@@ -18,7 +18,7 @@
  */
 
 #ifndef ECORECPP_RESOURCE_FORWARD_HPP
-#define ECORECPP_RESOURCEMAPPING_FORWARD_HPP
+#define ECORECPP_RESOURCE_FORWARD_HPP
 
 #include <boost/intrusive_ptr.hpp>
 
