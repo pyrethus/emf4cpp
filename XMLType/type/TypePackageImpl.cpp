@@ -1007,6 +1007,430 @@ void TypePackage::_initPackage()
     m_UnsignedShortObjectEDataType->setName("UnsignedShortObject");
     m_UnsignedShortObjectEDataType->setSerializable(true);
 
+    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
+    ::ecore::EAnnotation_ptr _annotation;
+
+    _annotation = m_AnyTypeEClass->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "anyType");
+    _annotation->setDetail("kind", "mixed");
+
+    _annotation = m_AnyType__mixed->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "elementWildcard");
+    _annotation->setDetail("name", ":mixed");
+
+    _annotation = m_AnyType__any->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "elementWildcard");
+    _annotation->setDetail("wildcards", "##any");
+    _annotation->setDetail("name", ":1");
+    _annotation->setDetail("processing", "lax");
+
+    _annotation = m_AnyType__anyAttribute->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "attributeWildcard");
+    _annotation->setDetail("wildcards", "##any");
+    _annotation->setDetail("name", ":2");
+    _annotation->setDetail("processing", "lax");
+
+    _annotation = m_ProcessingInstructionEClass->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "processingInstruction_._type");
+    _annotation->setDetail("kind", "empty");
+
+    _annotation = m_ProcessingInstruction__data->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "attribute");
+    _annotation->setDetail("name", "data");
+
+    _annotation = m_ProcessingInstruction__target->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "attribute");
+    _annotation->setDetail("name", "target");
+
+    _annotation = m_SimpleAnyTypeEClass->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "simpleAnyType");
+    _annotation->setDetail("kind", "simple");
+
+    _annotation = m_SimpleAnyType__rawValue->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", ":3");
+    _annotation->setDetail("kind", "simple");
+
+    _annotation = m_SimpleAnyType__value->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", ":4");
+    _annotation->setDetail("kind", "simple");
+
+    _annotation = m_SimpleAnyType__instanceType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", ":5");
+    _annotation->setDetail("kind", "simple");
+
+    _annotation = m_XMLTypeDocumentRootEClass->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "");
+    _annotation->setDetail("kind", "mixed");
+
+    _annotation = m_XMLTypeDocumentRoot__mixed->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "elementWildcard");
+    _annotation->setDetail("name", ":mixed");
+
+    _annotation = m_XMLTypeDocumentRoot__xMLNSPrefixMap->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "attribute");
+    _annotation->setDetail("name", "xmlns:prefix");
+
+    _annotation = m_XMLTypeDocumentRoot__xSISchemaLocation->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "attribute");
+    _annotation->setDetail("name", "xsi:schemaLocation");
+
+    _annotation = m_XMLTypeDocumentRoot__cDATA->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "element");
+    _annotation->setDetail("name", "cDATA");
+    _annotation->setDetail("namespace", "##targetNamespace");
+
+    _annotation = m_XMLTypeDocumentRoot__cDATA->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedGetVisibility", "true");
+
+    _annotation = m_XMLTypeDocumentRoot__comment->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "element");
+    _annotation->setDetail("name", "comment");
+    _annotation->setDetail("namespace", "##targetNamespace");
+
+    _annotation = m_XMLTypeDocumentRoot__comment->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedGetVisibility", "true");
+
+    _annotation = m_XMLTypeDocumentRoot__processingInstruction->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "element");
+    _annotation->setDetail("name", "processingInstruction");
+    _annotation->setDetail("namespace", "##targetNamespace");
+
+    _annotation = m_XMLTypeDocumentRoot__processingInstruction->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedGetVisibility", "true");
+
+    _annotation = m_XMLTypeDocumentRoot__text->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("kind", "element");
+    _annotation->setDetail("name", "text");
+    _annotation->setDetail("namespace", "##targetNamespace");
+
+    _annotation = m_XMLTypeDocumentRoot__text->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedGetVisibility", "true");
+
+    _annotation = m_AnySimpleTypeEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "anySimpleType");
+
+    _annotation = m_AnyURIEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "anyURI");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_Base64BinaryEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "base64Binary");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_BooleanEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "boolean");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_BooleanObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "boolean:Object");
+    _annotation->setDetail("baseType", "boolean");
+
+    _annotation = m_ByteEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "byte");
+
+    _annotation = m_ByteObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "byte:Object");
+    _annotation->setDetail("baseType", "byte");
+
+    _annotation = m_DateEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "date");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_DateTimeEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "dateTime");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_DecimalEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "decimal");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_DoubleEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "double");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_DoubleObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "double:Object");
+    _annotation->setDetail("baseType", "double");
+
+    _annotation = m_DurationEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "duration");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_ENTITIESEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "ENTITIES");
+    _annotation->setDetail("baseType", "ENTITIES_._base");
+    _annotation->setDetail("minLength", "1");
+
+    _annotation = m_ENTITIESBaseEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "ENTITIES_._base");
+    _annotation->setDetail("itemType", "ENTITY");
+
+    _annotation = m_ENTITYEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "ENTITY");
+    _annotation->setDetail("baseType", "NCName");
+
+    _annotation = m_FloatEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "float");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_FloatObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "float:Object");
+    _annotation->setDetail("baseType", "float");
+
+    _annotation = m_GDayEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "gDay");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_GMonthEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "gMonth");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_GMonthDayEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "gMonthDay");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_GYearEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "gYear");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_GYearMonthEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "gYearMonth");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_HexBinaryEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "hexBinary");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_IDEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "ID");
+    _annotation->setDetail("baseType", "NCName");
+
+    _annotation = m_IDREFEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "IDREF");
+    _annotation->setDetail("baseType", "NCName");
+
+    _annotation = m_IDREFSEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "IDREFS");
+    _annotation->setDetail("baseType", "IDREFS_._base");
+    _annotation->setDetail("minLength", "1");
+
+    _annotation = m_IDREFSBaseEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "IDREFS_._base");
+    _annotation->setDetail("itemType", "IDREF");
+
+    _annotation = m_IntEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "int");
+
+    _annotation = m_IntegerEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "integer");
+
+    _annotation = m_IntObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "int:Object");
+    _annotation->setDetail("baseType", "int");
+
+    _annotation = m_LanguageEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "language");
+    _annotation->setDetail("baseType", "token");
+    _annotation->setDetail("pattern", "[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*");
+
+    _annotation = m_LongEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "long");
+
+    _annotation = m_LongObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "long:Object");
+    _annotation->setDetail("baseType", "long");
+
+    _annotation = m_NameEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "Name");
+    _annotation->setDetail("baseType", "token");
+    _annotation->setDetail("pattern", "\\i\\c*");
+
+    _annotation = m_NCNameEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "NCName");
+    _annotation->setDetail("baseType", "Name");
+    _annotation->setDetail("pattern", "[\\i-[:]][\\c-[:]]*");
+
+    _annotation = m_NegativeIntegerEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "negativeInteger");
+    _annotation->setDetail("baseType", "nonPositiveInteger");
+    _annotation->setDetail("maxInclusive", "-1");
+
+    _annotation = m_NMTOKENEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "NMTOKEN");
+    _annotation->setDetail("baseType", "token");
+    _annotation->setDetail("pattern", "\\c+");
+
+    _annotation = m_NMTOKENSEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "NMTOKENS");
+    _annotation->setDetail("baseType", "NMTOKENS_._base");
+    _annotation->setDetail("minLength", "1");
+
+    _annotation = m_NMTOKENSBaseEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "NMTOKENS_._base");
+    _annotation->setDetail("itemType", "NMTOKEN");
+
+    _annotation = m_NonNegativeIntegerEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "nonNegativeInteger");
+    _annotation->setDetail("baseType", "integer");
+    _annotation->setDetail("minInclusive", "0");
+
+    _annotation = m_NonPositiveIntegerEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "nonPositiveInteger");
+    _annotation->setDetail("baseType", "integer");
+    _annotation->setDetail("maxInclusive", "0");
+
+    _annotation = m_NormalizedStringEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "normalizedString");
+    _annotation->setDetail("baseType", "string");
+    _annotation->setDetail("whiteSpace", "replace");
+
+    _annotation = m_NOTATIONEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "NOTATION");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_PositiveIntegerEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "positiveInteger");
+    _annotation->setDetail("baseType", "nonNegativeInteger");
+    _annotation->setDetail("minInclusive", "1");
+
+    _annotation = m_QNameEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "QName");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_ShortEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "short");
+
+    _annotation = m_ShortObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "short:Object");
+    _annotation->setDetail("baseType", "short");
+
+    _annotation = m_StringEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "string");
+    _annotation->setDetail("whiteSpace", "preserve");
+
+    _annotation = m_TimeEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "time");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_TokenEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "token");
+    _annotation->setDetail("baseType", "normalizedString");
+    _annotation->setDetail("whiteSpace", "collapse");
+
+    _annotation = m_UnsignedByteEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "unsignedByte");
+    _annotation->setDetail("maxInclusive", "255");
+    _annotation->setDetail("minInclusive", "0");
+
+    _annotation = m_UnsignedByteObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "unsignedByte:Object");
+    _annotation->setDetail("baseType", "unsignedByte");
+
+    _annotation = m_UnsignedIntEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "unsignedInt");
+    _annotation->setDetail("maxInclusive", "4294967295");
+    _annotation->setDetail("minInclusive", "0");
+
+    _annotation = m_UnsignedIntObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "unsignedInt:Object");
+    _annotation->setDetail("baseType", "unsignedInt");
+
+    _annotation = m_UnsignedLongEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "unsignedLong");
+    _annotation->setDetail("baseType", "nonNegativeInteger");
+    _annotation->setDetail("maxInclusive", "18446744073709551615");
+    _annotation->setDetail("minInclusive", "0");
+
+    _annotation = m_UnsignedShortEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "unsignedShort");
+    _annotation->setDetail("maxInclusive", "65535");
+    _annotation->setDetail("minInclusive", "0");
+
+    _annotation = m_UnsignedShortObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("name", "unsignedShort:Object");
+    _annotation->setDetail("baseType", "unsignedShort");
+
     _initialize();
 }
 

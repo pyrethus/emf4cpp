@@ -2930,6 +2930,197 @@ void EcorePackage::_initPackage()
             "EInvocationTargetException");
     m_EInvocationTargetExceptionEDataType->setSerializable(false);
 
+    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
+    ::ecore::EAnnotation_ptr _annotation;
+
+    _annotation = m_EAttributeEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints", "ConsistentTransient");
+
+    _annotation = m_EAnnotationEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints", "WellFormedSourceURI");
+
+    _annotation = m_EClassEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints",
+            "InterfaceIsAbstract AtMostOneID UniqueFeatureNames UniqueOperationSignatures NoCircularSuperTypes WellFormedMapEntryClass ConsistentSuperTypes DisjointFeatureAndOperationSignatures");
+
+    _annotation = m_EClass__eSuperTypes->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedIsSetVisibility", "true");
+    _annotation->setDetail("suppressedUnsetVisibility", "true");
+
+    _annotation = m_EClass__eGenericSuperTypes->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedIsSetVisibility", "true");
+    _annotation->setDetail("suppressedUnsetVisibility", "true");
+
+    _annotation = m_EClassifierEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints",
+            "WellFormedInstanceTypeName UniqueTypeParameterNames");
+
+    _annotation = m_EClassifier__instanceClassName->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedIsSetVisibility", "true");
+    _annotation->setDetail("suppressedUnsetVisibility", "true");
+
+    _annotation = m_EClassifier__instanceTypeName->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedIsSetVisibility", "true");
+    _annotation->setDetail("suppressedUnsetVisibility", "true");
+
+    _annotation = m_EEnumEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints",
+            "UniqueEnumeratorNames UniqueEnumeratorLiterals");
+
+    _annotation = m_ENamedElementEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints", "WellFormedName");
+
+    _annotation = m_EOperationEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints",
+            "UniqueParameterNames UniqueTypeParameterNames NoRepeatingVoid");
+
+    _annotation = m_EOperation__eExceptions->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedIsSetVisibility", "true");
+    _annotation->setDetail("suppressedUnsetVisibility", "true");
+
+    _annotation = m_EOperation__eGenericExceptions->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedIsSetVisibility", "true");
+    _annotation->setDetail("suppressedUnsetVisibility", "true");
+
+    _annotation = m_EPackageEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints",
+            "WellFormedNsURI WellFormedNsPrefix UniqueSubpackageNames UniqueClassifierNames UniqueNsURIs");
+
+    _annotation = m_EReferenceEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints",
+            "ConsistentOpposite SingleContainer ConsistentKeys ConsistentUnique ConsistentContainer");
+
+    _annotation = m_EStructuralFeatureEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints", "ValidDefaultValueLiteral");
+
+    _annotation = m_ETypedElementEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints",
+            "ValidLowerBound ValidUpperBound ConsistentBounds ValidType");
+
+    _annotation = m_ETypedElement__eType->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedIsSetVisibility", "true");
+    _annotation->setDetail("suppressedUnsetVisibility", "true");
+
+    _annotation = m_ETypedElement__eGenericType->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/GenModel");
+    _annotation->setDetail("suppressedIsSetVisibility", "true");
+    _annotation->setDetail("suppressedUnsetVisibility", "true");
+
+    _annotation = m_EGenericTypeEClass->getEAnnotation(
+            "http://www.eclipse.org/emf/2002/Ecore");
+    _annotation->setDetail("constraints",
+            "ConsistentType ConsistentBounds ConsistentArguments");
+
+    _annotation = m_EBigDecimalEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType",
+            "http://www.w3.org/2001/XMLSchema#decimal");
+
+    _annotation = m_EBigIntegerEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType",
+            "http://www.w3.org/2001/XMLSchema#integer");
+
+    _annotation = m_EBooleanEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType",
+            "http://www.w3.org/2001/XMLSchema#boolean");
+
+    _annotation = m_EBooleanObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "EBoolean");
+    _annotation->setDetail("name", "EBoolean:Object");
+
+    _annotation = m_EByteEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "http://www.w3.org/2001/XMLSchema#byte");
+
+    _annotation = m_EByteArrayEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType",
+            "http://www.w3.org/2001/XMLSchema#hexBinary");
+
+    _annotation = m_EByteObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "EByte");
+    _annotation->setDetail("name", "EByte:Object");
+
+    _annotation = m_ECharacterObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "EChar");
+    _annotation->setDetail("name", "EChar:Object");
+
+    _annotation = m_EDoubleEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType",
+            "http://www.w3.org/2001/XMLSchema#double");
+
+    _annotation = m_EDoubleObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "EDouble");
+    _annotation->setDetail("name", "EDouble:Object");
+
+    _annotation = m_EFloatEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType",
+            "http://www.w3.org/2001/XMLSchema#float");
+
+    _annotation = m_EFloatObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "EFloat");
+    _annotation->setDetail("name", "EFloat:Object");
+
+    _annotation = m_EIntEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "http://www.w3.org/2001/XMLSchema#int");
+
+    _annotation = m_EIntegerObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "EInt");
+    _annotation->setDetail("name", "EInt:Object");
+
+    _annotation = m_ELongEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "http://www.w3.org/2001/XMLSchema#long");
+
+    _annotation = m_ELongObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "ELong");
+    _annotation->setDetail("name", "ELong:Object");
+
+    _annotation = m_EShortEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType",
+            "http://www.w3.org/2001/XMLSchema#short");
+
+    _annotation = m_EShortObjectEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType", "EShort");
+    _annotation->setDetail("name", "EShort:Object");
+
+    _annotation = m_EStringEDataType->getEAnnotation(
+            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+    _annotation->setDetail("baseType",
+            "http://www.w3.org/2001/XMLSchema#string");
+
     _initialize();
 }
 

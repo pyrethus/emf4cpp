@@ -66,9 +66,11 @@ public:
     virtual const ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >& getReferences () const;
     virtual ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >& getReferences ();
 
-    /*PROTECTED REGION ID(EAnnotation) START*/
-    // Please, enable the protected region if you add manually written code.
-    // To do this, add the keyword ENABLED before START.
+    /*PROTECTED REGION ID(EAnnotation) ENABLED START*/
+    virtual bool hasDetail(::ecore::EString const&) const;
+    virtual ::ecore::EString getDetail(::ecore::EString const&) const;
+    virtual void setDetail(::ecore::EString const& key, ::ecore::EString const& value);
+    virtual void removeDetail(::ecore::EString const& key);
     /*PROTECTED REGION END*/
 
     // EObjectImpl

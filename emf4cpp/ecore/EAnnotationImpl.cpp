@@ -31,9 +31,68 @@
 #include <ecore/EObject.hpp>
 #include <ecorecpp/mapping.hpp>
 
-/*PROTECTED REGION ID(EAnnotationImpl.cpp) START*/
-// Please, enable the protected region if you add manually written code.
-// To do this, add the keyword ENABLED before START.
+/*PROTECTED REGION ID(EAnnotationImpl.cpp) ENABLED START*/
+#include <ecore/EcoreFactory.hpp>
+
+using namespace ::ecore;
+
+bool EAnnotation::hasDetail(::ecore::EString const& key) const
+{
+    for (size_t i = 0; i < m_details->size(); i++)
+    {
+        auto detail = (*m_details)[i];
+        if (detail->getKey() == key)
+            return true;
+    }
+    return false;
+}
+
+::ecore::EString EAnnotation::getDetail(::ecore::EString const& key) const
+{
+    for (size_t i = 0; i < m_details->size(); i++)
+    {
+        auto detail = (*m_details)[i];
+        if (detail->getKey() == key)
+            return detail->getValue();
+    }
+    throw "Error";
+}
+
+void EAnnotation::setDetail(::ecore::EString const& key,
+        ::ecore::EString const& value)
+{
+    size_t i = 0;
+    for (; i < m_details->size(); i++)
+    {
+        auto detail = (*m_details)[i];
+        if (detail->getKey() == key)
+            break;
+    }
+    if (i < m_details->size())
+    {
+        (*m_details)[i]->setValue(value);
+    }
+    else
+    {
+        auto newDetail = ::ecore::create< ::ecore::EStringToStringMapEntry >();
+        newDetail->_initialize();
+        newDetail->setKey(key);
+        newDetail->setValue(value);
+        m_details->push_back(newDetail);
+    }
+}
+
+void EAnnotation::removeDetail(::ecore::EString const& key)
+{
+    for (size_t i = 0; i < m_details->size(); i++)
+    {
+        auto detail = (*m_details)[i];
+        if (detail->getKey() == key)
+            m_details->remove(detail);
+    }
+}
+
+// Use the protected region if you add manually written code.
 /*PROTECTED REGION END*/
 
 using namespace ::ecore;

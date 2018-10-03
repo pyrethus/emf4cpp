@@ -39,7 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 enum class «name» {
 		«FOREACH this.ELiterals AS el SEPARATOR ","-»
-«REM»The name must not contain spaces, while the literal can contain spaces.«ENDREM»
+«REM»The name must not contain spaces, while the literal can contain spaces.«ENDREM-»
 		«el.name» = «el.value»
 		«ENDFOREACH»
 };

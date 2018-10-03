@@ -287,14 +287,54 @@ void «name.toFirstUpper()»Package::_initPackage()
     {
         ::ecore::EEnumLiteral_ptr _el = ::ecore::Ptr<::ecore::EEnumLiteral>(new ::ecore::EEnumLiteral);
         // «el»
-        _el->setName("«el»");
+        _el->setName("«el.name»");
         _el->setValue(«el.value»);
-        _el->setLiteral("«el»");
+        _el->setLiteral("«el.literal»");
         _el->setEEnum(«getPackageAttribute(ee)»);
         «getPackageAttribute(ee)»->getELiterals().push_back(_el);
     }
     «ENDFOREACH-»
 «ENDFOREACH»
+
+    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
+    ::ecore::EAnnotation_ptr _annotation;
+«FOREACH EAnnotations AS annotation-»
+    _annotation = getEAnnotation("«annotation.source»");
+  «FOREACH annotation.details AS detail-»
+«REM»detail.key and detail.value are flagged as an error, but in reality it works.
+«detail.key»=«detail.value»
+«ENDREM-»
+	_annotation->setDetail( "«((ecore::EStringToStringMapEntry)detail).key»", "«cxx(((ecore::EStringToStringMapEntry)detail).value)»" );
+  «ENDFOREACH»
+«ENDFOREACH-»
+
+«FOREACH EClassifiers.typeSelect(EClass) AS class-»
+  «FOREACH class.EAnnotations AS annotation-»
+    _annotation = «getPackageAttribute(class)»->getEAnnotation("«annotation.source»");
+    «FOREACH annotation.details AS detail-»
+	_annotation->setDetail( "«((ecore::EStringToStringMapEntry)detail).key»", "«cxx(((ecore::EStringToStringMapEntry)detail).value)»" );
+    «ENDFOREACH»
+  «ENDFOREACH-»
+
+  «FOREACH class.EStructuralFeatures AS feature-»
+    «FOREACH feature.EAnnotations AS annotation-»
+    _annotation = «getFeatureMember(feature)»->getEAnnotation("«annotation.source»");
+      «FOREACH annotation.details AS detail-»
+	_annotation->setDetail( "«((ecore::EStringToStringMapEntry)detail).key»", "«cxx(((ecore::EStringToStringMapEntry)detail).value)»" );
+      «ENDFOREACH»
+    «ENDFOREACH-»
+  «ENDFOREACH-»
+«ENDFOREACH-»
+
+«FOREACH EClassifiers.typeSelect(EDataType) AS datatype-»
+  «FOREACH datatype.EAnnotations AS annotation-»
+    _annotation = «getPackageAttribute(datatype)»->getEAnnotation("«annotation.source»");
+    «FOREACH annotation.details AS detail-»
+	_annotation->setDetail( "«((ecore::EStringToStringMapEntry)detail).key»", "«cxx(((ecore::EStringToStringMapEntry)detail).value)»" );
+    «ENDFOREACH»
+  «ENDFOREACH-»
+«REM»Theoretically EEnumLiterals may have EAnnotations, too.«ENDREM-»
+«ENDFOREACH-»
 
     _initialize();
 }

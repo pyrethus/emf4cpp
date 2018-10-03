@@ -78,3 +78,14 @@ String getFeatureGetMemberCallOrThis(EPackage this, EStructuralFeature ef) :
 	"(dynamic_cast< " + getPackageFQN() + "* >(this)) ? dynamic_cast< " + getPackageFQN() + "* >(this)->" + getFeatureGetMember(ef) + "() " + ": " + getFeatureGetMemberCall(ef)
 ;
 
+String xml(String raw) : JAVA
+    org.apache.commons.lang3.StringEscapeUtils.escapeXml(java.lang.String)
+;
+
+String java(String raw) : JAVA
+    org.apache.commons.lang3.StringEscapeUtils.escapeJava(java.lang.String)
+;
+
+String cxx(String raw) :
+    java( xml(raw) )
+;

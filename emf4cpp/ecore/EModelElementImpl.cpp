@@ -28,9 +28,8 @@
 #include <ecore/EObject.hpp>
 #include <ecorecpp/mapping.hpp>
 
-/*PROTECTED REGION ID(EModelElementImpl.cpp) START*/
-// Please, enable the protected region if you add manually written code.
-// To do this, add the keyword ENABLED before START.
+/*PROTECTED REGION ID(EModelElementImpl.cpp) ENABLED START*/
+#include <ecore/EcoreFactory.hpp>
 /*PROTECTED REGION END*/
 
 using namespace ::ecore;
@@ -56,10 +55,18 @@ void EModelElement::_initialize()
 ::ecore::EAnnotation_ptr EModelElement::getEAnnotation(
         ::ecore::EString const& _source)
 {
-    /*PROTECTED REGION ID(EModelElementImpl_getEAnnotation) START*/
-    // Please, enable the protected region if you add manually written code.
-    // To do this, add the keyword ENABLED before START.
-    throw "UnsupportedOperationException: ecore::EModelElement::getEAnnotation";
+    /*PROTECTED REGION ID(EModelElementImpl_getEAnnotation) ENABLED START*/
+    for (size_t i = 0; i < m_eAnnotations->size(); i++)
+    {
+        if ((*m_eAnnotations)[i]->getSource() == _source)
+            return (*m_eAnnotations)[i];
+    }
+
+    auto newAnnotation = create< EAnnotation >();
+    newAnnotation->_initialize();
+    newAnnotation->setSource(_source);
+    m_eAnnotations->push_back(newAnnotation);
+    return newAnnotation;
     /*PROTECTED REGION END*/
 }
 
