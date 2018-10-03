@@ -2,7 +2,7 @@
 /*
  * kdm/code/CodeFactoryImpl.cpp
  * Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
- * Copyright (C) INCHRON GmbH 2016 <soeren.henning@inchron.com>
+ * Copyright (C) INCHRON GmbH 2016-2018 <emf4cpp@inchron.com>
  *
  * EMF4CPP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
@@ -353,7 +353,7 @@ CodeFactory::CodeFactory()
                 > (getEPackage());
         ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EInt > (_instanceValue);
-        return _epkg->getMethodKind()->getEEnumLiteral(_value)->getName();
+        return _epkg->getMethodKind()->getEEnumLiteral(_value)->getLiteral();
     }
     case CodePackage::PARAMETERKIND:
     {
@@ -361,7 +361,7 @@ CodeFactory::CodeFactory()
                 > (getEPackage());
         ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EInt > (_instanceValue);
-        return _epkg->getParameterKind()->getEEnumLiteral(_value)->getName();
+        return _epkg->getParameterKind()->getEEnumLiteral(_value)->getLiteral();
     }
     case CodePackage::EXPORTKIND:
     {
@@ -369,7 +369,7 @@ CodeFactory::CodeFactory()
                 > (getEPackage());
         ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EInt > (_instanceValue);
-        return _epkg->getExportKind()->getEEnumLiteral(_value)->getName();
+        return _epkg->getExportKind()->getEEnumLiteral(_value)->getLiteral();
     }
     case CodePackage::STORABLEKIND:
     {
@@ -377,7 +377,7 @@ CodeFactory::CodeFactory()
                 > (getEPackage());
         ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EInt > (_instanceValue);
-        return _epkg->getStorableKind()->getEEnumLiteral(_value)->getName();
+        return _epkg->getStorableKind()->getEEnumLiteral(_value)->getLiteral();
     }
     case CodePackage::CALLABLEKIND:
     {
@@ -385,7 +385,7 @@ CodeFactory::CodeFactory()
                 > (getEPackage());
         ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EInt > (_instanceValue);
-        return _epkg->getCallableKind()->getEEnumLiteral(_value)->getName();
+        return _epkg->getCallableKind()->getEEnumLiteral(_value)->getLiteral();
     }
     case CodePackage::MACROKIND:
     {
@@ -393,7 +393,7 @@ CodeFactory::CodeFactory()
                 > (getEPackage());
         ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EInt > (_instanceValue);
-        return _epkg->getMacroKind()->getEEnumLiteral(_value)->getName();
+        return _epkg->getMacroKind()->getEEnumLiteral(_value)->getLiteral();
     }
     default:
         throw "IllegalArgumentException";

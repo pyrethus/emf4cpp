@@ -142,6 +142,23 @@ struct string_traits< std::vector< unsigned char > >
 };
 
 template< >
+struct string_traits< std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t > > >
+{
+    static inline any fromString(
+            const type_definitions::string_t &)
+    {
+        // TODO
+        throw "Not implemented!";
+    }
+
+    static inline type_definitions::string_t toString(any const&)
+    {
+        // TODO
+        throw "Not implemented!";
+    }
+};
+
+template< >
 struct string_traits< char16_t >
 {
     static inline any fromString(const type_definitions::string_t & str)

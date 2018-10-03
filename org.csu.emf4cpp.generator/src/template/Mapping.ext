@@ -55,6 +55,67 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
 	case "EString": "::ecorecpp::mapping::type_definitions::string_t"
 	case "ETreeIterator": "::ecorecpp::util::TreeIterator<" + type_parameters +">"
 	case "EInvocationTargetException": "int" // ?? Need class
+	
+	/* Support for synthesis of XMLType.ecore */
+	case "AnySimpleType": "::ecorecpp::mapping::any" // maps to java.lang.Object
+	case "AnyURI": "::ecorecpp::mapping::type_definitions::string_t"
+	case "Base64Binary": "::ecorecpp::mapping::type_definitions::string_t"
+	case "Boolean": "bool"
+	case "BooleanObject": "bool"
+	case "Byte": "int8_t"
+	case "ByteObject": "int8_t"
+	case "Date": "::ecorecpp::mapping::EDate"
+	case "DateTime": "::ecorecpp::mapping::EDate"
+	case "Decimal": "::ecorecpp::mapping::type_definitions::string_t"
+	case "Double": "double"
+	case "DoubleObject": "double"
+	case "Duration": "int" // ?
+	case "ENTITIES": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
+	case "ENTITIESBase": "::ecorecpp::mapping::type_definitions::string_t"
+	case "ENTITY": "::ecorecpp::mapping::type_definitions::string_t"
+	case "Float": "float"
+	case "FloatObject": "float"
+	case "GDay": "int" // ?
+	case "GMonth": "int" // ?
+	case "GMonthDay": "int" // ?
+	case "GYear": "int" // ?
+	case "GYearMonth": "int" // ?
+	case "HexBinary": "::ecorecpp::mapping::type_definitions::string_t"
+	case "ID": "::ecorecpp::mapping::type_definitions::string_t"
+	case "IDREF": "::ecorecpp::mapping::type_definitions::string_t"
+	case "IDREFS": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
+	case "IDREFSBase": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
+	case "Int": "int"
+	case "Integer": "int64_t" // XMLType.ecore references BigInteger
+	case "IntObject": "int"
+	case "Language": "::ecorecpp::mapping::type_definitions::string_t"
+	case "Long": "int64_t"
+	case "LongObject": "int64_t"
+	case "Name": "::ecorecpp::mapping::type_definitions::string_t"
+	case "NCName": "::ecorecpp::mapping::type_definitions::string_t"
+	case "NegativeInteger": "int64_t"
+	case "NMTOKEN": "::ecorecpp::mapping::type_definitions::string_t"
+	case "NMTOKENS": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
+	case "NMTOKENSBase": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
+	case "NonNegativeInteger": "uint64_t"
+	case "NonPositiveInteger": "int64_t"
+	case "NormalizedString": "::ecorecpp::mapping::type_definitions::string_t"
+	case "NOTATION": "int" // ?
+	case "PositiveInteger": "uint64_t"
+	case "QName": "::ecorecpp::mapping::type_definitions::string_t"
+	case "Short": "int16_t"
+	case "ShortObject": "int" // ?
+	case "String": "::ecorecpp::mapping::type_definitions::string_t"
+	case "Time": "int" // ?
+	case "Token": "::ecorecpp::mapping::type_definitions::string_t"
+	case "UnsignedByte": "uint8_t"
+	case "UnsignedByteObject": "uint8_t"
+	case "UnsignedInt": "unsigned int"
+	case "UnsignedIntObject": "unsigned int"
+	case "UnsignedLong": "uint64_t"
+	case "UnsignedShort": "uint16_t"
+	case "UnsignedShortObject" : "uint16_t"
+	
 	default: // fallback
 		"int"
 };
@@ -70,6 +131,11 @@ boolean cppComplexType (EDataType d) : switch (d.name)
 	case "EEList": true
 	case "EJavaObject": true
 	case "EString": true
+	case "ENTITIES": true
+	case "IDREFS": true
+	case "IDREFSBase": true
+	case "NMTOKENS": true
+	case "NMTOKENSBase": true
 	default: // fallback
 		false
 };

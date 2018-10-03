@@ -2,7 +2,7 @@
 /*
  * PrimitiveTypes_forward.hpp
  * Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
- * Copyright (C) INCHRON GmbH 2016 <soeren.henning@inchron.com>
+ * Copyright (C) INCHRON GmbH 2016-2018 <emf4cpp@inchron.com>
  *
  * EMF4CPP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
@@ -40,22 +40,22 @@ namespace PrimitiveTypes
     /*PROTECTED REGION ID(PrimitiveTypes_Boolean) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int Boolean;
+    typedef bool Boolean;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(PrimitiveTypes_Integer) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int Integer;
+    typedef int64_t Integer;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(PrimitiveTypes_String) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int String;
+    typedef ::ecorecpp::mapping::type_definitions::string_t String;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(PrimitiveTypes_Double) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int Double;
+    typedef double Double;
     /*PROTECTED REGION END*/
 
 // EClass

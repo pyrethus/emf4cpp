@@ -2,7 +2,7 @@
 /*
  * PrimitiveTypes/PrimitiveTypesPackageImpl.cpp
  * Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
- * Copyright (C) INCHRON GmbH 2016 <soeren.henning@inchron.com>
+ * Copyright (C) INCHRON GmbH 2016-2018 <emf4cpp@inchron.com>
  *
  * EMF4CPP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
@@ -106,6 +106,9 @@ void PrimitiveTypesPackage::_initPackage()
     // Double
     m_DoubleEDataType->setName("Double");
     m_DoubleEDataType->setSerializable(true);
+
+    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
+    ::ecore::EAnnotation_ptr _annotation;
 
     _initialize();
 }

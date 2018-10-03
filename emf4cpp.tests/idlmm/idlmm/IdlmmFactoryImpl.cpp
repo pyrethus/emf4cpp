@@ -2,7 +2,7 @@
 /*
  * idlmm/IdlmmFactoryImpl.cpp
  * Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
- * Copyright (C) INCHRON GmbH 2016 <soeren.henning@inchron.com>
+ * Copyright (C) INCHRON GmbH 2016-2018 <emf4cpp@inchron.com>
  *
  * EMF4CPP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
@@ -162,7 +162,7 @@ IdlmmFactory::IdlmmFactory()
                 > (getEPackage());
         ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EInt > (_instanceValue);
-        return _epkg->getParameterMode()->getEEnumLiteral(_value)->getName();
+        return _epkg->getParameterMode()->getEEnumLiteral(_value)->getLiteral();
     }
     case IdlmmPackage::PRIMITIVEKIND:
     {
@@ -170,7 +170,7 @@ IdlmmFactory::IdlmmFactory()
                 > (getEPackage());
         ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EInt > (_instanceValue);
-        return _epkg->getPrimitiveKind()->getEEnumLiteral(_value)->getName();
+        return _epkg->getPrimitiveKind()->getEEnumLiteral(_value)->getLiteral();
     }
     case IdlmmPackage::EANY:
         return ::ecorecpp::mapping::string_traits < ::idlmm::EAny

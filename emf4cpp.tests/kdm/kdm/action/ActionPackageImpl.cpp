@@ -2,7 +2,7 @@
 /*
  * kdm/action/ActionPackageImpl.cpp
  * Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
- * Copyright (C) INCHRON GmbH 2016 <soeren.henning@inchron.com>
+ * Copyright (C) INCHRON GmbH 2016-2018 <emf4cpp@inchron.com>
  *
  * EMF4CPP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
@@ -1031,6 +1031,9 @@ void ActionPackage::_initPackage()
     m_ExceptionFlow__from->setOrdered(false);
 
     // TODO: Initialize data types
+
+    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
+    ::ecore::EAnnotation_ptr _annotation;
 
     _initialize();
 }

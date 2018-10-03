@@ -2,7 +2,7 @@
 /*
  * enumeration/EnumerationFactoryImpl.cpp
  * Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
- * Copyright (C) INCHRON GmbH 2016 <soeren.henning@inchron.com>
+ * Copyright (C) INCHRON GmbH 2016-2018 <emf4cpp@inchron.com>
  *
  * EMF4CPP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
@@ -72,7 +72,7 @@ EnumerationFactory::EnumerationFactory()
                 < ::enumeration::EnumerationPackage > (getEPackage());
         ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EInt > (_instanceValue);
-        return _epkg->getBirdType()->getEEnumLiteral(_value)->getName();
+        return _epkg->getBirdType()->getEEnumLiteral(_value)->getLiteral();
     }
     default:
         throw "IllegalArgumentException";

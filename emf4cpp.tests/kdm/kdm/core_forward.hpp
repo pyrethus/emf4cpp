@@ -2,7 +2,7 @@
 /*
  * kdm/core_forward.hpp
  * Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
- * Copyright (C) INCHRON GmbH 2016 <soeren.henning@inchron.com>
+ * Copyright (C) INCHRON GmbH 2016-2018 <emf4cpp@inchron.com>
  *
  * EMF4CPP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
@@ -45,7 +45,7 @@ namespace kdm
         /*PROTECTED REGION ID(kdm_core_Integer) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-        typedef int Integer;
+        typedef int64_t Integer;
         /*PROTECTED REGION END*/
         /*PROTECTED REGION ID(kdm_core_Boolean) ENABLED START*/
         typedef bool Boolean;
