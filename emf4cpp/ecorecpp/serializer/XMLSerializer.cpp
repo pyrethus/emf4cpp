@@ -22,6 +22,8 @@
 #include <algorithm>
 
 #include <ecorecpp/resource/XMLResource.hpp>
+#include <ecorecpp/mapping/EListImpl.hpp>
+#include <ecore_forward.hpp>
 #include <ecore.hpp>
 
 #include "../util/debug.hpp"
@@ -57,8 +59,30 @@ bool XMLSerializer::getKeepDefault() const {
 	return m_keepDefault;
 }
 
+void XMLSerializer::setExtendedMetaData(bool b) {
+	if (b)
+		m_extendedMetaData = ::ecorecpp::util::ExtendedMetaData::_instance();
+	else
+		m_extendedMetaData = ::ecore::Ptr<util::ExtendedMetaData>();
+}
+
+bool XMLSerializer::getExtendedMetaData() const {
+	return !!m_extendedMetaData;
+}
+
 void XMLSerializer::serialize(EObject_ptr obj) {
 	m_root_obj = obj;
+
+	if (m_extendedMetaData) {
+		auto root_eClass = obj->eClass();
+		DEBUG_MSG(cout, "name " << m_extendedMetaData->getName(root_eClass) );
+		if (m_extendedMetaData->isDocumentRoot(root_eClass)) {
+			DEBUG_MSG(cout, "DocumentRoot detected");
+			throw std::logic_error("Cannot persist DocumentRoot");
+		} else
+			DEBUG_MSG(cout, "DocumentRoot not detected");
+	}
+
 
 	EClass_ptr cl = obj->eClass();
 	EPackage_ptr pkg = cl->getEPackage();
@@ -67,21 +91,27 @@ void XMLSerializer::serialize(EObject_ptr obj) {
 	// remove the XML processing instruction
 	m_internalBuffer.str(::ecorecpp::mapping::type_definitions::string_t());
 	// Serialize the top level object into m_internalBuffer
-	m_ser.open_object("", true);
+	m_ser.open_object("", greedy_serializer::SilentMode::Silent);
 	serialize_node(obj);
-	m_ser.close_object("", true);
+	m_ser.close_object("", greedy_serializer::SilentMode::Silent);
 
 	// Create a new serializer for the real output.
 	greedy_serializer output(m_out, m_mode == XmiIndentMode::Indentation);
 
 	::ecorecpp::mapping::type_definitions::string_t root_name(get_type(obj));
+	if ( m_extendedMetaData && obj->eContainer()
+		 && m_extendedMetaData->isDocumentRoot(obj->eContainer()->eClass()) ) {
+		root_name = get_reference(obj);
+	}
 	output.open_object(root_name);
 
 	// common attributes, following standard EMF order
-	// xmi:version="2.0"
-	output.add_attribute("xmi:version", "2.0");
-	// xmlns:xmi="http://www.omg.org/XMI"
-	output.add_attribute("xmlns:xmi", "http://www.omg.org/XMI");
+	if (!m_extendedMetaData) {
+		// xmi:version="2.0"
+		output.add_attribute("xmi:version", "2.0");
+		// xmlns:xmi="http://www.omg.org/XMI"
+		output.add_attribute("xmlns:xmi", "http://www.omg.org/XMI");
+	}
 	// xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	output.add_attribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
 
@@ -90,16 +120,15 @@ void XMLSerializer::serialize(EObject_ptr obj) {
 			[](const EPackage_ptr& lhs, const EPackage_ptr& rhs) -> bool {
 				return lhs->getName() < rhs->getName(); });
 	m_usedPackages.erase(std::unique(m_usedPackages.begin(), m_usedPackages.end()),
-	m_usedPackages.end());
+						 m_usedPackages.end());
 
 	for ( auto pkg : m_usedPackages ) {
-
 		::ecorecpp::mapping::type_definitions::string_t const& ns_uri = pkg->getNsURI();
-
 		::ecorecpp::mapping::type_definitions::stringstream_t root_namespace;
-		root_namespace << "xmlns:" << pkg->getName();
-
-		output.add_attribute(root_namespace.str(),ns_uri); // root element namespace URI
+		if (!m_extendedMetaData || m_extendedMetaData->isQualified(pkg)) {
+			root_namespace << "xmlns:" << pkg->getName();
+			output.add_attribute(root_namespace.str(),ns_uri); // root element namespace URI
+		}
 	}
 
 	output.append(m_internalBuffer.str());
@@ -110,11 +139,31 @@ void XMLSerializer::serialize(EObject_ptr obj) {
 ::ecorecpp::mapping::type_definitions::string_t
 XMLSerializer::get_type(EObject_ptr obj) const {
 	EClass_ptr cl = obj->eClass();
-	EPackage_ptr pkg = cl->getEPackage();
 
 	::ecorecpp::mapping::type_definitions::stringstream_t ss;
-	ss << pkg->getName() << ":" << cl->getName();
+	if (m_extendedMetaData) {
+		auto ns = m_extendedMetaData->getNamespace(cl);
+		if (!ns.empty())
+			ss << ns << ":";
+		ss << m_extendedMetaData->getName(cl);
+	} else {
+		ss << cl->getEPackage()->getName() << ":" << cl->getName();
+	}
+	return ss.str();
+}
 
+::ecorecpp::mapping::type_definitions::string_t
+XMLSerializer::get_reference(::ecore::EObject_ptr obj) const {
+	auto ef = obj->eContainingFeature();
+	::ecorecpp::mapping::type_definitions::stringstream_t ss;
+	if (m_extendedMetaData) {
+		auto ns = m_extendedMetaData->getNamespace(ef);
+		if (!ns.empty())
+			ss << ns << ":";
+		ss << m_extendedMetaData->getName(ef);
+	} else {
+		ss << obj->eContainer()->eClass()->getEPackage()->getName() << ":" << ef->getName();
+	}
 	return ss.str();
 }
 
@@ -150,8 +199,10 @@ XMLSerializer::get_type(EObject_ptr obj) const {
 
 void XMLSerializer::create_node(::ecore::EObject_ptr parent_obj,
                         EObject_ptr child_obj, EStructuralFeature_ptr ef) {
-
-	m_ser.open_object(ef->getName());
+	auto nodeName = ef->getName();
+	if (m_extendedMetaData)
+		nodeName = m_extendedMetaData->getName(ef);
+	m_ser.open_object(nodeName);
 
     EClass_ptr child_cl = child_obj->eClass();
 
@@ -172,13 +223,16 @@ void XMLSerializer::create_node(::ecore::EObject_ptr parent_obj,
 
     serialize_node(child_obj);
 
-    m_ser.close_object(ef->getName());
+    m_ser.close_object(nodeName);
 }
 
 void XMLSerializer::create_crossref_node(::ecore::EObject_ptr parent_obj,
                         EObject_ptr child_obj, EStructuralFeature_ptr ef) {
 
-	m_ser.open_object(ef->getName());
+	auto nodeName = ef->getName();
+	if (m_extendedMetaData)
+		nodeName = m_extendedMetaData->getName(ef);
+	m_ser.open_object(nodeName);
 
     EClass_ptr child_cl = child_obj->eClass();
 
@@ -189,7 +243,7 @@ void XMLSerializer::create_crossref_node(::ecore::EObject_ptr parent_obj,
 	}
 	m_ser.add_attribute("href", get_reference(parent_obj, child_obj, true));
 
-    m_ser.close_object(ef->getName());
+    m_ser.close_object(nodeName);
 }
 
 void XMLSerializer::serialize_node(EObject_ptr obj) {
@@ -208,25 +262,30 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 
 	EClass_ptr cl = obj->eClass();
 
-	/**
-	*
-	* Node attributes
-	*
-	*/
+	/*
+	 *
+	 * Node attributes
+	 *
+	 */
 	::ecorecpp::mapping::EList<EAttribute_ptr>& attributes =
 			cl->getEAllAttributes();
 
-	// Multiplicity-one attributes
+	/*
+	 * Multiplicity-one attributes
+	 */
 	for (auto const& current_at : attributes) {
 		if ( current_at->isTransient()
 				|| current_at->getUpperBound() != 1
 				|| (!obj->eIsSet(current_at) && !m_keepDefault) )
 			continue;
 
+		auto attributeName = current_at->getName();
+		if (m_extendedMetaData)
+			attributeName = m_extendedMetaData->getName(current_at);
 		try {
 			EClassifier_ptr at_classifier = current_at->getEType();
 
-			DEBUG_MSG(cout, indent << current_at->getName());
+			DEBUG_MSG(cout, indent << attributeName << " (from " << current_at->getName() << ")");
 
 			EDataType_ptr atc = as< EDataType >(at_classifier);
 			if (atc) {
@@ -237,14 +296,14 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 				::ecorecpp::mapping::type_definitions::string_t value =
 						fac->convertToString(atc, any);
 
-				DEBUG_MSG(cout, indent << current_at->getName() << " "
-						<< value);
+				DEBUG_MSG(cout, indent << attributeName
+						  << value);
 
 				if ( (!value.empty() && value
 						!= current_at->getDefaultValueLiteral())
 					|| (m_keepDefault && value
 						== current_at->getDefaultValueLiteral())) {
-					m_ser.add_attribute(current_at->getName(), value);
+					m_ser.add_attribute(attributeName, value);
 				}
 			} else {
 				// TODO: possible? Yes, for non-ecore built-in types!
@@ -254,7 +313,9 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 		}
 	}
 
-	// Non-containment references
+	/*
+	 * Non-containment references
+	 */
 	::ecorecpp::mapping::EList<EReference_ptr>& references =
 			cl->getEAllReferences();
 
@@ -266,8 +327,11 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 				|| !obj->eIsSet(current_ref) )
 			continue;
 
+		auto referenceName = current_ref->getName();
+		if (m_extendedMetaData)
+			referenceName = m_extendedMetaData->getName(current_ref);
 		try {
-			DEBUG_MSG(cout, indent << current_ref->getName());
+			DEBUG_MSG(cout, indent << referenceName << " (from " << current_ref->getName() << ")");
 
 			ecorecpp::mapping::any any = obj->eGet(current_ref);
 			::ecorecpp::mapping::type_definitions::stringstream_t value;
@@ -287,7 +351,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 					auto ref = get_reference(obj, child, isCrossDocumentReference);
 					if ( isCrossDocumentReference ) {
 						std::array<::ecorecpp::mapping::type_definitions::string_t, 3> crossRef;
-						crossRef[0] = current_ref->getName();
+						crossRef[0] = referenceName;
 
 						if (child->eClass() != current_ref->getEType()) {
 							crossRef[1] = get_type(child);
@@ -312,7 +376,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 					auto ref = get_reference(obj, child, isCrossDocumentReference);
 					if (isCrossDocumentReference) {
 						std::array<::ecorecpp::mapping::type_definitions::string_t, 3> crossRef;
-						crossRef[0] = current_ref->getName();
+						crossRef[0] = referenceName;
 
 						if (child->eClass() != current_ref->getEType()) {
 							crossRef[1] = get_type(child);
@@ -328,12 +392,15 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 			}
 
 			if (!value.str().empty())
-				m_ser.add_attribute(current_ref->getName(), value.str());
+				m_ser.add_attribute(referenceName, value.str());
 		} catch (...) {
 			DEBUG_MSG(cerr, "exception catched! ");
 		}
 	}
 
+	/*
+	 * Cross references to other Resources
+	 */
 	for ( auto const& crossRef : crossReferences ) {
 		m_ser.open_object(crossRef[0]);
 		if ( !crossRef[1].empty() ) {
@@ -343,18 +410,22 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 		m_ser.close_object(crossRef[0]);
 	}
 
-	//Multiplicity-many attributes
-
+	/*
+	 * Multiplicity-many attributes
+	 */
 	for (auto const& current_at : attributes) {
 		if ( current_at->isTransient()
 				|| current_at->getUpperBound() == 1
 				|| !obj->eIsSet(current_at) )
 			continue;
 
+		auto attributeName = current_at->getName();
+		if (m_extendedMetaData)
+			attributeName = m_extendedMetaData->getName(current_at);
 		try {
 			EClassifier_ptr at_classifier = current_at->getEType();
 
-			DEBUG_MSG(cout, indent << current_at->getName());
+			DEBUG_MSG(cout, indent << attributeName << " (from " << current_at->getName() << ")");
 
 			EDataType_ptr atc = as< EDataType >(at_classifier);
 			if (atc) {
@@ -370,12 +441,12 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 					::ecorecpp::mapping::type_definitions::string_t value =
 						fac->convertToString(atc, currAny);
 
-					DEBUG_MSG(cout, indent << current_at->getName()
-							<< " " << value);
+					DEBUG_MSG(cout, indent << attributeName
+							  << " " << value);
 
-					m_ser.open_object(current_at->getName());
+					m_ser.open_object(attributeName);
 					m_ser.add_value(value);
-					m_ser.close_object(current_at->getName());
+					m_ser.close_object(attributeName);
 				}
 			} else {
 				// TODO: possible?
@@ -396,10 +467,15 @@ void XMLSerializer::serialize_node_children(EObject_ptr obj) {
 
 	auto objResource = obj->eResource();
 
-	// Containment references
+	/*
+	 * Containment references
+	 */
 	for ( auto const& current_ref : references ) {
+		auto referenceName = current_ref->getName();
+		if (m_extendedMetaData)
+			referenceName = m_extendedMetaData->getName(current_ref);
 		try {
-			DEBUG_MSG(cout, indent << current_ref->getName());
+			DEBUG_MSG(cout, indent << referenceName << " (from " << current_ref->getName() << ")");
 
 			if ( current_ref->isTransient()
 					|| !current_ref->isContainment()

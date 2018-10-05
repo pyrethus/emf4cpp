@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -e
+
 EMF4CPPDIR=../..
 
 # generator-release

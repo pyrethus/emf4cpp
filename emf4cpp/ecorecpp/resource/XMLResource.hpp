@@ -60,6 +60,13 @@ public:
 	 */
 	static const std::string OPTION_FORMATTED /*="FORMATTED"*/;
 
+	/**
+	 * Consider the ExtendedMetaData of the EPackage when handling
+	 * serializations. If the option is used, the default is 'true', unless
+	 * set to 'false' explicitly.
+	 */
+	static const std::string OPTION_EXTENDED_META_DATA /*="EXTENDED_META_DATA"*/;
+
 	explicit XMLResource(const QUrl&);
 	~XMLResource() override;
 
@@ -87,7 +94,8 @@ protected:
 	virtual std::string createID(::ecore::EObject_ptr);
 
 private:
-	void doLoad(const std::vector<::ecorecpp::mapping::type_definitions::char_t>&);
+	void doLoad(const std::vector<::ecorecpp::mapping::type_definitions::char_t>&,
+				const Resource::OptionMap& = Resource::OptionMap());
 
 	std::unordered_map<::ecore::EObject*, std::string> _eObjectToIDMap;
 	std::unordered_map<std::string, ::ecore::EObject*> _idToEObjectMap;

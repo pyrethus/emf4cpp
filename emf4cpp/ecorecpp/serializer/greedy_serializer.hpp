@@ -88,7 +88,11 @@ public:
                 << "standalone=\"no\" ?>\n";
     }
 
-    inline void open_object(const string_t& _name, bool silent = false)
+	/** In silent mode no opening and closing tags are emitted. The name is
+	 * ignored. */
+	enum class SilentMode { Loud, Silent };
+
+    inline void open_object(const string_t& _name, SilentMode silent = SilentMode::Loud)
     {
         if (has_value.size() && has_value.back().closing == ClosingState::Open)
         {
@@ -103,15 +107,15 @@ public:
             _indent();
 
         ++level;
-		if(!silent)
+		if (silent == SilentMode::Loud)
 			out << "<" << _name;
     }
 
-    inline void close_object(const string_t& _name, bool silent = false)
+    inline void close_object(const string_t& _name, SilentMode silent = SilentMode::Loud)
     {
         --level;
 
-		if (!silent) {
+		if (silent == SilentMode::Loud) {
 			if (has_value.back().closing == ClosingState::Open)
 				out << "/>\n";
 			else

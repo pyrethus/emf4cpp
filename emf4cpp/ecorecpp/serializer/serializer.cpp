@@ -283,9 +283,9 @@ serializer::serialize(EObject_ptr obj)
 	// remove the XML processing instruction
 	m_internalBuffer.str(std::string());
 	// Serialize the top level object into m_internalBuffer
-	m_ser.open_object("", true);
+	m_ser.open_object("", greedy_serializer::SilentMode::Silent);
 	serialize_node(obj);
-	m_ser.close_object("", true);
+	m_ser.close_object("", greedy_serializer::SilentMode::Silent);
 
 	// Create a new serializer for the real output.
 	greedy_serializer output(m_out, m_mode == XmiIndentMode::Indentation);

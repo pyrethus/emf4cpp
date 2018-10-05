@@ -20,14 +20,16 @@
 #ifndef XMLSerializer_HPP
 #define XMLSerializer_HPP
 
+#include <ostream>
+#include <sstream>
+#include <unordered_map>
 #include <ecore/EObject.hpp>
 
 #include "../mapping.hpp"
-#include "greedy_serializer.hpp"
-#include <ostream>
-#include <sstream>
-
 #include "../dllEcorecpp.hpp"
+#include "../util/ExtendedMetaData.hpp"
+#include "greedy_serializer.hpp"
+
 
 namespace ecorecpp {
 namespace serializer {
@@ -47,9 +49,14 @@ public:
 	void setKeepDefault(bool);
 	bool getKeepDefault() const;
 
+	void setExtendedMetaData(bool);
+	bool getExtendedMetaData() const;
+
 protected:
 	::ecorecpp::mapping::type_definitions::string_t get_type(
 			::ecore::EObject_ptr obj) const;
+	::ecorecpp::mapping::type_definitions::string_t
+		  get_reference(::ecore::EObject_ptr obj) const;
 
 	::ecorecpp::mapping::type_definitions::string_t get_reference(
 			::ecore::EObject_ptr from, ::ecore::EObject_ptr to,
@@ -84,6 +91,7 @@ protected:
 	greedy_serializer m_ser;
 
 	std::vector<::ecore::EPackage_ptr> m_usedPackages;
+	::ecore::Ptr<util::ExtendedMetaData> m_extendedMetaData;
 };
 
 } //serializer

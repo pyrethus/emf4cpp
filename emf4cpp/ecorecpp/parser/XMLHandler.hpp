@@ -25,12 +25,13 @@
 #include <string>
 #include <unordered_map>
 
-#include <ecore/EObject.hpp>
 #include <ecore/EClass.hpp>
+#include <ecore/EObject.hpp>
 #include <ecore/EPackage.hpp>
 
-#include "simple_xml_parser.hpp"
 #include "../dllEcorecpp.hpp"
+#include "../util/ExtendedMetaData.hpp"
+#include "simple_xml_parser.hpp"
 
 namespace ecorecpp {
 namespace parser {
@@ -40,6 +41,9 @@ public:
 
 	XMLHandler();
 	~XMLHandler() = default;
+
+	void setExtendedMetaData(bool);
+	bool getExtendedMetaData() const;
 
 	void processing_tag(xml_parser::match_pair const& tag,
 			xml_parser::attr_list_t const& attr_list);
@@ -84,6 +88,8 @@ private:
 	}
 
 	XmiIdMap _xmiIds;
+	::ecore::Ptr<util::ExtendedMetaData> m_extendedMetaData;
+	::ecore::EStructuralFeature_ptr getEStructuralFeature(::ecore::EClass_ptr, ::ecore::EString);
 };
 
 } // parser

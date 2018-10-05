@@ -32,6 +32,8 @@ set(ecorecpp_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/EcoreUtil.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/Copier.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/CrossReferencer.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/ExtendedMetaData.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/BasicExtendedMetaData.cpp
    )
 
 set(ecorecpp_HEADERS
@@ -85,6 +87,8 @@ set(ecorecpp_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/EcoreUtil.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/Copier.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/CrossReferencer.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/ExtendedMetaData.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/BasicExtendedMetaData.hpp
    )
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp.hpp DESTINATION include/emf4cpp)
@@ -139,8 +143,10 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/TreeIterator.hpp DESTINA
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/EcoreUtil.hpp DESTINATION include/emf4cpp/ecorecpp/util)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/Copier.hpp DESTINATION include/emf4cpp/ecorecpp/util)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/CrossReferencer.hpp DESTINATION include/emf4cpp/ecorecpp/util)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/ExtendedMetaData.hpp DESTINATION include/emf4cpp/ecorecpp/util)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/BasicExtendedMetaData.hpp DESTINATION include/emf4cpp/ecorecpp/util)
 
-include_directories(../emf4cpp ./ecorecpp ${Qt5Core_INCLUDE_DIRS})
+include_directories(../emf4cpp ../XMLType ./ecorecpp ${Qt5Core_INCLUDE_DIRS})
 
 add_library(emf4cpp-ecorecpp SHARED ${ecorecpp_HEADERS} ${ecorecpp_SOURCES})
 

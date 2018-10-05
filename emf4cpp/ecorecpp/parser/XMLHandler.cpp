@@ -19,19 +19,24 @@
  */
 
 #include "XMLHandler.hpp"
-#include "../MetaModelRepository.hpp"
-#include "../util/debug.hpp"
-#include "../util/escape_html.hpp"
-#include "../mapping.hpp"
-#include "../resource/ResourceSet.hpp"
+
 #include <iostream>
-#include <vector>
 #include <map> // for pair
+#include <vector>
 #include <ecore.hpp>
 
+#include "../MetaModelRepository.hpp"
+#include "../mapping.hpp"
+#include "../resource/ResourceSet.hpp"
+#include "../util/ExtendedMetaData.hpp"
+#include "../util/debug.hpp"
+#include "../util/escape_html.hpp"
+
 using namespace ::ecorecpp;
-using namespace ::ecorecpp::parser;
 using namespace ::ecore;
+
+namespace ecorecpp {
+namespace parser {
 
 XMLHandler::XMLHandler()
 	: m_level(0),
@@ -43,6 +48,30 @@ XMLHandler::XMLHandler()
 	  m_unresolved_references(),
 	  m_unresolved_cross_references() {
 }
+
+void XMLHandler::setExtendedMetaData(bool b) {
+	if (b)
+		m_extendedMetaData = ::ecorecpp::util::ExtendedMetaData::_instance();
+	else
+		m_extendedMetaData = ::ecore::Ptr<util::ExtendedMetaData>();
+}
+
+bool XMLHandler::getExtendedMetaData() const {
+	return !!m_extendedMetaData;
+}
+
+::ecore::EStructuralFeature_ptr XMLHandler::getEStructuralFeature(::ecore::EClass_ptr eclass,
+																  ::ecore::EString name) {
+	if (m_extendedMetaData) {
+		for (auto&& ef : eclass->getEAllStructuralFeatures()) {
+			if (m_extendedMetaData->getName(ef) == name)
+				return ef;
+		}
+	}
+	return eclass->getEStructuralFeature(name);
+}
+
+
 
 void XMLHandler::characters(xml_parser::match_pair const& chars) {
 	if (!m_expected_literal)
@@ -63,8 +92,7 @@ void XMLHandler::characters(xml_parser::match_pair const& chars) {
 
 		DEBUG_MSG(cout, name);
 
-		EStructuralFeature_ptr const esf =
-				eclass->getEStructuralFeature(name);
+		EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, name);
 
 		EDataType_ptr const edt = as< EDataType >(esf->getEType());
 
@@ -150,20 +178,32 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 		::ecorecpp::mapping::type_definitions::string_t type_ns = type->substr(0, double_dot);
 		::ecorecpp::mapping::type_definitions::string_t type_name = type->substr(double_dot+1);
 
-		epkg = _mmr->getByName(type_ns);
-		if (!epkg)
-			throw std::logic_error(std::string("missing package: ") + type_ns);
+		if (!m_current_metamodel || double_dot != ::ecorecpp::mapping::type_definitions::string_t::npos) {
+			epkg = _mmr->getByName(type_ns);
+			if (!epkg)
+				throw std::logic_error(std::string("missing package: ") + type_ns);
 
-		if (!m_level) {
-			m_current_metamodel = epkg;
-			m_current_namespace = type_ns;
+			if (!m_level) {
+				m_current_metamodel = epkg;
+				m_current_namespace = type_ns;
+
+				if (m_extendedMetaData) {
+					auto docRoot = m_extendedMetaData->getDocumentRoot(epkg);
+					if (docRoot) {
+						eclassifier = getEStructuralFeature(docRoot, type_name)->getEType();
+					}
+				}
+			}
+		} else {
+			epkg = m_current_metamodel;
 		}
 
-		eclassifier = epkg->getEClassifier(type_name);
+		if (!eclassifier)
+			eclassifier = epkg->getEClassifier(type_name);
+
 	} else {
 		assert( m_level);
-		eclassifier
-				= m_objects.back()->eClass()->getEStructuralFeature(name)->getEType();
+		eclassifier = getEStructuralFeature(m_objects.back()->eClass(), name)->getEType();
 		epkg = eclassifier->getEPackage();
 	}
 
@@ -189,7 +229,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 						attr_list[i].first;
 
 				if (!isAtCurrentNamespace(aname))
-				continue;
+					continue;
 
 				::ecorecpp::mapping::type_definitions::string_t const& avalue =
 						attr_list[i].second;
@@ -197,8 +237,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 				DEBUG_MSG(cout, "    --- Attributes: (" << (i + 1) << "/"
 						<< length << ") " << aname << " " << avalue);
 
-				EStructuralFeature_ptr const esf =
-						eclass->getEStructuralFeature(aname);
+				EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, aname);
 				assert(esf);
 
 				EClassifier_ptr const aeclassifier =
@@ -235,8 +274,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 		if (m_level) {
 			EObject_ptr const& peobj = m_objects.back();
 			EClass_ptr const peclass = peobj->eClass();
-			EStructuralFeature_ptr const esf =
-					peclass->getEStructuralFeature(name);
+			EStructuralFeature_ptr const esf = getEStructuralFeature(peclass, name);
 
 			any anyRef;
 
@@ -327,7 +365,7 @@ void XMLHandler::resolveReferences() {
 			auto const eclass = eobj->eClass();
 			assert(eclass);
 
-			auto const esf = eclass->getEStructuralFeature(refs._featureName);
+			EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, refs._featureName);
 			assert(esf);
 
 			DEBUG_MSG(cout, "--- Resolving reference: " << ref << " from "
@@ -380,7 +418,7 @@ void XMLHandler::resolveCrossDocumentReferences() {
 		auto const eclass = eobj->eClass();
 		assert(eclass);
 
-		auto const esf = eclass->getEStructuralFeature(ref._featureName);
+		EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, ref._featureName);
 		assert(esf);
 
 		DEBUG_MSG(cout, "--- Resolving cross reference: " << ref._href << " from "
@@ -397,3 +435,6 @@ void XMLHandler::resolveCrossDocumentReferences() {
 		}
 	}
 }
+
+} // parser
+} // ecorecpp

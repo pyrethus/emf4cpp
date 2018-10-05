@@ -1,5 +1,7 @@
 #! /bin/sh
 
+set -e
+
 EMF4CPPDIR=../..
 
 # generator-debug

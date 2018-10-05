@@ -39,6 +39,7 @@ Resource_ptr XMLResourceFactory::createResource(const QUrl& uri) {
 
 const std::string XMLResource::OPTION_KEEP_DEFAULT_CONTENT = "KEEP_DEFAULT_CONTENT";
 const std::string XMLResource::OPTION_FORMATTED = "FORMATTED";
+const std::string XMLResource::OPTION_EXTENDED_META_DATA = "EXTENDED_META_DATA";
 
 XMLResource::XMLResource(const QUrl& uri)
 	: Resource(uri) {
@@ -80,7 +81,7 @@ std::string XMLResource::getURIFragment(::ecore::EObject_ptr obj) {
 	return Resource::getURIFragment(obj);
 }
 
-void XMLResource::load(std::istream& is, const Resource::OptionMap&) {
+void XMLResource::load(std::istream& is, const Resource::OptionMap& options) {
 	if (!is)
 		throw std::logic_error("Input stream not readable!");
 
@@ -101,7 +102,7 @@ void XMLResource::load(std::istream& is, const Resource::OptionMap&) {
 	length = is.gcount();
 	buffer.resize(length);
 
-	doLoad(buffer);
+	doLoad(buffer, options);
 }
 
 void XMLResource::save(std::ostream& os, const Resource::OptionMap& options) {
@@ -133,17 +134,35 @@ void XMLResource::save(std::ostream& os, const Resource::OptionMap& options) {
 	}
 	ser.setKeepDefault(keepDefault);
 
+	bool extendedMetaData = false;
+	if ( options.count(OPTION_EXTENDED_META_DATA) ) {
+		std::string emdStr = options.at(OPTION_EXTENDED_META_DATA);
+		std::transform(emdStr.begin(), emdStr.end(), emdStr.begin(),
+				[](unsigned char c){ return std::tolower(c); } );
+		extendedMetaData = (emdStr != "false");
+	}
+	ser.setExtendedMetaData(extendedMetaData);
 
 	ser.serialize(getContents()->get(0));
 }
 
 void XMLResource::doLoad(
-		const std::vector<::ecorecpp::mapping::type_definitions::char_t>& buffer ) {
+		const std::vector<::ecorecpp::mapping::type_definitions::char_t>& buffer,
+		const Resource::OptionMap& options ) {
 	/*
 	 * Create our SAX handler object and install it on the parser, as the
 	 * document and error handler.
 	 */
 	XMLHandler handler;
+
+	bool extendedMetaData = false;
+	if ( options.count(OPTION_EXTENDED_META_DATA) ) {
+		std::string emdStr = options.at(OPTION_EXTENDED_META_DATA);
+		std::transform(emdStr.begin(), emdStr.end(), emdStr.begin(),
+				[](unsigned char c){ return std::tolower(c); } );
+		extendedMetaData = (emdStr != "false");
+	}
+	handler.setExtendedMetaData(extendedMetaData);
 
 	xml_parser::SemanticState<XMLHandler> ss(handler);
 
