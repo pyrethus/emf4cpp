@@ -90,7 +90,7 @@ using namespace ::«getFQN()»;
              «name.toFirstUpper()»Package_ptr _epkg =
                  ::ecore::as< ::«getFQN()»::«name.toFirstUpper()»Package >(getEPackage());
             ::ecore::EInt _value = ::ecorecpp::mapping::any::any_cast< ::ecore::EInt > (_instanceValue);
-            return _epkg->get«edt.name.toFirstUpper()»()->getEEnumLiteral(_value)->getName();
+            return _epkg->get«edt.name.toFirstUpper()»()->getEEnumLiteral(_value)->getLiteral();
         }
         «ELSE-»
     case «name.toFirstUpper()»Package::«edt.name.toUpperCase()»:
