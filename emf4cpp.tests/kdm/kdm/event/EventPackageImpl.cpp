@@ -835,41 +835,9 @@ void EventPackage::_initPackage()
     return m_HasStateEClass;
 }
 
-::ecore::EReference_ptr EventPackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr EventPackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
-::ecore::EReference_ptr EventPackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr EventPackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
-::ecore::EReference_ptr EventPackage::getKDMFramework__audit()
-{
-    return m_KDMFramework__audit;
-}
-::ecore::EReference_ptr EventPackage::getKDMFramework__extensionFamily()
-{
-    return m_KDMFramework__extensionFamily;
-}
-::ecore::EAttribute_ptr EventPackage::getKDMFramework__name()
-{
-    return m_KDMFramework__name;
-}
 ::ecore::EReference_ptr EventPackage::getEventModel__eventElement()
 {
     return m_EventModel__eventElement;
-}
-::ecore::EAttribute_ptr EventPackage::getKDMEntity__name()
-{
-    return m_KDMEntity__name;
 }
 ::ecore::EReference_ptr EventPackage::getAbstractEventElement__source()
 {

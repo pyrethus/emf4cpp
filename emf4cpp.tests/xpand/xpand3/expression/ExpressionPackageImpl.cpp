@@ -1108,34 +1108,6 @@ void ExpressionPackage::_initPackage()
     return m_UnaryOperationEClass;
 }
 
-::ecore::EAttribute_ptr ExpressionPackage::getSyntaxElement__line()
-{
-    return m_SyntaxElement__line;
-}
-::ecore::EAttribute_ptr ExpressionPackage::getSyntaxElement__start()
-{
-    return m_SyntaxElement__start;
-}
-::ecore::EAttribute_ptr ExpressionPackage::getSyntaxElement__end()
-{
-    return m_SyntaxElement__end;
-}
-::ecore::EAttribute_ptr ExpressionPackage::getSyntaxElement__fileName()
-{
-    return m_SyntaxElement__fileName;
-}
-::ecore::EReference_ptr ExpressionPackage::getBinaryOperation__left()
-{
-    return m_BinaryOperation__left;
-}
-::ecore::EReference_ptr ExpressionPackage::getBinaryOperation__right()
-{
-    return m_BinaryOperation__right;
-}
-::ecore::EReference_ptr ExpressionPackage::getBinaryOperation__operator()
-{
-    return m_BinaryOperation__operator;
-}
 ::ecore::EReference_ptr ExpressionPackage::getCast__type()
 {
     return m_Cast__type;
@@ -1235,6 +1207,18 @@ void ExpressionPackage::_initPackage()
 ::ecore::EReference_ptr ExpressionPackage::getCase__thenPart()
 {
     return m_Case__thenPart;
+}
+::ecore::EReference_ptr ExpressionPackage::getBinaryOperation__left()
+{
+    return m_BinaryOperation__left;
+}
+::ecore::EReference_ptr ExpressionPackage::getBinaryOperation__right()
+{
+    return m_BinaryOperation__right;
+}
+::ecore::EReference_ptr ExpressionPackage::getBinaryOperation__operator()
+{
+    return m_BinaryOperation__operator;
 }
 ::ecore::EReference_ptr ExpressionPackage::getUnaryOperation__operator()
 {

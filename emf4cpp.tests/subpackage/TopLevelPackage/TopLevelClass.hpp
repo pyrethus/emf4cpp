@@ -27,6 +27,8 @@
 #include <TopLevelPackage/dllTopLevelPackage.hpp>
 #include <TopLevelPackage_forward.hpp>
 
+#include <ecore_forward.hpp>
+
 #include "TopLevelPackagePackage.hpp"
 
 /*PROTECTED REGION ID(TopLevelClass_pre) START*/
@@ -51,6 +53,8 @@ public:
     // Attributes
 
     // References
+    virtual ::ecore::EObject_ptr getReference () const;
+    virtual void setReference (::ecore::EObject_ptr _reference);
 
     /* This is the same value as getClassifierId() returns, but as a static
      * value it can be used in template expansions. */
@@ -82,6 +86,8 @@ protected:
     // Attributes
 
     // References
+
+    ::ecore::EObject_ptr m_reference;
 
 };
 

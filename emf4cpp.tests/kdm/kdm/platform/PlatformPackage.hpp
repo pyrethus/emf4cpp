@@ -794,16 +794,6 @@ namespace kdm
 
         // EStructuralFeatures methods
 
-        virtual ::ecore::EReference_ptr getElement__attribute();
-
-        virtual ::ecore::EReference_ptr getElement__annotation();
-
-        virtual ::ecore::EReference_ptr getModelElement__stereotype();
-
-        virtual ::ecore::EReference_ptr getModelElement__taggedValue();
-
-        virtual ::ecore::EAttribute_ptr getKDMEntity__name();
-
         virtual ::ecore::EReference_ptr getAbstractPlatformElement__source();
 
         virtual ::ecore::EReference_ptr getAbstractPlatformElement__relation();
@@ -811,12 +801,6 @@ namespace kdm
         virtual ::ecore::EReference_ptr getAbstractPlatformElement__abstraction();
 
         virtual ::ecore::EReference_ptr getAbstractPlatformElement__implementation();
-
-        virtual ::ecore::EReference_ptr getKDMFramework__audit();
-
-        virtual ::ecore::EReference_ptr getKDMFramework__extensionFamily();
-
-        virtual ::ecore::EAttribute_ptr getKDMFramework__name();
 
         virtual ::ecore::EReference_ptr getPlatformModel__platformElement();
 
@@ -953,16 +937,6 @@ namespace kdm
 
         // EStructuralFeatures instances
 
-        ::ecore::EReference_ptr m_Element__attribute;
-
-        ::ecore::EReference_ptr m_Element__annotation;
-
-        ::ecore::EReference_ptr m_ModelElement__stereotype;
-
-        ::ecore::EReference_ptr m_ModelElement__taggedValue;
-
-        ::ecore::EAttribute_ptr m_KDMEntity__name;
-
         ::ecore::EReference_ptr m_AbstractPlatformElement__source;
 
         ::ecore::EReference_ptr m_AbstractPlatformElement__relation;
@@ -970,12 +944,6 @@ namespace kdm
         ::ecore::EReference_ptr m_AbstractPlatformElement__abstraction;
 
         ::ecore::EReference_ptr m_AbstractPlatformElement__implementation;
-
-        ::ecore::EReference_ptr m_KDMFramework__audit;
-
-        ::ecore::EReference_ptr m_KDMFramework__extensionFamily;
-
-        ::ecore::EAttribute_ptr m_KDMFramework__name;
 
         ::ecore::EReference_ptr m_PlatformModel__platformElement;
 

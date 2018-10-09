@@ -812,22 +812,6 @@ void StatementPackage::_initPackage()
     return m_TextStatementEClass;
 }
 
-::ecore::EAttribute_ptr StatementPackage::getSyntaxElement__line()
-{
-    return m_SyntaxElement__line;
-}
-::ecore::EAttribute_ptr StatementPackage::getSyntaxElement__start()
-{
-    return m_SyntaxElement__start;
-}
-::ecore::EAttribute_ptr StatementPackage::getSyntaxElement__end()
-{
-    return m_SyntaxElement__end;
-}
-::ecore::EAttribute_ptr StatementPackage::getSyntaxElement__fileName()
-{
-    return m_SyntaxElement__fileName;
-}
 ::ecore::EAttribute_ptr StatementPackage::getExpandStatement__foreach()
 {
     return m_ExpandStatement__foreach;

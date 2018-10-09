@@ -489,6 +489,8 @@ public:
 
     // EStructuralFeatures methods
 
+    virtual ::ecore::EReference_ptr getContainer__contains();
+
     virtual ::ecore::EAttribute_ptr getContained__identifier();
 
     virtual ::ecore::EAttribute_ptr getContained__repositoryId();
@@ -498,10 +500,6 @@ public:
     virtual ::ecore::EAttribute_ptr getContained__absoluteName();
 
     virtual ::ecore::EReference_ptr getContained__definedIn();
-
-    virtual ::ecore::EReference_ptr getContainer__contains();
-
-    virtual ::ecore::EAttribute_ptr getIDLType__typeCode();
 
     virtual ::ecore::EAttribute_ptr getInterfaceDef__isAbstract();
 
@@ -513,9 +511,7 @@ public:
 
     virtual ::ecore::EAttribute_ptr getModuleDef__prefix();
 
-    virtual ::ecore::EReference_ptr getTyped__containedType();
-
-    virtual ::ecore::EReference_ptr getTyped__sharedType();
+    virtual ::ecore::EAttribute_ptr getIDLType__typeCode();
 
     virtual ::ecore::EReference_ptr getOperationDef__parameters();
 
@@ -532,6 +528,10 @@ public:
     virtual ::ecore::EAttribute_ptr getAttributeDef__isReadonly();
 
     virtual ::ecore::EAttribute_ptr getConstantDef__constValue();
+
+    virtual ::ecore::EReference_ptr getTyped__containedType();
+
+    virtual ::ecore::EReference_ptr getTyped__sharedType();
 
     virtual ::ecore::EAttribute_ptr getParameterDef__identifier();
 
@@ -654,6 +654,8 @@ protected:
 
     // EStructuralFeatures instances
 
+    ::ecore::EReference_ptr m_Container__contains;
+
     ::ecore::EAttribute_ptr m_Contained__identifier;
 
     ::ecore::EAttribute_ptr m_Contained__repositoryId;
@@ -663,10 +665,6 @@ protected:
     ::ecore::EAttribute_ptr m_Contained__absoluteName;
 
     ::ecore::EReference_ptr m_Contained__definedIn;
-
-    ::ecore::EReference_ptr m_Container__contains;
-
-    ::ecore::EAttribute_ptr m_IDLType__typeCode;
 
     ::ecore::EAttribute_ptr m_InterfaceDef__isAbstract;
 
@@ -678,9 +676,7 @@ protected:
 
     ::ecore::EAttribute_ptr m_ModuleDef__prefix;
 
-    ::ecore::EReference_ptr m_Typed__containedType;
-
-    ::ecore::EReference_ptr m_Typed__sharedType;
+    ::ecore::EAttribute_ptr m_IDLType__typeCode;
 
     ::ecore::EReference_ptr m_OperationDef__parameters;
 
@@ -697,6 +693,10 @@ protected:
     ::ecore::EAttribute_ptr m_AttributeDef__isReadonly;
 
     ::ecore::EAttribute_ptr m_ConstantDef__constValue;
+
+    ::ecore::EReference_ptr m_Typed__containedType;
+
+    ::ecore::EReference_ptr m_Typed__sharedType;
 
     ::ecore::EAttribute_ptr m_ParameterDef__identifier;
 

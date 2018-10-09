@@ -706,22 +706,6 @@ void KdmPackage::_initPackage()
     return m_TaggedValueEClass;
 }
 
-::ecore::EReference_ptr KdmPackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr KdmPackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
-::ecore::EReference_ptr KdmPackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr KdmPackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
 ::ecore::EReference_ptr KdmPackage::getKDMFramework__audit()
 {
     return m_KDMFramework__audit;

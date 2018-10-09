@@ -665,42 +665,6 @@ public:
 
     // EStructuralFeatures methods
 
-    virtual ::ecore::EReference_ptr getEModelElement__eAnnotations();
-
-    virtual ::ecore::EAttribute_ptr getENamedElement__name();
-
-    virtual ::ecore::EAttribute_ptr getETypedElement__ordered();
-
-    virtual ::ecore::EAttribute_ptr getETypedElement__unique();
-
-    virtual ::ecore::EAttribute_ptr getETypedElement__lowerBound();
-
-    virtual ::ecore::EAttribute_ptr getETypedElement__upperBound();
-
-    virtual ::ecore::EAttribute_ptr getETypedElement__many();
-
-    virtual ::ecore::EAttribute_ptr getETypedElement__required();
-
-    virtual ::ecore::EReference_ptr getETypedElement__eType();
-
-    virtual ::ecore::EReference_ptr getETypedElement__eGenericType();
-
-    virtual ::ecore::EAttribute_ptr getEStructuralFeature__changeable();
-
-    virtual ::ecore::EAttribute_ptr getEStructuralFeature__volatile();
-
-    virtual ::ecore::EAttribute_ptr getEStructuralFeature__transient();
-
-    virtual ::ecore::EAttribute_ptr getEStructuralFeature__defaultValueLiteral();
-
-    virtual ::ecore::EAttribute_ptr getEStructuralFeature__defaultValue();
-
-    virtual ::ecore::EAttribute_ptr getEStructuralFeature__unsettable();
-
-    virtual ::ecore::EAttribute_ptr getEStructuralFeature__derived();
-
-    virtual ::ecore::EReference_ptr getEStructuralFeature__eContainingClass();
-
     virtual ::ecore::EAttribute_ptr getEAttribute__iD();
 
     virtual ::ecore::EReference_ptr getEAttribute__eAttributeType();
@@ -714,18 +678,6 @@ public:
     virtual ::ecore::EReference_ptr getEAnnotation__contents();
 
     virtual ::ecore::EReference_ptr getEAnnotation__references();
-
-    virtual ::ecore::EAttribute_ptr getEClassifier__instanceClassName();
-
-    virtual ::ecore::EAttribute_ptr getEClassifier__instanceClass();
-
-    virtual ::ecore::EAttribute_ptr getEClassifier__defaultValue();
-
-    virtual ::ecore::EAttribute_ptr getEClassifier__instanceTypeName();
-
-    virtual ::ecore::EReference_ptr getEClassifier__ePackage();
-
-    virtual ::ecore::EReference_ptr getEClassifier__eTypeParameters();
 
     virtual ::ecore::EAttribute_ptr getEClass__abstract();
 
@@ -759,6 +711,18 @@ public:
 
     virtual ::ecore::EReference_ptr getEClass__eAllGenericSuperTypes();
 
+    virtual ::ecore::EAttribute_ptr getEClassifier__instanceClassName();
+
+    virtual ::ecore::EAttribute_ptr getEClassifier__instanceClass();
+
+    virtual ::ecore::EAttribute_ptr getEClassifier__defaultValue();
+
+    virtual ::ecore::EAttribute_ptr getEClassifier__instanceTypeName();
+
+    virtual ::ecore::EReference_ptr getEClassifier__ePackage();
+
+    virtual ::ecore::EReference_ptr getEClassifier__eTypeParameters();
+
     virtual ::ecore::EAttribute_ptr getEDataType__serializable();
 
     virtual ::ecore::EReference_ptr getEEnum__eLiterals();
@@ -772,6 +736,10 @@ public:
     virtual ::ecore::EReference_ptr getEEnumLiteral__eEnum();
 
     virtual ::ecore::EReference_ptr getEFactory__ePackage();
+
+    virtual ::ecore::EReference_ptr getEModelElement__eAnnotations();
+
+    virtual ::ecore::EAttribute_ptr getENamedElement__name();
 
     virtual ::ecore::EReference_ptr getEOperation__eContainingClass();
 
@@ -808,6 +776,38 @@ public:
     virtual ::ecore::EReference_ptr getEReference__eReferenceType();
 
     virtual ::ecore::EReference_ptr getEReference__eKeys();
+
+    virtual ::ecore::EAttribute_ptr getEStructuralFeature__changeable();
+
+    virtual ::ecore::EAttribute_ptr getEStructuralFeature__volatile();
+
+    virtual ::ecore::EAttribute_ptr getEStructuralFeature__transient();
+
+    virtual ::ecore::EAttribute_ptr getEStructuralFeature__defaultValueLiteral();
+
+    virtual ::ecore::EAttribute_ptr getEStructuralFeature__defaultValue();
+
+    virtual ::ecore::EAttribute_ptr getEStructuralFeature__unsettable();
+
+    virtual ::ecore::EAttribute_ptr getEStructuralFeature__derived();
+
+    virtual ::ecore::EReference_ptr getEStructuralFeature__eContainingClass();
+
+    virtual ::ecore::EAttribute_ptr getETypedElement__ordered();
+
+    virtual ::ecore::EAttribute_ptr getETypedElement__unique();
+
+    virtual ::ecore::EAttribute_ptr getETypedElement__lowerBound();
+
+    virtual ::ecore::EAttribute_ptr getETypedElement__upperBound();
+
+    virtual ::ecore::EAttribute_ptr getETypedElement__many();
+
+    virtual ::ecore::EAttribute_ptr getETypedElement__required();
+
+    virtual ::ecore::EReference_ptr getETypedElement__eType();
+
+    virtual ::ecore::EReference_ptr getETypedElement__eGenericType();
 
     virtual ::ecore::EAttribute_ptr getEStringToStringMapEntry__key();
 
@@ -948,42 +948,6 @@ protected:
 
     // EStructuralFeatures instances
 
-    ::ecore::EReference_ptr m_EModelElement__eAnnotations;
-
-    ::ecore::EAttribute_ptr m_ENamedElement__name;
-
-    ::ecore::EAttribute_ptr m_ETypedElement__ordered;
-
-    ::ecore::EAttribute_ptr m_ETypedElement__unique;
-
-    ::ecore::EAttribute_ptr m_ETypedElement__lowerBound;
-
-    ::ecore::EAttribute_ptr m_ETypedElement__upperBound;
-
-    ::ecore::EAttribute_ptr m_ETypedElement__many;
-
-    ::ecore::EAttribute_ptr m_ETypedElement__required;
-
-    ::ecore::EReference_ptr m_ETypedElement__eType;
-
-    ::ecore::EReference_ptr m_ETypedElement__eGenericType;
-
-    ::ecore::EAttribute_ptr m_EStructuralFeature__changeable;
-
-    ::ecore::EAttribute_ptr m_EStructuralFeature__volatile;
-
-    ::ecore::EAttribute_ptr m_EStructuralFeature__transient;
-
-    ::ecore::EAttribute_ptr m_EStructuralFeature__defaultValueLiteral;
-
-    ::ecore::EAttribute_ptr m_EStructuralFeature__defaultValue;
-
-    ::ecore::EAttribute_ptr m_EStructuralFeature__unsettable;
-
-    ::ecore::EAttribute_ptr m_EStructuralFeature__derived;
-
-    ::ecore::EReference_ptr m_EStructuralFeature__eContainingClass;
-
     ::ecore::EAttribute_ptr m_EAttribute__iD;
 
     ::ecore::EReference_ptr m_EAttribute__eAttributeType;
@@ -997,18 +961,6 @@ protected:
     ::ecore::EReference_ptr m_EAnnotation__contents;
 
     ::ecore::EReference_ptr m_EAnnotation__references;
-
-    ::ecore::EAttribute_ptr m_EClassifier__instanceClassName;
-
-    ::ecore::EAttribute_ptr m_EClassifier__instanceClass;
-
-    ::ecore::EAttribute_ptr m_EClassifier__defaultValue;
-
-    ::ecore::EAttribute_ptr m_EClassifier__instanceTypeName;
-
-    ::ecore::EReference_ptr m_EClassifier__ePackage;
-
-    ::ecore::EReference_ptr m_EClassifier__eTypeParameters;
 
     ::ecore::EAttribute_ptr m_EClass__abstract;
 
@@ -1042,6 +994,18 @@ protected:
 
     ::ecore::EReference_ptr m_EClass__eAllGenericSuperTypes;
 
+    ::ecore::EAttribute_ptr m_EClassifier__instanceClassName;
+
+    ::ecore::EAttribute_ptr m_EClassifier__instanceClass;
+
+    ::ecore::EAttribute_ptr m_EClassifier__defaultValue;
+
+    ::ecore::EAttribute_ptr m_EClassifier__instanceTypeName;
+
+    ::ecore::EReference_ptr m_EClassifier__ePackage;
+
+    ::ecore::EReference_ptr m_EClassifier__eTypeParameters;
+
     ::ecore::EAttribute_ptr m_EDataType__serializable;
 
     ::ecore::EReference_ptr m_EEnum__eLiterals;
@@ -1055,6 +1019,10 @@ protected:
     ::ecore::EReference_ptr m_EEnumLiteral__eEnum;
 
     ::ecore::EReference_ptr m_EFactory__ePackage;
+
+    ::ecore::EReference_ptr m_EModelElement__eAnnotations;
+
+    ::ecore::EAttribute_ptr m_ENamedElement__name;
 
     ::ecore::EReference_ptr m_EOperation__eContainingClass;
 
@@ -1091,6 +1059,38 @@ protected:
     ::ecore::EReference_ptr m_EReference__eReferenceType;
 
     ::ecore::EReference_ptr m_EReference__eKeys;
+
+    ::ecore::EAttribute_ptr m_EStructuralFeature__changeable;
+
+    ::ecore::EAttribute_ptr m_EStructuralFeature__volatile;
+
+    ::ecore::EAttribute_ptr m_EStructuralFeature__transient;
+
+    ::ecore::EAttribute_ptr m_EStructuralFeature__defaultValueLiteral;
+
+    ::ecore::EAttribute_ptr m_EStructuralFeature__defaultValue;
+
+    ::ecore::EAttribute_ptr m_EStructuralFeature__unsettable;
+
+    ::ecore::EAttribute_ptr m_EStructuralFeature__derived;
+
+    ::ecore::EReference_ptr m_EStructuralFeature__eContainingClass;
+
+    ::ecore::EAttribute_ptr m_ETypedElement__ordered;
+
+    ::ecore::EAttribute_ptr m_ETypedElement__unique;
+
+    ::ecore::EAttribute_ptr m_ETypedElement__lowerBound;
+
+    ::ecore::EAttribute_ptr m_ETypedElement__upperBound;
+
+    ::ecore::EAttribute_ptr m_ETypedElement__many;
+
+    ::ecore::EAttribute_ptr m_ETypedElement__required;
+
+    ::ecore::EReference_ptr m_ETypedElement__eType;
+
+    ::ecore::EReference_ptr m_ETypedElement__eGenericType;
 
     ::ecore::EAttribute_ptr m_EStringToStringMapEntry__key;
 

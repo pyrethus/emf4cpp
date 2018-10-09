@@ -20,6 +20,8 @@
 
 #include "Level2Class.hpp"
 #include <TopLevelPackage/Level1/Level2/Level2Package.hpp>
+#include <TopLevelPackage/TopLevelClass.hpp>
+#include <ecore/EObject.hpp>
 #include <ecore/EObject.hpp>
 #include <ecore/EClass.hpp>
 #include <ecore/EStructuralFeature.hpp>
@@ -37,6 +39,7 @@ using namespace ::TopLevelPackage::Level1::Level2;
 void Level2Class::_initialize()
 {
     // Supertypes
+    ::TopLevelPackage::TopLevelClass::_initialize();
 
     // References
 
@@ -55,6 +58,12 @@ void Level2Class::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    {
+        if (m_reference)
+            _any = ::ecore::as < ::ecore::EObject > (m_reference);
+    }
+        return _any;
 
     }
     throw "Error";
@@ -65,6 +74,14 @@ void Level2Class::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    {
+        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EObject_ptr > (_newValue);
+        ::ecore::EObject_ptr _t1 = dynamic_cast< ::ecore::EObject* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EObject >(_t0);*/
+        ::TopLevelPackage::TopLevelClass::setReference(_t1);
+    }
+        return;
 
     }
     throw "Error";
@@ -74,6 +91,8 @@ void Level2Class::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+        return (bool) m_reference;
 
     }
     throw "Error";
@@ -102,6 +121,10 @@ void Level2Class::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    {
+    }
+        return;
 
     }
     throw "Error: _inverseAdd() does not handle this featureID";
@@ -114,6 +137,10 @@ void Level2Class::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    {
+    }
+        return;
 
     }
     throw "Error: _inverseRemove() does not handle this featureID";

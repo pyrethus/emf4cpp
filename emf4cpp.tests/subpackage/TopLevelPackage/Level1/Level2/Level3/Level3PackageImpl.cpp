@@ -32,6 +32,8 @@
 #include <ecore/EDataType.hpp>
 #include <ecore/EGenericType.hpp>
 #include <ecore/ETypeParameter.hpp>
+#include <ecore/EcorePackage.hpp>
+#include <ecore/EObject.hpp>
 
 using namespace ::TopLevelPackage::Level1::Level2::Level3;
 
@@ -64,12 +66,15 @@ void Level3Package::_initPackage()
 
     // Initialize package
     setName("Level3");
-    setNsPrefix("");
-    setNsURI("");
+    setNsPrefix("Level3");
+    setNsURI(
+            "http:///com.example.subpackage/TopLevelPackage/Level1/Level2/Level3");
 
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
+    m_Level3ClassEClass->getESuperTypes().push_back(
+            dynamic_cast< ::TopLevelPackage::Level1::Level2::Level2Package* >(::TopLevelPackage::Level1::Level2::Level2Package::_instance().get())->getLevel2Class());
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes

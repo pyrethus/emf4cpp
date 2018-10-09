@@ -1068,23 +1068,7 @@ namespace kdm
 
         // EStructuralFeatures methods
 
-        virtual ::ecore::EReference_ptr getElement__attribute();
-
-        virtual ::ecore::EReference_ptr getElement__annotation();
-
-        virtual ::ecore::EReference_ptr getModelElement__stereotype();
-
-        virtual ::ecore::EReference_ptr getModelElement__taggedValue();
-
-        virtual ::ecore::EReference_ptr getKDMFramework__audit();
-
-        virtual ::ecore::EReference_ptr getKDMFramework__extensionFamily();
-
-        virtual ::ecore::EAttribute_ptr getKDMFramework__name();
-
         virtual ::ecore::EReference_ptr getDataModel__dataElement();
-
-        virtual ::ecore::EAttribute_ptr getKDMEntity__name();
 
         virtual ::ecore::EReference_ptr getAbstractDataElement__source();
 
@@ -1277,23 +1261,7 @@ namespace kdm
 
         // EStructuralFeatures instances
 
-        ::ecore::EReference_ptr m_Element__attribute;
-
-        ::ecore::EReference_ptr m_Element__annotation;
-
-        ::ecore::EReference_ptr m_ModelElement__stereotype;
-
-        ::ecore::EReference_ptr m_ModelElement__taggedValue;
-
-        ::ecore::EReference_ptr m_KDMFramework__audit;
-
-        ::ecore::EReference_ptr m_KDMFramework__extensionFamily;
-
-        ::ecore::EAttribute_ptr m_KDMFramework__name;
-
         ::ecore::EReference_ptr m_DataModel__dataElement;
-
-        ::ecore::EAttribute_ptr m_KDMEntity__name;
 
         ::ecore::EReference_ptr m_AbstractDataElement__source;
 

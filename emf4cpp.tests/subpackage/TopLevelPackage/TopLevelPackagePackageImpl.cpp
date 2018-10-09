@@ -32,6 +32,8 @@
 #include <ecore/EDataType.hpp>
 #include <ecore/EGenericType.hpp>
 #include <ecore/ETypeParameter.hpp>
+#include <ecore/EcorePackage.hpp>
+#include <ecore/EObject.hpp>
 
 using namespace ::TopLevelPackage;
 
@@ -39,6 +41,8 @@ TopLevelPackagePackage::TopLevelPackagePackage()
 {
 
     // Feature definitions of TopLevelClass
+    m_TopLevelClass__reference = ::ecore::Ptr < ::ecore::EReference
+            > (new ::ecore::EReference);
 
 }
 
@@ -57,6 +61,11 @@ void TopLevelPackagePackage::_initPackage()
     m_TopLevelClassEClass->setClassifierID(TOPLEVELCLASS);
     m_TopLevelClassEClass->setEPackage(_this());
     getEClassifiers().push_back(m_TopLevelClassEClass);
+    // m_TopLevelClass__reference has already been allocated above
+    m_TopLevelClass__reference->setFeatureID(
+            ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE);
+    m_TopLevelClassEClass->getEStructuralFeatures().push_back(
+            m_TopLevelClass__reference);
 
     // Create enums
 
@@ -67,8 +76,8 @@ void TopLevelPackagePackage::_initPackage()
 
     // Initialize package
     setName("TopLevelPackage");
-    setNsPrefix("");
-    setNsURI("");
+    setNsPrefix("TopLevelPackage");
+    setNsURI("http:///com.example.subpackage/TopLevelPackage");
 
     // TODO: bounds for type parameters
 
@@ -80,6 +89,20 @@ void TopLevelPackagePackage::_initPackage()
     m_TopLevelClassEClass->setName("TopLevelClass");
     m_TopLevelClassEClass->setAbstract(false);
     m_TopLevelClassEClass->setInterface(false);
+    m_TopLevelClass__reference->setEType(
+            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEObject());
+    m_TopLevelClass__reference->setName("reference");
+    m_TopLevelClass__reference->setDefaultValueLiteral("");
+    m_TopLevelClass__reference->setLowerBound(0);
+    m_TopLevelClass__reference->setUpperBound(1);
+    m_TopLevelClass__reference->setTransient(false);
+    m_TopLevelClass__reference->setVolatile(false);
+    m_TopLevelClass__reference->setChangeable(true);
+    m_TopLevelClass__reference->setContainment(false);
+    m_TopLevelClass__reference->setResolveProxies(true);
+    m_TopLevelClass__reference->setUnique(true);
+    m_TopLevelClass__reference->setDerived(false);
+    m_TopLevelClass__reference->setOrdered(true);
 
     // TODO: Initialize data types
 
@@ -92,5 +115,10 @@ void TopLevelPackagePackage::_initPackage()
 ::ecore::EClass_ptr TopLevelPackagePackage::getTopLevelClass()
 {
     return m_TopLevelClassEClass;
+}
+
+::ecore::EReference_ptr TopLevelPackagePackage::getTopLevelClass__reference()
+{
+    return m_TopLevelClass__reference;
 }
 

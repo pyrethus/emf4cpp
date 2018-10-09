@@ -25,6 +25,8 @@
 #include <TopLevelPackage/Level1/Level2_forward.hpp>
 #include <ecorecpp/PackageDeleter.hpp>
 
+#include <TopLevelPackage/TopLevelPackagePackage.hpp>
+
 #include <TopLevelPackage/dllTopLevelPackage.hpp>
 
 namespace TopLevelPackage
@@ -46,6 +48,8 @@ namespace TopLevelPackage
             static const int LEVEL2CLASS = 0;
 
             // IDs for classifiers for class Level2Class 
+
+            static const int LEVEL2CLASS__REFERENCE = ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE;
 
             // EClassifiers methods
 

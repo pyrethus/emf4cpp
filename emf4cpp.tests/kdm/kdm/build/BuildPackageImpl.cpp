@@ -858,26 +858,6 @@ void BuildPackage::_initPackage()
     return m_DescribedByEClass;
 }
 
-::ecore::EReference_ptr BuildPackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr BuildPackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
-::ecore::EReference_ptr BuildPackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr BuildPackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
-::ecore::EAttribute_ptr BuildPackage::getKDMEntity__name()
-{
-    return m_KDMEntity__name;
-}
 ::ecore::EReference_ptr BuildPackage::getAbstractBuildElement__buildRelation()
 {
     return m_AbstractBuildElement__buildRelation;
@@ -917,18 +897,6 @@ void BuildPackage::_initPackage()
 ::ecore::EReference_ptr BuildPackage::getConsumes__from()
 {
     return m_Consumes__from;
-}
-::ecore::EReference_ptr BuildPackage::getKDMFramework__audit()
-{
-    return m_KDMFramework__audit;
-}
-::ecore::EReference_ptr BuildPackage::getKDMFramework__extensionFamily()
-{
-    return m_KDMFramework__extensionFamily;
-}
-::ecore::EAttribute_ptr BuildPackage::getKDMFramework__name()
-{
-    return m_KDMFramework__name;
 }
 ::ecore::EReference_ptr BuildPackage::getBuildModel__buildElement()
 {

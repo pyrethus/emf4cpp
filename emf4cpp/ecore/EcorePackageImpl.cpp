@@ -3337,78 +3337,6 @@ void EcorePackage::_initPackage()
     return m_EInvocationTargetExceptionEDataType;
 }
 
-::ecore::EReference_ptr EcorePackage::getEModelElement__eAnnotations()
-{
-    return m_EModelElement__eAnnotations;
-}
-::ecore::EAttribute_ptr EcorePackage::getENamedElement__name()
-{
-    return m_ENamedElement__name;
-}
-::ecore::EAttribute_ptr EcorePackage::getETypedElement__ordered()
-{
-    return m_ETypedElement__ordered;
-}
-::ecore::EAttribute_ptr EcorePackage::getETypedElement__unique()
-{
-    return m_ETypedElement__unique;
-}
-::ecore::EAttribute_ptr EcorePackage::getETypedElement__lowerBound()
-{
-    return m_ETypedElement__lowerBound;
-}
-::ecore::EAttribute_ptr EcorePackage::getETypedElement__upperBound()
-{
-    return m_ETypedElement__upperBound;
-}
-::ecore::EAttribute_ptr EcorePackage::getETypedElement__many()
-{
-    return m_ETypedElement__many;
-}
-::ecore::EAttribute_ptr EcorePackage::getETypedElement__required()
-{
-    return m_ETypedElement__required;
-}
-::ecore::EReference_ptr EcorePackage::getETypedElement__eType()
-{
-    return m_ETypedElement__eType;
-}
-::ecore::EReference_ptr EcorePackage::getETypedElement__eGenericType()
-{
-    return m_ETypedElement__eGenericType;
-}
-::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__changeable()
-{
-    return m_EStructuralFeature__changeable;
-}
-::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__volatile()
-{
-    return m_EStructuralFeature__volatile;
-}
-::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__transient()
-{
-    return m_EStructuralFeature__transient;
-}
-::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__defaultValueLiteral()
-{
-    return m_EStructuralFeature__defaultValueLiteral;
-}
-::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__defaultValue()
-{
-    return m_EStructuralFeature__defaultValue;
-}
-::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__unsettable()
-{
-    return m_EStructuralFeature__unsettable;
-}
-::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__derived()
-{
-    return m_EStructuralFeature__derived;
-}
-::ecore::EReference_ptr EcorePackage::getEStructuralFeature__eContainingClass()
-{
-    return m_EStructuralFeature__eContainingClass;
-}
 ::ecore::EAttribute_ptr EcorePackage::getEAttribute__iD()
 {
     return m_EAttribute__iD;
@@ -3436,30 +3364,6 @@ void EcorePackage::_initPackage()
 ::ecore::EReference_ptr EcorePackage::getEAnnotation__references()
 {
     return m_EAnnotation__references;
-}
-::ecore::EAttribute_ptr EcorePackage::getEClassifier__instanceClassName()
-{
-    return m_EClassifier__instanceClassName;
-}
-::ecore::EAttribute_ptr EcorePackage::getEClassifier__instanceClass()
-{
-    return m_EClassifier__instanceClass;
-}
-::ecore::EAttribute_ptr EcorePackage::getEClassifier__defaultValue()
-{
-    return m_EClassifier__defaultValue;
-}
-::ecore::EAttribute_ptr EcorePackage::getEClassifier__instanceTypeName()
-{
-    return m_EClassifier__instanceTypeName;
-}
-::ecore::EReference_ptr EcorePackage::getEClassifier__ePackage()
-{
-    return m_EClassifier__ePackage;
-}
-::ecore::EReference_ptr EcorePackage::getEClassifier__eTypeParameters()
-{
-    return m_EClassifier__eTypeParameters;
 }
 ::ecore::EAttribute_ptr EcorePackage::getEClass__abstract()
 {
@@ -3525,6 +3429,30 @@ void EcorePackage::_initPackage()
 {
     return m_EClass__eAllGenericSuperTypes;
 }
+::ecore::EAttribute_ptr EcorePackage::getEClassifier__instanceClassName()
+{
+    return m_EClassifier__instanceClassName;
+}
+::ecore::EAttribute_ptr EcorePackage::getEClassifier__instanceClass()
+{
+    return m_EClassifier__instanceClass;
+}
+::ecore::EAttribute_ptr EcorePackage::getEClassifier__defaultValue()
+{
+    return m_EClassifier__defaultValue;
+}
+::ecore::EAttribute_ptr EcorePackage::getEClassifier__instanceTypeName()
+{
+    return m_EClassifier__instanceTypeName;
+}
+::ecore::EReference_ptr EcorePackage::getEClassifier__ePackage()
+{
+    return m_EClassifier__ePackage;
+}
+::ecore::EReference_ptr EcorePackage::getEClassifier__eTypeParameters()
+{
+    return m_EClassifier__eTypeParameters;
+}
 ::ecore::EAttribute_ptr EcorePackage::getEDataType__serializable()
 {
     return m_EDataType__serializable;
@@ -3552,6 +3480,14 @@ void EcorePackage::_initPackage()
 ::ecore::EReference_ptr EcorePackage::getEFactory__ePackage()
 {
     return m_EFactory__ePackage;
+}
+::ecore::EReference_ptr EcorePackage::getEModelElement__eAnnotations()
+{
+    return m_EModelElement__eAnnotations;
+}
+::ecore::EAttribute_ptr EcorePackage::getENamedElement__name()
+{
+    return m_ENamedElement__name;
 }
 ::ecore::EReference_ptr EcorePackage::getEOperation__eContainingClass()
 {
@@ -3624,6 +3560,70 @@ void EcorePackage::_initPackage()
 ::ecore::EReference_ptr EcorePackage::getEReference__eKeys()
 {
     return m_EReference__eKeys;
+}
+::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__changeable()
+{
+    return m_EStructuralFeature__changeable;
+}
+::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__volatile()
+{
+    return m_EStructuralFeature__volatile;
+}
+::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__transient()
+{
+    return m_EStructuralFeature__transient;
+}
+::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__defaultValueLiteral()
+{
+    return m_EStructuralFeature__defaultValueLiteral;
+}
+::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__defaultValue()
+{
+    return m_EStructuralFeature__defaultValue;
+}
+::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__unsettable()
+{
+    return m_EStructuralFeature__unsettable;
+}
+::ecore::EAttribute_ptr EcorePackage::getEStructuralFeature__derived()
+{
+    return m_EStructuralFeature__derived;
+}
+::ecore::EReference_ptr EcorePackage::getEStructuralFeature__eContainingClass()
+{
+    return m_EStructuralFeature__eContainingClass;
+}
+::ecore::EAttribute_ptr EcorePackage::getETypedElement__ordered()
+{
+    return m_ETypedElement__ordered;
+}
+::ecore::EAttribute_ptr EcorePackage::getETypedElement__unique()
+{
+    return m_ETypedElement__unique;
+}
+::ecore::EAttribute_ptr EcorePackage::getETypedElement__lowerBound()
+{
+    return m_ETypedElement__lowerBound;
+}
+::ecore::EAttribute_ptr EcorePackage::getETypedElement__upperBound()
+{
+    return m_ETypedElement__upperBound;
+}
+::ecore::EAttribute_ptr EcorePackage::getETypedElement__many()
+{
+    return m_ETypedElement__many;
+}
+::ecore::EAttribute_ptr EcorePackage::getETypedElement__required()
+{
+    return m_ETypedElement__required;
+}
+::ecore::EReference_ptr EcorePackage::getETypedElement__eType()
+{
+    return m_ETypedElement__eType;
+}
+::ecore::EReference_ptr EcorePackage::getETypedElement__eGenericType()
+{
+    return m_ETypedElement__eGenericType;
 }
 ::ecore::EAttribute_ptr EcorePackage::getEStringToStringMapEntry__key()
 {

@@ -67,8 +67,8 @@ void Level1Package::_initPackage()
 
     // Initialize package
     setName("Level1");
-    setNsPrefix("");
-    setNsURI("");
+    setNsPrefix("Level1");
+    setNsURI("http:///com.example.subpackage/TopLevelPackage/Level1");
 
     // TODO: bounds for type parameters
 

@@ -3428,26 +3428,6 @@ void CodePackage::_initPackage()
     return m_HasValueEClass;
 }
 
-::ecore::EReference_ptr CodePackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr CodePackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
-::ecore::EReference_ptr CodePackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr CodePackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
-::ecore::EAttribute_ptr CodePackage::getKDMEntity__name()
-{
-    return m_KDMEntity__name;
-}
 ::ecore::EReference_ptr CodePackage::getAbstractCodeElement__source()
 {
     return m_AbstractCodeElement__source;
@@ -3499,18 +3479,6 @@ void CodePackage::_initPackage()
 ::ecore::EReference_ptr CodePackage::getInstanceOf__from()
 {
     return m_InstanceOf__from;
-}
-::ecore::EReference_ptr CodePackage::getKDMFramework__audit()
-{
-    return m_KDMFramework__audit;
-}
-::ecore::EReference_ptr CodePackage::getKDMFramework__extensionFamily()
-{
-    return m_KDMFramework__extensionFamily;
-}
-::ecore::EAttribute_ptr CodePackage::getKDMFramework__name()
-{
-    return m_KDMFramework__name;
 }
 ::ecore::EReference_ptr CodePackage::getCodeModel__codeElement()
 {

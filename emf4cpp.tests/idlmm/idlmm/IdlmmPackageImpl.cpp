@@ -1750,6 +1750,10 @@ void IdlmmPackage::_initPackage()
     return m_IncludeEClass;
 }
 
+::ecore::EReference_ptr IdlmmPackage::getContainer__contains()
+{
+    return m_Container__contains;
+}
 ::ecore::EAttribute_ptr IdlmmPackage::getContained__identifier()
 {
     return m_Contained__identifier;
@@ -1769,14 +1773,6 @@ void IdlmmPackage::_initPackage()
 ::ecore::EReference_ptr IdlmmPackage::getContained__definedIn()
 {
     return m_Contained__definedIn;
-}
-::ecore::EReference_ptr IdlmmPackage::getContainer__contains()
-{
-    return m_Container__contains;
-}
-::ecore::EAttribute_ptr IdlmmPackage::getIDLType__typeCode()
-{
-    return m_IDLType__typeCode;
 }
 ::ecore::EAttribute_ptr IdlmmPackage::getInterfaceDef__isAbstract()
 {
@@ -1798,13 +1794,9 @@ void IdlmmPackage::_initPackage()
 {
     return m_ModuleDef__prefix;
 }
-::ecore::EReference_ptr IdlmmPackage::getTyped__containedType()
+::ecore::EAttribute_ptr IdlmmPackage::getIDLType__typeCode()
 {
-    return m_Typed__containedType;
-}
-::ecore::EReference_ptr IdlmmPackage::getTyped__sharedType()
-{
-    return m_Typed__sharedType;
+    return m_IDLType__typeCode;
 }
 ::ecore::EReference_ptr IdlmmPackage::getOperationDef__parameters()
 {
@@ -1837,6 +1829,14 @@ void IdlmmPackage::_initPackage()
 ::ecore::EAttribute_ptr IdlmmPackage::getConstantDef__constValue()
 {
     return m_ConstantDef__constValue;
+}
+::ecore::EReference_ptr IdlmmPackage::getTyped__containedType()
+{
+    return m_Typed__containedType;
+}
+::ecore::EReference_ptr IdlmmPackage::getTyped__sharedType()
+{
+    return m_Typed__sharedType;
 }
 ::ecore::EAttribute_ptr IdlmmPackage::getParameterDef__identifier()
 {

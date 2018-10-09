@@ -19,6 +19,8 @@
  */
 
 #include "Level3Class.hpp"
+#include <TopLevelPackage/Level1/Level2/Level2Class.hpp>
+#include <ecore/EObject.hpp>
 #include <ecore/EObject.hpp>
 #include <ecore/EClass.hpp>
 #include "TopLevelPackage/Level1/Level2/Level3/Level3Package.hpp"

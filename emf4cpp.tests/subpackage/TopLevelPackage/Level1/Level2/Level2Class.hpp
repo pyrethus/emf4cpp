@@ -22,10 +22,12 @@
 #define TOPLEVELPACKAGE_LEVEL1_LEVEL2_LEVEL2CLASS_HPP
 
 #include <ecorecpp/mapping_forward.hpp>
-#include <ecore/EObject.hpp>
 
 #include <TopLevelPackage/dllTopLevelPackage.hpp>
 #include <TopLevelPackage/Level1/Level2_forward.hpp>
+
+#include <ecore_forward.hpp>
+#include <TopLevelPackage/TopLevelClass.hpp>
 
 #include "Level2Package.hpp"
 
@@ -41,7 +43,7 @@ namespace TopLevelPackage
         namespace Level2
         {
 
-        class EXPORT_TOPLEVELPACKAGE_DLL Level2Class : public virtual ::ecore::EObject
+        class EXPORT_TOPLEVELPACKAGE_DLL Level2Class : public virtual ::TopLevelPackage::TopLevelClass
         {
         public:
             Level2Class();

@@ -864,14 +864,6 @@ void SourcePackage::_initPackage()
     return m_InventoryRelationshipEClass;
 }
 
-::ecore::EReference_ptr SourcePackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr SourcePackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
 ::ecore::EReference_ptr SourcePackage::getSourceRef__region()
 {
     return m_SourceRef__region;
@@ -912,33 +904,9 @@ void SourcePackage::_initPackage()
 {
     return m_SourceRegion__path;
 }
-::ecore::EReference_ptr SourcePackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr SourcePackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
-::ecore::EReference_ptr SourcePackage::getKDMFramework__audit()
-{
-    return m_KDMFramework__audit;
-}
-::ecore::EReference_ptr SourcePackage::getKDMFramework__extensionFamily()
-{
-    return m_KDMFramework__extensionFamily;
-}
-::ecore::EAttribute_ptr SourcePackage::getKDMFramework__name()
-{
-    return m_KDMFramework__name;
-}
 ::ecore::EReference_ptr SourcePackage::getInventoryModel__inventoryElement()
 {
     return m_InventoryModel__inventoryElement;
-}
-::ecore::EAttribute_ptr SourcePackage::getKDMEntity__name()
-{
-    return m_KDMEntity__name;
 }
 ::ecore::EReference_ptr SourcePackage::getAbstractInventoryElement__inventoryRelation()
 {

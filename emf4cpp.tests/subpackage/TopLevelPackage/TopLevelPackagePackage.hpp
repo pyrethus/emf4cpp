@@ -41,6 +41,8 @@ public:
 
     static const int TOPLEVELCLASS = 0;
 
+    static const int TOPLEVELCLASS__REFERENCE = 0;
+
     // IDs for classifiers for class TopLevelClass 
 
     // EClassifiers methods
@@ -48,6 +50,8 @@ public:
     virtual ::ecore::EClass_ptr getTopLevelClass();
 
     // EStructuralFeatures methods
+
+    virtual ::ecore::EReference_ptr getTopLevelClass__reference();
 
 protected:
 
@@ -65,6 +69,8 @@ protected:
     // EDataType instances 
 
     // EStructuralFeatures instances
+
+    ::ecore::EReference_ptr m_TopLevelClass__reference;
 
 };
 

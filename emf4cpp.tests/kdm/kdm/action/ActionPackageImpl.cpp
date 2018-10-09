@@ -1139,38 +1139,6 @@ void ActionPackage::_initPackage()
     return m_ExceptionFlowEClass;
 }
 
-::ecore::EReference_ptr ActionPackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr ActionPackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
-::ecore::EReference_ptr ActionPackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr ActionPackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
-::ecore::EAttribute_ptr ActionPackage::getKDMEntity__name()
-{
-    return m_KDMEntity__name;
-}
-::ecore::EReference_ptr ActionPackage::getAbstractCodeElement__source()
-{
-    return m_AbstractCodeElement__source;
-}
-::ecore::EReference_ptr ActionPackage::getAbstractCodeElement__comment()
-{
-    return m_AbstractCodeElement__comment;
-}
-::ecore::EReference_ptr ActionPackage::getAbstractCodeElement__codeRelation()
-{
-    return m_AbstractCodeElement__codeRelation;
-}
 ::ecore::EAttribute_ptr ActionPackage::getActionElement__kind()
 {
     return m_ActionElement__kind;

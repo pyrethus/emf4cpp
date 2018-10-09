@@ -457,20 +457,6 @@ namespace xpand3
 
         // EStructuralFeatures methods
 
-        virtual ::ecore::EAttribute_ptr getSyntaxElement__line();
-
-        virtual ::ecore::EAttribute_ptr getSyntaxElement__start();
-
-        virtual ::ecore::EAttribute_ptr getSyntaxElement__end();
-
-        virtual ::ecore::EAttribute_ptr getSyntaxElement__fileName();
-
-        virtual ::ecore::EReference_ptr getBinaryOperation__left();
-
-        virtual ::ecore::EReference_ptr getBinaryOperation__right();
-
-        virtual ::ecore::EReference_ptr getBinaryOperation__operator();
-
         virtual ::ecore::EReference_ptr getCast__type();
 
         virtual ::ecore::EReference_ptr getCast__target();
@@ -520,6 +506,12 @@ namespace xpand3
         virtual ::ecore::EReference_ptr getCase__condition();
 
         virtual ::ecore::EReference_ptr getCase__thenPart();
+
+        virtual ::ecore::EReference_ptr getBinaryOperation__left();
+
+        virtual ::ecore::EReference_ptr getBinaryOperation__right();
+
+        virtual ::ecore::EReference_ptr getBinaryOperation__operator();
 
         virtual ::ecore::EReference_ptr getUnaryOperation__operator();
 
@@ -586,20 +578,6 @@ namespace xpand3
 
         // EStructuralFeatures instances
 
-        ::ecore::EAttribute_ptr m_SyntaxElement__line;
-
-        ::ecore::EAttribute_ptr m_SyntaxElement__start;
-
-        ::ecore::EAttribute_ptr m_SyntaxElement__end;
-
-        ::ecore::EAttribute_ptr m_SyntaxElement__fileName;
-
-        ::ecore::EReference_ptr m_BinaryOperation__left;
-
-        ::ecore::EReference_ptr m_BinaryOperation__right;
-
-        ::ecore::EReference_ptr m_BinaryOperation__operator;
-
         ::ecore::EReference_ptr m_Cast__type;
 
         ::ecore::EReference_ptr m_Cast__target;
@@ -649,6 +627,12 @@ namespace xpand3
         ::ecore::EReference_ptr m_Case__condition;
 
         ::ecore::EReference_ptr m_Case__thenPart;
+
+        ::ecore::EReference_ptr m_BinaryOperation__left;
+
+        ::ecore::EReference_ptr m_BinaryOperation__right;
+
+        ::ecore::EReference_ptr m_BinaryOperation__operator;
 
         ::ecore::EReference_ptr m_UnaryOperation__operator;
 

@@ -20,6 +20,7 @@
 
 #include "TopLevelClass.hpp"
 #include <ecore/EObject.hpp>
+#include <ecore/EObject.hpp>
 #include <ecore/EClass.hpp>
 #include "TopLevelPackage/TopLevelPackagePackage.hpp"
 #include <ecorecpp/mapping.hpp>
@@ -36,7 +37,8 @@
 using namespace ::TopLevelPackage;
 
 // Default constructor
-TopLevelClass::TopLevelClass()
+TopLevelClass::TopLevelClass() :
+        m_reference(0)
 {
 
     /*PROTECTED REGION ID(TopLevelClassImpl__TopLevelClassImpl) START*/
@@ -56,4 +58,31 @@ TopLevelClass::~TopLevelClass()
 // Attributes
 
 // References
+
+::ecore::EObject_ptr TopLevelClass::getReference() const
+{
+    return m_reference;
+}
+
+void TopLevelClass::setReference(::ecore::EObject_ptr _reference)
+{
+#ifdef ECORECPP_NOTIFICATION_API
+    ::ecore::EObject_ptr _old_reference = m_reference;
+#endif
+    m_reference = _reference;
+
+#ifdef ECORECPP_NOTIFICATION_API
+    if (eNotificationRequired())
+    {
+        ::ecorecpp::notify::Notification notification(
+                ::ecorecpp::notify::Notification::SET,
+                _this(),
+                ::TopLevelPackage::TopLevelPackagePackage::_instance()->getTopLevelClass__reference(),
+                _old_reference,
+                m_reference
+        );
+        eNotify(&notification);
+    }
+#endif
+}
 

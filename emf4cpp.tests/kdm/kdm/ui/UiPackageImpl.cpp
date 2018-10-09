@@ -908,26 +908,6 @@ void UiPackage::_initPackage()
     return m_ManagesUIEClass;
 }
 
-::ecore::EReference_ptr UiPackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr UiPackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
-::ecore::EReference_ptr UiPackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr UiPackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
-::ecore::EAttribute_ptr UiPackage::getKDMEntity__name()
-{
-    return m_KDMEntity__name;
-}
 ::ecore::EReference_ptr UiPackage::getAbstractUIElement__source()
 {
     return m_AbstractUIElement__source;
@@ -947,18 +927,6 @@ void UiPackage::_initPackage()
 ::ecore::EReference_ptr UiPackage::getUIResource__UIElement()
 {
     return m_UIResource__UIElement;
-}
-::ecore::EReference_ptr UiPackage::getKDMFramework__audit()
-{
-    return m_KDMFramework__audit;
-}
-::ecore::EReference_ptr UiPackage::getKDMFramework__extensionFamily()
-{
-    return m_KDMFramework__extensionFamily;
-}
-::ecore::EAttribute_ptr UiPackage::getKDMFramework__name()
-{
-    return m_KDMFramework__name;
 }
 ::ecore::EReference_ptr UiPackage::getUIModel__UIElement()
 {

@@ -1324,26 +1324,6 @@ void PlatformPackage::_initPackage()
     return m_StreamResourceEClass;
 }
 
-::ecore::EReference_ptr PlatformPackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr PlatformPackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
-::ecore::EReference_ptr PlatformPackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr PlatformPackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
-::ecore::EAttribute_ptr PlatformPackage::getKDMEntity__name()
-{
-    return m_KDMEntity__name;
-}
 ::ecore::EReference_ptr PlatformPackage::getAbstractPlatformElement__source()
 {
     return m_AbstractPlatformElement__source;
@@ -1359,18 +1339,6 @@ void PlatformPackage::_initPackage()
 ::ecore::EReference_ptr PlatformPackage::getAbstractPlatformElement__implementation()
 {
     return m_AbstractPlatformElement__implementation;
-}
-::ecore::EReference_ptr PlatformPackage::getKDMFramework__audit()
-{
-    return m_KDMFramework__audit;
-}
-::ecore::EReference_ptr PlatformPackage::getKDMFramework__extensionFamily()
-{
-    return m_KDMFramework__extensionFamily;
-}
-::ecore::EAttribute_ptr PlatformPackage::getKDMFramework__name()
-{
-    return m_KDMFramework__name;
 }
 ::ecore::EReference_ptr PlatformPackage::getPlatformModel__platformElement()
 {

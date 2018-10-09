@@ -323,14 +323,6 @@ namespace xpand3
 
         // EStructuralFeatures methods
 
-        virtual ::ecore::EAttribute_ptr getSyntaxElement__line();
-
-        virtual ::ecore::EAttribute_ptr getSyntaxElement__start();
-
-        virtual ::ecore::EAttribute_ptr getSyntaxElement__end();
-
-        virtual ::ecore::EAttribute_ptr getSyntaxElement__fileName();
-
         virtual ::ecore::EReference_ptr getAbstractDeclaration__owner();
 
         virtual ::ecore::EReference_ptr getAbstractDeclaration__params();
@@ -407,14 +399,6 @@ namespace xpand3
         // EDataType instances 
 
         // EStructuralFeatures instances
-
-        ::ecore::EAttribute_ptr m_SyntaxElement__line;
-
-        ::ecore::EAttribute_ptr m_SyntaxElement__start;
-
-        ::ecore::EAttribute_ptr m_SyntaxElement__end;
-
-        ::ecore::EAttribute_ptr m_SyntaxElement__fileName;
 
         ::ecore::EReference_ptr m_AbstractDeclaration__owner;
 

@@ -57,6 +57,10 @@ String getFeatureGetMember(EPackage this, EStructuralFeature ef) :
 ;
 
 cached List[EStructuralFeature] getStructuralFeatures(EPackage this) :
+	this.EClassifiers.typeSelect(EClass).EStructuralFeatures.toSet().toList()
+;
+
+cached List[EStructuralFeature] getAllStructuralFeatures(EPackage this) :
 	this.EClassifiers.typeSelect(EClass).EAllStructuralFeatures.toSet().toList()
 ;
 

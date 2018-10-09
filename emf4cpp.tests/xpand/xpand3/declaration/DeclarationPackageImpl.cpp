@@ -701,22 +701,6 @@ void DeclarationPackage::_initPackage()
     return m_JavaExtensionEClass;
 }
 
-::ecore::EAttribute_ptr DeclarationPackage::getSyntaxElement__line()
-{
-    return m_SyntaxElement__line;
-}
-::ecore::EAttribute_ptr DeclarationPackage::getSyntaxElement__start()
-{
-    return m_SyntaxElement__start;
-}
-::ecore::EAttribute_ptr DeclarationPackage::getSyntaxElement__end()
-{
-    return m_SyntaxElement__end;
-}
-::ecore::EAttribute_ptr DeclarationPackage::getSyntaxElement__fileName()
-{
-    return m_SyntaxElement__fileName;
-}
 ::ecore::EReference_ptr DeclarationPackage::getAbstractDeclaration__owner()
 {
     return m_AbstractDeclaration__owner;

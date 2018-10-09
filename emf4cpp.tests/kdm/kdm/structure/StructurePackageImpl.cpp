@@ -420,26 +420,6 @@ void StructurePackage::_initPackage()
     return m_StructureElementEClass;
 }
 
-::ecore::EReference_ptr StructurePackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr StructurePackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
-::ecore::EReference_ptr StructurePackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr StructurePackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
-::ecore::EAttribute_ptr StructurePackage::getKDMEntity__name()
-{
-    return m_KDMEntity__name;
-}
 ::ecore::EReference_ptr StructurePackage::getAbstractStructureElement__aggregated()
 {
     return m_AbstractStructureElement__aggregated;
@@ -455,18 +435,6 @@ void StructurePackage::_initPackage()
 ::ecore::EReference_ptr StructurePackage::getAbstractStructureElement__structureRelationship()
 {
     return m_AbstractStructureElement__structureRelationship;
-}
-::ecore::EReference_ptr StructurePackage::getKDMFramework__audit()
-{
-    return m_KDMFramework__audit;
-}
-::ecore::EReference_ptr StructurePackage::getKDMFramework__extensionFamily()
-{
-    return m_KDMFramework__extensionFamily;
-}
-::ecore::EAttribute_ptr StructurePackage::getKDMFramework__name()
-{
-    return m_KDMFramework__name;
 }
 ::ecore::EReference_ptr StructurePackage::getStructureModel__structureElement()
 {

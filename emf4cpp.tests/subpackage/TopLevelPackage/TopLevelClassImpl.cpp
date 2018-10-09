@@ -21,6 +21,7 @@
 #include "TopLevelClass.hpp"
 #include <TopLevelPackage/TopLevelPackagePackage.hpp>
 #include <ecore/EObject.hpp>
+#include <ecore/EObject.hpp>
 #include <ecore/EClass.hpp>
 #include <ecore/EStructuralFeature.hpp>
 #include <ecore/EReference.hpp>
@@ -55,6 +56,12 @@ void TopLevelClass::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    {
+        if (m_reference)
+            _any = ::ecore::as < ::ecore::EObject > (m_reference);
+    }
+        return _any;
 
     }
     throw "Error";
@@ -65,6 +72,14 @@ void TopLevelClass::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    {
+        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EObject_ptr > (_newValue);
+        ::ecore::EObject_ptr _t1 = dynamic_cast< ::ecore::EObject* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EObject >(_t0);*/
+        ::TopLevelPackage::TopLevelClass::setReference(_t1);
+    }
+        return;
 
     }
     throw "Error";
@@ -74,6 +89,8 @@ void TopLevelClass::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+        return (bool) m_reference;
 
     }
     throw "Error";
@@ -102,6 +119,10 @@ void TopLevelClass::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    {
+    }
+        return;
 
     }
     throw "Error: _inverseAdd() does not handle this featureID";
@@ -114,6 +135,10 @@ void TopLevelClass::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
+    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    {
+    }
+        return;
 
     }
     throw "Error: _inverseRemove() does not handle this featureID";

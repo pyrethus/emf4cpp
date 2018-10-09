@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="TopLevelPackage" nsURI="" nsPrefix="">
-  <eClassifiers xsi:type="ecore:EClass" name="TopLevelClass"/>
-  <eSubpackages name="Level1">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="TopLevelPackage" nsURI="http:///com.example.subpackage/TopLevelPackage"
+    nsPrefix="TopLevelPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="TopLevelClass">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </eClassifiers>
+  <eSubpackages name="Level1" nsURI="http:///com.example.subpackage/TopLevelPackage/Level1"
+      nsPrefix="Level1">
     <eClassifiers xsi:type="ecore:EClass" name="Level1Class"/>
-    <eSubpackages name="Level2">
-      <eClassifiers xsi:type="ecore:EClass" name="Level2Class"/>
-      <eSubpackages name="Level3">
-        <eClassifiers xsi:type="ecore:EClass" name="Level3Class"/>
+    <eSubpackages name="Level2" nsURI="http:///com.example.subpackage/TopLevelPackage/Level1/Level2"
+        nsPrefix="Level2">
+      <eClassifiers xsi:type="ecore:EClass" name="Level2Class" eSuperTypes="#//TopLevelClass"/>
+      <eSubpackages name="Level3" nsURI="http:///com.example.subpackage/TopLevelPackage/Level1/Level2/Level3"
+          nsPrefix="Level3">
+        <eClassifiers xsi:type="ecore:EClass" name="Level3Class" eSuperTypes="#//Level1/Level2/Level2Class"/>
       </eSubpackages>
     </eSubpackages>
   </eSubpackages>

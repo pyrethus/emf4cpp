@@ -330,10 +330,6 @@ void EoppositePackage::_initPackage()
     return m_RightMultipleEClass;
 }
 
-::ecore::EAttribute_ptr EoppositePackage::getNamedObject__name()
-{
-    return m_NamedObject__name;
-}
 ::ecore::EReference_ptr EoppositePackage::getTopLevel__leftees()
 {
     return m_TopLevel__leftees;
@@ -345,6 +341,10 @@ void EoppositePackage::_initPackage()
 ::ecore::EReference_ptr EoppositePackage::getTopLevel__rightMultiples()
 {
     return m_TopLevel__rightMultiples;
+}
+::ecore::EAttribute_ptr EoppositePackage::getNamedObject__name()
+{
+    return m_NamedObject__name;
 }
 ::ecore::EReference_ptr EoppositePackage::getLeftHand__rightee()
 {

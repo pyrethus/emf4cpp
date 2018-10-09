@@ -1790,41 +1790,9 @@ void DataPackage::_initPackage()
     return m_ManagesDataEClass;
 }
 
-::ecore::EReference_ptr DataPackage::getElement__attribute()
-{
-    return m_Element__attribute;
-}
-::ecore::EReference_ptr DataPackage::getElement__annotation()
-{
-    return m_Element__annotation;
-}
-::ecore::EReference_ptr DataPackage::getModelElement__stereotype()
-{
-    return m_ModelElement__stereotype;
-}
-::ecore::EReference_ptr DataPackage::getModelElement__taggedValue()
-{
-    return m_ModelElement__taggedValue;
-}
-::ecore::EReference_ptr DataPackage::getKDMFramework__audit()
-{
-    return m_KDMFramework__audit;
-}
-::ecore::EReference_ptr DataPackage::getKDMFramework__extensionFamily()
-{
-    return m_KDMFramework__extensionFamily;
-}
-::ecore::EAttribute_ptr DataPackage::getKDMFramework__name()
-{
-    return m_KDMFramework__name;
-}
 ::ecore::EReference_ptr DataPackage::getDataModel__dataElement()
 {
     return m_DataModel__dataElement;
-}
-::ecore::EAttribute_ptr DataPackage::getKDMEntity__name()
-{
-    return m_KDMEntity__name;
 }
 ::ecore::EReference_ptr DataPackage::getAbstractDataElement__source()
 {

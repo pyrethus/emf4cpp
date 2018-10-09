@@ -97,13 +97,13 @@ public:
 
     // EStructuralFeatures methods
 
-    virtual ::ecore::EAttribute_ptr getNamedObject__name();
-
     virtual ::ecore::EReference_ptr getTopLevel__leftees();
 
     virtual ::ecore::EReference_ptr getTopLevel__rightees();
 
     virtual ::ecore::EReference_ptr getTopLevel__rightMultiples();
+
+    virtual ::ecore::EAttribute_ptr getNamedObject__name();
 
     virtual ::ecore::EReference_ptr getLeftHand__rightee();
 
@@ -138,13 +138,13 @@ protected:
 
     // EStructuralFeatures instances
 
-    ::ecore::EAttribute_ptr m_NamedObject__name;
-
     ::ecore::EReference_ptr m_TopLevel__leftees;
 
     ::ecore::EReference_ptr m_TopLevel__rightees;
 
     ::ecore::EReference_ptr m_TopLevel__rightMultiples;
+
+    ::ecore::EAttribute_ptr m_NamedObject__name;
 
     ::ecore::EReference_ptr m_LeftHand__rightee;
 
