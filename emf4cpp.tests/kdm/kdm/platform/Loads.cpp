@@ -44,8 +44,7 @@
 using namespace ::kdm::platform;
 
 // Default constructor
-Loads::Loads() :
-        m_to(0), m_from(0)
+Loads::Loads()
 {
 
     /*PROTECTED REGION ID(LoadsImpl__LoadsImpl) START*/

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ../org.csu.emf4cpp.generator/emf4cpp.generator.sh \
-    --internal \
+    --internal --emf4cpp '${CMAKE_CURRENT_SOURCE_DIR}/../builds/emf4cpp-generator-2.0.0' \
     XMLType.ecore
 
 # When the created code is compiled, the emf4cpp source directory has to be

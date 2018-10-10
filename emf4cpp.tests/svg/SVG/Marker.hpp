@@ -102,17 +102,23 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::String m_markerUnits;
+    ::PrimitiveTypes::String m_markerUnits
+    {};
 
-    ::PrimitiveTypes::Double m_refX;
+    ::PrimitiveTypes::Double m_refX
+    {};
 
-    ::PrimitiveTypes::Double m_refY;
+    ::PrimitiveTypes::Double m_refY
+    {};
 
-    ::PrimitiveTypes::Double m_markerWidth;
+    ::PrimitiveTypes::Double m_markerWidth
+    {};
 
-    ::PrimitiveTypes::Double m_markerHeight;
+    ::PrimitiveTypes::Double m_markerHeight
+    {};
 
-    ::PrimitiveTypes::String m_orient;
+    ::PrimitiveTypes::String m_orient
+    {};
 
     // References
 

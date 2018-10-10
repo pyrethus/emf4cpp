@@ -131,9 +131,11 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_nsURI;
+    ::ecore::EString m_nsURI
+    {};
 
-    ::ecore::EString m_nsPrefix;
+    ::ecore::EString m_nsPrefix
+    {};
 
     // References
 

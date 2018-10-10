@@ -92,9 +92,11 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::String m_name;
+        ::kdm::core::String m_name
+        {};
 
-        ::kdm::core::String m_type;
+        ::kdm::core::String m_type
+        {};
 
         // References
 

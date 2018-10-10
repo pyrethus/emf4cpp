@@ -40,8 +40,7 @@
 using namespace ::xpand3::statement;
 
 // Default constructor
-ForEachStatement::ForEachStatement() :
-        m_target(0), m_separator(0), m_variable(0), m_iteratorName(0)
+ForEachStatement::ForEachStatement()
 {
 
     /*PROTECTED REGION ID(ForEachStatementImpl__ForEachStatementImpl) START*/

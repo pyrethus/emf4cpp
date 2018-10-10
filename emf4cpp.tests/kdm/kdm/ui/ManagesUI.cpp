@@ -44,8 +44,7 @@
 using namespace ::kdm::ui;
 
 // Default constructor
-ManagesUI::ManagesUI() :
-        m_to(0), m_from(0)
+ManagesUI::ManagesUI()
 {
 
     /*PROTECTED REGION ID(ManagesUIImpl__ManagesUIImpl) START*/

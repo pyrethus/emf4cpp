@@ -37,8 +37,7 @@
 using namespace ::edate;
 
 // Default constructor
-Apollo11::Apollo11() :
-        m_FirstManOnMoonDate("1969-07-20T20:18:00.000+0000"), m_Member(0)
+Apollo11::Apollo11()
 {
 
     /*PROTECTED REGION ID(Apollo11Impl__Apollo11Impl) START*/

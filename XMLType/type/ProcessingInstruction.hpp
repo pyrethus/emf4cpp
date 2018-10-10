@@ -86,9 +86,11 @@ protected:
 
     // Attributes
 
-    ::type::String m_data;
+    ::type::String m_data
+    {};
 
-    ::type::String m_target;
+    ::type::String m_target
+    {};
 
     // References
 

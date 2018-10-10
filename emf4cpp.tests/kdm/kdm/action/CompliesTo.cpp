@@ -44,8 +44,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-CompliesTo::CompliesTo() :
-        m_to(0), m_from(0)
+CompliesTo::CompliesTo()
 {
 
     /*PROTECTED REGION ID(CompliesToImpl__CompliesToImpl) START*/

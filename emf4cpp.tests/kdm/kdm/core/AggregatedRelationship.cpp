@@ -43,8 +43,7 @@
 using namespace ::kdm::core;
 
 // Default constructor
-AggregatedRelationship::AggregatedRelationship() :
-        m_from(0), m_to(0)
+AggregatedRelationship::AggregatedRelationship()
 {
 
     m_relation.reset(

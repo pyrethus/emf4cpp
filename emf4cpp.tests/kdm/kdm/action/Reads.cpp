@@ -44,8 +44,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-Reads::Reads() :
-        m_to(0), m_from(0)
+Reads::Reads()
 {
 
     /*PROTECTED REGION ID(ReadsImpl__ReadsImpl) START*/

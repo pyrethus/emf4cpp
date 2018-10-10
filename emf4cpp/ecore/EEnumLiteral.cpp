@@ -39,8 +39,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EEnumLiteral::EEnumLiteral() :
-        m_eEnum(0)
+EEnumLiteral::EEnumLiteral()
 {
 
     /*PROTECTED REGION ID(EEnumLiteralImpl__EEnumLiteralImpl) START*/

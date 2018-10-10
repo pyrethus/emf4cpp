@@ -44,8 +44,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-GeneratedFrom::GeneratedFrom() :
-        m_to(0), m_from(0)
+GeneratedFrom::GeneratedFrom()
 {
 
     /*PROTECTED REGION ID(GeneratedFromImpl__GeneratedFromImpl) START*/

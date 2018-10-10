@@ -44,8 +44,7 @@
 using namespace ::kdm::platform;
 
 // Default constructor
-ReadsResource::ReadsResource() :
-        m_to(0), m_from(0)
+ReadsResource::ReadsResource()
 {
 
     /*PROTECTED REGION ID(ReadsResourceImpl__ReadsResourceImpl) START*/

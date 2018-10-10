@@ -43,8 +43,7 @@
 using namespace ::kdm::platform;
 
 // Default constructor
-BindsTo::BindsTo() :
-        m_to(0), m_from(0)
+BindsTo::BindsTo()
 {
 
     /*PROTECTED REGION ID(BindsToImpl__BindsToImpl) START*/

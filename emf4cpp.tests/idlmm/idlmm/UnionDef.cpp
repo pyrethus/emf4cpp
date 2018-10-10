@@ -40,8 +40,7 @@
 using namespace ::idlmm;
 
 // Default constructor
-UnionDef::UnionDef() :
-        m_containedDiscrim(0), m_sharedDiscrim(0)
+UnionDef::UnionDef()
 {
 
     m_unionMembers.reset(

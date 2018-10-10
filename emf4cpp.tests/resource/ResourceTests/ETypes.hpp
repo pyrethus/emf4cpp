@@ -103,19 +103,26 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_string;
+    ::ecore::EString m_string
+    {   "Hallo Welt!"};
 
-    ::ecore::EString m_emptyString;
+    ::ecore::EString m_emptyString
+    {   ""};
 
-    ::ecore::EDate m_date;
+    ::ecore::EDate m_date
+    {   "1976-05-27T12:13:14.123-0300"};
 
-    ::ecore::EChar m_char;
+    ::ecore::EChar m_char
+    {   98};
 
-    ::ecore::EBoolean m_bool;
+    ::ecore::EBoolean m_bool
+    {   true};
 
-    ::ecore::EDouble m_double;
+    ::ecore::EDouble m_double
+    {   3.14};
 
-    ::ecore::EInt m_int;
+    ::ecore::EInt m_int
+    {   10};
 
     // References
 

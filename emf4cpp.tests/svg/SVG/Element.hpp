@@ -120,11 +120,14 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::String m_fill;
+    ::PrimitiveTypes::String m_fill
+    {};
 
-    ::PrimitiveTypes::String m_viewBox;
+    ::PrimitiveTypes::String m_viewBox
+    {};
 
-    ::PrimitiveTypes::String m_identifier;
+    ::PrimitiveTypes::String m_identifier
+    {};
 
     // References
 

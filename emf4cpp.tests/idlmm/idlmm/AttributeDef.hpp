@@ -91,7 +91,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_isReadonly;
+    ::ecore::EBoolean m_isReadonly
+    {};
 
     // References
 

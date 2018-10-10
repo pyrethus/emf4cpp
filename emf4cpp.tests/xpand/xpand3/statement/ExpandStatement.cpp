@@ -39,8 +39,7 @@
 using namespace ::xpand3::statement;
 
 // Default constructor
-ExpandStatement::ExpandStatement() :
-        m_separator(0), m_target(0), m_definition(0)
+ExpandStatement::ExpandStatement()
 {
 
     m_parameters.reset(

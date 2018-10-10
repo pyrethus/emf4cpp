@@ -40,8 +40,7 @@
 using namespace ::xpand3::statement;
 
 // Default constructor
-FileStatement::FileStatement() :
-        m_fileNameExpression(0), m_outletNameIdentifier(0)
+FileStatement::FileStatement()
 {
 
     /*PROTECTED REGION ID(FileStatementImpl__FileStatementImpl) START*/

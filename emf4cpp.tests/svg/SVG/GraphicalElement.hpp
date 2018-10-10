@@ -85,7 +85,8 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::String m_stroke;
+    ::PrimitiveTypes::String m_stroke
+    {};
 
     // References
 

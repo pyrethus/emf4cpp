@@ -93,11 +93,14 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::String m_strokeDashArray;
+    ::PrimitiveTypes::String m_strokeDashArray
+    {};
 
-    ::PrimitiveTypes::String m_markerEnd;
+    ::PrimitiveTypes::String m_markerEnd
+    {};
 
-    ::PrimitiveTypes::String m_markerStart;
+    ::PrimitiveTypes::String m_markerStart
+    {};
 
     // References
 

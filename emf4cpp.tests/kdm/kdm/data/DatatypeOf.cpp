@@ -44,8 +44,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-DatatypeOf::DatatypeOf() :
-        m_to(0), m_from(0)
+DatatypeOf::DatatypeOf()
 {
 
     /*PROTECTED REGION ID(DatatypeOfImpl__DatatypeOfImpl) START*/

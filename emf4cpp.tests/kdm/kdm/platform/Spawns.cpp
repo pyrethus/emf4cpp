@@ -44,8 +44,7 @@
 using namespace ::kdm::platform;
 
 // Default constructor
-Spawns::Spawns() :
-        m_to(0), m_from(0)
+Spawns::Spawns()
 {
 
     /*PROTECTED REGION ID(SpawnsImpl__SpawnsImpl) START*/

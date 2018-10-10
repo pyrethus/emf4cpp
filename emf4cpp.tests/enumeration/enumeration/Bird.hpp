@@ -89,9 +89,11 @@ protected:
 
     // Attributes
 
-    ::enumeration::BirdType m_type;
+    ::enumeration::BirdType m_type
+    {   ::enumeration::BirdType::blackbird};
 
-    ::ecore::EString m_name;
+    ::ecore::EString m_name
+    {   "Birdy"};
 
     // References
 

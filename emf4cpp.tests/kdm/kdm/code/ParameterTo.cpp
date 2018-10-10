@@ -44,8 +44,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-ParameterTo::ParameterTo() :
-        m_to(0), m_from(0)
+ParameterTo::ParameterTo()
 {
 
     /*PROTECTED REGION ID(ParameterToImpl__ParameterToImpl) START*/

@@ -91,11 +91,14 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::Double m_rotate;
+    ::PrimitiveTypes::Double m_rotate
+    {};
 
-    ::PrimitiveTypes::String m_textLength;
+    ::PrimitiveTypes::String m_textLength
+    {};
 
-    ::PrimitiveTypes::String m_fontSize;
+    ::PrimitiveTypes::String m_fontSize
+    {};
 
     // References
 

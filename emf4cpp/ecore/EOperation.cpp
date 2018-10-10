@@ -44,8 +44,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EOperation::EOperation() :
-        m_eContainingClass(0)
+EOperation::EOperation()
 {
 
     m_eTypeParameters.reset(

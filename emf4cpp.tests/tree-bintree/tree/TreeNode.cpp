@@ -37,8 +37,7 @@
 using namespace ::tree;
 
 // Default constructor
-TreeNode::TreeNode() :
-        m_parent(0)
+TreeNode::TreeNode()
 {
 
     /*PROTECTED REGION ID(TreeNodeImpl__TreeNodeImpl) START*/

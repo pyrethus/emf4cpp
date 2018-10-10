@@ -39,8 +39,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-CollectionExpression::CollectionExpression() :
-        m_closure(0), m_eleName(0)
+CollectionExpression::CollectionExpression()
 {
 
     /*PROTECTED REGION ID(CollectionExpressionImpl__CollectionExpressionImpl) START*/

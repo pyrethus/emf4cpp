@@ -43,8 +43,7 @@
 using namespace ::kdm::build;
 
 // Default constructor
-BuildRelationship::BuildRelationship() :
-        m_to(0), m_from(0)
+BuildRelationship::BuildRelationship()
 {
 
     /*PROTECTED REGION ID(BuildRelationshipImpl__BuildRelationshipImpl) START*/

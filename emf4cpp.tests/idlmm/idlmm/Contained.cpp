@@ -37,8 +37,7 @@
 using namespace ::idlmm;
 
 // Default constructor
-Contained::Contained() :
-        m_definedIn(0)
+Contained::Contained()
 {
 
     /*PROTECTED REGION ID(ContainedImpl__ContainedImpl) START*/

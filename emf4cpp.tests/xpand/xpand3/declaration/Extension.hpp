@@ -94,7 +94,8 @@ namespace xpand3
 
         // Attributes
 
-        ::ecore::EBoolean m_cached;
+        ::ecore::EBoolean m_cached
+        {};
 
         // References
 

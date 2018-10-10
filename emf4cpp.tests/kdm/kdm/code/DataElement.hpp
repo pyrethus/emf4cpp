@@ -97,9 +97,11 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::String m_ext;
+        ::kdm::core::String m_ext
+        {};
 
-        ::kdm::core::Integer m_size;
+        ::kdm::core::Integer m_size
+        {};
 
         // References
 

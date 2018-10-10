@@ -43,8 +43,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-ExitFlow::ExitFlow() :
-        m_to(0), m_from(0)
+ExitFlow::ExitFlow()
 {
 
     /*PROTECTED REGION ID(ExitFlowImpl__ExitFlowImpl) START*/

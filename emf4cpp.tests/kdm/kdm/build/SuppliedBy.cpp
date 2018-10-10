@@ -44,8 +44,7 @@
 using namespace ::kdm::build;
 
 // Default constructor
-SuppliedBy::SuppliedBy() :
-        m_to(0), m_from(0)
+SuppliedBy::SuppliedBy()
 {
 
     /*PROTECTED REGION ID(SuppliedByImpl__SuppliedByImpl) START*/

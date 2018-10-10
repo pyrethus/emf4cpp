@@ -43,8 +43,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-DataRelationship::DataRelationship() :
-        m_to(0), m_from(0)
+DataRelationship::DataRelationship()
 {
 
     /*PROTECTED REGION ID(DataRelationshipImpl__DataRelationshipImpl) START*/

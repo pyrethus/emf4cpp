@@ -91,7 +91,8 @@ namespace xpand3
 
         // Attributes
 
-        ::ecore::EBoolean m_wildparams;
+        ::ecore::EBoolean m_wildparams
+        {};
 
         // References
 

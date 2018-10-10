@@ -111,19 +111,26 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_changeable;
+    ::ecore::EBoolean m_changeable
+    {   true};
 
-    ::ecore::EBoolean m_volatile;
+    ::ecore::EBoolean m_volatile
+    {};
 
-    ::ecore::EBoolean m_transient;
+    ::ecore::EBoolean m_transient
+    {};
 
-    ::ecore::EString m_defaultValueLiteral;
+    ::ecore::EString m_defaultValueLiteral
+    {};
 
-    ::ecore::EJavaObject m_defaultValue;
+    ::ecore::EJavaObject m_defaultValue
+    {};
 
-    ::ecore::EBoolean m_unsettable;
+    ::ecore::EBoolean m_unsettable
+    {};
 
-    ::ecore::EBoolean m_derived;
+    ::ecore::EBoolean m_derived
+    {};
 
     // References
 

@@ -39,8 +39,7 @@
 using namespace ::myDsl;
 
 // Default constructor
-Entity::Entity() :
-        m_extends(0)
+Entity::Entity()
 {
 
     m_properties.reset(

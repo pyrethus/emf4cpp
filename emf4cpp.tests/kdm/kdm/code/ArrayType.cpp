@@ -50,8 +50,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-ArrayType::ArrayType() :
-        m_indexUnit(0)
+ArrayType::ArrayType()
 {
 
     /*PROTECTED REGION ID(ArrayTypeImpl__ArrayTypeImpl) START*/

@@ -41,8 +41,7 @@
 using namespace ::xpand3::declaration;
 
 // Default constructor
-AbstractNamedDeclaration::AbstractNamedDeclaration() :
-        m_name(0)
+AbstractNamedDeclaration::AbstractNamedDeclaration()
 {
 
     /*PROTECTED REGION ID(AbstractNamedDeclarationImpl__AbstractNamedDeclarationImpl) START*/

@@ -41,8 +41,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EParameter::EParameter() :
-        m_eOperation(0)
+EParameter::EParameter()
 {
 
     /*PROTECTED REGION ID(EParameterImpl__EParameterImpl) START*/

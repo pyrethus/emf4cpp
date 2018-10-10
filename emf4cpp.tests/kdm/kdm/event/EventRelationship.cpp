@@ -43,8 +43,7 @@
 using namespace ::kdm::event;
 
 // Default constructor
-EventRelationship::EventRelationship() :
-        m_to(0), m_from(0)
+EventRelationship::EventRelationship()
 {
 
     /*PROTECTED REGION ID(EventRelationshipImpl__EventRelationshipImpl) START*/

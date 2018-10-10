@@ -44,8 +44,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-ReadsColumnSet::ReadsColumnSet() :
-        m_to(0), m_from(0)
+ReadsColumnSet::ReadsColumnSet()
 {
 
     /*PROTECTED REGION ID(ReadsColumnSetImpl__ReadsColumnSetImpl) START*/

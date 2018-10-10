@@ -44,8 +44,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-TypedBy::TypedBy() :
-        m_to(0), m_from(0)
+TypedBy::TypedBy()
 {
 
     /*PROTECTED REGION ID(TypedByImpl__TypedByImpl) START*/

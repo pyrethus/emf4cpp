@@ -40,8 +40,7 @@
 using namespace ::xpand3::statement;
 
 // Default constructor
-LetStatement::LetStatement() :
-        m_varName(0), m_varValue(0)
+LetStatement::LetStatement()
 {
 
     /*PROTECTED REGION ID(LetStatementImpl__LetStatementImpl) START*/

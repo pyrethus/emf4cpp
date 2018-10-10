@@ -89,9 +89,11 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_identifier;
+    ::ecore::EString m_identifier
+    {};
 
-    ::idlmm::ParameterMode m_direction;
+    ::idlmm::ParameterMode m_direction
+    {};
 
     // References
 

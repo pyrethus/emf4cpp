@@ -44,8 +44,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-KeyRelation::KeyRelation() :
-        m_to(0), m_from(0)
+KeyRelation::KeyRelation()
 {
 
     /*PROTECTED REGION ID(KeyRelationImpl__KeyRelationImpl) START*/

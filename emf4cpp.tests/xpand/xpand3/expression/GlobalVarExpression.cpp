@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-GlobalVarExpression::GlobalVarExpression() :
-        m_globalVarName(0)
+GlobalVarExpression::GlobalVarExpression()
 {
 
     /*PROTECTED REGION ID(GlobalVarExpressionImpl__GlobalVarExpressionImpl) START*/

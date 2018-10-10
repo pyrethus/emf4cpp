@@ -88,9 +88,11 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::Double m_rx;
+    ::PrimitiveTypes::Double m_rx
+    {};
 
-    ::PrimitiveTypes::Double m_ry;
+    ::PrimitiveTypes::Double m_ry
+    {};
 
     // References
 

@@ -39,8 +39,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-TypeSelectExpression::TypeSelectExpression() :
-        m_typeLiteral(0)
+TypeSelectExpression::TypeSelectExpression()
 {
 
     /*PROTECTED REGION ID(TypeSelectExpressionImpl__TypeSelectExpressionImpl) START*/

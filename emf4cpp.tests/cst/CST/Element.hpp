@@ -85,7 +85,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_kind;
+    ::ecore::EString m_kind
+    {};
 
     // References
 

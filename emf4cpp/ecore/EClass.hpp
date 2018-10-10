@@ -161,9 +161,11 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_abstract;
+    ::ecore::EBoolean m_abstract
+    {};
 
-    ::ecore::EBoolean m_interface;
+    ::ecore::EBoolean m_interface
+    {};
 
     // References
 

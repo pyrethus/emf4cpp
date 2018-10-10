@@ -43,8 +43,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-VariantTo::VariantTo() :
-        m_to(0), m_from(0)
+VariantTo::VariantTo()
 {
 
     /*PROTECTED REGION ID(VariantToImpl__VariantToImpl) START*/

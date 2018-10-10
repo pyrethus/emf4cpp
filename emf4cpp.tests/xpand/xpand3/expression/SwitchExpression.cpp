@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-SwitchExpression::SwitchExpression() :
-        m_switchExpr(0), m_defaultExpr(0)
+SwitchExpression::SwitchExpression()
 {
 
     m_cases.reset(

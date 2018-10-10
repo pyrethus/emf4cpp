@@ -38,8 +38,7 @@
 using namespace ::xpand3;
 
 // Default constructor
-ImportStatement::ImportStatement() :
-        m_importedId(0)
+ImportStatement::ImportStatement()
 {
 
     /*PROTECTED REGION ID(ImportStatementImpl__ImportStatementImpl) START*/

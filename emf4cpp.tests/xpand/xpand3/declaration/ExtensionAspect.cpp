@@ -41,8 +41,7 @@
 using namespace ::xpand3::declaration;
 
 // Default constructor
-ExtensionAspect::ExtensionAspect() :
-        m_expression(0)
+ExtensionAspect::ExtensionAspect()
 {
 
     /*PROTECTED REGION ID(ExtensionAspectImpl__ExtensionAspectImpl) START*/

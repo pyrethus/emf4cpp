@@ -48,8 +48,7 @@
 using namespace ::kdm::conceptual;
 
 // Default constructor
-ConceptualRole::ConceptualRole() :
-        m_conceptualElement(0)
+ConceptualRole::ConceptualRole()
 {
 
     /*PROTECTED REGION ID(ConceptualRoleImpl__ConceptualRoleImpl) START*/

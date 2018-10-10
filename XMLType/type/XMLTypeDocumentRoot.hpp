@@ -118,13 +118,17 @@ protected:
 
     // Attributes
 
-    std::vector< ::ecore::EFeatureMapEntry > m_mixed;
+    std::vector< ::ecore::EFeatureMapEntry > m_mixed
+    {};
 
-    std::vector< ::type::String > m_cDATA;
+    std::vector< ::type::String > m_cDATA
+    {};
 
-    std::vector< ::type::String > m_comment;
+    std::vector< ::type::String > m_comment
+    {};
 
-    std::vector< ::type::String > m_text;
+    std::vector< ::type::String > m_text
+    {};
 
     // References
 

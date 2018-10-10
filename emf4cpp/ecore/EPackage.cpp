@@ -54,8 +54,7 @@ void EPackage::setItemProviderInstance(
 using namespace ::ecore;
 
 // Default constructor
-EPackage::EPackage() :
-        m_eFactoryInstance(0), m_eSuperPackage(0)
+EPackage::EPackage()
 {
 
     m_eClassifiers.reset(

@@ -37,8 +37,7 @@
 using namespace ::myDsl;
 
 // Default constructor
-Property::Property() :
-        m_type(0)
+Property::Property()
 {
 
     /*PROTECTED REGION ID(PropertyImpl__PropertyImpl) START*/

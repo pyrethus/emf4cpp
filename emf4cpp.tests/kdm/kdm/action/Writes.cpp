@@ -44,8 +44,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-Writes::Writes() :
-        m_to(0), m_from(0)
+Writes::Writes()
 {
 
     /*PROTECTED REGION ID(WritesImpl__WritesImpl) START*/

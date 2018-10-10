@@ -85,7 +85,8 @@ protected:
 
     // Attributes
 
-    ::idlmm::PrimitiveKind m_kind;
+    ::idlmm::PrimitiveKind m_kind
+    {};
 
     // References
 

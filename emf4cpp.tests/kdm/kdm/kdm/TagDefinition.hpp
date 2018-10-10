@@ -90,9 +90,11 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::String m_tag;
+        ::kdm::core::String m_tag
+        {};
 
-        ::kdm::core::String m_type;
+        ::kdm::core::String m_type
+        {};
 
         // References
 

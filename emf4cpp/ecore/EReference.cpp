@@ -43,8 +43,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EReference::EReference() :
-        m_resolveProxies(true), m_eOpposite(0), m_eReferenceType(0)
+EReference::EReference()
 {
 
     m_eKeys.reset(

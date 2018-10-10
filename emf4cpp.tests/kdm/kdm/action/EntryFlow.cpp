@@ -44,8 +44,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-EntryFlow::EntryFlow() :
-        m_to(0), m_from(0)
+EntryFlow::EntryFlow()
 {
 
     /*PROTECTED REGION ID(EntryFlowImpl__EntryFlowImpl) START*/

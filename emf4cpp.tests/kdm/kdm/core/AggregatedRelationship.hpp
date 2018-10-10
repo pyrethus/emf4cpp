@@ -95,7 +95,8 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::Integer m_density;
+        ::kdm::core::Integer m_density
+        {};
 
         // References
 

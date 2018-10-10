@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-Case::Case() :
-        m_condition(0), m_thenPart(0)
+Case::Case()
 {
 
     /*PROTECTED REGION ID(CaseImpl__CaseImpl) START*/

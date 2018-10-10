@@ -44,8 +44,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-Throws::Throws() :
-        m_to(0), m_from(0)
+Throws::Throws()
 {
 
     /*PROTECTED REGION ID(ThrowsImpl__ThrowsImpl) START*/

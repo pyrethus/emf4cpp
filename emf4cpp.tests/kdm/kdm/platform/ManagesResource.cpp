@@ -44,8 +44,7 @@
 using namespace ::kdm::platform;
 
 // Default constructor
-ManagesResource::ManagesResource() :
-        m_to(0), m_from(0)
+ManagesResource::ManagesResource()
 {
 
     /*PROTECTED REGION ID(ManagesResourceImpl__ManagesResourceImpl) START*/

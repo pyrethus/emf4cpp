@@ -43,8 +43,7 @@
 using namespace ::kdm::ui;
 
 // Default constructor
-UILayout::UILayout() :
-        m_to(0), m_from(0)
+UILayout::UILayout()
 {
 
     /*PROTECTED REGION ID(UILayoutImpl__UILayoutImpl) START*/

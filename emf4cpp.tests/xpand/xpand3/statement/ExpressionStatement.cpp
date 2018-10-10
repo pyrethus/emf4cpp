@@ -38,8 +38,7 @@
 using namespace ::xpand3::statement;
 
 // Default constructor
-ExpressionStatement::ExpressionStatement() :
-        m_expression(0)
+ExpressionStatement::ExpressionStatement()
 {
 
     /*PROTECTED REGION ID(ExpressionStatementImpl__ExpressionStatementImpl) START*/

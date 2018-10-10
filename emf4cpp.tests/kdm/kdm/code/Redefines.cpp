@@ -43,8 +43,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-Redefines::Redefines() :
-        m_to(0), m_from(0)
+Redefines::Redefines()
 {
 
     /*PROTECTED REGION ID(RedefinesImpl__RedefinesImpl) START*/

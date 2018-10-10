@@ -85,7 +85,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EDouble m_value;
+    ::ecore::EDouble m_value
+    {};
 
     // References
 

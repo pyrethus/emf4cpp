@@ -90,7 +90,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EInt m_number;
+    ::ecore::EInt m_number
+    {};
 
     // References
 

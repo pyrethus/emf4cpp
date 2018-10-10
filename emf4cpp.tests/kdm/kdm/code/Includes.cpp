@@ -44,8 +44,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-Includes::Includes() :
-        m_to(0), m_from(0)
+Includes::Includes()
 {
 
     /*PROTECTED REGION ID(IncludesImpl__IncludesImpl) START*/

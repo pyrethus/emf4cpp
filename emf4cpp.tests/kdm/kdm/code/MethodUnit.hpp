@@ -95,9 +95,11 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::code::MethodKind m_kind;
+        ::kdm::code::MethodKind m_kind
+        {};
 
-        ::kdm::code::ExportKind m_export;
+        ::kdm::code::ExportKind m_export
+        {};
 
         // References
 

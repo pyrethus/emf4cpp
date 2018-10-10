@@ -36,8 +36,7 @@
 using namespace ::enumeration;
 
 // Default constructor
-Bird::Bird() :
-        m_type(::enumeration::BirdType::blackbird), m_name("Birdy")
+Bird::Bird()
 {
 
     /*PROTECTED REGION ID(BirdImpl__BirdImpl) START*/

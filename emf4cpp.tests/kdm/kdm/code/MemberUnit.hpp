@@ -90,7 +90,8 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::code::ExportKind m_export;
+        ::kdm::code::ExportKind m_export
+        {};
 
         // References
 

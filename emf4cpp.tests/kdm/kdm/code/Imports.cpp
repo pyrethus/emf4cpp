@@ -43,8 +43,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-Imports::Imports() :
-        m_to(0), m_from(0)
+Imports::Imports()
 {
 
     /*PROTECTED REGION ID(ImportsImpl__ImportsImpl) START*/

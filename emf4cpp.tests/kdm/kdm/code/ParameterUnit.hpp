@@ -93,9 +93,11 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::code::ParameterKind m_kind;
+        ::kdm::code::ParameterKind m_kind
+        {};
 
-        ::kdm::core::Integer m_pos;
+        ::kdm::core::Integer m_pos
+        {};
 
         // References
 

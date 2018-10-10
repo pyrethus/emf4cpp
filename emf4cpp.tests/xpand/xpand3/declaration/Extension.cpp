@@ -41,8 +41,7 @@
 using namespace ::xpand3::declaration;
 
 // Default constructor
-Extension::Extension() :
-        m_body(0), m_returnType(0)
+Extension::Extension()
 {
 
     /*PROTECTED REGION ID(ExtensionImpl__ExtensionImpl) START*/

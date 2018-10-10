@@ -88,9 +88,11 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::String m_lengthAdjust;
+    ::PrimitiveTypes::String m_lengthAdjust
+    {};
 
-    ::PrimitiveTypes::String m_content;
+    ::PrimitiveTypes::String m_content
+    {};
 
     // References
 

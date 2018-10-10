@@ -44,8 +44,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-ProducesDataEvent::ProducesDataEvent() :
-        m_to(0), m_from(0)
+ProducesDataEvent::ProducesDataEvent()
 {
 
     /*PROTECTED REGION ID(ProducesDataEventImpl__ProducesDataEventImpl) START*/

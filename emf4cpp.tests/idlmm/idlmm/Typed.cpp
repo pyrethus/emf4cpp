@@ -38,8 +38,7 @@
 using namespace ::idlmm;
 
 // Default constructor
-Typed::Typed() :
-        m_containedType(0), m_sharedType(0)
+Typed::Typed()
 {
 
     /*PROTECTED REGION ID(TypedImpl__TypedImpl) START*/

@@ -40,8 +40,7 @@
 using namespace ::kdm::kdm;
 
 // Default constructor
-ExtendedValue::ExtendedValue() :
-        m_tag(0)
+ExtendedValue::ExtendedValue()
 {
 
     /*PROTECTED REGION ID(ExtendedValueImpl__ExtendedValueImpl) START*/

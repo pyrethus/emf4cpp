@@ -89,7 +89,8 @@ protected:
 
     // Attributes
 
-    std::vector< ::ecore::EString > m_members;
+    std::vector< ::ecore::EString > m_members
+    {};
 
     // References
 

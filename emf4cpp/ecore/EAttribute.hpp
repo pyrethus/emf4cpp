@@ -80,7 +80,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_iD;
+    ::ecore::EBoolean m_iD
+    {};
 
     // References
 

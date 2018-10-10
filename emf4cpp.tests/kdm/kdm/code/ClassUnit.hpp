@@ -91,7 +91,8 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::Boolean m_isAbstract;
+        ::kdm::core::Boolean m_isAbstract
+        {};
 
         // References
 

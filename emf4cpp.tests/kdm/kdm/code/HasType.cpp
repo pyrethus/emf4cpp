@@ -44,8 +44,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-HasType::HasType() :
-        m_to(0), m_from(0)
+HasType::HasType()
 {
 
     /*PROTECTED REGION ID(HasTypeImpl__HasTypeImpl) START*/

@@ -43,8 +43,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-ReferenceTo::ReferenceTo() :
-        m_to(0), m_from(0)
+ReferenceTo::ReferenceTo()
 {
 
     /*PROTECTED REGION ID(ReferenceToImpl__ReferenceToImpl) START*/

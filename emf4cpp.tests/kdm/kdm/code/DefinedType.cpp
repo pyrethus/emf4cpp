@@ -48,8 +48,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-DefinedType::DefinedType() :
-        m_type(0), m_codeElement(0)
+DefinedType::DefinedType()
 {
 
     /*PROTECTED REGION ID(DefinedTypeImpl__DefinedTypeImpl) START*/

@@ -43,8 +43,7 @@
 using namespace ::kdm::conceptual;
 
 // Default constructor
-ConceptualRelationship::ConceptualRelationship() :
-        m_to(0), m_from(0)
+ConceptualRelationship::ConceptualRelationship()
 {
 
     /*PROTECTED REGION ID(ConceptualRelationshipImpl__ConceptualRelationshipImpl) START*/

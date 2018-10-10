@@ -44,8 +44,7 @@
 using namespace ::kdm::ui;
 
 // Default constructor
-Displays::Displays() :
-        m_to(0), m_from(0)
+Displays::Displays()
 {
 
     /*PROTECTED REGION ID(DisplaysImpl__DisplaysImpl) START*/

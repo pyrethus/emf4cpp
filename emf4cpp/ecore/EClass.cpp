@@ -46,8 +46,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EClass::EClass() :
-        m_eIDAttribute(0)
+EClass::EClass()
 {
 
     m_eSuperTypes.reset(

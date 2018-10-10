@@ -91,9 +91,11 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::String m_language;
+        ::kdm::core::String m_language
+        {};
 
-        ::kdm::core::String m_encoding;
+        ::kdm::core::String m_encoding
+        {};
 
         // References
 

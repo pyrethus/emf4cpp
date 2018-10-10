@@ -77,15 +77,15 @@ String getDeleteAtCPPSignature(EAttribute this) :
 // Default value
 String getDefaultValue(EAttribute this) :
 	if defaultValueLiteral == null then
-		getAttrMemberName() + "()"
+		""
 	else if this.EType.name == "EString" then
-		getAttrMemberName() + "(\"" + defaultValueLiteral + "\")"
+		"\"" + defaultValueLiteral + "\""
 	else if this.EType.name == "EDate" then
-		getAttrMemberName() + "(\"" + defaultValueLiteral + "\")"
+		"\"" + defaultValueLiteral + "\""
 	else if EEnum.isInstance(this.EType) then
-		getAttrMemberName() + "(" + this.getCPPTypeSignature() + "::" + defaultValueLiteral+ ")"
+		this.getCPPTypeSignature() + "::" + defaultValueLiteral
 	else
-		getAttrMemberName() + "(" + defaultValueLiteral+ ")"
+		defaultValueLiteral
 ;
 
 String getDefaultValue(EReference this) :

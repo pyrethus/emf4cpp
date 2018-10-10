@@ -38,8 +38,7 @@
 using namespace ::xpand3::statement;
 
 // Default constructor
-ErrorStatement::ErrorStatement() :
-        m_message(0)
+ErrorStatement::ErrorStatement()
 {
 
     /*PROTECTED REGION ID(ErrorStatementImpl__ErrorStatementImpl) START*/

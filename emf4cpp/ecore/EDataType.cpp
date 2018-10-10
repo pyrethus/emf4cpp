@@ -40,8 +40,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EDataType::EDataType() :
-        m_serializable(true)
+EDataType::EDataType()
 {
 
     /*PROTECTED REGION ID(EDataTypeImpl__EDataTypeImpl) START*/

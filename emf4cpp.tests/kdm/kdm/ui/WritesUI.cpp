@@ -44,8 +44,7 @@
 using namespace ::kdm::ui;
 
 // Default constructor
-WritesUI::WritesUI() :
-        m_to(0), m_from(0)
+WritesUI::WritesUI()
 {
 
     /*PROTECTED REGION ID(WritesUIImpl__WritesUIImpl) START*/

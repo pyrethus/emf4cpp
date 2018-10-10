@@ -41,8 +41,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EStructuralFeature::EStructuralFeature() :
-        m_changeable(true), m_eContainingClass(0)
+EStructuralFeature::EStructuralFeature()
 {
 
     /*PROTECTED REGION ID(EStructuralFeatureImpl__EStructuralFeatureImpl) START*/

@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-LetExpression::LetExpression() :
-        m_varExpression(0), m_targetExpression(0), m_varName(0)
+LetExpression::LetExpression()
 {
 
     /*PROTECTED REGION ID(LetExpressionImpl__LetExpressionImpl) START*/

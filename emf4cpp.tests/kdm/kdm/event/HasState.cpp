@@ -44,8 +44,7 @@
 using namespace ::kdm::event;
 
 // Default constructor
-HasState::HasState() :
-        m_to(0), m_from(0)
+HasState::HasState()
 {
 
     /*PROTECTED REGION ID(HasStateImpl__HasStateImpl) START*/

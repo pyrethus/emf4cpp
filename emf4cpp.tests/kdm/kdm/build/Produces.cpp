@@ -44,8 +44,7 @@
 using namespace ::kdm::build;
 
 // Default constructor
-Produces::Produces() :
-        m_to(0), m_from(0)
+Produces::Produces()
 {
 
     /*PROTECTED REGION ID(ProducesImpl__ProducesImpl) START*/

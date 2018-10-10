@@ -40,8 +40,7 @@
 using namespace ::xpand3::statement;
 
 // Default constructor
-IfStatement::IfStatement() :
-        m_condition(0), m_elseIf(0)
+IfStatement::IfStatement()
 {
 
     /*PROTECTED REGION ID(IfStatementImpl__IfStatementImpl) START*/

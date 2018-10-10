@@ -41,8 +41,7 @@
 using namespace ::xpand3::declaration;
 
 // Default constructor
-JavaExtension::JavaExtension() :
-        m_javaType(0), m_javaMethod(0)
+JavaExtension::JavaExtension()
 {
 
     m_javaParamTypes.reset(

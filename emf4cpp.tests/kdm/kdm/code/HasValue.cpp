@@ -43,8 +43,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-HasValue::HasValue() :
-        m_to(0), m_from(0)
+HasValue::HasValue()
 {
 
     /*PROTECTED REGION ID(HasValueImpl__HasValueImpl) START*/

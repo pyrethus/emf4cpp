@@ -44,8 +44,7 @@
 using namespace ::SVG;
 
 // Default constructor
-Element::Element() :
-        m_position(0), m_size(0), m_root(0), m_group(0), m_drawsMarker(0)
+Element::Element()
 {
 
     m_owner.reset(

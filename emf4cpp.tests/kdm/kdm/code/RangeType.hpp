@@ -92,9 +92,11 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::Integer m_lower;
+        ::kdm::core::Integer m_lower
+        {};
 
-        ::kdm::core::Integer m_upper;
+        ::kdm::core::Integer m_upper
+        {};
 
         // References
 

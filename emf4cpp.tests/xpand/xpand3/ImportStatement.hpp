@@ -87,7 +87,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_exported;
+    ::ecore::EBoolean m_exported
+    {};
 
     // References
 

@@ -49,8 +49,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-ContentItem::ContentItem() :
-        m_type(0)
+ContentItem::ContentItem()
 {
 
     m_contentElement.reset(

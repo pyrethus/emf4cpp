@@ -39,8 +39,7 @@
 using namespace ::xpand3::statement;
 
 // Default constructor
-ProtectStatement::ProtectStatement() :
-        m_commentStart(0), m_commentEnd(0), m_id(0)
+ProtectStatement::ProtectStatement()
 {
 
     /*PROTECTED REGION ID(ProtectStatementImpl__ProtectStatementImpl) START*/

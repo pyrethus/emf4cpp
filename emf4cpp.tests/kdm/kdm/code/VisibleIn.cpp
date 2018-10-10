@@ -43,8 +43,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-VisibleIn::VisibleIn() :
-        m_to(0), m_from(0)
+VisibleIn::VisibleIn()
 {
 
     /*PROTECTED REGION ID(VisibleInImpl__VisibleInImpl) START*/

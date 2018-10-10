@@ -51,8 +51,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-ControlElement::ControlElement() :
-        m_type(0)
+ControlElement::ControlElement()
 {
 
     m_entryFlow.reset(

@@ -44,8 +44,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-Calls::Calls() :
-        m_to(0), m_from(0)
+Calls::Calls()
 {
 
     /*PROTECTED REGION ID(CallsImpl__CallsImpl) START*/

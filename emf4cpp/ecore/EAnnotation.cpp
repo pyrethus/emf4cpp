@@ -40,8 +40,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EAnnotation::EAnnotation() :
-        m_eModelElement(0)
+EAnnotation::EAnnotation()
 {
 
     m_details.reset(

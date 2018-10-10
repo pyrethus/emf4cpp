@@ -90,9 +90,11 @@ protected:
 
     // Attributes
 
-    ::type::String m_rawValue;
+    ::type::String m_rawValue
+    {};
 
-    ::type::AnySimpleType m_value;
+    ::type::AnySimpleType m_value
+    {};
 
     // References
 

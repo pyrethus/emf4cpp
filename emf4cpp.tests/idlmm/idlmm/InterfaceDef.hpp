@@ -94,11 +94,14 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_isAbstract;
+    ::ecore::EBoolean m_isAbstract
+    {};
 
-    ::ecore::EBoolean m_isCustom;
+    ::ecore::EBoolean m_isCustom
+    {};
 
-    ::ecore::EBoolean m_isTruncatable;
+    ::ecore::EBoolean m_isTruncatable
+    {};
 
     // References
 

@@ -91,7 +91,8 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::Integer m_size;
+        ::kdm::core::Integer m_size
+        {};
 
         // References
 

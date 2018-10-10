@@ -85,7 +85,8 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::Boolean m_bold;
+    ::PrimitiveTypes::Boolean m_bold
+    {};
 
     // References
 

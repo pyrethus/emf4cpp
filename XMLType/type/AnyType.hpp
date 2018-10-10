@@ -103,11 +103,14 @@ protected:
 
     // Attributes
 
-    std::vector< ::ecore::EFeatureMapEntry > m_mixed;
+    std::vector< ::ecore::EFeatureMapEntry > m_mixed
+    {};
 
-    std::vector< ::ecore::EFeatureMapEntry > m_any;
+    std::vector< ::ecore::EFeatureMapEntry > m_any
+    {};
 
-    std::vector< ::ecore::EFeatureMapEntry > m_anyAttribute;
+    std::vector< ::ecore::EFeatureMapEntry > m_anyAttribute
+    {};
 
     // References
 

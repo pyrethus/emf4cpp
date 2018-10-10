@@ -38,8 +38,7 @@
 using namespace ::eopposite;
 
 // Default constructor
-RightHand::RightHand() :
-        m_leftee(0)
+RightHand::RightHand()
 {
 
     /*PROTECTED REGION ID(RightHandImpl__RightHandImpl) START*/

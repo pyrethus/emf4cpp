@@ -95,7 +95,8 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::String m_kind;
+        ::kdm::core::String m_kind
+        {};
 
         // References
 

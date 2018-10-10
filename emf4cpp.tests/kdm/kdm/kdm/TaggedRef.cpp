@@ -41,8 +41,7 @@
 using namespace ::kdm::kdm;
 
 // Default constructor
-TaggedRef::TaggedRef() :
-        m_reference(0)
+TaggedRef::TaggedRef()
 {
 
     /*PROTECTED REGION ID(TaggedRefImpl__TaggedRefImpl) START*/

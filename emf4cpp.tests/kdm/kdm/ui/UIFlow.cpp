@@ -43,8 +43,7 @@
 using namespace ::kdm::ui;
 
 // Default constructor
-UIFlow::UIFlow() :
-        m_to(0), m_from(0)
+UIFlow::UIFlow()
 {
 
     /*PROTECTED REGION ID(UIFlowImpl__UIFlowImpl) START*/

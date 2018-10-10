@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-Cast::Cast() :
-        m_type(0), m_target(0)
+Cast::Cast()
 {
 
     /*PROTECTED REGION ID(CastImpl__CastImpl) START*/

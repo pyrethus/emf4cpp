@@ -44,8 +44,7 @@
 using namespace ::kdm::event;
 
 // Default constructor
-ReadsState::ReadsState() :
-        m_to(0), m_from(0)
+ReadsState::ReadsState()
 {
 
     /*PROTECTED REGION ID(ReadsStateImpl__ReadsStateImpl) START*/

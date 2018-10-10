@@ -38,8 +38,7 @@
 using namespace ::xpand3;
 
 // Default constructor
-DeclaredParameter::DeclaredParameter() :
-        m_name(0), m_type(0)
+DeclaredParameter::DeclaredParameter()
 {
 
     /*PROTECTED REGION ID(DeclaredParameterImpl__DeclaredParameterImpl) START*/

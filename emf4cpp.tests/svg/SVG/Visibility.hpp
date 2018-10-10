@@ -85,7 +85,8 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::Boolean m_visible;
+    ::PrimitiveTypes::Boolean m_visible
+    {};
 
     // References
 

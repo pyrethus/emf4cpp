@@ -43,8 +43,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-Expands::Expands() :
-        m_to(0), m_from(0)
+Expands::Expands()
 {
 
     /*PROTECTED REGION ID(ExpandsImpl__ExpandsImpl) START*/

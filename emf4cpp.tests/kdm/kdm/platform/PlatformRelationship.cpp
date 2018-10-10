@@ -43,8 +43,7 @@
 using namespace ::kdm::platform;
 
 // Default constructor
-PlatformRelationship::PlatformRelationship() :
-        m_to(0), m_from(0)
+PlatformRelationship::PlatformRelationship()
 {
 
     /*PROTECTED REGION ID(PlatformRelationshipImpl__PlatformRelationshipImpl) START*/

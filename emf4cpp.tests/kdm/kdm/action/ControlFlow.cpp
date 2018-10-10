@@ -43,8 +43,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-ControlFlow::ControlFlow() :
-        m_to(0), m_from(0)
+ControlFlow::ControlFlow()
 {
 
     /*PROTECTED REGION ID(ControlFlowImpl__ControlFlowImpl) START*/

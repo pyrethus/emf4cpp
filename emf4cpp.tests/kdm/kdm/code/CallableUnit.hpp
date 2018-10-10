@@ -91,7 +91,8 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::code::CallableKind m_kind;
+        ::kdm::code::CallableKind m_kind
+        {};
 
         // References
 

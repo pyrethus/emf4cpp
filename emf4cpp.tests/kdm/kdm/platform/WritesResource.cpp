@@ -44,8 +44,7 @@
 using namespace ::kdm::platform;
 
 // Default constructor
-WritesResource::WritesResource() :
-        m_to(0), m_from(0)
+WritesResource::WritesResource()
 {
 
     /*PROTECTED REGION ID(WritesResourceImpl__WritesResourceImpl) START*/

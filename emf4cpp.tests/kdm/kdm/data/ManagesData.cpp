@@ -44,8 +44,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-ManagesData::ManagesData() :
-        m_to(0), m_from(0)
+ManagesData::ManagesData()
 {
 
     /*PROTECTED REGION ID(ManagesDataImpl__ManagesDataImpl) START*/

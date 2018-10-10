@@ -91,11 +91,14 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::Double m_angle;
+    ::PrimitiveTypes::Double m_angle
+    {};
 
-    ::PrimitiveTypes::Double m_cx;
+    ::PrimitiveTypes::Double m_cx
+    {};
 
-    ::PrimitiveTypes::Double m_cy;
+    ::PrimitiveTypes::Double m_cy
+    {};
 
     // References
 

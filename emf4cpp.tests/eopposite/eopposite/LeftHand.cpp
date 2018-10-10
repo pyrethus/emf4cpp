@@ -39,8 +39,7 @@
 using namespace ::eopposite;
 
 // Default constructor
-LeftHand::LeftHand() :
-        m_rightee(0), m_rightMultiple(0)
+LeftHand::LeftHand()
 {
 
     /*PROTECTED REGION ID(LeftHandImpl__LeftHandImpl) START*/

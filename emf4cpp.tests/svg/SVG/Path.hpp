@@ -94,13 +94,17 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::Double m_pathLength;
+    ::PrimitiveTypes::Double m_pathLength
+    {};
 
-    ::PrimitiveTypes::String m_d;
+    ::PrimitiveTypes::String m_d
+    {};
 
-    ::PrimitiveTypes::String m_markerEnd;
+    ::PrimitiveTypes::String m_markerEnd
+    {};
 
-    ::PrimitiveTypes::String m_markerStart;
+    ::PrimitiveTypes::String m_markerStart
+    {};
 
     // References
 

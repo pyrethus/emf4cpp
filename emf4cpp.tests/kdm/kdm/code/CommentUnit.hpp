@@ -88,7 +88,8 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::String m_text;
+        ::kdm::core::String m_text
+        {};
 
         // References
 

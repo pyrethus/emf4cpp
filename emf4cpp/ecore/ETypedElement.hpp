@@ -98,17 +98,23 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_ordered;
+    ::ecore::EBoolean m_ordered
+    {   true};
 
-    ::ecore::EBoolean m_unique;
+    ::ecore::EBoolean m_unique
+    {   true};
 
-    ::ecore::EInt m_lowerBound;
+    ::ecore::EInt m_lowerBound
+    {};
 
-    ::ecore::EInt m_upperBound;
+    ::ecore::EInt m_upperBound
+    {   1};
 
-    ::ecore::EBoolean m_many;
+    ::ecore::EBoolean m_many
+    {};
 
-    ::ecore::EBoolean m_required;
+    ::ecore::EBoolean m_required
+    {};
 
     // References
 

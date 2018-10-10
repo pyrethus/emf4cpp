@@ -44,8 +44,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-HasContent::HasContent() :
-        m_to(0), m_from(0)
+HasContent::HasContent()
 {
 
     /*PROTECTED REGION ID(HasContentImpl__HasContentImpl) START*/

@@ -43,8 +43,7 @@
 using namespace ::kdm::structure;
 
 // Default constructor
-StructureRelationship::StructureRelationship() :
-        m_to(0), m_from(0)
+StructureRelationship::StructureRelationship()
 {
 
     /*PROTECTED REGION ID(StructureRelationshipImpl__StructureRelationshipImpl) START*/

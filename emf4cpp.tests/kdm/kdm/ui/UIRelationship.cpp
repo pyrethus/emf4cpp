@@ -43,8 +43,7 @@
 using namespace ::kdm::ui;
 
 // Default constructor
-UIRelationship::UIRelationship() :
-        m_to(0), m_from(0)
+UIRelationship::UIRelationship()
 {
 
     /*PROTECTED REGION ID(UIRelationshipImpl__UIRelationshipImpl) START*/

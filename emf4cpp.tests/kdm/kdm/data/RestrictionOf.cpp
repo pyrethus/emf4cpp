@@ -43,8 +43,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-RestrictionOf::RestrictionOf() :
-        m_to(0), m_from(0)
+RestrictionOf::RestrictionOf()
 {
 
     /*PROTECTED REGION ID(RestrictionOfImpl__RestrictionOfImpl) START*/

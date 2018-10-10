@@ -49,8 +49,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-DerivedType::DerivedType() :
-        m_itemUnit(0)
+DerivedType::DerivedType()
 {
 
     /*PROTECTED REGION ID(DerivedTypeImpl__DerivedTypeImpl) START*/

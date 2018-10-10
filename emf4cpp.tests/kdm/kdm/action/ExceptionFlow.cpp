@@ -43,8 +43,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-ExceptionFlow::ExceptionFlow() :
-        m_to(0), m_from(0)
+ExceptionFlow::ExceptionFlow()
 {
 
     /*PROTECTED REGION ID(ExceptionFlowImpl__ExceptionFlowImpl) START*/

@@ -40,8 +40,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EClassifier::EClassifier() :
-        m_ePackage(0)
+EClassifier::EClassifier()
 {
 
     m_eTypeParameters.reset(

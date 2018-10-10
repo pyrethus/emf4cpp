@@ -85,7 +85,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_value;
+    ::ecore::EBoolean m_value
+    {};
 
     // References
 

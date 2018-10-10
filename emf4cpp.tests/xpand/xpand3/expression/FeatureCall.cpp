@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-FeatureCall::FeatureCall() :
-        m_target(0), m_name(0)
+FeatureCall::FeatureCall()
 {
 
     /*PROTECTED REGION ID(FeatureCallImpl__FeatureCallImpl) START*/

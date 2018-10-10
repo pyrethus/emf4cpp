@@ -44,8 +44,7 @@
 using namespace ::kdm::ui;
 
 // Default constructor
-ReadsUI::ReadsUI() :
-        m_to(0), m_from(0)
+ReadsUI::ReadsUI()
 {
 
     /*PROTECTED REGION ID(ReadsUIImpl__ReadsUIImpl) START*/

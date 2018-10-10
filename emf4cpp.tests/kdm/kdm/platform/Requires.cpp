@@ -44,8 +44,7 @@
 using namespace ::kdm::platform;
 
 // Default constructor
-Requires::Requires() :
-        m_to(0), m_from(0)
+Requires::Requires()
 {
 
     /*PROTECTED REGION ID(RequiresImpl__RequiresImpl) START*/

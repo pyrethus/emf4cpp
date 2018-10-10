@@ -90,7 +90,8 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::code::StorableKind m_kind;
+        ::kdm::code::StorableKind m_kind
+        {};
 
         // References
 

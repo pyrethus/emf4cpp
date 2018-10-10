@@ -43,8 +43,7 @@
 using namespace ::kdm::source;
 
 // Default constructor
-DependsOn::DependsOn() :
-        m_to(0), m_from(0)
+DependsOn::DependsOn()
 {
 
     /*PROTECTED REGION ID(DependsOnImpl__DependsOnImpl) START*/

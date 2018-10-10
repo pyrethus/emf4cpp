@@ -87,7 +87,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EDate m_FirstManOnMoonDate;
+    ::ecore::EDate m_FirstManOnMoonDate
+    {   "1969-07-20T20:18:00.000+0000"};
 
     // References
 

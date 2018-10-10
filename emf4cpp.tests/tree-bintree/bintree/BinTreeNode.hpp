@@ -93,7 +93,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_data;
+    ::ecore::EString m_data
+    {};
 
     // References
 

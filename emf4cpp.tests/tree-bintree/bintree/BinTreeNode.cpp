@@ -37,8 +37,7 @@
 using namespace ::bintree;
 
 // Default constructor
-BinTreeNode::BinTreeNode() :
-        m_parent(0), m_left(0), m_right(0)
+BinTreeNode::BinTreeNode()
 {
 
     /*PROTECTED REGION ID(BinTreeNodeImpl__BinTreeNodeImpl) START*/

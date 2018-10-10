@@ -45,8 +45,7 @@
 using namespace ::SVG;
 
 // Default constructor
-Tref::Tref() :
-        m_xlinkHref(0)
+Tref::Tref()
 {
 
     /*PROTECTED REGION ID(TrefImpl__TrefImpl) START*/

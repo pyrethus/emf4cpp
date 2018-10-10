@@ -37,8 +37,7 @@
 using namespace ::TopLevelPackage;
 
 // Default constructor
-TopLevelClass::TopLevelClass() :
-        m_reference(0)
+TopLevelClass::TopLevelClass()
 {
 
     /*PROTECTED REGION ID(TopLevelClassImpl__TopLevelClassImpl) START*/

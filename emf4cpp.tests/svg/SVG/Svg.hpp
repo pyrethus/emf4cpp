@@ -96,11 +96,14 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::String m_namespace;
+    ::PrimitiveTypes::String m_namespace
+    {};
 
-    ::PrimitiveTypes::String m_version;
+    ::PrimitiveTypes::String m_version
+    {};
 
-    ::PrimitiveTypes::String m_baseProfile;
+    ::PrimitiveTypes::String m_baseProfile
+    {};
 
     // References
 

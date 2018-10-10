@@ -38,8 +38,7 @@
 using namespace ::treeiterator;
 
 // Default constructor
-TreeNode::TreeNode() :
-        m_leaf(0)
+TreeNode::TreeNode()
 {
 
     m_children.reset(

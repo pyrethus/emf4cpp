@@ -97,7 +97,8 @@ namespace xpand3
 
         // Attributes
 
-        ::ecore::EBoolean m_isPrivate;
+        ::ecore::EBoolean m_isPrivate
+        {};
 
         // References
 

@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-UnaryOperation::UnaryOperation() :
-        m_operator(0), m_operand(0)
+UnaryOperation::UnaryOperation()
 {
 
     /*PROTECTED REGION ID(UnaryOperationImpl__UnaryOperationImpl) START*/

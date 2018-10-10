@@ -88,9 +88,11 @@ protected:
 
     // Attributes
 
-    ::ecore::EDate m_Birthday;
+    ::ecore::EDate m_Birthday
+    {};
 
-    ::ecore::EString m_Name;
+    ::ecore::EString m_Name
+    {};
 
     // References
 

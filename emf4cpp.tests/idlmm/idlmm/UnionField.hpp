@@ -92,9 +92,11 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_identifier;
+    ::ecore::EString m_identifier
+    {};
 
-    std::vector< ::idlmm::EAny > m_label;
+    std::vector< ::idlmm::EAny > m_label
+    {};
 
     // References
 

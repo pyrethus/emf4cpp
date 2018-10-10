@@ -44,8 +44,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-InstanceOf::InstanceOf() :
-        m_to(0), m_from(0)
+InstanceOf::InstanceOf()
 {
 
     /*PROTECTED REGION ID(InstanceOfImpl__InstanceOfImpl) START*/

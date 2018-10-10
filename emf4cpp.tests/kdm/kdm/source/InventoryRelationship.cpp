@@ -43,8 +43,7 @@
 using namespace ::kdm::source;
 
 // Default constructor
-InventoryRelationship::InventoryRelationship() :
-        m_to(0), m_from(0)
+InventoryRelationship::InventoryRelationship()
 {
 
     /*PROTECTED REGION ID(InventoryRelationshipImpl__InventoryRelationshipImpl) START*/

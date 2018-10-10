@@ -98,9 +98,11 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_isOneway;
+    ::ecore::EBoolean m_isOneway
+    {};
 
-    std::vector< ::ecore::EString > m_contexts;
+    std::vector< ::ecore::EString > m_contexts
+    {};
 
     // References
 

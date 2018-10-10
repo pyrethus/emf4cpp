@@ -43,8 +43,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-CodeRelationship::CodeRelationship() :
-        m_to(0), m_from(0)
+CodeRelationship::CodeRelationship()
 {
 
     /*PROTECTED REGION ID(CodeRelationshipImpl__CodeRelationshipImpl) START*/

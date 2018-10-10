@@ -91,9 +91,11 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::String m_version;
+        ::kdm::core::String m_version
+        {};
 
-        ::kdm::core::String m_path;
+        ::kdm::core::String m_path
+        {};
 
         // References
 

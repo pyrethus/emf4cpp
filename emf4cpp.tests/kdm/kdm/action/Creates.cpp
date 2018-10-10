@@ -44,8 +44,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-Creates::Creates() :
-        m_to(0), m_from(0)
+Creates::Creates()
 {
 
     /*PROTECTED REGION ID(CreatesImpl__CreatesImpl) START*/

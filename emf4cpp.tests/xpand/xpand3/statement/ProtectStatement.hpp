@@ -96,7 +96,8 @@ namespace xpand3
 
         // Attributes
 
-        ::ecore::EBoolean m_disable;
+        ::ecore::EBoolean m_disable
+        {};
 
         // References
 

@@ -42,8 +42,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EFactory::EFactory() :
-        m_ePackage(0)
+EFactory::EFactory()
 {
 
     /*PROTECTED REGION ID(EFactoryImpl__EFactoryImpl) START*/

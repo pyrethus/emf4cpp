@@ -90,7 +90,8 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::code::MacroKind m_kind;
+        ::kdm::code::MacroKind m_kind
+        {};
 
         // References
 

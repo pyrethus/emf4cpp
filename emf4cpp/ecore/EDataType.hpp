@@ -78,7 +78,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_serializable;
+    ::ecore::EBoolean m_serializable
+    {   true};
 
     // References
 

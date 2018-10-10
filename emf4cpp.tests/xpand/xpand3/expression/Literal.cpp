@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-Literal::Literal() :
-        m_literalValue(0)
+Literal::Literal()
 {
 
     /*PROTECTED REGION ID(LiteralImpl__LiteralImpl) START*/

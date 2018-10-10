@@ -37,8 +37,7 @@
 using namespace ::ResourceTests;
 
 // Default constructor
-Referrer::Referrer() :
-        m_reference(0)
+Referrer::Referrer()
 {
 
     /*PROTECTED REGION ID(ReferrerImpl__ReferrerImpl) START*/

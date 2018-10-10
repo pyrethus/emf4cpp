@@ -93,11 +93,14 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::String m_description;
+        ::kdm::core::String m_description
+        {};
 
-        ::kdm::core::String m_author;
+        ::kdm::core::String m_author
+        {};
 
-        ::kdm::core::String m_date;
+        ::kdm::core::String m_date
+        {};
 
         // References
 

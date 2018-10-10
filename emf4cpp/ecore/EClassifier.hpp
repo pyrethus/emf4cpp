@@ -105,13 +105,17 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_instanceClassName;
+    ::ecore::EString m_instanceClassName
+    {};
 
-    int m_instanceClass;
+    int m_instanceClass
+    {};
 
-    ::ecore::EJavaObject m_defaultValue;
+    ::ecore::EJavaObject m_defaultValue
+    {};
 
-    ::ecore::EString m_instanceTypeName;
+    ::ecore::EString m_instanceTypeName
+    {};
 
     // References
 

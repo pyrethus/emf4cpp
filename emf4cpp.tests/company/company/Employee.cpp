@@ -37,8 +37,7 @@
 using namespace ::company;
 
 // Default constructor
-Employee::Employee() :
-        m_phonebookEntry(0)
+Employee::Employee()
 {
 
     /*PROTECTED REGION ID(EmployeeImpl__EmployeeImpl) START*/

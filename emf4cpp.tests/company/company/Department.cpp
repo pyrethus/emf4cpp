@@ -37,8 +37,7 @@
 using namespace ::company;
 
 // Default constructor
-Department::Department() :
-        m_manager(0)
+Department::Department()
 {
 
     m_employees.reset(

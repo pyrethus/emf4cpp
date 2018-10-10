@@ -40,8 +40,7 @@
 using namespace ::kdm::source;
 
 // Default constructor
-SourceRegion::SourceRegion() :
-        m_file(0)
+SourceRegion::SourceRegion()
 {
 
     /*PROTECTED REGION ID(SourceRegionImpl__SourceRegionImpl) START*/

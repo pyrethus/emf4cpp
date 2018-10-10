@@ -91,11 +91,14 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_value;
+    ::ecore::EString m_value
+    {};
 
-    ::ecore::EInt m_pos;
+    ::ecore::EInt m_pos
+    {};
 
-    ::ecore::EInt m_line;
+    ::ecore::EInt m_line
+    {};
 
     // References
 

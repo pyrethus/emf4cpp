@@ -151,9 +151,9 @@ protected:
 
     // Attributes
     «FOREACH this.EAttributes AS at»
-    «at.getCPPDeclaration()»;
+    «at.getCPPDeclaration()+"{"+at.getDefaultValue()+"}"»;
     «ENDFOREACH»
-    
+
     // References
     «FOREACH this.EReferences AS ref»
     «ref.getCPPDeclaration()»;

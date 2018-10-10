@@ -38,8 +38,7 @@
 using namespace ::ResourceTests;
 
 // Default constructor
-Root::Root() :
-        m_target(0)
+Root::Root()
 {
 
     m_referrers.reset(

@@ -100,7 +100,8 @@ namespace xpand3
 
         // Attributes
 
-        ::ecore::EBoolean m_foreach;
+        ::ecore::EBoolean m_foreach
+        {};
 
         // References
 

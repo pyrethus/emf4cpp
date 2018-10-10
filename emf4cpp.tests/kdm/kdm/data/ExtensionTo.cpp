@@ -43,8 +43,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-ExtensionTo::ExtensionTo() :
-        m_to(0), m_from(0)
+ExtensionTo::ExtensionTo()
 {
 
     /*PROTECTED REGION ID(ExtensionToImpl__ExtensionToImpl) START*/

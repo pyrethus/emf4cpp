@@ -40,8 +40,7 @@
 using namespace ::xpand3::declaration;
 
 // Default constructor
-Check::Check() :
-        m_msg(0), m_constraint(0)
+Check::Check()
 {
 
     /*PROTECTED REGION ID(CheckImpl__CheckImpl) START*/

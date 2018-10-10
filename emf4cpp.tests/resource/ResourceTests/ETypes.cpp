@@ -36,10 +36,7 @@
 using namespace ::ResourceTests;
 
 // Default constructor
-ETypes::ETypes() :
-        m_string("Hallo Welt!"), m_emptyString(""), m_date(
-                "1976-05-27T12:13:14.123-0300"), m_char(98), m_bool(true), m_double(
-                3.14), m_int(10)
+ETypes::ETypes()
 {
 
     /*PROTECTED REGION ID(ETypesImpl__ETypesImpl) START*/

@@ -43,8 +43,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-ActionRelationship::ActionRelationship() :
-        m_to(0), m_from(0)
+ActionRelationship::ActionRelationship()
 {
 
     /*PROTECTED REGION ID(ActionRelationshipImpl__ActionRelationshipImpl) START*/

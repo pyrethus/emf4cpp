@@ -56,15 +56,6 @@ using namespace ::«EPackage.getFQN()»;
 
 // Default constructor
 «name»::«name»()
-«LET this.EAttributes.select(a|a.defaultValueLiteral != null) AS attrs-»
-«LET this.EReferences.select(r|r.upperBound == 1) AS refs-»
-«LET attrs.getDefaultValue().addAll(refs.getDefaultValue()) AS e-»
-«IF !e.isEmpty -»
-: «FOREACH e AS df SEPARATOR ", "»«df»«ENDFOREACH»
-«ENDIF-»
-«ENDLET-»
-«ENDLET-»
-«ENDLET-»
 {
 «IF "::"+this.getFQN() == "::ecore::EObject"-»
     m_refCount = 0u;

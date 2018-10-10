@@ -98,13 +98,17 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_identifier;
+    ::ecore::EString m_identifier
+    {};
 
-    ::ecore::EString m_repositoryId;
+    ::ecore::EString m_repositoryId
+    {};
 
-    ::ecore::EString m_version;
+    ::ecore::EString m_version
+    {};
 
-    ::ecore::EString m_absoluteName;
+    ::ecore::EString m_absoluteName
+    {};
 
     // References
 

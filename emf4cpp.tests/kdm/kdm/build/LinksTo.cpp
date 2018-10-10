@@ -44,8 +44,7 @@
 using namespace ::kdm::build;
 
 // Default constructor
-LinksTo::LinksTo() :
-        m_to(0), m_from(0)
+LinksTo::LinksTo()
 {
 
     /*PROTECTED REGION ID(LinksToImpl__LinksToImpl) START*/

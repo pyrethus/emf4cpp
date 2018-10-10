@@ -44,8 +44,7 @@
 using namespace ::kdm::event;
 
 // Default constructor
-NextState::NextState() :
-        m_to(0), m_from(0)
+NextState::NextState()
 {
 
     /*PROTECTED REGION ID(NextStateImpl__NextStateImpl) START*/

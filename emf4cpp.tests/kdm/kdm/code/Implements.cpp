@@ -43,8 +43,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-Implements::Implements() :
-        m_to(0), m_from(0)
+Implements::Implements()
 {
 
     /*PROTECTED REGION ID(ImplementsImpl__ImplementsImpl) START*/

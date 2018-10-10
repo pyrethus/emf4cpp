@@ -94,13 +94,17 @@ protected:
 
     // Attributes
 
-    ::ecore::EInt m_line;
+    ::ecore::EInt m_line
+    {};
 
-    ::ecore::EInt m_start;
+    ::ecore::EInt m_start
+    {};
 
-    ::ecore::EInt m_end;
+    ::ecore::EInt m_end
+    {};
 
-    ::ecore::EString m_fileName;
+    ::ecore::EString m_fileName
+    {};
 
     // References
 

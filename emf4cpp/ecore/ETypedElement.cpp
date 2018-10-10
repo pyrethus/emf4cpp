@@ -40,9 +40,7 @@
 using namespace ::ecore;
 
 // Default constructor
-ETypedElement::ETypedElement() :
-        m_ordered(true), m_unique(true), m_upperBound(1), m_eType(0), m_eGenericType(
-                0)
+ETypedElement::ETypedElement()
 {
 
     /*PROTECTED REGION ID(ETypedElementImpl__ETypedElementImpl) START*/

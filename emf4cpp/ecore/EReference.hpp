@@ -92,11 +92,14 @@ protected:
 
     // Attributes
 
-    ::ecore::EBoolean m_containment;
+    ::ecore::EBoolean m_containment
+    {};
 
-    ::ecore::EBoolean m_container;
+    ::ecore::EBoolean m_container
+    {};
 
-    ::ecore::EBoolean m_resolveProxies;
+    ::ecore::EBoolean m_resolveProxies
+    {   true};
 
     // References
 

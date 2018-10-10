@@ -44,8 +44,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-Dispatches::Dispatches() :
-        m_to(0), m_from(0)
+Dispatches::Dispatches()
 {
 
     /*PROTECTED REGION ID(DispatchesImpl__DispatchesImpl) START*/

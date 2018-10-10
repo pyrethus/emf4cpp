@@ -88,11 +88,14 @@ protected:
 
     // Attributes
 
-    ::ecore::EInt m_value;
+    ::ecore::EInt m_value
+    {};
 
-    ::ecore::EEnumerator m_instance;
+    ::ecore::EEnumerator m_instance
+    {};
 
-    ::ecore::EString m_literal;
+    ::ecore::EString m_literal
+    {};
 
     // References
 

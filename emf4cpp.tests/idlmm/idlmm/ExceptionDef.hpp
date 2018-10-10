@@ -87,7 +87,8 @@ protected:
 
     // Attributes
 
-    ::idlmm::ETypeCode m_typeCode;
+    ::idlmm::ETypeCode m_typeCode
+    {};
 
     // References
 

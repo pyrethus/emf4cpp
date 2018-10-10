@@ -44,8 +44,7 @@
 using namespace ::kdm::action;
 
 // Default constructor
-UsesType::UsesType() :
-        m_to(0), m_from(0)
+UsesType::UsesType()
 {
 
     /*PROTECTED REGION ID(UsesTypeImpl__UsesTypeImpl) START*/

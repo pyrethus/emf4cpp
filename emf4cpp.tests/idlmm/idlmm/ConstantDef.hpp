@@ -86,7 +86,8 @@ protected:
 
     // Attributes
 
-    ::idlmm::EAny m_constValue;
+    ::idlmm::EAny m_constValue
+    {};
 
     // References
 

@@ -41,8 +41,7 @@
 using namespace ::xpand3::declaration;
 
 // Default constructor
-AbstractAspect::AbstractAspect() :
-        m_pointcut(0)
+AbstractAspect::AbstractAspect()
 {
 
     /*PROTECTED REGION ID(AbstractAspectImpl__AbstractAspectImpl) START*/

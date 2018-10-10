@@ -37,8 +37,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-ChainExpression::ChainExpression() :
-        m_first(0), m_next(0)
+ChainExpression::ChainExpression()
 {
 
     /*PROTECTED REGION ID(ChainExpressionImpl__ChainExpressionImpl) START*/

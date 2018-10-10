@@ -85,7 +85,8 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_importURI;
+    ::ecore::EString m_importURI
+    {};
 
     // References
 

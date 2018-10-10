@@ -43,8 +43,7 @@
 using namespace ::kdm::conceptual;
 
 // Default constructor
-ConceptualFlow::ConceptualFlow() :
-        m_to(0), m_from(0)
+ConceptualFlow::ConceptualFlow()
 {
 
     /*PROTECTED REGION ID(ConceptualFlowImpl__ConceptualFlowImpl) START*/

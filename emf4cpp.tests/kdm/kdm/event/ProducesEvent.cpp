@@ -44,8 +44,7 @@
 using namespace ::kdm::event;
 
 // Default constructor
-ProducesEvent::ProducesEvent() :
-        m_to(0), m_from(0)
+ProducesEvent::ProducesEvent()
 {
 
     /*PROTECTED REGION ID(ProducesEventImpl__ProducesEventImpl) START*/

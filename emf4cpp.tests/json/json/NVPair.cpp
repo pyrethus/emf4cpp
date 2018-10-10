@@ -37,8 +37,7 @@
 using namespace ::json;
 
 // Default constructor
-NVPair::NVPair() :
-        m_value(0)
+NVPair::NVPair()
 {
 
     /*PROTECTED REGION ID(NVPairImpl__NVPairImpl) START*/

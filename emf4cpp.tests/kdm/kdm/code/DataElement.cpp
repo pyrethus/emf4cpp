@@ -49,8 +49,7 @@
 using namespace ::kdm::code;
 
 // Default constructor
-DataElement::DataElement() :
-        m_type(0)
+DataElement::DataElement()
 {
 
     m_codeElement.reset(

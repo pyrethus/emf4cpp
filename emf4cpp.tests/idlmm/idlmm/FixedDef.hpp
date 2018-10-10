@@ -88,9 +88,11 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_digits;
+    ::ecore::EString m_digits
+    {};
 
-    ::ecore::EString m_scale;
+    ::ecore::EString m_scale
+    {};
 
     // References
 

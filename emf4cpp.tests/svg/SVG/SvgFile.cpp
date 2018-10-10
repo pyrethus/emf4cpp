@@ -40,8 +40,7 @@
 using namespace ::SVG;
 
 // Default constructor
-SvgFile::SvgFile() :
-        m_tag(0)
+SvgFile::SvgFile()
 {
 
     m_elements.reset(

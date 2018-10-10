@@ -37,8 +37,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-IfExpression::IfExpression() :
-        m_condition(0), m_thenPart(0), m_elsePart(0)
+IfExpression::IfExpression()
 {
 
     /*PROTECTED REGION ID(IfExpressionImpl__IfExpressionImpl) START*/

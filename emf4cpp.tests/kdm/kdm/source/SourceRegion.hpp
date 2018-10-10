@@ -105,17 +105,23 @@ namespace kdm
 
         // Attributes
 
-        ::kdm::core::Integer m_startLine;
+        ::kdm::core::Integer m_startLine
+        {};
 
-        ::kdm::core::Integer m_startPosition;
+        ::kdm::core::Integer m_startPosition
+        {};
 
-        ::kdm::core::Integer m_endLine;
+        ::kdm::core::Integer m_endLine
+        {};
 
-        ::kdm::core::Integer m_endPosition;
+        ::kdm::core::Integer m_endPosition
+        {};
 
-        ::kdm::core::String m_language;
+        ::kdm::core::String m_language
+        {};
 
-        ::kdm::core::String m_path;
+        ::kdm::core::String m_path
+        {};
 
         // References
 

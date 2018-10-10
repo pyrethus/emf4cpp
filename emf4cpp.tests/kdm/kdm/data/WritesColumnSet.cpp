@@ -44,8 +44,7 @@
 using namespace ::kdm::data;
 
 // Default constructor
-WritesColumnSet::WritesColumnSet() :
-        m_to(0), m_from(0)
+WritesColumnSet::WritesColumnSet()
 {
 
     /*PROTECTED REGION ID(WritesColumnSetImpl__WritesColumnSetImpl) START*/

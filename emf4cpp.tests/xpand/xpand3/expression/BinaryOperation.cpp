@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-BinaryOperation::BinaryOperation() :
-        m_left(0), m_right(0), m_operator(0)
+BinaryOperation::BinaryOperation()
 {
 
     /*PROTECTED REGION ID(BinaryOperationImpl__BinaryOperationImpl) START*/

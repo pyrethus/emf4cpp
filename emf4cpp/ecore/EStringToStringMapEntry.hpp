@@ -80,9 +80,11 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_key;
+    ::ecore::EString m_key
+    {};
 
-    ::ecore::EString m_value;
+    ::ecore::EString m_value
+    {};
 
     // References
 

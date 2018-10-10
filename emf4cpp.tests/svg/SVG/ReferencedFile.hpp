@@ -87,7 +87,8 @@ protected:
 
     // Attributes
 
-    ::PrimitiveTypes::String m_name;
+    ::PrimitiveTypes::String m_name
+    {};
 
     // References
 

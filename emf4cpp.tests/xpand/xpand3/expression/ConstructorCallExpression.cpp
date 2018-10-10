@@ -38,8 +38,7 @@
 using namespace ::xpand3::expression;
 
 // Default constructor
-ConstructorCallExpression::ConstructorCallExpression() :
-        m_type(0)
+ConstructorCallExpression::ConstructorCallExpression()
 {
 
     /*PROTECTED REGION ID(ConstructorCallExpressionImpl__ConstructorCallExpressionImpl) START*/

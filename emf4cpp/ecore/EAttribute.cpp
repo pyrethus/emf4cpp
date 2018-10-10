@@ -42,8 +42,7 @@
 using namespace ::ecore;
 
 // Default constructor
-EAttribute::EAttribute() :
-        m_eAttributeType(0)
+EAttribute::EAttribute()
 {
 
     /*PROTECTED REGION ID(EAttributeImpl__EAttributeImpl) START*/

@@ -97,9 +97,11 @@ namespace xpand3
 
         // Attributes
 
-        ::ecore::EBoolean m_errorSeverity;
+        ::ecore::EBoolean m_errorSeverity
+        {};
 
-        ::ecore::EString m_feature;
+        ::ecore::EString m_feature
+        {};
 
         // References
 

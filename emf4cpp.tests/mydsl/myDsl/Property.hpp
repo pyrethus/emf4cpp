@@ -90,9 +90,11 @@ protected:
 
     // Attributes
 
-    ::ecore::EString m_name;
+    ::ecore::EString m_name
+    {};
 
-    ::ecore::EBoolean m_many;
+    ::ecore::EBoolean m_many
+    {};
 
     // References
 

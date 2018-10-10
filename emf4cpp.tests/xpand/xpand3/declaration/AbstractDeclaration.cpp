@@ -40,8 +40,7 @@
 using namespace ::xpand3::declaration;
 
 // Default constructor
-AbstractDeclaration::AbstractDeclaration() :
-        m_owner(0), m_guard(0)
+AbstractDeclaration::AbstractDeclaration()
 {
 
     m_params.reset(
