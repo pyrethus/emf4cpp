@@ -22,6 +22,7 @@ cmake_minimum_required(VERSION 2.8.11)
 project(emf4cpp CXX C)
 
 add_subdirectory(emf4cpp)
+add_subdirectory(XMLType)
 add_subdirectory(org.csu.emf4cpp.generator)
 add_subdirectory(emf4cpp.tests)
 

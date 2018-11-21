@@ -18,6 +18,9 @@ create_win_cfg ()
     (cd ${CFG} && cmake -G "MSYS Makefiles" $@ ${EMF4CPPDIR})
 }
 
+./generator-debug.sh
+./generator-release.sh
+
 if [[ "$OSTYPE" == "msys" ]]; then
 	# release
 	create_win_cfg "release" -DCMAKE_BUILD_TYPE=Release

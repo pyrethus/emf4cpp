@@ -24,6 +24,8 @@ set(CMAKE_CXX_FLAGS "-Wall -std=c++11")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 
+string(TOLOWER ${CMAKE_BUILD_TYPE} CMAKE_BUILD_TYPE_LOWER)
+
 set(kdm_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/kdm.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/kdm/KdmPackage.cpp
@@ -1401,8 +1403,8 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/kdm/ui/WritesUI.hpp DESTINATION includ
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/kdm/ui/ManagesUI.hpp DESTINATION include/emf4cpp/kdm/ui)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/kdm/dllKdm.hpp DESTINATION include/emf4cpp/kdm)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0/include/emf4cpp ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0/include/emf4cpp)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0/lib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/lib)
 
 add_library(emf4cpp-kdm SHARED ${kdm_HEADERS} ${kdm_SOURCES})
 set_target_properties(emf4cpp-kdm PROPERTIES COMPILE_FLAGS "-DMAKE_KDM_DLL" VERSION 0.0.1 SOVERSION 1)

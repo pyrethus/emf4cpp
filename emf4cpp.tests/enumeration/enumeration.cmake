@@ -24,6 +24,8 @@ set(CMAKE_CXX_FLAGS "-Wall -std=c++11")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 
+string(TOLOWER ${CMAKE_BUILD_TYPE} CMAKE_BUILD_TYPE_LOWER)
+
 set(enumeration_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/enumeration.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/enumeration/EnumerationPackage.cpp
@@ -49,8 +51,8 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/enumeration/EnumerationPackage.hpp DES
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/enumeration/Bird.hpp DESTINATION include/emf4cpp/enumeration)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/enumeration/dllEnumeration.hpp DESTINATION include/emf4cpp/enumeration)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0/include/emf4cpp ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0/include/emf4cpp)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0/lib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/lib)
 
 add_library(emf4cpp-enumeration SHARED ${enumeration_HEADERS} ${enumeration_SOURCES})
 set_target_properties(emf4cpp-enumeration PROPERTIES COMPILE_FLAGS "-DMAKE_ENUMERATION_DLL" VERSION 0.0.1 SOVERSION 1)

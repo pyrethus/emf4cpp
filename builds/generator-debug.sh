@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 set -e
 
@@ -15,7 +15,7 @@ if [[ "$OSTYPE" == "msys" ]]; then
 
     ( cd generator-debug && \
 	cmake -G "MSYS Makefiles" \
-	    -DCMAKE_BUILD_TYPE=Debug ${EMF4CPPDIR}/org.csu.emf4cpp.generator 
+	    -DCMAKE_BUILD_TYPE=Debug ${EMF4CPPDIR}/org.csu.emf4cpp.generator \
 	    -DCMAKE_INSTALL_PREFIX=../${VERSION} && \
 	make -j7 install )
     ( cd emf4cpp-debug && \
@@ -23,7 +23,7 @@ if [[ "$OSTYPE" == "msys" ]]; then
 	    -DCMAKE_BUILD_TYPE=Debug ${EMF4CPPDIR}/emf4cpp \
 	    -DCMAKE_INSTALL_PREFIX=../${VERSION} && \
 	make -j7 install )
-    ( cd xmltype-release && \
+    ( cd xmltype-debug && \
 	cmake -G "MSYS Makefiles" \
 	    -DCMAKE_BUILD_TYPE=Debug ${EMF4CPPDIR}/XMLType \
 	    -DCMAKE_INSTALL_PREFIX=../${VERSION} && \
@@ -39,7 +39,7 @@ else
 	cmake -DCMAKE_BUILD_TYPE=Debug ${EMF4CPPDIR}/emf4cpp \
 	    -DCMAKE_INSTALL_PREFIX=../${VERSION} && \
 	make -j7 install )
-    ( cd xmltype-release && \
+    ( cd xmltype-debug && \
 	cmake -DCMAKE_BUILD_TYPE=Debug ${EMF4CPPDIR}/XMLType \
 	    -DCMAKE_INSTALL_PREFIX=../${VERSION} && \
 	make -j7 install )

@@ -24,6 +24,8 @@ set(CMAKE_CXX_FLAGS "-Wall -std=c++11")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 
+string(TOLOWER ${CMAKE_BUILD_TYPE} CMAKE_BUILD_TYPE_LOWER)
+
 set(ecore_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/ecore.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EcorePackage.cpp

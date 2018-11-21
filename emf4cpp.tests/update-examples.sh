@@ -19,7 +19,7 @@ FILES="./tree-bintree/Tree.ecore
 ./edate/edate.ecore
 "
 
-EMF4CPP='${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0'
+EMF4CPP='${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}'
 EMF4CPPJAR=`pwd`/../org.csu.emf4cpp.generator/org.csu.emf4cpp.generator_2.0.0.jar
 GENERATOR="java -jar $EMF4CPPJAR"
 

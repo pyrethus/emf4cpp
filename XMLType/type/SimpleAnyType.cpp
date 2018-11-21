@@ -38,8 +38,7 @@
 using namespace ::type;
 
 // Default constructor
-SimpleAnyType::SimpleAnyType() :
-        m_instanceType(0)
+SimpleAnyType::SimpleAnyType()
 {
 
     /*PROTECTED REGION ID(SimpleAnyTypeImpl__SimpleAnyTypeImpl) START*/

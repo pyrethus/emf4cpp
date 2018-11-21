@@ -24,6 +24,8 @@ set(CMAKE_CXX_FLAGS "-Wall -std=c++11")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 
+string(TOLOWER ${CMAKE_BUILD_TYPE} CMAKE_BUILD_TYPE_LOWER)
+
 set(eopposite_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/eopposite.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/eopposite/EoppositePackage.cpp
@@ -65,8 +67,8 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/eopposite/RightHand.hpp DESTINATION in
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/eopposite/RightMultiple.hpp DESTINATION include/emf4cpp/eopposite)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/eopposite/dllEopposite.hpp DESTINATION include/emf4cpp/eopposite)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0/include/emf4cpp ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0/include/emf4cpp)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0/lib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/lib)
 
 add_library(emf4cpp-eopposite SHARED ${eopposite_HEADERS} ${eopposite_SOURCES})
 set_target_properties(emf4cpp-eopposite PROPERTIES COMPILE_FLAGS "-DMAKE_EOPPOSITE_DLL" VERSION 0.0.1 SOVERSION 1)
