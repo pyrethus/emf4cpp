@@ -40,7 +40,7 @@ namespace ecorecpp
 	 * instance of the EPackage where the EClass of the EObject belongs
 	 * to. Then it must call the virtual method _getText() of this
 	 * ItemProvider instance. */
-	std::string ItemProvider::getText(const ::ecore::EObject_ptr obj) {
+	std::string ItemProvider::getText( const ::ecore::EObject_ptr& obj ) {
 		::ecore::EClass_ptr cl = obj->eClass();
 		::ecore::EPackage_ptr pkg = cl->getEPackage();
 		auto ip = pkg->getItemProviderInstance();
@@ -49,42 +49,46 @@ namespace ecorecpp
 		return ip->_getText(obj);
 	}
 
-	std::string ItemProvider::getText(const ::ecore::EClass_ptr cl) {
+	std::string ItemProvider::getText( const ::ecore::EClass_ptr& cl,
+			const ::ecore::EObject_ptr& obj ) {
 		::ecore::EPackage_ptr pkg = cl->getEPackage();
 		auto ip = pkg->getItemProviderInstance();
 		if (!ip)
 			throw "No ItemProvider has been set";
-		return ip->_getText(cl);
+		return ip->_getText(cl, obj);
 	}
 
-	std::string ItemProvider::getText(const ::ecore::EAttribute_ptr obj) {
-		::ecore::EClass_ptr cl = obj->getEContainingClass();
+	std::string ItemProvider::getText( const ::ecore::EAttribute_ptr& att,
+			const ::ecore::EObject_ptr& obj ) {
+		::ecore::EClass_ptr cl = att->getEContainingClass();
 		::ecore::EPackage_ptr pkg = cl->getEPackage();
 		auto ip = pkg->getItemProviderInstance();
 		if (!ip)
 			throw "No ItemProvider has been set";
-		return ip->_getText(obj);
+		return ip->_getText(att, obj);
 	}
 
-	std::string ItemProvider::getText(const ::ecore::EReference_ptr obj) {
-		::ecore::EClass_ptr cl = obj->getEContainingClass();
+	std::string ItemProvider::getText( const ::ecore::EReference_ptr& ref,
+			const ::ecore::EObject_ptr& obj ) {
+		::ecore::EClass_ptr cl = ref->getEContainingClass();
 		::ecore::EPackage_ptr pkg = cl->getEPackage();
 		auto ip = pkg->getItemProviderInstance();
 		if (!ip)
 			throw "No ItemProvider has been set";
-		return ip->_getText(obj);
+		return ip->_getText(ref, obj);
 	}
 
-	std::string ItemProvider::getText(const ::ecore::EStructuralFeature_ptr obj) {
-		::ecore::EClass_ptr cl = obj->getEContainingClass();
+	std::string ItemProvider::getText( const ::ecore::EStructuralFeature_ptr& sf,
+			const ::ecore::EObject_ptr& obj ) {
+		::ecore::EClass_ptr cl = sf->getEContainingClass();
 		::ecore::EPackage_ptr pkg = cl->getEPackage();
 		auto ip = pkg->getItemProviderInstance();
 		if (!ip)
 			throw "No ItemProvider has been set";
-		return ip->_getText(obj);
+		return ip->_getText(sf, obj);
 	}
 
-	const QPixmap& ItemProvider::getImage(const ::ecore::EObject_ptr obj) {
+	const QPixmap& ItemProvider::getImage( const ::ecore::EObject_ptr& obj ) {
 		::ecore::EClass_ptr cl = obj->eClass();
 		::ecore::EPackage_ptr pkg = cl->getEPackage();
 		auto ip = pkg->getItemProviderInstance();
@@ -93,12 +97,13 @@ namespace ecorecpp
 		return ip->_getImage(obj);
 	}
 
-	const QPixmap& ItemProvider::getImage(const ::ecore::EClass_ptr cl) {
+	const QPixmap& ItemProvider::getImage( const ::ecore::EClass_ptr& cl,
+			const ::ecore::EObject_ptr& obj ) {
 		::ecore::EPackage_ptr pkg = cl->getEPackage();
 		auto ip = pkg->getItemProviderInstance();
 		if (!ip)
 			throw "No ItemProvider has been set";
-		return ip->_getImage(cl);
+		return ip->_getImage(cl, obj);
 	}
 
 } // namespace ecorecpp

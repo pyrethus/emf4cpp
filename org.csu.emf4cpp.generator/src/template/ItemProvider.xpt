@@ -52,14 +52,19 @@ public:
     «this.name.toFirstUpper()»ItemProvider();
     ~«this.name.toFirstUpper()»ItemProvider();
     
-	std::string _getText(const ::ecore::EObject_ptr) const override;
-	std::string _getText(const ::ecore::EClass_ptr) const override;
-	std::string _getText(const ::ecore::EAttribute_ptr) const override;
-	std::string _getText(const ::ecore::EReference_ptr) const override;
-	std::string _getText(const ::ecore::EStructuralFeature_ptr) const override;
+	std::string _getText(const ::ecore::EObject_ptr&) const override;
+	std::string _getText(const ::ecore::EClass_ptr&,
+			const ::ecore::EObject_ptr&) const override;
+	std::string _getText(const ::ecore::EAttribute_ptr&,
+			const ::ecore::EObject_ptr&) const override;
+	std::string _getText(const ::ecore::EReference_ptr&,
+			const ::ecore::EObject_ptr&) const override;
+	std::string _getText(const ::ecore::EStructuralFeature_ptr&,
+			const ::ecore::EObject_ptr&) const override;
 #ifdef QT5_SUPPORT
-	const QPixmap& _getImage(const ::ecore::EObject_ptr) const override;
-	const QPixmap& _getImage(const ::ecore::EClass_ptr) const override;
+	const QPixmap& _getImage(const ::ecore::EObject_ptr&) const override;
+	const QPixmap& _getImage(const ::ecore::EClass_ptr&,
+			const ::ecore::EObject_ptr&) const override;
 #endif // QT5_SUPPORT
 
 };
@@ -99,7 +104,7 @@ public:
 «this.name.toFirstUpper()»ItemProvider::~«this.name.toFirstUpper()»ItemProvider() = default;
 
 /** Return a string, which depends on the classifier id of the object. */
-std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EObject_ptr obj) const {
+std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EObject_ptr& obj) const {
 	switch (obj->eClass()->getClassifierID()) {
 «FOREACH EClassifiers.sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS class ITERATOR it-»
     case «name.toFirstUpper() + "Package::" + class.name.toUpperCase()»: {
@@ -120,7 +125,8 @@ std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EO
 /** Return a string, which depends on the classifier id of the object.
  *
  * The code is duplicated by intention to have different strings for classes and instances of classes. */
-std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EClass_ptr cl) const {
+std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EClass_ptr& cl,
+		const ::ecore::EObject_ptr&) const {
 	switch (cl->getClassifierID()) {
 «FOREACH EClassifiers.sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS class ITERATOR it-»
     case «name.toFirstUpper() + "Package::" + class.name.toUpperCase()»: {
@@ -139,23 +145,26 @@ std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EC
 }
 
 /** Simply forwards to _getText(EStructuralFeature_ptr) */
-std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EAttribute_ptr obj) const {
+std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EAttribute_ptr& att,
+		const ::ecore::EObject_ptr& obj) const {
     	«PROTECT CSTART '/*' CEND '*/' ID this.name.toFirstUpper()+"ItemProvider_getTextEAttribute" DISABLE»
-	::ecore::EStructuralFeature_ptr ef = obj;
-	return _getText(ef);
+	::ecore::EStructuralFeature_ptr ef = att;
+	return _getText(ef, obj);
     	«ENDPROTECT»
 }
 
 /** Simply forwards to _getText(EStructuralFeature_ptr) */
-std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EReference_ptr obj) const {
+std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EReference_ptr& ref,
+		const ::ecore::EObject_ptr& obj) const {
     	«PROTECT CSTART '/*' CEND '*/' ID this.name.toFirstUpper()+"ItemProvider_getTextEReference" DISABLE»
-	::ecore::EStructuralFeature_ptr ef = obj;
-	return _getText(ef);
+	::ecore::EStructuralFeature_ptr ef = ref;
+	return _getText(ef, obj);
     	«ENDPROTECT»
 }
 
-std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EStructuralFeature_ptr obj) const {
-	switch (obj->getFeatureID()) {
+std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EStructuralFeature_ptr& esf,
+		const ::ecore::EObject_ptr&) const {
+	switch (esf->getFeatureID()) {
 «FOREACH this.getFeatures().sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS ef ITERATOR it-»
 	case «name.toFirstUpper() + "Package::" + ef.getFeatureIDFQN()»: {
     	std::string text = "«ef.name.toFirstUpper()»";
@@ -181,7 +190,7 @@ std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::ES
  * provided to facilitate
  * a) different icons for classes and instances of classes and
  * b) icon variants depending on state of the given instance. */
-const QPixmap& «this.name.toFirstUpper()»ItemProvider::_getImage(const ::ecore::EObject_ptr obj) const {
+const QPixmap& «this.name.toFirstUpper()»ItemProvider::_getImage(const ::ecore::EObject_ptr& obj) const {
 	switch (obj->eClass()->getClassifierID()) {
 «FOREACH EClassifiers.sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS class ITERATOR it-»
     case «name.toFirstUpper() + "Package::" + class.name.toUpperCase()»: {
@@ -199,7 +208,8 @@ const QPixmap& «this.name.toFirstUpper()»ItemProvider::_getImage(const ::ecore
 /** Return a pixmap, which depends on the classifier id of the EClass.
  *
  * The code is duplicated by intention to have different strings for classes and instances of classes. */
-const QPixmap& «this.name.toFirstUpper()»ItemProvider::_getImage(const ::ecore::EClass_ptr cl) const {
+const QPixmap& «this.name.toFirstUpper()»ItemProvider::_getImage(const ::ecore::EClass_ptr& cl,
+		const ::ecore::EObject_ptr&) const {
 	switch (cl->getClassifierID()) {
 «FOREACH EClassifiers.sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS class ITERATOR it-»
     case «name.toFirstUpper() + "Package::" + class.name.toUpperCase()»: {

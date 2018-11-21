@@ -44,34 +44,38 @@ namespace ecorecpp
 		 *
 		 * The static version of getText() dispatches to the ItemProvider of
 		 * the specific EPackage, which knows all the details. */
-		static std::string getText(const ::ecore::EObject_ptr);
+		static std::string getText(const ::ecore::EObject_ptr&);
 
 		/** Returns a label for the EClass, which can be shown to the user.
 		 *
 		 * The static version of getText() dispatches to the ItemProvider of
 		 * the specific EPackage, which knows all the details. */
-		static std::string getText(const ::ecore::EClass_ptr);
+		static std::string getText(const ::ecore::EClass_ptr&,
+				const ::ecore::EObject_ptr& = ::ecore::EObject_ptr());
 
 		/** Returns a label for the EAttribute, which can be shown to the
 		 * user.
 		 *
 		 * The static version of getText() dispatches to the ItemProvider of
 		 * the specific EPackage, which knows all the details. */
-		static std::string getText(const ::ecore::EAttribute_ptr);
+		static std::string getText(const ::ecore::EAttribute_ptr&,
+				const ::ecore::EObject_ptr& = ::ecore::EObject_ptr());
 
 		/** Returns a label for the EReference, which can be shown to the
 		 * user.
 		 *
 		 * The static version of getText() dispatches to the ItemProvider of
 		 * the specific EPackage, which knows all the details. */
-		static std::string getText(const ::ecore::EReference_ptr);
+		static std::string getText(const ::ecore::EReference_ptr&,
+				const ::ecore::EObject_ptr& = ::ecore::EObject_ptr());
 
 		/** Returns a label for the EStructuralFeature, which can be shown to
 		 * the user.
 		 *
 		 * The static version of getText() dispatches to the ItemProvider of
 		 * the specific EPackage, which knows all the details. */
-		static std::string getText(const ::ecore::EStructuralFeature_ptr);
+		static std::string getText(const ::ecore::EStructuralFeature_ptr&,
+				const ::ecore::EObject_ptr& = ::ecore::EObject_ptr());
 
 
 		/** Returns a label for the EObject, which can be shown to the
@@ -79,35 +83,39 @@ namespace ecorecpp
 		 *
 		 * A concrete ItemProvider, which belongs to an EPackage, needs to
 		 * reimplement this method. */
-		virtual std::string _getText(const ::ecore::EObject_ptr) const = 0;
+		virtual std::string _getText(const ::ecore::EObject_ptr&) const = 0;
 
 		/** Returns a label for the EClass, which can be shown to the
 		 * user.
 		 *
 		 * A concrete ItemProvider, which belongs to an EPackage, needs to
 		 * reimplement this method. */
-		virtual std::string _getText(const ::ecore::EClass_ptr) const = 0;
+		virtual std::string _getText(const ::ecore::EClass_ptr&,
+				const ::ecore::EObject_ptr&) const = 0;
 
 		/** Returns a label for the EAttribute, which can be shown to the
 		 * user.
 		 *
 		 * A concrete ItemProvider, which belongs to an EPackage, needs to
 		 * reimplement this method. */
-		virtual std::string _getText(const ::ecore::EAttribute_ptr) const = 0;
+		virtual std::string _getText(const ::ecore::EAttribute_ptr&,
+				const ::ecore::EObject_ptr&) const = 0;
 
 		/** Returns a label for the EReference, which can be shown to the
 		 * user.
 		 *
 		 * A concrete ItemProvider, which belongs to an EPackage, needs to
 		 * reimplement this method. */
-		virtual std::string _getText(const ::ecore::EReference_ptr) const = 0;
+		virtual std::string _getText(const ::ecore::EReference_ptr&,
+				const ::ecore::EObject_ptr&) const = 0;
 
 		/** Returns a label for the EStructuralFeature, which can be shown to
 		 * the user.
 		 *
 		 * A concrete ItemProvider, which belongs to an EPackage, needs to
 		 * reimplement this method. */
-		virtual std::string _getText(const ::ecore::EStructuralFeature_ptr) const = 0;
+		virtual std::string _getText(const ::ecore::EStructuralFeature_ptr&,
+				const ::ecore::EObject_ptr&) const = 0;
 
 
 #ifdef QT5_SUPPORT
@@ -116,25 +124,27 @@ namespace ecorecpp
 		 *
 		 * The static version of getText() dispatches to the ItemProvider of
 		 * the specific EPackage, which knows all the details. */
-		static const QPixmap& getImage(const ::ecore::EObject_ptr);
+		static const QPixmap& getImage(const ::ecore::EObject_ptr&);
 
 		/** Returns a pixmap for use in a UI, e.g. a QStandardItemModel.
 		 *
 		 * The static version of getText() dispatches to the ItemProvider of
 		 * the specific EPackage, which knows all the details. */
-		static const QPixmap& getImage(const ::ecore::EClass_ptr);
+		static const QPixmap& getImage(const ::ecore::EClass_ptr&,
+				const ::ecore::EObject_ptr& = ::ecore::EObject_ptr());
 
 		/** Returns a pixmap for use in a UI, e.g. a QStandardItemModel.
 		 *
 		 * A concrete ItemProvider, which belongs to an EPackage, needs to
 		 * reimplement this method. */
-		virtual const QPixmap& _getImage(const ::ecore::EObject_ptr) const = 0;
+		virtual const QPixmap& _getImage(const ::ecore::EObject_ptr&) const = 0;
 
 		/** Returns a pixmap for use in a UI, e.g. a QStandardItemModel.
 		 *
 		 * A concrete ItemProvider, which belongs to an EPackage, needs to
 		 * reimplement this method. */
-		virtual const QPixmap& _getImage(const ::ecore::EClass_ptr) const = 0;
+		virtual const QPixmap& _getImage(const ::ecore::EClass_ptr&,
+				const ::ecore::EObject_ptr&) const = 0;
 
 #endif // QT5_SUPPORT
 
