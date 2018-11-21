@@ -25,6 +25,7 @@
 #include <sstream>
 #include <ecore.hpp>
 #include <mapping/EListImpl.hpp>
+#include <util/debug.hpp>
 #include <util/EcoreUtil.hpp>
 
 #include "ResourceSet.hpp"
@@ -237,7 +238,7 @@ bool Resource::isLoaded() const {
 			try {
 				index = std::stoull(indexString);
 			} catch (const std::invalid_argument& ia) {
-				std::cerr << "Index of segment could not be parsed" << std::endl;
+				DEBUG_MSG( cerr, "Index of segment could not be parsed" );
 				return nullptr;
 			}
 			segment.erase(dotPosition);
