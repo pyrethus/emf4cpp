@@ -19,7 +19,6 @@
 
 #include "Resource.hpp"
 
-#include <cassert>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -223,7 +222,7 @@ bool Resource::isLoaded() const {
 		current = _contents->get(0);
 	}
 
-	while (std::getline(input, segment, '/') ) {
+	while (current && std::getline(input, segment, '/') ) {
 		if (segment.empty())
 			continue;
 
@@ -246,15 +245,20 @@ bool Resource::isLoaded() const {
 		}
 
 		auto cl = current->eClass();
-		assert(cl);
+		if (!cl)
+			return nullptr;
 		auto sf = cl->getEStructuralFeature(segment);
-		assert(sf);
+		if (!sf)
+			return nullptr;
+
 		::ecorecpp::mapping::any any = current->eGet(sf);
 		if (isCollection) {
 			auto collection = ecorecpp::mapping::any::any_cast<
 					::ecorecpp::mapping::EList<::ecore::EObject_ptr>::ptr_type>(any);
 
-			assert(collection->size() >= index);
+			if (index >= collection->size())
+				return nullptr;
+
 			current = collection->get(index);
 		} else {
 			current = ::ecorecpp::mapping::any::any_cast<::ecore::EObject_ptr>(any);
