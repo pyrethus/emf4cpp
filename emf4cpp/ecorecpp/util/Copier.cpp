@@ -31,8 +31,8 @@ using namespace ::ecore;
 using EList_ptr = ::ecorecpp::mapping::EList<EObject_ptr>::ptr_type;
 
 Copier::Copier( bool keepExternalReferences )
-: _keepExternalRefs( keepExternalReferences ) { }
-	
+	: _keepExternalRefs( keepExternalReferences ) { }
+
 Copier::~Copier() { }
 
 /**
@@ -84,7 +84,7 @@ EObject_ptr Copier::copy( EObject_ptr src ) {
 				ecorecpp::mapping::any::any_cast<
 					std::vector<ecorecpp::mapping::any> >(any);
 			for (auto const& currAny : anys) {
-				src->eSet( attr, currAny );
+				dst->eSet( attr, currAny );
 			}
 		}
 	}
@@ -141,7 +141,7 @@ EObject_ptr Copier::copy( EObject_ptr src ) {
 			const auto& srcs = *mapping::any::any_cast<EList_ptr>( src_refs );
 			auto dsts = mapping::any::any_cast<EList_ptr>( dst_refs );
 			DEBUG_MSG(cout, eref->basicgetEContainingClass()->getName()
-					  << "::" << eref->getName() << ": " << srcs.size() << " refs" );					  
+					  << "::" << eref->getName() << ": " << srcs.size() << " refs" );
 			//assert( dsts->size() == 0 );
 			for ( size_t j = 0; j < srcs.size(); j++ ) {
 				auto refObj = mapping::any::any_cast<EObject_ptr>( srcs[ j ] );
