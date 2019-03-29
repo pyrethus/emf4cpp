@@ -31,9 +31,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define _DLL_«getHeaderDefDLL()»_HPP
 /*
  * Defines 3 preprocessor symbols:
- * - MAKE_«getHeaderDefDLL()»_DLL  set to 1 when building the dll, else unset
- * - USE_«getHeaderDefDLL()»_DLL    set to 1 when using the dll, else unset
- * - EXPORT_«getHeaderDefDLL()»_DLL  always set, import when using the dll,
+ * - MAKE_«getExportDLL()»_DLL  set to 1 when building the dll, else unset
+ * - USE_«getExportDLL()»_DLL    set to 1 when using the dll, else unset
+ * - EXPORT_«getExportDLL()»_DLL  always set, import when using the dll,
  *          export when building dll
  *
  * Pattern taken from qglobal.h
@@ -41,29 +41,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #if defined(__WIN32__) || defined(_WIN32)
 
-#   if defined(MAKE_«getHeaderDefDLL()»_DLL)
-#       if defined(USE_«getHeaderDefDLL()»_DLL)
-#           undef USE_«getHeaderDefDLL()»_DLL
+#   if defined(MAKE_«getExportDLL()»_DLL)
+#       if defined(USE_«getExportDLL()»_DLL)
+#           undef USE_«getExportDLL()»_DLL
 #       endif
 
-#       define EXPORT_«getHeaderDefDLL()»_DLL __declspec(dllexport)
-#       define EXTERN_«getHeaderDefDLL()»_DLL __declspec(dllimport)
+#       define EXPORT_«getExportDLL()»_DLL __declspec(dllexport)
+#       define EXTERN_«getExportDLL()»_DLL __declspec(dllimport)
 
 #   else
-#       if !defined(USE_«getHeaderDefDLL()»_DLL)
-#           define USE_«getHeaderDefDLL()»_DLL 1
+#       if !defined(USE_«getExportDLL()»_DLL)
+#           define USE_«getExportDLL()»_DLL 1
 #       endif
 
-#       define EXPORT_«getHeaderDefDLL()»_DLL __declspec(dllimport)
-#       define EXTERN_«getHeaderDefDLL()»_DLL __declspec(dllexport)
+#       define EXPORT_«getExportDLL()»_DLL __declspec(dllimport)
+#       define EXTERN_«getExportDLL()»_DLL __declspec(dllexport)
 
 #   endif
 
 
 #else
 
-#   define EXPORT_«getHeaderDefDLL()»_DLL
-#   define EXTERN_«getHeaderDefDLL()»_DLL
+#   define EXPORT_«getExportDLL()»_DLL
+#   define EXTERN_«getExportDLL()»_DLL
 
 #endif
 

@@ -40,7 +40,7 @@ public class Generator {
 
     public void generate(URI fileURI, String targetDir, String prSrcPaths, String ecPath,
 			boolean internalLicense, boolean bootstrap, boolean clear,
-			boolean createQt5Editor) {
+			boolean createQt5Editor, String targetVersion) {
 
         ResourceSet rs = new ResourceSetImpl();
         rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore",
@@ -56,6 +56,7 @@ public class Generator {
         globalVarsMap.put("internalLicense", new Variable("internalLicense", internalLicense));
         globalVarsMap.put("bootstrap", new Variable("bootstrap", bootstrap));
         globalVarsMap.put("createqt5editor", new Variable("createqt5editor", createQt5Editor));
+        globalVarsMap.put("targetVersion", new Variable("targetVersion", targetVersion));
 
         // Configure outlets
         CppBeautifier cppBeautifier = new CppBeautifier();
@@ -143,6 +144,7 @@ public class Generator {
         String targetDir = System.getProperty("user.dir");
         String prSrcPaths = "";
         String ecPath = null;
+        String targetVersion = null;
 
         CommandLineParser parser = new GnuParser();
         CommandLine cmd = null;
@@ -178,6 +180,9 @@ public class Generator {
 
             if (opt.getOpt() == "e")
                 ecPath = opt.getValue();
+
+            if (opt.getOpt() == "tv")
+                targetVersion = opt.getValue();
         }
 
         if (!cmd.hasOption("p"))
@@ -198,7 +203,7 @@ public class Generator {
 
         new Generator().generate(URI.createFileURI(filePath), targetDir, prSrcPaths, ecPath,
 				cmd.hasOption("i"), cmd.hasOption("b"), cmd.hasOption("c"),
-				cmd.hasOption("qt5"));
+				cmd.hasOption("qt5"), targetVersion);
     }
 
     private final static Options options = new Options(); // Command line
@@ -228,5 +233,7 @@ public class Generator {
 			  "Remove orphaned (source code) files after code generation");
         options.addOption("qt5", "qt5-editor", false,
 			  "Generate Qt5 editor code");
+        options.addOption("tv", "target-version", true,
+			  "Additional version string (valid C++ symbol), used for toplevel namespace.");
     }
 }

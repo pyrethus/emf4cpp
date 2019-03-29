@@ -39,7 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 «EXPAND template::EClassHPP::namespaces_begin FOR this-»
 
-class EXPORT_«getTopLevelPackage().name.toUpperCase()»_DLL «name.toFirstUpper()»Factory : public virtual ::ecore::EFactory
+class EXPORT_«getExportDLL()»_DLL «name.toFirstUpper()»Factory : public virtual ::ecore::EFactory
 {
 public:
 

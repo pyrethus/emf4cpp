@@ -66,7 +66,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 «EXPAND namespaces_begin FOR EPackage-»
 
-class EXPORT_«EPackage.getTopLevelPackage().name.toUpperCase()»_DLL «name» «IF !ESuperTypes.isEmpty-»: «FOREACH ESuperTypes AS supertype SEPARATOR ", "-»public virtual ::«supertype.getFQN()»«ENDFOREACH-»
+class EXPORT_«EPackage.getExportDLL()»_DLL «name» «IF !ESuperTypes.isEmpty-»: «FOREACH ESuperTypes AS supertype SEPARATOR ", "-»public virtual ::«supertype.getFQN()»«ENDFOREACH-»
         «ELSE-»«IF "::"+this.getFQN() != "::ecore::EObject"»: public virtual ::ecore::EObject«ELSE-»«ENDIF»«ENDIF»
 {
 public:
@@ -168,18 +168,31 @@ protected:
 «ENDDEFINE»
 
 «DEFINE namespaces_begin FOR EPackage-»
-«IF this != null-»
-«EXPAND namespaces_begin FOR ESuperPackage-»
-namespace «name»
-{
-«ENDIF-»
+    «IF this != null-»
+        «IF this.ESuperPackage == null-»
+            «IF GLOBALVAR targetVersion != null-»
+                namespace «(String) GLOBALVAR targetVersion»
+                {
+            «ENDIF-»
+        «ELSE-»
+            «EXPAND namespaces_begin FOR ESuperPackage-»
+        «ENDIF-»
+        namespace «name»
+        {
+    «ENDIF-»
 «ENDDEFINE»
 
 
 
 «DEFINE namespaces_end FOR EPackage-»
-«IF this != null-»
-} // «name»
-«EXPAND namespaces_end FOR ESuperPackage-»
-«ENDIF-»
+    «IF this != null-»
+        } // «name»
+        «IF this.ESuperPackage == null-»
+            «IF GLOBALVAR targetVersion != null-»
+                } // «(String) GLOBALVAR targetVersion»
+            «ENDIF-»
+        «ELSE-»
+            «EXPAND namespaces_end FOR ESuperPackage-»
+        «ENDIF»
+    «ENDIF-»
 «ENDDEFINE»

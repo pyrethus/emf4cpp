@@ -38,8 +38,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	«EXPAND headerspro FOREACH ESubpackages-»
 «ENDDEFINE»
 
-«DEFINE qmake FOR EPackage»
-«FILE name+"-editor.pro"-»
+«DEFINE qmakepro FOR EPackage»
+«FILE getFQN("_")+"-editor.pro"-»
 #
 # root-editor.pro
 # This file was created by EMF4CPP 2.0.5 and is copyrighted by the
@@ -58,7 +58,7 @@ QT += core widgets
 CONFIG += dll
 DEFINES += MAKE_«getHeaderDefDLL()»_DLL
 
-«PROTECT CSTART '#' CEND '' ID "qmake_local_config"»
+«PROTECT CSTART '#' CEND '' ID getFQN("_")+"qmake_local_config"»
 # Please, add the path to the created model files here
 #INCLUDEPATH +=
 «ENDPROTECT»
@@ -67,7 +67,20 @@ INCLUDEPATH += .
 
 # uses definitions above
 include (../install.pri)
+include («name+"-editor.pri"»)
+«ENDFILE»
+«ENDDEFINE»
 
+«DEFINE qmakepri FOR EPackage»
+«FILE getFQN("_")+"-editor.pri"-»
+#
+# root-editor.pro
+# This file was created by EMF4CPP 2.0.5 and is copyrighted by the
+# respective user and/or provider of the processed ECORE model.
+#
+# EMF4CPP is free software. You can obtain it from
+# https://github.com/catedrasaes-umu/emf4cpp
+#
 HEADERS += \
 	«EXPAND headerspro»
 
@@ -75,7 +88,7 @@ SOURCES += \
 	«EXPAND sourcespro»
 
 RESOURCES += \
-    «name»-editor.qrc
+    «getFQN("_")»-editor.qrc
 «ENDFILE»
 «ENDDEFINE»
 
@@ -87,7 +100,7 @@ RESOURCES += \
 «ENDDEFINE»
 
 «DEFINE qresource FOR EPackage»
-«FILE name+"-editor.qrc"-»
+«FILE getFQN("_")+"-editor.qrc"-»
 <!--
 # root-editor.qrc
 # This file was created by EMF4CPP 2.0.5 and is copyrighted by the

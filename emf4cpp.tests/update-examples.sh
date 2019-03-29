@@ -50,6 +50,19 @@ testLicenseText ()
 	return 0
 }
 
+testTargetVersion ()
+{
+	ECORES="v_3_0 v_2_0 v_1_0"
+	(
+	cd 'TargetVersion'
+	for i in $ECORES; do
+		FILENAME="${i}_edate.ecore"
+		echo "Updating $FILENAME"
+		$GENERATOR --clear --internal -o . -e $EMF4CPP --target-version=$i $FILENAME
+		echo "Done!"
+	done
+	)
+}
 
 if test -n "$1" ; then
 	if test "$1" == "EndUserLicense/enduserlicense.ecore" ; then
@@ -58,7 +71,7 @@ if test -n "$1" ; then
 		(cd `dirname $1` ; $GENERATOR --internal -o . -e $EMF4CPP `basename $1`)
 	fi
 else
-  	for i in $FILES; do
+	for i in $FILES; do
 
 		DIRNAME=`dirname $i`
 		BASENAME=`basename $i`
@@ -71,4 +84,5 @@ else
 	done
 
 	testLicenseText "EndUserLicense/enduserlicense.ecore"
+	testTargetVersion
 fi

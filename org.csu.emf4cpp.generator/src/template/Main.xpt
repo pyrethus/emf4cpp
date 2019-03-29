@@ -23,8 +23,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	«IF (boolean) GLOBALVAR createqt5editor»
     	«EXPAND itemprovider FOR this»
     	«EXPAND template::dllExtensions::hpp FOR this»
-    	«EXPAND template::ItemProviderQmake::qmake FOR this»
-    	«EXPAND template::ItemProviderQmake::qresource FOR this»
+		«EXPAND template::ItemProviderQmake::qmakepro FOR this»
+		«EXPAND template::ItemProviderQmake::qmakepri FOR this»
+		«EXPAND template::ItemProviderQmake::qresource FOR this»
 
 	«ELSE»
     	«EXPAND package FOR this»

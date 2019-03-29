@@ -43,7 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <«this.getDllExtensionPrefix()».hpp>
 
-«EXPAND namespaces_begin FOR this-»
+«EXPAND template::EClassHPP::namespaces_begin FOR this-»
 
 class EXPORT_«getHeaderDefDLL()»_DLL
 «this.name.toFirstUpper()»ItemProvider : public ::ecorecpp::ItemProvider
@@ -228,21 +228,4 @@ const QPixmap& «this.name.toFirstUpper()»ItemProvider::_getImage(const ::ecore
 «EXPAND template::EClassHPP::namespaces_end FOR this»
 
 «ENDFILE»
-«ENDDEFINE»
-
-«DEFINE namespaces_begin FOR EPackage-»
-«IF this != null-»
-«EXPAND namespaces_begin FOR ESuperPackage-»
-namespace «name»
-{
-«ENDIF-»
-«ENDDEFINE»
-
-
-
-«DEFINE namespaces_end FOR EPackage-»
-«IF this != null-»
-} // «name»
-«EXPAND namespaces_end FOR ESuperPackage-»
-«ENDIF-»
 «ENDDEFINE»

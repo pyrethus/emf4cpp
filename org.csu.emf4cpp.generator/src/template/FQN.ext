@@ -21,6 +21,13 @@ import org::eclipse::emf::ecore;
 extension template::Member;
 extension template::Keywords;
 
+String getTargetVersion(String separator) :
+    if GLOBALVAR targetVersion != null then
+        ((String) GLOBALVAR targetVersion) + separator
+    else
+        ""
+;
+
 String getDirFQN(EPackage this) :
 	if this.ESuperPackage == null then
 		""
@@ -31,29 +38,63 @@ String getDirFQN(EPackage this) :
 			this.ESuperPackage.getDirFQN() + name
 ;
 
-String getFQN(EPackage this, String separator) : this.ESuperPackage != null ? this.ESuperPackage.getFQN(separator) + separator + this.name : this.name;
+String getFQN(EPackage this, String separator) :
+    if this.ESuperPackage != null then
+        this.ESuperPackage.getFQN(separator) + separator + this.name
+    else
+        if this.name == "ecore" then
+            this.name
+        else
+            getTargetVersion(separator) + this.name
+;
 
 // prefix & suffix for normal classifiers
-String getFQNPrefix(EClassifier this, String separator) : this.EPackage != null ? this.EPackage.getFQN(separator) + separator : "";
-String getFQNSuffix(EClassifier this, String separator) : this.name;
+String getFQNPrefix(EClassifier this, String separator) :
+    this.EPackage != null
+        ? this.EPackage.getFQN(separator) + separator
+        : ""
+;
+
+String getFQNSuffix(EClassifier this, String separator) :
+    this.name
+;
 
 // prefix & suffix for packages
-String getFQNPrefix(EPackage this, String separator) : this.ESuperPackage != null ? this.ESuperPackage.getFQN(separator) + separator : "";
-String getFQNSuffix(EPackage this, String separator) : this.name;
+String getFQNPrefix(EPackage this, String separator) :
+    this.ESuperPackage != null
+        ? this.ESuperPackage.getFQN(separator) + separator
+        : ""
+;
 
-String getFQN(EClassifier this, String separator) : this.getFQNPrefix(separator) + this.getFQNSuffix(separator);
+String getFQNSuffix(EPackage this, String separator) :
+    this.name
+;
 
-String getFQN(EOperation this, String separator) : this.EContainingClass.getFQN(separator) + separator + this.name ;
+String getFQN(EClassifier this, String separator) :
+    this.getFQNPrefix(separator) + this.getFQNSuffix(separator)
+;
 
-String getFQN(EPackage this) : this.getFQN("::");
-String getFQN(EOperation this) : this.getFQN("::");
-String getFQN(EClassifier this) : this.getFQN("::");
+String getFQN(EOperation this, String separator) :
+    this.EContainingClass.getFQN(separator) + separator + this.name
+;
 
-cached String getPackagePrefix(EPackage this, String separator) : 
+String getFQN(EPackage this) :
+    this.getFQN("::")
+;
+
+String getFQN(EOperation this) :
+    this.getFQN("::")
+;
+
+String getFQN(EClassifier this) :
+    this.getFQN("::")
+;
+
+cached String getPackagePrefix(EPackage this, String separator) :
 	getFQN(separator) + separator + name.toFirstUpper() + "Package"
 ;
 
-cached String getPackagePrefix(EPackage this) : 
+cached String getPackagePrefix(EPackage this) :
 	getPackagePrefix("/")
 ;
 
@@ -73,11 +114,11 @@ cached String getItemProviderPrefix(EPackage this) :
 	getItemProviderPrefix("/")
 ;
 
-cached String getFactoryPrefix(EPackage this, String separator) : 
+cached String getFactoryPrefix(EPackage this, String separator) :
 	getFQN(separator) + separator + name.toFirstUpper() + "Factory"
 ;
 
-cached String getFactoryPrefix(EPackage this) : 
+cached String getFactoryPrefix(EPackage this) :
 	getFactoryPrefix("/")
 ;
 
@@ -92,18 +133,18 @@ cached Boolean createQt5Editor() :
 	GLOBALVAR createqt5editor
 ;
 
-cached String getDllExtensionPrefix(EPackage this, String separator) : 
+cached String getDllExtensionPrefix(EPackage this, String separator) :
 	if createQt5Editor() then
 		getTopLevelPackage().getFQN(separator) + separator + "dll" + getTopLevelPackage().name.toFirstUpper() + "Editor"
 	else
 		getTopLevelPackage().getFQN(separator) + separator + "dll" + getTopLevelPackage().name.toFirstUpper()
 ;
 
-cached String getDllExtensionPrefix(EPackage this) : 
+cached String getDllExtensionPrefix(EPackage this) :
 	getDllExtensionPrefix("/")
 ;
 
-cached String getDllExtensionInclude(EPackage this) : 
+cached String getDllExtensionInclude(EPackage this) :
 	"dll" + getTopLevelPackage().name.toFirstUpper() + ".hpp"
 ;
 
@@ -129,13 +170,20 @@ cached String getFactoryName(EPackage this) :
 	name.toFirstUpper() + "Factory"
 ;
 
+cached String getExportDLL(EPackage this) :
+	if createQt5Editor() then
+		getTopLevelPackage().getFQN("_").toUpperCase() + "EDITOR"
+	else
+		getTopLevelPackage().getFQN("_").toUpperCase()
+;
+
 cached String getHeaderDef(EPackage this) :
 	getFQN("_").toUpperCase()
 ;
 
 cached String getHeaderDefDLL(EPackage this) :
 	if createQt5Editor() then
-		getTopLevelPackage().name.toUpperCase() + "EDITOR"
+		getTopLevelPackage().getFQN("_").toUpperCase() + "EDITOR"
 	else
 		getFQN("_").toUpperCase()
 ;

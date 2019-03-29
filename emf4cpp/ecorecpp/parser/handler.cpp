@@ -105,21 +105,30 @@ void handler::start_tag(xml_parser::match_pair const& name,
     if (!m_level)
 		_type = &_name;
 
-    if (length)
-        for (size_t i = 0; i < length; i++)
-        {
-            // xsi:type may not be the first attribute using our serializer
-            attr_list[i] = std::make_pair(
-                ::ecorecpp::mapping::type_definitions::string_t (attributes[i].first.first,
+	for (size_t i = 0; i < length; i++)
+	{
+		// xsi:type may not be the first attribute using our serializer
+		attr_list[i] = std::make_pair(
+			::ecorecpp::mapping::type_definitions::string_t (attributes[i].first.first,
                               attributes[i].first.second),
-                ::ecorecpp::mapping::type_definitions::string_t (attributes[i].second.first,
+			::ecorecpp::mapping::type_definitions::string_t (attributes[i].second.first,
                               attributes[i].second.second));
 
-			util::unescape_html(attr_list[i].second);
+		util::unescape_html(attr_list[i].second);
 
-            if (!_type && (attr_list[i].first == "xsi:type"))
-                _type = &attr_list[i].second;
-        }
+		if (!_type && (attr_list[i].first == "xsi:type"))
+			_type = &attr_list[i].second;
+
+		/* Support multiple, versioned packages.
+		 * Example: xmlns:edate="http://www.example.org/edate/3.0"
+		 */
+		if (attr_list[i].first.find("xmlns:") == 0) {
+			const size_t first_colon = 6; // sizeof("xmlns:");
+			auto type_ns = attr_list[i].first.substr(first_colon);
+			auto type_nsuri = attr_list[i].second;
+			_nsUriMap.insert( std::make_pair(type_ns, type_nsuri) );
+		}
+	}
 
     if (_type)
     {
@@ -127,7 +136,18 @@ void handler::start_tag(xml_parser::match_pair const& name,
         ::ecorecpp::mapping::type_definitions::string_t _type_ns = _type->substr(0, double_dot);
         ::ecorecpp::mapping::type_definitions::string_t _type_name = _type->substr(double_dot + 1);
 
-        epkg = _mmr->getByName(_type_ns);
+		/* Support multiple, versioned packages.
+		 *
+		 * The type_ns denotes a namespace, which must be translated to a
+		 * nsUri from a previously read 'xmlns:ns="nsURI"' attribute.
+		 */
+		auto it = _nsUriMap.find(_type_ns);
+		if (it != _nsUriMap.end()) {
+			epkg = _mmr->getByNSURI(it->second);
+		}
+		/* Fallback: No ns-nsUri mapping or no EPackage found. */
+		if (!epkg)
+			epkg = _mmr->getByName(_type_ns);
 
         if (!m_level)
         {

@@ -180,6 +180,16 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 		if (attr_list[i].first == "href") {
 			href = &attr_list[i].second;
 		}
+
+		/* Support multiple, versioned packages.
+		 * Example: xmlns:edate="http://www.example.org/edate/3.0"
+		 */
+		if (attr_list[i].first.find("xmlns:") == 0) {
+			const size_t first_colon = 6; // sizeof("xmlns:");
+			auto type_ns = attr_list[i].first.substr(first_colon);
+			auto type_nsuri = attr_list[i].second;
+			_nsUriMap.insert( std::make_pair(type_ns, type_nsuri) );
+		}
 	}
 
 	if (href) {
@@ -205,8 +215,20 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 		::ecorecpp::mapping::type_definitions::string_t type_ns = type->substr(0, double_dot);
 		::ecorecpp::mapping::type_definitions::string_t type_name = type->substr(double_dot+1);
 
-		if (!m_current_metamodel || double_dot != ::ecorecpp::mapping::type_definitions::string_t::npos) {
-			epkg = _mmr->getByName(type_ns);
+		if ( !m_current_metamodel
+			 || double_dot != ::ecorecpp::mapping::type_definitions::string_t::npos ) {
+			/* Support multiple, versioned packages.
+			 *
+			 * The type_ns denotes a namespace, which must be translated to a
+			 * nsUri from a previously read 'xmlns:ns="nsURI"' attribute.
+			 */
+			auto it = _nsUriMap.find(type_ns);
+			if (it != _nsUriMap.end()) {
+				epkg = _mmr->getByNSURI(it->second);
+			}
+			/* Fallback: No ns-nsUri mapping or no EPackage found. */
+			if (!epkg)
+				epkg = _mmr->getByName(type_ns);
 			if (!epkg)
 				throw std::logic_error(std::string("missing package: ") + type_ns);
 

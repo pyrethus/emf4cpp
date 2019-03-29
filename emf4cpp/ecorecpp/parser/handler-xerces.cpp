@@ -107,19 +107,28 @@ void handler::startElement(const XMLCh * const name,
     if (!m_level)
         _type = &_name;
 
-    if (length)
-        for (XMLSize_t i = 0; i < length; i++)
-        {
-            // xsi:type may not be the first attribute using our serializer
-            const XMLCh* an = attributes.getName((XMLSize_t) i);
-            const XMLCh* av = attributes.getValue((XMLSize_t) i);
+	for (XMLSize_t i = 0; i < length; i++)
+	{
+		// xsi:type may not be the first attribute using our serializer
+		const XMLCh* an = attributes.getName((XMLSize_t) i);
+		const XMLCh* av = attributes.getValue((XMLSize_t) i);
 
-            attr_list[i] = std::make_pair(xercesToWstring(an), xercesToWstring(
-                    av));
+		attr_list[i] = std::make_pair(xercesToWstring(an), xercesToWstring(
+										  av));
 
-            if (!_type && (attr_list[i].first == L"xsi:type"))
-                _type = &attr_list[i].second;
-        }
+		if (!_type && (attr_list[i].first == L"xsi:type"))
+			_type = &attr_list[i].second;
+
+		/* Support multiple, versioned packages.
+		 * Example: xmlns:edate="http://www.example.org/edate/3.0"
+		 */
+		if (attr_list[i].first.find("xmlns:") == 0) {
+			const size_t first_colon = 6; // sizeof("xmlns:");
+			auto type_ns = attr_list[i].first.substr(first_colon);
+			auto type_nsuri = attr_list[i].second;
+			_nsUriMap.insert( std::make_pair(type_ns, type_nsuri) );
+		}
+	}
 
     if (_type)
     {
@@ -127,7 +136,18 @@ void handler::startElement(const XMLCh * const name,
         ::ecorecpp::mapping::type_definitions::string_t _type_ns = _type->substr(0, double_dot);
         ::ecorecpp::mapping::type_definitions::string_t _type_name = _type->substr(double_dot + 1);
 
-        epkg = _mmr->getByName(_type_ns);
+		/* Support multiple, versioned packages.
+		 *
+		 * The type_ns denotes a namespace, which must be translated to a
+		 * nsUri from a previously read 'xmlns:ns="nsURI"' attribute.
+		 */
+		auto it = _nsUriMap.find(type_ns);
+		if (it != _nsUriMap.end()) {
+			epkg = _mmr->getByNSURI(it->second);
+		}
+		/* Fallback: No ns-nsUri mapping or no EPackage found. */
+		if (!epkg)
+			epkg = _mmr->getByName(_type_ns);
 
         if (!m_level)
         {

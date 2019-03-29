@@ -35,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef «getHeaderDef()»_HPP
 #define «getHeaderDef()»_HPP
 
-«EXPAND namespaces_begin FOR EPackage-»
+«EXPAND template::EClassHPP::namespaces_begin FOR EPackage-»
 
 enum class «name» {
 		«FOREACH this.ELiterals AS el SEPARATOR ","-»
@@ -44,25 +44,8 @@ enum class «name» {
 		«ENDFOREACH»
 };
 
-«EXPAND namespaces_end FOR EPackage-»
+«EXPAND template::EClassHPP::namespaces_end FOR EPackage-»
 
 #endif
 «ENDFILE»
-«ENDDEFINE»
-
-«DEFINE namespaces_begin FOR EPackage-»
-«IF this != null-»
-«EXPAND namespaces_begin FOR ESuperPackage-»
-namespace «name»
-{
-«ENDIF-»
-«ENDDEFINE»
-
-
-
-«DEFINE namespaces_end FOR EPackage-»
-«IF this != null-»
-} // «name»
-«EXPAND namespaces_end FOR ESuperPackage-»
-«ENDIF-»
 «ENDDEFINE»
