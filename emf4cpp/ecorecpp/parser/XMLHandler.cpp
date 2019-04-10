@@ -72,10 +72,46 @@ bool XMLHandler::getExtendedMetaData() const {
 }
 
 
-
+/* Process the content a XMIObjectElement or a XMIValueElement.
+ *
+ * According to XML Metadata Interchange (XML), v2.4.2 [1] a XMIObjectElement
+ * with an empty content may end the starting element with "/>" (p.61, item
+ * 2a), however this is not allowed for XMIValueElements (p.61, item 2b).
+ *
+ * Unfortunately an ordinary XML parser which is not XMI-aware, e.g. like
+ * Qt's QDomDocument, will end empty XMIValueElements with "/>". To support
+ * this, a call to this method was inserted into struct unique_tag_end_ in
+ * simple_xml_parser.hpp. It passes an empty string, just as the conforming
+ * version would do.
+ *
+ * Including cross-document references, we end up with three possible
+ * contexts, in which this method is called:
+ *
+ * (1) <attribute></attribute>
+ * (2) <attribute />
+ * (3) <reference href="..." />
+ *
+ * [1] e.g. https://www.istr.unican.es/pyemofuc/PyEmofUCFiles/XMI_formal-14-04-04.pdf
+ */
 void XMLHandler::characters(xml_parser::match_pair const& chars) {
 	if (!m_expected_literal)
 		return;
+
+	EObject_ptr const& eobj = m_objects.back();
+	EClass_ptr const eclass = eobj->eClass();
+
+	::ecorecpp::mapping::type_definitions::string_t const& name =
+		  m_expected_literal_name;
+
+	DEBUG_MSG(cout, name);
+
+	EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, name);
+
+	if (as< EReference >(esf) ) {
+		/* m_expected_literal_name does not identify an EAttribute, hence any
+		 * parsed text content is ignored. */
+		return;
+	}
 
 	try {
 		assert( m_level);
@@ -83,16 +119,6 @@ void XMLHandler::characters(xml_parser::match_pair const& chars) {
 		::ecorecpp::mapping::type_definitions::string_t literal(chars.first, chars.second);
 
 		util::unescape_html(literal);
-
-		EObject_ptr const& eobj = m_objects.back();
-		EClass_ptr const eclass = eobj->eClass();
-
-		::ecorecpp::mapping::type_definitions::string_t const& name =
-				m_expected_literal_name;
-
-		DEBUG_MSG(cout, name);
-
-		EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, name);
 
 		EDataType_ptr const edt = as< EDataType >(esf->getEType());
 
@@ -117,6 +143,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 	::ecorecpp::mapping::type_definitions::string_t * href = nullptr;
 	::ecorecpp::mapping::type_definitions::string_t * xmiId = nullptr;
 	::ecorecpp::mapping::type_definitions::string_t name(nameP.first, nameP.second);
+	DEBUG_MSG(cout, "--- START: " << m_level << " " << name);
 	static MetaModelRepository_ptr _mmr = MetaModelRepository::_instance();
 
 	// Data
@@ -321,8 +348,8 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 	++m_level;
 }
 
-void XMLHandler::end_tag(xml_parser::match_pair const& name) {
-	DEBUG_MSG(cout, "--- END: " << m_level);
+void XMLHandler::end_tag(xml_parser::match_pair const& nameP) {
+	DEBUG_MSG(cout, "---     END: " << m_level);
 
 	if (--m_level && !m_expected_literal)
 		m_objects.pop_back();

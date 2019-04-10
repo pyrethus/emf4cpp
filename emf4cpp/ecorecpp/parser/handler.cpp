@@ -103,7 +103,7 @@ void handler::start_tag(xml_parser::match_pair const& name,
     std::vector< std::pair< ::ecorecpp::mapping::type_definitions::string_t, ::ecorecpp::mapping::type_definitions::string_t > > attr_list(length);
 
     if (!m_level)
-        _type = &_name;
+		_type = &_name;
 
     if (length)
         for (size_t i = 0; i < length; i++)

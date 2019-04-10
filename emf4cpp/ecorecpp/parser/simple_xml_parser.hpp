@@ -222,9 +222,24 @@ struct unique_tag_end_ :
 {
     // Semantic rule
     template< typename S >
-    static inline void process_match(S& state, match_pair const&)
+    static inline void process_match(S& state, match_pair const& mp)
     {
         state.semantic_state().new_start_tag();
+
+		/* EAttributes are created (only) in new_characters(), which uses the
+		 * string argument to determine the value of the EAttribute. For an
+		 * empty tag, we pass an empty string, which might be a valid
+		 * representation for an EAttribute. If not, the XMI is broken
+		 * anyways.
+		 *
+		 * It is safe to call new_characters() even for those tags, which
+		 * represent a reference to an EClass, this will be silently
+		 * ignored. EClass instances have already been created in
+		 * new_start_tag().
+		 */
+		match_pair cp (mp.first, 0);
+        state.semantic_state().new_characters(cp);
+
         state.semantic_state().new_end_tag();
     }
 };
