@@ -52,7 +52,7 @@ void EObject::_setEContainer(::ecore::EObject_ptr _eContainer,
     m_eContainingFeature = _eContainingFeature;
 }
 
-void EObject::_setEResource(::ecorecpp::resource::Resource* res)
+void EObject::_setEResource(::ecorecpp::resource::Resource_ptr res)
 {
     if (m_eResource == res)
         return;
@@ -69,7 +69,7 @@ void EObject::_setEResource(::ecorecpp::resource::Resource* res)
     m_eResource = res;
 }
 
-::ecorecpp::resource::Resource* EObject::_getDirectResource()
+::ecorecpp::resource::Resource_ptr EObject::_getDirectResource()
 {
     return m_eResource;
 }
@@ -179,7 +179,7 @@ void EObject::_initialize()
     /*PROTECTED REGION END*/
 }
 
-std::shared_ptr< ::ecorecpp::mapping::EList< ::ecore::EObject_ptr > > EObject::eContents()
+::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type EObject::eContents()
 {
     /*PROTECTED REGION ID(EObjectImpl_eContents) ENABLED START*/
     auto retList = std::make_shared<
@@ -223,7 +223,7 @@ std::shared_ptr< ::ecorecpp::mapping::EList< ::ecore::EObject_ptr > > EObject::e
     /*PROTECTED REGION END*/
 }
 
-std::shared_ptr< ::ecorecpp::mapping::EList< ::ecore::EObject_ptr > > EObject::eCrossReferences()
+::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type EObject::eCrossReferences()
 {
     /*PROTECTED REGION ID(EObjectImpl_eCrossReferences) ENABLED START*/
     /*
@@ -315,7 +315,7 @@ void EObject::eUnset(::ecore::EStructuralFeature_ptr _feature)
 }
 
 ::ecore::EJavaObject EObject::eInvoke(::ecore::EOperation_ptr _operation,
-        std::shared_ptr< ::ecorecpp::mapping::EList< ::ecorecpp::mapping::any > > const& _arguments)
+        ::ecorecpp::mapping::EList< ::ecorecpp::mapping::any >::ptr_type const& _arguments)
 {
     /*PROTECTED REGION ID(EObjectImpl_eInvoke) START*/
     // Please, enable the protected region if you add manually written code.

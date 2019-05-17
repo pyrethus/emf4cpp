@@ -89,7 +89,7 @@ public:
 
 protected:
     EAnnotation_ptr _this()
-    {   return EAnnotation_ptr(this);}
+    {   return std::dynamic_pointer_cast<EAnnotation>(shared_from_this());}
 
     // Attributes
 

@@ -41,7 +41,7 @@ template< typename T >
 class FeatureEListImpl: public EList< T >
 {
 public:
-	using ef_ptr = boost::intrusive_ptr<typename EList< T >::ef>;
+	using ef_ptr = std::shared_ptr<typename EList< T >::ef>;
 
     virtual T get(size_t _index) const
     {

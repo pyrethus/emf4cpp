@@ -36,6 +36,7 @@ namespace ecore
 {
 
 class EXPORT_ECORE_DLL EModelElement : public virtual ::ecore::EObject
+
 {
 public:
     EModelElement();
@@ -75,7 +76,7 @@ public:
 
 protected:
     EModelElement_ptr _this()
-    {   return EModelElement_ptr(this);}
+    {   return std::dynamic_pointer_cast<EModelElement>(shared_from_this());}
 
     // Attributes
 

@@ -35,14 +35,6 @@ protected:
 	ExtendedMetaData() = default;
     static ::ecore::Ptr<ExtendedMetaData> s_instance;
 
-    friend void intrusive_ptr_add_ref(ExtendedMetaData* p)
-    {   ++p->m_refCount;}
-    friend void intrusive_ptr_release(ExtendedMetaData* p)
-    {   if (--p->m_refCount == 0u) delete p;}
-    /** Maintains the reference counter, which is used by
-     * boost::intrusive_ptr<>. */
-    mutable std::atomic_size_t m_refCount;
-
 public:
 	virtual ~ExtendedMetaData();
 

@@ -82,7 +82,7 @@ public:
 
 protected:
     EFactory_ptr _this()
-    {   return EFactory_ptr(this);}
+    {   return std::dynamic_pointer_cast<EFactory>(shared_from_this());}
 
     // Attributes
 

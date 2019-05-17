@@ -36,6 +36,7 @@ namespace ecore
 {
 
 class EXPORT_ECORE_DLL EGenericType : public virtual ::ecore::EObject
+
 {
 public:
     EGenericType();
@@ -88,7 +89,7 @@ public:
 
 protected:
     EGenericType_ptr _this()
-    {   return EGenericType_ptr(this);}
+    {   return std::dynamic_pointer_cast<EGenericType>(shared_from_this());}
 
     // Attributes
 

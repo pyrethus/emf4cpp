@@ -263,7 +263,7 @@ protected:
     {
 		static inline B do_cast(A a)
         {
-            return dynamic_cast< typename B::element_type* > (a.get());
+            return std::dynamic_pointer_cast< typename B::element_type > (a);
         }
 	};
 

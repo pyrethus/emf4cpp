@@ -22,9 +22,9 @@
 
 #include "../dllEcorecpp.hpp"
 
+#include <memory>
 #include <string>
 #include <unordered_map>
-#include <boost/intrusive_ptr.hpp>
 
 #include <QtCore/qstring.h>
 #include <QtCore/qurl.h>
@@ -39,11 +39,11 @@ namespace ecorecpp {
 namespace resource {
 
 class Resource;
-using Resource_ptr = boost::intrusive_ptr<Resource>;
+using Resource_ptr = std::shared_ptr<Resource>;
 
 class URIConverter;
 
-class EXPORT_ECORECPP_DLL Resource {
+class EXPORT_ECORECPP_DLL Resource : public std::enable_shared_from_this<Resource> {
 public:
 	using OptionMap = std::unordered_map<std::string, std::string>;
 
@@ -115,12 +115,6 @@ protected:
 	explicit Resource(const QUrl&);
 
 	URIConverter* getURIConverter();
-
-    friend void intrusive_ptr_add_ref(Resource* p) { ++p->_refCount; }
-    friend void intrusive_ptr_release(Resource* p) {
-		if (--p->_refCount == 0u)
-			delete p; }
-    mutable std::atomic_size_t _refCount;
 
 private:
 	class ResourceContentEList;

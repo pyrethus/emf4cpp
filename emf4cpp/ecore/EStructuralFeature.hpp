@@ -107,7 +107,7 @@ protected:
 
 protected:
     EStructuralFeature_ptr _this()
-    {   return EStructuralFeature_ptr(this);}
+    {   return std::dynamic_pointer_cast<EStructuralFeature>(shared_from_this());}
 
     // Attributes
 

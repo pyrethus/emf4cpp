@@ -88,7 +88,7 @@ public:
 
 protected:
     EReference_ptr _this()
-    {   return EReference_ptr(this);}
+    {   return std::dynamic_pointer_cast<EReference>(shared_from_this());}
 
     // Attributes
 

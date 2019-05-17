@@ -267,7 +267,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 		assert(eobj);
 
 		if (xmiId && !xmiId->empty())
-			_xmiIds.insert( std::make_pair(*xmiId, eobj.get()) );
+			_xmiIds.insert( std::make_pair(*xmiId, eobj) );
 
 		DEBUG_MSG(cout, "--- START: " << (m_level + 1));
 
@@ -391,7 +391,7 @@ XMLHandler::XmiIdMap& XMLHandler::getXmiIds() {
 
 void XMLHandler::resolveReferences() {
 	auto model_root = m_objects.front();
-	::ecorecpp::resource::Resource* resource = model_root->eResource();
+	::ecorecpp::resource::Resource_ptr resource = model_root->eResource();
 	if (!resource)
 		throw std::logic_error("Cannot resolve references. Model has no resource.");
 
@@ -438,7 +438,7 @@ void XMLHandler::resolveCrossDocumentReferences() {
 		return;
 
 	auto model_root = m_objects.front();
-	::ecorecpp::resource::Resource* resource = model_root->eResource();
+	::ecorecpp::resource::Resource_ptr resource = model_root->eResource();
 	if (!resource)
 		throw std::logic_error("Cannot resolve cross references. Model has no resource.");
 

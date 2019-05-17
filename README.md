@@ -16,7 +16,7 @@ Two direct advantages can be that C++ programmers can write their data model usi
 
 * Updates only source files which really change.
 
-* Object management via boost::intrusive_ptr<> - no more memory leaks.
+* Object management via std::shared_ptr<> - no more memory leaks.
 
 * Automatic handling of econtainment and eopposite relations - setting one side of a relation automatically sets the other side.
 

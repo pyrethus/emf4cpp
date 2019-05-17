@@ -34,7 +34,7 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
  	case "EDiagnosticChain": "int" // ?? Need class
 	case "EDouble": "double"
 	case "EDoubleObject": "double" // Object/value?
-	case "EEList": "std::shared_ptr<::ecorecpp::mapping::EList<" + type_parameters +">>"
+	case "EEList": "::ecorecpp::mapping::EList<" + type_parameters +">::ptr_type"
 	case "EEnumerator": "int" // ?? Need class
 	case "EFeatureMap": "int" // ?? Need class
 	case "EFeatureMapEntry": "int" // ?? Need class
@@ -48,8 +48,8 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
 	case "ELongObject": "int64_t" // Object/value?
 	case "EMap": "int" // TODO: As in EList, we should look for type parameters, in this case K,V.
 	                    // maybe std::map<std::string, ecore::EObject> ó la versión con shared_ptr 
-	case "EResource": "::ecorecpp::resource::Resource*" // ?? Need class
-	case "EResourceSet": "::ecorecpp::resource::ResourceSet*" // ?? Need class
+	case "EResource": "::ecorecpp::resource::Resource_ptr" // ?? Need class
+	case "EResourceSet": "::ecorecpp::resource::ResourceSet_ptr" // ?? Need class
 	case "EShort": "short"
 	case "EShortObject": "short" // Object/value?
 	case "EString": "::ecorecpp::mapping::type_definitions::string_t"
@@ -83,8 +83,8 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
 	case "HexBinary": "::ecorecpp::mapping::type_definitions::string_t"
 	case "ID": "::ecorecpp::mapping::type_definitions::string_t"
 	case "IDREF": "::ecorecpp::mapping::type_definitions::string_t"
-	case "IDREFS": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
-	case "IDREFSBase": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
+	case "IDREFS": "::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >::ptr_type"
+	case "IDREFSBase": "::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >::ptr_type"
 	case "Int": "int"
 	case "Integer": "int64_t" // XMLType.ecore references BigInteger
 	case "IntObject": "int"
@@ -95,8 +95,8 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
 	case "NCName": "::ecorecpp::mapping::type_definitions::string_t"
 	case "NegativeInteger": "int64_t"
 	case "NMTOKEN": "::ecorecpp::mapping::type_definitions::string_t"
-	case "NMTOKENS": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
-	case "NMTOKENSBase": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
+	case "NMTOKENS": "::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >::ptr_type"
+	case "NMTOKENSBase": "::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >::ptr_type"
 	case "NonNegativeInteger": "uint64_t"
 	case "NonPositiveInteger": "int64_t"
 	case "NormalizedString": "::ecorecpp::mapping::type_definitions::string_t"

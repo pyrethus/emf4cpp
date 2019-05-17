@@ -80,7 +80,7 @@ public:
 
 protected:
     EEnum_ptr _this()
-    {   return EEnum_ptr(this);}
+    {   return std::dynamic_pointer_cast<EEnum>(shared_from_this());}
 
     // Attributes
 

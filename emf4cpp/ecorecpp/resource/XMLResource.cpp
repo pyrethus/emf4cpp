@@ -48,12 +48,12 @@ XMLResource::XMLResource(const QUrl& uri)
 XMLResource::~XMLResource() = default;
 
 void XMLResource::setID(::ecore::EObject_ptr eobj, const std::string& id) {
-	_eObjectToIDMap[eobj.get()] = id;
-	_idToEObjectMap[id] = eobj.get();
+	_eObjectToIDMap[eobj] = id;
+	_idToEObjectMap[id] = eobj;
 }
 
 std::string XMLResource::getID(::ecore::EObject_ptr eobj) {
-	auto it = _eObjectToIDMap.find(eobj.get());
+	auto it = _eObjectToIDMap.find(eobj);
 	if (it != _eObjectToIDMap.end())
 		return it->second;
 

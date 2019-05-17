@@ -74,7 +74,7 @@ public:
 
 protected:
     ENamedElement_ptr _this()
-    {   return ENamedElement_ptr(this);}
+    {   return std::dynamic_pointer_cast<ENamedElement>(shared_from_this());}
 
     // Attributes
 

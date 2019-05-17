@@ -36,6 +36,7 @@ namespace ecore
 {
 
 class EXPORT_ECORE_DLL EStringToStringMapEntry : public virtual ::ecore::EObject
+
 {
 public:
     EStringToStringMapEntry();
@@ -76,7 +77,7 @@ public:
 
 protected:
     EStringToStringMapEntry_ptr _this()
-    {   return EStringToStringMapEntry_ptr(this);}
+    {   return std::dynamic_pointer_cast<EStringToStringMapEntry>(shared_from_this());}
 
     // Attributes
 

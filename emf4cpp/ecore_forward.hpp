@@ -21,6 +21,7 @@
 #ifndef _ECORE_FORWARD_HPP
 #define _ECORE_FORWARD_HPP
 
+#include <memory>
 #include <ecorecpp/mapping_forward.hpp>
 
 /*PROTECTED REGION ID(ecore_forward) ENABLED START*/
@@ -46,13 +47,13 @@ namespace ecore
 
     /** The default pointer type used by the generated EMF implementation. */
     template< class T >
-    using Ptr = boost::intrusive_ptr<T>;
+    using Ptr = std::shared_ptr<T>;
 
     /* A helper function to create objects and wrap them in the default pointer type. */
     template< class T, class ... Args >
     Ptr< T > make(Args&&... args)
     {
-        return Ptr< T >(new T(args...));
+        return std::make_shared< T >(args...);
     }
 
     template< typename T, typename S >
@@ -64,7 +65,7 @@ namespace ecore
     template< typename T, typename S >
     inline Ptr< T > as(const Ptr< S >& _s)
     {
-        return Ptr< T >(dynamic_cast< T* >(_s.get()));
+        return Ptr< T >(std::dynamic_pointer_cast < T > (_s));
     }
 
     template< typename T, typename S >
@@ -192,12 +193,12 @@ namespace ecore
     /*PROTECTED REGION ID(ecore_EResource) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::resource::Resource* EResource;
+    typedef ::ecorecpp::resource::Resource_ptr EResource;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EResourceSet) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::resource::ResourceSet* EResourceSet;
+    typedef ::ecorecpp::resource::ResourceSet_ptr EResourceSet;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EShort) START*/
 // Please, enable the protected region if you add manually written code.

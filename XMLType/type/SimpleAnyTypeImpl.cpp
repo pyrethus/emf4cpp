@@ -112,8 +112,8 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EDataType_ptr _t1 =
-                dynamic_cast< ::ecore::EDataType* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EDataType >(_t0);*/
+        ::ecore::EDataType_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EDataType > (_t0);
         ::type::SimpleAnyType::setInstanceType(_t1);
     }
         return;

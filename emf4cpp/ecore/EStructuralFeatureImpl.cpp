@@ -234,8 +234,8 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EClassifier_ptr _t1 =
-                dynamic_cast< ::ecore::EClassifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EClassifier >(_t0);*/
+        ::ecore::EClassifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EClassifier > (_t0);
         ::ecore::ETypedElement::setEType(_t1);
     }
         return;
@@ -243,8 +243,8 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EGenericType_ptr _t1 =
-                dynamic_cast< ::ecore::EGenericType* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EGenericType >(_t0);*/
+        ::ecore::EGenericType_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EGenericType > (_t0);
         ::ecore::ETypedElement::setEGenericType(_t1);
     }
         return;
@@ -300,7 +300,8 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EClass_ptr _t1 = dynamic_cast< ::ecore::EClass* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EClass >(_t0);*/
+        ::ecore::EClass_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EClass
+                > (_t0);
         ::ecore::EStructuralFeature::setEContainingClass(_t1);
     }
         return;
@@ -391,8 +392,8 @@ void EStructuralFeature::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -413,7 +414,8 @@ void EStructuralFeature::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EClass_ptr _t1 = dynamic_cast< ::ecore::EClass* >(_t0.get());
+        ::ecore::EClass_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EClass
+                > (_t0);
 
         // set reference
         basicsetEContainingClass(_t1);
@@ -435,8 +437,8 @@ void EStructuralFeature::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -457,7 +459,8 @@ void EStructuralFeature::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EClass_ptr _t1 = dynamic_cast< ::ecore::EClass* >(_t0.get());
+        ::ecore::EClass_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EClass
+                > (_t0);
 
         // set reference
         if (basicgetEContainingClass() == _t1)

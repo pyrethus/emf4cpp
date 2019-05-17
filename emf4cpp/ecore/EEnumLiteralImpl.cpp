@@ -149,7 +149,8 @@ void EEnumLiteral::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EEnum_ptr _t1 = dynamic_cast< ::ecore::EEnum* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EEnum >(_t0);*/
+        ::ecore::EEnum_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EEnum
+                > (_t0);
         ::ecore::EEnumLiteral::setEEnum(_t1);
     }
         return;
@@ -210,8 +211,8 @@ void EEnumLiteral::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -224,7 +225,8 @@ void EEnumLiteral::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EEnum_ptr _t1 = dynamic_cast< ::ecore::EEnum* >(_t0.get());
+        ::ecore::EEnum_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EEnum
+                > (_t0);
 
         // set reference
         basicsetEEnum(_t1);
@@ -246,8 +248,8 @@ void EEnumLiteral::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -260,7 +262,8 @@ void EEnumLiteral::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EEnum_ptr _t1 = dynamic_cast< ::ecore::EEnum* >(_t0.get());
+        ::ecore::EEnum_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EEnum
+                > (_t0);
 
         // set reference
         if (basicgetEEnum() == _t1)

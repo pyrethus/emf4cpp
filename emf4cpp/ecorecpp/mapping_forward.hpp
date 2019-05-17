@@ -21,12 +21,10 @@
 #ifndef ECORECPP_MAPPING_FORWARD_HPP
 #define ECORECPP_MAPPING_FORWARD_HPP
 
-#include <atomic>
 #include <memory>
 #include <cstdint>
 #include <list>
 #include <vector>
-#include <boost/intrusive_ptr.hpp>
 
 #include "mapping/EDate.hpp"
 #include "mapping/type_definitions.hpp"

@@ -37,7 +37,7 @@ namespace ecorecpp {
 namespace resource {
 
 class ResourceSet;
-using ResourceSet_ptr = boost::intrusive_ptr<ResourceSet>;
+using ResourceSet_ptr = std::shared_ptr<ResourceSet>;
 
 class URIConverter;
 
@@ -72,13 +72,6 @@ public:
 
 	Resource::Factory::Registry* getResourceFactoryRegistry() const;
 	void setResourceFactoryRegistry(Resource::Factory::Registry*);
-
-protected:
-    friend void intrusive_ptr_add_ref(ResourceSet* p) { ++p->_refCount; }
-    friend void intrusive_ptr_release(ResourceSet* p) {
-		if (--p->_refCount == 0u)
-			delete p; }
-    mutable std::atomic_size_t _refCount;
 
 private:
 	std::unique_ptr<URIConverter> _uriConverter;

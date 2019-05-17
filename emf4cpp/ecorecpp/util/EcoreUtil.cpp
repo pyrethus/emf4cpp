@@ -19,6 +19,7 @@
 
 #include "EcoreUtil.hpp"
 
+#include <cassert>
 #include <map>
 #include <ecore.hpp>
 

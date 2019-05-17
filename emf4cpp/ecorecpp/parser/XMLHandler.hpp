@@ -57,7 +57,7 @@ public:
 
 	::ecore::EObject_ptr getRootElement();
 
-	using XmiIdMap = std::unordered_map<::ecorecpp::mapping::type_definitions::string_t, ::ecore::EObject*>;
+	using XmiIdMap = std::unordered_map<::ecorecpp::mapping::type_definitions::string_t, ::ecore::EObject_ptr>;
 	XmiIdMap& getXmiIds();
 	void resolveReferences();
 	void resolveCrossDocumentReferences();

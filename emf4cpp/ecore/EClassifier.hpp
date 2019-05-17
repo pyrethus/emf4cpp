@@ -101,7 +101,7 @@ protected:
 
 protected:
     EClassifier_ptr _this()
-    {   return EClassifier_ptr(this);}
+    {   return std::dynamic_pointer_cast<EClassifier>(shared_from_this());}
 
     // Attributes
 

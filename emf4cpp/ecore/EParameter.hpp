@@ -76,7 +76,7 @@ public:
 
 protected:
     EParameter_ptr _this()
-    {   return EParameter_ptr(this);}
+    {   return std::dynamic_pointer_cast<EParameter>(shared_from_this());}
 
     // Attributes
 

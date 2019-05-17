@@ -57,10 +57,6 @@ using namespace ::«EPackage.getFQN()»;
 // Default constructor
 «name»::«name»()
 {
-«IF "::"+this.getFQN() == "::ecore::EObject"-»
-    m_refCount = 0u;
-«ENDIF-»
-
 «IF (boolean) GLOBALVAR bootstrap»
     «FOREACH EReferences.select(e|e.upperBound != 1) AS ref-»
     «ref.getRefMemberName()».reset(new «ref.getListImpl()»(«ref.getListImplConstructorParametersOptional()»));
@@ -85,8 +81,6 @@ using namespace ::«EPackage.getFQN()»;
 // Copy constructor only for EObject, needed to properly initialize reference counting
 «name»::«name»(const «name»&)
 {
-    m_refCount = 0u;
-
 «IF (boolean) GLOBALVAR bootstrap»
     «FOREACH EReferences.select(e|e.upperBound != 1) AS ref-»
     «ref.getRefMemberName()».reset(new «ref.getListImpl()»(«ref.getListImplConstructorParametersOptional()»));

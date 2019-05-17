@@ -84,7 +84,7 @@ public:
 
 protected:
     EEnumLiteral_ptr _this()
-    {   return EEnumLiteral_ptr(this);}
+    {   return std::dynamic_pointer_cast<EEnumLiteral>(shared_from_this());}
 
     // Attributes
 

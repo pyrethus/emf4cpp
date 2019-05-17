@@ -21,6 +21,7 @@
 #ifndef ECORE_EOBJECT_HPP
 #define ECORE_EOBJECT_HPP
 
+#include <memory>
 #include <type_traits>
 
 #include <ecorecpp/mapping_forward.hpp>
@@ -36,7 +37,8 @@
 namespace ecore
 {
 
-class EXPORT_ECORE_DLL EObject
+class EXPORT_ECORE_DLL EObject : public std::enable_shared_from_this<::ecore::EObject>
+
 {
 public:
     EObject();
@@ -59,11 +61,11 @@ public:
 
     virtual ::ecore::EReference_ptr eContainmentFeature ();
 
-    virtual std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EObject_ptr>> eContents ();
+    virtual ::ecorecpp::mapping::EList< ::ecore::EObject_ptr>::ptr_type eContents ();
 
     virtual ::ecorecpp::util::TreeIterator< ::ecore::EObject_ptr> eAllContents ();
 
-    virtual std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EObject_ptr>> eCrossReferences ();
+    virtual ::ecorecpp::mapping::EList< ::ecore::EObject_ptr>::ptr_type eCrossReferences ();
 
     virtual ::ecore::EJavaObject eGet ( ::ecore::EStructuralFeature_ptr _feature);
 
@@ -75,7 +77,7 @@ public:
 
     virtual void eUnset ( ::ecore::EStructuralFeature_ptr _feature);
 
-    virtual ::ecore::EJavaObject eInvoke ( ::ecore::EOperation_ptr _operation, std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::any>> const& _arguments);
+    virtual ::ecore::EJavaObject eInvoke ( ::ecore::EOperation_ptr _operation, ::ecorecpp::mapping::EList< ::ecorecpp::mapping::any>::ptr_type const& _arguments);
 
     // Attributes
 
@@ -102,9 +104,9 @@ public:
     void _setEContainer(::ecore::EObject_ptr _eContainer,
             ::ecore::EStructuralFeature_ptr _eContainingFeature);
 
-    void _setEResource(::ecorecpp::resource::Resource*);
+    void _setEResource(::ecorecpp::resource::Resource_ptr);
 
-    ::ecorecpp::resource::Resource* _getDirectResource();
+    ::ecorecpp::resource::Resource_ptr _getDirectResource();
 
 #ifdef ECORECPP_NOTIFICATION_API
     // Notification API
@@ -137,25 +139,17 @@ protected:
 
 #ifdef ECORECPP_NOTIFICATION_API
     // Notification API
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::notify::Adapter_ptr >> m_eAdapters;
+    ::ecorecpp::mapping::EList< ::ecorecpp::notify::Adapter_ptr >::ptr_type m_eAdapters;
     bool m_eDeliver;
 #endif
 
-    ::ecorecpp::resource::Resource* m_eResource;
+    ::ecorecpp::resource::Resource_ptr m_eResource;
 
     /*PROTECTED REGION END*/
 
 protected:
     EObject_ptr _this()
-    {   return EObject_ptr(this);}
-
-    friend void intrusive_ptr_add_ref(EObject* p)
-    {   ++p->m_refCount;}
-    friend void intrusive_ptr_release(EObject* p)
-    {   if (--p->m_refCount == 0u) delete p;}
-    /** Maintains the reference counter, which is used by
-     * boost::intrusive_ptr<>. */
-    mutable std::atomic_size_t m_refCount;
+    {   return shared_from_this();}
 
     // Attributes
 

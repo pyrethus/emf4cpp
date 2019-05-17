@@ -174,8 +174,8 @@ void ETypedElement::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EClassifier_ptr _t1 =
-                dynamic_cast< ::ecore::EClassifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EClassifier >(_t0);*/
+        ::ecore::EClassifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EClassifier > (_t0);
         ::ecore::ETypedElement::setEType(_t1);
     }
         return;
@@ -183,8 +183,8 @@ void ETypedElement::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EGenericType_ptr _t1 =
-                dynamic_cast< ::ecore::EGenericType* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EGenericType >(_t0);*/
+        ::ecore::EGenericType_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EGenericType > (_t0);
         ::ecore::ETypedElement::setEGenericType(_t1);
     }
         return;
@@ -253,8 +253,8 @@ void ETypedElement::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -287,8 +287,8 @@ void ETypedElement::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =

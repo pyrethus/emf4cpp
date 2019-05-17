@@ -142,8 +142,8 @@ void ENamedElement::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -168,8 +168,8 @@ void ENamedElement::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =

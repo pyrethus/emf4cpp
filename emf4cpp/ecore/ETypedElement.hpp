@@ -94,7 +94,7 @@ public:
 
 protected:
     ETypedElement_ptr _this()
-    {   return ETypedElement_ptr(this);}
+    {   return std::dynamic_pointer_cast<ETypedElement>(shared_from_this());}
 
     // Attributes
 

@@ -97,8 +97,8 @@ private:
 	void doLoad(const std::vector<::ecorecpp::mapping::type_definitions::char_t>&,
 				const Resource::OptionMap& = Resource::OptionMap());
 
-	std::unordered_map<::ecore::EObject*, std::string> _eObjectToIDMap;
-	std::unordered_map<std::string, ::ecore::EObject*> _idToEObjectMap;
+	std::unordered_map<::ecore::EObject_ptr, std::string> _eObjectToIDMap;
+	std::unordered_map<std::string, ::ecore::EObject_ptr> _idToEObjectMap;
 };
 
 } // resource

@@ -183,8 +183,8 @@ void EPackage::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EFactory_ptr _t1 =
-                dynamic_cast< ::ecore::EFactory* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EFactory >(_t0);*/
+        ::ecore::EFactory_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EFactory > (_t0);
         ::ecore::EPackage::setEFactoryInstance(_t1);
     }
         return;
@@ -210,8 +210,8 @@ void EPackage::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EPackage_ptr _t1 =
-                dynamic_cast< ::ecore::EPackage* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EPackage >(_t0);*/
+        ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EPackage > (_t0);
         ::ecore::EPackage::setESuperPackage(_t1);
     }
         return;
@@ -275,8 +275,8 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -289,8 +289,8 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EFactory_ptr _t1 =
-                dynamic_cast< ::ecore::EFactory* >(_t0.get());
+        ::ecore::EFactory_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EFactory > (_t0);
 
         // set reference
         basicsetEFactoryInstance(_t1);
@@ -300,8 +300,8 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EClassifier_ptr _t1 =
-                dynamic_cast< ::ecore::EClassifier* >(_t0.get());
+        ::ecore::EClassifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EClassifier > (_t0);
 
         // add to a list
         auto& container =
@@ -314,8 +314,8 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EPackage_ptr _t1 =
-                dynamic_cast< ::ecore::EPackage* >(_t0.get());
+        ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EPackage > (_t0);
 
         // add to a list
         auto& container =
@@ -328,8 +328,8 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EPackage_ptr _t1 =
-                dynamic_cast< ::ecore::EPackage* >(_t0.get());
+        ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EPackage > (_t0);
 
         // set reference
         basicsetESuperPackage(_t1);
@@ -351,8 +351,8 @@ void EPackage::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -365,8 +365,8 @@ void EPackage::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EFactory_ptr _t1 =
-                dynamic_cast< ::ecore::EFactory* >(_t0.get());
+        ::ecore::EFactory_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EFactory > (_t0);
 
         // set reference
         if (basicgetEFactoryInstance() == _t1)
@@ -377,8 +377,8 @@ void EPackage::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EClassifier_ptr _t1 =
-                dynamic_cast< ::ecore::EClassifier* >(_t0.get());
+        ::ecore::EClassifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EClassifier > (_t0);
 
         // add to a list
         auto& container =
@@ -391,8 +391,8 @@ void EPackage::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EPackage_ptr _t1 =
-                dynamic_cast< ::ecore::EPackage* >(_t0.get());
+        ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EPackage > (_t0);
 
         // add to a list
         auto& container =
@@ -405,8 +405,8 @@ void EPackage::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EPackage_ptr _t1 =
-                dynamic_cast< ::ecore::EPackage* >(_t0.get());
+        ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EPackage > (_t0);
 
         // set reference
         if (basicgetESuperPackage() == _t1)

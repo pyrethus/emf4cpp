@@ -66,7 +66,7 @@ using namespace ::«getFQN()»;
         {
           ::ecore::EJavaObject _any;
              «name.toFirstUpper()»Package_ptr _epkg =
-                 dynamic_cast< ::«getFQN()»::«name.toFirstUpper()»Package* >(getEPackage().get());
+                 std::dynamic_pointer_cast< ::«getFQN()»::«name.toFirstUpper()»Package >(getEPackage());
             return _epkg->get«edt.name.toFirstUpper()»()->getEEnumLiteralByLiteral(_literalValue)->getValue();
         }
         «ELSE-»

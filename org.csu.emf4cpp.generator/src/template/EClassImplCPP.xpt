@@ -139,7 +139,7 @@ void «name»::eSet ( ::ecore::EInt _featureID, ::ecore::EJavaObject const& _new
                 «IF EReference.isInstance(ef)-»
                     «IF ef.upperBound == 1-»
 		        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast< ::ecore::EObject_ptr >(_newValue);
-			«((EReference)ef).getPtr()» _t1 = dynamic_cast<::«ef.EType.getFQN()»*>(_t0.get()); /*/// std::dynamic_pointer_cast< ::«ef.EType.getFQN()» >(_t0);*/
+			«((EReference)ef).getPtr()» _t1 = std::dynamic_pointer_cast< ::«ef.EType.getFQN()» >(_t0);
  			::«ef.EContainingClass.getFQN()»::set«ef.name.toFirstUpper()»(_t1);
                     «ELSE-»
                         ::ecorecpp::mapping::EList<::ecore::EObject_ptr>::ptr_type _t0 =
@@ -252,7 +252,7 @@ void «name»::_inverseAdd( ::ecore::EInt _featureID, ::ecore::EJavaObject const
             {
       «IF ((EReference)ef).EOpposite != null-»
           ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast< ::ecore::EObject_ptr >(_newValue);
-          «((EReference)ef).getPtr()» _t1 = dynamic_cast< ::«ef.EType.getFQN()»* >(_t0.get());
+          «((EReference)ef).getPtr()» _t1 = std::dynamic_pointer_cast< ::«ef.EType.getFQN()» >(_t0);
 
           «IF ef.upperBound == 1-»
               // set reference
@@ -285,7 +285,7 @@ void «name»::_inverseRemove( ::ecore::EInt _featureID, ::ecore::EJavaObject co
             {
       «IF ((EReference)ef).EOpposite != null-»
           ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast< ::ecore::EObject_ptr >(_oldValue);
-          «((EReference)ef).getPtr()» _t1 = dynamic_cast< ::«ef.EType.getFQN()»* >(_t0.get());
+          «((EReference)ef).getPtr()» _t1 = std::dynamic_pointer_cast< ::«ef.EType.getFQN()» >(_t0);
 
           «IF ef.upperBound == 1-»
 	      // set reference

@@ -21,16 +21,15 @@
 #define ECORECPP_MAPPING_ANY_HPP
 
 #include <cstddef>
+#include <memory>
 #include <stdexcept>
 #include <string>
 #include <type_traits>
 #include <typeinfo>
-#include <boost/intrusive_ptr.hpp>
 
 namespace ecore {
 class EObject;
-using EObject_ptr = boost::intrusive_ptr<EObject>;
-void intrusive_ptr_release(EObject*);
+using EObject_ptr = std::shared_ptr<EObject>;
 } // namespace ecore
 
 namespace ecorecpp

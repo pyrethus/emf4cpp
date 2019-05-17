@@ -92,7 +92,7 @@ public:
 
 protected:
     EOperation_ptr _this()
-    {   return EOperation_ptr(this);}
+    {   return std::dynamic_pointer_cast<EOperation>(shared_from_this());}
 
     // Attributes
 

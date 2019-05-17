@@ -76,7 +76,7 @@ public:
 
 protected:
     EAttribute_ptr _this()
-    {   return EAttribute_ptr(this);}
+    {   return std::dynamic_pointer_cast<EAttribute>(shared_from_this());}
 
     // Attributes
 

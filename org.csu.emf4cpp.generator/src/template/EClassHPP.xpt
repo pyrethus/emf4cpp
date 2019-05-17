@@ -37,6 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define «getHeaderDef()»_HPP
 
 «IF ESuperTypes.isEmpty && "::"+this.getFQN() == "::ecore::EObject"-»
+#include <memory>
 #include <type_traits>
 «ENDIF-»
 
@@ -67,7 +68,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 «EXPAND namespaces_begin FOR EPackage-»
 
 class EXPORT_«EPackage.getExportDLL()»_DLL «name» «IF !ESuperTypes.isEmpty-»: «FOREACH ESuperTypes AS supertype SEPARATOR ", "-»public virtual ::«supertype.getFQN()»«ENDFOREACH-»
-        «ELSE-»«IF "::"+this.getFQN() != "::ecore::EObject"»: public virtual ::ecore::EObject«ELSE-»«ENDIF»«ENDIF»
+        «ELSE-»
+        	«IF "::"+this.getFQN() != "::ecore::EObject"»: public virtual ::ecore::EObject
+        	«ELSE-»: public std::enable_shared_from_this<::ecore::EObject>«ENDIF»
+        «ENDIF»
 {
 public:
     «name»();
@@ -139,15 +143,11 @@ public:
     «ENDPROTECT»
     
 protected:
-    «name»_ptr _this() { return «name»_ptr(this); }
-
-    «IF "::"+this.getFQN() == "::ecore::EObject"-»
-        friend void intrusive_ptr_add_ref(EObject* p) { ++p->m_refCount; }
-        friend void intrusive_ptr_release(EObject* p) { if (--p->m_refCount == 0u) delete p; }
-	/** Maintains the reference counter, which is used by
-         * boost::intrusive_ptr<>. */
-        mutable std::atomic_size_t m_refCount;
-    «ENDIF-»
+	«IF ESuperTypes.isEmpty && "::"+this.getFQN() == "::ecore::EObject"-»
+		«name»_ptr _this() { return shared_from_this(); }
+	«ELSE-»
+		«name»_ptr _this() { return std::dynamic_pointer_cast<«name»>(shared_from_this()); }
+	«ENDIF-»
 
     // Attributes
     «FOREACH this.EAttributes AS at»

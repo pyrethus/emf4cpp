@@ -170,9 +170,9 @@ XMLSerializer::get_reference(::ecore::EObject_ptr obj) const {
 ::ecorecpp::mapping::type_definitions::string_t XMLSerializer::get_reference(
 			::ecore::EObject_ptr from, ::ecore::EObject_ptr to,
 			bool crossDocument ) const {
-	::ecorecpp::resource::Resource* fromResource = from->eResource();
+	::ecorecpp::resource::Resource_ptr fromResource = from->eResource();
 	assert (fromResource);
-	::ecorecpp::resource::Resource* toResource = to->eResource();
+	::ecorecpp::resource::Resource_ptr toResource = to->eResource();
 	assert (toResource);
 
 	QUrl referenceUri = toResource->getURI();
@@ -212,7 +212,7 @@ void XMLSerializer::create_node(::ecore::EObject_ptr parent_obj,
 		m_usedPackages.push_back(child_cl->getEPackage());
 	}
 
-	auto resource = dynamic_cast<resource::XMLResource*>(child_obj->eResource());
+	auto resource = std::dynamic_pointer_cast<resource::XMLResource>(child_obj->eResource());
 	if (resource) {
 		if (resource->useIDs() || resource->useUUIDs()) {
 			auto id = resource->getID(child_obj);

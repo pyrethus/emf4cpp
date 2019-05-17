@@ -199,8 +199,8 @@ void EAnnotation::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EModelElement_ptr _t1 =
-                dynamic_cast< ::ecore::EModelElement* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EModelElement >(_t0);*/
+        ::ecore::EModelElement_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EModelElement > (_t0);
         ::ecore::EAnnotation::setEModelElement(_t1);
     }
         return;
@@ -276,8 +276,8 @@ void EAnnotation::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -294,8 +294,8 @@ void EAnnotation::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EModelElement_ptr _t1 =
-                dynamic_cast< ::ecore::EModelElement* >(_t0.get());
+        ::ecore::EModelElement_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EModelElement > (_t0);
 
         // set reference
         basicsetEModelElement(_t1);
@@ -325,8 +325,8 @@ void EAnnotation::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -343,8 +343,8 @@ void EAnnotation::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EModelElement_ptr _t1 =
-                dynamic_cast< ::ecore::EModelElement* >(_t0.get());
+        ::ecore::EModelElement_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EModelElement > (_t0);
 
         // set reference
         if (basicgetEModelElement() == _t1)

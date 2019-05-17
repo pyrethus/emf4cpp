@@ -157,7 +157,7 @@ public:
 
 protected:
     EClass_ptr _this()
-    {   return EClass_ptr(this);}
+    {   return std::dynamic_pointer_cast<EClass>(shared_from_this());}
 
     // Attributes
 

@@ -147,8 +147,8 @@ void EDataType::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EPackage_ptr _t1 =
-                dynamic_cast< ::ecore::EPackage* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EPackage >(_t0);*/
+        ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EPackage > (_t0);
         ::ecore::EClassifier::setEPackage(_t1);
     }
         return;
@@ -230,8 +230,8 @@ void EDataType::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -244,8 +244,8 @@ void EDataType::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EPackage_ptr _t1 =
-                dynamic_cast< ::ecore::EPackage* >(_t0.get());
+        ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EPackage > (_t0);
 
         // set reference
         basicsetEPackage(_t1);
@@ -271,8 +271,8 @@ void EDataType::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EAnnotation_ptr _t1 =
-                dynamic_cast< ::ecore::EAnnotation* >(_t0.get());
+        ::ecore::EAnnotation_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EAnnotation > (_t0);
 
         // add to a list
         auto& container =
@@ -285,8 +285,8 @@ void EDataType::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::ecore::EPackage_ptr _t1 =
-                dynamic_cast< ::ecore::EPackage* >(_t0.get());
+        ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EPackage > (_t0);
 
         // set reference
         if (basicgetEPackage() == _t1)

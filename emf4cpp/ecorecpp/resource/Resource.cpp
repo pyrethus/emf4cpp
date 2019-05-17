@@ -49,7 +49,7 @@ public:
 		if ( auto other = _obj->_getDirectResource() ) {
 			other->getContents()->remove(_obj);
 		}
-		_obj->_setEResource(_this);
+		_obj->_setEResource(_this->shared_from_this());
 		_this->_loaded = true;
 	}
 
@@ -117,8 +117,7 @@ Resource_ptr Resource::Factory::createResource(const QUrl& uri) {
 
 //Resource
 Resource::Resource(const QUrl& uri)
-	: _refCount(0u),
-	  _qurl(uri),
+	: _qurl(uri),
 	  _contents(new ResourceContentEList(this)),
 	  _resourceSet(nullptr),
 	  _uriConverter(nullptr),
@@ -126,15 +125,6 @@ Resource::Resource(const QUrl& uri)
 }
 
 Resource::~Resource() {
-	if (_resourceSet) {
-		/* boost::intrusive_ptr(p, false) creates a pointer, which does not
-		 * increment the reference counter in the beginning, but does
-		 * decrement it at the end. But as we are here in the destructor, and
-		 * the object, including the reference counter, will be destroyed
-		 * anyways, we do not care about leaving the reference counter with a
-		 * value of -1. */
-		_resourceSet->getResources().remove( Resource_ptr(this, /*add_ref*/false) );
-	}
 	for (auto obj : *_contents)
 		obj->_setEResource(nullptr);
 }
@@ -311,7 +301,7 @@ std::string Resource::getURIFragment( ::ecore::EObject_ptr obj ) {
 	auto current = obj;
 	std::string id;
 	while ( auto container = current->eContainer() ) {
-		if ( container->eResource() != this )
+		if ( container->eResource().get() != this )
 			break;
 		auto esf = current->eContainingFeature();
 		if (esf->getUpperBound() == 1) {

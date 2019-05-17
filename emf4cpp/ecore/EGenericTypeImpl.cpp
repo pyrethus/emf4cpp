@@ -113,8 +113,8 @@ void EGenericType::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EGenericType_ptr _t1 =
-                dynamic_cast< ::ecore::EGenericType* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EGenericType >(_t0);*/
+        ::ecore::EGenericType_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EGenericType > (_t0);
         ::ecore::EGenericType::setEUpperBound(_t1);
     }
         return;
@@ -131,8 +131,8 @@ void EGenericType::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EGenericType_ptr _t1 =
-                dynamic_cast< ::ecore::EGenericType* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EGenericType >(_t0);*/
+        ::ecore::EGenericType_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EGenericType > (_t0);
         ::ecore::EGenericType::setELowerBound(_t1);
     }
         return;
@@ -140,8 +140,8 @@ void EGenericType::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::ETypeParameter_ptr _t1 =
-                dynamic_cast< ::ecore::ETypeParameter* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::ETypeParameter >(_t0);*/
+        ::ecore::ETypeParameter_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::ETypeParameter > (_t0);
         ::ecore::EGenericType::setETypeParameter(_t1);
     }
         return;
@@ -149,8 +149,8 @@ void EGenericType::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EClassifier_ptr _t1 =
-                dynamic_cast< ::ecore::EClassifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EClassifier >(_t0);*/
+        ::ecore::EClassifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::ecore::EClassifier > (_t0);
         ::ecore::EGenericType::setEClassifier(_t1);
     }
         return;

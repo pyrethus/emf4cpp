@@ -127,7 +127,7 @@ public:
 
 protected:
     EPackage_ptr _this()
-    {   return EPackage_ptr(this);}
+    {   return std::dynamic_pointer_cast<EPackage>(shared_from_this());}
 
     // Attributes
 

@@ -74,7 +74,7 @@ public:
 
 protected:
     EDataType_ptr _this()
-    {   return EDataType_ptr(this);}
+    {   return std::dynamic_pointer_cast<EDataType>(shared_from_this());}
 
     // Attributes
 
