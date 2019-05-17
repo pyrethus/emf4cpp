@@ -43,7 +43,7 @@ class FeatureEListImpl: public EList< T >
 public:
 	using ef_ptr = std::shared_ptr<typename EList< T >::ef>;
 
-    virtual T get(size_t _index) const
+    T get(size_t _index) const override
     {
         return m_content[_index].first;
     }
@@ -83,12 +83,12 @@ public:
         m_content.push_back( std::make_pair(_obj, ef) );
     }
 
-    virtual size_t size() const
+    size_t size() const override
     {
         return m_content.size();
     }
 
-    virtual void clear()
+    void clear() override
     {
         m_content.clear();
     }

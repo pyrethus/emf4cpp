@@ -21,8 +21,6 @@
 #ifndef ECORE_ECLASS_HPP
 #define ECORE_ECLASS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -169,33 +167,33 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EClass_ptr >> m_eSuperTypes;
+    ::ecore::EList_ptr< ::ecore::EClass_ptr > m_eSuperTypes;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EOperation_ptr >> m_eOperations;
+    ::ecore::EList_ptr< ::ecore::EOperation_ptr > m_eOperations;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EAttribute_ptr >> m_eAllAttributes;
+    ::ecore::EList_ptr< ::ecore::EAttribute_ptr > m_eAllAttributes;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EReference_ptr >> m_eAllReferences;
+    ::ecore::EList_ptr< ::ecore::EReference_ptr > m_eAllReferences;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EReference_ptr >> m_eReferences;
+    ::ecore::EList_ptr< ::ecore::EReference_ptr > m_eReferences;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EAttribute_ptr >> m_eAttributes;
+    ::ecore::EList_ptr< ::ecore::EAttribute_ptr > m_eAttributes;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EReference_ptr >> m_eAllContainments;
+    ::ecore::EList_ptr< ::ecore::EReference_ptr > m_eAllContainments;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EOperation_ptr >> m_eAllOperations;
+    ::ecore::EList_ptr< ::ecore::EOperation_ptr > m_eAllOperations;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EStructuralFeature_ptr >> m_eAllStructuralFeatures;
+    ::ecore::EList_ptr< ::ecore::EStructuralFeature_ptr > m_eAllStructuralFeatures;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EClass_ptr >> m_eAllSuperTypes;
+    ::ecore::EList_ptr< ::ecore::EClass_ptr > m_eAllSuperTypes;
 
-    ::ecore::EAttribute_ptr m_eIDAttribute;
+    std::weak_ptr< ::ecore::EAttribute > m_eIDAttribute;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EStructuralFeature_ptr >> m_eStructuralFeatures;
+    ::ecore::EList_ptr< ::ecore::EStructuralFeature_ptr > m_eStructuralFeatures;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >> m_eGenericSuperTypes;
+    ::ecore::EList_ptr< ::ecore::EGenericType_ptr > m_eGenericSuperTypes;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >> m_eAllGenericSuperTypes;
+    ::ecore::EList_ptr< ::ecore::EGenericType_ptr > m_eAllGenericSuperTypes;
 
 };
 

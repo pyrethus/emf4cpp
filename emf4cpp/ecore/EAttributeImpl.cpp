@@ -99,14 +99,12 @@ void EAttribute::_initialize()
         return _any;
     case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
     {
-        if (m_eType)
-            _any = ::ecore::as < ::ecore::EObject > (m_eType);
+        _any = ::ecore::as < ::ecore::EObject > (m_eType.lock());
     }
         return _any;
     case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
     {
-        if (m_eGenericType)
-            _any = ::ecore::as < ::ecore::EObject > (m_eGenericType);
+        _any = ::ecore::as < ::ecore::EObject > (m_eGenericType);
     }
         return _any;
     case ::ecore::EcorePackage::ESTRUCTURALFEATURE__CHANGEABLE:
@@ -147,8 +145,7 @@ void EAttribute::_initialize()
         return _any;
     case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ECONTAININGCLASS:
     {
-        if (m_eContainingClass)
-            _any = ::ecore::as < ::ecore::EObject > (m_eContainingClass);
+        _any = ::ecore::as < ::ecore::EObject > (m_eContainingClass.lock());
     }
         return _any;
     case ::ecore::EcorePackage::EATTRIBUTE__ID:
@@ -169,9 +166,10 @@ void EAttribute::eSet(::ecore::EInt _featureID,
     {
     case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::ecore::EModelElement::getEAnnotations().clear();
         ::ecore::EModelElement::getEAnnotations().insert_all(*_t0);
     }
@@ -329,9 +327,9 @@ void EAttribute::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(m_required);
     case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
-        return (bool) m_eType;
+        return !m_eType.expired();
     case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
-        return (bool) m_eGenericType;
+        return !(m_eGenericType == nullptr);
     case ::ecore::EcorePackage::ESTRUCTURALFEATURE__CHANGEABLE:
         return m_changeable != true;
     case ::ecore::EcorePackage::ESTRUCTURALFEATURE__VOLATILE:
@@ -353,12 +351,12 @@ void EAttribute::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(m_derived);
     case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ECONTAININGCLASS:
-        return (bool) m_eContainingClass;
+        return !m_eContainingClass.expired();
     case ::ecore::EcorePackage::EATTRIBUTE__ID:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(m_iD);
     case ::ecore::EcorePackage::EATTRIBUTE__EATTRIBUTETYPE:
-        return (bool) m_eAttributeType;
+        return !m_eAttributeType.expired();
 
     }
     throw "Error";

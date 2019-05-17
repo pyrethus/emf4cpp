@@ -120,13 +120,13 @@ const ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& EGenericType::get
 
 ::ecore::EClassifier_ptr EGenericType::getERawType() const
 {
-    return m_eRawType;
+    return m_eRawType.lock();
 }
 
 void EGenericType::setERawType(::ecore::EClassifier_ptr _eRawType)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EClassifier_ptr _old_eRawType = m_eRawType;
+    ::ecore::EClassifier_ptr _old_eRawType = m_eRawType.lock();
 #endif
     m_eRawType = _eRawType;
 
@@ -138,7 +138,7 @@ void EGenericType::setERawType(::ecore::EClassifier_ptr _eRawType)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEGenericType__eRawType(),
                 _old_eRawType,
-                m_eRawType
+                m_eRawType.lock()
         );
         eNotify(&notification);
     }
@@ -181,14 +181,14 @@ void EGenericType::setELowerBound(::ecore::EGenericType_ptr _eLowerBound)
 
 ::ecore::ETypeParameter_ptr EGenericType::getETypeParameter() const
 {
-    return m_eTypeParameter;
+    return m_eTypeParameter.lock();
 }
 
 void EGenericType::setETypeParameter(
         ::ecore::ETypeParameter_ptr _eTypeParameter)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::ETypeParameter_ptr _old_eTypeParameter = m_eTypeParameter;
+    ::ecore::ETypeParameter_ptr _old_eTypeParameter = m_eTypeParameter.lock();
 #endif
     m_eTypeParameter = _eTypeParameter;
 
@@ -200,7 +200,7 @@ void EGenericType::setETypeParameter(
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEGenericType__eTypeParameter(),
                 _old_eTypeParameter,
-                m_eTypeParameter
+                m_eTypeParameter.lock()
         );
         eNotify(&notification);
     }
@@ -209,13 +209,13 @@ void EGenericType::setETypeParameter(
 
 ::ecore::EClassifier_ptr EGenericType::getEClassifier() const
 {
-    return m_eClassifier;
+    return m_eClassifier.lock();
 }
 
 void EGenericType::setEClassifier(::ecore::EClassifier_ptr _eClassifier)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EClassifier_ptr _old_eClassifier = m_eClassifier;
+    ::ecore::EClassifier_ptr _old_eClassifier = m_eClassifier.lock();
 #endif
     m_eClassifier = _eClassifier;
 
@@ -227,7 +227,7 @@ void EGenericType::setEClassifier(::ecore::EClassifier_ptr _eClassifier)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEGenericType__eClassifier(),
                 _old_eClassifier,
-                m_eClassifier
+                m_eClassifier.lock()
         );
         eNotify(&notification);
     }

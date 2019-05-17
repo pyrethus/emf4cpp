@@ -21,8 +21,6 @@
 #ifndef ECORE_EREFERENCE_HPP
 #define ECORE_EREFERENCE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -103,11 +101,11 @@ protected:
 
     // References
 
-    ::ecore::EReference_ptr m_eOpposite;
+    std::weak_ptr< ::ecore::EReference > m_eOpposite;
 
-    ::ecore::EClass_ptr m_eReferenceType;
+    std::weak_ptr< ::ecore::EClass > m_eReferenceType;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EAttribute_ptr >> m_eKeys;
+    ::ecore::EList_ptr< ::ecore::EAttribute_ptr > m_eKeys;
 
 };
 

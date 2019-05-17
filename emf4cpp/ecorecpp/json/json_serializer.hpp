@@ -69,10 +69,12 @@ private:
         if(has_value.size())
             new_line();
 
-        unsigned int mylevel = level &
-            (sizeof(_indent_precalc) / sizeof (const char_t*) - 1);
-        out << _indent_precalc[mylevel];
-    }
+		if (indent) {
+			unsigned int mylevel = level &
+				(sizeof(_indent_precalc) / sizeof (const char_t*) - 1);
+			out << _indent_precalc[mylevel];
+		}
+	}
 
 public:
     inline json_serializer(std::ostream& _out, bool ind=false) :

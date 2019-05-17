@@ -21,8 +21,6 @@
 #ifndef ECORE_EDATATYPE_HPP
 #define ECORE_EDATATYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 

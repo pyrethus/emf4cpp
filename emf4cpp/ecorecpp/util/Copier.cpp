@@ -144,15 +144,16 @@ EObject_ptr Copier::copy( EObject_ptr src ) {
 					  << "::" << eref->getName() << ": " << srcs.size() << " refs" );
 			//assert( dsts->size() == 0 );
 			for ( size_t j = 0; j < srcs.size(); j++ ) {
-				auto refObj = mapping::any::any_cast<EObject_ptr>( srcs[ j ] );
-				/* This is false in case of a reference into another resource or
-				 * outside the subject given to the Copier to be cloned.	*/
-				const bool isKnownRef = m_objectsMap.count( refObj );
-				//DEBUG_MSG( cout, "ref #" <<j <<" " <<refObj << ' ' <<isKnownRef <<_keepExternalRefs );
-				if ( isKnownRef || _keepExternalRefs ) {
-					if ( isKnownRef )
-						refObj = m_objectsMap.at( refObj );
-					dsts->push_back( refObj );
+				if ( auto refObj = mapping::any::any_cast<EObject_ptr>( srcs[ j ] ) ) {
+					/* This is false in case of a reference into another resource or
+					 * outside the subject given to the Copier to be cloned.	*/
+					const bool isKnownRef = m_objectsMap.count( refObj );
+					//DEBUG_MSG( cout, "ref #" <<j <<" " <<refObj << ' ' <<isKnownRef <<_keepExternalRefs );
+					if ( isKnownRef || _keepExternalRefs ) {
+						if ( isKnownRef )
+							refObj = m_objectsMap.at( refObj );
+						dsts->push_back( refObj );
+					}
 				}
 			}
 		} else if ( auto refObj = mapping::any::any_cast<EObject_ptr>( src_refs ) ) {

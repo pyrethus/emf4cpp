@@ -107,8 +107,7 @@ void «name»::_initialize()
             {
                 «IF EReference.isInstance(ef)-»
                     «IF ef.upperBound == 1-»
-                        if («ef.getMemberName()»)
-                            _any = ::ecore::as<::ecore::EObject>(«ef.getMemberName()»);
+                        _any = ::ecore::as<::ecore::EObject>(«((EReference) ef).getRefMemberNameLocked()»);
                     «ELSE-»
                         _any = «ef.getMemberName()»->asEListOf< ::ecore::EObject_ptr >();
                     «ENDIF-»
@@ -142,8 +141,8 @@ void «name»::eSet ( ::ecore::EInt _featureID, ::ecore::EJavaObject const& _new
 			«((EReference)ef).getPtr()» _t1 = std::dynamic_pointer_cast< ::«ef.EType.getFQN()» >(_t0);
  			::«ef.EContainingClass.getFQN()»::set«ef.name.toFirstUpper()»(_t1);
                     «ELSE-»
-                        ::ecorecpp::mapping::EList<::ecore::EObject_ptr>::ptr_type _t0 =
-                            ::ecorecpp::mapping::any::any_cast< ::ecorecpp::mapping::EList<::ecore::EObject_ptr>::ptr_type >(_newValue);
+                        ::ecore::EList_ptr<::ecore::EObject_ptr> _t0 =
+                            ::ecorecpp::mapping::any::any_cast< ::ecore::EList_ptr<::ecore::EObject_ptr> >(_newValue);
                         ::«ef.EContainingClass.getFQN()»::get«ef.name.toFirstUpper()»().clear();
                         ::«ef.EContainingClass.getFQN()»::get«ef.name.toFirstUpper()»().insert_all(*_t0);
                     «ENDIF-»
@@ -173,7 +172,7 @@ void «name»::eSet ( ::ecore::EInt _featureID, ::ecore::EJavaObject const& _new
         case «ef.getCPPFQN()» :
             «IF EReference.isInstance(ef)-»
                 «IF ef.upperBound == 1-»
-            	    return (bool)«ef.getMemberName()»;
+            	    return !«((EReference) ef).getRefMemberNameExpired()»;
                 «ELSE-»
             		return «ef.getMemberName()» && «ef.getMemberName()»->size();
                 «ENDIF-»

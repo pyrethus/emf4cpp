@@ -150,13 +150,13 @@ void EReference::setResolveProxies(::ecore::EBoolean _resolveProxies)
 
 ::ecore::EReference_ptr EReference::getEOpposite() const
 {
-    return m_eOpposite;
+    return m_eOpposite.lock();
 }
 
 void EReference::setEOpposite(::ecore::EReference_ptr _eOpposite)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EReference_ptr _old_eOpposite = m_eOpposite;
+    ::ecore::EReference_ptr _old_eOpposite = m_eOpposite.lock();
 #endif
     m_eOpposite = _eOpposite;
 
@@ -168,7 +168,7 @@ void EReference::setEOpposite(::ecore::EReference_ptr _eOpposite)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEReference__eOpposite(),
                 _old_eOpposite,
-                m_eOpposite
+                m_eOpposite.lock()
         );
         eNotify(&notification);
     }
@@ -177,13 +177,13 @@ void EReference::setEOpposite(::ecore::EReference_ptr _eOpposite)
 
 ::ecore::EClass_ptr EReference::getEReferenceType() const
 {
-    return m_eReferenceType;
+    return m_eReferenceType.lock();
 }
 
 void EReference::setEReferenceType(::ecore::EClass_ptr _eReferenceType)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EClass_ptr _old_eReferenceType = m_eReferenceType;
+    ::ecore::EClass_ptr _old_eReferenceType = m_eReferenceType.lock();
 #endif
     m_eReferenceType = _eReferenceType;
 
@@ -195,7 +195,7 @@ void EReference::setEReferenceType(::ecore::EClass_ptr _eReferenceType)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEReference__eReferenceType(),
                 _old_eReferenceType,
-                m_eReferenceType
+                m_eReferenceType.lock()
         );
         eNotify(&notification);
     }

@@ -21,7 +21,6 @@
 #ifndef ECORE_EMODELELEMENT_HPP
 #define ECORE_EMODELELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <ecore/dllEcore.hpp>
@@ -36,7 +35,6 @@ namespace ecore
 {
 
 class EXPORT_ECORE_DLL EModelElement : public virtual ::ecore::EObject
-
 {
 public:
     EModelElement();
@@ -82,7 +80,7 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EAnnotation_ptr >> m_eAnnotations;
+    ::ecore::EList_ptr< ::ecore::EAnnotation_ptr > m_eAnnotations;
 
 };
 

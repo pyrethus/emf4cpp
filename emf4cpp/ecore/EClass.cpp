@@ -289,13 +289,13 @@ const ::ecorecpp::mapping::EList< ::ecore::EClass_ptr >& EClass::getEAllSuperTyp
 
 ::ecore::EAttribute_ptr EClass::getEIDAttribute() const
 {
-    return m_eIDAttribute;
+    return m_eIDAttribute.lock();
 }
 
 void EClass::setEIDAttribute(::ecore::EAttribute_ptr _eIDAttribute)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EAttribute_ptr _old_eIDAttribute = m_eIDAttribute;
+    ::ecore::EAttribute_ptr _old_eIDAttribute = m_eIDAttribute.lock();
 #endif
     m_eIDAttribute = _eIDAttribute;
 
@@ -307,7 +307,7 @@ void EClass::setEIDAttribute(::ecore::EAttribute_ptr _eIDAttribute)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEClass__eIDAttribute(),
                 _old_eIDAttribute,
-                m_eIDAttribute
+                m_eIDAttribute.lock()
         );
         eNotify(&notification);
     }

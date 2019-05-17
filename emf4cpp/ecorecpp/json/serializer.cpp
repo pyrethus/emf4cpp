@@ -185,6 +185,9 @@ serializer::serialize_node(EObject_ptr obj)
                     {
                         mapping::EList<::ecore::EObject_ptr>::ptr_type children = ecorecpp::mapping::any::any_cast<
                                 mapping::EList<::ecore::EObject_ptr>::ptr_type >(any);
+                        // Remove expired references first
+                        children->cleanup();
+
                         for (size_t j = 0; j < children->size(); j++)
                         {
                             value << get_reference(obj, (*children)[j]);

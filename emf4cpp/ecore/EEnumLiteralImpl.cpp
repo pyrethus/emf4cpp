@@ -90,8 +90,7 @@ void EEnumLiteral::_initialize()
         return _any;
     case ::ecore::EcorePackage::EENUMLITERAL__EENUM:
     {
-        if (m_eEnum)
-            _any = ::ecore::as < ::ecore::EObject > (m_eEnum);
+        _any = ::ecore::as < ::ecore::EObject > (m_eEnum.lock());
     }
         return _any;
 
@@ -106,9 +105,10 @@ void EEnumLiteral::eSet(::ecore::EInt _featureID,
     {
     case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::ecore::EModelElement::getEAnnotations().clear();
         ::ecore::EModelElement::getEAnnotations().insert_all(*_t0);
     }
@@ -178,7 +178,7 @@ void EEnumLiteral::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_literal);
     case ::ecore::EcorePackage::EENUMLITERAL__EENUM:
-        return (bool) m_eEnum;
+        return !m_eEnum.expired();
 
     }
     throw "Error";

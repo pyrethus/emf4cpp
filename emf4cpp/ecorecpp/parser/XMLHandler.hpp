@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef XMLHandler__HPP
+#ifndef XMLHandler_HPP
 #define XMLHandler_HPP
 
 #include <list>

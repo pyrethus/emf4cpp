@@ -1,21 +1,21 @@
 /*
  * References.ext
  * Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
- * 
+ *
  * EMF4CPP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
  * by the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * EMF4CPP is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
 import org::eclipse::emf::ecore;
 
 extension template::Types;
@@ -28,14 +28,22 @@ String getTypeFQN(EReference this) :
 ;
 
 String getPtr(EReference this) :
+        getTypeFQN() + "_ptr"
+;
+
+String getMemberPtr(EReference this) :
     if containment then
         getTypeFQN() + "_ptr"
     else
-        getTypeFQN() + "_ptr"
+        "std::weak_ptr< " + getTypeFQN() + " >"
 ;
 
 String getList(EReference this) :
     "::ecorecpp::mapping::EList< " + getPtr()  + " >"
+;
+
+String getListPtr(EReference this) :
+    "::ecore::EList_ptr< " + getPtr()  + " >"
 ;
 
 String getListImpl(EReference this) :
@@ -59,11 +67,19 @@ String getListImplConstructorParametersOptional(EReference this) :
 ;
 
 // Reference type
-String getReferencEType(EReference this) :
- 	if isMultiple() then
-		"std::shared_ptr<" + getList() + ">"
+String getReferenceEType(EReference this) :
+	if isMultiple() then
+		getListPtr()
 	else
 		getPtr()
+;
+
+// Reference member type
+String getReferenceMemberEType(EReference this) :
+	if isMultiple() then
+		getListPtr()
+	else
+		getMemberPtr()
 ;
 
 // Reference returned type
@@ -71,32 +87,48 @@ String getReferenceReturnedType(EReference this) :
     if isMultiple() then
         getList() + "&"
     else
-        getPtr()        
+        getPtr()
 ;
 
 // Reference member name
 String getRefMemberName(EReference this) :
 	getMemberPrefix() + name;
 
+// Reference member access
+String getRefMemberNameLocked(EReference this) :
+	if containment then
+		getMemberPrefix() + name
+	else
+		getMemberPrefix() + name + ".lock()"
+;
+
+// Reference member access
+String getRefMemberNameExpired(EReference this) :
+	if containment then
+		"( " + getMemberPrefix() + name + "== nullptr )"
+	else
+		getMemberPrefix() + name + ".expired()"
+;
+
 // Declaration
-String getCPPDeclaration(EReference this) : 
-	getReferencEType() + " " + getRefMemberName()
+String getCPPDeclaration(EReference this) :
+	getReferenceMemberEType() + " " + getRefMemberName()
 ;
 
 // Set !isMultiple() required
 String getSetCPPSignature(EReference this, String prefix) :
-	"void " + prefix + "set"+ name.toFirstUpper() + " (" + getReferencEType() + " _" + name + ")";
-	
-String getSetCPPSignature(EReference this) : 
+	"void " + prefix + "set"+ name.toFirstUpper() + " (" + getReferenceEType() + " _" + name + ")";
+
+String getSetCPPSignature(EReference this) :
 	getSetCPPSignature("");
 
 String getSetCPPSignatureO(EReference this, String prefix) :
 	"void set"+ name.toFirstUpper() + " (" + getTypeFQN() + "_ptr
 	_" + name + ") { set" + name.toFirstUpper() + "( _" + name + ".get() ); }";
-	
-String getSetCPPSignatureO(EReference this) : 
+
+String getSetCPPSignatureO(EReference this) :
 	getSetCPPSignatureO("");
-	
+
 // Get
 String getGetCPPSignature(EReference this, String prefix) :
 	getReferenceReturnedType() + " " + prefix + "get"+ name.toFirstUpper() + " ()";
@@ -108,7 +140,7 @@ String getGetCPPSignatureConst(EReference this, String prefix) :
 		getReferenceReturnedType() + " " + prefix + "get"+ name.toFirstUpper() + " () const"
 ;
 
-String getGetCPPSignature(EReference this) : 
+String getGetCPPSignature(EReference this) :
 	getGetCPPSignature("");
 
 String getGetCPPSignatureConst(EReference this) :

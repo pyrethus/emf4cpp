@@ -21,8 +21,6 @@
 #ifndef ECORE_EFACTORY_HPP
 #define ECORE_EFACTORY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -88,7 +86,7 @@ protected:
 
     // References
 
-    ::ecore::EPackage_ptr m_ePackage;
+    std::weak_ptr< ::ecore::EPackage > m_ePackage;
 
 };
 

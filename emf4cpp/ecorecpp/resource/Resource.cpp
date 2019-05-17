@@ -146,7 +146,7 @@ void Resource::setResourceSet(ResourceSet* rs) {
 		return;
 
 	if (_resourceSet)
-		_resourceSet->getResources().remove( Resource_ptr(this) );
+		_resourceSet->getResources().remove(shared_from_this());
 
 	_resourceSet = rs;
 }

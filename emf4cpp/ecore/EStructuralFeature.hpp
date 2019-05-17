@@ -21,8 +21,6 @@
 #ifndef ECORE_ESTRUCTURALFEATURE_HPP
 #define ECORE_ESTRUCTURALFEATURE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -134,7 +132,7 @@ protected:
 
     // References
 
-    ::ecore::EClass_ptr m_eContainingClass;
+    std::weak_ptr< ::ecore::EClass > m_eContainingClass;
 
 };
 

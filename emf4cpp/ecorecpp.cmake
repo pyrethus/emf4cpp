@@ -1,7 +1,7 @@
 
-set(CMAKE_CXX_FLAGS "-Wall -std=c++11")
-set(CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -DDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -funroll-loops")
 
 find_package(Qt5Core REQUIRED)
 set (CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -44,6 +44,7 @@ set(ecorecpp_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/any_traits.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/EList.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/EListImpl.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/elist_traits.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/FeatureEListImpl.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping_forward.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping.hpp
@@ -99,6 +100,7 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/any_traits.hpp DESTIN
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/EDate.hpp DESTINATION include/emf4cpp/ecorecpp/mapping)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/EList.hpp DESTINATION include/emf4cpp/ecorecpp/mapping)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/EListImpl.hpp DESTINATION include/emf4cpp/ecorecpp/mapping)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/elist_traits.hpp DESTINATION include/emf4cpp/ecorecpp/mapping)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/FeatureEListImpl.hpp DESTINATION include/emf4cpp/ecorecpp/mapping)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping_forward.hpp DESTINATION include/emf4cpp/ecorecpp)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping.hpp DESTINATION include/emf4cpp/ecorecpp)

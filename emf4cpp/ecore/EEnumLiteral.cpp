@@ -140,18 +140,18 @@ void EEnumLiteral::setLiteral(::ecore::EString const& _literal)
 
 ::ecore::EEnum_ptr EEnumLiteral::getEEnum() const
 {
-    return m_eEnum;
+    return m_eEnum.lock();
 }
 
 ::ecore::EEnum_ptr EEnumLiteral::basicgetEEnum()
 {
-    return m_eEnum;
+    return m_eEnum.lock();
 }
 
 void EEnumLiteral::basicsetEEnum(::ecore::EEnum_ptr _eEnum)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EEnum_ptr _old_eEnum = m_eEnum;
+    ::ecore::EEnum_ptr _old_eEnum = m_eEnum.lock();
 #endif
     m_eEnum = _eEnum;
 
@@ -163,7 +163,7 @@ void EEnumLiteral::basicsetEEnum(::ecore::EEnum_ptr _eEnum)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEEnumLiteral__eEnum(),
                 _old_eEnum,
-                m_eEnum
+                m_eEnum.lock()
         );
         eNotify(&notification);
     }
@@ -172,15 +172,16 @@ void EEnumLiteral::basicsetEEnum(::ecore::EEnum_ptr _eEnum)
 
 void EEnumLiteral::setEEnum(::ecore::EEnum_ptr _eEnum)
 {
-    if (_eEnum != m_eEnum)
+    ::ecore::EEnum_ptr _old_eEnum = m_eEnum.lock();
+    if (_eEnum != _old_eEnum)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_eEnum != nullptr)
+        if (_old_eEnum)
         {
-            m_eEnum->_inverseRemove(::ecore::EcorePackage::EENUM__ELITERALS,
+            _old_eEnum->_inverseRemove(::ecore::EcorePackage::EENUM__ELITERALS,
                     _this);
         }
-        if (_eEnum != nullptr)
+        if (_eEnum)
         {
             _eEnum->_inverseAdd(::ecore::EcorePackage::EENUM__ELITERALS, _this);
         }

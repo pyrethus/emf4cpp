@@ -21,8 +21,6 @@
 #ifndef ECORE_EENUMLITERAL_HPP
 #define ECORE_EENUMLITERAL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -99,7 +97,7 @@ protected:
 
     // References
 
-    ::ecore::EEnum_ptr m_eEnum;
+    std::weak_ptr< ::ecore::EEnum > m_eEnum;
 
 };
 

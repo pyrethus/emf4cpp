@@ -89,18 +89,18 @@ EOperation::~EOperation()
 
 ::ecore::EClass_ptr EOperation::getEContainingClass() const
 {
-    return m_eContainingClass;
+    return m_eContainingClass.lock();
 }
 
 ::ecore::EClass_ptr EOperation::basicgetEContainingClass()
 {
-    return m_eContainingClass;
+    return m_eContainingClass.lock();
 }
 
 void EOperation::basicsetEContainingClass(::ecore::EClass_ptr _eContainingClass)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EClass_ptr _old_eContainingClass = m_eContainingClass;
+    ::ecore::EClass_ptr _old_eContainingClass = m_eContainingClass.lock();
 #endif
     m_eContainingClass = _eContainingClass;
 
@@ -112,7 +112,7 @@ void EOperation::basicsetEContainingClass(::ecore::EClass_ptr _eContainingClass)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEOperation__eContainingClass(),
                 _old_eContainingClass,
-                m_eContainingClass
+                m_eContainingClass.lock()
         );
         eNotify(&notification);
     }
@@ -121,15 +121,16 @@ void EOperation::basicsetEContainingClass(::ecore::EClass_ptr _eContainingClass)
 
 void EOperation::setEContainingClass(::ecore::EClass_ptr _eContainingClass)
 {
-    if (_eContainingClass != m_eContainingClass)
+    ::ecore::EClass_ptr _old_eContainingClass = m_eContainingClass.lock();
+    if (_eContainingClass != _old_eContainingClass)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_eContainingClass != nullptr)
+        if (_old_eContainingClass)
         {
-            m_eContainingClass->_inverseRemove(
+            _old_eContainingClass->_inverseRemove(
                     ::ecore::EcorePackage::ECLASS__EOPERATIONS, _this);
         }
-        if (_eContainingClass != nullptr)
+        if (_eContainingClass)
         {
             _eContainingClass->_inverseAdd(
                     ::ecore::EcorePackage::ECLASS__EOPERATIONS, _this);

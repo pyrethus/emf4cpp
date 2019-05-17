@@ -21,8 +21,6 @@
 #ifndef ECORE_EPACKAGE_HPP
 #define ECORE_EPACKAGE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -139,13 +137,13 @@ protected:
 
     // References
 
-    ::ecore::EFactory_ptr m_eFactoryInstance;
+    std::weak_ptr< ::ecore::EFactory > m_eFactoryInstance;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EClassifier_ptr >> m_eClassifiers;
+    ::ecore::EList_ptr< ::ecore::EClassifier_ptr > m_eClassifiers;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EPackage_ptr >> m_eSubpackages;
+    ::ecore::EList_ptr< ::ecore::EPackage_ptr > m_eSubpackages;
 
-    ::ecore::EPackage_ptr m_eSuperPackage;
+    std::weak_ptr< ::ecore::EPackage > m_eSuperPackage;
 
 };
 

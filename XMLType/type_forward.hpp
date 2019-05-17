@@ -103,9 +103,7 @@ namespace type
     /*PROTECTED REGION ID(type_ENTITIES) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef std::shared_ptr<
-            ::ecorecpp::mapping::EList<
-                    ::ecorecpp::mapping::type_definitions::string_t > > ENTITIES;
+    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > ENTITIES;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_ENTITIESBase) START*/
 // Please, enable the protected region if you add manually written code.
@@ -170,16 +168,12 @@ namespace type
     /*PROTECTED REGION ID(type_IDREFS) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef std::shared_ptr<
-            ::ecorecpp::mapping::EList<
-                    ::ecorecpp::mapping::type_definitions::string_t > > IDREFS;
+    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > IDREFS;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_IDREFSBase) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef std::shared_ptr<
-            ::ecorecpp::mapping::EList<
-                    ::ecorecpp::mapping::type_definitions::string_t > > IDREFSBase;
+    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > IDREFSBase;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Int) START*/
 // Please, enable the protected region if you add manually written code.
@@ -234,16 +228,12 @@ namespace type
     /*PROTECTED REGION ID(type_NMTOKENS) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef std::shared_ptr<
-            ::ecorecpp::mapping::EList<
-                    ::ecorecpp::mapping::type_definitions::string_t > > NMTOKENS;
+    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > NMTOKENS;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NMTOKENSBase) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef std::shared_ptr<
-            ::ecorecpp::mapping::EList<
-                    ::ecorecpp::mapping::type_definitions::string_t > > NMTOKENSBase;
+    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > NMTOKENSBase;
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NonNegativeInteger) START*/
 // Please, enable the protected region if you add manually written code.

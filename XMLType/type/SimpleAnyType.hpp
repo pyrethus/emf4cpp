@@ -21,8 +21,6 @@
 #ifndef TYPE_SIMPLEANYTYPE_HPP
 #define TYPE_SIMPLEANYTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <type/dllType.hpp>
 #include <type_forward.hpp>
 
@@ -86,7 +84,7 @@ public:
 
 protected:
     SimpleAnyType_ptr _this()
-    {   return SimpleAnyType_ptr(this);}
+    {   return std::dynamic_pointer_cast<SimpleAnyType>(shared_from_this());}
 
     // Attributes
 
@@ -98,7 +96,7 @@ protected:
 
     // References
 
-    ::ecore::EDataType_ptr m_instanceType;
+    std::weak_ptr< ::ecore::EDataType > m_instanceType;
 
 };
 

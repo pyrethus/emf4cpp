@@ -21,7 +21,6 @@
 #ifndef TYPE_PROCESSINGINSTRUCTION_HPP
 #define TYPE_PROCESSINGINSTRUCTION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <type/dllType.hpp>
@@ -82,7 +81,7 @@ public:
 
 protected:
     ProcessingInstruction_ptr _this()
-    {   return ProcessingInstruction_ptr(this);}
+    {   return std::dynamic_pointer_cast<ProcessingInstruction>(shared_from_this());}
 
     // Attributes
 

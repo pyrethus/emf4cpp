@@ -199,6 +199,8 @@ void serializer::serialize_node(DOMElement* node, EObject_ptr obj)
                     {
                         mapping::EList<::ecore::EObject>::ptr_type children = boost::any_cast<
                                 mapping::EList<::ecore::EObject>::ptr_type >(any);
+                        // Remove expired references first
+                        children->cleanup();
                         for (size_t j = 0; j < children->size(); j++)
                         {
                             value << get_reference(obj, (*children)[j]);

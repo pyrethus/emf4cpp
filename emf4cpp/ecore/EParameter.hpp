@@ -21,8 +21,6 @@
 #ifndef ECORE_EPARAMETER_HPP
 #define ECORE_EPARAMETER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -82,7 +80,7 @@ protected:
 
     // References
 
-    ::ecore::EOperation_ptr m_eOperation;
+    std::weak_ptr< ::ecore::EOperation > m_eOperation;
 
 };
 

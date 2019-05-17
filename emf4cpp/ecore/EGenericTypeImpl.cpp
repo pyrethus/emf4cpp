@@ -72,8 +72,7 @@ void EGenericType::_initialize()
     {
     case ::ecore::EcorePackage::EGENERICTYPE__EUPPERBOUND:
     {
-        if (m_eUpperBound)
-            _any = ::ecore::as < ::ecore::EObject > (m_eUpperBound);
+        _any = ::ecore::as < ::ecore::EObject > (m_eUpperBound);
     }
         return _any;
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEARGUMENTS:
@@ -83,20 +82,17 @@ void EGenericType::_initialize()
         return _any;
     case ::ecore::EcorePackage::EGENERICTYPE__ELOWERBOUND:
     {
-        if (m_eLowerBound)
-            _any = ::ecore::as < ::ecore::EObject > (m_eLowerBound);
+        _any = ::ecore::as < ::ecore::EObject > (m_eLowerBound);
     }
         return _any;
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEPARAMETER:
     {
-        if (m_eTypeParameter)
-            _any = ::ecore::as < ::ecore::EObject > (m_eTypeParameter);
+        _any = ::ecore::as < ::ecore::EObject > (m_eTypeParameter.lock());
     }
         return _any;
     case ::ecore::EcorePackage::EGENERICTYPE__ECLASSIFIER:
     {
-        if (m_eClassifier)
-            _any = ::ecore::as < ::ecore::EObject > (m_eClassifier);
+        _any = ::ecore::as < ::ecore::EObject > (m_eClassifier.lock());
     }
         return _any;
 
@@ -120,9 +116,10 @@ void EGenericType::eSet(::ecore::EInt _featureID,
         return;
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEARGUMENTS:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::ecore::EGenericType::getETypeArguments().clear();
         ::ecore::EGenericType::getETypeArguments().insert_all(*_t0);
     }
@@ -164,17 +161,17 @@ void EGenericType::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::ecore::EcorePackage::EGENERICTYPE__EUPPERBOUND:
-        return (bool) m_eUpperBound;
+        return !(m_eUpperBound == nullptr);
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEARGUMENTS:
         return m_eTypeArguments && m_eTypeArguments->size();
     case ::ecore::EcorePackage::EGENERICTYPE__ERAWTYPE:
-        return (bool) m_eRawType;
+        return !m_eRawType.expired();
     case ::ecore::EcorePackage::EGENERICTYPE__ELOWERBOUND:
-        return (bool) m_eLowerBound;
+        return !(m_eLowerBound == nullptr);
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEPARAMETER:
-        return (bool) m_eTypeParameter;
+        return !m_eTypeParameter.expired();
     case ::ecore::EcorePackage::EGENERICTYPE__ECLASSIFIER:
-        return (bool) m_eClassifier;
+        return !m_eClassifier.expired();
 
     }
     throw "Error";

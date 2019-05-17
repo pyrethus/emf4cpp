@@ -45,10 +45,6 @@ EObject::EObject()
 {
 
     /*PROTECTED REGION ID(EObjectImpl__EObjectImpl) ENABLED START*/
-    m_eContainer = nullptr;
-    m_eContainingFeature = nullptr;
-    m_eResource = nullptr;
-
     m_eAdapters.reset(
             new ::ecorecpp::mapping::EListImpl< ::ecorecpp::notify::Adapter_ptr >());
     /*PROTECTED REGION END*/
@@ -62,10 +58,9 @@ EObject::EObject()
 EObject::EObject(const EObject&)
 {
 
-    /*PROTECTED REGION ID(EObjectImpl__EObjectImplConst) ENABLED START*/
-    m_eContainer = nullptr;
-    m_eContainingFeature = nullptr;
-    m_eResource = nullptr;
+    /*PROTECTED REGION ID(EObjectImpl__EObjectImplConst) START*/
+// Please, enable the protected region if you add manually written code.
+// To do this, add the keyword ENABLED before START.
     /*PROTECTED REGION END*/
 
 #ifdef ECORECPP_NOTIFICATION_API

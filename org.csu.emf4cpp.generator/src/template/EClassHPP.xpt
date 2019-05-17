@@ -36,12 +36,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef «getHeaderDef()»_HPP
 #define «getHeaderDef()»_HPP
 
-«IF ESuperTypes.isEmpty && "::"+this.getFQN() == "::ecore::EObject"-»
-#include <memory>
-#include <type_traits>
-«ENDIF-»
-
-#include <ecorecpp/mapping_forward.hpp>
 «IF ESuperTypes.isEmpty && "::"+this.getFQN() != "::ecore::EObject"-»
 #include <ecore/EObject.hpp>
 «ENDIF-»
@@ -70,8 +64,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class EXPORT_«EPackage.getExportDLL()»_DLL «name» «IF !ESuperTypes.isEmpty-»: «FOREACH ESuperTypes AS supertype SEPARATOR ", "-»public virtual ::«supertype.getFQN()»«ENDFOREACH-»
         «ELSE-»
         	«IF "::"+this.getFQN() != "::ecore::EObject"»: public virtual ::ecore::EObject
-        	«ELSE-»: public std::enable_shared_from_this<::ecore::EObject>«ENDIF»
-        «ENDIF»
+        	«ELSE-»: public std::enable_shared_from_this<::ecore::EObject>«ENDIF-»
+        «ENDIF-»
 {
 public:
     «name»();

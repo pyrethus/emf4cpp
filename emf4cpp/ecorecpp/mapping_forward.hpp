@@ -21,11 +21,6 @@
 #ifndef ECORECPP_MAPPING_FORWARD_HPP
 #define ECORECPP_MAPPING_FORWARD_HPP
 
-#include <memory>
-#include <cstdint>
-#include <list>
-#include <vector>
-
 #include "mapping/EDate.hpp"
 #include "mapping/type_definitions.hpp"
 #include "mapping/any.hpp"

@@ -21,7 +21,6 @@
 #ifndef TYPE_XMLTYPEDOCUMENTROOT_HPP
 #define TYPE_XMLTYPEDOCUMENTROOT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <type/dllType.hpp>
@@ -114,7 +113,7 @@ public:
 
 protected:
     XMLTypeDocumentRoot_ptr _this()
-    {   return XMLTypeDocumentRoot_ptr(this);}
+    {   return std::dynamic_pointer_cast<XMLTypeDocumentRoot>(shared_from_this());}
 
     // Attributes
 
@@ -132,11 +131,11 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >> m_xMLNSPrefixMap;
+    ::ecore::EList_ptr< ::ecore::EStringToStringMapEntry_ptr > m_xMLNSPrefixMap;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >> m_xSISchemaLocation;
+    ::ecore::EList_ptr< ::ecore::EStringToStringMapEntry_ptr > m_xSISchemaLocation;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::type::ProcessingInstruction_ptr >> m_processingInstruction;
+    ::ecore::EList_ptr< ::type::ProcessingInstruction_ptr > m_processingInstruction;
 
 };
 

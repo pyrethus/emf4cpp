@@ -189,8 +189,8 @@ struct any
 				   > : holder_base
     {
         holder(T const& v) : v_(v) { }
-		const std::type_info& type__id() const { return typeid(T); }
-        holder_base* copy() const { return new holder< T > (v_); }
+		const std::type_info& type__id() const override { return typeid(T); }
+        holder_base* copy() const override { return new holder< T > (v_); }
 		::ecore::EObject_ptr eObject() const override { return ::ecore::EObject_ptr(v_); }
 
         T v_; // Value

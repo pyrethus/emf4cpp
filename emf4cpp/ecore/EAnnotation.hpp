@@ -21,8 +21,6 @@
 #ifndef ECORE_EANNOTATION_HPP
 #define ECORE_EANNOTATION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -98,13 +96,13 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >> m_details;
+    ::ecore::EList_ptr< ::ecore::EStringToStringMapEntry_ptr > m_details;
 
-    ::ecore::EModelElement_ptr m_eModelElement;
+    std::weak_ptr< ::ecore::EModelElement > m_eModelElement;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EObject_ptr >> m_contents;
+    ::ecore::EList_ptr< ::ecore::EObject_ptr > m_contents;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EObject_ptr >> m_references;
+    ::ecore::EList_ptr< ::ecore::EObject_ptr > m_references;
 
 };
 

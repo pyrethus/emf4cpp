@@ -223,13 +223,13 @@ void ETypedElement::setRequired(::ecore::EBoolean _required)
 
 ::ecore::EClassifier_ptr ETypedElement::getEType() const
 {
-    return m_eType;
+    return m_eType.lock();
 }
 
 void ETypedElement::setEType(::ecore::EClassifier_ptr _eType)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EClassifier_ptr _old_eType = m_eType;
+    ::ecore::EClassifier_ptr _old_eType = m_eType.lock();
 #endif
     m_eType = _eType;
 
@@ -241,7 +241,7 @@ void ETypedElement::setEType(::ecore::EClassifier_ptr _eType)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getETypedElement__eType(),
                 _old_eType,
-                m_eType
+                m_eType.lock()
         );
         eNotify(&notification);
     }

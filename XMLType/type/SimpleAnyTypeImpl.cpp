@@ -78,8 +78,7 @@ void SimpleAnyType::_initialize()
         return _any;
     case ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE:
     {
-        if (m_instanceType)
-            _any = ::ecore::as < ::ecore::EObject > (m_instanceType);
+        _any = ::ecore::as < ::ecore::EObject > (m_instanceType.lock());
     }
         return _any;
 
@@ -139,7 +138,7 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::type::AnySimpleType
                 > ::is_set(m_value);
     case ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE:
-        return (bool) m_instanceType;
+        return !m_instanceType.expired();
 
     }
     throw "Error";

@@ -21,11 +21,6 @@
 #ifndef ECORE_EOBJECT_HPP
 #define ECORE_EOBJECT_HPP
 
-#include <memory>
-#include <type_traits>
-
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -38,7 +33,6 @@ namespace ecore
 {
 
 class EXPORT_ECORE_DLL EObject : public std::enable_shared_from_this<::ecore::EObject>
-
 {
 public:
     EObject();
@@ -61,11 +55,11 @@ public:
 
     virtual ::ecore::EReference_ptr eContainmentFeature ();
 
-    virtual ::ecorecpp::mapping::EList< ::ecore::EObject_ptr>::ptr_type eContents ();
+    virtual ::ecore::EList_ptr< ::ecore::EObject_ptr> eContents ();
 
     virtual ::ecorecpp::util::TreeIterator< ::ecore::EObject_ptr> eAllContents ();
 
-    virtual ::ecorecpp::mapping::EList< ::ecore::EObject_ptr>::ptr_type eCrossReferences ();
+    virtual ::ecore::EList_ptr< ::ecore::EObject_ptr> eCrossReferences ();
 
     virtual ::ecore::EJavaObject eGet ( ::ecore::EStructuralFeature_ptr _feature);
 
@@ -77,7 +71,7 @@ public:
 
     virtual void eUnset ( ::ecore::EStructuralFeature_ptr _feature);
 
-    virtual ::ecore::EJavaObject eInvoke ( ::ecore::EOperation_ptr _operation, ::ecorecpp::mapping::EList< ::ecorecpp::mapping::any>::ptr_type const& _arguments);
+    virtual ::ecore::EJavaObject eInvoke ( ::ecore::EOperation_ptr _operation, ::ecore::EList_ptr< ::ecorecpp::mapping::any> const& _arguments);
 
     // Attributes
 
@@ -134,16 +128,16 @@ public:
 
 protected:
 
-    ::ecore::EObject_ptr m_eContainer;
-    ::ecore::EStructuralFeature_ptr m_eContainingFeature;
+    std::weak_ptr<::ecore::EObject> m_eContainer;
+    std::weak_ptr<::ecore::EStructuralFeature> m_eContainingFeature;
 
 #ifdef ECORECPP_NOTIFICATION_API
     // Notification API
-    ::ecorecpp::mapping::EList< ::ecorecpp::notify::Adapter_ptr >::ptr_type m_eAdapters;
+    ::ecore::Ptr<::ecorecpp::mapping::EList< ::ecorecpp::notify::Adapter_ptr >> m_eAdapters;
     bool m_eDeliver;
 #endif
 
-    ::ecorecpp::resource::Resource_ptr m_eResource;
+    std::weak_ptr<::ecorecpp::resource::Resource> m_eResource;
 
     /*PROTECTED REGION END*/
 

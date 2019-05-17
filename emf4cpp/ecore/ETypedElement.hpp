@@ -21,8 +21,6 @@
 #ifndef ECORE_ETYPEDELEMENT_HPP
 #define ECORE_ETYPEDELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -118,7 +116,7 @@ protected:
 
     // References
 
-    ::ecore::EClassifier_ptr m_eType;
+    std::weak_ptr< ::ecore::EClassifier > m_eType;
 
     ::ecore::EGenericType_ptr m_eGenericType;
 

@@ -142,18 +142,18 @@ void EPackage::setNsPrefix(::ecore::EString const& _nsPrefix)
 
 ::ecore::EFactory_ptr EPackage::getEFactoryInstance() const
 {
-    return m_eFactoryInstance;
+    return m_eFactoryInstance.lock();
 }
 
 ::ecore::EFactory_ptr EPackage::basicgetEFactoryInstance()
 {
-    return m_eFactoryInstance;
+    return m_eFactoryInstance.lock();
 }
 
 void EPackage::basicsetEFactoryInstance(::ecore::EFactory_ptr _eFactoryInstance)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EFactory_ptr _old_eFactoryInstance = m_eFactoryInstance;
+    ::ecore::EFactory_ptr _old_eFactoryInstance = m_eFactoryInstance.lock();
 #endif
     m_eFactoryInstance = _eFactoryInstance;
 
@@ -165,7 +165,7 @@ void EPackage::basicsetEFactoryInstance(::ecore::EFactory_ptr _eFactoryInstance)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEPackage__eFactoryInstance(),
                 _old_eFactoryInstance,
-                m_eFactoryInstance
+                m_eFactoryInstance.lock()
         );
         eNotify(&notification);
     }
@@ -174,15 +174,16 @@ void EPackage::basicsetEFactoryInstance(::ecore::EFactory_ptr _eFactoryInstance)
 
 void EPackage::setEFactoryInstance(::ecore::EFactory_ptr _eFactoryInstance)
 {
-    if (_eFactoryInstance != m_eFactoryInstance)
+    ::ecore::EFactory_ptr _old_eFactoryInstance = m_eFactoryInstance.lock();
+    if (_eFactoryInstance != _old_eFactoryInstance)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_eFactoryInstance != nullptr)
+        if (_old_eFactoryInstance)
         {
-            m_eFactoryInstance->_inverseRemove(
+            _old_eFactoryInstance->_inverseRemove(
                     ::ecore::EcorePackage::EFACTORY__EPACKAGE, _this);
         }
-        if (_eFactoryInstance != nullptr)
+        if (_eFactoryInstance)
         {
             _eFactoryInstance->_inverseAdd(
                     ::ecore::EcorePackage::EFACTORY__EPACKAGE, _this);
@@ -213,18 +214,18 @@ const ::ecorecpp::mapping::EList< ::ecore::EPackage_ptr >& EPackage::getESubpack
 
 ::ecore::EPackage_ptr EPackage::getESuperPackage() const
 {
-    return m_eSuperPackage;
+    return m_eSuperPackage.lock();
 }
 
 ::ecore::EPackage_ptr EPackage::basicgetESuperPackage()
 {
-    return m_eSuperPackage;
+    return m_eSuperPackage.lock();
 }
 
 void EPackage::basicsetESuperPackage(::ecore::EPackage_ptr _eSuperPackage)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EPackage_ptr _old_eSuperPackage = m_eSuperPackage;
+    ::ecore::EPackage_ptr _old_eSuperPackage = m_eSuperPackage.lock();
 #endif
     m_eSuperPackage = _eSuperPackage;
 
@@ -236,7 +237,7 @@ void EPackage::basicsetESuperPackage(::ecore::EPackage_ptr _eSuperPackage)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEPackage__eSuperPackage(),
                 _old_eSuperPackage,
-                m_eSuperPackage
+                m_eSuperPackage.lock()
         );
         eNotify(&notification);
     }
@@ -245,15 +246,16 @@ void EPackage::basicsetESuperPackage(::ecore::EPackage_ptr _eSuperPackage)
 
 void EPackage::setESuperPackage(::ecore::EPackage_ptr _eSuperPackage)
 {
-    if (_eSuperPackage != m_eSuperPackage)
+    ::ecore::EPackage_ptr _old_eSuperPackage = m_eSuperPackage.lock();
+    if (_eSuperPackage != _old_eSuperPackage)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_eSuperPackage != nullptr)
+        if (_old_eSuperPackage)
         {
-            m_eSuperPackage->_inverseRemove(
+            _old_eSuperPackage->_inverseRemove(
                     ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES, _this);
         }
-        if (_eSuperPackage != nullptr)
+        if (_eSuperPackage)
         {
             _eSuperPackage->_inverseAdd(
                     ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES, _this);

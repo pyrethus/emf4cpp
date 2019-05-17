@@ -116,8 +116,7 @@ void EPackage::_initialize()
         return _any;
     case ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE:
     {
-        if (m_eFactoryInstance)
-            _any = ::ecore::as < ::ecore::EObject > (m_eFactoryInstance);
+        _any = ::ecore::as < ::ecore::EObject > (m_eFactoryInstance.lock());
     }
         return _any;
     case ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS:
@@ -132,8 +131,7 @@ void EPackage::_initialize()
         return _any;
     case ::ecore::EcorePackage::EPACKAGE__ESUPERPACKAGE:
     {
-        if (m_eSuperPackage)
-            _any = ::ecore::as < ::ecore::EObject > (m_eSuperPackage);
+        _any = ::ecore::as < ::ecore::EObject > (m_eSuperPackage.lock());
     }
         return _any;
 
@@ -148,9 +146,10 @@ void EPackage::eSet(::ecore::EInt _featureID,
     {
     case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::ecore::EModelElement::getEAnnotations().clear();
         ::ecore::EModelElement::getEAnnotations().insert_all(*_t0);
     }
@@ -190,18 +189,20 @@ void EPackage::eSet(::ecore::EInt _featureID,
         return;
     case ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::ecore::EPackage::getEClassifiers().clear();
         ::ecore::EPackage::getEClassifiers().insert_all(*_t0);
     }
         return;
     case ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::ecore::EPackage::getESubpackages().clear();
         ::ecore::EPackage::getESubpackages().insert_all(*_t0);
     }
@@ -236,13 +237,13 @@ void EPackage::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_nsPrefix);
     case ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE:
-        return (bool) m_eFactoryInstance;
+        return !m_eFactoryInstance.expired();
     case ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS:
         return m_eClassifiers && m_eClassifiers->size();
     case ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES:
         return m_eSubpackages && m_eSubpackages->size();
     case ::ecore::EcorePackage::EPACKAGE__ESUPERPACKAGE:
-        return (bool) m_eSuperPackage;
+        return !m_eSuperPackage.expired();
 
     }
     throw "Error";

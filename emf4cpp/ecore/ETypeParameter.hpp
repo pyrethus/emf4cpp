@@ -21,8 +21,6 @@
 #ifndef ECORE_ETYPEPARAMETER_HPP
 #define ECORE_ETYPEPARAMETER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -80,7 +78,7 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >> m_eBounds;
+    ::ecore::EList_ptr< ::ecore::EGenericType_ptr > m_eBounds;
 
 };
 

@@ -21,8 +21,6 @@
 #ifndef ECORE_EATTRIBUTE_HPP
 #define ECORE_EATTRIBUTE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -85,7 +83,7 @@ protected:
 
     // References
 
-    ::ecore::EDataType_ptr m_eAttributeType;
+    std::weak_ptr< ::ecore::EDataType > m_eAttributeType;
 
 };
 

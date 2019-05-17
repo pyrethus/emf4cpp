@@ -35,14 +35,15 @@
 /*PROTECTED REGION ID(EObjectImpl.cpp) ENABLED START*/
 #include <ecorecpp/mapping/FeatureEListImpl.hpp>
 #include <ecorecpp/resource/Resource.hpp>
+#include <ecorecpp/notify/Adapter.hpp>
 
 using namespace ::ecore;
 
 void EObject::_setEContainer(::ecore::EObject_ptr _eContainer,
         ::ecore::EStructuralFeature_ptr _eContainingFeature)
 {
-    if (m_eContainer == _eContainer
-            && m_eContainingFeature == _eContainingFeature)
+    if (m_eContainer.lock() == _eContainer
+            && m_eContainingFeature.lock() == _eContainingFeature)
         return;
 
     /* [SUITE3-208] m_eResource is not touched to allow cross resource
@@ -54,15 +55,16 @@ void EObject::_setEContainer(::ecore::EObject_ptr _eContainer,
 
 void EObject::_setEResource(::ecorecpp::resource::Resource_ptr res)
 {
-    if (m_eResource == res)
+    ::ecorecpp::resource::Resource_ptr currentRes = m_eResource.lock();
+    if (currentRes == res)
         return;
 
     /* [SUITE3-208] m_eContainer is not touched to allow cross resource
      * containment. */
 
-    if (m_eResource)
+    if (currentRes)
     {
-        auto list = m_eResource->getContents();
+        auto list = currentRes->getContents();
         list->remove(_this());
     }
 
@@ -71,7 +73,7 @@ void EObject::_setEResource(::ecorecpp::resource::Resource_ptr res)
 
 ::ecorecpp::resource::Resource_ptr EObject::_getDirectResource()
 {
-    return m_eResource;
+    return m_eResource.lock();
 }
 
 #ifdef ECORECPP_NOTIFICATION_API
@@ -86,7 +88,7 @@ void EObject::_setEResource(::ecorecpp::resource::Resource_ptr res)
 
 void EObject::eNotify( ::ecorecpp::notify::Notification_ptr _notification)
 {
-    for (auto adapter : *m_eAdapters)
+    for (auto&& adapter : *m_eAdapters)
     adapter->notifyChanged(_notification);
 }
 
@@ -137,27 +139,28 @@ void EObject::_initialize()
     /*PROTECTED REGION ID(EObjectImpl_eResource) ENABLED START*/
     // Please, enable the protected region if you add manually written code.
     // To do this, add the keyword ENABLED before START.
-    if (m_eResource || !eContainer())
-        return m_eResource;
+    ::ecore::EResource currentRes = m_eResource.lock();
+    if (currentRes || !eContainer())
+        return currentRes;
 
-    EObject_ptr current = eContainer();
+    EObject_ptr currentCon = eContainer();
     size_t count = 0;
-    while (current && !current->_getDirectResource() && current->eContainer()
-            && current.get() != this // prevent cyclic containments
+    while (currentCon && !currentCon->_getDirectResource()
+            && currentCon->eContainer() && currentCon.get() != this // prevent cyclic containments
             && count < 10000000) // last resort
     {
         count++;
-        current = current->eContainer();
+        currentCon = currentCon->eContainer();
     }
 
-    return current->_getDirectResource();
+    return currentCon->_getDirectResource();
     /*PROTECTED REGION END*/
 }
 
 ::ecore::EObject_ptr EObject::eContainer()
 {
     /*PROTECTED REGION ID(EObjectImpl_eContainer) ENABLED START*/
-    return m_eContainer;
+    return m_eContainer.lock();
     /*PROTECTED REGION END*/
 }
 
@@ -165,7 +168,7 @@ void EObject::_initialize()
 {
     /*PROTECTED REGION ID(EObjectImpl_eContainingFeature) ENABLED START*/
 
-    return m_eContainingFeature;
+    return m_eContainingFeature.lock();
 
     /*PROTECTED REGION END*/
 }
@@ -174,12 +177,12 @@ void EObject::_initialize()
 {
     /*PROTECTED REGION ID(EObjectImpl_eContainmentFeature) ENABLED START*/
 
-    return ::ecore::as < EReference > (m_eContainingFeature);
+    return ::ecore::as < EReference > (m_eContainingFeature.lock());
 
     /*PROTECTED REGION END*/
 }
 
-::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type EObject::eContents()
+::ecore::EList_ptr< ::ecore::EObject_ptr > EObject::eContents()
 {
     /*PROTECTED REGION ID(EObjectImpl_eContents) ENABLED START*/
     auto retList = std::make_shared<
@@ -223,7 +226,7 @@ void EObject::_initialize()
     /*PROTECTED REGION END*/
 }
 
-::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type EObject::eCrossReferences()
+::ecore::EList_ptr< ::ecore::EObject_ptr > EObject::eCrossReferences()
 {
     /*PROTECTED REGION ID(EObjectImpl_eCrossReferences) ENABLED START*/
     /*
@@ -259,6 +262,9 @@ void EObject::_initialize()
             auto children = ecorecpp::mapping::any::any_cast
                     < ::ecorecpp::mapping::EList < ::ecore::EObject_ptr
                     > ::ptr_type > (any);
+            // Remove expired references first
+            children->cleanup();
+
             retList->insert_all(*children, ref);
         }
         else
@@ -315,7 +321,7 @@ void EObject::eUnset(::ecore::EStructuralFeature_ptr _feature)
 }
 
 ::ecore::EJavaObject EObject::eInvoke(::ecore::EOperation_ptr _operation,
-        ::ecorecpp::mapping::EList< ::ecorecpp::mapping::any >::ptr_type const& _arguments)
+        ::ecore::EList_ptr< ::ecorecpp::mapping::any > const& _arguments)
 {
     /*PROTECTED REGION ID(EObjectImpl_eInvoke) START*/
     // Please, enable the protected region if you add manually written code.

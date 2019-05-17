@@ -21,7 +21,6 @@
 #ifndef ECORE_EGENERICTYPE_HPP
 #define ECORE_EGENERICTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <ecore/dllEcore.hpp>
@@ -36,7 +35,6 @@ namespace ecore
 {
 
 class EXPORT_ECORE_DLL EGenericType : public virtual ::ecore::EObject
-
 {
 public:
     EGenericType();
@@ -97,15 +95,15 @@ protected:
 
     ::ecore::EGenericType_ptr m_eUpperBound;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >> m_eTypeArguments;
+    ::ecore::EList_ptr< ::ecore::EGenericType_ptr > m_eTypeArguments;
 
-    ::ecore::EClassifier_ptr m_eRawType;
+    std::weak_ptr< ::ecore::EClassifier > m_eRawType;
 
     ::ecore::EGenericType_ptr m_eLowerBound;
 
-    ::ecore::ETypeParameter_ptr m_eTypeParameter;
+    std::weak_ptr< ::ecore::ETypeParameter > m_eTypeParameter;
 
-    ::ecore::EClassifier_ptr m_eClassifier;
+    std::weak_ptr< ::ecore::EClassifier > m_eClassifier;
 
 };
 

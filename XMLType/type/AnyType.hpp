@@ -21,7 +21,6 @@
 #ifndef TYPE_ANYTYPE_HPP
 #define TYPE_ANYTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <type/dllType.hpp>
@@ -99,7 +98,7 @@ public:
 
 protected:
     AnyType_ptr _this()
-    {   return AnyType_ptr(this);}
+    {   return std::dynamic_pointer_cast<AnyType>(shared_from_this());}
 
     // Attributes
 

@@ -64,18 +64,18 @@ EParameter::~EParameter()
 
 ::ecore::EOperation_ptr EParameter::getEOperation() const
 {
-    return m_eOperation;
+    return m_eOperation.lock();
 }
 
 ::ecore::EOperation_ptr EParameter::basicgetEOperation()
 {
-    return m_eOperation;
+    return m_eOperation.lock();
 }
 
 void EParameter::basicsetEOperation(::ecore::EOperation_ptr _eOperation)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EOperation_ptr _old_eOperation = m_eOperation;
+    ::ecore::EOperation_ptr _old_eOperation = m_eOperation.lock();
 #endif
     m_eOperation = _eOperation;
 
@@ -87,7 +87,7 @@ void EParameter::basicsetEOperation(::ecore::EOperation_ptr _eOperation)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEParameter__eOperation(),
                 _old_eOperation,
-                m_eOperation
+                m_eOperation.lock()
         );
         eNotify(&notification);
     }
@@ -96,15 +96,16 @@ void EParameter::basicsetEOperation(::ecore::EOperation_ptr _eOperation)
 
 void EParameter::setEOperation(::ecore::EOperation_ptr _eOperation)
 {
-    if (_eOperation != m_eOperation)
+    ::ecore::EOperation_ptr _old_eOperation = m_eOperation.lock();
+    if (_eOperation != _old_eOperation)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_eOperation != nullptr)
+        if (_old_eOperation)
         {
-            m_eOperation->_inverseRemove(
+            _old_eOperation->_inverseRemove(
                     ::ecore::EcorePackage::EOPERATION__EPARAMETERS, _this);
         }
-        if (_eOperation != nullptr)
+        if (_eOperation)
         {
             _eOperation->_inverseAdd(
                     ::ecore::EcorePackage::EOPERATION__EPARAMETERS, _this);

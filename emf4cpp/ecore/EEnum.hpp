@@ -21,8 +21,6 @@
 #ifndef ECORE_EENUM_HPP
 #define ECORE_EENUM_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -86,7 +84,7 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EEnumLiteral_ptr >> m_eLiterals;
+    ::ecore::EList_ptr< ::ecore::EEnumLiteral_ptr > m_eLiterals;
 
 };
 

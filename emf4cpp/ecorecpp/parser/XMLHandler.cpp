@@ -65,7 +65,7 @@ bool XMLHandler::getExtendedMetaData() const {
 	if (m_extendedMetaData) {
 		for (auto&& ef : eclass->getEAllStructuralFeatures()) {
 			if (m_extendedMetaData->getName(ef) == name)
-				return ef;
+				return std::move(ef);
 		}
 	}
 	return eclass->getEStructuralFeature(name);

@@ -340,6 +340,8 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 				mapping::EList<::ecore::EObject_ptr>::ptr_type children =
 						ecorecpp::mapping::any::any_cast<
 							mapping::EList<::ecore::EObject_ptr>::ptr_type >(any);
+				// Remove expired references first
+				children->cleanup();
 
 				const bool isCrossDocumentReference =
 						std::any_of( children->begin(), children->end(),

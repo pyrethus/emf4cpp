@@ -113,13 +113,13 @@ void SimpleAnyType::setValue(::type::AnySimpleType _value)
 
 ::ecore::EDataType_ptr SimpleAnyType::getInstanceType() const
 {
-    return m_instanceType;
+    return m_instanceType.lock();
 }
 
 void SimpleAnyType::setInstanceType(::ecore::EDataType_ptr _instanceType)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EDataType_ptr _old_instanceType = m_instanceType;
+    ::ecore::EDataType_ptr _old_instanceType = m_instanceType.lock();
 #endif
     m_instanceType = _instanceType;
 
@@ -131,7 +131,7 @@ void SimpleAnyType::setInstanceType(::ecore::EDataType_ptr _instanceType)
                 _this(),
                 ::type::TypePackage::_instance()->getSimpleAnyType__instanceType(),
                 _old_instanceType,
-                m_instanceType
+                m_instanceType.lock()
         );
         eNotify(&notification);
     }

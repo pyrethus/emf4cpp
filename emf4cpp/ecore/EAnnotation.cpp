@@ -116,19 +116,19 @@ const ::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >& EAnnot
 
 ::ecore::EModelElement_ptr EAnnotation::getEModelElement() const
 {
-    return m_eModelElement;
+    return m_eModelElement.lock();
 }
 
 ::ecore::EModelElement_ptr EAnnotation::basicgetEModelElement()
 {
-    return m_eModelElement;
+    return m_eModelElement.lock();
 }
 
 void EAnnotation::basicsetEModelElement(
         ::ecore::EModelElement_ptr _eModelElement)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EModelElement_ptr _old_eModelElement = m_eModelElement;
+    ::ecore::EModelElement_ptr _old_eModelElement = m_eModelElement.lock();
 #endif
     m_eModelElement = _eModelElement;
 
@@ -140,7 +140,7 @@ void EAnnotation::basicsetEModelElement(
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEAnnotation__eModelElement(),
                 _old_eModelElement,
-                m_eModelElement
+                m_eModelElement.lock()
         );
         eNotify(&notification);
     }
@@ -149,15 +149,16 @@ void EAnnotation::basicsetEModelElement(
 
 void EAnnotation::setEModelElement(::ecore::EModelElement_ptr _eModelElement)
 {
-    if (_eModelElement != m_eModelElement)
+    ::ecore::EModelElement_ptr _old_eModelElement = m_eModelElement.lock();
+    if (_eModelElement != _old_eModelElement)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_eModelElement != nullptr)
+        if (_old_eModelElement)
         {
-            m_eModelElement->_inverseRemove(
+            _old_eModelElement->_inverseRemove(
                     ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS, _this);
         }
-        if (_eModelElement != nullptr)
+        if (_eModelElement)
         {
             _eModelElement->_inverseAdd(
                     ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS, _this);

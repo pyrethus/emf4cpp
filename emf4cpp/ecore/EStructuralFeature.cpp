@@ -248,19 +248,19 @@ void EStructuralFeature::setDerived(::ecore::EBoolean _derived)
 
 ::ecore::EClass_ptr EStructuralFeature::getEContainingClass() const
 {
-    return m_eContainingClass;
+    return m_eContainingClass.lock();
 }
 
 ::ecore::EClass_ptr EStructuralFeature::basicgetEContainingClass()
 {
-    return m_eContainingClass;
+    return m_eContainingClass.lock();
 }
 
 void EStructuralFeature::basicsetEContainingClass(
         ::ecore::EClass_ptr _eContainingClass)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EClass_ptr _old_eContainingClass = m_eContainingClass;
+    ::ecore::EClass_ptr _old_eContainingClass = m_eContainingClass.lock();
 #endif
     m_eContainingClass = _eContainingClass;
 
@@ -272,7 +272,7 @@ void EStructuralFeature::basicsetEContainingClass(
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEStructuralFeature__eContainingClass(),
                 _old_eContainingClass,
-                m_eContainingClass
+                m_eContainingClass.lock()
         );
         eNotify(&notification);
     }
@@ -282,15 +282,16 @@ void EStructuralFeature::basicsetEContainingClass(
 void EStructuralFeature::setEContainingClass(
         ::ecore::EClass_ptr _eContainingClass)
 {
-    if (_eContainingClass != m_eContainingClass)
+    ::ecore::EClass_ptr _old_eContainingClass = m_eContainingClass.lock();
+    if (_eContainingClass != _old_eContainingClass)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_eContainingClass != nullptr)
+        if (_old_eContainingClass)
         {
-            m_eContainingClass->_inverseRemove(
+            _old_eContainingClass->_inverseRemove(
                     ::ecore::EcorePackage::ECLASS__ESTRUCTURALFEATURES, _this);
         }
-        if (_eContainingClass != nullptr)
+        if (_eContainingClass)
         {
             _eContainingClass->_inverseAdd(
                     ::ecore::EcorePackage::ECLASS__ESTRUCTURALFEATURES, _this);

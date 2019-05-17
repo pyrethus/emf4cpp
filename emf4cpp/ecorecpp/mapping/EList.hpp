@@ -24,7 +24,7 @@
 #include <type_traits>
 #include <vector>
 
-#include <ecore_forward.hpp>
+#include "../../ecore_forward.hpp"
 
 namespace ecorecpp
 {
@@ -35,10 +35,9 @@ template< typename T >
 class EList : public std::enable_shared_from_this<EList<T>> {
 public:
 
-    typedef std::shared_ptr<EList<T>> ptr_type;
-    typedef std::shared_ptr<const EList<T>> ptr_const_type;
-	typedef std::vector<T> UnderlyingContainer_type;
-	typedef ::ecore::EStructuralFeature ef;
+    using ptr_type = ::ecore::EList_ptr<T>;
+    using ptr_const_type = ::ecore::EList_const_ptr<T>;
+	using ef = ::ecore::EStructuralFeature;
 
 	/** Iterator interfaces for an EList<T>.
 	 */
@@ -174,7 +173,14 @@ public:
 	virtual void remove(T) = 0;
 	virtual void remove(iterator) = 0;
 
-    /**
+	/**
+	 * This method normally does nothing. Only for non-containment
+	 * reference lists this method removes all orphaned references.
+	 */
+	virtual void cleanup() {
+	}
+
+	/**
      * Allows treating an EList<T> as an EList<Q> (if T can be casted to Q dynamically)
      */
     template< typename Q >
@@ -209,7 +215,7 @@ public:
     {
     }
 
-    virtual T get(size_t _index) const
+    T get(size_t _index) const override
     {
         return _cast< Q, T >::do_cast(m_delegate[_index]);
     }
@@ -218,7 +224,7 @@ public:
 	{
 		return nullptr;
 	}
-	
+
 	void insert_at(size_t _pos, T _obj,
 			typename EList< T >::ef* ef = nullptr) override
     {
@@ -231,12 +237,12 @@ public:
         m_delegate.push_back(_cast< T, Q >::do_cast(_obj), ef);
     }
 
-    virtual size_t size() const
+    size_t size() const override
     {
         return m_delegate.size();
     }
 
-    virtual void clear()
+    void clear() override
     {
         m_delegate.clear();
     }
@@ -250,7 +256,11 @@ public:
 			remove(*it);
 	}
 
-    virtual ~DelegateEList()
+	void cleanup() override {
+		m_delegate.cleanup();
+	}
+
+	virtual ~DelegateEList()
     {
     }
 

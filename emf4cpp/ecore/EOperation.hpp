@@ -21,8 +21,6 @@
 #ifndef ECORE_EOPERATION_HPP
 #define ECORE_EOPERATION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -98,15 +96,15 @@ protected:
 
     // References
 
-    ::ecore::EClass_ptr m_eContainingClass;
+    std::weak_ptr< ::ecore::EClass > m_eContainingClass;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::ETypeParameter_ptr >> m_eTypeParameters;
+    ::ecore::EList_ptr< ::ecore::ETypeParameter_ptr > m_eTypeParameters;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EParameter_ptr >> m_eParameters;
+    ::ecore::EList_ptr< ::ecore::EParameter_ptr > m_eParameters;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EClassifier_ptr >> m_eExceptions;
+    ::ecore::EList_ptr< ::ecore::EClassifier_ptr > m_eExceptions;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >> m_eGenericExceptions;
+    ::ecore::EList_ptr< ::ecore::EGenericType_ptr > m_eGenericExceptions;
 
 };
 

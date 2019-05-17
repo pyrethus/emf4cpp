@@ -21,8 +21,6 @@
 #ifndef ECORE_ECLASSIFIER_HPP
 #define ECORE_ECLASSIFIER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 
@@ -119,9 +117,9 @@ protected:
 
     // References
 
-    ::ecore::EPackage_ptr m_ePackage;
+    std::weak_ptr< ::ecore::EPackage > m_ePackage;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::ETypeParameter_ptr >> m_eTypeParameters;
+    ::ecore::EList_ptr< ::ecore::ETypeParameter_ptr > m_eTypeParameters;
 
 };
 

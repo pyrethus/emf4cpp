@@ -21,10 +21,10 @@
 #ifndef _ECORE_FORWARD_HPP
 #define _ECORE_FORWARD_HPP
 
-#include <memory>
-#include <ecorecpp/mapping_forward.hpp>
-
 /*PROTECTED REGION ID(ecore_forward) ENABLED START*/
+#include <memory>
+#include <vector>
+#include <ecorecpp/mapping_forward.hpp>
 #include <ecorecpp/resource_forward.hpp>
 #ifndef ECORECPP_USE_UNORDERED_MAP
 #define ECORECPP_USE_UNORDERED_MAP
@@ -73,6 +73,13 @@ namespace ecore
     {
         return (bool) dynamic_cast< T* >(_s.get());
     }
+
+    /** The default EList pointer type used by the generated EMF implementation. */
+    template< class T >
+    using EList_ptr = std::shared_ptr<::ecorecpp::mapping::EList<T> >;
+
+    template< class T >
+    using EList_const_ptr = std::shared_ptr<const ::ecorecpp::mapping::EList<T> >;
 
 // EDataType
     /*PROTECTED REGION ID(ecore_EBigDecimal) START*/

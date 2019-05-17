@@ -21,7 +21,6 @@
 #ifndef ECORE_ESTRINGTOSTRINGMAPENTRY_HPP
 #define ECORE_ESTRINGTOSTRINGMAPENTRY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <ecore/dllEcore.hpp>
@@ -36,7 +35,6 @@ namespace ecore
 {
 
 class EXPORT_ECORE_DLL EStringToStringMapEntry : public virtual ::ecore::EObject
-
 {
 public:
     EStringToStringMapEntry();

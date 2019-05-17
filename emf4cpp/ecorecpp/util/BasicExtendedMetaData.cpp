@@ -818,8 +818,7 @@ mapping::EList<::ecore::EString>::ptr_type BasicExtendedMetaData::getEnumeration
 
 BasicExtendedMetaData::EStringList::ptr_type BasicExtendedMetaData::EDataTypeExtendedMetaData::basicGetEnumerationFacet() {
 	mapping::EList<::ecore::EString>::ptr_type result(
-		new ::ecorecpp::mapping::ReferenceEListImpl< ::ecore::EString, -1, false, false >(
-			nullptr, ::ecore::EReference_ptr()));
+		new ::ecorecpp::mapping::EListImpl< ::ecore::EString >());
 
 	auto eAnnotation = m_dataType->getEAnnotation(ANNOTATION_URI);
 	if (eAnnotation->hasDetail("enumeration")) {
@@ -860,8 +859,7 @@ mapping::EList<::ecore::EString>::ptr_type BasicExtendedMetaData::getPatternFace
 
 BasicExtendedMetaData::EStringList::ptr_type BasicExtendedMetaData::EDataTypeExtendedMetaData::basicGetPatternFacet() {
 	mapping::EList<::ecore::EString>::ptr_type result(
-		new ::ecorecpp::mapping::ReferenceEListImpl< ::ecore::EString, -1, false, false >(
-			nullptr, ::ecore::EReference_ptr()));
+		new ::ecorecpp::mapping::EListImpl< ::ecore::EString >() );
 
 	auto eAnnotation = m_dataType->getEAnnotation(ANNOTATION_URI);
 	if (eAnnotation->hasDetail("pattern")) {
@@ -1183,9 +1181,7 @@ BasicExtendedMetaData::createExtendedMetaData(
 
 BasicExtendedMetaData::AbstractEClassifierExtendedMetaData::~AbstractEClassifierExtendedMetaData() = default;
 
-const ::ecore::EString BasicExtendedMetaData::UNINITIALIZED_STRING(
-	{"-uninitialized-"});
-
+const ::ecore::EString BasicExtendedMetaData::UNINITIALIZED_STRING("-uninitialized-");
 
 BasicExtendedMetaData::EClassExtendedMetaData::~EClassExtendedMetaData() = default;
 

@@ -91,13 +91,13 @@ void EAttribute::setID(::ecore::EBoolean _iD)
 
 ::ecore::EDataType_ptr EAttribute::getEAttributeType() const
 {
-    return m_eAttributeType;
+    return m_eAttributeType.lock();
 }
 
 void EAttribute::setEAttributeType(::ecore::EDataType_ptr _eAttributeType)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EDataType_ptr _old_eAttributeType = m_eAttributeType;
+    ::ecore::EDataType_ptr _old_eAttributeType = m_eAttributeType.lock();
 #endif
     m_eAttributeType = _eAttributeType;
 
@@ -109,7 +109,7 @@ void EAttribute::setEAttributeType(::ecore::EDataType_ptr _eAttributeType)
                 _this(),
                 ::ecore::EcorePackage::_instance()->getEAttribute__eAttributeType(),
                 _old_eAttributeType,
-                m_eAttributeType
+                m_eAttributeType.lock()
         );
         eNotify(&notification);
     }

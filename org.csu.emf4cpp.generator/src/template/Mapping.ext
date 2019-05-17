@@ -34,7 +34,7 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
  	case "EDiagnosticChain": "int" // ?? Need class
 	case "EDouble": "double"
 	case "EDoubleObject": "double" // Object/value?
-	case "EEList": "::ecorecpp::mapping::EList<" + type_parameters +">::ptr_type"
+	case "EEList": "::ecore::EList_ptr<" + type_parameters +">"
 	case "EEnumerator": "int" // ?? Need class
 	case "EFeatureMap": "int" // ?? Need class
 	case "EFeatureMapEntry": "int" // ?? Need class
@@ -70,7 +70,7 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
 	case "Double": "double"
 	case "DoubleObject": "double"
 	case "Duration": "int" // ?
-	case "ENTITIES": "std::shared_ptr<::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >>"
+	case "ENTITIES": "::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >"
 	case "ENTITIESBase": "::ecorecpp::mapping::type_definitions::string_t"
 	case "ENTITY": "::ecorecpp::mapping::type_definitions::string_t"
 	case "Float": "float"
@@ -83,8 +83,8 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
 	case "HexBinary": "::ecorecpp::mapping::type_definitions::string_t"
 	case "ID": "::ecorecpp::mapping::type_definitions::string_t"
 	case "IDREF": "::ecorecpp::mapping::type_definitions::string_t"
-	case "IDREFS": "::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >::ptr_type"
-	case "IDREFSBase": "::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >::ptr_type"
+	case "IDREFS": "::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >"
+	case "IDREFSBase": "::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >"
 	case "Int": "int"
 	case "Integer": "int64_t" // XMLType.ecore references BigInteger
 	case "IntObject": "int"
@@ -95,8 +95,8 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
 	case "NCName": "::ecorecpp::mapping::type_definitions::string_t"
 	case "NegativeInteger": "int64_t"
 	case "NMTOKEN": "::ecorecpp::mapping::type_definitions::string_t"
-	case "NMTOKENS": "::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >::ptr_type"
-	case "NMTOKENSBase": "::ecorecpp::mapping::EList< ::ecorecpp::mapping::type_definitions::string_t >::ptr_type"
+	case "NMTOKENS": "::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >"
+	case "NMTOKENSBase": "::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >"
 	case "NonNegativeInteger": "uint64_t"
 	case "NonPositiveInteger": "int64_t"
 	case "NormalizedString": "::ecorecpp::mapping::type_definitions::string_t"

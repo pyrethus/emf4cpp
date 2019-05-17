@@ -108,18 +108,20 @@ void XMLTypeDocumentRoot::eSet(::ecore::EInt _featureID,
         return;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::type::XMLTypeDocumentRoot::getXMLNSPrefixMap().clear();
         ::type::XMLTypeDocumentRoot::getXMLNSPrefixMap().insert_all(*_t0);
     }
         return;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::type::XMLTypeDocumentRoot::getXSISchemaLocation().clear();
         ::type::XMLTypeDocumentRoot::getXSISchemaLocation().insert_all(*_t0);
     }

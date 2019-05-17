@@ -48,7 +48,6 @@ ResourceSet::ResourceSet()
  */
 ResourceSet::~ResourceSet() {
 	std::vector<Resource_ptr> tmpCopy;
-	tmpCopy.reserve(_resources->size());
 	for (auto r : *_resources)
 		tmpCopy.push_back(r);
 

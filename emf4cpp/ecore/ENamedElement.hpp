@@ -21,8 +21,6 @@
 #ifndef ECORE_ENAMEDELEMENT_HPP
 #define ECORE_ENAMEDELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <ecore/dllEcore.hpp>
 #include <ecore_forward.hpp>
 

@@ -21,9 +21,9 @@
 #define ECORECPP_MAPPING_ELISTIMPL_HPP
 
 #include <algorithm>
+#include <cassert>
 #include <iostream>
-#include "EList.hpp"
-#include "any.hpp"
+
 #include <ecore/EObject.hpp>
 #include <ecore/EReference.hpp>
 
@@ -31,6 +31,9 @@
 #include <ecorecpp/notify.hpp>
 #endif
 
+#include "EList.hpp"
+#include "any.hpp"
+#include "elist_traits.hpp"
 
 namespace ecorecpp
 {
@@ -42,7 +45,7 @@ class EListImpl: public EList< T >
 {
 public:
 
-    virtual T get(size_t _index) const
+    T get(size_t _index) const override
     {
         return m_content[_index];
     }
@@ -70,12 +73,12 @@ public:
         m_content.push_back(_obj);
     }
 
-    virtual size_t size() const
+    size_t size() const override
     {
         return m_content.size();
     }
 
-    virtual void clear()
+    void clear() override
     {
         m_content.clear();
     }
@@ -102,116 +105,134 @@ public:
 
 protected:
 
-    typename EList<T>::UnderlyingContainer_type m_content;
+    std::vector<T> m_content;
 };
 
 template< typename T, int upper_bound = -1, bool containment = false,
         bool opposite = false >
-class ReferenceEListImpl: public EListImpl< T >
+class ReferenceEListImpl : public EList< T >
 {
+	static_assert(is_shared_ptr<T>::value, "ReferenceEListImpl content type must be a shared_ptr!");
+
+	using containment_t = ContainmentPolicy< T, containment >;
+	using opposite_t = OppositePolicy< T, opposite >;
+	using value_type = T;
+	using ptr_type = typename containment_t::ptr_type;
+
 public:
 
-    ReferenceEListImpl(::ecore::EObject_ptr _this,
-					   ::ecore::EReference_ptr _ref, int _opp = -1) :
-		m_this(_this), m_ref(_ref), m_opp(_opp),
-		m_containment(*this), m_opposite(*this)
-    {
-    }
-
     ReferenceEListImpl(::ecore::EObject* _this,
-					   ::ecore::EReference_ptr _ref, int _opp = -1) :
-		m_this(::ecore::EObject_ptr(_this)), m_ref(_ref), m_opp(_opp),
-		m_containment(*this), m_opposite(*this)
-    {
-    }
+					   ::ecore::EReference_ptr _ref, int _opp = -1)
+		: m_this(_this),
+		  m_ref(_ref),
+		  m_opp(_opp) {
+		assert(_this != nullptr && "ReferenceEListImpl must be created with non-null parent pointer!");
+	}
 
 	/* The container grows as std::vector<>::insert() does. */
-	void insert_at(size_t _pos, T _obj,
+	void insert_at(size_t _pos, value_type _obj,
 			typename EList< T >::ef* ef = nullptr) override
     {
 		/* Out-of-range positions are appended. */
-		if (_pos >= base_t::m_content.size())
+		if (_pos >= m_content.size())
 			return push_back(_obj, ef);
 
 		/* Do not insert a second reference to the same object. */
-		auto it = std::find( base_t::m_content.begin(), base_t::m_content.end(), _obj );
-		if (it == base_t::m_content.end()) {
+		auto it = std::find_if( m_content.begin(), m_content.end(),
+				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );
+		if (it == m_content.end()) {
 			/* Removed deletion of element at previous position. */
 
-			it = base_t::m_content.begin() + _pos;
-			base_t::m_content.insert(it, _obj);
+			it = m_content.begin() + _pos;
+			m_content.insert(it, typename containment_t::ptr_type(_obj));
 
-			m_containment.set(_obj);
-			m_opposite.set(_obj);
+			containment_t::set(_obj, _this(), m_ref);
+			opposite_t::set(_obj, _this(), m_opp);
 
 #ifdef ECORECPP_NOTIFICATION_API
-			if (m_this->eNotificationRequired())
+			if (_this()->eNotificationRequired())
 			{
 				::ecorecpp::notify::Notification notification(
 					::ecorecpp::notify::Notification::ADD,
-					m_this,
+					_this(),
 					m_ref,
 					T(),
 					_obj
 					);
-				m_this->eNotify(&notification);
+				_this()->eNotify(&notification);
 			}
 #endif
 		}
     }
 
-    void push_back(T _obj,
+    value_type get(size_t _index) const override
+    {
+        return containment_t::to_value_type( m_content[_index] );
+    }
+
+	typename EList< T >::ef* eFeature(size_t) const override
+	{
+		return nullptr;
+	}
+
+    void push_back(value_type _obj,
 			typename EList< T >::ef* = nullptr ) override
     {
-		auto it = std::find( base_t::m_content.begin(), base_t::m_content.end(), _obj );
-		if (it == base_t::m_content.end()) {
-			base_t::m_content.push_back(_obj);
+		auto it = std::find_if( m_content.begin(), m_content.end(),
+				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );
+		if (it == m_content.end()) {
+			m_content.push_back(typename containment_t::ptr_type(_obj));
 
-			m_containment.set(_obj);
-			m_opposite.set(_obj);
+			containment_t::set(_obj, _this(), m_ref);
+			opposite_t::set(_obj, _this(), m_opp);
 
 #ifdef ECORECPP_NOTIFICATION_API
-			if (m_this->eNotificationRequired())
+			if (_this()->eNotificationRequired())
 			{
 				::ecorecpp::notify::Notification notification(
 					::ecorecpp::notify::Notification::ADD,
-					m_this,
+					_this(),
 					m_ref,
 					T(),
 					_obj
 					);
-				m_this->eNotify(&notification);
+				_this()->eNotify(&notification);
 			}
 #endif
 		}
     }
 
-    virtual void clear()
+    size_t size() const override
     {
-        containment_t< T, containment >::free_all(base_t::m_content);
+        return m_content.size();
+    }
 
-        base_t::m_content.clear();
+    void clear() override
+    {
+        containment_t::free_all(m_content);
+
+        m_content.clear();
 
 #ifdef ECORECPP_NOTIFICATION_API
-			if (m_this->eNotificationRequired())
+			if (_this()->eNotificationRequired())
 			{
 				::ecorecpp::notify::Notification notification(
 					::ecorecpp::notify::Notification::REMOVE_MANY,
-					m_this,
+					_this(),
 					m_ref,
 					T(),
 					T()
 					);
-				m_this->eNotify(&notification);
+				_this()->eNotify(&notification);
 			}
 #endif
     }
 
-	void remove(T _obj) override {
+	void remove(value_type _obj) override {
 			basicRemove(_obj);
 
-			m_containment.unset(_obj);
-			m_opposite.unset(_obj);
+			containment_t::unset(_obj, m_ref);
+			opposite_t::unset(_obj, _this(), m_opp);
 	}
 
 	/* Better check before trusting the caller. */
@@ -224,21 +245,22 @@ public:
 	/* Called from the opposite end of a relation: Just remove the object, do
 	 * nothing else. */
 	void basicRemove(T _obj) {
-		auto it = std::find( base_t::m_content.begin(), base_t::m_content.end(), _obj );
-		if (it != base_t::m_content.end()) {
-			base_t::m_content.erase(it);
+		auto it = std::find_if( m_content.begin(), m_content.end(),
+				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );
+		if (it != m_content.end()) {
+			m_content.erase(it);
 
 #ifdef ECORECPP_NOTIFICATION_API
-			if (m_this->eNotificationRequired())
+			if (_this()->eNotificationRequired())
 			{
 				::ecorecpp::notify::Notification notification(
 					::ecorecpp::notify::Notification::REMOVE,
-					m_this,
+					_this(),
 					m_ref,
 					_obj,
 					T()
 					);
-				m_this->eNotify(&notification);
+				_this()->eNotify(&notification);
 			}
 #endif
 		}
@@ -247,164 +269,48 @@ public:
 	/* Called from the opposite end of a relation: Just add the object, do
 	 * nothing else. */
 	void basicAdd(T _obj) {
-		auto it = std::find( base_t::m_content.begin(), base_t::m_content.end(), _obj );
-		if (it == base_t::m_content.end()) {
-			base_t::m_content.push_back(_obj);
+		auto it = std::find_if( m_content.begin(), m_content.end(),
+				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );
+		if (it == m_content.end()) {
+			m_content.push_back(typename containment_t::ptr_type(_obj));
 
 #ifdef ECORECPP_NOTIFICATION_API
-			if (m_this->eNotificationRequired())
+			if (_this()->eNotificationRequired())
 			{
 				::ecorecpp::notify::Notification notification(
 					::ecorecpp::notify::Notification::ADD,
-					m_this,
+					_this(),
 					m_ref,
 					T(),
 					_obj
 					);
-				m_this->eNotify(&notification);
+				_this()->eNotify(&notification);
 			}
 #endif
 		}
 	}
 
+	void cleanup() override {
+		containment_t::cleanup(m_content);
+	}
+
     virtual ~ReferenceEListImpl()
     {
-        containment_t< T, containment >::free_all(base_t::m_content);
+        containment_t::free_all(m_content);
     }
 
 protected:
-   ::ecore::EObject_ptr m_this; // owner object
+	::ecore::EObject_ptr _this() {return m_this->shared_from_this();}
+	::ecore::EObject* m_this; // owner object
     ::ecore::EReference_ptr m_ref;
     const int m_opp;
 
-    template< typename Q, bool _free = false >
-    struct containment_t
-    {
-        inline containment_t(ReferenceEListImpl& _parent)
-        {
-        }
-
-        static inline void free_all(std::vector< Q >& _v)
-        {
-        }
-
-        static inline void free(Q _p)
-        {
-        }
-
-		inline void set(Q _p)
-        {
-        }
-
-		inline void unset(Q _p)
-        {
-        }
-	};
-
-    template< typename Q >
-    struct containment_t< Q, true >
-    {
-        inline containment_t(ReferenceEListImpl& _parent)
-        : m_parent(_parent)
-        {
-        }
-
-        static inline void free_all(std::vector< Q >& _v)
-        {
-            for (size_t i = 0; i < _v.size(); i++)
-                _v[i].reset();
-        }
-
-        static inline void free(Q _p)
-        {
-            _p.reset();
-        }
-
-		inline void set(Q _p)
-        {
-			_p->_setEContainer(m_parent.m_this, m_parent.m_ref);
-        }
-
-		inline void unset(Q _p)
-        {
-			if (_p)
-				_p->_setEContainer(nullptr, m_parent.m_ref);
-        }
-
-		ReferenceEListImpl& m_parent;
-	};
-
-    template< typename Q, bool _opposite = false >
-    struct opposite_t
-    {
-        inline opposite_t(ReferenceEListImpl& _parent)
-        {
-        }
-
-        inline void set(Q _obj)
-        {
-        }
-
-        inline void unset(Q _obj)
-        {
-        }
-    };
-
-    template< typename Q >
-    struct opposite_t< Q, true >
-    {
-        inline opposite_t(ReferenceEListImpl& _parent)
-        : m_parent(_parent)
-        {
-        }
-
-        inline void set(::ecore::EObject_ptr _obj)
-        {
-			auto ref = m_parent.m_opp;
-			if (ref == -1) // as long as ecore has not been regenerated
-				return;
-			_obj->_inverseAdd(ref, m_parent.m_this);
-        }
-
-        inline void unset(::ecore::EObject_ptr _obj)
-        {
-			auto ref = m_parent.m_opp;
-			if (ref == -1) // as long as ecore has not been regenerated
-				return;
-			_obj->_inverseRemove(ref, m_parent.m_this);
-          }
-
-        ReferenceEListImpl& m_parent;
-    };
-
-    typedef EListImpl< T > base_t;
-
-    containment_t< T, containment > m_containment;
-    opposite_t< T, opposite > m_opposite;
+	typename containment_t::container_type m_content;
 
 };
 
 template <class T>
-class ContainingEList : public EListImpl<T> {
-	using base_t = EListImpl<T>;
-public:
-
-    ContainingEList() {
-	}
-
-	virtual ~ContainingEList() {
-		for ( auto& obj : base_t::m_content )
-			obj.reset();
-	}
-
-	void clear() override
-    {
-		for ( auto& obj : base_t::m_content )
-			obj.reset();
-
-        base_t::m_content.clear();
-    }
-};
+using ContainingEList = EListImpl<T>;
 
 } // mapping
 } // ecorecpp
