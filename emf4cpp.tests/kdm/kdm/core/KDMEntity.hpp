@@ -21,8 +21,6 @@
 #ifndef KDM_CORE_KDMENTITY_HPP
 #define KDM_CORE_KDMENTITY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/core_forward.hpp>
 
@@ -107,7 +105,7 @@ namespace kdm
 
     protected:
         KDMEntity_ptr _this()
-        {   return KDMEntity_ptr(this);}
+        {   return std::dynamic_pointer_cast<KDMEntity>(shared_from_this());}
 
         // Attributes
 

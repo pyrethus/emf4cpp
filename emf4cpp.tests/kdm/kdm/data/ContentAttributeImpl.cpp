@@ -113,8 +113,7 @@ void ContentAttribute::_initialize()
         return _any;
     case ::kdm::data::DataPackage::CONTENTITEM__TYPE:
     {
-        if (m_type)
-            _any = ::ecore::as < ::ecore::EObject > (m_type);
+        _any = ::ecore::as < ::ecore::EObject > (m_type.lock());
     }
         return _any;
     case ::kdm::data::DataPackage::CONTENTITEM__CONTENTELEMENT:
@@ -134,36 +133,40 @@ void ContentAttribute::eSet(::ecore::EInt _featureID,
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::Element::getAttribute().clear();
         ::kdm::core::Element::getAttribute().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::Element::getAnnotation().clear();
         ::kdm::core::Element::getAnnotation().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::ModelElement::getStereotype().clear();
         ::kdm::core::ModelElement::getStereotype().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::ModelElement::getTaggedValue().clear();
         ::kdm::core::ModelElement::getTaggedValue().insert_all(*_t0);
     }
@@ -178,27 +181,30 @@ void ContentAttribute::eSet(::ecore::EInt _featureID,
         return;
     case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__SOURCE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::data::AbstractDataElement::getSource().clear();
         ::kdm::data::AbstractDataElement::getSource().insert_all(*_t0);
     }
         return;
     case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__DATARELATION:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::data::AbstractDataElement::getDataRelation().clear();
         ::kdm::data::AbstractDataElement::getDataRelation().insert_all(*_t0);
     }
         return;
     case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__ABSTRACTION:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::data::AbstractDataElement::getAbstraction().clear();
         ::kdm::data::AbstractDataElement::getAbstraction().insert_all(*_t0);
     }
@@ -207,16 +213,17 @@ void ContentAttribute::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::kdm::data::ComplexContentType_ptr _t1 =
-                dynamic_cast< ::kdm::data::ComplexContentType* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::kdm::data::ComplexContentType >(_t0);*/
+        ::kdm::data::ComplexContentType_ptr _t1 = std::dynamic_pointer_cast
+                < ::kdm::data::ComplexContentType > (_t0);
         ::kdm::data::ContentItem::setType(_t1);
     }
         return;
     case ::kdm::data::DataPackage::CONTENTITEM__CONTENTELEMENT:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::data::ContentItem::getContentElement().clear();
         ::kdm::data::ContentItem::getContentElement().insert_all(*_t0);
     }
@@ -248,7 +255,7 @@ void ContentAttribute::eSet(::ecore::EInt _featureID,
     case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__ABSTRACTION:
         return m_abstraction && m_abstraction->size();
     case ::kdm::data::DataPackage::CONTENTITEM__TYPE:
-        return (bool) m_type;
+        return !m_type.expired();
     case ::kdm::data::DataPackage::CONTENTITEM__CONTENTELEMENT:
         return m_contentElement && m_contentElement->size();
 

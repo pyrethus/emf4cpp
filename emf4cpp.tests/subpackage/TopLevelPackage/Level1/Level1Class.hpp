@@ -21,7 +21,6 @@
 #ifndef TOPLEVELPACKAGE_LEVEL1_LEVEL1CLASS_HPP
 #define TOPLEVELPACKAGE_LEVEL1_LEVEL1CLASS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <TopLevelPackage/dllTopLevelPackage.hpp>
@@ -79,7 +78,7 @@ namespace TopLevelPackage
 
     protected:
         Level1Class_ptr _this()
-        {   return Level1Class_ptr(this);}
+        {   return std::dynamic_pointer_cast<Level1Class>(shared_from_this());}
 
         // Attributes
 

@@ -21,8 +21,6 @@
 #ifndef KDM_EVENT_EVENTRELATIONSHIP_HPP
 #define KDM_EVENT_EVENTRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/event_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         EventRelationship_ptr _this()
-        {   return EventRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<EventRelationship>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::core::KDMEntity_ptr m_to;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_to;
 
-        ::kdm::event::AbstractEventElement_ptr m_from;
+        std::weak_ptr< ::kdm::event::AbstractEventElement > m_from;
 
     };
 

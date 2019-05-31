@@ -2,7 +2,6 @@
 #include <ecorecpp.hpp>
 #include <company.hpp>
 #include <fstream>
-#include <memory> // for std::auto_ptr
 #include <assert.h>
 
 using namespace company;
@@ -14,7 +13,7 @@ int main(int argc, char* argv[])
     CompanyFactory_ptr companyFactory = CompanyFactory::_instance();
 
     {
-		boost::intrusive_ptr<Company> umu ( companyFactory->createCompany());
+		Company_ptr umu ( companyFactory->createCompany());
         umu->setName("UMU");
 
         Department_ptr catedraSAES = companyFactory->createDepartment();
@@ -56,7 +55,7 @@ int main(int argc, char* argv[])
 
         std::ofstream outfile ("UMU.xmi");
         ecorecpp::serializer::serializer _ser(outfile);
-        _ser.serialize(umu.get());
+        _ser.serialize(umu);
         outfile.close();
     }
 
@@ -67,7 +66,7 @@ int main(int argc, char* argv[])
     EObject_ptr eobj = _dser.load ("UMU.xmi");
 
     {
-		boost::intrusive_ptr<Company> umu (::ecore::as< Company >(eobj));
+		Company_ptr umu (::ecore::as< Company >(eobj));
     }
 }
 

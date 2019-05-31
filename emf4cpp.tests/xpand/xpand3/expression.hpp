@@ -22,7 +22,6 @@
 #define XPAND3_EXPRESSION_HPP
 
 #include "expression_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

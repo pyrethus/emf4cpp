@@ -69,8 +69,7 @@ void NonTerminal::_initialize()
         return _any;
     case ::tree::TreePackage::TREENODE__PARENT:
     {
-        if (m_parent)
-            _any = ::ecore::as < ::ecore::EObject > (m_parent);
+        _any = ::ecore::as < ::ecore::EObject > (m_parent.lock());
     }
         return _any;
     case ::tree::TreePackage::NONTERMINAL__CHILDREN:
@@ -100,15 +99,17 @@ void NonTerminal::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::tree::TreeNode_ptr _t1 = dynamic_cast< ::tree::TreeNode* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::tree::TreeNode >(_t0);*/
+        ::tree::TreeNode_ptr _t1 = std::dynamic_pointer_cast < ::tree::TreeNode
+                > (_t0);
         ::tree::TreeNode::setParent(_t1);
     }
         return;
     case ::tree::TreePackage::NONTERMINAL__CHILDREN:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::tree::NonTerminal::getChildren().clear();
         ::tree::NonTerminal::getChildren().insert_all(*_t0);
     }
@@ -126,7 +127,7 @@ void NonTerminal::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_data);
     case ::tree::TreePackage::TREENODE__PARENT:
-        return (bool) m_parent;
+        return !m_parent.expired();
     case ::tree::TreePackage::NONTERMINAL__CHILDREN:
         return m_children && m_children->size();
 

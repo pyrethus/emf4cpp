@@ -66,13 +66,13 @@ BuildRelationship::~BuildRelationship()
 
 ::kdm::core::KDMEntity_ptr BuildRelationship::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void BuildRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::core::KDMEntity_ptr _old_to = m_to;
+    ::kdm::core::KDMEntity_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void BuildRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 _this(),
                 ::kdm::build::BuildPackage::_instance()->getBuildRelationship__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,13 +93,13 @@ void BuildRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 
 ::kdm::build::AbstractBuildElement_ptr BuildRelationship::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void BuildRelationship::setFrom(::kdm::build::AbstractBuildElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::build::AbstractBuildElement_ptr _old_from = m_from;
+    ::kdm::build::AbstractBuildElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -111,7 +111,7 @@ void BuildRelationship::setFrom(::kdm::build::AbstractBuildElement_ptr _from)
                 _this(),
                 ::kdm::build::BuildPackage::_instance()->getBuildRelationship__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

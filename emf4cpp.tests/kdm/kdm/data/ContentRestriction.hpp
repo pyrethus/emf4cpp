@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_CONTENTRESTRICTION_HPP
 #define KDM_DATA_CONTENTRESTRICTION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -89,7 +87,7 @@ namespace kdm
 
     protected:
         ContentRestriction_ptr _this()
-        {   return ContentRestriction_ptr(this);}
+        {   return std::dynamic_pointer_cast<ContentRestriction>(shared_from_this());}
 
         // Attributes
 

@@ -21,8 +21,6 @@
 #ifndef EOPPOSITE_RIGHTHAND_HPP
 #define EOPPOSITE_RIGHTHAND_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <eopposite/dllEopposite.hpp>
 #include <eopposite_forward.hpp>
 
@@ -83,13 +81,13 @@ public:
 
 protected:
     RightHand_ptr _this()
-    {   return RightHand_ptr(this);}
+    {   return std::dynamic_pointer_cast<RightHand>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    ::eopposite::LeftHand_ptr m_leftee;
+    std::weak_ptr< ::eopposite::LeftHand > m_leftee;
 
 };
 

@@ -21,8 +21,6 @@
 #ifndef SVG_ABSOLUTECOORD_HPP
 #define SVG_ABSOLUTECOORD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     AbsoluteCoord_ptr _this()
-    {   return AbsoluteCoord_ptr(this);}
+    {   return std::dynamic_pointer_cast<AbsoluteCoord>(shared_from_this());}
 
     // Attributes
 

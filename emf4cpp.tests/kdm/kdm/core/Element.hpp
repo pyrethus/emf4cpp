@@ -21,7 +21,6 @@
 #ifndef KDM_CORE_ELEMENT_HPP
 #define KDM_CORE_ELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <kdm/dllKdm.hpp>
@@ -86,15 +85,15 @@ namespace kdm
 
     protected:
         Element_ptr _this()
-        {   return Element_ptr(this);}
+        {   return std::dynamic_pointer_cast<Element>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::Attribute_ptr >> m_attribute;
+        ::ecore::EList_ptr< ::kdm::kdm::Attribute_ptr > m_attribute;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::Annotation_ptr >> m_annotation;
+        ::ecore::EList_ptr< ::kdm::kdm::Annotation_ptr > m_annotation;
 
     };
 

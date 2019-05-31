@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_INDEX_HPP
 #define KDM_DATA_INDEX_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         Index_ptr _this()
-        {   return Index_ptr(this);}
+        {   return std::dynamic_pointer_cast<Index>(shared_from_this());}
 
         // Attributes
 

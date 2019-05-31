@@ -67,13 +67,13 @@ HasState::~HasState()
 
 ::kdm::event::AbstractEventElement_ptr HasState::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void HasState::setTo(::kdm::event::AbstractEventElement_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::event::AbstractEventElement_ptr _old_to = m_to;
+    ::kdm::event::AbstractEventElement_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void HasState::setTo(::kdm::event::AbstractEventElement_ptr _to)
                 _this(),
                 ::kdm::event::EventPackage::_instance()->getHasState__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void HasState::setTo(::kdm::event::AbstractEventElement_ptr _to)
 
 ::kdm::action::ActionElement_ptr HasState::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void HasState::setFrom(::kdm::action::ActionElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::action::ActionElement_ptr _old_from = m_from;
+    ::kdm::action::ActionElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void HasState::setFrom(::kdm::action::ActionElement_ptr _from)
                 _this(),
                 ::kdm::event::EventPackage::_instance()->getHasState__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

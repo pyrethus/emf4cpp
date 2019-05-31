@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UILAYOUT_HPP
 #define KDM_UI_UILAYOUT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         UILayout_ptr _this()
-        {   return UILayout_ptr(this);}
+        {   return std::dynamic_pointer_cast<UILayout>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::ui::UIResource_ptr m_to;
+        std::weak_ptr< ::kdm::ui::UIResource > m_to;
 
-        ::kdm::ui::UIResource_ptr m_from;
+        std::weak_ptr< ::kdm::ui::UIResource > m_from;
 
     };
 

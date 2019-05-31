@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_INVENTORYMODEL_HPP
 #define KDM_SOURCE_INVENTORYMODEL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -84,13 +82,13 @@ namespace kdm
 
     protected:
         InventoryModel_ptr _this()
-        {   return InventoryModel_ptr(this);}
+        {   return std::dynamic_pointer_cast<InventoryModel>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::source::AbstractInventoryElement_ptr >> m_inventoryElement;
+        ::ecore::EList_ptr< ::kdm::source::AbstractInventoryElement_ptr > m_inventoryElement;
 
     };
 

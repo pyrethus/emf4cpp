@@ -97,14 +97,12 @@ void LetStatement::_initialize()
         return _any;
     case ::xpand3::statement::StatementPackage::LETSTATEMENT__VARNAME:
     {
-        if (m_varName)
-            _any = ::ecore::as < ::ecore::EObject > (m_varName);
+        _any = ::ecore::as < ::ecore::EObject > (m_varName);
     }
         return _any;
     case ::xpand3::statement::StatementPackage::LETSTATEMENT__VARVALUE:
     {
-        if (m_varValue)
-            _any = ::ecore::as < ::ecore::EObject > (m_varValue);
+        _any = ::ecore::as < ::ecore::EObject > (m_varValue);
     }
         return _any;
 
@@ -151,9 +149,10 @@ void LetStatement::eSet(::ecore::EInt _featureID,
         return;
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::xpand3::statement::AbstractStatementWithBody::getBody().clear();
         ::xpand3::statement::AbstractStatementWithBody::getBody().insert_all(
                 *_t0);
@@ -163,8 +162,8 @@ void LetStatement::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::statement::LetStatement::setVarName(_t1);
     }
         return;
@@ -173,7 +172,8 @@ void LetStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::statement::LetStatement::setVarValue(_t1);
     }
         return;
@@ -200,9 +200,9 @@ void LetStatement::eSet(::ecore::EInt _featureID,
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
         return m_body && m_body->size();
     case ::xpand3::statement::StatementPackage::LETSTATEMENT__VARNAME:
-        return (bool) m_varName;
+        return !(m_varName == nullptr);
     case ::xpand3::statement::StatementPackage::LETSTATEMENT__VARVALUE:
-        return (bool) m_varValue;
+        return !(m_varValue == nullptr);
 
     }
     throw "Error";

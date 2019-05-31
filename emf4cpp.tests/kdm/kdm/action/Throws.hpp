@@ -21,8 +21,6 @@
 #ifndef KDM_ACTION_THROWS_HPP
 #define KDM_ACTION_THROWS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/action_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         Throws_ptr _this()
-        {   return Throws_ptr(this);}
+        {   return std::dynamic_pointer_cast<Throws>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::code::DataElement_ptr m_to;
+        std::weak_ptr< ::kdm::code::DataElement > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

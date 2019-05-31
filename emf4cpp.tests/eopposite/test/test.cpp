@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
     EoppositeFactory_ptr eoppositeFactory = EoppositeFactory::_instance();
 
     {
-		boost::intrusive_ptr<TopLevel> tl ( create<TopLevel>());
+		TopLevel_ptr tl ( create<TopLevel>());
         tl->setName("MyTopLevel");
 
         auto myLeft = create<LeftHand>();
@@ -32,8 +32,8 @@ int main(int argc, char* argv[])
 		/* setRightee() automatically calls setLeftee() on opposite end */
 		myLeft->setRightee(myRight);
 
-		assert( myLeft->eContainer() == tl.get() );
-		assert( myRight->eContainer() == tl.get() );
+		assert( myLeft->eContainer() == tl );
+		assert( myRight->eContainer() == tl );
 
 		assert( myLeft->getRightee() == myRight );
 		assert( myRight->getLeftee() == myLeft );
@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 		{
 			std::ofstream outfile ("myTopLevel.xmi");
 			ecorecpp::serializer::serializer _ser(outfile);
-			_ser.serialize(tl.get());
+			_ser.serialize(tl);
 			outfile.close();
 		}
 
@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
 			ecorecpp::serializer::serializer _ser(
 				outfile,
 				ecorecpp::serializer::serializer::XmiIndentMode::Indentation);
-			_ser.serialize(tl.get());
+			_ser.serialize(tl);
 			outfile.close();
 		}
 
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
 
 		myLeft2->setRightMultiple(rm);
 		it = std::find(rm->getLeftees().begin(), rm->getLeftees().end(), myLeft2);
-		assert( *it == myLeft2 );				
+		assert( *it == myLeft2 );
 	}
 
 
@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
 	ec::EObject_ptr eobj = _dser.load ("myTopLevel.xmi");
 
     {
-		boost::intrusive_ptr<TopLevel> tl (::ecore::as< TopLevel >(eobj));
+		TopLevel_ptr tl (::ecore::as< TopLevel >(eobj));
     }
 }
 

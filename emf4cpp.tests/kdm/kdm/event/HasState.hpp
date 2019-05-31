@@ -21,8 +21,6 @@
 #ifndef KDM_EVENT_HASSTATE_HPP
 #define KDM_EVENT_HASSTATE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/event_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         HasState_ptr _this()
-        {   return HasState_ptr(this);}
+        {   return std::dynamic_pointer_cast<HasState>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::event::AbstractEventElement_ptr m_to;
+        std::weak_ptr< ::kdm::event::AbstractEventElement > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

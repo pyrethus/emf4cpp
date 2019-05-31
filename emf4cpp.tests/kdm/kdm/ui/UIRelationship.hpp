@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UIRELATIONSHIP_HPP
 #define KDM_UI_UIRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         UIRelationship_ptr _this()
-        {   return UIRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<UIRelationship>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::core::KDMEntity_ptr m_to;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_to;
 
-        ::kdm::ui::AbstractUIElement_ptr m_from;
+        std::weak_ptr< ::kdm::ui::AbstractUIElement > m_from;
 
     };
 

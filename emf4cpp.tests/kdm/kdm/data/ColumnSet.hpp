@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_COLUMNSET_HPP
 #define KDM_DATA_COLUMNSET_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -87,13 +85,13 @@ namespace kdm
 
     protected:
         ColumnSet_ptr _this()
-        {   return ColumnSet_ptr(this);}
+        {   return std::dynamic_pointer_cast<ColumnSet>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::ItemUnit_ptr >> m_itemUnit;
+        ::ecore::EList_ptr< ::kdm::code::ItemUnit_ptr > m_itemUnit;
 
     };
 

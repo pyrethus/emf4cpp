@@ -89,14 +89,12 @@ void ChainExpression::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__FIRST:
     {
-        if (m_first)
-            _any = ::ecore::as < ::ecore::EObject > (m_first);
+        _any = ::ecore::as < ::ecore::EObject > (m_first);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__NEXT:
     {
-        if (m_next)
-            _any = ::ecore::as < ::ecore::EObject > (m_next);
+        _any = ::ecore::as < ::ecore::EObject > (m_next);
     }
         return _any;
 
@@ -146,7 +144,8 @@ void ChainExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::ChainExpression::setFirst(_t1);
     }
         return;
@@ -155,7 +154,8 @@ void ChainExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::ChainExpression::setNext(_t1);
     }
         return;
@@ -180,9 +180,9 @@ void ChainExpression::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__FIRST:
-        return (bool) m_first;
+        return !(m_first == nullptr);
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__NEXT:
-        return (bool) m_next;
+        return !(m_next == nullptr);
 
     }
     throw "Error";

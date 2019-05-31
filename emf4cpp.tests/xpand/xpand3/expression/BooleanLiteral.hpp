@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_BOOLEANLITERAL_HPP
 #define XPAND3_EXPRESSION_BOOLEANLITERAL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace xpand3
 
     protected:
         BooleanLiteral_ptr _this()
-        {   return BooleanLiteral_ptr(this);}
+        {   return std::dynamic_pointer_cast<BooleanLiteral>(shared_from_this());}
 
         // Attributes
 

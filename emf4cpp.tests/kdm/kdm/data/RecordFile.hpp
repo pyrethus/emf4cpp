@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_RECORDFILE_HPP
 #define KDM_DATA_RECORDFILE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         RecordFile_ptr _this()
-        {   return RecordFile_ptr(this);}
+        {   return std::dynamic_pointer_cast<RecordFile>(shared_from_this());}
 
         // Attributes
 

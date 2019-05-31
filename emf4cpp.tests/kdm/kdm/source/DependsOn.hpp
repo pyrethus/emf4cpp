@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_DEPENDSON_HPP
 #define KDM_SOURCE_DEPENDSON_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         DependsOn_ptr _this()
-        {   return DependsOn_ptr(this);}
+        {   return std::dynamic_pointer_cast<DependsOn>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::source::AbstractInventoryElement_ptr m_to;
+        std::weak_ptr< ::kdm::source::AbstractInventoryElement > m_to;
 
-        ::kdm::source::AbstractInventoryElement_ptr m_from;
+        std::weak_ptr< ::kdm::source::AbstractInventoryElement > m_from;
 
     };
 

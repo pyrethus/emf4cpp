@@ -21,7 +21,6 @@
 #ifndef TREEITERATOR_TREENODE_HPP
 #define TREEITERATOR_TREENODE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <treeiterator/dllTreeiterator.hpp>
@@ -86,7 +85,7 @@ public:
 
 protected:
     TreeNode_ptr _this()
-    {   return TreeNode_ptr(this);}
+    {   return std::dynamic_pointer_cast<TreeNode>(shared_from_this());}
 
     // Attributes
 
@@ -95,7 +94,7 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::treeiterator::TreeNode_ptr >> m_children;
+    ::ecore::EList_ptr< ::treeiterator::TreeNode_ptr > m_children;
 
     ::treeiterator::Leaf_ptr m_leaf;
 

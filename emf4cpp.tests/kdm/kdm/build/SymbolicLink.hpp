@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_SYMBOLICLINK_HPP
 #define KDM_BUILD_SYMBOLICLINK_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace kdm
 
     protected:
         SymbolicLink_ptr _this()
-        {   return SymbolicLink_ptr(this);}
+        {   return std::dynamic_pointer_cast<SymbolicLink>(shared_from_this());}
 
         // Attributes
 

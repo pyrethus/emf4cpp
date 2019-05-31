@@ -21,7 +21,6 @@
 #ifndef RESOURCETESTS_REFERENCETARGET_HPP
 #define RESOURCETESTS_REFERENCETARGET_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <ResourceTests/dllResourceTests.hpp>
@@ -77,7 +76,7 @@ public:
 
 protected:
     ReferenceTarget_ptr _this()
-    {   return ReferenceTarget_ptr(this);}
+    {   return std::dynamic_pointer_cast<ReferenceTarget>(shared_from_this());}
 
     // Attributes
 

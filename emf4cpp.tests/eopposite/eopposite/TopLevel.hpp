@@ -21,8 +21,6 @@
 #ifndef EOPPOSITE_TOPLEVEL_HPP
 #define EOPPOSITE_TOPLEVEL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <eopposite/dllEopposite.hpp>
 #include <eopposite_forward.hpp>
 
@@ -87,17 +85,17 @@ public:
 
 protected:
     TopLevel_ptr _this()
-    {   return TopLevel_ptr(this);}
+    {   return std::dynamic_pointer_cast<TopLevel>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::eopposite::LeftHand_ptr >> m_leftees;
+    ::ecore::EList_ptr< ::eopposite::LeftHand_ptr > m_leftees;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::eopposite::RightHand_ptr >> m_rightees;
+    ::ecore::EList_ptr< ::eopposite::RightHand_ptr > m_rightees;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::eopposite::RightMultiple_ptr >> m_rightMultiples;
+    ::ecore::EList_ptr< ::eopposite::RightMultiple_ptr > m_rightMultiples;
 
 };
 

@@ -67,13 +67,13 @@ LinksTo::~LinksTo()
 
 ::kdm::build::AbstractBuildElement_ptr LinksTo::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void LinksTo::setTo(::kdm::build::AbstractBuildElement_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::build::AbstractBuildElement_ptr _old_to = m_to;
+    ::kdm::build::AbstractBuildElement_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void LinksTo::setTo(::kdm::build::AbstractBuildElement_ptr _to)
                 _this(),
                 ::kdm::build::BuildPackage::_instance()->getLinksTo__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void LinksTo::setTo(::kdm::build::AbstractBuildElement_ptr _to)
 
 ::kdm::build::SymbolicLink_ptr LinksTo::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void LinksTo::setFrom(::kdm::build::SymbolicLink_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::build::SymbolicLink_ptr _old_from = m_from;
+    ::kdm::build::SymbolicLink_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void LinksTo::setFrom(::kdm::build::SymbolicLink_ptr _from)
                 _this(),
                 ::kdm::build::BuildPackage::_instance()->getLinksTo__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

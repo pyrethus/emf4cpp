@@ -21,7 +21,6 @@
 #ifndef IDLMM_CONTAINED_HPP
 #define IDLMM_CONTAINED_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <idlmm/dllIdlmm.hpp>
@@ -94,7 +93,7 @@ public:
 
 protected:
     Contained_ptr _this()
-    {   return Contained_ptr(this);}
+    {   return std::dynamic_pointer_cast<Contained>(shared_from_this());}
 
     // Attributes
 
@@ -112,7 +111,7 @@ protected:
 
     // References
 
-    ::idlmm::Container_ptr m_definedIn;
+    std::weak_ptr< ::idlmm::Container > m_definedIn;
 
 };
 

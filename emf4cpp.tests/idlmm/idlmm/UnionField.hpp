@@ -21,8 +21,6 @@
 #ifndef IDLMM_UNIONFIELD_HPP
 #define IDLMM_UNIONFIELD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -88,7 +86,7 @@ public:
 
 protected:
     UnionField_ptr _this()
-    {   return UnionField_ptr(this);}
+    {   return std::dynamic_pointer_cast<UnionField>(shared_from_this());}
 
     // Attributes
 

@@ -21,8 +21,6 @@
 #ifndef SVG_ELLIPSE_HPP
 #define SVG_ELLIPSE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     Ellipse_ptr _this()
-    {   return Ellipse_ptr(this);}
+    {   return std::dynamic_pointer_cast<Ellipse>(shared_from_this());}
 
     // Attributes
 

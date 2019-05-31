@@ -21,8 +21,6 @@
 #ifndef XPAND3_DECLARATION_JAVAEXTENSION_HPP
 #define XPAND3_DECLARATION_JAVAEXTENSION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/declaration_forward.hpp>
 
@@ -91,7 +89,7 @@ namespace xpand3
 
     protected:
         JavaExtension_ptr _this()
-        {   return JavaExtension_ptr(this);}
+        {   return std::dynamic_pointer_cast<JavaExtension>(shared_from_this());}
 
         // Attributes
 
@@ -101,7 +99,7 @@ namespace xpand3
 
         ::xpand3::Identifier_ptr m_javaMethod;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::Identifier_ptr >> m_javaParamTypes;
+        ::ecore::EList_ptr< ::xpand3::Identifier_ptr > m_javaParamTypes;
 
     };
 

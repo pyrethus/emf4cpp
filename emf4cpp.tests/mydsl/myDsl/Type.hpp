@@ -21,7 +21,6 @@
 #ifndef MYDSL_TYPE_HPP
 #define MYDSL_TYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <myDsl/dllMyDsl.hpp>
@@ -81,7 +80,7 @@ public:
 
 protected:
     Type_ptr _this()
-    {   return Type_ptr(this);}
+    {   return std::dynamic_pointer_cast<Type>(shared_from_this());}
 
     // Attributes
 

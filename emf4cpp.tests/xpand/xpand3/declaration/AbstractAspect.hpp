@@ -21,8 +21,6 @@
 #ifndef XPAND3_DECLARATION_ABSTRACTASPECT_HPP
 #define XPAND3_DECLARATION_ABSTRACTASPECT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/declaration_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace xpand3
 
     protected:
         AbstractAspect_ptr _this()
-        {   return AbstractAspect_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractAspect>(shared_from_this());}
 
         // Attributes
 

@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_CONTENTATTRIBUTE_HPP
 #define KDM_DATA_CONTENTATTRIBUTE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -84,7 +82,7 @@ namespace kdm
 
     protected:
         ContentAttribute_ptr _this()
-        {   return ContentAttribute_ptr(this);}
+        {   return std::dynamic_pointer_cast<ContentAttribute>(shared_from_this());}
 
         // Attributes
 

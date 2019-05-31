@@ -92,8 +92,7 @@ void TypedefDef::_initialize()
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
     {
-        if (m_definedIn)
-            _any = ::ecore::as < ::ecore::EObject > (m_definedIn);
+        _any = ::ecore::as < ::ecore::EObject > (m_definedIn.lock());
     }
         return _any;
 
@@ -150,8 +149,8 @@ void TypedefDef::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::Container_ptr _t1 =
-                dynamic_cast< ::idlmm::Container* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::idlmm::Container >(_t0);*/
+        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::Container > (_t0);
         ::idlmm::Contained::setDefinedIn(_t1);
     }
         return;
@@ -180,7 +179,7 @@ void TypedefDef::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_absoluteName);
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
-        return (bool) m_definedIn;
+        return !m_definedIn.expired();
 
     }
     throw "Error";
@@ -213,8 +212,8 @@ void TypedefDef::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::Container_ptr _t1 =
-                dynamic_cast< ::idlmm::Container* >(_t0.get());
+        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::Container > (_t0);
 
         // set reference
         basicsetDefinedIn(_t1);
@@ -236,8 +235,8 @@ void TypedefDef::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::idlmm::Container_ptr _t1 =
-                dynamic_cast< ::idlmm::Container* >(_t0.get());
+        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::Container > (_t0);
 
         // set reference
         if (basicgetDefinedIn() == _t1)

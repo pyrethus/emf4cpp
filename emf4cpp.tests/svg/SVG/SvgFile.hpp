@@ -21,8 +21,6 @@
 #ifndef SVG_SVGFILE_HPP
 #define SVG_SVGFILE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -86,15 +84,15 @@ public:
 
 protected:
     SvgFile_ptr _this()
-    {   return SvgFile_ptr(this);}
+    {   return std::dynamic_pointer_cast<SvgFile>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    ::SVG::Svg_ptr m_tag;
+    std::weak_ptr< ::SVG::Svg > m_tag;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::Element_ptr >> m_elements;
+    ::ecore::EList_ptr< ::SVG::Element_ptr > m_elements;
 
 };
 

@@ -21,8 +21,6 @@
 #ifndef JSON_OBJECTVALUE_HPP
 #define JSON_OBJECTVALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <json/dllJson.hpp>
 #include <json_forward.hpp>
 
@@ -80,13 +78,13 @@ public:
 
 protected:
     ObjectValue_ptr _this()
-    {   return ObjectValue_ptr(this);}
+    {   return std::dynamic_pointer_cast<ObjectValue>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::json::NVPair_ptr >> m_members;
+    ::ecore::EList_ptr< ::json::NVPair_ptr > m_members;
 
 };
 

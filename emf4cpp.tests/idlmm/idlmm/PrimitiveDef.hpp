@@ -21,8 +21,6 @@
 #ifndef IDLMM_PRIMITIVEDEF_HPP
 #define IDLMM_PRIMITIVEDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     PrimitiveDef_ptr _this()
-    {   return PrimitiveDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<PrimitiveDef>(shared_from_this());}
 
     // Attributes
 

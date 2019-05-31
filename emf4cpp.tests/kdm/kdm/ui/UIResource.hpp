@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UIRESOURCE_HPP
 #define KDM_UI_UIRESOURCE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -87,13 +85,13 @@ namespace kdm
 
     protected:
         UIResource_ptr _this()
-        {   return UIResource_ptr(this);}
+        {   return std::dynamic_pointer_cast<UIResource>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::ui::AbstractUIElement_ptr >> m_UIElement;
+        ::ecore::EList_ptr< ::kdm::ui::AbstractUIElement_ptr > m_UIElement;
 
     };
 

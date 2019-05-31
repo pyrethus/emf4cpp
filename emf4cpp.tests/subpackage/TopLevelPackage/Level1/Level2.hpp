@@ -22,7 +22,6 @@
 #define TOPLEVELPACKAGE_LEVEL1_LEVEL2_HPP
 
 #include "Level2_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

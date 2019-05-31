@@ -67,14 +67,12 @@ void LeftHand::_initialize()
         return _any;
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE:
     {
-        if (m_rightee)
-            _any = ::ecore::as < ::ecore::EObject > (m_rightee);
+        _any = ::ecore::as < ::ecore::EObject > (m_rightee.lock());
     }
         return _any;
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTMULTIPLE:
     {
-        if (m_rightMultiple)
-            _any = ::ecore::as < ::ecore::EObject > (m_rightMultiple);
+        _any = ::ecore::as < ::ecore::EObject > (m_rightMultiple.lock());
     }
         return _any;
 
@@ -99,8 +97,8 @@ void LeftHand::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::eopposite::RightHand_ptr _t1 =
-                dynamic_cast< ::eopposite::RightHand* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::eopposite::RightHand >(_t0);*/
+        ::eopposite::RightHand_ptr _t1 = std::dynamic_pointer_cast
+                < ::eopposite::RightHand > (_t0);
         ::eopposite::LeftHand::setRightee(_t1);
     }
         return;
@@ -108,8 +106,8 @@ void LeftHand::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::eopposite::RightMultiple_ptr _t1 =
-                dynamic_cast< ::eopposite::RightMultiple* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::eopposite::RightMultiple >(_t0);*/
+        ::eopposite::RightMultiple_ptr _t1 = std::dynamic_pointer_cast
+                < ::eopposite::RightMultiple > (_t0);
         ::eopposite::LeftHand::setRightMultiple(_t1);
     }
         return;
@@ -126,9 +124,9 @@ void LeftHand::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_name);
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE:
-        return (bool) m_rightee;
+        return !m_rightee.expired();
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTMULTIPLE:
-        return (bool) m_rightMultiple;
+        return !m_rightMultiple.expired();
 
     }
     throw "Error";
@@ -161,8 +159,8 @@ void LeftHand::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::eopposite::RightHand_ptr _t1 =
-                dynamic_cast< ::eopposite::RightHand* >(_t0.get());
+        ::eopposite::RightHand_ptr _t1 = std::dynamic_pointer_cast
+                < ::eopposite::RightHand > (_t0);
 
         // set reference
         basicsetRightee(_t1);
@@ -172,8 +170,8 @@ void LeftHand::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::eopposite::RightMultiple_ptr _t1 =
-                dynamic_cast< ::eopposite::RightMultiple* >(_t0.get());
+        ::eopposite::RightMultiple_ptr _t1 = std::dynamic_pointer_cast
+                < ::eopposite::RightMultiple > (_t0);
 
         // set reference
         basicsetRightMultiple(_t1);
@@ -195,8 +193,8 @@ void LeftHand::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::eopposite::RightHand_ptr _t1 =
-                dynamic_cast< ::eopposite::RightHand* >(_t0.get());
+        ::eopposite::RightHand_ptr _t1 = std::dynamic_pointer_cast
+                < ::eopposite::RightHand > (_t0);
 
         // set reference
         if (basicgetRightee() == _t1)
@@ -207,8 +205,8 @@ void LeftHand::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::eopposite::RightMultiple_ptr _t1 =
-                dynamic_cast< ::eopposite::RightMultiple* >(_t0.get());
+        ::eopposite::RightMultiple_ptr _t1 = std::dynamic_pointer_cast
+                < ::eopposite::RightMultiple > (_t0);
 
         // set reference
         if (basicgetRightMultiple() == _t1)

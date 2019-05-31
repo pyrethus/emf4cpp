@@ -61,18 +61,18 @@ RightHand::~RightHand()
 
 ::eopposite::LeftHand_ptr RightHand::getLeftee() const
 {
-    return m_leftee;
+    return m_leftee.lock();
 }
 
 ::eopposite::LeftHand_ptr RightHand::basicgetLeftee()
 {
-    return m_leftee;
+    return m_leftee.lock();
 }
 
 void RightHand::basicsetLeftee(::eopposite::LeftHand_ptr _leftee)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::eopposite::LeftHand_ptr _old_leftee = m_leftee;
+    ::eopposite::LeftHand_ptr _old_leftee = m_leftee.lock();
 #endif
     m_leftee = _leftee;
 
@@ -84,7 +84,7 @@ void RightHand::basicsetLeftee(::eopposite::LeftHand_ptr _leftee)
                 _this(),
                 ::eopposite::EoppositePackage::_instance()->getRightHand__leftee(),
                 _old_leftee,
-                m_leftee
+                m_leftee.lock()
         );
         eNotify(&notification);
     }
@@ -93,15 +93,16 @@ void RightHand::basicsetLeftee(::eopposite::LeftHand_ptr _leftee)
 
 void RightHand::setLeftee(::eopposite::LeftHand_ptr _leftee)
 {
-    if (_leftee != m_leftee)
+    ::eopposite::LeftHand_ptr _old_leftee = m_leftee.lock();
+    if (_leftee != _old_leftee)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_leftee != nullptr)
+        if (_old_leftee)
         {
-            m_leftee->_inverseRemove(
+            _old_leftee->_inverseRemove(
                     ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE, _this);
         }
-        if (_leftee != nullptr)
+        if (_leftee)
         {
             _leftee->_inverseAdd(
                     ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE, _this);

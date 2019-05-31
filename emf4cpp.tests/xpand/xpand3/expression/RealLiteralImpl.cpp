@@ -82,8 +82,7 @@ void RealLiteral::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::LITERAL__LITERALVALUE:
     {
-        if (m_literalValue)
-            _any = ::ecore::as < ::ecore::EObject > (m_literalValue);
+        _any = ::ecore::as < ::ecore::EObject > (m_literalValue);
     }
         return _any;
 
@@ -132,8 +131,8 @@ void RealLiteral::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::expression::Literal::setLiteralValue(_t1);
     }
         return;
@@ -158,7 +157,7 @@ void RealLiteral::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::LITERAL__LITERALVALUE:
-        return (bool) m_literalValue;
+        return !(m_literalValue == nullptr);
 
     }
     throw "Error";

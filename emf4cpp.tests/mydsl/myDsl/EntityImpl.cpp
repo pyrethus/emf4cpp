@@ -71,8 +71,7 @@ void Entity::_initialize()
         return _any;
     case ::myDsl::MyDslPackage::ENTITY__EXTENDS:
     {
-        if (m_extends)
-            _any = ::ecore::as < ::ecore::EObject > (m_extends);
+        _any = ::ecore::as < ::ecore::EObject > (m_extends.lock());
     }
         return _any;
     case ::myDsl::MyDslPackage::ENTITY__PROPERTIES:
@@ -102,15 +101,17 @@ void Entity::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::myDsl::Entity_ptr _t1 = dynamic_cast< ::myDsl::Entity* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::myDsl::Entity >(_t0);*/
+        ::myDsl::Entity_ptr _t1 = std::dynamic_pointer_cast < ::myDsl::Entity
+                > (_t0);
         ::myDsl::Entity::setExtends(_t1);
     }
         return;
     case ::myDsl::MyDslPackage::ENTITY__PROPERTIES:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::myDsl::Entity::getProperties().clear();
         ::myDsl::Entity::getProperties().insert_all(*_t0);
     }
@@ -128,7 +129,7 @@ void Entity::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_name);
     case ::myDsl::MyDslPackage::ENTITY__EXTENDS:
-        return (bool) m_extends;
+        return !m_extends.expired();
     case ::myDsl::MyDslPackage::ENTITY__PROPERTIES:
         return m_properties && m_properties->size();
 

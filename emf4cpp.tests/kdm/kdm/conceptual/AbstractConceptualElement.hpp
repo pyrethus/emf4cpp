@@ -21,8 +21,6 @@
 #ifndef KDM_CONCEPTUAL_ABSTRACTCONCEPTUALELEMENT_HPP
 #define KDM_CONCEPTUAL_ABSTRACTCONCEPTUALELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/conceptual_forward.hpp>
 
@@ -95,19 +93,19 @@ namespace kdm
 
     protected:
         AbstractConceptualElement_ptr _this()
-        {   return AbstractConceptualElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractConceptualElement>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >> m_source;
+        ::ecore::EList_ptr< ::kdm::source::SourceRef_ptr > m_source;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::core::KDMEntity_ptr >> m_implementation;
+        ::ecore::EList_ptr< ::kdm::core::KDMEntity_ptr > m_implementation;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::conceptual::AbstractConceptualRelationship_ptr >> m_conceptualRelation;
+        ::ecore::EList_ptr< ::kdm::conceptual::AbstractConceptualRelationship_ptr > m_conceptualRelation;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >> m_abstraction;
+        ::ecore::EList_ptr< ::kdm::action::ActionElement_ptr > m_abstraction;
 
     };
 

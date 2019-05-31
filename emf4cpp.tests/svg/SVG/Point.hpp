@@ -21,8 +21,6 @@
 #ifndef SVG_POINT_HPP
 #define SVG_POINT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     Point_ptr _this()
-    {   return Point_ptr(this);}
+    {   return std::dynamic_pointer_cast<Point>(shared_from_this());}
 
     // Attributes
 

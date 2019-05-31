@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_ABSTRACTPLATFORMELEMENT_HPP
 #define KDM_PLATFORM_ABSTRACTPLATFORMELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -96,19 +94,19 @@ namespace kdm
 
     protected:
         AbstractPlatformElement_ptr _this()
-        {   return AbstractPlatformElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractPlatformElement>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >> m_source;
+        ::ecore::EList_ptr< ::kdm::source::SourceRef_ptr > m_source;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::platform::AbstractPlatformRelationship_ptr >> m_relation;
+        ::ecore::EList_ptr< ::kdm::platform::AbstractPlatformRelationship_ptr > m_relation;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >> m_abstraction;
+        ::ecore::EList_ptr< ::kdm::action::ActionElement_ptr > m_abstraction;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >> m_implementation;
+        ::ecore::EList_ptr< ::kdm::code::AbstractCodeElement_ptr > m_implementation;
 
     };
 

@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_EXTERNALACTOR_HPP
 #define KDM_PLATFORM_EXTERNALACTOR_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         ExternalActor_ptr _this()
-        {   return ExternalActor_ptr(this);}
+        {   return std::dynamic_pointer_cast<ExternalActor>(shared_from_this());}
 
         // Attributes
 

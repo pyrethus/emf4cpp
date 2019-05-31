@@ -219,13 +219,13 @@ void SourceRegion::setPath(::kdm::core::String _path)
 
 ::kdm::source::SourceFile_ptr SourceRegion::getFile() const
 {
-    return m_file;
+    return m_file.lock();
 }
 
 void SourceRegion::setFile(::kdm::source::SourceFile_ptr _file)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::source::SourceFile_ptr _old_file = m_file;
+    ::kdm::source::SourceFile_ptr _old_file = m_file.lock();
 #endif
     m_file = _file;
 
@@ -237,7 +237,7 @@ void SourceRegion::setFile(::kdm::source::SourceFile_ptr _file)
                 _this(),
                 ::kdm::source::SourcePackage::_instance()->getSourceRegion__file(),
                 _old_file,
-                m_file
+                m_file.lock()
         );
         eNotify(&notification);
     }

@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_LISTLITERAL_HPP
 #define XPAND3_EXPRESSION_LISTLITERAL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -83,13 +81,13 @@ namespace xpand3
 
     protected:
         ListLiteral_ptr _this()
-        {   return ListLiteral_ptr(this);}
+        {   return std::dynamic_pointer_cast<ListLiteral>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::expression::AbstractExpression_ptr >> m_elements;
+        ::ecore::EList_ptr< ::xpand3::expression::AbstractExpression_ptr > m_elements;
 
     };
 

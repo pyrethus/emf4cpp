@@ -67,13 +67,13 @@ Consumes::~Consumes()
 
 ::kdm::build::AbstractBuildElement_ptr Consumes::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void Consumes::setTo(::kdm::build::AbstractBuildElement_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::build::AbstractBuildElement_ptr _old_to = m_to;
+    ::kdm::build::AbstractBuildElement_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void Consumes::setTo(::kdm::build::AbstractBuildElement_ptr _to)
                 _this(),
                 ::kdm::build::BuildPackage::_instance()->getConsumes__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void Consumes::setTo(::kdm::build::AbstractBuildElement_ptr _to)
 
 ::kdm::build::BuildStep_ptr Consumes::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void Consumes::setFrom(::kdm::build::BuildStep_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::build::BuildStep_ptr _old_from = m_from;
+    ::kdm::build::BuildStep_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void Consumes::setFrom(::kdm::build::BuildStep_ptr _from)
                 _this(),
                 ::kdm::build::BuildPackage::_instance()->getConsumes__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

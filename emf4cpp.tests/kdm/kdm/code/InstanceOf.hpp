@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_INSTANCEOF_HPP
 #define KDM_CODE_INSTANCEOF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         InstanceOf_ptr _this()
-        {   return InstanceOf_ptr(this);}
+        {   return std::dynamic_pointer_cast<InstanceOf>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::code::TemplateUnit_ptr m_to;
+        std::weak_ptr< ::kdm::code::TemplateUnit > m_to;
 
-        ::kdm::code::AbstractCodeElement_ptr m_from;
+        std::weak_ptr< ::kdm::code::AbstractCodeElement > m_from;
 
     };
 

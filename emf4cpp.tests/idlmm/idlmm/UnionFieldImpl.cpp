@@ -61,14 +61,12 @@ void UnionField::_initialize()
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
     {
-        if (m_containedType)
-            _any = ::ecore::as < ::ecore::EObject > (m_containedType);
+        _any = ::ecore::as < ::ecore::EObject > (m_containedType);
     }
         return _any;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
     {
-        if (m_sharedType)
-            _any = ::ecore::as < ::ecore::EObject > (m_sharedType);
+        _any = ::ecore::as < ::ecore::EObject > (m_sharedType.lock());
     }
         return _any;
     case ::idlmm::IdlmmPackage::UNIONFIELD__IDENTIFIER:
@@ -100,7 +98,8 @@ void UnionField::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::IDLType_ptr _t1 = dynamic_cast< ::idlmm::IDLType* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::idlmm::IDLType >(_t0);*/
+        ::idlmm::IDLType_ptr _t1 = std::dynamic_pointer_cast < ::idlmm::IDLType
+                > (_t0);
         ::idlmm::Typed::setContainedType(_t1);
     }
         return;
@@ -108,8 +107,8 @@ void UnionField::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::TypedefDef_ptr _t1 =
-                dynamic_cast< ::idlmm::TypedefDef* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::idlmm::TypedefDef >(_t0);*/
+        ::idlmm::TypedefDef_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::TypedefDef > (_t0);
         ::idlmm::Typed::setSharedType(_t1);
     }
         return;
@@ -139,9 +138,9 @@ void UnionField::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
-        return (bool) m_containedType;
+        return !(m_containedType == nullptr);
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
-        return (bool) m_sharedType;
+        return !m_sharedType.expired();
     case ::idlmm::IdlmmPackage::UNIONFIELD__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_identifier);

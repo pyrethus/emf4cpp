@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_EXPANDS_HPP
 #define KDM_CODE_EXPANDS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         Expands_ptr _this()
-        {   return Expands_ptr(this);}
+        {   return std::dynamic_pointer_cast<Expands>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::code::PreprocessorDirective_ptr m_to;
+        std::weak_ptr< ::kdm::code::PreprocessorDirective > m_to;
 
-        ::kdm::code::PreprocessorDirective_ptr m_from;
+        std::weak_ptr< ::kdm::code::PreprocessorDirective > m_from;
 
     };
 

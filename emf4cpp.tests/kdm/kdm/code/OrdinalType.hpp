@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_ORDINALTYPE_HPP
 #define KDM_CODE_ORDINALTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -83,7 +81,7 @@ namespace kdm
 
     protected:
         OrdinalType_ptr _this()
-        {   return OrdinalType_ptr(this);}
+        {   return std::dynamic_pointer_cast<OrdinalType>(shared_from_this());}
 
         // Attributes
 

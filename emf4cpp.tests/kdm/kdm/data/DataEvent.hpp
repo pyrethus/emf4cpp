@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_DATAEVENT_HPP
 #define KDM_DATA_DATAEVENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -86,7 +84,7 @@ namespace kdm
 
     protected:
         DataEvent_ptr _this()
-        {   return DataEvent_ptr(this);}
+        {   return std::dynamic_pointer_cast<DataEvent>(shared_from_this());}
 
         // Attributes
 

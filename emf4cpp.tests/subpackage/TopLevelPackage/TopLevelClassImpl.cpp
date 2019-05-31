@@ -58,8 +58,7 @@ void TopLevelClass::_initialize()
     {
     case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
     {
-        if (m_reference)
-            _any = ::ecore::as < ::ecore::EObject > (m_reference);
+        _any = ::ecore::as < ::ecore::EObject > (m_reference.lock());
     }
         return _any;
 
@@ -76,7 +75,8 @@ void TopLevelClass::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EObject_ptr _t1 = dynamic_cast< ::ecore::EObject* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ecore::EObject >(_t0);*/
+        ::ecore::EObject_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EObject
+                > (_t0);
         ::TopLevelPackage::TopLevelClass::setReference(_t1);
     }
         return;
@@ -90,7 +90,7 @@ void TopLevelClass::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
-        return (bool) m_reference;
+        return !m_reference.expired();
 
     }
     throw "Error";

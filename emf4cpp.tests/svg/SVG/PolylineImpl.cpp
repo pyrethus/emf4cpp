@@ -87,20 +87,17 @@ void Polyline::_initialize()
         return _any;
     case ::SVG::SVGPackage::ELEMENT__POSITION:
     {
-        if (m_position)
-            _any = ::ecore::as < ::ecore::EObject > (m_position);
+        _any = ::ecore::as < ::ecore::EObject > (m_position);
     }
         return _any;
     case ::SVG::SVGPackage::ELEMENT__SIZE:
     {
-        if (m_size)
-            _any = ::ecore::as < ::ecore::EObject > (m_size);
+        _any = ::ecore::as < ::ecore::EObject > (m_size);
     }
         return _any;
     case ::SVG::SVGPackage::ELEMENT__ROOT:
     {
-        if (m_root)
-            _any = ::ecore::as < ::ecore::EObject > (m_root);
+        _any = ::ecore::as < ::ecore::EObject > (m_root.lock());
     }
         return _any;
     case ::SVG::SVGPackage::ELEMENT__FILL:
@@ -117,8 +114,7 @@ void Polyline::_initialize()
         return _any;
     case ::SVG::SVGPackage::ELEMENT__GROUP:
     {
-        if (m_group)
-            _any = ::ecore::as < ::ecore::EObject > (m_group);
+        _any = ::ecore::as < ::ecore::EObject > (m_group.lock());
     }
         return _any;
     case ::SVG::SVGPackage::ELEMENT__IDENTIFIER:
@@ -129,8 +125,7 @@ void Polyline::_initialize()
         return _any;
     case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
     {
-        if (m_drawsMarker)
-            _any = ::ecore::as < ::ecore::EObject > (m_drawsMarker);
+        _any = ::ecore::as < ::ecore::EObject > (m_drawsMarker.lock());
     }
         return _any;
     case ::SVG::SVGPackage::GRAPHICALELEMENT__STROKE:
@@ -174,27 +169,30 @@ void Polyline::eSet(::ecore::EInt _featureID,
     {
     case ::SVG::SVGPackage::ELEMENT__OWNER:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::SVG::Element::getOwner().clear();
         ::SVG::Element::getOwner().insert_all(*_t0);
     }
         return;
     case ::SVG::SVGPackage::ELEMENT__TARGET:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::SVG::Element::getTarget().clear();
         ::SVG::Element::getTarget().insert_all(*_t0);
     }
         return;
     case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::SVG::Element::getAttribute().clear();
         ::SVG::Element::getAttribute().insert_all(*_t0);
     }
@@ -203,8 +201,8 @@ void Polyline::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::Coordinates_ptr _t1 =
-                dynamic_cast< ::SVG::Coordinates* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::SVG::Coordinates >(_t0);*/
+        ::SVG::Coordinates_ptr _t1 = std::dynamic_pointer_cast
+                < ::SVG::Coordinates > (_t0);
         ::SVG::Element::setPosition(_t1);
     }
         return;
@@ -212,7 +210,8 @@ void Polyline::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::Dimension_ptr _t1 = dynamic_cast< ::SVG::Dimension* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::SVG::Dimension >(_t0);*/
+        ::SVG::Dimension_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Dimension
+                > (_t0);
         ::SVG::Element::setSize(_t1);
     }
         return;
@@ -220,7 +219,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::Svg_ptr _t1 = dynamic_cast< ::SVG::Svg* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::SVG::Svg >(_t0);*/
+        ::SVG::Svg_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Svg > (_t0);
         ::SVG::Element::setRoot(_t1);
     }
         return;
@@ -244,8 +243,8 @@ void Polyline::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::GroupingElement_ptr _t1 =
-                dynamic_cast< ::SVG::GroupingElement* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::SVG::GroupingElement >(_t0);*/
+        ::SVG::GroupingElement_ptr _t1 = std::dynamic_pointer_cast
+                < ::SVG::GroupingElement > (_t0);
         ::SVG::Element::setGroup(_t1);
     }
         return;
@@ -261,7 +260,8 @@ void Polyline::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::Marker_ptr _t1 = dynamic_cast< ::SVG::Marker* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::SVG::Marker >(_t0);*/
+        ::SVG::Marker_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Marker
+                > (_t0);
         ::SVG::Element::setDrawsMarker(_t1);
     }
         return;
@@ -275,9 +275,10 @@ void Polyline::eSet(::ecore::EInt _featureID,
         return;
     case ::SVG::SVGPackage::POLYLINE__WAYPOINTS:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::SVG::Polyline::getWaypoints().clear();
         ::SVG::Polyline::getWaypoints().insert_all(*_t0);
     }
@@ -322,11 +323,11 @@ void Polyline::eSet(::ecore::EInt _featureID,
     case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
         return m_attribute && m_attribute->size();
     case ::SVG::SVGPackage::ELEMENT__POSITION:
-        return (bool) m_position;
+        return !(m_position == nullptr);
     case ::SVG::SVGPackage::ELEMENT__SIZE:
-        return (bool) m_size;
+        return !(m_size == nullptr);
     case ::SVG::SVGPackage::ELEMENT__ROOT:
-        return (bool) m_root;
+        return !m_root.expired();
     case ::SVG::SVGPackage::ELEMENT__FILL:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(m_fill);
@@ -334,12 +335,12 @@ void Polyline::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(m_viewBox);
     case ::SVG::SVGPackage::ELEMENT__GROUP:
-        return (bool) m_group;
+        return !m_group.expired();
     case ::SVG::SVGPackage::ELEMENT__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(m_identifier);
     case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
-        return (bool) m_drawsMarker;
+        return !m_drawsMarker.expired();
     case ::SVG::SVGPackage::GRAPHICALELEMENT__STROKE:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(m_stroke);
@@ -386,7 +387,8 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::SvgFile_ptr _t1 = dynamic_cast< ::SVG::SvgFile* >(_t0.get());
+        ::SVG::SvgFile_ptr _t1 = std::dynamic_pointer_cast < ::SVG::SvgFile
+                > (_t0);
 
         // add to a list
         auto& container =
@@ -399,7 +401,7 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::Use_ptr _t1 = dynamic_cast< ::SVG::Use* >(_t0.get());
+        ::SVG::Use_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Use > (_t0);
 
         // add to a list
         auto& container = (::ecorecpp::mapping::ReferenceEListImpl<
@@ -411,7 +413,8 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::Attribute_ptr _t1 = dynamic_cast< ::SVG::Attribute* >(_t0.get());
+        ::SVG::Attribute_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Attribute
+                > (_t0);
 
         // add to a list
         auto& container =
@@ -432,7 +435,7 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::Svg_ptr _t1 = dynamic_cast< ::SVG::Svg* >(_t0.get());
+        ::SVG::Svg_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Svg > (_t0);
 
         // set reference
         basicsetRoot(_t1);
@@ -442,8 +445,8 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::GroupingElement_ptr _t1 =
-                dynamic_cast< ::SVG::GroupingElement* >(_t0.get());
+        ::SVG::GroupingElement_ptr _t1 = std::dynamic_pointer_cast
+                < ::SVG::GroupingElement > (_t0);
 
         // set reference
         basicsetGroup(_t1);
@@ -453,7 +456,8 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::Marker_ptr _t1 = dynamic_cast< ::SVG::Marker* >(_t0.get());
+        ::SVG::Marker_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Marker
+                > (_t0);
 
         // set reference
         basicsetDrawsMarker(_t1);
@@ -479,7 +483,8 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::SVG::SvgFile_ptr _t1 = dynamic_cast< ::SVG::SvgFile* >(_t0.get());
+        ::SVG::SvgFile_ptr _t1 = std::dynamic_pointer_cast < ::SVG::SvgFile
+                > (_t0);
 
         // add to a list
         auto& container =
@@ -492,7 +497,7 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::SVG::Use_ptr _t1 = dynamic_cast< ::SVG::Use* >(_t0.get());
+        ::SVG::Use_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Use > (_t0);
 
         // add to a list
         auto& container = (::ecorecpp::mapping::ReferenceEListImpl<
@@ -504,7 +509,8 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::SVG::Attribute_ptr _t1 = dynamic_cast< ::SVG::Attribute* >(_t0.get());
+        ::SVG::Attribute_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Attribute
+                > (_t0);
 
         // add to a list
         auto& container =
@@ -525,7 +531,7 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::SVG::Svg_ptr _t1 = dynamic_cast< ::SVG::Svg* >(_t0.get());
+        ::SVG::Svg_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Svg > (_t0);
 
         // set reference
         if (basicgetRoot() == _t1)
@@ -536,8 +542,8 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::SVG::GroupingElement_ptr _t1 =
-                dynamic_cast< ::SVG::GroupingElement* >(_t0.get());
+        ::SVG::GroupingElement_ptr _t1 = std::dynamic_pointer_cast
+                < ::SVG::GroupingElement > (_t0);
 
         // set reference
         if (basicgetGroup() == _t1)
@@ -548,7 +554,8 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::SVG::Marker_ptr _t1 = dynamic_cast< ::SVG::Marker* >(_t0.get());
+        ::SVG::Marker_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Marker
+                > (_t0);
 
         // set reference
         if (basicgetDrawsMarker() == _t1)

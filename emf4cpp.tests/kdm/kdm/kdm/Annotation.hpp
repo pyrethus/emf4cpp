@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_ANNOTATION_HPP
 #define KDM_KDM_ANNOTATION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -83,7 +81,7 @@ namespace kdm
 
     protected:
         Annotation_ptr _this()
-        {   return Annotation_ptr(this);}
+        {   return std::dynamic_pointer_cast<Annotation>(shared_from_this());}
 
         // Attributes
 

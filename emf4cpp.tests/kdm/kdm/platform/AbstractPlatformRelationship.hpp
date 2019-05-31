@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_ABSTRACTPLATFORMRELATIONSHIP_HPP
 #define KDM_PLATFORM_ABSTRACTPLATFORMRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         AbstractPlatformRelationship_ptr _this()
-        {   return AbstractPlatformRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractPlatformRelationship>(shared_from_this());}
 
         // Attributes
 

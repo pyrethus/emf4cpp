@@ -21,8 +21,6 @@
 #ifndef SVG_USE_HPP
 #define SVG_USE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -81,13 +79,13 @@ public:
 
 protected:
     Use_ptr _this()
-    {   return Use_ptr(this);}
+    {   return std::dynamic_pointer_cast<Use>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::Element_ptr >> m_use;
+    ::ecore::EList_ptr< ::SVG::Element_ptr > m_use;
 
 };
 

@@ -21,8 +21,6 @@
 #ifndef IDLMM_ALIASDEF_HPP
 #define IDLMM_ALIASDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -80,7 +78,7 @@ public:
 
 protected:
     AliasDef_ptr _this()
-    {   return AliasDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<AliasDef>(shared_from_this());}
 
     // Attributes
 

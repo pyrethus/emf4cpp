@@ -21,8 +21,6 @@
 #ifndef XPAND3_DECLARATION_EXTENSIONASPECT_HPP
 #define XPAND3_DECLARATION_EXTENSIONASPECT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/declaration_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace xpand3
 
     protected:
         ExtensionAspect_ptr _this()
-        {   return ExtensionAspect_ptr(this);}
+        {   return std::dynamic_pointer_cast<ExtensionAspect>(shared_from_this());}
 
         // Attributes
 

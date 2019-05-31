@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_FEATURECALL_HPP
 #define XPAND3_EXPRESSION_FEATURECALL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace xpand3
 
     protected:
         FeatureCall_ptr _this()
-        {   return FeatureCall_ptr(this);}
+        {   return std::dynamic_pointer_cast<FeatureCall>(shared_from_this());}
 
         // Attributes
 

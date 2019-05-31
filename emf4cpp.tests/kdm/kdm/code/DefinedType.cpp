@@ -75,13 +75,13 @@ DefinedType::~DefinedType()
 
 ::kdm::code::Datatype_ptr DefinedType::getType() const
 {
-    return m_type;
+    return m_type.lock();
 }
 
 void DefinedType::setType(::kdm::code::Datatype_ptr _type)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::code::Datatype_ptr _old_type = m_type;
+    ::kdm::code::Datatype_ptr _old_type = m_type.lock();
 #endif
     m_type = _type;
 
@@ -93,7 +93,7 @@ void DefinedType::setType(::kdm::code::Datatype_ptr _type)
                 _this(),
                 ::kdm::code::CodePackage::_instance()->getDefinedType__type(),
                 _old_type,
-                m_type
+                m_type.lock()
         );
         eNotify(&notification);
     }

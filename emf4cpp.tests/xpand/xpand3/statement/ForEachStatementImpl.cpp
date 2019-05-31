@@ -105,26 +105,22 @@ void ForEachStatement::_initialize()
         return _any;
     case ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__TARGET:
     {
-        if (m_target)
-            _any = ::ecore::as < ::ecore::EObject > (m_target);
+        _any = ::ecore::as < ::ecore::EObject > (m_target);
     }
         return _any;
     case ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__SEPARATOR:
     {
-        if (m_separator)
-            _any = ::ecore::as < ::ecore::EObject > (m_separator);
+        _any = ::ecore::as < ::ecore::EObject > (m_separator);
     }
         return _any;
     case ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__VARIABLE:
     {
-        if (m_variable)
-            _any = ::ecore::as < ::ecore::EObject > (m_variable);
+        _any = ::ecore::as < ::ecore::EObject > (m_variable);
     }
         return _any;
     case ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__ITERATORNAME:
     {
-        if (m_iteratorName)
-            _any = ::ecore::as < ::ecore::EObject > (m_iteratorName);
+        _any = ::ecore::as < ::ecore::EObject > (m_iteratorName);
     }
         return _any;
 
@@ -171,9 +167,10 @@ void ForEachStatement::eSet(::ecore::EInt _featureID,
         return;
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::xpand3::statement::AbstractStatementWithBody::getBody().clear();
         ::xpand3::statement::AbstractStatementWithBody::getBody().insert_all(
                 *_t0);
@@ -184,7 +181,8 @@ void ForEachStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::statement::ForEachStatement::setTarget(_t1);
     }
         return;
@@ -193,7 +191,8 @@ void ForEachStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::statement::ForEachStatement::setSeparator(_t1);
     }
         return;
@@ -201,8 +200,8 @@ void ForEachStatement::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::statement::ForEachStatement::setVariable(_t1);
     }
         return;
@@ -210,8 +209,8 @@ void ForEachStatement::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::statement::ForEachStatement::setIteratorName(_t1);
     }
         return;
@@ -238,13 +237,13 @@ void ForEachStatement::eSet(::ecore::EInt _featureID,
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
         return m_body && m_body->size();
     case ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__TARGET:
-        return (bool) m_target;
+        return !(m_target == nullptr);
     case ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__SEPARATOR:
-        return (bool) m_separator;
+        return !(m_separator == nullptr);
     case ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__VARIABLE:
-        return (bool) m_variable;
+        return !(m_variable == nullptr);
     case ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__ITERATORNAME:
-        return (bool) m_iteratorName;
+        return !(m_iteratorName == nullptr);
 
     }
     throw "Error";

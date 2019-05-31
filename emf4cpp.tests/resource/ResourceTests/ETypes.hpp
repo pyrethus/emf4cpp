@@ -21,7 +21,6 @@
 #ifndef RESOURCETESTS_ETYPES_HPP
 #define RESOURCETESTS_ETYPES_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <ResourceTests/dllResourceTests.hpp>
@@ -99,7 +98,7 @@ public:
 
 protected:
     ETypes_ptr _this()
-    {   return ETypes_ptr(this);}
+    {   return std::dynamic_pointer_cast<ETypes>(shared_from_this());}
 
     // Attributes
 

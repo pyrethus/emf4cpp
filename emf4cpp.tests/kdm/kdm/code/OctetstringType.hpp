@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_OCTETSTRINGTYPE_HPP
 #define KDM_CODE_OCTETSTRINGTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -83,7 +81,7 @@ namespace kdm
 
     protected:
         OctetstringType_ptr _this()
-        {   return OctetstringType_ptr(this);}
+        {   return std::dynamic_pointer_cast<OctetstringType>(shared_from_this());}
 
         // Attributes
 

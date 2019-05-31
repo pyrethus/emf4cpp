@@ -21,7 +21,6 @@
 #ifndef MYDSL_MODEL_HPP
 #define MYDSL_MODEL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <myDsl/dllMyDsl.hpp>
@@ -82,15 +81,15 @@ public:
 
 protected:
     Model_ptr _this()
-    {   return Model_ptr(this);}
+    {   return std::dynamic_pointer_cast<Model>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::myDsl::Import_ptr >> m_imports;
+    ::ecore::EList_ptr< ::myDsl::Import_ptr > m_imports;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::myDsl::Type_ptr >> m_elements;
+    ::ecore::EList_ptr< ::myDsl::Type_ptr > m_elements;
 
 };
 

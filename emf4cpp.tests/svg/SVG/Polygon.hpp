@@ -21,8 +21,6 @@
 #ifndef SVG_POLYGON_HPP
 #define SVG_POLYGON_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -86,7 +84,7 @@ public:
 
 protected:
     Polygon_ptr _this()
-    {   return Polygon_ptr(this);}
+    {   return std::dynamic_pointer_cast<Polygon>(shared_from_this());}
 
     // Attributes
 
@@ -98,7 +96,7 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::Point_ptr >> m_waypoints;
+    ::ecore::EList_ptr< ::SVG::Point_ptr > m_waypoints;
 
 };
 

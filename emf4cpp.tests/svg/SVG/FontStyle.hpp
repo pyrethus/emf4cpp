@@ -21,8 +21,6 @@
 #ifndef SVG_FONTSTYLE_HPP
 #define SVG_FONTSTYLE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     FontStyle_ptr _this()
-    {   return FontStyle_ptr(this);}
+    {   return std::dynamic_pointer_cast<FontStyle>(shared_from_this());}
 
     // Attributes
 

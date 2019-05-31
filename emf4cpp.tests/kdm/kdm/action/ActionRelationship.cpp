@@ -66,13 +66,13 @@ ActionRelationship::~ActionRelationship()
 
 ::kdm::core::KDMEntity_ptr ActionRelationship::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void ActionRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::core::KDMEntity_ptr _old_to = m_to;
+    ::kdm::core::KDMEntity_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void ActionRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 _this(),
                 ::kdm::action::ActionPackage::_instance()->getActionRelationship__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,13 +93,13 @@ void ActionRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 
 ::kdm::action::ActionElement_ptr ActionRelationship::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void ActionRelationship::setFrom(::kdm::action::ActionElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::action::ActionElement_ptr _old_from = m_from;
+    ::kdm::action::ActionElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -111,7 +111,7 @@ void ActionRelationship::setFrom(::kdm::action::ActionElement_ptr _from)
                 _this(),
                 ::kdm::action::ActionPackage::_instance()->getActionRelationship__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

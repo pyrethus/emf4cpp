@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_ABSTRACTDATAELEMENT_HPP
 #define KDM_DATA_ABSTRACTDATAELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -92,17 +90,17 @@ namespace kdm
 
     protected:
         AbstractDataElement_ptr _this()
-        {   return AbstractDataElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractDataElement>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >> m_source;
+        ::ecore::EList_ptr< ::kdm::source::SourceRef_ptr > m_source;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::data::AbstractDataRelationship_ptr >> m_dataRelation;
+        ::ecore::EList_ptr< ::kdm::data::AbstractDataRelationship_ptr > m_dataRelation;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >> m_abstraction;
+        ::ecore::EList_ptr< ::kdm::action::ActionElement_ptr > m_abstraction;
 
     };
 

@@ -21,7 +21,6 @@
 #ifndef JSON_NVPAIR_HPP
 #define JSON_NVPAIR_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <json/dllJson.hpp>
@@ -83,7 +82,7 @@ public:
 
 protected:
     NVPair_ptr _this()
-    {   return NVPair_ptr(this);}
+    {   return std::dynamic_pointer_cast<NVPair>(shared_from_this());}
 
     // Attributes
 

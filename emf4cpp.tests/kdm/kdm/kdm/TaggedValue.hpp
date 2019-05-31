@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_TAGGEDVALUE_HPP
 #define KDM_KDM_TAGGEDVALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -83,7 +81,7 @@ namespace kdm
 
     protected:
         TaggedValue_ptr _this()
-        {   return TaggedValue_ptr(this);}
+        {   return std::dynamic_pointer_cast<TaggedValue>(shared_from_this());}
 
         // Attributes
 

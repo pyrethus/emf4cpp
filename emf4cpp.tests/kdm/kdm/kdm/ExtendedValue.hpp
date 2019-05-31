@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_EXTENDEDVALUE_HPP
 #define KDM_KDM_EXTENDEDVALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -82,13 +80,13 @@ namespace kdm
 
     protected:
         ExtendedValue_ptr _this()
-        {   return ExtendedValue_ptr(this);}
+        {   return std::dynamic_pointer_cast<ExtendedValue>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::kdm::TagDefinition_ptr m_tag;
+        std::weak_ptr< ::kdm::kdm::TagDefinition > m_tag;
 
     };
 

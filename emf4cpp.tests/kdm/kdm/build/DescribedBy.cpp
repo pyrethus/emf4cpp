@@ -67,13 +67,13 @@ DescribedBy::~DescribedBy()
 
 ::kdm::build::BuildDescription_ptr DescribedBy::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void DescribedBy::setTo(::kdm::build::BuildDescription_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::build::BuildDescription_ptr _old_to = m_to;
+    ::kdm::build::BuildDescription_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void DescribedBy::setTo(::kdm::build::BuildDescription_ptr _to)
                 _this(),
                 ::kdm::build::BuildPackage::_instance()->getDescribedBy__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void DescribedBy::setTo(::kdm::build::BuildDescription_ptr _to)
 
 ::kdm::build::BuildStep_ptr DescribedBy::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void DescribedBy::setFrom(::kdm::build::BuildStep_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::build::BuildStep_ptr _old_from = m_from;
+    ::kdm::build::BuildStep_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void DescribedBy::setFrom(::kdm::build::BuildStep_ptr _from)
                 _this(),
                 ::kdm::build::BuildPackage::_instance()->getDescribedBy__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

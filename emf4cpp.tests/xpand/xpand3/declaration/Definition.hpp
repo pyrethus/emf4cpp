@@ -21,8 +21,6 @@
 #ifndef XPAND3_DECLARATION_DEFINITION_HPP
 #define XPAND3_DECLARATION_DEFINITION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/declaration_forward.hpp>
 
@@ -86,13 +84,13 @@ namespace xpand3
 
     protected:
         Definition_ptr _this()
-        {   return Definition_ptr(this);}
+        {   return std::dynamic_pointer_cast<Definition>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::statement::AbstractStatement_ptr >> m_body;
+        ::ecore::EList_ptr< ::xpand3::statement::AbstractStatement_ptr > m_body;
 
     };
 

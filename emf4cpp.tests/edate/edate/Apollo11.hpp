@@ -21,7 +21,6 @@
 #ifndef EDATE_APOLLO11_HPP
 #define EDATE_APOLLO11_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <edate/dllEdate.hpp>
@@ -83,7 +82,7 @@ public:
 
 protected:
     Apollo11_ptr _this()
-    {   return Apollo11_ptr(this);}
+    {   return std::dynamic_pointer_cast<Apollo11>(shared_from_this());}
 
     // Attributes
 

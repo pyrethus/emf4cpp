@@ -78,13 +78,13 @@ ContentItem::~ContentItem()
 
 ::kdm::data::ComplexContentType_ptr ContentItem::getType() const
 {
-    return m_type;
+    return m_type.lock();
 }
 
 void ContentItem::setType(::kdm::data::ComplexContentType_ptr _type)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::data::ComplexContentType_ptr _old_type = m_type;
+    ::kdm::data::ComplexContentType_ptr _old_type = m_type.lock();
 #endif
     m_type = _type;
 
@@ -96,7 +96,7 @@ void ContentItem::setType(::kdm::data::ComplexContentType_ptr _type)
                 _this(),
                 ::kdm::data::DataPackage::_instance()->getContentItem__type(),
                 _old_type,
-                m_type
+                m_type.lock()
         );
         eNotify(&notification);
     }

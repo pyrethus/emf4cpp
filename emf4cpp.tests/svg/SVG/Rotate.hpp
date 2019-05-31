@@ -21,8 +21,6 @@
 #ifndef SVG_ROTATE_HPP
 #define SVG_ROTATE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -87,7 +85,7 @@ public:
 
 protected:
     Rotate_ptr _this()
-    {   return Rotate_ptr(this);}
+    {   return std::dynamic_pointer_cast<Rotate>(shared_from_this());}
 
     // Attributes
 

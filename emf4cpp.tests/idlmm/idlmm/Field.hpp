@@ -21,8 +21,6 @@
 #ifndef IDLMM_FIELD_HPP
 #define IDLMM_FIELD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     Field_ptr _this()
-    {   return Field_ptr(this);}
+    {   return std::dynamic_pointer_cast<Field>(shared_from_this());}
 
     // Attributes
 

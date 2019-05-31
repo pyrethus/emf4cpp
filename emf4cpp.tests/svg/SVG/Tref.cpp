@@ -68,13 +68,13 @@ Tref::~Tref()
 
 ::SVG::TextElement_ptr Tref::getXlinkHref() const
 {
-    return m_xlinkHref;
+    return m_xlinkHref.lock();
 }
 
 void Tref::setXlinkHref(::SVG::TextElement_ptr _xlinkHref)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::SVG::TextElement_ptr _old_xlinkHref = m_xlinkHref;
+    ::SVG::TextElement_ptr _old_xlinkHref = m_xlinkHref.lock();
 #endif
     m_xlinkHref = _xlinkHref;
 
@@ -86,7 +86,7 @@ void Tref::setXlinkHref(::SVG::TextElement_ptr _xlinkHref)
                 _this(),
                 ::SVG::SVGPackage::_instance()->getTref__xlinkHref(),
                 _old_xlinkHref,
-                m_xlinkHref
+                m_xlinkHref.lock()
         );
         eNotify(&notification);
     }

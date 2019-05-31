@@ -21,8 +21,6 @@
 #ifndef IDLMM_ENUMDEF_HPP
 #define IDLMM_ENUMDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -85,7 +83,7 @@ public:
 
 protected:
     EnumDef_ptr _this()
-    {   return EnumDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<EnumDef>(shared_from_this());}
 
     // Attributes
 

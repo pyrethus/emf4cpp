@@ -126,16 +126,16 @@ IdlmmFactory::IdlmmFactory()
     case IdlmmPackage::PARAMETERMODE:
     {
         ::ecore::EJavaObject _any;
-        IdlmmPackage_ptr _epkg =
-                dynamic_cast< ::idlmm::IdlmmPackage* >(getEPackage().get());
+        IdlmmPackage_ptr _epkg = std::dynamic_pointer_cast
+                < ::idlmm::IdlmmPackage > (getEPackage());
         return _epkg->getParameterMode()->getEEnumLiteralByLiteral(
                 _literalValue)->getValue();
     }
     case IdlmmPackage::PRIMITIVEKIND:
     {
         ::ecore::EJavaObject _any;
-        IdlmmPackage_ptr _epkg =
-                dynamic_cast< ::idlmm::IdlmmPackage* >(getEPackage().get());
+        IdlmmPackage_ptr _epkg = std::dynamic_pointer_cast
+                < ::idlmm::IdlmmPackage > (getEPackage());
         return _epkg->getPrimitiveKind()->getEEnumLiteralByLiteral(
                 _literalValue)->getValue();
     }

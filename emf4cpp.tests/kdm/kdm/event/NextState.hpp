@@ -21,8 +21,6 @@
 #ifndef KDM_EVENT_NEXTSTATE_HPP
 #define KDM_EVENT_NEXTSTATE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/event_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         NextState_ptr _this()
-        {   return NextState_ptr(this);}
+        {   return std::dynamic_pointer_cast<NextState>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::event::State_ptr m_to;
+        std::weak_ptr< ::kdm::event::State > m_to;
 
-        ::kdm::event::Transition_ptr m_from;
+        std::weak_ptr< ::kdm::event::Transition > m_from;
 
     };
 

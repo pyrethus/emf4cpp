@@ -21,8 +21,6 @@
 #ifndef SVG_DEFS_HPP
 #define SVG_DEFS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     Defs_ptr _this()
-    {   return Defs_ptr(this);}
+    {   return std::dynamic_pointer_cast<Defs>(shared_from_this());}
 
     // Attributes
 

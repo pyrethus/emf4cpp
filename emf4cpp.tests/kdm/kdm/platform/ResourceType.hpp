@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_RESOURCETYPE_HPP
 #define KDM_PLATFORM_RESOURCETYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -87,13 +85,13 @@ namespace kdm
 
     protected:
         ResourceType_ptr _this()
-        {   return ResourceType_ptr(this);}
+        {   return std::dynamic_pointer_cast<ResourceType>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::platform::AbstractPlatformElement_ptr >> m_platformElement;
+        ::ecore::EList_ptr< ::kdm::platform::AbstractPlatformElement_ptr > m_platformElement;
 
     };
 

@@ -21,8 +21,6 @@
 #ifndef SVG_GRAPHICALELEMENT_HPP
 #define SVG_GRAPHICALELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     GraphicalElement_ptr _this()
-    {   return GraphicalElement_ptr(this);}
+    {   return std::dynamic_pointer_cast<GraphicalElement>(shared_from_this());}
 
     // Attributes
 

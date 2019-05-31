@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_COMPLEXCONTENTTYPE_HPP
 #define KDM_DATA_COMPLEXCONTENTTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -86,13 +84,13 @@ namespace kdm
 
     protected:
         ComplexContentType_ptr _this()
-        {   return ComplexContentType_ptr(this);}
+        {   return std::dynamic_pointer_cast<ComplexContentType>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::data::AbstractContentElement_ptr >> m_contentElement;
+        ::ecore::EList_ptr< ::kdm::data::AbstractContentElement_ptr > m_contentElement;
 
     };
 

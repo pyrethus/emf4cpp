@@ -21,8 +21,6 @@
 #ifndef KDM_ACTION_ACTIONRELATIONSHIP_HPP
 #define KDM_ACTION_ACTIONRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/action_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         ActionRelationship_ptr _this()
-        {   return ActionRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<ActionRelationship>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::core::KDMEntity_ptr m_to;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

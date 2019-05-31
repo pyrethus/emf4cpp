@@ -21,8 +21,6 @@
 #ifndef KDM_ACTION_ACTIONELEMENT_HPP
 #define KDM_ACTION_ACTIONELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/action_forward.hpp>
 
@@ -91,7 +89,7 @@ namespace kdm
 
     protected:
         ActionElement_ptr _this()
-        {   return ActionElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<ActionElement>(shared_from_this());}
 
         // Attributes
 
@@ -100,9 +98,9 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >> m_codeElement;
+        ::ecore::EList_ptr< ::kdm::code::AbstractCodeElement_ptr > m_codeElement;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::action::AbstractActionRelationship_ptr >> m_actionRelation;
+        ::ecore::EList_ptr< ::kdm::action::AbstractActionRelationship_ptr > m_actionRelation;
 
     };
 

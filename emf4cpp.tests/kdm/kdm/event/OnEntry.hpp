@@ -21,8 +21,6 @@
 #ifndef KDM_EVENT_ONENTRY_HPP
 #define KDM_EVENT_ONENTRY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/event_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         OnEntry_ptr _this()
-        {   return OnEntry_ptr(this);}
+        {   return std::dynamic_pointer_cast<OnEntry>(shared_from_this());}
 
         // Attributes
 

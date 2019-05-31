@@ -97,14 +97,12 @@ void IfStatement::_initialize()
         return _any;
     case ::xpand3::statement::StatementPackage::IFSTATEMENT__CONDITION:
     {
-        if (m_condition)
-            _any = ::ecore::as < ::ecore::EObject > (m_condition);
+        _any = ::ecore::as < ::ecore::EObject > (m_condition);
     }
         return _any;
     case ::xpand3::statement::StatementPackage::IFSTATEMENT__ELSEIF:
     {
-        if (m_elseIf)
-            _any = ::ecore::as < ::ecore::EObject > (m_elseIf);
+        _any = ::ecore::as < ::ecore::EObject > (m_elseIf);
     }
         return _any;
 
@@ -151,9 +149,10 @@ void IfStatement::eSet(::ecore::EInt _featureID,
         return;
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::xpand3::statement::AbstractStatementWithBody::getBody().clear();
         ::xpand3::statement::AbstractStatementWithBody::getBody().insert_all(
                 *_t0);
@@ -164,7 +163,8 @@ void IfStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::statement::IfStatement::setCondition(_t1);
     }
         return;
@@ -172,8 +172,8 @@ void IfStatement::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::statement::IfStatement_ptr _t1 =
-                dynamic_cast< ::xpand3::statement::IfStatement* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::statement::IfStatement >(_t0);*/
+        ::xpand3::statement::IfStatement_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::statement::IfStatement > (_t0);
         ::xpand3::statement::IfStatement::setElseIf(_t1);
     }
         return;
@@ -200,9 +200,9 @@ void IfStatement::eSet(::ecore::EInt _featureID,
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
         return m_body && m_body->size();
     case ::xpand3::statement::StatementPackage::IFSTATEMENT__CONDITION:
-        return (bool) m_condition;
+        return !(m_condition == nullptr);
     case ::xpand3::statement::StatementPackage::IFSTATEMENT__ELSEIF:
-        return (bool) m_elseIf;
+        return !(m_elseIf == nullptr);
 
     }
     throw "Error";

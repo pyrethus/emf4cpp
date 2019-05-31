@@ -67,13 +67,13 @@ HasType::~HasType()
 
 ::kdm::code::Datatype_ptr HasType::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void HasType::setTo(::kdm::code::Datatype_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::code::Datatype_ptr _old_to = m_to;
+    ::kdm::code::Datatype_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void HasType::setTo(::kdm::code::Datatype_ptr _to)
                 _this(),
                 ::kdm::code::CodePackage::_instance()->getHasType__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void HasType::setTo(::kdm::code::Datatype_ptr _to)
 
 ::kdm::code::CodeItem_ptr HasType::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void HasType::setFrom(::kdm::code::CodeItem_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::code::CodeItem_ptr _old_from = m_from;
+    ::kdm::code::CodeItem_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void HasType::setFrom(::kdm::code::CodeItem_ptr _from)
                 _this(),
                 ::kdm::code::CodePackage::_instance()->getHasType__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

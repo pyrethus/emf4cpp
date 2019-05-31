@@ -21,8 +21,6 @@
 #ifndef SVG_RELATIVECOORD_HPP
 #define SVG_RELATIVECOORD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     RelativeCoord_ptr _this()
-    {   return RelativeCoord_ptr(this);}
+    {   return std::dynamic_pointer_cast<RelativeCoord>(shared_from_this());}
 
     // Attributes
 

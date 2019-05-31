@@ -67,13 +67,13 @@ TypedBy::~TypedBy()
 
 ::kdm::data::ComplexContentType_ptr TypedBy::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void TypedBy::setTo(::kdm::data::ComplexContentType_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::data::ComplexContentType_ptr _old_to = m_to;
+    ::kdm::data::ComplexContentType_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void TypedBy::setTo(::kdm::data::ComplexContentType_ptr _to)
                 _this(),
                 ::kdm::data::DataPackage::_instance()->getTypedBy__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void TypedBy::setTo(::kdm::data::ComplexContentType_ptr _to)
 
 ::kdm::data::ContentItem_ptr TypedBy::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void TypedBy::setFrom(::kdm::data::ContentItem_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::data::ContentItem_ptr _old_from = m_from;
+    ::kdm::data::ContentItem_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void TypedBy::setFrom(::kdm::data::ContentItem_ptr _from)
                 _this(),
                 ::kdm::data::DataPackage::_instance()->getTypedBy__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

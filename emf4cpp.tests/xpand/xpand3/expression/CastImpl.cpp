@@ -90,14 +90,12 @@ void Cast::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::CAST__TYPE:
     {
-        if (m_type)
-            _any = ::ecore::as < ::ecore::EObject > (m_type);
+        _any = ::ecore::as < ::ecore::EObject > (m_type);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::CAST__TARGET:
     {
-        if (m_target)
-            _any = ::ecore::as < ::ecore::EObject > (m_target);
+        _any = ::ecore::as < ::ecore::EObject > (m_target);
     }
         return _any;
 
@@ -145,8 +143,8 @@ void Cast::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::expression::Cast::setType(_t1);
     }
         return;
@@ -155,7 +153,8 @@ void Cast::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::Cast::setTarget(_t1);
     }
         return;
@@ -180,9 +179,9 @@ void Cast::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::CAST__TYPE:
-        return (bool) m_type;
+        return !(m_type == nullptr);
     case ::xpand3::expression::ExpressionPackage::CAST__TARGET:
-        return (bool) m_target;
+        return !(m_target == nullptr);
 
     }
     throw "Error";

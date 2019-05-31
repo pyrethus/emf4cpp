@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_EXECUTABLEFILE_HPP
 #define KDM_SOURCE_EXECUTABLEFILE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace kdm
 
     protected:
         ExecutableFile_ptr _this()
-        {   return ExecutableFile_ptr(this);}
+        {   return std::dynamic_pointer_cast<ExecutableFile>(shared_from_this());}
 
         // Attributes
 

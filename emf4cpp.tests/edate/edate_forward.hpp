@@ -21,7 +21,7 @@
 #ifndef _EDATE_FORWARD_HPP
 #define _EDATE_FORWARD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
+#include <ecore_forward.hpp> // for EDataTypes
 
 /*PROTECTED REGION ID(edate_forward) START*/
 // Please, enable the protected region if you add manually written code.
@@ -30,8 +30,6 @@
 /*PROTECTED REGION END*/
 
 // EPackage
-
-#include <ecore_forward.hpp> // for EDataTypes
 
 namespace edate
 {

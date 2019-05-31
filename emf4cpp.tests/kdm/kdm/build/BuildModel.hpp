@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_BUILDMODEL_HPP
 #define KDM_BUILD_BUILDMODEL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -84,13 +82,13 @@ namespace kdm
 
     protected:
         BuildModel_ptr _this()
-        {   return BuildModel_ptr(this);}
+        {   return std::dynamic_pointer_cast<BuildModel>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildElement_ptr >> m_buildElement;
+        ::ecore::EList_ptr< ::kdm::build::AbstractBuildElement_ptr > m_buildElement;
 
     };
 

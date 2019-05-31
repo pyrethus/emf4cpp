@@ -21,8 +21,6 @@
 #ifndef KDM_ACTION_GUARDEDFLOW_HPP
 #define KDM_ACTION_GUARDEDFLOW_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/action_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         GuardedFlow_ptr _this()
-        {   return GuardedFlow_ptr(this);}
+        {   return std::dynamic_pointer_cast<GuardedFlow>(shared_from_this());}
 
         // Attributes
 

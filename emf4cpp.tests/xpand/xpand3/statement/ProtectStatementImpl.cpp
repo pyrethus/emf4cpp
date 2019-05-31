@@ -100,20 +100,17 @@ void ProtectStatement::_initialize()
         return _any;
     case ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTSTART:
     {
-        if (m_commentStart)
-            _any = ::ecore::as < ::ecore::EObject > (m_commentStart);
+        _any = ::ecore::as < ::ecore::EObject > (m_commentStart);
     }
         return _any;
     case ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTEND:
     {
-        if (m_commentEnd)
-            _any = ::ecore::as < ::ecore::EObject > (m_commentEnd);
+        _any = ::ecore::as < ::ecore::EObject > (m_commentEnd);
     }
         return _any;
     case ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__ID:
     {
-        if (m_id)
-            _any = ::ecore::as < ::ecore::EObject > (m_id);
+        _any = ::ecore::as < ::ecore::EObject > (m_id);
     }
         return _any;
     case ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__DISABLE:
@@ -166,9 +163,10 @@ void ProtectStatement::eSet(::ecore::EInt _featureID,
         return;
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::xpand3::statement::AbstractStatementWithBody::getBody().clear();
         ::xpand3::statement::AbstractStatementWithBody::getBody().insert_all(
                 *_t0);
@@ -179,7 +177,8 @@ void ProtectStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::statement::ProtectStatement::setCommentStart(_t1);
     }
         return;
@@ -188,7 +187,8 @@ void ProtectStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::statement::ProtectStatement::setCommentEnd(_t1);
     }
         return;
@@ -197,7 +197,8 @@ void ProtectStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::statement::ProtectStatement::setId(_t1);
     }
         return;
@@ -232,11 +233,11 @@ void ProtectStatement::eSet(::ecore::EInt _featureID,
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
         return m_body && m_body->size();
     case ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTSTART:
-        return (bool) m_commentStart;
+        return !(m_commentStart == nullptr);
     case ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTEND:
-        return (bool) m_commentEnd;
+        return !(m_commentEnd == nullptr);
     case ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__ID:
-        return (bool) m_id;
+        return !(m_id == nullptr);
     case ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__DISABLE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(m_disable);

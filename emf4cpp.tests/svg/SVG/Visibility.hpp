@@ -21,8 +21,6 @@
 #ifndef SVG_VISIBILITY_HPP
 #define SVG_VISIBILITY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     Visibility_ptr _this()
-    {   return Visibility_ptr(this);}
+    {   return std::dynamic_pointer_cast<Visibility>(shared_from_this());}
 
     // Attributes
 

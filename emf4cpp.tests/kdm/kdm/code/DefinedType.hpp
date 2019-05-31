@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_DEFINEDTYPE_HPP
 #define KDM_CODE_DEFINEDTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -88,13 +86,13 @@ namespace kdm
 
     protected:
         DefinedType_ptr _this()
-        {   return DefinedType_ptr(this);}
+        {   return std::dynamic_pointer_cast<DefinedType>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::code::Datatype_ptr m_type;
+        std::weak_ptr< ::kdm::code::Datatype > m_type;
 
         ::kdm::code::Datatype_ptr m_codeElement;
 

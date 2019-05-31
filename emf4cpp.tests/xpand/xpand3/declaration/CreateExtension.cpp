@@ -64,14 +64,14 @@ CreateExtension::~CreateExtension()
 
 ::xpand3::DeclaredParameter_ptr CreateExtension::getToBeCreated() const
 {
-    return m_toBeCreated;
+    return m_toBeCreated.lock();
 }
 
 void CreateExtension::setToBeCreated(
         ::xpand3::DeclaredParameter_ptr _toBeCreated)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::xpand3::DeclaredParameter_ptr _old_toBeCreated = m_toBeCreated;
+    ::xpand3::DeclaredParameter_ptr _old_toBeCreated = m_toBeCreated.lock();
 #endif
     m_toBeCreated = _toBeCreated;
 
@@ -83,7 +83,7 @@ void CreateExtension::setToBeCreated(
                 _this(),
                 ::xpand3::declaration::DeclarationPackage::_instance()->getCreateExtension__toBeCreated(),
                 _old_toBeCreated,
-                m_toBeCreated
+                m_toBeCreated.lock()
         );
         eNotify(&notification);
     }

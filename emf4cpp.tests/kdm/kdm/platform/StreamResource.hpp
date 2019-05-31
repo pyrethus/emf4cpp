@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_STREAMRESOURCE_HPP
 #define KDM_PLATFORM_STREAMRESOURCE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         StreamResource_ptr _this()
-        {   return StreamResource_ptr(this);}
+        {   return std::dynamic_pointer_cast<StreamResource>(shared_from_this());}
 
         // Attributes
 

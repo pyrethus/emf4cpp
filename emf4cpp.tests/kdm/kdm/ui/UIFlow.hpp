@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UIFLOW_HPP
 #define KDM_UI_UIFLOW_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         UIFlow_ptr _this()
-        {   return UIFlow_ptr(this);}
+        {   return std::dynamic_pointer_cast<UIFlow>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::ui::AbstractUIElement_ptr m_to;
+        std::weak_ptr< ::kdm::ui::AbstractUIElement > m_to;
 
-        ::kdm::ui::AbstractUIElement_ptr m_from;
+        std::weak_ptr< ::kdm::ui::AbstractUIElement > m_from;
 
     };
 

@@ -21,8 +21,6 @@
 #ifndef JSON_ARRAYVALUE_HPP
 #define JSON_ARRAYVALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <json/dllJson.hpp>
 #include <json_forward.hpp>
 
@@ -80,13 +78,13 @@ public:
 
 protected:
     ArrayValue_ptr _this()
-    {   return ArrayValue_ptr(this);}
+    {   return std::dynamic_pointer_cast<ArrayValue>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::json::Value_ptr >> m_values;
+    ::ecore::EList_ptr< ::json::Value_ptr > m_values;
 
 };
 

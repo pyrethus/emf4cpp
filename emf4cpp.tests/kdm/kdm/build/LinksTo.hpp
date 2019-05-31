@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_LINKSTO_HPP
 #define KDM_BUILD_LINKSTO_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         LinksTo_ptr _this()
-        {   return LinksTo_ptr(this);}
+        {   return std::dynamic_pointer_cast<LinksTo>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::build::AbstractBuildElement_ptr m_to;
+        std::weak_ptr< ::kdm::build::AbstractBuildElement > m_to;
 
-        ::kdm::build::SymbolicLink_ptr m_from;
+        std::weak_ptr< ::kdm::build::SymbolicLink > m_from;
 
     };
 

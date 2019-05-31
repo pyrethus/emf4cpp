@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_INTEGERLITERAL_HPP
 #define XPAND3_EXPRESSION_INTEGERLITERAL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace xpand3
 
     protected:
         IntegerLiteral_ptr _this()
-        {   return IntegerLiteral_ptr(this);}
+        {   return std::dynamic_pointer_cast<IntegerLiteral>(shared_from_this());}
 
         // Attributes
 

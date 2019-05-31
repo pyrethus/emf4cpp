@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_BUILDDESCRIPTION_HPP
 #define KDM_BUILD_BUILDDESCRIPTION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace kdm
 
     protected:
         BuildDescription_ptr _this()
-        {   return BuildDescription_ptr(this);}
+        {   return std::dynamic_pointer_cast<BuildDescription>(shared_from_this());}
 
         // Attributes
 
@@ -96,7 +94,7 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >> m_source;
+        ::ecore::EList_ptr< ::kdm::source::SourceRef_ptr > m_source;
 
     };
 

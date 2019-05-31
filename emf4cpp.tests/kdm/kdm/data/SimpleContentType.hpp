@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_SIMPLECONTENTTYPE_HPP
 #define KDM_DATA_SIMPLECONTENTTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -88,7 +86,7 @@ namespace kdm
 
     protected:
         SimpleContentType_ptr _this()
-        {   return SimpleContentType_ptr(this);}
+        {   return std::dynamic_pointer_cast<SimpleContentType>(shared_from_this());}
 
         // Attributes
 
@@ -97,7 +95,7 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::data::ComplexContentType_ptr >> m_type;
+        ::ecore::EList_ptr< ::kdm::data::ComplexContentType_ptr > m_type;
 
     };
 

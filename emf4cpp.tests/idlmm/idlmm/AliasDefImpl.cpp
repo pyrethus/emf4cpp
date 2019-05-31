@@ -63,14 +63,12 @@ void AliasDef::_initialize()
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
     {
-        if (m_containedType)
-            _any = ::ecore::as < ::ecore::EObject > (m_containedType);
+        _any = ::ecore::as < ::ecore::EObject > (m_containedType);
     }
         return _any;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
     {
-        if (m_sharedType)
-            _any = ::ecore::as < ::ecore::EObject > (m_sharedType);
+        _any = ::ecore::as < ::ecore::EObject > (m_sharedType.lock());
     }
         return _any;
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
@@ -105,8 +103,7 @@ void AliasDef::_initialize()
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
     {
-        if (m_definedIn)
-            _any = ::ecore::as < ::ecore::EObject > (m_definedIn);
+        _any = ::ecore::as < ::ecore::EObject > (m_definedIn.lock());
     }
         return _any;
 
@@ -123,7 +120,8 @@ void AliasDef::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::IDLType_ptr _t1 = dynamic_cast< ::idlmm::IDLType* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::idlmm::IDLType >(_t0);*/
+        ::idlmm::IDLType_ptr _t1 = std::dynamic_pointer_cast < ::idlmm::IDLType
+                > (_t0);
         ::idlmm::Typed::setContainedType(_t1);
     }
         return;
@@ -131,8 +129,8 @@ void AliasDef::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::TypedefDef_ptr _t1 =
-                dynamic_cast< ::idlmm::TypedefDef* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::idlmm::TypedefDef >(_t0);*/
+        ::idlmm::TypedefDef_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::TypedefDef > (_t0);
         ::idlmm::Typed::setSharedType(_t1);
     }
         return;
@@ -180,8 +178,8 @@ void AliasDef::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::Container_ptr _t1 =
-                dynamic_cast< ::idlmm::Container* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::idlmm::Container >(_t0);*/
+        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::Container > (_t0);
         ::idlmm::Contained::setDefinedIn(_t1);
     }
         return;
@@ -195,9 +193,9 @@ void AliasDef::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
-        return (bool) m_containedType;
+        return !(m_containedType == nullptr);
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
-        return (bool) m_sharedType;
+        return !m_sharedType.expired();
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
                 > ::is_set(m_typeCode);
@@ -214,7 +212,7 @@ void AliasDef::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_absoluteName);
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
-        return (bool) m_definedIn;
+        return !m_definedIn.expired();
 
     }
     throw "Error";
@@ -255,8 +253,8 @@ void AliasDef::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::Container_ptr _t1 =
-                dynamic_cast< ::idlmm::Container* >(_t0.get());
+        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::Container > (_t0);
 
         // set reference
         basicsetDefinedIn(_t1);
@@ -286,8 +284,8 @@ void AliasDef::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::idlmm::Container_ptr _t1 =
-                dynamic_cast< ::idlmm::Container* >(_t0.get());
+        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::Container > (_t0);
 
         // set reference
         if (basicgetDefinedIn() == _t1)

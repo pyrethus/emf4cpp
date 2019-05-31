@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_KDMFRAMEWORK_HPP
 #define KDM_KDM_KDMFRAMEWORK_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -88,7 +86,7 @@ namespace kdm
 
     protected:
         KDMFramework_ptr _this()
-        {   return KDMFramework_ptr(this);}
+        {   return std::dynamic_pointer_cast<KDMFramework>(shared_from_this());}
 
         // Attributes
 
@@ -97,9 +95,9 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::Audit_ptr >> m_audit;
+        ::ecore::EList_ptr< ::kdm::kdm::Audit_ptr > m_audit;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::ExtensionFamily_ptr >> m_extensionFamily;
+        ::ecore::EList_ptr< ::kdm::kdm::ExtensionFamily_ptr > m_extensionFamily;
 
     };
 

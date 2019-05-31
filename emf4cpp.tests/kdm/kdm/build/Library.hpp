@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_LIBRARY_HPP
 #define KDM_BUILD_LIBRARY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace kdm
 
     protected:
         Library_ptr _this()
-        {   return Library_ptr(this);}
+        {   return std::dynamic_pointer_cast<Library>(shared_from_this());}
 
         // Attributes
 

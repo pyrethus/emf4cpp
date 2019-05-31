@@ -21,7 +21,6 @@
 #ifndef TREEITERATOR_LEAF_HPP
 #define TREEITERATOR_LEAF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <treeiterator/dllTreeiterator.hpp>
@@ -81,7 +80,7 @@ public:
 
 protected:
     Leaf_ptr _this()
-    {   return Leaf_ptr(this);}
+    {   return std::dynamic_pointer_cast<Leaf>(shared_from_this());}
 
     // Attributes
 

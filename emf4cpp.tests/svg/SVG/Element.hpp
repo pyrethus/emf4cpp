@@ -21,7 +21,6 @@
 #ifndef SVG_ELEMENT_HPP
 #define SVG_ELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <SVG/dllSVG.hpp>
@@ -116,7 +115,7 @@ public:
 
 protected:
     Element_ptr _this()
-    {   return Element_ptr(this);}
+    {   return std::dynamic_pointer_cast<Element>(shared_from_this());}
 
     // Attributes
 
@@ -131,21 +130,21 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::SvgFile_ptr >> m_owner;
+    ::ecore::EList_ptr< ::SVG::SvgFile_ptr > m_owner;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::Use_ptr >> m_target;
+    ::ecore::EList_ptr< ::SVG::Use_ptr > m_target;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::Attribute_ptr >> m_attribute;
+    ::ecore::EList_ptr< ::SVG::Attribute_ptr > m_attribute;
 
     ::SVG::Coordinates_ptr m_position;
 
     ::SVG::Dimension_ptr m_size;
 
-    ::SVG::Svg_ptr m_root;
+    std::weak_ptr< ::SVG::Svg > m_root;
 
-    ::SVG::GroupingElement_ptr m_group;
+    std::weak_ptr< ::SVG::GroupingElement > m_group;
 
-    ::SVG::Marker_ptr m_drawsMarker;
+    std::weak_ptr< ::SVG::Marker > m_drawsMarker;
 
 };
 

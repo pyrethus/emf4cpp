@@ -66,13 +66,13 @@ UILayout::~UILayout()
 
 ::kdm::ui::UIResource_ptr UILayout::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void UILayout::setTo(::kdm::ui::UIResource_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::ui::UIResource_ptr _old_to = m_to;
+    ::kdm::ui::UIResource_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void UILayout::setTo(::kdm::ui::UIResource_ptr _to)
                 _this(),
                 ::kdm::ui::UiPackage::_instance()->getUILayout__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,13 +93,13 @@ void UILayout::setTo(::kdm::ui::UIResource_ptr _to)
 
 ::kdm::ui::UIResource_ptr UILayout::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void UILayout::setFrom(::kdm::ui::UIResource_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::ui::UIResource_ptr _old_from = m_from;
+    ::kdm::ui::UIResource_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -111,7 +111,7 @@ void UILayout::setFrom(::kdm::ui::UIResource_ptr _from)
                 _this(),
                 ::kdm::ui::UiPackage::_instance()->getUILayout__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

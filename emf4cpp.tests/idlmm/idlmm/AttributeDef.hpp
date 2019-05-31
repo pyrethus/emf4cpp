@@ -21,8 +21,6 @@
 #ifndef IDLMM_ATTRIBUTEDEF_HPP
 #define IDLMM_ATTRIBUTEDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -87,7 +85,7 @@ public:
 
 protected:
     AttributeDef_ptr _this()
-    {   return AttributeDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<AttributeDef>(shared_from_this());}
 
     // Attributes
 
@@ -96,9 +94,9 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::idlmm::ExceptionDef_ptr >> m_getRaises;
+    ::ecore::EList_ptr< ::idlmm::ExceptionDef_ptr > m_getRaises;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::idlmm::ExceptionDef_ptr >> m_setRaises;
+    ::ecore::EList_ptr< ::idlmm::ExceptionDef_ptr > m_setRaises;
 
 };
 

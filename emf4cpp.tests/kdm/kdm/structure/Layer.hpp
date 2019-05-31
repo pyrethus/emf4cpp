@@ -21,8 +21,6 @@
 #ifndef KDM_STRUCTURE_LAYER_HPP
 #define KDM_STRUCTURE_LAYER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/structure_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace kdm
 
     protected:
         Layer_ptr _this()
-        {   return Layer_ptr(this);}
+        {   return std::dynamic_pointer_cast<Layer>(shared_from_this());}
 
         // Attributes
 

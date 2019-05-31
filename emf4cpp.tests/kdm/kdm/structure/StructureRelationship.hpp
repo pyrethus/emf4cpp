@@ -21,8 +21,6 @@
 #ifndef KDM_STRUCTURE_STRUCTURERELATIONSHIP_HPP
 #define KDM_STRUCTURE_STRUCTURERELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/structure_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         StructureRelationship_ptr _this()
-        {   return StructureRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<StructureRelationship>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::core::KDMEntity_ptr m_to;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_to;
 
-        ::kdm::structure::AbstractStructureElement_ptr m_from;
+        std::weak_ptr< ::kdm::structure::AbstractStructureElement > m_from;
 
     };
 

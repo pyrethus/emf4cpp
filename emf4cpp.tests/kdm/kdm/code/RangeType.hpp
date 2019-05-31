@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_RANGETYPE_HPP
 #define KDM_CODE_RANGETYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -88,7 +86,7 @@ namespace kdm
 
     protected:
         RangeType_ptr _this()
-        {   return RangeType_ptr(this);}
+        {   return std::dynamic_pointer_cast<RangeType>(shared_from_this());}
 
         // Attributes
 

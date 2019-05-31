@@ -21,7 +21,6 @@
 #ifndef MYDSL_IMPORT_HPP
 #define MYDSL_IMPORT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <myDsl/dllMyDsl.hpp>
@@ -81,7 +80,7 @@ public:
 
 protected:
     Import_ptr _this()
-    {   return Import_ptr(this);}
+    {   return std::dynamic_pointer_cast<Import>(shared_from_this());}
 
     // Attributes
 

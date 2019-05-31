@@ -93,20 +93,17 @@ void IfExpression::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::IFEXPRESSION__CONDITION:
     {
-        if (m_condition)
-            _any = ::ecore::as < ::ecore::EObject > (m_condition);
+        _any = ::ecore::as < ::ecore::EObject > (m_condition);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::IFEXPRESSION__THENPART:
     {
-        if (m_thenPart)
-            _any = ::ecore::as < ::ecore::EObject > (m_thenPart);
+        _any = ::ecore::as < ::ecore::EObject > (m_thenPart);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::IFEXPRESSION__ELSEPART:
     {
-        if (m_elsePart)
-            _any = ::ecore::as < ::ecore::EObject > (m_elsePart);
+        _any = ::ecore::as < ::ecore::EObject > (m_elsePart);
     }
         return _any;
 
@@ -156,7 +153,8 @@ void IfExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::IfExpression::setCondition(_t1);
     }
         return;
@@ -165,7 +163,8 @@ void IfExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::IfExpression::setThenPart(_t1);
     }
         return;
@@ -174,7 +173,8 @@ void IfExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::IfExpression::setElsePart(_t1);
     }
         return;
@@ -199,11 +199,11 @@ void IfExpression::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::IFEXPRESSION__CONDITION:
-        return (bool) m_condition;
+        return !(m_condition == nullptr);
     case ::xpand3::expression::ExpressionPackage::IFEXPRESSION__THENPART:
-        return (bool) m_thenPart;
+        return !(m_thenPart == nullptr);
     case ::xpand3::expression::ExpressionPackage::IFEXPRESSION__ELSEPART:
-        return (bool) m_elsePart;
+        return !(m_elsePart == nullptr);
 
     }
     throw "Error";

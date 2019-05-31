@@ -21,7 +21,6 @@
 #ifndef IDLMM_TYPED_HPP
 #define IDLMM_TYPED_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <idlmm/dllIdlmm.hpp>
@@ -82,7 +81,7 @@ public:
 
 protected:
     Typed_ptr _this()
-    {   return Typed_ptr(this);}
+    {   return std::dynamic_pointer_cast<Typed>(shared_from_this());}
 
     // Attributes
 
@@ -90,7 +89,7 @@ protected:
 
     ::idlmm::IDLType_ptr m_containedType;
 
-    ::idlmm::TypedefDef_ptr m_sharedType;
+    std::weak_ptr< ::idlmm::TypedefDef > m_sharedType;
 
 };
 

@@ -22,7 +22,6 @@
 #define TREEITERATOR_HPP
 
 #include "treeiterator_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

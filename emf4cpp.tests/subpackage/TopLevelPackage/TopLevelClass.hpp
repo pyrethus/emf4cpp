@@ -21,7 +21,6 @@
 #ifndef TOPLEVELPACKAGE_TOPLEVELCLASS_HPP
 #define TOPLEVELPACKAGE_TOPLEVELCLASS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <TopLevelPackage/dllTopLevelPackage.hpp>
@@ -81,13 +80,13 @@ public:
 
 protected:
     TopLevelClass_ptr _this()
-    {   return TopLevelClass_ptr(this);}
+    {   return std::dynamic_pointer_cast<TopLevelClass>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    ::ecore::EObject_ptr m_reference;
+    std::weak_ptr< ::ecore::EObject > m_reference;
 
 };
 

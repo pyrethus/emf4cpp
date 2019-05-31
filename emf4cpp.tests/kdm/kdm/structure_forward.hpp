@@ -21,7 +21,7 @@
 #ifndef _KDM_STRUCTURE_FORWARD_HPP
 #define _KDM_STRUCTURE_FORWARD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
+#include <ecore_forward.hpp> // for EDataTypes
 
 /*PROTECTED REGION ID(kdm_structure_forward) START*/
 // Please, enable the protected region if you add manually written code.
@@ -30,8 +30,6 @@
 /*PROTECTED REGION END*/
 
 // EPackage
-
-#include <ecore_forward.hpp> // for EDataTypes
 
 namespace kdm
 {

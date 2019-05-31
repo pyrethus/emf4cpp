@@ -86,13 +86,13 @@ void TreeNode::setData(::ecore::EString const& _data)
 
 ::tree::TreeNode_ptr TreeNode::getParent() const
 {
-    return m_parent;
+    return m_parent.lock();
 }
 
 void TreeNode::setParent(::tree::TreeNode_ptr _parent)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::tree::TreeNode_ptr _old_parent = m_parent;
+    ::tree::TreeNode_ptr _old_parent = m_parent.lock();
 #endif
     m_parent = _parent;
 
@@ -104,7 +104,7 @@ void TreeNode::setParent(::tree::TreeNode_ptr _parent)
                 _this(),
                 ::tree::TreePackage::_instance()->getTreeNode__parent(),
                 _old_parent,
-                m_parent
+                m_parent.lock()
         );
         eNotify(&notification);
     }

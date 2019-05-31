@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_DEPLOYEDRESOURCE_HPP
 #define KDM_PLATFORM_DEPLOYEDRESOURCE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -87,13 +85,13 @@ namespace kdm
 
     protected:
         DeployedResource_ptr _this()
-        {   return DeployedResource_ptr(this);}
+        {   return std::dynamic_pointer_cast<DeployedResource>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::platform::ResourceType_ptr >> m_platformElement;
+        ::ecore::EList_ptr< ::kdm::platform::ResourceType_ptr > m_platformElement;
 
     };
 

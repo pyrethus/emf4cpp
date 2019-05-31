@@ -21,8 +21,6 @@
 #ifndef IDLMM_ARRAYDEF_HPP
 #define IDLMM_ARRAYDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -82,7 +80,7 @@ public:
 
 protected:
     ArrayDef_ptr _this()
-    {   return ArrayDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<ArrayDef>(shared_from_this());}
 
     // Attributes
 

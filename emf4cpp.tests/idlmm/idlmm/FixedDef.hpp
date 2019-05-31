@@ -21,8 +21,6 @@
 #ifndef IDLMM_FIXEDDEF_HPP
 #define IDLMM_FIXEDDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -84,7 +82,7 @@ public:
 
 protected:
     FixedDef_ptr _this()
-    {   return FixedDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<FixedDef>(shared_from_this());}
 
     // Attributes
 

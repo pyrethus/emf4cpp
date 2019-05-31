@@ -67,13 +67,13 @@ HasContent::~HasContent()
 
 ::kdm::data::AbstractDataElement_ptr HasContent::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void HasContent::setTo(::kdm::data::AbstractDataElement_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::data::AbstractDataElement_ptr _old_to = m_to;
+    ::kdm::data::AbstractDataElement_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void HasContent::setTo(::kdm::data::AbstractDataElement_ptr _to)
                 _this(),
                 ::kdm::data::DataPackage::_instance()->getHasContent__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void HasContent::setTo(::kdm::data::AbstractDataElement_ptr _to)
 
 ::kdm::action::ActionElement_ptr HasContent::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void HasContent::setFrom(::kdm::action::ActionElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::action::ActionElement_ptr _old_from = m_from;
+    ::kdm::action::ActionElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void HasContent::setFrom(::kdm::action::ActionElement_ptr _from)
                 _this(),
                 ::kdm::data::DataPackage::_instance()->getHasContent__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

@@ -21,8 +21,6 @@
 #ifndef IDLMM_UNIONDEF_HPP
 #define IDLMM_UNIONDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -87,17 +85,17 @@ public:
 
 protected:
     UnionDef_ptr _this()
-    {   return UnionDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<UnionDef>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::idlmm::UnionField_ptr >> m_unionMembers;
+    ::ecore::EList_ptr< ::idlmm::UnionField_ptr > m_unionMembers;
 
     ::idlmm::IDLType_ptr m_containedDiscrim;
 
-    ::idlmm::TypedefDef_ptr m_sharedDiscrim;
+    std::weak_ptr< ::idlmm::TypedefDef > m_sharedDiscrim;
 
 };
 

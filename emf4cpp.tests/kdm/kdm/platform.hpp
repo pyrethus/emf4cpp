@@ -22,7 +22,6 @@
 #define KDM_PLATFORM_HPP
 
 #include "platform_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

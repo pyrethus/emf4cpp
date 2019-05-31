@@ -72,8 +72,7 @@ void SourceRegion::_initialize()
         return _any;
     case ::kdm::source::SourcePackage::SOURCEREGION__FILE:
     {
-        if (m_file)
-            _any = ::ecore::as < ::ecore::EObject > (m_file);
+        _any = ::ecore::as < ::ecore::EObject > (m_file.lock());
     }
         return _any;
     case ::kdm::source::SourcePackage::SOURCEREGION__STARTLINE:
@@ -124,18 +123,20 @@ void SourceRegion::eSet(::ecore::EInt _featureID,
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::Element::getAttribute().clear();
         ::kdm::core::Element::getAttribute().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::Element::getAnnotation().clear();
         ::kdm::core::Element::getAnnotation().insert_all(*_t0);
     }
@@ -144,8 +145,8 @@ void SourceRegion::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::kdm::source::SourceFile_ptr _t1 =
-                dynamic_cast< ::kdm::source::SourceFile* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::kdm::source::SourceFile >(_t0);*/
+        ::kdm::source::SourceFile_ptr _t1 = std::dynamic_pointer_cast
+                < ::kdm::source::SourceFile > (_t0);
         ::kdm::source::SourceRegion::setFile(_t1);
     }
         return;
@@ -211,7 +212,7 @@ void SourceRegion::eSet(::ecore::EInt _featureID,
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
         return m_annotation && m_annotation->size();
     case ::kdm::source::SourcePackage::SOURCEREGION__FILE:
-        return (bool) m_file;
+        return !m_file.expired();
     case ::kdm::source::SourcePackage::SOURCEREGION__STARTLINE:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::Integer
                 > ::is_set(m_startLine);

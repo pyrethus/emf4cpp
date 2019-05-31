@@ -21,8 +21,6 @@
 #ifndef SVG_GROUPINGELEMENT_HPP
 #define SVG_GROUPINGELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -81,13 +79,13 @@ public:
 
 protected:
     GroupingElement_ptr _this()
-    {   return GroupingElement_ptr(this);}
+    {   return std::dynamic_pointer_cast<GroupingElement>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::Element_ptr >> m_groupContent;
+    ::ecore::EList_ptr< ::SVG::Element_ptr > m_groupContent;
 
 };
 

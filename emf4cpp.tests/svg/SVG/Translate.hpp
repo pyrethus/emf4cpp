@@ -21,8 +21,6 @@
 #ifndef SVG_TRANSLATE_HPP
 #define SVG_TRANSLATE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -84,7 +82,7 @@ public:
 
 protected:
     Translate_ptr _this()
-    {   return Translate_ptr(this);}
+    {   return std::dynamic_pointer_cast<Translate>(shared_from_this());}
 
     // Attributes
 

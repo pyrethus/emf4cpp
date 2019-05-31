@@ -67,13 +67,13 @@ NextState::~NextState()
 
 ::kdm::event::State_ptr NextState::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void NextState::setTo(::kdm::event::State_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::event::State_ptr _old_to = m_to;
+    ::kdm::event::State_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void NextState::setTo(::kdm::event::State_ptr _to)
                 _this(),
                 ::kdm::event::EventPackage::_instance()->getNextState__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void NextState::setTo(::kdm::event::State_ptr _to)
 
 ::kdm::event::Transition_ptr NextState::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void NextState::setFrom(::kdm::event::Transition_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::event::Transition_ptr _old_from = m_from;
+    ::kdm::event::Transition_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void NextState::setFrom(::kdm::event::Transition_ptr _from)
                 _this(),
                 ::kdm::event::EventPackage::_instance()->getNextState__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

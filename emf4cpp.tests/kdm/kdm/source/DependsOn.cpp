@@ -66,13 +66,13 @@ DependsOn::~DependsOn()
 
 ::kdm::source::AbstractInventoryElement_ptr DependsOn::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void DependsOn::setTo(::kdm::source::AbstractInventoryElement_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::source::AbstractInventoryElement_ptr _old_to = m_to;
+    ::kdm::source::AbstractInventoryElement_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void DependsOn::setTo(::kdm::source::AbstractInventoryElement_ptr _to)
                 _this(),
                 ::kdm::source::SourcePackage::_instance()->getDependsOn__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,13 +93,13 @@ void DependsOn::setTo(::kdm::source::AbstractInventoryElement_ptr _to)
 
 ::kdm::source::AbstractInventoryElement_ptr DependsOn::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void DependsOn::setFrom(::kdm::source::AbstractInventoryElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::source::AbstractInventoryElement_ptr _old_from = m_from;
+    ::kdm::source::AbstractInventoryElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -111,7 +111,7 @@ void DependsOn::setFrom(::kdm::source::AbstractInventoryElement_ptr _from)
                 _this(),
                 ::kdm::source::SourcePackage::_instance()->getDependsOn__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

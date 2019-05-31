@@ -90,14 +90,12 @@ void DeclaredParameter::_initialize()
         return _any;
     case ::xpand3::Xpand3Package::DECLAREDPARAMETER__NAME:
     {
-        if (m_name)
-            _any = ::ecore::as < ::ecore::EObject > (m_name);
+        _any = ::ecore::as < ::ecore::EObject > (m_name);
     }
         return _any;
     case ::xpand3::Xpand3Package::DECLAREDPARAMETER__TYPE:
     {
-        if (m_type)
-            _any = ::ecore::as < ::ecore::EObject > (m_type);
+        _any = ::ecore::as < ::ecore::EObject > (m_type);
     }
         return _any;
 
@@ -146,8 +144,8 @@ void DeclaredParameter::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::DeclaredParameter::setName(_t1);
     }
         return;
@@ -155,8 +153,8 @@ void DeclaredParameter::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::DeclaredParameter::setType(_t1);
     }
         return;
@@ -181,9 +179,9 @@ void DeclaredParameter::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::Xpand3Package::DECLAREDPARAMETER__NAME:
-        return (bool) m_name;
+        return !(m_name == nullptr);
     case ::xpand3::Xpand3Package::DECLAREDPARAMETER__TYPE:
-        return (bool) m_type;
+        return !(m_type == nullptr);
 
     }
     throw "Error";

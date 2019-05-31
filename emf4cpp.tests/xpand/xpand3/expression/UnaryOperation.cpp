@@ -99,14 +99,14 @@ void UnaryOperation::setOperator(::xpand3::Identifier_ptr _operator)
 
 ::xpand3::expression::AbstractExpression_ptr UnaryOperation::getOperand() const
 {
-    return m_operand;
+    return m_operand.lock();
 }
 
 void UnaryOperation::setOperand(
         ::xpand3::expression::AbstractExpression_ptr _operand)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::xpand3::expression::AbstractExpression_ptr _old_operand = m_operand;
+    ::xpand3::expression::AbstractExpression_ptr _old_operand = m_operand.lock();
 #endif
     m_operand = _operand;
 
@@ -118,7 +118,7 @@ void UnaryOperation::setOperand(
                 _this(),
                 ::xpand3::expression::ExpressionPackage::_instance()->getUnaryOperation__operand(),
                 _old_operand,
-                m_operand
+                m_operand.lock()
         );
         eNotify(&notification);
     }

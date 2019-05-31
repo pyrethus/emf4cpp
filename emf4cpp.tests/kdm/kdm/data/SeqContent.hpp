@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_SEQCONTENT_HPP
 #define KDM_DATA_SEQCONTENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -84,7 +82,7 @@ namespace kdm
 
     protected:
         SeqContent_ptr _this()
-        {   return SeqContent_ptr(this);}
+        {   return std::dynamic_pointer_cast<SeqContent>(shared_from_this());}
 
         // Attributes
 

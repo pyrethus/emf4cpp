@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_METHODUNIT_HPP
 #define KDM_CODE_METHODUNIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -91,7 +89,7 @@ namespace kdm
 
     protected:
         MethodUnit_ptr _this()
-        {   return MethodUnit_ptr(this);}
+        {   return std::dynamic_pointer_cast<MethodUnit>(shared_from_this());}
 
         // Attributes
 

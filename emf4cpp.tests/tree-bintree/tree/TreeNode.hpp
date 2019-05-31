@@ -21,7 +21,6 @@
 #ifndef TREE_TREENODE_HPP
 #define TREE_TREENODE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <tree/dllTree.hpp>
@@ -83,7 +82,7 @@ public:
 
 protected:
     TreeNode_ptr _this()
-    {   return TreeNode_ptr(this);}
+    {   return std::dynamic_pointer_cast<TreeNode>(shared_from_this());}
 
     // Attributes
 
@@ -92,7 +91,7 @@ protected:
 
     // References
 
-    ::tree::TreeNode_ptr m_parent;
+    std::weak_ptr< ::tree::TreeNode > m_parent;
 
 };
 

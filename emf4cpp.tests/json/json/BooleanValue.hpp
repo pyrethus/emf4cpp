@@ -21,8 +21,6 @@
 #ifndef JSON_BOOLEANVALUE_HPP
 #define JSON_BOOLEANVALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <json/dllJson.hpp>
 #include <json_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     BooleanValue_ptr _this()
-    {   return BooleanValue_ptr(this);}
+    {   return std::dynamic_pointer_cast<BooleanValue>(shared_from_this());}
 
     // Attributes
 

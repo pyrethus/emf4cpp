@@ -66,13 +66,13 @@ ReferenceTo::~ReferenceTo()
 
 ::kdm::data::ContentItem_ptr ReferenceTo::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void ReferenceTo::setTo(::kdm::data::ContentItem_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::data::ContentItem_ptr _old_to = m_to;
+    ::kdm::data::ContentItem_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void ReferenceTo::setTo(::kdm::data::ContentItem_ptr _to)
                 _this(),
                 ::kdm::data::DataPackage::_instance()->getReferenceTo__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,13 +93,13 @@ void ReferenceTo::setTo(::kdm::data::ContentItem_ptr _to)
 
 ::kdm::data::ContentItem_ptr ReferenceTo::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void ReferenceTo::setFrom(::kdm::data::ContentItem_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::data::ContentItem_ptr _old_from = m_from;
+    ::kdm::data::ContentItem_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -111,7 +111,7 @@ void ReferenceTo::setFrom(::kdm::data::ContentItem_ptr _from)
                 _this(),
                 ::kdm::data::DataPackage::_instance()->getReferenceTo__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

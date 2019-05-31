@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_AUDIT_HPP
 #define KDM_KDM_AUDIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -89,7 +87,7 @@ namespace kdm
 
     protected:
         Audit_ptr _this()
-        {   return Audit_ptr(this);}
+        {   return std::dynamic_pointer_cast<Audit>(shared_from_this());}
 
         // Attributes
 

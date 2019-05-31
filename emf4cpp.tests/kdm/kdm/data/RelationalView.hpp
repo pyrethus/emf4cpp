@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_RELATIONALVIEW_HPP
 #define KDM_DATA_RELATIONALVIEW_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         RelationalView_ptr _this()
-        {   return RelationalView_ptr(this);}
+        {   return std::dynamic_pointer_cast<RelationalView>(shared_from_this());}
 
         // Attributes
 

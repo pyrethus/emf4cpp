@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UIMODEL_HPP
 #define KDM_UI_UIMODEL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -84,13 +82,13 @@ namespace kdm
 
     protected:
         UIModel_ptr _this()
-        {   return UIModel_ptr(this);}
+        {   return std::dynamic_pointer_cast<UIModel>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::ui::AbstractUIElement_ptr >> m_UIElement;
+        ::ecore::EList_ptr< ::kdm::ui::AbstractUIElement_ptr > m_UIElement;
 
     };
 

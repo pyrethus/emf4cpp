@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_PROJECT_HPP
 #define KDM_SOURCE_PROJECT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace kdm
 
     protected:
         Project_ptr _this()
-        {   return Project_ptr(this);}
+        {   return std::dynamic_pointer_cast<Project>(shared_from_this());}
 
         // Attributes
 

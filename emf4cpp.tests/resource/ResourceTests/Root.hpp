@@ -21,7 +21,6 @@
 #ifndef RESOURCETESTS_ROOT_HPP
 #define RESOURCETESTS_ROOT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <ResourceTests/dllResourceTests.hpp>
@@ -82,7 +81,7 @@ public:
 
 protected:
     Root_ptr _this()
-    {   return Root_ptr(this);}
+    {   return std::dynamic_pointer_cast<Root>(shared_from_this());}
 
     // Attributes
 
@@ -90,7 +89,7 @@ protected:
 
     ::ResourceTests::ReferenceTarget_ptr m_target;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::ResourceTests::Referrer_ptr >> m_referrers;
+    ::ecore::EList_ptr< ::ResourceTests::Referrer_ptr > m_referrers;
 
 };
 

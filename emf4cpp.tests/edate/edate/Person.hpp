@@ -21,7 +21,6 @@
 #ifndef EDATE_PERSON_HPP
 #define EDATE_PERSON_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <edate/dllEdate.hpp>
@@ -84,7 +83,7 @@ public:
 
 protected:
     Person_ptr _this()
-    {   return Person_ptr(this);}
+    {   return std::dynamic_pointer_cast<Person>(shared_from_this());}
 
     // Attributes
 

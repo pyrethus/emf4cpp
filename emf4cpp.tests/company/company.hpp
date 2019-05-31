@@ -22,7 +22,6 @@
 #define COMPANY_HPP
 
 #include "company_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

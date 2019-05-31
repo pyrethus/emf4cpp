@@ -297,44 +297,44 @@ CodeFactory::CodeFactory()
     case CodePackage::METHODKIND:
     {
         ::ecore::EJavaObject _any;
-        CodePackage_ptr _epkg =
-                dynamic_cast< ::kdm::code::CodePackage* >(getEPackage().get());
+        CodePackage_ptr _epkg = std::dynamic_pointer_cast
+                < ::kdm::code::CodePackage > (getEPackage());
         return _epkg->getMethodKind()->getEEnumLiteralByLiteral(_literalValue)->getValue();
     }
     case CodePackage::PARAMETERKIND:
     {
         ::ecore::EJavaObject _any;
-        CodePackage_ptr _epkg =
-                dynamic_cast< ::kdm::code::CodePackage* >(getEPackage().get());
+        CodePackage_ptr _epkg = std::dynamic_pointer_cast
+                < ::kdm::code::CodePackage > (getEPackage());
         return _epkg->getParameterKind()->getEEnumLiteralByLiteral(
                 _literalValue)->getValue();
     }
     case CodePackage::EXPORTKIND:
     {
         ::ecore::EJavaObject _any;
-        CodePackage_ptr _epkg =
-                dynamic_cast< ::kdm::code::CodePackage* >(getEPackage().get());
+        CodePackage_ptr _epkg = std::dynamic_pointer_cast
+                < ::kdm::code::CodePackage > (getEPackage());
         return _epkg->getExportKind()->getEEnumLiteralByLiteral(_literalValue)->getValue();
     }
     case CodePackage::STORABLEKIND:
     {
         ::ecore::EJavaObject _any;
-        CodePackage_ptr _epkg =
-                dynamic_cast< ::kdm::code::CodePackage* >(getEPackage().get());
+        CodePackage_ptr _epkg = std::dynamic_pointer_cast
+                < ::kdm::code::CodePackage > (getEPackage());
         return _epkg->getStorableKind()->getEEnumLiteralByLiteral(_literalValue)->getValue();
     }
     case CodePackage::CALLABLEKIND:
     {
         ::ecore::EJavaObject _any;
-        CodePackage_ptr _epkg =
-                dynamic_cast< ::kdm::code::CodePackage* >(getEPackage().get());
+        CodePackage_ptr _epkg = std::dynamic_pointer_cast
+                < ::kdm::code::CodePackage > (getEPackage());
         return _epkg->getCallableKind()->getEEnumLiteralByLiteral(_literalValue)->getValue();
     }
     case CodePackage::MACROKIND:
     {
         ::ecore::EJavaObject _any;
-        CodePackage_ptr _epkg =
-                dynamic_cast< ::kdm::code::CodePackage* >(getEPackage().get());
+        CodePackage_ptr _epkg = std::dynamic_pointer_cast
+                < ::kdm::code::CodePackage > (getEPackage());
         return _epkg->getMacroKind()->getEEnumLiteralByLiteral(_literalValue)->getValue();
     }
     default:

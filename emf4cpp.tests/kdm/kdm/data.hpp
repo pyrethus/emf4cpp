@@ -22,7 +22,6 @@
 #define KDM_DATA_HPP
 
 #include "data_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

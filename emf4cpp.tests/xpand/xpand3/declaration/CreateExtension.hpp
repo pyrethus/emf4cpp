@@ -21,8 +21,6 @@
 #ifndef XPAND3_DECLARATION_CREATEEXTENSION_HPP
 #define XPAND3_DECLARATION_CREATEEXTENSION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/declaration_forward.hpp>
 
@@ -85,13 +83,13 @@ namespace xpand3
 
     protected:
         CreateExtension_ptr _this()
-        {   return CreateExtension_ptr(this);}
+        {   return std::dynamic_pointer_cast<CreateExtension>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::xpand3::DeclaredParameter_ptr m_toBeCreated;
+        std::weak_ptr< ::xpand3::DeclaredParameter > m_toBeCreated;
 
     };
 

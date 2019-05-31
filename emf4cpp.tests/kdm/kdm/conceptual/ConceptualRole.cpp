@@ -71,14 +71,14 @@ ConceptualRole::~ConceptualRole()
 
 ::kdm::conceptual::AbstractConceptualElement_ptr ConceptualRole::getConceptualElement() const
 {
-    return m_conceptualElement;
+    return m_conceptualElement.lock();
 }
 
 void ConceptualRole::setConceptualElement(
         ::kdm::conceptual::AbstractConceptualElement_ptr _conceptualElement)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::conceptual::AbstractConceptualElement_ptr _old_conceptualElement = m_conceptualElement;
+    ::kdm::conceptual::AbstractConceptualElement_ptr _old_conceptualElement = m_conceptualElement.lock();
 #endif
     m_conceptualElement = _conceptualElement;
 
@@ -90,7 +90,7 @@ void ConceptualRole::setConceptualElement(
                 _this(),
                 ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualRole__conceptualElement(),
                 _old_conceptualElement,
-                m_conceptualElement
+                m_conceptualElement.lock()
         );
         eNotify(&notification);
     }

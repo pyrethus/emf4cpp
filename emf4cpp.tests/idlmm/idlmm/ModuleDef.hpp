@@ -21,8 +21,6 @@
 #ifndef IDLMM_MODULEDEF_HPP
 #define IDLMM_MODULEDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     ModuleDef_ptr _this()
-    {   return ModuleDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<ModuleDef>(shared_from_this());}
 
     // Attributes
 

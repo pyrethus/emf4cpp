@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_READSRESOURCE_HPP
 #define KDM_PLATFORM_READSRESOURCE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         ReadsResource_ptr _this()
-        {   return ReadsResource_ptr(this);}
+        {   return std::dynamic_pointer_cast<ReadsResource>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::platform::ResourceType_ptr m_to;
+        std::weak_ptr< ::kdm::platform::ResourceType > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

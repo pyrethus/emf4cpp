@@ -21,8 +21,6 @@
 #ifndef XPAND3_DECLARATION_CHECK_HPP
 #define XPAND3_DECLARATION_CHECK_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/declaration_forward.hpp>
 
@@ -93,7 +91,7 @@ namespace xpand3
 
     protected:
         Check_ptr _this()
-        {   return Check_ptr(this);}
+        {   return std::dynamic_pointer_cast<Check>(shared_from_this());}
 
         // Attributes
 

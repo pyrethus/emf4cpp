@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_CONTENTITEM_HPP
 #define KDM_DATA_CONTENTITEM_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -89,15 +87,15 @@ namespace kdm
 
     protected:
         ContentItem_ptr _this()
-        {   return ContentItem_ptr(this);}
+        {   return std::dynamic_pointer_cast<ContentItem>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::data::ComplexContentType_ptr m_type;
+        std::weak_ptr< ::kdm::data::ComplexContentType > m_type;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::data::AbstractContentElement_ptr >> m_contentElement;
+        ::ecore::EList_ptr< ::kdm::data::AbstractContentElement_ptr > m_contentElement;
 
     };
 

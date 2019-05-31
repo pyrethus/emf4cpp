@@ -3,6 +3,7 @@
  * Copyright 2016, 2017 INCHRON Gmbh <info@inchron.com>
  */
 #include <iostream>
+#include <unistd.h>
 
 #include <ecore_forward.hpp>
 #include <ecore/EClass.hpp>
@@ -48,8 +49,7 @@ void dumpModel(const ecore::Ptr<ecore::EObject>& top) {
 		return;
 
 	QUrl outputUrl = QUrl::fromLocalFile("-");
-	::ecorecpp::resource::Resource_ptr output =
-		  new ecorecpp::resource::XMLResource(outputUrl);
+	::ecorecpp::resource::Resource_ptr output(new ecorecpp::resource::XMLResource(outputUrl));
 
 	output->getContents()->push_back(top);
 

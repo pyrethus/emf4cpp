@@ -21,7 +21,7 @@
 #ifndef _TOPLEVELPACKAGE_LEVEL1_FORWARD_HPP
 #define _TOPLEVELPACKAGE_LEVEL1_FORWARD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
+#include <ecore_forward.hpp> // for EDataTypes
 
 /*PROTECTED REGION ID(TopLevelPackage_Level1_forward) START*/
 // Please, enable the protected region if you add manually written code.
@@ -31,8 +31,6 @@
 
 // EPackage
 #include <TopLevelPackage/Level1/Level2_forward.hpp>
-
-#include <ecore_forward.hpp> // for EDataTypes
 
 namespace TopLevelPackage
 {

@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_STRINGTYPE_HPP
 #define KDM_CODE_STRINGTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -83,7 +81,7 @@ namespace kdm
 
     protected:
         StringType_ptr _this()
-        {   return StringType_ptr(this);}
+        {   return std::dynamic_pointer_cast<StringType>(shared_from_this());}
 
         // Attributes
 

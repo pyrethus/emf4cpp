@@ -66,13 +66,13 @@ ExitFlow::~ExitFlow()
 
 ::kdm::action::ActionElement_ptr ExitFlow::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void ExitFlow::setTo(::kdm::action::ActionElement_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::action::ActionElement_ptr _old_to = m_to;
+    ::kdm::action::ActionElement_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void ExitFlow::setTo(::kdm::action::ActionElement_ptr _to)
                 _this(),
                 ::kdm::action::ActionPackage::_instance()->getExitFlow__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,13 +93,13 @@ void ExitFlow::setTo(::kdm::action::ActionElement_ptr _to)
 
 ::kdm::action::ActionElement_ptr ExitFlow::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void ExitFlow::setFrom(::kdm::action::ActionElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::action::ActionElement_ptr _old_from = m_from;
+    ::kdm::action::ActionElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -111,7 +111,7 @@ void ExitFlow::setFrom(::kdm::action::ActionElement_ptr _from)
                 _this(),
                 ::kdm::action::ActionPackage::_instance()->getExitFlow__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

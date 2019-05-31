@@ -267,18 +267,18 @@ void Element::setSize(::SVG::Dimension_ptr _size)
 
 ::SVG::Svg_ptr Element::getRoot() const
 {
-    return m_root;
+    return m_root.lock();
 }
 
 ::SVG::Svg_ptr Element::basicgetRoot()
 {
-    return m_root;
+    return m_root.lock();
 }
 
 void Element::basicsetRoot(::SVG::Svg_ptr _root)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::SVG::Svg_ptr _old_root = m_root;
+    ::SVG::Svg_ptr _old_root = m_root.lock();
 #endif
     m_root = _root;
 
@@ -290,7 +290,7 @@ void Element::basicsetRoot(::SVG::Svg_ptr _root)
                 _this(),
                 ::SVG::SVGPackage::_instance()->getElement__root(),
                 _old_root,
-                m_root
+                m_root.lock()
         );
         eNotify(&notification);
     }
@@ -299,14 +299,15 @@ void Element::basicsetRoot(::SVG::Svg_ptr _root)
 
 void Element::setRoot(::SVG::Svg_ptr _root)
 {
-    if (_root != m_root)
+    ::SVG::Svg_ptr _old_root = m_root.lock();
+    if (_root != _old_root)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_root != nullptr)
+        if (_old_root)
         {
-            m_root->_inverseRemove(::SVG::SVGPackage::SVG__CHILDREN, _this);
+            _old_root->_inverseRemove(::SVG::SVGPackage::SVG__CHILDREN, _this);
         }
-        if (_root != nullptr)
+        if (_root)
         {
             _root->_inverseAdd(::SVG::SVGPackage::SVG__CHILDREN, _this);
         }
@@ -316,18 +317,18 @@ void Element::setRoot(::SVG::Svg_ptr _root)
 
 ::SVG::GroupingElement_ptr Element::getGroup() const
 {
-    return m_group;
+    return m_group.lock();
 }
 
 ::SVG::GroupingElement_ptr Element::basicgetGroup()
 {
-    return m_group;
+    return m_group.lock();
 }
 
 void Element::basicsetGroup(::SVG::GroupingElement_ptr _group)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::SVG::GroupingElement_ptr _old_group = m_group;
+    ::SVG::GroupingElement_ptr _old_group = m_group.lock();
 #endif
     m_group = _group;
 
@@ -339,7 +340,7 @@ void Element::basicsetGroup(::SVG::GroupingElement_ptr _group)
                 _this(),
                 ::SVG::SVGPackage::_instance()->getElement__group(),
                 _old_group,
-                m_group
+                m_group.lock()
         );
         eNotify(&notification);
     }
@@ -348,15 +349,16 @@ void Element::basicsetGroup(::SVG::GroupingElement_ptr _group)
 
 void Element::setGroup(::SVG::GroupingElement_ptr _group)
 {
-    if (_group != m_group)
+    ::SVG::GroupingElement_ptr _old_group = m_group.lock();
+    if (_group != _old_group)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_group != nullptr)
+        if (_old_group)
         {
-            m_group->_inverseRemove(
+            _old_group->_inverseRemove(
                     ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT, _this);
         }
-        if (_group != nullptr)
+        if (_group)
         {
             _group->_inverseAdd(
                     ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT, _this);
@@ -367,18 +369,18 @@ void Element::setGroup(::SVG::GroupingElement_ptr _group)
 
 ::SVG::Marker_ptr Element::getDrawsMarker() const
 {
-    return m_drawsMarker;
+    return m_drawsMarker.lock();
 }
 
 ::SVG::Marker_ptr Element::basicgetDrawsMarker()
 {
-    return m_drawsMarker;
+    return m_drawsMarker.lock();
 }
 
 void Element::basicsetDrawsMarker(::SVG::Marker_ptr _drawsMarker)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::SVG::Marker_ptr _old_drawsMarker = m_drawsMarker;
+    ::SVG::Marker_ptr _old_drawsMarker = m_drawsMarker.lock();
 #endif
     m_drawsMarker = _drawsMarker;
 
@@ -390,7 +392,7 @@ void Element::basicsetDrawsMarker(::SVG::Marker_ptr _drawsMarker)
                 _this(),
                 ::SVG::SVGPackage::_instance()->getElement__drawsMarker(),
                 _old_drawsMarker,
-                m_drawsMarker
+                m_drawsMarker.lock()
         );
         eNotify(&notification);
     }
@@ -399,15 +401,16 @@ void Element::basicsetDrawsMarker(::SVG::Marker_ptr _drawsMarker)
 
 void Element::setDrawsMarker(::SVG::Marker_ptr _drawsMarker)
 {
-    if (_drawsMarker != m_drawsMarker)
+    ::SVG::Marker_ptr _old_drawsMarker = m_drawsMarker.lock();
+    if (_drawsMarker != _old_drawsMarker)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_drawsMarker != nullptr)
+        if (_old_drawsMarker)
         {
-            m_drawsMarker->_inverseRemove(::SVG::SVGPackage::MARKER__DRAWING,
+            _old_drawsMarker->_inverseRemove(::SVG::SVGPackage::MARKER__DRAWING,
                     _this);
         }
-        if (_drawsMarker != nullptr)
+        if (_drawsMarker)
         {
             _drawsMarker->_inverseAdd(::SVG::SVGPackage::MARKER__DRAWING,
                     _this);

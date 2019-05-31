@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_SUPPLIEDBY_HPP
 #define KDM_BUILD_SUPPLIEDBY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         SuppliedBy_ptr _this()
-        {   return SuppliedBy_ptr(this);}
+        {   return std::dynamic_pointer_cast<SuppliedBy>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::build::Supplier_ptr m_to;
+        std::weak_ptr< ::kdm::build::Supplier > m_to;
 
-        ::kdm::build::AbstractBuildElement_ptr m_from;
+        std::weak_ptr< ::kdm::build::AbstractBuildElement > m_from;
 
     };
 

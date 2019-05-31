@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_MODULE_HPP
 #define KDM_CODE_MODULE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -85,13 +83,13 @@ namespace kdm
 
     protected:
         Module_ptr _this()
-        {   return Module_ptr(this);}
+        {   return std::dynamic_pointer_cast<Module>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >> m_codeElement;
+        ::ecore::EList_ptr< ::kdm::code::AbstractCodeElement_ptr > m_codeElement;
 
     };
 

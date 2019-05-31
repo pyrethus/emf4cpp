@@ -21,8 +21,6 @@
 #ifndef KDM_UI_ABSTRACTUIRELATIONSHIP_HPP
 #define KDM_UI_ABSTRACTUIRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         AbstractUIRelationship_ptr _this()
-        {   return AbstractUIRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractUIRelationship>(shared_from_this());}
 
         // Attributes
 

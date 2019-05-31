@@ -21,7 +21,6 @@
 #ifndef MYDSL_PROPERTY_HPP
 #define MYDSL_PROPERTY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <myDsl/dllMyDsl.hpp>
@@ -86,7 +85,7 @@ public:
 
 protected:
     Property_ptr _this()
-    {   return Property_ptr(this);}
+    {   return std::dynamic_pointer_cast<Property>(shared_from_this());}
 
     // Attributes
 
@@ -98,7 +97,7 @@ protected:
 
     // References
 
-    ::myDsl::Type_ptr m_type;
+    std::weak_ptr< ::myDsl::Type > m_type;
 
 };
 

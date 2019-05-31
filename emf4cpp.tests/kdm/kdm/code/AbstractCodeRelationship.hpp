@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_ABSTRACTCODERELATIONSHIP_HPP
 #define KDM_CODE_ABSTRACTCODERELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         AbstractCodeRelationship_ptr _this()
-        {   return AbstractCodeRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractCodeRelationship>(shared_from_this());}
 
         // Attributes
 

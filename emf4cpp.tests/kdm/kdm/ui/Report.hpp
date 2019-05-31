@@ -21,8 +21,6 @@
 #ifndef KDM_UI_REPORT_HPP
 #define KDM_UI_REPORT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         Report_ptr _this()
-        {   return Report_ptr(this);}
+        {   return std::dynamic_pointer_cast<Report>(shared_from_this());}
 
         // Attributes
 

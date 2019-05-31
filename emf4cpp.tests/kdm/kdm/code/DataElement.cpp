@@ -129,13 +129,13 @@ void DataElement::setSize(::kdm::core::Integer _size)
 
 ::kdm::code::Datatype_ptr DataElement::getType() const
 {
-    return m_type;
+    return m_type.lock();
 }
 
 void DataElement::setType(::kdm::code::Datatype_ptr _type)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::code::Datatype_ptr _old_type = m_type;
+    ::kdm::code::Datatype_ptr _old_type = m_type.lock();
 #endif
     m_type = _type;
 
@@ -147,7 +147,7 @@ void DataElement::setType(::kdm::code::Datatype_ptr _type)
                 _this(),
                 ::kdm::code::CodePackage::_instance()->getDataElement__type(),
                 _old_type,
-                m_type
+                m_type.lock()
         );
         eNotify(&notification);
     }

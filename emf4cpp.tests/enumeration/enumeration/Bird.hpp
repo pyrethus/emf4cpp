@@ -21,7 +21,6 @@
 #ifndef ENUMERATION_BIRD_HPP
 #define ENUMERATION_BIRD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <enumeration/dllEnumeration.hpp>
@@ -85,7 +84,7 @@ public:
 
 protected:
     Bird_ptr _this()
-    {   return Bird_ptr(this);}
+    {   return std::dynamic_pointer_cast<Bird>(shared_from_this());}
 
     // Attributes
 

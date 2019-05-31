@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_INVENTORYRELATIONSHIP_HPP
 #define KDM_SOURCE_INVENTORYRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         InventoryRelationship_ptr _this()
-        {   return InventoryRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<InventoryRelationship>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::core::KDMEntity_ptr m_to;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_to;
 
-        ::kdm::source::AbstractInventoryElement_ptr m_from;
+        std::weak_ptr< ::kdm::source::AbstractInventoryElement > m_from;
 
     };
 

@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_UNARYOPERATION_HPP
 #define XPAND3_EXPRESSION_UNARYOPERATION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace xpand3
 
     protected:
         UnaryOperation_ptr _this()
-        {   return UnaryOperation_ptr(this);}
+        {   return std::dynamic_pointer_cast<UnaryOperation>(shared_from_this());}
 
         // Attributes
 
@@ -95,7 +93,7 @@ namespace xpand3
 
         ::xpand3::Identifier_ptr m_operator;
 
-        ::xpand3::expression::AbstractExpression_ptr m_operand;
+        std::weak_ptr< ::xpand3::expression::AbstractExpression > m_operand;
 
     };
 

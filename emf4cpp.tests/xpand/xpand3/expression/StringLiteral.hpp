@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_STRINGLITERAL_HPP
 #define XPAND3_EXPRESSION_STRINGLITERAL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace xpand3
 
     protected:
         StringLiteral_ptr _this()
-        {   return StringLiteral_ptr(this);}
+        {   return std::dynamic_pointer_cast<StringLiteral>(shared_from_this());}
 
         // Attributes
 

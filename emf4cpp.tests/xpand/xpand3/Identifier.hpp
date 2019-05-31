@@ -21,8 +21,6 @@
 #ifndef XPAND3_IDENTIFIER_HPP
 #define XPAND3_IDENTIFIER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     Identifier_ptr _this()
-    {   return Identifier_ptr(this);}
+    {   return std::dynamic_pointer_cast<Identifier>(shared_from_this());}
 
     // Attributes
 

@@ -21,8 +21,6 @@
 #ifndef KDM_ACTION_EXCEPTIONUNIT_HPP
 #define KDM_ACTION_EXCEPTIONUNIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/action_forward.hpp>
 
@@ -84,7 +82,7 @@ namespace kdm
 
     protected:
         ExceptionUnit_ptr _this()
-        {   return ExceptionUnit_ptr(this);}
+        {   return std::dynamic_pointer_cast<ExceptionUnit>(shared_from_this());}
 
         // Attributes
 

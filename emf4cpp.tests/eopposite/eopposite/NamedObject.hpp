@@ -21,7 +21,6 @@
 #ifndef EOPPOSITE_NAMEDOBJECT_HPP
 #define EOPPOSITE_NAMEDOBJECT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <eopposite/dllEopposite.hpp>
@@ -81,7 +80,7 @@ public:
 
 protected:
     NamedObject_ptr _this()
-    {   return NamedObject_ptr(this);}
+    {   return std::dynamic_pointer_cast<NamedObject>(shared_from_this());}
 
     // Attributes
 

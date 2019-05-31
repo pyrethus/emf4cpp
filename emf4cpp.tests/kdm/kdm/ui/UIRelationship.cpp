@@ -66,13 +66,13 @@ UIRelationship::~UIRelationship()
 
 ::kdm::core::KDMEntity_ptr UIRelationship::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void UIRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::core::KDMEntity_ptr _old_to = m_to;
+    ::kdm::core::KDMEntity_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void UIRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 _this(),
                 ::kdm::ui::UiPackage::_instance()->getUIRelationship__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,13 +93,13 @@ void UIRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 
 ::kdm::ui::AbstractUIElement_ptr UIRelationship::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void UIRelationship::setFrom(::kdm::ui::AbstractUIElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::ui::AbstractUIElement_ptr _old_from = m_from;
+    ::kdm::ui::AbstractUIElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -111,7 +111,7 @@ void UIRelationship::setFrom(::kdm::ui::AbstractUIElement_ptr _from)
                 _this(),
                 ::kdm::ui::UiPackage::_instance()->getUIRelationship__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

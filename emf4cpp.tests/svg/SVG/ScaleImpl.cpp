@@ -87,9 +87,10 @@ void Scale::eSet(::ecore::EInt _featureID,
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::SVG::Attribute::getAttOwner().clear();
         ::SVG::Attribute::getAttOwner().insert_all(*_t0);
     }
@@ -159,7 +160,8 @@ void Scale::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::SVG::Element_ptr _t1 = dynamic_cast< ::SVG::Element* >(_t0.get());
+        ::SVG::Element_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Element
+                > (_t0);
 
         // add to a list
         auto& container =
@@ -184,7 +186,8 @@ void Scale::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::SVG::Element_ptr _t1 = dynamic_cast< ::SVG::Element* >(_t0.get());
+        ::SVG::Element_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Element
+                > (_t0);
 
         // add to a list
         auto& container =

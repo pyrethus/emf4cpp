@@ -21,7 +21,6 @@
 #ifndef SVG_ATTRIBUTE_HPP
 #define SVG_ATTRIBUTE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <SVG/dllSVG.hpp>
@@ -79,13 +78,13 @@ public:
 
 protected:
     Attribute_ptr _this()
-    {   return Attribute_ptr(this);}
+    {   return std::dynamic_pointer_cast<Attribute>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::Element_ptr >> m_attOwner;
+    ::ecore::EList_ptr< ::SVG::Element_ptr > m_attOwner;
 
 };
 

@@ -21,8 +21,6 @@
 #ifndef KDM_EVENT_PRODUCESEVENT_HPP
 #define KDM_EVENT_PRODUCESEVENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/event_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         ProducesEvent_ptr _this()
-        {   return ProducesEvent_ptr(this);}
+        {   return std::dynamic_pointer_cast<ProducesEvent>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::event::Event_ptr m_to;
+        std::weak_ptr< ::kdm::event::Event > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

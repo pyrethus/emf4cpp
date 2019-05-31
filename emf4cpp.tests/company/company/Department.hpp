@@ -21,7 +21,6 @@
 #ifndef COMPANY_DEPARTMENT_HPP
 #define COMPANY_DEPARTMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <company/dllCompany.hpp>
@@ -86,7 +85,7 @@ public:
 
 protected:
     Department_ptr _this()
-    {   return Department_ptr(this);}
+    {   return std::dynamic_pointer_cast<Department>(shared_from_this());}
 
     // Attributes
 
@@ -95,9 +94,9 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::company::Employee_ptr >> m_employees;
+    ::ecore::EList_ptr< ::company::Employee_ptr > m_employees;
 
-    ::company::Employee_ptr m_manager;
+    std::weak_ptr< ::company::Employee > m_manager;
 
 };
 

@@ -21,8 +21,6 @@
 #ifndef XPAND3_DECLAREDPARAMETER_HPP
 #define XPAND3_DECLAREDPARAMETER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3_forward.hpp>
 
@@ -84,7 +82,7 @@ public:
 
 protected:
     DeclaredParameter_ptr _this()
-    {   return DeclaredParameter_ptr(this);}
+    {   return std::dynamic_pointer_cast<DeclaredParameter>(shared_from_this());}
 
     // Attributes
 

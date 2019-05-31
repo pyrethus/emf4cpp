@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_HASVALUE_HPP
 #define KDM_CODE_HASVALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         HasValue_ptr _this()
-        {   return HasValue_ptr(this);}
+        {   return std::dynamic_pointer_cast<HasValue>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::code::CodeItem_ptr m_to;
+        std::weak_ptr< ::kdm::code::CodeItem > m_to;
 
-        ::kdm::code::CodeItem_ptr m_from;
+        std::weak_ptr< ::kdm::code::CodeItem > m_from;
 
     };
 

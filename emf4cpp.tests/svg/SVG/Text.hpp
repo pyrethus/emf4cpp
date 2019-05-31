@@ -21,8 +21,6 @@
 #ifndef SVG_TEXT_HPP
 #define SVG_TEXT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -84,7 +82,7 @@ public:
 
 protected:
     Text_ptr _this()
-    {   return Text_ptr(this);}
+    {   return std::dynamic_pointer_cast<Text>(shared_from_this());}
 
     // Attributes
 

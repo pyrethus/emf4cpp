@@ -21,8 +21,6 @@
 #ifndef MYDSL_ENTITY_HPP
 #define MYDSL_ENTITY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <myDsl/dllMyDsl.hpp>
 #include <myDsl_forward.hpp>
 
@@ -84,15 +82,15 @@ public:
 
 protected:
     Entity_ptr _this()
-    {   return Entity_ptr(this);}
+    {   return std::dynamic_pointer_cast<Entity>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    ::myDsl::Entity_ptr m_extends;
+    std::weak_ptr< ::myDsl::Entity > m_extends;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::myDsl::Property_ptr >> m_properties;
+    ::ecore::EList_ptr< ::myDsl::Property_ptr > m_properties;
 
 };
 

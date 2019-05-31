@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_DATATYPEOF_HPP
 #define KDM_DATA_DATATYPEOF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         DatatypeOf_ptr _this()
-        {   return DatatypeOf_ptr(this);}
+        {   return std::dynamic_pointer_cast<DatatypeOf>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::code::Datatype_ptr m_to;
+        std::weak_ptr< ::kdm::code::Datatype > m_to;
 
-        ::kdm::data::ComplexContentType_ptr m_from;
+        std::weak_ptr< ::kdm::data::ComplexContentType > m_from;
 
     };
 

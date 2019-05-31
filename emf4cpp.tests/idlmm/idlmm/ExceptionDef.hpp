@@ -21,8 +21,6 @@
 #ifndef IDLMM_EXCEPTIONDEF_HPP
 #define IDLMM_EXCEPTIONDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -83,7 +81,7 @@ public:
 
 protected:
     ExceptionDef_ptr _this()
-    {   return ExceptionDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<ExceptionDef>(shared_from_this());}
 
     // Attributes
 
@@ -92,7 +90,7 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::idlmm::Field_ptr >> m_members;
+    ::ecore::EList_ptr< ::idlmm::Field_ptr > m_members;
 
 };
 

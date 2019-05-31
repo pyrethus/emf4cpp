@@ -21,8 +21,6 @@
 #ifndef KDM_ACTION_ABSTRACTACTIONRELATIONSHIP_HPP
 #define KDM_ACTION_ABSTRACTACTIONRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/action_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         AbstractActionRelationship_ptr _this()
-        {   return AbstractActionRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractActionRelationship>(shared_from_this());}
 
         // Attributes
 

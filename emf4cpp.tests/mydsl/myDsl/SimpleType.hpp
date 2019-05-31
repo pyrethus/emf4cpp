@@ -21,8 +21,6 @@
 #ifndef MYDSL_SIMPLETYPE_HPP
 #define MYDSL_SIMPLETYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <myDsl/dllMyDsl.hpp>
 #include <myDsl_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     SimpleType_ptr _this()
-    {   return SimpleType_ptr(this);}
+    {   return std::dynamic_pointer_cast<SimpleType>(shared_from_this());}
 
     // Attributes
 

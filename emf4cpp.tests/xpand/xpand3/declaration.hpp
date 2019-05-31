@@ -22,7 +22,6 @@
 #define XPAND3_DECLARATION_HPP
 
 #include "declaration_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

@@ -21,8 +21,6 @@
 #ifndef KDM_EVENT_ONEXIT_HPP
 #define KDM_EVENT_ONEXIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/event_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         OnExit_ptr _this()
-        {   return OnExit_ptr(this);}
+        {   return std::dynamic_pointer_cast<OnExit>(shared_from_this());}
 
         // Attributes
 

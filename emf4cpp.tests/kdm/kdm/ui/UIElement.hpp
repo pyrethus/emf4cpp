@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UIELEMENT_HPP
 #define KDM_UI_UIELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         UIElement_ptr _this()
-        {   return UIElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<UIElement>(shared_from_this());}
 
         // Attributes
 

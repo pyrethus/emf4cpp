@@ -113,27 +113,30 @@ void TopLevel::eSet(::ecore::EInt _featureID,
         return;
     case ::eopposite::EoppositePackage::TOPLEVEL__LEFTEES:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::eopposite::TopLevel::getLeftees().clear();
         ::eopposite::TopLevel::getLeftees().insert_all(*_t0);
     }
         return;
     case ::eopposite::EoppositePackage::TOPLEVEL__RIGHTEES:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::eopposite::TopLevel::getRightees().clear();
         ::eopposite::TopLevel::getRightees().insert_all(*_t0);
     }
         return;
     case ::eopposite::EoppositePackage::TOPLEVEL__RIGHTMULTIPLES:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::eopposite::TopLevel::getRightMultiples().clear();
         ::eopposite::TopLevel::getRightMultiples().insert_all(*_t0);
     }

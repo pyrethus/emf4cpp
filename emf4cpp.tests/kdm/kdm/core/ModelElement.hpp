@@ -21,8 +21,6 @@
 #ifndef KDM_CORE_MODELELEMENT_HPP
 #define KDM_CORE_MODELELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/core_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         ModelElement_ptr _this()
-        {   return ModelElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<ModelElement>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::Stereotype_ptr >> m_stereotype;
+        ::ecore::EList_ptr< ::kdm::kdm::Stereotype_ptr > m_stereotype;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::ExtendedValue_ptr >> m_taggedValue;
+        ::ecore::EList_ptr< ::kdm::kdm::ExtendedValue_ptr > m_taggedValue;
 
     };
 

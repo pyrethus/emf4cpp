@@ -67,8 +67,7 @@ void Department::_initialize()
         return _any;
     case ::company::CompanyPackage::DEPARTMENT__MANAGER:
     {
-        if (m_manager)
-            _any = ::ecore::as < ::ecore::EObject > (m_manager);
+        _any = ::ecore::as < ::ecore::EObject > (m_manager.lock());
     }
         return _any;
     case ::company::CompanyPackage::DEPARTMENT__NUMBER:
@@ -89,9 +88,10 @@ void Department::eSet(::ecore::EInt _featureID,
     {
     case ::company::CompanyPackage::DEPARTMENT__EMPLOYEES:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::company::Department::getEmployees().clear();
         ::company::Department::getEmployees().insert_all(*_t0);
     }
@@ -100,8 +100,8 @@ void Department::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::company::Employee_ptr _t1 =
-                dynamic_cast< ::company::Employee* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::company::Employee >(_t0);*/
+        ::company::Employee_ptr _t1 = std::dynamic_pointer_cast
+                < ::company::Employee > (_t0);
         ::company::Department::setManager(_t1);
     }
         return;
@@ -125,7 +125,7 @@ void Department::eSet(::ecore::EInt _featureID,
     case ::company::CompanyPackage::DEPARTMENT__EMPLOYEES:
         return m_employees && m_employees->size();
     case ::company::CompanyPackage::DEPARTMENT__MANAGER:
-        return (bool) m_manager;
+        return !m_manager.expired();
     case ::company::CompanyPackage::DEPARTMENT__NUMBER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(m_number);

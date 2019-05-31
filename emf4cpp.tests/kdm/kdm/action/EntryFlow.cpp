@@ -67,13 +67,13 @@ EntryFlow::~EntryFlow()
 
 ::kdm::action::ActionElement_ptr EntryFlow::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void EntryFlow::setTo(::kdm::action::ActionElement_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::action::ActionElement_ptr _old_to = m_to;
+    ::kdm::action::ActionElement_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void EntryFlow::setTo(::kdm::action::ActionElement_ptr _to)
                 _this(),
                 ::kdm::action::ActionPackage::_instance()->getEntryFlow__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void EntryFlow::setTo(::kdm::action::ActionElement_ptr _to)
 
 ::kdm::code::ControlElement_ptr EntryFlow::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void EntryFlow::setFrom(::kdm::code::ControlElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::code::ControlElement_ptr _old_from = m_from;
+    ::kdm::code::ControlElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void EntryFlow::setFrom(::kdm::code::ControlElement_ptr _from)
                 _this(),
                 ::kdm::action::ActionPackage::_instance()->getEntryFlow__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

@@ -21,8 +21,6 @@
 #ifndef XPAND3_FILE_HPP
 #define XPAND3_FILE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3_forward.hpp>
 
@@ -85,15 +83,15 @@ public:
 
 protected:
     File_ptr _this()
-    {   return File_ptr(this);}
+    {   return std::dynamic_pointer_cast<File>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::ImportStatement_ptr >> m_imports;
+    ::ecore::EList_ptr< ::xpand3::ImportStatement_ptr > m_imports;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::declaration::AbstractDeclaration_ptr >> m_declarations;
+    ::ecore::EList_ptr< ::xpand3::declaration::AbstractDeclaration_ptr > m_declarations;
 
 };
 

@@ -21,8 +21,6 @@
 #ifndef TREE_LEAF_HPP
 #define TREE_LEAF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <tree/dllTree.hpp>
 #include <tree_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     Leaf_ptr _this()
-    {   return Leaf_ptr(this);}
+    {   return std::dynamic_pointer_cast<Leaf>(shared_from_this());}
 
     // Attributes
 

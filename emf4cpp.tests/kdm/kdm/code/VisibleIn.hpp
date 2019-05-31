@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_VISIBLEIN_HPP
 #define KDM_CODE_VISIBLEIN_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         VisibleIn_ptr _this()
-        {   return VisibleIn_ptr(this);}
+        {   return std::dynamic_pointer_cast<VisibleIn>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::code::CodeItem_ptr m_to;
+        std::weak_ptr< ::kdm::code::CodeItem > m_to;
 
-        ::kdm::code::CodeItem_ptr m_from;
+        std::weak_ptr< ::kdm::code::CodeItem > m_from;
 
     };
 

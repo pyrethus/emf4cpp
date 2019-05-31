@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_CASE_HPP
 #define XPAND3_EXPRESSION_CASE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -86,7 +84,7 @@ namespace xpand3
 
     protected:
         Case_ptr _this()
-        {   return Case_ptr(this);}
+        {   return std::dynamic_pointer_cast<Case>(shared_from_this());}
 
         // Attributes
 

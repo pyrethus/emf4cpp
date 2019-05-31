@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_ABSTRACTINVENTORYRELATIONSHIP_HPP
 #define KDM_SOURCE_ABSTRACTINVENTORYRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         AbstractInventoryRelationship_ptr _this()
-        {   return AbstractInventoryRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractInventoryRelationship>(shared_from_this());}
 
         // Attributes
 

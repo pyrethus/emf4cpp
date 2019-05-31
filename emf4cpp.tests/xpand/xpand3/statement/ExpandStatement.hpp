@@ -21,8 +21,6 @@
 #ifndef XPAND3_STATEMENT_EXPANDSTATEMENT_HPP
 #define XPAND3_STATEMENT_EXPANDSTATEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/statement_forward.hpp>
 
@@ -96,7 +94,7 @@ namespace xpand3
 
     protected:
         ExpandStatement_ptr _this()
-        {   return ExpandStatement_ptr(this);}
+        {   return std::dynamic_pointer_cast<ExpandStatement>(shared_from_this());}
 
         // Attributes
 
@@ -105,7 +103,7 @@ namespace xpand3
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::expression::AbstractExpression_ptr >> m_parameters;
+        ::ecore::EList_ptr< ::xpand3::expression::AbstractExpression_ptr > m_parameters;
 
         ::xpand3::expression::AbstractExpression_ptr m_separator;
 

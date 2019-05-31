@@ -21,8 +21,6 @@
 #ifndef IDLMM_INTERFACEDEF_HPP
 #define IDLMM_INTERFACEDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -90,7 +88,7 @@ public:
 
 protected:
     InterfaceDef_ptr _this()
-    {   return InterfaceDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<InterfaceDef>(shared_from_this());}
 
     // Attributes
 
@@ -105,7 +103,7 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::idlmm::InterfaceDef_ptr >> m_derivesFrom;
+    ::ecore::EList_ptr< ::idlmm::InterfaceDef_ptr > m_derivesFrom;
 
 };
 

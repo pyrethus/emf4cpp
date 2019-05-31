@@ -21,7 +21,6 @@
 #ifndef IDLMM_IDLTYPE_HPP
 #define IDLMM_IDLTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <idlmm/dllIdlmm.hpp>
@@ -79,7 +78,7 @@ public:
 
 protected:
     IDLType_ptr _this()
-    {   return IDLType_ptr(this);}
+    {   return std::dynamic_pointer_cast<IDLType>(shared_from_this());}
 
     // Attributes
 

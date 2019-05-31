@@ -21,7 +21,7 @@
 #ifndef _CST_FORWARD_HPP
 #define _CST_FORWARD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
+#include <ecore_forward.hpp> // for EDataTypes
 
 /*PROTECTED REGION ID(CST_forward) START*/
 // Please, enable the protected region if you add manually written code.
@@ -30,8 +30,6 @@
 /*PROTECTED REGION END*/
 
 // EPackage
-
-#include <ecore_forward.hpp> // for EDataTypes
 
 namespace CST
 {

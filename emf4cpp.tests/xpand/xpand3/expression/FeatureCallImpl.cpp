@@ -90,14 +90,12 @@ void FeatureCall::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
     {
-        if (m_target)
-            _any = ::ecore::as < ::ecore::EObject > (m_target);
+        _any = ::ecore::as < ::ecore::EObject > (m_target);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
     {
-        if (m_name)
-            _any = ::ecore::as < ::ecore::EObject > (m_name);
+        _any = ::ecore::as < ::ecore::EObject > (m_name);
     }
         return _any;
 
@@ -147,7 +145,8 @@ void FeatureCall::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::FeatureCall::setTarget(_t1);
     }
         return;
@@ -155,8 +154,8 @@ void FeatureCall::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::expression::FeatureCall::setName(_t1);
     }
         return;
@@ -181,9 +180,9 @@ void FeatureCall::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
-        return (bool) m_target;
+        return !(m_target == nullptr);
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
-        return (bool) m_name;
+        return !(m_name == nullptr);
 
     }
     throw "Error";

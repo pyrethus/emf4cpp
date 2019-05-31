@@ -21,8 +21,6 @@
 #ifndef KDM_CONCEPTUAL_SCENARIOUNIT_HPP
 #define KDM_CONCEPTUAL_SCENARIOUNIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/conceptual_forward.hpp>
 
@@ -84,7 +82,7 @@ namespace kdm
 
     protected:
         ScenarioUnit_ptr _this()
-        {   return ScenarioUnit_ptr(this);}
+        {   return std::dynamic_pointer_cast<ScenarioUnit>(shared_from_this());}
 
         // Attributes
 

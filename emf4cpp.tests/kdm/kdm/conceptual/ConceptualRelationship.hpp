@@ -21,8 +21,6 @@
 #ifndef KDM_CONCEPTUAL_CONCEPTUALRELATIONSHIP_HPP
 #define KDM_CONCEPTUAL_CONCEPTUALRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/conceptual_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         ConceptualRelationship_ptr _this()
-        {   return ConceptualRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<ConceptualRelationship>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::core::KDMEntity_ptr m_to;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_to;
 
-        ::kdm::conceptual::AbstractConceptualElement_ptr m_from;
+        std::weak_ptr< ::kdm::conceptual::AbstractConceptualElement > m_from;
 
     };
 

@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_HASCONTENT_HPP
 #define KDM_DATA_HASCONTENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         HasContent_ptr _this()
-        {   return HasContent_ptr(this);}
+        {   return std::dynamic_pointer_cast<HasContent>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::data::AbstractDataElement_ptr m_to;
+        std::weak_ptr< ::kdm::data::AbstractDataElement > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

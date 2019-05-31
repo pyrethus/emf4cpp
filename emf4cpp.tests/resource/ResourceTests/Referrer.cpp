@@ -60,13 +60,13 @@ Referrer::~Referrer()
 
 ::ResourceTests::ReferenceTarget_ptr Referrer::getReference() const
 {
-    return m_reference;
+    return m_reference.lock();
 }
 
 void Referrer::setReference(::ResourceTests::ReferenceTarget_ptr _reference)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ResourceTests::ReferenceTarget_ptr _old_reference = m_reference;
+    ::ResourceTests::ReferenceTarget_ptr _old_reference = m_reference.lock();
 #endif
     m_reference = _reference;
 
@@ -78,7 +78,7 @@ void Referrer::setReference(::ResourceTests::ReferenceTarget_ptr _reference)
                 _this(),
                 ::ResourceTests::ResourceTestsPackage::_instance()->getReferrer__reference(),
                 _old_reference,
-                m_reference
+                m_reference.lock()
         );
         eNotify(&notification);
     }

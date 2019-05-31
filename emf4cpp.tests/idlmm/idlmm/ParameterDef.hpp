@@ -21,8 +21,6 @@
 #ifndef IDLMM_PARAMETERDEF_HPP
 #define IDLMM_PARAMETERDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -85,7 +83,7 @@ public:
 
 protected:
     ParameterDef_ptr _this()
-    {   return ParameterDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<ParameterDef>(shared_from_this());}
 
     // Attributes
 

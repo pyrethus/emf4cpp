@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_DEPLOYEDSOFTWARESYSTEM_HPP
 #define KDM_PLATFORM_DEPLOYEDSOFTWARESYSTEM_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -87,13 +85,13 @@ namespace kdm
 
     protected:
         DeployedSoftwareSystem_ptr _this()
-        {   return DeployedSoftwareSystem_ptr(this);}
+        {   return std::dynamic_pointer_cast<DeployedSoftwareSystem>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::platform::DeployedComponent_ptr >> m_groupedComponent;
+        ::ecore::EList_ptr< ::kdm::platform::DeployedComponent_ptr > m_groupedComponent;
 
     };
 

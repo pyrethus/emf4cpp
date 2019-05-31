@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_SIGNATURE_HPP
 #define KDM_CODE_SIGNATURE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -85,13 +83,13 @@ namespace kdm
 
     protected:
         Signature_ptr _this()
-        {   return Signature_ptr(this);}
+        {   return std::dynamic_pointer_cast<Signature>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::ParameterUnit_ptr >> m_parameterUnit;
+        ::ecore::EList_ptr< ::kdm::code::ParameterUnit_ptr > m_parameterUnit;
 
     };
 

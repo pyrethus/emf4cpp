@@ -22,7 +22,6 @@
 #define KDM_ACTION_HPP
 
 #include "action_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

@@ -21,8 +21,6 @@
 #ifndef KDM_CONCEPTUAL_CONCEPTUALMODEL_HPP
 #define KDM_CONCEPTUAL_CONCEPTUALMODEL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/conceptual_forward.hpp>
 
@@ -84,13 +82,13 @@ namespace kdm
 
     protected:
         ConceptualModel_ptr _this()
-        {   return ConceptualModel_ptr(this);}
+        {   return std::dynamic_pointer_cast<ConceptualModel>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::conceptual::AbstractConceptualElement_ptr >> m_conceptualElement;
+        ::ecore::EList_ptr< ::kdm::conceptual::AbstractConceptualElement_ptr > m_conceptualElement;
 
     };
 

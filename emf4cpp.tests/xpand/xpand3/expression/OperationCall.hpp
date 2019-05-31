@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_OPERATIONCALL_HPP
 #define XPAND3_EXPRESSION_OPERATIONCALL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -84,13 +82,13 @@ namespace xpand3
 
     protected:
         OperationCall_ptr _this()
-        {   return OperationCall_ptr(this);}
+        {   return std::dynamic_pointer_cast<OperationCall>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::expression::AbstractExpression_ptr >> m_params;
+        ::ecore::EList_ptr< ::xpand3::expression::AbstractExpression_ptr > m_params;
 
     };
 

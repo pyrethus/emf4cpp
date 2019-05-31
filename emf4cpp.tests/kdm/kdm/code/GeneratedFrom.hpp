@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_GENERATEDFROM_HPP
 #define KDM_CODE_GENERATEDFROM_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         GeneratedFrom_ptr _this()
-        {   return GeneratedFrom_ptr(this);}
+        {   return std::dynamic_pointer_cast<GeneratedFrom>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::code::PreprocessorDirective_ptr m_to;
+        std::weak_ptr< ::kdm::code::PreprocessorDirective > m_to;
 
-        ::kdm::code::AbstractCodeElement_ptr m_from;
+        std::weak_ptr< ::kdm::code::AbstractCodeElement > m_from;
 
     };
 

@@ -73,14 +73,12 @@ void TaggedRef::_initialize()
         return _any;
     case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__TAG:
     {
-        if (m_tag)
-            _any = ::ecore::as < ::ecore::EObject > (m_tag);
+        _any = ::ecore::as < ::ecore::EObject > (m_tag.lock());
     }
         return _any;
     case ::kdm::kdm::KdmPackage::TAGGEDREF__REFERENCE:
     {
-        if (m_reference)
-            _any = ::ecore::as < ::ecore::EObject > (m_reference);
+        _any = ::ecore::as < ::ecore::EObject > (m_reference.lock());
     }
         return _any;
 
@@ -95,18 +93,20 @@ void TaggedRef::eSet(::ecore::EInt _featureID,
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::Element::getAttribute().clear();
         ::kdm::core::Element::getAttribute().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::Element::getAnnotation().clear();
         ::kdm::core::Element::getAnnotation().insert_all(*_t0);
     }
@@ -115,8 +115,8 @@ void TaggedRef::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::kdm::kdm::TagDefinition_ptr _t1 =
-                dynamic_cast< ::kdm::kdm::TagDefinition* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::kdm::kdm::TagDefinition >(_t0);*/
+        ::kdm::kdm::TagDefinition_ptr _t1 = std::dynamic_pointer_cast
+                < ::kdm::kdm::TagDefinition > (_t0);
         ::kdm::kdm::ExtendedValue::setTag(_t1);
     }
         return;
@@ -124,8 +124,8 @@ void TaggedRef::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::kdm::core::ModelElement_ptr _t1 =
-                dynamic_cast< ::kdm::core::ModelElement* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::kdm::core::ModelElement >(_t0);*/
+        ::kdm::core::ModelElement_ptr _t1 = std::dynamic_pointer_cast
+                < ::kdm::core::ModelElement > (_t0);
         ::kdm::kdm::TaggedRef::setReference(_t1);
     }
         return;
@@ -143,9 +143,9 @@ void TaggedRef::eSet(::ecore::EInt _featureID,
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
         return m_annotation && m_annotation->size();
     case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__TAG:
-        return (bool) m_tag;
+        return !m_tag.expired();
     case ::kdm::kdm::KdmPackage::TAGGEDREF__REFERENCE:
-        return (bool) m_reference;
+        return !m_reference.expired();
 
     }
     throw "Error";

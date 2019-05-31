@@ -21,8 +21,6 @@
 #ifndef XPAND3_STATEMENT_ABSTRACTSTATEMENTWITHBODY_HPP
 #define XPAND3_STATEMENT_ABSTRACTSTATEMENTWITHBODY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/statement_forward.hpp>
 
@@ -83,13 +81,13 @@ namespace xpand3
 
     protected:
         AbstractStatementWithBody_ptr _this()
-        {   return AbstractStatementWithBody_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractStatementWithBody>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::statement::AbstractStatement_ptr >> m_body;
+        ::ecore::EList_ptr< ::xpand3::statement::AbstractStatement_ptr > m_body;
 
     };
 

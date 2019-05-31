@@ -21,7 +21,6 @@
 #ifndef BINTREE_BINTREENODE_HPP
 #define BINTREE_BINTREENODE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <bintree/dllBintree.hpp>
@@ -89,7 +88,7 @@ public:
 
 protected:
     BinTreeNode_ptr _this()
-    {   return BinTreeNode_ptr(this);}
+    {   return std::dynamic_pointer_cast<BinTreeNode>(shared_from_this());}
 
     // Attributes
 
@@ -98,7 +97,7 @@ protected:
 
     // References
 
-    ::bintree::BinTreeNode_ptr m_parent;
+    std::weak_ptr< ::bintree::BinTreeNode > m_parent;
 
     ::bintree::BinTreeNode_ptr m_left;
 

@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_CLASSUNIT_HPP
 #define KDM_CODE_CLASSUNIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace kdm
 
     protected:
         ClassUnit_ptr _this()
-        {   return ClassUnit_ptr(this);}
+        {   return std::dynamic_pointer_cast<ClassUnit>(shared_from_this());}
 
         // Attributes
 
@@ -96,7 +94,7 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >> m_codeElement;
+        ::ecore::EList_ptr< ::kdm::code::CodeItem_ptr > m_codeElement;
 
     };
 

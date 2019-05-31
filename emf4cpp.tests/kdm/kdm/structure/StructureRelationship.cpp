@@ -66,13 +66,13 @@ StructureRelationship::~StructureRelationship()
 
 ::kdm::core::KDMEntity_ptr StructureRelationship::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void StructureRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::core::KDMEntity_ptr _old_to = m_to;
+    ::kdm::core::KDMEntity_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void StructureRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 _this(),
                 ::kdm::structure::StructurePackage::_instance()->getStructureRelationship__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,14 +93,14 @@ void StructureRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 
 ::kdm::structure::AbstractStructureElement_ptr StructureRelationship::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void StructureRelationship::setFrom(
         ::kdm::structure::AbstractStructureElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::structure::AbstractStructureElement_ptr _old_from = m_from;
+    ::kdm::structure::AbstractStructureElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void StructureRelationship::setFrom(
                 _this(),
                 ::kdm::structure::StructurePackage::_instance()->getStructureRelationship__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

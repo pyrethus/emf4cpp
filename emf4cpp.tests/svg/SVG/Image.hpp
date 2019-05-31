@@ -21,8 +21,6 @@
 #ifndef SVG_IMAGE_HPP
 #define SVG_IMAGE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -81,13 +79,13 @@ public:
 
 protected:
     Image_ptr _this()
-    {   return Image_ptr(this);}
+    {   return std::dynamic_pointer_cast<Image>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::ReferencedFile_ptr >> m_referee;
+    ::ecore::EList_ptr< ::SVG::ReferencedFile_ptr > m_referee;
 
 };
 

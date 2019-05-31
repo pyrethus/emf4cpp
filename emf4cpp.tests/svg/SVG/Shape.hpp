@@ -21,8 +21,6 @@
 #ifndef SVG_SHAPE_HPP
 #define SVG_SHAPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     Shape_ptr _this()
-    {   return Shape_ptr(this);}
+    {   return std::dynamic_pointer_cast<Shape>(shared_from_this());}
 
     // Attributes
 

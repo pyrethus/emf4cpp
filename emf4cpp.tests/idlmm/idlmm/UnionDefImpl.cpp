@@ -100,8 +100,7 @@ void UnionDef::_initialize()
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
     {
-        if (m_definedIn)
-            _any = ::ecore::as < ::ecore::EObject > (m_definedIn);
+        _any = ::ecore::as < ::ecore::EObject > (m_definedIn.lock());
     }
         return _any;
     case ::idlmm::IdlmmPackage::UNIONDEF__UNIONMEMBERS:
@@ -111,14 +110,12 @@ void UnionDef::_initialize()
         return _any;
     case ::idlmm::IdlmmPackage::UNIONDEF__CONTAINEDDISCRIM:
     {
-        if (m_containedDiscrim)
-            _any = ::ecore::as < ::ecore::EObject > (m_containedDiscrim);
+        _any = ::ecore::as < ::ecore::EObject > (m_containedDiscrim);
     }
         return _any;
     case ::idlmm::IdlmmPackage::UNIONDEF__SHAREDDISCRIM:
     {
-        if (m_sharedDiscrim)
-            _any = ::ecore::as < ::ecore::EObject > (m_sharedDiscrim);
+        _any = ::ecore::as < ::ecore::EObject > (m_sharedDiscrim.lock());
     }
         return _any;
 
@@ -175,16 +172,17 @@ void UnionDef::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::Container_ptr _t1 =
-                dynamic_cast< ::idlmm::Container* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::idlmm::Container >(_t0);*/
+        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::Container > (_t0);
         ::idlmm::Contained::setDefinedIn(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::UNIONDEF__UNIONMEMBERS:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::idlmm::UnionDef::getUnionMembers().clear();
         ::idlmm::UnionDef::getUnionMembers().insert_all(*_t0);
     }
@@ -193,7 +191,8 @@ void UnionDef::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::IDLType_ptr _t1 = dynamic_cast< ::idlmm::IDLType* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::idlmm::IDLType >(_t0);*/
+        ::idlmm::IDLType_ptr _t1 = std::dynamic_pointer_cast < ::idlmm::IDLType
+                > (_t0);
         ::idlmm::UnionDef::setContainedDiscrim(_t1);
     }
         return;
@@ -201,8 +200,8 @@ void UnionDef::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::TypedefDef_ptr _t1 =
-                dynamic_cast< ::idlmm::TypedefDef* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::idlmm::TypedefDef >(_t0);*/
+        ::idlmm::TypedefDef_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::TypedefDef > (_t0);
         ::idlmm::UnionDef::setSharedDiscrim(_t1);
     }
         return;
@@ -231,13 +230,13 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_absoluteName);
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
-        return (bool) m_definedIn;
+        return !m_definedIn.expired();
     case ::idlmm::IdlmmPackage::UNIONDEF__UNIONMEMBERS:
         return m_unionMembers && m_unionMembers->size();
     case ::idlmm::IdlmmPackage::UNIONDEF__CONTAINEDDISCRIM:
-        return (bool) m_containedDiscrim;
+        return !(m_containedDiscrim == nullptr);
     case ::idlmm::IdlmmPackage::UNIONDEF__SHAREDDISCRIM:
-        return (bool) m_sharedDiscrim;
+        return !m_sharedDiscrim.expired();
 
     }
     throw "Error";
@@ -270,8 +269,8 @@ void UnionDef::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::Container_ptr _t1 =
-                dynamic_cast< ::idlmm::Container* >(_t0.get());
+        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::Container > (_t0);
 
         // set reference
         basicsetDefinedIn(_t1);
@@ -305,8 +304,8 @@ void UnionDef::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::idlmm::Container_ptr _t1 =
-                dynamic_cast< ::idlmm::Container* >(_t0.get());
+        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
+                < ::idlmm::Container > (_t0);
 
         // set reference
         if (basicgetDefinedIn() == _t1)

@@ -21,8 +21,6 @@
 #ifndef KDM_UI_ABSTRACTUIELEMENT_HPP
 #define KDM_UI_ABSTRACTUIELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -96,19 +94,19 @@ namespace kdm
 
     protected:
         AbstractUIElement_ptr _this()
-        {   return AbstractUIElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractUIElement>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >> m_source;
+        ::ecore::EList_ptr< ::kdm::source::SourceRef_ptr > m_source;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::ui::AbstractUIRelationship_ptr >> m_UIRelation;
+        ::ecore::EList_ptr< ::kdm::ui::AbstractUIRelationship_ptr > m_UIRelation;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >> m_implementation;
+        ::ecore::EList_ptr< ::kdm::code::AbstractCodeElement_ptr > m_implementation;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >> m_abstraction;
+        ::ecore::EList_ptr< ::kdm::action::ActionElement_ptr > m_abstraction;
 
     };
 

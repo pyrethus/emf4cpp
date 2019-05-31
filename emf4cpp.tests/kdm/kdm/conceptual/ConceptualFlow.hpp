@@ -21,8 +21,6 @@
 #ifndef KDM_CONCEPTUAL_CONCEPTUALFLOW_HPP
 #define KDM_CONCEPTUAL_CONCEPTUALFLOW_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/conceptual_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         ConceptualFlow_ptr _this()
-        {   return ConceptualFlow_ptr(this);}
+        {   return std::dynamic_pointer_cast<ConceptualFlow>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::conceptual::ConceptualContainer_ptr m_to;
+        std::weak_ptr< ::kdm::conceptual::ConceptualContainer > m_to;
 
-        ::kdm::conceptual::ConceptualContainer_ptr m_from;
+        std::weak_ptr< ::kdm::conceptual::ConceptualContainer > m_from;
 
     };
 

@@ -21,8 +21,6 @@
 #ifndef KDM_STRUCTURE_ABSTRACTSTRUCTURERELATIONSHIP_HPP
 #define KDM_STRUCTURE_ABSTRACTSTRUCTURERELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/structure_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         AbstractStructureRelationship_ptr _this()
-        {   return AbstractStructureRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractStructureRelationship>(shared_from_this());}
 
         // Attributes
 

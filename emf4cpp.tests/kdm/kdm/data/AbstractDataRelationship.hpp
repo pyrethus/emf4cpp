@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_ABSTRACTDATARELATIONSHIP_HPP
 #define KDM_DATA_ABSTRACTDATARELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         AbstractDataRelationship_ptr _this()
-        {   return AbstractDataRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractDataRelationship>(shared_from_this());}
 
         // Attributes
 

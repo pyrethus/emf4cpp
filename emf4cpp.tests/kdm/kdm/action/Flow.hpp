@@ -21,8 +21,6 @@
 #ifndef KDM_ACTION_FLOW_HPP
 #define KDM_ACTION_FLOW_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/action_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         Flow_ptr _this()
-        {   return Flow_ptr(this);}
+        {   return std::dynamic_pointer_cast<Flow>(shared_from_this());}
 
         // Attributes
 

@@ -21,8 +21,6 @@
 #ifndef KDM_STRUCTURE_STRUCTUREMODEL_HPP
 #define KDM_STRUCTURE_STRUCTUREMODEL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/structure_forward.hpp>
 
@@ -84,13 +82,13 @@ namespace kdm
 
     protected:
         StructureModel_ptr _this()
-        {   return StructureModel_ptr(this);}
+        {   return std::dynamic_pointer_cast<StructureModel>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::structure::AbstractStructureElement_ptr >> m_structureElement;
+        ::ecore::EList_ptr< ::kdm::structure::AbstractStructureElement_ptr > m_structureElement;
 
     };
 

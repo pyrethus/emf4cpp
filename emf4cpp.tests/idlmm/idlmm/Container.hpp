@@ -21,8 +21,6 @@
 #ifndef IDLMM_CONTAINER_HPP
 #define IDLMM_CONTAINER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -81,13 +79,13 @@ public:
 
 protected:
     Container_ptr _this()
-    {   return Container_ptr(this);}
+    {   return std::dynamic_pointer_cast<Container>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::idlmm::Contained_ptr >> m_contains;
+    ::ecore::EList_ptr< ::idlmm::Contained_ptr > m_contains;
 
 };
 

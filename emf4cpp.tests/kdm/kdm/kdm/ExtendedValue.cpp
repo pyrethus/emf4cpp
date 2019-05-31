@@ -63,13 +63,13 @@ ExtendedValue::~ExtendedValue()
 
 ::kdm::kdm::TagDefinition_ptr ExtendedValue::getTag() const
 {
-    return m_tag;
+    return m_tag.lock();
 }
 
 void ExtendedValue::setTag(::kdm::kdm::TagDefinition_ptr _tag)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::kdm::TagDefinition_ptr _old_tag = m_tag;
+    ::kdm::kdm::TagDefinition_ptr _old_tag = m_tag.lock();
 #endif
     m_tag = _tag;
 
@@ -81,7 +81,7 @@ void ExtendedValue::setTag(::kdm::kdm::TagDefinition_ptr _tag)
                 _this(),
                 ::kdm::kdm::KdmPackage::_instance()->getExtendedValue__tag(),
                 _old_tag,
-                m_tag
+                m_tag.lock()
         );
         eNotify(&notification);
     }

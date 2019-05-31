@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_SWITCHEXPRESSION_HPP
 #define XPAND3_EXPRESSION_SWITCHEXPRESSION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -89,7 +87,7 @@ namespace xpand3
 
     protected:
         SwitchExpression_ptr _this()
-        {   return SwitchExpression_ptr(this);}
+        {   return std::dynamic_pointer_cast<SwitchExpression>(shared_from_this());}
 
         // Attributes
 
@@ -99,7 +97,7 @@ namespace xpand3
 
         ::xpand3::expression::AbstractExpression_ptr m_defaultExpr;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::expression::Case_ptr >> m_cases;
+        ::ecore::EList_ptr< ::xpand3::expression::Case_ptr > m_cases;
 
     };
 

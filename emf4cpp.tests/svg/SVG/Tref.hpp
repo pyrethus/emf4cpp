@@ -21,8 +21,6 @@
 #ifndef SVG_TREF_HPP
 #define SVG_TREF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -81,13 +79,13 @@ public:
 
 protected:
     Tref_ptr _this()
-    {   return Tref_ptr(this);}
+    {   return std::dynamic_pointer_cast<Tref>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    ::SVG::TextElement_ptr m_xlinkHref;
+    std::weak_ptr< ::SVG::TextElement > m_xlinkHref;
 
 };
 

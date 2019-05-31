@@ -21,7 +21,6 @@
 #ifndef RESOURCETESTS_REFERRER_HPP
 #define RESOURCETESTS_REFERRER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <ResourceTests/dllResourceTests.hpp>
@@ -79,13 +78,13 @@ public:
 
 protected:
     Referrer_ptr _this()
-    {   return Referrer_ptr(this);}
+    {   return std::dynamic_pointer_cast<Referrer>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    ::ResourceTests::ReferenceTarget_ptr m_reference;
+    std::weak_ptr< ::ResourceTests::ReferenceTarget > m_reference;
 
 };
 

@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_LOADS_HPP
 #define KDM_PLATFORM_LOADS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         Loads_ptr _this()
-        {   return Loads_ptr(this);}
+        {   return std::dynamic_pointer_cast<Loads>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::platform::DeployedComponent_ptr m_to;
+        std::weak_ptr< ::kdm::platform::DeployedComponent > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

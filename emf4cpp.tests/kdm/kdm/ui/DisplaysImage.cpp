@@ -67,13 +67,13 @@ DisplaysImage::~DisplaysImage()
 
 ::kdm::source::Image_ptr DisplaysImage::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void DisplaysImage::setTo(::kdm::source::Image_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::source::Image_ptr _old_to = m_to;
+    ::kdm::source::Image_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void DisplaysImage::setTo(::kdm::source::Image_ptr _to)
                 _this(),
                 ::kdm::ui::UiPackage::_instance()->getDisplaysImage__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void DisplaysImage::setTo(::kdm::source::Image_ptr _to)
 
 ::kdm::action::ActionElement_ptr DisplaysImage::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void DisplaysImage::setFrom(::kdm::action::ActionElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::action::ActionElement_ptr _old_from = m_from;
+    ::kdm::action::ActionElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void DisplaysImage::setFrom(::kdm::action::ActionElement_ptr _from)
                 _this(),
                 ::kdm::ui::UiPackage::_instance()->getDisplaysImage__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

@@ -51,8 +51,8 @@ EnumerationFactory::EnumerationFactory()
     case EnumerationPackage::BIRDTYPE:
     {
         ::ecore::EJavaObject _any;
-        EnumerationPackage_ptr _epkg =
-                dynamic_cast< ::enumeration::EnumerationPackage* >(getEPackage().get());
+        EnumerationPackage_ptr _epkg = std::dynamic_pointer_cast
+                < ::enumeration::EnumerationPackage > (getEPackage());
         return _epkg->getBirdType()->getEEnumLiteralByLiteral(_literalValue)->getValue();
     }
     default:

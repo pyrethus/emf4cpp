@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_IMPLEMENTATIONOF_HPP
 #define KDM_CODE_IMPLEMENTATIONOF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         ImplementationOf_ptr _this()
-        {   return ImplementationOf_ptr(this);}
+        {   return std::dynamic_pointer_cast<ImplementationOf>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::code::CodeItem_ptr m_to;
+        std::weak_ptr< ::kdm::code::CodeItem > m_to;
 
-        ::kdm::code::CodeItem_ptr m_from;
+        std::weak_ptr< ::kdm::code::CodeItem > m_from;
 
     };
 

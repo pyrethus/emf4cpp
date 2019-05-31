@@ -21,7 +21,6 @@
 #ifndef JSON_VALUE_HPP
 #define JSON_VALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <json/dllJson.hpp>
@@ -77,7 +76,7 @@ public:
 
 protected:
     Value_ptr _this()
-    {   return Value_ptr(this);}
+    {   return std::dynamic_pointer_cast<Value>(shared_from_this());}
 
     // Attributes
 

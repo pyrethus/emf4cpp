@@ -21,8 +21,6 @@
 #ifndef KDM_STRUCTURE_ARCHITECTUREVIEW_HPP
 #define KDM_STRUCTURE_ARCHITECTUREVIEW_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/structure_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace kdm
 
     protected:
         ArchitectureView_ptr _this()
-        {   return ArchitectureView_ptr(this);}
+        {   return std::dynamic_pointer_cast<ArchitectureView>(shared_from_this());}
 
         // Attributes
 

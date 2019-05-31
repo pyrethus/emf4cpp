@@ -21,8 +21,6 @@
 #ifndef KDM_CONCEPTUAL_CONCEPTUALROLE_HPP
 #define KDM_CONCEPTUAL_CONCEPTUALROLE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/conceptual_forward.hpp>
 
@@ -86,13 +84,13 @@ namespace kdm
 
     protected:
         ConceptualRole_ptr _this()
-        {   return ConceptualRole_ptr(this);}
+        {   return std::dynamic_pointer_cast<ConceptualRole>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::conceptual::AbstractConceptualElement_ptr m_conceptualElement;
+        std::weak_ptr< ::kdm::conceptual::AbstractConceptualElement > m_conceptualElement;
 
     };
 

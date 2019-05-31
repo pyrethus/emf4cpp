@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_BOOLEANOPERATION_HPP
 #define XPAND3_EXPRESSION_BOOLEANOPERATION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace xpand3
 
     protected:
         BooleanOperation_ptr _this()
-        {   return BooleanOperation_ptr(this);}
+        {   return std::dynamic_pointer_cast<BooleanOperation>(shared_from_this());}
 
         // Attributes
 

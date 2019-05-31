@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_INDEXELEMENT_HPP
 #define KDM_DATA_INDEXELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -87,13 +85,13 @@ namespace kdm
 
     protected:
         IndexElement_ptr _this()
-        {   return IndexElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<IndexElement>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::ItemUnit_ptr >> m_implementation;
+        ::ecore::EList_ptr< ::kdm::code::ItemUnit_ptr > m_implementation;
 
     };
 

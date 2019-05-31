@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_CAST_HPP
 #define XPAND3_EXPRESSION_CAST_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace xpand3
 
     protected:
         Cast_ptr _this()
-        {   return Cast_ptr(this);}
+        {   return std::dynamic_pointer_cast<Cast>(shared_from_this());}
 
         // Attributes
 

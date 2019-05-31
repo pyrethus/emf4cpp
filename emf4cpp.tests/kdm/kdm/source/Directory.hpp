@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_DIRECTORY_HPP
 #define KDM_SOURCE_DIRECTORY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -84,7 +82,7 @@ namespace kdm
 
     protected:
         Directory_ptr _this()
-        {   return Directory_ptr(this);}
+        {   return std::dynamic_pointer_cast<Directory>(shared_from_this());}
 
         // Attributes
 

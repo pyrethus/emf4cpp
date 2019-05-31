@@ -21,8 +21,6 @@
 #ifndef KDM_CONCEPTUAL_BEHAVIORUNIT_HPP
 #define KDM_CONCEPTUAL_BEHAVIORUNIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/conceptual_forward.hpp>
 
@@ -84,7 +82,7 @@ namespace kdm
 
     protected:
         BehaviorUnit_ptr _this()
-        {   return BehaviorUnit_ptr(this);}
+        {   return std::dynamic_pointer_cast<BehaviorUnit>(shared_from_this());}
 
         // Attributes
 

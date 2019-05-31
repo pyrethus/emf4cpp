@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_GROUPCONTENT_HPP
 #define KDM_DATA_GROUPCONTENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -84,7 +82,7 @@ namespace kdm
 
     protected:
         GroupContent_ptr _this()
-        {   return GroupContent_ptr(this);}
+        {   return std::dynamic_pointer_cast<GroupContent>(shared_from_this());}
 
         // Attributes
 

@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_RELATIONALSCHEMA_HPP
 #define KDM_DATA_RELATIONALSCHEMA_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -87,13 +85,13 @@ namespace kdm
 
     protected:
         RelationalSchema_ptr _this()
-        {   return RelationalSchema_ptr(this);}
+        {   return std::dynamic_pointer_cast<RelationalSchema>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >> m_codeElement;
+        ::ecore::EList_ptr< ::kdm::code::CodeItem_ptr > m_codeElement;
 
     };
 

@@ -21,7 +21,6 @@
 #ifndef V_3_0_EDATE_PERSON_HPP
 #define V_3_0_EDATE_PERSON_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <v_3_0/edate/dllEdate.hpp>
@@ -86,7 +85,7 @@ namespace v_3_0
 
     protected:
         Person_ptr _this()
-        {   return Person_ptr(this);}
+        {   return std::dynamic_pointer_cast<Person>(shared_from_this());}
 
         // Attributes
 

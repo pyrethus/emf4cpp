@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_SPAWNS_HPP
 #define KDM_PLATFORM_SPAWNS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         Spawns_ptr _this()
-        {   return Spawns_ptr(this);}
+        {   return std::dynamic_pointer_cast<Spawns>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::platform::RuntimeResource_ptr m_to;
+        std::weak_ptr< ::kdm::platform::RuntimeResource > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

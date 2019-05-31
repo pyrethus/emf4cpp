@@ -21,8 +21,6 @@
 #ifndef KDM_UI_SCREEN_HPP
 #define KDM_UI_SCREEN_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         Screen_ptr _this()
-        {   return Screen_ptr(this);}
+        {   return std::dynamic_pointer_cast<Screen>(shared_from_this());}
 
         // Attributes
 

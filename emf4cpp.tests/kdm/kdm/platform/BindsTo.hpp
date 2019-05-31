@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_BINDSTO_HPP
 #define KDM_PLATFORM_BINDSTO_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         BindsTo_ptr _this()
-        {   return BindsTo_ptr(this);}
+        {   return std::dynamic_pointer_cast<BindsTo>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::platform::ResourceType_ptr m_to;
+        std::weak_ptr< ::kdm::platform::ResourceType > m_to;
 
-        ::kdm::platform::ResourceType_ptr m_from;
+        std::weak_ptr< ::kdm::platform::ResourceType > m_from;
 
     };
 

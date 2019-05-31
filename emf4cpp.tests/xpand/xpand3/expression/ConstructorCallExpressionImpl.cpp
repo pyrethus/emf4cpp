@@ -86,8 +86,7 @@ void ConstructorCallExpression::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::CONSTRUCTORCALLEXPRESSION__TYPE:
     {
-        if (m_type)
-            _any = ::ecore::as < ::ecore::EObject > (m_type);
+        _any = ::ecore::as < ::ecore::EObject > (m_type);
     }
         return _any;
 
@@ -136,8 +135,8 @@ void ConstructorCallExpression::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::expression::ConstructorCallExpression::setType(_t1);
     }
         return;
@@ -162,7 +161,7 @@ void ConstructorCallExpression::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::CONSTRUCTORCALLEXPRESSION__TYPE:
-        return (bool) m_type;
+        return !(m_type == nullptr);
 
     }
     throw "Error";

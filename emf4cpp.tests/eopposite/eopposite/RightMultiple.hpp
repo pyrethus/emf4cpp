@@ -21,8 +21,6 @@
 #ifndef EOPPOSITE_RIGHTMULTIPLE_HPP
 #define EOPPOSITE_RIGHTMULTIPLE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <eopposite/dllEopposite.hpp>
 #include <eopposite_forward.hpp>
 
@@ -81,13 +79,13 @@ public:
 
 protected:
     RightMultiple_ptr _this()
-    {   return RightMultiple_ptr(this);}
+    {   return std::dynamic_pointer_cast<RightMultiple>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::eopposite::LeftHand_ptr >> m_leftees;
+    ::ecore::EList_ptr< ::eopposite::LeftHand_ptr > m_leftees;
 
 };
 

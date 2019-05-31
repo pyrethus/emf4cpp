@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_REFERENCETO_HPP
 #define KDM_DATA_REFERENCETO_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         ReferenceTo_ptr _this()
-        {   return ReferenceTo_ptr(this);}
+        {   return std::dynamic_pointer_cast<ReferenceTo>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::data::ContentItem_ptr m_to;
+        std::weak_ptr< ::kdm::data::ContentItem > m_to;
 
-        ::kdm::data::ContentItem_ptr m_from;
+        std::weak_ptr< ::kdm::data::ContentItem > m_from;
 
     };
 

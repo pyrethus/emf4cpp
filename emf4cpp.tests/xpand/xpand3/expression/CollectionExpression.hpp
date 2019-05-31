@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_COLLECTIONEXPRESSION_HPP
 #define XPAND3_EXPRESSION_COLLECTIONEXPRESSION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace xpand3
 
     protected:
         CollectionExpression_ptr _this()
-        {   return CollectionExpression_ptr(this);}
+        {   return std::dynamic_pointer_cast<CollectionExpression>(shared_from_this());}
 
         // Attributes
 

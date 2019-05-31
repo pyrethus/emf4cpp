@@ -21,8 +21,6 @@
 #ifndef KDM_UI_MANAGESUI_HPP
 #define KDM_UI_MANAGESUI_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         ManagesUI_ptr _this()
-        {   return ManagesUI_ptr(this);}
+        {   return std::dynamic_pointer_cast<ManagesUI>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::ui::UIResource_ptr m_to;
+        std::weak_ptr< ::kdm::ui::UIResource > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

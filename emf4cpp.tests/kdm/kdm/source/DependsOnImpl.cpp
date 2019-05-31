@@ -85,14 +85,12 @@ void DependsOn::_initialize()
         return _any;
     case ::kdm::source::SourcePackage::DEPENDSON__TO:
     {
-        if (m_to)
-            _any = ::ecore::as < ::ecore::EObject > (m_to);
+        _any = ::ecore::as < ::ecore::EObject > (m_to.lock());
     }
         return _any;
     case ::kdm::source::SourcePackage::DEPENDSON__FROM:
     {
-        if (m_from)
-            _any = ::ecore::as < ::ecore::EObject > (m_from);
+        _any = ::ecore::as < ::ecore::EObject > (m_from.lock());
     }
         return _any;
 
@@ -107,36 +105,40 @@ void DependsOn::eSet(::ecore::EInt _featureID,
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::Element::getAttribute().clear();
         ::kdm::core::Element::getAttribute().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::Element::getAnnotation().clear();
         ::kdm::core::Element::getAnnotation().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::ModelElement::getStereotype().clear();
         ::kdm::core::ModelElement::getStereotype().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::kdm::core::ModelElement::getTaggedValue().clear();
         ::kdm::core::ModelElement::getTaggedValue().insert_all(*_t0);
     }
@@ -146,7 +148,8 @@ void DependsOn::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::kdm::source::AbstractInventoryElement_ptr _t1 =
-                dynamic_cast< ::kdm::source::AbstractInventoryElement* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::kdm::source::AbstractInventoryElement >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::kdm::source::AbstractInventoryElement > (_t0);
         ::kdm::source::DependsOn::setTo(_t1);
     }
         return;
@@ -155,7 +158,8 @@ void DependsOn::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::kdm::source::AbstractInventoryElement_ptr _t1 =
-                dynamic_cast< ::kdm::source::AbstractInventoryElement* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::kdm::source::AbstractInventoryElement >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::kdm::source::AbstractInventoryElement > (_t0);
         ::kdm::source::DependsOn::setFrom(_t1);
     }
         return;
@@ -177,9 +181,9 @@ void DependsOn::eSet(::ecore::EInt _featureID,
     case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
         return m_taggedValue && m_taggedValue->size();
     case ::kdm::source::SourcePackage::DEPENDSON__TO:
-        return (bool) m_to;
+        return !m_to.expired();
     case ::kdm::source::SourcePackage::DEPENDSON__FROM:
-        return (bool) m_from;
+        return !m_from.expired();
 
     }
     throw "Error";

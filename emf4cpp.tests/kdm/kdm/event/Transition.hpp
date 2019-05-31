@@ -21,8 +21,6 @@
 #ifndef KDM_EVENT_TRANSITION_HPP
 #define KDM_EVENT_TRANSITION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/event_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         Transition_ptr _this()
-        {   return Transition_ptr(this);}
+        {   return std::dynamic_pointer_cast<Transition>(shared_from_this());}
 
         // Attributes
 

@@ -21,8 +21,6 @@
 #ifndef KDM_STRUCTURE_STRUCTUREELEMENT_HPP
 #define KDM_STRUCTURE_STRUCTUREELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/structure_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace kdm
 
     protected:
         StructureElement_ptr _this()
-        {   return StructureElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<StructureElement>(shared_from_this());}
 
         // Attributes
 

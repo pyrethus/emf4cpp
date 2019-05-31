@@ -21,7 +21,6 @@
 #ifndef XPAND3_SYNTAXELEMENT_HPP
 #define XPAND3_SYNTAXELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <xpand3/dllXpand3.hpp>
@@ -90,7 +89,7 @@ public:
 
 protected:
     SyntaxElement_ptr _this()
-    {   return SyntaxElement_ptr(this);}
+    {   return std::dynamic_pointer_cast<SyntaxElement>(shared_from_this());}
 
     // Attributes
 

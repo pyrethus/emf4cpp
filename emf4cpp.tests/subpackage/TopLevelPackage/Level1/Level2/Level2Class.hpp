@@ -21,8 +21,6 @@
 #ifndef TOPLEVELPACKAGE_LEVEL1_LEVEL2_LEVEL2CLASS_HPP
 #define TOPLEVELPACKAGE_LEVEL1_LEVEL2_LEVEL2CLASS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <TopLevelPackage/dllTopLevelPackage.hpp>
 #include <TopLevelPackage/Level1/Level2_forward.hpp>
 
@@ -83,7 +81,7 @@ namespace TopLevelPackage
 
         protected:
             Level2Class_ptr _this()
-            {   return Level2Class_ptr(this);}
+            {   return std::dynamic_pointer_cast<Level2Class>(shared_from_this());}
 
             // Attributes
 

@@ -116,13 +116,13 @@ void UnionDef::setContainedDiscrim(::idlmm::IDLType_ptr _containedDiscrim)
 
 ::idlmm::TypedefDef_ptr UnionDef::getSharedDiscrim() const
 {
-    return m_sharedDiscrim;
+    return m_sharedDiscrim.lock();
 }
 
 void UnionDef::setSharedDiscrim(::idlmm::TypedefDef_ptr _sharedDiscrim)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::idlmm::TypedefDef_ptr _old_sharedDiscrim = m_sharedDiscrim;
+    ::idlmm::TypedefDef_ptr _old_sharedDiscrim = m_sharedDiscrim.lock();
 #endif
     m_sharedDiscrim = _sharedDiscrim;
 
@@ -134,7 +134,7 @@ void UnionDef::setSharedDiscrim(::idlmm::TypedefDef_ptr _sharedDiscrim)
                 _this(),
                 ::idlmm::IdlmmPackage::_instance()->getUnionDef__sharedDiscrim(),
                 _old_sharedDiscrim,
-                m_sharedDiscrim
+                m_sharedDiscrim.lock()
         );
         eNotify(&notification);
     }

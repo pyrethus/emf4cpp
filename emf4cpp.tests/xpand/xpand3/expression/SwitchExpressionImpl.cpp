@@ -94,14 +94,12 @@ void SwitchExpression::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__SWITCHEXPR:
     {
-        if (m_switchExpr)
-            _any = ::ecore::as < ::ecore::EObject > (m_switchExpr);
+        _any = ::ecore::as < ::ecore::EObject > (m_switchExpr);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__DEFAULTEXPR:
     {
-        if (m_defaultExpr)
-            _any = ::ecore::as < ::ecore::EObject > (m_defaultExpr);
+        _any = ::ecore::as < ::ecore::EObject > (m_defaultExpr);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__CASES:
@@ -156,7 +154,8 @@ void SwitchExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::SwitchExpression::setSwitchExpr(_t1);
     }
         return;
@@ -165,15 +164,17 @@ void SwitchExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::SwitchExpression::setDefaultExpr(_t1);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__CASES:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::xpand3::expression::SwitchExpression::getCases().clear();
         ::xpand3::expression::SwitchExpression::getCases().insert_all(*_t0);
     }
@@ -199,9 +200,9 @@ void SwitchExpression::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__SWITCHEXPR:
-        return (bool) m_switchExpr;
+        return !(m_switchExpr == nullptr);
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__DEFAULTEXPR:
-        return (bool) m_defaultExpr;
+        return !(m_defaultExpr == nullptr);
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__CASES:
         return m_cases && m_cases->size();
 

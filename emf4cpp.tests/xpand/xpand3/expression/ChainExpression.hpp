@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_CHAINEXPRESSION_HPP
 #define XPAND3_EXPRESSION_CHAINEXPRESSION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -86,7 +84,7 @@ namespace xpand3
 
     protected:
         ChainExpression_ptr _this()
-        {   return ChainExpression_ptr(this);}
+        {   return std::dynamic_pointer_cast<ChainExpression>(shared_from_this());}
 
         // Attributes
 

@@ -67,8 +67,7 @@ void Root::_initialize()
     {
     case ::ResourceTests::ResourceTestsPackage::ROOT__TARGET:
     {
-        if (m_target)
-            _any = ::ecore::as < ::ecore::EObject > (m_target);
+        _any = ::ecore::as < ::ecore::EObject > (m_target);
     }
         return _any;
     case ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS:
@@ -89,16 +88,17 @@ void Root::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::ResourceTests::ReferenceTarget_ptr _t1 =
-                dynamic_cast< ::ResourceTests::ReferenceTarget* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::ResourceTests::ReferenceTarget >(_t0);*/
+        ::ResourceTests::ReferenceTarget_ptr _t1 = std::dynamic_pointer_cast
+                < ::ResourceTests::ReferenceTarget > (_t0);
         ::ResourceTests::Root::setTarget(_t1);
     }
         return;
     case ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS:
     {
-        ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >::ptr_type _t0 =
-                ::ecorecpp::mapping::any::any_cast < ::ecorecpp::mapping::EList
-                        < ::ecore::EObject_ptr > ::ptr_type > (_newValue);
+        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
+                ::ecorecpp::mapping::any::any_cast
+                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
+                        > (_newValue);
         ::ResourceTests::Root::getReferrers().clear();
         ::ResourceTests::Root::getReferrers().insert_all(*_t0);
     }
@@ -113,7 +113,7 @@ void Root::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
     switch (_featureID)
     {
     case ::ResourceTests::ResourceTestsPackage::ROOT__TARGET:
-        return (bool) m_target;
+        return !(m_target == nullptr);
     case ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS:
         return m_referrers && m_referrers->size();
 

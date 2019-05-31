@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_SOURCEREGION_HPP
 #define KDM_SOURCE_SOURCEREGION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -101,7 +99,7 @@ namespace kdm
 
     protected:
         SourceRegion_ptr _this()
-        {   return SourceRegion_ptr(this);}
+        {   return std::dynamic_pointer_cast<SourceRegion>(shared_from_this());}
 
         // Attributes
 
@@ -125,7 +123,7 @@ namespace kdm
 
         // References
 
-        ::kdm::source::SourceFile_ptr m_file;
+        std::weak_ptr< ::kdm::source::SourceFile > m_file;
 
     };
 

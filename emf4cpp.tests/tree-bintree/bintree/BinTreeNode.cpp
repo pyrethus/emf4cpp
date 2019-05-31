@@ -94,13 +94,13 @@ void BinTreeNode::setData(::ecore::EString const& _data)
 
 ::bintree::BinTreeNode_ptr BinTreeNode::getParent() const
 {
-    return m_parent;
+    return m_parent.lock();
 }
 
 void BinTreeNode::setParent(::bintree::BinTreeNode_ptr _parent)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::bintree::BinTreeNode_ptr _old_parent = m_parent;
+    ::bintree::BinTreeNode_ptr _old_parent = m_parent.lock();
 #endif
     m_parent = _parent;
 
@@ -112,7 +112,7 @@ void BinTreeNode::setParent(::bintree::BinTreeNode_ptr _parent)
                 _this(),
                 ::bintree::BintreePackage::_instance()->getBinTreeNode__parent(),
                 _old_parent,
-                m_parent
+                m_parent.lock()
         );
         eNotify(&notification);
     }

@@ -64,8 +64,7 @@ void Property::_initialize()
         return _any;
     case ::myDsl::MyDslPackage::PROPERTY__TYPE:
     {
-        if (m_type)
-            _any = ::ecore::as < ::ecore::EObject > (m_type);
+        _any = ::ecore::as < ::ecore::EObject > (m_type.lock());
     }
         return _any;
     case ::myDsl::MyDslPackage::PROPERTY__MANY:
@@ -96,7 +95,8 @@ void Property::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::myDsl::Type_ptr _t1 = dynamic_cast< ::myDsl::Type* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::myDsl::Type >(_t0);*/
+        ::myDsl::Type_ptr _t1 = std::dynamic_pointer_cast < ::myDsl::Type
+                > (_t0);
         ::myDsl::Property::setType(_t1);
     }
         return;
@@ -121,7 +121,7 @@ void Property::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_name);
     case ::myDsl::MyDslPackage::PROPERTY__TYPE:
-        return (bool) m_type;
+        return !m_type.expired();
     case ::myDsl::MyDslPackage::PROPERTY__MANY:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(m_many);

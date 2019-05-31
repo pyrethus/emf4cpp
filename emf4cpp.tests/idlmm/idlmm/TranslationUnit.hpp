@@ -21,7 +21,6 @@
 #ifndef IDLMM_TRANSLATIONUNIT_HPP
 #define IDLMM_TRANSLATIONUNIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <idlmm/dllIdlmm.hpp>
@@ -86,7 +85,7 @@ public:
 
 protected:
     TranslationUnit_ptr _this()
-    {   return TranslationUnit_ptr(this);}
+    {   return std::dynamic_pointer_cast<TranslationUnit>(shared_from_this());}
 
     // Attributes
 
@@ -95,9 +94,9 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::idlmm::Contained_ptr >> m_contains;
+    ::ecore::EList_ptr< ::idlmm::Contained_ptr > m_contains;
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::idlmm::Include_ptr >> m_includes;
+    ::ecore::EList_ptr< ::idlmm::Include_ptr > m_includes;
 
 };
 

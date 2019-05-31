@@ -21,8 +21,6 @@
 #ifndef SVG_FONTWEIGHT_HPP
 #define SVG_FONTWEIGHT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     FontWeight_ptr _this()
-    {   return FontWeight_ptr(this);}
+    {   return std::dynamic_pointer_cast<FontWeight>(shared_from_this());}
 
     // Attributes
 

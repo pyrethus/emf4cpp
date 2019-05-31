@@ -91,26 +91,22 @@ void CollectionExpression::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
     {
-        if (m_target)
-            _any = ::ecore::as < ::ecore::EObject > (m_target);
+        _any = ::ecore::as < ::ecore::EObject > (m_target);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
     {
-        if (m_name)
-            _any = ::ecore::as < ::ecore::EObject > (m_name);
+        _any = ::ecore::as < ::ecore::EObject > (m_name);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::COLLECTIONEXPRESSION__CLOSURE:
     {
-        if (m_closure)
-            _any = ::ecore::as < ::ecore::EObject > (m_closure);
+        _any = ::ecore::as < ::ecore::EObject > (m_closure);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::COLLECTIONEXPRESSION__ELENAME:
     {
-        if (m_eleName)
-            _any = ::ecore::as < ::ecore::EObject > (m_eleName);
+        _any = ::ecore::as < ::ecore::EObject > (m_eleName);
     }
         return _any;
 
@@ -160,7 +156,8 @@ void CollectionExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::FeatureCall::setTarget(_t1);
     }
         return;
@@ -168,8 +165,8 @@ void CollectionExpression::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::expression::FeatureCall::setName(_t1);
     }
         return;
@@ -178,7 +175,8 @@ void CollectionExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::CollectionExpression::setClosure(_t1);
     }
         return;
@@ -186,8 +184,8 @@ void CollectionExpression::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::expression::CollectionExpression::setEleName(_t1);
     }
         return;
@@ -212,13 +210,13 @@ void CollectionExpression::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
-        return (bool) m_target;
+        return !(m_target == nullptr);
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
-        return (bool) m_name;
+        return !(m_name == nullptr);
     case ::xpand3::expression::ExpressionPackage::COLLECTIONEXPRESSION__CLOSURE:
-        return (bool) m_closure;
+        return !(m_closure == nullptr);
     case ::xpand3::expression::ExpressionPackage::COLLECTIONEXPRESSION__ELENAME:
-        return (bool) m_eleName;
+        return !(m_eleName == nullptr);
 
     }
     throw "Error";

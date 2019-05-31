@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_STEREOTYPE_HPP
 #define KDM_KDM_STEREOTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -88,7 +86,7 @@ namespace kdm
 
     protected:
         Stereotype_ptr _this()
-        {   return Stereotype_ptr(this);}
+        {   return std::dynamic_pointer_cast<Stereotype>(shared_from_this());}
 
         // Attributes
 
@@ -100,7 +98,7 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::TagDefinition_ptr >> m_tag;
+        ::ecore::EList_ptr< ::kdm::kdm::TagDefinition_ptr > m_tag;
 
     };
 

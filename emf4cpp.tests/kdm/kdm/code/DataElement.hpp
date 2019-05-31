@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_DATAELEMENT_HPP
 #define KDM_CODE_DATAELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -93,7 +91,7 @@ namespace kdm
 
     protected:
         DataElement_ptr _this()
-        {   return DataElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<DataElement>(shared_from_this());}
 
         // Attributes
 
@@ -105,9 +103,9 @@ namespace kdm
 
         // References
 
-        ::kdm::code::Datatype_ptr m_type;
+        std::weak_ptr< ::kdm::code::Datatype > m_type;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::Datatype_ptr >> m_codeElement;
+        ::ecore::EList_ptr< ::kdm::code::Datatype_ptr > m_codeElement;
 
     };
 

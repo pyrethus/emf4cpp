@@ -112,13 +112,13 @@ void Property::setMany(::ecore::EBoolean _many)
 
 ::myDsl::Type_ptr Property::getType() const
 {
-    return m_type;
+    return m_type.lock();
 }
 
 void Property::setType(::myDsl::Type_ptr _type)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::myDsl::Type_ptr _old_type = m_type;
+    ::myDsl::Type_ptr _old_type = m_type.lock();
 #endif
     m_type = _type;
 
@@ -130,7 +130,7 @@ void Property::setType(::myDsl::Type_ptr _type)
                 _this(),
                 ::myDsl::MyDslPackage::_instance()->getProperty__type(),
                 _old_type,
-                m_type
+                m_type.lock()
         );
         eNotify(&notification);
     }

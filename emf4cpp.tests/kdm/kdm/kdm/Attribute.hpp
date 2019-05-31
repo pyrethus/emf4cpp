@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_ATTRIBUTE_HPP
 #define KDM_KDM_ATTRIBUTE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -86,7 +84,7 @@ namespace kdm
 
     protected:
         Attribute_ptr _this()
-        {   return Attribute_ptr(this);}
+        {   return std::dynamic_pointer_cast<Attribute>(shared_from_this());}
 
         // Attributes
 

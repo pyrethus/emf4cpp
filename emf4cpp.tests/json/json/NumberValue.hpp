@@ -21,8 +21,6 @@
 #ifndef JSON_NUMBERVALUE_HPP
 #define JSON_NUMBERVALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <json/dllJson.hpp>
 #include <json_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     NumberValue_ptr _this()
-    {   return NumberValue_ptr(this);}
+    {   return std::dynamic_pointer_cast<NumberValue>(shared_from_this());}
 
     // Attributes
 

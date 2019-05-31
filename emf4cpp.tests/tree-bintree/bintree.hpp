@@ -22,7 +22,6 @@
 #define BINTREE_HPP
 
 #include "bintree_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

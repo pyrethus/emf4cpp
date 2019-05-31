@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_PLATFORMACTION_HPP
 #define KDM_PLATFORM_PLATFORMACTION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -89,7 +87,7 @@ namespace kdm
 
     protected:
         PlatformAction_ptr _this()
-        {   return PlatformAction_ptr(this);}
+        {   return std::dynamic_pointer_cast<PlatformAction>(shared_from_this());}
 
         // Attributes
 
@@ -98,7 +96,7 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::platform::PlatformEvent_ptr >> m_platformElement;
+        ::ecore::EList_ptr< ::kdm::platform::PlatformEvent_ptr > m_platformElement;
 
     };
 

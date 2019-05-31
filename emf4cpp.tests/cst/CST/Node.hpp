@@ -21,8 +21,6 @@
 #ifndef CST_NODE_HPP
 #define CST_NODE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <CST/dllCST.hpp>
 #include <CST_forward.hpp>
 
@@ -81,13 +79,13 @@ public:
 
 protected:
     Node_ptr _this()
-    {   return Node_ptr(this);}
+    {   return std::dynamic_pointer_cast<Node>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::CST::Element_ptr >> m_children;
+    ::ecore::EList_ptr< ::CST::Element_ptr > m_children;
 
 };
 

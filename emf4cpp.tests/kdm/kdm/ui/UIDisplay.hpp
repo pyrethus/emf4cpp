@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UIDISPLAY_HPP
 #define KDM_UI_UIDISPLAY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         UIDisplay_ptr _this()
-        {   return UIDisplay_ptr(this);}
+        {   return std::dynamic_pointer_cast<UIDisplay>(shared_from_this());}
 
         // Attributes
 

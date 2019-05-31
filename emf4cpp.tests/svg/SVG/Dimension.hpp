@@ -21,7 +21,6 @@
 #ifndef SVG_DIMENSION_HPP
 #define SVG_DIMENSION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <SVG/dllSVG.hpp>
@@ -84,7 +83,7 @@ public:
 
 protected:
     Dimension_ptr _this()
-    {   return Dimension_ptr(this);}
+    {   return std::dynamic_pointer_cast<Dimension>(shared_from_this());}
 
     // Attributes
 

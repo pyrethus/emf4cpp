@@ -69,18 +69,18 @@ SvgFile::~SvgFile()
 
 ::SVG::Svg_ptr SvgFile::getTag() const
 {
-    return m_tag;
+    return m_tag.lock();
 }
 
 ::SVG::Svg_ptr SvgFile::basicgetTag()
 {
-    return m_tag;
+    return m_tag.lock();
 }
 
 void SvgFile::basicsetTag(::SVG::Svg_ptr _tag)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::SVG::Svg_ptr _old_tag = m_tag;
+    ::SVG::Svg_ptr _old_tag = m_tag.lock();
 #endif
     m_tag = _tag;
 
@@ -92,7 +92,7 @@ void SvgFile::basicsetTag(::SVG::Svg_ptr _tag)
                 _this(),
                 ::SVG::SVGPackage::_instance()->getSvgFile__tag(),
                 _old_tag,
-                m_tag
+                m_tag.lock()
         );
         eNotify(&notification);
     }
@@ -101,14 +101,15 @@ void SvgFile::basicsetTag(::SVG::Svg_ptr _tag)
 
 void SvgFile::setTag(::SVG::Svg_ptr _tag)
 {
-    if (_tag != m_tag)
+    ::SVG::Svg_ptr _old_tag = m_tag.lock();
+    if (_tag != _old_tag)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_tag != nullptr)
+        if (_old_tag)
         {
-            m_tag->_inverseRemove(::SVG::SVGPackage::SVG__OWNER_SVG, _this);
+            _old_tag->_inverseRemove(::SVG::SVGPackage::SVG__OWNER_SVG, _this);
         }
-        if (_tag != nullptr)
+        if (_tag)
         {
             _tag->_inverseAdd(::SVG::SVGPackage::SVG__OWNER_SVG, _this);
         }

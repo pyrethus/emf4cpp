@@ -67,13 +67,13 @@ Requires::~Requires()
 
 ::kdm::platform::AbstractPlatformElement_ptr Requires::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void Requires::setTo(::kdm::platform::AbstractPlatformElement_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::platform::AbstractPlatformElement_ptr _old_to = m_to;
+    ::kdm::platform::AbstractPlatformElement_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -85,7 +85,7 @@ void Requires::setTo(::kdm::platform::AbstractPlatformElement_ptr _to)
                 _this(),
                 ::kdm::platform::PlatformPackage::_instance()->getRequires__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -94,13 +94,13 @@ void Requires::setTo(::kdm::platform::AbstractPlatformElement_ptr _to)
 
 ::kdm::platform::DeployedComponent_ptr Requires::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void Requires::setFrom(::kdm::platform::DeployedComponent_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::platform::DeployedComponent_ptr _old_from = m_from;
+    ::kdm::platform::DeployedComponent_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void Requires::setFrom(::kdm::platform::DeployedComponent_ptr _from)
                 _this(),
                 ::kdm::platform::PlatformPackage::_instance()->getRequires__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

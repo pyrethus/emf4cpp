@@ -90,14 +90,12 @@ void Case::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::CASE__CONDITION:
     {
-        if (m_condition)
-            _any = ::ecore::as < ::ecore::EObject > (m_condition);
+        _any = ::ecore::as < ::ecore::EObject > (m_condition);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::CASE__THENPART:
     {
-        if (m_thenPart)
-            _any = ::ecore::as < ::ecore::EObject > (m_thenPart);
+        _any = ::ecore::as < ::ecore::EObject > (m_thenPart);
     }
         return _any;
 
@@ -146,7 +144,8 @@ void Case::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::Case::setCondition(_t1);
     }
         return;
@@ -155,7 +154,8 @@ void Case::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::Case::setThenPart(_t1);
     }
         return;
@@ -180,9 +180,9 @@ void Case::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::CASE__CONDITION:
-        return (bool) m_condition;
+        return !(m_condition == nullptr);
     case ::xpand3::expression::ExpressionPackage::CASE__THENPART:
-        return (bool) m_thenPart;
+        return !(m_thenPart == nullptr);
 
     }
     throw "Error";

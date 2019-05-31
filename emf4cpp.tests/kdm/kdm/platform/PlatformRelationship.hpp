@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_PLATFORMRELATIONSHIP_HPP
 #define KDM_PLATFORM_PLATFORMRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         PlatformRelationship_ptr _this()
-        {   return PlatformRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<PlatformRelationship>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::core::KDMEntity_ptr m_to;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_to;
 
-        ::kdm::platform::AbstractPlatformElement_ptr m_from;
+        std::weak_ptr< ::kdm::platform::AbstractPlatformElement > m_from;
 
     };
 

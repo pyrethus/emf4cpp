@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_CONFIGURATION_HPP
 #define KDM_SOURCE_CONFIGURATION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace kdm
 
     protected:
         Configuration_ptr _this()
-        {   return Configuration_ptr(this);}
+        {   return std::dynamic_pointer_cast<Configuration>(shared_from_this());}
 
         // Attributes
 

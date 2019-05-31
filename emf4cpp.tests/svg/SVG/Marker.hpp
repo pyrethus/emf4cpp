@@ -21,8 +21,6 @@
 #ifndef SVG_MARKER_HPP
 #define SVG_MARKER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -98,7 +96,7 @@ public:
 
 protected:
     Marker_ptr _this()
-    {   return Marker_ptr(this);}
+    {   return std::dynamic_pointer_cast<Marker>(shared_from_this());}
 
     // Attributes
 
@@ -122,7 +120,7 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::Element_ptr >> m_drawing;
+    ::ecore::EList_ptr< ::SVG::Element_ptr > m_drawing;
 
 };
 

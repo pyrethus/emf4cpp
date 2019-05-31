@@ -21,8 +21,6 @@
 #ifndef SVG_CIRCLE_HPP
 #define SVG_CIRCLE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     Circle_ptr _this()
-    {   return Circle_ptr(this);}
+    {   return std::dynamic_pointer_cast<Circle>(shared_from_this());}
 
     // Attributes
 

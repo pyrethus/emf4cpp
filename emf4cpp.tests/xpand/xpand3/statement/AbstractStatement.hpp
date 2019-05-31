@@ -21,8 +21,6 @@
 #ifndef XPAND3_STATEMENT_ABSTRACTSTATEMENT_HPP
 #define XPAND3_STATEMENT_ABSTRACTSTATEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/statement_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace xpand3
 
     protected:
         AbstractStatement_ptr _this()
-        {   return AbstractStatement_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractStatement>(shared_from_this());}
 
         // Attributes
 

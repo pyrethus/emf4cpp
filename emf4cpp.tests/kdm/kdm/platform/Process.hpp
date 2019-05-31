@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_PROCESS_HPP
 #define KDM_PLATFORM_PROCESS_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         Process_ptr _this()
-        {   return Process_ptr(this);}
+        {   return std::dynamic_pointer_cast<Process>(shared_from_this());}
 
         // Attributes
 

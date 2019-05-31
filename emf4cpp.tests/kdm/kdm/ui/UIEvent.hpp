@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UIEVENT_HPP
 #define KDM_UI_UIEVENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace kdm
 
     protected:
         UIEvent_ptr _this()
-        {   return UIEvent_ptr(this);}
+        {   return std::dynamic_pointer_cast<UIEvent>(shared_from_this());}
 
         // Attributes
 

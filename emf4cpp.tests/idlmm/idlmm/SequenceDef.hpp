@@ -21,8 +21,6 @@
 #ifndef IDLMM_SEQUENCEDEF_HPP
 #define IDLMM_SEQUENCEDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -82,7 +80,7 @@ public:
 
 protected:
     SequenceDef_ptr _this()
-    {   return SequenceDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<SequenceDef>(shared_from_this());}
 
     // Attributes
 

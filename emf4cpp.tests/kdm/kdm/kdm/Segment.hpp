@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_SEGMENT_HPP
 #define KDM_KDM_SEGMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         Segment_ptr _this()
-        {   return Segment_ptr(this);}
+        {   return std::dynamic_pointer_cast<Segment>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::Segment_ptr >> m_segment;
+        ::ecore::EList_ptr< ::kdm::kdm::Segment_ptr > m_segment;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::KDMModel_ptr >> m_model;
+        ::ecore::EList_ptr< ::kdm::kdm::KDMModel_ptr > m_model;
 
     };
 

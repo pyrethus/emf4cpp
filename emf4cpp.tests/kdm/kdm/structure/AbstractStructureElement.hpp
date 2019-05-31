@@ -21,8 +21,6 @@
 #ifndef KDM_STRUCTURE_ABSTRACTSTRUCTUREELEMENT_HPP
 #define KDM_STRUCTURE_ABSTRACTSTRUCTUREELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/structure_forward.hpp>
 
@@ -93,19 +91,19 @@ namespace kdm
 
     protected:
         AbstractStructureElement_ptr _this()
-        {   return AbstractStructureElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractStructureElement>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::core::AggregatedRelationship_ptr >> m_aggregated;
+        ::ecore::EList_ptr< ::kdm::core::AggregatedRelationship_ptr > m_aggregated;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::core::KDMEntity_ptr >> m_implementation;
+        ::ecore::EList_ptr< ::kdm::core::KDMEntity_ptr > m_implementation;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::structure::AbstractStructureElement_ptr >> m_structureElement;
+        ::ecore::EList_ptr< ::kdm::structure::AbstractStructureElement_ptr > m_structureElement;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::structure::AbstractStructureRelationship_ptr >> m_structureRelationship;
+        ::ecore::EList_ptr< ::kdm::structure::AbstractStructureRelationship_ptr > m_structureRelationship;
 
     };
 

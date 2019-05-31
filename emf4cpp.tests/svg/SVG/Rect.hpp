@@ -21,8 +21,6 @@
 #ifndef SVG_RECT_HPP
 #define SVG_RECT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -84,7 +82,7 @@ public:
 
 protected:
     Rect_ptr _this()
-    {   return Rect_ptr(this);}
+    {   return std::dynamic_pointer_cast<Rect>(shared_from_this());}
 
     // Attributes
 

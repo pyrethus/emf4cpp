@@ -21,8 +21,6 @@
 #ifndef KDM_CORE_AGGREGATEDRELATIONSHIP_HPP
 #define KDM_CORE_AGGREGATEDRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/core_forward.hpp>
 
@@ -91,7 +89,7 @@ namespace kdm
 
     protected:
         AggregatedRelationship_ptr _this()
-        {   return AggregatedRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<AggregatedRelationship>(shared_from_this());}
 
         // Attributes
 
@@ -100,11 +98,11 @@ namespace kdm
 
         // References
 
-        ::kdm::core::KDMEntity_ptr m_from;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_from;
 
-        ::kdm::core::KDMEntity_ptr m_to;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_to;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::core::KDMRelationship_ptr >> m_relation;
+        ::ecore::EList_ptr< ::kdm::core::KDMRelationship_ptr > m_relation;
 
     };
 

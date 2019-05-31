@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_ARRAYTYPE_HPP
 #define KDM_CODE_ARRAYTYPE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace kdm
 
     protected:
         ArrayType_ptr _this()
-        {   return ArrayType_ptr(this);}
+        {   return std::dynamic_pointer_cast<ArrayType>(shared_from_this());}
 
         // Attributes
 

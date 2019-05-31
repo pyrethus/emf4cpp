@@ -21,8 +21,6 @@
 #ifndef KDM_ACTION_EXCEPTIONFLOW_HPP
 #define KDM_ACTION_EXCEPTIONFLOW_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/action_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         ExceptionFlow_ptr _this()
-        {   return ExceptionFlow_ptr(this);}
+        {   return std::dynamic_pointer_cast<ExceptionFlow>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::action::ActionElement_ptr m_to;
+        std::weak_ptr< ::kdm::action::ActionElement > m_to;
 
-        ::kdm::action::ActionElement_ptr m_from;
+        std::weak_ptr< ::kdm::action::ActionElement > m_from;
 
     };
 

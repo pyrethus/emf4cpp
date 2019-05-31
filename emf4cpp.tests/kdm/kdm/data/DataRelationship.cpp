@@ -66,13 +66,13 @@ DataRelationship::~DataRelationship()
 
 ::kdm::core::KDMEntity_ptr DataRelationship::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void DataRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::core::KDMEntity_ptr _old_to = m_to;
+    ::kdm::core::KDMEntity_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void DataRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 _this(),
                 ::kdm::data::DataPackage::_instance()->getDataRelationship__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,13 +93,13 @@ void DataRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 
 ::kdm::data::AbstractDataElement_ptr DataRelationship::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void DataRelationship::setFrom(::kdm::data::AbstractDataElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::data::AbstractDataElement_ptr _old_from = m_from;
+    ::kdm::data::AbstractDataElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -111,7 +111,7 @@ void DataRelationship::setFrom(::kdm::data::AbstractDataElement_ptr _from)
                 _this(),
                 ::kdm::data::DataPackage::_instance()->getDataRelationship__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

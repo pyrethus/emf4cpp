@@ -66,13 +66,13 @@ PlatformRelationship::~PlatformRelationship()
 
 ::kdm::core::KDMEntity_ptr PlatformRelationship::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void PlatformRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::core::KDMEntity_ptr _old_to = m_to;
+    ::kdm::core::KDMEntity_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void PlatformRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 _this(),
                 ::kdm::platform::PlatformPackage::_instance()->getPlatformRelationship__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,14 +93,14 @@ void PlatformRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 
 ::kdm::platform::AbstractPlatformElement_ptr PlatformRelationship::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void PlatformRelationship::setFrom(
         ::kdm::platform::AbstractPlatformElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::platform::AbstractPlatformElement_ptr _old_from = m_from;
+    ::kdm::platform::AbstractPlatformElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void PlatformRelationship::setFrom(
                 _this(),
                 ::kdm::platform::PlatformPackage::_instance()->getPlatformRelationship__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

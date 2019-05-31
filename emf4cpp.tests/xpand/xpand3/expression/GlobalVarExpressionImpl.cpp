@@ -86,8 +86,7 @@ void GlobalVarExpression::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::GLOBALVAREXPRESSION__GLOBALVARNAME:
     {
-        if (m_globalVarName)
-            _any = ::ecore::as < ::ecore::EObject > (m_globalVarName);
+        _any = ::ecore::as < ::ecore::EObject > (m_globalVarName);
     }
         return _any;
 
@@ -136,8 +135,8 @@ void GlobalVarExpression::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::expression::GlobalVarExpression::setGlobalVarName(_t1);
     }
         return;
@@ -162,7 +161,7 @@ void GlobalVarExpression::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::GLOBALVAREXPRESSION__GLOBALVARNAME:
-        return (bool) m_globalVarName;
+        return !(m_globalVarName == nullptr);
 
     }
     throw "Error";

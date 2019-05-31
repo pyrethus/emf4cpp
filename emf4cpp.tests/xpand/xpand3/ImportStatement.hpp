@@ -21,8 +21,6 @@
 #ifndef XPAND3_IMPORTSTATEMENT_HPP
 #define XPAND3_IMPORTSTATEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3_forward.hpp>
 
@@ -83,7 +81,7 @@ public:
 
 protected:
     ImportStatement_ptr _this()
-    {   return ImportStatement_ptr(this);}
+    {   return std::dynamic_pointer_cast<ImportStatement>(shared_from_this());}
 
     // Attributes
 

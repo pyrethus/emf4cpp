@@ -21,8 +21,6 @@
 #ifndef JSON_NULLVALUE_HPP
 #define JSON_NULLVALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <json/dllJson.hpp>
 #include <json_forward.hpp>
 
@@ -78,7 +76,7 @@ public:
 
 protected:
     NullValue_ptr _this()
-    {   return NullValue_ptr(this);}
+    {   return std::dynamic_pointer_cast<NullValue>(shared_from_this());}
 
     // Attributes
 

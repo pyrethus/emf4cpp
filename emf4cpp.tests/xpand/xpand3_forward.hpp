@@ -21,7 +21,7 @@
 #ifndef _XPAND3_FORWARD_HPP
 #define _XPAND3_FORWARD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
+#include <ecore_forward.hpp> // for EDataTypes
 
 /*PROTECTED REGION ID(xpand3_forward) START*/
 // Please, enable the protected region if you add manually written code.
@@ -33,8 +33,6 @@
 #include <xpand3/expression_forward.hpp>
 #include <xpand3/statement_forward.hpp>
 #include <xpand3/declaration_forward.hpp>
-
-#include <ecore_forward.hpp> // for EDataTypes
 
 namespace xpand3
 {

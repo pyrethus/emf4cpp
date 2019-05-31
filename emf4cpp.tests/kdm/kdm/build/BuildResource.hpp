@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_BUILDRESOURCE_HPP
 #define KDM_BUILD_BUILDRESOURCE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -90,17 +88,17 @@ namespace kdm
 
     protected:
         BuildResource_ptr _this()
-        {   return BuildResource_ptr(this);}
+        {   return std::dynamic_pointer_cast<BuildResource>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::core::KDMEntity_ptr >> m_implementation;
+        ::ecore::EList_ptr< ::kdm::core::KDMEntity_ptr > m_implementation;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildElement_ptr >> m_groupedBuild;
+        ::ecore::EList_ptr< ::kdm::build::AbstractBuildElement_ptr > m_groupedBuild;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildElement_ptr >> m_buildElement;
+        ::ecore::EList_ptr< ::kdm::build::AbstractBuildElement_ptr > m_buildElement;
 
     };
 

@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_DESCRIBEDBY_HPP
 #define KDM_BUILD_DESCRIBEDBY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         DescribedBy_ptr _this()
-        {   return DescribedBy_ptr(this);}
+        {   return std::dynamic_pointer_cast<DescribedBy>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::build::BuildDescription_ptr m_to;
+        std::weak_ptr< ::kdm::build::BuildDescription > m_to;
 
-        ::kdm::build::BuildStep_ptr m_from;
+        std::weak_ptr< ::kdm::build::BuildStep > m_from;
 
     };
 

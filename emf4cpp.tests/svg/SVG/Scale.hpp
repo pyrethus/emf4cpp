@@ -21,8 +21,6 @@
 #ifndef SVG_SCALE_HPP
 #define SVG_SCALE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -84,7 +82,7 @@ public:
 
 protected:
     Scale_ptr _this()
-    {   return Scale_ptr(this);}
+    {   return std::dynamic_pointer_cast<Scale>(shared_from_this());}
 
     // Attributes
 

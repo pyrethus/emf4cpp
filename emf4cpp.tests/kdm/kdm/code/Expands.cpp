@@ -66,13 +66,13 @@ Expands::~Expands()
 
 ::kdm::code::PreprocessorDirective_ptr Expands::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void Expands::setTo(::kdm::code::PreprocessorDirective_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::code::PreprocessorDirective_ptr _old_to = m_to;
+    ::kdm::code::PreprocessorDirective_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void Expands::setTo(::kdm::code::PreprocessorDirective_ptr _to)
                 _this(),
                 ::kdm::code::CodePackage::_instance()->getExpands__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,13 +93,13 @@ void Expands::setTo(::kdm::code::PreprocessorDirective_ptr _to)
 
 ::kdm::code::PreprocessorDirective_ptr Expands::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void Expands::setFrom(::kdm::code::PreprocessorDirective_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::code::PreprocessorDirective_ptr _old_from = m_from;
+    ::kdm::code::PreprocessorDirective_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -111,7 +111,7 @@ void Expands::setFrom(::kdm::code::PreprocessorDirective_ptr _from)
                 _this(),
                 ::kdm::code::CodePackage::_instance()->getExpands__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_BUILDRELATIONSHIP_HPP
 #define KDM_BUILD_BUILDRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -87,15 +85,15 @@ namespace kdm
 
     protected:
         BuildRelationship_ptr _this()
-        {   return BuildRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<BuildRelationship>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::core::KDMEntity_ptr m_to;
+        std::weak_ptr< ::kdm::core::KDMEntity > m_to;
 
-        ::kdm::build::AbstractBuildElement_ptr m_from;
+        std::weak_ptr< ::kdm::build::AbstractBuildElement > m_from;
 
     };
 

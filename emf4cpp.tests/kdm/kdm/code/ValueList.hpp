@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_VALUELIST_HPP
 #define KDM_CODE_VALUELIST_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -85,13 +83,13 @@ namespace kdm
 
     protected:
         ValueList_ptr _this()
-        {   return ValueList_ptr(this);}
+        {   return std::dynamic_pointer_cast<ValueList>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::code::ValueElement_ptr >> m_valueElement;
+        ::ecore::EList_ptr< ::kdm::code::ValueElement_ptr > m_valueElement;
 
     };
 

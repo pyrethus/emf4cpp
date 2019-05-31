@@ -21,8 +21,6 @@
 #ifndef TREE_NONTERMINAL_HPP
 #define TREE_NONTERMINAL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <tree/dllTree.hpp>
 #include <tree_forward.hpp>
 
@@ -81,13 +79,13 @@ public:
 
 protected:
     NonTerminal_ptr _this()
-    {   return NonTerminal_ptr(this);}
+    {   return std::dynamic_pointer_cast<NonTerminal>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::tree::TreeNode_ptr >> m_children;
+    ::ecore::EList_ptr< ::tree::TreeNode_ptr > m_children;
 
 };
 

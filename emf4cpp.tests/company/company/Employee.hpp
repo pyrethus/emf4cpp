@@ -21,7 +21,6 @@
 #ifndef COMPANY_EMPLOYEE_HPP
 #define COMPANY_EMPLOYEE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <company/dllCompany.hpp>
@@ -83,7 +82,7 @@ public:
 
 protected:
     Employee_ptr _this()
-    {   return Employee_ptr(this);}
+    {   return std::dynamic_pointer_cast<Employee>(shared_from_this());}
 
     // Attributes
 

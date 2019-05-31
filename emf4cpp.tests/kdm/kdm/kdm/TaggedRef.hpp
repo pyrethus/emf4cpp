@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_TAGGEDREF_HPP
 #define KDM_KDM_TAGGEDREF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -83,13 +81,13 @@ namespace kdm
 
     protected:
         TaggedRef_ptr _this()
-        {   return TaggedRef_ptr(this);}
+        {   return std::dynamic_pointer_cast<TaggedRef>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::core::ModelElement_ptr m_reference;
+        std::weak_ptr< ::kdm::core::ModelElement > m_reference;
 
     };
 

@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_EXTENSIONFAMILY_HPP
 #define KDM_KDM_EXTENSIONFAMILY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         ExtensionFamily_ptr _this()
-        {   return ExtensionFamily_ptr(this);}
+        {   return std::dynamic_pointer_cast<ExtensionFamily>(shared_from_this());}
 
         // Attributes
 
@@ -94,7 +92,7 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::kdm::Stereotype_ptr >> m_stereotype;
+        ::ecore::EList_ptr< ::kdm::kdm::Stereotype_ptr > m_stereotype;
 
     };
 

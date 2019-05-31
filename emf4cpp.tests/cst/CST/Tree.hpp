@@ -21,8 +21,6 @@
 #ifndef CST_TREE_HPP
 #define CST_TREE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <CST/dllCST.hpp>
 #include <CST_forward.hpp>
 
@@ -79,7 +77,7 @@ public:
 
 protected:
     Tree_ptr _this()
-    {   return Tree_ptr(this);}
+    {   return std::dynamic_pointer_cast<Tree>(shared_from_this());}
 
     // Attributes
 

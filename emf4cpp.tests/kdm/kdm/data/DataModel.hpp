@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_DATAMODEL_HPP
 #define KDM_DATA_DATAMODEL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -84,13 +82,13 @@ namespace kdm
 
     protected:
         DataModel_ptr _this()
-        {   return DataModel_ptr(this);}
+        {   return std::dynamic_pointer_cast<DataModel>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::data::AbstractDataElement_ptr >> m_dataElement;
+        ::ecore::EList_ptr< ::kdm::data::AbstractDataElement_ptr > m_dataElement;
 
     };
 

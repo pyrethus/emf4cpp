@@ -21,8 +21,6 @@
 #ifndef IDLMM_STRUCTDEF_HPP
 #define IDLMM_STRUCTDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -81,13 +79,13 @@ public:
 
 protected:
     StructDef_ptr _this()
-    {   return StructDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<StructDef>(shared_from_this());}
 
     // Attributes
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::idlmm::Field_ptr >> m_members;
+    ::ecore::EList_ptr< ::idlmm::Field_ptr > m_members;
 
 };
 

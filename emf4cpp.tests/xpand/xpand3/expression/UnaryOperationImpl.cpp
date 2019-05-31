@@ -86,14 +86,12 @@ void UnaryOperation::_initialize()
         return _any;
     case ::xpand3::expression::ExpressionPackage::UNARYOPERATION__OPERATOR:
     {
-        if (m_operator)
-            _any = ::ecore::as < ::ecore::EObject > (m_operator);
+        _any = ::ecore::as < ::ecore::EObject > (m_operator);
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::UNARYOPERATION__OPERAND:
     {
-        if (m_operand)
-            _any = ::ecore::as < ::ecore::EObject > (m_operand);
+        _any = ::ecore::as < ::ecore::EObject > (m_operand.lock());
     }
         return _any;
 
@@ -142,8 +140,8 @@ void UnaryOperation::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::expression::UnaryOperation::setOperator(_t1);
     }
         return;
@@ -152,7 +150,8 @@ void UnaryOperation::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::expression::UnaryOperation::setOperand(_t1);
     }
         return;
@@ -177,9 +176,9 @@ void UnaryOperation::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::expression::ExpressionPackage::UNARYOPERATION__OPERATOR:
-        return (bool) m_operator;
+        return !(m_operator == nullptr);
     case ::xpand3::expression::ExpressionPackage::UNARYOPERATION__OPERAND:
-        return (bool) m_operand;
+        return !m_operand.expired();
 
     }
     throw "Error";

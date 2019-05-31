@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_CALLABLEUNIT_HPP
 #define KDM_CODE_CALLABLEUNIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace kdm
 
     protected:
         CallableUnit_ptr _this()
-        {   return CallableUnit_ptr(this);}
+        {   return std::dynamic_pointer_cast<CallableUnit>(shared_from_this());}
 
         // Attributes
 

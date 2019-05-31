@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_ABSTRACTBUILDRELATIONSHIP_HPP
 #define KDM_BUILD_ABSTRACTBUILDRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -81,7 +79,7 @@ namespace kdm
 
     protected:
         AbstractBuildRelationship_ptr _this()
-        {   return AbstractBuildRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractBuildRelationship>(shared_from_this());}
 
         // Attributes
 

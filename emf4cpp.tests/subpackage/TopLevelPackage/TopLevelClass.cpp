@@ -60,13 +60,13 @@ TopLevelClass::~TopLevelClass()
 
 ::ecore::EObject_ptr TopLevelClass::getReference() const
 {
-    return m_reference;
+    return m_reference.lock();
 }
 
 void TopLevelClass::setReference(::ecore::EObject_ptr _reference)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EObject_ptr _old_reference = m_reference;
+    ::ecore::EObject_ptr _old_reference = m_reference.lock();
 #endif
     m_reference = _reference;
 
@@ -78,7 +78,7 @@ void TopLevelClass::setReference(::ecore::EObject_ptr _reference)
                 _this(),
                 ::TopLevelPackage::TopLevelPackagePackage::_instance()->getTopLevelClass__reference(),
                 _old_reference,
-                m_reference
+                m_reference.lock()
         );
         eNotify(&notification);
     }

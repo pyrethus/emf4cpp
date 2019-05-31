@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UIFIELD_HPP
 #define KDM_UI_UIFIELD_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         UIField_ptr _this()
-        {   return UIField_ptr(this);}
+        {   return std::dynamic_pointer_cast<UIField>(shared_from_this());}
 
         // Attributes
 

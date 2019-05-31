@@ -66,8 +66,7 @@ void RightHand::_initialize()
         return _any;
     case ::eopposite::EoppositePackage::RIGHTHAND__LEFTEE:
     {
-        if (m_leftee)
-            _any = ::ecore::as < ::ecore::EObject > (m_leftee);
+        _any = ::ecore::as < ::ecore::EObject > (m_leftee.lock());
     }
         return _any;
 
@@ -92,8 +91,8 @@ void RightHand::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::eopposite::LeftHand_ptr _t1 =
-                dynamic_cast< ::eopposite::LeftHand* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::eopposite::LeftHand >(_t0);*/
+        ::eopposite::LeftHand_ptr _t1 = std::dynamic_pointer_cast
+                < ::eopposite::LeftHand > (_t0);
         ::eopposite::RightHand::setLeftee(_t1);
     }
         return;
@@ -110,7 +109,7 @@ void RightHand::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_name);
     case ::eopposite::EoppositePackage::RIGHTHAND__LEFTEE:
-        return (bool) m_leftee;
+        return !m_leftee.expired();
 
     }
     throw "Error";
@@ -143,8 +142,8 @@ void RightHand::_inverseAdd(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::eopposite::LeftHand_ptr _t1 =
-                dynamic_cast< ::eopposite::LeftHand* >(_t0.get());
+        ::eopposite::LeftHand_ptr _t1 = std::dynamic_pointer_cast
+                < ::eopposite::LeftHand > (_t0);
 
         // set reference
         basicsetLeftee(_t1);
@@ -166,8 +165,8 @@ void RightHand::_inverseRemove(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
-        ::eopposite::LeftHand_ptr _t1 =
-                dynamic_cast< ::eopposite::LeftHand* >(_t0.get());
+        ::eopposite::LeftHand_ptr _t1 = std::dynamic_pointer_cast
+                < ::eopposite::LeftHand > (_t0);
 
         // set reference
         if (basicgetLeftee() == _t1)

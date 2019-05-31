@@ -21,7 +21,6 @@
 #ifndef IDLMM_INCLUDE_HPP
 #define IDLMM_INCLUDE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <idlmm/dllIdlmm.hpp>
@@ -81,7 +80,7 @@ public:
 
 protected:
     Include_ptr _this()
-    {   return Include_ptr(this);}
+    {   return std::dynamic_pointer_cast<Include>(shared_from_this());}
 
     // Attributes
 

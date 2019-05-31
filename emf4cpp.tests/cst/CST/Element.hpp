@@ -21,7 +21,6 @@
 #ifndef CST_ELEMENT_HPP
 #define CST_ELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <CST/dllCST.hpp>
@@ -81,7 +80,7 @@ public:
 
 protected:
     Element_ptr _this()
-    {   return Element_ptr(this);}
+    {   return std::dynamic_pointer_cast<Element>(shared_from_this());}
 
     // Attributes
 

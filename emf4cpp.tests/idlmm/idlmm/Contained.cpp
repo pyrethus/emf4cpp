@@ -164,18 +164,18 @@ void Contained::setAbsoluteName(::ecore::EString const& _absoluteName)
 
 ::idlmm::Container_ptr Contained::getDefinedIn() const
 {
-    return m_definedIn;
+    return m_definedIn.lock();
 }
 
 ::idlmm::Container_ptr Contained::basicgetDefinedIn()
 {
-    return m_definedIn;
+    return m_definedIn.lock();
 }
 
 void Contained::basicsetDefinedIn(::idlmm::Container_ptr _definedIn)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::idlmm::Container_ptr _old_definedIn = m_definedIn;
+    ::idlmm::Container_ptr _old_definedIn = m_definedIn.lock();
 #endif
     m_definedIn = _definedIn;
 
@@ -187,7 +187,7 @@ void Contained::basicsetDefinedIn(::idlmm::Container_ptr _definedIn)
                 _this(),
                 ::idlmm::IdlmmPackage::_instance()->getContained__definedIn(),
                 _old_definedIn,
-                m_definedIn
+                m_definedIn.lock()
         );
         eNotify(&notification);
     }
@@ -196,15 +196,16 @@ void Contained::basicsetDefinedIn(::idlmm::Container_ptr _definedIn)
 
 void Contained::setDefinedIn(::idlmm::Container_ptr _definedIn)
 {
-    if (_definedIn != m_definedIn)
+    ::idlmm::Container_ptr _old_definedIn = m_definedIn.lock();
+    if (_definedIn != _old_definedIn)
     {
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-        if (m_definedIn != nullptr)
+        if (_old_definedIn)
         {
-            m_definedIn->_inverseRemove(
+            _old_definedIn->_inverseRemove(
                     ::idlmm::IdlmmPackage::CONTAINER__CONTAINS, _this);
         }
-        if (_definedIn != nullptr)
+        if (_definedIn)
         {
             _definedIn->_inverseAdd(::idlmm::IdlmmPackage::CONTAINER__CONTAINS,
                     _this);

@@ -65,8 +65,7 @@ void Leaf::_initialize()
         return _any;
     case ::tree::TreePackage::TREENODE__PARENT:
     {
-        if (m_parent)
-            _any = ::ecore::as < ::ecore::EObject > (m_parent);
+        _any = ::ecore::as < ::ecore::EObject > (m_parent.lock());
     }
         return _any;
 
@@ -90,7 +89,8 @@ void Leaf::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::tree::TreeNode_ptr _t1 = dynamic_cast< ::tree::TreeNode* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::tree::TreeNode >(_t0);*/
+        ::tree::TreeNode_ptr _t1 = std::dynamic_pointer_cast < ::tree::TreeNode
+                > (_t0);
         ::tree::TreeNode::setParent(_t1);
     }
         return;
@@ -107,7 +107,7 @@ void Leaf::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_data);
     case ::tree::TreePackage::TREENODE__PARENT:
-        return (bool) m_parent;
+        return !m_parent.expired();
 
     }
     throw "Error";

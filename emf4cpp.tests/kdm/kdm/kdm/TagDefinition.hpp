@@ -21,8 +21,6 @@
 #ifndef KDM_KDM_TAGDEFINITION_HPP
 #define KDM_KDM_TAGDEFINITION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/kdm_forward.hpp>
 
@@ -86,7 +84,7 @@ namespace kdm
 
     protected:
         TagDefinition_ptr _this()
-        {   return TagDefinition_ptr(this);}
+        {   return std::dynamic_pointer_cast<TagDefinition>(shared_from_this());}
 
         // Attributes
 

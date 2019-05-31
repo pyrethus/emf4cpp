@@ -21,8 +21,6 @@
 #ifndef IDLMM_CONSTANTDEF_HPP
 #define IDLMM_CONSTANTDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -82,7 +80,7 @@ public:
 
 protected:
     ConstantDef_ptr _this()
-    {   return ConstantDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<ConstantDef>(shared_from_this());}
 
     // Attributes
 

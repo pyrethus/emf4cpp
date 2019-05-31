@@ -86,8 +86,7 @@ void ImportStatement::_initialize()
         return _any;
     case ::xpand3::Xpand3Package::IMPORTSTATEMENT__IMPORTEDID:
     {
-        if (m_importedId)
-            _any = ::ecore::as < ::ecore::EObject > (m_importedId);
+        _any = ::ecore::as < ::ecore::EObject > (m_importedId);
     }
         return _any;
     case ::xpand3::Xpand3Package::IMPORTSTATEMENT__EXPORTED:
@@ -142,8 +141,8 @@ void ImportStatement::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 =
-                dynamic_cast< ::xpand3::Identifier* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::Identifier >(_t0);*/
+        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
+                < ::xpand3::Identifier > (_t0);
         ::xpand3::ImportStatement::setImportedId(_t1);
     }
         return;
@@ -176,7 +175,7 @@ void ImportStatement::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::Xpand3Package::IMPORTSTATEMENT__IMPORTEDID:
-        return (bool) m_importedId;
+        return !(m_importedId == nullptr);
     case ::xpand3::Xpand3Package::IMPORTSTATEMENT__EXPORTED:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(m_exported);

@@ -21,8 +21,6 @@
 #ifndef XPAND3_STATEMENT_FILESTATEMENT_HPP
 #define XPAND3_STATEMENT_FILESTATEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/statement_forward.hpp>
 
@@ -90,7 +88,7 @@ namespace xpand3
 
     protected:
         FileStatement_ptr _this()
-        {   return FileStatement_ptr(this);}
+        {   return std::dynamic_pointer_cast<FileStatement>(shared_from_this());}
 
         // Attributes
 

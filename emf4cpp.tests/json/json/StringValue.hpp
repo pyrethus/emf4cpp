@@ -21,8 +21,6 @@
 #ifndef JSON_STRINGVALUE_HPP
 #define JSON_STRINGVALUE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <json/dllJson.hpp>
 #include <json_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     StringValue_ptr _this()
-    {   return StringValue_ptr(this);}
+    {   return std::dynamic_pointer_cast<StringValue>(shared_from_this());}
 
     // Attributes
 

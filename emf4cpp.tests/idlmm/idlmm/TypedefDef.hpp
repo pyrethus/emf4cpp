@@ -21,8 +21,6 @@
 #ifndef IDLMM_TYPEDEFDEF_HPP
 #define IDLMM_TYPEDEFDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -80,7 +78,7 @@ public:
 
 protected:
     TypedefDef_ptr _this()
-    {   return TypedefDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<TypedefDef>(shared_from_this());}
 
     // Attributes
 

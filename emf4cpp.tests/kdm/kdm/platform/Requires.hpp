@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_REQUIRES_HPP
 #define KDM_PLATFORM_REQUIRES_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -86,15 +84,15 @@ namespace kdm
 
     protected:
         Requires_ptr _this()
-        {   return Requires_ptr(this);}
+        {   return std::dynamic_pointer_cast<Requires>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        ::kdm::platform::AbstractPlatformElement_ptr m_to;
+        std::weak_ptr< ::kdm::platform::AbstractPlatformElement > m_to;
 
-        ::kdm::platform::DeployedComponent_ptr m_from;
+        std::weak_ptr< ::kdm::platform::DeployedComponent > m_from;
 
     };
 

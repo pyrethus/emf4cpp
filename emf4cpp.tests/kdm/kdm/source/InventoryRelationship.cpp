@@ -66,13 +66,13 @@ InventoryRelationship::~InventoryRelationship()
 
 ::kdm::core::KDMEntity_ptr InventoryRelationship::getTo() const
 {
-    return m_to;
+    return m_to.lock();
 }
 
 void InventoryRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::core::KDMEntity_ptr _old_to = m_to;
+    ::kdm::core::KDMEntity_ptr _old_to = m_to.lock();
 #endif
     m_to = _to;
 
@@ -84,7 +84,7 @@ void InventoryRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 _this(),
                 ::kdm::source::SourcePackage::_instance()->getInventoryRelationship__to(),
                 _old_to,
-                m_to
+                m_to.lock()
         );
         eNotify(&notification);
     }
@@ -93,14 +93,14 @@ void InventoryRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 
 ::kdm::source::AbstractInventoryElement_ptr InventoryRelationship::getFrom() const
 {
-    return m_from;
+    return m_from.lock();
 }
 
 void InventoryRelationship::setFrom(
         ::kdm::source::AbstractInventoryElement_ptr _from)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::source::AbstractInventoryElement_ptr _old_from = m_from;
+    ::kdm::source::AbstractInventoryElement_ptr _old_from = m_from.lock();
 #endif
     m_from = _from;
 
@@ -112,7 +112,7 @@ void InventoryRelationship::setFrom(
                 _this(),
                 ::kdm::source::SourcePackage::_instance()->getInventoryRelationship__from(),
                 _old_from,
-                m_from
+                m_from.lock()
         );
         eNotify(&notification);
     }

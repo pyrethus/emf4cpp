@@ -22,7 +22,6 @@
 #define KDM_KDM_HPP
 
 #include "kdm_forward.hpp"
-#include <boost/intrusive_ptr.hpp>
 #include <ecorecpp/mapping.hpp>
 
 // EPackage

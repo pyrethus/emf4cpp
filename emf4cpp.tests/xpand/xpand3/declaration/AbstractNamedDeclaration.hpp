@@ -21,8 +21,6 @@
 #ifndef XPAND3_DECLARATION_ABSTRACTNAMEDDECLARATION_HPP
 #define XPAND3_DECLARATION_ABSTRACTNAMEDDECLARATION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/declaration_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace xpand3
 
     protected:
         AbstractNamedDeclaration_ptr _this()
-        {   return AbstractNamedDeclaration_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractNamedDeclaration>(shared_from_this());}
 
         // Attributes
 

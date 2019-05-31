@@ -21,8 +21,6 @@
 #ifndef KDM_PLATFORM_MACHINE_HPP
 #define KDM_PLATFORM_MACHINE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/platform_forward.hpp>
 
@@ -90,15 +88,15 @@ namespace kdm
 
     protected:
         Machine_ptr _this()
-        {   return Machine_ptr(this);}
+        {   return std::dynamic_pointer_cast<Machine>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::platform::DeployedComponent_ptr >> m_deployedComponent;
+        ::ecore::EList_ptr< ::kdm::platform::DeployedComponent_ptr > m_deployedComponent;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::platform::DeployedResource_ptr >> m_deployedResource;
+        ::ecore::EList_ptr< ::kdm::platform::DeployedResource_ptr > m_deployedResource;
 
     };
 

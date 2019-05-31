@@ -21,8 +21,6 @@
 #ifndef KDM_CODE_TYPEUNIT_HPP
 #define KDM_CODE_TYPEUNIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/code_forward.hpp>
 
@@ -83,7 +81,7 @@ namespace kdm
 
     protected:
         TypeUnit_ptr _this()
-        {   return TypeUnit_ptr(this);}
+        {   return std::dynamic_pointer_cast<TypeUnit>(shared_from_this());}
 
         // Attributes
 

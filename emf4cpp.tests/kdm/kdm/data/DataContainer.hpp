@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_DATACONTAINER_HPP
 #define KDM_DATA_DATACONTAINER_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -86,13 +84,13 @@ namespace kdm
 
     protected:
         DataContainer_ptr _this()
-        {   return DataContainer_ptr(this);}
+        {   return std::dynamic_pointer_cast<DataContainer>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::data::DataResource_ptr >> m_dataElement;
+        ::ecore::EList_ptr< ::kdm::data::DataResource_ptr > m_dataElement;
 
     };
 

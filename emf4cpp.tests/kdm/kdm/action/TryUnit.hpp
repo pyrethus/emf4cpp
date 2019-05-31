@@ -21,8 +21,6 @@
 #ifndef KDM_ACTION_TRYUNIT_HPP
 #define KDM_ACTION_TRYUNIT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/action_forward.hpp>
 
@@ -84,7 +82,7 @@ namespace kdm
 
     protected:
         TryUnit_ptr _this()
-        {   return TryUnit_ptr(this);}
+        {   return std::dynamic_pointer_cast<TryUnit>(shared_from_this());}
 
         // Attributes
 

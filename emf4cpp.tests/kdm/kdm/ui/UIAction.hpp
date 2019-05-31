@@ -21,8 +21,6 @@
 #ifndef KDM_UI_UIACTION_HPP
 #define KDM_UI_UIACTION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/ui_forward.hpp>
 
@@ -89,7 +87,7 @@ namespace kdm
 
     protected:
         UIAction_ptr _this()
-        {   return UIAction_ptr(this);}
+        {   return std::dynamic_pointer_cast<UIAction>(shared_from_this());}
 
         // Attributes
 
@@ -98,7 +96,7 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::ui::UIEvent_ptr >> m_UIElement;
+        ::ecore::EList_ptr< ::kdm::ui::UIEvent_ptr > m_UIElement;
 
     };
 

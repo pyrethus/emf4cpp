@@ -21,8 +21,6 @@
 #ifndef XPAND3_STATEMENT_LETSTATEMENT_HPP
 #define XPAND3_STATEMENT_LETSTATEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/statement_forward.hpp>
 
@@ -88,7 +86,7 @@ namespace xpand3
 
     protected:
         LetStatement_ptr _this()
-        {   return LetStatement_ptr(this);}
+        {   return std::dynamic_pointer_cast<LetStatement>(shared_from_this());}
 
         // Attributes
 

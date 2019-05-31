@@ -21,7 +21,6 @@
 #ifndef COMPANY_PHONEBOOKENTRY_HPP
 #define COMPANY_PHONEBOOKENTRY_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <company/dllCompany.hpp>
@@ -77,7 +76,7 @@ public:
 
 protected:
     PhonebookEntry_ptr _this()
-    {   return PhonebookEntry_ptr(this);}
+    {   return std::dynamic_pointer_cast<PhonebookEntry>(shared_from_this());}
 
     // Attributes
 

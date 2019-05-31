@@ -21,8 +21,6 @@
 #ifndef SVG_LINE_HPP
 #define SVG_LINE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <SVG/dllSVG.hpp>
 #include <SVG_forward.hpp>
 
@@ -86,7 +84,7 @@ public:
 
 protected:
     Line_ptr _this()
-    {   return Line_ptr(this);}
+    {   return std::dynamic_pointer_cast<Line>(shared_from_this());}
 
     // Attributes
 
@@ -98,7 +96,7 @@ protected:
 
     // References
 
-    std::shared_ptr<::ecorecpp::mapping::EList< ::SVG::Point_ptr >> m_between;
+    ::ecore::EList_ptr< ::SVG::Point_ptr > m_between;
 
 };
 

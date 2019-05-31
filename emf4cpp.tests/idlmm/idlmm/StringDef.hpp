@@ -21,8 +21,6 @@
 #ifndef IDLMM_STRINGDEF_HPP
 #define IDLMM_STRINGDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     StringDef_ptr _this()
-    {   return StringDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<StringDef>(shared_from_this());}
 
     // Attributes
 

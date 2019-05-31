@@ -64,13 +64,13 @@ TaggedRef::~TaggedRef()
 
 ::kdm::core::ModelElement_ptr TaggedRef::getReference() const
 {
-    return m_reference;
+    return m_reference.lock();
 }
 
 void TaggedRef::setReference(::kdm::core::ModelElement_ptr _reference)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::kdm::core::ModelElement_ptr _old_reference = m_reference;
+    ::kdm::core::ModelElement_ptr _old_reference = m_reference.lock();
 #endif
     m_reference = _reference;
 
@@ -82,7 +82,7 @@ void TaggedRef::setReference(::kdm::core::ModelElement_ptr _reference)
                 _this(),
                 ::kdm::kdm::KdmPackage::_instance()->getTaggedRef__reference(),
                 _old_reference,
-                m_reference
+                m_reference.lock()
         );
         eNotify(&notification);
     }

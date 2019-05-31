@@ -21,8 +21,6 @@
 #ifndef KDM_BUILD_BUILDELEMENT_HPP
 #define KDM_BUILD_BUILDELEMENT_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/build_forward.hpp>
 
@@ -82,7 +80,7 @@ namespace kdm
 
     protected:
         BuildElement_ptr _this()
-        {   return BuildElement_ptr(this);}
+        {   return std::dynamic_pointer_cast<BuildElement>(shared_from_this());}
 
         // Attributes
 

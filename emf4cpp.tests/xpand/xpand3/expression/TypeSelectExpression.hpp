@@ -21,8 +21,6 @@
 #ifndef XPAND3_EXPRESSION_TYPESELECTEXPRESSION_HPP
 #define XPAND3_EXPRESSION_TYPESELECTEXPRESSION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/expression_forward.hpp>
 
@@ -84,7 +82,7 @@ namespace xpand3
 
     protected:
         TypeSelectExpression_ptr _this()
-        {   return TypeSelectExpression_ptr(this);}
+        {   return std::dynamic_pointer_cast<TypeSelectExpression>(shared_from_this());}
 
         // Attributes
 

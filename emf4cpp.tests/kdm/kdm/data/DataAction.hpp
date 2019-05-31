@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_DATAACTION_HPP
 #define KDM_DATA_DATAACTION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -91,7 +89,7 @@ namespace kdm
 
     protected:
         DataAction_ptr _this()
-        {   return DataAction_ptr(this);}
+        {   return std::dynamic_pointer_cast<DataAction>(shared_from_this());}
 
         // Attributes
 
@@ -100,9 +98,9 @@ namespace kdm
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >> m_implementation;
+        ::ecore::EList_ptr< ::kdm::action::ActionElement_ptr > m_implementation;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::data::DataEvent_ptr >> m_dataElement;
+        ::ecore::EList_ptr< ::kdm::data::DataEvent_ptr > m_dataElement;
 
     };
 

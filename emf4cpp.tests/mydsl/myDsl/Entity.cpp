@@ -67,13 +67,13 @@ Entity::~Entity()
 
 ::myDsl::Entity_ptr Entity::getExtends() const
 {
-    return m_extends;
+    return m_extends.lock();
 }
 
 void Entity::setExtends(::myDsl::Entity_ptr _extends)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::myDsl::Entity_ptr _old_extends = m_extends;
+    ::myDsl::Entity_ptr _old_extends = m_extends.lock();
 #endif
     m_extends = _extends;
 
@@ -85,7 +85,7 @@ void Entity::setExtends(::myDsl::Entity_ptr _extends)
                 _this(),
                 ::myDsl::MyDslPackage::_instance()->getEntity__extends(),
                 _old_extends,
-                m_extends
+                m_extends.lock()
         );
         eNotify(&notification);
     }

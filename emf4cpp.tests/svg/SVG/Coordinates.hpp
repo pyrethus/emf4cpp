@@ -21,7 +21,6 @@
 #ifndef SVG_COORDINATES_HPP
 #define SVG_COORDINATES_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
 #include <ecore/EObject.hpp>
 
 #include <SVG/dllSVG.hpp>
@@ -84,7 +83,7 @@ public:
 
 protected:
     Coordinates_ptr _this()
-    {   return Coordinates_ptr(this);}
+    {   return std::dynamic_pointer_cast<Coordinates>(shared_from_this());}
 
     // Attributes
 

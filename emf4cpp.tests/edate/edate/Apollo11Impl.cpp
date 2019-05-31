@@ -68,8 +68,7 @@ void Apollo11::_initialize()
         return _any;
     case ::edate::EdatePackage::APOLLO11__MEMBER:
     {
-        if (m_Member)
-            _any = ::ecore::as < ::ecore::EObject > (m_Member);
+        _any = ::ecore::as < ::ecore::EObject > (m_Member);
     }
         return _any;
 
@@ -94,7 +93,8 @@ void Apollo11::eSet(::ecore::EInt _featureID,
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
-        ::edate::Person_ptr _t1 = dynamic_cast< ::edate::Person* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::edate::Person >(_t0);*/
+        ::edate::Person_ptr _t1 = std::dynamic_pointer_cast < ::edate::Person
+                > (_t0);
         ::edate::Apollo11::setMember(_t1);
     }
         return;
@@ -111,7 +111,7 @@ void Apollo11::eSet(::ecore::EInt _featureID,
         return m_FirstManOnMoonDate
                 != ::ecorecpp::mapping::EDate("1969-07-20T20:18:00.000+0000");
     case ::edate::EdatePackage::APOLLO11__MEMBER:
-        return (bool) m_Member;
+        return !(m_Member == nullptr);
 
     }
     throw "Error";

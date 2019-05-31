@@ -21,8 +21,6 @@
 #ifndef KDM_EVENT_EVENTMODEL_HPP
 #define KDM_EVENT_EVENTMODEL_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/event_forward.hpp>
 
@@ -84,13 +82,13 @@ namespace kdm
 
     protected:
         EventModel_ptr _this()
-        {   return EventModel_ptr(this);}
+        {   return std::dynamic_pointer_cast<EventModel>(shared_from_this());}
 
         // Attributes
 
         // References
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::kdm::event::AbstractEventElement_ptr >> m_eventElement;
+        ::ecore::EList_ptr< ::kdm::event::AbstractEventElement_ptr > m_eventElement;
 
     };
 

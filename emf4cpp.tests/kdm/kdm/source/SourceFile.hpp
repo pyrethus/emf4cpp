@@ -21,8 +21,6 @@
 #ifndef KDM_SOURCE_SOURCEFILE_HPP
 #define KDM_SOURCE_SOURCEFILE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/source_forward.hpp>
 
@@ -87,7 +85,7 @@ namespace kdm
 
     protected:
         SourceFile_ptr _this()
-        {   return SourceFile_ptr(this);}
+        {   return std::dynamic_pointer_cast<SourceFile>(shared_from_this());}
 
         // Attributes
 

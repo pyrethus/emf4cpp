@@ -101,13 +101,13 @@ const ::ecorecpp::mapping::EList< ::company::Employee_ptr >& Department::getEmpl
 
 ::company::Employee_ptr Department::getManager() const
 {
-    return m_manager;
+    return m_manager.lock();
 }
 
 void Department::setManager(::company::Employee_ptr _manager)
 {
 #ifdef ECORECPP_NOTIFICATION_API
-    ::company::Employee_ptr _old_manager = m_manager;
+    ::company::Employee_ptr _old_manager = m_manager.lock();
 #endif
     m_manager = _manager;
 
@@ -119,7 +119,7 @@ void Department::setManager(::company::Employee_ptr _manager)
                 _this(),
                 ::company::CompanyPackage::_instance()->getDepartment__manager(),
                 _old_manager,
-                m_manager
+                m_manager.lock()
         );
         eNotify(&notification);
     }

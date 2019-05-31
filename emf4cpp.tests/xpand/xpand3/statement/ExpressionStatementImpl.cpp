@@ -86,8 +86,7 @@ void ExpressionStatement::_initialize()
         return _any;
     case ::xpand3::statement::StatementPackage::EXPRESSIONSTATEMENT__EXPRESSION:
     {
-        if (m_expression)
-            _any = ::ecore::as < ::ecore::EObject > (m_expression);
+        _any = ::ecore::as < ::ecore::EObject > (m_expression);
     }
         return _any;
 
@@ -137,7 +136,8 @@ void ExpressionStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
         ::xpand3::expression::AbstractExpression_ptr _t1 =
-                dynamic_cast< ::xpand3::expression::AbstractExpression* >(_t0.get()); /*/// std::dynamic_pointer_cast< ::xpand3::expression::AbstractExpression >(_t0);*/
+                std::dynamic_pointer_cast
+                        < ::xpand3::expression::AbstractExpression > (_t0);
         ::xpand3::statement::ExpressionStatement::setExpression(_t1);
     }
         return;
@@ -162,7 +162,7 @@ void ExpressionStatement::eSet(::ecore::EInt _featureID,
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(m_fileName);
     case ::xpand3::statement::StatementPackage::EXPRESSIONSTATEMENT__EXPRESSION:
-        return (bool) m_expression;
+        return !(m_expression == nullptr);
 
     }
     throw "Error";

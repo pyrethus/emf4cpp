@@ -21,8 +21,6 @@
 #ifndef KDM_DATA_RELATIONALTABLE_HPP
 #define KDM_DATA_RELATIONALTABLE_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/data_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         RelationalTable_ptr _this()
-        {   return RelationalTable_ptr(this);}
+        {   return std::dynamic_pointer_cast<RelationalTable>(shared_from_this());}
 
         // Attributes
 

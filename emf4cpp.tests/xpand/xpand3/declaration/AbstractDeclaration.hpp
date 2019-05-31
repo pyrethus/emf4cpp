@@ -21,8 +21,6 @@
 #ifndef XPAND3_DECLARATION_ABSTRACTDECLARATION_HPP
 #define XPAND3_DECLARATION_ABSTRACTDECLARATION_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <xpand3/dllXpand3.hpp>
 #include <xpand3/declaration_forward.hpp>
 
@@ -93,7 +91,7 @@ namespace xpand3
 
     protected:
         AbstractDeclaration_ptr _this()
-        {   return AbstractDeclaration_ptr(this);}
+        {   return std::dynamic_pointer_cast<AbstractDeclaration>(shared_from_this());}
 
         // Attributes
 
@@ -104,7 +102,7 @@ namespace xpand3
 
         ::xpand3::File_ptr m_owner;
 
-        std::shared_ptr<::ecorecpp::mapping::EList< ::xpand3::DeclaredParameter_ptr >> m_params;
+        ::ecore::EList_ptr< ::xpand3::DeclaredParameter_ptr > m_params;
 
         ::xpand3::expression::AbstractExpression_ptr m_guard;
 

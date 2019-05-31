@@ -21,8 +21,6 @@
 #ifndef IDLMM_WSTRINGDEF_HPP
 #define IDLMM_WSTRINGDEF_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <idlmm/dllIdlmm.hpp>
 #include <idlmm_forward.hpp>
 
@@ -81,7 +79,7 @@ public:
 
 protected:
     WstringDef_ptr _this()
-    {   return WstringDef_ptr(this);}
+    {   return std::dynamic_pointer_cast<WstringDef>(shared_from_this());}
 
     // Attributes
 

@@ -21,8 +21,6 @@
 #ifndef KDM_CORE_KDMRELATIONSHIP_HPP
 #define KDM_CORE_KDMRELATIONSHIP_HPP
 
-#include <ecorecpp/mapping_forward.hpp>
-
 #include <kdm/dllKdm.hpp>
 #include <kdm/core_forward.hpp>
 
@@ -85,7 +83,7 @@ namespace kdm
 
     protected:
         KDMRelationship_ptr _this()
-        {   return KDMRelationship_ptr(this);}
+        {   return std::dynamic_pointer_cast<KDMRelationship>(shared_from_this());}
 
         // Attributes
 
