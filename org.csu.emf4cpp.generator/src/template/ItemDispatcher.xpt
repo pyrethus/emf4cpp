@@ -35,6 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 «ENDIF-»
 #ifndef «getHeaderDef()»_ITEMDISPATCHER_HPP
 #define «getHeaderDef()»_ITEMDISPATCHER_HPP
+#include <cassert>
 
 #include <ecore_forward.hpp>
 #include <ecore/EClass.hpp>
@@ -53,34 +54,29 @@ public:
     ~«this.name.toFirstUpper()»ItemDispatcher() = default;
 
     /** Clients need to overload and reimplement this work() method for every
-	 * class they want to handle. Note that in a class hierarchy classes may
-	 * be shadowed by derived classes. */
-    void work(::ecore::EObject*) { }
+	 * class they want to handle. The second argument is a dummy argument to
+	 * disambiguate work methods in case of an inheritance hirarchy and
+	 * always contains a nullptr.
+	 * Note that in a class hierarchy classes may be shadowed by derived classes. */
+    void work(const ::ecore::EObject_ptr&, ::ecore::EObject*) { }
 
 	/** Entry function for the dispatch mechanism. */
 	void enter(const ::ecore::EObject_ptr& obj) {
-		enter(obj.get());
-	}
-
-	/** Entry function for the dispatch mechanism. */
-	void enter(::ecore::EObject* obj) {
 		auto eClass = obj->eClass();
 		if (eClass->getEPackage() != «name.toFirstUpper() + "Package::_instance()"») {
-			_this()->T::work(obj);
+			assert(!"The package of the eclass does not match the package of the dispatcher!");
 			return;
 		}
 
 		switch (eClass->getClassifierID()) {
 «FOREACH EClassifiers.typeSelect(EClass).sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS class ITERATOR it-»
 		case «name.toFirstUpper() + "Package::" + class.name.toUpperCase()»: {
-			auto derived = dynamic_cast< «class.name.toFirstUpper()»* >(obj);
-			_this()->T::work(derived);
+			auto derived = ::ecore::as< «class.name.toFirstUpper()» >(obj);
+			_this()->T::work(derived, («class.name.toFirstUpper()»*)nullptr);
 		} break;
 «ENDFOREACH-»
 		default:
-		{
-			_this()->T::work(obj);
-		}break;
+			break;
 		}
 	}
 

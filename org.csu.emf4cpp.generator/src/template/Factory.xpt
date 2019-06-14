@@ -44,6 +44,7 @@ class EXPORT_«getExportDLL()»_DLL «name.toFirstUpper()»Factory : public virt
 public:
 
     static «name.toFirstUpper()»Factory_ptr _instance();
+    static void _setFactoryInstance(const «name.toFirstUpper()»Factory_ptr&);
 
 «FOREACH this.EClassifiers.typeSelect(EClass) AS class-»
     virtual «class.name»_ptr create«class.name»();
@@ -58,7 +59,7 @@ protected:
     static ::ecore::Ptr< «name.toFirstUpper()»Factory > s_holder;
 
     «name.toFirstUpper()»Factory();
-    
+
 };
 
 /** An object creation helper
@@ -106,6 +107,11 @@ using namespace ::«getFQN()»;
     return s_holder;
 }
 
+void «name.toFirstUpper()»Factory::_setFactoryInstance(const «name.toFirstUpper()»Factory_ptr& fac)
+{
+    «name.toFirstUpper()»Package::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}
 «ENDFILE»
 
 «ENDDEFINE»
