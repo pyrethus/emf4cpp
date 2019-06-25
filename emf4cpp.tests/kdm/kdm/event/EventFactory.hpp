@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static EventFactory_ptr _instance();
+            static void _setFactoryInstance(const EventFactory_ptr&);
 
             virtual EventModel_ptr createEventModel();
             virtual AbstractEventElement_ptr createAbstractEventElement();

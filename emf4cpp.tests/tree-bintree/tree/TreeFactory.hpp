@@ -34,6 +34,7 @@ namespace tree
     public:
 
         static TreeFactory_ptr _instance();
+        static void _setFactoryInstance(const TreeFactory_ptr&);
 
         virtual TreeNode_ptr createTreeNode();
         virtual Leaf_ptr createLeaf();

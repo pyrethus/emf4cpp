@@ -34,6 +34,7 @@ namespace enumeration
     public:
 
         static EnumerationFactory_ptr _instance();
+        static void _setFactoryInstance(const EnumerationFactory_ptr&);
 
         virtual Bird_ptr createBird();
 

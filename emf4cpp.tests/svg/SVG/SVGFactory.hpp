@@ -34,6 +34,7 @@ namespace SVG
     public:
 
         static SVGFactory_ptr _instance();
+        static void _setFactoryInstance(const SVGFactory_ptr&);
 
         virtual Element_ptr createElement();
         virtual StructuralElement_ptr createStructuralElement();

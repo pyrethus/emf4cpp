@@ -32,3 +32,8 @@ using namespace ::edate;
     return s_holder;
 }
 
+void EdateFactory::_setFactoryInstance(const EdateFactory_ptr& fac)
+{
+    EdatePackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

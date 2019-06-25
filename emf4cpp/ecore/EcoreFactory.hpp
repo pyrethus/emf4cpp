@@ -34,6 +34,7 @@ namespace ecore
     public:
 
         static EcoreFactory_ptr _instance();
+        static void _setFactoryInstance(const EcoreFactory_ptr&);
 
         virtual EAttribute_ptr createEAttribute();
         virtual EAnnotation_ptr createEAnnotation();

@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static SourceFactory_ptr _instance();
+            static void _setFactoryInstance(const SourceFactory_ptr&);
 
             virtual SourceRef_ptr createSourceRef();
             virtual SourceRegion_ptr createSourceRegion();

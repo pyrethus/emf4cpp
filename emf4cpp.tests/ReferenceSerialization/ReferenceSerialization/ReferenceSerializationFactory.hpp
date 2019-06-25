@@ -34,6 +34,7 @@ namespace ReferenceSerialization
     public:
 
         static ReferenceSerializationFactory_ptr _instance();
+        static void _setFactoryInstance(const ReferenceSerializationFactory_ptr&);
 
         virtual Container_ptr createContainer();
         virtual Content_ptr createContent();

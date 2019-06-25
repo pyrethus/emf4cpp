@@ -33,3 +33,9 @@ using namespace ::PrimitiveTypes;
     return s_holder;
 }
 
+void PrimitiveTypesFactory::_setFactoryInstance(
+        const PrimitiveTypesFactory_ptr& fac)
+{
+    PrimitiveTypesPackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

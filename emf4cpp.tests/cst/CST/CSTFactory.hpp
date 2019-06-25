@@ -34,6 +34,7 @@ namespace CST
     public:
 
         static CSTFactory_ptr _instance();
+        static void _setFactoryInstance(const CSTFactory_ptr&);
 
         virtual Tree_ptr createTree();
         virtual Element_ptr createElement();

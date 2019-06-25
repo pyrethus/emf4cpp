@@ -34,6 +34,7 @@ namespace xpand3
     public:
 
         static Xpand3Factory_ptr _instance();
+        static void _setFactoryInstance(const Xpand3Factory_ptr&);
 
         virtual SyntaxElement_ptr createSyntaxElement();
         virtual File_ptr createFile();

@@ -34,6 +34,7 @@ namespace company
     public:
 
         static CompanyFactory_ptr _instance();
+        static void _setFactoryInstance(const CompanyFactory_ptr&);
 
         virtual Employee_ptr createEmployee();
         virtual Department_ptr createDepartment();

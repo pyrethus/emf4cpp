@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static UiFactory_ptr _instance();
+            static void _setFactoryInstance(const UiFactory_ptr&);
 
             virtual AbstractUIElement_ptr createAbstractUIElement();
             virtual UIResource_ptr createUIResource();

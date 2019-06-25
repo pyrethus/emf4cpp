@@ -32,3 +32,8 @@ using namespace ::kdm::structure;
     return s_holder;
 }
 
+void StructureFactory::_setFactoryInstance(const StructureFactory_ptr& fac)
+{
+    StructurePackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

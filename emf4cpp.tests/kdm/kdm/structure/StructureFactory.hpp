@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static StructureFactory_ptr _instance();
+            static void _setFactoryInstance(const StructureFactory_ptr&);
 
             virtual AbstractStructureElement_ptr createAbstractStructureElement();
             virtual Subsystem_ptr createSubsystem();

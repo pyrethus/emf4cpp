@@ -34,6 +34,7 @@ namespace myDsl
     public:
 
         static MyDslFactory_ptr _instance();
+        static void _setFactoryInstance(const MyDslFactory_ptr&);
 
         virtual Model_ptr createModel();
         virtual Import_ptr createImport();

@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static PlatformFactory_ptr _instance();
+            static void _setFactoryInstance(const PlatformFactory_ptr&);
 
             virtual AbstractPlatformElement_ptr createAbstractPlatformElement();
             virtual PlatformModel_ptr createPlatformModel();

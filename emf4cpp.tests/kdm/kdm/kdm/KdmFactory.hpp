@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static KdmFactory_ptr _instance();
+            static void _setFactoryInstance(const KdmFactory_ptr&);
 
             virtual KDMFramework_ptr createKDMFramework();
             virtual KDMModel_ptr createKDMModel();

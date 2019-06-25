@@ -34,6 +34,7 @@ namespace bintree
     public:
 
         static BintreeFactory_ptr _instance();
+        static void _setFactoryInstance(const BintreeFactory_ptr&);
 
         virtual BinTreeNode_ptr createBinTreeNode();
 

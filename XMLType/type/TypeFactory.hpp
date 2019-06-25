@@ -34,6 +34,7 @@ namespace type
     public:
 
         static TypeFactory_ptr _instance();
+        static void _setFactoryInstance(const TypeFactory_ptr&);
 
         virtual AnyType_ptr createAnyType();
         virtual ProcessingInstruction_ptr createProcessingInstruction();

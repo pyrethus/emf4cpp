@@ -36,6 +36,7 @@ namespace xpand3
         public:
 
             static DeclarationFactory_ptr _instance();
+            static void _setFactoryInstance(const DeclarationFactory_ptr&);
 
             virtual AbstractDeclaration_ptr createAbstractDeclaration();
             virtual AbstractNamedDeclaration_ptr createAbstractNamedDeclaration();

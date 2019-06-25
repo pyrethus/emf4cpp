@@ -34,6 +34,7 @@ namespace kdm
     public:
 
         static KdmFactory_ptr _instance();
+        static void _setFactoryInstance(const KdmFactory_ptr&);
 
         virtual ::ecore::EObject_ptr create ( ::ecore::EClass_ptr _eClass);
         virtual ::ecore::EJavaObject createFromString ( ::ecore::EDataType_ptr _eDataType, ::ecore::EString const& _literalValue);

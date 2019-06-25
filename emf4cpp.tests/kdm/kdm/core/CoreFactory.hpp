@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static CoreFactory_ptr _instance();
+            static void _setFactoryInstance(const CoreFactory_ptr&);
 
             virtual Element_ptr createElement();
             virtual ModelElement_ptr createModelElement();

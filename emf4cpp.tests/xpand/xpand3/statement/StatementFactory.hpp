@@ -36,6 +36,7 @@ namespace xpand3
         public:
 
             static StatementFactory_ptr _instance();
+            static void _setFactoryInstance(const StatementFactory_ptr&);
 
             virtual AbstractStatement_ptr createAbstractStatement();
             virtual ExpandStatement_ptr createExpandStatement();

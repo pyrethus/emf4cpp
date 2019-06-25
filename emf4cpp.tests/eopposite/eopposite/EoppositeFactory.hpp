@@ -34,6 +34,7 @@ namespace eopposite
     public:
 
         static EoppositeFactory_ptr _instance();
+        static void _setFactoryInstance(const EoppositeFactory_ptr&);
 
         virtual TopLevel_ptr createTopLevel();
         virtual NamedObject_ptr createNamedObject();

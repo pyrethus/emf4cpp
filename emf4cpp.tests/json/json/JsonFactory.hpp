@@ -34,6 +34,7 @@ namespace json
     public:
 
         static JsonFactory_ptr _instance();
+        static void _setFactoryInstance(const JsonFactory_ptr&);
 
         virtual ObjectValue_ptr createObjectValue();
         virtual NVPair_ptr createNVPair();

@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static DataFactory_ptr _instance();
+            static void _setFactoryInstance(const DataFactory_ptr&);
 
             virtual DataModel_ptr createDataModel();
             virtual AbstractDataElement_ptr createAbstractDataElement();

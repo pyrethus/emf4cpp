@@ -32,3 +32,8 @@ using namespace ::tree;
     return s_holder;
 }
 
+void TreeFactory::_setFactoryInstance(const TreeFactory_ptr& fac)
+{
+    TreePackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

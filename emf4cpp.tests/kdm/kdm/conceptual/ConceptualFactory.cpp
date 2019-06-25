@@ -32,3 +32,8 @@ using namespace ::kdm::conceptual;
     return s_holder;
 }
 
+void ConceptualFactory::_setFactoryInstance(const ConceptualFactory_ptr& fac)
+{
+    ConceptualPackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

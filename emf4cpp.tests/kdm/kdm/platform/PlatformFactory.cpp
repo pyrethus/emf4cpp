@@ -32,3 +32,8 @@ using namespace ::kdm::platform;
     return s_holder;
 }
 
+void PlatformFactory::_setFactoryInstance(const PlatformFactory_ptr& fac)
+{
+    PlatformPackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

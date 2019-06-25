@@ -36,6 +36,7 @@ namespace xpand3
         public:
 
             static ExpressionFactory_ptr _instance();
+            static void _setFactoryInstance(const ExpressionFactory_ptr&);
 
             virtual AbstractExpression_ptr createAbstractExpression();
             virtual BooleanOperation_ptr createBooleanOperation();

@@ -32,3 +32,8 @@ using namespace ::bintree;
     return s_holder;
 }
 
+void BintreeFactory::_setFactoryInstance(const BintreeFactory_ptr& fac)
+{
+    BintreePackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

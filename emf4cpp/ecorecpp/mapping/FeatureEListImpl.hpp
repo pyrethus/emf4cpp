@@ -41,30 +41,24 @@ template< typename T >
 class FeatureEListImpl: public EList< T >
 {
 public:
-	using ef_ptr = std::shared_ptr<typename EList< T >::ef>;
-
     T get(size_t _index) const override
     {
         return m_content[_index].first;
     }
 
-    typename EList< T >::ef* eFeature(size_t _index) const override
+    typename EList< T >::ef_ptr eFeature(size_t _index) const override
 	{
 		return m_content[_index].second;
 	}
 
     template< typename Q >
-    inline void insert_all(EList< Q >& _q, const ef_ptr& ef)
+    inline void insert_all(EList< Q >& _q, const typename EList< T >::ef_ptr& ef)
     {
-		EList<T>::insert_all(_q, ef.get());
+		EList<T>::insert_all(_q, ef);
     }
 
-    void insert_at(size_t _pos, T _obj, const ef_ptr& ef) {
-		EList<T>::insert_at(_pos, _obj, ef.get());
-	}
-
 	/* The container grows as std::vector<>::insert() does. */
-    void insert_at(size_t _pos, T _obj, typename EList< T >::ef* ef) override
+    void insert_at(size_t _pos, T _obj, const typename EList< T >::ef_ptr& ef) override
     {
 		/* Out-of-range positions are appended. */
 		if (_pos >= m_content.size())
@@ -74,11 +68,7 @@ public:
 		m_content.insert(it, std::make_pair(_obj, ef));
     }
 
-    void push_back(T _obj, const ef_ptr& ef) {
-		push_back(_obj, ef.get());
-	}
-
-    void push_back(T _obj, typename EList< T >::ef* ef) override
+    void push_back(T _obj, const typename EList< T >::ef_ptr& ef) override
     {
         m_content.push_back( std::make_pair(_obj, ef) );
     }
@@ -94,7 +84,7 @@ public:
     }
 
 	void remove(T _obj) override {
-		auto pred = [&](const std::pair<T, typename EList< T >::ef*>& cd) {
+		auto pred = [&](const std::pair<T, typename EList< T >::ef_ptr>& cd) {
 			return (cd.first == _obj);
 		};
 
@@ -119,7 +109,7 @@ public:
 
 protected:
 
-	std::vector< std::pair< T, typename EList< T >::ef* > > m_content;
+	std::vector< std::pair< T, typename EList< T >::ef_ptr > > m_content;
 };
 
 } // mapping

@@ -32,3 +32,8 @@ using namespace ::json;
     return s_holder;
 }
 
+void JsonFactory::_setFactoryInstance(const JsonFactory_ptr& fac)
+{
+    JsonPackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

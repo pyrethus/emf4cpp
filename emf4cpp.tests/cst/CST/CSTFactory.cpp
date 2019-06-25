@@ -32,3 +32,8 @@ using namespace ::CST;
     return s_holder;
 }
 
+void CSTFactory::_setFactoryInstance(const CSTFactory_ptr& fac)
+{
+    CSTPackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

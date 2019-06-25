@@ -37,7 +37,7 @@ public:
 
     using ptr_type = ::ecore::EList_ptr<T>;
     using ptr_const_type = ::ecore::EList_const_ptr<T>;
-	using ef = ::ecore::EStructuralFeature;
+	using ef_ptr = ::ecore::EStructuralFeature_ptr;
 
 	/** Iterator interfaces for an EList<T>.
 	 */
@@ -53,7 +53,7 @@ public:
 			return _elist->get(_ind);
 		}
 
-		ef* eFeature() const {
+		ef_ptr eFeature() const {
 			return _elist->eFeature(_ind);
 		}
 
@@ -116,7 +116,7 @@ public:
     }
 
     template< typename Q >
-    inline void insert_all(EList< Q > & _q, ef* _ef = nullptr)
+    inline void insert_all(EList< Q > & _q, const ef_ptr& _ef = nullptr)
     {
         ptr_type _p(_q.template asEListOf< T >());
 
@@ -124,19 +124,19 @@ public:
             push_back(_p->get(i), _ef);
     }
 
-    inline void insert_all(EList const & _q, ef* _ef = nullptr)
+    inline void insert_all(EList const & _q, const ef_ptr& _ef = nullptr)
     {
         for (size_t i = 0; i < _q.size(); i++)
             push_back(_q.get(i), _ef);
      }
 
-    virtual void insert_at(size_t _pos, T _obj, ef* = nullptr) = 0;
+    virtual void insert_at(size_t _pos, T _obj, const ef_ptr& = nullptr) = 0;
 
     virtual T get(size_t _index) const = 0;
 
-    virtual ef* eFeature(size_t _index) const  = 0;
+    virtual ef_ptr eFeature(size_t _index) const  = 0;
 
-    virtual void push_back(T _obj, ef* = nullptr) = 0;
+    virtual void push_back(T _obj, const ef_ptr& = nullptr) = 0;
 
     virtual size_t size() const = 0;
 
@@ -220,19 +220,19 @@ public:
         return _cast< Q, T >::do_cast(m_delegate[_index]);
     }
 
-    typename EList< T >::ef* eFeature(size_t) const override
+    typename EList< T >::ef_ptr eFeature(size_t) const override
 	{
 		return nullptr;
 	}
 
 	void insert_at(size_t _pos, T _obj,
-			typename EList< T >::ef* ef = nullptr) override
+			const typename EList< T >::ef_ptr& ef = nullptr) override
     {
         m_delegate.insert_at(_pos, _cast< T, Q >::do_cast(_obj), ef);
     }
 
     void push_back(T _obj,
-			typename EList< T >::ef* ef = nullptr) override
+			const typename EList< T >::ef_ptr& ef = nullptr) override
     {
         m_delegate.push_back(_cast< T, Q >::do_cast(_obj), ef);
     }

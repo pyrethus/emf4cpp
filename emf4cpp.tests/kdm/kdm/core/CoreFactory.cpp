@@ -32,3 +32,8 @@ using namespace ::kdm::core;
     return s_holder;
 }
 
+void CoreFactory::_setFactoryInstance(const CoreFactory_ptr& fac)
+{
+    CorePackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

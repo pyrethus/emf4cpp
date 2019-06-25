@@ -50,14 +50,14 @@ public:
         return m_content[_index];
     }
 
-	typename EList< T >::ef* eFeature(size_t) const override
+	typename EList< T >::ef_ptr eFeature(size_t) const override
 	{
 		return nullptr;
 	}
 
 	/* The container grows as std::vector<>::insert() does. */
     void insert_at(size_t _pos, T _obj,
-			typename EList< T >::ef* = nullptr) override
+			const typename EList< T >::ef_ptr& = nullptr) override
     {
 		/* Out-of-range positions are appended. */
 		if (_pos >= m_content.size())
@@ -68,7 +68,7 @@ public:
     }
 
     void push_back(T _obj,
-			typename EList< T >::ef* = nullptr) override
+			const typename EList< T >::ef_ptr& = nullptr) override
     {
         m_content.push_back(_obj);
     }
@@ -122,7 +122,7 @@ class ReferenceEListImpl : public EList< T >
 public:
 
     ReferenceEListImpl(::ecore::EObject* _this,
-					   ::ecore::EReference_ptr _ref, int _opp = -1)
+					   const ::ecore::EReference_ptr& _ref, int _opp = -1)
 		: m_this(_this),
 		  m_ref(_ref),
 		  m_opp(_opp) {
@@ -131,7 +131,7 @@ public:
 
 	/* The container grows as std::vector<>::insert() does. */
 	void insert_at(size_t _pos, value_type _obj,
-			typename EList< T >::ef* ef = nullptr) override
+			const typename EList< T >::ef_ptr& ef = nullptr) override
     {
 		/* Out-of-range positions are appended. */
 		if (_pos >= m_content.size())
@@ -170,13 +170,13 @@ public:
         return containment_t::to_value_type( m_content[_index] );
     }
 
-	typename EList< T >::ef* eFeature(size_t) const override
+	typename EList< T >::ef_ptr eFeature(size_t) const override
 	{
 		return nullptr;
 	}
 
     void push_back(value_type _obj,
-			typename EList< T >::ef* = nullptr ) override
+			const typename EList< T >::ef_ptr& = nullptr ) override
     {
 		auto it = std::find_if( m_content.begin(), m_content.end(),
 				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );

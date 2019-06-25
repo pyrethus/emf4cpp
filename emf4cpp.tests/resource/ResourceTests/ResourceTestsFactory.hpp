@@ -34,6 +34,7 @@ namespace ResourceTests
     public:
 
         static ResourceTestsFactory_ptr _instance();
+        static void _setFactoryInstance(const ResourceTestsFactory_ptr&);
 
         virtual Root_ptr createRoot();
         virtual ReferenceTarget_ptr createReferenceTarget();

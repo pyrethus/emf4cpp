@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static BuildFactory_ptr _instance();
+            static void _setFactoryInstance(const BuildFactory_ptr&);
 
             virtual AbstractBuildElement_ptr createAbstractBuildElement();
             virtual BuildResource_ptr createBuildResource();

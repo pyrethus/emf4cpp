@@ -32,3 +32,8 @@ using namespace ::kdm::ui;
     return s_holder;
 }
 
+void UiFactory::_setFactoryInstance(const UiFactory_ptr& fac)
+{
+    UiPackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

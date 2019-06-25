@@ -32,3 +32,8 @@ using namespace ::xpand3::statement;
     return s_holder;
 }
 
+void StatementFactory::_setFactoryInstance(const StatementFactory_ptr& fac)
+{
+    StatementPackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

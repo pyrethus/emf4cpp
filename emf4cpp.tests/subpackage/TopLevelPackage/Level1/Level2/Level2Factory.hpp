@@ -38,6 +38,7 @@ namespace TopLevelPackage
             public:
 
                 static Level2Factory_ptr _instance();
+                static void _setFactoryInstance(const Level2Factory_ptr&);
 
                 virtual Level2Class_ptr createLevel2Class();
 

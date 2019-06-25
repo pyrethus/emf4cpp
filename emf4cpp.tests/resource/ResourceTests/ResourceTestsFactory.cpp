@@ -33,3 +33,9 @@ using namespace ::ResourceTests;
     return s_holder;
 }
 
+void ResourceTestsFactory::_setFactoryInstance(
+        const ResourceTestsFactory_ptr& fac)
+{
+    ResourceTestsPackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

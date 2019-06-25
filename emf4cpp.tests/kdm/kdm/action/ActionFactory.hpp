@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static ActionFactory_ptr _instance();
+            static void _setFactoryInstance(const ActionFactory_ptr&);
 
             virtual ActionElement_ptr createActionElement();
             virtual AbstractActionRelationship_ptr createAbstractActionRelationship();

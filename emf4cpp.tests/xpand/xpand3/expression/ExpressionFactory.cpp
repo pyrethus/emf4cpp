@@ -32,3 +32,8 @@ using namespace ::xpand3::expression;
     return s_holder;
 }
 
+void ExpressionFactory::_setFactoryInstance(const ExpressionFactory_ptr& fac)
+{
+    ExpressionPackage::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

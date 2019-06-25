@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static ConceptualFactory_ptr _instance();
+            static void _setFactoryInstance(const ConceptualFactory_ptr&);
 
             virtual ConceptualModel_ptr createConceptualModel();
             virtual AbstractConceptualElement_ptr createAbstractConceptualElement();

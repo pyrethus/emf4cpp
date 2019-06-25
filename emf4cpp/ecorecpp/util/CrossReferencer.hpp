@@ -54,23 +54,23 @@ public:
 	/** A HolderMap answers "referencedObject -> (holder, feature)". */
 	using HolderMap = std::map<::ecore::EObject_ptr, FeatureEListImpl::ptr_type>;
 
-	static HolderMap find_references(::ecore::EObject_ptr emfObject);
+	static HolderMap find_references(const ::ecore::EObject_ptr& emfObject);
 	static HolderMap find_references(const EList::ptr_type& emfObjects);
 	static HolderMap find_references(const resource::Resource_ptr& resource);
 	static HolderMap find_references(const resource::ResourceSet_ptr& resources);
 
 protected:
-	CrossReferencer(::ecore::EObject_ptr);
+	CrossReferencer(const ::ecore::EObject_ptr&);
 	CrossReferencer(const EList::ptr_type&);
 	~CrossReferencer() = default;
 
 	void find();
 	void add(
-		const ::ecore::EObject_ptr& holder, ::ecore::EStructuralFeature*,
+		const ::ecore::EObject_ptr& holder, const ::ecore::EStructuralFeature_ptr&,
 		const ::ecore::EObject_ptr& referencedObject);
 
 	virtual bool isCrossReference(
-		const ::ecore::EObject_ptr& holder, ::ecore::EStructuralFeature*,
+		const ::ecore::EObject_ptr& holder, const ::ecore::EStructuralFeature_ptr&,
 		const ::ecore::EObject_ptr& referencedObject) const;
 
 private:

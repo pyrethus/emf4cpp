@@ -34,6 +34,7 @@ namespace idlmm
     public:
 
         static IdlmmFactory_ptr _instance();
+        static void _setFactoryInstance(const IdlmmFactory_ptr&);
 
         virtual Container_ptr createContainer();
         virtual Contained_ptr createContained();

@@ -32,3 +32,8 @@ using namespace ::TopLevelPackage::Level1::Level2;
     return s_holder;
 }
 
+void Level2Factory::_setFactoryInstance(const Level2Factory_ptr& fac)
+{
+    Level2Package::_instance()->setEFactoryInstance(fac);
+    s_holder = fac;
+}

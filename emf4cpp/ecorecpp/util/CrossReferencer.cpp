@@ -30,7 +30,7 @@ namespace util {
 using list_impl_t =  ::ecorecpp::mapping::EListImpl<::ecore::EObject_ptr>;
 
 CrossReferencer::HolderMap
-CrossReferencer::find_references(::ecore::EObject_ptr emfObject) {
+CrossReferencer::find_references(const ::ecore::EObject_ptr& emfObject) {
 	CrossReferencer cr(emfObject);
 	cr.find();
 	return cr.m_result;
@@ -62,7 +62,7 @@ CrossReferencer::find_references(const resource::ResourceSet_ptr& resources) {
 }
 
 
-CrossReferencer::CrossReferencer(::ecore::EObject_ptr object)
+CrossReferencer::CrossReferencer(const ::ecore::EObject_ptr& object)
 	: m_emfObjects(std::make_shared< EListImpl >()) {
 	m_emfObjects->push_back(object);
 }
@@ -86,7 +86,7 @@ CrossReferencer::CrossReferencer(const EList::ptr_type& objects)
  * while this map contains "referencedObject -> (holder, feature)".
  */
 void CrossReferencer::add(const ::ecore::EObject_ptr& holder,
-						  ::ecore::EStructuralFeature* ef,
+						  const ::ecore::EStructuralFeature_ptr& ef,
 						  const ::ecore::EObject_ptr& referencedObject) {
 	auto it = m_result.find(referencedObject);
 	if (it == m_result.end()) {
@@ -118,7 +118,7 @@ void CrossReferencer::find() {
 }
 
 bool CrossReferencer::isCrossReference(
-		const ::ecore::EObject_ptr&, ::ecore::EStructuralFeature*,
+		const ::ecore::EObject_ptr&, const ::ecore::EStructuralFeature_ptr&,
 		const ::ecore::EObject_ptr&) const {
 	return true;
 }

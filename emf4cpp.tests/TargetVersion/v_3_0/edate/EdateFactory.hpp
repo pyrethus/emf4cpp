@@ -36,6 +36,7 @@ namespace v_3_0
         public:
 
             static EdateFactory_ptr _instance();
+            static void _setFactoryInstance(const EdateFactory_ptr&);
 
             virtual Person_ptr createPerson();
             virtual Apollo11_ptr createApollo11();

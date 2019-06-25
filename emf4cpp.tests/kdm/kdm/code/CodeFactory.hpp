@@ -36,6 +36,7 @@ namespace kdm
         public:
 
             static CodeFactory_ptr _instance();
+            static void _setFactoryInstance(const CodeFactory_ptr&);
 
             virtual AbstractCodeElement_ptr createAbstractCodeElement();
             virtual CodeItem_ptr createCodeItem();
