@@ -181,19 +181,19 @@ XMLSerializer::get_reference(::ecore::EObject_ptr obj) const {
 #ifdef ECORECPP_USE_WSTRING
 	if (crossDocument) {
 		return ( fromResource == toResource )
-				? (QString("#") + referenceUri.fragment()).toStdWString()
+				? (QString("#") + referenceUri.fragment(QUrl::FullyEncoded)).toStdWString()
 				: referenceUri.toString().toStdWString();
 	}
 
-	return referenceUri.fragment().toStdWString();
+	return referenceUri.fragment(QUrl::FullyEncoded).toStdWString();
 #else
 	if (crossDocument) {
 		return ( fromResource == toResource )
-				? (QString("#") + referenceUri.fragment()).toStdString()
+				? (QString("#") + referenceUri.fragment(QUrl::FullyEncoded)).toStdString()
 				: referenceUri.toString().toStdString();
 	}
 
-	return referenceUri.fragment().toStdString();
+	return referenceUri.fragment(QUrl::FullyEncoded).toStdString();
 #endif
 }
 
