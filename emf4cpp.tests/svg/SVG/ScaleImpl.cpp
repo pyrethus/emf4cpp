@@ -53,26 +53,26 @@ void Scale::_initialize()
 
 // EObject
 ::ecore::EJavaObject Scale::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
     {
-        _any = m_attOwner->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAttOwner().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::SVG::SVGPackage::SCALE__SX:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_sx);
+                > ::toAny(_any, getSx());
     }
         return _any;
     case ::SVG::SVGPackage::SCALE__SY:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_sy);
+                > ::toAny(_any, getSy());
     }
         return _any;
 
@@ -87,12 +87,10 @@ void Scale::eSet(::ecore::EInt _featureID,
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::SVG::Attribute::getAttOwner().clear();
-        ::SVG::Attribute::getAttOwner().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAttOwner().clear();
+        getAttOwner().insert_all(*_t0);
     }
         return;
     case ::SVG::SVGPackage::SCALE__SX:
@@ -100,7 +98,7 @@ void Scale::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Scale::setSx(_t0);
+        setSx(_t0);
     }
         return;
     case ::SVG::SVGPackage::SCALE__SY:
@@ -108,7 +106,7 @@ void Scale::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Scale::setSy(_t0);
+        setSy(_t0);
     }
         return;
 
@@ -121,13 +119,13 @@ void Scale::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
-        return m_attOwner && m_attOwner->size();
+        return getAttOwner().size() > 0;
     case ::SVG::SVGPackage::SCALE__SX:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_sx);
+                > ::is_set(getSx());
     case ::SVG::SVGPackage::SCALE__SY:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_sy);
+                > ::is_set(getSy());
 
     }
     throw "Error";

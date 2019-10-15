@@ -53,7 +53,7 @@ void RightMultiple::_initialize()
 
 // EObject
 ::ecore::EJavaObject RightMultiple::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -61,12 +61,12 @@ void RightMultiple::_initialize()
     case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::eopposite::EoppositePackage::RIGHTMULTIPLE__LEFTEES:
     {
-        _any = m_leftees->asEListOf< ::ecore::EObject_ptr >();
+        _any = getLeftees().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -84,17 +84,15 @@ void RightMultiple::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::eopposite::NamedObject::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::eopposite::EoppositePackage::RIGHTMULTIPLE__LEFTEES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::eopposite::RightMultiple::getLeftees().clear();
-        ::eopposite::RightMultiple::getLeftees().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getLeftees().clear();
+        getLeftees().insert_all(*_t0);
     }
         return;
 
@@ -108,9 +106,9 @@ void RightMultiple::eSet(::ecore::EInt _featureID,
     {
     case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::eopposite::EoppositePackage::RIGHTMULTIPLE__LEFTEES:
-        return m_leftees && m_leftees->size();
+        return getLeftees().size() > 0;
 
     }
     throw "Error";

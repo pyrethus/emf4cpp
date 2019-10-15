@@ -55,7 +55,7 @@ void NVPair::_initialize()
 
 // EObject
 ::ecore::EJavaObject NVPair::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -63,12 +63,12 @@ void NVPair::_initialize()
     case ::json::JsonPackage::NVPAIR__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::json::JsonPackage::NVPAIR__VALUE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_value);
+        _any = ::ecore::as < ::ecore::EObject > (getValue());
     }
         return _any;
 
@@ -86,16 +86,15 @@ void NVPair::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::json::NVPair::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::json::JsonPackage::NVPAIR__VALUE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::json::Value_ptr _t1 = std::dynamic_pointer_cast < ::json::Value
-                > (_t0);
-        ::json::NVPair::setValue(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::json::Value > (_t0);
+        setValue(_t1);
     }
         return;
 
@@ -109,9 +108,9 @@ void NVPair::eSet(::ecore::EInt _featureID,
     {
     case ::json::JsonPackage::NVPAIR__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::json::JsonPackage::NVPAIR__VALUE:
-        return !(m_value == nullptr);
+        return getValue().get() != nullptr;
 
     }
     throw "Error";

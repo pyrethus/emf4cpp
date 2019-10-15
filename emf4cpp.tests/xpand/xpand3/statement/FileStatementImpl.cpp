@@ -63,52 +63,54 @@ void FileStatement::_initialize()
 
 // EObject
 ::ecore::EJavaObject FileStatement::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_line);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getLine());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
-                > ::toAny(_any, m_start);
+                > ::toAny(_any, getStart());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_end);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getEnd());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_fileName);
+                > ::toAny(_any, getFileName());
     }
         return _any;
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
     {
-        _any = m_body->asEListOf< ::ecore::EObject_ptr >();
+        _any = getBody().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::xpand3::statement::StatementPackage::FILESTATEMENT__FILENAMEEXPRESSION:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_fileNameExpression);
+        _any = ::ecore::as < ::ecore::EObject > (getFileNameExpression());
     }
         return _any;
     case ::xpand3::statement::StatementPackage::FILESTATEMENT__OUTLETNAMEIDENTIFIER:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_outletNameIdentifier);
+        _any = ::ecore::as < ::ecore::EObject > (getOutletNameIdentifier());
     }
         return _any;
     case ::xpand3::statement::StatementPackage::FILESTATEMENT__ONCE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
-                > ::toAny(_any, m_once);
+                > ::toAny(_any, isOnce());
     }
         return _any;
 
@@ -126,7 +128,7 @@ void FileStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setLine(_t0);
+        setLine(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
@@ -134,7 +136,7 @@ void FileStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setStart(_t0);
+        setStart(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
@@ -142,7 +144,7 @@ void FileStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setEnd(_t0);
+        setEnd(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
@@ -150,37 +152,32 @@ void FileStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setFileName(_t0);
+        setFileName(_t0);
     }
         return;
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::xpand3::statement::AbstractStatementWithBody::getBody().clear();
-        ::xpand3::statement::AbstractStatementWithBody::getBody().insert_all(
-                *_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getBody().clear();
+        getBody().insert_all(*_t0);
     }
         return;
     case ::xpand3::statement::StatementPackage::FILESTATEMENT__FILENAMEEXPRESSION:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::expression::AbstractExpression_ptr _t1 =
-                std::dynamic_pointer_cast
-                        < ::xpand3::expression::AbstractExpression > (_t0);
-        ::xpand3::statement::FileStatement::setFileNameExpression(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::expression::AbstractExpression
+                > (_t0);
+        setFileNameExpression(_t1);
     }
         return;
     case ::xpand3::statement::StatementPackage::FILESTATEMENT__OUTLETNAMEIDENTIFIER:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
-                < ::xpand3::Identifier > (_t0);
-        ::xpand3::statement::FileStatement::setOutletNameIdentifier(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::Identifier > (_t0);
+        setOutletNameIdentifier(_t1);
     }
         return;
     case ::xpand3::statement::StatementPackage::FILESTATEMENT__ONCE:
@@ -188,7 +185,7 @@ void FileStatement::eSet(::ecore::EInt _featureID,
         ::ecore::EBoolean _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::statement::FileStatement::setOnce(_t0);
+        setOnce(_t0);
     }
         return;
 
@@ -202,24 +199,25 @@ void FileStatement::eSet(::ecore::EInt _featureID,
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_line);
+                > ::is_set(getLine());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_start);
+                > ::is_set(getStart());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
-        return ::ecorecpp::mapping::set_traits < ::ecore::EInt > ::is_set(m_end);
+        return ::ecorecpp::mapping::set_traits < ::ecore::EInt
+                > ::is_set(getEnd());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_fileName);
+                > ::is_set(getFileName());
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
-        return m_body && m_body->size();
+        return getBody().size() > 0;
     case ::xpand3::statement::StatementPackage::FILESTATEMENT__FILENAMEEXPRESSION:
-        return !(m_fileNameExpression == nullptr);
+        return getFileNameExpression().get() != nullptr;
     case ::xpand3::statement::StatementPackage::FILESTATEMENT__OUTLETNAMEIDENTIFIER:
-        return !(m_outletNameIdentifier == nullptr);
+        return getOutletNameIdentifier().get() != nullptr;
     case ::xpand3::statement::StatementPackage::FILESTATEMENT__ONCE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
-                > ::is_set(m_once);
+                > ::is_set(isOnce());
 
     }
     throw "Error";

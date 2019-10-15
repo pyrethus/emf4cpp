@@ -59,36 +59,36 @@ void Stereotype::_initialize()
 
 // EObject
 ::ecore::EJavaObject Stereotype::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        _any = m_attribute->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        _any = m_annotation->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::kdm::KdmPackage::STEREOTYPE__TAG:
     {
-        _any = m_tag->asEListOf< ::ecore::EObject_ptr >();
+        _any = getTag().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::kdm::KdmPackage::STEREOTYPE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::kdm::kdm::KdmPackage::STEREOTYPE__TYPE:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
-                > ::toAny(_any, m_type);
+                > ::toAny(_any, getType());
     }
         return _any;
 
@@ -103,32 +103,26 @@ void Stereotype::eSet(::ecore::EInt _featureID,
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::Element::getAttribute().clear();
-        ::kdm::core::Element::getAttribute().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAttribute().clear();
+        getAttribute().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::Element::getAnnotation().clear();
-        ::kdm::core::Element::getAnnotation().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAnnotation().clear();
+        getAnnotation().insert_all(*_t0);
     }
         return;
     case ::kdm::kdm::KdmPackage::STEREOTYPE__TAG:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::kdm::Stereotype::getTag().clear();
-        ::kdm::kdm::Stereotype::getTag().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getTag().clear();
+        getTag().insert_all(*_t0);
     }
         return;
     case ::kdm::kdm::KdmPackage::STEREOTYPE__NAME:
@@ -136,7 +130,7 @@ void Stereotype::eSet(::ecore::EInt _featureID,
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::fromAny(_newValue, _t0);
-        ::kdm::kdm::Stereotype::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::kdm::kdm::KdmPackage::STEREOTYPE__TYPE:
@@ -144,7 +138,7 @@ void Stereotype::eSet(::ecore::EInt _featureID,
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::fromAny(_newValue, _t0);
-        ::kdm::kdm::Stereotype::setType(_t0);
+        setType(_t0);
     }
         return;
 
@@ -157,17 +151,17 @@ void Stereotype::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
-        return m_attribute && m_attribute->size();
+        return getAttribute().size() > 0;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
-        return m_annotation && m_annotation->size();
+        return getAnnotation().size() > 0;
     case ::kdm::kdm::KdmPackage::STEREOTYPE__TAG:
-        return m_tag && m_tag->size();
+        return getTag().size() > 0;
     case ::kdm::kdm::KdmPackage::STEREOTYPE__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::kdm::kdm::KdmPackage::STEREOTYPE__TYPE:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
-                > ::is_set(m_type);
+                > ::is_set(getType());
 
     }
     throw "Error";

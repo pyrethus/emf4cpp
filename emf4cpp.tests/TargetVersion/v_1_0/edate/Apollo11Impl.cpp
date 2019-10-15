@@ -55,7 +55,7 @@ void Apollo11::_initialize()
 
 // EObject
 ::ecore::EJavaObject Apollo11::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -63,12 +63,12 @@ void Apollo11::_initialize()
     case ::v_1_0::edate::EdatePackage::APOLLO11__FIRSTMANONMOONDATE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EDate
-                > ::toAny(_any, m_FirstManOnMoonDate);
+                > ::toAny(_any, getFirstManOnMoonDate());
     }
         return _any;
     case ::v_1_0::edate::EdatePackage::APOLLO11__MEMBER:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_Member);
+        _any = ::ecore::as < ::ecore::EObject > (getMember());
     }
         return _any;
 
@@ -86,16 +86,15 @@ void Apollo11::eSet(::ecore::EInt _featureID,
         ::ecore::EDate _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EDate
                 > ::fromAny(_newValue, _t0);
-        ::v_1_0::edate::Apollo11::setFirstManOnMoonDate(_t0);
+        setFirstManOnMoonDate(_t0);
     }
         return;
     case ::v_1_0::edate::EdatePackage::APOLLO11__MEMBER:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::v_1_0::edate::Person_ptr _t1 = std::dynamic_pointer_cast
-                < ::v_1_0::edate::Person > (_t0);
-        ::v_1_0::edate::Apollo11::setMember(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::v_1_0::edate::Person > (_t0);
+        setMember(_t1);
     }
         return;
 
@@ -108,10 +107,10 @@ void Apollo11::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::v_1_0::edate::EdatePackage::APOLLO11__FIRSTMANONMOONDATE:
-        return m_FirstManOnMoonDate
+        return getFirstManOnMoonDate()
                 != ::ecorecpp::mapping::EDate("1969-07-20T20:18:00.000+0000");
     case ::v_1_0::edate::EdatePackage::APOLLO11__MEMBER:
-        return !(m_Member == nullptr);
+        return getMember().get() != nullptr;
 
     }
     throw "Error";

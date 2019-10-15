@@ -64,28 +64,28 @@ void XMLTypeDocumentRoot::_initialize()
 
 // EObject
 ::ecore::EJavaObject XMLTypeDocumentRoot::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__MIXED:
     {
-        std::vector < ::ecorecpp::mapping::any > _anys(m_mixed.size());
-        for (size_t _i = 0; _i < m_mixed.size(); _i++)
+        std::vector < ::ecorecpp::mapping::any > _anys(getMixed().size());
+        for (size_t _i = 0; _i < getMixed().size(); _i++)
             ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
-                    > ::toAny(_anys[_i], m_mixed[_i]);
+                    > ::toAny(_anys[_i], getMixed()[_i]);
         _any = _anys;
     }
         return _any;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP:
     {
-        _any = m_xMLNSPrefixMap->asEListOf< ::ecore::EObject_ptr >();
+        _any = getXMLNSPrefixMap().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION:
     {
-        _any = m_xSISchemaLocation->asEListOf< ::ecore::EObject_ptr >();
+        _any = getXSISchemaLocation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -103,27 +103,23 @@ void XMLTypeDocumentRoot::eSet(::ecore::EInt _featureID,
         ::ecore::EFeatureMapEntry _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
                 > ::fromAny(_newValue, _t0);
-        ::type::XMLTypeDocumentRoot::addMixed(_t0);
+        addMixed(_t0);
     }
         return;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::type::XMLTypeDocumentRoot::getXMLNSPrefixMap().clear();
-        ::type::XMLTypeDocumentRoot::getXMLNSPrefixMap().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getXMLNSPrefixMap().clear();
+        getXMLNSPrefixMap().insert_all(*_t0);
     }
         return;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::type::XMLTypeDocumentRoot::getXSISchemaLocation().clear();
-        ::type::XMLTypeDocumentRoot::getXSISchemaLocation().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getXSISchemaLocation().clear();
+        getXSISchemaLocation().insert_all(*_t0);
     }
         return;
 
@@ -136,19 +132,19 @@ void XMLTypeDocumentRoot::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__MIXED:
-        return m_mixed.size();
+        return getMixed().size() > 0;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP:
-        return m_xMLNSPrefixMap && m_xMLNSPrefixMap->size();
+        return getXMLNSPrefixMap().size() > 0;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION:
-        return m_xSISchemaLocation && m_xSISchemaLocation->size();
+        return getXSISchemaLocation().size() > 0;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__CDATA:
-        return m_cDATA.size();
+        return getCDATA().size() > 0;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__COMMENT:
-        return m_comment.size();
+        return getComment().size() > 0;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__PROCESSINGINSTRUCTION:
-        return m_processingInstruction && m_processingInstruction->size();
+        return getProcessingInstruction().size() > 0;
     case ::type::TypePackage::XMLTYPEDOCUMENTROOT__TEXT:
-        return m_text.size();
+        return getText().size() > 0;
 
     }
     throw "Error";

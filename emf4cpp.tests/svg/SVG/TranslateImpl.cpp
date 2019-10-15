@@ -53,26 +53,26 @@ void Translate::_initialize()
 
 // EObject
 ::ecore::EJavaObject Translate::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
     {
-        _any = m_attOwner->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAttOwner().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::SVG::SVGPackage::TRANSLATE__TX:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_tx);
+                > ::toAny(_any, getTx());
     }
         return _any;
     case ::SVG::SVGPackage::TRANSLATE__TY:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_ty);
+                > ::toAny(_any, getTy());
     }
         return _any;
 
@@ -87,12 +87,10 @@ void Translate::eSet(::ecore::EInt _featureID,
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::SVG::Attribute::getAttOwner().clear();
-        ::SVG::Attribute::getAttOwner().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAttOwner().clear();
+        getAttOwner().insert_all(*_t0);
     }
         return;
     case ::SVG::SVGPackage::TRANSLATE__TX:
@@ -100,7 +98,7 @@ void Translate::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Translate::setTx(_t0);
+        setTx(_t0);
     }
         return;
     case ::SVG::SVGPackage::TRANSLATE__TY:
@@ -108,7 +106,7 @@ void Translate::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Translate::setTy(_t0);
+        setTy(_t0);
     }
         return;
 
@@ -121,13 +119,13 @@ void Translate::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
-        return m_attOwner && m_attOwner->size();
+        return getAttOwner().size() > 0;
     case ::SVG::SVGPackage::TRANSLATE__TX:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_tx);
+                > ::is_set(getTx());
     case ::SVG::SVGPackage::TRANSLATE__TY:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_ty);
+                > ::is_set(getTy());
 
     }
     throw "Error";

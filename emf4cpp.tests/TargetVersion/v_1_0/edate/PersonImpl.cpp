@@ -50,7 +50,7 @@ void Person::_initialize()
 
 // EObject
 ::ecore::EJavaObject Person::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -58,13 +58,13 @@ void Person::_initialize()
     case ::v_1_0::edate::EdatePackage::PERSON__BIRTHDAY:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EDate
-                > ::toAny(_any, m_Birthday);
+                > ::toAny(_any, getBirthday());
     }
         return _any;
     case ::v_1_0::edate::EdatePackage::PERSON__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_Name);
+                > ::toAny(_any, getName());
     }
         return _any;
 
@@ -82,7 +82,7 @@ void Person::eSet(::ecore::EInt _featureID,
         ::ecore::EDate _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EDate
                 > ::fromAny(_newValue, _t0);
-        ::v_1_0::edate::Person::setBirthday(_t0);
+        setBirthday(_t0);
     }
         return;
     case ::v_1_0::edate::EdatePackage::PERSON__NAME:
@@ -90,7 +90,7 @@ void Person::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::v_1_0::edate::Person::setName(_t0);
+        setName(_t0);
     }
         return;
 
@@ -104,10 +104,10 @@ void Person::eSet(::ecore::EInt _featureID,
     {
     case ::v_1_0::edate::EdatePackage::PERSON__BIRTHDAY:
         return ::ecorecpp::mapping::set_traits < ::ecore::EDate
-                > ::is_set(m_Birthday);
+                > ::is_set(getBirthday());
     case ::v_1_0::edate::EdatePackage::PERSON__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_Name);
+                > ::is_set(getName());
 
     }
     throw "Error";

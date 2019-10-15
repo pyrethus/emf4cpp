@@ -56,7 +56,7 @@ void Node::_initialize()
 
 // EObject
 ::ecore::EJavaObject Node::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -64,12 +64,12 @@ void Node::_initialize()
     case ::CST::CSTPackage::ELEMENT__KIND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_kind);
+                > ::toAny(_any, getKind());
     }
         return _any;
     case ::CST::CSTPackage::NODE__CHILDREN:
     {
-        _any = m_children->asEListOf< ::ecore::EObject_ptr >();
+        _any = getChildren().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -86,17 +86,15 @@ void Node::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::CST::Element::setKind(_t0);
+        setKind(_t0);
     }
         return;
     case ::CST::CSTPackage::NODE__CHILDREN:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::CST::Node::getChildren().clear();
-        ::CST::Node::getChildren().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getChildren().clear();
+        getChildren().insert_all(*_t0);
     }
         return;
 
@@ -110,9 +108,9 @@ void Node::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
     {
     case ::CST::CSTPackage::ELEMENT__KIND:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_kind);
+                > ::is_set(getKind());
     case ::CST::CSTPackage::NODE__CHILDREN:
-        return m_children && m_children->size();
+        return getChildren().size() > 0;
 
     }
     throw "Error";

@@ -50,7 +50,7 @@ void Coordinates::_initialize()
 
 // EObject
 ::ecore::EJavaObject Coordinates::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -58,13 +58,13 @@ void Coordinates::_initialize()
     case ::SVG::SVGPackage::COORDINATES__X:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_x);
+                > ::toAny(_any, getX());
     }
         return _any;
     case ::SVG::SVGPackage::COORDINATES__Y:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_y);
+                > ::toAny(_any, getY());
     }
         return _any;
 
@@ -82,7 +82,7 @@ void Coordinates::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Coordinates::setX(_t0);
+        setX(_t0);
     }
         return;
     case ::SVG::SVGPackage::COORDINATES__Y:
@@ -90,7 +90,7 @@ void Coordinates::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Coordinates::setY(_t0);
+        setY(_t0);
     }
         return;
 
@@ -104,10 +104,10 @@ void Coordinates::eSet(::ecore::EInt _featureID,
     {
     case ::SVG::SVGPackage::COORDINATES__X:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_x);
+                > ::is_set(getX());
     case ::SVG::SVGPackage::COORDINATES__Y:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_y);
+                > ::is_set(getY());
 
     }
     throw "Error";

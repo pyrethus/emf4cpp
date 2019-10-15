@@ -50,7 +50,7 @@ void ProcessingInstruction::_initialize()
 
 // EObject
 ::ecore::EJavaObject ProcessingInstruction::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -58,13 +58,13 @@ void ProcessingInstruction::_initialize()
     case ::type::TypePackage::PROCESSINGINSTRUCTION__DATA:
     {
         ::ecorecpp::mapping::any_traits < ::type::String
-                > ::toAny(_any, m_data);
+                > ::toAny(_any, getData());
     }
         return _any;
     case ::type::TypePackage::PROCESSINGINSTRUCTION__TARGET:
     {
         ::ecorecpp::mapping::any_traits < ::type::String
-                > ::toAny(_any, m_target);
+                > ::toAny(_any, getTarget());
     }
         return _any;
 
@@ -82,7 +82,7 @@ void ProcessingInstruction::eSet(::ecore::EInt _featureID,
         ::type::String _t0;
         ::ecorecpp::mapping::any_traits < ::type::String
                 > ::fromAny(_newValue, _t0);
-        ::type::ProcessingInstruction::setData(_t0);
+        setData(_t0);
     }
         return;
     case ::type::TypePackage::PROCESSINGINSTRUCTION__TARGET:
@@ -90,7 +90,7 @@ void ProcessingInstruction::eSet(::ecore::EInt _featureID,
         ::type::String _t0;
         ::ecorecpp::mapping::any_traits < ::type::String
                 > ::fromAny(_newValue, _t0);
-        ::type::ProcessingInstruction::setTarget(_t0);
+        setTarget(_t0);
     }
         return;
 
@@ -104,10 +104,10 @@ void ProcessingInstruction::eSet(::ecore::EInt _featureID,
     {
     case ::type::TypePackage::PROCESSINGINSTRUCTION__DATA:
         return ::ecorecpp::mapping::set_traits < ::type::String
-                > ::is_set(m_data);
+                > ::is_set(getData());
     case ::type::TypePackage::PROCESSINGINSTRUCTION__TARGET:
         return ::ecorecpp::mapping::set_traits < ::type::String
-                > ::is_set(m_target);
+                > ::is_set(getTarget());
 
     }
     throw "Error";

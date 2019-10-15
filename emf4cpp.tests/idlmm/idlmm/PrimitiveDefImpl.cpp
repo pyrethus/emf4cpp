@@ -52,7 +52,7 @@ void PrimitiveDef::_initialize()
 
 // EObject
 ::ecore::EJavaObject PrimitiveDef::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -60,13 +60,13 @@ void PrimitiveDef::_initialize()
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
-                > ::toAny(_any, m_typeCode);
+                > ::toAny(_any, getTypeCode());
     }
         return _any;
     case ::idlmm::IdlmmPackage::PRIMITIVEDEF__KIND:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::PrimitiveKind
-                > ::toAny(_any, m_kind);
+                > ::toAny(_any, getKind());
     }
         return _any;
 
@@ -84,7 +84,7 @@ void PrimitiveDef::eSet(::ecore::EInt _featureID,
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::IDLType::setTypeCode(_t0);
+        setTypeCode(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::PRIMITIVEDEF__KIND:
@@ -92,7 +92,7 @@ void PrimitiveDef::eSet(::ecore::EInt _featureID,
         ::idlmm::PrimitiveKind _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::PrimitiveKind
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::PrimitiveDef::setKind(_t0);
+        setKind(_t0);
     }
         return;
 
@@ -106,10 +106,10 @@ void PrimitiveDef::eSet(::ecore::EInt _featureID,
     {
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
-                > ::is_set(m_typeCode);
+                > ::is_set(getTypeCode());
     case ::idlmm::IdlmmPackage::PRIMITIVEDEF__KIND:
         return ::ecorecpp::mapping::set_traits < ::idlmm::PrimitiveKind
-                > ::is_set(m_kind);
+                > ::is_set(getKind());
 
     }
     throw "Error";

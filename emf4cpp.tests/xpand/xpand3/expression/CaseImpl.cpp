@@ -61,41 +61,43 @@ void Case::_initialize()
 
 // EObject
 ::ecore::EJavaObject Case::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_line);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getLine());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
-                > ::toAny(_any, m_start);
+                > ::toAny(_any, getStart());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_end);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getEnd());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_fileName);
+                > ::toAny(_any, getFileName());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::CASE__CONDITION:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_condition);
+        _any = ::ecore::as < ::ecore::EObject > (getCondition());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::CASE__THENPART:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_thenPart);
+        _any = ::ecore::as < ::ecore::EObject > (getThenPart());
     }
         return _any;
 
@@ -112,7 +114,7 @@ void Case::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setLine(_t0);
+        setLine(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
@@ -120,7 +122,7 @@ void Case::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setStart(_t0);
+        setStart(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
@@ -128,7 +130,7 @@ void Case::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setEnd(_t0);
+        setEnd(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
@@ -136,27 +138,25 @@ void Case::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setFileName(_t0);
+        setFileName(_t0);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::CASE__CONDITION:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::expression::AbstractExpression_ptr _t1 =
-                std::dynamic_pointer_cast
-                        < ::xpand3::expression::AbstractExpression > (_t0);
-        ::xpand3::expression::Case::setCondition(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::expression::AbstractExpression
+                > (_t0);
+        setCondition(_t1);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::CASE__THENPART:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::expression::AbstractExpression_ptr _t1 =
-                std::dynamic_pointer_cast
-                        < ::xpand3::expression::AbstractExpression > (_t0);
-        ::xpand3::expression::Case::setThenPart(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::expression::AbstractExpression
+                > (_t0);
+        setThenPart(_t1);
     }
         return;
 
@@ -170,19 +170,20 @@ void Case::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_line);
+                > ::is_set(getLine());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_start);
+                > ::is_set(getStart());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
-        return ::ecorecpp::mapping::set_traits < ::ecore::EInt > ::is_set(m_end);
+        return ::ecorecpp::mapping::set_traits < ::ecore::EInt
+                > ::is_set(getEnd());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_fileName);
+                > ::is_set(getFileName());
     case ::xpand3::expression::ExpressionPackage::CASE__CONDITION:
-        return !(m_condition == nullptr);
+        return getCondition().get() != nullptr;
     case ::xpand3::expression::ExpressionPackage::CASE__THENPART:
-        return !(m_thenPart == nullptr);
+        return getThenPart().get() != nullptr;
 
     }
     throw "Error";

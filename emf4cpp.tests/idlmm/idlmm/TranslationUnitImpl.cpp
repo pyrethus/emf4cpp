@@ -60,25 +60,25 @@ void TranslationUnit::_initialize()
 
 // EObject
 ::ecore::EJavaObject TranslationUnit::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::idlmm::IdlmmPackage::TRANSLATIONUNIT__CONTAINS:
     {
-        _any = m_contains->asEListOf< ::ecore::EObject_ptr >();
+        _any = getContains().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::idlmm::IdlmmPackage::TRANSLATIONUNIT__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_identifier);
+                > ::toAny(_any, getIdentifier());
     }
         return _any;
     case ::idlmm::IdlmmPackage::TRANSLATIONUNIT__INCLUDES:
     {
-        _any = m_includes->asEListOf< ::ecore::EObject_ptr >();
+        _any = getIncludes().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -93,12 +93,10 @@ void TranslationUnit::eSet(::ecore::EInt _featureID,
     {
     case ::idlmm::IdlmmPackage::TRANSLATIONUNIT__CONTAINS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::idlmm::TranslationUnit::getContains().clear();
-        ::idlmm::TranslationUnit::getContains().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getContains().clear();
+        getContains().insert_all(*_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::TRANSLATIONUNIT__IDENTIFIER:
@@ -106,17 +104,15 @@ void TranslationUnit::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::TranslationUnit::setIdentifier(_t0);
+        setIdentifier(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::TRANSLATIONUNIT__INCLUDES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::idlmm::TranslationUnit::getIncludes().clear();
-        ::idlmm::TranslationUnit::getIncludes().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getIncludes().clear();
+        getIncludes().insert_all(*_t0);
     }
         return;
 
@@ -129,12 +125,12 @@ void TranslationUnit::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::idlmm::IdlmmPackage::TRANSLATIONUNIT__CONTAINS:
-        return m_contains && m_contains->size();
+        return getContains().size() > 0;
     case ::idlmm::IdlmmPackage::TRANSLATIONUNIT__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_identifier);
+                > ::is_set(getIdentifier());
     case ::idlmm::IdlmmPackage::TRANSLATIONUNIT__INCLUDES:
-        return m_includes && m_includes->size();
+        return getIncludes().size() > 0;
 
     }
     throw "Error";

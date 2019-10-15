@@ -50,7 +50,7 @@ void Include::_initialize()
 
 // EObject
 ::ecore::EJavaObject Include::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -58,7 +58,7 @@ void Include::_initialize()
     case ::idlmm::IdlmmPackage::INCLUDE__IMPORTURI:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_importURI);
+                > ::toAny(_any, getImportURI());
     }
         return _any;
 
@@ -76,7 +76,7 @@ void Include::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::Include::setImportURI(_t0);
+        setImportURI(_t0);
     }
         return;
 
@@ -90,7 +90,7 @@ void Include::eSet(::ecore::EInt _featureID,
     {
     case ::idlmm::IdlmmPackage::INCLUDE__IMPORTURI:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_importURI);
+                > ::is_set(getImportURI());
 
     }
     throw "Error";

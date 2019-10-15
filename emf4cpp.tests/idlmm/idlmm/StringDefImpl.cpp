@@ -52,7 +52,7 @@ void StringDef::_initialize()
 
 // EObject
 ::ecore::EJavaObject StringDef::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -60,13 +60,13 @@ void StringDef::_initialize()
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
-                > ::toAny(_any, m_typeCode);
+                > ::toAny(_any, getTypeCode());
     }
         return _any;
     case ::idlmm::IdlmmPackage::STRINGDEF__BOUND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_bound);
+                > ::toAny(_any, getBound());
     }
         return _any;
 
@@ -84,7 +84,7 @@ void StringDef::eSet(::ecore::EInt _featureID,
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::IDLType::setTypeCode(_t0);
+        setTypeCode(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::STRINGDEF__BOUND:
@@ -92,7 +92,7 @@ void StringDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::StringDef::setBound(_t0);
+        setBound(_t0);
     }
         return;
 
@@ -106,10 +106,10 @@ void StringDef::eSet(::ecore::EInt _featureID,
     {
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
-                > ::is_set(m_typeCode);
+                > ::is_set(getTypeCode());
     case ::idlmm::IdlmmPackage::STRINGDEF__BOUND:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_bound);
+                > ::is_set(getBound());
 
     }
     throw "Error";

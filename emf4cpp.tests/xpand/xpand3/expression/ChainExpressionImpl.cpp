@@ -60,41 +60,43 @@ void ChainExpression::_initialize()
 
 // EObject
 ::ecore::EJavaObject ChainExpression::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_line);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getLine());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
-                > ::toAny(_any, m_start);
+                > ::toAny(_any, getStart());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_end);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getEnd());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_fileName);
+                > ::toAny(_any, getFileName());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__FIRST:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_first);
+        _any = ::ecore::as < ::ecore::EObject > (getFirst());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__NEXT:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_next);
+        _any = ::ecore::as < ::ecore::EObject > (getNext());
     }
         return _any;
 
@@ -112,7 +114,7 @@ void ChainExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setLine(_t0);
+        setLine(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
@@ -120,7 +122,7 @@ void ChainExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setStart(_t0);
+        setStart(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
@@ -128,7 +130,7 @@ void ChainExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setEnd(_t0);
+        setEnd(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
@@ -136,27 +138,25 @@ void ChainExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setFileName(_t0);
+        setFileName(_t0);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__FIRST:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::expression::AbstractExpression_ptr _t1 =
-                std::dynamic_pointer_cast
-                        < ::xpand3::expression::AbstractExpression > (_t0);
-        ::xpand3::expression::ChainExpression::setFirst(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::expression::AbstractExpression
+                > (_t0);
+        setFirst(_t1);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__NEXT:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::expression::AbstractExpression_ptr _t1 =
-                std::dynamic_pointer_cast
-                        < ::xpand3::expression::AbstractExpression > (_t0);
-        ::xpand3::expression::ChainExpression::setNext(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::expression::AbstractExpression
+                > (_t0);
+        setNext(_t1);
     }
         return;
 
@@ -170,19 +170,20 @@ void ChainExpression::eSet(::ecore::EInt _featureID,
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_line);
+                > ::is_set(getLine());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_start);
+                > ::is_set(getStart());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
-        return ::ecorecpp::mapping::set_traits < ::ecore::EInt > ::is_set(m_end);
+        return ::ecorecpp::mapping::set_traits < ::ecore::EInt
+                > ::is_set(getEnd());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_fileName);
+                > ::is_set(getFileName());
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__FIRST:
-        return !(m_first == nullptr);
+        return getFirst().get() != nullptr;
     case ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__NEXT:
-        return !(m_next == nullptr);
+        return getNext().get() != nullptr;
 
     }
     throw "Error";

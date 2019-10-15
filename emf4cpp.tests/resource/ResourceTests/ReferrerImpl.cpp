@@ -51,14 +51,14 @@ void Referrer::_initialize()
 
 // EObject
 ::ecore::EJavaObject Referrer::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::ResourceTests::ResourceTestsPackage::REFERRER__REFERENCE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_reference.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getReference());
     }
         return _any;
 
@@ -73,11 +73,10 @@ void Referrer::eSet(::ecore::EInt _featureID,
     {
     case ::ResourceTests::ResourceTestsPackage::REFERRER__REFERENCE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ResourceTests::ReferenceTarget_ptr _t1 = std::dynamic_pointer_cast
-                < ::ResourceTests::ReferenceTarget > (_t0);
-        ::ResourceTests::Referrer::setReference(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ResourceTests::ReferenceTarget > (_t0);
+        setReference(_t1);
     }
         return;
 
@@ -90,7 +89,7 @@ void Referrer::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::ResourceTests::ResourceTestsPackage::REFERRER__REFERENCE:
-        return !m_reference.expired();
+        return getReference().get() != nullptr;
 
     }
     throw "Error";

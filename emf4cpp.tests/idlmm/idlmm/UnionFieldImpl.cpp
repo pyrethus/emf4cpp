@@ -54,33 +54,33 @@ void UnionField::_initialize()
 
 // EObject
 ::ecore::EJavaObject UnionField::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_containedType);
+        _any = ::ecore::as < ::ecore::EObject > (getContainedType());
     }
         return _any;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_sharedType.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getSharedType());
     }
         return _any;
     case ::idlmm::IdlmmPackage::UNIONFIELD__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_identifier);
+                > ::toAny(_any, getIdentifier());
     }
         return _any;
     case ::idlmm::IdlmmPackage::UNIONFIELD__LABEL:
     {
-        std::vector < ::ecorecpp::mapping::any > _anys(m_label.size());
-        for (size_t _i = 0; _i < m_label.size(); _i++)
+        std::vector < ::ecorecpp::mapping::any > _anys(getLabel().size());
+        for (size_t _i = 0; _i < getLabel().size(); _i++)
             ::ecorecpp::mapping::any_traits < ::idlmm::EAny
-                    > ::toAny(_anys[_i], m_label[_i]);
+                    > ::toAny(_anys[_i], getLabel()[_i]);
         _any = _anys;
     }
         return _any;
@@ -96,20 +96,18 @@ void UnionField::eSet(::ecore::EInt _featureID,
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::IDLType_ptr _t1 = std::dynamic_pointer_cast < ::idlmm::IDLType
-                > (_t0);
-        ::idlmm::Typed::setContainedType(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::IDLType > (_t0);
+        setContainedType(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::TypedefDef_ptr _t1 = std::dynamic_pointer_cast
-                < ::idlmm::TypedefDef > (_t0);
-        ::idlmm::Typed::setSharedType(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::TypedefDef > (_t0);
+        setSharedType(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::UNIONFIELD__IDENTIFIER:
@@ -117,7 +115,7 @@ void UnionField::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::UnionField::setIdentifier(_t0);
+        setIdentifier(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::UNIONFIELD__LABEL:
@@ -125,7 +123,7 @@ void UnionField::eSet(::ecore::EInt _featureID,
         ::idlmm::EAny _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::EAny
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::UnionField::addLabel(_t0);
+        addLabel(_t0);
     }
         return;
 
@@ -138,14 +136,14 @@ void UnionField::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
-        return !(m_containedType == nullptr);
+        return getContainedType().get() != nullptr;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
-        return !m_sharedType.expired();
+        return getSharedType().get() != nullptr;
     case ::idlmm::IdlmmPackage::UNIONFIELD__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_identifier);
+                > ::is_set(getIdentifier());
     case ::idlmm::IdlmmPackage::UNIONFIELD__LABEL:
-        return m_label.size();
+        return getLabel().size() > 0;
 
     }
     throw "Error";

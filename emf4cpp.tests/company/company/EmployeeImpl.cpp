@@ -55,7 +55,7 @@ void Employee::_initialize()
 
 // EObject
 ::ecore::EJavaObject Employee::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -63,12 +63,12 @@ void Employee::_initialize()
     case ::company::CompanyPackage::EMPLOYEE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::company::CompanyPackage::EMPLOYEE__PHONEBOOKENTRY:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_phonebookEntry);
+        _any = ::ecore::as < ::ecore::EObject > (getPhonebookEntry());
     }
         return _any;
 
@@ -86,16 +86,15 @@ void Employee::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::company::Employee::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::company::CompanyPackage::EMPLOYEE__PHONEBOOKENTRY:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::company::PhonebookEntry_ptr _t1 = std::dynamic_pointer_cast
-                < ::company::PhonebookEntry > (_t0);
-        ::company::Employee::setPhonebookEntry(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::company::PhonebookEntry > (_t0);
+        setPhonebookEntry(_t1);
     }
         return;
 
@@ -109,9 +108,9 @@ void Employee::eSet(::ecore::EInt _featureID,
     {
     case ::company::CompanyPackage::EMPLOYEE__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::company::CompanyPackage::EMPLOYEE__PHONEBOOKENTRY:
-        return !(m_phonebookEntry == nullptr);
+        return getPhonebookEntry().get() != nullptr;
 
     }
     throw "Error";

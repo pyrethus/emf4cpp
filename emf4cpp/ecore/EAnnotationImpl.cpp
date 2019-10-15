@@ -122,40 +122,40 @@ void EAnnotation::_initialize()
 
 // EObject
 ::ecore::EJavaObject EAnnotation::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
     {
-        _any = m_eAnnotations->asEListOf< ::ecore::EObject_ptr >();
+        _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::ecore::EcorePackage::EANNOTATION__SOURCE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_source);
+                > ::toAny(_any, getSource());
     }
         return _any;
     case ::ecore::EcorePackage::EANNOTATION__DETAILS:
     {
-        _any = m_details->asEListOf< ::ecore::EObject_ptr >();
+        _any = getDetails().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::ecore::EcorePackage::EANNOTATION__EMODELELEMENT:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_eModelElement.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getEModelElement());
     }
         return _any;
     case ::ecore::EcorePackage::EANNOTATION__CONTENTS:
     {
-        _any = m_contents->asEListOf< ::ecore::EObject_ptr >();
+        _any = getContents().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::ecore::EcorePackage::EANNOTATION__REFERENCES:
     {
-        _any = m_references->asEListOf< ::ecore::EObject_ptr >();
+        _any = getReferences().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -170,12 +170,10 @@ void EAnnotation::eSet(::ecore::EInt _featureID,
     {
     case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ecore::EModelElement::getEAnnotations().clear();
-        ::ecore::EModelElement::getEAnnotations().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getEAnnotations().clear();
+        getEAnnotations().insert_all(*_t0);
     }
         return;
     case ::ecore::EcorePackage::EANNOTATION__SOURCE:
@@ -183,46 +181,39 @@ void EAnnotation::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::ecore::EAnnotation::setSource(_t0);
+        setSource(_t0);
     }
         return;
     case ::ecore::EcorePackage::EANNOTATION__DETAILS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ecore::EAnnotation::getDetails().clear();
-        ::ecore::EAnnotation::getDetails().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getDetails().clear();
+        getDetails().insert_all(*_t0);
     }
         return;
     case ::ecore::EcorePackage::EANNOTATION__EMODELELEMENT:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EModelElement_ptr _t1 = std::dynamic_pointer_cast
-                < ::ecore::EModelElement > (_t0);
-        ::ecore::EAnnotation::setEModelElement(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ecore::EModelElement > (_t0);
+        setEModelElement(_t1);
     }
         return;
     case ::ecore::EcorePackage::EANNOTATION__CONTENTS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ecore::EAnnotation::getContents().clear();
-        ::ecore::EAnnotation::getContents().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getContents().clear();
+        getContents().insert_all(*_t0);
     }
         return;
     case ::ecore::EcorePackage::EANNOTATION__REFERENCES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ecore::EAnnotation::getReferences().clear();
-        ::ecore::EAnnotation::getReferences().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getReferences().clear();
+        getReferences().insert_all(*_t0);
     }
         return;
 
@@ -235,18 +226,18 @@ void EAnnotation::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
-        return m_eAnnotations && m_eAnnotations->size();
+        return getEAnnotations().size() > 0;
     case ::ecore::EcorePackage::EANNOTATION__SOURCE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_source);
+                > ::is_set(getSource());
     case ::ecore::EcorePackage::EANNOTATION__DETAILS:
-        return m_details && m_details->size();
+        return getDetails().size() > 0;
     case ::ecore::EcorePackage::EANNOTATION__EMODELELEMENT:
-        return !m_eModelElement.expired();
+        return getEModelElement().get() != nullptr;
     case ::ecore::EcorePackage::EANNOTATION__CONTENTS:
-        return m_contents && m_contents->size();
+        return getContents().size() > 0;
     case ::ecore::EcorePackage::EANNOTATION__REFERENCES:
-        return m_references && m_references->size();
+        return getReferences().size() > 0;
 
     }
     throw "Error";

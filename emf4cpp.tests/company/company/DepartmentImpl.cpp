@@ -55,25 +55,25 @@ void Department::_initialize()
 
 // EObject
 ::ecore::EJavaObject Department::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::company::CompanyPackage::DEPARTMENT__EMPLOYEES:
     {
-        _any = m_employees->asEListOf< ::ecore::EObject_ptr >();
+        _any = getEmployees().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::company::CompanyPackage::DEPARTMENT__MANAGER:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_manager.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getManager());
     }
         return _any;
     case ::company::CompanyPackage::DEPARTMENT__NUMBER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
-                > ::toAny(_any, m_number);
+                > ::toAny(_any, getNumber());
     }
         return _any;
 
@@ -88,21 +88,18 @@ void Department::eSet(::ecore::EInt _featureID,
     {
     case ::company::CompanyPackage::DEPARTMENT__EMPLOYEES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::company::Department::getEmployees().clear();
-        ::company::Department::getEmployees().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getEmployees().clear();
+        getEmployees().insert_all(*_t0);
     }
         return;
     case ::company::CompanyPackage::DEPARTMENT__MANAGER:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::company::Employee_ptr _t1 = std::dynamic_pointer_cast
-                < ::company::Employee > (_t0);
-        ::company::Department::setManager(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::company::Employee > (_t0);
+        setManager(_t1);
     }
         return;
     case ::company::CompanyPackage::DEPARTMENT__NUMBER:
@@ -110,7 +107,7 @@ void Department::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::company::Department::setNumber(_t0);
+        setNumber(_t0);
     }
         return;
 
@@ -123,12 +120,12 @@ void Department::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::company::CompanyPackage::DEPARTMENT__EMPLOYEES:
-        return m_employees && m_employees->size();
+        return getEmployees().size() > 0;
     case ::company::CompanyPackage::DEPARTMENT__MANAGER:
-        return !m_manager.expired();
+        return getManager().get() != nullptr;
     case ::company::CompanyPackage::DEPARTMENT__NUMBER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_number);
+                > ::is_set(getNumber());
 
     }
     throw "Error";

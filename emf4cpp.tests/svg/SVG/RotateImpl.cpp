@@ -53,32 +53,32 @@ void Rotate::_initialize()
 
 // EObject
 ::ecore::EJavaObject Rotate::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
     {
-        _any = m_attOwner->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAttOwner().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::SVG::SVGPackage::ROTATE__ANGLE:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_angle);
+                > ::toAny(_any, getAngle());
     }
         return _any;
     case ::SVG::SVGPackage::ROTATE__CX:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_cx);
+                > ::toAny(_any, getCx());
     }
         return _any;
     case ::SVG::SVGPackage::ROTATE__CY:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_cy);
+                > ::toAny(_any, getCy());
     }
         return _any;
 
@@ -93,12 +93,10 @@ void Rotate::eSet(::ecore::EInt _featureID,
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::SVG::Attribute::getAttOwner().clear();
-        ::SVG::Attribute::getAttOwner().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAttOwner().clear();
+        getAttOwner().insert_all(*_t0);
     }
         return;
     case ::SVG::SVGPackage::ROTATE__ANGLE:
@@ -106,7 +104,7 @@ void Rotate::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Rotate::setAngle(_t0);
+        setAngle(_t0);
     }
         return;
     case ::SVG::SVGPackage::ROTATE__CX:
@@ -114,7 +112,7 @@ void Rotate::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Rotate::setCx(_t0);
+        setCx(_t0);
     }
         return;
     case ::SVG::SVGPackage::ROTATE__CY:
@@ -122,7 +120,7 @@ void Rotate::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Rotate::setCy(_t0);
+        setCy(_t0);
     }
         return;
 
@@ -135,16 +133,16 @@ void Rotate::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
-        return m_attOwner && m_attOwner->size();
+        return getAttOwner().size() > 0;
     case ::SVG::SVGPackage::ROTATE__ANGLE:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_angle);
+                > ::is_set(getAngle());
     case ::SVG::SVGPackage::ROTATE__CX:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_cx);
+                > ::is_set(getCx());
     case ::SVG::SVGPackage::ROTATE__CY:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_cy);
+                > ::is_set(getCy());
 
     }
     throw "Error";

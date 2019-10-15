@@ -54,7 +54,7 @@ void LeftHand::_initialize()
 
 // EObject
 ::ecore::EJavaObject LeftHand::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -62,17 +62,17 @@ void LeftHand::_initialize()
     case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_rightee.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getRightee());
     }
         return _any;
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTMULTIPLE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_rightMultiple.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getRightMultiple());
     }
         return _any;
 
@@ -90,25 +90,23 @@ void LeftHand::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::eopposite::NamedObject::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::eopposite::RightHand_ptr _t1 = std::dynamic_pointer_cast
-                < ::eopposite::RightHand > (_t0);
-        ::eopposite::LeftHand::setRightee(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::eopposite::RightHand > (_t0);
+        setRightee(_t1);
     }
         return;
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTMULTIPLE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::eopposite::RightMultiple_ptr _t1 = std::dynamic_pointer_cast
-                < ::eopposite::RightMultiple > (_t0);
-        ::eopposite::LeftHand::setRightMultiple(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::eopposite::RightMultiple > (_t0);
+        setRightMultiple(_t1);
     }
         return;
 
@@ -122,11 +120,11 @@ void LeftHand::eSet(::ecore::EInt _featureID,
     {
     case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE:
-        return !m_rightee.expired();
+        return getRightee().get() != nullptr;
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTMULTIPLE:
-        return !m_rightMultiple.expired();
+        return getRightMultiple().get() != nullptr;
 
     }
     throw "Error";

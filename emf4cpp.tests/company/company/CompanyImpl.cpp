@@ -55,7 +55,7 @@ void Company::_initialize()
 
 // EObject
 ::ecore::EJavaObject Company::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -63,12 +63,12 @@ void Company::_initialize()
     case ::company::CompanyPackage::COMPANY__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::company::CompanyPackage::COMPANY__DEPARTMENTS:
     {
-        _any = m_departments->asEListOf< ::ecore::EObject_ptr >();
+        _any = getDepartments().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -86,17 +86,15 @@ void Company::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::company::Company::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::company::CompanyPackage::COMPANY__DEPARTMENTS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::company::Company::getDepartments().clear();
-        ::company::Company::getDepartments().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getDepartments().clear();
+        getDepartments().insert_all(*_t0);
     }
         return;
 
@@ -110,9 +108,9 @@ void Company::eSet(::ecore::EInt _featureID,
     {
     case ::company::CompanyPackage::COMPANY__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::company::CompanyPackage::COMPANY__DEPARTMENTS:
-        return m_departments && m_departments->size();
+        return getDepartments().size() > 0;
 
     }
     throw "Error";

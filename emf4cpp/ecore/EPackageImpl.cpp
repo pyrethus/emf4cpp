@@ -86,52 +86,52 @@ void EPackage::_initialize()
 
 // EObject
 ::ecore::EJavaObject EPackage::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
     {
-        _any = m_eAnnotations->asEListOf< ::ecore::EObject_ptr >();
+        _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::ecore::EcorePackage::EPACKAGE__NSURI:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_nsURI);
+                > ::toAny(_any, getNsURI());
     }
         return _any;
     case ::ecore::EcorePackage::EPACKAGE__NSPREFIX:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_nsPrefix);
+                > ::toAny(_any, getNsPrefix());
     }
         return _any;
     case ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_eFactoryInstance.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getEFactoryInstance());
     }
         return _any;
     case ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS:
     {
-        _any = m_eClassifiers->asEListOf< ::ecore::EObject_ptr >();
+        _any = getEClassifiers().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES:
     {
-        _any = m_eSubpackages->asEListOf< ::ecore::EObject_ptr >();
+        _any = getESubpackages().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::ecore::EcorePackage::EPACKAGE__ESUPERPACKAGE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_eSuperPackage.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getESuperPackage());
     }
         return _any;
 
@@ -146,12 +146,10 @@ void EPackage::eSet(::ecore::EInt _featureID,
     {
     case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ecore::EModelElement::getEAnnotations().clear();
-        ::ecore::EModelElement::getEAnnotations().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getEAnnotations().clear();
+        getEAnnotations().insert_all(*_t0);
     }
         return;
     case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
@@ -159,7 +157,7 @@ void EPackage::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::ecore::ENamedElement::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::ecore::EcorePackage::EPACKAGE__NSURI:
@@ -167,7 +165,7 @@ void EPackage::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::ecore::EPackage::setNsURI(_t0);
+        setNsURI(_t0);
     }
         return;
     case ::ecore::EcorePackage::EPACKAGE__NSPREFIX:
@@ -175,45 +173,39 @@ void EPackage::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::ecore::EPackage::setNsPrefix(_t0);
+        setNsPrefix(_t0);
     }
         return;
     case ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EFactory_ptr _t1 = std::dynamic_pointer_cast
-                < ::ecore::EFactory > (_t0);
-        ::ecore::EPackage::setEFactoryInstance(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ecore::EFactory > (_t0);
+        setEFactoryInstance(_t1);
     }
         return;
     case ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ecore::EPackage::getEClassifiers().clear();
-        ::ecore::EPackage::getEClassifiers().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getEClassifiers().clear();
+        getEClassifiers().insert_all(*_t0);
     }
         return;
     case ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ecore::EPackage::getESubpackages().clear();
-        ::ecore::EPackage::getESubpackages().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getESubpackages().clear();
+        getESubpackages().insert_all(*_t0);
     }
         return;
     case ::ecore::EcorePackage::EPACKAGE__ESUPERPACKAGE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
-                < ::ecore::EPackage > (_t0);
-        ::ecore::EPackage::setESuperPackage(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ecore::EPackage > (_t0);
+        setESuperPackage(_t1);
     }
         return;
 
@@ -226,24 +218,24 @@ void EPackage::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
-        return m_eAnnotations && m_eAnnotations->size();
+        return getEAnnotations().size() > 0;
     case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::ecore::EcorePackage::EPACKAGE__NSURI:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_nsURI);
+                > ::is_set(getNsURI());
     case ::ecore::EcorePackage::EPACKAGE__NSPREFIX:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_nsPrefix);
+                > ::is_set(getNsPrefix());
     case ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE:
-        return !m_eFactoryInstance.expired();
+        return getEFactoryInstance().get() != nullptr;
     case ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS:
-        return m_eClassifiers && m_eClassifiers->size();
+        return getEClassifiers().size() > 0;
     case ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES:
-        return m_eSubpackages && m_eSubpackages->size();
+        return getESubpackages().size() > 0;
     case ::ecore::EcorePackage::EPACKAGE__ESUPERPACKAGE:
-        return !m_eSuperPackage.expired();
+        return getESuperPackage().get() != nullptr;
 
     }
     throw "Error";

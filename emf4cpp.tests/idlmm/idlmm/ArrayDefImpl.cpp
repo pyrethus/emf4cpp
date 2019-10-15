@@ -55,31 +55,31 @@ void ArrayDef::_initialize()
 
 // EObject
 ::ecore::EJavaObject ArrayDef::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_containedType);
+        _any = ::ecore::as < ::ecore::EObject > (getContainedType());
     }
         return _any;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_sharedType.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getSharedType());
     }
         return _any;
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
-                > ::toAny(_any, m_typeCode);
+                > ::toAny(_any, getTypeCode());
     }
         return _any;
     case ::idlmm::IdlmmPackage::ARRAYDEF__BOUND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_bound);
+                > ::toAny(_any, getBound());
     }
         return _any;
 
@@ -94,20 +94,18 @@ void ArrayDef::eSet(::ecore::EInt _featureID,
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::IDLType_ptr _t1 = std::dynamic_pointer_cast < ::idlmm::IDLType
-                > (_t0);
-        ::idlmm::Typed::setContainedType(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::IDLType > (_t0);
+        setContainedType(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::TypedefDef_ptr _t1 = std::dynamic_pointer_cast
-                < ::idlmm::TypedefDef > (_t0);
-        ::idlmm::Typed::setSharedType(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::TypedefDef > (_t0);
+        setSharedType(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
@@ -115,7 +113,7 @@ void ArrayDef::eSet(::ecore::EInt _featureID,
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::IDLType::setTypeCode(_t0);
+        setTypeCode(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::ARRAYDEF__BOUND:
@@ -123,7 +121,7 @@ void ArrayDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::ArrayDef::setBound(_t0);
+        setBound(_t0);
     }
         return;
 
@@ -136,15 +134,15 @@ void ArrayDef::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
-        return !(m_containedType == nullptr);
+        return getContainedType().get() != nullptr;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
-        return !m_sharedType.expired();
+        return getSharedType().get() != nullptr;
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
-                > ::is_set(m_typeCode);
+                > ::is_set(getTypeCode());
     case ::idlmm::IdlmmPackage::ARRAYDEF__BOUND:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_bound);
+                > ::is_set(getBound());
 
     }
     throw "Error";

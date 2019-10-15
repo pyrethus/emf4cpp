@@ -51,20 +51,20 @@ void ReferencedFile::_initialize()
 
 // EObject
 ::ecore::EJavaObject ReferencedFile::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::SVG::SVGPackage::REFERENCEDFILE__REFERER:
     {
-        _any = m_referer->asEListOf< ::ecore::EObject_ptr >();
+        _any = getReferer().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::SVG::SVGPackage::REFERENCEDFILE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
 
@@ -79,12 +79,10 @@ void ReferencedFile::eSet(::ecore::EInt _featureID,
     {
     case ::SVG::SVGPackage::REFERENCEDFILE__REFERER:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::SVG::ReferencedFile::getReferer().clear();
-        ::SVG::ReferencedFile::getReferer().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getReferer().clear();
+        getReferer().insert_all(*_t0);
     }
         return;
     case ::SVG::SVGPackage::REFERENCEDFILE__NAME:
@@ -92,7 +90,7 @@ void ReferencedFile::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::String _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
                 > ::fromAny(_newValue, _t0);
-        ::SVG::ReferencedFile::setName(_t0);
+        setName(_t0);
     }
         return;
 
@@ -105,10 +103,10 @@ void ReferencedFile::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::SVG::SVGPackage::REFERENCEDFILE__REFERER:
-        return m_referer && m_referer->size();
+        return getReferer().size() > 0;
     case ::SVG::SVGPackage::REFERENCEDFILE__NAME:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
-                > ::is_set(m_name);
+                > ::is_set(getName());
 
     }
     throw "Error";

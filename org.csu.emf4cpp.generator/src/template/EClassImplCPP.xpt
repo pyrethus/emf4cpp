@@ -97,7 +97,7 @@ void «name»::_initialize()
 «ENDFOREACH»
 
 // EObject
-::ecore::EJavaObject «name»::eGet ( ::ecore::EInt _featureID, ::ecore::EBoolean _resolve)
+::ecore::EJavaObject «name»::eGet ( ::ecore::EInt _featureID, ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -107,17 +107,17 @@ void «name»::_initialize()
             {
                 «IF EReference.isInstance(ef)-»
                     «IF ef.upperBound == 1-»
-                        _any = ::ecore::as<::ecore::EObject>(«((EReference) ef).getRefMemberNameLocked()»);
+                        _any = ::ecore::as<::ecore::EObject>(get«ef.name.toFirstUpper()»());
                     «ELSE-»
-                        _any = «ef.getMemberName()»->asEListOf< ::ecore::EObject_ptr >();
+                        _any = get«ef.name.toFirstUpper()»().asEListOf< ::ecore::EObject_ptr >();
                     «ENDIF-»
                 «ELSE-»
                     «IF ef.upperBound == 1-»
-                ::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::toAny(_any, «ef.getMemberName()»);
+                ::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::toAny(_any, «(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»());
                     «ELSE-»
-                 std::vector < ::ecorecpp::mapping::any> _anys(«ef.getMemberName()».size());
-                 for (size_t _i = 0; _i < «ef.getMemberName()».size(); _i++)
-                    ::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::toAny(_anys[_i], «ef.getMemberName()»[_i]);
+                 std::vector < ::ecorecpp::mapping::any> _anys(«(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»().size());
+                 for (size_t _i = 0; _i < «(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»().size(); _i++)
+                    ::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::toAny(_anys[_i], «(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»()[_i]);
                  _any = _anys;
                     «ENDIF-»
                 «ENDIF-»
@@ -137,24 +137,23 @@ void «name»::eSet ( ::ecore::EInt _featureID, ::ecore::EJavaObject const& _new
             {
                 «IF EReference.isInstance(ef)-»
                     «IF ef.upperBound == 1-»
-		        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast< ::ecore::EObject_ptr >(_newValue);
-			«((EReference)ef).getPtr()» _t1 = std::dynamic_pointer_cast< ::«ef.EType.getFQN()» >(_t0);
- 			::«ef.EContainingClass.getFQN()»::set«ef.name.toFirstUpper()»(_t1);
+                        auto _t0 = ::ecorecpp::mapping::any::any_cast< ::ecore::EObject_ptr >(_newValue);
+                        auto _t1 = ::ecore::as< ::«ef.EType.getFQN()» >(_t0);
+                        set«ef.name.toFirstUpper()»(_t1);
                     «ELSE-»
-                        ::ecore::EList_ptr<::ecore::EObject_ptr> _t0 =
-                            ::ecorecpp::mapping::any::any_cast< ::ecore::EList_ptr<::ecore::EObject_ptr> >(_newValue);
-                        ::«ef.EContainingClass.getFQN()»::get«ef.name.toFirstUpper()»().clear();
-                        ::«ef.EContainingClass.getFQN()»::get«ef.name.toFirstUpper()»().insert_all(*_t0);
+                        auto _t0 = ::ecorecpp::mapping::any::any_cast< ::ecore::EList_ptr<::ecore::EObject_ptr> >(_newValue);
+                        get«ef.name.toFirstUpper()»().clear();
+                        get«ef.name.toFirstUpper()»().insert_all(*_t0);
                     «ENDIF-»
                 «ELSE-»
                     «IF ef.isList() || ef.isMultiple()-»
                         «ef.getCPPTypeSignatureImpl()» _t0;
- 			::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::fromAny(_newValue, _t0);
- 			::«ef.EContainingClass.getFQN()»::add«ef.name.toFirstUpper()»(_t0);
+                        ::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::fromAny(_newValue, _t0);
+                        add«ef.name.toFirstUpper()»(_t0);
                     «ELSE-»
-                    	«ef.getCPPTypeSignatureImpl()» _t0;
- 		        		::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::fromAny(_newValue, _t0);
- 		        		::«ef.EContainingClass.getFQN()»::set«ef.name.toFirstUpper()»(_t0);
+                        «ef.getCPPTypeSignatureImpl()» _t0;
+                        ::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::fromAny(_newValue, _t0);
+                        set«ef.name.toFirstUpper()»(_t0);
                     «ENDIF-»
                 «ENDIF-»
             }
@@ -172,26 +171,26 @@ void «name»::eSet ( ::ecore::EInt _featureID, ::ecore::EJavaObject const& _new
         case «ef.getCPPFQN()» :
             «IF EReference.isInstance(ef)-»
                 «IF ef.upperBound == 1-»
-            	    return !«((EReference) ef).getRefMemberNameExpired()»;
+                    return get«ef.name.toFirstUpper()»().get() != nullptr;
                 «ELSE-»
-            		return «ef.getMemberName()» && «ef.getMemberName()»->size();
+                    return get«ef.name.toFirstUpper()»().size() > 0;
                 «ENDIF-»
             «ELSE-»
                 «IF ef.isList() || ef.isMultiple()-»
-            		return «ef.getMemberName()».size();
+                    return «(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»().size() > 0;
                 «ELSE-»
                     «IF ef.defaultValueLiteral != null && ef.defaultValueLiteral != "" -»
-            			«IF ef.EType.name == "EString"-»
-            				return «ef.getMemberName()» != "«ef.defaultValueLiteral»";
-            			«ELSEIF ef.EType.name == "EDate"-»
-            				return «ef.getMemberName()» != ::ecorecpp::mapping::EDate("«ef.defaultValueLiteral»");
-            			«ELSEIF EEnum.isInstance(ef.EType)-»
-            				return «ef.getMemberName()» != «ef.getCPPTypeSignature()»::«ef.defaultValueLiteral»;
-            			«ELSE-»
-            				return «ef.getMemberName()» != «ef.defaultValueLiteral»;
-            			«ENDIF-»
+                        «IF ef.EType.name == "EString"-»
+                            return «(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»() != "«ef.defaultValueLiteral»";
+                        «ELSEIF ef.EType.name == "EDate"-»
+                            return «(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»() != ::ecorecpp::mapping::EDate("«ef.defaultValueLiteral»");
+                        «ELSEIF EEnum.isInstance(ef.EType)-»
+                            return «(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»() != «ef.getCPPTypeSignature()»::«ef.defaultValueLiteral»;
+                        «ELSE-»
+                            return «(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»() != «ef.defaultValueLiteral»;
+                        «ENDIF-»
                     «ELSE-»
-            			return ::ecorecpp::mapping::set_traits< ::«ef.EType.getFQN()» >::is_set(«ef.getMemberName()»);
+                        return ::ecorecpp::mapping::set_traits< ::«ef.EType.getFQN()» >::is_set(«(ef.isBoolean() ? "is" : "get") + ef.name.toFirstUpper()»());
                     «ENDIF-»
                 «ENDIF-»
             «ENDIF-»

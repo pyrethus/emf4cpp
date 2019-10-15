@@ -58,46 +58,48 @@ void TypeSelectExpression::_initialize()
 
 // EObject
 ::ecore::EJavaObject TypeSelectExpression::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_line);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getLine());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
-                > ::toAny(_any, m_start);
+                > ::toAny(_any, getStart());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_end);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getEnd());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_fileName);
+                > ::toAny(_any, getFileName());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_target);
+        _any = ::ecore::as < ::ecore::EObject > (getTarget());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_name);
+        _any = ::ecore::as < ::ecore::EObject > (getName());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TYPELITERAL:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_typeLiteral);
+        _any = ::ecore::as < ::ecore::EObject > (getTypeLiteral());
     }
         return _any;
 
@@ -115,7 +117,7 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setLine(_t0);
+        setLine(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
@@ -123,7 +125,7 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setStart(_t0);
+        setStart(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
@@ -131,7 +133,7 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setEnd(_t0);
+        setEnd(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
@@ -139,35 +141,32 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setFileName(_t0);
+        setFileName(_t0);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::expression::AbstractExpression_ptr _t1 =
-                std::dynamic_pointer_cast
-                        < ::xpand3::expression::AbstractExpression > (_t0);
-        ::xpand3::expression::FeatureCall::setTarget(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::expression::AbstractExpression
+                > (_t0);
+        setTarget(_t1);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
-                < ::xpand3::Identifier > (_t0);
-        ::xpand3::expression::FeatureCall::setName(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::Identifier > (_t0);
+        setName(_t1);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TYPELITERAL:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::Identifier_ptr _t1 = std::dynamic_pointer_cast
-                < ::xpand3::Identifier > (_t0);
-        ::xpand3::expression::TypeSelectExpression::setTypeLiteral(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::Identifier > (_t0);
+        setTypeLiteral(_t1);
     }
         return;
 
@@ -181,21 +180,22 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_line);
+                > ::is_set(getLine());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_start);
+                > ::is_set(getStart());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
-        return ::ecorecpp::mapping::set_traits < ::ecore::EInt > ::is_set(m_end);
+        return ::ecorecpp::mapping::set_traits < ::ecore::EInt
+                > ::is_set(getEnd());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_fileName);
+                > ::is_set(getFileName());
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
-        return !(m_target == nullptr);
+        return getTarget().get() != nullptr;
     case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
-        return !(m_name == nullptr);
+        return getName().get() != nullptr;
     case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TYPELITERAL:
-        return !(m_typeLiteral == nullptr);
+        return getTypeLiteral().get() != nullptr;
 
     }
     throw "Error";

@@ -65,34 +65,34 @@ void EGenericType::_initialize()
 
 // EObject
 ::ecore::EJavaObject EGenericType::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::ecore::EcorePackage::EGENERICTYPE__EUPPERBOUND:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_eUpperBound);
+        _any = ::ecore::as < ::ecore::EObject > (getEUpperBound());
     }
         return _any;
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEARGUMENTS:
     {
-        _any = m_eTypeArguments->asEListOf< ::ecore::EObject_ptr >();
+        _any = getETypeArguments().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::ecore::EcorePackage::EGENERICTYPE__ELOWERBOUND:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_eLowerBound);
+        _any = ::ecore::as < ::ecore::EObject > (getELowerBound());
     }
         return _any;
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEPARAMETER:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_eTypeParameter.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getETypeParameter());
     }
         return _any;
     case ::ecore::EcorePackage::EGENERICTYPE__ECLASSIFIER:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_eClassifier.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getEClassifier());
     }
         return _any;
 
@@ -107,48 +107,42 @@ void EGenericType::eSet(::ecore::EInt _featureID,
     {
     case ::ecore::EcorePackage::EGENERICTYPE__EUPPERBOUND:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EGenericType_ptr _t1 = std::dynamic_pointer_cast
-                < ::ecore::EGenericType > (_t0);
-        ::ecore::EGenericType::setEUpperBound(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ecore::EGenericType > (_t0);
+        setEUpperBound(_t1);
     }
         return;
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEARGUMENTS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ecore::EGenericType::getETypeArguments().clear();
-        ::ecore::EGenericType::getETypeArguments().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getETypeArguments().clear();
+        getETypeArguments().insert_all(*_t0);
     }
         return;
     case ::ecore::EcorePackage::EGENERICTYPE__ELOWERBOUND:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EGenericType_ptr _t1 = std::dynamic_pointer_cast
-                < ::ecore::EGenericType > (_t0);
-        ::ecore::EGenericType::setELowerBound(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ecore::EGenericType > (_t0);
+        setELowerBound(_t1);
     }
         return;
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEPARAMETER:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::ETypeParameter_ptr _t1 = std::dynamic_pointer_cast
-                < ::ecore::ETypeParameter > (_t0);
-        ::ecore::EGenericType::setETypeParameter(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ecore::ETypeParameter > (_t0);
+        setETypeParameter(_t1);
     }
         return;
     case ::ecore::EcorePackage::EGENERICTYPE__ECLASSIFIER:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EClassifier_ptr _t1 = std::dynamic_pointer_cast
-                < ::ecore::EClassifier > (_t0);
-        ::ecore::EGenericType::setEClassifier(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ecore::EClassifier > (_t0);
+        setEClassifier(_t1);
     }
         return;
 
@@ -161,17 +155,17 @@ void EGenericType::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::ecore::EcorePackage::EGENERICTYPE__EUPPERBOUND:
-        return !(m_eUpperBound == nullptr);
+        return getEUpperBound().get() != nullptr;
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEARGUMENTS:
-        return m_eTypeArguments && m_eTypeArguments->size();
+        return getETypeArguments().size() > 0;
     case ::ecore::EcorePackage::EGENERICTYPE__ERAWTYPE:
-        return !m_eRawType.expired();
+        return getERawType().get() != nullptr;
     case ::ecore::EcorePackage::EGENERICTYPE__ELOWERBOUND:
-        return !(m_eLowerBound == nullptr);
+        return getELowerBound().get() != nullptr;
     case ::ecore::EcorePackage::EGENERICTYPE__ETYPEPARAMETER:
-        return !m_eTypeParameter.expired();
+        return getETypeParameter().get() != nullptr;
     case ::ecore::EcorePackage::EGENERICTYPE__ECLASSIFIER:
-        return !m_eClassifier.expired();
+        return getEClassifier().get() != nullptr;
 
     }
     throw "Error";

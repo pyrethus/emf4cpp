@@ -50,7 +50,7 @@ void Dimension::_initialize()
 
 // EObject
 ::ecore::EJavaObject Dimension::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -58,13 +58,13 @@ void Dimension::_initialize()
     case ::SVG::SVGPackage::DIMENSION__WIDTH:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_width);
+                > ::toAny(_any, getWidth());
     }
         return _any;
     case ::SVG::SVGPackage::DIMENSION__HEIGHT:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
-                > ::toAny(_any, m_height);
+                > ::toAny(_any, getHeight());
     }
         return _any;
 
@@ -82,7 +82,7 @@ void Dimension::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Dimension::setWidth(_t0);
+        setWidth(_t0);
     }
         return;
     case ::SVG::SVGPackage::DIMENSION__HEIGHT:
@@ -90,7 +90,7 @@ void Dimension::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::fromAny(_newValue, _t0);
-        ::SVG::Dimension::setHeight(_t0);
+        setHeight(_t0);
     }
         return;
 
@@ -104,10 +104,10 @@ void Dimension::eSet(::ecore::EInt _featureID,
     {
     case ::SVG::SVGPackage::DIMENSION__WIDTH:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_width);
+                > ::is_set(getWidth());
     case ::SVG::SVGPackage::DIMENSION__HEIGHT:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
-                > ::is_set(m_height);
+                > ::is_set(getHeight());
 
     }
     throw "Error";

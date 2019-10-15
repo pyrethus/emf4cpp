@@ -53,20 +53,20 @@ void FontStyle::_initialize()
 
 // EObject
 ::ecore::EJavaObject FontStyle::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
     {
-        _any = m_attOwner->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAttOwner().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::SVG::SVGPackage::FONTSTYLE__ITALIC:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Boolean
-                > ::toAny(_any, m_italic);
+                > ::toAny(_any, getItalic());
     }
         return _any;
 
@@ -81,12 +81,10 @@ void FontStyle::eSet(::ecore::EInt _featureID,
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::SVG::Attribute::getAttOwner().clear();
-        ::SVG::Attribute::getAttOwner().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAttOwner().clear();
+        getAttOwner().insert_all(*_t0);
     }
         return;
     case ::SVG::SVGPackage::FONTSTYLE__ITALIC:
@@ -94,7 +92,7 @@ void FontStyle::eSet(::ecore::EInt _featureID,
         ::PrimitiveTypes::Boolean _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Boolean
                 > ::fromAny(_newValue, _t0);
-        ::SVG::FontStyle::setItalic(_t0);
+        setItalic(_t0);
     }
         return;
 
@@ -107,10 +105,10 @@ void FontStyle::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
-        return m_attOwner && m_attOwner->size();
+        return getAttOwner().size() > 0;
     case ::SVG::SVGPackage::FONTSTYLE__ITALIC:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Boolean
-                > ::is_set(m_italic);
+                > ::is_set(getItalic());
 
     }
     throw "Error";

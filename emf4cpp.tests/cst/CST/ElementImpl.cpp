@@ -50,7 +50,7 @@ void Element::_initialize()
 
 // EObject
 ::ecore::EJavaObject Element::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -58,7 +58,7 @@ void Element::_initialize()
     case ::CST::CSTPackage::ELEMENT__KIND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_kind);
+                > ::toAny(_any, getKind());
     }
         return _any;
 
@@ -76,7 +76,7 @@ void Element::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::CST::Element::setKind(_t0);
+        setKind(_t0);
     }
         return;
 
@@ -90,7 +90,7 @@ void Element::eSet(::ecore::EInt _featureID,
     {
     case ::CST::CSTPackage::ELEMENT__KIND:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_kind);
+                > ::is_set(getKind());
 
     }
     throw "Error";

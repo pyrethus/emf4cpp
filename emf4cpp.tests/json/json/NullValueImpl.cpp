@@ -52,7 +52,7 @@ void NullValue::_initialize()
 
 // EObject
 ::ecore::EJavaObject NullValue::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)

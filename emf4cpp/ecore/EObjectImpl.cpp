@@ -332,7 +332,7 @@ void EObject::eUnset(::ecore::EStructuralFeature_ptr _feature)
 
 // EObject
 ::ecore::EJavaObject EObject::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)

@@ -50,7 +50,7 @@ void Bird::_initialize()
 
 // EObject
 ::ecore::EJavaObject Bird::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -58,13 +58,13 @@ void Bird::_initialize()
     case ::enumeration::EnumerationPackage::BIRD__TYPE:
     {
         ::ecorecpp::mapping::any_traits < ::enumeration::BirdType
-                > ::toAny(_any, m_type);
+                > ::toAny(_any, getType());
     }
         return _any;
     case ::enumeration::EnumerationPackage::BIRD__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
 
@@ -81,7 +81,7 @@ void Bird::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::enumeration::BirdType _t0;
         ::ecorecpp::mapping::any_traits < ::enumeration::BirdType
                 > ::fromAny(_newValue, _t0);
-        ::enumeration::Bird::setType(_t0);
+        setType(_t0);
     }
         return;
     case ::enumeration::EnumerationPackage::BIRD__NAME:
@@ -89,7 +89,7 @@ void Bird::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::enumeration::Bird::setName(_t0);
+        setName(_t0);
     }
         return;
 
@@ -102,9 +102,9 @@ void Bird::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
     switch (_featureID)
     {
     case ::enumeration::EnumerationPackage::BIRD__TYPE:
-        return m_type != ::enumeration::BirdType::blackbird;
+        return getType() != ::enumeration::BirdType::blackbird;
     case ::enumeration::EnumerationPackage::BIRD__NAME:
-        return m_name != "Birdy";
+        return getName() != "Birdy";
 
     }
     throw "Error";

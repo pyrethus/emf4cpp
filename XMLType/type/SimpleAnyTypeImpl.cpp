@@ -53,32 +53,33 @@ void SimpleAnyType::_initialize()
 
 // EObject
 ::ecore::EJavaObject SimpleAnyType::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::type::TypePackage::ANYTYPE__MIXED:
     {
-        std::vector < ::ecorecpp::mapping::any > _anys(m_mixed.size());
-        for (size_t _i = 0; _i < m_mixed.size(); _i++)
+        std::vector < ::ecorecpp::mapping::any > _anys(getMixed().size());
+        for (size_t _i = 0; _i < getMixed().size(); _i++)
             ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
-                    > ::toAny(_anys[_i], m_mixed[_i]);
+                    > ::toAny(_anys[_i], getMixed()[_i]);
         _any = _anys;
     }
         return _any;
     case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
     {
-        std::vector < ::ecorecpp::mapping::any > _anys(m_anyAttribute.size());
-        for (size_t _i = 0; _i < m_anyAttribute.size(); _i++)
+        std::vector < ::ecorecpp::mapping::any
+                > _anys(getAnyAttribute().size());
+        for (size_t _i = 0; _i < getAnyAttribute().size(); _i++)
             ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
-                    > ::toAny(_anys[_i], m_anyAttribute[_i]);
+                    > ::toAny(_anys[_i], getAnyAttribute()[_i]);
         _any = _anys;
     }
         return _any;
     case ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_instanceType.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getInstanceType());
     }
         return _any;
 
@@ -96,7 +97,7 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
         ::ecore::EFeatureMapEntry _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
                 > ::fromAny(_newValue, _t0);
-        ::type::AnyType::addMixed(_t0);
+        addMixed(_t0);
     }
         return;
     case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
@@ -104,16 +105,15 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
         ::ecore::EFeatureMapEntry _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
                 > ::fromAny(_newValue, _t0);
-        ::type::AnyType::addAnyAttribute(_t0);
+        addAnyAttribute(_t0);
     }
         return;
     case ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EDataType_ptr _t1 = std::dynamic_pointer_cast
-                < ::ecore::EDataType > (_t0);
-        ::type::SimpleAnyType::setInstanceType(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ecore::EDataType > (_t0);
+        setInstanceType(_t1);
     }
         return;
 
@@ -126,19 +126,19 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::type::TypePackage::ANYTYPE__MIXED:
-        return m_mixed.size();
+        return getMixed().size() > 0;
     case ::type::TypePackage::ANYTYPE__ANY:
-        return m_any.size();
+        return getAny().size() > 0;
     case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
-        return m_anyAttribute.size();
+        return getAnyAttribute().size() > 0;
     case ::type::TypePackage::SIMPLEANYTYPE__RAWVALUE:
         return ::ecorecpp::mapping::set_traits < ::type::String
-                > ::is_set(m_rawValue);
+                > ::is_set(getRawValue());
     case ::type::TypePackage::SIMPLEANYTYPE__VALUE:
         return ::ecorecpp::mapping::set_traits < ::type::AnySimpleType
-                > ::is_set(m_value);
+                > ::is_set(getValue());
     case ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE:
-        return !m_instanceType.expired();
+        return getInstanceType().get() != nullptr;
 
     }
     throw "Error";

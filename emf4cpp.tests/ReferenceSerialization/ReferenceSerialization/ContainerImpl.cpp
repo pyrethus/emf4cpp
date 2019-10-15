@@ -60,29 +60,29 @@ void Container::_initialize()
 
 // EObject
 ::ecore::EJavaObject Container::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CONTENTS:
     {
-        _any = m_contents->asEListOf< ::ecore::EObject_ptr >();
+        _any = getContents().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__REFERENCES:
     {
-        _any = m_references->asEListOf< ::ecore::EObject_ptr >();
+        _any = getReferences().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILD:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_child);
+        _any = ::ecore::as < ::ecore::EObject > (getChild());
     }
         return _any;
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILDREF:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_childRef.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getChildRef());
     }
         return _any;
 
@@ -97,40 +97,34 @@ void Container::eSet(::ecore::EInt _featureID,
     {
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CONTENTS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ReferenceSerialization::Container::getContents().clear();
-        ::ReferenceSerialization::Container::getContents().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getContents().clear();
+        getContents().insert_all(*_t0);
     }
         return;
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__REFERENCES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ReferenceSerialization::Container::getReferences().clear();
-        ::ReferenceSerialization::Container::getReferences().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getReferences().clear();
+        getReferences().insert_all(*_t0);
     }
         return;
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILD:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ReferenceSerialization::Child_ptr _t1 = std::dynamic_pointer_cast
-                < ::ReferenceSerialization::Child > (_t0);
-        ::ReferenceSerialization::Container::setChild(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ReferenceSerialization::Child > (_t0);
+        setChild(_t1);
     }
         return;
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILDREF:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ReferenceSerialization::Child_ptr _t1 = std::dynamic_pointer_cast
-                < ::ReferenceSerialization::Child > (_t0);
-        ::ReferenceSerialization::Container::setChildRef(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ReferenceSerialization::Child > (_t0);
+        setChildRef(_t1);
     }
         return;
 
@@ -143,13 +137,13 @@ void Container::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CONTENTS:
-        return m_contents && m_contents->size();
+        return getContents().size() > 0;
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__REFERENCES:
-        return m_references && m_references->size();
+        return getReferences().size() > 0;
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILD:
-        return !(m_child == nullptr);
+        return getChild().get() != nullptr;
     case ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILDREF:
-        return !m_childRef.expired();
+        return getChildRef().get() != nullptr;
 
     }
     throw "Error";

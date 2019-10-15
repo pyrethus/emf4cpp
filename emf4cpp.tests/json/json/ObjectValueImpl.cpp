@@ -57,14 +57,14 @@ void ObjectValue::_initialize()
 
 // EObject
 ::ecore::EJavaObject ObjectValue::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::json::JsonPackage::OBJECTVALUE__MEMBERS:
     {
-        _any = m_members->asEListOf< ::ecore::EObject_ptr >();
+        _any = getMembers().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -79,12 +79,10 @@ void ObjectValue::eSet(::ecore::EInt _featureID,
     {
     case ::json::JsonPackage::OBJECTVALUE__MEMBERS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::json::ObjectValue::getMembers().clear();
-        ::json::ObjectValue::getMembers().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getMembers().clear();
+        getMembers().insert_all(*_t0);
     }
         return;
 
@@ -97,7 +95,7 @@ void ObjectValue::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::json::JsonPackage::OBJECTVALUE__MEMBERS:
-        return m_members && m_members->size();
+        return getMembers().size() > 0;
 
     }
     throw "Error";

@@ -55,30 +55,30 @@ void TaggedValue::_initialize()
 
 // EObject
 ::ecore::EJavaObject TaggedValue::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        _any = m_attribute->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        _any = m_annotation->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__TAG:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_tag.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getTag());
     }
         return _any;
     case ::kdm::kdm::KdmPackage::TAGGEDVALUE__VALUE:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
-                > ::toAny(_any, m_value);
+                > ::toAny(_any, getValue());
     }
         return _any;
 
@@ -93,31 +93,26 @@ void TaggedValue::eSet(::ecore::EInt _featureID,
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::Element::getAttribute().clear();
-        ::kdm::core::Element::getAttribute().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAttribute().clear();
+        getAttribute().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::Element::getAnnotation().clear();
-        ::kdm::core::Element::getAnnotation().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAnnotation().clear();
+        getAnnotation().insert_all(*_t0);
     }
         return;
     case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__TAG:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::kdm::kdm::TagDefinition_ptr _t1 = std::dynamic_pointer_cast
-                < ::kdm::kdm::TagDefinition > (_t0);
-        ::kdm::kdm::ExtendedValue::setTag(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::kdm::kdm::TagDefinition > (_t0);
+        setTag(_t1);
     }
         return;
     case ::kdm::kdm::KdmPackage::TAGGEDVALUE__VALUE:
@@ -125,7 +120,7 @@ void TaggedValue::eSet(::ecore::EInt _featureID,
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::fromAny(_newValue, _t0);
-        ::kdm::kdm::TaggedValue::setValue(_t0);
+        setValue(_t0);
     }
         return;
 
@@ -138,14 +133,14 @@ void TaggedValue::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
-        return m_attribute && m_attribute->size();
+        return getAttribute().size() > 0;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
-        return m_annotation && m_annotation->size();
+        return getAnnotation().size() > 0;
     case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__TAG:
-        return !m_tag.expired();
+        return getTag().get() != nullptr;
     case ::kdm::kdm::KdmPackage::TAGGEDVALUE__VALUE:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
-                > ::is_set(m_value);
+                > ::is_set(getValue());
 
     }
     throw "Error";

@@ -52,7 +52,7 @@ void StringValue::_initialize()
 
 // EObject
 ::ecore::EJavaObject StringValue::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -60,7 +60,7 @@ void StringValue::_initialize()
     case ::json::JsonPackage::STRINGVALUE__VALUE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_value);
+                > ::toAny(_any, getValue());
     }
         return _any;
 
@@ -78,7 +78,7 @@ void StringValue::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::json::StringValue::setValue(_t0);
+        setValue(_t0);
     }
         return;
 
@@ -92,7 +92,7 @@ void StringValue::eSet(::ecore::EInt _featureID,
     {
     case ::json::JsonPackage::STRINGVALUE__VALUE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_value);
+                > ::is_set(getValue());
 
     }
     throw "Error";

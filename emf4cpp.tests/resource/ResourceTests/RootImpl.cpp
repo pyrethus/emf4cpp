@@ -60,19 +60,19 @@ void Root::_initialize()
 
 // EObject
 ::ecore::EJavaObject Root::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::ResourceTests::ResourceTestsPackage::ROOT__TARGET:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_target);
+        _any = ::ecore::as < ::ecore::EObject > (getTarget());
     }
         return _any;
     case ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS:
     {
-        _any = m_referrers->asEListOf< ::ecore::EObject_ptr >();
+        _any = getReferrers().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -86,21 +86,18 @@ void Root::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
     {
     case ::ResourceTests::ResourceTestsPackage::ROOT__TARGET:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ResourceTests::ReferenceTarget_ptr _t1 = std::dynamic_pointer_cast
-                < ::ResourceTests::ReferenceTarget > (_t0);
-        ::ResourceTests::Root::setTarget(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ResourceTests::ReferenceTarget > (_t0);
+        setTarget(_t1);
     }
         return;
     case ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::ResourceTests::Root::getReferrers().clear();
-        ::ResourceTests::Root::getReferrers().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getReferrers().clear();
+        getReferrers().insert_all(*_t0);
     }
         return;
 
@@ -113,9 +110,9 @@ void Root::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const& _newValue)
     switch (_featureID)
     {
     case ::ResourceTests::ResourceTestsPackage::ROOT__TARGET:
-        return !(m_target == nullptr);
+        return getTarget().get() != nullptr;
     case ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS:
-        return m_referrers && m_referrers->size();
+        return getReferrers().size() > 0;
 
     }
     throw "Error";

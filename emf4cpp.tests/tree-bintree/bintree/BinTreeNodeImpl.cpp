@@ -59,30 +59,30 @@ void BinTreeNode::_initialize()
 
 // EObject
 ::ecore::EJavaObject BinTreeNode::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::bintree::BintreePackage::BINTREENODE__PARENT:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_parent.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getParent());
     }
         return _any;
     case ::bintree::BintreePackage::BINTREENODE__LEFT:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_left);
+        _any = ::ecore::as < ::ecore::EObject > (getLeft());
     }
         return _any;
     case ::bintree::BintreePackage::BINTREENODE__RIGHT:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_right);
+        _any = ::ecore::as < ::ecore::EObject > (getRight());
     }
         return _any;
     case ::bintree::BintreePackage::BINTREENODE__DATA:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_data);
+                > ::toAny(_any, getData());
     }
         return _any;
 
@@ -97,29 +97,26 @@ void BinTreeNode::eSet(::ecore::EInt _featureID,
     {
     case ::bintree::BintreePackage::BINTREENODE__PARENT:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::bintree::BinTreeNode_ptr _t1 = std::dynamic_pointer_cast
-                < ::bintree::BinTreeNode > (_t0);
-        ::bintree::BinTreeNode::setParent(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::bintree::BinTreeNode > (_t0);
+        setParent(_t1);
     }
         return;
     case ::bintree::BintreePackage::BINTREENODE__LEFT:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::bintree::BinTreeNode_ptr _t1 = std::dynamic_pointer_cast
-                < ::bintree::BinTreeNode > (_t0);
-        ::bintree::BinTreeNode::setLeft(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::bintree::BinTreeNode > (_t0);
+        setLeft(_t1);
     }
         return;
     case ::bintree::BintreePackage::BINTREENODE__RIGHT:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::bintree::BinTreeNode_ptr _t1 = std::dynamic_pointer_cast
-                < ::bintree::BinTreeNode > (_t0);
-        ::bintree::BinTreeNode::setRight(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::bintree::BinTreeNode > (_t0);
+        setRight(_t1);
     }
         return;
     case ::bintree::BintreePackage::BINTREENODE__DATA:
@@ -127,7 +124,7 @@ void BinTreeNode::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::bintree::BinTreeNode::setData(_t0);
+        setData(_t0);
     }
         return;
 
@@ -140,14 +137,14 @@ void BinTreeNode::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::bintree::BintreePackage::BINTREENODE__PARENT:
-        return !m_parent.expired();
+        return getParent().get() != nullptr;
     case ::bintree::BintreePackage::BINTREENODE__LEFT:
-        return !(m_left == nullptr);
+        return getLeft().get() != nullptr;
     case ::bintree::BintreePackage::BINTREENODE__RIGHT:
-        return !(m_right == nullptr);
+        return getRight().get() != nullptr;
     case ::bintree::BintreePackage::BINTREENODE__DATA:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_data);
+                > ::is_set(getData());
 
     }
     throw "Error";

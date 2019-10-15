@@ -58,7 +58,7 @@ void Entity::_initialize()
 
 // EObject
 ::ecore::EJavaObject Entity::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -66,17 +66,17 @@ void Entity::_initialize()
     case ::myDsl::MyDslPackage::TYPE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::myDsl::MyDslPackage::ENTITY__EXTENDS:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_extends.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getExtends());
     }
         return _any;
     case ::myDsl::MyDslPackage::ENTITY__PROPERTIES:
     {
-        _any = m_properties->asEListOf< ::ecore::EObject_ptr >();
+        _any = getProperties().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -94,26 +94,23 @@ void Entity::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::myDsl::Type::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::myDsl::MyDslPackage::ENTITY__EXTENDS:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::myDsl::Entity_ptr _t1 = std::dynamic_pointer_cast < ::myDsl::Entity
-                > (_t0);
-        ::myDsl::Entity::setExtends(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::myDsl::Entity > (_t0);
+        setExtends(_t1);
     }
         return;
     case ::myDsl::MyDslPackage::ENTITY__PROPERTIES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::myDsl::Entity::getProperties().clear();
-        ::myDsl::Entity::getProperties().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getProperties().clear();
+        getProperties().insert_all(*_t0);
     }
         return;
 
@@ -127,11 +124,11 @@ void Entity::eSet(::ecore::EInt _featureID,
     {
     case ::myDsl::MyDslPackage::TYPE__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::myDsl::MyDslPackage::ENTITY__EXTENDS:
-        return !m_extends.expired();
+        return getExtends().get() != nullptr;
     case ::myDsl::MyDslPackage::ENTITY__PROPERTIES:
-        return m_properties && m_properties->size();
+        return getProperties().size() > 0;
 
     }
     throw "Error";

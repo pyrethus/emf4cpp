@@ -52,7 +52,7 @@ void BooleanValue::_initialize()
 
 // EObject
 ::ecore::EJavaObject BooleanValue::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -60,7 +60,7 @@ void BooleanValue::_initialize()
     case ::json::JsonPackage::BOOLEANVALUE__VALUE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
-                > ::toAny(_any, m_value);
+                > ::toAny(_any, isValue());
     }
         return _any;
 
@@ -78,7 +78,7 @@ void BooleanValue::eSet(::ecore::EInt _featureID,
         ::ecore::EBoolean _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
                 > ::fromAny(_newValue, _t0);
-        ::json::BooleanValue::setValue(_t0);
+        setValue(_t0);
     }
         return;
 
@@ -92,7 +92,7 @@ void BooleanValue::eSet(::ecore::EInt _featureID,
     {
     case ::json::JsonPackage::BOOLEANVALUE__VALUE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
-                > ::is_set(m_value);
+                > ::is_set(isValue());
 
     }
     throw "Error";

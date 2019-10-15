@@ -67,7 +67,7 @@ void TopLevel::_initialize()
 
 // EObject
 ::ecore::EJavaObject TopLevel::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -75,22 +75,22 @@ void TopLevel::_initialize()
     case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::eopposite::EoppositePackage::TOPLEVEL__LEFTEES:
     {
-        _any = m_leftees->asEListOf< ::ecore::EObject_ptr >();
+        _any = getLeftees().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::eopposite::EoppositePackage::TOPLEVEL__RIGHTEES:
     {
-        _any = m_rightees->asEListOf< ::ecore::EObject_ptr >();
+        _any = getRightees().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::eopposite::EoppositePackage::TOPLEVEL__RIGHTMULTIPLES:
     {
-        _any = m_rightMultiples->asEListOf< ::ecore::EObject_ptr >();
+        _any = getRightMultiples().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -108,37 +108,31 @@ void TopLevel::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::eopposite::NamedObject::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::eopposite::EoppositePackage::TOPLEVEL__LEFTEES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::eopposite::TopLevel::getLeftees().clear();
-        ::eopposite::TopLevel::getLeftees().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getLeftees().clear();
+        getLeftees().insert_all(*_t0);
     }
         return;
     case ::eopposite::EoppositePackage::TOPLEVEL__RIGHTEES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::eopposite::TopLevel::getRightees().clear();
-        ::eopposite::TopLevel::getRightees().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getRightees().clear();
+        getRightees().insert_all(*_t0);
     }
         return;
     case ::eopposite::EoppositePackage::TOPLEVEL__RIGHTMULTIPLES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::eopposite::TopLevel::getRightMultiples().clear();
-        ::eopposite::TopLevel::getRightMultiples().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getRightMultiples().clear();
+        getRightMultiples().insert_all(*_t0);
     }
         return;
 
@@ -152,13 +146,13 @@ void TopLevel::eSet(::ecore::EInt _featureID,
     {
     case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::eopposite::EoppositePackage::TOPLEVEL__LEFTEES:
-        return m_leftees && m_leftees->size();
+        return getLeftees().size() > 0;
     case ::eopposite::EoppositePackage::TOPLEVEL__RIGHTEES:
-        return m_rightees && m_rightees->size();
+        return getRightees().size() > 0;
     case ::eopposite::EoppositePackage::TOPLEVEL__RIGHTMULTIPLES:
-        return m_rightMultiples && m_rightMultiples->size();
+        return getRightMultiples().size() > 0;
 
     }
     throw "Error";

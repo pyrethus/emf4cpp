@@ -63,7 +63,7 @@ void UnionDef::_initialize()
 
 // EObject
 ::ecore::EJavaObject UnionDef::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -71,51 +71,51 @@ void UnionDef::_initialize()
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
-                > ::toAny(_any, m_typeCode);
+                > ::toAny(_any, getTypeCode());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_identifier);
+                > ::toAny(_any, getIdentifier());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_repositoryId);
+                > ::toAny(_any, getRepositoryId());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_version);
+                > ::toAny(_any, getVersion());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_absoluteName);
+                > ::toAny(_any, getAbsoluteName());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_definedIn.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getDefinedIn());
     }
         return _any;
     case ::idlmm::IdlmmPackage::UNIONDEF__UNIONMEMBERS:
     {
-        _any = m_unionMembers->asEListOf< ::ecore::EObject_ptr >();
+        _any = getUnionMembers().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::idlmm::IdlmmPackage::UNIONDEF__CONTAINEDDISCRIM:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_containedDiscrim);
+        _any = ::ecore::as < ::ecore::EObject > (getContainedDiscrim());
     }
         return _any;
     case ::idlmm::IdlmmPackage::UNIONDEF__SHAREDDISCRIM:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_sharedDiscrim.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getSharedDiscrim());
     }
         return _any;
 
@@ -133,7 +133,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::IDLType::setTypeCode(_t0);
+        setTypeCode(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
@@ -141,7 +141,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::Contained::setIdentifier(_t0);
+        setIdentifier(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
@@ -149,7 +149,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::Contained::setRepositoryId(_t0);
+        setRepositoryId(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
@@ -157,7 +157,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::Contained::setVersion(_t0);
+        setVersion(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
@@ -165,44 +165,39 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::Contained::setAbsoluteName(_t0);
+        setAbsoluteName(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
-                < ::idlmm::Container > (_t0);
-        ::idlmm::Contained::setDefinedIn(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::Container > (_t0);
+        setDefinedIn(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::UNIONDEF__UNIONMEMBERS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::idlmm::UnionDef::getUnionMembers().clear();
-        ::idlmm::UnionDef::getUnionMembers().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getUnionMembers().clear();
+        getUnionMembers().insert_all(*_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::UNIONDEF__CONTAINEDDISCRIM:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::IDLType_ptr _t1 = std::dynamic_pointer_cast < ::idlmm::IDLType
-                > (_t0);
-        ::idlmm::UnionDef::setContainedDiscrim(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::IDLType > (_t0);
+        setContainedDiscrim(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::UNIONDEF__SHAREDDISCRIM:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::TypedefDef_ptr _t1 = std::dynamic_pointer_cast
-                < ::idlmm::TypedefDef > (_t0);
-        ::idlmm::UnionDef::setSharedDiscrim(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::TypedefDef > (_t0);
+        setSharedDiscrim(_t1);
     }
         return;
 
@@ -216,27 +211,27 @@ void UnionDef::eSet(::ecore::EInt _featureID,
     {
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
-                > ::is_set(m_typeCode);
+                > ::is_set(getTypeCode());
     case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_identifier);
+                > ::is_set(getIdentifier());
     case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_repositoryId);
+                > ::is_set(getRepositoryId());
     case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_version);
+                > ::is_set(getVersion());
     case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_absoluteName);
+                > ::is_set(getAbsoluteName());
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
-        return !m_definedIn.expired();
+        return getDefinedIn().get() != nullptr;
     case ::idlmm::IdlmmPackage::UNIONDEF__UNIONMEMBERS:
-        return m_unionMembers && m_unionMembers->size();
+        return getUnionMembers().size() > 0;
     case ::idlmm::IdlmmPackage::UNIONDEF__CONTAINEDDISCRIM:
-        return !(m_containedDiscrim == nullptr);
+        return getContainedDiscrim().get() != nullptr;
     case ::idlmm::IdlmmPackage::UNIONDEF__SHAREDDISCRIM:
-        return !m_sharedDiscrim.expired();
+        return getSharedDiscrim().get() != nullptr;
 
     }
     throw "Error";

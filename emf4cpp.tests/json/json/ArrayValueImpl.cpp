@@ -56,14 +56,14 @@ void ArrayValue::_initialize()
 
 // EObject
 ::ecore::EJavaObject ArrayValue::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::json::JsonPackage::ARRAYVALUE__VALUES:
     {
-        _any = m_values->asEListOf< ::ecore::EObject_ptr >();
+        _any = getValues().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -78,12 +78,10 @@ void ArrayValue::eSet(::ecore::EInt _featureID,
     {
     case ::json::JsonPackage::ARRAYVALUE__VALUES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::json::ArrayValue::getValues().clear();
-        ::json::ArrayValue::getValues().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getValues().clear();
+        getValues().insert_all(*_t0);
     }
         return;
 
@@ -96,7 +94,7 @@ void ArrayValue::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::json::JsonPackage::ARRAYVALUE__VALUES:
-        return m_values && m_values->size();
+        return getValues().size() > 0;
 
     }
     throw "Error";

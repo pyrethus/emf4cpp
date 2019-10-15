@@ -52,7 +52,7 @@ void FixedDef::_initialize()
 
 // EObject
 ::ecore::EJavaObject FixedDef::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -60,19 +60,19 @@ void FixedDef::_initialize()
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
-                > ::toAny(_any, m_typeCode);
+                > ::toAny(_any, getTypeCode());
     }
         return _any;
     case ::idlmm::IdlmmPackage::FIXEDDEF__DIGITS:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_digits);
+                > ::toAny(_any, getDigits());
     }
         return _any;
     case ::idlmm::IdlmmPackage::FIXEDDEF__SCALE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_scale);
+                > ::toAny(_any, getScale());
     }
         return _any;
 
@@ -90,7 +90,7 @@ void FixedDef::eSet(::ecore::EInt _featureID,
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::IDLType::setTypeCode(_t0);
+        setTypeCode(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::FIXEDDEF__DIGITS:
@@ -98,7 +98,7 @@ void FixedDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::FixedDef::setDigits(_t0);
+        setDigits(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::FIXEDDEF__SCALE:
@@ -106,7 +106,7 @@ void FixedDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::FixedDef::setScale(_t0);
+        setScale(_t0);
     }
         return;
 
@@ -120,13 +120,13 @@ void FixedDef::eSet(::ecore::EInt _featureID,
     {
     case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
-                > ::is_set(m_typeCode);
+                > ::is_set(getTypeCode());
     case ::idlmm::IdlmmPackage::FIXEDDEF__DIGITS:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_digits);
+                > ::is_set(getDigits());
     case ::idlmm::IdlmmPackage::FIXEDDEF__SCALE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_scale);
+                > ::is_set(getScale());
 
     }
     throw "Error";

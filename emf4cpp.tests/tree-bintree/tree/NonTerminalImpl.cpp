@@ -56,7 +56,7 @@ void NonTerminal::_initialize()
 
 // EObject
 ::ecore::EJavaObject NonTerminal::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -64,17 +64,17 @@ void NonTerminal::_initialize()
     case ::tree::TreePackage::TREENODE__DATA:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_data);
+                > ::toAny(_any, getData());
     }
         return _any;
     case ::tree::TreePackage::TREENODE__PARENT:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_parent.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getParent());
     }
         return _any;
     case ::tree::TreePackage::NONTERMINAL__CHILDREN:
     {
-        _any = m_children->asEListOf< ::ecore::EObject_ptr >();
+        _any = getChildren().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -92,26 +92,23 @@ void NonTerminal::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::tree::TreeNode::setData(_t0);
+        setData(_t0);
     }
         return;
     case ::tree::TreePackage::TREENODE__PARENT:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::tree::TreeNode_ptr _t1 = std::dynamic_pointer_cast < ::tree::TreeNode
-                > (_t0);
-        ::tree::TreeNode::setParent(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::tree::TreeNode > (_t0);
+        setParent(_t1);
     }
         return;
     case ::tree::TreePackage::NONTERMINAL__CHILDREN:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::tree::NonTerminal::getChildren().clear();
-        ::tree::NonTerminal::getChildren().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getChildren().clear();
+        getChildren().insert_all(*_t0);
     }
         return;
 
@@ -125,11 +122,11 @@ void NonTerminal::eSet(::ecore::EInt _featureID,
     {
     case ::tree::TreePackage::TREENODE__DATA:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_data);
+                > ::is_set(getData());
     case ::tree::TreePackage::TREENODE__PARENT:
-        return !m_parent.expired();
+        return getParent().get() != nullptr;
     case ::tree::TreePackage::NONTERMINAL__CHILDREN:
-        return m_children && m_children->size();
+        return getChildren().size() > 0;
 
     }
     throw "Error";

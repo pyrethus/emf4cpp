@@ -50,7 +50,7 @@ void EStringToStringMapEntry::_initialize()
 
 // EObject
 ::ecore::EJavaObject EStringToStringMapEntry::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -58,13 +58,13 @@ void EStringToStringMapEntry::_initialize()
     case ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__KEY:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_key);
+                > ::toAny(_any, getKey());
     }
         return _any;
     case ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__VALUE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_value);
+                > ::toAny(_any, getValue());
     }
         return _any;
 
@@ -82,7 +82,7 @@ void EStringToStringMapEntry::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::ecore::EStringToStringMapEntry::setKey(_t0);
+        setKey(_t0);
     }
         return;
     case ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__VALUE:
@@ -90,7 +90,7 @@ void EStringToStringMapEntry::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::ecore::EStringToStringMapEntry::setValue(_t0);
+        setValue(_t0);
     }
         return;
 
@@ -104,10 +104,10 @@ void EStringToStringMapEntry::eSet(::ecore::EInt _featureID,
     {
     case ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__KEY:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_key);
+                > ::is_set(getKey());
     case ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__VALUE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_value);
+                > ::is_set(getValue());
 
     }
     throw "Error";

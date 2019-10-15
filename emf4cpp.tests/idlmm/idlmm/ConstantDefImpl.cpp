@@ -57,7 +57,7 @@ void ConstantDef::_initialize()
 
 // EObject
 ::ecore::EJavaObject ConstantDef::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -65,46 +65,46 @@ void ConstantDef::_initialize()
     case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_identifier);
+                > ::toAny(_any, getIdentifier());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_repositoryId);
+                > ::toAny(_any, getRepositoryId());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_version);
+                > ::toAny(_any, getVersion());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_absoluteName);
+                > ::toAny(_any, getAbsoluteName());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_definedIn.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getDefinedIn());
     }
         return _any;
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_containedType);
+        _any = ::ecore::as < ::ecore::EObject > (getContainedType());
     }
         return _any;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_sharedType.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getSharedType());
     }
         return _any;
     case ::idlmm::IdlmmPackage::CONSTANTDEF__CONSTVALUE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::EAny
-                > ::toAny(_any, m_constValue);
+                > ::toAny(_any, getConstValue());
     }
         return _any;
 
@@ -122,7 +122,7 @@ void ConstantDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::Contained::setIdentifier(_t0);
+        setIdentifier(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
@@ -130,7 +130,7 @@ void ConstantDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::Contained::setRepositoryId(_t0);
+        setRepositoryId(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
@@ -138,7 +138,7 @@ void ConstantDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::Contained::setVersion(_t0);
+        setVersion(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
@@ -146,34 +146,31 @@ void ConstantDef::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::Contained::setAbsoluteName(_t0);
+        setAbsoluteName(_t0);
     }
         return;
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
-                < ::idlmm::Container > (_t0);
-        ::idlmm::Contained::setDefinedIn(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::Container > (_t0);
+        setDefinedIn(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::IDLType_ptr _t1 = std::dynamic_pointer_cast < ::idlmm::IDLType
-                > (_t0);
-        ::idlmm::Typed::setContainedType(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::IDLType > (_t0);
+        setContainedType(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::idlmm::TypedefDef_ptr _t1 = std::dynamic_pointer_cast
-                < ::idlmm::TypedefDef > (_t0);
-        ::idlmm::Typed::setSharedType(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::idlmm::TypedefDef > (_t0);
+        setSharedType(_t1);
     }
         return;
     case ::idlmm::IdlmmPackage::CONSTANTDEF__CONSTVALUE:
@@ -181,7 +178,7 @@ void ConstantDef::eSet(::ecore::EInt _featureID,
         ::idlmm::EAny _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::EAny
                 > ::fromAny(_newValue, _t0);
-        ::idlmm::ConstantDef::setConstValue(_t0);
+        setConstValue(_t0);
     }
         return;
 
@@ -195,25 +192,25 @@ void ConstantDef::eSet(::ecore::EInt _featureID,
     {
     case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_identifier);
+                > ::is_set(getIdentifier());
     case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_repositoryId);
+                > ::is_set(getRepositoryId());
     case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_version);
+                > ::is_set(getVersion());
     case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_absoluteName);
+                > ::is_set(getAbsoluteName());
     case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
-        return !m_definedIn.expired();
+        return getDefinedIn().get() != nullptr;
     case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
-        return !(m_containedType == nullptr);
+        return getContainedType().get() != nullptr;
     case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
-        return !m_sharedType.expired();
+        return getSharedType().get() != nullptr;
     case ::idlmm::IdlmmPackage::CONSTANTDEF__CONSTVALUE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::EAny
-                > ::is_set(m_constValue);
+                > ::is_set(getConstValue());
 
     }
     throw "Error";

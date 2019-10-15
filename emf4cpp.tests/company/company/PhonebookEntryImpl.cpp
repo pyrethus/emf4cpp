@@ -50,7 +50,7 @@ void PhonebookEntry::_initialize()
 
 // EObject
 ::ecore::EJavaObject PhonebookEntry::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)

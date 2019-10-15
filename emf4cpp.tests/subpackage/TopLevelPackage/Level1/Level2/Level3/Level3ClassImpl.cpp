@@ -53,14 +53,14 @@ void Level3Class::_initialize()
 
 // EObject
 ::ecore::EJavaObject Level3Class::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_reference.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getReference());
     }
         return _any;
 
@@ -75,11 +75,10 @@ void Level3Class::eSet(::ecore::EInt _featureID,
     {
     case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::ecore::EObject_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EObject
-                > (_t0);
-        ::TopLevelPackage::TopLevelClass::setReference(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::ecore::EObject > (_t0);
+        setReference(_t1);
     }
         return;
 
@@ -92,7 +91,7 @@ void Level3Class::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
-        return !m_reference.expired();
+        return getReference().get() != nullptr;
 
     }
     throw "Error";

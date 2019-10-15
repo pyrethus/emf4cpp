@@ -58,50 +58,50 @@ void AggregatedRelationship::_initialize()
 
 // EObject
 ::ecore::EJavaObject AggregatedRelationship::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        _any = m_attribute->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        _any = m_annotation->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
     {
-        _any = m_stereotype->asEListOf< ::ecore::EObject_ptr >();
+        _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
     {
-        _any = m_taggedValue->asEListOf< ::ecore::EObject_ptr >();
+        _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__FROM:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_from.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getFrom());
     }
         return _any;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TO:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_to.lock());
+        _any = ::ecore::as < ::ecore::EObject > (getTo());
     }
         return _any;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__RELATION:
     {
-        _any = m_relation->asEListOf< ::ecore::EObject_ptr >();
+        _any = getRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__DENSITY:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::Integer
-                > ::toAny(_any, m_density);
+                > ::toAny(_any, getDensity());
     }
         return _any;
 
@@ -116,70 +116,58 @@ void AggregatedRelationship::eSet(::ecore::EInt _featureID,
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::Element::getAttribute().clear();
-        ::kdm::core::Element::getAttribute().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAttribute().clear();
+        getAttribute().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::Element::getAnnotation().clear();
-        ::kdm::core::Element::getAnnotation().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAnnotation().clear();
+        getAnnotation().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::ModelElement::getStereotype().clear();
-        ::kdm::core::ModelElement::getStereotype().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getStereotype().clear();
+        getStereotype().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::ModelElement::getTaggedValue().clear();
-        ::kdm::core::ModelElement::getTaggedValue().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getTaggedValue().clear();
+        getTaggedValue().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__FROM:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::kdm::core::KDMEntity_ptr _t1 = std::dynamic_pointer_cast
-                < ::kdm::core::KDMEntity > (_t0);
-        ::kdm::core::AggregatedRelationship::setFrom(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::kdm::core::KDMEntity > (_t0);
+        setFrom(_t1);
     }
         return;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TO:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::kdm::core::KDMEntity_ptr _t1 = std::dynamic_pointer_cast
-                < ::kdm::core::KDMEntity > (_t0);
-        ::kdm::core::AggregatedRelationship::setTo(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::kdm::core::KDMEntity > (_t0);
+        setTo(_t1);
     }
         return;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__RELATION:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::AggregatedRelationship::getRelation().clear();
-        ::kdm::core::AggregatedRelationship::getRelation().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getRelation().clear();
+        getRelation().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__DENSITY:
@@ -187,7 +175,7 @@ void AggregatedRelationship::eSet(::ecore::EInt _featureID,
         ::kdm::core::Integer _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::Integer
                 > ::fromAny(_newValue, _t0);
-        ::kdm::core::AggregatedRelationship::setDensity(_t0);
+        setDensity(_t0);
     }
         return;
 
@@ -200,22 +188,22 @@ void AggregatedRelationship::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
-        return m_attribute && m_attribute->size();
+        return getAttribute().size() > 0;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
-        return m_annotation && m_annotation->size();
+        return getAnnotation().size() > 0;
     case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
-        return m_stereotype && m_stereotype->size();
+        return getStereotype().size() > 0;
     case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
-        return m_taggedValue && m_taggedValue->size();
+        return getTaggedValue().size() > 0;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__FROM:
-        return !m_from.expired();
+        return getFrom().get() != nullptr;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TO:
-        return !m_to.expired();
+        return getTo().get() != nullptr;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__RELATION:
-        return m_relation && m_relation->size();
+        return getRelation().size() > 0;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__DENSITY:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::Integer
-                > ::is_set(m_density);
+                > ::is_set(getDensity());
 
     }
     throw "Error";

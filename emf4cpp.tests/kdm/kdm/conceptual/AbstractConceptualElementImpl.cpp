@@ -74,55 +74,55 @@ void AbstractConceptualElement::_initialize()
 
 // EObject
 ::ecore::EJavaObject AbstractConceptualElement::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        _any = m_attribute->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        _any = m_annotation->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
     {
-        _any = m_stereotype->asEListOf< ::ecore::EObject_ptr >();
+        _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
     {
-        _any = m_taggedValue->asEListOf< ::ecore::EObject_ptr >();
+        _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::core::CorePackage::KDMENTITY__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE:
     {
-        _any = m_source->asEListOf< ::ecore::EObject_ptr >();
+        _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION:
     {
-        _any = m_implementation->asEListOf< ::ecore::EObject_ptr >();
+        _any = getImplementation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION:
     {
-        _any = m_conceptualRelation->asEListOf< ::ecore::EObject_ptr >();
+        _any = getConceptualRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION:
     {
-        _any = m_abstraction->asEListOf< ::ecore::EObject_ptr >();
+        _any = getAbstraction().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -137,42 +137,34 @@ void AbstractConceptualElement::eSet(::ecore::EInt _featureID,
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::Element::getAttribute().clear();
-        ::kdm::core::Element::getAttribute().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAttribute().clear();
+        getAttribute().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::Element::getAnnotation().clear();
-        ::kdm::core::Element::getAnnotation().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAnnotation().clear();
+        getAnnotation().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::ModelElement::getStereotype().clear();
-        ::kdm::core::ModelElement::getStereotype().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getStereotype().clear();
+        getStereotype().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::core::ModelElement::getTaggedValue().clear();
-        ::kdm::core::ModelElement::getTaggedValue().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getTaggedValue().clear();
+        getTaggedValue().insert_all(*_t0);
     }
         return;
     case ::kdm::core::CorePackage::KDMENTITY__NAME:
@@ -180,51 +172,39 @@ void AbstractConceptualElement::eSet(::ecore::EInt _featureID,
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::fromAny(_newValue, _t0);
-        ::kdm::core::KDMEntity::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::conceptual::AbstractConceptualElement::getSource().clear();
-        ::kdm::conceptual::AbstractConceptualElement::getSource().insert_all(
-                *_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getSource().clear();
+        getSource().insert_all(*_t0);
     }
         return;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::conceptual::AbstractConceptualElement::getImplementation().clear();
-        ::kdm::conceptual::AbstractConceptualElement::getImplementation().insert_all(
-                *_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getImplementation().clear();
+        getImplementation().insert_all(*_t0);
     }
         return;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::conceptual::AbstractConceptualElement::getConceptualRelation().clear();
-        ::kdm::conceptual::AbstractConceptualElement::getConceptualRelation().insert_all(
-                *_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getConceptualRelation().clear();
+        getConceptualRelation().insert_all(*_t0);
     }
         return;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::kdm::conceptual::AbstractConceptualElement::getAbstraction().clear();
-        ::kdm::conceptual::AbstractConceptualElement::getAbstraction().insert_all(
-                *_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getAbstraction().clear();
+        getAbstraction().insert_all(*_t0);
     }
         return;
 
@@ -237,24 +217,24 @@ void AbstractConceptualElement::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
-        return m_attribute && m_attribute->size();
+        return getAttribute().size() > 0;
     case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
-        return m_annotation && m_annotation->size();
+        return getAnnotation().size() > 0;
     case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
-        return m_stereotype && m_stereotype->size();
+        return getStereotype().size() > 0;
     case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
-        return m_taggedValue && m_taggedValue->size();
+        return getTaggedValue().size() > 0;
     case ::kdm::core::CorePackage::KDMENTITY__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE:
-        return m_source && m_source->size();
+        return getSource().size() > 0;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION:
-        return m_implementation && m_implementation->size();
+        return getImplementation().size() > 0;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION:
-        return m_conceptualRelation && m_conceptualRelation->size();
+        return getConceptualRelation().size() > 0;
     case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION:
-        return m_abstraction && m_abstraction->size();
+        return getAbstraction().size() > 0;
 
     }
     throw "Error";

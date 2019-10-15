@@ -50,26 +50,27 @@ void AnyType::_initialize()
 
 // EObject
 ::ecore::EJavaObject AnyType::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::type::TypePackage::ANYTYPE__MIXED:
     {
-        std::vector < ::ecorecpp::mapping::any > _anys(m_mixed.size());
-        for (size_t _i = 0; _i < m_mixed.size(); _i++)
+        std::vector < ::ecorecpp::mapping::any > _anys(getMixed().size());
+        for (size_t _i = 0; _i < getMixed().size(); _i++)
             ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
-                    > ::toAny(_anys[_i], m_mixed[_i]);
+                    > ::toAny(_anys[_i], getMixed()[_i]);
         _any = _anys;
     }
         return _any;
     case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
     {
-        std::vector < ::ecorecpp::mapping::any > _anys(m_anyAttribute.size());
-        for (size_t _i = 0; _i < m_anyAttribute.size(); _i++)
+        std::vector < ::ecorecpp::mapping::any
+                > _anys(getAnyAttribute().size());
+        for (size_t _i = 0; _i < getAnyAttribute().size(); _i++)
             ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
-                    > ::toAny(_anys[_i], m_anyAttribute[_i]);
+                    > ::toAny(_anys[_i], getAnyAttribute()[_i]);
         _any = _anys;
     }
         return _any;
@@ -88,7 +89,7 @@ void AnyType::eSet(::ecore::EInt _featureID,
         ::ecore::EFeatureMapEntry _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
                 > ::fromAny(_newValue, _t0);
-        ::type::AnyType::addMixed(_t0);
+        addMixed(_t0);
     }
         return;
     case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
@@ -96,7 +97,7 @@ void AnyType::eSet(::ecore::EInt _featureID,
         ::ecore::EFeatureMapEntry _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
                 > ::fromAny(_newValue, _t0);
-        ::type::AnyType::addAnyAttribute(_t0);
+        addAnyAttribute(_t0);
     }
         return;
 
@@ -109,11 +110,11 @@ void AnyType::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::type::TypePackage::ANYTYPE__MIXED:
-        return m_mixed.size();
+        return getMixed().size() > 0;
     case ::type::TypePackage::ANYTYPE__ANY:
-        return m_any.size();
+        return getAny().size() > 0;
     case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
-        return m_anyAttribute.size();
+        return getAnyAttribute().size() > 0;
 
     }
     throw "Error";

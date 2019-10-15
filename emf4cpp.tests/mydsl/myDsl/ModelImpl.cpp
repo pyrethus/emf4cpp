@@ -60,19 +60,19 @@ void Model::_initialize()
 
 // EObject
 ::ecore::EJavaObject Model::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::myDsl::MyDslPackage::MODEL__IMPORTS:
     {
-        _any = m_imports->asEListOf< ::ecore::EObject_ptr >();
+        _any = getImports().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::myDsl::MyDslPackage::MODEL__ELEMENTS:
     {
-        _any = m_elements->asEListOf< ::ecore::EObject_ptr >();
+        _any = getElements().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -87,22 +87,18 @@ void Model::eSet(::ecore::EInt _featureID,
     {
     case ::myDsl::MyDslPackage::MODEL__IMPORTS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::myDsl::Model::getImports().clear();
-        ::myDsl::Model::getImports().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getImports().clear();
+        getImports().insert_all(*_t0);
     }
         return;
     case ::myDsl::MyDslPackage::MODEL__ELEMENTS:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::myDsl::Model::getElements().clear();
-        ::myDsl::Model::getElements().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getElements().clear();
+        getElements().insert_all(*_t0);
     }
         return;
 
@@ -115,9 +111,9 @@ void Model::eSet(::ecore::EInt _featureID,
     switch (_featureID)
     {
     case ::myDsl::MyDslPackage::MODEL__IMPORTS:
-        return m_imports && m_imports->size();
+        return getImports().size() > 0;
     case ::myDsl::MyDslPackage::MODEL__ELEMENTS:
-        return m_elements && m_elements->size();
+        return getElements().size() > 0;
 
     }
     throw "Error";

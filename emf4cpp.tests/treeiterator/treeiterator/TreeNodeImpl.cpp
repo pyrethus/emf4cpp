@@ -60,7 +60,7 @@ void TreeNode::_initialize()
 
 // EObject
 ::ecore::EJavaObject TreeNode::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
@@ -68,17 +68,17 @@ void TreeNode::_initialize()
     case ::treeiterator::TreeiteratorPackage::TREENODE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_name);
+                > ::toAny(_any, getName());
     }
         return _any;
     case ::treeiterator::TreeiteratorPackage::TREENODE__CHILDREN:
     {
-        _any = m_children->asEListOf< ::ecore::EObject_ptr >();
+        _any = getChildren().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
     case ::treeiterator::TreeiteratorPackage::TREENODE__LEAF:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_leaf);
+        _any = ::ecore::as < ::ecore::EObject > (getLeaf());
     }
         return _any;
 
@@ -96,26 +96,23 @@ void TreeNode::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::treeiterator::TreeNode::setName(_t0);
+        setName(_t0);
     }
         return;
     case ::treeiterator::TreeiteratorPackage::TREENODE__CHILDREN:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::treeiterator::TreeNode::getChildren().clear();
-        ::treeiterator::TreeNode::getChildren().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getChildren().clear();
+        getChildren().insert_all(*_t0);
     }
         return;
     case ::treeiterator::TreeiteratorPackage::TREENODE__LEAF:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::treeiterator::Leaf_ptr _t1 = std::dynamic_pointer_cast
-                < ::treeiterator::Leaf > (_t0);
-        ::treeiterator::TreeNode::setLeaf(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::treeiterator::Leaf > (_t0);
+        setLeaf(_t1);
     }
         return;
 
@@ -129,11 +126,11 @@ void TreeNode::eSet(::ecore::EInt _featureID,
     {
     case ::treeiterator::TreeiteratorPackage::TREENODE__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_name);
+                > ::is_set(getName());
     case ::treeiterator::TreeiteratorPackage::TREENODE__CHILDREN:
-        return m_children && m_children->size();
+        return getChildren().size() > 0;
     case ::treeiterator::TreeiteratorPackage::TREENODE__LEAF:
-        return !(m_leaf == nullptr);
+        return getLeaf().get() != nullptr;
 
     }
     throw "Error";

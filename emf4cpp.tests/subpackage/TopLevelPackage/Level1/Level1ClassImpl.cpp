@@ -50,7 +50,7 @@ void Level1Class::_initialize()
 
 // EObject
 ::ecore::EJavaObject Level1Class::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)

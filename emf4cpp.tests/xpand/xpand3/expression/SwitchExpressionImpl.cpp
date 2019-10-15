@@ -65,46 +65,48 @@ void SwitchExpression::_initialize()
 
 // EObject
 ::ecore::EJavaObject SwitchExpression::eGet(::ecore::EInt _featureID,
-        ::ecore::EBoolean _resolve)
+        ::ecore::EBoolean /*_resolve*/)
 {
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_line);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getLine());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
-                > ::toAny(_any, m_start);
+                > ::toAny(_any, getStart());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
     {
-        ::ecorecpp::mapping::any_traits < ::ecore::EInt > ::toAny(_any, m_end);
+        ::ecorecpp::mapping::any_traits < ::ecore::EInt
+                > ::toAny(_any, getEnd());
     }
         return _any;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::toAny(_any, m_fileName);
+                > ::toAny(_any, getFileName());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__SWITCHEXPR:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_switchExpr);
+        _any = ::ecore::as < ::ecore::EObject > (getSwitchExpr());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__DEFAULTEXPR:
     {
-        _any = ::ecore::as < ::ecore::EObject > (m_defaultExpr);
+        _any = ::ecore::as < ::ecore::EObject > (getDefaultExpr());
     }
         return _any;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__CASES:
     {
-        _any = m_cases->asEListOf< ::ecore::EObject_ptr >();
+        _any = getCases().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
 
@@ -122,7 +124,7 @@ void SwitchExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setLine(_t0);
+        setLine(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
@@ -130,7 +132,7 @@ void SwitchExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setStart(_t0);
+        setStart(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
@@ -138,7 +140,7 @@ void SwitchExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setEnd(_t0);
+        setEnd(_t0);
     }
         return;
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
@@ -146,37 +148,33 @@ void SwitchExpression::eSet(::ecore::EInt _featureID,
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
-        ::xpand3::SyntaxElement::setFileName(_t0);
+        setFileName(_t0);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__SWITCHEXPR:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::expression::AbstractExpression_ptr _t1 =
-                std::dynamic_pointer_cast
-                        < ::xpand3::expression::AbstractExpression > (_t0);
-        ::xpand3::expression::SwitchExpression::setSwitchExpr(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::expression::AbstractExpression
+                > (_t0);
+        setSwitchExpr(_t1);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__DEFAULTEXPR:
     {
-        ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
-                < ::ecore::EObject_ptr > (_newValue);
-        ::xpand3::expression::AbstractExpression_ptr _t1 =
-                std::dynamic_pointer_cast
-                        < ::xpand3::expression::AbstractExpression > (_t0);
-        ::xpand3::expression::SwitchExpression::setDefaultExpr(_t1);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
+                > (_newValue);
+        auto _t1 = ::ecore::as < ::xpand3::expression::AbstractExpression
+                > (_t0);
+        setDefaultExpr(_t1);
     }
         return;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__CASES:
     {
-        ::ecore::EList_ptr < ::ecore::EObject_ptr > _t0 =
-                ::ecorecpp::mapping::any::any_cast
-                        < ::ecore::EList_ptr< ::ecore::EObject_ptr >
-                        > (_newValue);
-        ::xpand3::expression::SwitchExpression::getCases().clear();
-        ::xpand3::expression::SwitchExpression::getCases().insert_all(*_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast
+                < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
+        getCases().clear();
+        getCases().insert_all(*_t0);
     }
         return;
 
@@ -190,21 +188,22 @@ void SwitchExpression::eSet(::ecore::EInt _featureID,
     {
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_line);
+                > ::is_set(getLine());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
-                > ::is_set(m_start);
+                > ::is_set(getStart());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
-        return ::ecorecpp::mapping::set_traits < ::ecore::EInt > ::is_set(m_end);
+        return ::ecorecpp::mapping::set_traits < ::ecore::EInt
+                > ::is_set(getEnd());
     case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
-                > ::is_set(m_fileName);
+                > ::is_set(getFileName());
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__SWITCHEXPR:
-        return !(m_switchExpr == nullptr);
+        return getSwitchExpr().get() != nullptr;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__DEFAULTEXPR:
-        return !(m_defaultExpr == nullptr);
+        return getDefaultExpr().get() != nullptr;
     case ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__CASES:
-        return m_cases && m_cases->size();
+        return getCases().size() > 0;
 
     }
     throw "Error";
