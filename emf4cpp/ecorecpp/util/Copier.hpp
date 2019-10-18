@@ -40,8 +40,15 @@ public:
 	 * copied tree's root, a nullptr is returned. */
 	::ecore::EObject_ptr get_clone( ::ecore::EObject_ptr );
 
+	/** Control if attributes marked as ID are copied 1:1 or if they are
+	 * skipped. When they are skipped, an outer mechanism usually will
+	 * recreate new unique values for them. */
+	void setExactCopy(bool b) { m_exactCopy = b; }
+	bool isExactCopy() const { return m_exactCopy; }
+
 protected:
-	bool _keepExternalRefs;
+	bool m_keepExternalRefs;
+	bool m_exactCopy {false};
 	std::map<::ecore::EObject_ptr, ::ecore::EObject_ptr> m_objectsMap;
 };
 

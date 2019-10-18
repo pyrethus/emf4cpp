@@ -31,7 +31,7 @@ using namespace ::ecore;
 using EList_ptr = ::ecorecpp::mapping::EList<EObject_ptr>::ptr_type;
 
 Copier::Copier( bool keepExternalReferences )
-	: _keepExternalRefs( keepExternalReferences ) { }
+	: m_keepExternalRefs( keepExternalReferences ) { }
 
 Copier::~Copier() { }
 
@@ -50,10 +50,16 @@ EObject_ptr Copier::clone( EObject_ptr obj ) {
 	return clone;
 }
 
-/**
- * This does a deep copy of attributes and containments of the given object
- * without adjusting non-containment references.
- * \sa copy_references()
+/** Clone the given object, including its attributes. The original object and
+ * the clone are inserted in m_objectsMap.
+ *
+ * For each containment reference, this method is called recursively and the
+ * cloned objects are added instead of the original object.
+ *
+ * Non-containment references are not copied, i.e. in the cloned object they
+ * are empty. \sa copy_references()
+ *
+ * Attributes marked as ID are not copied, unless m_exactCopy is set.
  */
 EObject_ptr Copier::copy( EObject_ptr src ) {
 	EClass_ptr cls = src->eClass();
@@ -68,7 +74,8 @@ EObject_ptr Copier::copy( EObject_ptr src ) {
 	const auto& attributes = cls->getEAllAttributes();
 	for ( size_t i = 0; i < attributes.size(); i++ ) {
 		EAttribute_ptr const& attr = attributes[ i ];
-		if ( attr->isTransient() || ! src->eIsSet( attr ) || attr->isID() )
+		if ( attr->isTransient() || ! src->eIsSet( attr )
+			 || (attr->isID() && !m_exactCopy) )
 			continue;
 		if ( attr->getUpperBound() == 1)
 			dst->eSet( attr, src->eGet( attr ) );
@@ -128,7 +135,7 @@ EObject_ptr Copier::copy( EObject_ptr src ) {
  *object 'dst), re-targeting them to cloned object instances.
  *\sa m_objectsMap
  */
-	void Copier::copy_references( ::ecore::EObject_ptr src, ::ecore::EObject_ptr dst ) {
+void Copier::copy_references( ::ecore::EObject_ptr src, ::ecore::EObject_ptr dst ) {
 	const auto& ereferences = src->eClass()->getEAllReferences();
 	for ( size_t i = 0; i < ereferences.size(); i++ ) {
 		EReference_ptr eref = ereferences[ i ];
@@ -148,8 +155,8 @@ EObject_ptr Copier::copy( EObject_ptr src ) {
 					/* This is false in case of a reference into another resource or
 					 * outside the subject given to the Copier to be cloned.	*/
 					const bool isKnownRef = m_objectsMap.count( refObj );
-					//DEBUG_MSG( cout, "ref #" <<j <<" " <<refObj << ' ' <<isKnownRef <<_keepExternalRefs );
-					if ( isKnownRef || _keepExternalRefs ) {
+					//DEBUG_MSG( cout, "ref #" <<j <<" " <<refObj << ' ' <<isKnownRef <<m_keepExternalRefs );
+					if ( isKnownRef || m_keepExternalRefs ) {
 						if ( isKnownRef )
 							refObj = m_objectsMap.at( refObj );
 						dsts->push_back( refObj );
@@ -158,8 +165,8 @@ EObject_ptr Copier::copy( EObject_ptr src ) {
 			}
 		} else if ( auto refObj = mapping::any::any_cast<EObject_ptr>( src_refs ) ) {
 			const bool isKnownRef = m_objectsMap.count( refObj );
-			//DEBUG_MSG( cout, "ref " <<refObj <<' ' <<isKnownRef <<_keepExternalRefs );
-			if ( isKnownRef || _keepExternalRefs ) {
+			//DEBUG_MSG( cout, "ref " <<refObj <<' ' <<isKnownRef <<m_keepExternalRefs );
+			if ( isKnownRef || m_keepExternalRefs ) {
 				if ( isKnownRef )
 					refObj = m_objectsMap.at( refObj );
 				dst->eSet( eref, refObj );
