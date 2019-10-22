@@ -20,8 +20,9 @@
 #ifndef Copier_HPP
 #define Copier_HPP
 
-#include <ecore/EObject.hpp>
 #include <map>
+#include <ecore/EObject.hpp>
+#include <ecorecpp/mapping/EList.hpp>
 
 namespace ecorecpp {
 namespace util {
@@ -31,14 +32,20 @@ public:
 	Copier( bool keepExternalReferences = true );
 	virtual ~Copier();
 
-	::ecore::EObject_ptr clone( ::ecore::EObject_ptr );
-	::ecore::EObject_ptr copy( ::ecore::EObject_ptr );
-	void copy_references( ::ecore::EObject_ptr src, ::ecore::EObject_ptr dst );
+	/** Create a deep copy of the given EObject. */
+	virtual ::ecore::EObject_ptr clone( ::ecore::EObject_ptr );
+
+	/** Create a deep copy of all given EObjects. */
+	virtual std::shared_ptr<::ecorecpp::mapping::EList< ::ecore::EObject_ptr > >
+		clone(const ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >&);
+
+	virtual ::ecore::EObject_ptr copy( ::ecore::EObject_ptr );
+	virtual void copy_references( ::ecore::EObject_ptr src, ::ecore::EObject_ptr dst );
 
 	/** Return a copied object for a source object. If the source object was
 	 * not copied, e.g. because it is not in a containment relation to the
 	 * copied tree's root, a nullptr is returned. */
-	::ecore::EObject_ptr get_clone( ::ecore::EObject_ptr );
+	virtual ::ecore::EObject_ptr get_clone( ::ecore::EObject_ptr );
 
 	/** Control if attributes marked as ID are copied 1:1 or if they are
 	 * skipped. When they are skipped, an outer mechanism usually will
@@ -47,9 +54,16 @@ public:
 	bool isExactCopy() const { return m_exactCopy; }
 
 protected:
-	bool m_keepExternalRefs;
+	bool m_keepExternalRefs {true};
 	bool m_exactCopy {false};
 	std::map<::ecore::EObject_ptr, ::ecore::EObject_ptr> m_objectsMap;
+
+	virtual void keepReference(::ecore::EObject_ptr dst,
+							   ::ecore::EReference_ptr,
+							   ::ecore::EObject_ptr refObj);
+	virtual void dropReference(::ecore::EObject_ptr dst,
+							   ::ecore::EReference_ptr,
+							   ::ecore::EObject_ptr refObj);
 };
 
 } // util
