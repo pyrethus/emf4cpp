@@ -18,44 +18,47 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _DLL_TYPE_HPP
-#define _DLL_TYPE_HPP
+#ifndef DLL_TYPE_HPP
+#define DLL_TYPE_HPP
 /*
- * Defines 3 preprocessor symbols:
- * - MAKE_TYPE_DLL  set to 1 when building the dll, else unset
- * - USE_TYPE_DLL    set to 1 when using the dll, else unset
- * - EXPORT_TYPE_DLL  always set, import when using the dll,
- *          export when building dll
+ * To use or build the library as a static or shared one, define at most one of
+ * - USE_TYPE_STATIC, MAKE_TYPE_STATIC,
+ * - USE_TYPE_DLL, or MAKE_TYPE_DLL.
+ * When none of these macros are defined, then USE_TYPE_DLL
+ * is implicitly considered as defined.
  *
- * Pattern taken from qglobal.h
+ * The definition of one those 4 macros implies the value of the macros
+ * - EXPORT_TYPE_DLL and
+ * - EXTERN_TYPE_DLL.
+ * These must be used to correctly use or build the library as a shared one.
+ *
  */
 
-#if defined(__WIN32__) || defined(_WIN32)
-
-#   if defined(MAKE_TYPE_DLL)
-#       if defined(USE_TYPE_DLL)
-#           undef USE_TYPE_DLL
-#       endif
-
-#       define EXPORT_TYPE_DLL __declspec(dllexport)
-#       define EXTERN_TYPE_DLL __declspec(dllimport)
-
-#   else
-#       if !defined(USE_TYPE_DLL)
-#           define USE_TYPE_DLL 1
-#       endif
-
-#       define EXPORT_TYPE_DLL __declspec(dllimport)
-#       define EXTERN_TYPE_DLL __declspec(dllexport)
-
-#   endif
-
-#else
-
-#   define EXPORT_TYPE_DLL
-#   define EXTERN_TYPE_DLL
-
+#if defined(MAKE_TYPE_STATIC) +\
+    defined(USE_TYPE_STATIC) +\
+    defined(MAKE_TYPE_DLL) +\
+    defined(USE_TYPE_DLL) > 1
+#   error "Please define at most one of MAKE_TYPE_STATIC, USE_TYPE_STATIC, MAKE_TYPE_DLL, or USE_TYPE_DLL"
 #endif
 
-#endif // _TYPE_HPP
+#if defined(__WIN32__) || defined(_WIN32)
+#   if defined(MAKE_TYPE_STATIC) || defined(USE_TYPE_STATIC)
+#       define EXPORT_TYPE_DLL
+#       define EXTERN_TYPE_DLL
+#   elif defined(MAKE_TYPE_DLL)
+#       define EXPORT_TYPE_DLL __declspec(dllexport)
+#       define EXTERN_TYPE_DLL __declspec(dllimport)
+#   else
+#       define EXPORT_TYPE_DLL __declspec(dllimport)
+#       define EXTERN_TYPE_DLL __declspec(dllexport)
+#   endif
+#else
+#   if defined(MAKE_TYPE_STATIC) || defined(USE_TYPE_STATIC)
+#      define EXPORT_TYPE_DLL
+#   else
+#      define EXPORT_TYPE_DLL __attribute__ ((visibility ("default")))
+#   endif
+#   define EXTERN_TYPE_DLL
+#endif
 
+#endif // DLL_TYPE_HPP

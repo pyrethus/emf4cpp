@@ -40,7 +40,7 @@ public class Generator {
 
     public void generate(URI fileURI, String targetDir, String prSrcPaths, String ecPath,
 			boolean internalLicense, boolean bootstrap, boolean clear,
-			boolean createQt5Editor, String targetVersion) {
+			boolean createQt5Editor, String targetVersion, boolean staticLibrary) {
 
         ResourceSet rs = new ResourceSetImpl();
         rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore",
@@ -57,13 +57,14 @@ public class Generator {
         globalVarsMap.put("bootstrap", new Variable("bootstrap", bootstrap));
         globalVarsMap.put("createqt5editor", new Variable("createqt5editor", createQt5Editor));
         globalVarsMap.put("targetVersion", new Variable("targetVersion", targetVersion));
+        globalVarsMap.put("staticLibrary", new Variable("staticLibrary", staticLibrary));
 
         // Configure outlets
         CppBeautifier cppBeautifier = new CppBeautifier();
         final FileList fileList = new FileList();
 
         OutputImpl output = new OutputImpl();
-        NoChangesVetoStrategy vetoStrategy = new NoChangesVetoStrategy(); 
+        NoChangesVetoStrategy vetoStrategy = new NoChangesVetoStrategy();
         Outlet outlet = new Outlet(targetDir);
         outlet.setOverwrite(true);
         outlet.addPostprocessor(cppBeautifier);
@@ -203,7 +204,7 @@ public class Generator {
 
         new Generator().generate(URI.createFileURI(filePath), targetDir, prSrcPaths, ecPath,
 				cmd.hasOption("i"), cmd.hasOption("b"), cmd.hasOption("c"),
-				cmd.hasOption("qt5"), targetVersion);
+				cmd.hasOption("qt5"), targetVersion, cmd.hasOption("s"));
     }
 
     private final static Options options = new Options(); // Command line
@@ -235,5 +236,7 @@ public class Generator {
 			  "Generate Qt5 editor code");
         options.addOption("tv", "target-version", true,
 			  "Additional version string (valid C++ symbol), used for toplevel namespace.");
+        options.addOption("s", "static", false,
+			  "Generate CMake files to build a static library.");
     }
 }

@@ -33,7 +33,7 @@ testLicenseText ()
 
 	(cd $DIR ; $GENERATOR -o . -e $EMF4CPP `basename $1`)
 	egrep -L "was created by EMF4CPP [[:digit:]]+.[[:digit:]]+.[[:digit:]]+ and is copyrighted by the" $FILES
-	if [ $? -ne 0 ] ; then
+	if [ $? -ne 1 ] ; then
 	    echo "License text failed: No foreign copyright when called w/o -i"
 	    return 1
 	fi
@@ -42,7 +42,7 @@ testLicenseText ()
 
 	(cd $DIR ; $GENERATOR --internal -o . -e $EMF4CPP `basename $1`)
 	grep -L "SAES-UMU 2010 <andres.senac@um.es>" $FILES
-	if [ $? -ne 0 ] ; then
+	if [ $? -ne 1 ] ; then
 	    echo "License text failed: No internal copyright when called w/ -i"
 	    return 2
 	fi

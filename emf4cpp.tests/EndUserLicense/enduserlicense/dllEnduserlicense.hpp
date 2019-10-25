@@ -18,44 +18,47 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _DLL_ENDUSERLICENSE_HPP
-#define _DLL_ENDUSERLICENSE_HPP
+#ifndef DLL_ENDUSERLICENSE_HPP
+#define DLL_ENDUSERLICENSE_HPP
 /*
- * Defines 3 preprocessor symbols:
- * - MAKE_ENDUSERLICENSE_DLL  set to 1 when building the dll, else unset
- * - USE_ENDUSERLICENSE_DLL    set to 1 when using the dll, else unset
- * - EXPORT_ENDUSERLICENSE_DLL  always set, import when using the dll,
- *          export when building dll
+ * To use or build the library as a static or shared one, define at most one of
+ * - USE_ENDUSERLICENSE_STATIC, MAKE_ENDUSERLICENSE_STATIC,
+ * - USE_ENDUSERLICENSE_DLL, or MAKE_ENDUSERLICENSE_DLL.
+ * When none of these macros are defined, then USE_ENDUSERLICENSE_DLL
+ * is implicitly considered as defined.
  *
- * Pattern taken from qglobal.h
+ * The definition of one those 4 macros implies the value of the macros
+ * - EXPORT_ENDUSERLICENSE_DLL and
+ * - EXTERN_ENDUSERLICENSE_DLL.
+ * These must be used to correctly use or build the library as a shared one.
+ *
  */
 
-#if defined(__WIN32__) || defined(_WIN32)
-
-#   if defined(MAKE_ENDUSERLICENSE_DLL)
-#       if defined(USE_ENDUSERLICENSE_DLL)
-#           undef USE_ENDUSERLICENSE_DLL
-#       endif
-
-#       define EXPORT_ENDUSERLICENSE_DLL __declspec(dllexport)
-#       define EXTERN_ENDUSERLICENSE_DLL __declspec(dllimport)
-
-#   else
-#       if !defined(USE_ENDUSERLICENSE_DLL)
-#           define USE_ENDUSERLICENSE_DLL 1
-#       endif
-
-#       define EXPORT_ENDUSERLICENSE_DLL __declspec(dllimport)
-#       define EXTERN_ENDUSERLICENSE_DLL __declspec(dllexport)
-
-#   endif
-
-#else
-
-#   define EXPORT_ENDUSERLICENSE_DLL
-#   define EXTERN_ENDUSERLICENSE_DLL
-
+#if defined(MAKE_ENDUSERLICENSE_STATIC) +\
+    defined(USE_ENDUSERLICENSE_STATIC) +\
+    defined(MAKE_ENDUSERLICENSE_DLL) +\
+    defined(USE_ENDUSERLICENSE_DLL) > 1
+#   error "Please define at most one of MAKE_ENDUSERLICENSE_STATIC, USE_ENDUSERLICENSE_STATIC, MAKE_ENDUSERLICENSE_DLL, or USE_ENDUSERLICENSE_DLL"
 #endif
 
-#endif // _ENDUSERLICENSE_HPP
+#if defined(__WIN32__) || defined(_WIN32)
+#   if defined(MAKE_ENDUSERLICENSE_STATIC) || defined(USE_ENDUSERLICENSE_STATIC)
+#       define EXPORT_ENDUSERLICENSE_DLL
+#       define EXTERN_ENDUSERLICENSE_DLL
+#   elif defined(MAKE_ENDUSERLICENSE_DLL)
+#       define EXPORT_ENDUSERLICENSE_DLL __declspec(dllexport)
+#       define EXTERN_ENDUSERLICENSE_DLL __declspec(dllimport)
+#   else
+#       define EXPORT_ENDUSERLICENSE_DLL __declspec(dllimport)
+#       define EXTERN_ENDUSERLICENSE_DLL __declspec(dllexport)
+#   endif
+#else
+#   if defined(MAKE_ENDUSERLICENSE_STATIC) || defined(USE_ENDUSERLICENSE_STATIC)
+#      define EXPORT_ENDUSERLICENSE_DLL
+#   else
+#      define EXPORT_ENDUSERLICENSE_DLL __attribute__ ((visibility ("default")))
+#   endif
+#   define EXTERN_ENDUSERLICENSE_DLL
+#endif
 
+#endif // DLL_ENDUSERLICENSE_HPP

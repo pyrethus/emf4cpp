@@ -18,44 +18,47 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _DLL_MYDSL_HPP
-#define _DLL_MYDSL_HPP
+#ifndef DLL_MYDSL_HPP
+#define DLL_MYDSL_HPP
 /*
- * Defines 3 preprocessor symbols:
- * - MAKE_MYDSL_DLL  set to 1 when building the dll, else unset
- * - USE_MYDSL_DLL    set to 1 when using the dll, else unset
- * - EXPORT_MYDSL_DLL  always set, import when using the dll,
- *          export when building dll
+ * To use or build the library as a static or shared one, define at most one of
+ * - USE_MYDSL_STATIC, MAKE_MYDSL_STATIC,
+ * - USE_MYDSL_DLL, or MAKE_MYDSL_DLL.
+ * When none of these macros are defined, then USE_MYDSL_DLL
+ * is implicitly considered as defined.
  *
- * Pattern taken from qglobal.h
+ * The definition of one those 4 macros implies the value of the macros
+ * - EXPORT_MYDSL_DLL and
+ * - EXTERN_MYDSL_DLL.
+ * These must be used to correctly use or build the library as a shared one.
+ *
  */
 
-#if defined(__WIN32__) || defined(_WIN32)
-
-#   if defined(MAKE_MYDSL_DLL)
-#       if defined(USE_MYDSL_DLL)
-#           undef USE_MYDSL_DLL
-#       endif
-
-#       define EXPORT_MYDSL_DLL __declspec(dllexport)
-#       define EXTERN_MYDSL_DLL __declspec(dllimport)
-
-#   else
-#       if !defined(USE_MYDSL_DLL)
-#           define USE_MYDSL_DLL 1
-#       endif
-
-#       define EXPORT_MYDSL_DLL __declspec(dllimport)
-#       define EXTERN_MYDSL_DLL __declspec(dllexport)
-
-#   endif
-
-#else
-
-#   define EXPORT_MYDSL_DLL
-#   define EXTERN_MYDSL_DLL
-
+#if defined(MAKE_MYDSL_STATIC) +\
+    defined(USE_MYDSL_STATIC) +\
+    defined(MAKE_MYDSL_DLL) +\
+    defined(USE_MYDSL_DLL) > 1
+#   error "Please define at most one of MAKE_MYDSL_STATIC, USE_MYDSL_STATIC, MAKE_MYDSL_DLL, or USE_MYDSL_DLL"
 #endif
 
-#endif // _MYDSL_HPP
+#if defined(__WIN32__) || defined(_WIN32)
+#   if defined(MAKE_MYDSL_STATIC) || defined(USE_MYDSL_STATIC)
+#       define EXPORT_MYDSL_DLL
+#       define EXTERN_MYDSL_DLL
+#   elif defined(MAKE_MYDSL_DLL)
+#       define EXPORT_MYDSL_DLL __declspec(dllexport)
+#       define EXTERN_MYDSL_DLL __declspec(dllimport)
+#   else
+#       define EXPORT_MYDSL_DLL __declspec(dllimport)
+#       define EXTERN_MYDSL_DLL __declspec(dllexport)
+#   endif
+#else
+#   if defined(MAKE_MYDSL_STATIC) || defined(USE_MYDSL_STATIC)
+#      define EXPORT_MYDSL_DLL
+#   else
+#      define EXPORT_MYDSL_DLL __attribute__ ((visibility ("default")))
+#   endif
+#   define EXTERN_MYDSL_DLL
+#endif
 
+#endif // DLL_MYDSL_HPP

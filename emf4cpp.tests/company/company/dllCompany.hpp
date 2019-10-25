@@ -18,44 +18,47 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _DLL_COMPANY_HPP
-#define _DLL_COMPANY_HPP
+#ifndef DLL_COMPANY_HPP
+#define DLL_COMPANY_HPP
 /*
- * Defines 3 preprocessor symbols:
- * - MAKE_COMPANY_DLL  set to 1 when building the dll, else unset
- * - USE_COMPANY_DLL    set to 1 when using the dll, else unset
- * - EXPORT_COMPANY_DLL  always set, import when using the dll,
- *          export when building dll
+ * To use or build the library as a static or shared one, define at most one of
+ * - USE_COMPANY_STATIC, MAKE_COMPANY_STATIC,
+ * - USE_COMPANY_DLL, or MAKE_COMPANY_DLL.
+ * When none of these macros are defined, then USE_COMPANY_DLL
+ * is implicitly considered as defined.
  *
- * Pattern taken from qglobal.h
+ * The definition of one those 4 macros implies the value of the macros
+ * - EXPORT_COMPANY_DLL and
+ * - EXTERN_COMPANY_DLL.
+ * These must be used to correctly use or build the library as a shared one.
+ *
  */
 
-#if defined(__WIN32__) || defined(_WIN32)
-
-#   if defined(MAKE_COMPANY_DLL)
-#       if defined(USE_COMPANY_DLL)
-#           undef USE_COMPANY_DLL
-#       endif
-
-#       define EXPORT_COMPANY_DLL __declspec(dllexport)
-#       define EXTERN_COMPANY_DLL __declspec(dllimport)
-
-#   else
-#       if !defined(USE_COMPANY_DLL)
-#           define USE_COMPANY_DLL 1
-#       endif
-
-#       define EXPORT_COMPANY_DLL __declspec(dllimport)
-#       define EXTERN_COMPANY_DLL __declspec(dllexport)
-
-#   endif
-
-#else
-
-#   define EXPORT_COMPANY_DLL
-#   define EXTERN_COMPANY_DLL
-
+#if defined(MAKE_COMPANY_STATIC) +\
+    defined(USE_COMPANY_STATIC) +\
+    defined(MAKE_COMPANY_DLL) +\
+    defined(USE_COMPANY_DLL) > 1
+#   error "Please define at most one of MAKE_COMPANY_STATIC, USE_COMPANY_STATIC, MAKE_COMPANY_DLL, or USE_COMPANY_DLL"
 #endif
 
-#endif // _COMPANY_HPP
+#if defined(__WIN32__) || defined(_WIN32)
+#   if defined(MAKE_COMPANY_STATIC) || defined(USE_COMPANY_STATIC)
+#       define EXPORT_COMPANY_DLL
+#       define EXTERN_COMPANY_DLL
+#   elif defined(MAKE_COMPANY_DLL)
+#       define EXPORT_COMPANY_DLL __declspec(dllexport)
+#       define EXTERN_COMPANY_DLL __declspec(dllimport)
+#   else
+#       define EXPORT_COMPANY_DLL __declspec(dllimport)
+#       define EXTERN_COMPANY_DLL __declspec(dllexport)
+#   endif
+#else
+#   if defined(MAKE_COMPANY_STATIC) || defined(USE_COMPANY_STATIC)
+#      define EXPORT_COMPANY_DLL
+#   else
+#      define EXPORT_COMPANY_DLL __attribute__ ((visibility ("default")))
+#   endif
+#   define EXTERN_COMPANY_DLL
+#endif
 
+#endif // DLL_COMPANY_HPP

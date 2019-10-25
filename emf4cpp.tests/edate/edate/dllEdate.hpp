@@ -18,44 +18,47 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _DLL_EDATE_HPP
-#define _DLL_EDATE_HPP
+#ifndef DLL_EDATE_HPP
+#define DLL_EDATE_HPP
 /*
- * Defines 3 preprocessor symbols:
- * - MAKE_EDATE_DLL  set to 1 when building the dll, else unset
- * - USE_EDATE_DLL    set to 1 when using the dll, else unset
- * - EXPORT_EDATE_DLL  always set, import when using the dll,
- *          export when building dll
+ * To use or build the library as a static or shared one, define at most one of
+ * - USE_EDATE_STATIC, MAKE_EDATE_STATIC,
+ * - USE_EDATE_DLL, or MAKE_EDATE_DLL.
+ * When none of these macros are defined, then USE_EDATE_DLL
+ * is implicitly considered as defined.
  *
- * Pattern taken from qglobal.h
+ * The definition of one those 4 macros implies the value of the macros
+ * - EXPORT_EDATE_DLL and
+ * - EXTERN_EDATE_DLL.
+ * These must be used to correctly use or build the library as a shared one.
+ *
  */
 
-#if defined(__WIN32__) || defined(_WIN32)
-
-#   if defined(MAKE_EDATE_DLL)
-#       if defined(USE_EDATE_DLL)
-#           undef USE_EDATE_DLL
-#       endif
-
-#       define EXPORT_EDATE_DLL __declspec(dllexport)
-#       define EXTERN_EDATE_DLL __declspec(dllimport)
-
-#   else
-#       if !defined(USE_EDATE_DLL)
-#           define USE_EDATE_DLL 1
-#       endif
-
-#       define EXPORT_EDATE_DLL __declspec(dllimport)
-#       define EXTERN_EDATE_DLL __declspec(dllexport)
-
-#   endif
-
-#else
-
-#   define EXPORT_EDATE_DLL
-#   define EXTERN_EDATE_DLL
-
+#if defined(MAKE_EDATE_STATIC) +\
+    defined(USE_EDATE_STATIC) +\
+    defined(MAKE_EDATE_DLL) +\
+    defined(USE_EDATE_DLL) > 1
+#   error "Please define at most one of MAKE_EDATE_STATIC, USE_EDATE_STATIC, MAKE_EDATE_DLL, or USE_EDATE_DLL"
 #endif
 
-#endif // _EDATE_HPP
+#if defined(__WIN32__) || defined(_WIN32)
+#   if defined(MAKE_EDATE_STATIC) || defined(USE_EDATE_STATIC)
+#       define EXPORT_EDATE_DLL
+#       define EXTERN_EDATE_DLL
+#   elif defined(MAKE_EDATE_DLL)
+#       define EXPORT_EDATE_DLL __declspec(dllexport)
+#       define EXTERN_EDATE_DLL __declspec(dllimport)
+#   else
+#       define EXPORT_EDATE_DLL __declspec(dllimport)
+#       define EXTERN_EDATE_DLL __declspec(dllexport)
+#   endif
+#else
+#   if defined(MAKE_EDATE_STATIC) || defined(USE_EDATE_STATIC)
+#      define EXPORT_EDATE_DLL
+#   else
+#      define EXPORT_EDATE_DLL __attribute__ ((visibility ("default")))
+#   endif
+#   define EXTERN_EDATE_DLL
+#endif
 
+#endif // DLL_EDATE_HPP

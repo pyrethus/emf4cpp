@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 «ELSE-»
 «EXPAND template::EndUserLicense::LicenseMakefile FOR "CMakeLists.txt"-»
 «ENDIF-»
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.1.0)
 
 project(emf4cpp-«name» CXX)
 
@@ -119,8 +119,13 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR} «GLOBALVAR ecorePath» «GLOBAL
 link_directories(«GLOBALVAR ecoreLibraryPath»)
 «ENDIF-»
 
+«IF (boolean) GLOBALVAR staticLibrary-»
+add_library(emf4cpp-«fqn» STATIC ${«fqn»_HEADERS} ${«fqn»_SOURCES})
+set_target_properties(emf4cpp-«fqn» PROPERTIES COMPILE_FLAGS "-DMAKE_«getHeaderDef()»_STATIC" VERSION 0.0.1 SOVERSION 1)
+«ELSE-»
 add_library(emf4cpp-«fqn» SHARED ${«fqn»_HEADERS} ${«fqn»_SOURCES})
 set_target_properties(emf4cpp-«fqn» PROPERTIES COMPILE_FLAGS "-DMAKE_«getHeaderDef()»_DLL" VERSION 0.0.1 SOVERSION 1)
+«ENDIF-»
 «IF (boolean) GLOBALVAR bootstrap-»
 «ELSE-»
 target_link_libraries(emf4cpp-«fqn» emf4cpp-ecore)

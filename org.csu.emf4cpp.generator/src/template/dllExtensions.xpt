@@ -27,48 +27,50 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 «ELSE»
 «EXPAND template::EndUserLicense::License FOR getDllExtensionPrefix()+".hpp"-»
 «ENDIF»
-#ifndef _DLL_«getHeaderDefDLL()»_HPP
-#define _DLL_«getHeaderDefDLL()»_HPP
+#ifndef DLL_«getHeaderDefDLL()»_HPP
+#define DLL_«getHeaderDefDLL()»_HPP
 /*
- * Defines 3 preprocessor symbols:
- * - MAKE_«getExportDLL()»_DLL  set to 1 when building the dll, else unset
- * - USE_«getExportDLL()»_DLL    set to 1 when using the dll, else unset
- * - EXPORT_«getExportDLL()»_DLL  always set, import when using the dll,
- *          export when building dll
+ * To use or build the library as a static or shared one, define at most one of
+ * - USE_«getExportDLL()»_STATIC, MAKE_«getExportDLL()»_STATIC,
+ * - USE_«getExportDLL()»_DLL, or MAKE_«getExportDLL()»_DLL.
+ * When none of these macros are defined, then USE_«getExportDLL()»_DLL
+ * is implicitly considered as defined.
  *
- * Pattern taken from qglobal.h
+ * The definition of one those 4 macros implies the value of the macros
+ * - EXPORT_«getExportDLL()»_DLL and
+ * - EXTERN_«getExportDLL()»_DLL.
+ * These must be used to correctly use or build the library as a shared one.
+ *
  */
 
-#if defined(__WIN32__) || defined(_WIN32)
-
-#   if defined(MAKE_«getExportDLL()»_DLL)
-#       if defined(USE_«getExportDLL()»_DLL)
-#           undef USE_«getExportDLL()»_DLL
-#       endif
-
-#       define EXPORT_«getExportDLL()»_DLL __declspec(dllexport)
-#       define EXTERN_«getExportDLL()»_DLL __declspec(dllimport)
-
-#   else
-#       if !defined(USE_«getExportDLL()»_DLL)
-#           define USE_«getExportDLL()»_DLL 1
-#       endif
-
-#       define EXPORT_«getExportDLL()»_DLL __declspec(dllimport)
-#       define EXTERN_«getExportDLL()»_DLL __declspec(dllexport)
-
-#   endif
-
-
-#else
-
-#   define EXPORT_«getExportDLL()»_DLL
-#   define EXTERN_«getExportDLL()»_DLL
-
+#if defined(MAKE_«getExportDLL()»_STATIC) +\
+    defined(USE_«getExportDLL()»_STATIC) +\
+    defined(MAKE_«getExportDLL()»_DLL) +\
+    defined(USE_«getExportDLL()»_DLL) > 1
+#   error "Please define at most one of MAKE_«getExportDLL()»_STATIC, USE_«getExportDLL()»_STATIC, MAKE_«getExportDLL()»_DLL, or USE_«getExportDLL()»_DLL"
 #endif
 
-#endif // _«getHeaderDefDLL()»_HPP
+#if defined(__WIN32__) || defined(_WIN32)
+#   if defined(MAKE_«getExportDLL()»_STATIC) || defined(USE_«getExportDLL()»_STATIC)
+#       define EXPORT_«getExportDLL()»_DLL
+#       define EXTERN_«getExportDLL()»_DLL
+#   elif defined(MAKE_«getExportDLL()»_DLL)
+#       define EXPORT_«getExportDLL()»_DLL __declspec(dllexport)
+#       define EXTERN_«getExportDLL()»_DLL __declspec(dllimport)
+#   else
+#       define EXPORT_«getExportDLL()»_DLL __declspec(dllimport)
+#       define EXTERN_«getExportDLL()»_DLL __declspec(dllexport)
+#   endif
+#else
+#   if defined(MAKE_«getExportDLL()»_STATIC) || defined(USE_«getExportDLL()»_STATIC)
+#      define EXPORT_«getExportDLL()»_DLL
+#   else
+#      define EXPORT_«getExportDLL()»_DLL __attribute__ ((visibility ("default")))
+#   endif
+#   define EXTERN_«getExportDLL()»_DLL
+#endif
 
+#endif // DLL_«getHeaderDefDLL()»_HPP
 «ENDFILE»
 
 «ENDDEFINE»

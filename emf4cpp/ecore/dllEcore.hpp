@@ -18,44 +18,47 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _DLL_ECORE_HPP
-#define _DLL_ECORE_HPP
+#ifndef DLL_ECORE_HPP
+#define DLL_ECORE_HPP
 /*
- * Defines 3 preprocessor symbols:
- * - MAKE_ECORE_DLL  set to 1 when building the dll, else unset
- * - USE_ECORE_DLL    set to 1 when using the dll, else unset
- * - EXPORT_ECORE_DLL  always set, import when using the dll,
- *          export when building dll
+ * To use or build the library as a static or shared one, define at most one of
+ * - USE_ECORE_STATIC, MAKE_ECORE_STATIC,
+ * - USE_ECORE_DLL, or MAKE_ECORE_DLL.
+ * When none of these macros are defined, then USE_ECORE_DLL
+ * is implicitly considered as defined.
  *
- * Pattern taken from qglobal.h
+ * The definition of one those 4 macros implies the value of the macros
+ * - EXPORT_ECORE_DLL and
+ * - EXTERN_ECORE_DLL.
+ * These must be used to correctly use or build the library as a shared one.
+ *
  */
 
-#if defined(__WIN32__) || defined(_WIN32)
-
-#   if defined(MAKE_ECORE_DLL)
-#       if defined(USE_ECORE_DLL)
-#           undef USE_ECORE_DLL
-#       endif
-
-#       define EXPORT_ECORE_DLL __declspec(dllexport)
-#       define EXTERN_ECORE_DLL __declspec(dllimport)
-
-#   else
-#       if !defined(USE_ECORE_DLL)
-#           define USE_ECORE_DLL 1
-#       endif
-
-#       define EXPORT_ECORE_DLL __declspec(dllimport)
-#       define EXTERN_ECORE_DLL __declspec(dllexport)
-
-#   endif
-
-#else
-
-#   define EXPORT_ECORE_DLL
-#   define EXTERN_ECORE_DLL
-
+#if defined(MAKE_ECORE_STATIC) +\
+    defined(USE_ECORE_STATIC) +\
+    defined(MAKE_ECORE_DLL) +\
+    defined(USE_ECORE_DLL) > 1
+#   error "Please define at most one of MAKE_ECORE_STATIC, USE_ECORE_STATIC, MAKE_ECORE_DLL, or USE_ECORE_DLL"
 #endif
 
-#endif // _ECORE_HPP
+#if defined(__WIN32__) || defined(_WIN32)
+#   if defined(MAKE_ECORE_STATIC) || defined(USE_ECORE_STATIC)
+#       define EXPORT_ECORE_DLL
+#       define EXTERN_ECORE_DLL
+#   elif defined(MAKE_ECORE_DLL)
+#       define EXPORT_ECORE_DLL __declspec(dllexport)
+#       define EXTERN_ECORE_DLL __declspec(dllimport)
+#   else
+#       define EXPORT_ECORE_DLL __declspec(dllimport)
+#       define EXTERN_ECORE_DLL __declspec(dllexport)
+#   endif
+#else
+#   if defined(MAKE_ECORE_STATIC) || defined(USE_ECORE_STATIC)
+#      define EXPORT_ECORE_DLL
+#   else
+#      define EXPORT_ECORE_DLL __attribute__ ((visibility ("default")))
+#   endif
+#   define EXTERN_ECORE_DLL
+#endif
 
+#endif // DLL_ECORE_HPP
