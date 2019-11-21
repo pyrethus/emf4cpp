@@ -160,6 +160,14 @@ void LeftHand::_inverseAdd(::ecore::EInt _featureID,
         ::eopposite::RightHand_ptr _t1 = std::dynamic_pointer_cast
                 < ::eopposite::RightHand > (_t0);
 
+        ::eopposite::RightHand_ptr _old_rightee = getRightee();
+        if (_old_rightee && _old_rightee != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_rightee->_inverseRemove(
+                    ::eopposite::EoppositePackage::RIGHTHAND__LEFTEE, _this);
+        }
+
         // set reference
         basicsetRightee(_t1);
     }
@@ -170,6 +178,15 @@ void LeftHand::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EObject_ptr > (_newValue);
         ::eopposite::RightMultiple_ptr _t1 = std::dynamic_pointer_cast
                 < ::eopposite::RightMultiple > (_t0);
+
+        ::eopposite::RightMultiple_ptr _old_rightMultiple = getRightMultiple();
+        if (_old_rightMultiple && _old_rightMultiple != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_rightMultiple->_inverseRemove(
+                    ::eopposite::EoppositePackage::RIGHTMULTIPLE__LEFTEES,
+                    _this);
+        }
 
         // set reference
         basicsetRightMultiple(_t1);

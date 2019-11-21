@@ -225,6 +225,14 @@ void EEnumLiteral::_inverseAdd(::ecore::EInt _featureID,
         ::ecore::EEnum_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EEnum
                 > (_t0);
 
+        ::ecore::EEnum_ptr _old_eEnum = getEEnum();
+        if (_old_eEnum && _old_eEnum != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_eEnum->_inverseRemove(::ecore::EcorePackage::EENUM__ELITERALS,
+                    _this);
+        }
+
         // set reference
         basicsetEEnum(_t1);
     }

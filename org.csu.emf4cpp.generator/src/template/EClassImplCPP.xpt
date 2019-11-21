@@ -246,6 +246,7 @@ void «name»::_inverseAdd( ::ecore::EInt _featureID, ::ecore::EJavaObject const
     {
     «FOREACH EAllStructuralFeatures.select(e|!e.derived) AS ef-»
       «IF EReference.isInstance(ef)-»
+      «LET ((EReference)ef) AS ref-»
         case «ef.getCPPFQN()» :
             {
       «IF ((EReference)ef).EOpposite != null-»
@@ -253,8 +254,17 @@ void «name»::_inverseAdd( ::ecore::EInt _featureID, ::ecore::EJavaObject const
           «((EReference)ef).getPtr()» _t1 = std::dynamic_pointer_cast< ::«ef.EType.getFQN()» >(_t0);
 
           «IF ef.upperBound == 1-»
-              // set reference
-	      basicset«ef.name.toFirstUpper()»(_t1);
+          «ref.getPtr()» _old_«ref.name» = get«ef.name.toFirstUpper()»();
+          if (_old_«ref.name» && _old_«ref.name» != _t0)
+          {
+              ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+              _old_«ref.name»->_inverseRemove(
+              «ref.EOpposite.EContainingClass.EPackage.getPackageFQN()»::«ref.EOpposite.getFeatureIDFQN()»,
+              _this);
+          }
+
+          // set reference
+          basicset«ef.name.toFirstUpper()»(_t1);
           «ELSE-»
 	      // add to a list
 	      auto& container =
@@ -265,6 +275,7 @@ void «name»::_inverseAdd( ::ecore::EInt _featureID, ::ecore::EJavaObject const
       «ENDIF-»
             }
             return;
+      «ENDLET-»
       «ENDIF-»
     «ENDFOREACH»
     }

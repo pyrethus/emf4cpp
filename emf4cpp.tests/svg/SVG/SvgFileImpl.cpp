@@ -188,6 +188,13 @@ void SvgFile::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EObject_ptr > (_newValue);
         ::SVG::Svg_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Svg > (_t0);
 
+        ::SVG::Svg_ptr _old_tag = getTag();
+        if (_old_tag && _old_tag != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_tag->_inverseRemove(::SVG::SVGPackage::SVG__OWNER_SVG, _this);
+        }
+
         // set reference
         basicsetTag(_t1);
     }

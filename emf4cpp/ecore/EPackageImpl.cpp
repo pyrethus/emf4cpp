@@ -285,6 +285,14 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
         ::ecore::EFactory_ptr _t1 = std::dynamic_pointer_cast
                 < ::ecore::EFactory > (_t0);
 
+        ::ecore::EFactory_ptr _old_eFactoryInstance = getEFactoryInstance();
+        if (_old_eFactoryInstance && _old_eFactoryInstance != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_eFactoryInstance->_inverseRemove(
+                    ::ecore::EcorePackage::EFACTORY__EPACKAGE, _this);
+        }
+
         // set reference
         basicsetEFactoryInstance(_t1);
     }
@@ -323,6 +331,14 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EObject_ptr > (_newValue);
         ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
                 < ::ecore::EPackage > (_t0);
+
+        ::ecore::EPackage_ptr _old_eSuperPackage = getESuperPackage();
+        if (_old_eSuperPackage && _old_eSuperPackage != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_eSuperPackage->_inverseRemove(
+                    ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES, _this);
+        }
 
         // set reference
         basicsetESuperPackage(_t1);

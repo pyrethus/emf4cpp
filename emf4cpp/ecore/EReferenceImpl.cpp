@@ -459,6 +459,14 @@ void EReference::_inverseAdd(::ecore::EInt _featureID,
         ::ecore::EClass_ptr _t1 = std::dynamic_pointer_cast < ::ecore::EClass
                 > (_t0);
 
+        ::ecore::EClass_ptr _old_eContainingClass = getEContainingClass();
+        if (_old_eContainingClass && _old_eContainingClass != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_eContainingClass->_inverseRemove(
+                    ::ecore::EcorePackage::ECLASS__ESTRUCTURALFEATURES, _this);
+        }
+
         // set reference
         basicsetEContainingClass(_t1);
     }

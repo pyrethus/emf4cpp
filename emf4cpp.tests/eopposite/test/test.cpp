@@ -81,6 +81,14 @@ int main(int argc, char* argv[])
 		myLeft2->setRightMultiple(rm);
 		it = std::find(rm->getLeftees().begin(), rm->getLeftees().end(), myLeft2);
 		assert( *it == myLeft2 );
+
+        auto rm2 = create<RightMultiple>();
+        tl->getRightMultiples().push_back(rm2);
+        rm2->getLeftees().push_back(myLeft2);
+        assert( myLeft2->getRightMultiple() == rm2 );
+
+		it = std::find(rm->getLeftees().begin(), rm->getLeftees().end(), myLeft2);
+		assert( it == rm->getLeftees().end() );
 	}
 
 

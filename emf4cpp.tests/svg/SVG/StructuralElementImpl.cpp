@@ -337,6 +337,13 @@ void StructuralElement::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EObject_ptr > (_newValue);
         ::SVG::Svg_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Svg > (_t0);
 
+        ::SVG::Svg_ptr _old_root = getRoot();
+        if (_old_root && _old_root != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_root->_inverseRemove(::SVG::SVGPackage::SVG__CHILDREN, _this);
+        }
+
         // set reference
         basicsetRoot(_t1);
     }
@@ -348,6 +355,14 @@ void StructuralElement::_inverseAdd(::ecore::EInt _featureID,
         ::SVG::GroupingElement_ptr _t1 = std::dynamic_pointer_cast
                 < ::SVG::GroupingElement > (_t0);
 
+        ::SVG::GroupingElement_ptr _old_group = getGroup();
+        if (_old_group && _old_group != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_group->_inverseRemove(
+                    ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT, _this);
+        }
+
         // set reference
         basicsetGroup(_t1);
     }
@@ -358,6 +373,14 @@ void StructuralElement::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EObject_ptr > (_newValue);
         ::SVG::Marker_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Marker
                 > (_t0);
+
+        ::SVG::Marker_ptr _old_drawsMarker = getDrawsMarker();
+        if (_old_drawsMarker && _old_drawsMarker != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_drawsMarker->_inverseRemove(::SVG::SVGPackage::MARKER__DRAWING,
+                    _this);
+        }
 
         // set reference
         basicsetDrawsMarker(_t1);

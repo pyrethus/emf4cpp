@@ -144,6 +144,14 @@ void RightHand::_inverseAdd(::ecore::EInt _featureID,
         ::eopposite::LeftHand_ptr _t1 = std::dynamic_pointer_cast
                 < ::eopposite::LeftHand > (_t0);
 
+        ::eopposite::LeftHand_ptr _old_leftee = getLeftee();
+        if (_old_leftee && _old_leftee != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_leftee->_inverseRemove(
+                    ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE, _this);
+        }
+
         // set reference
         basicsetLeftee(_t1);
     }

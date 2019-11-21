@@ -291,6 +291,14 @@ void EAnnotation::_inverseAdd(::ecore::EInt _featureID,
         ::ecore::EModelElement_ptr _t1 = std::dynamic_pointer_cast
                 < ::ecore::EModelElement > (_t0);
 
+        ::ecore::EModelElement_ptr _old_eModelElement = getEModelElement();
+        if (_old_eModelElement && _old_eModelElement != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_eModelElement->_inverseRemove(
+                    ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS, _this);
+        }
+
         // set reference
         basicsetEModelElement(_t1);
     }

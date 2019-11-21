@@ -246,6 +246,14 @@ void ConstantDef::_inverseAdd(::ecore::EInt _featureID,
         ::idlmm::Container_ptr _t1 = std::dynamic_pointer_cast
                 < ::idlmm::Container > (_t0);
 
+        ::idlmm::Container_ptr _old_definedIn = getDefinedIn();
+        if (_old_definedIn && _old_definedIn != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_definedIn->_inverseRemove(
+                    ::idlmm::IdlmmPackage::CONTAINER__CONTAINS, _this);
+        }
+
         // set reference
         basicsetDefinedIn(_t1);
     }

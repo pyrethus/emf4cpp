@@ -190,6 +190,14 @@ void EFactory::_inverseAdd(::ecore::EInt _featureID,
         ::ecore::EPackage_ptr _t1 = std::dynamic_pointer_cast
                 < ::ecore::EPackage > (_t0);
 
+        ::ecore::EPackage_ptr _old_ePackage = getEPackage();
+        if (_old_ePackage && _old_ePackage != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_ePackage->_inverseRemove(
+                    ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE, _this);
+        }
+
         // set reference
         basicsetEPackage(_t1);
     }

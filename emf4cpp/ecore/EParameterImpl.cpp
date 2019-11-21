@@ -285,6 +285,14 @@ void EParameter::_inverseAdd(::ecore::EInt _featureID,
         ::ecore::EOperation_ptr _t1 = std::dynamic_pointer_cast
                 < ::ecore::EOperation > (_t0);
 
+        ::ecore::EOperation_ptr _old_eOperation = getEOperation();
+        if (_old_eOperation && _old_eOperation != _t0)
+        {
+            ::ecore::EJavaObject _this = ::ecore::EObject::_this();
+            _old_eOperation->_inverseRemove(
+                    ::ecore::EcorePackage::EOPERATION__EPARAMETERS, _this);
+        }
+
         // set reference
         basicsetEOperation(_t1);
     }
