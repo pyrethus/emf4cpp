@@ -38,7 +38,6 @@ using namespace ::myDsl;
 // Default constructor
 Import::Import()
 {
-
     /*PROTECTED REGION ID(ImportImpl__ImportImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -133,234 +133,291 @@ void SourcePackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = SourceFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // SourceRef
     m_SourceRefEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SourceRefEClass->setClassifierID(SOURCEREF);
-    m_SourceRefEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SourceRefEClass);
-    // m_SourceRef__language has already been allocated above
-    m_SourceRef__language->setFeatureID(
-            ::kdm::source::SourcePackage::SOURCEREF__LANGUAGE);
-    m_SourceRefEClass->getEStructuralFeatures().push_back(
-            m_SourceRef__language);
-    // m_SourceRef__snippet has already been allocated above
-    m_SourceRef__snippet->setFeatureID(
-            ::kdm::source::SourcePackage::SOURCEREF__SNIPPET);
-    m_SourceRefEClass->getEStructuralFeatures().push_back(m_SourceRef__snippet);
+    m_SourceRefEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SourceRefEClass);
     // m_SourceRef__region has already been allocated above
     m_SourceRef__region->setFeatureID(
             ::kdm::source::SourcePackage::SOURCEREF__REGION);
-    m_SourceRefEClass->getEStructuralFeatures().push_back(m_SourceRef__region);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures()).basicAdd(
+            m_SourceRef__region);
+    m_SourceRef__region->basicsetEContainingClass(m_SourceRefEClass);
+    // m_SourceRef__language has already been allocated above
+    m_SourceRef__language->setFeatureID(
+            ::kdm::source::SourcePackage::SOURCEREF__LANGUAGE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures()).basicAdd(
+            m_SourceRef__language);
+    m_SourceRef__language->basicsetEContainingClass(m_SourceRefEClass);
+    // m_SourceRef__snippet has already been allocated above
+    m_SourceRef__snippet->setFeatureID(
+            ::kdm::source::SourcePackage::SOURCEREF__SNIPPET);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures()).basicAdd(
+            m_SourceRef__snippet);
+    m_SourceRef__snippet->basicsetEContainingClass(m_SourceRefEClass);
 
     // SourceRegion
     m_SourceRegionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_SourceRegionEClass->setClassifierID(SOURCEREGION);
-    m_SourceRegionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SourceRegionEClass);
-    // m_SourceRegion__startLine has already been allocated above
-    m_SourceRegion__startLine->setFeatureID(
-            ::kdm::source::SourcePackage::SOURCEREGION__STARTLINE);
-    m_SourceRegionEClass->getEStructuralFeatures().push_back(
-            m_SourceRegion__startLine);
-    // m_SourceRegion__startPosition has already been allocated above
-    m_SourceRegion__startPosition->setFeatureID(
-            ::kdm::source::SourcePackage::SOURCEREGION__STARTPOSITION);
-    m_SourceRegionEClass->getEStructuralFeatures().push_back(
-            m_SourceRegion__startPosition);
-    // m_SourceRegion__endLine has already been allocated above
-    m_SourceRegion__endLine->setFeatureID(
-            ::kdm::source::SourcePackage::SOURCEREGION__ENDLINE);
-    m_SourceRegionEClass->getEStructuralFeatures().push_back(
-            m_SourceRegion__endLine);
-    // m_SourceRegion__endPosition has already been allocated above
-    m_SourceRegion__endPosition->setFeatureID(
-            ::kdm::source::SourcePackage::SOURCEREGION__ENDPOSITION);
-    m_SourceRegionEClass->getEStructuralFeatures().push_back(
-            m_SourceRegion__endPosition);
-    // m_SourceRegion__language has already been allocated above
-    m_SourceRegion__language->setFeatureID(
-            ::kdm::source::SourcePackage::SOURCEREGION__LANGUAGE);
-    m_SourceRegionEClass->getEStructuralFeatures().push_back(
-            m_SourceRegion__language);
-    // m_SourceRegion__path has already been allocated above
-    m_SourceRegion__path->setFeatureID(
-            ::kdm::source::SourcePackage::SOURCEREGION__PATH);
-    m_SourceRegionEClass->getEStructuralFeatures().push_back(
-            m_SourceRegion__path);
+    m_SourceRegionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SourceRegionEClass);
     // m_SourceRegion__file has already been allocated above
     m_SourceRegion__file->setFeatureID(
             ::kdm::source::SourcePackage::SOURCEREGION__FILE);
-    m_SourceRegionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
             m_SourceRegion__file);
+    m_SourceRegion__file->basicsetEContainingClass(m_SourceRegionEClass);
+    // m_SourceRegion__startLine has already been allocated above
+    m_SourceRegion__startLine->setFeatureID(
+            ::kdm::source::SourcePackage::SOURCEREGION__STARTLINE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
+            m_SourceRegion__startLine);
+    m_SourceRegion__startLine->basicsetEContainingClass(m_SourceRegionEClass);
+    // m_SourceRegion__startPosition has already been allocated above
+    m_SourceRegion__startPosition->setFeatureID(
+            ::kdm::source::SourcePackage::SOURCEREGION__STARTPOSITION);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
+            m_SourceRegion__startPosition);
+    m_SourceRegion__startPosition->basicsetEContainingClass(
+            m_SourceRegionEClass);
+    // m_SourceRegion__endLine has already been allocated above
+    m_SourceRegion__endLine->setFeatureID(
+            ::kdm::source::SourcePackage::SOURCEREGION__ENDLINE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
+            m_SourceRegion__endLine);
+    m_SourceRegion__endLine->basicsetEContainingClass(m_SourceRegionEClass);
+    // m_SourceRegion__endPosition has already been allocated above
+    m_SourceRegion__endPosition->setFeatureID(
+            ::kdm::source::SourcePackage::SOURCEREGION__ENDPOSITION);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
+            m_SourceRegion__endPosition);
+    m_SourceRegion__endPosition->basicsetEContainingClass(m_SourceRegionEClass);
+    // m_SourceRegion__language has already been allocated above
+    m_SourceRegion__language->setFeatureID(
+            ::kdm::source::SourcePackage::SOURCEREGION__LANGUAGE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
+            m_SourceRegion__language);
+    m_SourceRegion__language->basicsetEContainingClass(m_SourceRegionEClass);
+    // m_SourceRegion__path has already been allocated above
+    m_SourceRegion__path->setFeatureID(
+            ::kdm::source::SourcePackage::SOURCEREGION__PATH);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
+            m_SourceRegion__path);
+    m_SourceRegion__path->basicsetEContainingClass(m_SourceRegionEClass);
 
     // InventoryModel
     m_InventoryModelEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_InventoryModelEClass->setClassifierID(INVENTORYMODEL);
-    m_InventoryModelEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_InventoryModelEClass);
+    m_InventoryModelEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_InventoryModelEClass);
     // m_InventoryModel__inventoryElement has already been allocated above
     m_InventoryModel__inventoryElement->setFeatureID(
             ::kdm::source::SourcePackage::INVENTORYMODEL__INVENTORYELEMENT);
-    m_InventoryModelEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryModelEClass->getEStructuralFeatures()).basicAdd(
             m_InventoryModel__inventoryElement);
+    m_InventoryModel__inventoryElement->basicsetEContainingClass(
+            m_InventoryModelEClass);
 
     // AbstractInventoryElement
     m_AbstractInventoryElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractInventoryElementEClass->setClassifierID(ABSTRACTINVENTORYELEMENT);
-    m_AbstractInventoryElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractInventoryElementEClass);
+    m_AbstractInventoryElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractInventoryElementEClass);
     // m_AbstractInventoryElement__inventoryRelation has already been allocated above
     m_AbstractInventoryElement__inventoryRelation->setFeatureID(
             ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION);
-    m_AbstractInventoryElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractInventoryElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractInventoryElement__inventoryRelation);
+    m_AbstractInventoryElement__inventoryRelation->basicsetEContainingClass(
+            m_AbstractInventoryElementEClass);
 
     // InventoryItem
     m_InventoryItemEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_InventoryItemEClass->setClassifierID(INVENTORYITEM);
-    m_InventoryItemEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_InventoryItemEClass);
+    m_InventoryItemEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_InventoryItemEClass);
     // m_InventoryItem__version has already been allocated above
     m_InventoryItem__version->setFeatureID(
             ::kdm::source::SourcePackage::INVENTORYITEM__VERSION);
-    m_InventoryItemEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryItemEClass->getEStructuralFeatures()).basicAdd(
             m_InventoryItem__version);
+    m_InventoryItem__version->basicsetEContainingClass(m_InventoryItemEClass);
     // m_InventoryItem__path has already been allocated above
     m_InventoryItem__path->setFeatureID(
             ::kdm::source::SourcePackage::INVENTORYITEM__PATH);
-    m_InventoryItemEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryItemEClass->getEStructuralFeatures()).basicAdd(
             m_InventoryItem__path);
+    m_InventoryItem__path->basicsetEContainingClass(m_InventoryItemEClass);
 
     // SourceFile
     m_SourceFileEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SourceFileEClass->setClassifierID(SOURCEFILE);
-    m_SourceFileEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SourceFileEClass);
+    m_SourceFileEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SourceFileEClass);
     // m_SourceFile__language has already been allocated above
     m_SourceFile__language->setFeatureID(
             ::kdm::source::SourcePackage::SOURCEFILE__LANGUAGE);
-    m_SourceFileEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceFileEClass->getEStructuralFeatures()).basicAdd(
             m_SourceFile__language);
+    m_SourceFile__language->basicsetEContainingClass(m_SourceFileEClass);
     // m_SourceFile__encoding has already been allocated above
     m_SourceFile__encoding->setFeatureID(
             ::kdm::source::SourcePackage::SOURCEFILE__ENCODING);
-    m_SourceFileEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceFileEClass->getEStructuralFeatures()).basicAdd(
             m_SourceFile__encoding);
+    m_SourceFile__encoding->basicsetEContainingClass(m_SourceFileEClass);
 
     // Image
     m_ImageEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ImageEClass->setClassifierID(IMAGE);
-    m_ImageEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ImageEClass);
+    m_ImageEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ImageEClass);
 
     // ResourceDescription
     m_ResourceDescriptionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ResourceDescriptionEClass->setClassifierID(RESOURCEDESCRIPTION);
-    m_ResourceDescriptionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ResourceDescriptionEClass);
+    m_ResourceDescriptionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ResourceDescriptionEClass);
 
     // Configuration
     m_ConfigurationEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConfigurationEClass->setClassifierID(CONFIGURATION);
-    m_ConfigurationEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConfigurationEClass);
+    m_ConfigurationEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConfigurationEClass);
 
     // InventoryContainer
     m_InventoryContainerEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_InventoryContainerEClass->setClassifierID(INVENTORYCONTAINER);
-    m_InventoryContainerEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_InventoryContainerEClass);
+    m_InventoryContainerEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_InventoryContainerEClass);
     // m_InventoryContainer__inventoryElement has already been allocated above
     m_InventoryContainer__inventoryElement->setFeatureID(
             ::kdm::source::SourcePackage::INVENTORYCONTAINER__INVENTORYELEMENT);
-    m_InventoryContainerEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryContainerEClass->getEStructuralFeatures()).basicAdd(
             m_InventoryContainer__inventoryElement);
+    m_InventoryContainer__inventoryElement->basicsetEContainingClass(
+            m_InventoryContainerEClass);
 
     // Directory
     m_DirectoryEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DirectoryEClass->setClassifierID(DIRECTORY);
-    m_DirectoryEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DirectoryEClass);
+    m_DirectoryEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DirectoryEClass);
     // m_Directory__path has already been allocated above
     m_Directory__path->setFeatureID(
             ::kdm::source::SourcePackage::DIRECTORY__PATH);
-    m_DirectoryEClass->getEStructuralFeatures().push_back(m_Directory__path);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DirectoryEClass->getEStructuralFeatures()).basicAdd(
+            m_Directory__path);
+    m_Directory__path->basicsetEContainingClass(m_DirectoryEClass);
 
     // Project
     m_ProjectEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ProjectEClass->setClassifierID(PROJECT);
-    m_ProjectEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ProjectEClass);
+    m_ProjectEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ProjectEClass);
 
     // AbstractInventoryRelationship
     m_AbstractInventoryRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractInventoryRelationshipEClass->setClassifierID(
             ABSTRACTINVENTORYRELATIONSHIP);
-    m_AbstractInventoryRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractInventoryRelationshipEClass);
+    m_AbstractInventoryRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractInventoryRelationshipEClass);
 
     // BinaryFile
     m_BinaryFileEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_BinaryFileEClass->setClassifierID(BINARYFILE);
-    m_BinaryFileEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BinaryFileEClass);
+    m_BinaryFileEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BinaryFileEClass);
 
     // ExecutableFile
     m_ExecutableFileEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExecutableFileEClass->setClassifierID(EXECUTABLEFILE);
-    m_ExecutableFileEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExecutableFileEClass);
+    m_ExecutableFileEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExecutableFileEClass);
 
     // DependsOn
     m_DependsOnEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DependsOnEClass->setClassifierID(DEPENDSON);
-    m_DependsOnEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DependsOnEClass);
+    m_DependsOnEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DependsOnEClass);
     // m_DependsOn__to has already been allocated above
     m_DependsOn__to->setFeatureID(::kdm::source::SourcePackage::DEPENDSON__TO);
-    m_DependsOnEClass->getEStructuralFeatures().push_back(m_DependsOn__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DependsOnEClass->getEStructuralFeatures()).basicAdd(
+            m_DependsOn__to);
+    m_DependsOn__to->basicsetEContainingClass(m_DependsOnEClass);
     // m_DependsOn__from has already been allocated above
     m_DependsOn__from->setFeatureID(
             ::kdm::source::SourcePackage::DEPENDSON__FROM);
-    m_DependsOnEClass->getEStructuralFeatures().push_back(m_DependsOn__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DependsOnEClass->getEStructuralFeatures()).basicAdd(
+            m_DependsOn__from);
+    m_DependsOn__from->basicsetEContainingClass(m_DependsOnEClass);
 
     // InventoryElement
     m_InventoryElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_InventoryElementEClass->setClassifierID(INVENTORYELEMENT);
-    m_InventoryElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_InventoryElementEClass);
+    m_InventoryElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_InventoryElementEClass);
 
     // InventoryRelationship
     m_InventoryRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_InventoryRelationshipEClass->setClassifierID(INVENTORYRELATIONSHIP);
-    m_InventoryRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_InventoryRelationshipEClass);
+    m_InventoryRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_InventoryRelationshipEClass);
     // m_InventoryRelationship__to has already been allocated above
     m_InventoryRelationship__to->setFeatureID(
             ::kdm::source::SourcePackage::INVENTORYRELATIONSHIP__TO);
-    m_InventoryRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_InventoryRelationship__to);
+    m_InventoryRelationship__to->basicsetEContainingClass(
+            m_InventoryRelationshipEClass);
     // m_InventoryRelationship__from has already been allocated above
     m_InventoryRelationship__from->setFeatureID(
             ::kdm::source::SourcePackage::INVENTORYRELATIONSHIP__FROM);
-    m_InventoryRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_InventoryRelationship__from);
+    m_InventoryRelationship__from->basicsetEContainingClass(
+            m_InventoryRelationshipEClass);
 
     // Create enums
 

@@ -40,16 +40,6 @@ using namespace ::myDsl;
 // Default constructor
 Model::Model()
 {
-
-    m_imports.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::myDsl::Import_ptr,
-                    -1, true, false >(this,
-                    ::myDsl::MyDslPackage::_instance()->getModel__imports()));
-    m_elements.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::myDsl::Type_ptr, -1,
-                    true, false >(this,
-                    ::myDsl::MyDslPackage::_instance()->getModel__elements()));
-
     /*PROTECTED REGION ID(ModelImpl__ModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -70,21 +60,45 @@ Model::~Model()
 
 const ::ecorecpp::mapping::EList< ::myDsl::Import_ptr >& Model::getImports() const
 {
+    if (!m_imports)
+        return const_cast< Model* >(this)->getImports();
+
     return *m_imports;
 }
 
 ::ecorecpp::mapping::EList< ::myDsl::Import_ptr >& Model::getImports()
 {
+    /*PROTECTED REGION ID(Model__getImports) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_imports)
+        m_imports.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::myDsl::Import_ptr, -1, true, false >(this,
+                        ::myDsl::MyDslPackage::_instance()->getModel__imports()));
+    /*PROTECTED REGION END*/
     return *m_imports;
 }
 
 const ::ecorecpp::mapping::EList< ::myDsl::Type_ptr >& Model::getElements() const
 {
+    if (!m_elements)
+        return const_cast< Model* >(this)->getElements();
+
     return *m_elements;
 }
 
 ::ecorecpp::mapping::EList< ::myDsl::Type_ptr >& Model::getElements()
 {
+    /*PROTECTED REGION ID(Model__getElements) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_elements)
+        m_elements.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::myDsl::Type_ptr,
+                        -1, true, false >(this,
+                        ::myDsl::MyDslPackage::_instance()->getModel__elements()));
+    /*PROTECTED REGION END*/
     return *m_elements;
 }
 

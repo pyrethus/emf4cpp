@@ -29,16 +29,7 @@
 /*PROTECTED REGION ID(EClass_pre) ENABLED START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-#ifdef ECORECPP_USE_UNORDERED_MAP
-#ifdef  __GNUG__
-#include <tr1/unordered_map>
-#endif // __GNUG__
-#ifdef _MSC_VER // TODO: look for version numbers of MS VC
-#include <unordered_map>
-#endif // _MSC_VER
-#else
 #include <map>
-#endif // ECORECPP_USE_UNORDERED_MAP
 /*PROTECTED REGION END*/
 
 namespace ecore
@@ -127,15 +118,12 @@ public:
 
 protected:
 
-#ifdef ECORECPP_USE_UNORDERED_MAP
-    typedef std::tr1::unordered_map < ::ecore::EString, ::ecore::EStructuralFeature_ptr > EStructuralFeatureMap;
-#else
     typedef std::map< ::ecore::EString, ::ecore::EStructuralFeature_ptr > EStructuralFeatureMap;
-#endif
+    typedef std::map< ::ecore::EStructuralFeature_ptr, int > EStructuralFeatureIDMap;
 
     EStructuralFeatureMap m_eAllStructuralFeaturesMap;
+    EStructuralFeatureIDMap m_eAllStructuralFeaturesIDMap;
 
-    void _init_collections();
 public:
     /*PROTECTED REGION END*/
 

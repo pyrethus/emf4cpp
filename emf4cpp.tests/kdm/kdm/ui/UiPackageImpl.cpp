@@ -148,222 +148,294 @@ void UiPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = UiFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // AbstractUIElement
     m_AbstractUIElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractUIElementEClass->setClassifierID(ABSTRACTUIELEMENT);
-    m_AbstractUIElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractUIElementEClass);
+    m_AbstractUIElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractUIElementEClass);
     // m_AbstractUIElement__source has already been allocated above
     m_AbstractUIElement__source->setFeatureID(
             ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__SOURCE);
-    m_AbstractUIElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractUIElement__source);
+    m_AbstractUIElement__source->basicsetEContainingClass(
+            m_AbstractUIElementEClass);
     // m_AbstractUIElement__UIRelation has already been allocated above
     m_AbstractUIElement__UIRelation->setFeatureID(
             ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__UIRELATION);
-    m_AbstractUIElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractUIElement__UIRelation);
+    m_AbstractUIElement__UIRelation->basicsetEContainingClass(
+            m_AbstractUIElementEClass);
     // m_AbstractUIElement__implementation has already been allocated above
     m_AbstractUIElement__implementation->setFeatureID(
             ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__IMPLEMENTATION);
-    m_AbstractUIElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractUIElement__implementation);
+    m_AbstractUIElement__implementation->basicsetEContainingClass(
+            m_AbstractUIElementEClass);
     // m_AbstractUIElement__abstraction has already been allocated above
     m_AbstractUIElement__abstraction->setFeatureID(
             ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__ABSTRACTION);
-    m_AbstractUIElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractUIElement__abstraction);
+    m_AbstractUIElement__abstraction->basicsetEContainingClass(
+            m_AbstractUIElementEClass);
 
     // UIResource
     m_UIResourceEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UIResourceEClass->setClassifierID(UIRESOURCE);
-    m_UIResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UIResourceEClass);
+    m_UIResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UIResourceEClass);
     // m_UIResource__UIElement has already been allocated above
     m_UIResource__UIElement->setFeatureID(
             ::kdm::ui::UiPackage::UIRESOURCE__UIELEMENT);
-    m_UIResourceEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIResourceEClass->getEStructuralFeatures()).basicAdd(
             m_UIResource__UIElement);
+    m_UIResource__UIElement->basicsetEContainingClass(m_UIResourceEClass);
 
     // UIDisplay
     m_UIDisplayEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UIDisplayEClass->setClassifierID(UIDISPLAY);
-    m_UIDisplayEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UIDisplayEClass);
+    m_UIDisplayEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UIDisplayEClass);
 
     // Screen
     m_ScreenEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ScreenEClass->setClassifierID(SCREEN);
-    m_ScreenEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ScreenEClass);
+    m_ScreenEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ScreenEClass);
 
     // Report
     m_ReportEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ReportEClass->setClassifierID(REPORT);
-    m_ReportEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ReportEClass);
+    m_ReportEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ReportEClass);
 
     // UIModel
     m_UIModelEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UIModelEClass->setClassifierID(UIMODEL);
-    m_UIModelEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UIModelEClass);
+    m_UIModelEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UIModelEClass);
     // m_UIModel__UIElement has already been allocated above
     m_UIModel__UIElement->setFeatureID(
             ::kdm::ui::UiPackage::UIMODEL__UIELEMENT);
-    m_UIModelEClass->getEStructuralFeatures().push_back(m_UIModel__UIElement);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIModelEClass->getEStructuralFeatures()).basicAdd(
+            m_UIModel__UIElement);
+    m_UIModel__UIElement->basicsetEContainingClass(m_UIModelEClass);
 
     // AbstractUIRelationship
     m_AbstractUIRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractUIRelationshipEClass->setClassifierID(ABSTRACTUIRELATIONSHIP);
-    m_AbstractUIRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractUIRelationshipEClass);
+    m_AbstractUIRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractUIRelationshipEClass);
 
     // UILayout
     m_UILayoutEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UILayoutEClass->setClassifierID(UILAYOUT);
-    m_UILayoutEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UILayoutEClass);
+    m_UILayoutEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UILayoutEClass);
     // m_UILayout__to has already been allocated above
     m_UILayout__to->setFeatureID(::kdm::ui::UiPackage::UILAYOUT__TO);
-    m_UILayoutEClass->getEStructuralFeatures().push_back(m_UILayout__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UILayoutEClass->getEStructuralFeatures()).basicAdd(
+            m_UILayout__to);
+    m_UILayout__to->basicsetEContainingClass(m_UILayoutEClass);
     // m_UILayout__from has already been allocated above
     m_UILayout__from->setFeatureID(::kdm::ui::UiPackage::UILAYOUT__FROM);
-    m_UILayoutEClass->getEStructuralFeatures().push_back(m_UILayout__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UILayoutEClass->getEStructuralFeatures()).basicAdd(
+            m_UILayout__from);
+    m_UILayout__from->basicsetEContainingClass(m_UILayoutEClass);
 
     // UIField
     m_UIFieldEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UIFieldEClass->setClassifierID(UIFIELD);
-    m_UIFieldEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UIFieldEClass);
+    m_UIFieldEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UIFieldEClass);
 
     // DisplaysImage
     m_DisplaysImageEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DisplaysImageEClass->setClassifierID(DISPLAYSIMAGE);
-    m_DisplaysImageEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DisplaysImageEClass);
+    m_DisplaysImageEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DisplaysImageEClass);
     // m_DisplaysImage__to has already been allocated above
     m_DisplaysImage__to->setFeatureID(::kdm::ui::UiPackage::DISPLAYSIMAGE__TO);
-    m_DisplaysImageEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysImageEClass->getEStructuralFeatures()).basicAdd(
             m_DisplaysImage__to);
+    m_DisplaysImage__to->basicsetEContainingClass(m_DisplaysImageEClass);
     // m_DisplaysImage__from has already been allocated above
     m_DisplaysImage__from->setFeatureID(
             ::kdm::ui::UiPackage::DISPLAYSIMAGE__FROM);
-    m_DisplaysImageEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysImageEClass->getEStructuralFeatures()).basicAdd(
             m_DisplaysImage__from);
+    m_DisplaysImage__from->basicsetEContainingClass(m_DisplaysImageEClass);
 
     // Displays
     m_DisplaysEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DisplaysEClass->setClassifierID(DISPLAYS);
-    m_DisplaysEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DisplaysEClass);
+    m_DisplaysEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DisplaysEClass);
     // m_Displays__to has already been allocated above
     m_Displays__to->setFeatureID(::kdm::ui::UiPackage::DISPLAYS__TO);
-    m_DisplaysEClass->getEStructuralFeatures().push_back(m_Displays__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysEClass->getEStructuralFeatures()).basicAdd(
+            m_Displays__to);
+    m_Displays__to->basicsetEContainingClass(m_DisplaysEClass);
     // m_Displays__from has already been allocated above
     m_Displays__from->setFeatureID(::kdm::ui::UiPackage::DISPLAYS__FROM);
-    m_DisplaysEClass->getEStructuralFeatures().push_back(m_Displays__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysEClass->getEStructuralFeatures()).basicAdd(
+            m_Displays__from);
+    m_Displays__from->basicsetEContainingClass(m_DisplaysEClass);
 
     // UIFlow
     m_UIFlowEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UIFlowEClass->setClassifierID(UIFLOW);
-    m_UIFlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UIFlowEClass);
+    m_UIFlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UIFlowEClass);
     // m_UIFlow__to has already been allocated above
     m_UIFlow__to->setFeatureID(::kdm::ui::UiPackage::UIFLOW__TO);
-    m_UIFlowEClass->getEStructuralFeatures().push_back(m_UIFlow__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIFlowEClass->getEStructuralFeatures()).basicAdd(
+            m_UIFlow__to);
+    m_UIFlow__to->basicsetEContainingClass(m_UIFlowEClass);
     // m_UIFlow__from has already been allocated above
     m_UIFlow__from->setFeatureID(::kdm::ui::UiPackage::UIFLOW__FROM);
-    m_UIFlowEClass->getEStructuralFeatures().push_back(m_UIFlow__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIFlowEClass->getEStructuralFeatures()).basicAdd(
+            m_UIFlow__from);
+    m_UIFlow__from->basicsetEContainingClass(m_UIFlowEClass);
 
     // UIElement
     m_UIElementEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UIElementEClass->setClassifierID(UIELEMENT);
-    m_UIElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UIElementEClass);
+    m_UIElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UIElementEClass);
 
     // UIRelationship
     m_UIRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_UIRelationshipEClass->setClassifierID(UIRELATIONSHIP);
-    m_UIRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UIRelationshipEClass);
+    m_UIRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UIRelationshipEClass);
     // m_UIRelationship__to has already been allocated above
     m_UIRelationship__to->setFeatureID(
             ::kdm::ui::UiPackage::UIRELATIONSHIP__TO);
-    m_UIRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_UIRelationship__to);
+    m_UIRelationship__to->basicsetEContainingClass(m_UIRelationshipEClass);
     // m_UIRelationship__from has already been allocated above
     m_UIRelationship__from->setFeatureID(
             ::kdm::ui::UiPackage::UIRELATIONSHIP__FROM);
-    m_UIRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_UIRelationship__from);
+    m_UIRelationship__from->basicsetEContainingClass(m_UIRelationshipEClass);
 
     // UIAction
     m_UIActionEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UIActionEClass->setClassifierID(UIACTION);
-    m_UIActionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UIActionEClass);
+    m_UIActionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UIActionEClass);
     // m_UIAction__kind has already been allocated above
     m_UIAction__kind->setFeatureID(::kdm::ui::UiPackage::UIACTION__KIND);
-    m_UIActionEClass->getEStructuralFeatures().push_back(m_UIAction__kind);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIActionEClass->getEStructuralFeatures()).basicAdd(
+            m_UIAction__kind);
+    m_UIAction__kind->basicsetEContainingClass(m_UIActionEClass);
     // m_UIAction__UIElement has already been allocated above
     m_UIAction__UIElement->setFeatureID(
             ::kdm::ui::UiPackage::UIACTION__UIELEMENT);
-    m_UIActionEClass->getEStructuralFeatures().push_back(m_UIAction__UIElement);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIActionEClass->getEStructuralFeatures()).basicAdd(
+            m_UIAction__UIElement);
+    m_UIAction__UIElement->basicsetEContainingClass(m_UIActionEClass);
 
     // UIEvent
     m_UIEventEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UIEventEClass->setClassifierID(UIEVENT);
-    m_UIEventEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UIEventEClass);
+    m_UIEventEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UIEventEClass);
     // m_UIEvent__kind has already been allocated above
     m_UIEvent__kind->setFeatureID(::kdm::ui::UiPackage::UIEVENT__KIND);
-    m_UIEventEClass->getEStructuralFeatures().push_back(m_UIEvent__kind);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIEventEClass->getEStructuralFeatures()).basicAdd(
+            m_UIEvent__kind);
+    m_UIEvent__kind->basicsetEContainingClass(m_UIEventEClass);
 
     // ReadsUI
     m_ReadsUIEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ReadsUIEClass->setClassifierID(READSUI);
-    m_ReadsUIEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ReadsUIEClass);
+    m_ReadsUIEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ReadsUIEClass);
     // m_ReadsUI__to has already been allocated above
     m_ReadsUI__to->setFeatureID(::kdm::ui::UiPackage::READSUI__TO);
-    m_ReadsUIEClass->getEStructuralFeatures().push_back(m_ReadsUI__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsUIEClass->getEStructuralFeatures()).basicAdd(
+            m_ReadsUI__to);
+    m_ReadsUI__to->basicsetEContainingClass(m_ReadsUIEClass);
     // m_ReadsUI__from has already been allocated above
     m_ReadsUI__from->setFeatureID(::kdm::ui::UiPackage::READSUI__FROM);
-    m_ReadsUIEClass->getEStructuralFeatures().push_back(m_ReadsUI__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsUIEClass->getEStructuralFeatures()).basicAdd(
+            m_ReadsUI__from);
+    m_ReadsUI__from->basicsetEContainingClass(m_ReadsUIEClass);
 
     // WritesUI
     m_WritesUIEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_WritesUIEClass->setClassifierID(WRITESUI);
-    m_WritesUIEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_WritesUIEClass);
+    m_WritesUIEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_WritesUIEClass);
     // m_WritesUI__to has already been allocated above
     m_WritesUI__to->setFeatureID(::kdm::ui::UiPackage::WRITESUI__TO);
-    m_WritesUIEClass->getEStructuralFeatures().push_back(m_WritesUI__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesUIEClass->getEStructuralFeatures()).basicAdd(
+            m_WritesUI__to);
+    m_WritesUI__to->basicsetEContainingClass(m_WritesUIEClass);
     // m_WritesUI__from has already been allocated above
     m_WritesUI__from->setFeatureID(::kdm::ui::UiPackage::WRITESUI__FROM);
-    m_WritesUIEClass->getEStructuralFeatures().push_back(m_WritesUI__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesUIEClass->getEStructuralFeatures()).basicAdd(
+            m_WritesUI__from);
+    m_WritesUI__from->basicsetEContainingClass(m_WritesUIEClass);
 
     // ManagesUI
     m_ManagesUIEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ManagesUIEClass->setClassifierID(MANAGESUI);
-    m_ManagesUIEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ManagesUIEClass);
+    m_ManagesUIEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ManagesUIEClass);
     // m_ManagesUI__to has already been allocated above
     m_ManagesUI__to->setFeatureID(::kdm::ui::UiPackage::MANAGESUI__TO);
-    m_ManagesUIEClass->getEStructuralFeatures().push_back(m_ManagesUI__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesUIEClass->getEStructuralFeatures()).basicAdd(
+            m_ManagesUI__to);
+    m_ManagesUI__to->basicsetEContainingClass(m_ManagesUIEClass);
     // m_ManagesUI__from has already been allocated above
     m_ManagesUI__from->setFeatureID(::kdm::ui::UiPackage::MANAGESUI__FROM);
-    m_ManagesUIEClass->getEStructuralFeatures().push_back(m_ManagesUI__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesUIEClass->getEStructuralFeatures()).basicAdd(
+            m_ManagesUI__from);
+    m_ManagesUI__from->basicsetEContainingClass(m_ManagesUIEClass);
 
     // Create enums
 

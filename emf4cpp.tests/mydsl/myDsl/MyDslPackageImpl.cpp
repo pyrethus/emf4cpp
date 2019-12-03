@@ -75,74 +75,103 @@ void MyDslPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = MyDslFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Model
     m_ModelEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ModelEClass->setClassifierID(MODEL);
-    m_ModelEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ModelEClass);
+    m_ModelEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ModelEClass);
     // m_Model__imports has already been allocated above
     m_Model__imports->setFeatureID(::myDsl::MyDslPackage::MODEL__IMPORTS);
-    m_ModelEClass->getEStructuralFeatures().push_back(m_Model__imports);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelEClass->getEStructuralFeatures()).basicAdd(
+            m_Model__imports);
+    m_Model__imports->basicsetEContainingClass(m_ModelEClass);
     // m_Model__elements has already been allocated above
     m_Model__elements->setFeatureID(::myDsl::MyDslPackage::MODEL__ELEMENTS);
-    m_ModelEClass->getEStructuralFeatures().push_back(m_Model__elements);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelEClass->getEStructuralFeatures()).basicAdd(
+            m_Model__elements);
+    m_Model__elements->basicsetEContainingClass(m_ModelEClass);
 
     // Import
     m_ImportEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ImportEClass->setClassifierID(IMPORT);
-    m_ImportEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ImportEClass);
+    m_ImportEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ImportEClass);
     // m_Import__importURI has already been allocated above
     m_Import__importURI->setFeatureID(::myDsl::MyDslPackage::IMPORT__IMPORTURI);
-    m_ImportEClass->getEStructuralFeatures().push_back(m_Import__importURI);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportEClass->getEStructuralFeatures()).basicAdd(
+            m_Import__importURI);
+    m_Import__importURI->basicsetEContainingClass(m_ImportEClass);
 
     // Type
     m_TypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TypeEClass->setClassifierID(TYPE);
-    m_TypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TypeEClass);
+    m_TypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TypeEClass);
     // m_Type__name has already been allocated above
     m_Type__name->setFeatureID(::myDsl::MyDslPackage::TYPE__NAME);
-    m_TypeEClass->getEStructuralFeatures().push_back(m_Type__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypeEClass->getEStructuralFeatures()).basicAdd(
+            m_Type__name);
+    m_Type__name->basicsetEContainingClass(m_TypeEClass);
 
     // SimpleType
     m_SimpleTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SimpleTypeEClass->setClassifierID(SIMPLETYPE);
-    m_SimpleTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SimpleTypeEClass);
+    m_SimpleTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SimpleTypeEClass);
 
     // Entity
     m_EntityEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_EntityEClass->setClassifierID(ENTITY);
-    m_EntityEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EntityEClass);
+    m_EntityEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EntityEClass);
     // m_Entity__extends has already been allocated above
     m_Entity__extends->setFeatureID(::myDsl::MyDslPackage::ENTITY__EXTENDS);
-    m_EntityEClass->getEStructuralFeatures().push_back(m_Entity__extends);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntityEClass->getEStructuralFeatures()).basicAdd(
+            m_Entity__extends);
+    m_Entity__extends->basicsetEContainingClass(m_EntityEClass);
     // m_Entity__properties has already been allocated above
     m_Entity__properties->setFeatureID(
             ::myDsl::MyDslPackage::ENTITY__PROPERTIES);
-    m_EntityEClass->getEStructuralFeatures().push_back(m_Entity__properties);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntityEClass->getEStructuralFeatures()).basicAdd(
+            m_Entity__properties);
+    m_Entity__properties->basicsetEContainingClass(m_EntityEClass);
 
     // Property
     m_PropertyEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_PropertyEClass->setClassifierID(PROPERTY);
-    m_PropertyEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PropertyEClass);
+    m_PropertyEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PropertyEClass);
     // m_Property__name has already been allocated above
     m_Property__name->setFeatureID(::myDsl::MyDslPackage::PROPERTY__NAME);
-    m_PropertyEClass->getEStructuralFeatures().push_back(m_Property__name);
-    // m_Property__many has already been allocated above
-    m_Property__many->setFeatureID(::myDsl::MyDslPackage::PROPERTY__MANY);
-    m_PropertyEClass->getEStructuralFeatures().push_back(m_Property__many);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures()).basicAdd(
+            m_Property__name);
+    m_Property__name->basicsetEContainingClass(m_PropertyEClass);
     // m_Property__type has already been allocated above
     m_Property__type->setFeatureID(::myDsl::MyDslPackage::PROPERTY__TYPE);
-    m_PropertyEClass->getEStructuralFeatures().push_back(m_Property__type);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures()).basicAdd(
+            m_Property__type);
+    m_Property__type->basicsetEContainingClass(m_PropertyEClass);
+    // m_Property__many has already been allocated above
+    m_Property__many->setFeatureID(::myDsl::MyDslPackage::PROPERTY__MANY);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures()).basicAdd(
+            m_Property__many);
+    m_Property__many->basicsetEContainingClass(m_PropertyEClass);
 
     // Create enums
 

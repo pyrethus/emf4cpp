@@ -39,11 +39,10 @@ namespace TopLevelPackage
         static Level1Package_ptr _instance();
         static Level1Package_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier Level1Class
         static const int LEVEL1CLASS = 0;
 
-        // IDs for classifiers for class Level1Class 
+        static const int LEVEL1CLASS_FEATURE_COUNT = 0;
 
         // EClassifiers methods
 

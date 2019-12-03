@@ -51,7 +51,6 @@ using namespace ::kdm::conceptual;
 // Default constructor
 RuleUnit::RuleUnit()
 {
-
     /*PROTECTED REGION ID(RuleUnitImpl__RuleUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -45,9 +45,9 @@ void Root::_initialize()
     {
         m_target->_initialize();
     }
-    for (size_t i = 0; i < m_referrers->size(); i++)
+    for (const auto &ref : getReferrers())
     {
-        (*m_referrers)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(RootImpl__initialize) START*/
@@ -130,7 +130,7 @@ void Root::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Root::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ResourceTests::ResourceTestsPackage* >(::ResourceTests::ResourceTestsPackage::_instance().get())->getRoot();
+            ::ResourceTests::ResourceTestsPackage::_instance()->getRoot();
     return _eclass;
 }
 

@@ -48,9 +48,9 @@ void BuildModel::_initialize()
     ::kdm::kdm::KDMModel::_initialize();
 
     // References
-    for (size_t i = 0; i < m_buildElement->size(); i++)
+    for (const auto &ref : getBuildElement())
     {
-        (*m_buildElement)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(BuildModelImpl__initialize) START*/
@@ -68,37 +68,37 @@ void BuildModel::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::build::BuildPackage::BUILDMODEL__AUDIT:
     {
         _any = getAudit().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::build::BuildPackage::BUILDMODEL__EXTENSIONFAMILY:
     {
         _any = getExtensionFamily().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::build::BuildPackage::BUILDMODEL__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
@@ -119,7 +119,7 @@ void BuildModel::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -127,7 +127,7 @@ void BuildModel::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -135,7 +135,7 @@ void BuildModel::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -143,7 +143,7 @@ void BuildModel::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -151,7 +151,7 @@ void BuildModel::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::build::BuildPackage::BUILDMODEL__AUDIT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -159,7 +159,7 @@ void BuildModel::eSet(::ecore::EInt _featureID,
         getAudit().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::build::BuildPackage::BUILDMODEL__EXTENSIONFAMILY:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -167,7 +167,7 @@ void BuildModel::eSet(::ecore::EInt _featureID,
         getExtensionFamily().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::build::BuildPackage::BUILDMODEL__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -192,19 +192,19 @@ void BuildModel::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::build::BuildPackage::BUILDMODEL__AUDIT:
         return getAudit().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::build::BuildPackage::BUILDMODEL__EXTENSIONFAMILY:
         return getExtensionFamily().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::build::BuildPackage::BUILDMODEL__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
     case ::kdm::build::BuildPackage::BUILDMODEL__BUILDELEMENT:
@@ -226,7 +226,7 @@ void BuildModel::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr BuildModel::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::build::BuildPackage* >(::kdm::build::BuildPackage::_instance().get())->getBuildModel();
+            ::kdm::build::BuildPackage::_instance()->getBuildModel();
     return _eclass;
 }
 
@@ -237,27 +237,27 @@ void BuildModel::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::build::BuildPackage::BUILDMODEL__AUDIT:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::build::BuildPackage::BUILDMODEL__EXTENSIONFAMILY:
     {
     }
         return;
@@ -277,27 +277,27 @@ void BuildModel::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDMODEL__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDMODEL__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::build::BuildPackage::BUILDMODEL__AUDIT:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::build::BuildPackage::BUILDMODEL__EXTENSIONFAMILY:
     {
     }
         return;

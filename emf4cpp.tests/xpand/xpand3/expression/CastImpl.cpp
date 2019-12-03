@@ -66,25 +66,25 @@ void Cast::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::CAST__LINE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getLine());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::CAST__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getStart());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::CAST__END:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getEnd());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::CAST__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getFileName());
@@ -109,7 +109,7 @@ void Cast::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::CAST__LINE:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -117,7 +117,7 @@ void Cast::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         setLine(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::CAST__START:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -125,7 +125,7 @@ void Cast::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         setStart(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::CAST__END:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -133,7 +133,7 @@ void Cast::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         setEnd(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::CAST__FILENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -167,16 +167,16 @@ void Cast::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::CAST__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getLine());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::CAST__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getStart());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::CAST__END:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getEnd());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::CAST__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getFileName());
     case ::xpand3::expression::ExpressionPackage::CAST__TYPE:
@@ -200,7 +200,7 @@ void Cast::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Cast::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getCast();
+            ::xpand3::expression::ExpressionPackage::_instance()->getCast();
     return _eclass;
 }
 

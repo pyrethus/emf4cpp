@@ -38,7 +38,6 @@ using namespace ::type;
 // Default constructor
 AnyType::AnyType()
 {
-
     /*PROTECTED REGION ID(AnyTypeImpl__AnyTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

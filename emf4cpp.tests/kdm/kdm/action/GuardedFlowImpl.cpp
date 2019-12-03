@@ -63,32 +63,32 @@ void GuardedFlow::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TO:
     {
         _any = ::ecore::as < ::ecore::EObject > (getTo());
     }
         return _any;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__FROM:
     {
         _any = ::ecore::as < ::ecore::EObject > (getFrom());
     }
@@ -103,7 +103,7 @@ void GuardedFlow::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -111,7 +111,7 @@ void GuardedFlow::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -119,7 +119,7 @@ void GuardedFlow::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -127,7 +127,7 @@ void GuardedFlow::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -135,7 +135,7 @@ void GuardedFlow::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TO:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -143,7 +143,7 @@ void GuardedFlow::eSet(::ecore::EInt _featureID,
         setTo(_t1);
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__FROM:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -160,17 +160,17 @@ void GuardedFlow::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TO:
         return getTo().get() != nullptr;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__FROM:
         return getFrom().get() != nullptr;
 
     }
@@ -189,7 +189,7 @@ void GuardedFlow::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr GuardedFlow::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getGuardedFlow();
+            ::kdm::action::ActionPackage::_instance()->getGuardedFlow();
     return _eclass;
 }
 
@@ -200,27 +200,27 @@ void GuardedFlow::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TO:
     {
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__FROM:
     {
     }
         return;
@@ -236,27 +236,27 @@ void GuardedFlow::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__TO:
     {
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::GUARDEDFLOW__FROM:
     {
     }
         return;

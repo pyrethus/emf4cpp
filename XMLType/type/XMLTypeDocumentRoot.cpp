@@ -40,22 +40,6 @@ using namespace ::type;
 // Default constructor
 XMLTypeDocumentRoot::XMLTypeDocumentRoot()
 {
-
-    m_xMLNSPrefixMap.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EStringToStringMapEntry_ptr, -1, true, false >(
-                    this,
-                    ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__xMLNSPrefixMap()));
-    m_xSISchemaLocation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EStringToStringMapEntry_ptr, -1, true, false >(
-                    this,
-                    ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__xSISchemaLocation()));
-    m_processingInstruction.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::type::ProcessingInstruction_ptr, -2, true, false >(this,
-                    ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__processingInstruction()));
-
     /*PROTECTED REGION ID(XMLTypeDocumentRootImpl__XMLTypeDocumentRootImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -279,31 +263,70 @@ void XMLTypeDocumentRoot::deleteTextAt(size_t _position)
 
 const ::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >& XMLTypeDocumentRoot::getXMLNSPrefixMap() const
 {
+    if (!m_xMLNSPrefixMap)
+        return const_cast< XMLTypeDocumentRoot* >(this)->getXMLNSPrefixMap();
+
     return *m_xMLNSPrefixMap;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >& XMLTypeDocumentRoot::getXMLNSPrefixMap()
 {
+    /*PROTECTED REGION ID(XMLTypeDocumentRoot__getXMLNSPrefixMap) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_xMLNSPrefixMap)
+        m_xMLNSPrefixMap.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EStringToStringMapEntry_ptr, -1, true, false >(
+                        this,
+                        ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__xMLNSPrefixMap()));
+    /*PROTECTED REGION END*/
     return *m_xMLNSPrefixMap;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >& XMLTypeDocumentRoot::getXSISchemaLocation() const
 {
+    if (!m_xSISchemaLocation)
+        return const_cast< XMLTypeDocumentRoot* >(this)->getXSISchemaLocation();
+
     return *m_xSISchemaLocation;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >& XMLTypeDocumentRoot::getXSISchemaLocation()
 {
+    /*PROTECTED REGION ID(XMLTypeDocumentRoot__getXSISchemaLocation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_xSISchemaLocation)
+        m_xSISchemaLocation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EStringToStringMapEntry_ptr, -1, true, false >(
+                        this,
+                        ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__xSISchemaLocation()));
+    /*PROTECTED REGION END*/
     return *m_xSISchemaLocation;
 }
 
 const ::ecorecpp::mapping::EList< ::type::ProcessingInstruction_ptr >& XMLTypeDocumentRoot::getProcessingInstruction() const
 {
+    if (!m_processingInstruction)
+        return const_cast< XMLTypeDocumentRoot* >(this)->getProcessingInstruction();
+
     return *m_processingInstruction;
 }
 
 ::ecorecpp::mapping::EList< ::type::ProcessingInstruction_ptr >& XMLTypeDocumentRoot::getProcessingInstruction()
 {
+    /*PROTECTED REGION ID(XMLTypeDocumentRoot__getProcessingInstruction) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_processingInstruction)
+        m_processingInstruction.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::type::ProcessingInstruction_ptr, -2, true, false >(
+                        this,
+                        ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__processingInstruction()));
+    /*PROTECTED REGION END*/
     return *m_processingInstruction;
 }
 

@@ -40,7 +40,6 @@ using namespace ::xpand3::statement;
 // Default constructor
 ErrorStatement::ErrorStatement()
 {
-
     /*PROTECTED REGION ID(ErrorStatementImpl__ErrorStatementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

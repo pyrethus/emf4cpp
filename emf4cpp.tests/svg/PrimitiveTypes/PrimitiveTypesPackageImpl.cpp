@@ -44,10 +44,12 @@ void PrimitiveTypesPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = PrimitiveTypesFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Create enums
 
@@ -56,26 +58,26 @@ void PrimitiveTypesPackage::_initPackage()
     m_BooleanEDataType = ::ecore::Ptr < ::ecore::EDataType
             > (new ::ecore::EDataType);
     m_BooleanEDataType->setClassifierID(BOOLEAN);
-    m_BooleanEDataType->setEPackage(_this());
-    getEClassifiers().push_back(m_BooleanEDataType);
+    m_BooleanEDataType->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BooleanEDataType);
 
     m_IntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
             > (new ::ecore::EDataType);
     m_IntegerEDataType->setClassifierID(INTEGER);
-    m_IntegerEDataType->setEPackage(_this());
-    getEClassifiers().push_back(m_IntegerEDataType);
+    m_IntegerEDataType->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IntegerEDataType);
 
     m_StringEDataType = ::ecore::Ptr < ::ecore::EDataType
             > (new ::ecore::EDataType);
     m_StringEDataType->setClassifierID(STRING);
-    m_StringEDataType->setEPackage(_this());
-    getEClassifiers().push_back(m_StringEDataType);
+    m_StringEDataType->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StringEDataType);
 
     m_DoubleEDataType = ::ecore::Ptr < ::ecore::EDataType
             > (new ::ecore::EDataType);
     m_DoubleEDataType->setClassifierID(DOUBLE);
-    m_DoubleEDataType->setEPackage(_this());
-    getEClassifiers().push_back(m_DoubleEDataType);
+    m_DoubleEDataType->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DoubleEDataType);
 
     // Initialize package
     setName("PrimitiveTypes");

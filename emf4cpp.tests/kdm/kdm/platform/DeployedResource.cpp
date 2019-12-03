@@ -52,12 +52,6 @@ using namespace ::kdm::platform;
 // Default constructor
 DeployedResource::DeployedResource()
 {
-
-    m_platformElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::platform::ResourceType_ptr, -1, true, false >(this,
-                    ::kdm::platform::PlatformPackage::_instance()->getDeployedResource__platformElement()));
-
     /*PROTECTED REGION ID(DeployedResourceImpl__DeployedResourceImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -78,11 +72,24 @@ DeployedResource::~DeployedResource()
 
 const ::ecorecpp::mapping::EList< ::kdm::platform::ResourceType_ptr >& DeployedResource::getPlatformElement() const
 {
+    if (!m_platformElement)
+        return const_cast< DeployedResource* >(this)->getPlatformElement();
+
     return *m_platformElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::platform::ResourceType_ptr >& DeployedResource::getPlatformElement()
 {
+    /*PROTECTED REGION ID(DeployedResource__getPlatformElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_platformElement)
+        m_platformElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::platform::ResourceType_ptr, -1, true, false >(
+                        this,
+                        ::kdm::platform::PlatformPackage::_instance()->getDeployedResource__platformElement()));
+    /*PROTECTED REGION END*/
     return *m_platformElement;
 }
 

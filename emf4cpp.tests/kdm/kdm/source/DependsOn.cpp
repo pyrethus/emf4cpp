@@ -45,7 +45,6 @@ using namespace ::kdm::source;
 // Default constructor
 DependsOn::DependsOn()
 {
-
     /*PROTECTED REGION ID(DependsOnImpl__DependsOnImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

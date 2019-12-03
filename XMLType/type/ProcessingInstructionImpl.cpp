@@ -125,7 +125,7 @@ void ProcessingInstruction::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ProcessingInstruction::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::type::TypePackage* >(::type::TypePackage::_instance().get())->getProcessingInstruction();
+            ::type::TypePackage::_instance()->getProcessingInstruction();
     return _eclass;
 }
 

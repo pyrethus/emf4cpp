@@ -39,9 +39,9 @@ void EModelElement::_initialize()
     // Supertypes
 
     // References
-    for (size_t i = 0; i < m_eAnnotations->size(); i++)
+    for (const auto &ref : getEAnnotations())
     {
-        (*m_eAnnotations)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(EModelElementImpl__initialize) START*/
@@ -56,16 +56,16 @@ void EModelElement::_initialize()
         ::ecore::EString const &_source)
 {
     /*PROTECTED REGION ID(EModelElementImpl_getEAnnotation) ENABLED START*/
-    for (size_t i = 0; i < m_eAnnotations->size(); i++)
+    for (const auto &annotation : getEAnnotations())
     {
-        if ((*m_eAnnotations)[i]->getSource() == _source)
-            return (*m_eAnnotations)[i];
+        if (annotation->getSource() == _source)
+            return annotation;
     }
 
     auto newAnnotation = create< EAnnotation >();
     newAnnotation->_initialize();
     newAnnotation->setSource(_source);
-    m_eAnnotations->push_back(newAnnotation);
+    getEAnnotations().push_back(newAnnotation);
     return newAnnotation;
     /*PROTECTED REGION END*/
 }
@@ -128,7 +128,7 @@ void EModelElement::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EModelElement::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEModelElement();
+            ::ecore::EcorePackage::_instance()->getEModelElement();
     return _eclass;
 }
 

@@ -38,7 +38,6 @@ using namespace ::edate;
 // Default constructor
 Person::Person()
 {
-
     /*PROTECTED REGION ID(PersonImpl__PersonImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

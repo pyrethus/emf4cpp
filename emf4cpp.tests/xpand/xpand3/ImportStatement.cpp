@@ -40,7 +40,6 @@ using namespace ::xpand3;
 // Default constructor
 ImportStatement::ImportStatement()
 {
-
     /*PROTECTED REGION ID(ImportStatementImpl__ImportStatementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

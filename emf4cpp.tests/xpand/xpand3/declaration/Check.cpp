@@ -42,7 +42,6 @@ using namespace ::xpand3::declaration;
 // Default constructor
 Check::Check()
 {
-
     /*PROTECTED REGION ID(CheckImpl__CheckImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -70,53 +70,53 @@ void OnEntry::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::event::EventPackage::ONENTRY__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::event::EventPackage::ONENTRY__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::event::EventPackage::ONENTRY__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::event::EventPackage::ONENTRY__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::event::EventPackage::ONENTRY__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__SOURCE:
+    case ::kdm::event::EventPackage::ONENTRY__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__EVENTRELATION:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTRELATION:
     {
         _any = getEventRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__ABSTRACTION:
+    case ::kdm::event::EventPackage::ONENTRY__ABSTRACTION:
     {
         _any = getAbstraction().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__IMPLEMENTATION:
+    case ::kdm::event::EventPackage::ONENTRY__IMPLEMENTATION:
     {
         _any = getImplementation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::event::EventPackage::EVENTRESOURCE__EVENTELEMENT:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTELEMENT:
     {
         _any = getEventElement().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -131,7 +131,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::event::EventPackage::ONENTRY__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -139,7 +139,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::event::EventPackage::ONENTRY__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -147,7 +147,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::event::EventPackage::ONENTRY__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -155,7 +155,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::event::EventPackage::ONENTRY__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -163,7 +163,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::event::EventPackage::ONENTRY__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -171,7 +171,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__SOURCE:
+    case ::kdm::event::EventPackage::ONENTRY__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -179,7 +179,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__EVENTRELATION:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTRELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -187,7 +187,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
         getEventRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__ABSTRACTION:
+    case ::kdm::event::EventPackage::ONENTRY__ABSTRACTION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -195,7 +195,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
         getAbstraction().insert_all(*_t0);
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__IMPLEMENTATION:
+    case ::kdm::event::EventPackage::ONENTRY__IMPLEMENTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -203,7 +203,7 @@ void OnEntry::eSet(::ecore::EInt _featureID,
         getImplementation().insert_all(*_t0);
     }
         return;
-    case ::kdm::event::EventPackage::EVENTRESOURCE__EVENTELEMENT:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTELEMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -220,26 +220,26 @@ void OnEntry::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::event::EventPackage::ONENTRY__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::event::EventPackage::ONENTRY__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::event::EventPackage::ONENTRY__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::event::EventPackage::ONENTRY__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::event::EventPackage::ONENTRY__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__SOURCE:
+    case ::kdm::event::EventPackage::ONENTRY__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__EVENTRELATION:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTRELATION:
         return getEventRelation().size() > 0;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__ABSTRACTION:
+    case ::kdm::event::EventPackage::ONENTRY__ABSTRACTION:
         return getAbstraction().size() > 0;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__IMPLEMENTATION:
+    case ::kdm::event::EventPackage::ONENTRY__IMPLEMENTATION:
         return getImplementation().size() > 0;
-    case ::kdm::event::EventPackage::EVENTRESOURCE__EVENTELEMENT:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTELEMENT:
         return getEventElement().size() > 0;
 
     }
@@ -258,7 +258,7 @@ void OnEntry::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr OnEntry::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::event::EventPackage* >(::kdm::event::EventPackage::_instance().get())->getOnEntry();
+            ::kdm::event::EventPackage::_instance()->getOnEntry();
     return _eclass;
 }
 
@@ -269,39 +269,39 @@ void OnEntry::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::event::EventPackage::ONENTRY__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::event::EventPackage::ONENTRY__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::event::EventPackage::ONENTRY__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::event::EventPackage::ONENTRY__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__SOURCE:
+    case ::kdm::event::EventPackage::ONENTRY__SOURCE:
     {
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__EVENTRELATION:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTRELATION:
     {
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__ABSTRACTION:
+    case ::kdm::event::EventPackage::ONENTRY__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__IMPLEMENTATION:
+    case ::kdm::event::EventPackage::ONENTRY__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::event::EventPackage::EVENTRESOURCE__EVENTELEMENT:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTELEMENT:
     {
     }
         return;
@@ -317,39 +317,39 @@ void OnEntry::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::event::EventPackage::ONENTRY__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::event::EventPackage::ONENTRY__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::event::EventPackage::ONENTRY__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::event::EventPackage::ONENTRY__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__SOURCE:
+    case ::kdm::event::EventPackage::ONENTRY__SOURCE:
     {
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__EVENTRELATION:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTRELATION:
     {
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__ABSTRACTION:
+    case ::kdm::event::EventPackage::ONENTRY__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__IMPLEMENTATION:
+    case ::kdm::event::EventPackage::ONENTRY__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::event::EventPackage::EVENTRESOURCE__EVENTELEMENT:
+    case ::kdm::event::EventPackage::ONENTRY__EVENTELEMENT:
     {
     }
         return;

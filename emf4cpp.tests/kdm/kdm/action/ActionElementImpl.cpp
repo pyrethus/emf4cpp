@@ -53,13 +53,13 @@ void ActionElement::_initialize()
     ::kdm::code::AbstractCodeElement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_codeElement->size(); i++)
+    for (const auto &ref : getCodeElement())
     {
-        (*m_codeElement)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_actionRelation->size(); i++)
+    for (const auto &ref : getActionRelation())
     {
-        (*m_actionRelation)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ActionElementImpl__initialize) START*/
@@ -77,43 +77,43 @@ void ActionElement::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__COMMENT:
     {
         _any = getComment().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__CODERELATION:
     {
         _any = getCodeRelation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -144,7 +144,7 @@ void ActionElement::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -152,7 +152,7 @@ void ActionElement::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -160,7 +160,7 @@ void ActionElement::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -168,7 +168,7 @@ void ActionElement::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -176,7 +176,7 @@ void ActionElement::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -184,7 +184,7 @@ void ActionElement::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -192,7 +192,7 @@ void ActionElement::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__COMMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -200,7 +200,7 @@ void ActionElement::eSet(::ecore::EInt _featureID,
         getComment().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__CODERELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -241,22 +241,22 @@ void ActionElement::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__COMMENT:
         return getComment().size() > 0;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__CODERELATION:
         return getCodeRelation().size() > 0;
     case ::kdm::action::ActionPackage::ACTIONELEMENT__KIND:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
@@ -282,7 +282,7 @@ void ActionElement::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ActionElement::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement();
+            ::kdm::action::ActionPackage::_instance()->getActionElement();
     return _eclass;
 }
 
@@ -293,31 +293,31 @@ void ActionElement::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__SOURCE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__COMMENT:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__CODERELATION:
     {
     }
         return;
@@ -341,31 +341,31 @@ void ActionElement::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__SOURCE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__COMMENT:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::action::ActionPackage::ACTIONELEMENT__CODERELATION:
     {
     }
         return;

@@ -40,7 +40,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 BooleanLiteral::BooleanLiteral()
 {
-
     /*PROTECTED REGION ID(BooleanLiteralImpl__BooleanLiteralImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

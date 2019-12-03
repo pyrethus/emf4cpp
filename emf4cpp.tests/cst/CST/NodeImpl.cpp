@@ -41,9 +41,9 @@ void Node::_initialize()
     ::CST::Element::_initialize();
 
     // References
-    for (size_t i = 0; i < m_children->size(); i++)
+    for (const auto &ref : getChildren())
     {
-        (*m_children)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(NodeImpl__initialize) START*/
@@ -61,7 +61,7 @@ void Node::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::CST::CSTPackage::ELEMENT__KIND:
+    case ::CST::CSTPackage::NODE__KIND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getKind());
@@ -81,7 +81,7 @@ void Node::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::CST::CSTPackage::ELEMENT__KIND:
+    case ::CST::CSTPackage::NODE__KIND:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -106,7 +106,7 @@ void Node::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::CST::CSTPackage::ELEMENT__KIND:
+    case ::CST::CSTPackage::NODE__KIND:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getKind());
     case ::CST::CSTPackage::NODE__CHILDREN:
@@ -128,7 +128,7 @@ void Node::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Node::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::CST::CSTPackage* >(::CST::CSTPackage::_instance().get())->getNode();
+            ::CST::CSTPackage::_instance()->getNode();
     return _eclass;
 }
 

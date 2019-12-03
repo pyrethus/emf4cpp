@@ -51,13 +51,6 @@ using namespace ::kdm::data;
 // Default constructor
 XMLSchema::XMLSchema()
 {
-
-    m_contentElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::data::AbstractContentElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::data::DataPackage::_instance()->getXMLSchema__contentElement()));
-
     /*PROTECTED REGION ID(XMLSchemaImpl__XMLSchemaImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -78,11 +71,24 @@ XMLSchema::~XMLSchema()
 
 const ::ecorecpp::mapping::EList< ::kdm::data::AbstractContentElement_ptr >& XMLSchema::getContentElement() const
 {
+    if (!m_contentElement)
+        return const_cast< XMLSchema* >(this)->getContentElement();
+
     return *m_contentElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::data::AbstractContentElement_ptr >& XMLSchema::getContentElement()
 {
+    /*PROTECTED REGION ID(XMLSchema__getContentElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_contentElement)
+        m_contentElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::data::AbstractContentElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::data::DataPackage::_instance()->getXMLSchema__contentElement()));
+    /*PROTECTED REGION END*/
     return *m_contentElement;
 }
 

@@ -60,12 +60,12 @@ void SourceRegion::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -121,7 +121,7 @@ void SourceRegion::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -129,7 +129,7 @@ void SourceRegion::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -202,9 +202,9 @@ void SourceRegion::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ANNOTATION:
         return getAnnotation().size() > 0;
     case ::kdm::source::SourcePackage::SOURCEREGION__FILE:
         return getFile().get() != nullptr;
@@ -243,7 +243,7 @@ void SourceRegion::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr SourceRegion::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRegion();
+            ::kdm::source::SourcePackage::_instance()->getSourceRegion();
     return _eclass;
 }
 
@@ -254,11 +254,11 @@ void SourceRegion::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ANNOTATION:
     {
     }
         return;
@@ -278,11 +278,11 @@ void SourceRegion::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREGION__ANNOTATION:
     {
     }
         return;

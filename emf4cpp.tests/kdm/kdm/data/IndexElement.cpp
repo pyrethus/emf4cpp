@@ -51,12 +51,6 @@ using namespace ::kdm::data;
 // Default constructor
 IndexElement::IndexElement()
 {
-
-    m_implementation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::ItemUnit_ptr, -1, false, false >(this,
-                    ::kdm::data::DataPackage::_instance()->getIndexElement__implementation()));
-
     /*PROTECTED REGION ID(IndexElementImpl__IndexElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -77,11 +71,23 @@ IndexElement::~IndexElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::ItemUnit_ptr >& IndexElement::getImplementation() const
 {
+    if (!m_implementation)
+        return const_cast< IndexElement* >(this)->getImplementation();
+
     return *m_implementation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::ItemUnit_ptr >& IndexElement::getImplementation()
 {
+    /*PROTECTED REGION ID(IndexElement__getImplementation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_implementation)
+        m_implementation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::ItemUnit_ptr, -1, false, false >(this,
+                        ::kdm::data::DataPackage::_instance()->getIndexElement__implementation()));
+    /*PROTECTED REGION END*/
     return *m_implementation;
 }
 

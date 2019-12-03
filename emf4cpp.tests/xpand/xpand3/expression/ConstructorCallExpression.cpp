@@ -40,7 +40,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 ConstructorCallExpression::ConstructorCallExpression()
 {
-
     /*PROTECTED REGION ID(ConstructorCallExpressionImpl__ConstructorCallExpressionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

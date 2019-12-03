@@ -125,7 +125,7 @@ void Coordinates::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Coordinates::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getCoordinates();
+            ::SVG::SVGPackage::_instance()->getCoordinates();
     return _eclass;
 }
 

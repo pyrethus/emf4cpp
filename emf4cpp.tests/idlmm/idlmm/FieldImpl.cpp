@@ -59,12 +59,12 @@ void Field::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__CONTAINEDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getContainedType());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__SHAREDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getSharedType());
     }
@@ -85,7 +85,7 @@ void Field::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__CONTAINEDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -93,7 +93,7 @@ void Field::eSet(::ecore::EInt _featureID,
         setContainedType(_t1);
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__SHAREDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -118,9 +118,9 @@ void Field::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__CONTAINEDTYPE:
         return getContainedType().get() != nullptr;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__SHAREDTYPE:
         return getSharedType().get() != nullptr;
     case ::idlmm::IdlmmPackage::FIELD__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
@@ -142,7 +142,7 @@ void Field::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Field::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getField();
+            ::idlmm::IdlmmPackage::_instance()->getField();
     return _eclass;
 }
 
@@ -153,11 +153,11 @@ void Field::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__SHAREDTYPE:
     {
     }
         return;
@@ -173,11 +173,11 @@ void Field::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::FIELD__SHAREDTYPE:
     {
     }
         return;

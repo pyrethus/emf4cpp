@@ -39,7 +39,6 @@ using namespace ::json;
 // Default constructor
 BooleanValue::BooleanValue()
 {
-
     /*PROTECTED REGION ID(BooleanValueImpl__BooleanValueImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

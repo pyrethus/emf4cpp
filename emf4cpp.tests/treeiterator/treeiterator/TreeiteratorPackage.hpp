@@ -37,10 +37,14 @@ public:
     static TreeiteratorPackage_ptr _instance();
     static TreeiteratorPackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier Leaf
     static const int LEAF = 0;
 
+    static const int LEAF__NAME = 0;
+
+    static const int LEAF_FEATURE_COUNT = 1;
+
+    // IDs for classifier TreeNode
     static const int TREENODE = 1;
 
     static const int TREENODE__NAME = 0;
@@ -49,11 +53,7 @@ public:
 
     static const int TREENODE__LEAF = 2;
 
-    static const int LEAF__NAME = 3;
-
-    // IDs for classifiers for class Leaf 
-
-    // IDs for classifiers for class TreeNode 
+    static const int TREENODE_FEATURE_COUNT = 3;
 
     // EClassifiers methods
 

@@ -162,7 +162,7 @@ void BinTreeNode::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr BinTreeNode::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::bintree::BintreePackage* >(::bintree::BintreePackage::_instance().get())->getBinTreeNode();
+            ::bintree::BintreePackage::_instance()->getBinTreeNode();
     return _eclass;
 }
 

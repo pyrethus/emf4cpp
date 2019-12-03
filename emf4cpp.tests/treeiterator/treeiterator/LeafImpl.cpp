@@ -107,7 +107,7 @@ void Leaf::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Leaf::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::treeiterator::TreeiteratorPackage* >(::treeiterator::TreeiteratorPackage::_instance().get())->getLeaf();
+            ::treeiterator::TreeiteratorPackage::_instance()->getLeaf();
     return _eclass;
 }
 

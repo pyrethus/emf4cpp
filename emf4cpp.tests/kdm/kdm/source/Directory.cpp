@@ -49,7 +49,6 @@ using namespace ::kdm::source;
 // Default constructor
 Directory::Directory()
 {
-
     /*PROTECTED REGION ID(DirectoryImpl__DirectoryImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

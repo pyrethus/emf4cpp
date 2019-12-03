@@ -107,7 +107,7 @@ void Attribute::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Attribute::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getAttribute();
+            ::SVG::SVGPackage::_instance()->getAttribute();
     return _eclass;
 }
 

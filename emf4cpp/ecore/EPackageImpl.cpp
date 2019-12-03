@@ -45,13 +45,13 @@ void EPackage::_initialize()
     ::ecore::ENamedElement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_eClassifiers->size(); i++)
+    for (const auto &ref : getEClassifiers())
     {
-        (*m_eClassifiers)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_eSubpackages->size(); i++)
+    for (const auto &ref : getESubpackages())
     {
-        (*m_eSubpackages)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(EPackageImpl__initialize) START*/
@@ -68,10 +68,9 @@ void EPackage::_initialize()
     if (m_eClassifiersMap.size() == 0)
     {
         // Fill eClassifiers map
-        for (size_t i = 0; i < m_eClassifiers->size(); i++)
+        for (const auto &classifier : getEClassifiers())
         {
-            ::ecore::EClassifier_ptr c = (*m_eClassifiers)[i];
-            m_eClassifiersMap[c->getName()] = c;
+            m_eClassifiersMap[classifier->getName()] = classifier;
         }
     }
 
@@ -91,12 +90,12 @@ void EPackage::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EPACKAGE__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EPACKAGE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -144,7 +143,7 @@ void EPackage::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EPACKAGE__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -152,7 +151,7 @@ void EPackage::eSet(::ecore::EInt _featureID,
         getEAnnotations().insert_all(*_t0);
     }
         return;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EPACKAGE__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -217,9 +216,9 @@ void EPackage::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EPACKAGE__EANNOTATIONS:
         return getEAnnotations().size() > 0;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EPACKAGE__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
     case ::ecore::EcorePackage::EPACKAGE__NSURI:
@@ -253,7 +252,7 @@ void EPackage::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EPackage::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEPackage();
+            ::ecore::EcorePackage::_instance()->getEPackage();
     return _eclass;
 }
 
@@ -264,7 +263,7 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EPACKAGE__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -289,8 +288,9 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
         if (_old_eFactoryInstance && _old_eFactoryInstance != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_eFactoryInstance->_inverseRemove(
-                    ::ecore::EcorePackage::EFACTORY__EPACKAGE, _this);
+            _old_eFactoryInstance->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEFactory__ePackage(),
+                    _this);
         }
 
         // set reference
@@ -336,8 +336,9 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
         if (_old_eSuperPackage && _old_eSuperPackage != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_eSuperPackage->_inverseRemove(
-                    ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES, _this);
+            _old_eSuperPackage->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEPackage__eSubpackages(),
+                    _this);
         }
 
         // set reference
@@ -356,7 +357,7 @@ void EPackage::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EPACKAGE__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

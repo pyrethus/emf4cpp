@@ -42,7 +42,6 @@ using namespace ::kdm::kdm;
 // Default constructor
 TaggedValue::TaggedValue()
 {
-
     /*PROTECTED REGION ID(TaggedValueImpl__TaggedValueImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

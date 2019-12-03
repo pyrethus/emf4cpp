@@ -39,7 +39,6 @@ using namespace ::bintree;
 // Default constructor
 BinTreeNode::BinTreeNode()
 {
-
     /*PROTECTED REGION ID(BinTreeNodeImpl__BinTreeNodeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -44,7 +44,6 @@ using namespace ::ecore;
 // Default constructor
 EAttribute::EAttribute()
 {
-
     /*PROTECTED REGION ID(EAttributeImpl__EAttributeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

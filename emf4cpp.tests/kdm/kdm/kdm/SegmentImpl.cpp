@@ -49,13 +49,13 @@ void Segment::_initialize()
     ::kdm::kdm::KDMFramework::_initialize();
 
     // References
-    for (size_t i = 0; i < m_segment->size(); i++)
+    for (const auto &ref : getSegment())
     {
-        (*m_segment)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_model->size(); i++)
+    for (const auto &ref : getModel())
     {
-        (*m_model)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(SegmentImpl__initialize) START*/
@@ -73,37 +73,37 @@ void Segment::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::SEGMENT__AUDIT:
     {
         _any = getAudit().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::SEGMENT__EXTENSIONFAMILY:
     {
         _any = getExtensionFamily().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::kdm::KdmPackage::SEGMENT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
@@ -129,7 +129,7 @@ void Segment::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -137,7 +137,7 @@ void Segment::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -145,7 +145,7 @@ void Segment::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -153,7 +153,7 @@ void Segment::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -161,7 +161,7 @@ void Segment::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::SEGMENT__AUDIT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -169,7 +169,7 @@ void Segment::eSet(::ecore::EInt _featureID,
         getAudit().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::SEGMENT__EXTENSIONFAMILY:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -177,7 +177,7 @@ void Segment::eSet(::ecore::EInt _featureID,
         getExtensionFamily().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::kdm::KdmPackage::SEGMENT__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -210,19 +210,19 @@ void Segment::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::SEGMENT__AUDIT:
         return getAudit().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::SEGMENT__EXTENSIONFAMILY:
         return getExtensionFamily().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::kdm::KdmPackage::SEGMENT__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
     case ::kdm::kdm::KdmPackage::SEGMENT__SEGMENT:
@@ -246,7 +246,7 @@ void Segment::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Segment::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getSegment();
+            ::kdm::kdm::KdmPackage::_instance()->getSegment();
     return _eclass;
 }
 
@@ -257,27 +257,27 @@ void Segment::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::SEGMENT__AUDIT:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::SEGMENT__EXTENSIONFAMILY:
     {
     }
         return;
@@ -301,27 +301,27 @@ void Segment::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::SEGMENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::SEGMENT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::SEGMENT__AUDIT:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::SEGMENT__EXTENSIONFAMILY:
     {
     }
         return;

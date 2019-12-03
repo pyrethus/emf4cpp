@@ -69,48 +69,48 @@ void ConditionalDirective::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__COMMENT:
     {
         _any = getComment().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODERELATION:
     {
         _any = getCodeRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::PREPROCESSORDIRECTIVE__CODEELEMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODEELEMENT:
     {
         _any = getCodeElement().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -125,7 +125,7 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -133,7 +133,7 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -141,7 +141,7 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -149,7 +149,7 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -157,7 +157,7 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -165,7 +165,7 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -173,7 +173,7 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__COMMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -181,7 +181,7 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
         getComment().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODERELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -189,7 +189,7 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
         getCodeRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::PREPROCESSORDIRECTIVE__CODEELEMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODEELEMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -206,24 +206,24 @@ void ConditionalDirective::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__COMMENT:
         return getComment().size() > 0;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODERELATION:
         return getCodeRelation().size() > 0;
-    case ::kdm::code::CodePackage::PREPROCESSORDIRECTIVE__CODEELEMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODEELEMENT:
         return getCodeElement().size() > 0;
 
     }
@@ -242,7 +242,7 @@ void ConditionalDirective::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ConditionalDirective::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getConditionalDirective();
+            ::kdm::code::CodePackage::_instance()->getConditionalDirective();
     return _eclass;
 }
 
@@ -253,35 +253,35 @@ void ConditionalDirective::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__SOURCE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__COMMENT:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODERELATION:
     {
     }
         return;
-    case ::kdm::code::CodePackage::PREPROCESSORDIRECTIVE__CODEELEMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODEELEMENT:
     {
     }
         return;
@@ -297,35 +297,35 @@ void ConditionalDirective::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__SOURCE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__COMMENT:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODERELATION:
     {
     }
         return;
-    case ::kdm::code::CodePackage::PREPROCESSORDIRECTIVE__CODEELEMENT:
+    case ::kdm::code::CodePackage::CONDITIONALDIRECTIVE__CODEELEMENT:
     {
     }
         return;

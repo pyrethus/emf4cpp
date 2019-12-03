@@ -42,339 +42,355 @@ namespace kdm
         static SourcePackage_ptr _instance();
         static SourcePackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier AbstractInventoryElement
         static const int ABSTRACTINVENTORYELEMENT = 0;
 
+        static const int ABSTRACTINVENTORYELEMENT__ATTRIBUTE = 0;
+
+        static const int ABSTRACTINVENTORYELEMENT__ANNOTATION = 1;
+
+        static const int ABSTRACTINVENTORYELEMENT__STEREOTYPE = 2;
+
+        static const int ABSTRACTINVENTORYELEMENT__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTINVENTORYELEMENT__NAME = 4;
+
+        static const int ABSTRACTINVENTORYELEMENT__INVENTORYRELATION = 5;
+
+        static const int ABSTRACTINVENTORYELEMENT_FEATURE_COUNT = 6;
+
+        // IDs for classifier AbstractInventoryRelationship
         static const int ABSTRACTINVENTORYRELATIONSHIP = 1;
 
+        static const int ABSTRACTINVENTORYRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int ABSTRACTINVENTORYRELATIONSHIP__ANNOTATION = 1;
+
+        static const int ABSTRACTINVENTORYRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int ABSTRACTINVENTORYRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTINVENTORYRELATIONSHIP_FEATURE_COUNT = 4;
+
+        // IDs for classifier BinaryFile
         static const int BINARYFILE = 2;
 
+        static const int BINARYFILE__ATTRIBUTE = 0;
+
+        static const int BINARYFILE__ANNOTATION = 1;
+
+        static const int BINARYFILE__STEREOTYPE = 2;
+
+        static const int BINARYFILE__TAGGEDVALUE = 3;
+
+        static const int BINARYFILE__NAME = 4;
+
+        static const int BINARYFILE__INVENTORYRELATION = 5;
+
+        static const int BINARYFILE__VERSION = 6;
+
+        static const int BINARYFILE__PATH = 7;
+
+        static const int BINARYFILE_FEATURE_COUNT = 8;
+
+        // IDs for classifier Configuration
         static const int CONFIGURATION = 3;
 
+        static const int CONFIGURATION__ATTRIBUTE = 0;
+
+        static const int CONFIGURATION__ANNOTATION = 1;
+
+        static const int CONFIGURATION__STEREOTYPE = 2;
+
+        static const int CONFIGURATION__TAGGEDVALUE = 3;
+
+        static const int CONFIGURATION__NAME = 4;
+
+        static const int CONFIGURATION__INVENTORYRELATION = 5;
+
+        static const int CONFIGURATION__VERSION = 6;
+
+        static const int CONFIGURATION__PATH = 7;
+
+        static const int CONFIGURATION_FEATURE_COUNT = 8;
+
+        // IDs for classifier DependsOn
         static const int DEPENDSON = 4;
 
+        static const int DEPENDSON__ATTRIBUTE = 0;
+
+        static const int DEPENDSON__ANNOTATION = 1;
+
+        static const int DEPENDSON__STEREOTYPE = 2;
+
+        static const int DEPENDSON__TAGGEDVALUE = 3;
+
+        static const int DEPENDSON__TO = 4;
+
+        static const int DEPENDSON__FROM = 5;
+
+        static const int DEPENDSON_FEATURE_COUNT = 6;
+
+        // IDs for classifier Directory
         static const int DIRECTORY = 5;
 
+        static const int DIRECTORY__ATTRIBUTE = 0;
+
+        static const int DIRECTORY__ANNOTATION = 1;
+
+        static const int DIRECTORY__STEREOTYPE = 2;
+
+        static const int DIRECTORY__TAGGEDVALUE = 3;
+
+        static const int DIRECTORY__NAME = 4;
+
+        static const int DIRECTORY__INVENTORYRELATION = 5;
+
+        static const int DIRECTORY__INVENTORYELEMENT = 6;
+
+        static const int DIRECTORY__PATH = 7;
+
+        static const int DIRECTORY_FEATURE_COUNT = 8;
+
+        // IDs for classifier ExecutableFile
         static const int EXECUTABLEFILE = 6;
 
+        static const int EXECUTABLEFILE__ATTRIBUTE = 0;
+
+        static const int EXECUTABLEFILE__ANNOTATION = 1;
+
+        static const int EXECUTABLEFILE__STEREOTYPE = 2;
+
+        static const int EXECUTABLEFILE__TAGGEDVALUE = 3;
+
+        static const int EXECUTABLEFILE__NAME = 4;
+
+        static const int EXECUTABLEFILE__INVENTORYRELATION = 5;
+
+        static const int EXECUTABLEFILE__VERSION = 6;
+
+        static const int EXECUTABLEFILE__PATH = 7;
+
+        static const int EXECUTABLEFILE_FEATURE_COUNT = 8;
+
+        // IDs for classifier Image
         static const int IMAGE = 7;
 
+        static const int IMAGE__ATTRIBUTE = 0;
+
+        static const int IMAGE__ANNOTATION = 1;
+
+        static const int IMAGE__STEREOTYPE = 2;
+
+        static const int IMAGE__TAGGEDVALUE = 3;
+
+        static const int IMAGE__NAME = 4;
+
+        static const int IMAGE__INVENTORYRELATION = 5;
+
+        static const int IMAGE__VERSION = 6;
+
+        static const int IMAGE__PATH = 7;
+
+        static const int IMAGE_FEATURE_COUNT = 8;
+
+        // IDs for classifier InventoryContainer
         static const int INVENTORYCONTAINER = 8;
 
+        static const int INVENTORYCONTAINER__ATTRIBUTE = 0;
+
+        static const int INVENTORYCONTAINER__ANNOTATION = 1;
+
+        static const int INVENTORYCONTAINER__STEREOTYPE = 2;
+
+        static const int INVENTORYCONTAINER__TAGGEDVALUE = 3;
+
+        static const int INVENTORYCONTAINER__NAME = 4;
+
+        static const int INVENTORYCONTAINER__INVENTORYRELATION = 5;
+
+        static const int INVENTORYCONTAINER__INVENTORYELEMENT = 6;
+
+        static const int INVENTORYCONTAINER_FEATURE_COUNT = 7;
+
+        // IDs for classifier InventoryElement
         static const int INVENTORYELEMENT = 9;
 
+        static const int INVENTORYELEMENT__ATTRIBUTE = 0;
+
+        static const int INVENTORYELEMENT__ANNOTATION = 1;
+
+        static const int INVENTORYELEMENT__STEREOTYPE = 2;
+
+        static const int INVENTORYELEMENT__TAGGEDVALUE = 3;
+
+        static const int INVENTORYELEMENT__NAME = 4;
+
+        static const int INVENTORYELEMENT__INVENTORYRELATION = 5;
+
+        static const int INVENTORYELEMENT_FEATURE_COUNT = 6;
+
+        // IDs for classifier InventoryItem
         static const int INVENTORYITEM = 10;
 
+        static const int INVENTORYITEM__ATTRIBUTE = 0;
+
+        static const int INVENTORYITEM__ANNOTATION = 1;
+
+        static const int INVENTORYITEM__STEREOTYPE = 2;
+
+        static const int INVENTORYITEM__TAGGEDVALUE = 3;
+
+        static const int INVENTORYITEM__NAME = 4;
+
+        static const int INVENTORYITEM__INVENTORYRELATION = 5;
+
+        static const int INVENTORYITEM__VERSION = 6;
+
+        static const int INVENTORYITEM__PATH = 7;
+
+        static const int INVENTORYITEM_FEATURE_COUNT = 8;
+
+        // IDs for classifier InventoryModel
         static const int INVENTORYMODEL = 11;
 
+        static const int INVENTORYMODEL__ATTRIBUTE = 0;
+
+        static const int INVENTORYMODEL__ANNOTATION = 1;
+
+        static const int INVENTORYMODEL__STEREOTYPE = 2;
+
+        static const int INVENTORYMODEL__TAGGEDVALUE = 3;
+
+        static const int INVENTORYMODEL__AUDIT = 4;
+
+        static const int INVENTORYMODEL__EXTENSIONFAMILY = 5;
+
+        static const int INVENTORYMODEL__NAME = 6;
+
+        static const int INVENTORYMODEL__INVENTORYELEMENT = 7;
+
+        static const int INVENTORYMODEL_FEATURE_COUNT = 8;
+
+        // IDs for classifier InventoryRelationship
         static const int INVENTORYRELATIONSHIP = 12;
 
+        static const int INVENTORYRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int INVENTORYRELATIONSHIP__ANNOTATION = 1;
+
+        static const int INVENTORYRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int INVENTORYRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int INVENTORYRELATIONSHIP__TO = 4;
+
+        static const int INVENTORYRELATIONSHIP__FROM = 5;
+
+        static const int INVENTORYRELATIONSHIP_FEATURE_COUNT = 6;
+
+        // IDs for classifier Project
         static const int PROJECT = 13;
 
+        static const int PROJECT__ATTRIBUTE = 0;
+
+        static const int PROJECT__ANNOTATION = 1;
+
+        static const int PROJECT__STEREOTYPE = 2;
+
+        static const int PROJECT__TAGGEDVALUE = 3;
+
+        static const int PROJECT__NAME = 4;
+
+        static const int PROJECT__INVENTORYRELATION = 5;
+
+        static const int PROJECT__INVENTORYELEMENT = 6;
+
+        static const int PROJECT_FEATURE_COUNT = 7;
+
+        // IDs for classifier ResourceDescription
         static const int RESOURCEDESCRIPTION = 14;
 
+        static const int RESOURCEDESCRIPTION__ATTRIBUTE = 0;
+
+        static const int RESOURCEDESCRIPTION__ANNOTATION = 1;
+
+        static const int RESOURCEDESCRIPTION__STEREOTYPE = 2;
+
+        static const int RESOURCEDESCRIPTION__TAGGEDVALUE = 3;
+
+        static const int RESOURCEDESCRIPTION__NAME = 4;
+
+        static const int RESOURCEDESCRIPTION__INVENTORYRELATION = 5;
+
+        static const int RESOURCEDESCRIPTION__VERSION = 6;
+
+        static const int RESOURCEDESCRIPTION__PATH = 7;
+
+        static const int RESOURCEDESCRIPTION_FEATURE_COUNT = 8;
+
+        // IDs for classifier SourceFile
         static const int SOURCEFILE = 15;
 
+        static const int SOURCEFILE__ATTRIBUTE = 0;
+
+        static const int SOURCEFILE__ANNOTATION = 1;
+
+        static const int SOURCEFILE__STEREOTYPE = 2;
+
+        static const int SOURCEFILE__TAGGEDVALUE = 3;
+
+        static const int SOURCEFILE__NAME = 4;
+
+        static const int SOURCEFILE__INVENTORYRELATION = 5;
+
+        static const int SOURCEFILE__VERSION = 6;
+
+        static const int SOURCEFILE__PATH = 7;
+
+        static const int SOURCEFILE__LANGUAGE = 8;
+
+        static const int SOURCEFILE__ENCODING = 9;
+
+        static const int SOURCEFILE_FEATURE_COUNT = 10;
+
+        // IDs for classifier SourceRef
         static const int SOURCEREF = 16;
 
+        static const int SOURCEREF__ATTRIBUTE = 0;
+
+        static const int SOURCEREF__ANNOTATION = 1;
+
+        static const int SOURCEREF__REGION = 2;
+
+        static const int SOURCEREF__LANGUAGE = 3;
+
+        static const int SOURCEREF__SNIPPET = 4;
+
+        static const int SOURCEREF_FEATURE_COUNT = 5;
+
+        // IDs for classifier SourceRegion
         static const int SOURCEREGION = 17;
 
-        static const int SOURCEREF__REGION = 208;
+        static const int SOURCEREGION__ATTRIBUTE = 0;
 
-        static const int SOURCEREF__LANGUAGE = 209;
+        static const int SOURCEREGION__ANNOTATION = 1;
 
-        static const int SOURCEREF__SNIPPET = 210;
+        static const int SOURCEREGION__FILE = 2;
 
-        static const int SOURCEREGION__FILE = 211;
+        static const int SOURCEREGION__STARTLINE = 3;
 
-        static const int SOURCEREGION__STARTLINE = 212;
+        static const int SOURCEREGION__STARTPOSITION = 4;
 
-        static const int SOURCEREGION__STARTPOSITION = 213;
+        static const int SOURCEREGION__ENDLINE = 5;
 
-        static const int SOURCEREGION__ENDLINE = 214;
+        static const int SOURCEREGION__ENDPOSITION = 6;
 
-        static const int SOURCEREGION__ENDPOSITION = 215;
+        static const int SOURCEREGION__LANGUAGE = 7;
 
-        static const int SOURCEREGION__LANGUAGE = 216;
+        static const int SOURCEREGION__PATH = 8;
 
-        static const int SOURCEREGION__PATH = 217;
-
-        static const int INVENTORYMODEL__INVENTORYELEMENT = 218;
-
-        static const int ABSTRACTINVENTORYELEMENT__INVENTORYRELATION = 219;
-
-        static const int INVENTORYITEM__VERSION = 220;
-
-        static const int INVENTORYITEM__PATH = 221;
-
-        static const int SOURCEFILE__LANGUAGE = 222;
-
-        static const int SOURCEFILE__ENCODING = 223;
-
-        static const int INVENTORYCONTAINER__INVENTORYELEMENT = 224;
-
-        static const int DIRECTORY__PATH = 225;
-
-        static const int DEPENDSON__TO = 226;
-
-        static const int DEPENDSON__FROM = 227;
-
-        static const int INVENTORYRELATIONSHIP__TO = 228;
-
-        static const int INVENTORYRELATIONSHIP__FROM = 229;
-
-        // IDs for classifiers for class AbstractInventoryElement 
-
-        static const int ABSTRACTINVENTORYELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTINVENTORYELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTINVENTORYELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTINVENTORYELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ABSTRACTINVENTORYELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        // IDs for classifiers for class AbstractInventoryRelationship 
-
-        static const int ABSTRACTINVENTORYRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTINVENTORYRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTINVENTORYRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTINVENTORYRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class BinaryFile 
-
-        static const int BINARYFILE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int BINARYFILE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int BINARYFILE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int BINARYFILE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int BINARYFILE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int BINARYFILE__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        static const int BINARYFILE__VERSION = INVENTORYITEM__VERSION;
-
-        static const int BINARYFILE__PATH = INVENTORYITEM__PATH;
-
-        // IDs for classifiers for class Configuration 
-
-        static const int CONFIGURATION__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CONFIGURATION__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CONFIGURATION__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CONFIGURATION__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CONFIGURATION__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CONFIGURATION__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        static const int CONFIGURATION__VERSION = INVENTORYITEM__VERSION;
-
-        static const int CONFIGURATION__PATH = INVENTORYITEM__PATH;
-
-        // IDs for classifiers for class DependsOn 
-
-        static const int DEPENDSON__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DEPENDSON__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DEPENDSON__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DEPENDSON__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Directory 
-
-        static const int DIRECTORY__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DIRECTORY__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DIRECTORY__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DIRECTORY__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DIRECTORY__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DIRECTORY__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        static const int DIRECTORY__INVENTORYELEMENT = INVENTORYCONTAINER__INVENTORYELEMENT;
-
-        // IDs for classifiers for class ExecutableFile 
-
-        static const int EXECUTABLEFILE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXECUTABLEFILE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EXECUTABLEFILE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EXECUTABLEFILE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int EXECUTABLEFILE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int EXECUTABLEFILE__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        static const int EXECUTABLEFILE__VERSION = INVENTORYITEM__VERSION;
-
-        static const int EXECUTABLEFILE__PATH = INVENTORYITEM__PATH;
-
-        // IDs for classifiers for class Image 
-
-        static const int IMAGE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int IMAGE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int IMAGE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int IMAGE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int IMAGE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int IMAGE__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        static const int IMAGE__VERSION = INVENTORYITEM__VERSION;
-
-        static const int IMAGE__PATH = INVENTORYITEM__PATH;
-
-        // IDs for classifiers for class InventoryContainer 
-
-        static const int INVENTORYCONTAINER__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INVENTORYCONTAINER__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INVENTORYCONTAINER__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INVENTORYCONTAINER__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int INVENTORYCONTAINER__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int INVENTORYCONTAINER__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        // IDs for classifiers for class InventoryElement 
-
-        static const int INVENTORYELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INVENTORYELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INVENTORYELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INVENTORYELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int INVENTORYELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int INVENTORYELEMENT__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        // IDs for classifiers for class InventoryItem 
-
-        static const int INVENTORYITEM__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INVENTORYITEM__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INVENTORYITEM__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INVENTORYITEM__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int INVENTORYITEM__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int INVENTORYITEM__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        // IDs for classifiers for class InventoryModel 
-
-        static const int INVENTORYMODEL__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INVENTORYMODEL__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INVENTORYMODEL__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INVENTORYMODEL__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int INVENTORYMODEL__AUDIT = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT;
-
-        static const int INVENTORYMODEL__EXTENSIONFAMILY = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY;
-
-        static const int INVENTORYMODEL__NAME = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME;
-
-        // IDs for classifiers for class InventoryRelationship 
-
-        static const int INVENTORYRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INVENTORYRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INVENTORYRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INVENTORYRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Project 
-
-        static const int PROJECT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PROJECT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PROJECT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PROJECT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PROJECT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int PROJECT__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        static const int PROJECT__INVENTORYELEMENT = INVENTORYCONTAINER__INVENTORYELEMENT;
-
-        // IDs for classifiers for class ResourceDescription 
-
-        static const int RESOURCEDESCRIPTION__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int RESOURCEDESCRIPTION__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int RESOURCEDESCRIPTION__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int RESOURCEDESCRIPTION__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int RESOURCEDESCRIPTION__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int RESOURCEDESCRIPTION__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        static const int RESOURCEDESCRIPTION__VERSION = INVENTORYITEM__VERSION;
-
-        static const int RESOURCEDESCRIPTION__PATH = INVENTORYITEM__PATH;
-
-        // IDs for classifiers for class SourceFile 
-
-        static const int SOURCEFILE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SOURCEFILE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SOURCEFILE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SOURCEFILE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int SOURCEFILE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int SOURCEFILE__INVENTORYRELATION = ABSTRACTINVENTORYELEMENT__INVENTORYRELATION;
-
-        static const int SOURCEFILE__VERSION = INVENTORYITEM__VERSION;
-
-        static const int SOURCEFILE__PATH = INVENTORYITEM__PATH;
-
-        // IDs for classifiers for class SourceRef 
-
-        static const int SOURCEREF__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SOURCEREF__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        // IDs for classifiers for class SourceRegion 
-
-        static const int SOURCEREGION__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SOURCEREGION__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
+        static const int SOURCEREGION_FEATURE_COUNT = 9;
 
         // EClassifiers methods
 

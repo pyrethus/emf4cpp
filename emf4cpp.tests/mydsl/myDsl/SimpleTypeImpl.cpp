@@ -57,7 +57,7 @@ void SimpleType::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::myDsl::MyDslPackage::TYPE__NAME:
+    case ::myDsl::MyDslPackage::SIMPLETYPE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -73,7 +73,7 @@ void SimpleType::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::myDsl::MyDslPackage::TYPE__NAME:
+    case ::myDsl::MyDslPackage::SIMPLETYPE__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -90,7 +90,7 @@ void SimpleType::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::myDsl::MyDslPackage::TYPE__NAME:
+    case ::myDsl::MyDslPackage::SIMPLETYPE__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
 
@@ -110,7 +110,7 @@ void SimpleType::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr SimpleType::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::myDsl::MyDslPackage* >(::myDsl::MyDslPackage::_instance().get())->getSimpleType();
+            ::myDsl::MyDslPackage::_instance()->getSimpleType();
     return _eclass;
 }
 

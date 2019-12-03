@@ -40,7 +40,6 @@ using namespace ::CST;
 // Default constructor
 Tree::Tree()
 {
-
     /*PROTECTED REGION ID(TreeImpl__TreeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

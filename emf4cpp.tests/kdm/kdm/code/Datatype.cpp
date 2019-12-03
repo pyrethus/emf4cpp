@@ -50,7 +50,6 @@ using namespace ::kdm::code;
 // Default constructor
 Datatype::Datatype()
 {
-
     /*PROTECTED REGION ID(DatatypeImpl__DatatypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

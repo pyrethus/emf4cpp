@@ -49,7 +49,6 @@ using namespace ::kdm::build;
 // Default constructor
 BuildProduct::BuildProduct()
 {
-
     /*PROTECTED REGION ID(BuildProductImpl__BuildProductImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

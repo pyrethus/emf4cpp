@@ -52,7 +52,6 @@ using namespace ::kdm::platform;
 // Default constructor
 DataManager::DataManager()
 {
-
     /*PROTECTED REGION ID(DataManagerImpl__DataManagerImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

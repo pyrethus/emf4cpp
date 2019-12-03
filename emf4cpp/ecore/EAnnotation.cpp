@@ -42,24 +42,6 @@ using namespace ::ecore;
 // Default constructor
 EAnnotation::EAnnotation()
 {
-
-    m_details.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EStringToStringMapEntry_ptr, -1, true, false >(
-                    this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEAnnotation__details() :
-                            ::ecore::EReference_ptr()));
-    m_contents.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::ecore::EObject_ptr,
-                    -1, true, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEAnnotation__contents() :
-                            ::ecore::EReference_ptr()));
-    m_references.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::ecore::EObject_ptr,
-                    -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEAnnotation__references() :
-                            ::ecore::EReference_ptr()));
-
     /*PROTECTED REGION ID(EAnnotationImpl__EAnnotationImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -106,11 +88,24 @@ void EAnnotation::setSource(::ecore::EString const &_source)
 
 const ::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >& EAnnotation::getDetails() const
 {
+    if (!m_details)
+        return const_cast< EAnnotation* >(this)->getDetails();
+
     return *m_details;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >& EAnnotation::getDetails()
 {
+    /*PROTECTED REGION ID(EAnnotation__getDetails) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_details)
+        m_details.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EStringToStringMapEntry_ptr, -1, true, false >(
+                        this,
+                        ::ecore::EcorePackage::_instance()->getEAnnotation__details()));
+    /*PROTECTED REGION END*/
     return *m_details;
 }
 
@@ -155,13 +150,15 @@ void EAnnotation::setEModelElement(::ecore::EModelElement_ptr _eModelElement)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_eModelElement)
         {
-            _old_eModelElement->_inverseRemove(
-                    ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS, _this);
+            _old_eModelElement->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEModelElement__eAnnotations(),
+                    _this);
         }
-        if (_eModelElement)
+        if (_eModelElement && ::ecore::EcorePackage::_instance())
         {
-            _eModelElement->_inverseAdd(
-                    ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS, _this);
+            _eModelElement->::ecore::EObject::_inverseAdd(
+                    ::ecore::EcorePackage::_instance()->getEModelElement__eAnnotations(),
+                    _this);
         }
         basicsetEModelElement(_eModelElement);
     }
@@ -169,21 +166,45 @@ void EAnnotation::setEModelElement(::ecore::EModelElement_ptr _eModelElement)
 
 const ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >& EAnnotation::getContents() const
 {
+    if (!m_contents)
+        return const_cast< EAnnotation* >(this)->getContents();
+
     return *m_contents;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >& EAnnotation::getContents()
 {
+    /*PROTECTED REGION ID(EAnnotation__getContents) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_contents)
+        m_contents.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EObject_ptr, -1, true, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEAnnotation__contents()));
+    /*PROTECTED REGION END*/
     return *m_contents;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >& EAnnotation::getReferences() const
 {
+    if (!m_references)
+        return const_cast< EAnnotation* >(this)->getReferences();
+
     return *m_references;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EObject_ptr >& EAnnotation::getReferences()
 {
+    /*PROTECTED REGION ID(EAnnotation__getReferences) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_references)
+        m_references.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EObject_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEAnnotation__references()));
+    /*PROTECTED REGION END*/
     return *m_references;
 }
 

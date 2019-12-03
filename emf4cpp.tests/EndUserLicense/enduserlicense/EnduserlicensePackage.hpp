@@ -37,8 +37,6 @@ public:
     static EnduserlicensePackage_ptr _instance();
     static EnduserlicensePackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
     // EClassifiers methods
 
     // EStructuralFeatures methods

@@ -68,48 +68,48 @@ void TermUnit::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__IMPLEMENTATION:
     {
         _any = getImplementation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__CONCEPTUALRELATION:
     {
         _any = getConceptualRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ABSTRACTION:
     {
         _any = getAbstraction().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -124,7 +124,7 @@ void TermUnit::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -132,7 +132,7 @@ void TermUnit::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -140,7 +140,7 @@ void TermUnit::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -148,7 +148,7 @@ void TermUnit::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -156,7 +156,7 @@ void TermUnit::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -164,7 +164,7 @@ void TermUnit::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -172,7 +172,7 @@ void TermUnit::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__IMPLEMENTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -180,7 +180,7 @@ void TermUnit::eSet(::ecore::EInt _featureID,
         getImplementation().insert_all(*_t0);
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__CONCEPTUALRELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -188,7 +188,7 @@ void TermUnit::eSet(::ecore::EInt _featureID,
         getConceptualRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ABSTRACTION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -205,24 +205,24 @@ void TermUnit::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__IMPLEMENTATION:
         return getImplementation().size() > 0;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__CONCEPTUALRELATION:
         return getConceptualRelation().size() > 0;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ABSTRACTION:
         return getAbstraction().size() > 0;
 
     }
@@ -241,7 +241,7 @@ void TermUnit::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr TermUnit::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::conceptual::ConceptualPackage* >(::kdm::conceptual::ConceptualPackage::_instance().get())->getTermUnit();
+            ::kdm::conceptual::ConceptualPackage::_instance()->getTermUnit();
     return _eclass;
 }
 
@@ -252,35 +252,35 @@ void TermUnit::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__SOURCE:
     {
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__CONCEPTUALRELATION:
     {
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ABSTRACTION:
     {
     }
         return;
@@ -296,35 +296,35 @@ void TermUnit::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__SOURCE:
     {
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__CONCEPTUALRELATION:
     {
     }
         return;
-    case ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION:
+    case ::kdm::conceptual::ConceptualPackage::TERMUNIT__ABSTRACTION:
     {
     }
         return;

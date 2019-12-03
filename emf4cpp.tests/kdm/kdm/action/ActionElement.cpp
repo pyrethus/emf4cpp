@@ -51,18 +51,6 @@ using namespace ::kdm::action;
 // Default constructor
 ActionElement::ActionElement()
 {
-
-    m_codeElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::AbstractCodeElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::action::ActionPackage::_instance()->getActionElement__codeElement()));
-    m_actionRelation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::action::AbstractActionRelationship_ptr, -1, true,
-                    false >(this,
-                    ::kdm::action::ActionPackage::_instance()->getActionElement__actionRelation()));
-
     /*PROTECTED REGION ID(ActionElementImpl__ActionElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -109,21 +97,47 @@ void ActionElement::setKind(::kdm::core::String _kind)
 
 const ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& ActionElement::getCodeElement() const
 {
+    if (!m_codeElement)
+        return const_cast< ActionElement* >(this)->getCodeElement();
+
     return *m_codeElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& ActionElement::getCodeElement()
 {
+    /*PROTECTED REGION ID(ActionElement__getCodeElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_codeElement)
+        m_codeElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::AbstractCodeElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::action::ActionPackage::_instance()->getActionElement__codeElement()));
+    /*PROTECTED REGION END*/
     return *m_codeElement;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::action::AbstractActionRelationship_ptr >& ActionElement::getActionRelation() const
 {
+    if (!m_actionRelation)
+        return const_cast< ActionElement* >(this)->getActionRelation();
+
     return *m_actionRelation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::action::AbstractActionRelationship_ptr >& ActionElement::getActionRelation()
 {
+    /*PROTECTED REGION ID(ActionElement__getActionRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_actionRelation)
+        m_actionRelation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::action::AbstractActionRelationship_ptr, -1, true,
+                        false >(this,
+                        ::kdm::action::ActionPackage::_instance()->getActionElement__actionRelation()));
+    /*PROTECTED REGION END*/
     return *m_actionRelation;
 }
 

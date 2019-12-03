@@ -52,7 +52,6 @@ using namespace ::kdm::action;
 // Default constructor
 BlockUnit::BlockUnit()
 {
-
     /*PROTECTED REGION ID(BlockUnitImpl__BlockUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -46,7 +46,6 @@ using namespace ::kdm::event;
 // Default constructor
 NextState::NextState()
 {
-
     /*PROTECTED REGION ID(NextStateImpl__NextStateImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

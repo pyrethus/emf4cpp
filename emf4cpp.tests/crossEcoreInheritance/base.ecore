@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="base" nsURI="http:///com.example.base.ecore/base" nsPrefix="base">
+  <eClassifiers xsi:type="ecore:EClass" name="Base01">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valBase01" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derived02ref" eType="ecore:EClass derived.ecore#//Derived02"
+        eOpposite="derived.ecore#//Derived02/base01ref"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Base02">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valBase02" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Base03">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valBase03" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eSubpackages name="base1" nsURI="http:///com.example.base.ecore/base/base1" nsPrefix="base1">
+    <eClassifiers xsi:type="ecore:EClass" name="Base10" eSuperTypes="#//Base01">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="valBase10" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Base11" eSuperTypes="#//base1/Base10 #//Base02 #//Base03">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="valBase11" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eSubpackages name="base2" nsURI="http:///com.example.base.ecore/base/base1/base2"
+        nsPrefix="base2">
+      <eClassifiers xsi:type="ecore:EClass" name="Base20" eSuperTypes="#//base1/Base10 #//base1/Base11">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="valBase20" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

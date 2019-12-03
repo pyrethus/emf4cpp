@@ -63,36 +63,36 @@ void TypeSelectExpression::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__LINE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getLine());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getStart());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__END:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getEnd());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getFileName());
     }
         return _any;
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TARGET:
     {
         _any = ::ecore::as < ::ecore::EObject > (getTarget());
     }
         return _any;
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__NAME:
     {
         _any = ::ecore::as < ::ecore::EObject > (getName());
     }
@@ -112,7 +112,7 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__LINE:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -120,7 +120,7 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
         setLine(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__START:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -128,7 +128,7 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
         setStart(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__END:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -136,7 +136,7 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
         setEnd(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__FILENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -144,7 +144,7 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
         setFileName(_t0);
     }
         return;
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TARGET:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -153,7 +153,7 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
         setTarget(_t1);
     }
         return;
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__NAME:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -178,21 +178,21 @@ void TypeSelectExpression::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getLine());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getStart());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__END:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getEnd());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getFileName());
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TARGET:
         return getTarget().get() != nullptr;
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__NAME:
         return getName().get() != nullptr;
     case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TYPELITERAL:
         return getTypeLiteral().get() != nullptr;
@@ -213,7 +213,7 @@ void TypeSelectExpression::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr TypeSelectExpression::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getTypeSelectExpression();
+            ::xpand3::expression::ExpressionPackage::_instance()->getTypeSelectExpression();
     return _eclass;
 }
 
@@ -224,11 +224,11 @@ void TypeSelectExpression::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TARGET:
     {
     }
         return;
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__NAME:
     {
     }
         return;
@@ -248,11 +248,11 @@ void TypeSelectExpression::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TARGET:
     {
     }
         return;
-    case ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME:
+    case ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__NAME:
     {
     }
         return;

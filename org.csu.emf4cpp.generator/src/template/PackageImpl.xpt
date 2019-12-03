@@ -74,8 +74,8 @@ void «name.toFirstUpper()»Package::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = «name.toFirstUpper()»Factory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
     
 «IF !EClassifiers.typeSelect(EClass).EOperations.isEmpty-»
     ::ecore::EOperation_ptr _op;
@@ -84,22 +84,24 @@ void «name.toFirstUpper()»Package::_initPackage()
     «ENDIF-»
 «ENDIF-»
 
-    // Create classes and their features
+
+// Create classes and their features
+«IF !EClassifiers.isEmpty-»
+auto& classifiers =
+	          (::ecorecpp::mapping::ReferenceEListImpl<::ecore::EClassifier_ptr, -1, true, true >&)
+	          getEClassifiers();
 «FOREACH EClassifiers.typeSelect(EClass) AS class»
     // «class.name»
     «getPackageAttribute(class)» = ::ecore::Ptr<::ecore::EClass>(new ::ecore::EClass);
     «getPackageAttribute(class)»->setClassifierID(«class.name.toUpperCase()»);
-    «getPackageAttribute(class)»->setEPackage(_this());
-    getEClassifiers().push_back(«getPackageAttribute(class)»);   
-    «FOREACH class.EAttributes AS at-»
-    // «getFeatureMember(at)» has already been allocated above
-    «getFeatureMember(at)»->setFeatureID(«at.getCPPFQN()»);
-    «getPackageAttribute(class)»->getEStructuralFeatures().push_back(«getFeatureMember(at)»);
-    «ENDFOREACH-»
-    «FOREACH class.EReferences AS ref-»
-    // «getFeatureMember(ref)» has already been allocated above
-    «getFeatureMember(ref)»->setFeatureID(«ref.getCPPFQN()»);
-    «getPackageAttribute(class)»->getEStructuralFeatures().push_back(«getFeatureMember(ref)»);
+    «getPackageAttribute(class)»->basicsetEPackage(_this());
+    classifiers.basicAdd(«getPackageAttribute(class)»);   
+    «FOREACH class.EStructuralFeatures AS esf-»
+    // «getFeatureMember(esf)» has already been allocated above
+    «getFeatureMember(esf)»->setFeatureID(«esf.getCPPFQN()»);
+    static_cast<::ecorecpp::mapping::ReferenceEListImpl<::ecore::EStructuralFeature_ptr, -1, true, true >&>(
+    				«getPackageAttribute(class)»->getEStructuralFeatures()).basicAdd(«getFeatureMember(esf)»);
+    «getFeatureMember(esf)»->basicsetEContainingClass(«getPackageAttribute(class)»);
     «ENDFOREACH-»
 «ENDFOREACH»
 
@@ -107,17 +109,18 @@ void «name.toFirstUpper()»Package::_initPackage()
 «FOREACH EClassifiers.typeSelect(EEnum) AS enum»
     «getPackageAttribute(enum)» = ::ecore::Ptr<::ecore::EEnum>(new ::ecore::EEnum);
     «getPackageAttribute(enum)»->setClassifierID(«enum.name.toUpperCase()»);
-    «getPackageAttribute(enum)»->setEPackage(_this());
-    getEClassifiers().push_back(«getPackageAttribute(enum)»);
+    «getPackageAttribute(enum)»->basicsetEPackage(_this());
+    classifiers.basicAdd(«getPackageAttribute(enum)»);
 «ENDFOREACH»
 
     // Create data types
 «FOREACH EClassifiers.typeSelect(EDataType).select(e|!EEnum.isInstance(e)) AS dt»
     «getPackageAttribute(dt)» = ::ecore::Ptr<::ecore::EDataType>(new ::ecore::EDataType);
     «getPackageAttribute(dt)»->setClassifierID(«dt.name.toUpperCase()»);
-    «getPackageAttribute(dt)»->setEPackage(_this());
-    getEClassifiers().push_back(«getPackageAttribute(dt)»);
+    «getPackageAttribute(dt)»->basicsetEPackage(_this());
+    classifiers.basicAdd(«getPackageAttribute(dt)»);
 «ENDFOREACH»
+«ENDIF-»
 
 «FOREACH ESubpackages AS sub-»
     getESubpackages().push_back( ::«sub.getPackagePrefix("::")»::_getInstanceAndRemoveOwnership());

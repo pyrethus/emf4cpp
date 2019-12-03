@@ -39,7 +39,6 @@ using namespace ::json;
 // Default constructor
 NullValue::NullValue()
 {
-
     /*PROTECTED REGION ID(NullValueImpl__NullValueImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

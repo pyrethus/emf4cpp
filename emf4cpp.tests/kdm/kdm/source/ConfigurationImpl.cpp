@@ -66,44 +66,44 @@ void Configuration::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::source::SourcePackage::CONFIGURATION__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__INVENTORYRELATION:
     {
         _any = getInventoryRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__VERSION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__VERSION:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getVersion());
     }
         return _any;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__PATH:
+    case ::kdm::source::SourcePackage::CONFIGURATION__PATH:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getPath());
@@ -119,7 +119,7 @@ void Configuration::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -127,7 +127,7 @@ void Configuration::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -135,7 +135,7 @@ void Configuration::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -143,7 +143,7 @@ void Configuration::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -151,7 +151,7 @@ void Configuration::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::source::SourcePackage::CONFIGURATION__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -159,7 +159,7 @@ void Configuration::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__INVENTORYRELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -167,7 +167,7 @@ void Configuration::eSet(::ecore::EInt _featureID,
         getInventoryRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__VERSION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__VERSION:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -175,7 +175,7 @@ void Configuration::eSet(::ecore::EInt _featureID,
         setVersion(_t0);
     }
         return;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__PATH:
+    case ::kdm::source::SourcePackage::CONFIGURATION__PATH:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -192,23 +192,23 @@ void Configuration::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::source::SourcePackage::CONFIGURATION__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__INVENTORYRELATION:
         return getInventoryRelation().size() > 0;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__VERSION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__VERSION:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getVersion());
-    case ::kdm::source::SourcePackage::INVENTORYITEM__PATH:
+    case ::kdm::source::SourcePackage::CONFIGURATION__PATH:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getPath());
 
@@ -228,7 +228,7 @@ void Configuration::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Configuration::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getConfiguration();
+            ::kdm::source::SourcePackage::_instance()->getConfiguration();
     return _eclass;
 }
 
@@ -239,23 +239,23 @@ void Configuration::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__INVENTORYRELATION:
     {
     }
         return;
@@ -271,23 +271,23 @@ void Configuration::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::CONFIGURATION__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::CONFIGURATION__INVENTORYRELATION:
     {
     }
         return;

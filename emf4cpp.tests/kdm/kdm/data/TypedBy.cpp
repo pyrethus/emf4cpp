@@ -46,7 +46,6 @@ using namespace ::kdm::data;
 // Default constructor
 TypedBy::TypedBy()
 {
-
     /*PROTECTED REGION ID(TypedByImpl__TypedByImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

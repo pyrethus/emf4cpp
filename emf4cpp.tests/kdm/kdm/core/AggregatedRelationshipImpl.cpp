@@ -63,22 +63,22 @@ void AggregatedRelationship::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -114,7 +114,7 @@ void AggregatedRelationship::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -122,7 +122,7 @@ void AggregatedRelationship::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -130,7 +130,7 @@ void AggregatedRelationship::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -138,7 +138,7 @@ void AggregatedRelationship::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -187,13 +187,13 @@ void AggregatedRelationship::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
     case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__FROM:
         return getFrom().get() != nullptr;
@@ -221,7 +221,7 @@ void AggregatedRelationship::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr AggregatedRelationship::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getAggregatedRelationship();
+            ::kdm::core::CorePackage::_instance()->getAggregatedRelationship();
     return _eclass;
 }
 
@@ -232,19 +232,19 @@ void AggregatedRelationship::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TAGGEDVALUE:
     {
     }
         return;
@@ -272,19 +272,19 @@ void AggregatedRelationship::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TAGGEDVALUE:
     {
     }
         return;

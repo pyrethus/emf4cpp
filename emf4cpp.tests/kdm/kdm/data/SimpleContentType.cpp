@@ -51,13 +51,6 @@ using namespace ::kdm::data;
 // Default constructor
 SimpleContentType::SimpleContentType()
 {
-
-    m_type.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::data::ComplexContentType_ptr, -1, false, false >(
-                    this,
-                    ::kdm::data::DataPackage::_instance()->getSimpleContentType__type()));
-
     /*PROTECTED REGION ID(SimpleContentTypeImpl__SimpleContentTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -104,11 +97,24 @@ void SimpleContentType::setKind(::kdm::core::String _kind)
 
 const ::ecorecpp::mapping::EList< ::kdm::data::ComplexContentType_ptr >& SimpleContentType::getType() const
 {
+    if (!m_type)
+        return const_cast< SimpleContentType* >(this)->getType();
+
     return *m_type;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::data::ComplexContentType_ptr >& SimpleContentType::getType()
 {
+    /*PROTECTED REGION ID(SimpleContentType__getType) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_type)
+        m_type.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::data::ComplexContentType_ptr, -1, false, false >(
+                        this,
+                        ::kdm::data::DataPackage::_instance()->getSimpleContentType__type()));
+    /*PROTECTED REGION END*/
     return *m_type;
 }
 

@@ -42,12 +42,6 @@ using namespace ::kdm::source;
 // Default constructor
 SourceRef::SourceRef()
 {
-
-    m_region.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::SourceRegion_ptr, -1, true, false >(this,
-                    ::kdm::source::SourcePackage::_instance()->getSourceRef__region()));
-
     /*PROTECTED REGION ID(SourceRefImpl__SourceRefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -120,11 +114,23 @@ void SourceRef::setSnippet(::kdm::core::String _snippet)
 
 const ::ecorecpp::mapping::EList< ::kdm::source::SourceRegion_ptr >& SourceRef::getRegion() const
 {
+    if (!m_region)
+        return const_cast< SourceRef* >(this)->getRegion();
+
     return *m_region;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::SourceRegion_ptr >& SourceRef::getRegion()
 {
+    /*PROTECTED REGION ID(SourceRef__getRegion) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_region)
+        m_region.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::SourceRegion_ptr, -1, true, false >(this,
+                        ::kdm::source::SourcePackage::_instance()->getSourceRef__region()));
+    /*PROTECTED REGION END*/
     return *m_region;
 }
 

@@ -39,7 +39,6 @@ using namespace ::myDsl;
 // Default constructor
 Property::Property()
 {
-
     /*PROTECTED REGION ID(PropertyImpl__PropertyImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -45,16 +45,6 @@ using namespace ::idlmm;
 // Default constructor
 OperationDef::OperationDef()
 {
-
-    m_parameters.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::idlmm::ParameterDef_ptr, -1, true, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getOperationDef__parameters()));
-    m_canRaise.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::idlmm::ExceptionDef_ptr, -1, false, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getOperationDef__canRaise()));
-
     /*PROTECTED REGION ID(OperationDefImpl__OperationDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -151,21 +141,45 @@ void OperationDef::deleteContextsAt(size_t _position)
 
 const ::ecorecpp::mapping::EList< ::idlmm::ParameterDef_ptr >& OperationDef::getParameters() const
 {
+    if (!m_parameters)
+        return const_cast< OperationDef* >(this)->getParameters();
+
     return *m_parameters;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::ParameterDef_ptr >& OperationDef::getParameters()
 {
+    /*PROTECTED REGION ID(OperationDef__getParameters) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_parameters)
+        m_parameters.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::idlmm::ParameterDef_ptr, -1, true, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getOperationDef__parameters()));
+    /*PROTECTED REGION END*/
     return *m_parameters;
 }
 
 const ::ecorecpp::mapping::EList< ::idlmm::ExceptionDef_ptr >& OperationDef::getCanRaise() const
 {
+    if (!m_canRaise)
+        return const_cast< OperationDef* >(this)->getCanRaise();
+
     return *m_canRaise;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::ExceptionDef_ptr >& OperationDef::getCanRaise()
 {
+    /*PROTECTED REGION ID(OperationDef__getCanRaise) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_canRaise)
+        m_canRaise.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::idlmm::ExceptionDef_ptr, -1, false, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getOperationDef__canRaise()));
+    /*PROTECTED REGION END*/
     return *m_canRaise;
 }
 

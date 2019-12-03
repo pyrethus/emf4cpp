@@ -40,13 +40,6 @@ using namespace ::eopposite;
 // Default constructor
 RightMultiple::RightMultiple()
 {
-
-    m_leftees.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::eopposite::LeftHand_ptr, -1, false, true >(this,
-                    ::eopposite::EoppositePackage::_instance()->getRightMultiple__leftees(),
-                    ::eopposite::EoppositePackage::LEFTHAND__RIGHTMULTIPLE));
-
     /*PROTECTED REGION ID(RightMultipleImpl__RightMultipleImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -67,11 +60,24 @@ RightMultiple::~RightMultiple()
 
 const ::ecorecpp::mapping::EList< ::eopposite::LeftHand_ptr >& RightMultiple::getLeftees() const
 {
+    if (!m_leftees)
+        return const_cast< RightMultiple* >(this)->getLeftees();
+
     return *m_leftees;
 }
 
 ::ecorecpp::mapping::EList< ::eopposite::LeftHand_ptr >& RightMultiple::getLeftees()
 {
+    /*PROTECTED REGION ID(RightMultiple__getLeftees) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_leftees)
+        m_leftees.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::eopposite::LeftHand_ptr, -1, false, true >(this,
+                        ::eopposite::EoppositePackage::_instance()->getRightMultiple__leftees(),
+                        ::eopposite::EoppositePackage::_instance()->getLeftHand__rightMultiple()));
+    /*PROTECTED REGION END*/
     return *m_leftees;
 }
 

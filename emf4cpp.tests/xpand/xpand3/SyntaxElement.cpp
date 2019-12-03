@@ -38,7 +38,6 @@ using namespace ::xpand3;
 // Default constructor
 SyntaxElement::SyntaxElement()
 {
-
     /*PROTECTED REGION ID(SyntaxElementImpl__SyntaxElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

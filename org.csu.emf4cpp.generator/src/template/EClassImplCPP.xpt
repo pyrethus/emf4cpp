@@ -71,9 +71,9 @@ void «name»::_initialize()
         «ref.getMemberName()»->_initialize();
     }
         «ELSE-»
-    for (size_t i = 0; i < «ref.getMemberName()»->size(); i++)
+    for (const auto& ref : get«ref.name.toFirstUpper()»())
     {
-        (*«ref.getMemberName()»)[i]->_initialize();
+        ref->_initialize();
     }
         «ENDIF-»
     «ENDFOREACH-»
@@ -115,7 +115,7 @@ void «name»::_initialize()
     switch (_featureID)
     {
     «FOREACH EAllStructuralFeatures.select(e|!e.derived) AS ef-»
-        case «ef.getCPPFQN()»:
+        case «ef.getCPPFQN(this)»:
             {
                 «IF EReference.isInstance(ef)-»
                     «IF ef.upperBound == 1-»
@@ -145,7 +145,7 @@ void «name»::eSet ( ::ecore::EInt _featureID, ::ecore::EJavaObject const& _new
     switch (_featureID)
     {
     «FOREACH EAllStructuralFeatures.select(e|!e.derived) AS ef-»
-        case «ef.getCPPFQN()» :
+        case «ef.getCPPFQN(this)» :
             {
                 «IF EReference.isInstance(ef)-»
                     «IF ef.upperBound == 1-»
@@ -180,7 +180,7 @@ void «name»::eSet ( ::ecore::EInt _featureID, ::ecore::EJavaObject const& _new
     switch (_featureID)
     {
     «FOREACH EAllStructuralFeatures.select(e|e.EType.ETypeParameters.isEmpty) AS ef-»
-        case «ef.getCPPFQN()» :
+        case «ef.getCPPFQN(this)» :
             «IF EReference.isInstance(ef)-»
                 «IF ef.upperBound == 1-»
                     return get«ef.name.toFirstUpper()»().get() != nullptr;
@@ -217,7 +217,7 @@ void «name»::eUnset ( ::ecore::EInt _featureID)
     {
     «FOREACH EAllStructuralFeatures.select(e|e.unsettable) AS ef-»
        «REM»
-        case «ef.getCPPFQN()» :
+        case «ef.getCPPFQN(this)» :
             «IF EClass.isInstance(ef.EType)-»
                 «IF ef.upperBound == 1-»
             «ef.getMemberName()» = NULL;
@@ -245,7 +245,7 @@ void «name»::eUnset ( ::ecore::EInt _featureID)
 ::ecore::EClass_ptr «name»::_eClass ()
 {
     «LET "::"+EPackage.getFQN()+"::"+EPackage.getPackageName() AS pkg-»
-    static ::ecore::EClass_ptr _eclass = dynamic_cast< «pkg»* > («pkg»::_instance().get())->«EPackage.getPackageGetAttribute(this)»();
+    static ::ecore::EClass_ptr _eclass = «pkg»::_instance()->«EPackage.getPackageGetAttribute(this)»();
     return _eclass;
     «ENDLET-»
 }
@@ -259,7 +259,7 @@ void «name»::_inverseAdd( ::ecore::EInt _featureID, ::ecore::EJavaObject const
     «FOREACH EAllStructuralFeatures.select(e|!e.derived) AS ef-»
       «IF EReference.isInstance(ef)-»
       «LET ((EReference)ef) AS ref-»
-        case «ef.getCPPFQN()» :
+        case «ef.getCPPFQN(this)» :
             {
       «IF ((EReference)ef).EOpposite != null-»
           ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast< ::ecore::EObject_ptr >(_newValue);
@@ -270,8 +270,8 @@ void «name»::_inverseAdd( ::ecore::EInt _featureID, ::ecore::EJavaObject const
           if (_old_«ref.name» && _old_«ref.name» != _t0)
           {
               ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-              _old_«ref.name»->_inverseRemove(
-              «ref.EOpposite.EContainingClass.EPackage.getPackageFQN()»::«ref.EOpposite.getFeatureIDFQN()»,
+              _old_«ref.name»->::ecore::EObject::_inverseRemove(
+              «ref.EOpposite.EContainingClass.EPackage.getPackageFQN()»::_instance()->«ref.EOpposite.EContainingClass.EPackage.getFeatureGetMember(ref.EOpposite)»(),
               _this);
           }
 
@@ -302,7 +302,7 @@ void «name»::_inverseRemove( ::ecore::EInt _featureID, ::ecore::EJavaObject co
     {
     «FOREACH EAllStructuralFeatures.select(e|!e.derived) AS ef-»
       «IF EReference.isInstance(ef)-»
-        case «ef.getCPPFQN()» :
+        case «ef.getCPPFQN(this)» :
             {
       «IF ((EReference)ef).EOpposite != null-»
           ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast< ::ecore::EObject_ptr >(_oldValue);

@@ -48,12 +48,6 @@ using namespace ::SVG;
 // Default constructor
 Polygon::Polygon()
 {
-
-    m_waypoints.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Point_ptr, -1,
-                    false, false >(this,
-                    ::SVG::SVGPackage::_instance()->getPolygon__waypoints()));
-
     /*PROTECTED REGION ID(PolygonImpl__PolygonImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -126,11 +120,23 @@ void Polygon::setMarkerStart(::PrimitiveTypes::String _markerStart)
 
 const ::ecorecpp::mapping::EList< ::SVG::Point_ptr >& Polygon::getWaypoints() const
 {
+    if (!m_waypoints)
+        return const_cast< Polygon* >(this)->getWaypoints();
+
     return *m_waypoints;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Point_ptr >& Polygon::getWaypoints()
 {
+    /*PROTECTED REGION ID(Polygon__getWaypoints) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_waypoints)
+        m_waypoints.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Point_ptr,
+                        -1, false, false >(this,
+                        ::SVG::SVGPackage::_instance()->getPolygon__waypoints()));
+    /*PROTECTED REGION END*/
     return *m_waypoints;
 }
 

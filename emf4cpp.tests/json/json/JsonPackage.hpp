@@ -37,53 +37,59 @@ public:
     static JsonPackage_ptr _instance();
     static JsonPackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier ArrayValue
     static const int ARRAYVALUE = 0;
 
+    static const int ARRAYVALUE__VALUES = 0;
+
+    static const int ARRAYVALUE_FEATURE_COUNT = 1;
+
+    // IDs for classifier BooleanValue
     static const int BOOLEANVALUE = 1;
 
+    static const int BOOLEANVALUE__VALUE = 0;
+
+    static const int BOOLEANVALUE_FEATURE_COUNT = 1;
+
+    // IDs for classifier NullValue
     static const int NULLVALUE = 2;
 
+    static const int NULLVALUE_FEATURE_COUNT = 0;
+
+    // IDs for classifier NumberValue
     static const int NUMBERVALUE = 3;
 
+    static const int NUMBERVALUE__VALUE = 0;
+
+    static const int NUMBERVALUE_FEATURE_COUNT = 1;
+
+    // IDs for classifier NVPair
     static const int NVPAIR = 4;
 
+    static const int NVPAIR__NAME = 0;
+
+    static const int NVPAIR__VALUE = 1;
+
+    static const int NVPAIR_FEATURE_COUNT = 2;
+
+    // IDs for classifier ObjectValue
     static const int OBJECTVALUE = 5;
-
-    static const int STRINGVALUE = 6;
-
-    static const int VALUE = 7;
 
     static const int OBJECTVALUE__MEMBERS = 0;
 
-    static const int NVPAIR__NAME = 1;
+    static const int OBJECTVALUE_FEATURE_COUNT = 1;
 
-    static const int NVPAIR__VALUE = 2;
+    // IDs for classifier StringValue
+    static const int STRINGVALUE = 6;
 
-    static const int STRINGVALUE__VALUE = 3;
+    static const int STRINGVALUE__VALUE = 0;
 
-    static const int NUMBERVALUE__VALUE = 4;
+    static const int STRINGVALUE_FEATURE_COUNT = 1;
 
-    static const int BOOLEANVALUE__VALUE = 5;
+    // IDs for classifier Value
+    static const int VALUE = 7;
 
-    static const int ARRAYVALUE__VALUES = 6;
-
-    // IDs for classifiers for class ArrayValue 
-
-    // IDs for classifiers for class BooleanValue 
-
-    // IDs for classifiers for class NullValue 
-
-    // IDs for classifiers for class NumberValue 
-
-    // IDs for classifiers for class NVPair 
-
-    // IDs for classifiers for class ObjectValue 
-
-    // IDs for classifiers for class StringValue 
-
-    // IDs for classifiers for class Value 
+    static const int VALUE_FEATURE_COUNT = 0;
 
     // EClassifiers methods
 

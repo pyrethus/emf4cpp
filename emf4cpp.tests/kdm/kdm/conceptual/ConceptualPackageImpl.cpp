@@ -105,155 +105,188 @@ void ConceptualPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = ConceptualFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // ConceptualModel
     m_ConceptualModelEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConceptualModelEClass->setClassifierID(CONCEPTUALMODEL);
-    m_ConceptualModelEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConceptualModelEClass);
+    m_ConceptualModelEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConceptualModelEClass);
     // m_ConceptualModel__conceptualElement has already been allocated above
     m_ConceptualModel__conceptualElement->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__CONCEPTUALELEMENT);
-    m_ConceptualModelEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualModelEClass->getEStructuralFeatures()).basicAdd(
             m_ConceptualModel__conceptualElement);
+    m_ConceptualModel__conceptualElement->basicsetEContainingClass(
+            m_ConceptualModelEClass);
 
     // AbstractConceptualElement
     m_AbstractConceptualElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractConceptualElementEClass->setClassifierID(
             ABSTRACTCONCEPTUALELEMENT);
-    m_AbstractConceptualElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractConceptualElementEClass);
+    m_AbstractConceptualElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractConceptualElementEClass);
     // m_AbstractConceptualElement__source has already been allocated above
     m_AbstractConceptualElement__source->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE);
-    m_AbstractConceptualElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractConceptualElement__source);
+    m_AbstractConceptualElement__source->basicsetEContainingClass(
+            m_AbstractConceptualElementEClass);
     // m_AbstractConceptualElement__implementation has already been allocated above
     m_AbstractConceptualElement__implementation->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION);
-    m_AbstractConceptualElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractConceptualElement__implementation);
+    m_AbstractConceptualElement__implementation->basicsetEContainingClass(
+            m_AbstractConceptualElementEClass);
     // m_AbstractConceptualElement__conceptualRelation has already been allocated above
     m_AbstractConceptualElement__conceptualRelation->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION);
-    m_AbstractConceptualElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractConceptualElement__conceptualRelation);
+    m_AbstractConceptualElement__conceptualRelation->basicsetEContainingClass(
+            m_AbstractConceptualElementEClass);
     // m_AbstractConceptualElement__abstraction has already been allocated above
     m_AbstractConceptualElement__abstraction->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION);
-    m_AbstractConceptualElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractConceptualElement__abstraction);
+    m_AbstractConceptualElement__abstraction->basicsetEContainingClass(
+            m_AbstractConceptualElementEClass);
 
     // TermUnit
     m_TermUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TermUnitEClass->setClassifierID(TERMUNIT);
-    m_TermUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TermUnitEClass);
+    m_TermUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TermUnitEClass);
 
     // ConceptualContainer
     m_ConceptualContainerEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConceptualContainerEClass->setClassifierID(CONCEPTUALCONTAINER);
-    m_ConceptualContainerEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConceptualContainerEClass);
+    m_ConceptualContainerEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConceptualContainerEClass);
     // m_ConceptualContainer__conceptualElement has already been allocated above
     m_ConceptualContainer__conceptualElement->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::CONCEPTUALCONTAINER__CONCEPTUALELEMENT);
-    m_ConceptualContainerEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualContainerEClass->getEStructuralFeatures()).basicAdd(
             m_ConceptualContainer__conceptualElement);
+    m_ConceptualContainer__conceptualElement->basicsetEContainingClass(
+            m_ConceptualContainerEClass);
 
     // FactUnit
     m_FactUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_FactUnitEClass->setClassifierID(FACTUNIT);
-    m_FactUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FactUnitEClass);
+    m_FactUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FactUnitEClass);
 
     // AbstractConceptualRelationship
     m_AbstractConceptualRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractConceptualRelationshipEClass->setClassifierID(
             ABSTRACTCONCEPTUALRELATIONSHIP);
-    m_AbstractConceptualRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractConceptualRelationshipEClass);
+    m_AbstractConceptualRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractConceptualRelationshipEClass);
 
     // ConceptualRelationship
     m_ConceptualRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConceptualRelationshipEClass->setClassifierID(CONCEPTUALRELATIONSHIP);
-    m_ConceptualRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConceptualRelationshipEClass);
+    m_ConceptualRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConceptualRelationshipEClass);
     // m_ConceptualRelationship__to has already been allocated above
     m_ConceptualRelationship__to->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::CONCEPTUALRELATIONSHIP__TO);
-    m_ConceptualRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_ConceptualRelationship__to);
+    m_ConceptualRelationship__to->basicsetEContainingClass(
+            m_ConceptualRelationshipEClass);
     // m_ConceptualRelationship__from has already been allocated above
     m_ConceptualRelationship__from->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::CONCEPTUALRELATIONSHIP__FROM);
-    m_ConceptualRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_ConceptualRelationship__from);
+    m_ConceptualRelationship__from->basicsetEContainingClass(
+            m_ConceptualRelationshipEClass);
 
     // BehaviorUnit
     m_BehaviorUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_BehaviorUnitEClass->setClassifierID(BEHAVIORUNIT);
-    m_BehaviorUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BehaviorUnitEClass);
+    m_BehaviorUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BehaviorUnitEClass);
 
     // RuleUnit
     m_RuleUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_RuleUnitEClass->setClassifierID(RULEUNIT);
-    m_RuleUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RuleUnitEClass);
+    m_RuleUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RuleUnitEClass);
 
     // ScenarioUnit
     m_ScenarioUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ScenarioUnitEClass->setClassifierID(SCENARIOUNIT);
-    m_ScenarioUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ScenarioUnitEClass);
+    m_ScenarioUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ScenarioUnitEClass);
 
     // ConceptualFlow
     m_ConceptualFlowEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConceptualFlowEClass->setClassifierID(CONCEPTUALFLOW);
-    m_ConceptualFlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConceptualFlowEClass);
+    m_ConceptualFlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConceptualFlowEClass);
     // m_ConceptualFlow__to has already been allocated above
     m_ConceptualFlow__to->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__TO);
-    m_ConceptualFlowEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualFlowEClass->getEStructuralFeatures()).basicAdd(
             m_ConceptualFlow__to);
+    m_ConceptualFlow__to->basicsetEContainingClass(m_ConceptualFlowEClass);
     // m_ConceptualFlow__from has already been allocated above
     m_ConceptualFlow__from->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__FROM);
-    m_ConceptualFlowEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualFlowEClass->getEStructuralFeatures()).basicAdd(
             m_ConceptualFlow__from);
+    m_ConceptualFlow__from->basicsetEContainingClass(m_ConceptualFlowEClass);
 
     // ConceptualElement
     m_ConceptualElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConceptualElementEClass->setClassifierID(CONCEPTUALELEMENT);
-    m_ConceptualElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConceptualElementEClass);
+    m_ConceptualElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConceptualElementEClass);
 
     // ConceptualRole
     m_ConceptualRoleEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConceptualRoleEClass->setClassifierID(CONCEPTUALROLE);
-    m_ConceptualRoleEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConceptualRoleEClass);
+    m_ConceptualRoleEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConceptualRoleEClass);
     // m_ConceptualRole__conceptualElement has already been allocated above
     m_ConceptualRole__conceptualElement->setFeatureID(
             ::kdm::conceptual::ConceptualPackage::CONCEPTUALROLE__CONCEPTUALELEMENT);
-    m_ConceptualRoleEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRoleEClass->getEStructuralFeatures()).basicAdd(
             m_ConceptualRole__conceptualElement);
+    m_ConceptualRole__conceptualElement->basicsetEContainingClass(
+            m_ConceptualRoleEClass);
 
     // Create enums
 

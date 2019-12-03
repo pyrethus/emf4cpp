@@ -40,7 +40,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 FeatureCall::FeatureCall()
 {
-
     /*PROTECTED REGION ID(FeatureCallImpl__FeatureCallImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

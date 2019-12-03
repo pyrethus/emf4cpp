@@ -40,7 +40,6 @@ using namespace ::idlmm;
 // Default constructor
 EnumDef::EnumDef()
 {
-
     /*PROTECTED REGION ID(EnumDefImpl__EnumDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

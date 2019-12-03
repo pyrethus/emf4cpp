@@ -256,478 +256,681 @@ void SVGPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = SVGFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Element
     m_ElementEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ElementEClass->setClassifierID(ELEMENT);
-    m_ElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ElementEClass);
-    // m_Element__fill has already been allocated above
-    m_Element__fill->setFeatureID(::SVG::SVGPackage::ELEMENT__FILL);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__fill);
-    // m_Element__viewBox has already been allocated above
-    m_Element__viewBox->setFeatureID(::SVG::SVGPackage::ELEMENT__VIEWBOX);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__viewBox);
-    // m_Element__identifier has already been allocated above
-    m_Element__identifier->setFeatureID(::SVG::SVGPackage::ELEMENT__IDENTIFIER);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__identifier);
+    m_ElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ElementEClass);
     // m_Element__owner has already been allocated above
     m_Element__owner->setFeatureID(::SVG::SVGPackage::ELEMENT__OWNER);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__owner);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__owner);
+    m_Element__owner->basicsetEContainingClass(m_ElementEClass);
     // m_Element__target has already been allocated above
     m_Element__target->setFeatureID(::SVG::SVGPackage::ELEMENT__TARGET);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__target);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__target);
+    m_Element__target->basicsetEContainingClass(m_ElementEClass);
     // m_Element__attribute has already been allocated above
     m_Element__attribute->setFeatureID(::SVG::SVGPackage::ELEMENT__ATTRIBUTE);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__attribute);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__attribute);
+    m_Element__attribute->basicsetEContainingClass(m_ElementEClass);
     // m_Element__position has already been allocated above
     m_Element__position->setFeatureID(::SVG::SVGPackage::ELEMENT__POSITION);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__position);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__position);
+    m_Element__position->basicsetEContainingClass(m_ElementEClass);
     // m_Element__size has already been allocated above
     m_Element__size->setFeatureID(::SVG::SVGPackage::ELEMENT__SIZE);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__size);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__size);
+    m_Element__size->basicsetEContainingClass(m_ElementEClass);
     // m_Element__root has already been allocated above
     m_Element__root->setFeatureID(::SVG::SVGPackage::ELEMENT__ROOT);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__root);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__root);
+    m_Element__root->basicsetEContainingClass(m_ElementEClass);
+    // m_Element__fill has already been allocated above
+    m_Element__fill->setFeatureID(::SVG::SVGPackage::ELEMENT__FILL);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__fill);
+    m_Element__fill->basicsetEContainingClass(m_ElementEClass);
+    // m_Element__viewBox has already been allocated above
+    m_Element__viewBox->setFeatureID(::SVG::SVGPackage::ELEMENT__VIEWBOX);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__viewBox);
+    m_Element__viewBox->basicsetEContainingClass(m_ElementEClass);
     // m_Element__group has already been allocated above
     m_Element__group->setFeatureID(::SVG::SVGPackage::ELEMENT__GROUP);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__group);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__group);
+    m_Element__group->basicsetEContainingClass(m_ElementEClass);
+    // m_Element__identifier has already been allocated above
+    m_Element__identifier->setFeatureID(::SVG::SVGPackage::ELEMENT__IDENTIFIER);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__identifier);
+    m_Element__identifier->basicsetEContainingClass(m_ElementEClass);
     // m_Element__drawsMarker has already been allocated above
     m_Element__drawsMarker->setFeatureID(
             ::SVG::SVGPackage::ELEMENT__DRAWSMARKER);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__drawsMarker);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__drawsMarker);
+    m_Element__drawsMarker->basicsetEContainingClass(m_ElementEClass);
 
     // StructuralElement
     m_StructuralElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_StructuralElementEClass->setClassifierID(STRUCTURALELEMENT);
-    m_StructuralElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_StructuralElementEClass);
+    m_StructuralElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StructuralElementEClass);
 
     // Image
     m_ImageEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ImageEClass->setClassifierID(IMAGE);
-    m_ImageEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ImageEClass);
+    m_ImageEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ImageEClass);
     // m_Image__referee has already been allocated above
     m_Image__referee->setFeatureID(::SVG::SVGPackage::IMAGE__REFEREE);
-    m_ImageEClass->getEStructuralFeatures().push_back(m_Image__referee);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImageEClass->getEStructuralFeatures()).basicAdd(
+            m_Image__referee);
+    m_Image__referee->basicsetEContainingClass(m_ImageEClass);
 
     // Svg
     m_SvgEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SvgEClass->setClassifierID(SVG);
-    m_SvgEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SvgEClass);
-    // m_Svg__namespace has already been allocated above
-    m_Svg__namespace->setFeatureID(::SVG::SVGPackage::SVG__NAMESPACE);
-    m_SvgEClass->getEStructuralFeatures().push_back(m_Svg__namespace);
-    // m_Svg__version has already been allocated above
-    m_Svg__version->setFeatureID(::SVG::SVGPackage::SVG__VERSION);
-    m_SvgEClass->getEStructuralFeatures().push_back(m_Svg__version);
-    // m_Svg__baseProfile has already been allocated above
-    m_Svg__baseProfile->setFeatureID(::SVG::SVGPackage::SVG__BASEPROFILE);
-    m_SvgEClass->getEStructuralFeatures().push_back(m_Svg__baseProfile);
+    m_SvgEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SvgEClass);
     // m_Svg__owner_SVG has already been allocated above
     m_Svg__owner_SVG->setFeatureID(::SVG::SVGPackage::SVG__OWNER_SVG);
-    m_SvgEClass->getEStructuralFeatures().push_back(m_Svg__owner_SVG);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SvgEClass->getEStructuralFeatures()).basicAdd(
+            m_Svg__owner_SVG);
+    m_Svg__owner_SVG->basicsetEContainingClass(m_SvgEClass);
     // m_Svg__children has already been allocated above
     m_Svg__children->setFeatureID(::SVG::SVGPackage::SVG__CHILDREN);
-    m_SvgEClass->getEStructuralFeatures().push_back(m_Svg__children);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SvgEClass->getEStructuralFeatures()).basicAdd(
+            m_Svg__children);
+    m_Svg__children->basicsetEContainingClass(m_SvgEClass);
+    // m_Svg__namespace has already been allocated above
+    m_Svg__namespace->setFeatureID(::SVG::SVGPackage::SVG__NAMESPACE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SvgEClass->getEStructuralFeatures()).basicAdd(
+            m_Svg__namespace);
+    m_Svg__namespace->basicsetEContainingClass(m_SvgEClass);
+    // m_Svg__version has already been allocated above
+    m_Svg__version->setFeatureID(::SVG::SVGPackage::SVG__VERSION);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SvgEClass->getEStructuralFeatures()).basicAdd(
+            m_Svg__version);
+    m_Svg__version->basicsetEContainingClass(m_SvgEClass);
+    // m_Svg__baseProfile has already been allocated above
+    m_Svg__baseProfile->setFeatureID(::SVG::SVGPackage::SVG__BASEPROFILE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SvgEClass->getEStructuralFeatures()).basicAdd(
+            m_Svg__baseProfile);
+    m_Svg__baseProfile->basicsetEContainingClass(m_SvgEClass);
 
     // GroupingElement
     m_GroupingElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_GroupingElementEClass->setClassifierID(GROUPINGELEMENT);
-    m_GroupingElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_GroupingElementEClass);
+    m_GroupingElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_GroupingElementEClass);
     // m_GroupingElement__groupContent has already been allocated above
     m_GroupingElement__groupContent->setFeatureID(
             ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT);
-    m_GroupingElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_GroupingElementEClass->getEStructuralFeatures()).basicAdd(
             m_GroupingElement__groupContent);
+    m_GroupingElement__groupContent->basicsetEContainingClass(
+            m_GroupingElementEClass);
 
     // G
     m_GEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_GEClass->setClassifierID(G);
-    m_GEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_GEClass);
+    m_GEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_GEClass);
     // m_G__name has already been allocated above
     m_G__name->setFeatureID(::SVG::SVGPackage::G__NAME);
-    m_GEClass->getEStructuralFeatures().push_back(m_G__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_GEClass->getEStructuralFeatures()).basicAdd(
+            m_G__name);
+    m_G__name->basicsetEContainingClass(m_GEClass);
 
     // Defs
     m_DefsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DefsEClass->setClassifierID(DEFS);
-    m_DefsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DefsEClass);
+    m_DefsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DefsEClass);
 
     // Symbol
     m_SymbolEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SymbolEClass->setClassifierID(SYMBOL);
-    m_SymbolEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SymbolEClass);
+    m_SymbolEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SymbolEClass);
 
     // Use
     m_UseEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UseEClass->setClassifierID(USE);
-    m_UseEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UseEClass);
+    m_UseEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UseEClass);
     // m_Use__use has already been allocated above
     m_Use__use->setFeatureID(::SVG::SVGPackage::USE__USE);
-    m_UseEClass->getEStructuralFeatures().push_back(m_Use__use);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UseEClass->getEStructuralFeatures()).basicAdd(
+            m_Use__use);
+    m_Use__use->basicsetEContainingClass(m_UseEClass);
 
     // GraphicalElement
     m_GraphicalElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_GraphicalElementEClass->setClassifierID(GRAPHICALELEMENT);
-    m_GraphicalElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_GraphicalElementEClass);
+    m_GraphicalElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_GraphicalElementEClass);
     // m_GraphicalElement__stroke has already been allocated above
     m_GraphicalElement__stroke->setFeatureID(
             ::SVG::SVGPackage::GRAPHICALELEMENT__STROKE);
-    m_GraphicalElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_GraphicalElementEClass->getEStructuralFeatures()).basicAdd(
             m_GraphicalElement__stroke);
+    m_GraphicalElement__stroke->basicsetEContainingClass(
+            m_GraphicalElementEClass);
 
     // Shape
     m_ShapeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ShapeEClass->setClassifierID(SHAPE);
-    m_ShapeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ShapeEClass);
+    m_ShapeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ShapeEClass);
 
     // TextElement
     m_TextElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_TextElementEClass->setClassifierID(TEXTELEMENT);
-    m_TextElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TextElementEClass);
+    m_TextElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TextElementEClass);
     // m_TextElement__rotate has already been allocated above
     m_TextElement__rotate->setFeatureID(::SVG::SVGPackage::TEXTELEMENT__ROTATE);
-    m_TextElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextElementEClass->getEStructuralFeatures()).basicAdd(
             m_TextElement__rotate);
+    m_TextElement__rotate->basicsetEContainingClass(m_TextElementEClass);
     // m_TextElement__textLength has already been allocated above
     m_TextElement__textLength->setFeatureID(
             ::SVG::SVGPackage::TEXTELEMENT__TEXTLENGTH);
-    m_TextElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextElementEClass->getEStructuralFeatures()).basicAdd(
             m_TextElement__textLength);
+    m_TextElement__textLength->basicsetEContainingClass(m_TextElementEClass);
     // m_TextElement__fontSize has already been allocated above
     m_TextElement__fontSize->setFeatureID(
             ::SVG::SVGPackage::TEXTELEMENT__FONTSIZE);
-    m_TextElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextElementEClass->getEStructuralFeatures()).basicAdd(
             m_TextElement__fontSize);
+    m_TextElement__fontSize->basicsetEContainingClass(m_TextElementEClass);
 
     // Rect
     m_RectEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_RectEClass->setClassifierID(RECT);
-    m_RectEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RectEClass);
+    m_RectEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RectEClass);
     // m_Rect__rx has already been allocated above
     m_Rect__rx->setFeatureID(::SVG::SVGPackage::RECT__RX);
-    m_RectEClass->getEStructuralFeatures().push_back(m_Rect__rx);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RectEClass->getEStructuralFeatures()).basicAdd(
+            m_Rect__rx);
+    m_Rect__rx->basicsetEContainingClass(m_RectEClass);
     // m_Rect__ry has already been allocated above
     m_Rect__ry->setFeatureID(::SVG::SVGPackage::RECT__RY);
-    m_RectEClass->getEStructuralFeatures().push_back(m_Rect__ry);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RectEClass->getEStructuralFeatures()).basicAdd(
+            m_Rect__ry);
+    m_Rect__ry->basicsetEContainingClass(m_RectEClass);
 
     // Circle
     m_CircleEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CircleEClass->setClassifierID(CIRCLE);
-    m_CircleEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CircleEClass);
+    m_CircleEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CircleEClass);
 
     // Ellipse
     m_EllipseEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_EllipseEClass->setClassifierID(ELLIPSE);
-    m_EllipseEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EllipseEClass);
+    m_EllipseEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EllipseEClass);
 
     // Line
     m_LineEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_LineEClass->setClassifierID(LINE);
-    m_LineEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LineEClass);
-    // m_Line__markerEnd has already been allocated above
-    m_Line__markerEnd->setFeatureID(::SVG::SVGPackage::LINE__MARKEREND);
-    m_LineEClass->getEStructuralFeatures().push_back(m_Line__markerEnd);
-    // m_Line__markerStart has already been allocated above
-    m_Line__markerStart->setFeatureID(::SVG::SVGPackage::LINE__MARKERSTART);
-    m_LineEClass->getEStructuralFeatures().push_back(m_Line__markerStart);
+    m_LineEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LineEClass);
     // m_Line__between has already been allocated above
     m_Line__between->setFeatureID(::SVG::SVGPackage::LINE__BETWEEN);
-    m_LineEClass->getEStructuralFeatures().push_back(m_Line__between);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LineEClass->getEStructuralFeatures()).basicAdd(
+            m_Line__between);
+    m_Line__between->basicsetEContainingClass(m_LineEClass);
+    // m_Line__markerEnd has already been allocated above
+    m_Line__markerEnd->setFeatureID(::SVG::SVGPackage::LINE__MARKEREND);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LineEClass->getEStructuralFeatures()).basicAdd(
+            m_Line__markerEnd);
+    m_Line__markerEnd->basicsetEContainingClass(m_LineEClass);
+    // m_Line__markerStart has already been allocated above
+    m_Line__markerStart->setFeatureID(::SVG::SVGPackage::LINE__MARKERSTART);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LineEClass->getEStructuralFeatures()).basicAdd(
+            m_Line__markerStart);
+    m_Line__markerStart->basicsetEContainingClass(m_LineEClass);
 
     // Polyline
     m_PolylineEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_PolylineEClass->setClassifierID(POLYLINE);
-    m_PolylineEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PolylineEClass);
+    m_PolylineEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PolylineEClass);
+    // m_Polyline__waypoints has already been allocated above
+    m_Polyline__waypoints->setFeatureID(::SVG::SVGPackage::POLYLINE__WAYPOINTS);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PolylineEClass->getEStructuralFeatures()).basicAdd(
+            m_Polyline__waypoints);
+    m_Polyline__waypoints->basicsetEContainingClass(m_PolylineEClass);
     // m_Polyline__strokeDashArray has already been allocated above
     m_Polyline__strokeDashArray->setFeatureID(
             ::SVG::SVGPackage::POLYLINE__STROKEDASHARRAY);
-    m_PolylineEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PolylineEClass->getEStructuralFeatures()).basicAdd(
             m_Polyline__strokeDashArray);
+    m_Polyline__strokeDashArray->basicsetEContainingClass(m_PolylineEClass);
     // m_Polyline__markerEnd has already been allocated above
     m_Polyline__markerEnd->setFeatureID(::SVG::SVGPackage::POLYLINE__MARKEREND);
-    m_PolylineEClass->getEStructuralFeatures().push_back(m_Polyline__markerEnd);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PolylineEClass->getEStructuralFeatures()).basicAdd(
+            m_Polyline__markerEnd);
+    m_Polyline__markerEnd->basicsetEContainingClass(m_PolylineEClass);
     // m_Polyline__markerStart has already been allocated above
     m_Polyline__markerStart->setFeatureID(
             ::SVG::SVGPackage::POLYLINE__MARKERSTART);
-    m_PolylineEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PolylineEClass->getEStructuralFeatures()).basicAdd(
             m_Polyline__markerStart);
-    // m_Polyline__waypoints has already been allocated above
-    m_Polyline__waypoints->setFeatureID(::SVG::SVGPackage::POLYLINE__WAYPOINTS);
-    m_PolylineEClass->getEStructuralFeatures().push_back(m_Polyline__waypoints);
+    m_Polyline__markerStart->basicsetEContainingClass(m_PolylineEClass);
 
     // Polygon
     m_PolygonEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_PolygonEClass->setClassifierID(POLYGON);
-    m_PolygonEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PolygonEClass);
+    m_PolygonEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PolygonEClass);
+    // m_Polygon__waypoints has already been allocated above
+    m_Polygon__waypoints->setFeatureID(::SVG::SVGPackage::POLYGON__WAYPOINTS);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PolygonEClass->getEStructuralFeatures()).basicAdd(
+            m_Polygon__waypoints);
+    m_Polygon__waypoints->basicsetEContainingClass(m_PolygonEClass);
     // m_Polygon__markerEnd has already been allocated above
     m_Polygon__markerEnd->setFeatureID(::SVG::SVGPackage::POLYGON__MARKEREND);
-    m_PolygonEClass->getEStructuralFeatures().push_back(m_Polygon__markerEnd);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PolygonEClass->getEStructuralFeatures()).basicAdd(
+            m_Polygon__markerEnd);
+    m_Polygon__markerEnd->basicsetEContainingClass(m_PolygonEClass);
     // m_Polygon__markerStart has already been allocated above
     m_Polygon__markerStart->setFeatureID(
             ::SVG::SVGPackage::POLYGON__MARKERSTART);
-    m_PolygonEClass->getEStructuralFeatures().push_back(m_Polygon__markerStart);
-    // m_Polygon__waypoints has already been allocated above
-    m_Polygon__waypoints->setFeatureID(::SVG::SVGPackage::POLYGON__WAYPOINTS);
-    m_PolygonEClass->getEStructuralFeatures().push_back(m_Polygon__waypoints);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PolygonEClass->getEStructuralFeatures()).basicAdd(
+            m_Polygon__markerStart);
+    m_Polygon__markerStart->basicsetEContainingClass(m_PolygonEClass);
 
     // Path
     m_PathEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_PathEClass->setClassifierID(PATH);
-    m_PathEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PathEClass);
+    m_PathEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PathEClass);
     // m_Path__pathLength has already been allocated above
     m_Path__pathLength->setFeatureID(::SVG::SVGPackage::PATH__PATHLENGTH);
-    m_PathEClass->getEStructuralFeatures().push_back(m_Path__pathLength);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PathEClass->getEStructuralFeatures()).basicAdd(
+            m_Path__pathLength);
+    m_Path__pathLength->basicsetEContainingClass(m_PathEClass);
     // m_Path__d has already been allocated above
     m_Path__d->setFeatureID(::SVG::SVGPackage::PATH__D);
-    m_PathEClass->getEStructuralFeatures().push_back(m_Path__d);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PathEClass->getEStructuralFeatures()).basicAdd(
+            m_Path__d);
+    m_Path__d->basicsetEContainingClass(m_PathEClass);
     // m_Path__markerEnd has already been allocated above
     m_Path__markerEnd->setFeatureID(::SVG::SVGPackage::PATH__MARKEREND);
-    m_PathEClass->getEStructuralFeatures().push_back(m_Path__markerEnd);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PathEClass->getEStructuralFeatures()).basicAdd(
+            m_Path__markerEnd);
+    m_Path__markerEnd->basicsetEContainingClass(m_PathEClass);
     // m_Path__markerStart has already been allocated above
     m_Path__markerStart->setFeatureID(::SVG::SVGPackage::PATH__MARKERSTART);
-    m_PathEClass->getEStructuralFeatures().push_back(m_Path__markerStart);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PathEClass->getEStructuralFeatures()).basicAdd(
+            m_Path__markerStart);
+    m_Path__markerStart->basicsetEContainingClass(m_PathEClass);
 
     // Point
     m_PointEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_PointEClass->setClassifierID(POINT);
-    m_PointEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PointEClass);
+    m_PointEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PointEClass);
 
     // Marker
     m_MarkerEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_MarkerEClass->setClassifierID(MARKER);
-    m_MarkerEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_MarkerEClass);
+    m_MarkerEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MarkerEClass);
     // m_Marker__markerUnits has already been allocated above
     m_Marker__markerUnits->setFeatureID(::SVG::SVGPackage::MARKER__MARKERUNITS);
-    m_MarkerEClass->getEStructuralFeatures().push_back(m_Marker__markerUnits);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MarkerEClass->getEStructuralFeatures()).basicAdd(
+            m_Marker__markerUnits);
+    m_Marker__markerUnits->basicsetEContainingClass(m_MarkerEClass);
     // m_Marker__refX has already been allocated above
     m_Marker__refX->setFeatureID(::SVG::SVGPackage::MARKER__REFX);
-    m_MarkerEClass->getEStructuralFeatures().push_back(m_Marker__refX);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MarkerEClass->getEStructuralFeatures()).basicAdd(
+            m_Marker__refX);
+    m_Marker__refX->basicsetEContainingClass(m_MarkerEClass);
     // m_Marker__refY has already been allocated above
     m_Marker__refY->setFeatureID(::SVG::SVGPackage::MARKER__REFY);
-    m_MarkerEClass->getEStructuralFeatures().push_back(m_Marker__refY);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MarkerEClass->getEStructuralFeatures()).basicAdd(
+            m_Marker__refY);
+    m_Marker__refY->basicsetEContainingClass(m_MarkerEClass);
     // m_Marker__markerWidth has already been allocated above
     m_Marker__markerWidth->setFeatureID(::SVG::SVGPackage::MARKER__MARKERWIDTH);
-    m_MarkerEClass->getEStructuralFeatures().push_back(m_Marker__markerWidth);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MarkerEClass->getEStructuralFeatures()).basicAdd(
+            m_Marker__markerWidth);
+    m_Marker__markerWidth->basicsetEContainingClass(m_MarkerEClass);
     // m_Marker__markerHeight has already been allocated above
     m_Marker__markerHeight->setFeatureID(
             ::SVG::SVGPackage::MARKER__MARKERHEIGHT);
-    m_MarkerEClass->getEStructuralFeatures().push_back(m_Marker__markerHeight);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MarkerEClass->getEStructuralFeatures()).basicAdd(
+            m_Marker__markerHeight);
+    m_Marker__markerHeight->basicsetEContainingClass(m_MarkerEClass);
     // m_Marker__orient has already been allocated above
     m_Marker__orient->setFeatureID(::SVG::SVGPackage::MARKER__ORIENT);
-    m_MarkerEClass->getEStructuralFeatures().push_back(m_Marker__orient);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MarkerEClass->getEStructuralFeatures()).basicAdd(
+            m_Marker__orient);
+    m_Marker__orient->basicsetEContainingClass(m_MarkerEClass);
     // m_Marker__drawing has already been allocated above
     m_Marker__drawing->setFeatureID(::SVG::SVGPackage::MARKER__DRAWING);
-    m_MarkerEClass->getEStructuralFeatures().push_back(m_Marker__drawing);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MarkerEClass->getEStructuralFeatures()).basicAdd(
+            m_Marker__drawing);
+    m_Marker__drawing->basicsetEContainingClass(m_MarkerEClass);
 
     // Text
     m_TextEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TextEClass->setClassifierID(TEXT);
-    m_TextEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TextEClass);
+    m_TextEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TextEClass);
     // m_Text__lengthAdjust has already been allocated above
     m_Text__lengthAdjust->setFeatureID(::SVG::SVGPackage::TEXT__LENGTHADJUST);
-    m_TextEClass->getEStructuralFeatures().push_back(m_Text__lengthAdjust);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextEClass->getEStructuralFeatures()).basicAdd(
+            m_Text__lengthAdjust);
+    m_Text__lengthAdjust->basicsetEContainingClass(m_TextEClass);
     // m_Text__content has already been allocated above
     m_Text__content->setFeatureID(::SVG::SVGPackage::TEXT__CONTENT);
-    m_TextEClass->getEStructuralFeatures().push_back(m_Text__content);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextEClass->getEStructuralFeatures()).basicAdd(
+            m_Text__content);
+    m_Text__content->basicsetEContainingClass(m_TextEClass);
 
     // Tspan
     m_TspanEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TspanEClass->setClassifierID(TSPAN);
-    m_TspanEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TspanEClass);
+    m_TspanEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TspanEClass);
     // m_Tspan__content has already been allocated above
     m_Tspan__content->setFeatureID(::SVG::SVGPackage::TSPAN__CONTENT);
-    m_TspanEClass->getEStructuralFeatures().push_back(m_Tspan__content);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TspanEClass->getEStructuralFeatures()).basicAdd(
+            m_Tspan__content);
+    m_Tspan__content->basicsetEContainingClass(m_TspanEClass);
 
     // Tref
     m_TrefEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TrefEClass->setClassifierID(TREF);
-    m_TrefEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TrefEClass);
+    m_TrefEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TrefEClass);
     // m_Tref__xlinkHref has already been allocated above
     m_Tref__xlinkHref->setFeatureID(::SVG::SVGPackage::TREF__XLINKHREF);
-    m_TrefEClass->getEStructuralFeatures().push_back(m_Tref__xlinkHref);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TrefEClass->getEStructuralFeatures()).basicAdd(
+            m_Tref__xlinkHref);
+    m_Tref__xlinkHref->basicsetEContainingClass(m_TrefEClass);
 
     // Attribute
     m_AttributeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_AttributeEClass->setClassifierID(ATTRIBUTE);
-    m_AttributeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AttributeEClass);
+    m_AttributeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AttributeEClass);
     // m_Attribute__attOwner has already been allocated above
     m_Attribute__attOwner->setFeatureID(::SVG::SVGPackage::ATTRIBUTE__ATTOWNER);
-    m_AttributeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AttributeEClass->getEStructuralFeatures()).basicAdd(
             m_Attribute__attOwner);
+    m_Attribute__attOwner->basicsetEContainingClass(m_AttributeEClass);
 
     // Transform
     m_TransformEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TransformEClass->setClassifierID(TRANSFORM);
-    m_TransformEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TransformEClass);
+    m_TransformEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TransformEClass);
 
     // Scale
     m_ScaleEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ScaleEClass->setClassifierID(SCALE);
-    m_ScaleEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ScaleEClass);
+    m_ScaleEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ScaleEClass);
     // m_Scale__sx has already been allocated above
     m_Scale__sx->setFeatureID(::SVG::SVGPackage::SCALE__SX);
-    m_ScaleEClass->getEStructuralFeatures().push_back(m_Scale__sx);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ScaleEClass->getEStructuralFeatures()).basicAdd(
+            m_Scale__sx);
+    m_Scale__sx->basicsetEContainingClass(m_ScaleEClass);
     // m_Scale__sy has already been allocated above
     m_Scale__sy->setFeatureID(::SVG::SVGPackage::SCALE__SY);
-    m_ScaleEClass->getEStructuralFeatures().push_back(m_Scale__sy);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ScaleEClass->getEStructuralFeatures()).basicAdd(
+            m_Scale__sy);
+    m_Scale__sy->basicsetEContainingClass(m_ScaleEClass);
 
     // Translate
     m_TranslateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TranslateEClass->setClassifierID(TRANSLATE);
-    m_TranslateEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TranslateEClass);
+    m_TranslateEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TranslateEClass);
     // m_Translate__tx has already been allocated above
     m_Translate__tx->setFeatureID(::SVG::SVGPackage::TRANSLATE__TX);
-    m_TranslateEClass->getEStructuralFeatures().push_back(m_Translate__tx);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TranslateEClass->getEStructuralFeatures()).basicAdd(
+            m_Translate__tx);
+    m_Translate__tx->basicsetEContainingClass(m_TranslateEClass);
     // m_Translate__ty has already been allocated above
     m_Translate__ty->setFeatureID(::SVG::SVGPackage::TRANSLATE__TY);
-    m_TranslateEClass->getEStructuralFeatures().push_back(m_Translate__ty);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TranslateEClass->getEStructuralFeatures()).basicAdd(
+            m_Translate__ty);
+    m_Translate__ty->basicsetEContainingClass(m_TranslateEClass);
 
     // Rotate
     m_RotateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_RotateEClass->setClassifierID(ROTATE);
-    m_RotateEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RotateEClass);
+    m_RotateEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RotateEClass);
     // m_Rotate__angle has already been allocated above
     m_Rotate__angle->setFeatureID(::SVG::SVGPackage::ROTATE__ANGLE);
-    m_RotateEClass->getEStructuralFeatures().push_back(m_Rotate__angle);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RotateEClass->getEStructuralFeatures()).basicAdd(
+            m_Rotate__angle);
+    m_Rotate__angle->basicsetEContainingClass(m_RotateEClass);
     // m_Rotate__cx has already been allocated above
     m_Rotate__cx->setFeatureID(::SVG::SVGPackage::ROTATE__CX);
-    m_RotateEClass->getEStructuralFeatures().push_back(m_Rotate__cx);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RotateEClass->getEStructuralFeatures()).basicAdd(
+            m_Rotate__cx);
+    m_Rotate__cx->basicsetEContainingClass(m_RotateEClass);
     // m_Rotate__cy has already been allocated above
     m_Rotate__cy->setFeatureID(::SVG::SVGPackage::ROTATE__CY);
-    m_RotateEClass->getEStructuralFeatures().push_back(m_Rotate__cy);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RotateEClass->getEStructuralFeatures()).basicAdd(
+            m_Rotate__cy);
+    m_Rotate__cy->basicsetEContainingClass(m_RotateEClass);
 
     // Visibility
     m_VisibilityEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_VisibilityEClass->setClassifierID(VISIBILITY);
-    m_VisibilityEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_VisibilityEClass);
+    m_VisibilityEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_VisibilityEClass);
     // m_Visibility__visible has already been allocated above
     m_Visibility__visible->setFeatureID(::SVG::SVGPackage::VISIBILITY__VISIBLE);
-    m_VisibilityEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_VisibilityEClass->getEStructuralFeatures()).basicAdd(
             m_Visibility__visible);
+    m_Visibility__visible->basicsetEContainingClass(m_VisibilityEClass);
 
     // FontWeight
     m_FontWeightEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_FontWeightEClass->setClassifierID(FONTWEIGHT);
-    m_FontWeightEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FontWeightEClass);
+    m_FontWeightEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FontWeightEClass);
     // m_FontWeight__bold has already been allocated above
     m_FontWeight__bold->setFeatureID(::SVG::SVGPackage::FONTWEIGHT__BOLD);
-    m_FontWeightEClass->getEStructuralFeatures().push_back(m_FontWeight__bold);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FontWeightEClass->getEStructuralFeatures()).basicAdd(
+            m_FontWeight__bold);
+    m_FontWeight__bold->basicsetEContainingClass(m_FontWeightEClass);
 
     // FontStyle
     m_FontStyleEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_FontStyleEClass->setClassifierID(FONTSTYLE);
-    m_FontStyleEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FontStyleEClass);
+    m_FontStyleEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FontStyleEClass);
     // m_FontStyle__italic has already been allocated above
     m_FontStyle__italic->setFeatureID(::SVG::SVGPackage::FONTSTYLE__ITALIC);
-    m_FontStyleEClass->getEStructuralFeatures().push_back(m_FontStyle__italic);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FontStyleEClass->getEStructuralFeatures()).basicAdd(
+            m_FontStyle__italic);
+    m_FontStyle__italic->basicsetEContainingClass(m_FontStyleEClass);
 
     // Dimension
     m_DimensionEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DimensionEClass->setClassifierID(DIMENSION);
-    m_DimensionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DimensionEClass);
+    m_DimensionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DimensionEClass);
     // m_Dimension__width has already been allocated above
     m_Dimension__width->setFeatureID(::SVG::SVGPackage::DIMENSION__WIDTH);
-    m_DimensionEClass->getEStructuralFeatures().push_back(m_Dimension__width);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DimensionEClass->getEStructuralFeatures()).basicAdd(
+            m_Dimension__width);
+    m_Dimension__width->basicsetEContainingClass(m_DimensionEClass);
     // m_Dimension__height has already been allocated above
     m_Dimension__height->setFeatureID(::SVG::SVGPackage::DIMENSION__HEIGHT);
-    m_DimensionEClass->getEStructuralFeatures().push_back(m_Dimension__height);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DimensionEClass->getEStructuralFeatures()).basicAdd(
+            m_Dimension__height);
+    m_Dimension__height->basicsetEContainingClass(m_DimensionEClass);
 
     // Coordinates
     m_CoordinatesEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CoordinatesEClass->setClassifierID(COORDINATES);
-    m_CoordinatesEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CoordinatesEClass);
+    m_CoordinatesEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CoordinatesEClass);
     // m_Coordinates__x has already been allocated above
     m_Coordinates__x->setFeatureID(::SVG::SVGPackage::COORDINATES__X);
-    m_CoordinatesEClass->getEStructuralFeatures().push_back(m_Coordinates__x);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CoordinatesEClass->getEStructuralFeatures()).basicAdd(
+            m_Coordinates__x);
+    m_Coordinates__x->basicsetEContainingClass(m_CoordinatesEClass);
     // m_Coordinates__y has already been allocated above
     m_Coordinates__y->setFeatureID(::SVG::SVGPackage::COORDINATES__Y);
-    m_CoordinatesEClass->getEStructuralFeatures().push_back(m_Coordinates__y);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CoordinatesEClass->getEStructuralFeatures()).basicAdd(
+            m_Coordinates__y);
+    m_Coordinates__y->basicsetEContainingClass(m_CoordinatesEClass);
 
     // RelativeCoord
     m_RelativeCoordEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_RelativeCoordEClass->setClassifierID(RELATIVECOORD);
-    m_RelativeCoordEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RelativeCoordEClass);
+    m_RelativeCoordEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RelativeCoordEClass);
 
     // AbsoluteCoord
     m_AbsoluteCoordEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbsoluteCoordEClass->setClassifierID(ABSOLUTECOORD);
-    m_AbsoluteCoordEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbsoluteCoordEClass);
+    m_AbsoluteCoordEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbsoluteCoordEClass);
 
     // ReferencedFile
     m_ReferencedFileEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ReferencedFileEClass->setClassifierID(REFERENCEDFILE);
-    m_ReferencedFileEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ReferencedFileEClass);
-    // m_ReferencedFile__name has already been allocated above
-    m_ReferencedFile__name->setFeatureID(
-            ::SVG::SVGPackage::REFERENCEDFILE__NAME);
-    m_ReferencedFileEClass->getEStructuralFeatures().push_back(
-            m_ReferencedFile__name);
+    m_ReferencedFileEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ReferencedFileEClass);
     // m_ReferencedFile__referer has already been allocated above
     m_ReferencedFile__referer->setFeatureID(
             ::SVG::SVGPackage::REFERENCEDFILE__REFERER);
-    m_ReferencedFileEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReferencedFileEClass->getEStructuralFeatures()).basicAdd(
             m_ReferencedFile__referer);
+    m_ReferencedFile__referer->basicsetEContainingClass(m_ReferencedFileEClass);
+    // m_ReferencedFile__name has already been allocated above
+    m_ReferencedFile__name->setFeatureID(
+            ::SVG::SVGPackage::REFERENCEDFILE__NAME);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReferencedFileEClass->getEStructuralFeatures()).basicAdd(
+            m_ReferencedFile__name);
+    m_ReferencedFile__name->basicsetEContainingClass(m_ReferencedFileEClass);
 
     // SvgFile
     m_SvgFileEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SvgFileEClass->setClassifierID(SVGFILE);
-    m_SvgFileEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SvgFileEClass);
+    m_SvgFileEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SvgFileEClass);
     // m_SvgFile__tag has already been allocated above
     m_SvgFile__tag->setFeatureID(::SVG::SVGPackage::SVGFILE__TAG);
-    m_SvgFileEClass->getEStructuralFeatures().push_back(m_SvgFile__tag);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SvgFileEClass->getEStructuralFeatures()).basicAdd(
+            m_SvgFile__tag);
+    m_SvgFile__tag->basicsetEContainingClass(m_SvgFileEClass);
     // m_SvgFile__elements has already been allocated above
     m_SvgFile__elements->setFeatureID(::SVG::SVGPackage::SVGFILE__ELEMENTS);
-    m_SvgFileEClass->getEStructuralFeatures().push_back(m_SvgFile__elements);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SvgFileEClass->getEStructuralFeatures()).basicAdd(
+            m_SvgFile__elements);
+    m_SvgFile__elements->basicsetEContainingClass(m_SvgFileEClass);
 
     // Create enums
 

@@ -39,7 +39,6 @@ using namespace ::TopLevelPackage;
 // Default constructor
 TopLevelClass::TopLevelClass()
 {
-
     /*PROTECTED REGION ID(TopLevelClassImpl__TopLevelClassImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

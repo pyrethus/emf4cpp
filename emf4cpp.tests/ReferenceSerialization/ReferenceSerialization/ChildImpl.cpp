@@ -91,7 +91,7 @@ void Child::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Child::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ReferenceSerialization::ReferenceSerializationPackage* >(::ReferenceSerialization::ReferenceSerializationPackage::_instance().get())->getChild();
+            ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getChild();
     return _eclass;
 }
 

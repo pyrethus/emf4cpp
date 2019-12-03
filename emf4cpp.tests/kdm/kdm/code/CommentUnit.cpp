@@ -43,7 +43,6 @@ using namespace ::kdm::code;
 // Default constructor
 CommentUnit::CommentUnit()
 {
-
     /*PROTECTED REGION ID(CommentUnitImpl__CommentUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

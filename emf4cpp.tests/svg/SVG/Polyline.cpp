@@ -48,12 +48,6 @@ using namespace ::SVG;
 // Default constructor
 Polyline::Polyline()
 {
-
-    m_waypoints.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Point_ptr, -1,
-                    true, false >(this,
-                    ::SVG::SVGPackage::_instance()->getPolyline__waypoints()));
-
     /*PROTECTED REGION ID(PolylineImpl__PolylineImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -152,11 +146,23 @@ void Polyline::setMarkerStart(::PrimitiveTypes::String _markerStart)
 
 const ::ecorecpp::mapping::EList< ::SVG::Point_ptr >& Polyline::getWaypoints() const
 {
+    if (!m_waypoints)
+        return const_cast< Polyline* >(this)->getWaypoints();
+
     return *m_waypoints;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Point_ptr >& Polyline::getWaypoints()
 {
+    /*PROTECTED REGION ID(Polyline__getWaypoints) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_waypoints)
+        m_waypoints.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Point_ptr,
+                        -1, true, false >(this,
+                        ::SVG::SVGPackage::_instance()->getPolyline__waypoints()));
+    /*PROTECTED REGION END*/
     return *m_waypoints;
 }
 

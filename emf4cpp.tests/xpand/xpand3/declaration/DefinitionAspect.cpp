@@ -44,13 +44,6 @@ using namespace ::xpand3::declaration;
 // Default constructor
 DefinitionAspect::DefinitionAspect()
 {
-
-    m_body.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::statement::AbstractStatement_ptr, -1, true, false >(
-                    this,
-                    ::xpand3::declaration::DeclarationPackage::_instance()->getDefinitionAspect__body()));
-
     /*PROTECTED REGION ID(DefinitionAspectImpl__DefinitionAspectImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -71,11 +64,24 @@ DefinitionAspect::~DefinitionAspect()
 
 const ::ecorecpp::mapping::EList< ::xpand3::statement::AbstractStatement_ptr >& DefinitionAspect::getBody() const
 {
+    if (!m_body)
+        return const_cast< DefinitionAspect* >(this)->getBody();
+
     return *m_body;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::statement::AbstractStatement_ptr >& DefinitionAspect::getBody()
 {
+    /*PROTECTED REGION ID(DefinitionAspect__getBody) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_body)
+        m_body.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::statement::AbstractStatement_ptr, -1, true,
+                        false >(this,
+                        ::xpand3::declaration::DeclarationPackage::_instance()->getDefinitionAspect__body()));
+    /*PROTECTED REGION END*/
     return *m_body;
 }
 

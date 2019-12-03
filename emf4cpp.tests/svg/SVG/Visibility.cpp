@@ -40,7 +40,6 @@ using namespace ::SVG;
 // Default constructor
 Visibility::Visibility()
 {
-
     /*PROTECTED REGION ID(VisibilityImpl__VisibilityImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -39,7 +39,6 @@ using namespace ::edate;
 // Default constructor
 Apollo11::Apollo11()
 {
-
     /*PROTECTED REGION ID(Apollo11Impl__Apollo11Impl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

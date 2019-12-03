@@ -40,7 +40,6 @@ using namespace ::ecore;
 // Default constructor
 ENamedElement::ENamedElement()
 {
-
     /*PROTECTED REGION ID(ENamedElementImpl__ENamedElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

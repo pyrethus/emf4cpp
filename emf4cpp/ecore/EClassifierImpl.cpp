@@ -49,9 +49,9 @@ void EClassifier::_initialize()
     ::ecore::ENamedElement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_eTypeParameters->size(); i++)
+    for (const auto &ref : getETypeParameters())
     {
-        (*m_eTypeParameters)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(EClassifierImpl__initialize) START*/
@@ -85,12 +85,12 @@ void EClassifier::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ECLASSIFIER__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::ECLASSIFIER__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -128,7 +128,7 @@ void EClassifier::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ECLASSIFIER__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -136,7 +136,7 @@ void EClassifier::eSet(::ecore::EInt _featureID,
         getEAnnotations().insert_all(*_t0);
     }
         return;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::ECLASSIFIER__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -185,9 +185,9 @@ void EClassifier::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ECLASSIFIER__EANNOTATIONS:
         return getEAnnotations().size() > 0;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::ECLASSIFIER__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
     case ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASSNAME:
@@ -220,7 +220,7 @@ void EClassifier::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EClassifier::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEClassifier_();
+            ::ecore::EcorePackage::_instance()->getEClassifier_();
     return _eclass;
 }
 
@@ -231,7 +231,7 @@ void EClassifier::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ECLASSIFIER__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -256,8 +256,9 @@ void EClassifier::_inverseAdd(::ecore::EInt _featureID,
         if (_old_ePackage && _old_ePackage != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_ePackage->_inverseRemove(
-                    ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS, _this);
+            _old_ePackage->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEPackage__eClassifiers(),
+                    _this);
         }
 
         // set reference
@@ -280,7 +281,7 @@ void EClassifier::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ECLASSIFIER__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

@@ -40,7 +40,6 @@ using namespace ::SVG;
 // Default constructor
 Rotate::Rotate()
 {
-
     /*PROTECTED REGION ID(RotateImpl__RotateImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

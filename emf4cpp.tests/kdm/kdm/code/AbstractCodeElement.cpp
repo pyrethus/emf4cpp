@@ -49,21 +49,6 @@ using namespace ::kdm::code;
 // Default constructor
 AbstractCodeElement::AbstractCodeElement()
 {
-
-    m_source.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::SourceRef_ptr, -1, true, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getAbstractCodeElement__source()));
-    m_comment.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::CommentUnit_ptr, -1, true, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getAbstractCodeElement__comment()));
-    m_codeRelation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::AbstractCodeRelationship_ptr, -1, true, false >(
-                    this,
-                    ::kdm::code::CodePackage::_instance()->getAbstractCodeElement__codeRelation()));
-
     /*PROTECTED REGION ID(AbstractCodeElementImpl__AbstractCodeElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -84,31 +69,68 @@ AbstractCodeElement::~AbstractCodeElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractCodeElement::getSource() const
 {
+    if (!m_source)
+        return const_cast< AbstractCodeElement* >(this)->getSource();
+
     return *m_source;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractCodeElement::getSource()
 {
+    /*PROTECTED REGION ID(AbstractCodeElement__getSource) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_source)
+        m_source.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::SourceRef_ptr, -1, true, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getAbstractCodeElement__source()));
+    /*PROTECTED REGION END*/
     return *m_source;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::code::CommentUnit_ptr >& AbstractCodeElement::getComment() const
 {
+    if (!m_comment)
+        return const_cast< AbstractCodeElement* >(this)->getComment();
+
     return *m_comment;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::CommentUnit_ptr >& AbstractCodeElement::getComment()
 {
+    /*PROTECTED REGION ID(AbstractCodeElement__getComment) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_comment)
+        m_comment.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::CommentUnit_ptr, -1, true, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getAbstractCodeElement__comment()));
+    /*PROTECTED REGION END*/
     return *m_comment;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeRelationship_ptr >& AbstractCodeElement::getCodeRelation() const
 {
+    if (!m_codeRelation)
+        return const_cast< AbstractCodeElement* >(this)->getCodeRelation();
+
     return *m_codeRelation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeRelationship_ptr >& AbstractCodeElement::getCodeRelation()
 {
+    /*PROTECTED REGION ID(AbstractCodeElement__getCodeRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_codeRelation)
+        m_codeRelation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::AbstractCodeRelationship_ptr, -1, true,
+                        false >(this,
+                        ::kdm::code::CodePackage::_instance()->getAbstractCodeElement__codeRelation()));
+    /*PROTECTED REGION END*/
     return *m_codeRelation;
 }
 

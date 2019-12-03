@@ -45,7 +45,6 @@ using namespace ::kdm::data;
 // Default constructor
 ReferenceTo::ReferenceTo()
 {
-
     /*PROTECTED REGION ID(ReferenceToImpl__ReferenceToImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -46,6 +46,14 @@ List[String] getArgumentsIncludeFiles(EClass this) :
 	this.EAllOperations.EParameters.EType.select(e|EClass.isInstance(e)).getFQN("/")
 ;
 
+int getFeatureIDValue(EClass this, EStructuralFeature ef) :
+	this.EAllStructuralFeatures.indexOf(ef)
+;
+
+int getFeatureCount(EClass this) :
+	this.EAllStructuralFeatures.size
+;
+
 Set[String] getAllIncludeFiles(EClass this) : 
 	getSuperTypeIncludeFiles().addAll(
 		getReferencesIncludeFiles()		

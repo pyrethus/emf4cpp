@@ -52,7 +52,6 @@ using namespace ::kdm::action;
 // Default constructor
 ExceptionUnit::ExceptionUnit()
 {
-
     /*PROTECTED REGION ID(ExceptionUnitImpl__ExceptionUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

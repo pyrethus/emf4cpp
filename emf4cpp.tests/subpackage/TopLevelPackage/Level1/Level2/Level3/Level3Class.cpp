@@ -40,7 +40,6 @@ using namespace ::TopLevelPackage::Level1::Level2::Level3;
 // Default constructor
 Level3Class::Level3Class()
 {
-
     /*PROTECTED REGION ID(Level3ClassImpl__Level3ClassImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

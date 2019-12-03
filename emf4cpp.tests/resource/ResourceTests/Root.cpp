@@ -40,12 +40,6 @@ using namespace ::ResourceTests;
 // Default constructor
 Root::Root()
 {
-
-    m_referrers.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ResourceTests::Referrer_ptr, -1, true, false >(this,
-                    ::ResourceTests::ResourceTestsPackage::_instance()->getRoot__referrers()));
-
     /*PROTECTED REGION ID(RootImpl__RootImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -104,11 +98,23 @@ void Root::setTarget(::ResourceTests::ReferenceTarget_ptr _target)
 
 const ::ecorecpp::mapping::EList< ::ResourceTests::Referrer_ptr >& Root::getReferrers() const
 {
+    if (!m_referrers)
+        return const_cast< Root* >(this)->getReferrers();
+
     return *m_referrers;
 }
 
 ::ecorecpp::mapping::EList< ::ResourceTests::Referrer_ptr >& Root::getReferrers()
 {
+    /*PROTECTED REGION ID(Root__getReferrers) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_referrers)
+        m_referrers.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ResourceTests::Referrer_ptr, -1, true, false >(this,
+                        ::ResourceTests::ResourceTestsPackage::_instance()->getRoot__referrers()));
+    /*PROTECTED REGION END*/
     return *m_referrers;
 }
 

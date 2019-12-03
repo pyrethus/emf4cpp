@@ -110,7 +110,7 @@ void NumberValue::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr NumberValue::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::json::JsonPackage* >(::json::JsonPackage::_instance().get())->getNumberValue();
+            ::json::JsonPackage::_instance()->getNumberValue();
     return _eclass;
 }
 

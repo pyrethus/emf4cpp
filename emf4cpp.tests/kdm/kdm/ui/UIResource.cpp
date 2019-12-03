@@ -51,12 +51,6 @@ using namespace ::kdm::ui;
 // Default constructor
 UIResource::UIResource()
 {
-
-    m_UIElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::ui::AbstractUIElement_ptr, -1, true, false >(this,
-                    ::kdm::ui::UiPackage::_instance()->getUIResource__UIElement()));
-
     /*PROTECTED REGION ID(UIResourceImpl__UIResourceImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -77,11 +71,24 @@ UIResource::~UIResource()
 
 const ::ecorecpp::mapping::EList< ::kdm::ui::AbstractUIElement_ptr >& UIResource::getUIElement() const
 {
+    if (!m_UIElement)
+        return const_cast< UIResource* >(this)->getUIElement();
+
     return *m_UIElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::ui::AbstractUIElement_ptr >& UIResource::getUIElement()
 {
+    /*PROTECTED REGION ID(UIResource__getUIElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_UIElement)
+        m_UIElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::ui::AbstractUIElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::ui::UiPackage::_instance()->getUIResource__UIElement()));
+    /*PROTECTED REGION END*/
     return *m_UIElement;
 }
 

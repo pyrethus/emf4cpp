@@ -48,7 +48,6 @@ using namespace ::kdm::structure;
 // Default constructor
 SoftwareSystem::SoftwareSystem()
 {
-
     /*PROTECTED REGION ID(SoftwareSystemImpl__SoftwareSystemImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

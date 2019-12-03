@@ -39,12 +39,6 @@ using namespace ::CST;
 // Default constructor
 Node::Node()
 {
-
-    m_children.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::CST::Element_ptr, -1,
-                    true, false >(this,
-                    ::CST::CSTPackage::_instance()->getNode__children()));
-
     /*PROTECTED REGION ID(NodeImpl__NodeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -65,11 +59,23 @@ Node::~Node()
 
 const ::ecorecpp::mapping::EList< ::CST::Element_ptr >& Node::getChildren() const
 {
+    if (!m_children)
+        return const_cast< Node* >(this)->getChildren();
+
     return *m_children;
 }
 
 ::ecorecpp::mapping::EList< ::CST::Element_ptr >& Node::getChildren()
 {
+    /*PROTECTED REGION ID(Node__getChildren) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_children)
+        m_children.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::CST::Element_ptr,
+                        -1, true, false >(this,
+                        ::CST::CSTPackage::_instance()->getNode__children()));
+    /*PROTECTED REGION END*/
     return *m_children;
 }
 

@@ -46,7 +46,6 @@ using namespace ::kdm::build;
 // Default constructor
 Produces::Produces()
 {
-
     /*PROTECTED REGION ID(ProducesImpl__ProducesImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

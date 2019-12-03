@@ -50,7 +50,6 @@ using namespace ::kdm::conceptual;
 // Default constructor
 ConceptualElement::ConceptualElement()
 {
-
     /*PROTECTED REGION ID(ConceptualElementImpl__ConceptualElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -132,7 +132,7 @@ void AnyType::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr AnyType::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::type::TypePackage* >(::type::TypePackage::_instance().get())->getAnyType();
+            ::type::TypePackage::_instance()->getAnyType();
     return _eclass;
 }
 

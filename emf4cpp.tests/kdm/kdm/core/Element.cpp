@@ -40,16 +40,6 @@ using namespace ::kdm::core;
 // Default constructor
 Element::Element()
 {
-
-    m_attribute.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::kdm::Attribute_ptr, -1, true, false >(this,
-                    ::kdm::core::CorePackage::_instance()->getElement__attribute()));
-    m_annotation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::kdm::Annotation_ptr, -1, true, false >(this,
-                    ::kdm::core::CorePackage::_instance()->getElement__annotation()));
-
     /*PROTECTED REGION ID(ElementImpl__ElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -70,21 +60,45 @@ Element::~Element()
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::Attribute_ptr >& Element::getAttribute() const
 {
+    if (!m_attribute)
+        return const_cast< Element* >(this)->getAttribute();
+
     return *m_attribute;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::Attribute_ptr >& Element::getAttribute()
 {
+    /*PROTECTED REGION ID(Element__getAttribute) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_attribute)
+        m_attribute.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::Attribute_ptr, -1, true, false >(this,
+                        ::kdm::core::CorePackage::_instance()->getElement__attribute()));
+    /*PROTECTED REGION END*/
     return *m_attribute;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::Annotation_ptr >& Element::getAnnotation() const
 {
+    if (!m_annotation)
+        return const_cast< Element* >(this)->getAnnotation();
+
     return *m_annotation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::Annotation_ptr >& Element::getAnnotation()
 {
+    /*PROTECTED REGION ID(Element__getAnnotation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_annotation)
+        m_annotation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::Annotation_ptr, -1, true, false >(this,
+                        ::kdm::core::CorePackage::_instance()->getElement__annotation()));
+    /*PROTECTED REGION END*/
     return *m_annotation;
 }
 

@@ -92,7 +92,7 @@ void EFactory::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EFACTORY__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -112,7 +112,7 @@ void EFactory::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EFACTORY__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -137,7 +137,7 @@ void EFactory::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EFACTORY__EANNOTATIONS:
         return getEAnnotations().size() > 0;
     case ::ecore::EcorePackage::EFACTORY__EPACKAGE:
         return getEPackage().get() != nullptr;
@@ -158,7 +158,7 @@ void EFactory::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EFactory::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFactory();
+            ::ecore::EcorePackage::_instance()->getEFactory();
     return _eclass;
 }
 
@@ -169,7 +169,7 @@ void EFactory::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EFACTORY__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -194,8 +194,9 @@ void EFactory::_inverseAdd(::ecore::EInt _featureID,
         if (_old_ePackage && _old_ePackage != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_ePackage->_inverseRemove(
-                    ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE, _this);
+            _old_ePackage->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEPackage__eFactoryInstance(),
+                    _this);
         }
 
         // set reference
@@ -214,7 +215,7 @@ void EFactory::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EFACTORY__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

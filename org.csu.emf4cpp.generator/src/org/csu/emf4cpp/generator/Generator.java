@@ -106,7 +106,11 @@ public class Generator {
 
         if (clear) {
 			String rootPackageName = ((EPackage)resource.getContents().get(0)).getName();
-			Path start = FileSystems.getDefault().getPath(targetDir, rootPackageName);
+			String startPath = new String();
+			if (targetVersion != null)
+				startPath += targetVersion + "/";
+			startPath += targetDir;
+			Path start = FileSystems.getDefault().getPath(startPath, rootPackageName);
 
 			try {
 				Files.walkFileTree(start, new SimpleFileVisitor<Path>() {

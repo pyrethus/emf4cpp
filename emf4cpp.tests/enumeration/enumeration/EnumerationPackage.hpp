@@ -37,17 +37,17 @@ public:
     static EnumerationPackage_ptr _instance();
     static EnumerationPackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier Bird
     static const int BIRD = 0;
-
-    static const int BIRDTYPE = 1;
 
     static const int BIRD__TYPE = 0;
 
     static const int BIRD__NAME = 1;
 
-    // IDs for classifiers for class Bird 
+    static const int BIRD_FEATURE_COUNT = 2;
+
+    // IDs for classifier BirdType
+    static const int BIRDTYPE = 1;
 
     // EClassifiers methods
 

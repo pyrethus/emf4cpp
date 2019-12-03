@@ -52,7 +52,6 @@ using namespace ::kdm::code;
 // Default constructor
 ArrayType::ArrayType()
 {
-
     /*PROTECTED REGION ID(ArrayTypeImpl__ArrayTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

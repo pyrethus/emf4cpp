@@ -50,13 +50,6 @@ using namespace ::kdm::data;
 // Default constructor
 ComplexContentType::ComplexContentType()
 {
-
-    m_contentElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::data::AbstractContentElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::data::DataPackage::_instance()->getComplexContentType__contentElement()));
-
     /*PROTECTED REGION ID(ComplexContentTypeImpl__ComplexContentTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -77,11 +70,24 @@ ComplexContentType::~ComplexContentType()
 
 const ::ecorecpp::mapping::EList< ::kdm::data::AbstractContentElement_ptr >& ComplexContentType::getContentElement() const
 {
+    if (!m_contentElement)
+        return const_cast< ComplexContentType* >(this)->getContentElement();
+
     return *m_contentElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::data::AbstractContentElement_ptr >& ComplexContentType::getContentElement()
 {
+    /*PROTECTED REGION ID(ComplexContentType__getContentElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_contentElement)
+        m_contentElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::data::AbstractContentElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::data::DataPackage::_instance()->getComplexContentType__contentElement()));
+    /*PROTECTED REGION END*/
     return *m_contentElement;
 }
 

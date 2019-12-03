@@ -69,48 +69,48 @@ void UIElement::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::UIELEMENT__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::UIELEMENT__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::UIELEMENT__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::ui::UiPackage::UIELEMENT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__SOURCE:
+    case ::kdm::ui::UiPackage::UIELEMENT__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__UIRELATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__UIRELATION:
     {
         _any = getUIRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__IMPLEMENTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__IMPLEMENTATION:
     {
         _any = getImplementation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__ABSTRACTION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ABSTRACTION:
     {
         _any = getAbstraction().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -125,7 +125,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::UIELEMENT__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -133,7 +133,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -141,7 +141,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::UIELEMENT__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -149,7 +149,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::UIELEMENT__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -157,7 +157,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::ui::UiPackage::UIELEMENT__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -165,7 +165,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__SOURCE:
+    case ::kdm::ui::UiPackage::UIELEMENT__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -173,7 +173,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__UIRELATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__UIRELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -181,7 +181,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         getUIRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__IMPLEMENTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__IMPLEMENTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -189,7 +189,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         getImplementation().insert_all(*_t0);
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__ABSTRACTION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ABSTRACTION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -206,24 +206,24 @@ void UIElement::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::UIELEMENT__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::UIELEMENT__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::UIELEMENT__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::ui::UiPackage::UIELEMENT__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__SOURCE:
+    case ::kdm::ui::UiPackage::UIELEMENT__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__UIRELATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__UIRELATION:
         return getUIRelation().size() > 0;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__IMPLEMENTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__IMPLEMENTATION:
         return getImplementation().size() > 0;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__ABSTRACTION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ABSTRACTION:
         return getAbstraction().size() > 0;
 
     }
@@ -242,7 +242,7 @@ void UIElement::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr UIElement::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::ui::UiPackage* >(::kdm::ui::UiPackage::_instance().get())->getUIElement();
+            ::kdm::ui::UiPackage::_instance()->getUIElement();
     return _eclass;
 }
 
@@ -253,35 +253,35 @@ void UIElement::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::UIELEMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::UIELEMENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::UIELEMENT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__SOURCE:
+    case ::kdm::ui::UiPackage::UIELEMENT__SOURCE:
     {
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__UIRELATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__UIRELATION:
     {
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__IMPLEMENTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__ABSTRACTION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ABSTRACTION:
     {
     }
         return;
@@ -297,35 +297,35 @@ void UIElement::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::UIELEMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::UIELEMENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::UIELEMENT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__SOURCE:
+    case ::kdm::ui::UiPackage::UIELEMENT__SOURCE:
     {
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__UIRELATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__UIRELATION:
     {
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__IMPLEMENTATION:
+    case ::kdm::ui::UiPackage::UIELEMENT__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__ABSTRACTION:
+    case ::kdm::ui::UiPackage::UIELEMENT__ABSTRACTION:
     {
     }
         return;

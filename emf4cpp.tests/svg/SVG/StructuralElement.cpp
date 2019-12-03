@@ -47,7 +47,6 @@ using namespace ::SVG;
 // Default constructor
 StructuralElement::StructuralElement()
 {
-
     /*PROTECTED REGION ID(StructuralElementImpl__StructuralElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

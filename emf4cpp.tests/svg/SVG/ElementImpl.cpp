@@ -278,7 +278,7 @@ void Element::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Element::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getElement();
+            ::SVG::SVGPackage::_instance()->getElement();
     return _eclass;
 }
 
@@ -347,7 +347,8 @@ void Element::_inverseAdd(::ecore::EInt _featureID,
         if (_old_root && _old_root != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_root->_inverseRemove(::SVG::SVGPackage::SVG__CHILDREN, _this);
+            _old_root->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getSvg__children(), _this);
         }
 
         // set reference
@@ -365,8 +366,9 @@ void Element::_inverseAdd(::ecore::EInt _featureID,
         if (_old_group && _old_group != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_group->_inverseRemove(
-                    ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT, _this);
+            _old_group->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getGroupingElement__groupContent(),
+                    _this);
         }
 
         // set reference
@@ -384,7 +386,8 @@ void Element::_inverseAdd(::ecore::EInt _featureID,
         if (_old_drawsMarker && _old_drawsMarker != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_drawsMarker->_inverseRemove(::SVG::SVGPackage::MARKER__DRAWING,
+            _old_drawsMarker->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getMarker__drawing(),
                     _this);
         }
 

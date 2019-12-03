@@ -57,37 +57,51 @@ void TreeiteratorPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = TreeiteratorFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // TreeNode
     m_TreeNodeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TreeNodeEClass->setClassifierID(TREENODE);
-    m_TreeNodeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TreeNodeEClass);
+    m_TreeNodeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TreeNodeEClass);
     // m_TreeNode__name has already been allocated above
     m_TreeNode__name->setFeatureID(
             ::treeiterator::TreeiteratorPackage::TREENODE__NAME);
-    m_TreeNodeEClass->getEStructuralFeatures().push_back(m_TreeNode__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
+            m_TreeNode__name);
+    m_TreeNode__name->basicsetEContainingClass(m_TreeNodeEClass);
     // m_TreeNode__children has already been allocated above
     m_TreeNode__children->setFeatureID(
             ::treeiterator::TreeiteratorPackage::TREENODE__CHILDREN);
-    m_TreeNodeEClass->getEStructuralFeatures().push_back(m_TreeNode__children);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
+            m_TreeNode__children);
+    m_TreeNode__children->basicsetEContainingClass(m_TreeNodeEClass);
     // m_TreeNode__leaf has already been allocated above
     m_TreeNode__leaf->setFeatureID(
             ::treeiterator::TreeiteratorPackage::TREENODE__LEAF);
-    m_TreeNodeEClass->getEStructuralFeatures().push_back(m_TreeNode__leaf);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
+            m_TreeNode__leaf);
+    m_TreeNode__leaf->basicsetEContainingClass(m_TreeNodeEClass);
 
     // Leaf
     m_LeafEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_LeafEClass->setClassifierID(LEAF);
-    m_LeafEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LeafEClass);
+    m_LeafEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LeafEClass);
     // m_Leaf__name has already been allocated above
     m_Leaf__name->setFeatureID(::treeiterator::TreeiteratorPackage::LEAF__NAME);
-    m_LeafEClass->getEStructuralFeatures().push_back(m_Leaf__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures()).basicAdd(
+            m_Leaf__name);
+    m_Leaf__name->basicsetEContainingClass(m_LeafEClass);
 
     // Create enums
 

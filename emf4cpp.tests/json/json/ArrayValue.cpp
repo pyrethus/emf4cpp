@@ -39,12 +39,6 @@ using namespace ::json;
 // Default constructor
 ArrayValue::ArrayValue()
 {
-
-    m_values.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::json::Value_ptr, -1,
-                    true, false >(this,
-                    ::json::JsonPackage::_instance()->getArrayValue__values()));
-
     /*PROTECTED REGION ID(ArrayValueImpl__ArrayValueImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -65,11 +59,23 @@ ArrayValue::~ArrayValue()
 
 const ::ecorecpp::mapping::EList< ::json::Value_ptr >& ArrayValue::getValues() const
 {
+    if (!m_values)
+        return const_cast< ArrayValue* >(this)->getValues();
+
     return *m_values;
 }
 
 ::ecorecpp::mapping::EList< ::json::Value_ptr >& ArrayValue::getValues()
 {
+    /*PROTECTED REGION ID(ArrayValue__getValues) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_values)
+        m_values.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::json::Value_ptr,
+                        -1, true, false >(this,
+                        ::json::JsonPackage::_instance()->getArrayValue__values()));
+    /*PROTECTED REGION END*/
     return *m_values;
 }
 

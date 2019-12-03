@@ -44,14 +44,10 @@ void KdmPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = KdmFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
-
-    // Create enums
-
-    // Create data types
+// Create classes and their features
 
     getESubpackages().push_back(
             ::kdm::action::ActionPackage::_getInstanceAndRemoveOwnership());

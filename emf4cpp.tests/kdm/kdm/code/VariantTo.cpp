@@ -45,7 +45,6 @@ using namespace ::kdm::code;
 // Default constructor
 VariantTo::VariantTo()
 {
-
     /*PROTECTED REGION ID(VariantToImpl__VariantToImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

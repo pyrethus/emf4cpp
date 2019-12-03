@@ -51,7 +51,6 @@ using namespace ::kdm::data;
 // Default constructor
 Index::Index()
 {
-
     /*PROTECTED REGION ID(IndexImpl__IndexImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

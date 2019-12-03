@@ -48,7 +48,6 @@ using namespace ::kdm::source;
 // Default constructor
 BinaryFile::BinaryFile()
 {
-
     /*PROTECTED REGION ID(BinaryFileImpl__BinaryFileImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

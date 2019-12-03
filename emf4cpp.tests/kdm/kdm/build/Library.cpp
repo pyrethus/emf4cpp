@@ -49,7 +49,6 @@ using namespace ::kdm::build;
 // Default constructor
 Library::Library()
 {
-
     /*PROTECTED REGION ID(LibraryImpl__LibraryImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -58,37 +58,37 @@ void EnumDef::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::ENUMDEF__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::toAny(_any, getTypeCode());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::ENUMDEF__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getIdentifier());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::ENUMDEF__REPOSITORYID:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getRepositoryId());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::ENUMDEF__VERSION:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getVersion());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::ENUMDEF__ABSOLUTENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getAbsoluteName());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ENUMDEF__DEFINEDIN:
     {
         _any = ::ecore::as < ::ecore::EObject > (getDefinedIn());
     }
@@ -112,7 +112,7 @@ void EnumDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::ENUMDEF__TYPECODE:
     {
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
@@ -120,7 +120,7 @@ void EnumDef::eSet(::ecore::EInt _featureID,
         setTypeCode(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::ENUMDEF__IDENTIFIER:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -128,7 +128,7 @@ void EnumDef::eSet(::ecore::EInt _featureID,
         setIdentifier(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::ENUMDEF__REPOSITORYID:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -136,7 +136,7 @@ void EnumDef::eSet(::ecore::EInt _featureID,
         setRepositoryId(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::ENUMDEF__VERSION:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -144,7 +144,7 @@ void EnumDef::eSet(::ecore::EInt _featureID,
         setVersion(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::ENUMDEF__ABSOLUTENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -152,7 +152,7 @@ void EnumDef::eSet(::ecore::EInt _featureID,
         setAbsoluteName(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ENUMDEF__DEFINEDIN:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -177,22 +177,22 @@ void EnumDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::ENUMDEF__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
                 > ::is_set(getTypeCode());
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::ENUMDEF__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getIdentifier());
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::ENUMDEF__REPOSITORYID:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getRepositoryId());
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::ENUMDEF__VERSION:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getVersion());
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::ENUMDEF__ABSOLUTENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getAbsoluteName());
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ENUMDEF__DEFINEDIN:
         return getDefinedIn().get() != nullptr;
     case ::idlmm::IdlmmPackage::ENUMDEF__MEMBERS:
         return getMembers().size() > 0;
@@ -213,7 +213,7 @@ void EnumDef::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EnumDef::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getEnumDef();
+            ::idlmm::IdlmmPackage::_instance()->getEnumDef();
     return _eclass;
 }
 
@@ -224,7 +224,7 @@ void EnumDef::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ENUMDEF__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -235,8 +235,9 @@ void EnumDef::_inverseAdd(::ecore::EInt _featureID,
         if (_old_definedIn && _old_definedIn != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_definedIn->_inverseRemove(
-                    ::idlmm::IdlmmPackage::CONTAINER__CONTAINS, _this);
+            _old_definedIn->::ecore::EObject::_inverseRemove(
+                    ::idlmm::IdlmmPackage::_instance()->getContainer__contains(),
+                    _this);
         }
 
         // set reference
@@ -255,7 +256,7 @@ void EnumDef::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ENUMDEF__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

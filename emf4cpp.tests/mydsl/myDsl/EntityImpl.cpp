@@ -43,9 +43,9 @@ void Entity::_initialize()
     ::myDsl::Type::_initialize();
 
     // References
-    for (size_t i = 0; i < m_properties->size(); i++)
+    for (const auto &ref : getProperties())
     {
-        (*m_properties)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(EntityImpl__initialize) START*/
@@ -63,7 +63,7 @@ void Entity::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::myDsl::MyDslPackage::TYPE__NAME:
+    case ::myDsl::MyDslPackage::ENTITY__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -89,7 +89,7 @@ void Entity::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::myDsl::MyDslPackage::TYPE__NAME:
+    case ::myDsl::MyDslPackage::ENTITY__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -122,7 +122,7 @@ void Entity::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::myDsl::MyDslPackage::TYPE__NAME:
+    case ::myDsl::MyDslPackage::ENTITY__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
     case ::myDsl::MyDslPackage::ENTITY__EXTENDS:
@@ -146,7 +146,7 @@ void Entity::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Entity::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::myDsl::MyDslPackage* >(::myDsl::MyDslPackage::_instance().get())->getEntity();
+            ::myDsl::MyDslPackage::_instance()->getEntity();
     return _eclass;
 }
 

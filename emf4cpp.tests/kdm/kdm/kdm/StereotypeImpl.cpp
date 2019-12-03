@@ -44,9 +44,9 @@ void Stereotype::_initialize()
     ::kdm::core::Element::_initialize();
 
     // References
-    for (size_t i = 0; i < m_tag->size(); i++)
+    for (const auto &ref : getTag())
     {
-        (*m_tag)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(StereotypeImpl__initialize) START*/
@@ -64,12 +64,12 @@ void Stereotype::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -101,7 +101,7 @@ void Stereotype::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -109,7 +109,7 @@ void Stereotype::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -150,9 +150,9 @@ void Stereotype::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ANNOTATION:
         return getAnnotation().size() > 0;
     case ::kdm::kdm::KdmPackage::STEREOTYPE__TAG:
         return getTag().size() > 0;
@@ -179,7 +179,7 @@ void Stereotype::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Stereotype::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getStereotype();
+            ::kdm::kdm::KdmPackage::_instance()->getStereotype();
     return _eclass;
 }
 
@@ -190,11 +190,11 @@ void Stereotype::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ANNOTATION:
     {
     }
         return;
@@ -214,11 +214,11 @@ void Stereotype::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::STEREOTYPE__ANNOTATION:
     {
     }
         return;

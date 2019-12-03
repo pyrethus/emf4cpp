@@ -58,7 +58,7 @@ void Transform::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::TRANSFORM__ATTOWNER:
     {
         _any = getAttOwner().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -73,7 +73,7 @@ void Transform::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::TRANSFORM__ATTOWNER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -90,7 +90,7 @@ void Transform::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::TRANSFORM__ATTOWNER:
         return getAttOwner().size() > 0;
 
     }
@@ -109,7 +109,7 @@ void Transform::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Transform::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getTransform();
+            ::SVG::SVGPackage::_instance()->getTransform();
     return _eclass;
 }
 
@@ -120,7 +120,7 @@ void Transform::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::TRANSFORM__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -146,7 +146,7 @@ void Transform::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::TRANSFORM__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

@@ -69,65 +69,65 @@ void StorableUnit::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::code::CodePackage::STORABLEUNIT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__COMMENT:
     {
         _any = getComment().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODERELATION:
     {
         _any = getCodeRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::DATAELEMENT__TYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getType());
     }
         return _any;
-    case ::kdm::code::CodePackage::DATAELEMENT__EXT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__EXT:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getExt());
     }
         return _any;
-    case ::kdm::code::CodePackage::DATAELEMENT__SIZE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__SIZE:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::Integer
                 > ::toAny(_any, getSize());
     }
         return _any;
-    case ::kdm::code::CodePackage::DATAELEMENT__CODEELEMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODEELEMENT:
     {
         _any = getCodeElement().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -148,7 +148,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -156,7 +156,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -164,7 +164,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -172,7 +172,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -180,7 +180,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::code::CodePackage::STORABLEUNIT__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -188,7 +188,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -196,7 +196,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__COMMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -204,7 +204,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         getComment().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODERELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -212,7 +212,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         getCodeRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::DATAELEMENT__TYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -220,7 +220,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         setType(_t1);
     }
         return;
-    case ::kdm::code::CodePackage::DATAELEMENT__EXT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__EXT:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -228,7 +228,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         setExt(_t0);
     }
         return;
-    case ::kdm::code::CodePackage::DATAELEMENT__SIZE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__SIZE:
     {
         ::kdm::core::Integer _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::Integer
@@ -236,7 +236,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         setSize(_t0);
     }
         return;
-    case ::kdm::code::CodePackage::DATAELEMENT__CODEELEMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODEELEMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -261,32 +261,32 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::code::CodePackage::STORABLEUNIT__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__COMMENT:
         return getComment().size() > 0;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODERELATION:
         return getCodeRelation().size() > 0;
-    case ::kdm::code::CodePackage::DATAELEMENT__TYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TYPE:
         return getType().get() != nullptr;
-    case ::kdm::code::CodePackage::DATAELEMENT__EXT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__EXT:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getExt());
-    case ::kdm::code::CodePackage::DATAELEMENT__SIZE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__SIZE:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::Integer
                 > ::is_set(getSize());
-    case ::kdm::code::CodePackage::DATAELEMENT__CODEELEMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODEELEMENT:
         return getCodeElement().size() > 0;
     case ::kdm::code::CodePackage::STORABLEUNIT__KIND:
         return ::ecorecpp::mapping::set_traits < ::kdm::code::StorableKind
@@ -308,7 +308,7 @@ void StorableUnit::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr StorableUnit::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getStorableUnit();
+            ::kdm::code::CodePackage::_instance()->getStorableUnit();
     return _eclass;
 }
 
@@ -319,39 +319,39 @@ void StorableUnit::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__SOURCE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__COMMENT:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODERELATION:
     {
     }
         return;
-    case ::kdm::code::CodePackage::DATAELEMENT__TYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TYPE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::DATAELEMENT__CODEELEMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODEELEMENT:
     {
     }
         return;
@@ -367,39 +367,39 @@ void StorableUnit::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__SOURCE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__COMMENT:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODERELATION:
     {
     }
         return;
-    case ::kdm::code::CodePackage::DATAELEMENT__TYPE:
+    case ::kdm::code::CodePackage::STORABLEUNIT__TYPE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::DATAELEMENT__CODEELEMENT:
+    case ::kdm::code::CodePackage::STORABLEUNIT__CODEELEMENT:
     {
     }
         return;

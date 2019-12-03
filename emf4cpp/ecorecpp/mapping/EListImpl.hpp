@@ -122,7 +122,8 @@ class ReferenceEListImpl : public EList< T >
 public:
 
     ReferenceEListImpl(::ecore::EObject* _this,
-					   const ::ecore::EReference_ptr& _ref, int _opp = -1)
+					   const ::ecore::EReference_ptr& _ref,
+					   const ::ecore::EReference_ptr& _opp = ::ecore::EReference_ptr())
 		: m_this(_this),
 		  m_ref(_ref),
 		  m_opp(_opp) {
@@ -244,7 +245,7 @@ public:
 
 	/* Called from the opposite end of a relation: Just remove the object, do
 	 * nothing else. */
-	void basicRemove(T _obj) {
+	void basicRemove(value_type _obj) {
 		auto it = std::find_if( m_content.begin(), m_content.end(),
 				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );
 		if (it != m_content.end()) {
@@ -268,7 +269,7 @@ public:
 
 	/* Called from the opposite end of a relation: Just add the object, do
 	 * nothing else. */
-	void basicAdd(T _obj) {
+	void basicAdd(value_type _obj) {
 		auto it = std::find_if( m_content.begin(), m_content.end(),
 				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );
 		if (it == m_content.end()) {
@@ -303,7 +304,7 @@ protected:
 	::ecore::EObject_ptr _this() {return m_this->shared_from_this();}
 	::ecore::EObject* m_this; // owner object
     ::ecore::EReference_ptr m_ref;
-    const int m_opp;
+    ::ecore::EReference_ptr m_opp;
 
 	typename containment_t::container_type m_content;
 

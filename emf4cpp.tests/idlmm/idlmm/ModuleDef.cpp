@@ -40,7 +40,6 @@ using namespace ::idlmm;
 // Default constructor
 ModuleDef::ModuleDef()
 {
-
     /*PROTECTED REGION ID(ModuleDefImpl__ModuleDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

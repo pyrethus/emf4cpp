@@ -51,12 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 TemplateUnit::TemplateUnit()
 {
-
-    m_codeElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::CodeItem_ptr, -1, true, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getTemplateUnit__codeElement()));
-
     /*PROTECTED REGION ID(TemplateUnitImpl__TemplateUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -77,11 +71,23 @@ TemplateUnit::~TemplateUnit()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >& TemplateUnit::getCodeElement() const
 {
+    if (!m_codeElement)
+        return const_cast< TemplateUnit* >(this)->getCodeElement();
+
     return *m_codeElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >& TemplateUnit::getCodeElement()
 {
+    /*PROTECTED REGION ID(TemplateUnit__getCodeElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_codeElement)
+        m_codeElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::CodeItem_ptr, -1, true, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getTemplateUnit__codeElement()));
+    /*PROTECTED REGION END*/
     return *m_codeElement;
 }
 

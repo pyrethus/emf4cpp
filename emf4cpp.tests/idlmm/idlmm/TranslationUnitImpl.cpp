@@ -41,13 +41,13 @@ void TranslationUnit::_initialize()
     // Supertypes
 
     // References
-    for (size_t i = 0; i < m_contains->size(); i++)
+    for (const auto &ref : getContains())
     {
-        (*m_contains)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_includes->size(); i++)
+    for (const auto &ref : getIncludes())
     {
-        (*m_includes)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(TranslationUnitImpl__initialize) START*/
@@ -148,7 +148,7 @@ void TranslationUnit::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr TranslationUnit::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getTranslationUnit();
+            ::idlmm::IdlmmPackage::_instance()->getTranslationUnit();
     return _eclass;
 }
 

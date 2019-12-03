@@ -70,25 +70,25 @@ void BinaryOperation::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__LINE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getLine());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getStart());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__END:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getEnd());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getFileName());
@@ -119,7 +119,7 @@ void BinaryOperation::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__LINE:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -127,7 +127,7 @@ void BinaryOperation::eSet(::ecore::EInt _featureID,
         setLine(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__START:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -135,7 +135,7 @@ void BinaryOperation::eSet(::ecore::EInt _featureID,
         setStart(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__END:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -143,7 +143,7 @@ void BinaryOperation::eSet(::ecore::EInt _featureID,
         setEnd(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__FILENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -186,16 +186,16 @@ void BinaryOperation::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getLine());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getStart());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__END:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getEnd());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getFileName());
     case ::xpand3::expression::ExpressionPackage::BINARYOPERATION__LEFT:
@@ -221,7 +221,7 @@ void BinaryOperation::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr BinaryOperation::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getBinaryOperation();
+            ::xpand3::expression::ExpressionPackage::_instance()->getBinaryOperation();
     return _eclass;
 }
 

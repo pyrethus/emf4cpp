@@ -48,7 +48,6 @@ using namespace ::kdm::build;
 // Default constructor
 SymbolicLink::SymbolicLink()
 {
-
     /*PROTECTED REGION ID(SymbolicLinkImpl__SymbolicLinkImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

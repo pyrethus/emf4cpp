@@ -58,7 +58,7 @@ void FontStyle::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTSTYLE__ATTOWNER:
     {
         _any = getAttOwner().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -79,7 +79,7 @@ void FontStyle::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTSTYLE__ATTOWNER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -104,7 +104,7 @@ void FontStyle::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTSTYLE__ATTOWNER:
         return getAttOwner().size() > 0;
     case ::SVG::SVGPackage::FONTSTYLE__ITALIC:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Boolean
@@ -126,7 +126,7 @@ void FontStyle::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr FontStyle::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getFontStyle();
+            ::SVG::SVGPackage::_instance()->getFontStyle();
     return _eclass;
 }
 
@@ -137,7 +137,7 @@ void FontStyle::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTSTYLE__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -163,7 +163,7 @@ void FontStyle::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTSTYLE__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

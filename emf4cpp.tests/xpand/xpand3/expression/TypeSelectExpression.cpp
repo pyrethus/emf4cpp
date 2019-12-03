@@ -41,7 +41,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 TypeSelectExpression::TypeSelectExpression()
 {
-
     /*PROTECTED REGION ID(TypeSelectExpressionImpl__TypeSelectExpressionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

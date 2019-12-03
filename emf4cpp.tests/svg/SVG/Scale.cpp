@@ -40,7 +40,6 @@ using namespace ::SVG;
 // Default constructor
 Scale::Scale()
 {
-
     /*PROTECTED REGION ID(ScaleImpl__ScaleImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

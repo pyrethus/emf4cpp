@@ -44,7 +44,6 @@ using namespace ::kdm::action;
 // Default constructor
 AbstractActionRelationship::AbstractActionRelationship()
 {
-
     /*PROTECTED REGION ID(AbstractActionRelationshipImpl__AbstractActionRelationshipImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

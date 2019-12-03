@@ -52,12 +52,6 @@ using namespace ::kdm::data;
 // Default constructor
 RelationalSchema::RelationalSchema()
 {
-
-    m_codeElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::CodeItem_ptr, -1, true, false >(this,
-                    ::kdm::data::DataPackage::_instance()->getRelationalSchema__codeElement()));
-
     /*PROTECTED REGION ID(RelationalSchemaImpl__RelationalSchemaImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -78,11 +72,23 @@ RelationalSchema::~RelationalSchema()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >& RelationalSchema::getCodeElement() const
 {
+    if (!m_codeElement)
+        return const_cast< RelationalSchema* >(this)->getCodeElement();
+
     return *m_codeElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >& RelationalSchema::getCodeElement()
 {
+    /*PROTECTED REGION ID(RelationalSchema__getCodeElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_codeElement)
+        m_codeElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::CodeItem_ptr, -1, true, false >(this,
+                        ::kdm::data::DataPackage::_instance()->getRelationalSchema__codeElement()));
+    /*PROTECTED REGION END*/
     return *m_codeElement;
 }
 

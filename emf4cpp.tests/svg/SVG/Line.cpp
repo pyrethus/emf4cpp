@@ -48,12 +48,6 @@ using namespace ::SVG;
 // Default constructor
 Line::Line()
 {
-
-    m_between.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Point_ptr, 2,
-                    false, false >(this,
-                    ::SVG::SVGPackage::_instance()->getLine__between()));
-
     /*PROTECTED REGION ID(LineImpl__LineImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -126,11 +120,23 @@ void Line::setMarkerStart(::PrimitiveTypes::String _markerStart)
 
 const ::ecorecpp::mapping::EList< ::SVG::Point_ptr >& Line::getBetween() const
 {
+    if (!m_between)
+        return const_cast< Line* >(this)->getBetween();
+
     return *m_between;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Point_ptr >& Line::getBetween()
 {
+    /*PROTECTED REGION ID(Line__getBetween) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_between)
+        m_between.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Point_ptr,
+                        2, false, false >(this,
+                        ::SVG::SVGPackage::_instance()->getLine__between()));
+    /*PROTECTED REGION END*/
     return *m_between;
 }
 

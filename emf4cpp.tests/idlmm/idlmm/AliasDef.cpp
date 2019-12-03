@@ -42,7 +42,6 @@ using namespace ::idlmm;
 // Default constructor
 AliasDef::AliasDef()
 {
-
     /*PROTECTED REGION ID(AliasDefImpl__AliasDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

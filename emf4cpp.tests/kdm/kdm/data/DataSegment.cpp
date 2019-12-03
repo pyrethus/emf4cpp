@@ -52,7 +52,6 @@ using namespace ::kdm::data;
 // Default constructor
 DataSegment::DataSegment()
 {
-
     /*PROTECTED REGION ID(DataSegmentImpl__DataSegmentImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

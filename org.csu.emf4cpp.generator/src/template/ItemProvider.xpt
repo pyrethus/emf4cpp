@@ -164,9 +164,10 @@ std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::ER
 
 std::string «this.name.toFirstUpper()»ItemProvider::_getText(const ::ecore::EStructuralFeature_ptr& esf,
 		const ::ecore::EObject_ptr&) const {
-	switch (esf->getFeatureID()) {
+	switch (::ecore::EPackage::makeUniqueFeatureID(esf->getEContainingClass()->getClassifierID(), esf->getFeatureID())) {
 «FOREACH this.getFeatures().sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS ef ITERATOR it-»
-	case «name.toFirstUpper() + "Package::" + ef.getFeatureIDFQN()»: {
+	case ::ecore::EPackage::makeUniqueFeatureID(«name.toFirstUpper() + "Package::" + ef.EContainingClass.name.toUpperCase()»,
+			«name.toFirstUpper() + "Package::" + ef.getFeatureIDFQN()»): {
     	std::string text = "«ef.name.toFirstUpper()»";
     	«PROTECT CSTART '/*' CEND '*/' ID this.name.toFirstUpper()+"ItemProvider_getTextEStructuralFeature_"+ef.getFeatureIDFQN() DISABLE»
     	// Please, enable the protected region if you add manually written code.

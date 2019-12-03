@@ -46,7 +46,6 @@ using namespace ::kdm::code;
 // Default constructor
 ParameterTo::ParameterTo()
 {
-
     /*PROTECTED REGION ID(ParameterToImpl__ParameterToImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

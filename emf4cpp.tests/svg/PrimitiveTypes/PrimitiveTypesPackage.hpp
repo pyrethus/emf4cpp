@@ -37,14 +37,16 @@ public:
     static PrimitiveTypesPackage_ptr _instance();
     static PrimitiveTypesPackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier Boolean
     static const int BOOLEAN = 0;
 
+    // IDs for classifier Double
     static const int DOUBLE = 1;
 
+    // IDs for classifier Integer
     static const int INTEGER = 2;
 
+    // IDs for classifier String
     static const int STRING = 3;
 
     // EClassifiers methods

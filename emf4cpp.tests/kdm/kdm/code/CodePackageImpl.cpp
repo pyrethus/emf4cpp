@@ -365,879 +365,1065 @@ void CodePackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = CodeFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // AbstractCodeElement
     m_AbstractCodeElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractCodeElementEClass->setClassifierID(ABSTRACTCODEELEMENT);
-    m_AbstractCodeElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractCodeElementEClass);
+    m_AbstractCodeElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractCodeElementEClass);
     // m_AbstractCodeElement__source has already been allocated above
     m_AbstractCodeElement__source->setFeatureID(
             ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE);
-    m_AbstractCodeElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractCodeElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractCodeElement__source);
+    m_AbstractCodeElement__source->basicsetEContainingClass(
+            m_AbstractCodeElementEClass);
     // m_AbstractCodeElement__comment has already been allocated above
     m_AbstractCodeElement__comment->setFeatureID(
             ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT);
-    m_AbstractCodeElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractCodeElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractCodeElement__comment);
+    m_AbstractCodeElement__comment->basicsetEContainingClass(
+            m_AbstractCodeElementEClass);
     // m_AbstractCodeElement__codeRelation has already been allocated above
     m_AbstractCodeElement__codeRelation->setFeatureID(
             ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION);
-    m_AbstractCodeElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractCodeElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractCodeElement__codeRelation);
+    m_AbstractCodeElement__codeRelation->basicsetEContainingClass(
+            m_AbstractCodeElementEClass);
 
     // CodeItem
     m_CodeItemEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CodeItemEClass->setClassifierID(CODEITEM);
-    m_CodeItemEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CodeItemEClass);
+    m_CodeItemEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CodeItemEClass);
 
     // ComputationalObject
     m_ComputationalObjectEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ComputationalObjectEClass->setClassifierID(COMPUTATIONALOBJECT);
-    m_ComputationalObjectEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ComputationalObjectEClass);
+    m_ComputationalObjectEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ComputationalObjectEClass);
 
     // ControlElement
     m_ControlElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ControlElementEClass->setClassifierID(CONTROLELEMENT);
-    m_ControlElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ControlElementEClass);
+    m_ControlElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ControlElementEClass);
     // m_ControlElement__type has already been allocated above
     m_ControlElement__type->setFeatureID(
             ::kdm::code::CodePackage::CONTROLELEMENT__TYPE);
-    m_ControlElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlElementEClass->getEStructuralFeatures()).basicAdd(
             m_ControlElement__type);
+    m_ControlElement__type->basicsetEContainingClass(m_ControlElementEClass);
     // m_ControlElement__entryFlow has already been allocated above
     m_ControlElement__entryFlow->setFeatureID(
             ::kdm::code::CodePackage::CONTROLELEMENT__ENTRYFLOW);
-    m_ControlElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlElementEClass->getEStructuralFeatures()).basicAdd(
             m_ControlElement__entryFlow);
+    m_ControlElement__entryFlow->basicsetEContainingClass(
+            m_ControlElementEClass);
     // m_ControlElement__codeElement has already been allocated above
     m_ControlElement__codeElement->setFeatureID(
             ::kdm::code::CodePackage::CONTROLELEMENT__CODEELEMENT);
-    m_ControlElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlElementEClass->getEStructuralFeatures()).basicAdd(
             m_ControlElement__codeElement);
+    m_ControlElement__codeElement->basicsetEContainingClass(
+            m_ControlElementEClass);
 
     // MethodUnit
     m_MethodUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_MethodUnitEClass->setClassifierID(METHODUNIT);
-    m_MethodUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_MethodUnitEClass);
+    m_MethodUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MethodUnitEClass);
     // m_MethodUnit__kind has already been allocated above
     m_MethodUnit__kind->setFeatureID(
             ::kdm::code::CodePackage::METHODUNIT__KIND);
-    m_MethodUnitEClass->getEStructuralFeatures().push_back(m_MethodUnit__kind);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MethodUnitEClass->getEStructuralFeatures()).basicAdd(
+            m_MethodUnit__kind);
+    m_MethodUnit__kind->basicsetEContainingClass(m_MethodUnitEClass);
     // m_MethodUnit__export has already been allocated above
     m_MethodUnit__export->setFeatureID(
             ::kdm::code::CodePackage::METHODUNIT__EXPORT);
-    m_MethodUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MethodUnitEClass->getEStructuralFeatures()).basicAdd(
             m_MethodUnit__export);
+    m_MethodUnit__export->basicsetEContainingClass(m_MethodUnitEClass);
 
     // Module
     m_ModuleEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ModuleEClass->setClassifierID(MODULE);
-    m_ModuleEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ModuleEClass);
+    m_ModuleEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ModuleEClass);
     // m_Module__codeElement has already been allocated above
     m_Module__codeElement->setFeatureID(
             ::kdm::code::CodePackage::MODULE__CODEELEMENT);
-    m_ModuleEClass->getEStructuralFeatures().push_back(m_Module__codeElement);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModuleEClass->getEStructuralFeatures()).basicAdd(
+            m_Module__codeElement);
+    m_Module__codeElement->basicsetEContainingClass(m_ModuleEClass);
 
     // CodeAssembly
     m_CodeAssemblyEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CodeAssemblyEClass->setClassifierID(CODEASSEMBLY);
-    m_CodeAssemblyEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CodeAssemblyEClass);
+    m_CodeAssemblyEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CodeAssemblyEClass);
 
     // CallableUnit
     m_CallableUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CallableUnitEClass->setClassifierID(CALLABLEUNIT);
-    m_CallableUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CallableUnitEClass);
+    m_CallableUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CallableUnitEClass);
     // m_CallableUnit__kind has already been allocated above
     m_CallableUnit__kind->setFeatureID(
             ::kdm::code::CodePackage::CALLABLEUNIT__KIND);
-    m_CallableUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CallableUnitEClass->getEStructuralFeatures()).basicAdd(
             m_CallableUnit__kind);
+    m_CallableUnit__kind->basicsetEContainingClass(m_CallableUnitEClass);
 
     // Datatype
     m_DatatypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DatatypeEClass->setClassifierID(DATATYPE);
-    m_DatatypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DatatypeEClass);
+    m_DatatypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DatatypeEClass);
 
     // TemplateUnit
     m_TemplateUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_TemplateUnitEClass->setClassifierID(TEMPLATEUNIT);
-    m_TemplateUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TemplateUnitEClass);
+    m_TemplateUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TemplateUnitEClass);
     // m_TemplateUnit__codeElement has already been allocated above
     m_TemplateUnit__codeElement->setFeatureID(
             ::kdm::code::CodePackage::TEMPLATEUNIT__CODEELEMENT);
-    m_TemplateUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TemplateUnitEClass->getEStructuralFeatures()).basicAdd(
             m_TemplateUnit__codeElement);
+    m_TemplateUnit__codeElement->basicsetEContainingClass(m_TemplateUnitEClass);
 
     // TemplateParameter
     m_TemplateParameterEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_TemplateParameterEClass->setClassifierID(TEMPLATEPARAMETER);
-    m_TemplateParameterEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TemplateParameterEClass);
+    m_TemplateParameterEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TemplateParameterEClass);
 
     // AbstractCodeRelationship
     m_AbstractCodeRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractCodeRelationshipEClass->setClassifierID(ABSTRACTCODERELATIONSHIP);
-    m_AbstractCodeRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractCodeRelationshipEClass);
+    m_AbstractCodeRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractCodeRelationshipEClass);
 
     // InstanceOf
     m_InstanceOfEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_InstanceOfEClass->setClassifierID(INSTANCEOF);
-    m_InstanceOfEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_InstanceOfEClass);
+    m_InstanceOfEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_InstanceOfEClass);
     // m_InstanceOf__to has already been allocated above
     m_InstanceOf__to->setFeatureID(::kdm::code::CodePackage::INSTANCEOF__TO);
-    m_InstanceOfEClass->getEStructuralFeatures().push_back(m_InstanceOf__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InstanceOfEClass->getEStructuralFeatures()).basicAdd(
+            m_InstanceOf__to);
+    m_InstanceOf__to->basicsetEContainingClass(m_InstanceOfEClass);
     // m_InstanceOf__from has already been allocated above
     m_InstanceOf__from->setFeatureID(
             ::kdm::code::CodePackage::INSTANCEOF__FROM);
-    m_InstanceOfEClass->getEStructuralFeatures().push_back(m_InstanceOf__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InstanceOfEClass->getEStructuralFeatures()).basicAdd(
+            m_InstanceOf__from);
+    m_InstanceOf__from->basicsetEContainingClass(m_InstanceOfEClass);
 
     // CompilationUnit
     m_CompilationUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CompilationUnitEClass->setClassifierID(COMPILATIONUNIT);
-    m_CompilationUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CompilationUnitEClass);
+    m_CompilationUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CompilationUnitEClass);
 
     // CodeModel
     m_CodeModelEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CodeModelEClass->setClassifierID(CODEMODEL);
-    m_CodeModelEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CodeModelEClass);
+    m_CodeModelEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CodeModelEClass);
     // m_CodeModel__codeElement has already been allocated above
     m_CodeModel__codeElement->setFeatureID(
             ::kdm::code::CodePackage::CODEMODEL__CODEELEMENT);
-    m_CodeModelEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CodeModelEClass->getEStructuralFeatures()).basicAdd(
             m_CodeModel__codeElement);
+    m_CodeModel__codeElement->basicsetEContainingClass(m_CodeModelEClass);
 
     // DerivedType
     m_DerivedTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DerivedTypeEClass->setClassifierID(DERIVEDTYPE);
-    m_DerivedTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DerivedTypeEClass);
+    m_DerivedTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DerivedTypeEClass);
     // m_DerivedType__itemUnit has already been allocated above
     m_DerivedType__itemUnit->setFeatureID(
             ::kdm::code::CodePackage::DERIVEDTYPE__ITEMUNIT);
-    m_DerivedTypeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DerivedTypeEClass->getEStructuralFeatures()).basicAdd(
             m_DerivedType__itemUnit);
+    m_DerivedType__itemUnit->basicsetEContainingClass(m_DerivedTypeEClass);
 
     // ArrayType
     m_ArrayTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ArrayTypeEClass->setClassifierID(ARRAYTYPE);
-    m_ArrayTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ArrayTypeEClass);
+    m_ArrayTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ArrayTypeEClass);
     // m_ArrayType__size has already been allocated above
     m_ArrayType__size->setFeatureID(::kdm::code::CodePackage::ARRAYTYPE__SIZE);
-    m_ArrayTypeEClass->getEStructuralFeatures().push_back(m_ArrayType__size);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ArrayTypeEClass->getEStructuralFeatures()).basicAdd(
+            m_ArrayType__size);
+    m_ArrayType__size->basicsetEContainingClass(m_ArrayTypeEClass);
     // m_ArrayType__indexUnit has already been allocated above
     m_ArrayType__indexUnit->setFeatureID(
             ::kdm::code::CodePackage::ARRAYTYPE__INDEXUNIT);
-    m_ArrayTypeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ArrayTypeEClass->getEStructuralFeatures()).basicAdd(
             m_ArrayType__indexUnit);
+    m_ArrayType__indexUnit->basicsetEContainingClass(m_ArrayTypeEClass);
 
     // PrimitiveType
     m_PrimitiveTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_PrimitiveTypeEClass->setClassifierID(PRIMITIVETYPE);
-    m_PrimitiveTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PrimitiveTypeEClass);
+    m_PrimitiveTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PrimitiveTypeEClass);
 
     // BooleanType
     m_BooleanTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_BooleanTypeEClass->setClassifierID(BOOLEANTYPE);
-    m_BooleanTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BooleanTypeEClass);
+    m_BooleanTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BooleanTypeEClass);
 
     // CharType
     m_CharTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CharTypeEClass->setClassifierID(CHARTYPE);
-    m_CharTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CharTypeEClass);
+    m_CharTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CharTypeEClass);
 
     // ClassUnit
     m_ClassUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ClassUnitEClass->setClassifierID(CLASSUNIT);
-    m_ClassUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ClassUnitEClass);
+    m_ClassUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ClassUnitEClass);
     // m_ClassUnit__isAbstract has already been allocated above
     m_ClassUnit__isAbstract->setFeatureID(
             ::kdm::code::CodePackage::CLASSUNIT__ISABSTRACT);
-    m_ClassUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ClassUnitEClass->getEStructuralFeatures()).basicAdd(
             m_ClassUnit__isAbstract);
+    m_ClassUnit__isAbstract->basicsetEContainingClass(m_ClassUnitEClass);
     // m_ClassUnit__codeElement has already been allocated above
     m_ClassUnit__codeElement->setFeatureID(
             ::kdm::code::CodePackage::CLASSUNIT__CODEELEMENT);
-    m_ClassUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ClassUnitEClass->getEStructuralFeatures()).basicAdd(
             m_ClassUnit__codeElement);
+    m_ClassUnit__codeElement->basicsetEContainingClass(m_ClassUnitEClass);
 
     // CompositeType
     m_CompositeTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CompositeTypeEClass->setClassifierID(COMPOSITETYPE);
-    m_CompositeTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CompositeTypeEClass);
+    m_CompositeTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CompositeTypeEClass);
     // m_CompositeType__itemUnit has already been allocated above
     m_CompositeType__itemUnit->setFeatureID(
             ::kdm::code::CodePackage::COMPOSITETYPE__ITEMUNIT);
-    m_CompositeTypeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompositeTypeEClass->getEStructuralFeatures()).basicAdd(
             m_CompositeType__itemUnit);
+    m_CompositeType__itemUnit->basicsetEContainingClass(m_CompositeTypeEClass);
 
     // RecordType
     m_RecordTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_RecordTypeEClass->setClassifierID(RECORDTYPE);
-    m_RecordTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RecordTypeEClass);
+    m_RecordTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RecordTypeEClass);
 
     // EnumeratedType
     m_EnumeratedTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_EnumeratedTypeEClass->setClassifierID(ENUMERATEDTYPE);
-    m_EnumeratedTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EnumeratedTypeEClass);
+    m_EnumeratedTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EnumeratedTypeEClass);
     // m_EnumeratedType__value has already been allocated above
     m_EnumeratedType__value->setFeatureID(
             ::kdm::code::CodePackage::ENUMERATEDTYPE__VALUE);
-    m_EnumeratedTypeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EnumeratedTypeEClass->getEStructuralFeatures()).basicAdd(
             m_EnumeratedType__value);
+    m_EnumeratedType__value->basicsetEContainingClass(m_EnumeratedTypeEClass);
 
     // Extends
     m_ExtendsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ExtendsEClass->setClassifierID(EXTENDS);
-    m_ExtendsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExtendsEClass);
+    m_ExtendsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExtendsEClass);
     // m_Extends__to has already been allocated above
     m_Extends__to->setFeatureID(::kdm::code::CodePackage::EXTENDS__TO);
-    m_ExtendsEClass->getEStructuralFeatures().push_back(m_Extends__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtendsEClass->getEStructuralFeatures()).basicAdd(
+            m_Extends__to);
+    m_Extends__to->basicsetEContainingClass(m_ExtendsEClass);
     // m_Extends__from has already been allocated above
     m_Extends__from->setFeatureID(::kdm::code::CodePackage::EXTENDS__FROM);
-    m_ExtendsEClass->getEStructuralFeatures().push_back(m_Extends__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtendsEClass->getEStructuralFeatures()).basicAdd(
+            m_Extends__from);
+    m_Extends__from->basicsetEContainingClass(m_ExtendsEClass);
 
     // ScaledType
     m_ScaledTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ScaledTypeEClass->setClassifierID(SCALEDTYPE);
-    m_ScaledTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ScaledTypeEClass);
+    m_ScaledTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ScaledTypeEClass);
 
     // FloatType
     m_FloatTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_FloatTypeEClass->setClassifierID(FLOATTYPE);
-    m_FloatTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FloatTypeEClass);
+    m_FloatTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FloatTypeEClass);
 
     // HasType
     m_HasTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_HasTypeEClass->setClassifierID(HASTYPE);
-    m_HasTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_HasTypeEClass);
+    m_HasTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_HasTypeEClass);
     // m_HasType__to has already been allocated above
     m_HasType__to->setFeatureID(::kdm::code::CodePackage::HASTYPE__TO);
-    m_HasTypeEClass->getEStructuralFeatures().push_back(m_HasType__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasTypeEClass->getEStructuralFeatures()).basicAdd(
+            m_HasType__to);
+    m_HasType__to->basicsetEContainingClass(m_HasTypeEClass);
     // m_HasType__from has already been allocated above
     m_HasType__from->setFeatureID(::kdm::code::CodePackage::HASTYPE__FROM);
-    m_HasTypeEClass->getEStructuralFeatures().push_back(m_HasType__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasTypeEClass->getEStructuralFeatures()).basicAdd(
+            m_HasType__from);
+    m_HasType__from->basicsetEContainingClass(m_HasTypeEClass);
 
     // ImplementationOf
     m_ImplementationOfEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ImplementationOfEClass->setClassifierID(IMPLEMENTATIONOF);
-    m_ImplementationOfEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ImplementationOfEClass);
+    m_ImplementationOfEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ImplementationOfEClass);
     // m_ImplementationOf__to has already been allocated above
     m_ImplementationOf__to->setFeatureID(
             ::kdm::code::CodePackage::IMPLEMENTATIONOF__TO);
-    m_ImplementationOfEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImplementationOfEClass->getEStructuralFeatures()).basicAdd(
             m_ImplementationOf__to);
+    m_ImplementationOf__to->basicsetEContainingClass(m_ImplementationOfEClass);
     // m_ImplementationOf__from has already been allocated above
     m_ImplementationOf__from->setFeatureID(
             ::kdm::code::CodePackage::IMPLEMENTATIONOF__FROM);
-    m_ImplementationOfEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImplementationOfEClass->getEStructuralFeatures()).basicAdd(
             m_ImplementationOf__from);
+    m_ImplementationOf__from->basicsetEContainingClass(
+            m_ImplementationOfEClass);
 
     // Implements
     m_ImplementsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ImplementsEClass->setClassifierID(IMPLEMENTS);
-    m_ImplementsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ImplementsEClass);
+    m_ImplementsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ImplementsEClass);
     // m_Implements__to has already been allocated above
     m_Implements__to->setFeatureID(::kdm::code::CodePackage::IMPLEMENTS__TO);
-    m_ImplementsEClass->getEStructuralFeatures().push_back(m_Implements__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImplementsEClass->getEStructuralFeatures()).basicAdd(
+            m_Implements__to);
+    m_Implements__to->basicsetEContainingClass(m_ImplementsEClass);
     // m_Implements__from has already been allocated above
     m_Implements__from->setFeatureID(
             ::kdm::code::CodePackage::IMPLEMENTS__FROM);
-    m_ImplementsEClass->getEStructuralFeatures().push_back(m_Implements__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImplementsEClass->getEStructuralFeatures()).basicAdd(
+            m_Implements__from);
+    m_Implements__from->basicsetEContainingClass(m_ImplementsEClass);
 
     // IntegerType
     m_IntegerTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_IntegerTypeEClass->setClassifierID(INTEGERTYPE);
-    m_IntegerTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_IntegerTypeEClass);
+    m_IntegerTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IntegerTypeEClass);
 
     // InterfaceUnit
     m_InterfaceUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_InterfaceUnitEClass->setClassifierID(INTERFACEUNIT);
-    m_InterfaceUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_InterfaceUnitEClass);
+    m_InterfaceUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_InterfaceUnitEClass);
     // m_InterfaceUnit__codeElement has already been allocated above
     m_InterfaceUnit__codeElement->setFeatureID(
             ::kdm::code::CodePackage::INTERFACEUNIT__CODEELEMENT);
-    m_InterfaceUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InterfaceUnitEClass->getEStructuralFeatures()).basicAdd(
             m_InterfaceUnit__codeElement);
+    m_InterfaceUnit__codeElement->basicsetEContainingClass(
+            m_InterfaceUnitEClass);
 
     // PointerType
     m_PointerTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_PointerTypeEClass->setClassifierID(POINTERTYPE);
-    m_PointerTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PointerTypeEClass);
+    m_PointerTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PointerTypeEClass);
 
     // DefinedType
     m_DefinedTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DefinedTypeEClass->setClassifierID(DEFINEDTYPE);
-    m_DefinedTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DefinedTypeEClass);
+    m_DefinedTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DefinedTypeEClass);
     // m_DefinedType__type has already been allocated above
     m_DefinedType__type->setFeatureID(
             ::kdm::code::CodePackage::DEFINEDTYPE__TYPE);
-    m_DefinedTypeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedTypeEClass->getEStructuralFeatures()).basicAdd(
             m_DefinedType__type);
+    m_DefinedType__type->basicsetEContainingClass(m_DefinedTypeEClass);
     // m_DefinedType__codeElement has already been allocated above
     m_DefinedType__codeElement->setFeatureID(
             ::kdm::code::CodePackage::DEFINEDTYPE__CODEELEMENT);
-    m_DefinedTypeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedTypeEClass->getEStructuralFeatures()).basicAdd(
             m_DefinedType__codeElement);
+    m_DefinedType__codeElement->basicsetEContainingClass(m_DefinedTypeEClass);
 
     // TypeUnit
     m_TypeUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TypeUnitEClass->setClassifierID(TYPEUNIT);
-    m_TypeUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TypeUnitEClass);
+    m_TypeUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TypeUnitEClass);
 
     // RangeType
     m_RangeTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_RangeTypeEClass->setClassifierID(RANGETYPE);
-    m_RangeTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RangeTypeEClass);
+    m_RangeTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RangeTypeEClass);
     // m_RangeType__lower has already been allocated above
     m_RangeType__lower->setFeatureID(
             ::kdm::code::CodePackage::RANGETYPE__LOWER);
-    m_RangeTypeEClass->getEStructuralFeatures().push_back(m_RangeType__lower);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RangeTypeEClass->getEStructuralFeatures()).basicAdd(
+            m_RangeType__lower);
+    m_RangeType__lower->basicsetEContainingClass(m_RangeTypeEClass);
     // m_RangeType__upper has already been allocated above
     m_RangeType__upper->setFeatureID(
             ::kdm::code::CodePackage::RANGETYPE__UPPER);
-    m_RangeTypeEClass->getEStructuralFeatures().push_back(m_RangeType__upper);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RangeTypeEClass->getEStructuralFeatures()).basicAdd(
+            m_RangeType__upper);
+    m_RangeType__upper->basicsetEContainingClass(m_RangeTypeEClass);
 
     // Signature
     m_SignatureEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SignatureEClass->setClassifierID(SIGNATURE);
-    m_SignatureEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SignatureEClass);
+    m_SignatureEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SignatureEClass);
     // m_Signature__parameterUnit has already been allocated above
     m_Signature__parameterUnit->setFeatureID(
             ::kdm::code::CodePackage::SIGNATURE__PARAMETERUNIT);
-    m_SignatureEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SignatureEClass->getEStructuralFeatures()).basicAdd(
             m_Signature__parameterUnit);
+    m_Signature__parameterUnit->basicsetEContainingClass(m_SignatureEClass);
 
     // DataElement
     m_DataElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DataElementEClass->setClassifierID(DATAELEMENT);
-    m_DataElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DataElementEClass);
-    // m_DataElement__ext has already been allocated above
-    m_DataElement__ext->setFeatureID(
-            ::kdm::code::CodePackage::DATAELEMENT__EXT);
-    m_DataElementEClass->getEStructuralFeatures().push_back(m_DataElement__ext);
-    // m_DataElement__size has already been allocated above
-    m_DataElement__size->setFeatureID(
-            ::kdm::code::CodePackage::DATAELEMENT__SIZE);
-    m_DataElementEClass->getEStructuralFeatures().push_back(
-            m_DataElement__size);
+    m_DataElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DataElementEClass);
     // m_DataElement__type has already been allocated above
     m_DataElement__type->setFeatureID(
             ::kdm::code::CodePackage::DATAELEMENT__TYPE);
-    m_DataElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataElementEClass->getEStructuralFeatures()).basicAdd(
             m_DataElement__type);
+    m_DataElement__type->basicsetEContainingClass(m_DataElementEClass);
+    // m_DataElement__ext has already been allocated above
+    m_DataElement__ext->setFeatureID(
+            ::kdm::code::CodePackage::DATAELEMENT__EXT);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataElementEClass->getEStructuralFeatures()).basicAdd(
+            m_DataElement__ext);
+    m_DataElement__ext->basicsetEContainingClass(m_DataElementEClass);
+    // m_DataElement__size has already been allocated above
+    m_DataElement__size->setFeatureID(
+            ::kdm::code::CodePackage::DATAELEMENT__SIZE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataElementEClass->getEStructuralFeatures()).basicAdd(
+            m_DataElement__size);
+    m_DataElement__size->basicsetEContainingClass(m_DataElementEClass);
     // m_DataElement__codeElement has already been allocated above
     m_DataElement__codeElement->setFeatureID(
             ::kdm::code::CodePackage::DATAELEMENT__CODEELEMENT);
-    m_DataElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataElementEClass->getEStructuralFeatures()).basicAdd(
             m_DataElement__codeElement);
+    m_DataElement__codeElement->basicsetEContainingClass(m_DataElementEClass);
 
     // StringType
     m_StringTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_StringTypeEClass->setClassifierID(STRINGTYPE);
-    m_StringTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_StringTypeEClass);
+    m_StringTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StringTypeEClass);
 
     // ChoiceType
     m_ChoiceTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ChoiceTypeEClass->setClassifierID(CHOICETYPE);
-    m_ChoiceTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ChoiceTypeEClass);
+    m_ChoiceTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ChoiceTypeEClass);
 
     // NamespaceUnit
     m_NamespaceUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_NamespaceUnitEClass->setClassifierID(NAMESPACEUNIT);
-    m_NamespaceUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NamespaceUnitEClass);
+    m_NamespaceUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NamespaceUnitEClass);
     // m_NamespaceUnit__groupedCode has already been allocated above
     m_NamespaceUnit__groupedCode->setFeatureID(
             ::kdm::code::CodePackage::NAMESPACEUNIT__GROUPEDCODE);
-    m_NamespaceUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NamespaceUnitEClass->getEStructuralFeatures()).basicAdd(
             m_NamespaceUnit__groupedCode);
+    m_NamespaceUnit__groupedCode->basicsetEContainingClass(
+            m_NamespaceUnitEClass);
 
     // VisibleIn
     m_VisibleInEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_VisibleInEClass->setClassifierID(VISIBLEIN);
-    m_VisibleInEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_VisibleInEClass);
+    m_VisibleInEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_VisibleInEClass);
     // m_VisibleIn__to has already been allocated above
     m_VisibleIn__to->setFeatureID(::kdm::code::CodePackage::VISIBLEIN__TO);
-    m_VisibleInEClass->getEStructuralFeatures().push_back(m_VisibleIn__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_VisibleInEClass->getEStructuralFeatures()).basicAdd(
+            m_VisibleIn__to);
+    m_VisibleIn__to->basicsetEContainingClass(m_VisibleInEClass);
     // m_VisibleIn__from has already been allocated above
     m_VisibleIn__from->setFeatureID(::kdm::code::CodePackage::VISIBLEIN__FROM);
-    m_VisibleInEClass->getEStructuralFeatures().push_back(m_VisibleIn__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_VisibleInEClass->getEStructuralFeatures()).basicAdd(
+            m_VisibleIn__from);
+    m_VisibleIn__from->basicsetEContainingClass(m_VisibleInEClass);
 
     // CommentUnit
     m_CommentUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CommentUnitEClass->setClassifierID(COMMENTUNIT);
-    m_CommentUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CommentUnitEClass);
+    m_CommentUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CommentUnitEClass);
     // m_CommentUnit__text has already been allocated above
     m_CommentUnit__text->setFeatureID(
             ::kdm::code::CodePackage::COMMENTUNIT__TEXT);
-    m_CommentUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CommentUnitEClass->getEStructuralFeatures()).basicAdd(
             m_CommentUnit__text);
+    m_CommentUnit__text->basicsetEContainingClass(m_CommentUnitEClass);
 
     // SharedUnit
     m_SharedUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SharedUnitEClass->setClassifierID(SHAREDUNIT);
-    m_SharedUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SharedUnitEClass);
+    m_SharedUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SharedUnitEClass);
 
     // DecimalType
     m_DecimalTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DecimalTypeEClass->setClassifierID(DECIMALTYPE);
-    m_DecimalTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DecimalTypeEClass);
+    m_DecimalTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DecimalTypeEClass);
 
     // DateType
     m_DateTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DateTypeEClass->setClassifierID(DATETYPE);
-    m_DateTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DateTypeEClass);
+    m_DateTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DateTypeEClass);
 
     // TimeType
     m_TimeTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TimeTypeEClass->setClassifierID(TIMETYPE);
-    m_TimeTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TimeTypeEClass);
+    m_TimeTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TimeTypeEClass);
 
     // VoidType
     m_VoidTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_VoidTypeEClass->setClassifierID(VOIDTYPE);
-    m_VoidTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_VoidTypeEClass);
+    m_VoidTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_VoidTypeEClass);
 
     // ValueElement
     m_ValueElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ValueElementEClass->setClassifierID(VALUEELEMENT);
-    m_ValueElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ValueElementEClass);
+    m_ValueElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ValueElementEClass);
 
     // Value
     m_ValueEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ValueEClass->setClassifierID(VALUE);
-    m_ValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ValueEClass);
+    m_ValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ValueEClass);
 
     // ValueList
     m_ValueListEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ValueListEClass->setClassifierID(VALUELIST);
-    m_ValueListEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ValueListEClass);
+    m_ValueListEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ValueListEClass);
     // m_ValueList__valueElement has already been allocated above
     m_ValueList__valueElement->setFeatureID(
             ::kdm::code::CodePackage::VALUELIST__VALUEELEMENT);
-    m_ValueListEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ValueListEClass->getEStructuralFeatures()).basicAdd(
             m_ValueList__valueElement);
+    m_ValueList__valueElement->basicsetEContainingClass(m_ValueListEClass);
 
     // StorableUnit
     m_StorableUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_StorableUnitEClass->setClassifierID(STORABLEUNIT);
-    m_StorableUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_StorableUnitEClass);
+    m_StorableUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StorableUnitEClass);
     // m_StorableUnit__kind has already been allocated above
     m_StorableUnit__kind->setFeatureID(
             ::kdm::code::CodePackage::STORABLEUNIT__KIND);
-    m_StorableUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StorableUnitEClass->getEStructuralFeatures()).basicAdd(
             m_StorableUnit__kind);
+    m_StorableUnit__kind->basicsetEContainingClass(m_StorableUnitEClass);
 
     // MemberUnit
     m_MemberUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_MemberUnitEClass->setClassifierID(MEMBERUNIT);
-    m_MemberUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_MemberUnitEClass);
+    m_MemberUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MemberUnitEClass);
     // m_MemberUnit__export has already been allocated above
     m_MemberUnit__export->setFeatureID(
             ::kdm::code::CodePackage::MEMBERUNIT__EXPORT);
-    m_MemberUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MemberUnitEClass->getEStructuralFeatures()).basicAdd(
             m_MemberUnit__export);
+    m_MemberUnit__export->basicsetEContainingClass(m_MemberUnitEClass);
 
     // ParameterUnit
     m_ParameterUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ParameterUnitEClass->setClassifierID(PARAMETERUNIT);
-    m_ParameterUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ParameterUnitEClass);
+    m_ParameterUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ParameterUnitEClass);
     // m_ParameterUnit__kind has already been allocated above
     m_ParameterUnit__kind->setFeatureID(
             ::kdm::code::CodePackage::PARAMETERUNIT__KIND);
-    m_ParameterUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterUnitEClass->getEStructuralFeatures()).basicAdd(
             m_ParameterUnit__kind);
+    m_ParameterUnit__kind->basicsetEContainingClass(m_ParameterUnitEClass);
     // m_ParameterUnit__pos has already been allocated above
     m_ParameterUnit__pos->setFeatureID(
             ::kdm::code::CodePackage::PARAMETERUNIT__POS);
-    m_ParameterUnitEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterUnitEClass->getEStructuralFeatures()).basicAdd(
             m_ParameterUnit__pos);
+    m_ParameterUnit__pos->basicsetEContainingClass(m_ParameterUnitEClass);
 
     // ItemUnit
     m_ItemUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ItemUnitEClass->setClassifierID(ITEMUNIT);
-    m_ItemUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ItemUnitEClass);
+    m_ItemUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ItemUnitEClass);
 
     // IndexUnit
     m_IndexUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_IndexUnitEClass->setClassifierID(INDEXUNIT);
-    m_IndexUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_IndexUnitEClass);
+    m_IndexUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IndexUnitEClass);
 
     // SynonymType
     m_SynonymTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_SynonymTypeEClass->setClassifierID(SYNONYMTYPE);
-    m_SynonymTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SynonymTypeEClass);
+    m_SynonymTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SynonymTypeEClass);
 
     // SequenceType
     m_SequenceTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_SequenceTypeEClass->setClassifierID(SEQUENCETYPE);
-    m_SequenceTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SequenceTypeEClass);
+    m_SequenceTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SequenceTypeEClass);
     // m_SequenceType__size has already been allocated above
     m_SequenceType__size->setFeatureID(
             ::kdm::code::CodePackage::SEQUENCETYPE__SIZE);
-    m_SequenceTypeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SequenceTypeEClass->getEStructuralFeatures()).basicAdd(
             m_SequenceType__size);
+    m_SequenceType__size->basicsetEContainingClass(m_SequenceTypeEClass);
 
     // BagType
     m_BagTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_BagTypeEClass->setClassifierID(BAGTYPE);
-    m_BagTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BagTypeEClass);
+    m_BagTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BagTypeEClass);
     // m_BagType__size has already been allocated above
     m_BagType__size->setFeatureID(::kdm::code::CodePackage::BAGTYPE__SIZE);
-    m_BagTypeEClass->getEStructuralFeatures().push_back(m_BagType__size);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BagTypeEClass->getEStructuralFeatures()).basicAdd(
+            m_BagType__size);
+    m_BagType__size->basicsetEContainingClass(m_BagTypeEClass);
 
     // SetType
     m_SetTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SetTypeEClass->setClassifierID(SETTYPE);
-    m_SetTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SetTypeEClass);
+    m_SetTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SetTypeEClass);
     // m_SetType__size has already been allocated above
     m_SetType__size->setFeatureID(::kdm::code::CodePackage::SETTYPE__SIZE);
-    m_SetTypeEClass->getEStructuralFeatures().push_back(m_SetType__size);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SetTypeEClass->getEStructuralFeatures()).basicAdd(
+            m_SetType__size);
+    m_SetType__size->basicsetEContainingClass(m_SetTypeEClass);
 
     // CodeElement
     m_CodeElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CodeElementEClass->setClassifierID(CODEELEMENT);
-    m_CodeElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CodeElementEClass);
+    m_CodeElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CodeElementEClass);
 
     // CodeRelationship
     m_CodeRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CodeRelationshipEClass->setClassifierID(CODERELATIONSHIP);
-    m_CodeRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CodeRelationshipEClass);
+    m_CodeRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CodeRelationshipEClass);
     // m_CodeRelationship__to has already been allocated above
     m_CodeRelationship__to->setFeatureID(
             ::kdm::code::CodePackage::CODERELATIONSHIP__TO);
-    m_CodeRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CodeRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_CodeRelationship__to);
+    m_CodeRelationship__to->basicsetEContainingClass(m_CodeRelationshipEClass);
     // m_CodeRelationship__from has already been allocated above
     m_CodeRelationship__from->setFeatureID(
             ::kdm::code::CodePackage::CODERELATIONSHIP__FROM);
-    m_CodeRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CodeRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_CodeRelationship__from);
+    m_CodeRelationship__from->basicsetEContainingClass(
+            m_CodeRelationshipEClass);
 
     // LanguageUnit
     m_LanguageUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_LanguageUnitEClass->setClassifierID(LANGUAGEUNIT);
-    m_LanguageUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LanguageUnitEClass);
+    m_LanguageUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LanguageUnitEClass);
 
     // OrdinalType
     m_OrdinalTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_OrdinalTypeEClass->setClassifierID(ORDINALTYPE);
-    m_OrdinalTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_OrdinalTypeEClass);
+    m_OrdinalTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_OrdinalTypeEClass);
 
     // BitstringType
     m_BitstringTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_BitstringTypeEClass->setClassifierID(BITSTRINGTYPE);
-    m_BitstringTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BitstringTypeEClass);
+    m_BitstringTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BitstringTypeEClass);
 
     // OctetType
     m_OctetTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_OctetTypeEClass->setClassifierID(OCTETTYPE);
-    m_OctetTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_OctetTypeEClass);
+    m_OctetTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_OctetTypeEClass);
 
     // OctetstringType
     m_OctetstringTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_OctetstringTypeEClass->setClassifierID(OCTETSTRINGTYPE);
-    m_OctetstringTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_OctetstringTypeEClass);
+    m_OctetstringTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_OctetstringTypeEClass);
 
     // BitType
     m_BitTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_BitTypeEClass->setClassifierID(BITTYPE);
-    m_BitTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BitTypeEClass);
+    m_BitTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BitTypeEClass);
 
     // Imports
     m_ImportsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ImportsEClass->setClassifierID(IMPORTS);
-    m_ImportsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ImportsEClass);
+    m_ImportsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ImportsEClass);
     // m_Imports__to has already been allocated above
     m_Imports__to->setFeatureID(::kdm::code::CodePackage::IMPORTS__TO);
-    m_ImportsEClass->getEStructuralFeatures().push_back(m_Imports__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportsEClass->getEStructuralFeatures()).basicAdd(
+            m_Imports__to);
+    m_Imports__to->basicsetEContainingClass(m_ImportsEClass);
     // m_Imports__from has already been allocated above
     m_Imports__from->setFeatureID(::kdm::code::CodePackage::IMPORTS__FROM);
-    m_ImportsEClass->getEStructuralFeatures().push_back(m_Imports__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportsEClass->getEStructuralFeatures()).basicAdd(
+            m_Imports__from);
+    m_Imports__from->basicsetEContainingClass(m_ImportsEClass);
 
     // Package
     m_PackageEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_PackageEClass->setClassifierID(PACKAGE);
-    m_PackageEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PackageEClass);
+    m_PackageEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PackageEClass);
 
     // ParameterTo
     m_ParameterToEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ParameterToEClass->setClassifierID(PARAMETERTO);
-    m_ParameterToEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ParameterToEClass);
+    m_ParameterToEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ParameterToEClass);
     // m_ParameterTo__to has already been allocated above
     m_ParameterTo__to->setFeatureID(::kdm::code::CodePackage::PARAMETERTO__TO);
-    m_ParameterToEClass->getEStructuralFeatures().push_back(m_ParameterTo__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterToEClass->getEStructuralFeatures()).basicAdd(
+            m_ParameterTo__to);
+    m_ParameterTo__to->basicsetEContainingClass(m_ParameterToEClass);
     // m_ParameterTo__from has already been allocated above
     m_ParameterTo__from->setFeatureID(
             ::kdm::code::CodePackage::PARAMETERTO__FROM);
-    m_ParameterToEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterToEClass->getEStructuralFeatures()).basicAdd(
             m_ParameterTo__from);
+    m_ParameterTo__from->basicsetEContainingClass(m_ParameterToEClass);
 
     // TemplateType
     m_TemplateTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_TemplateTypeEClass->setClassifierID(TEMPLATETYPE);
-    m_TemplateTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TemplateTypeEClass);
+    m_TemplateTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TemplateTypeEClass);
 
     // PreprocessorDirective
     m_PreprocessorDirectiveEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_PreprocessorDirectiveEClass->setClassifierID(PREPROCESSORDIRECTIVE);
-    m_PreprocessorDirectiveEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PreprocessorDirectiveEClass);
+    m_PreprocessorDirectiveEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PreprocessorDirectiveEClass);
     // m_PreprocessorDirective__codeElement has already been allocated above
     m_PreprocessorDirective__codeElement->setFeatureID(
             ::kdm::code::CodePackage::PREPROCESSORDIRECTIVE__CODEELEMENT);
-    m_PreprocessorDirectiveEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PreprocessorDirectiveEClass->getEStructuralFeatures()).basicAdd(
             m_PreprocessorDirective__codeElement);
+    m_PreprocessorDirective__codeElement->basicsetEContainingClass(
+            m_PreprocessorDirectiveEClass);
 
     // MacroDirective
     m_MacroDirectiveEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_MacroDirectiveEClass->setClassifierID(MACRODIRECTIVE);
-    m_MacroDirectiveEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_MacroDirectiveEClass);
+    m_MacroDirectiveEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MacroDirectiveEClass);
 
     // MacroUnit
     m_MacroUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_MacroUnitEClass->setClassifierID(MACROUNIT);
-    m_MacroUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_MacroUnitEClass);
+    m_MacroUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MacroUnitEClass);
     // m_MacroUnit__kind has already been allocated above
     m_MacroUnit__kind->setFeatureID(::kdm::code::CodePackage::MACROUNIT__KIND);
-    m_MacroUnitEClass->getEStructuralFeatures().push_back(m_MacroUnit__kind);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MacroUnitEClass->getEStructuralFeatures()).basicAdd(
+            m_MacroUnit__kind);
+    m_MacroUnit__kind->basicsetEContainingClass(m_MacroUnitEClass);
 
     // ConditionalDirective
     m_ConditionalDirectiveEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConditionalDirectiveEClass->setClassifierID(CONDITIONALDIRECTIVE);
-    m_ConditionalDirectiveEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConditionalDirectiveEClass);
+    m_ConditionalDirectiveEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConditionalDirectiveEClass);
 
     // IncludeDirective
     m_IncludeDirectiveEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_IncludeDirectiveEClass->setClassifierID(INCLUDEDIRECTIVE);
-    m_IncludeDirectiveEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_IncludeDirectiveEClass);
+    m_IncludeDirectiveEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IncludeDirectiveEClass);
 
     // VariantTo
     m_VariantToEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_VariantToEClass->setClassifierID(VARIANTTO);
-    m_VariantToEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_VariantToEClass);
+    m_VariantToEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_VariantToEClass);
     // m_VariantTo__to has already been allocated above
     m_VariantTo__to->setFeatureID(::kdm::code::CodePackage::VARIANTTO__TO);
-    m_VariantToEClass->getEStructuralFeatures().push_back(m_VariantTo__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_VariantToEClass->getEStructuralFeatures()).basicAdd(
+            m_VariantTo__to);
+    m_VariantTo__to->basicsetEContainingClass(m_VariantToEClass);
     // m_VariantTo__from has already been allocated above
     m_VariantTo__from->setFeatureID(::kdm::code::CodePackage::VARIANTTO__FROM);
-    m_VariantToEClass->getEStructuralFeatures().push_back(m_VariantTo__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_VariantToEClass->getEStructuralFeatures()).basicAdd(
+            m_VariantTo__from);
+    m_VariantTo__from->basicsetEContainingClass(m_VariantToEClass);
 
     // Expands
     m_ExpandsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ExpandsEClass->setClassifierID(EXPANDS);
-    m_ExpandsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExpandsEClass);
+    m_ExpandsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExpandsEClass);
     // m_Expands__to has already been allocated above
     m_Expands__to->setFeatureID(::kdm::code::CodePackage::EXPANDS__TO);
-    m_ExpandsEClass->getEStructuralFeatures().push_back(m_Expands__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandsEClass->getEStructuralFeatures()).basicAdd(
+            m_Expands__to);
+    m_Expands__to->basicsetEContainingClass(m_ExpandsEClass);
     // m_Expands__from has already been allocated above
     m_Expands__from->setFeatureID(::kdm::code::CodePackage::EXPANDS__FROM);
-    m_ExpandsEClass->getEStructuralFeatures().push_back(m_Expands__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandsEClass->getEStructuralFeatures()).basicAdd(
+            m_Expands__from);
+    m_Expands__from->basicsetEContainingClass(m_ExpandsEClass);
 
     // Redefines
     m_RedefinesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_RedefinesEClass->setClassifierID(REDEFINES);
-    m_RedefinesEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RedefinesEClass);
+    m_RedefinesEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RedefinesEClass);
     // m_Redefines__to has already been allocated above
     m_Redefines__to->setFeatureID(::kdm::code::CodePackage::REDEFINES__TO);
-    m_RedefinesEClass->getEStructuralFeatures().push_back(m_Redefines__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RedefinesEClass->getEStructuralFeatures()).basicAdd(
+            m_Redefines__to);
+    m_Redefines__to->basicsetEContainingClass(m_RedefinesEClass);
     // m_Redefines__from has already been allocated above
     m_Redefines__from->setFeatureID(::kdm::code::CodePackage::REDEFINES__FROM);
-    m_RedefinesEClass->getEStructuralFeatures().push_back(m_Redefines__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RedefinesEClass->getEStructuralFeatures()).basicAdd(
+            m_Redefines__from);
+    m_Redefines__from->basicsetEContainingClass(m_RedefinesEClass);
 
     // GeneratedFrom
     m_GeneratedFromEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_GeneratedFromEClass->setClassifierID(GENERATEDFROM);
-    m_GeneratedFromEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_GeneratedFromEClass);
+    m_GeneratedFromEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_GeneratedFromEClass);
     // m_GeneratedFrom__to has already been allocated above
     m_GeneratedFrom__to->setFeatureID(
             ::kdm::code::CodePackage::GENERATEDFROM__TO);
-    m_GeneratedFromEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_GeneratedFromEClass->getEStructuralFeatures()).basicAdd(
             m_GeneratedFrom__to);
+    m_GeneratedFrom__to->basicsetEContainingClass(m_GeneratedFromEClass);
     // m_GeneratedFrom__from has already been allocated above
     m_GeneratedFrom__from->setFeatureID(
             ::kdm::code::CodePackage::GENERATEDFROM__FROM);
-    m_GeneratedFromEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_GeneratedFromEClass->getEStructuralFeatures()).basicAdd(
             m_GeneratedFrom__from);
+    m_GeneratedFrom__from->basicsetEContainingClass(m_GeneratedFromEClass);
 
     // Includes
     m_IncludesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_IncludesEClass->setClassifierID(INCLUDES);
-    m_IncludesEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_IncludesEClass);
+    m_IncludesEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IncludesEClass);
     // m_Includes__to has already been allocated above
     m_Includes__to->setFeatureID(::kdm::code::CodePackage::INCLUDES__TO);
-    m_IncludesEClass->getEStructuralFeatures().push_back(m_Includes__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IncludesEClass->getEStructuralFeatures()).basicAdd(
+            m_Includes__to);
+    m_Includes__to->basicsetEContainingClass(m_IncludesEClass);
     // m_Includes__from has already been allocated above
     m_Includes__from->setFeatureID(::kdm::code::CodePackage::INCLUDES__FROM);
-    m_IncludesEClass->getEStructuralFeatures().push_back(m_Includes__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IncludesEClass->getEStructuralFeatures()).basicAdd(
+            m_Includes__from);
+    m_Includes__from->basicsetEContainingClass(m_IncludesEClass);
 
     // HasValue
     m_HasValueEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_HasValueEClass->setClassifierID(HASVALUE);
-    m_HasValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_HasValueEClass);
+    m_HasValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_HasValueEClass);
     // m_HasValue__to has already been allocated above
     m_HasValue__to->setFeatureID(::kdm::code::CodePackage::HASVALUE__TO);
-    m_HasValueEClass->getEStructuralFeatures().push_back(m_HasValue__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasValueEClass->getEStructuralFeatures()).basicAdd(
+            m_HasValue__to);
+    m_HasValue__to->basicsetEContainingClass(m_HasValueEClass);
     // m_HasValue__from has already been allocated above
     m_HasValue__from->setFeatureID(::kdm::code::CodePackage::HASVALUE__FROM);
-    m_HasValueEClass->getEStructuralFeatures().push_back(m_HasValue__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasValueEClass->getEStructuralFeatures()).basicAdd(
+            m_HasValue__from);
+    m_HasValue__from->basicsetEContainingClass(m_HasValueEClass);
 
     // Create enums
 
     m_MethodKindEEnum = ::ecore::Ptr < ::ecore::EEnum > (new ::ecore::EEnum);
     m_MethodKindEEnum->setClassifierID(METHODKIND);
-    m_MethodKindEEnum->setEPackage(_this());
-    getEClassifiers().push_back(m_MethodKindEEnum);
+    m_MethodKindEEnum->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MethodKindEEnum);
 
     m_ParameterKindEEnum = ::ecore::Ptr < ::ecore::EEnum > (new ::ecore::EEnum);
     m_ParameterKindEEnum->setClassifierID(PARAMETERKIND);
-    m_ParameterKindEEnum->setEPackage(_this());
-    getEClassifiers().push_back(m_ParameterKindEEnum);
+    m_ParameterKindEEnum->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ParameterKindEEnum);
 
     m_ExportKindEEnum = ::ecore::Ptr < ::ecore::EEnum > (new ::ecore::EEnum);
     m_ExportKindEEnum->setClassifierID(EXPORTKIND);
-    m_ExportKindEEnum->setEPackage(_this());
-    getEClassifiers().push_back(m_ExportKindEEnum);
+    m_ExportKindEEnum->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExportKindEEnum);
 
     m_StorableKindEEnum = ::ecore::Ptr < ::ecore::EEnum > (new ::ecore::EEnum);
     m_StorableKindEEnum->setClassifierID(STORABLEKIND);
-    m_StorableKindEEnum->setEPackage(_this());
-    getEClassifiers().push_back(m_StorableKindEEnum);
+    m_StorableKindEEnum->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StorableKindEEnum);
 
     m_CallableKindEEnum = ::ecore::Ptr < ::ecore::EEnum > (new ::ecore::EEnum);
     m_CallableKindEEnum->setClassifierID(CALLABLEKIND);
-    m_CallableKindEEnum->setEPackage(_this());
-    getEClassifiers().push_back(m_CallableKindEEnum);
+    m_CallableKindEEnum->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CallableKindEEnum);
 
     m_MacroKindEEnum = ::ecore::Ptr < ::ecore::EEnum > (new ::ecore::EEnum);
     m_MacroKindEEnum->setClassifierID(MACROKIND);
-    m_MacroKindEEnum->setEPackage(_this());
-    getEClassifiers().push_back(m_MacroKindEEnum);
+    m_MacroKindEEnum->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MacroKindEEnum);
 
     // Create data types
 

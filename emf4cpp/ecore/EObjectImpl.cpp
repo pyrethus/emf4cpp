@@ -39,6 +39,18 @@
 
 using namespace ::ecore;
 
+void EObject::_inverseAdd(::ecore::EStructuralFeature_ptr _feature,
+        ::ecore::EJavaObject const &_newValue)
+{
+    _inverseAdd(eClass()->getFeatureID(_feature), _newValue);
+}
+
+void EObject::_inverseRemove(::ecore::EStructuralFeature_ptr _feature,
+        ::ecore::EJavaObject const &_oldValue)
+{
+    _inverseRemove(eClass()->getFeatureID(_feature), _oldValue);
+}
+
 void EObject::_setEContainer(::ecore::EObject_ptr _eContainer,
         ::ecore::EStructuralFeature_ptr _eContainingFeature)
 {
@@ -283,7 +295,7 @@ void EObject::_initialize()
 {
     /*PROTECTED REGION ID(EObjectImpl_eGet_0) ENABLED START*/
 
-    return eGet(_feature->getFeatureID(), false);
+    return eGet(eClass()->getFeatureID(_feature), false);
 
     /*PROTECTED REGION END*/
 }
@@ -293,7 +305,7 @@ void EObject::_initialize()
 {
     /*PROTECTED REGION ID(EObjectImpl_eGet_1) ENABLED START*/
 
-    return eGet(_feature->getFeatureID(), _resolve);
+    return eGet(eClass()->getFeatureID(_feature), _resolve);
 
     /*PROTECTED REGION END*/
 }
@@ -302,21 +314,21 @@ void EObject::eSet(::ecore::EStructuralFeature_ptr _feature,
         ::ecore::EJavaObject const &_newValue)
 {
     /*PROTECTED REGION ID(EObjectImpl_eSet) ENABLED START*/
-    eSet(_feature->getFeatureID(), _newValue);
+    eSet(eClass()->getFeatureID(_feature), _newValue);
     /*PROTECTED REGION END*/
 }
 
 ::ecore::EBoolean EObject::eIsSet(::ecore::EStructuralFeature_ptr _feature)
 {
     /*PROTECTED REGION ID(EObjectImpl_eIsSet) ENABLED START*/
-    return eIsSet(_feature->getFeatureID());
+    return eIsSet(eClass()->getFeatureID(_feature));
     /*PROTECTED REGION END*/
 }
 
 void EObject::eUnset(::ecore::EStructuralFeature_ptr _feature)
 {
     /*PROTECTED REGION ID(EObjectImpl_eUnset) ENABLED START*/
-    return eUnset(_feature->getFeatureID());
+    return eUnset(eClass()->getFeatureID(_feature));
     /*PROTECTED REGION END*/
 }
 
@@ -373,7 +385,7 @@ void EObject::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EObject::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEObject();
+            ::ecore::EcorePackage::_instance()->getEObject();
     return _eclass;
 }
 

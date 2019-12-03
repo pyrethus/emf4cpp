@@ -43,14 +43,6 @@ using namespace ::ecore;
 // Default constructor
 EEnum::EEnum()
 {
-
-    m_eLiterals.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EEnumLiteral_ptr, -1, true, true >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEEnum__eLiterals() :
-                            ::ecore::EReference_ptr(),
-                    ::ecore::EcorePackage::EENUMLITERAL__EENUM));
-
     /*PROTECTED REGION ID(EEnumImpl__EEnumImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -71,11 +63,24 @@ EEnum::~EEnum()
 
 const ::ecorecpp::mapping::EList< ::ecore::EEnumLiteral_ptr >& EEnum::getELiterals() const
 {
+    if (!m_eLiterals)
+        return const_cast< EEnum* >(this)->getELiterals();
+
     return *m_eLiterals;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EEnumLiteral_ptr >& EEnum::getELiterals()
 {
+    /*PROTECTED REGION ID(EEnum__getELiterals) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eLiterals)
+        m_eLiterals.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EEnumLiteral_ptr, -1, true, true >(this,
+                        ::ecore::EcorePackage::_instance()->getEEnum__eLiterals(),
+                        ::ecore::EcorePackage::_instance()->getEEnumLiteral__eEnum()));
+    /*PROTECTED REGION END*/
     return *m_eLiterals;
 }
 

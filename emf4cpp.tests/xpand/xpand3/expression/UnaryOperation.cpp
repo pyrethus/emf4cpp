@@ -40,7 +40,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 UnaryOperation::UnaryOperation()
 {
-
     /*PROTECTED REGION ID(UnaryOperationImpl__UnaryOperationImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

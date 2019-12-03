@@ -57,7 +57,7 @@ void PrimitiveDef::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::PRIMITIVEDEF__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::toAny(_any, getTypeCode());
@@ -79,7 +79,7 @@ void PrimitiveDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::PRIMITIVEDEF__TYPECODE:
     {
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
@@ -104,7 +104,7 @@ void PrimitiveDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::PRIMITIVEDEF__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
                 > ::is_set(getTypeCode());
     case ::idlmm::IdlmmPackage::PRIMITIVEDEF__KIND:
@@ -127,7 +127,7 @@ void PrimitiveDef::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr PrimitiveDef::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getPrimitiveDef();
+            ::idlmm::IdlmmPackage::_instance()->getPrimitiveDef();
     return _eclass;
 }
 

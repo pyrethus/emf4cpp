@@ -47,7 +47,6 @@ using namespace ::SVG;
 // Default constructor
 Symbol::Symbol()
 {
-
     /*PROTECTED REGION ID(SymbolImpl__SymbolImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

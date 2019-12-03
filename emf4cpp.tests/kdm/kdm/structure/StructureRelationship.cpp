@@ -45,7 +45,6 @@ using namespace ::kdm::structure;
 // Default constructor
 StructureRelationship::StructureRelationship()
 {
-
     /*PROTECTED REGION ID(StructureRelationshipImpl__StructureRelationshipImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

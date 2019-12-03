@@ -44,7 +44,6 @@ using namespace ::kdm::code;
 // Default constructor
 AbstractCodeRelationship::AbstractCodeRelationship()
 {
-
     /*PROTECTED REGION ID(AbstractCodeRelationshipImpl__AbstractCodeRelationshipImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

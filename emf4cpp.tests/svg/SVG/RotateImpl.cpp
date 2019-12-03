@@ -58,7 +58,7 @@ void Rotate::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::ROTATE__ATTOWNER:
     {
         _any = getAttOwner().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -91,7 +91,7 @@ void Rotate::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::ROTATE__ATTOWNER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -132,7 +132,7 @@ void Rotate::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::ROTATE__ATTOWNER:
         return getAttOwner().size() > 0;
     case ::SVG::SVGPackage::ROTATE__ANGLE:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
@@ -160,7 +160,7 @@ void Rotate::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Rotate::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getRotate();
+            ::SVG::SVGPackage::_instance()->getRotate();
     return _eclass;
 }
 
@@ -171,7 +171,7 @@ void Rotate::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::ROTATE__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -197,7 +197,7 @@ void Rotate::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::ROTATE__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

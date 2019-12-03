@@ -41,12 +41,6 @@ using namespace ::idlmm;
 // Default constructor
 StructDef::StructDef()
 {
-
-    m_members.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::idlmm::Field_ptr, -1,
-                    true, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getStructDef__members()));
-
     /*PROTECTED REGION ID(StructDefImpl__StructDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -67,11 +61,23 @@ StructDef::~StructDef()
 
 const ::ecorecpp::mapping::EList< ::idlmm::Field_ptr >& StructDef::getMembers() const
 {
+    if (!m_members)
+        return const_cast< StructDef* >(this)->getMembers();
+
     return *m_members;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::Field_ptr >& StructDef::getMembers()
 {
+    /*PROTECTED REGION ID(StructDef__getMembers) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_members)
+        m_members.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::idlmm::Field_ptr,
+                        -1, true, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getStructDef__members()));
+    /*PROTECTED REGION END*/
     return *m_members;
 }
 

@@ -40,7 +40,6 @@ using namespace ::eopposite;
 // Default constructor
 RightHand::RightHand()
 {
-
     /*PROTECTED REGION ID(RightHandImpl__RightHandImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -99,13 +98,15 @@ void RightHand::setLeftee(::eopposite::LeftHand_ptr _leftee)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_leftee)
         {
-            _old_leftee->_inverseRemove(
-                    ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE, _this);
+            _old_leftee->::ecore::EObject::_inverseRemove(
+                    ::eopposite::EoppositePackage::_instance()->getLeftHand__rightee(),
+                    _this);
         }
-        if (_leftee)
+        if (_leftee && ::eopposite::EoppositePackage::_instance())
         {
-            _leftee->_inverseAdd(
-                    ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE, _this);
+            _leftee->::ecore::EObject::_inverseAdd(
+                    ::eopposite::EoppositePackage::_instance()->getLeftHand__rightee(),
+                    _this);
         }
         basicsetLeftee(_leftee);
     }

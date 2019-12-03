@@ -48,7 +48,6 @@ using namespace ::kdm::structure;
 // Default constructor
 Subsystem::Subsystem()
 {
-
     /*PROTECTED REGION ID(SubsystemImpl__SubsystemImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

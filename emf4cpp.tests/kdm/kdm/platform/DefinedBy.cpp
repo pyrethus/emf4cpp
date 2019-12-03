@@ -46,7 +46,6 @@ using namespace ::kdm::platform;
 // Default constructor
 DefinedBy::DefinedBy()
 {
-
     /*PROTECTED REGION ID(DefinedByImpl__DefinedByImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

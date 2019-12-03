@@ -42,689 +42,719 @@ namespace kdm
         static PlatformPackage_ptr _instance();
         static PlatformPackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier AbstractPlatformElement
         static const int ABSTRACTPLATFORMELEMENT = 0;
 
+        static const int ABSTRACTPLATFORMELEMENT__ATTRIBUTE = 0;
+
+        static const int ABSTRACTPLATFORMELEMENT__ANNOTATION = 1;
+
+        static const int ABSTRACTPLATFORMELEMENT__STEREOTYPE = 2;
+
+        static const int ABSTRACTPLATFORMELEMENT__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTPLATFORMELEMENT__NAME = 4;
+
+        static const int ABSTRACTPLATFORMELEMENT__SOURCE = 5;
+
+        static const int ABSTRACTPLATFORMELEMENT__RELATION = 6;
+
+        static const int ABSTRACTPLATFORMELEMENT__ABSTRACTION = 7;
+
+        static const int ABSTRACTPLATFORMELEMENT__IMPLEMENTATION = 8;
+
+        static const int ABSTRACTPLATFORMELEMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier AbstractPlatformRelationship
         static const int ABSTRACTPLATFORMRELATIONSHIP = 1;
 
+        static const int ABSTRACTPLATFORMRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int ABSTRACTPLATFORMRELATIONSHIP__ANNOTATION = 1;
+
+        static const int ABSTRACTPLATFORMRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int ABSTRACTPLATFORMRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTPLATFORMRELATIONSHIP_FEATURE_COUNT = 4;
+
+        // IDs for classifier BindsTo
         static const int BINDSTO = 2;
 
+        static const int BINDSTO__ATTRIBUTE = 0;
+
+        static const int BINDSTO__ANNOTATION = 1;
+
+        static const int BINDSTO__STEREOTYPE = 2;
+
+        static const int BINDSTO__TAGGEDVALUE = 3;
+
+        static const int BINDSTO__TO = 4;
+
+        static const int BINDSTO__FROM = 5;
+
+        static const int BINDSTO_FEATURE_COUNT = 6;
+
+        // IDs for classifier DataManager
         static const int DATAMANAGER = 3;
 
+        static const int DATAMANAGER__ATTRIBUTE = 0;
+
+        static const int DATAMANAGER__ANNOTATION = 1;
+
+        static const int DATAMANAGER__STEREOTYPE = 2;
+
+        static const int DATAMANAGER__TAGGEDVALUE = 3;
+
+        static const int DATAMANAGER__NAME = 4;
+
+        static const int DATAMANAGER__SOURCE = 5;
+
+        static const int DATAMANAGER__RELATION = 6;
+
+        static const int DATAMANAGER__ABSTRACTION = 7;
+
+        static const int DATAMANAGER__IMPLEMENTATION = 8;
+
+        static const int DATAMANAGER__PLATFORMELEMENT = 9;
+
+        static const int DATAMANAGER_FEATURE_COUNT = 10;
+
+        // IDs for classifier DefinedBy
         static const int DEFINEDBY = 4;
 
+        static const int DEFINEDBY__ATTRIBUTE = 0;
+
+        static const int DEFINEDBY__ANNOTATION = 1;
+
+        static const int DEFINEDBY__STEREOTYPE = 2;
+
+        static const int DEFINEDBY__TAGGEDVALUE = 3;
+
+        static const int DEFINEDBY__TO = 4;
+
+        static const int DEFINEDBY__FROM = 5;
+
+        static const int DEFINEDBY_FEATURE_COUNT = 6;
+
+        // IDs for classifier DeployedComponent
         static const int DEPLOYEDCOMPONENT = 5;
 
+        static const int DEPLOYEDCOMPONENT__ATTRIBUTE = 0;
+
+        static const int DEPLOYEDCOMPONENT__ANNOTATION = 1;
+
+        static const int DEPLOYEDCOMPONENT__STEREOTYPE = 2;
+
+        static const int DEPLOYEDCOMPONENT__TAGGEDVALUE = 3;
+
+        static const int DEPLOYEDCOMPONENT__NAME = 4;
+
+        static const int DEPLOYEDCOMPONENT__SOURCE = 5;
+
+        static const int DEPLOYEDCOMPONENT__RELATION = 6;
+
+        static const int DEPLOYEDCOMPONENT__ABSTRACTION = 7;
+
+        static const int DEPLOYEDCOMPONENT__IMPLEMENTATION = 8;
+
+        static const int DEPLOYEDCOMPONENT__GROUPEDCODE = 9;
+
+        static const int DEPLOYEDCOMPONENT_FEATURE_COUNT = 10;
+
+        // IDs for classifier DeployedResource
         static const int DEPLOYEDRESOURCE = 6;
 
+        static const int DEPLOYEDRESOURCE__ATTRIBUTE = 0;
+
+        static const int DEPLOYEDRESOURCE__ANNOTATION = 1;
+
+        static const int DEPLOYEDRESOURCE__STEREOTYPE = 2;
+
+        static const int DEPLOYEDRESOURCE__TAGGEDVALUE = 3;
+
+        static const int DEPLOYEDRESOURCE__NAME = 4;
+
+        static const int DEPLOYEDRESOURCE__SOURCE = 5;
+
+        static const int DEPLOYEDRESOURCE__RELATION = 6;
+
+        static const int DEPLOYEDRESOURCE__ABSTRACTION = 7;
+
+        static const int DEPLOYEDRESOURCE__IMPLEMENTATION = 8;
+
+        static const int DEPLOYEDRESOURCE__PLATFORMELEMENT = 9;
+
+        static const int DEPLOYEDRESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier DeployedSoftwareSystem
         static const int DEPLOYEDSOFTWARESYSTEM = 7;
 
+        static const int DEPLOYEDSOFTWARESYSTEM__ATTRIBUTE = 0;
+
+        static const int DEPLOYEDSOFTWARESYSTEM__ANNOTATION = 1;
+
+        static const int DEPLOYEDSOFTWARESYSTEM__STEREOTYPE = 2;
+
+        static const int DEPLOYEDSOFTWARESYSTEM__TAGGEDVALUE = 3;
+
+        static const int DEPLOYEDSOFTWARESYSTEM__NAME = 4;
+
+        static const int DEPLOYEDSOFTWARESYSTEM__SOURCE = 5;
+
+        static const int DEPLOYEDSOFTWARESYSTEM__RELATION = 6;
+
+        static const int DEPLOYEDSOFTWARESYSTEM__ABSTRACTION = 7;
+
+        static const int DEPLOYEDSOFTWARESYSTEM__IMPLEMENTATION = 8;
+
+        static const int DEPLOYEDSOFTWARESYSTEM__GROUPEDCOMPONENT = 9;
+
+        static const int DEPLOYEDSOFTWARESYSTEM_FEATURE_COUNT = 10;
+
+        // IDs for classifier ExecutionResource
         static const int EXECUTIONRESOURCE = 8;
 
+        static const int EXECUTIONRESOURCE__ATTRIBUTE = 0;
+
+        static const int EXECUTIONRESOURCE__ANNOTATION = 1;
+
+        static const int EXECUTIONRESOURCE__STEREOTYPE = 2;
+
+        static const int EXECUTIONRESOURCE__TAGGEDVALUE = 3;
+
+        static const int EXECUTIONRESOURCE__NAME = 4;
+
+        static const int EXECUTIONRESOURCE__SOURCE = 5;
+
+        static const int EXECUTIONRESOURCE__RELATION = 6;
+
+        static const int EXECUTIONRESOURCE__ABSTRACTION = 7;
+
+        static const int EXECUTIONRESOURCE__IMPLEMENTATION = 8;
+
+        static const int EXECUTIONRESOURCE__PLATFORMELEMENT = 9;
+
+        static const int EXECUTIONRESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier ExternalActor
         static const int EXTERNALACTOR = 9;
 
+        static const int EXTERNALACTOR__ATTRIBUTE = 0;
+
+        static const int EXTERNALACTOR__ANNOTATION = 1;
+
+        static const int EXTERNALACTOR__STEREOTYPE = 2;
+
+        static const int EXTERNALACTOR__TAGGEDVALUE = 3;
+
+        static const int EXTERNALACTOR__NAME = 4;
+
+        static const int EXTERNALACTOR__SOURCE = 5;
+
+        static const int EXTERNALACTOR__RELATION = 6;
+
+        static const int EXTERNALACTOR__ABSTRACTION = 7;
+
+        static const int EXTERNALACTOR__IMPLEMENTATION = 8;
+
+        static const int EXTERNALACTOR__KIND = 9;
+
+        static const int EXTERNALACTOR__PLATFORMELEMENT = 10;
+
+        static const int EXTERNALACTOR_FEATURE_COUNT = 11;
+
+        // IDs for classifier FileResource
         static const int FILERESOURCE = 10;
 
+        static const int FILERESOURCE__ATTRIBUTE = 0;
+
+        static const int FILERESOURCE__ANNOTATION = 1;
+
+        static const int FILERESOURCE__STEREOTYPE = 2;
+
+        static const int FILERESOURCE__TAGGEDVALUE = 3;
+
+        static const int FILERESOURCE__NAME = 4;
+
+        static const int FILERESOURCE__SOURCE = 5;
+
+        static const int FILERESOURCE__RELATION = 6;
+
+        static const int FILERESOURCE__ABSTRACTION = 7;
+
+        static const int FILERESOURCE__IMPLEMENTATION = 8;
+
+        static const int FILERESOURCE__PLATFORMELEMENT = 9;
+
+        static const int FILERESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier Loads
         static const int LOADS = 11;
 
+        static const int LOADS__ATTRIBUTE = 0;
+
+        static const int LOADS__ANNOTATION = 1;
+
+        static const int LOADS__STEREOTYPE = 2;
+
+        static const int LOADS__TAGGEDVALUE = 3;
+
+        static const int LOADS__TO = 4;
+
+        static const int LOADS__FROM = 5;
+
+        static const int LOADS_FEATURE_COUNT = 6;
+
+        // IDs for classifier LockResource
         static const int LOCKRESOURCE = 12;
 
+        static const int LOCKRESOURCE__ATTRIBUTE = 0;
+
+        static const int LOCKRESOURCE__ANNOTATION = 1;
+
+        static const int LOCKRESOURCE__STEREOTYPE = 2;
+
+        static const int LOCKRESOURCE__TAGGEDVALUE = 3;
+
+        static const int LOCKRESOURCE__NAME = 4;
+
+        static const int LOCKRESOURCE__SOURCE = 5;
+
+        static const int LOCKRESOURCE__RELATION = 6;
+
+        static const int LOCKRESOURCE__ABSTRACTION = 7;
+
+        static const int LOCKRESOURCE__IMPLEMENTATION = 8;
+
+        static const int LOCKRESOURCE__PLATFORMELEMENT = 9;
+
+        static const int LOCKRESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier Machine
         static const int MACHINE = 13;
 
+        static const int MACHINE__ATTRIBUTE = 0;
+
+        static const int MACHINE__ANNOTATION = 1;
+
+        static const int MACHINE__STEREOTYPE = 2;
+
+        static const int MACHINE__TAGGEDVALUE = 3;
+
+        static const int MACHINE__NAME = 4;
+
+        static const int MACHINE__SOURCE = 5;
+
+        static const int MACHINE__RELATION = 6;
+
+        static const int MACHINE__ABSTRACTION = 7;
+
+        static const int MACHINE__IMPLEMENTATION = 8;
+
+        static const int MACHINE__DEPLOYEDCOMPONENT = 9;
+
+        static const int MACHINE__DEPLOYEDRESOURCE = 10;
+
+        static const int MACHINE_FEATURE_COUNT = 11;
+
+        // IDs for classifier ManagesResource
         static const int MANAGESRESOURCE = 14;
 
+        static const int MANAGESRESOURCE__ATTRIBUTE = 0;
+
+        static const int MANAGESRESOURCE__ANNOTATION = 1;
+
+        static const int MANAGESRESOURCE__STEREOTYPE = 2;
+
+        static const int MANAGESRESOURCE__TAGGEDVALUE = 3;
+
+        static const int MANAGESRESOURCE__TO = 4;
+
+        static const int MANAGESRESOURCE__FROM = 5;
+
+        static const int MANAGESRESOURCE_FEATURE_COUNT = 6;
+
+        // IDs for classifier MarshalledResource
         static const int MARSHALLEDRESOURCE = 15;
 
+        static const int MARSHALLEDRESOURCE__ATTRIBUTE = 0;
+
+        static const int MARSHALLEDRESOURCE__ANNOTATION = 1;
+
+        static const int MARSHALLEDRESOURCE__STEREOTYPE = 2;
+
+        static const int MARSHALLEDRESOURCE__TAGGEDVALUE = 3;
+
+        static const int MARSHALLEDRESOURCE__NAME = 4;
+
+        static const int MARSHALLEDRESOURCE__SOURCE = 5;
+
+        static const int MARSHALLEDRESOURCE__RELATION = 6;
+
+        static const int MARSHALLEDRESOURCE__ABSTRACTION = 7;
+
+        static const int MARSHALLEDRESOURCE__IMPLEMENTATION = 8;
+
+        static const int MARSHALLEDRESOURCE__PLATFORMELEMENT = 9;
+
+        static const int MARSHALLEDRESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier MessagingResource
         static const int MESSAGINGRESOURCE = 16;
 
+        static const int MESSAGINGRESOURCE__ATTRIBUTE = 0;
+
+        static const int MESSAGINGRESOURCE__ANNOTATION = 1;
+
+        static const int MESSAGINGRESOURCE__STEREOTYPE = 2;
+
+        static const int MESSAGINGRESOURCE__TAGGEDVALUE = 3;
+
+        static const int MESSAGINGRESOURCE__NAME = 4;
+
+        static const int MESSAGINGRESOURCE__SOURCE = 5;
+
+        static const int MESSAGINGRESOURCE__RELATION = 6;
+
+        static const int MESSAGINGRESOURCE__ABSTRACTION = 7;
+
+        static const int MESSAGINGRESOURCE__IMPLEMENTATION = 8;
+
+        static const int MESSAGINGRESOURCE__PLATFORMELEMENT = 9;
+
+        static const int MESSAGINGRESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier NamingResource
         static const int NAMINGRESOURCE = 17;
 
+        static const int NAMINGRESOURCE__ATTRIBUTE = 0;
+
+        static const int NAMINGRESOURCE__ANNOTATION = 1;
+
+        static const int NAMINGRESOURCE__STEREOTYPE = 2;
+
+        static const int NAMINGRESOURCE__TAGGEDVALUE = 3;
+
+        static const int NAMINGRESOURCE__NAME = 4;
+
+        static const int NAMINGRESOURCE__SOURCE = 5;
+
+        static const int NAMINGRESOURCE__RELATION = 6;
+
+        static const int NAMINGRESOURCE__ABSTRACTION = 7;
+
+        static const int NAMINGRESOURCE__IMPLEMENTATION = 8;
+
+        static const int NAMINGRESOURCE__PLATFORMELEMENT = 9;
+
+        static const int NAMINGRESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier PlatformAction
         static const int PLATFORMACTION = 18;
 
+        static const int PLATFORMACTION__ATTRIBUTE = 0;
+
+        static const int PLATFORMACTION__ANNOTATION = 1;
+
+        static const int PLATFORMACTION__STEREOTYPE = 2;
+
+        static const int PLATFORMACTION__TAGGEDVALUE = 3;
+
+        static const int PLATFORMACTION__NAME = 4;
+
+        static const int PLATFORMACTION__SOURCE = 5;
+
+        static const int PLATFORMACTION__RELATION = 6;
+
+        static const int PLATFORMACTION__ABSTRACTION = 7;
+
+        static const int PLATFORMACTION__IMPLEMENTATION = 8;
+
+        static const int PLATFORMACTION__KIND = 9;
+
+        static const int PLATFORMACTION__PLATFORMELEMENT = 10;
+
+        static const int PLATFORMACTION_FEATURE_COUNT = 11;
+
+        // IDs for classifier PlatformElement
         static const int PLATFORMELEMENT = 19;
 
+        static const int PLATFORMELEMENT__ATTRIBUTE = 0;
+
+        static const int PLATFORMELEMENT__ANNOTATION = 1;
+
+        static const int PLATFORMELEMENT__STEREOTYPE = 2;
+
+        static const int PLATFORMELEMENT__TAGGEDVALUE = 3;
+
+        static const int PLATFORMELEMENT__NAME = 4;
+
+        static const int PLATFORMELEMENT__SOURCE = 5;
+
+        static const int PLATFORMELEMENT__RELATION = 6;
+
+        static const int PLATFORMELEMENT__ABSTRACTION = 7;
+
+        static const int PLATFORMELEMENT__IMPLEMENTATION = 8;
+
+        static const int PLATFORMELEMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier PlatformEvent
         static const int PLATFORMEVENT = 20;
 
+        static const int PLATFORMEVENT__ATTRIBUTE = 0;
+
+        static const int PLATFORMEVENT__ANNOTATION = 1;
+
+        static const int PLATFORMEVENT__STEREOTYPE = 2;
+
+        static const int PLATFORMEVENT__TAGGEDVALUE = 3;
+
+        static const int PLATFORMEVENT__NAME = 4;
+
+        static const int PLATFORMEVENT__SOURCE = 5;
+
+        static const int PLATFORMEVENT__RELATION = 6;
+
+        static const int PLATFORMEVENT__ABSTRACTION = 7;
+
+        static const int PLATFORMEVENT__IMPLEMENTATION = 8;
+
+        static const int PLATFORMEVENT__KIND = 9;
+
+        static const int PLATFORMEVENT_FEATURE_COUNT = 10;
+
+        // IDs for classifier PlatformModel
         static const int PLATFORMMODEL = 21;
 
+        static const int PLATFORMMODEL__ATTRIBUTE = 0;
+
+        static const int PLATFORMMODEL__ANNOTATION = 1;
+
+        static const int PLATFORMMODEL__STEREOTYPE = 2;
+
+        static const int PLATFORMMODEL__TAGGEDVALUE = 3;
+
+        static const int PLATFORMMODEL__AUDIT = 4;
+
+        static const int PLATFORMMODEL__EXTENSIONFAMILY = 5;
+
+        static const int PLATFORMMODEL__NAME = 6;
+
+        static const int PLATFORMMODEL__PLATFORMELEMENT = 7;
+
+        static const int PLATFORMMODEL_FEATURE_COUNT = 8;
+
+        // IDs for classifier PlatformRelationship
         static const int PLATFORMRELATIONSHIP = 22;
 
+        static const int PLATFORMRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int PLATFORMRELATIONSHIP__ANNOTATION = 1;
+
+        static const int PLATFORMRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int PLATFORMRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int PLATFORMRELATIONSHIP__TO = 4;
+
+        static const int PLATFORMRELATIONSHIP__FROM = 5;
+
+        static const int PLATFORMRELATIONSHIP_FEATURE_COUNT = 6;
+
+        // IDs for classifier Process
         static const int PROCESS = 23;
 
+        static const int PROCESS__ATTRIBUTE = 0;
+
+        static const int PROCESS__ANNOTATION = 1;
+
+        static const int PROCESS__STEREOTYPE = 2;
+
+        static const int PROCESS__TAGGEDVALUE = 3;
+
+        static const int PROCESS__NAME = 4;
+
+        static const int PROCESS__SOURCE = 5;
+
+        static const int PROCESS__RELATION = 6;
+
+        static const int PROCESS__ABSTRACTION = 7;
+
+        static const int PROCESS__IMPLEMENTATION = 8;
+
+        static const int PROCESS__PLATFORMELEMENT = 9;
+
+        static const int PROCESS_FEATURE_COUNT = 10;
+
+        // IDs for classifier ReadsResource
         static const int READSRESOURCE = 24;
 
+        static const int READSRESOURCE__ATTRIBUTE = 0;
+
+        static const int READSRESOURCE__ANNOTATION = 1;
+
+        static const int READSRESOURCE__STEREOTYPE = 2;
+
+        static const int READSRESOURCE__TAGGEDVALUE = 3;
+
+        static const int READSRESOURCE__TO = 4;
+
+        static const int READSRESOURCE__FROM = 5;
+
+        static const int READSRESOURCE_FEATURE_COUNT = 6;
+
+        // IDs for classifier Requires
         static const int REQUIRES = 25;
 
+        static const int REQUIRES__ATTRIBUTE = 0;
+
+        static const int REQUIRES__ANNOTATION = 1;
+
+        static const int REQUIRES__STEREOTYPE = 2;
+
+        static const int REQUIRES__TAGGEDVALUE = 3;
+
+        static const int REQUIRES__TO = 4;
+
+        static const int REQUIRES__FROM = 5;
+
+        static const int REQUIRES_FEATURE_COUNT = 6;
+
+        // IDs for classifier ResourceType
         static const int RESOURCETYPE = 26;
 
+        static const int RESOURCETYPE__ATTRIBUTE = 0;
+
+        static const int RESOURCETYPE__ANNOTATION = 1;
+
+        static const int RESOURCETYPE__STEREOTYPE = 2;
+
+        static const int RESOURCETYPE__TAGGEDVALUE = 3;
+
+        static const int RESOURCETYPE__NAME = 4;
+
+        static const int RESOURCETYPE__SOURCE = 5;
+
+        static const int RESOURCETYPE__RELATION = 6;
+
+        static const int RESOURCETYPE__ABSTRACTION = 7;
+
+        static const int RESOURCETYPE__IMPLEMENTATION = 8;
+
+        static const int RESOURCETYPE__PLATFORMELEMENT = 9;
+
+        static const int RESOURCETYPE_FEATURE_COUNT = 10;
+
+        // IDs for classifier RuntimeResource
         static const int RUNTIMERESOURCE = 27;
 
+        static const int RUNTIMERESOURCE__ATTRIBUTE = 0;
+
+        static const int RUNTIMERESOURCE__ANNOTATION = 1;
+
+        static const int RUNTIMERESOURCE__STEREOTYPE = 2;
+
+        static const int RUNTIMERESOURCE__TAGGEDVALUE = 3;
+
+        static const int RUNTIMERESOURCE__NAME = 4;
+
+        static const int RUNTIMERESOURCE__SOURCE = 5;
+
+        static const int RUNTIMERESOURCE__RELATION = 6;
+
+        static const int RUNTIMERESOURCE__ABSTRACTION = 7;
+
+        static const int RUNTIMERESOURCE__IMPLEMENTATION = 8;
+
+        static const int RUNTIMERESOURCE__PLATFORMELEMENT = 9;
+
+        static const int RUNTIMERESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier Spawns
         static const int SPAWNS = 28;
 
+        static const int SPAWNS__ATTRIBUTE = 0;
+
+        static const int SPAWNS__ANNOTATION = 1;
+
+        static const int SPAWNS__STEREOTYPE = 2;
+
+        static const int SPAWNS__TAGGEDVALUE = 3;
+
+        static const int SPAWNS__TO = 4;
+
+        static const int SPAWNS__FROM = 5;
+
+        static const int SPAWNS_FEATURE_COUNT = 6;
+
+        // IDs for classifier StreamResource
         static const int STREAMRESOURCE = 29;
 
+        static const int STREAMRESOURCE__ATTRIBUTE = 0;
+
+        static const int STREAMRESOURCE__ANNOTATION = 1;
+
+        static const int STREAMRESOURCE__STEREOTYPE = 2;
+
+        static const int STREAMRESOURCE__TAGGEDVALUE = 3;
+
+        static const int STREAMRESOURCE__NAME = 4;
+
+        static const int STREAMRESOURCE__SOURCE = 5;
+
+        static const int STREAMRESOURCE__RELATION = 6;
+
+        static const int STREAMRESOURCE__ABSTRACTION = 7;
+
+        static const int STREAMRESOURCE__IMPLEMENTATION = 8;
+
+        static const int STREAMRESOURCE__PLATFORMELEMENT = 9;
+
+        static const int STREAMRESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier Thread
         static const int THREAD = 30;
 
+        static const int THREAD__ATTRIBUTE = 0;
+
+        static const int THREAD__ANNOTATION = 1;
+
+        static const int THREAD__STEREOTYPE = 2;
+
+        static const int THREAD__TAGGEDVALUE = 3;
+
+        static const int THREAD__NAME = 4;
+
+        static const int THREAD__SOURCE = 5;
+
+        static const int THREAD__RELATION = 6;
+
+        static const int THREAD__ABSTRACTION = 7;
+
+        static const int THREAD__IMPLEMENTATION = 8;
+
+        static const int THREAD__PLATFORMELEMENT = 9;
+
+        static const int THREAD_FEATURE_COUNT = 10;
+
+        // IDs for classifier WritesResource
         static const int WRITESRESOURCE = 31;
 
-        static const int ABSTRACTPLATFORMELEMENT__SOURCE = 230;
+        static const int WRITESRESOURCE__ATTRIBUTE = 0;
 
-        static const int ABSTRACTPLATFORMELEMENT__RELATION = 231;
+        static const int WRITESRESOURCE__ANNOTATION = 1;
 
-        static const int ABSTRACTPLATFORMELEMENT__ABSTRACTION = 232;
+        static const int WRITESRESOURCE__STEREOTYPE = 2;
 
-        static const int ABSTRACTPLATFORMELEMENT__IMPLEMENTATION = 233;
+        static const int WRITESRESOURCE__TAGGEDVALUE = 3;
 
-        static const int PLATFORMMODEL__PLATFORMELEMENT = 234;
+        static const int WRITESRESOURCE__TO = 4;
 
-        static const int REQUIRES__TO = 235;
+        static const int WRITESRESOURCE__FROM = 5;
 
-        static const int REQUIRES__FROM = 236;
-
-        static const int RESOURCETYPE__PLATFORMELEMENT = 237;
-
-        static const int PLATFORMACTION__KIND = 238;
-
-        static const int PLATFORMACTION__PLATFORMELEMENT = 239;
-
-        static const int BINDSTO__TO = 240;
-
-        static const int BINDSTO__FROM = 241;
-
-        static const int PLATFORMRELATIONSHIP__TO = 242;
-
-        static const int PLATFORMRELATIONSHIP__FROM = 243;
-
-        static const int PLATFORMEVENT__KIND = 244;
-
-        static const int DEPLOYEDSOFTWARESYSTEM__GROUPEDCOMPONENT = 245;
-
-        static const int MACHINE__DEPLOYEDCOMPONENT = 246;
-
-        static const int MACHINE__DEPLOYEDRESOURCE = 247;
-
-        static const int DEPLOYEDCOMPONENT__GROUPEDCODE = 248;
-
-        static const int DEPLOYEDRESOURCE__PLATFORMELEMENT = 249;
-
-        static const int LOADS__TO = 250;
-
-        static const int LOADS__FROM = 251;
-
-        static const int SPAWNS__TO = 252;
-
-        static const int SPAWNS__FROM = 253;
-
-        static const int READSRESOURCE__TO = 254;
-
-        static const int READSRESOURCE__FROM = 255;
-
-        static const int WRITESRESOURCE__TO = 256;
-
-        static const int WRITESRESOURCE__FROM = 257;
-
-        static const int MANAGESRESOURCE__TO = 258;
-
-        static const int MANAGESRESOURCE__FROM = 259;
-
-        static const int DEFINEDBY__TO = 260;
-
-        static const int DEFINEDBY__FROM = 261;
-
-        // IDs for classifiers for class AbstractPlatformElement 
-
-        static const int ABSTRACTPLATFORMELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTPLATFORMELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTPLATFORMELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTPLATFORMELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ABSTRACTPLATFORMELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        // IDs for classifiers for class AbstractPlatformRelationship 
-
-        static const int ABSTRACTPLATFORMRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTPLATFORMRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTPLATFORMRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTPLATFORMRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class BindsTo 
-
-        static const int BINDSTO__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int BINDSTO__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int BINDSTO__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int BINDSTO__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class DataManager 
-
-        static const int DATAMANAGER__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DATAMANAGER__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DATAMANAGER__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DATAMANAGER__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DATAMANAGER__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DATAMANAGER__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int DATAMANAGER__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int DATAMANAGER__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int DATAMANAGER__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int DATAMANAGER__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class DefinedBy 
-
-        static const int DEFINEDBY__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DEFINEDBY__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DEFINEDBY__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DEFINEDBY__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class DeployedComponent 
-
-        static const int DEPLOYEDCOMPONENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DEPLOYEDCOMPONENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DEPLOYEDCOMPONENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DEPLOYEDCOMPONENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DEPLOYEDCOMPONENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DEPLOYEDCOMPONENT__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int DEPLOYEDCOMPONENT__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int DEPLOYEDCOMPONENT__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int DEPLOYEDCOMPONENT__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class DeployedResource 
-
-        static const int DEPLOYEDRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DEPLOYEDRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DEPLOYEDRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DEPLOYEDRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DEPLOYEDRESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DEPLOYEDRESOURCE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int DEPLOYEDRESOURCE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int DEPLOYEDRESOURCE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int DEPLOYEDRESOURCE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class DeployedSoftwareSystem 
-
-        static const int DEPLOYEDSOFTWARESYSTEM__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DEPLOYEDSOFTWARESYSTEM__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DEPLOYEDSOFTWARESYSTEM__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DEPLOYEDSOFTWARESYSTEM__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DEPLOYEDSOFTWARESYSTEM__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DEPLOYEDSOFTWARESYSTEM__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int DEPLOYEDSOFTWARESYSTEM__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int DEPLOYEDSOFTWARESYSTEM__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int DEPLOYEDSOFTWARESYSTEM__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class ExecutionResource 
-
-        static const int EXECUTIONRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXECUTIONRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EXECUTIONRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EXECUTIONRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int EXECUTIONRESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int EXECUTIONRESOURCE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int EXECUTIONRESOURCE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int EXECUTIONRESOURCE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int EXECUTIONRESOURCE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int EXECUTIONRESOURCE__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class ExternalActor 
-
-        static const int EXTERNALACTOR__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXTERNALACTOR__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EXTERNALACTOR__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EXTERNALACTOR__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int EXTERNALACTOR__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int EXTERNALACTOR__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int EXTERNALACTOR__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int EXTERNALACTOR__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int EXTERNALACTOR__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int EXTERNALACTOR__KIND = PLATFORMACTION__KIND;
-
-        static const int EXTERNALACTOR__PLATFORMELEMENT = PLATFORMACTION__PLATFORMELEMENT;
-
-        // IDs for classifiers for class FileResource 
-
-        static const int FILERESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int FILERESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int FILERESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int FILERESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int FILERESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int FILERESOURCE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int FILERESOURCE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int FILERESOURCE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int FILERESOURCE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int FILERESOURCE__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class Loads 
-
-        static const int LOADS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int LOADS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int LOADS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int LOADS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class LockResource 
-
-        static const int LOCKRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int LOCKRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int LOCKRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int LOCKRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int LOCKRESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int LOCKRESOURCE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int LOCKRESOURCE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int LOCKRESOURCE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int LOCKRESOURCE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int LOCKRESOURCE__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class Machine 
-
-        static const int MACHINE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int MACHINE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int MACHINE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int MACHINE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int MACHINE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int MACHINE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int MACHINE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int MACHINE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int MACHINE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class ManagesResource 
-
-        static const int MANAGESRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int MANAGESRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int MANAGESRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int MANAGESRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class MarshalledResource 
-
-        static const int MARSHALLEDRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int MARSHALLEDRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int MARSHALLEDRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int MARSHALLEDRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int MARSHALLEDRESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int MARSHALLEDRESOURCE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int MARSHALLEDRESOURCE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int MARSHALLEDRESOURCE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int MARSHALLEDRESOURCE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int MARSHALLEDRESOURCE__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class MessagingResource 
-
-        static const int MESSAGINGRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int MESSAGINGRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int MESSAGINGRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int MESSAGINGRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int MESSAGINGRESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int MESSAGINGRESOURCE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int MESSAGINGRESOURCE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int MESSAGINGRESOURCE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int MESSAGINGRESOURCE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int MESSAGINGRESOURCE__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class NamingResource 
-
-        static const int NAMINGRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int NAMINGRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int NAMINGRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int NAMINGRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int NAMINGRESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int NAMINGRESOURCE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int NAMINGRESOURCE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int NAMINGRESOURCE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int NAMINGRESOURCE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int NAMINGRESOURCE__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class PlatformAction 
-
-        static const int PLATFORMACTION__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PLATFORMACTION__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PLATFORMACTION__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PLATFORMACTION__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PLATFORMACTION__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int PLATFORMACTION__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int PLATFORMACTION__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int PLATFORMACTION__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int PLATFORMACTION__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class PlatformElement 
-
-        static const int PLATFORMELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PLATFORMELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PLATFORMELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PLATFORMELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PLATFORMELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int PLATFORMELEMENT__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int PLATFORMELEMENT__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int PLATFORMELEMENT__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int PLATFORMELEMENT__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class PlatformEvent 
-
-        static const int PLATFORMEVENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PLATFORMEVENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PLATFORMEVENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PLATFORMEVENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PLATFORMEVENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int PLATFORMEVENT__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int PLATFORMEVENT__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int PLATFORMEVENT__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int PLATFORMEVENT__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class PlatformModel 
-
-        static const int PLATFORMMODEL__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PLATFORMMODEL__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PLATFORMMODEL__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PLATFORMMODEL__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PLATFORMMODEL__AUDIT = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT;
-
-        static const int PLATFORMMODEL__EXTENSIONFAMILY = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY;
-
-        static const int PLATFORMMODEL__NAME = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME;
-
-        // IDs for classifiers for class PlatformRelationship 
-
-        static const int PLATFORMRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PLATFORMRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PLATFORMRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PLATFORMRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Process 
-
-        static const int PROCESS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PROCESS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PROCESS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PROCESS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PROCESS__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int PROCESS__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int PROCESS__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int PROCESS__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int PROCESS__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int PROCESS__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class ReadsResource 
-
-        static const int READSRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int READSRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int READSRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int READSRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Requires 
-
-        static const int REQUIRES__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int REQUIRES__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int REQUIRES__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int REQUIRES__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ResourceType 
-
-        static const int RESOURCETYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int RESOURCETYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int RESOURCETYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int RESOURCETYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int RESOURCETYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int RESOURCETYPE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int RESOURCETYPE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int RESOURCETYPE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int RESOURCETYPE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class RuntimeResource 
-
-        static const int RUNTIMERESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int RUNTIMERESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int RUNTIMERESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int RUNTIMERESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int RUNTIMERESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int RUNTIMERESOURCE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int RUNTIMERESOURCE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int RUNTIMERESOURCE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int RUNTIMERESOURCE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int RUNTIMERESOURCE__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class Spawns 
-
-        static const int SPAWNS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SPAWNS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SPAWNS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SPAWNS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class StreamResource 
-
-        static const int STREAMRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int STREAMRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int STREAMRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int STREAMRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int STREAMRESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int STREAMRESOURCE__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int STREAMRESOURCE__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int STREAMRESOURCE__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int STREAMRESOURCE__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int STREAMRESOURCE__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class Thread 
-
-        static const int THREAD__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int THREAD__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int THREAD__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int THREAD__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int THREAD__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int THREAD__SOURCE = ABSTRACTPLATFORMELEMENT__SOURCE;
-
-        static const int THREAD__RELATION = ABSTRACTPLATFORMELEMENT__RELATION;
-
-        static const int THREAD__ABSTRACTION = ABSTRACTPLATFORMELEMENT__ABSTRACTION;
-
-        static const int THREAD__IMPLEMENTATION = ABSTRACTPLATFORMELEMENT__IMPLEMENTATION;
-
-        static const int THREAD__PLATFORMELEMENT = RESOURCETYPE__PLATFORMELEMENT;
-
-        // IDs for classifiers for class WritesResource 
-
-        static const int WRITESRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int WRITESRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int WRITESRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int WRITESRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
+        static const int WRITESRESOURCE_FEATURE_COUNT = 6;
 
         // EClassifiers methods
 

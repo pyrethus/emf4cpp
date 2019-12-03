@@ -44,17 +44,17 @@ void TopLevel::_initialize()
     ::eopposite::NamedObject::_initialize();
 
     // References
-    for (size_t i = 0; i < m_leftees->size(); i++)
+    for (const auto &ref : getLeftees())
     {
-        (*m_leftees)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_rightees->size(); i++)
+    for (const auto &ref : getRightees())
     {
-        (*m_rightees)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_rightMultiples->size(); i++)
+    for (const auto &ref : getRightMultiples())
     {
-        (*m_rightMultiples)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(TopLevelImpl__initialize) START*/
@@ -72,7 +72,7 @@ void TopLevel::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::TOPLEVEL__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -103,7 +103,7 @@ void TopLevel::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::TOPLEVEL__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -144,7 +144,7 @@ void TopLevel::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::TOPLEVEL__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
     case ::eopposite::EoppositePackage::TOPLEVEL__LEFTEES:
@@ -170,7 +170,7 @@ void TopLevel::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr TopLevel::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::eopposite::EoppositePackage* >(::eopposite::EoppositePackage::_instance().get())->getTopLevel();
+            ::eopposite::EoppositePackage::_instance()->getTopLevel();
     return _eclass;
 }
 

@@ -59,12 +59,12 @@ void Audit::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::AUDIT__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::AUDIT__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -97,7 +97,7 @@ void Audit::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::AUDIT__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -105,7 +105,7 @@ void Audit::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::AUDIT__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -146,9 +146,9 @@ void Audit::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::AUDIT__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::AUDIT__ANNOTATION:
         return getAnnotation().size() > 0;
     case ::kdm::kdm::KdmPackage::AUDIT__DESCRIPTION:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
@@ -176,7 +176,7 @@ void Audit::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Audit::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getAudit();
+            ::kdm::kdm::KdmPackage::_instance()->getAudit();
     return _eclass;
 }
 
@@ -187,11 +187,11 @@ void Audit::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::AUDIT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::AUDIT__ANNOTATION:
     {
     }
         return;
@@ -207,11 +207,11 @@ void Audit::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::AUDIT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::AUDIT__ANNOTATION:
     {
     }
         return;

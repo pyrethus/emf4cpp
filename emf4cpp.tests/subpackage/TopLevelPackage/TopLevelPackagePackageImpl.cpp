@@ -50,22 +50,26 @@ void TopLevelPackagePackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = TopLevelPackageFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // TopLevelClass
     m_TopLevelClassEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_TopLevelClassEClass->setClassifierID(TOPLEVELCLASS);
-    m_TopLevelClassEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TopLevelClassEClass);
+    m_TopLevelClassEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TopLevelClassEClass);
     // m_TopLevelClass__reference has already been allocated above
     m_TopLevelClass__reference->setFeatureID(
             ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE);
-    m_TopLevelClassEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TopLevelClassEClass->getEStructuralFeatures()).basicAdd(
             m_TopLevelClass__reference);
+    m_TopLevelClass__reference->basicsetEContainingClass(m_TopLevelClassEClass);
 
     // Create enums
 

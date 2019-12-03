@@ -39,14 +39,6 @@ using namespace ::ecore;
 // Default constructor
 EModelElement::EModelElement()
 {
-
-    m_eAnnotations.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EAnnotation_ptr, -1, true, true >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEModelElement__eAnnotations() :
-                            ::ecore::EReference_ptr(),
-                    ::ecore::EcorePackage::EANNOTATION__EMODELELEMENT));
-
     /*PROTECTED REGION ID(EModelElementImpl__EModelElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -67,11 +59,24 @@ EModelElement::~EModelElement()
 
 const ::ecorecpp::mapping::EList< ::ecore::EAnnotation_ptr >& EModelElement::getEAnnotations() const
 {
+    if (!m_eAnnotations)
+        return const_cast< EModelElement* >(this)->getEAnnotations();
+
     return *m_eAnnotations;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EAnnotation_ptr >& EModelElement::getEAnnotations()
 {
+    /*PROTECTED REGION ID(EModelElement__getEAnnotations) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eAnnotations)
+        m_eAnnotations.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EAnnotation_ptr, -1, true, true >(this,
+                        ::ecore::EcorePackage::_instance()->getEModelElement__eAnnotations(),
+                        ::ecore::EcorePackage::_instance()->getEAnnotation__eModelElement()));
+    /*PROTECTED REGION END*/
     return *m_eAnnotations;
 }
 

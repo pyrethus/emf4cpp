@@ -57,7 +57,7 @@ void Leaf::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::CST::CSTPackage::ELEMENT__KIND:
+    case ::CST::CSTPackage::LEAF__KIND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getKind());
@@ -90,7 +90,7 @@ void Leaf::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::CST::CSTPackage::ELEMENT__KIND:
+    case ::CST::CSTPackage::LEAF__KIND:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -131,7 +131,7 @@ void Leaf::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::CST::CSTPackage::ELEMENT__KIND:
+    case ::CST::CSTPackage::LEAF__KIND:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getKind());
     case ::CST::CSTPackage::LEAF__VALUE:
@@ -160,7 +160,7 @@ void Leaf::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Leaf::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::CST::CSTPackage* >(::CST::CSTPackage::_instance().get())->getLeaf();
+            ::CST::CSTPackage::_instance()->getLeaf();
     return _eclass;
 }
 

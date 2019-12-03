@@ -65,65 +65,65 @@ void Symbol::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::SYMBOL__OWNER:
     {
         _any = getOwner().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::SYMBOL__TARGET:
     {
         _any = getTarget().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::SYMBOL__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::SYMBOL__POSITION:
     {
         _any = ::ecore::as < ::ecore::EObject > (getPosition());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::SYMBOL__SIZE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getSize());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::SYMBOL__ROOT:
     {
         _any = ::ecore::as < ::ecore::EObject > (getRoot());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__FILL:
+    case ::SVG::SVGPackage::SYMBOL__FILL:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
                 > ::toAny(_any, getFill());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__VIEWBOX:
+    case ::SVG::SVGPackage::SYMBOL__VIEWBOX:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
                 > ::toAny(_any, getViewBox());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::SYMBOL__GROUP:
     {
         _any = ::ecore::as < ::ecore::EObject > (getGroup());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__IDENTIFIER:
+    case ::SVG::SVGPackage::SYMBOL__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
                 > ::toAny(_any, getIdentifier());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::SYMBOL__DRAWSMARKER:
     {
         _any = ::ecore::as < ::ecore::EObject > (getDrawsMarker());
     }
         return _any;
-    case ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT:
+    case ::SVG::SVGPackage::SYMBOL__GROUPCONTENT:
     {
         _any = getGroupContent().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -138,7 +138,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::SYMBOL__OWNER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -146,7 +146,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         getOwner().insert_all(*_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::SYMBOL__TARGET:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -154,7 +154,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         getTarget().insert_all(*_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::SYMBOL__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -162,7 +162,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::SYMBOL__POSITION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -170,7 +170,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         setPosition(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::SYMBOL__SIZE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -178,7 +178,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         setSize(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::SYMBOL__ROOT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -186,7 +186,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         setRoot(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__FILL:
+    case ::SVG::SVGPackage::SYMBOL__FILL:
     {
         ::PrimitiveTypes::String _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
@@ -194,7 +194,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         setFill(_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__VIEWBOX:
+    case ::SVG::SVGPackage::SYMBOL__VIEWBOX:
     {
         ::PrimitiveTypes::String _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
@@ -202,7 +202,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         setViewBox(_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::SYMBOL__GROUP:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -210,7 +210,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         setGroup(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__IDENTIFIER:
+    case ::SVG::SVGPackage::SYMBOL__IDENTIFIER:
     {
         ::PrimitiveTypes::String _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
@@ -218,7 +218,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         setIdentifier(_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::SYMBOL__DRAWSMARKER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -226,7 +226,7 @@ void Symbol::eSet(::ecore::EInt _featureID,
         setDrawsMarker(_t1);
     }
         return;
-    case ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT:
+    case ::SVG::SVGPackage::SYMBOL__GROUPCONTENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -243,32 +243,32 @@ void Symbol::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::SYMBOL__OWNER:
         return getOwner().size() > 0;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::SYMBOL__TARGET:
         return getTarget().size() > 0;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::SYMBOL__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::SYMBOL__POSITION:
         return getPosition().get() != nullptr;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::SYMBOL__SIZE:
         return getSize().get() != nullptr;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::SYMBOL__ROOT:
         return getRoot().get() != nullptr;
-    case ::SVG::SVGPackage::ELEMENT__FILL:
+    case ::SVG::SVGPackage::SYMBOL__FILL:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(getFill());
-    case ::SVG::SVGPackage::ELEMENT__VIEWBOX:
+    case ::SVG::SVGPackage::SYMBOL__VIEWBOX:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(getViewBox());
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::SYMBOL__GROUP:
         return getGroup().get() != nullptr;
-    case ::SVG::SVGPackage::ELEMENT__IDENTIFIER:
+    case ::SVG::SVGPackage::SYMBOL__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(getIdentifier());
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::SYMBOL__DRAWSMARKER:
         return getDrawsMarker().get() != nullptr;
-    case ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT:
+    case ::SVG::SVGPackage::SYMBOL__GROUPCONTENT:
         return getGroupContent().size() > 0;
 
     }
@@ -287,7 +287,7 @@ void Symbol::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Symbol::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getSymbol();
+            ::SVG::SVGPackage::_instance()->getSymbol();
     return _eclass;
 }
 
@@ -298,7 +298,7 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::SYMBOL__OWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -312,7 +312,7 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::SYMBOL__TARGET:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -324,7 +324,7 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::SYMBOL__ATTRIBUTE:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -338,15 +338,15 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::SYMBOL__POSITION:
     {
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::SYMBOL__SIZE:
     {
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::SYMBOL__ROOT:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -356,14 +356,15 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
         if (_old_root && _old_root != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_root->_inverseRemove(::SVG::SVGPackage::SVG__CHILDREN, _this);
+            _old_root->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getSvg__children(), _this);
         }
 
         // set reference
         basicsetRoot(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::SYMBOL__GROUP:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -374,15 +375,16 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
         if (_old_group && _old_group != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_group->_inverseRemove(
-                    ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT, _this);
+            _old_group->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getGroupingElement__groupContent(),
+                    _this);
         }
 
         // set reference
         basicsetGroup(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::SYMBOL__DRAWSMARKER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -393,7 +395,8 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
         if (_old_drawsMarker && _old_drawsMarker != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_drawsMarker->_inverseRemove(::SVG::SVGPackage::MARKER__DRAWING,
+            _old_drawsMarker->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getMarker__drawing(),
                     _this);
         }
 
@@ -401,7 +404,7 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
         basicsetDrawsMarker(_t1);
     }
         return;
-    case ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT:
+    case ::SVG::SVGPackage::SYMBOL__GROUPCONTENT:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -427,7 +430,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::SYMBOL__OWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -441,7 +444,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::SYMBOL__TARGET:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -453,7 +456,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::SYMBOL__ATTRIBUTE:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -467,15 +470,15 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::SYMBOL__POSITION:
     {
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::SYMBOL__SIZE:
     {
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::SYMBOL__ROOT:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -486,7 +489,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
             basicsetRoot(nullptr);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::SYMBOL__GROUP:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -498,7 +501,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
             basicsetGroup(nullptr);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::SYMBOL__DRAWSMARKER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -510,7 +513,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
             basicsetDrawsMarker(nullptr);
     }
         return;
-    case ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT:
+    case ::SVG::SVGPackage::SYMBOL__GROUPCONTENT:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

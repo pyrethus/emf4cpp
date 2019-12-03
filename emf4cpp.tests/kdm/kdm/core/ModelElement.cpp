@@ -43,16 +43,6 @@ using namespace ::kdm::core;
 // Default constructor
 ModelElement::ModelElement()
 {
-
-    m_stereotype.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::kdm::Stereotype_ptr, -1, false, false >(this,
-                    ::kdm::core::CorePackage::_instance()->getModelElement__stereotype()));
-    m_taggedValue.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::kdm::ExtendedValue_ptr, -1, true, false >(this,
-                    ::kdm::core::CorePackage::_instance()->getModelElement__taggedValue()));
-
     /*PROTECTED REGION ID(ModelElementImpl__ModelElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -73,21 +63,45 @@ ModelElement::~ModelElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::Stereotype_ptr >& ModelElement::getStereotype() const
 {
+    if (!m_stereotype)
+        return const_cast< ModelElement* >(this)->getStereotype();
+
     return *m_stereotype;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::Stereotype_ptr >& ModelElement::getStereotype()
 {
+    /*PROTECTED REGION ID(ModelElement__getStereotype) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_stereotype)
+        m_stereotype.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::Stereotype_ptr, -1, false, false >(this,
+                        ::kdm::core::CorePackage::_instance()->getModelElement__stereotype()));
+    /*PROTECTED REGION END*/
     return *m_stereotype;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::ExtendedValue_ptr >& ModelElement::getTaggedValue() const
 {
+    if (!m_taggedValue)
+        return const_cast< ModelElement* >(this)->getTaggedValue();
+
     return *m_taggedValue;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::ExtendedValue_ptr >& ModelElement::getTaggedValue()
 {
+    /*PROTECTED REGION ID(ModelElement__getTaggedValue) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_taggedValue)
+        m_taggedValue.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::ExtendedValue_ptr, -1, true, false >(this,
+                        ::kdm::core::CorePackage::_instance()->getModelElement__taggedValue()));
+    /*PROTECTED REGION END*/
     return *m_taggedValue;
 }
 

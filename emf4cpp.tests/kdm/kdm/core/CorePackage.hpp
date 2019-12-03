@@ -39,79 +39,85 @@ namespace kdm
         static CorePackage_ptr _instance();
         static CorePackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier AggregatedRelationship
         static const int AGGREGATEDRELATIONSHIP = 0;
 
+        static const int AGGREGATEDRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int AGGREGATEDRELATIONSHIP__ANNOTATION = 1;
+
+        static const int AGGREGATEDRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int AGGREGATEDRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int AGGREGATEDRELATIONSHIP__FROM = 4;
+
+        static const int AGGREGATEDRELATIONSHIP__TO = 5;
+
+        static const int AGGREGATEDRELATIONSHIP__RELATION = 6;
+
+        static const int AGGREGATEDRELATIONSHIP__DENSITY = 7;
+
+        static const int AGGREGATEDRELATIONSHIP_FEATURE_COUNT = 8;
+
+        // IDs for classifier Boolean
         static const int BOOLEAN = 1;
 
+        // IDs for classifier Element
         static const int ELEMENT = 2;
 
+        static const int ELEMENT__ATTRIBUTE = 0;
+
+        static const int ELEMENT__ANNOTATION = 1;
+
+        static const int ELEMENT_FEATURE_COUNT = 2;
+
+        // IDs for classifier Integer
         static const int INTEGER = 3;
 
+        // IDs for classifier KDMEntity
         static const int KDMENTITY = 4;
 
+        static const int KDMENTITY__ATTRIBUTE = 0;
+
+        static const int KDMENTITY__ANNOTATION = 1;
+
+        static const int KDMENTITY__STEREOTYPE = 2;
+
+        static const int KDMENTITY__TAGGEDVALUE = 3;
+
+        static const int KDMENTITY__NAME = 4;
+
+        static const int KDMENTITY_FEATURE_COUNT = 5;
+
+        // IDs for classifier KDMRelationship
         static const int KDMRELATIONSHIP = 5;
 
+        static const int KDMRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int KDMRELATIONSHIP__ANNOTATION = 1;
+
+        static const int KDMRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int KDMRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int KDMRELATIONSHIP_FEATURE_COUNT = 4;
+
+        // IDs for classifier ModelElement
         static const int MODELELEMENT = 6;
 
+        static const int MODELELEMENT__ATTRIBUTE = 0;
+
+        static const int MODELELEMENT__ANNOTATION = 1;
+
+        static const int MODELELEMENT__STEREOTYPE = 2;
+
+        static const int MODELELEMENT__TAGGEDVALUE = 3;
+
+        static const int MODELELEMENT_FEATURE_COUNT = 4;
+
+        // IDs for classifier String
         static const int STRING = 7;
-
-        static const int ELEMENT__ATTRIBUTE = 134;
-
-        static const int ELEMENT__ANNOTATION = 135;
-
-        static const int MODELELEMENT__STEREOTYPE = 136;
-
-        static const int MODELELEMENT__TAGGEDVALUE = 137;
-
-        static const int KDMENTITY__NAME = 138;
-
-        static const int AGGREGATEDRELATIONSHIP__FROM = 139;
-
-        static const int AGGREGATEDRELATIONSHIP__TO = 140;
-
-        static const int AGGREGATEDRELATIONSHIP__RELATION = 141;
-
-        static const int AGGREGATEDRELATIONSHIP__DENSITY = 142;
-
-        // IDs for classifiers for class AggregatedRelationship 
-
-        static const int AGGREGATEDRELATIONSHIP__ATTRIBUTE = ELEMENT__ATTRIBUTE;
-
-        static const int AGGREGATEDRELATIONSHIP__ANNOTATION = ELEMENT__ANNOTATION;
-
-        static const int AGGREGATEDRELATIONSHIP__STEREOTYPE = MODELELEMENT__STEREOTYPE;
-
-        static const int AGGREGATEDRELATIONSHIP__TAGGEDVALUE = MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Element 
-
-        // IDs for classifiers for class KDMEntity 
-
-        static const int KDMENTITY__ATTRIBUTE = ELEMENT__ATTRIBUTE;
-
-        static const int KDMENTITY__ANNOTATION = ELEMENT__ANNOTATION;
-
-        static const int KDMENTITY__STEREOTYPE = MODELELEMENT__STEREOTYPE;
-
-        static const int KDMENTITY__TAGGEDVALUE = MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class KDMRelationship 
-
-        static const int KDMRELATIONSHIP__ATTRIBUTE = ELEMENT__ATTRIBUTE;
-
-        static const int KDMRELATIONSHIP__ANNOTATION = ELEMENT__ANNOTATION;
-
-        static const int KDMRELATIONSHIP__STEREOTYPE = MODELELEMENT__STEREOTYPE;
-
-        static const int KDMRELATIONSHIP__TAGGEDVALUE = MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ModelElement 
-
-        static const int MODELELEMENT__ATTRIBUTE = ELEMENT__ATTRIBUTE;
-
-        static const int MODELELEMENT__ANNOTATION = ELEMENT__ANNOTATION;
 
         // EClassifiers methods
 

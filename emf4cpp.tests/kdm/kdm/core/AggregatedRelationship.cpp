@@ -45,12 +45,6 @@ using namespace ::kdm::core;
 // Default constructor
 AggregatedRelationship::AggregatedRelationship()
 {
-
-    m_relation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::core::KDMRelationship_ptr, -1, false, false >(this,
-                    ::kdm::core::CorePackage::_instance()->getAggregatedRelationship__relation()));
-
     /*PROTECTED REGION ID(AggregatedRelationshipImpl__AggregatedRelationshipImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -151,11 +145,24 @@ void AggregatedRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
 
 const ::ecorecpp::mapping::EList< ::kdm::core::KDMRelationship_ptr >& AggregatedRelationship::getRelation() const
 {
+    if (!m_relation)
+        return const_cast< AggregatedRelationship* >(this)->getRelation();
+
     return *m_relation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::core::KDMRelationship_ptr >& AggregatedRelationship::getRelation()
 {
+    /*PROTECTED REGION ID(AggregatedRelationship__getRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_relation)
+        m_relation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::core::KDMRelationship_ptr, -1, false, false >(
+                        this,
+                        ::kdm::core::CorePackage::_instance()->getAggregatedRelationship__relation()));
+    /*PROTECTED REGION END*/
     return *m_relation;
 }
 

@@ -51,7 +51,6 @@ using namespace ::kdm::event;
 // Default constructor
 EventElement::EventElement()
 {
-
     /*PROTECTED REGION ID(EventElementImpl__EventElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

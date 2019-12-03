@@ -39,7 +39,6 @@ using namespace ::company;
 // Default constructor
 Employee::Employee()
 {
-
     /*PROTECTED REGION ID(EmployeeImpl__EmployeeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

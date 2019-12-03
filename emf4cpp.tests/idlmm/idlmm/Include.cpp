@@ -38,7 +38,6 @@ using namespace ::idlmm;
 // Default constructor
 Include::Include()
 {
-
     /*PROTECTED REGION ID(IncludeImpl__IncludeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

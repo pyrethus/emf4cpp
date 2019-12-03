@@ -52,7 +52,6 @@ using namespace ::kdm::ui;
 // Default constructor
 Screen::Screen()
 {
-
     /*PROTECTED REGION ID(ScreenImpl__ScreenImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

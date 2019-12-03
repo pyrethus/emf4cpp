@@ -39,7 +39,6 @@ using namespace ::idlmm;
 // Default constructor
 Contained::Contained()
 {
-
     /*PROTECTED REGION ID(ContainedImpl__ContainedImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -202,12 +201,14 @@ void Contained::setDefinedIn(::idlmm::Container_ptr _definedIn)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_definedIn)
         {
-            _old_definedIn->_inverseRemove(
-                    ::idlmm::IdlmmPackage::CONTAINER__CONTAINS, _this);
+            _old_definedIn->::ecore::EObject::_inverseRemove(
+                    ::idlmm::IdlmmPackage::_instance()->getContainer__contains(),
+                    _this);
         }
-        if (_definedIn)
+        if (_definedIn && ::idlmm::IdlmmPackage::_instance())
         {
-            _definedIn->_inverseAdd(::idlmm::IdlmmPackage::CONTAINER__CONTAINS,
+            _definedIn->::ecore::EObject::_inverseAdd(
+                    ::idlmm::IdlmmPackage::_instance()->getContainer__contains(),
                     _this);
         }
         basicsetDefinedIn(_definedIn);

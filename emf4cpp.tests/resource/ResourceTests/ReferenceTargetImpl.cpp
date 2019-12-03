@@ -91,7 +91,7 @@ void ReferenceTarget::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ReferenceTarget::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ResourceTests::ResourceTestsPackage* >(::ResourceTests::ResourceTestsPackage::_instance().get())->getReferenceTarget();
+            ::ResourceTests::ResourceTestsPackage::_instance()->getReferenceTarget();
     return _eclass;
 }
 

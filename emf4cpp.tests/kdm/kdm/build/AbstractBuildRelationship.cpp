@@ -44,7 +44,6 @@ using namespace ::kdm::build;
 // Default constructor
 AbstractBuildRelationship::AbstractBuildRelationship()
 {
-
     /*PROTECTED REGION ID(AbstractBuildRelationshipImpl__AbstractBuildRelationshipImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

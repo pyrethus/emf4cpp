@@ -48,9 +48,9 @@ void ConceptualModel::_initialize()
     ::kdm::kdm::KDMModel::_initialize();
 
     // References
-    for (size_t i = 0; i < m_conceptualElement->size(); i++)
+    for (const auto &ref : getConceptualElement())
     {
-        (*m_conceptualElement)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ConceptualModelImpl__initialize) START*/
@@ -68,37 +68,37 @@ void ConceptualModel::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__AUDIT:
     {
         _any = getAudit().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__EXTENSIONFAMILY:
     {
         _any = getExtensionFamily().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
@@ -119,7 +119,7 @@ void ConceptualModel::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -127,7 +127,7 @@ void ConceptualModel::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -135,7 +135,7 @@ void ConceptualModel::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -143,7 +143,7 @@ void ConceptualModel::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -151,7 +151,7 @@ void ConceptualModel::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__AUDIT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -159,7 +159,7 @@ void ConceptualModel::eSet(::ecore::EInt _featureID,
         getAudit().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__EXTENSIONFAMILY:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -167,7 +167,7 @@ void ConceptualModel::eSet(::ecore::EInt _featureID,
         getExtensionFamily().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -192,19 +192,19 @@ void ConceptualModel::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__AUDIT:
         return getAudit().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__EXTENSIONFAMILY:
         return getExtensionFamily().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
     case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__CONCEPTUALELEMENT:
@@ -226,7 +226,7 @@ void ConceptualModel::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ConceptualModel::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::conceptual::ConceptualPackage* >(::kdm::conceptual::ConceptualPackage::_instance().get())->getConceptualModel();
+            ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualModel();
     return _eclass;
 }
 
@@ -237,27 +237,27 @@ void ConceptualModel::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__AUDIT:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__EXTENSIONFAMILY:
     {
     }
         return;
@@ -277,27 +277,27 @@ void ConceptualModel::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__AUDIT:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__EXTENSIONFAMILY:
     {
     }
         return;

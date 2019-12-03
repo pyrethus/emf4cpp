@@ -41,7 +41,6 @@ using namespace ::kdm::kdm;
 // Default constructor
 Audit::Audit()
 {
-
     /*PROTECTED REGION ID(AuditImpl__AuditImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

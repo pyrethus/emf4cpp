@@ -63,37 +63,37 @@ void KDMModel::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__AUDIT:
     {
         _any = getAudit().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__EXTENSIONFAMILY:
     {
         _any = getExtensionFamily().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
@@ -109,7 +109,7 @@ void KDMModel::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -117,7 +117,7 @@ void KDMModel::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -125,7 +125,7 @@ void KDMModel::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -133,7 +133,7 @@ void KDMModel::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -141,7 +141,7 @@ void KDMModel::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__AUDIT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -149,7 +149,7 @@ void KDMModel::eSet(::ecore::EInt _featureID,
         getAudit().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__EXTENSIONFAMILY:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -157,7 +157,7 @@ void KDMModel::eSet(::ecore::EInt _featureID,
         getExtensionFamily().insert_all(*_t0);
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -174,19 +174,19 @@ void KDMModel::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__AUDIT:
         return getAudit().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__EXTENSIONFAMILY:
         return getExtensionFamily().size() > 0;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
 
@@ -206,7 +206,7 @@ void KDMModel::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr KDMModel::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel();
+            ::kdm::kdm::KdmPackage::_instance()->getKDMModel();
     return _eclass;
 }
 
@@ -217,27 +217,27 @@ void KDMModel::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__AUDIT:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__EXTENSIONFAMILY:
     {
     }
         return;
@@ -253,27 +253,27 @@ void KDMModel::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__AUDIT:
     {
     }
         return;
-    case ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY:
+    case ::kdm::kdm::KdmPackage::KDMMODEL__EXTENSIONFAMILY:
     {
     }
         return;

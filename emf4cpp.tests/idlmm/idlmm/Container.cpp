@@ -40,13 +40,6 @@ using namespace ::idlmm;
 // Default constructor
 Container::Container()
 {
-
-    m_contains.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::idlmm::Contained_ptr,
-                    -1, true, true >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getContainer__contains(),
-                    ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN));
-
     /*PROTECTED REGION ID(ContainerImpl__ContainerImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -67,11 +60,24 @@ Container::~Container()
 
 const ::ecorecpp::mapping::EList< ::idlmm::Contained_ptr >& Container::getContains() const
 {
+    if (!m_contains)
+        return const_cast< Container* >(this)->getContains();
+
     return *m_contains;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::Contained_ptr >& Container::getContains()
 {
+    /*PROTECTED REGION ID(Container__getContains) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_contains)
+        m_contains.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::idlmm::Contained_ptr, -1, true, true >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getContainer__contains(),
+                        ::idlmm::IdlmmPackage::_instance()->getContained__definedIn()));
+    /*PROTECTED REGION END*/
     return *m_contains;
 }
 

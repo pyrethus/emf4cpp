@@ -40,12 +40,6 @@ using namespace ::json;
 // Default constructor
 ObjectValue::ObjectValue()
 {
-
-    m_members.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::json::NVPair_ptr, -1,
-                    true, false >(this,
-                    ::json::JsonPackage::_instance()->getObjectValue__members()));
-
     /*PROTECTED REGION ID(ObjectValueImpl__ObjectValueImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -66,11 +60,23 @@ ObjectValue::~ObjectValue()
 
 const ::ecorecpp::mapping::EList< ::json::NVPair_ptr >& ObjectValue::getMembers() const
 {
+    if (!m_members)
+        return const_cast< ObjectValue* >(this)->getMembers();
+
     return *m_members;
 }
 
 ::ecorecpp::mapping::EList< ::json::NVPair_ptr >& ObjectValue::getMembers()
 {
+    /*PROTECTED REGION ID(ObjectValue__getMembers) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_members)
+        m_members.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::json::NVPair_ptr,
+                        -1, true, false >(this,
+                        ::json::JsonPackage::_instance()->getObjectValue__members()));
+    /*PROTECTED REGION END*/
     return *m_members;
 }
 

@@ -46,7 +46,6 @@ using namespace ::kdm::data;
 // Default constructor
 WritesColumnSet::WritesColumnSet()
 {
-
     /*PROTECTED REGION ID(WritesColumnSetImpl__WritesColumnSetImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

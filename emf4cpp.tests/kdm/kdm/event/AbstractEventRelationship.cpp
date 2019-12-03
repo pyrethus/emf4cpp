@@ -44,7 +44,6 @@ using namespace ::kdm::event;
 // Default constructor
 AbstractEventRelationship::AbstractEventRelationship()
 {
-
     /*PROTECTED REGION ID(AbstractEventRelationshipImpl__AbstractEventRelationshipImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

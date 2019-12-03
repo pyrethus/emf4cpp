@@ -46,7 +46,6 @@ using namespace ::kdm::code;
 // Default constructor
 GeneratedFrom::GeneratedFrom()
 {
-
     /*PROTECTED REGION ID(GeneratedFromImpl__GeneratedFromImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

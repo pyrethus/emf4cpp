@@ -38,7 +38,6 @@ using namespace ::CST;
 // Default constructor
 Element::Element()
 {
-
     /*PROTECTED REGION ID(ElementImpl__ElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

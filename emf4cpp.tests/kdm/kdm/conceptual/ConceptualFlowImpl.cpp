@@ -63,22 +63,22 @@ void ConceptualFlow::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -103,7 +103,7 @@ void ConceptualFlow::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -111,7 +111,7 @@ void ConceptualFlow::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -119,7 +119,7 @@ void ConceptualFlow::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -127,7 +127,7 @@ void ConceptualFlow::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -160,13 +160,13 @@ void ConceptualFlow::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
     case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__TO:
         return getTo().get() != nullptr;
@@ -189,7 +189,7 @@ void ConceptualFlow::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ConceptualFlow::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::conceptual::ConceptualPackage* >(::kdm::conceptual::ConceptualPackage::_instance().get())->getConceptualFlow();
+            ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualFlow();
     return _eclass;
 }
 
@@ -200,19 +200,19 @@ void ConceptualFlow::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__TAGGEDVALUE:
     {
     }
         return;
@@ -236,19 +236,19 @@ void ConceptualFlow::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__TAGGEDVALUE:
     {
     }
         return;

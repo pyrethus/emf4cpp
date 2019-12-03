@@ -40,12 +40,6 @@ using namespace ::treeiterator;
 // Default constructor
 TreeNode::TreeNode()
 {
-
-    m_children.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::treeiterator::TreeNode_ptr, -1, true, false >(this,
-                    ::treeiterator::TreeiteratorPackage::_instance()->getTreeNode__children()));
-
     /*PROTECTED REGION ID(TreeNodeImpl__TreeNodeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -96,11 +90,23 @@ void TreeNode::setName(::ecore::EString const &_name)
 
 const ::ecorecpp::mapping::EList< ::treeiterator::TreeNode_ptr >& TreeNode::getChildren() const
 {
+    if (!m_children)
+        return const_cast< TreeNode* >(this)->getChildren();
+
     return *m_children;
 }
 
 ::ecorecpp::mapping::EList< ::treeiterator::TreeNode_ptr >& TreeNode::getChildren()
 {
+    /*PROTECTED REGION ID(TreeNode__getChildren) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_children)
+        m_children.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::treeiterator::TreeNode_ptr, -1, true, false >(this,
+                        ::treeiterator::TreeiteratorPackage::_instance()->getTreeNode__children()));
+    /*PROTECTED REGION END*/
     return *m_children;
 }
 

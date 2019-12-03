@@ -48,13 +48,6 @@ using namespace ::SVG;
 // Default constructor
 Use::Use()
 {
-
-    m_use.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr, -1,
-                    false, true >(this,
-                    ::SVG::SVGPackage::_instance()->getUse__use(),
-                    ::SVG::SVGPackage::ELEMENT__TARGET));
-
     /*PROTECTED REGION ID(UseImpl__UseImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -75,11 +68,24 @@ Use::~Use()
 
 const ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& Use::getUse() const
 {
+    if (!m_use)
+        return const_cast< Use* >(this)->getUse();
+
     return *m_use;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& Use::getUse()
 {
+    /*PROTECTED REGION ID(Use__getUse) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_use)
+        m_use.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
+                        -1, false, true >(this,
+                        ::SVG::SVGPackage::_instance()->getUse__use(),
+                        ::SVG::SVGPackage::_instance()->getElement__target()));
+    /*PROTECTED REGION END*/
     return *m_use;
 }
 

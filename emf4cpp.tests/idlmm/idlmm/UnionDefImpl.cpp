@@ -44,9 +44,9 @@ void UnionDef::_initialize()
     ::idlmm::TypedefDef::_initialize();
 
     // References
-    for (size_t i = 0; i < m_unionMembers->size(); i++)
+    for (const auto &ref : getUnionMembers())
     {
-        (*m_unionMembers)[i]->_initialize();
+        ref->_initialize();
     }
     if (m_containedDiscrim)
     {
@@ -68,37 +68,37 @@ void UnionDef::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::UNIONDEF__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::toAny(_any, getTypeCode());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::UNIONDEF__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getIdentifier());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::UNIONDEF__REPOSITORYID:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getRepositoryId());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::UNIONDEF__VERSION:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getVersion());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::UNIONDEF__ABSOLUTENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getAbsoluteName());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::UNIONDEF__DEFINEDIN:
     {
         _any = ::ecore::as < ::ecore::EObject > (getDefinedIn());
     }
@@ -128,7 +128,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::UNIONDEF__TYPECODE:
     {
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
@@ -136,7 +136,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         setTypeCode(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::UNIONDEF__IDENTIFIER:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -144,7 +144,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         setIdentifier(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::UNIONDEF__REPOSITORYID:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -152,7 +152,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         setRepositoryId(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::UNIONDEF__VERSION:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -160,7 +160,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         setVersion(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::UNIONDEF__ABSOLUTENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -168,7 +168,7 @@ void UnionDef::eSet(::ecore::EInt _featureID,
         setAbsoluteName(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::UNIONDEF__DEFINEDIN:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -209,22 +209,22 @@ void UnionDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::UNIONDEF__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
                 > ::is_set(getTypeCode());
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::UNIONDEF__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getIdentifier());
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::UNIONDEF__REPOSITORYID:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getRepositoryId());
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::UNIONDEF__VERSION:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getVersion());
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::UNIONDEF__ABSOLUTENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getAbsoluteName());
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::UNIONDEF__DEFINEDIN:
         return getDefinedIn().get() != nullptr;
     case ::idlmm::IdlmmPackage::UNIONDEF__UNIONMEMBERS:
         return getUnionMembers().size() > 0;
@@ -249,7 +249,7 @@ void UnionDef::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr UnionDef::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getUnionDef();
+            ::idlmm::IdlmmPackage::_instance()->getUnionDef();
     return _eclass;
 }
 
@@ -260,7 +260,7 @@ void UnionDef::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::UNIONDEF__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -271,8 +271,9 @@ void UnionDef::_inverseAdd(::ecore::EInt _featureID,
         if (_old_definedIn && _old_definedIn != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_definedIn->_inverseRemove(
-                    ::idlmm::IdlmmPackage::CONTAINER__CONTAINS, _this);
+            _old_definedIn->::ecore::EObject::_inverseRemove(
+                    ::idlmm::IdlmmPackage::_instance()->getContainer__contains(),
+                    _this);
         }
 
         // set reference
@@ -303,7 +304,7 @@ void UnionDef::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::UNIONDEF__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

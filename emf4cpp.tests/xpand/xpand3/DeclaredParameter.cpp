@@ -40,7 +40,6 @@ using namespace ::xpand3;
 // Default constructor
 DeclaredParameter::DeclaredParameter()
 {
-
     /*PROTECTED REGION ID(DeclaredParameterImpl__DeclaredParameterImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

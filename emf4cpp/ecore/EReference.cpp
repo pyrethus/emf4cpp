@@ -45,13 +45,6 @@ using namespace ::ecore;
 // Default constructor
 EReference::EReference()
 {
-
-    m_eKeys.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EAttribute_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEReference__eKeys() :
-                            ::ecore::EReference_ptr()));
-
     /*PROTECTED REGION ID(EReferenceImpl__EReferenceImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -204,11 +197,23 @@ void EReference::setEReferenceType(::ecore::EClass_ptr _eReferenceType)
 
 const ::ecorecpp::mapping::EList< ::ecore::EAttribute_ptr >& EReference::getEKeys() const
 {
+    if (!m_eKeys)
+        return const_cast< EReference* >(this)->getEKeys();
+
     return *m_eKeys;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EAttribute_ptr >& EReference::getEKeys()
 {
+    /*PROTECTED REGION ID(EReference__getEKeys) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eKeys)
+        m_eKeys.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EAttribute_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEReference__eKeys()));
+    /*PROTECTED REGION END*/
     return *m_eKeys;
 }
 

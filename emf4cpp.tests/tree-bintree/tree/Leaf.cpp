@@ -39,7 +39,6 @@ using namespace ::tree;
 // Default constructor
 Leaf::Leaf()
 {
-
     /*PROTECTED REGION ID(LeafImpl__LeafImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

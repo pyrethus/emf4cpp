@@ -39,7 +39,6 @@ using namespace ::myDsl;
 // Default constructor
 SimpleType::SimpleType()
 {
-
     /*PROTECTED REGION ID(SimpleTypeImpl__SimpleTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -38,7 +38,6 @@ using namespace ::SVG;
 // Default constructor
 Dimension::Dimension()
 {
-
     /*PROTECTED REGION ID(DimensionImpl__DimensionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

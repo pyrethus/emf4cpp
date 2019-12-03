@@ -53,17 +53,6 @@ using namespace ::kdm::code;
 // Default constructor
 ControlElement::ControlElement()
 {
-
-    m_entryFlow.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::action::EntryFlow_ptr, -1, true, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getControlElement__entryFlow()));
-    m_codeElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::AbstractCodeElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::code::CodePackage::_instance()->getControlElement__codeElement()));
-
     /*PROTECTED REGION ID(ControlElementImpl__ControlElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -111,21 +100,46 @@ void ControlElement::setType(::kdm::code::Datatype_ptr _type)
 
 const ::ecorecpp::mapping::EList< ::kdm::action::EntryFlow_ptr >& ControlElement::getEntryFlow() const
 {
+    if (!m_entryFlow)
+        return const_cast< ControlElement* >(this)->getEntryFlow();
+
     return *m_entryFlow;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::action::EntryFlow_ptr >& ControlElement::getEntryFlow()
 {
+    /*PROTECTED REGION ID(ControlElement__getEntryFlow) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_entryFlow)
+        m_entryFlow.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::action::EntryFlow_ptr, -1, true, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getControlElement__entryFlow()));
+    /*PROTECTED REGION END*/
     return *m_entryFlow;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& ControlElement::getCodeElement() const
 {
+    if (!m_codeElement)
+        return const_cast< ControlElement* >(this)->getCodeElement();
+
     return *m_codeElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& ControlElement::getCodeElement()
 {
+    /*PROTECTED REGION ID(ControlElement__getCodeElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_codeElement)
+        m_codeElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::AbstractCodeElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::code::CodePackage::_instance()->getControlElement__codeElement()));
+    /*PROTECTED REGION END*/
     return *m_codeElement;
 }
 

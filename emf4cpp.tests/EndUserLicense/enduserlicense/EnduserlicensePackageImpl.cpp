@@ -44,16 +44,12 @@ void EnduserlicensePackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = EnduserlicenseFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
 
-    // Create enums
-
-    // Create data types
-
-    // Initialize package
+// Initialize package
     setName("enduserlicense");
     setNsPrefix("enduserlicense");
     setNsURI("http:///com.example.enduserlicense.ecore");

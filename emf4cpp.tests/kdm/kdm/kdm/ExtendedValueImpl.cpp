@@ -60,12 +60,12 @@ void ExtendedValue::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -85,7 +85,7 @@ void ExtendedValue::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -93,7 +93,7 @@ void ExtendedValue::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -118,9 +118,9 @@ void ExtendedValue::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ANNOTATION:
         return getAnnotation().size() > 0;
     case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__TAG:
         return getTag().get() != nullptr;
@@ -141,7 +141,7 @@ void ExtendedValue::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ExtendedValue::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getExtendedValue();
+            ::kdm::kdm::KdmPackage::_instance()->getExtendedValue();
     return _eclass;
 }
 
@@ -152,11 +152,11 @@ void ExtendedValue::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ANNOTATION:
     {
     }
         return;
@@ -176,11 +176,11 @@ void ExtendedValue::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::kdm::KdmPackage::EXTENDEDVALUE__ANNOTATION:
     {
     }
         return;

@@ -38,7 +38,6 @@ using namespace ::ReferenceSerialization;
 // Default constructor
 Content::Content()
 {
-
     /*PROTECTED REGION ID(ContentImpl__ContentImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

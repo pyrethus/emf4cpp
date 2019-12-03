@@ -48,27 +48,6 @@ using namespace ::kdm::structure;
 // Default constructor
 AbstractStructureElement::AbstractStructureElement()
 {
-
-    m_aggregated.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::core::AggregatedRelationship_ptr, -1, true, false >(
-                    this,
-                    ::kdm::structure::StructurePackage::_instance()->getAbstractStructureElement__aggregated()));
-    m_implementation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::core::KDMEntity_ptr, -1, false, false >(this,
-                    ::kdm::structure::StructurePackage::_instance()->getAbstractStructureElement__implementation()));
-    m_structureElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::structure::AbstractStructureElement_ptr, -1, true,
-                    false >(this,
-                    ::kdm::structure::StructurePackage::_instance()->getAbstractStructureElement__structureElement()));
-    m_structureRelationship.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::structure::AbstractStructureRelationship_ptr, -1,
-                    true, false >(this,
-                    ::kdm::structure::StructurePackage::_instance()->getAbstractStructureElement__structureRelationship()));
-
     /*PROTECTED REGION ID(AbstractStructureElementImpl__AbstractStructureElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -89,42 +68,93 @@ AbstractStructureElement::~AbstractStructureElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::core::AggregatedRelationship_ptr >& AbstractStructureElement::getAggregated() const
 {
+    if (!m_aggregated)
+        return const_cast< AbstractStructureElement* >(this)->getAggregated();
+
     return *m_aggregated;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::core::AggregatedRelationship_ptr >& AbstractStructureElement::getAggregated()
 {
+    /*PROTECTED REGION ID(AbstractStructureElement__getAggregated) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_aggregated)
+        m_aggregated.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::core::AggregatedRelationship_ptr, -1, true, false >(
+                        this,
+                        ::kdm::structure::StructurePackage::_instance()->getAbstractStructureElement__aggregated()));
+    /*PROTECTED REGION END*/
     return *m_aggregated;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::core::KDMEntity_ptr >& AbstractStructureElement::getImplementation() const
 {
+    if (!m_implementation)
+        return const_cast< AbstractStructureElement* >(this)->getImplementation();
+
     return *m_implementation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::core::KDMEntity_ptr >& AbstractStructureElement::getImplementation()
 {
+    /*PROTECTED REGION ID(AbstractStructureElement__getImplementation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_implementation)
+        m_implementation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::core::KDMEntity_ptr, -1, false, false >(this,
+                        ::kdm::structure::StructurePackage::_instance()->getAbstractStructureElement__implementation()));
+    /*PROTECTED REGION END*/
     return *m_implementation;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::structure::AbstractStructureElement_ptr >& AbstractStructureElement::getStructureElement() const
 {
+    if (!m_structureElement)
+        return const_cast< AbstractStructureElement* >(this)->getStructureElement();
+
     return *m_structureElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::structure::AbstractStructureElement_ptr >& AbstractStructureElement::getStructureElement()
 {
+    /*PROTECTED REGION ID(AbstractStructureElement__getStructureElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_structureElement)
+        m_structureElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::structure::AbstractStructureElement_ptr, -1,
+                        true, false >(this,
+                        ::kdm::structure::StructurePackage::_instance()->getAbstractStructureElement__structureElement()));
+    /*PROTECTED REGION END*/
     return *m_structureElement;
 }
 
 const ::ecorecpp::mapping::EList<
         ::kdm::structure::AbstractStructureRelationship_ptr >& AbstractStructureElement::getStructureRelationship() const
 {
+    if (!m_structureRelationship)
+        return const_cast< AbstractStructureElement* >(this)->getStructureRelationship();
+
     return *m_structureRelationship;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::structure::AbstractStructureRelationship_ptr >& AbstractStructureElement::getStructureRelationship()
 {
+    /*PROTECTED REGION ID(AbstractStructureElement__getStructureRelationship) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_structureRelationship)
+        m_structureRelationship.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::structure::AbstractStructureRelationship_ptr, -1,
+                        true, false >(this,
+                        ::kdm::structure::StructurePackage::_instance()->getAbstractStructureElement__structureRelationship()));
+    /*PROTECTED REGION END*/
     return *m_structureRelationship;
 }
 

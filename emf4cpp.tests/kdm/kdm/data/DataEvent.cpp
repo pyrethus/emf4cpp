@@ -50,7 +50,6 @@ using namespace ::kdm::data;
 // Default constructor
 DataEvent::DataEvent()
 {
-
     /*PROTECTED REGION ID(DataEventImpl__DataEventImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

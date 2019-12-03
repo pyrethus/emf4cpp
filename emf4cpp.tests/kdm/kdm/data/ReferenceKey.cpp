@@ -51,7 +51,6 @@ using namespace ::kdm::data;
 // Default constructor
 ReferenceKey::ReferenceKey()
 {
-
     /*PROTECTED REGION ID(ReferenceKeyImpl__ReferenceKeyImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

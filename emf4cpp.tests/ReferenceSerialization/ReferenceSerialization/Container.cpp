@@ -40,18 +40,6 @@ using namespace ::ReferenceSerialization;
 // Default constructor
 Container::Container()
 {
-
-    m_contents.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ReferenceSerialization::Content_ptr, -1, true, false >(
-                    this,
-                    ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getContainer__contents()));
-    m_references.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ReferenceSerialization::Content_ptr, -1, false, false >(
-                    this,
-                    ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getContainer__references()));
-
     /*PROTECTED REGION ID(ContainerImpl__ContainerImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -76,21 +64,47 @@ Container::~Container()
 
 const ::ecorecpp::mapping::EList< ::ReferenceSerialization::Content_ptr >& Container::getContents() const
 {
+    if (!m_contents)
+        return const_cast< Container* >(this)->getContents();
+
     return *m_contents;
 }
 
 ::ecorecpp::mapping::EList< ::ReferenceSerialization::Content_ptr >& Container::getContents()
 {
+    /*PROTECTED REGION ID(Container__getContents) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_contents)
+        m_contents.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ReferenceSerialization::Content_ptr, -1, true, false >(
+                        this,
+                        ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getContainer__contents()));
+    /*PROTECTED REGION END*/
     return *m_contents;
 }
 
 const ::ecorecpp::mapping::EList< ::ReferenceSerialization::Content_ptr >& Container::getReferences() const
 {
+    if (!m_references)
+        return const_cast< Container* >(this)->getReferences();
+
     return *m_references;
 }
 
 ::ecorecpp::mapping::EList< ::ReferenceSerialization::Content_ptr >& Container::getReferences()
 {
+    /*PROTECTED REGION ID(Container__getReferences) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_references)
+        m_references.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ReferenceSerialization::Content_ptr, -1, false, false >(
+                        this,
+                        ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getContainer__references()));
+    /*PROTECTED REGION END*/
     return *m_references;
 }
 

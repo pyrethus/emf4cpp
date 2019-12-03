@@ -50,7 +50,6 @@ using namespace ::kdm::data;
 // Default constructor
 DataResource::DataResource()
 {
-
     /*PROTECTED REGION ID(DataResourceImpl__DataResourceImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -52,7 +52,7 @@ String getListImpl(EReference this) :
 
 String _getListImplConstructorOpposite(EReference this) :
     if EOpposite != null then
-        ", " + EOpposite.EContainingClass.EPackage.getPackageFQN() + "::" + EOpposite.getFeatureIDFQN()
+        ", " + EOpposite.EContainingClass.EPackage.getPackageFQN() + "::_instance()->" + EOpposite.EContainingClass.EPackage.getFeatureGetMember(EOpposite) + "()"
     else
         ""
 ;

@@ -57,7 +57,7 @@ void StringDef::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::STRINGDEF__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::toAny(_any, getTypeCode());
@@ -79,7 +79,7 @@ void StringDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::STRINGDEF__TYPECODE:
     {
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
@@ -104,7 +104,7 @@ void StringDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::STRINGDEF__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
                 > ::is_set(getTypeCode());
     case ::idlmm::IdlmmPackage::STRINGDEF__BOUND:
@@ -127,7 +127,7 @@ void StringDef::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr StringDef::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getStringDef();
+            ::idlmm::IdlmmPackage::_instance()->getStringDef();
     return _eclass;
 }
 

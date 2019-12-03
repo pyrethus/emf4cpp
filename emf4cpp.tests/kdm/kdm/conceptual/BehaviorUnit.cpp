@@ -51,7 +51,6 @@ using namespace ::kdm::conceptual;
 // Default constructor
 BehaviorUnit::BehaviorUnit()
 {
-
     /*PROTECTED REGION ID(BehaviorUnitImpl__BehaviorUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

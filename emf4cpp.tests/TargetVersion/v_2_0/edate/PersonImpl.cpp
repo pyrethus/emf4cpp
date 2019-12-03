@@ -125,7 +125,7 @@ void Person::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Person::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::v_2_0::edate::EdatePackage* >(::v_2_0::edate::EdatePackage::_instance().get())->getPerson();
+            ::v_2_0::edate::EdatePackage::_instance()->getPerson();
     return _eclass;
 }
 

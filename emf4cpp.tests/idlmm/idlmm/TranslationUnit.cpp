@@ -40,16 +40,6 @@ using namespace ::idlmm;
 // Default constructor
 TranslationUnit::TranslationUnit()
 {
-
-    m_contains.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::idlmm::Contained_ptr,
-                    -1, true, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getTranslationUnit__contains()));
-    m_includes.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::idlmm::Include_ptr,
-                    -1, true, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getTranslationUnit__includes()));
-
     /*PROTECTED REGION ID(TranslationUnitImpl__TranslationUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -96,21 +86,45 @@ void TranslationUnit::setIdentifier(::ecore::EString const &_identifier)
 
 const ::ecorecpp::mapping::EList< ::idlmm::Contained_ptr >& TranslationUnit::getContains() const
 {
+    if (!m_contains)
+        return const_cast< TranslationUnit* >(this)->getContains();
+
     return *m_contains;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::Contained_ptr >& TranslationUnit::getContains()
 {
+    /*PROTECTED REGION ID(TranslationUnit__getContains) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_contains)
+        m_contains.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::idlmm::Contained_ptr, -1, true, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getTranslationUnit__contains()));
+    /*PROTECTED REGION END*/
     return *m_contains;
 }
 
 const ::ecorecpp::mapping::EList< ::idlmm::Include_ptr >& TranslationUnit::getIncludes() const
 {
+    if (!m_includes)
+        return const_cast< TranslationUnit* >(this)->getIncludes();
+
     return *m_includes;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::Include_ptr >& TranslationUnit::getIncludes()
 {
+    /*PROTECTED REGION ID(TranslationUnit__getIncludes) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_includes)
+        m_includes.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::idlmm::Include_ptr, -1, true, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getTranslationUnit__includes()));
+    /*PROTECTED REGION END*/
     return *m_includes;
 }
 

@@ -50,12 +50,6 @@ using namespace ::kdm::code;
 // Default constructor
 NamespaceUnit::NamespaceUnit()
 {
-
-    m_groupedCode.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::CodeItem_ptr, -1, false, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getNamespaceUnit__groupedCode()));
-
     /*PROTECTED REGION ID(NamespaceUnitImpl__NamespaceUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -76,11 +70,23 @@ NamespaceUnit::~NamespaceUnit()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >& NamespaceUnit::getGroupedCode() const
 {
+    if (!m_groupedCode)
+        return const_cast< NamespaceUnit* >(this)->getGroupedCode();
+
     return *m_groupedCode;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >& NamespaceUnit::getGroupedCode()
 {
+    /*PROTECTED REGION ID(NamespaceUnit__getGroupedCode) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_groupedCode)
+        m_groupedCode.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::CodeItem_ptr, -1, false, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getNamespaceUnit__groupedCode()));
+    /*PROTECTED REGION END*/
     return *m_groupedCode;
 }
 

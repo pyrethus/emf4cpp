@@ -39,12 +39,6 @@ using namespace ::tree;
 // Default constructor
 NonTerminal::NonTerminal()
 {
-
-    m_children.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::tree::TreeNode_ptr,
-                    -1, true, false >(this,
-                    ::tree::TreePackage::_instance()->getNonTerminal__children()));
-
     /*PROTECTED REGION ID(NonTerminalImpl__NonTerminalImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -65,11 +59,23 @@ NonTerminal::~NonTerminal()
 
 const ::ecorecpp::mapping::EList< ::tree::TreeNode_ptr >& NonTerminal::getChildren() const
 {
+    if (!m_children)
+        return const_cast< NonTerminal* >(this)->getChildren();
+
     return *m_children;
 }
 
 ::ecorecpp::mapping::EList< ::tree::TreeNode_ptr >& NonTerminal::getChildren()
 {
+    /*PROTECTED REGION ID(NonTerminal__getChildren) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_children)
+        m_children.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::tree::TreeNode_ptr, -1, true, false >(this,
+                        ::tree::TreePackage::_instance()->getNonTerminal__children()));
+    /*PROTECTED REGION END*/
     return *m_children;
 }
 

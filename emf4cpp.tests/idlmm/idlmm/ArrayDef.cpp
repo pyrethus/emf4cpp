@@ -41,7 +41,6 @@ using namespace ::idlmm;
 // Default constructor
 ArrayDef::ArrayDef()
 {
-
     /*PROTECTED REGION ID(ArrayDefImpl__ArrayDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

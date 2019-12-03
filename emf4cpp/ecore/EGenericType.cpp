@@ -41,13 +41,6 @@ using namespace ::ecore;
 // Default constructor
 EGenericType::EGenericType()
 {
-
-    m_eTypeArguments.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EGenericType_ptr, -1, true, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEGenericType__eTypeArguments() :
-                            ::ecore::EReference_ptr()));
-
     /*PROTECTED REGION ID(EGenericTypeImpl__EGenericTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -110,11 +103,23 @@ void EGenericType::setEUpperBound(::ecore::EGenericType_ptr _eUpperBound)
 
 const ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& EGenericType::getETypeArguments() const
 {
+    if (!m_eTypeArguments)
+        return const_cast< EGenericType* >(this)->getETypeArguments();
+
     return *m_eTypeArguments;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& EGenericType::getETypeArguments()
 {
+    /*PROTECTED REGION ID(EGenericType__getETypeArguments) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eTypeArguments)
+        m_eTypeArguments.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EGenericType_ptr, -1, true, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEGenericType__eTypeArguments()));
+    /*PROTECTED REGION END*/
     return *m_eTypeArguments;
 }
 

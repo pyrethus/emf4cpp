@@ -58,13 +58,13 @@ void Tree::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::CST::CSTPackage::ELEMENT__KIND:
+    case ::CST::CSTPackage::TREE__KIND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getKind());
     }
         return _any;
-    case ::CST::CSTPackage::NODE__CHILDREN:
+    case ::CST::CSTPackage::TREE__CHILDREN:
     {
         _any = getChildren().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -78,7 +78,7 @@ void Tree::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::CST::CSTPackage::ELEMENT__KIND:
+    case ::CST::CSTPackage::TREE__KIND:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -86,7 +86,7 @@ void Tree::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         setKind(_t0);
     }
         return;
-    case ::CST::CSTPackage::NODE__CHILDREN:
+    case ::CST::CSTPackage::TREE__CHILDREN:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -103,10 +103,10 @@ void Tree::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::CST::CSTPackage::ELEMENT__KIND:
+    case ::CST::CSTPackage::TREE__KIND:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getKind());
-    case ::CST::CSTPackage::NODE__CHILDREN:
+    case ::CST::CSTPackage::TREE__CHILDREN:
         return getChildren().size() > 0;
 
     }
@@ -125,7 +125,7 @@ void Tree::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Tree::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::CST::CSTPackage* >(::CST::CSTPackage::_instance().get())->getTree();
+            ::CST::CSTPackage::_instance()->getTree();
     return _eclass;
 }
 
@@ -136,7 +136,7 @@ void Tree::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::CST::CSTPackage::NODE__CHILDREN:
+    case ::CST::CSTPackage::TREE__CHILDREN:
     {
     }
         return;
@@ -152,7 +152,7 @@ void Tree::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::CST::CSTPackage::NODE__CHILDREN:
+    case ::CST::CSTPackage::TREE__CHILDREN:
     {
     }
         return;

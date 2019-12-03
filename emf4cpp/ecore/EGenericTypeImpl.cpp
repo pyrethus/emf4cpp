@@ -46,9 +46,9 @@ void EGenericType::_initialize()
     {
         m_eUpperBound->_initialize();
     }
-    for (size_t i = 0; i < m_eTypeArguments->size(); i++)
+    for (const auto &ref : getETypeArguments())
     {
-        (*m_eTypeArguments)[i]->_initialize();
+        ref->_initialize();
     }
     if (m_eLowerBound)
     {
@@ -183,7 +183,7 @@ void EGenericType::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EGenericType::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEGenericType();
+            ::ecore::EcorePackage::_instance()->getEGenericType();
     return _eclass;
 }
 

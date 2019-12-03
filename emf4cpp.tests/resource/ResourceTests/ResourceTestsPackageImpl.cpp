@@ -73,75 +73,107 @@ void ResourceTestsPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = ResourceTestsFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Root
     m_RootEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_RootEClass->setClassifierID(ROOT);
-    m_RootEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RootEClass);
+    m_RootEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RootEClass);
     // m_Root__target has already been allocated above
     m_Root__target->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::ROOT__TARGET);
-    m_RootEClass->getEStructuralFeatures().push_back(m_Root__target);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RootEClass->getEStructuralFeatures()).basicAdd(
+            m_Root__target);
+    m_Root__target->basicsetEContainingClass(m_RootEClass);
     // m_Root__referrers has already been allocated above
     m_Root__referrers->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS);
-    m_RootEClass->getEStructuralFeatures().push_back(m_Root__referrers);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RootEClass->getEStructuralFeatures()).basicAdd(
+            m_Root__referrers);
+    m_Root__referrers->basicsetEContainingClass(m_RootEClass);
 
     // ReferenceTarget
     m_ReferenceTargetEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ReferenceTargetEClass->setClassifierID(REFERENCETARGET);
-    m_ReferenceTargetEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ReferenceTargetEClass);
+    m_ReferenceTargetEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ReferenceTargetEClass);
 
     // Referrer
     m_ReferrerEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ReferrerEClass->setClassifierID(REFERRER);
-    m_ReferrerEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ReferrerEClass);
+    m_ReferrerEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ReferrerEClass);
     // m_Referrer__reference has already been allocated above
     m_Referrer__reference->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::REFERRER__REFERENCE);
-    m_ReferrerEClass->getEStructuralFeatures().push_back(m_Referrer__reference);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReferrerEClass->getEStructuralFeatures()).basicAdd(
+            m_Referrer__reference);
+    m_Referrer__reference->basicsetEContainingClass(m_ReferrerEClass);
 
     // ETypes
     m_ETypesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ETypesEClass->setClassifierID(ETYPES);
-    m_ETypesEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ETypesEClass);
+    m_ETypesEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ETypesEClass);
     // m_ETypes__string has already been allocated above
     m_ETypes__string->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::ETYPES__STRING);
-    m_ETypesEClass->getEStructuralFeatures().push_back(m_ETypes__string);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+            m_ETypes__string);
+    m_ETypes__string->basicsetEContainingClass(m_ETypesEClass);
     // m_ETypes__emptyString has already been allocated above
     m_ETypes__emptyString->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::ETYPES__EMPTYSTRING);
-    m_ETypesEClass->getEStructuralFeatures().push_back(m_ETypes__emptyString);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+            m_ETypes__emptyString);
+    m_ETypes__emptyString->basicsetEContainingClass(m_ETypesEClass);
     // m_ETypes__date has already been allocated above
     m_ETypes__date->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::ETYPES__DATE);
-    m_ETypesEClass->getEStructuralFeatures().push_back(m_ETypes__date);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+            m_ETypes__date);
+    m_ETypes__date->basicsetEContainingClass(m_ETypesEClass);
     // m_ETypes__char has already been allocated above
     m_ETypes__char->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::ETYPES__CHAR);
-    m_ETypesEClass->getEStructuralFeatures().push_back(m_ETypes__char);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+            m_ETypes__char);
+    m_ETypes__char->basicsetEContainingClass(m_ETypesEClass);
     // m_ETypes__bool has already been allocated above
     m_ETypes__bool->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::ETYPES__BOOL);
-    m_ETypesEClass->getEStructuralFeatures().push_back(m_ETypes__bool);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+            m_ETypes__bool);
+    m_ETypes__bool->basicsetEContainingClass(m_ETypesEClass);
     // m_ETypes__double has already been allocated above
     m_ETypes__double->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::ETYPES__DOUBLE);
-    m_ETypesEClass->getEStructuralFeatures().push_back(m_ETypes__double);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+            m_ETypes__double);
+    m_ETypes__double->basicsetEContainingClass(m_ETypesEClass);
     // m_ETypes__int has already been allocated above
     m_ETypes__int->setFeatureID(
             ::ResourceTests::ResourceTestsPackage::ETYPES__INT);
-    m_ETypesEClass->getEStructuralFeatures().push_back(m_ETypes__int);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+            m_ETypes__int);
+    m_ETypes__int->basicsetEContainingClass(m_ETypesEClass);
 
     // Create enums
 

@@ -115,175 +115,238 @@ void DeclarationPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = DeclarationFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // AbstractDeclaration
     m_AbstractDeclarationEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractDeclarationEClass->setClassifierID(ABSTRACTDECLARATION);
-    m_AbstractDeclarationEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractDeclarationEClass);
-    // m_AbstractDeclaration__isPrivate has already been allocated above
-    m_AbstractDeclaration__isPrivate->setFeatureID(
-            ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__ISPRIVATE);
-    m_AbstractDeclarationEClass->getEStructuralFeatures().push_back(
-            m_AbstractDeclaration__isPrivate);
+    m_AbstractDeclarationEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractDeclarationEClass);
     // m_AbstractDeclaration__owner has already been allocated above
     m_AbstractDeclaration__owner->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__OWNER);
-    m_AbstractDeclarationEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDeclarationEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractDeclaration__owner);
+    m_AbstractDeclaration__owner->basicsetEContainingClass(
+            m_AbstractDeclarationEClass);
     // m_AbstractDeclaration__params has already been allocated above
     m_AbstractDeclaration__params->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__PARAMS);
-    m_AbstractDeclarationEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDeclarationEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractDeclaration__params);
+    m_AbstractDeclaration__params->basicsetEContainingClass(
+            m_AbstractDeclarationEClass);
+    // m_AbstractDeclaration__isPrivate has already been allocated above
+    m_AbstractDeclaration__isPrivate->setFeatureID(
+            ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__ISPRIVATE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDeclarationEClass->getEStructuralFeatures()).basicAdd(
+            m_AbstractDeclaration__isPrivate);
+    m_AbstractDeclaration__isPrivate->basicsetEContainingClass(
+            m_AbstractDeclarationEClass);
     // m_AbstractDeclaration__guard has already been allocated above
     m_AbstractDeclaration__guard->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__GUARD);
-    m_AbstractDeclarationEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDeclarationEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractDeclaration__guard);
+    m_AbstractDeclaration__guard->basicsetEContainingClass(
+            m_AbstractDeclarationEClass);
 
     // AbstractNamedDeclaration
     m_AbstractNamedDeclarationEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractNamedDeclarationEClass->setClassifierID(ABSTRACTNAMEDDECLARATION);
-    m_AbstractNamedDeclarationEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractNamedDeclarationEClass);
+    m_AbstractNamedDeclarationEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractNamedDeclarationEClass);
     // m_AbstractNamedDeclaration__name has already been allocated above
     m_AbstractNamedDeclaration__name->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::ABSTRACTNAMEDDECLARATION__NAME);
-    m_AbstractNamedDeclarationEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractNamedDeclarationEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractNamedDeclaration__name);
+    m_AbstractNamedDeclaration__name->basicsetEContainingClass(
+            m_AbstractNamedDeclarationEClass);
 
     // Definition
     m_DefinitionEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DefinitionEClass->setClassifierID(DEFINITION);
-    m_DefinitionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DefinitionEClass);
+    m_DefinitionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DefinitionEClass);
     // m_Definition__body has already been allocated above
     m_Definition__body->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::DEFINITION__BODY);
-    m_DefinitionEClass->getEStructuralFeatures().push_back(m_Definition__body);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinitionEClass->getEStructuralFeatures()).basicAdd(
+            m_Definition__body);
+    m_Definition__body->basicsetEContainingClass(m_DefinitionEClass);
 
     // Extension
     m_ExtensionEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ExtensionEClass->setClassifierID(EXTENSION);
-    m_ExtensionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExtensionEClass);
+    m_ExtensionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExtensionEClass);
     // m_Extension__cached has already been allocated above
     m_Extension__cached->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::EXTENSION__CACHED);
-    m_ExtensionEClass->getEStructuralFeatures().push_back(m_Extension__cached);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionEClass->getEStructuralFeatures()).basicAdd(
+            m_Extension__cached);
+    m_Extension__cached->basicsetEContainingClass(m_ExtensionEClass);
     // m_Extension__body has already been allocated above
     m_Extension__body->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::EXTENSION__BODY);
-    m_ExtensionEClass->getEStructuralFeatures().push_back(m_Extension__body);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionEClass->getEStructuralFeatures()).basicAdd(
+            m_Extension__body);
+    m_Extension__body->basicsetEContainingClass(m_ExtensionEClass);
     // m_Extension__returnType has already been allocated above
     m_Extension__returnType->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::EXTENSION__RETURNTYPE);
-    m_ExtensionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionEClass->getEStructuralFeatures()).basicAdd(
             m_Extension__returnType);
+    m_Extension__returnType->basicsetEContainingClass(m_ExtensionEClass);
 
     // AbstractAspect
     m_AbstractAspectEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractAspectEClass->setClassifierID(ABSTRACTASPECT);
-    m_AbstractAspectEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractAspectEClass);
-    // m_AbstractAspect__wildparams has already been allocated above
-    m_AbstractAspect__wildparams->setFeatureID(
-            ::xpand3::declaration::DeclarationPackage::ABSTRACTASPECT__WILDPARAMS);
-    m_AbstractAspectEClass->getEStructuralFeatures().push_back(
-            m_AbstractAspect__wildparams);
+    m_AbstractAspectEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractAspectEClass);
     // m_AbstractAspect__pointcut has already been allocated above
     m_AbstractAspect__pointcut->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::ABSTRACTASPECT__POINTCUT);
-    m_AbstractAspectEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractAspectEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractAspect__pointcut);
+    m_AbstractAspect__pointcut->basicsetEContainingClass(
+            m_AbstractAspectEClass);
+    // m_AbstractAspect__wildparams has already been allocated above
+    m_AbstractAspect__wildparams->setFeatureID(
+            ::xpand3::declaration::DeclarationPackage::ABSTRACTASPECT__WILDPARAMS);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractAspectEClass->getEStructuralFeatures()).basicAdd(
+            m_AbstractAspect__wildparams);
+    m_AbstractAspect__wildparams->basicsetEContainingClass(
+            m_AbstractAspectEClass);
 
     // ExtensionAspect
     m_ExtensionAspectEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExtensionAspectEClass->setClassifierID(EXTENSIONASPECT);
-    m_ExtensionAspectEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExtensionAspectEClass);
+    m_ExtensionAspectEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExtensionAspectEClass);
     // m_ExtensionAspect__expression has already been allocated above
     m_ExtensionAspect__expression->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::EXTENSIONASPECT__EXPRESSION);
-    m_ExtensionAspectEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionAspectEClass->getEStructuralFeatures()).basicAdd(
             m_ExtensionAspect__expression);
+    m_ExtensionAspect__expression->basicsetEContainingClass(
+            m_ExtensionAspectEClass);
 
     // DefinitionAspect
     m_DefinitionAspectEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DefinitionAspectEClass->setClassifierID(DEFINITIONASPECT);
-    m_DefinitionAspectEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DefinitionAspectEClass);
+    m_DefinitionAspectEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DefinitionAspectEClass);
     // m_DefinitionAspect__body has already been allocated above
     m_DefinitionAspect__body->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::DEFINITIONASPECT__BODY);
-    m_DefinitionAspectEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinitionAspectEClass->getEStructuralFeatures()).basicAdd(
             m_DefinitionAspect__body);
+    m_DefinitionAspect__body->basicsetEContainingClass(
+            m_DefinitionAspectEClass);
 
     // Check
     m_CheckEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CheckEClass->setClassifierID(CHECK);
-    m_CheckEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CheckEClass);
+    m_CheckEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CheckEClass);
     // m_Check__errorSeverity has already been allocated above
     m_Check__errorSeverity->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::CHECK__ERRORSEVERITY);
-    m_CheckEClass->getEStructuralFeatures().push_back(m_Check__errorSeverity);
-    // m_Check__feature has already been allocated above
-    m_Check__feature->setFeatureID(
-            ::xpand3::declaration::DeclarationPackage::CHECK__FEATURE);
-    m_CheckEClass->getEStructuralFeatures().push_back(m_Check__feature);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CheckEClass->getEStructuralFeatures()).basicAdd(
+            m_Check__errorSeverity);
+    m_Check__errorSeverity->basicsetEContainingClass(m_CheckEClass);
     // m_Check__msg has already been allocated above
     m_Check__msg->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::CHECK__MSG);
-    m_CheckEClass->getEStructuralFeatures().push_back(m_Check__msg);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CheckEClass->getEStructuralFeatures()).basicAdd(
+            m_Check__msg);
+    m_Check__msg->basicsetEContainingClass(m_CheckEClass);
     // m_Check__constraint has already been allocated above
     m_Check__constraint->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::CHECK__CONSTRAINT);
-    m_CheckEClass->getEStructuralFeatures().push_back(m_Check__constraint);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CheckEClass->getEStructuralFeatures()).basicAdd(
+            m_Check__constraint);
+    m_Check__constraint->basicsetEContainingClass(m_CheckEClass);
+    // m_Check__feature has already been allocated above
+    m_Check__feature->setFeatureID(
+            ::xpand3::declaration::DeclarationPackage::CHECK__FEATURE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CheckEClass->getEStructuralFeatures()).basicAdd(
+            m_Check__feature);
+    m_Check__feature->basicsetEContainingClass(m_CheckEClass);
 
     // CreateExtension
     m_CreateExtensionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CreateExtensionEClass->setClassifierID(CREATEEXTENSION);
-    m_CreateExtensionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CreateExtensionEClass);
+    m_CreateExtensionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CreateExtensionEClass);
     // m_CreateExtension__toBeCreated has already been allocated above
     m_CreateExtension__toBeCreated->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__TOBECREATED);
-    m_CreateExtensionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CreateExtensionEClass->getEStructuralFeatures()).basicAdd(
             m_CreateExtension__toBeCreated);
+    m_CreateExtension__toBeCreated->basicsetEContainingClass(
+            m_CreateExtensionEClass);
 
     // JavaExtension
     m_JavaExtensionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_JavaExtensionEClass->setClassifierID(JAVAEXTENSION);
-    m_JavaExtensionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_JavaExtensionEClass);
+    m_JavaExtensionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_JavaExtensionEClass);
     // m_JavaExtension__javaType has already been allocated above
     m_JavaExtension__javaType->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::JAVAEXTENSION__JAVATYPE);
-    m_JavaExtensionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_JavaExtensionEClass->getEStructuralFeatures()).basicAdd(
             m_JavaExtension__javaType);
+    m_JavaExtension__javaType->basicsetEContainingClass(m_JavaExtensionEClass);
     // m_JavaExtension__javaMethod has already been allocated above
     m_JavaExtension__javaMethod->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::JAVAEXTENSION__JAVAMETHOD);
-    m_JavaExtensionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_JavaExtensionEClass->getEStructuralFeatures()).basicAdd(
             m_JavaExtension__javaMethod);
+    m_JavaExtension__javaMethod->basicsetEContainingClass(
+            m_JavaExtensionEClass);
     // m_JavaExtension__javaParamTypes has already been allocated above
     m_JavaExtension__javaParamTypes->setFeatureID(
             ::xpand3::declaration::DeclarationPackage::JAVAEXTENSION__JAVAPARAMTYPES);
-    m_JavaExtensionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_JavaExtensionEClass->getEStructuralFeatures()).basicAdd(
             m_JavaExtension__javaParamTypes);
+    m_JavaExtension__javaParamTypes->basicsetEContainingClass(
+            m_JavaExtensionEClass);
 
     // Create enums
 

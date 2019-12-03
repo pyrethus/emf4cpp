@@ -41,13 +41,13 @@ void Element::_initialize()
     // Supertypes
 
     // References
-    for (size_t i = 0; i < m_attribute->size(); i++)
+    for (const auto &ref : getAttribute())
     {
-        (*m_attribute)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_annotation->size(); i++)
+    for (const auto &ref : getAnnotation())
     {
-        (*m_annotation)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ElementImpl__initialize) START*/
@@ -131,7 +131,7 @@ void Element::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Element::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement();
+            ::kdm::core::CorePackage::_instance()->getElement();
     return _eclass;
 }
 

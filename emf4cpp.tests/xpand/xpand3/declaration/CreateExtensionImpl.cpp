@@ -61,68 +61,68 @@ void CreateExtension::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__LINE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getLine());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getStart());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__END:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getEnd());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getFileName());
     }
         return _any;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__OWNER:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__OWNER:
     {
         _any = ::ecore::as < ::ecore::EObject > (getOwner());
     }
         return _any;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__PARAMS:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__PARAMS:
     {
         _any = getParams().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__ISPRIVATE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__ISPRIVATE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
                 > ::toAny(_any, isIsPrivate());
     }
         return _any;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__GUARD:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__GUARD:
     {
         _any = ::ecore::as < ::ecore::EObject > (getGuard());
     }
         return _any;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTNAMEDDECLARATION__NAME:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__NAME:
     {
         _any = ::ecore::as < ::ecore::EObject > (getName());
     }
         return _any;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__CACHED:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__CACHED:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
                 > ::toAny(_any, isCached());
     }
         return _any;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__BODY:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__BODY:
     {
         _any = ::ecore::as < ::ecore::EObject > (getBody());
     }
         return _any;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__RETURNTYPE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__RETURNTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getReturnType());
     }
@@ -142,7 +142,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__LINE:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -150,7 +150,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setLine(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__START:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -158,7 +158,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setStart(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__END:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -166,7 +166,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setEnd(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__FILENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -174,7 +174,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setFileName(_t0);
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__OWNER:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__OWNER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -182,7 +182,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setOwner(_t1);
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__PARAMS:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__PARAMS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -190,7 +190,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         getParams().insert_all(*_t0);
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__ISPRIVATE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__ISPRIVATE:
     {
         ::ecore::EBoolean _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -198,7 +198,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setIsPrivate(_t0);
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__GUARD:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__GUARD:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -207,7 +207,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setGuard(_t1);
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTNAMEDDECLARATION__NAME:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__NAME:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -215,7 +215,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setName(_t1);
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__CACHED:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__CACHED:
     {
         ::ecore::EBoolean _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -223,7 +223,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setCached(_t0);
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__BODY:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__BODY:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -232,7 +232,7 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
         setBody(_t1);
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__RETURNTYPE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__RETURNTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -257,35 +257,35 @@ void CreateExtension::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getLine());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getStart());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__END:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getEnd());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getFileName());
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__OWNER:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__OWNER:
         return getOwner().get() != nullptr;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__PARAMS:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__PARAMS:
         return getParams().size() > 0;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__ISPRIVATE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__ISPRIVATE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(isIsPrivate());
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__GUARD:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__GUARD:
         return getGuard().get() != nullptr;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTNAMEDDECLARATION__NAME:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__NAME:
         return getName().get() != nullptr;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__CACHED:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__CACHED:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(isCached());
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__BODY:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__BODY:
         return getBody().get() != nullptr;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__RETURNTYPE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__RETURNTYPE:
         return getReturnType().get() != nullptr;
     case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__TOBECREATED:
         return getToBeCreated().get() != nullptr;
@@ -306,7 +306,7 @@ void CreateExtension::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr CreateExtension::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::xpand3::declaration::DeclarationPackage* >(::xpand3::declaration::DeclarationPackage::_instance().get())->getCreateExtension();
+            ::xpand3::declaration::DeclarationPackage::_instance()->getCreateExtension();
     return _eclass;
 }
 
@@ -317,27 +317,27 @@ void CreateExtension::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__OWNER:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__OWNER:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__PARAMS:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__PARAMS:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__GUARD:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__GUARD:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTNAMEDDECLARATION__NAME:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__NAME:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__BODY:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__BODY:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__RETURNTYPE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__RETURNTYPE:
     {
     }
         return;
@@ -357,27 +357,27 @@ void CreateExtension::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__OWNER:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__OWNER:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__PARAMS:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__PARAMS:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__GUARD:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__GUARD:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::ABSTRACTNAMEDDECLARATION__NAME:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__NAME:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__BODY:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__BODY:
     {
     }
         return;
-    case ::xpand3::declaration::DeclarationPackage::EXTENSION__RETURNTYPE:
+    case ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__RETURNTYPE:
     {
     }
         return;

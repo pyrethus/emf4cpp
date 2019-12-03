@@ -51,7 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 Package::Package()
 {
-
     /*PROTECTED REGION ID(PackageImpl__PackageImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -41,13 +41,6 @@ using namespace ::ecore;
 // Default constructor
 ETypeParameter::ETypeParameter()
 {
-
-    m_eBounds.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EGenericType_ptr, -1, true, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getETypeParameter__eBounds() :
-                            ::ecore::EReference_ptr()));
-
     /*PROTECTED REGION ID(ETypeParameterImpl__ETypeParameterImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -68,11 +61,23 @@ ETypeParameter::~ETypeParameter()
 
 const ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& ETypeParameter::getEBounds() const
 {
+    if (!m_eBounds)
+        return const_cast< ETypeParameter* >(this)->getEBounds();
+
     return *m_eBounds;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& ETypeParameter::getEBounds()
 {
+    /*PROTECTED REGION ID(ETypeParameter__getEBounds) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eBounds)
+        m_eBounds.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EGenericType_ptr, -1, true, false >(this,
+                        ::ecore::EcorePackage::_instance()->getETypeParameter__eBounds()));
+    /*PROTECTED REGION END*/
     return *m_eBounds;
 }
 

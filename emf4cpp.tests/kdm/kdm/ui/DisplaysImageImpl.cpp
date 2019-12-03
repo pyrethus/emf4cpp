@@ -64,22 +64,22 @@ void DisplaysImage::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -104,7 +104,7 @@ void DisplaysImage::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -112,7 +112,7 @@ void DisplaysImage::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -120,7 +120,7 @@ void DisplaysImage::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -128,7 +128,7 @@ void DisplaysImage::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -161,13 +161,13 @@ void DisplaysImage::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
     case ::kdm::ui::UiPackage::DISPLAYSIMAGE__TO:
         return getTo().get() != nullptr;
@@ -190,7 +190,7 @@ void DisplaysImage::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr DisplaysImage::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::ui::UiPackage* >(::kdm::ui::UiPackage::_instance().get())->getDisplaysImage();
+            ::kdm::ui::UiPackage::_instance()->getDisplaysImage();
     return _eclass;
 }
 
@@ -201,19 +201,19 @@ void DisplaysImage::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__TAGGEDVALUE:
     {
     }
         return;
@@ -237,19 +237,19 @@ void DisplaysImage::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::ui::UiPackage::DISPLAYSIMAGE__TAGGEDVALUE:
     {
     }
         return;

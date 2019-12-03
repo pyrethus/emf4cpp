@@ -41,9 +41,9 @@ void ArrayValue::_initialize()
     ::json::Value::_initialize();
 
     // References
-    for (size_t i = 0; i < m_values->size(); i++)
+    for (const auto &ref : getValues())
     {
-        (*m_values)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ArrayValueImpl__initialize) START*/
@@ -112,7 +112,7 @@ void ArrayValue::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ArrayValue::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::json::JsonPackage* >(::json::JsonPackage::_instance().get())->getArrayValue();
+            ::json::JsonPackage::_instance()->getArrayValue();
     return _eclass;
 }
 

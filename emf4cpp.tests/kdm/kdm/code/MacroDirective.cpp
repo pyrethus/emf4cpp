@@ -51,7 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 MacroDirective::MacroDirective()
 {
-
     /*PROTECTED REGION ID(MacroDirectiveImpl__MacroDirectiveImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

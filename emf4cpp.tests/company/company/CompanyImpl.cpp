@@ -40,9 +40,9 @@ void Company::_initialize()
     // Supertypes
 
     // References
-    for (size_t i = 0; i < m_departments->size(); i++)
+    for (const auto &ref : getDepartments())
     {
-        (*m_departments)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(CompanyImpl__initialize) START*/
@@ -128,7 +128,7 @@ void Company::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Company::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::company::CompanyPackage* >(::company::CompanyPackage::_instance().get())->getCompany();
+            ::company::CompanyPackage::_instance()->getCompany();
     return _eclass;
 }
 

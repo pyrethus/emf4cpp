@@ -44,13 +44,6 @@ using namespace ::xpand3::declaration;
 // Default constructor
 Definition::Definition()
 {
-
-    m_body.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::statement::AbstractStatement_ptr, -1, true, false >(
-                    this,
-                    ::xpand3::declaration::DeclarationPackage::_instance()->getDefinition__body()));
-
     /*PROTECTED REGION ID(DefinitionImpl__DefinitionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -71,11 +64,24 @@ Definition::~Definition()
 
 const ::ecorecpp::mapping::EList< ::xpand3::statement::AbstractStatement_ptr >& Definition::getBody() const
 {
+    if (!m_body)
+        return const_cast< Definition* >(this)->getBody();
+
     return *m_body;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::statement::AbstractStatement_ptr >& Definition::getBody()
 {
+    /*PROTECTED REGION ID(Definition__getBody) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_body)
+        m_body.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::statement::AbstractStatement_ptr, -1, true,
+                        false >(this,
+                        ::xpand3::declaration::DeclarationPackage::_instance()->getDefinition__body()));
+    /*PROTECTED REGION END*/
     return *m_body;
 }
 

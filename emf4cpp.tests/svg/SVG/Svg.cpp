@@ -48,18 +48,6 @@ using namespace ::SVG;
 // Default constructor
 Svg::Svg()
 {
-
-    m_owner_SVG.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::SvgFile_ptr, -1,
-                    false, true >(this,
-                    ::SVG::SVGPackage::_instance()->getSvg__owner_SVG(),
-                    ::SVG::SVGPackage::SVGFILE__TAG));
-    m_children.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr, -1,
-                    true, true >(this,
-                    ::SVG::SVGPackage::_instance()->getSvg__children(),
-                    ::SVG::SVGPackage::ELEMENT__ROOT));
-
     /*PROTECTED REGION ID(SvgImpl__SvgImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -158,21 +146,47 @@ void Svg::setBaseProfile(::PrimitiveTypes::String _baseProfile)
 
 const ::ecorecpp::mapping::EList< ::SVG::SvgFile_ptr >& Svg::getOwner_SVG() const
 {
+    if (!m_owner_SVG)
+        return const_cast< Svg* >(this)->getOwner_SVG();
+
     return *m_owner_SVG;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::SvgFile_ptr >& Svg::getOwner_SVG()
 {
+    /*PROTECTED REGION ID(Svg__getOwner_SVG) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_owner_SVG)
+        m_owner_SVG.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::SvgFile_ptr,
+                        -1, false, true >(this,
+                        ::SVG::SVGPackage::_instance()->getSvg__owner_SVG(),
+                        ::SVG::SVGPackage::_instance()->getSvgFile__tag()));
+    /*PROTECTED REGION END*/
     return *m_owner_SVG;
 }
 
 const ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& Svg::getChildren() const
 {
+    if (!m_children)
+        return const_cast< Svg* >(this)->getChildren();
+
     return *m_children;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& Svg::getChildren()
 {
+    /*PROTECTED REGION ID(Svg__getChildren) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_children)
+        m_children.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
+                        -1, true, true >(this,
+                        ::SVG::SVGPackage::_instance()->getSvg__children(),
+                        ::SVG::SVGPackage::_instance()->getElement__root()));
+    /*PROTECTED REGION END*/
     return *m_children;
 }
 

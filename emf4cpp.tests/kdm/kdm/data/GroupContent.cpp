@@ -52,7 +52,6 @@ using namespace ::kdm::data;
 // Default constructor
 GroupContent::GroupContent()
 {
-
     /*PROTECTED REGION ID(GroupContentImpl__GroupContentImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

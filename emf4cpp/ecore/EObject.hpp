@@ -95,6 +95,12 @@ public:
 
     /*PROTECTED REGION ID(EObjectImpl) ENABLED START*/
 
+    void _inverseAdd ( ::ecore::EStructuralFeature_ptr _feature,
+            ::ecore::EJavaObject const& _newValue);
+
+    void _inverseRemove ( ::ecore::EStructuralFeature_ptr _feature,
+            ::ecore::EJavaObject const& _oldValue);
+
     void _setEContainer(::ecore::EObject_ptr _eContainer,
             ::ecore::EStructuralFeature_ptr _eContainingFeature);
 

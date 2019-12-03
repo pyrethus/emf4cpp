@@ -57,16 +57,6 @@ using namespace ::«EPackage.getFQN()»;
 // Default constructor
 «name»::«name»()
 {
-«IF (boolean) GLOBALVAR bootstrap»
-    «FOREACH EReferences.select(e|e.upperBound != 1) AS ref-»
-    «ref.getRefMemberName()».reset(new «ref.getListImpl()»(«ref.getListImplConstructorParametersOptional()»));
-    «ENDFOREACH-»
-«ELSE»
-    «FOREACH EReferences.select(e|e.upperBound != 1) AS ref-»
-    «ref.getRefMemberName()».reset(new «ref.getListImpl()»(«ref.getListImplConstructorParameters()»));
-    «ENDFOREACH-»
-«ENDIF»
-
 «PROTECT CSTART '/*' CEND '*/' ID name+"Impl__"+name+"Impl" DISABLE»
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -81,16 +71,6 @@ using namespace ::«EPackage.getFQN()»;
 // Copy constructor only for EObject, needed to properly initialize reference counting
 «name»::«name»(const «name»&)
 {
-«IF (boolean) GLOBALVAR bootstrap»
-    «FOREACH EReferences.select(e|e.upperBound != 1) AS ref-»
-    «ref.getRefMemberName()».reset(new «ref.getListImpl()»(«ref.getListImplConstructorParametersOptional()»));
-    «ENDFOREACH-»
-«ELSE»
-    «FOREACH EReferences.select(e|e.upperBound != 1) AS ref-»
-    «ref.getRefMemberName()».reset(new «ref.getListImpl()»(«ref.getListImplConstructorParameters()»));
-    «ENDFOREACH-»
-«ENDIF»
-
 «PROTECT CSTART '/*' CEND '*/' ID name+"Impl__"+name+"ImplConst" DISABLE»
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -188,6 +168,9 @@ using namespace ::«EPackage.getFQN()»;
     «IF !ref.isMultiple()-»
     return «ref.getRefMemberNameLocked()»;
     «ELSE-»
+    if (!«ref.getRefMemberName()»)
+    	return const_cast<«name»*>(this)->get«ref.name.toFirstUpper()»();
+    
     return *«ref.getRefMemberName()»;
     «ENDIF-»
 }
@@ -196,6 +179,13 @@ using namespace ::«EPackage.getFQN()»;
 		«REM»In case of a container emit another non-const version«ENDREM»
 «ref.getGetCPPSignature(name+"::")»
 {
+	«PROTECT CSTART '/*' CEND '*/' ID name+"__get"+ref.name.toFirstUpper() DISABLE»
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+ 
+	if (!«ref.getRefMemberName()»)
+		«ref.getRefMemberName()».reset(new «ref.getListImpl()»(«ref.getListImplConstructorParameters()»));
+   «ENDPROTECT»
     return *«ref.getRefMemberName()»;
 }
 
@@ -249,14 +239,14 @@ using namespace ::«EPackage.getFQN()»;
 		::ecore::EJavaObject _this = ::ecore::EObject::_this();
                 if (_old_«ref.name»)
 		{
-		        _old_«ref.name»->_inverseRemove(
-			    «ref.EOpposite.EContainingClass.EPackage.getPackageFQN()»::«ref.EOpposite.getFeatureIDFQN()»,
+		        _old_«ref.name»->::ecore::EObject::_inverseRemove(
+			    «ref.EOpposite.EContainingClass.EPackage.getPackageFQN()»::_instance()->«ref.EOpposite.EContainingClass.EPackage.getFeatureGetMember(ref.EOpposite)»(),
 			    _this);
 		}
-		if (_«ref.name»)
+		if (_«ref.name» && «ref.EOpposite.EContainingClass.EPackage.getPackageFQN()»::_instance())
 		{
-		        _«ref.name»->_inverseAdd(
-			    «ref.EOpposite.EContainingClass.EPackage.getPackageFQN()»::«ref.EOpposite.getFeatureIDFQN()»,
+		        _«ref.name»->::ecore::EObject::_inverseAdd(
+			    «ref.EOpposite.EContainingClass.EPackage.getPackageFQN()»::_instance()->«ref.EOpposite.EContainingClass.EPackage.getFeatureGetMember(ref.EOpposite)»(),
 			    _this);
 		}
 		«ref.getSetCPPCall("basic")»(_«ref.name»);

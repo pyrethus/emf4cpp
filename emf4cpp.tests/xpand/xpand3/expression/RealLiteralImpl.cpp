@@ -58,31 +58,31 @@ void RealLiteral::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__LINE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getLine());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getStart());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__END:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getEnd());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getFileName());
     }
         return _any;
-    case ::xpand3::expression::ExpressionPackage::LITERAL__LITERALVALUE:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__LITERALVALUE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getLiteralValue());
     }
@@ -97,7 +97,7 @@ void RealLiteral::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__LINE:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -105,7 +105,7 @@ void RealLiteral::eSet(::ecore::EInt _featureID,
         setLine(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__START:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -113,7 +113,7 @@ void RealLiteral::eSet(::ecore::EInt _featureID,
         setStart(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__END:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -121,7 +121,7 @@ void RealLiteral::eSet(::ecore::EInt _featureID,
         setEnd(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__FILENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -129,7 +129,7 @@ void RealLiteral::eSet(::ecore::EInt _featureID,
         setFileName(_t0);
     }
         return;
-    case ::xpand3::expression::ExpressionPackage::LITERAL__LITERALVALUE:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__LITERALVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -146,19 +146,19 @@ void RealLiteral::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getLine());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getStart());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__END:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getEnd());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getFileName());
-    case ::xpand3::expression::ExpressionPackage::LITERAL__LITERALVALUE:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__LITERALVALUE:
         return getLiteralValue().get() != nullptr;
 
     }
@@ -177,7 +177,7 @@ void RealLiteral::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr RealLiteral::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getRealLiteral();
+            ::xpand3::expression::ExpressionPackage::_instance()->getRealLiteral();
     return _eclass;
 }
 
@@ -188,7 +188,7 @@ void RealLiteral::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::expression::ExpressionPackage::LITERAL__LITERALVALUE:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__LITERALVALUE:
     {
     }
         return;
@@ -204,7 +204,7 @@ void RealLiteral::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::expression::ExpressionPackage::LITERAL__LITERALVALUE:
+    case ::xpand3::expression::ExpressionPackage::REALLITERAL__LITERALVALUE:
     {
     }
         return;

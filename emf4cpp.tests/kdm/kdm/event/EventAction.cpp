@@ -52,12 +52,6 @@ using namespace ::kdm::event;
 // Default constructor
 EventAction::EventAction()
 {
-
-    m_eventElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::event::Event_ptr, -1, true, false >(this,
-                    ::kdm::event::EventPackage::_instance()->getEventAction__eventElement()));
-
     /*PROTECTED REGION ID(EventActionImpl__EventActionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -104,11 +98,23 @@ void EventAction::setKind(::kdm::core::String _kind)
 
 const ::ecorecpp::mapping::EList< ::kdm::event::Event_ptr >& EventAction::getEventElement() const
 {
+    if (!m_eventElement)
+        return const_cast< EventAction* >(this)->getEventElement();
+
     return *m_eventElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::event::Event_ptr >& EventAction::getEventElement()
 {
+    /*PROTECTED REGION ID(EventAction__getEventElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eventElement)
+        m_eventElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::event::Event_ptr, -1, true, false >(this,
+                        ::kdm::event::EventPackage::_instance()->getEventAction__eventElement()));
+    /*PROTECTED REGION END*/
     return *m_eventElement;
 }
 

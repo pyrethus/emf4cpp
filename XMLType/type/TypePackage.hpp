@@ -37,131 +37,11 @@ public:
     static TypePackage_ptr _instance();
     static TypePackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier AnySimpleType
     static const int ANYSIMPLETYPE = 0;
 
+    // IDs for classifier AnyType
     static const int ANYTYPE = 1;
-
-    static const int ANYURI = 2;
-
-    static const int BASE64BINARY = 3;
-
-    static const int BOOLEAN = 4;
-
-    static const int BOOLEANOBJECT = 5;
-
-    static const int BYTE = 6;
-
-    static const int BYTEOBJECT = 7;
-
-    static const int DATE = 8;
-
-    static const int DATETIME = 9;
-
-    static const int DECIMAL = 10;
-
-    static const int DOUBLE = 11;
-
-    static const int DOUBLEOBJECT = 12;
-
-    static const int DURATION = 13;
-
-    static const int ENTITIES = 14;
-
-    static const int ENTITIESBASE = 15;
-
-    static const int ENTITY = 16;
-
-    static const int FLOAT = 17;
-
-    static const int FLOATOBJECT = 18;
-
-    static const int GDAY = 19;
-
-    static const int GMONTH = 20;
-
-    static const int GMONTHDAY = 21;
-
-    static const int GYEAR = 22;
-
-    static const int GYEARMONTH = 23;
-
-    static const int HEXBINARY = 24;
-
-    static const int ID = 25;
-
-    static const int IDREF = 26;
-
-    static const int IDREFS = 27;
-
-    static const int IDREFSBASE = 28;
-
-    static const int INT = 29;
-
-    static const int INTEGER = 30;
-
-    static const int INTOBJECT = 31;
-
-    static const int LANGUAGE = 32;
-
-    static const int LONG = 33;
-
-    static const int LONGOBJECT = 34;
-
-    static const int NAME = 35;
-
-    static const int NCNAME = 36;
-
-    static const int NEGATIVEINTEGER = 37;
-
-    static const int NMTOKEN = 38;
-
-    static const int NMTOKENS = 39;
-
-    static const int NMTOKENSBASE = 40;
-
-    static const int NONNEGATIVEINTEGER = 41;
-
-    static const int NONPOSITIVEINTEGER = 42;
-
-    static const int NORMALIZEDSTRING = 43;
-
-    static const int NOTATION = 44;
-
-    static const int POSITIVEINTEGER = 45;
-
-    static const int PROCESSINGINSTRUCTION = 46;
-
-    static const int QNAME = 47;
-
-    static const int SHORT = 48;
-
-    static const int SHORTOBJECT = 49;
-
-    static const int SIMPLEANYTYPE = 50;
-
-    static const int STRING = 51;
-
-    static const int TIME = 52;
-
-    static const int TOKEN = 53;
-
-    static const int UNSIGNEDBYTE = 54;
-
-    static const int UNSIGNEDBYTEOBJECT = 55;
-
-    static const int UNSIGNEDINT = 56;
-
-    static const int UNSIGNEDINTOBJECT = 57;
-
-    static const int UNSIGNEDLONG = 58;
-
-    static const int UNSIGNEDSHORT = 59;
-
-    static const int UNSIGNEDSHORTOBJECT = 60;
-
-    static const int XMLTYPEDOCUMENTROOT = 61;
 
     static const int ANYTYPE__MIXED = 0;
 
@@ -169,43 +49,223 @@ public:
 
     static const int ANYTYPE__ANYATTRIBUTE = 2;
 
-    static const int PROCESSINGINSTRUCTION__DATA = 3;
+    static const int ANYTYPE_FEATURE_COUNT = 3;
 
-    static const int PROCESSINGINSTRUCTION__TARGET = 4;
+    // IDs for classifier AnyURI
+    static const int ANYURI = 2;
 
-    static const int SIMPLEANYTYPE__RAWVALUE = 5;
+    // IDs for classifier Base64Binary
+    static const int BASE64BINARY = 3;
 
-    static const int SIMPLEANYTYPE__VALUE = 6;
+    // IDs for classifier Boolean
+    static const int BOOLEAN = 4;
 
-    static const int SIMPLEANYTYPE__INSTANCETYPE = 7;
+    // IDs for classifier BooleanObject
+    static const int BOOLEANOBJECT = 5;
 
-    static const int XMLTYPEDOCUMENTROOT__MIXED = 8;
+    // IDs for classifier Byte
+    static const int BYTE = 6;
 
-    static const int XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP = 9;
+    // IDs for classifier ByteObject
+    static const int BYTEOBJECT = 7;
 
-    static const int XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION = 10;
+    // IDs for classifier Date
+    static const int DATE = 8;
 
-    static const int XMLTYPEDOCUMENTROOT__CDATA = 11;
+    // IDs for classifier DateTime
+    static const int DATETIME = 9;
 
-    static const int XMLTYPEDOCUMENTROOT__COMMENT = 12;
+    // IDs for classifier Decimal
+    static const int DECIMAL = 10;
 
-    static const int XMLTYPEDOCUMENTROOT__PROCESSINGINSTRUCTION = 13;
+    // IDs for classifier Double
+    static const int DOUBLE = 11;
 
-    static const int XMLTYPEDOCUMENTROOT__TEXT = 14;
+    // IDs for classifier DoubleObject
+    static const int DOUBLEOBJECT = 12;
 
-    // IDs for classifiers for class AnyType 
+    // IDs for classifier Duration
+    static const int DURATION = 13;
 
-    // IDs for classifiers for class ProcessingInstruction 
+    // IDs for classifier ENTITIES
+    static const int ENTITIES = 14;
 
-    // IDs for classifiers for class SimpleAnyType 
+    // IDs for classifier ENTITIESBase
+    static const int ENTITIESBASE = 15;
 
-    static const int SIMPLEANYTYPE__MIXED = ANYTYPE__MIXED;
+    // IDs for classifier ENTITY
+    static const int ENTITY = 16;
 
-    static const int SIMPLEANYTYPE__ANY = ANYTYPE__ANY;
+    // IDs for classifier Float
+    static const int FLOAT = 17;
 
-    static const int SIMPLEANYTYPE__ANYATTRIBUTE = ANYTYPE__ANYATTRIBUTE;
+    // IDs for classifier FloatObject
+    static const int FLOATOBJECT = 18;
 
-    // IDs for classifiers for class XMLTypeDocumentRoot 
+    // IDs for classifier GDay
+    static const int GDAY = 19;
+
+    // IDs for classifier GMonth
+    static const int GMONTH = 20;
+
+    // IDs for classifier GMonthDay
+    static const int GMONTHDAY = 21;
+
+    // IDs for classifier GYear
+    static const int GYEAR = 22;
+
+    // IDs for classifier GYearMonth
+    static const int GYEARMONTH = 23;
+
+    // IDs for classifier HexBinary
+    static const int HEXBINARY = 24;
+
+    // IDs for classifier ID
+    static const int ID = 25;
+
+    // IDs for classifier IDREF
+    static const int IDREF = 26;
+
+    // IDs for classifier IDREFS
+    static const int IDREFS = 27;
+
+    // IDs for classifier IDREFSBase
+    static const int IDREFSBASE = 28;
+
+    // IDs for classifier Int
+    static const int INT = 29;
+
+    // IDs for classifier Integer
+    static const int INTEGER = 30;
+
+    // IDs for classifier IntObject
+    static const int INTOBJECT = 31;
+
+    // IDs for classifier Language
+    static const int LANGUAGE = 32;
+
+    // IDs for classifier Long
+    static const int LONG = 33;
+
+    // IDs for classifier LongObject
+    static const int LONGOBJECT = 34;
+
+    // IDs for classifier Name
+    static const int NAME = 35;
+
+    // IDs for classifier NCName
+    static const int NCNAME = 36;
+
+    // IDs for classifier NegativeInteger
+    static const int NEGATIVEINTEGER = 37;
+
+    // IDs for classifier NMTOKEN
+    static const int NMTOKEN = 38;
+
+    // IDs for classifier NMTOKENS
+    static const int NMTOKENS = 39;
+
+    // IDs for classifier NMTOKENSBase
+    static const int NMTOKENSBASE = 40;
+
+    // IDs for classifier NonNegativeInteger
+    static const int NONNEGATIVEINTEGER = 41;
+
+    // IDs for classifier NonPositiveInteger
+    static const int NONPOSITIVEINTEGER = 42;
+
+    // IDs for classifier NormalizedString
+    static const int NORMALIZEDSTRING = 43;
+
+    // IDs for classifier NOTATION
+    static const int NOTATION = 44;
+
+    // IDs for classifier PositiveInteger
+    static const int POSITIVEINTEGER = 45;
+
+    // IDs for classifier ProcessingInstruction
+    static const int PROCESSINGINSTRUCTION = 46;
+
+    static const int PROCESSINGINSTRUCTION__DATA = 0;
+
+    static const int PROCESSINGINSTRUCTION__TARGET = 1;
+
+    static const int PROCESSINGINSTRUCTION_FEATURE_COUNT = 2;
+
+    // IDs for classifier QName
+    static const int QNAME = 47;
+
+    // IDs for classifier Short
+    static const int SHORT = 48;
+
+    // IDs for classifier ShortObject
+    static const int SHORTOBJECT = 49;
+
+    // IDs for classifier SimpleAnyType
+    static const int SIMPLEANYTYPE = 50;
+
+    static const int SIMPLEANYTYPE__MIXED = 0;
+
+    static const int SIMPLEANYTYPE__ANY = 1;
+
+    static const int SIMPLEANYTYPE__ANYATTRIBUTE = 2;
+
+    static const int SIMPLEANYTYPE__RAWVALUE = 3;
+
+    static const int SIMPLEANYTYPE__VALUE = 4;
+
+    static const int SIMPLEANYTYPE__INSTANCETYPE = 5;
+
+    static const int SIMPLEANYTYPE_FEATURE_COUNT = 6;
+
+    // IDs for classifier String
+    static const int STRING = 51;
+
+    // IDs for classifier Time
+    static const int TIME = 52;
+
+    // IDs for classifier Token
+    static const int TOKEN = 53;
+
+    // IDs for classifier UnsignedByte
+    static const int UNSIGNEDBYTE = 54;
+
+    // IDs for classifier UnsignedByteObject
+    static const int UNSIGNEDBYTEOBJECT = 55;
+
+    // IDs for classifier UnsignedInt
+    static const int UNSIGNEDINT = 56;
+
+    // IDs for classifier UnsignedIntObject
+    static const int UNSIGNEDINTOBJECT = 57;
+
+    // IDs for classifier UnsignedLong
+    static const int UNSIGNEDLONG = 58;
+
+    // IDs for classifier UnsignedShort
+    static const int UNSIGNEDSHORT = 59;
+
+    // IDs for classifier UnsignedShortObject
+    static const int UNSIGNEDSHORTOBJECT = 60;
+
+    // IDs for classifier XMLTypeDocumentRoot
+    static const int XMLTYPEDOCUMENTROOT = 61;
+
+    static const int XMLTYPEDOCUMENTROOT__MIXED = 0;
+
+    static const int XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP = 1;
+
+    static const int XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION = 2;
+
+    static const int XMLTYPEDOCUMENTROOT__CDATA = 3;
+
+    static const int XMLTYPEDOCUMENTROOT__COMMENT = 4;
+
+    static const int XMLTYPEDOCUMENTROOT__PROCESSINGINSTRUCTION = 5;
+
+    static const int XMLTYPEDOCUMENTROOT__TEXT = 6;
+
+    static const int XMLTYPEDOCUMENTROOT_FEATURE_COUNT = 7;
 
     // EClassifiers methods
 

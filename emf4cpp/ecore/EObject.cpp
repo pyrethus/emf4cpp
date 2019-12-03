@@ -43,7 +43,6 @@ using namespace ::ecore;
 // Default constructor
 EObject::EObject()
 {
-
     /*PROTECTED REGION ID(EObjectImpl__EObjectImpl) ENABLED START*/
     m_eAdapters.reset(
             new ::ecorecpp::mapping::EListImpl< ::ecorecpp::notify::Adapter_ptr >());
@@ -57,7 +56,6 @@ EObject::EObject()
 // Copy constructor only for EObject, needed to properly initialize reference counting
 EObject::EObject(const EObject&)
 {
-
     /*PROTECTED REGION ID(EObjectImpl__EObjectImplConst) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

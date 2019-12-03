@@ -51,7 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 CodeAssembly::CodeAssembly()
 {
-
     /*PROTECTED REGION ID(CodeAssemblyImpl__CodeAssemblyImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

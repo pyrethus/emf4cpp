@@ -46,7 +46,6 @@ using namespace ::kdm::event;
 // Default constructor
 ReadsState::ReadsState()
 {
-
     /*PROTECTED REGION ID(ReadsStateImpl__ReadsStateImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -51,7 +51,6 @@ using namespace ::kdm::conceptual;
 // Default constructor
 FactUnit::FactUnit()
 {
-
     /*PROTECTED REGION ID(FactUnitImpl__FactUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

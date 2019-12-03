@@ -66,33 +66,33 @@ void Tool::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::TOOL__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::TOOL__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::TOOL__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::TOOL__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::build::BuildPackage::TOOL__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::TOOL__BUILDRELATION:
     {
         _any = getBuildRelation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -106,7 +106,7 @@ void Tool::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::TOOL__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -114,7 +114,7 @@ void Tool::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::TOOL__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -122,7 +122,7 @@ void Tool::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::TOOL__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -130,7 +130,7 @@ void Tool::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::TOOL__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -138,7 +138,7 @@ void Tool::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::build::BuildPackage::TOOL__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -146,7 +146,7 @@ void Tool::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         setName(_t0);
     }
         return;
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::TOOL__BUILDRELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -163,18 +163,18 @@ void Tool::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::TOOL__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::TOOL__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::TOOL__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::TOOL__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::build::BuildPackage::TOOL__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::TOOL__BUILDRELATION:
         return getBuildRelation().size() > 0;
 
     }
@@ -193,7 +193,7 @@ void Tool::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Tool::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::build::BuildPackage* >(::kdm::build::BuildPackage::_instance().get())->getTool();
+            ::kdm::build::BuildPackage::_instance()->getTool();
     return _eclass;
 }
 
@@ -204,23 +204,23 @@ void Tool::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::TOOL__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::TOOL__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::TOOL__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::TOOL__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::TOOL__BUILDRELATION:
     {
     }
         return;
@@ -236,23 +236,23 @@ void Tool::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::TOOL__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::TOOL__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::TOOL__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::TOOL__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::TOOL__BUILDRELATION:
     {
     }
         return;

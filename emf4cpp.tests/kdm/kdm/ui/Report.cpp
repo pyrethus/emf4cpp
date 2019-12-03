@@ -52,7 +52,6 @@ using namespace ::kdm::ui;
 // Default constructor
 Report::Report()
 {
-
     /*PROTECTED REGION ID(ReportImpl__ReportImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -37,13 +37,12 @@ public:
     static TopLevelPackagePackage_ptr _instance();
     static TopLevelPackagePackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier TopLevelClass
     static const int TOPLEVELCLASS = 0;
 
     static const int TOPLEVELCLASS__REFERENCE = 0;
 
-    // IDs for classifiers for class TopLevelClass 
+    static const int TOPLEVELCLASS_FEATURE_COUNT = 1;
 
     // EClassifiers methods
 

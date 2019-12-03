@@ -46,12 +46,6 @@ using namespace ::kdm::ui;
 // Default constructor
 UIModel::UIModel()
 {
-
-    m_UIElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::ui::AbstractUIElement_ptr, -1, true, false >(this,
-                    ::kdm::ui::UiPackage::_instance()->getUIModel__UIElement()));
-
     /*PROTECTED REGION ID(UIModelImpl__UIModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -72,11 +66,24 @@ UIModel::~UIModel()
 
 const ::ecorecpp::mapping::EList< ::kdm::ui::AbstractUIElement_ptr >& UIModel::getUIElement() const
 {
+    if (!m_UIElement)
+        return const_cast< UIModel* >(this)->getUIElement();
+
     return *m_UIElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::ui::AbstractUIElement_ptr >& UIModel::getUIElement()
 {
+    /*PROTECTED REGION ID(UIModel__getUIElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_UIElement)
+        m_UIElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::ui::AbstractUIElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::ui::UiPackage::_instance()->getUIModel__UIElement()));
+    /*PROTECTED REGION END*/
     return *m_UIElement;
 }
 

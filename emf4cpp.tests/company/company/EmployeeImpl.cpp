@@ -128,7 +128,7 @@ void Employee::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Employee::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::company::CompanyPackage* >(::company::CompanyPackage::_instance().get())->getEmployee();
+            ::company::CompanyPackage::_instance()->getEmployee();
     return _eclass;
 }
 

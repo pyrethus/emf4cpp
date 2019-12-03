@@ -58,7 +58,7 @@ void SimpleAnyType::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::type::TypePackage::ANYTYPE__MIXED:
+    case ::type::TypePackage::SIMPLEANYTYPE__MIXED:
     {
         std::vector < ::ecorecpp::mapping::any > _anys(getMixed().size());
         for (size_t _i = 0; _i < getMixed().size(); _i++)
@@ -67,7 +67,7 @@ void SimpleAnyType::_initialize()
         _any = _anys;
     }
         return _any;
-    case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
+    case ::type::TypePackage::SIMPLEANYTYPE__ANYATTRIBUTE:
     {
         std::vector < ::ecorecpp::mapping::any
                 > _anys(getAnyAttribute().size());
@@ -92,7 +92,7 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::type::TypePackage::ANYTYPE__MIXED:
+    case ::type::TypePackage::SIMPLEANYTYPE__MIXED:
     {
         ::ecore::EFeatureMapEntry _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
@@ -100,7 +100,7 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
         addMixed(_t0);
     }
         return;
-    case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
+    case ::type::TypePackage::SIMPLEANYTYPE__ANYATTRIBUTE:
     {
         ::ecore::EFeatureMapEntry _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
@@ -125,11 +125,11 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::type::TypePackage::ANYTYPE__MIXED:
+    case ::type::TypePackage::SIMPLEANYTYPE__MIXED:
         return getMixed().size() > 0;
-    case ::type::TypePackage::ANYTYPE__ANY:
+    case ::type::TypePackage::SIMPLEANYTYPE__ANY:
         return getAny().size() > 0;
-    case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
+    case ::type::TypePackage::SIMPLEANYTYPE__ANYATTRIBUTE:
         return getAnyAttribute().size() > 0;
     case ::type::TypePackage::SIMPLEANYTYPE__RAWVALUE:
         return ::ecorecpp::mapping::set_traits < ::type::String
@@ -156,7 +156,7 @@ void SimpleAnyType::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr SimpleAnyType::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::type::TypePackage* >(::type::TypePackage::_instance().get())->getSimpleAnyType();
+            ::type::TypePackage::_instance()->getSimpleAnyType();
     return _eclass;
 }
 

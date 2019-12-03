@@ -53,18 +53,6 @@ using namespace ::kdm::platform;
 // Default constructor
 Machine::Machine()
 {
-
-    m_deployedComponent.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::platform::DeployedComponent_ptr, -1, true, false >(
-                    this,
-                    ::kdm::platform::PlatformPackage::_instance()->getMachine__deployedComponent()));
-    m_deployedResource.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::platform::DeployedResource_ptr, -1, true, false >(
-                    this,
-                    ::kdm::platform::PlatformPackage::_instance()->getMachine__deployedResource()));
-
     /*PROTECTED REGION ID(MachineImpl__MachineImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -85,21 +73,47 @@ Machine::~Machine()
 
 const ::ecorecpp::mapping::EList< ::kdm::platform::DeployedComponent_ptr >& Machine::getDeployedComponent() const
 {
+    if (!m_deployedComponent)
+        return const_cast< Machine* >(this)->getDeployedComponent();
+
     return *m_deployedComponent;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::platform::DeployedComponent_ptr >& Machine::getDeployedComponent()
 {
+    /*PROTECTED REGION ID(Machine__getDeployedComponent) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_deployedComponent)
+        m_deployedComponent.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::platform::DeployedComponent_ptr, -1, true, false >(
+                        this,
+                        ::kdm::platform::PlatformPackage::_instance()->getMachine__deployedComponent()));
+    /*PROTECTED REGION END*/
     return *m_deployedComponent;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::platform::DeployedResource_ptr >& Machine::getDeployedResource() const
 {
+    if (!m_deployedResource)
+        return const_cast< Machine* >(this)->getDeployedResource();
+
     return *m_deployedResource;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::platform::DeployedResource_ptr >& Machine::getDeployedResource()
 {
+    /*PROTECTED REGION ID(Machine__getDeployedResource) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_deployedResource)
+        m_deployedResource.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::platform::DeployedResource_ptr, -1, true, false >(
+                        this,
+                        ::kdm::platform::PlatformPackage::_instance()->getMachine__deployedResource()));
+    /*PROTECTED REGION END*/
     return *m_deployedResource;
 }
 

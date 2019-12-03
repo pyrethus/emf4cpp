@@ -46,13 +46,6 @@ using namespace ::kdm::platform;
 // Default constructor
 PlatformModel::PlatformModel()
 {
-
-    m_platformElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::platform::AbstractPlatformElement_ptr, -1, true,
-                    false >(this,
-                    ::kdm::platform::PlatformPackage::_instance()->getPlatformModel__platformElement()));
-
     /*PROTECTED REGION ID(PlatformModelImpl__PlatformModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -73,11 +66,24 @@ PlatformModel::~PlatformModel()
 
 const ::ecorecpp::mapping::EList< ::kdm::platform::AbstractPlatformElement_ptr >& PlatformModel::getPlatformElement() const
 {
+    if (!m_platformElement)
+        return const_cast< PlatformModel* >(this)->getPlatformElement();
+
     return *m_platformElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::platform::AbstractPlatformElement_ptr >& PlatformModel::getPlatformElement()
 {
+    /*PROTECTED REGION ID(PlatformModel__getPlatformElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_platformElement)
+        m_platformElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::platform::AbstractPlatformElement_ptr, -1, true,
+                        false >(this,
+                        ::kdm::platform::PlatformPackage::_instance()->getPlatformModel__platformElement()));
+    /*PROTECTED REGION END*/
     return *m_platformElement;
 }
 

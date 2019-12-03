@@ -45,9 +45,9 @@ void ModelElement::_initialize()
     ::kdm::core::Element::_initialize();
 
     // References
-    for (size_t i = 0; i < m_taggedValue->size(); i++)
+    for (const auto &ref : getTaggedValue())
     {
-        (*m_taggedValue)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ModelElementImpl__initialize) START*/
@@ -65,12 +65,12 @@ void ModelElement::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::MODELELEMENT__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::MODELELEMENT__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -95,7 +95,7 @@ void ModelElement::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::MODELELEMENT__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -103,7 +103,7 @@ void ModelElement::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::MODELELEMENT__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -136,9 +136,9 @@ void ModelElement::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::MODELELEMENT__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::MODELELEMENT__ANNOTATION:
         return getAnnotation().size() > 0;
     case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
         return getStereotype().size() > 0;
@@ -161,7 +161,7 @@ void ModelElement::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ModelElement::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getModelElement();
+            ::kdm::core::CorePackage::_instance()->getModelElement();
     return _eclass;
 }
 
@@ -172,11 +172,11 @@ void ModelElement::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::MODELELEMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::MODELELEMENT__ANNOTATION:
     {
     }
         return;
@@ -200,11 +200,11 @@ void ModelElement::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::core::CorePackage::MODELELEMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::core::CorePackage::MODELELEMENT__ANNOTATION:
     {
     }
         return;

@@ -48,13 +48,6 @@ using namespace ::SVG;
 // Default constructor
 Marker::Marker()
 {
-
-    m_drawing.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr, -1,
-                    true, true >(this,
-                    ::SVG::SVGPackage::_instance()->getMarker__drawing(),
-                    ::SVG::SVGPackage::ELEMENT__DRAWSMARKER));
-
     /*PROTECTED REGION ID(MarkerImpl__MarkerImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -231,11 +224,24 @@ void Marker::setOrient(::PrimitiveTypes::String _orient)
 
 const ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& Marker::getDrawing() const
 {
+    if (!m_drawing)
+        return const_cast< Marker* >(this)->getDrawing();
+
     return *m_drawing;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& Marker::getDrawing()
 {
+    /*PROTECTED REGION ID(Marker__getDrawing) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_drawing)
+        m_drawing.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
+                        -1, true, true >(this,
+                        ::SVG::SVGPackage::_instance()->getMarker__drawing(),
+                        ::SVG::SVGPackage::_instance()->getElement__drawsMarker()));
+    /*PROTECTED REGION END*/
     return *m_drawing;
 }
 

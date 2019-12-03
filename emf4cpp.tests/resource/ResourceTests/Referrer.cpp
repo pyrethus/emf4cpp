@@ -39,7 +39,6 @@ using namespace ::ResourceTests;
 // Default constructor
 Referrer::Referrer()
 {
-
     /*PROTECTED REGION ID(ReferrerImpl__ReferrerImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

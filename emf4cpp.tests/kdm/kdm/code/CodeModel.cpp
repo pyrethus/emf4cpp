@@ -46,13 +46,6 @@ using namespace ::kdm::code;
 // Default constructor
 CodeModel::CodeModel()
 {
-
-    m_codeElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::AbstractCodeElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::code::CodePackage::_instance()->getCodeModel__codeElement()));
-
     /*PROTECTED REGION ID(CodeModelImpl__CodeModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -73,11 +66,24 @@ CodeModel::~CodeModel()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& CodeModel::getCodeElement() const
 {
+    if (!m_codeElement)
+        return const_cast< CodeModel* >(this)->getCodeElement();
+
     return *m_codeElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& CodeModel::getCodeElement()
 {
+    /*PROTECTED REGION ID(CodeModel__getCodeElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_codeElement)
+        m_codeElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::AbstractCodeElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::code::CodePackage::_instance()->getCodeModel__codeElement()));
+    /*PROTECTED REGION END*/
     return *m_codeElement;
 }
 

@@ -58,7 +58,7 @@ void FontWeight::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTWEIGHT__ATTOWNER:
     {
         _any = getAttOwner().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -79,7 +79,7 @@ void FontWeight::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTWEIGHT__ATTOWNER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -104,7 +104,7 @@ void FontWeight::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTWEIGHT__ATTOWNER:
         return getAttOwner().size() > 0;
     case ::SVG::SVGPackage::FONTWEIGHT__BOLD:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Boolean
@@ -126,7 +126,7 @@ void FontWeight::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr FontWeight::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getFontWeight();
+            ::SVG::SVGPackage::_instance()->getFontWeight();
     return _eclass;
 }
 
@@ -137,7 +137,7 @@ void FontWeight::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTWEIGHT__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -163,7 +163,7 @@ void FontWeight::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::FONTWEIGHT__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

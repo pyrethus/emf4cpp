@@ -41,13 +41,13 @@ void Model::_initialize()
     // Supertypes
 
     // References
-    for (size_t i = 0; i < m_imports->size(); i++)
+    for (const auto &ref : getImports())
     {
-        (*m_imports)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_elements->size(); i++)
+    for (const auto &ref : getElements())
     {
-        (*m_elements)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ModelImpl__initialize) START*/
@@ -131,7 +131,7 @@ void Model::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Model::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::myDsl::MyDslPackage* >(::myDsl::MyDslPackage::_instance().get())->getModel();
+            ::myDsl::MyDslPackage::_instance()->getModel();
     return _eclass;
 }
 

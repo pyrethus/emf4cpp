@@ -137,221 +137,279 @@ void EventPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = EventFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // EventModel
     m_EventModelEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_EventModelEClass->setClassifierID(EVENTMODEL);
-    m_EventModelEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EventModelEClass);
+    m_EventModelEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EventModelEClass);
     // m_EventModel__eventElement has already been allocated above
     m_EventModel__eventElement->setFeatureID(
             ::kdm::event::EventPackage::EVENTMODEL__EVENTELEMENT);
-    m_EventModelEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventModelEClass->getEStructuralFeatures()).basicAdd(
             m_EventModel__eventElement);
+    m_EventModel__eventElement->basicsetEContainingClass(m_EventModelEClass);
 
     // AbstractEventElement
     m_AbstractEventElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractEventElementEClass->setClassifierID(ABSTRACTEVENTELEMENT);
-    m_AbstractEventElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractEventElementEClass);
+    m_AbstractEventElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractEventElementEClass);
     // m_AbstractEventElement__source has already been allocated above
     m_AbstractEventElement__source->setFeatureID(
             ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__SOURCE);
-    m_AbstractEventElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractEventElement__source);
+    m_AbstractEventElement__source->basicsetEContainingClass(
+            m_AbstractEventElementEClass);
     // m_AbstractEventElement__eventRelation has already been allocated above
     m_AbstractEventElement__eventRelation->setFeatureID(
             ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__EVENTRELATION);
-    m_AbstractEventElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractEventElement__eventRelation);
+    m_AbstractEventElement__eventRelation->basicsetEContainingClass(
+            m_AbstractEventElementEClass);
     // m_AbstractEventElement__abstraction has already been allocated above
     m_AbstractEventElement__abstraction->setFeatureID(
             ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__ABSTRACTION);
-    m_AbstractEventElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractEventElement__abstraction);
+    m_AbstractEventElement__abstraction->basicsetEContainingClass(
+            m_AbstractEventElementEClass);
     // m_AbstractEventElement__implementation has already been allocated above
     m_AbstractEventElement__implementation->setFeatureID(
             ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__IMPLEMENTATION);
-    m_AbstractEventElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractEventElement__implementation);
+    m_AbstractEventElement__implementation->basicsetEContainingClass(
+            m_AbstractEventElementEClass);
 
     // Event
     m_EventEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_EventEClass->setClassifierID(EVENT);
-    m_EventEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EventEClass);
+    m_EventEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EventEClass);
     // m_Event__kind has already been allocated above
     m_Event__kind->setFeatureID(::kdm::event::EventPackage::EVENT__KIND);
-    m_EventEClass->getEStructuralFeatures().push_back(m_Event__kind);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventEClass->getEStructuralFeatures()).basicAdd(
+            m_Event__kind);
+    m_Event__kind->basicsetEContainingClass(m_EventEClass);
 
     // AbstractEventRelationship
     m_AbstractEventRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractEventRelationshipEClass->setClassifierID(
             ABSTRACTEVENTRELATIONSHIP);
-    m_AbstractEventRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractEventRelationshipEClass);
+    m_AbstractEventRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractEventRelationshipEClass);
 
     // EventRelationship
     m_EventRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_EventRelationshipEClass->setClassifierID(EVENTRELATIONSHIP);
-    m_EventRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EventRelationshipEClass);
+    m_EventRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EventRelationshipEClass);
     // m_EventRelationship__to has already been allocated above
     m_EventRelationship__to->setFeatureID(
             ::kdm::event::EventPackage::EVENTRELATIONSHIP__TO);
-    m_EventRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_EventRelationship__to);
+    m_EventRelationship__to->basicsetEContainingClass(
+            m_EventRelationshipEClass);
     // m_EventRelationship__from has already been allocated above
     m_EventRelationship__from->setFeatureID(
             ::kdm::event::EventPackage::EVENTRELATIONSHIP__FROM);
-    m_EventRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_EventRelationship__from);
+    m_EventRelationship__from->basicsetEContainingClass(
+            m_EventRelationshipEClass);
 
     // EventResource
     m_EventResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_EventResourceEClass->setClassifierID(EVENTRESOURCE);
-    m_EventResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EventResourceEClass);
+    m_EventResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EventResourceEClass);
     // m_EventResource__eventElement has already been allocated above
     m_EventResource__eventElement->setFeatureID(
             ::kdm::event::EventPackage::EVENTRESOURCE__EVENTELEMENT);
-    m_EventResourceEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventResourceEClass->getEStructuralFeatures()).basicAdd(
             m_EventResource__eventElement);
+    m_EventResource__eventElement->basicsetEContainingClass(
+            m_EventResourceEClass);
 
     // State
     m_StateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_StateEClass->setClassifierID(STATE);
-    m_StateEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_StateEClass);
+    m_StateEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StateEClass);
 
     // Transition
     m_TransitionEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TransitionEClass->setClassifierID(TRANSITION);
-    m_TransitionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TransitionEClass);
+    m_TransitionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TransitionEClass);
 
     // OnEntry
     m_OnEntryEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_OnEntryEClass->setClassifierID(ONENTRY);
-    m_OnEntryEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_OnEntryEClass);
+    m_OnEntryEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_OnEntryEClass);
 
     // OnExit
     m_OnExitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_OnExitEClass->setClassifierID(ONEXIT);
-    m_OnExitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_OnExitEClass);
+    m_OnExitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_OnExitEClass);
 
     // EventAction
     m_EventActionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_EventActionEClass->setClassifierID(EVENTACTION);
-    m_EventActionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EventActionEClass);
+    m_EventActionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EventActionEClass);
     // m_EventAction__kind has already been allocated above
     m_EventAction__kind->setFeatureID(
             ::kdm::event::EventPackage::EVENTACTION__KIND);
-    m_EventActionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventActionEClass->getEStructuralFeatures()).basicAdd(
             m_EventAction__kind);
+    m_EventAction__kind->basicsetEContainingClass(m_EventActionEClass);
     // m_EventAction__eventElement has already been allocated above
     m_EventAction__eventElement->setFeatureID(
             ::kdm::event::EventPackage::EVENTACTION__EVENTELEMENT);
-    m_EventActionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventActionEClass->getEStructuralFeatures()).basicAdd(
             m_EventAction__eventElement);
+    m_EventAction__eventElement->basicsetEContainingClass(m_EventActionEClass);
 
     // ReadsState
     m_ReadsStateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ReadsStateEClass->setClassifierID(READSSTATE);
-    m_ReadsStateEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ReadsStateEClass);
+    m_ReadsStateEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ReadsStateEClass);
     // m_ReadsState__to has already been allocated above
     m_ReadsState__to->setFeatureID(::kdm::event::EventPackage::READSSTATE__TO);
-    m_ReadsStateEClass->getEStructuralFeatures().push_back(m_ReadsState__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsStateEClass->getEStructuralFeatures()).basicAdd(
+            m_ReadsState__to);
+    m_ReadsState__to->basicsetEContainingClass(m_ReadsStateEClass);
     // m_ReadsState__from has already been allocated above
     m_ReadsState__from->setFeatureID(
             ::kdm::event::EventPackage::READSSTATE__FROM);
-    m_ReadsStateEClass->getEStructuralFeatures().push_back(m_ReadsState__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsStateEClass->getEStructuralFeatures()).basicAdd(
+            m_ReadsState__from);
+    m_ReadsState__from->basicsetEContainingClass(m_ReadsStateEClass);
 
     // ProducesEvent
     m_ProducesEventEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ProducesEventEClass->setClassifierID(PRODUCESEVENT);
-    m_ProducesEventEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ProducesEventEClass);
+    m_ProducesEventEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ProducesEventEClass);
     // m_ProducesEvent__to has already been allocated above
     m_ProducesEvent__to->setFeatureID(
             ::kdm::event::EventPackage::PRODUCESEVENT__TO);
-    m_ProducesEventEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEventEClass->getEStructuralFeatures()).basicAdd(
             m_ProducesEvent__to);
+    m_ProducesEvent__to->basicsetEContainingClass(m_ProducesEventEClass);
     // m_ProducesEvent__from has already been allocated above
     m_ProducesEvent__from->setFeatureID(
             ::kdm::event::EventPackage::PRODUCESEVENT__FROM);
-    m_ProducesEventEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEventEClass->getEStructuralFeatures()).basicAdd(
             m_ProducesEvent__from);
+    m_ProducesEvent__from->basicsetEContainingClass(m_ProducesEventEClass);
 
     // ConsumesEvent
     m_ConsumesEventEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConsumesEventEClass->setClassifierID(CONSUMESEVENT);
-    m_ConsumesEventEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConsumesEventEClass);
+    m_ConsumesEventEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConsumesEventEClass);
     // m_ConsumesEvent__to has already been allocated above
     m_ConsumesEvent__to->setFeatureID(
             ::kdm::event::EventPackage::CONSUMESEVENT__TO);
-    m_ConsumesEventEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEventEClass->getEStructuralFeatures()).basicAdd(
             m_ConsumesEvent__to);
+    m_ConsumesEvent__to->basicsetEContainingClass(m_ConsumesEventEClass);
     // m_ConsumesEvent__from has already been allocated above
     m_ConsumesEvent__from->setFeatureID(
             ::kdm::event::EventPackage::CONSUMESEVENT__FROM);
-    m_ConsumesEventEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEventEClass->getEStructuralFeatures()).basicAdd(
             m_ConsumesEvent__from);
+    m_ConsumesEvent__from->basicsetEContainingClass(m_ConsumesEventEClass);
 
     // NextState
     m_NextStateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_NextStateEClass->setClassifierID(NEXTSTATE);
-    m_NextStateEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NextStateEClass);
+    m_NextStateEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NextStateEClass);
     // m_NextState__to has already been allocated above
     m_NextState__to->setFeatureID(::kdm::event::EventPackage::NEXTSTATE__TO);
-    m_NextStateEClass->getEStructuralFeatures().push_back(m_NextState__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NextStateEClass->getEStructuralFeatures()).basicAdd(
+            m_NextState__to);
+    m_NextState__to->basicsetEContainingClass(m_NextStateEClass);
     // m_NextState__from has already been allocated above
     m_NextState__from->setFeatureID(
             ::kdm::event::EventPackage::NEXTSTATE__FROM);
-    m_NextStateEClass->getEStructuralFeatures().push_back(m_NextState__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NextStateEClass->getEStructuralFeatures()).basicAdd(
+            m_NextState__from);
+    m_NextState__from->basicsetEContainingClass(m_NextStateEClass);
 
     // InitialState
     m_InitialStateEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_InitialStateEClass->setClassifierID(INITIALSTATE);
-    m_InitialStateEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_InitialStateEClass);
+    m_InitialStateEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_InitialStateEClass);
 
     // EventElement
     m_EventElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_EventElementEClass->setClassifierID(EVENTELEMENT);
-    m_EventElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EventElementEClass);
+    m_EventElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EventElementEClass);
 
     // HasState
     m_HasStateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_HasStateEClass->setClassifierID(HASSTATE);
-    m_HasStateEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_HasStateEClass);
+    m_HasStateEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_HasStateEClass);
     // m_HasState__to has already been allocated above
     m_HasState__to->setFeatureID(::kdm::event::EventPackage::HASSTATE__TO);
-    m_HasStateEClass->getEStructuralFeatures().push_back(m_HasState__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasStateEClass->getEStructuralFeatures()).basicAdd(
+            m_HasState__to);
+    m_HasState__to->basicsetEContainingClass(m_HasStateEClass);
     // m_HasState__from has already been allocated above
     m_HasState__from->setFeatureID(::kdm::event::EventPackage::HASSTATE__FROM);
-    m_HasStateEClass->getEStructuralFeatures().push_back(m_HasState__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasStateEClass->getEStructuralFeatures()).basicAdd(
+            m_HasState__from);
+    m_HasState__from->basicsetEContainingClass(m_HasStateEClass);
 
     // Create enums
 

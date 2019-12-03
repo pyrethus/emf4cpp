@@ -67,65 +67,84 @@ void CompanyPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = CompanyFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Employee
     m_EmployeeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_EmployeeEClass->setClassifierID(EMPLOYEE);
-    m_EmployeeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EmployeeEClass);
+    m_EmployeeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EmployeeEClass);
     // m_Employee__name has already been allocated above
     m_Employee__name->setFeatureID(::company::CompanyPackage::EMPLOYEE__NAME);
-    m_EmployeeEClass->getEStructuralFeatures().push_back(m_Employee__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EmployeeEClass->getEStructuralFeatures()).basicAdd(
+            m_Employee__name);
+    m_Employee__name->basicsetEContainingClass(m_EmployeeEClass);
     // m_Employee__phonebookEntry has already been allocated above
     m_Employee__phonebookEntry->setFeatureID(
             ::company::CompanyPackage::EMPLOYEE__PHONEBOOKENTRY);
-    m_EmployeeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EmployeeEClass->getEStructuralFeatures()).basicAdd(
             m_Employee__phonebookEntry);
+    m_Employee__phonebookEntry->basicsetEContainingClass(m_EmployeeEClass);
 
     // Department
     m_DepartmentEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DepartmentEClass->setClassifierID(DEPARTMENT);
-    m_DepartmentEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DepartmentEClass);
-    // m_Department__number has already been allocated above
-    m_Department__number->setFeatureID(
-            ::company::CompanyPackage::DEPARTMENT__NUMBER);
-    m_DepartmentEClass->getEStructuralFeatures().push_back(
-            m_Department__number);
+    m_DepartmentEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DepartmentEClass);
     // m_Department__employees has already been allocated above
     m_Department__employees->setFeatureID(
             ::company::CompanyPackage::DEPARTMENT__EMPLOYEES);
-    m_DepartmentEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures()).basicAdd(
             m_Department__employees);
+    m_Department__employees->basicsetEContainingClass(m_DepartmentEClass);
     // m_Department__manager has already been allocated above
     m_Department__manager->setFeatureID(
             ::company::CompanyPackage::DEPARTMENT__MANAGER);
-    m_DepartmentEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures()).basicAdd(
             m_Department__manager);
+    m_Department__manager->basicsetEContainingClass(m_DepartmentEClass);
+    // m_Department__number has already been allocated above
+    m_Department__number->setFeatureID(
+            ::company::CompanyPackage::DEPARTMENT__NUMBER);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures()).basicAdd(
+            m_Department__number);
+    m_Department__number->basicsetEContainingClass(m_DepartmentEClass);
 
     // Company
     m_CompanyEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CompanyEClass->setClassifierID(COMPANY);
-    m_CompanyEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CompanyEClass);
+    m_CompanyEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CompanyEClass);
     // m_Company__name has already been allocated above
     m_Company__name->setFeatureID(::company::CompanyPackage::COMPANY__NAME);
-    m_CompanyEClass->getEStructuralFeatures().push_back(m_Company__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompanyEClass->getEStructuralFeatures()).basicAdd(
+            m_Company__name);
+    m_Company__name->basicsetEContainingClass(m_CompanyEClass);
     // m_Company__departments has already been allocated above
     m_Company__departments->setFeatureID(
             ::company::CompanyPackage::COMPANY__DEPARTMENTS);
-    m_CompanyEClass->getEStructuralFeatures().push_back(m_Company__departments);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompanyEClass->getEStructuralFeatures()).basicAdd(
+            m_Company__departments);
+    m_Company__departments->basicsetEContainingClass(m_CompanyEClass);
 
     // PhonebookEntry
     m_PhonebookEntryEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_PhonebookEntryEClass->setClassifierID(PHONEBOOKENTRY);
-    m_PhonebookEntryEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PhonebookEntryEClass);
+    m_PhonebookEntryEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PhonebookEntryEClass);
 
     // Create enums
 

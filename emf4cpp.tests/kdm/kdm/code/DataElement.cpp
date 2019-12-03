@@ -51,12 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 DataElement::DataElement()
 {
-
-    m_codeElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::Datatype_ptr, -1, true, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getDataElement__codeElement()));
-
     /*PROTECTED REGION ID(DataElementImpl__DataElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -156,11 +150,23 @@ void DataElement::setType(::kdm::code::Datatype_ptr _type)
 
 const ::ecorecpp::mapping::EList< ::kdm::code::Datatype_ptr >& DataElement::getCodeElement() const
 {
+    if (!m_codeElement)
+        return const_cast< DataElement* >(this)->getCodeElement();
+
     return *m_codeElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::Datatype_ptr >& DataElement::getCodeElement()
 {
+    /*PROTECTED REGION ID(DataElement__getCodeElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_codeElement)
+        m_codeElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::Datatype_ptr, -1, true, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getDataElement__codeElement()));
+    /*PROTECTED REGION END*/
     return *m_codeElement;
 }
 

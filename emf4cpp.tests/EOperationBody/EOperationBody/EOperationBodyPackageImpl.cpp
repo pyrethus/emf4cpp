@@ -49,23 +49,28 @@ void EOperationBodyPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = EOperationBodyFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
     ::ecore::EOperation_ptr _op;
     ::ecore::EParameter_ptr _pa;
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Integer
     m_IntegerEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_IntegerEClass->setClassifierID(INTEGER);
-    m_IntegerEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_IntegerEClass);
+    m_IntegerEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IntegerEClass);
     // m_Integer__value has already been allocated above
     m_Integer__value->setFeatureID(
             ::EOperationBody::EOperationBodyPackage::INTEGER__VALUE);
-    m_IntegerEClass->getEStructuralFeatures().push_back(m_Integer__value);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IntegerEClass->getEStructuralFeatures()).basicAdd(
+            m_Integer__value);
+    m_Integer__value->basicsetEContainingClass(m_IntegerEClass);
 
     // Create enums
 

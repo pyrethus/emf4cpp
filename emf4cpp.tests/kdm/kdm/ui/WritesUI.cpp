@@ -46,7 +46,6 @@ using namespace ::kdm::ui;
 // Default constructor
 WritesUI::WritesUI()
 {
-
     /*PROTECTED REGION ID(WritesUIImpl__WritesUIImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

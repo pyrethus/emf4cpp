@@ -107,7 +107,7 @@ void TopLevelClass::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr TopLevelClass::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::TopLevelPackage::TopLevelPackagePackage* >(::TopLevelPackage::TopLevelPackagePackage::_instance().get())->getTopLevelClass();
+            ::TopLevelPackage::TopLevelPackagePackage::_instance()->getTopLevelClass();
     return _eclass;
 }
 

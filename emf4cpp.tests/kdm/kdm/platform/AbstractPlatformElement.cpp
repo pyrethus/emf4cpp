@@ -50,26 +50,6 @@ using namespace ::kdm::platform;
 // Default constructor
 AbstractPlatformElement::AbstractPlatformElement()
 {
-
-    m_source.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::SourceRef_ptr, -1, true, false >(this,
-                    ::kdm::platform::PlatformPackage::_instance()->getAbstractPlatformElement__source()));
-    m_relation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::platform::AbstractPlatformRelationship_ptr, -1, true,
-                    false >(this,
-                    ::kdm::platform::PlatformPackage::_instance()->getAbstractPlatformElement__relation()));
-    m_abstraction.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::action::ActionElement_ptr, -1, true, false >(this,
-                    ::kdm::platform::PlatformPackage::_instance()->getAbstractPlatformElement__abstraction()));
-    m_implementation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::AbstractCodeElement_ptr, -1, false, false >(
-                    this,
-                    ::kdm::platform::PlatformPackage::_instance()->getAbstractPlatformElement__implementation()));
-
     /*PROTECTED REGION ID(AbstractPlatformElementImpl__AbstractPlatformElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -90,42 +70,93 @@ AbstractPlatformElement::~AbstractPlatformElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractPlatformElement::getSource() const
 {
+    if (!m_source)
+        return const_cast< AbstractPlatformElement* >(this)->getSource();
+
     return *m_source;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractPlatformElement::getSource()
 {
+    /*PROTECTED REGION ID(AbstractPlatformElement__getSource) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_source)
+        m_source.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::SourceRef_ptr, -1, true, false >(this,
+                        ::kdm::platform::PlatformPackage::_instance()->getAbstractPlatformElement__source()));
+    /*PROTECTED REGION END*/
     return *m_source;
 }
 
 const ::ecorecpp::mapping::EList<
         ::kdm::platform::AbstractPlatformRelationship_ptr >& AbstractPlatformElement::getRelation() const
 {
+    if (!m_relation)
+        return const_cast< AbstractPlatformElement* >(this)->getRelation();
+
     return *m_relation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::platform::AbstractPlatformRelationship_ptr >& AbstractPlatformElement::getRelation()
 {
+    /*PROTECTED REGION ID(AbstractPlatformElement__getRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_relation)
+        m_relation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::platform::AbstractPlatformRelationship_ptr, -1,
+                        true, false >(this,
+                        ::kdm::platform::PlatformPackage::_instance()->getAbstractPlatformElement__relation()));
+    /*PROTECTED REGION END*/
     return *m_relation;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractPlatformElement::getAbstraction() const
 {
+    if (!m_abstraction)
+        return const_cast< AbstractPlatformElement* >(this)->getAbstraction();
+
     return *m_abstraction;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractPlatformElement::getAbstraction()
 {
+    /*PROTECTED REGION ID(AbstractPlatformElement__getAbstraction) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_abstraction)
+        m_abstraction.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::action::ActionElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::platform::PlatformPackage::_instance()->getAbstractPlatformElement__abstraction()));
+    /*PROTECTED REGION END*/
     return *m_abstraction;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& AbstractPlatformElement::getImplementation() const
 {
+    if (!m_implementation)
+        return const_cast< AbstractPlatformElement* >(this)->getImplementation();
+
     return *m_implementation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& AbstractPlatformElement::getImplementation()
 {
+    /*PROTECTED REGION ID(AbstractPlatformElement__getImplementation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_implementation)
+        m_implementation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::AbstractCodeElement_ptr, -1, false, false >(
+                        this,
+                        ::kdm::platform::PlatformPackage::_instance()->getAbstractPlatformElement__implementation()));
+    /*PROTECTED REGION END*/
     return *m_implementation;
 }
 

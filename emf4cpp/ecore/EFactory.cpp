@@ -44,7 +44,6 @@ using namespace ::ecore;
 // Default constructor
 EFactory::EFactory()
 {
-
     /*PROTECTED REGION ID(EFactoryImpl__EFactoryImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -103,13 +102,15 @@ void EFactory::setEPackage(::ecore::EPackage_ptr _ePackage)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_ePackage)
         {
-            _old_ePackage->_inverseRemove(
-                    ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE, _this);
+            _old_ePackage->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEPackage__eFactoryInstance(),
+                    _this);
         }
-        if (_ePackage)
+        if (_ePackage && ::ecore::EcorePackage::_instance())
         {
-            _ePackage->_inverseAdd(
-                    ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE, _this);
+            _ePackage->::ecore::EObject::_inverseAdd(
+                    ::ecore::EcorePackage::_instance()->getEPackage__eFactoryInstance(),
+                    _this);
         }
         basicsetEPackage(_ePackage);
     }

@@ -37,51 +37,54 @@ public:
     static EoppositePackage_ptr _instance();
     static EoppositePackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier LeftHand
     static const int LEFTHAND = 0;
 
+    static const int LEFTHAND__NAME = 0;
+
+    static const int LEFTHAND__RIGHTEE = 1;
+
+    static const int LEFTHAND__RIGHTMULTIPLE = 2;
+
+    static const int LEFTHAND_FEATURE_COUNT = 3;
+
+    // IDs for classifier NamedObject
     static const int NAMEDOBJECT = 1;
 
+    static const int NAMEDOBJECT__NAME = 0;
+
+    static const int NAMEDOBJECT_FEATURE_COUNT = 1;
+
+    // IDs for classifier RightHand
     static const int RIGHTHAND = 2;
 
+    static const int RIGHTHAND__NAME = 0;
+
+    static const int RIGHTHAND__LEFTEE = 1;
+
+    static const int RIGHTHAND_FEATURE_COUNT = 2;
+
+    // IDs for classifier RightMultiple
     static const int RIGHTMULTIPLE = 3;
 
+    static const int RIGHTMULTIPLE__NAME = 0;
+
+    static const int RIGHTMULTIPLE__LEFTEES = 1;
+
+    static const int RIGHTMULTIPLE_FEATURE_COUNT = 2;
+
+    // IDs for classifier TopLevel
     static const int TOPLEVEL = 4;
 
-    static const int TOPLEVEL__LEFTEES = 0;
+    static const int TOPLEVEL__NAME = 0;
 
-    static const int TOPLEVEL__RIGHTEES = 1;
+    static const int TOPLEVEL__LEFTEES = 1;
 
-    static const int TOPLEVEL__RIGHTMULTIPLES = 2;
+    static const int TOPLEVEL__RIGHTEES = 2;
 
-    static const int NAMEDOBJECT__NAME = 3;
+    static const int TOPLEVEL__RIGHTMULTIPLES = 3;
 
-    static const int LEFTHAND__RIGHTEE = 4;
-
-    static const int LEFTHAND__RIGHTMULTIPLE = 5;
-
-    static const int RIGHTHAND__LEFTEE = 6;
-
-    static const int RIGHTMULTIPLE__LEFTEES = 7;
-
-    // IDs for classifiers for class LeftHand 
-
-    static const int LEFTHAND__NAME = NAMEDOBJECT__NAME;
-
-    // IDs for classifiers for class NamedObject 
-
-    // IDs for classifiers for class RightHand 
-
-    static const int RIGHTHAND__NAME = NAMEDOBJECT__NAME;
-
-    // IDs for classifiers for class RightMultiple 
-
-    static const int RIGHTMULTIPLE__NAME = NAMEDOBJECT__NAME;
-
-    // IDs for classifiers for class TopLevel 
-
-    static const int TOPLEVEL__NAME = NAMEDOBJECT__NAME;
+    static const int TOPLEVEL_FEATURE_COUNT = 4;
 
     // EClassifiers methods
 

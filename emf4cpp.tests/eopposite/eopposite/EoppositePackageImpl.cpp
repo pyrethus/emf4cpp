@@ -71,78 +71,100 @@ void EoppositePackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = EoppositeFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // TopLevel
     m_TopLevelEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TopLevelEClass->setClassifierID(TOPLEVEL);
-    m_TopLevelEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TopLevelEClass);
+    m_TopLevelEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TopLevelEClass);
     // m_TopLevel__leftees has already been allocated above
     m_TopLevel__leftees->setFeatureID(
             ::eopposite::EoppositePackage::TOPLEVEL__LEFTEES);
-    m_TopLevelEClass->getEStructuralFeatures().push_back(m_TopLevel__leftees);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TopLevelEClass->getEStructuralFeatures()).basicAdd(
+            m_TopLevel__leftees);
+    m_TopLevel__leftees->basicsetEContainingClass(m_TopLevelEClass);
     // m_TopLevel__rightees has already been allocated above
     m_TopLevel__rightees->setFeatureID(
             ::eopposite::EoppositePackage::TOPLEVEL__RIGHTEES);
-    m_TopLevelEClass->getEStructuralFeatures().push_back(m_TopLevel__rightees);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TopLevelEClass->getEStructuralFeatures()).basicAdd(
+            m_TopLevel__rightees);
+    m_TopLevel__rightees->basicsetEContainingClass(m_TopLevelEClass);
     // m_TopLevel__rightMultiples has already been allocated above
     m_TopLevel__rightMultiples->setFeatureID(
             ::eopposite::EoppositePackage::TOPLEVEL__RIGHTMULTIPLES);
-    m_TopLevelEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TopLevelEClass->getEStructuralFeatures()).basicAdd(
             m_TopLevel__rightMultiples);
+    m_TopLevel__rightMultiples->basicsetEContainingClass(m_TopLevelEClass);
 
     // NamedObject
     m_NamedObjectEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_NamedObjectEClass->setClassifierID(NAMEDOBJECT);
-    m_NamedObjectEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NamedObjectEClass);
+    m_NamedObjectEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NamedObjectEClass);
     // m_NamedObject__name has already been allocated above
     m_NamedObject__name->setFeatureID(
             ::eopposite::EoppositePackage::NAMEDOBJECT__NAME);
-    m_NamedObjectEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NamedObjectEClass->getEStructuralFeatures()).basicAdd(
             m_NamedObject__name);
+    m_NamedObject__name->basicsetEContainingClass(m_NamedObjectEClass);
 
     // LeftHand
     m_LeftHandEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_LeftHandEClass->setClassifierID(LEFTHAND);
-    m_LeftHandEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LeftHandEClass);
+    m_LeftHandEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LeftHandEClass);
     // m_LeftHand__rightee has already been allocated above
     m_LeftHand__rightee->setFeatureID(
             ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE);
-    m_LeftHandEClass->getEStructuralFeatures().push_back(m_LeftHand__rightee);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeftHandEClass->getEStructuralFeatures()).basicAdd(
+            m_LeftHand__rightee);
+    m_LeftHand__rightee->basicsetEContainingClass(m_LeftHandEClass);
     // m_LeftHand__rightMultiple has already been allocated above
     m_LeftHand__rightMultiple->setFeatureID(
             ::eopposite::EoppositePackage::LEFTHAND__RIGHTMULTIPLE);
-    m_LeftHandEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeftHandEClass->getEStructuralFeatures()).basicAdd(
             m_LeftHand__rightMultiple);
+    m_LeftHand__rightMultiple->basicsetEContainingClass(m_LeftHandEClass);
 
     // RightHand
     m_RightHandEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_RightHandEClass->setClassifierID(RIGHTHAND);
-    m_RightHandEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RightHandEClass);
+    m_RightHandEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RightHandEClass);
     // m_RightHand__leftee has already been allocated above
     m_RightHand__leftee->setFeatureID(
             ::eopposite::EoppositePackage::RIGHTHAND__LEFTEE);
-    m_RightHandEClass->getEStructuralFeatures().push_back(m_RightHand__leftee);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RightHandEClass->getEStructuralFeatures()).basicAdd(
+            m_RightHand__leftee);
+    m_RightHand__leftee->basicsetEContainingClass(m_RightHandEClass);
 
     // RightMultiple
     m_RightMultipleEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_RightMultipleEClass->setClassifierID(RIGHTMULTIPLE);
-    m_RightMultipleEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RightMultipleEClass);
+    m_RightMultipleEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RightMultipleEClass);
     // m_RightMultiple__leftees has already been allocated above
     m_RightMultiple__leftees->setFeatureID(
             ::eopposite::EoppositePackage::RIGHTMULTIPLE__LEFTEES);
-    m_RightMultipleEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RightMultipleEClass->getEStructuralFeatures()).basicAdd(
             m_RightMultiple__leftees);
+    m_RightMultiple__leftees->basicsetEContainingClass(m_RightMultipleEClass);
 
     // Create enums
 

@@ -48,7 +48,6 @@ using namespace ::kdm::structure;
 // Default constructor
 Layer::Layer()
 {
-
     /*PROTECTED REGION ID(LayerImpl__LayerImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

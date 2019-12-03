@@ -50,7 +50,6 @@ using namespace ::kdm::code;
 // Default constructor
 CodeElement::CodeElement()
 {
-
     /*PROTECTED REGION ID(CodeElementImpl__CodeElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -141,7 +141,7 @@ void Property::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Property::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::myDsl::MyDslPackage* >(::myDsl::MyDslPackage::_instance().get())->getProperty();
+            ::myDsl::MyDslPackage::_instance()->getProperty();
     return _eclass;
 }
 

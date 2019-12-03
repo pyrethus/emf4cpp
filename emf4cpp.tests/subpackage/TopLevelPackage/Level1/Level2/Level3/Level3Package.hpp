@@ -45,13 +45,12 @@ namespace TopLevelPackage
                 static Level3Package_ptr _instance();
                 static Level3Package_ptr _getInstanceAndRemoveOwnership();
 
-                // IDs for classifiers
-
+                // IDs for classifier Level3Class
                 static const int LEVEL3CLASS = 0;
 
-                // IDs for classifiers for class Level3Class 
+                static const int LEVEL3CLASS__REFERENCE = 0;
 
-                static const int LEVEL3CLASS__REFERENCE = ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE;
+                static const int LEVEL3CLASS_FEATURE_COUNT = 1;
 
                 // EClassifiers methods
 

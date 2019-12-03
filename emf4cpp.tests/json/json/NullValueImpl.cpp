@@ -93,7 +93,7 @@ void NullValue::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr NullValue::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::json::JsonPackage* >(::json::JsonPackage::_instance().get())->getNullValue();
+            ::json::JsonPackage::_instance()->getNullValue();
     return _eclass;
 }
 

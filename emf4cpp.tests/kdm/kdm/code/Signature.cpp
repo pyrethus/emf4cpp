@@ -51,12 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 Signature::Signature()
 {
-
-    m_parameterUnit.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::ParameterUnit_ptr, -1, true, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getSignature__parameterUnit()));
-
     /*PROTECTED REGION ID(SignatureImpl__SignatureImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -77,11 +71,23 @@ Signature::~Signature()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::ParameterUnit_ptr >& Signature::getParameterUnit() const
 {
+    if (!m_parameterUnit)
+        return const_cast< Signature* >(this)->getParameterUnit();
+
     return *m_parameterUnit;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::ParameterUnit_ptr >& Signature::getParameterUnit()
 {
+    /*PROTECTED REGION ID(Signature__getParameterUnit) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_parameterUnit)
+        m_parameterUnit.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::ParameterUnit_ptr, -1, true, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getSignature__parameterUnit()));
+    /*PROTECTED REGION END*/
     return *m_parameterUnit;
 }
 

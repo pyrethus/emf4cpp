@@ -66,44 +66,44 @@ void ResourceDescription::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__INVENTORYRELATION:
     {
         _any = getInventoryRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__VERSION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__VERSION:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getVersion());
     }
         return _any;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__PATH:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__PATH:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getPath());
@@ -119,7 +119,7 @@ void ResourceDescription::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -127,7 +127,7 @@ void ResourceDescription::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -135,7 +135,7 @@ void ResourceDescription::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -143,7 +143,7 @@ void ResourceDescription::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -151,7 +151,7 @@ void ResourceDescription::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -159,7 +159,7 @@ void ResourceDescription::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__INVENTORYRELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -167,7 +167,7 @@ void ResourceDescription::eSet(::ecore::EInt _featureID,
         getInventoryRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__VERSION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__VERSION:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -175,7 +175,7 @@ void ResourceDescription::eSet(::ecore::EInt _featureID,
         setVersion(_t0);
     }
         return;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__PATH:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__PATH:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -192,23 +192,23 @@ void ResourceDescription::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__INVENTORYRELATION:
         return getInventoryRelation().size() > 0;
-    case ::kdm::source::SourcePackage::INVENTORYITEM__VERSION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__VERSION:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getVersion());
-    case ::kdm::source::SourcePackage::INVENTORYITEM__PATH:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__PATH:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getPath());
 
@@ -228,7 +228,7 @@ void ResourceDescription::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ResourceDescription::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getResourceDescription();
+            ::kdm::source::SourcePackage::_instance()->getResourceDescription();
     return _eclass;
 }
 
@@ -239,23 +239,23 @@ void ResourceDescription::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__INVENTORYRELATION:
     {
     }
         return;
@@ -271,23 +271,23 @@ void ResourceDescription::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
+    case ::kdm::source::SourcePackage::RESOURCEDESCRIPTION__INVENTORYRELATION:
     {
     }
         return;

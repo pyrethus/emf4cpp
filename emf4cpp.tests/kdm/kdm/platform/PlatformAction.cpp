@@ -52,12 +52,6 @@ using namespace ::kdm::platform;
 // Default constructor
 PlatformAction::PlatformAction()
 {
-
-    m_platformElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::platform::PlatformEvent_ptr, -1, true, false >(this,
-                    ::kdm::platform::PlatformPackage::_instance()->getPlatformAction__platformElement()));
-
     /*PROTECTED REGION ID(PlatformActionImpl__PlatformActionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -104,11 +98,24 @@ void PlatformAction::setKind(::kdm::core::String _kind)
 
 const ::ecorecpp::mapping::EList< ::kdm::platform::PlatformEvent_ptr >& PlatformAction::getPlatformElement() const
 {
+    if (!m_platformElement)
+        return const_cast< PlatformAction* >(this)->getPlatformElement();
+
     return *m_platformElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::platform::PlatformEvent_ptr >& PlatformAction::getPlatformElement()
 {
+    /*PROTECTED REGION ID(PlatformAction__getPlatformElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_platformElement)
+        m_platformElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::platform::PlatformEvent_ptr, -1, true, false >(
+                        this,
+                        ::kdm::platform::PlatformPackage::_instance()->getPlatformAction__platformElement()));
+    /*PROTECTED REGION END*/
     return *m_platformElement;
 }
 

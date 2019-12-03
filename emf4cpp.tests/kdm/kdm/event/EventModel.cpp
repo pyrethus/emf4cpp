@@ -46,13 +46,6 @@ using namespace ::kdm::event;
 // Default constructor
 EventModel::EventModel()
 {
-
-    m_eventElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::event::AbstractEventElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::event::EventPackage::_instance()->getEventModel__eventElement()));
-
     /*PROTECTED REGION ID(EventModelImpl__EventModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -73,11 +66,24 @@ EventModel::~EventModel()
 
 const ::ecorecpp::mapping::EList< ::kdm::event::AbstractEventElement_ptr >& EventModel::getEventElement() const
 {
+    if (!m_eventElement)
+        return const_cast< EventModel* >(this)->getEventElement();
+
     return *m_eventElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::event::AbstractEventElement_ptr >& EventModel::getEventElement()
 {
+    /*PROTECTED REGION ID(EventModel__getEventElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eventElement)
+        m_eventElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::event::AbstractEventElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::event::EventPackage::_instance()->getEventModel__eventElement()));
+    /*PROTECTED REGION END*/
     return *m_eventElement;
 }
 

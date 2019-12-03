@@ -42,373 +42,389 @@ namespace kdm
         static EventPackage_ptr _instance();
         static EventPackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier AbstractEventElement
         static const int ABSTRACTEVENTELEMENT = 0;
 
+        static const int ABSTRACTEVENTELEMENT__ATTRIBUTE = 0;
+
+        static const int ABSTRACTEVENTELEMENT__ANNOTATION = 1;
+
+        static const int ABSTRACTEVENTELEMENT__STEREOTYPE = 2;
+
+        static const int ABSTRACTEVENTELEMENT__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTEVENTELEMENT__NAME = 4;
+
+        static const int ABSTRACTEVENTELEMENT__SOURCE = 5;
+
+        static const int ABSTRACTEVENTELEMENT__EVENTRELATION = 6;
+
+        static const int ABSTRACTEVENTELEMENT__ABSTRACTION = 7;
+
+        static const int ABSTRACTEVENTELEMENT__IMPLEMENTATION = 8;
+
+        static const int ABSTRACTEVENTELEMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier AbstractEventRelationship
         static const int ABSTRACTEVENTRELATIONSHIP = 1;
 
+        static const int ABSTRACTEVENTRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int ABSTRACTEVENTRELATIONSHIP__ANNOTATION = 1;
+
+        static const int ABSTRACTEVENTRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int ABSTRACTEVENTRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTEVENTRELATIONSHIP_FEATURE_COUNT = 4;
+
+        // IDs for classifier ConsumesEvent
         static const int CONSUMESEVENT = 2;
 
+        static const int CONSUMESEVENT__ATTRIBUTE = 0;
+
+        static const int CONSUMESEVENT__ANNOTATION = 1;
+
+        static const int CONSUMESEVENT__STEREOTYPE = 2;
+
+        static const int CONSUMESEVENT__TAGGEDVALUE = 3;
+
+        static const int CONSUMESEVENT__TO = 4;
+
+        static const int CONSUMESEVENT__FROM = 5;
+
+        static const int CONSUMESEVENT_FEATURE_COUNT = 6;
+
+        // IDs for classifier Event
         static const int EVENT = 3;
 
+        static const int EVENT__ATTRIBUTE = 0;
+
+        static const int EVENT__ANNOTATION = 1;
+
+        static const int EVENT__STEREOTYPE = 2;
+
+        static const int EVENT__TAGGEDVALUE = 3;
+
+        static const int EVENT__NAME = 4;
+
+        static const int EVENT__SOURCE = 5;
+
+        static const int EVENT__EVENTRELATION = 6;
+
+        static const int EVENT__ABSTRACTION = 7;
+
+        static const int EVENT__IMPLEMENTATION = 8;
+
+        static const int EVENT__KIND = 9;
+
+        static const int EVENT_FEATURE_COUNT = 10;
+
+        // IDs for classifier EventAction
         static const int EVENTACTION = 4;
 
+        static const int EVENTACTION__ATTRIBUTE = 0;
+
+        static const int EVENTACTION__ANNOTATION = 1;
+
+        static const int EVENTACTION__STEREOTYPE = 2;
+
+        static const int EVENTACTION__TAGGEDVALUE = 3;
+
+        static const int EVENTACTION__NAME = 4;
+
+        static const int EVENTACTION__SOURCE = 5;
+
+        static const int EVENTACTION__EVENTRELATION = 6;
+
+        static const int EVENTACTION__ABSTRACTION = 7;
+
+        static const int EVENTACTION__IMPLEMENTATION = 8;
+
+        static const int EVENTACTION__KIND = 9;
+
+        static const int EVENTACTION__EVENTELEMENT = 10;
+
+        static const int EVENTACTION_FEATURE_COUNT = 11;
+
+        // IDs for classifier EventElement
         static const int EVENTELEMENT = 5;
 
+        static const int EVENTELEMENT__ATTRIBUTE = 0;
+
+        static const int EVENTELEMENT__ANNOTATION = 1;
+
+        static const int EVENTELEMENT__STEREOTYPE = 2;
+
+        static const int EVENTELEMENT__TAGGEDVALUE = 3;
+
+        static const int EVENTELEMENT__NAME = 4;
+
+        static const int EVENTELEMENT__SOURCE = 5;
+
+        static const int EVENTELEMENT__EVENTRELATION = 6;
+
+        static const int EVENTELEMENT__ABSTRACTION = 7;
+
+        static const int EVENTELEMENT__IMPLEMENTATION = 8;
+
+        static const int EVENTELEMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier EventModel
         static const int EVENTMODEL = 6;
 
+        static const int EVENTMODEL__ATTRIBUTE = 0;
+
+        static const int EVENTMODEL__ANNOTATION = 1;
+
+        static const int EVENTMODEL__STEREOTYPE = 2;
+
+        static const int EVENTMODEL__TAGGEDVALUE = 3;
+
+        static const int EVENTMODEL__AUDIT = 4;
+
+        static const int EVENTMODEL__EXTENSIONFAMILY = 5;
+
+        static const int EVENTMODEL__NAME = 6;
+
+        static const int EVENTMODEL__EVENTELEMENT = 7;
+
+        static const int EVENTMODEL_FEATURE_COUNT = 8;
+
+        // IDs for classifier EventRelationship
         static const int EVENTRELATIONSHIP = 7;
 
+        static const int EVENTRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int EVENTRELATIONSHIP__ANNOTATION = 1;
+
+        static const int EVENTRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int EVENTRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int EVENTRELATIONSHIP__TO = 4;
+
+        static const int EVENTRELATIONSHIP__FROM = 5;
+
+        static const int EVENTRELATIONSHIP_FEATURE_COUNT = 6;
+
+        // IDs for classifier EventResource
         static const int EVENTRESOURCE = 8;
 
+        static const int EVENTRESOURCE__ATTRIBUTE = 0;
+
+        static const int EVENTRESOURCE__ANNOTATION = 1;
+
+        static const int EVENTRESOURCE__STEREOTYPE = 2;
+
+        static const int EVENTRESOURCE__TAGGEDVALUE = 3;
+
+        static const int EVENTRESOURCE__NAME = 4;
+
+        static const int EVENTRESOURCE__SOURCE = 5;
+
+        static const int EVENTRESOURCE__EVENTRELATION = 6;
+
+        static const int EVENTRESOURCE__ABSTRACTION = 7;
+
+        static const int EVENTRESOURCE__IMPLEMENTATION = 8;
+
+        static const int EVENTRESOURCE__EVENTELEMENT = 9;
+
+        static const int EVENTRESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier HasState
         static const int HASSTATE = 9;
 
+        static const int HASSTATE__ATTRIBUTE = 0;
+
+        static const int HASSTATE__ANNOTATION = 1;
+
+        static const int HASSTATE__STEREOTYPE = 2;
+
+        static const int HASSTATE__TAGGEDVALUE = 3;
+
+        static const int HASSTATE__TO = 4;
+
+        static const int HASSTATE__FROM = 5;
+
+        static const int HASSTATE_FEATURE_COUNT = 6;
+
+        // IDs for classifier InitialState
         static const int INITIALSTATE = 10;
 
+        static const int INITIALSTATE__ATTRIBUTE = 0;
+
+        static const int INITIALSTATE__ANNOTATION = 1;
+
+        static const int INITIALSTATE__STEREOTYPE = 2;
+
+        static const int INITIALSTATE__TAGGEDVALUE = 3;
+
+        static const int INITIALSTATE__NAME = 4;
+
+        static const int INITIALSTATE__SOURCE = 5;
+
+        static const int INITIALSTATE__EVENTRELATION = 6;
+
+        static const int INITIALSTATE__ABSTRACTION = 7;
+
+        static const int INITIALSTATE__IMPLEMENTATION = 8;
+
+        static const int INITIALSTATE__EVENTELEMENT = 9;
+
+        static const int INITIALSTATE_FEATURE_COUNT = 10;
+
+        // IDs for classifier NextState
         static const int NEXTSTATE = 11;
 
+        static const int NEXTSTATE__ATTRIBUTE = 0;
+
+        static const int NEXTSTATE__ANNOTATION = 1;
+
+        static const int NEXTSTATE__STEREOTYPE = 2;
+
+        static const int NEXTSTATE__TAGGEDVALUE = 3;
+
+        static const int NEXTSTATE__TO = 4;
+
+        static const int NEXTSTATE__FROM = 5;
+
+        static const int NEXTSTATE_FEATURE_COUNT = 6;
+
+        // IDs for classifier OnEntry
         static const int ONENTRY = 12;
 
+        static const int ONENTRY__ATTRIBUTE = 0;
+
+        static const int ONENTRY__ANNOTATION = 1;
+
+        static const int ONENTRY__STEREOTYPE = 2;
+
+        static const int ONENTRY__TAGGEDVALUE = 3;
+
+        static const int ONENTRY__NAME = 4;
+
+        static const int ONENTRY__SOURCE = 5;
+
+        static const int ONENTRY__EVENTRELATION = 6;
+
+        static const int ONENTRY__ABSTRACTION = 7;
+
+        static const int ONENTRY__IMPLEMENTATION = 8;
+
+        static const int ONENTRY__EVENTELEMENT = 9;
+
+        static const int ONENTRY_FEATURE_COUNT = 10;
+
+        // IDs for classifier OnExit
         static const int ONEXIT = 13;
 
+        static const int ONEXIT__ATTRIBUTE = 0;
+
+        static const int ONEXIT__ANNOTATION = 1;
+
+        static const int ONEXIT__STEREOTYPE = 2;
+
+        static const int ONEXIT__TAGGEDVALUE = 3;
+
+        static const int ONEXIT__NAME = 4;
+
+        static const int ONEXIT__SOURCE = 5;
+
+        static const int ONEXIT__EVENTRELATION = 6;
+
+        static const int ONEXIT__ABSTRACTION = 7;
+
+        static const int ONEXIT__IMPLEMENTATION = 8;
+
+        static const int ONEXIT__EVENTELEMENT = 9;
+
+        static const int ONEXIT_FEATURE_COUNT = 10;
+
+        // IDs for classifier ProducesEvent
         static const int PRODUCESEVENT = 14;
 
+        static const int PRODUCESEVENT__ATTRIBUTE = 0;
+
+        static const int PRODUCESEVENT__ANNOTATION = 1;
+
+        static const int PRODUCESEVENT__STEREOTYPE = 2;
+
+        static const int PRODUCESEVENT__TAGGEDVALUE = 3;
+
+        static const int PRODUCESEVENT__TO = 4;
+
+        static const int PRODUCESEVENT__FROM = 5;
+
+        static const int PRODUCESEVENT_FEATURE_COUNT = 6;
+
+        // IDs for classifier ReadsState
         static const int READSSTATE = 15;
 
+        static const int READSSTATE__ATTRIBUTE = 0;
+
+        static const int READSSTATE__ANNOTATION = 1;
+
+        static const int READSSTATE__STEREOTYPE = 2;
+
+        static const int READSSTATE__TAGGEDVALUE = 3;
+
+        static const int READSSTATE__TO = 4;
+
+        static const int READSSTATE__FROM = 5;
+
+        static const int READSSTATE_FEATURE_COUNT = 6;
+
+        // IDs for classifier State
         static const int STATE = 16;
 
+        static const int STATE__ATTRIBUTE = 0;
+
+        static const int STATE__ANNOTATION = 1;
+
+        static const int STATE__STEREOTYPE = 2;
+
+        static const int STATE__TAGGEDVALUE = 3;
+
+        static const int STATE__NAME = 4;
+
+        static const int STATE__SOURCE = 5;
+
+        static const int STATE__EVENTRELATION = 6;
+
+        static const int STATE__ABSTRACTION = 7;
+
+        static const int STATE__IMPLEMENTATION = 8;
+
+        static const int STATE__EVENTELEMENT = 9;
+
+        static const int STATE_FEATURE_COUNT = 10;
+
+        // IDs for classifier Transition
         static const int TRANSITION = 17;
 
-        static const int EVENTMODEL__EVENTELEMENT = 187;
+        static const int TRANSITION__ATTRIBUTE = 0;
 
-        static const int ABSTRACTEVENTELEMENT__SOURCE = 188;
+        static const int TRANSITION__ANNOTATION = 1;
 
-        static const int ABSTRACTEVENTELEMENT__EVENTRELATION = 189;
+        static const int TRANSITION__STEREOTYPE = 2;
 
-        static const int ABSTRACTEVENTELEMENT__ABSTRACTION = 190;
+        static const int TRANSITION__TAGGEDVALUE = 3;
 
-        static const int ABSTRACTEVENTELEMENT__IMPLEMENTATION = 191;
+        static const int TRANSITION__NAME = 4;
 
-        static const int EVENT__KIND = 192;
+        static const int TRANSITION__SOURCE = 5;
 
-        static const int EVENTRELATIONSHIP__TO = 193;
+        static const int TRANSITION__EVENTRELATION = 6;
 
-        static const int EVENTRELATIONSHIP__FROM = 194;
+        static const int TRANSITION__ABSTRACTION = 7;
 
-        static const int EVENTRESOURCE__EVENTELEMENT = 195;
+        static const int TRANSITION__IMPLEMENTATION = 8;
 
-        static const int EVENTACTION__KIND = 196;
+        static const int TRANSITION__EVENTELEMENT = 9;
 
-        static const int EVENTACTION__EVENTELEMENT = 197;
-
-        static const int READSSTATE__TO = 198;
-
-        static const int READSSTATE__FROM = 199;
-
-        static const int PRODUCESEVENT__TO = 200;
-
-        static const int PRODUCESEVENT__FROM = 201;
-
-        static const int CONSUMESEVENT__TO = 202;
-
-        static const int CONSUMESEVENT__FROM = 203;
-
-        static const int NEXTSTATE__TO = 204;
-
-        static const int NEXTSTATE__FROM = 205;
-
-        static const int HASSTATE__TO = 206;
-
-        static const int HASSTATE__FROM = 207;
-
-        // IDs for classifiers for class AbstractEventElement 
-
-        static const int ABSTRACTEVENTELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTEVENTELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTEVENTELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTEVENTELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ABSTRACTEVENTELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        // IDs for classifiers for class AbstractEventRelationship 
-
-        static const int ABSTRACTEVENTRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTEVENTRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTEVENTRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTEVENTRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ConsumesEvent 
-
-        static const int CONSUMESEVENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CONSUMESEVENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CONSUMESEVENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CONSUMESEVENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Event 
-
-        static const int EVENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EVENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EVENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EVENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int EVENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int EVENT__SOURCE = ABSTRACTEVENTELEMENT__SOURCE;
-
-        static const int EVENT__EVENTRELATION = ABSTRACTEVENTELEMENT__EVENTRELATION;
-
-        static const int EVENT__ABSTRACTION = ABSTRACTEVENTELEMENT__ABSTRACTION;
-
-        static const int EVENT__IMPLEMENTATION = ABSTRACTEVENTELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class EventAction 
-
-        static const int EVENTACTION__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EVENTACTION__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EVENTACTION__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EVENTACTION__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int EVENTACTION__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int EVENTACTION__SOURCE = ABSTRACTEVENTELEMENT__SOURCE;
-
-        static const int EVENTACTION__EVENTRELATION = ABSTRACTEVENTELEMENT__EVENTRELATION;
-
-        static const int EVENTACTION__ABSTRACTION = ABSTRACTEVENTELEMENT__ABSTRACTION;
-
-        static const int EVENTACTION__IMPLEMENTATION = ABSTRACTEVENTELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class EventElement 
-
-        static const int EVENTELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EVENTELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EVENTELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EVENTELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int EVENTELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int EVENTELEMENT__SOURCE = ABSTRACTEVENTELEMENT__SOURCE;
-
-        static const int EVENTELEMENT__EVENTRELATION = ABSTRACTEVENTELEMENT__EVENTRELATION;
-
-        static const int EVENTELEMENT__ABSTRACTION = ABSTRACTEVENTELEMENT__ABSTRACTION;
-
-        static const int EVENTELEMENT__IMPLEMENTATION = ABSTRACTEVENTELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class EventModel 
-
-        static const int EVENTMODEL__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EVENTMODEL__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EVENTMODEL__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EVENTMODEL__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int EVENTMODEL__AUDIT = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT;
-
-        static const int EVENTMODEL__EXTENSIONFAMILY = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY;
-
-        static const int EVENTMODEL__NAME = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME;
-
-        // IDs for classifiers for class EventRelationship 
-
-        static const int EVENTRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EVENTRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EVENTRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EVENTRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class EventResource 
-
-        static const int EVENTRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EVENTRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EVENTRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EVENTRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int EVENTRESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int EVENTRESOURCE__SOURCE = ABSTRACTEVENTELEMENT__SOURCE;
-
-        static const int EVENTRESOURCE__EVENTRELATION = ABSTRACTEVENTELEMENT__EVENTRELATION;
-
-        static const int EVENTRESOURCE__ABSTRACTION = ABSTRACTEVENTELEMENT__ABSTRACTION;
-
-        static const int EVENTRESOURCE__IMPLEMENTATION = ABSTRACTEVENTELEMENT__IMPLEMENTATION;
-
-        // IDs for classifiers for class HasState 
-
-        static const int HASSTATE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int HASSTATE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int HASSTATE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int HASSTATE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class InitialState 
-
-        static const int INITIALSTATE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INITIALSTATE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INITIALSTATE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INITIALSTATE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int INITIALSTATE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int INITIALSTATE__SOURCE = ABSTRACTEVENTELEMENT__SOURCE;
-
-        static const int INITIALSTATE__EVENTRELATION = ABSTRACTEVENTELEMENT__EVENTRELATION;
-
-        static const int INITIALSTATE__ABSTRACTION = ABSTRACTEVENTELEMENT__ABSTRACTION;
-
-        static const int INITIALSTATE__IMPLEMENTATION = ABSTRACTEVENTELEMENT__IMPLEMENTATION;
-
-        static const int INITIALSTATE__EVENTELEMENT = EVENTRESOURCE__EVENTELEMENT;
-
-        // IDs for classifiers for class NextState 
-
-        static const int NEXTSTATE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int NEXTSTATE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int NEXTSTATE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int NEXTSTATE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class OnEntry 
-
-        static const int ONENTRY__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ONENTRY__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ONENTRY__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ONENTRY__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ONENTRY__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int ONENTRY__SOURCE = ABSTRACTEVENTELEMENT__SOURCE;
-
-        static const int ONENTRY__EVENTRELATION = ABSTRACTEVENTELEMENT__EVENTRELATION;
-
-        static const int ONENTRY__ABSTRACTION = ABSTRACTEVENTELEMENT__ABSTRACTION;
-
-        static const int ONENTRY__IMPLEMENTATION = ABSTRACTEVENTELEMENT__IMPLEMENTATION;
-
-        static const int ONENTRY__EVENTELEMENT = EVENTRESOURCE__EVENTELEMENT;
-
-        // IDs for classifiers for class OnExit 
-
-        static const int ONEXIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ONEXIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ONEXIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ONEXIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ONEXIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int ONEXIT__SOURCE = ABSTRACTEVENTELEMENT__SOURCE;
-
-        static const int ONEXIT__EVENTRELATION = ABSTRACTEVENTELEMENT__EVENTRELATION;
-
-        static const int ONEXIT__ABSTRACTION = ABSTRACTEVENTELEMENT__ABSTRACTION;
-
-        static const int ONEXIT__IMPLEMENTATION = ABSTRACTEVENTELEMENT__IMPLEMENTATION;
-
-        static const int ONEXIT__EVENTELEMENT = EVENTRESOURCE__EVENTELEMENT;
-
-        // IDs for classifiers for class ProducesEvent 
-
-        static const int PRODUCESEVENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PRODUCESEVENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PRODUCESEVENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PRODUCESEVENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ReadsState 
-
-        static const int READSSTATE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int READSSTATE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int READSSTATE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int READSSTATE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class State 
-
-        static const int STATE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int STATE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int STATE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int STATE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int STATE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int STATE__SOURCE = ABSTRACTEVENTELEMENT__SOURCE;
-
-        static const int STATE__EVENTRELATION = ABSTRACTEVENTELEMENT__EVENTRELATION;
-
-        static const int STATE__ABSTRACTION = ABSTRACTEVENTELEMENT__ABSTRACTION;
-
-        static const int STATE__IMPLEMENTATION = ABSTRACTEVENTELEMENT__IMPLEMENTATION;
-
-        static const int STATE__EVENTELEMENT = EVENTRESOURCE__EVENTELEMENT;
-
-        // IDs for classifiers for class Transition 
-
-        static const int TRANSITION__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TRANSITION__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TRANSITION__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int TRANSITION__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int TRANSITION__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int TRANSITION__SOURCE = ABSTRACTEVENTELEMENT__SOURCE;
-
-        static const int TRANSITION__EVENTRELATION = ABSTRACTEVENTELEMENT__EVENTRELATION;
-
-        static const int TRANSITION__ABSTRACTION = ABSTRACTEVENTELEMENT__ABSTRACTION;
-
-        static const int TRANSITION__IMPLEMENTATION = ABSTRACTEVENTELEMENT__IMPLEMENTATION;
-
-        static const int TRANSITION__EVENTELEMENT = EVENTRESOURCE__EVENTELEMENT;
+        static const int TRANSITION_FEATURE_COUNT = 10;
 
         // EClassifiers methods
 

@@ -52,7 +52,6 @@ using namespace ::kdm::data;
 // Default constructor
 RecordFile::RecordFile()
 {
-
     /*PROTECTED REGION ID(RecordFileImpl__RecordFileImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

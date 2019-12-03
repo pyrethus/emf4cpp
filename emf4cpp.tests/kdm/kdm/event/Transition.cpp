@@ -52,7 +52,6 @@ using namespace ::kdm::event;
 // Default constructor
 Transition::Transition()
 {
-
     /*PROTECTED REGION ID(TransitionImpl__TransitionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

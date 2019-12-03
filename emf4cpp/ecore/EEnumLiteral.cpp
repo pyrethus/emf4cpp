@@ -41,7 +41,6 @@ using namespace ::ecore;
 // Default constructor
 EEnumLiteral::EEnumLiteral()
 {
-
     /*PROTECTED REGION ID(EEnumLiteralImpl__EEnumLiteralImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -178,12 +177,15 @@ void EEnumLiteral::setEEnum(::ecore::EEnum_ptr _eEnum)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_eEnum)
         {
-            _old_eEnum->_inverseRemove(::ecore::EcorePackage::EENUM__ELITERALS,
+            _old_eEnum->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEEnum__eLiterals(),
                     _this);
         }
-        if (_eEnum)
+        if (_eEnum && ::ecore::EcorePackage::_instance())
         {
-            _eEnum->_inverseAdd(::ecore::EcorePackage::EENUM__ELITERALS, _this);
+            _eEnum->::ecore::EObject::_inverseAdd(
+                    ::ecore::EcorePackage::_instance()->getEEnum__eLiterals(),
+                    _this);
         }
         basicsetEEnum(_eEnum);
     }

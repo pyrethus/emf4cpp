@@ -42,7 +42,6 @@ using namespace ::xpand3::statement;
 // Default constructor
 FileStatement::FileStatement()
 {
-
     /*PROTECTED REGION ID(FileStatementImpl__FileStatementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

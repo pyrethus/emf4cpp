@@ -69,53 +69,53 @@ void SynonymType::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__COMMENT:
     {
         _any = getComment().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODERELATION:
     {
         _any = getCodeRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__TYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getType());
     }
         return _any;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__CODEELEMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODEELEMENT:
     {
         _any = ::ecore::as < ::ecore::EObject > (getCodeElement());
     }
@@ -130,7 +130,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -138,7 +138,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -146,7 +146,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -154,7 +154,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -162,7 +162,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -170,7 +170,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -178,7 +178,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__COMMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -186,7 +186,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
         getComment().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODERELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -194,7 +194,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
         getCodeRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__TYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -202,7 +202,7 @@ void SynonymType::eSet(::ecore::EInt _featureID,
         setType(_t1);
     }
         return;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__CODEELEMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODEELEMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -219,26 +219,26 @@ void SynonymType::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__COMMENT:
         return getComment().size() > 0;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODERELATION:
         return getCodeRelation().size() > 0;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__TYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TYPE:
         return getType().get() != nullptr;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__CODEELEMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODEELEMENT:
         return getCodeElement().get() != nullptr;
 
     }
@@ -257,7 +257,7 @@ void SynonymType::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr SynonymType::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getSynonymType();
+            ::kdm::code::CodePackage::_instance()->getSynonymType();
     return _eclass;
 }
 
@@ -268,39 +268,39 @@ void SynonymType::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__SOURCE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__COMMENT:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODERELATION:
     {
     }
         return;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__TYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TYPE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__CODEELEMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODEELEMENT:
     {
     }
         return;
@@ -316,39 +316,39 @@ void SynonymType::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__SOURCE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__COMMENT:
     {
     }
         return;
-    case ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODERELATION:
     {
     }
         return;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__TYPE:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__TYPE:
     {
     }
         return;
-    case ::kdm::code::CodePackage::DEFINEDTYPE__CODEELEMENT:
+    case ::kdm::code::CodePackage::SYNONYMTYPE__CODEELEMENT:
     {
     }
         return;

@@ -42,13 +42,6 @@ using namespace ::ecore;
 // Default constructor
 EClassifier::EClassifier()
 {
-
-    m_eTypeParameters.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::ETypeParameter_ptr, -1, true, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClassifier__eTypeParameters() :
-                            ::ecore::EReference_ptr()));
-
     /*PROTECTED REGION ID(EClassifierImpl__EClassifierImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -212,13 +205,15 @@ void EClassifier::setEPackage(::ecore::EPackage_ptr _ePackage)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_ePackage)
         {
-            _old_ePackage->_inverseRemove(
-                    ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS, _this);
+            _old_ePackage->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEPackage__eClassifiers(),
+                    _this);
         }
-        if (_ePackage)
+        if (_ePackage && ::ecore::EcorePackage::_instance())
         {
-            _ePackage->_inverseAdd(
-                    ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS, _this);
+            _ePackage->::ecore::EObject::_inverseAdd(
+                    ::ecore::EcorePackage::_instance()->getEPackage__eClassifiers(),
+                    _this);
         }
         basicsetEPackage(_ePackage);
     }
@@ -226,11 +221,23 @@ void EClassifier::setEPackage(::ecore::EPackage_ptr _ePackage)
 
 const ::ecorecpp::mapping::EList< ::ecore::ETypeParameter_ptr >& EClassifier::getETypeParameters() const
 {
+    if (!m_eTypeParameters)
+        return const_cast< EClassifier* >(this)->getETypeParameters();
+
     return *m_eTypeParameters;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::ETypeParameter_ptr >& EClassifier::getETypeParameters()
 {
+    /*PROTECTED REGION ID(EClassifier__getETypeParameters) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eTypeParameters)
+        m_eTypeParameters.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::ETypeParameter_ptr, -1, true, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClassifier__eTypeParameters()));
+    /*PROTECTED REGION END*/
     return *m_eTypeParameters;
 }
 

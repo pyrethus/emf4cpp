@@ -38,7 +38,6 @@ using namespace ::type;
 // Default constructor
 ProcessingInstruction::ProcessingInstruction()
 {
-
     /*PROTECTED REGION ID(ProcessingInstructionImpl__ProcessingInstructionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -42,9 +42,9 @@ void Container::_initialize()
     ::idlmm::Contained::_initialize();
 
     // References
-    for (size_t i = 0; i < m_contains->size(); i++)
+    for (const auto &ref : getContains())
     {
-        (*m_contains)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ContainerImpl__initialize) START*/
@@ -62,31 +62,31 @@ void Container::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::CONTAINER__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getIdentifier());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::CONTAINER__REPOSITORYID:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getRepositoryId());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::CONTAINER__VERSION:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getVersion());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::CONTAINER__ABSOLUTENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getAbsoluteName());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::CONTAINER__DEFINEDIN:
     {
         _any = ::ecore::as < ::ecore::EObject > (getDefinedIn());
     }
@@ -106,7 +106,7 @@ void Container::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::CONTAINER__IDENTIFIER:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -114,7 +114,7 @@ void Container::eSet(::ecore::EInt _featureID,
         setIdentifier(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::CONTAINER__REPOSITORYID:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -122,7 +122,7 @@ void Container::eSet(::ecore::EInt _featureID,
         setRepositoryId(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::CONTAINER__VERSION:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -130,7 +130,7 @@ void Container::eSet(::ecore::EInt _featureID,
         setVersion(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::CONTAINER__ABSOLUTENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -138,7 +138,7 @@ void Container::eSet(::ecore::EInt _featureID,
         setAbsoluteName(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::CONTAINER__DEFINEDIN:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -163,19 +163,19 @@ void Container::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::CONTAINER__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getIdentifier());
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::CONTAINER__REPOSITORYID:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getRepositoryId());
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::CONTAINER__VERSION:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getVersion());
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::CONTAINER__ABSOLUTENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getAbsoluteName());
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::CONTAINER__DEFINEDIN:
         return getDefinedIn().get() != nullptr;
     case ::idlmm::IdlmmPackage::CONTAINER__CONTAINS:
         return getContains().size() > 0;
@@ -196,7 +196,7 @@ void Container::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Container::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getContainer();
+            ::idlmm::IdlmmPackage::_instance()->getContainer();
     return _eclass;
 }
 
@@ -207,7 +207,7 @@ void Container::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::CONTAINER__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -218,8 +218,9 @@ void Container::_inverseAdd(::ecore::EInt _featureID,
         if (_old_definedIn && _old_definedIn != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_definedIn->_inverseRemove(
-                    ::idlmm::IdlmmPackage::CONTAINER__CONTAINS, _this);
+            _old_definedIn->::ecore::EObject::_inverseRemove(
+                    ::idlmm::IdlmmPackage::_instance()->getContainer__contains(),
+                    _this);
         }
 
         // set reference
@@ -252,7 +253,7 @@ void Container::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::CONTAINER__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

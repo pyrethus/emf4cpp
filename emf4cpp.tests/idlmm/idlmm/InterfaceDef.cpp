@@ -42,12 +42,6 @@ using namespace ::idlmm;
 // Default constructor
 InterfaceDef::InterfaceDef()
 {
-
-    m_derivesFrom.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::idlmm::InterfaceDef_ptr, -1, false, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getInterfaceDef__derivesFrom()));
-
     /*PROTECTED REGION ID(InterfaceDefImpl__InterfaceDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -146,11 +140,23 @@ void InterfaceDef::setIsTruncatable(::ecore::EBoolean _isTruncatable)
 
 const ::ecorecpp::mapping::EList< ::idlmm::InterfaceDef_ptr >& InterfaceDef::getDerivesFrom() const
 {
+    if (!m_derivesFrom)
+        return const_cast< InterfaceDef* >(this)->getDerivesFrom();
+
     return *m_derivesFrom;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::InterfaceDef_ptr >& InterfaceDef::getDerivesFrom()
 {
+    /*PROTECTED REGION ID(InterfaceDef__getDerivesFrom) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_derivesFrom)
+        m_derivesFrom.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::idlmm::InterfaceDef_ptr, -1, false, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getInterfaceDef__derivesFrom()));
+    /*PROTECTED REGION END*/
     return *m_derivesFrom;
 }
 

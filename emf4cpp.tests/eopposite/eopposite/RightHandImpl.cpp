@@ -58,7 +58,7 @@ void RightHand::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::RIGHTHAND__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -79,7 +79,7 @@ void RightHand::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::RIGHTHAND__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -104,7 +104,7 @@ void RightHand::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::RIGHTHAND__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
     case ::eopposite::EoppositePackage::RIGHTHAND__LEFTEE:
@@ -126,7 +126,7 @@ void RightHand::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr RightHand::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::eopposite::EoppositePackage* >(::eopposite::EoppositePackage::_instance().get())->getRightHand();
+            ::eopposite::EoppositePackage::_instance()->getRightHand();
     return _eclass;
 }
 
@@ -148,8 +148,9 @@ void RightHand::_inverseAdd(::ecore::EInt _featureID,
         if (_old_leftee && _old_leftee != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_leftee->_inverseRemove(
-                    ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE, _this);
+            _old_leftee->::ecore::EObject::_inverseRemove(
+                    ::eopposite::EoppositePackage::_instance()->getLeftHand__rightee(),
+                    _this);
         }
 
         // set reference

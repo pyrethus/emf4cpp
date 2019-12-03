@@ -42,20 +42,6 @@ using namespace ::eopposite;
 // Default constructor
 TopLevel::TopLevel()
 {
-
-    m_leftees.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::eopposite::LeftHand_ptr, -1, true, false >(this,
-                    ::eopposite::EoppositePackage::_instance()->getTopLevel__leftees()));
-    m_rightees.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::eopposite::RightHand_ptr, -1, true, false >(this,
-                    ::eopposite::EoppositePackage::_instance()->getTopLevel__rightees()));
-    m_rightMultiples.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::eopposite::RightMultiple_ptr, -1, true, false >(this,
-                    ::eopposite::EoppositePackage::_instance()->getTopLevel__rightMultiples()));
-
     /*PROTECTED REGION ID(TopLevelImpl__TopLevelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -76,31 +62,67 @@ TopLevel::~TopLevel()
 
 const ::ecorecpp::mapping::EList< ::eopposite::LeftHand_ptr >& TopLevel::getLeftees() const
 {
+    if (!m_leftees)
+        return const_cast< TopLevel* >(this)->getLeftees();
+
     return *m_leftees;
 }
 
 ::ecorecpp::mapping::EList< ::eopposite::LeftHand_ptr >& TopLevel::getLeftees()
 {
+    /*PROTECTED REGION ID(TopLevel__getLeftees) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_leftees)
+        m_leftees.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::eopposite::LeftHand_ptr, -1, true, false >(this,
+                        ::eopposite::EoppositePackage::_instance()->getTopLevel__leftees()));
+    /*PROTECTED REGION END*/
     return *m_leftees;
 }
 
 const ::ecorecpp::mapping::EList< ::eopposite::RightHand_ptr >& TopLevel::getRightees() const
 {
+    if (!m_rightees)
+        return const_cast< TopLevel* >(this)->getRightees();
+
     return *m_rightees;
 }
 
 ::ecorecpp::mapping::EList< ::eopposite::RightHand_ptr >& TopLevel::getRightees()
 {
+    /*PROTECTED REGION ID(TopLevel__getRightees) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_rightees)
+        m_rightees.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::eopposite::RightHand_ptr, -1, true, false >(this,
+                        ::eopposite::EoppositePackage::_instance()->getTopLevel__rightees()));
+    /*PROTECTED REGION END*/
     return *m_rightees;
 }
 
 const ::ecorecpp::mapping::EList< ::eopposite::RightMultiple_ptr >& TopLevel::getRightMultiples() const
 {
+    if (!m_rightMultiples)
+        return const_cast< TopLevel* >(this)->getRightMultiples();
+
     return *m_rightMultiples;
 }
 
 ::ecorecpp::mapping::EList< ::eopposite::RightMultiple_ptr >& TopLevel::getRightMultiples()
 {
+    /*PROTECTED REGION ID(TopLevel__getRightMultiples) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_rightMultiples)
+        m_rightMultiples.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::eopposite::RightMultiple_ptr, -1, true, false >(this,
+                        ::eopposite::EoppositePackage::_instance()->getTopLevel__rightMultiples()));
+    /*PROTECTED REGION END*/
     return *m_rightMultiples;
 }
 

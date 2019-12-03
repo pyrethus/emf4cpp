@@ -41,17 +41,6 @@ using namespace ::xpand3;
 // Default constructor
 File::File()
 {
-
-    m_imports.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::ImportStatement_ptr, -1, true, false >(this,
-                    ::xpand3::Xpand3Package::_instance()->getFile__imports()));
-    m_declarations.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::declaration::AbstractDeclaration_ptr, -1, true,
-                    false >(this,
-                    ::xpand3::Xpand3Package::_instance()->getFile__declarations()));
-
     /*PROTECTED REGION ID(FileImpl__FileImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -72,21 +61,46 @@ File::~File()
 
 const ::ecorecpp::mapping::EList< ::xpand3::ImportStatement_ptr >& File::getImports() const
 {
+    if (!m_imports)
+        return const_cast< File* >(this)->getImports();
+
     return *m_imports;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::ImportStatement_ptr >& File::getImports()
 {
+    /*PROTECTED REGION ID(File__getImports) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_imports)
+        m_imports.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::ImportStatement_ptr, -1, true, false >(this,
+                        ::xpand3::Xpand3Package::_instance()->getFile__imports()));
+    /*PROTECTED REGION END*/
     return *m_imports;
 }
 
 const ::ecorecpp::mapping::EList< ::xpand3::declaration::AbstractDeclaration_ptr >& File::getDeclarations() const
 {
+    if (!m_declarations)
+        return const_cast< File* >(this)->getDeclarations();
+
     return *m_declarations;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::declaration::AbstractDeclaration_ptr >& File::getDeclarations()
 {
+    /*PROTECTED REGION ID(File__getDeclarations) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_declarations)
+        m_declarations.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::declaration::AbstractDeclaration_ptr, -1,
+                        true, false >(this,
+                        ::xpand3::Xpand3Package::_instance()->getFile__declarations()));
+    /*PROTECTED REGION END*/
     return *m_declarations;
 }
 

@@ -55,37 +55,47 @@ void BintreePackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = BintreeFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // BinTreeNode
     m_BinTreeNodeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_BinTreeNodeEClass->setClassifierID(BINTREENODE);
-    m_BinTreeNodeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BinTreeNodeEClass);
-    // m_BinTreeNode__data has already been allocated above
-    m_BinTreeNode__data->setFeatureID(
-            ::bintree::BintreePackage::BINTREENODE__DATA);
-    m_BinTreeNodeEClass->getEStructuralFeatures().push_back(
-            m_BinTreeNode__data);
+    m_BinTreeNodeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BinTreeNodeEClass);
     // m_BinTreeNode__parent has already been allocated above
     m_BinTreeNode__parent->setFeatureID(
             ::bintree::BintreePackage::BINTREENODE__PARENT);
-    m_BinTreeNodeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
             m_BinTreeNode__parent);
+    m_BinTreeNode__parent->basicsetEContainingClass(m_BinTreeNodeEClass);
     // m_BinTreeNode__left has already been allocated above
     m_BinTreeNode__left->setFeatureID(
             ::bintree::BintreePackage::BINTREENODE__LEFT);
-    m_BinTreeNodeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
             m_BinTreeNode__left);
+    m_BinTreeNode__left->basicsetEContainingClass(m_BinTreeNodeEClass);
     // m_BinTreeNode__right has already been allocated above
     m_BinTreeNode__right->setFeatureID(
             ::bintree::BintreePackage::BINTREENODE__RIGHT);
-    m_BinTreeNodeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
             m_BinTreeNode__right);
+    m_BinTreeNode__right->basicsetEContainingClass(m_BinTreeNodeEClass);
+    // m_BinTreeNode__data has already been allocated above
+    m_BinTreeNode__data->setFeatureID(
+            ::bintree::BintreePackage::BINTREENODE__DATA);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
+            m_BinTreeNode__data);
+    m_BinTreeNode__data->basicsetEContainingClass(m_BinTreeNodeEClass);
 
     // Create enums
 

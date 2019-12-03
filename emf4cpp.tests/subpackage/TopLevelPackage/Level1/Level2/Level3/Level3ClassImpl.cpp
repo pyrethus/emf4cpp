@@ -58,7 +58,7 @@ void Level3Class::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level3::Level3Package::LEVEL3CLASS__REFERENCE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getReference());
     }
@@ -73,7 +73,7 @@ void Level3Class::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level3::Level3Package::LEVEL3CLASS__REFERENCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -90,7 +90,7 @@ void Level3Class::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level3::Level3Package::LEVEL3CLASS__REFERENCE:
         return getReference().get() != nullptr;
 
     }
@@ -109,7 +109,7 @@ void Level3Class::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Level3Class::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::TopLevelPackage::Level1::Level2::Level3::Level3Package* >(::TopLevelPackage::Level1::Level2::Level3::Level3Package::_instance().get())->getLevel3Class();
+            ::TopLevelPackage::Level1::Level2::Level3::Level3Package::_instance()->getLevel3Class();
     return _eclass;
 }
 
@@ -120,7 +120,7 @@ void Level3Class::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level3::Level3Package::LEVEL3CLASS__REFERENCE:
     {
     }
         return;
@@ -136,7 +136,7 @@ void Level3Class::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level3::Level3Package::LEVEL3CLASS__REFERENCE:
     {
     }
         return;

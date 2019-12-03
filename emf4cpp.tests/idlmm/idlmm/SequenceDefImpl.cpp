@@ -60,17 +60,17 @@ void SequenceDef::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__CONTAINEDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getContainedType());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__SHAREDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getSharedType());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::toAny(_any, getTypeCode());
@@ -92,7 +92,7 @@ void SequenceDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__CONTAINEDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -100,7 +100,7 @@ void SequenceDef::eSet(::ecore::EInt _featureID,
         setContainedType(_t1);
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__SHAREDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -108,7 +108,7 @@ void SequenceDef::eSet(::ecore::EInt _featureID,
         setSharedType(_t1);
     }
         return;
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__TYPECODE:
     {
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
@@ -133,11 +133,11 @@ void SequenceDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__CONTAINEDTYPE:
         return getContainedType().get() != nullptr;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__SHAREDTYPE:
         return getSharedType().get() != nullptr;
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
                 > ::is_set(getTypeCode());
     case ::idlmm::IdlmmPackage::SEQUENCEDEF__BOUND:
@@ -160,7 +160,7 @@ void SequenceDef::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr SequenceDef::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getSequenceDef();
+            ::idlmm::IdlmmPackage::_instance()->getSequenceDef();
     return _eclass;
 }
 
@@ -171,11 +171,11 @@ void SequenceDef::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__SHAREDTYPE:
     {
     }
         return;
@@ -191,11 +191,11 @@ void SequenceDef::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::SEQUENCEDEF__SHAREDTYPE:
     {
     }
         return;

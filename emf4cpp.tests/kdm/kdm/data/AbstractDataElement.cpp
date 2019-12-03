@@ -49,21 +49,6 @@ using namespace ::kdm::data;
 // Default constructor
 AbstractDataElement::AbstractDataElement()
 {
-
-    m_source.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::SourceRef_ptr, -1, true, false >(this,
-                    ::kdm::data::DataPackage::_instance()->getAbstractDataElement__source()));
-    m_dataRelation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::data::AbstractDataRelationship_ptr, -1, true, false >(
-                    this,
-                    ::kdm::data::DataPackage::_instance()->getAbstractDataElement__dataRelation()));
-    m_abstraction.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::action::ActionElement_ptr, -1, true, false >(this,
-                    ::kdm::data::DataPackage::_instance()->getAbstractDataElement__abstraction()));
-
     /*PROTECTED REGION ID(AbstractDataElementImpl__AbstractDataElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -84,31 +69,69 @@ AbstractDataElement::~AbstractDataElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractDataElement::getSource() const
 {
+    if (!m_source)
+        return const_cast< AbstractDataElement* >(this)->getSource();
+
     return *m_source;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractDataElement::getSource()
 {
+    /*PROTECTED REGION ID(AbstractDataElement__getSource) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_source)
+        m_source.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::SourceRef_ptr, -1, true, false >(this,
+                        ::kdm::data::DataPackage::_instance()->getAbstractDataElement__source()));
+    /*PROTECTED REGION END*/
     return *m_source;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::data::AbstractDataRelationship_ptr >& AbstractDataElement::getDataRelation() const
 {
+    if (!m_dataRelation)
+        return const_cast< AbstractDataElement* >(this)->getDataRelation();
+
     return *m_dataRelation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::data::AbstractDataRelationship_ptr >& AbstractDataElement::getDataRelation()
 {
+    /*PROTECTED REGION ID(AbstractDataElement__getDataRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_dataRelation)
+        m_dataRelation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::data::AbstractDataRelationship_ptr, -1, true,
+                        false >(this,
+                        ::kdm::data::DataPackage::_instance()->getAbstractDataElement__dataRelation()));
+    /*PROTECTED REGION END*/
     return *m_dataRelation;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractDataElement::getAbstraction() const
 {
+    if (!m_abstraction)
+        return const_cast< AbstractDataElement* >(this)->getAbstraction();
+
     return *m_abstraction;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractDataElement::getAbstraction()
 {
+    /*PROTECTED REGION ID(AbstractDataElement__getAbstraction) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_abstraction)
+        m_abstraction.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::action::ActionElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::data::DataPackage::_instance()->getAbstractDataElement__abstraction()));
+    /*PROTECTED REGION END*/
     return *m_abstraction;
 }
 

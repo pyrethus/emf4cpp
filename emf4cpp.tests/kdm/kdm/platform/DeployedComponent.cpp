@@ -52,12 +52,6 @@ using namespace ::kdm::platform;
 // Default constructor
 DeployedComponent::DeployedComponent()
 {
-
-    m_groupedCode.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::Module_ptr, -1, false, false >(this,
-                    ::kdm::platform::PlatformPackage::_instance()->getDeployedComponent__groupedCode()));
-
     /*PROTECTED REGION ID(DeployedComponentImpl__DeployedComponentImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -78,11 +72,23 @@ DeployedComponent::~DeployedComponent()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::Module_ptr >& DeployedComponent::getGroupedCode() const
 {
+    if (!m_groupedCode)
+        return const_cast< DeployedComponent* >(this)->getGroupedCode();
+
     return *m_groupedCode;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::Module_ptr >& DeployedComponent::getGroupedCode()
 {
+    /*PROTECTED REGION ID(DeployedComponent__getGroupedCode) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_groupedCode)
+        m_groupedCode.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::Module_ptr, -1, false, false >(this,
+                        ::kdm::platform::PlatformPackage::_instance()->getDeployedComponent__groupedCode()));
+    /*PROTECTED REGION END*/
     return *m_groupedCode;
 }
 

@@ -50,7 +50,6 @@ using namespace ::kdm::code;
 // Default constructor
 ScaledType::ScaledType()
 {
-
     /*PROTECTED REGION ID(ScaledTypeImpl__ScaledTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

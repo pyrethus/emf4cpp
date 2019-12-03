@@ -41,9 +41,9 @@ void Container::_initialize()
     // Supertypes
 
     // References
-    for (size_t i = 0; i < m_contents->size(); i++)
+    for (const auto &ref : getContents())
     {
-        (*m_contents)[i]->_initialize();
+        ref->_initialize();
     }
     if (m_child)
     {
@@ -161,7 +161,7 @@ void Container::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Container::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ReferenceSerialization::ReferenceSerializationPackage* >(::ReferenceSerialization::ReferenceSerializationPackage::_instance().get())->getContainer();
+            ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getContainer();
     return _eclass;
 }
 

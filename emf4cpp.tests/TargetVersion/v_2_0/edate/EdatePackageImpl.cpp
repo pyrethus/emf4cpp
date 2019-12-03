@@ -57,38 +57,51 @@ void EdatePackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = EdateFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Person
     m_PersonEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_PersonEClass->setClassifierID(PERSON);
-    m_PersonEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PersonEClass);
+    m_PersonEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PersonEClass);
     // m_Person__Birthday has already been allocated above
     m_Person__Birthday->setFeatureID(
             ::v_2_0::edate::EdatePackage::PERSON__BIRTHDAY);
-    m_PersonEClass->getEStructuralFeatures().push_back(m_Person__Birthday);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PersonEClass->getEStructuralFeatures()).basicAdd(
+            m_Person__Birthday);
+    m_Person__Birthday->basicsetEContainingClass(m_PersonEClass);
     // m_Person__Name has already been allocated above
     m_Person__Name->setFeatureID(::v_2_0::edate::EdatePackage::PERSON__NAME);
-    m_PersonEClass->getEStructuralFeatures().push_back(m_Person__Name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PersonEClass->getEStructuralFeatures()).basicAdd(
+            m_Person__Name);
+    m_Person__Name->basicsetEContainingClass(m_PersonEClass);
 
     // Apollo11
     m_Apollo11EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_Apollo11EClass->setClassifierID(APOLLO11);
-    m_Apollo11EClass->setEPackage(_this());
-    getEClassifiers().push_back(m_Apollo11EClass);
+    m_Apollo11EClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_Apollo11EClass);
     // m_Apollo11__FirstManOnMoonDate has already been allocated above
     m_Apollo11__FirstManOnMoonDate->setFeatureID(
             ::v_2_0::edate::EdatePackage::APOLLO11__FIRSTMANONMOONDATE);
-    m_Apollo11EClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Apollo11EClass->getEStructuralFeatures()).basicAdd(
             m_Apollo11__FirstManOnMoonDate);
+    m_Apollo11__FirstManOnMoonDate->basicsetEContainingClass(m_Apollo11EClass);
     // m_Apollo11__Member has already been allocated above
     m_Apollo11__Member->setFeatureID(
             ::v_2_0::edate::EdatePackage::APOLLO11__MEMBER);
-    m_Apollo11EClass->getEStructuralFeatures().push_back(m_Apollo11__Member);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Apollo11EClass->getEStructuralFeatures()).basicAdd(
+            m_Apollo11__Member);
+    m_Apollo11__Member->basicsetEContainingClass(m_Apollo11EClass);
 
     // Create enums
 

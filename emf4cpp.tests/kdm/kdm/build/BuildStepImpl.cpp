@@ -67,48 +67,48 @@ void BuildStep::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::build::BuildPackage::BUILDSTEP__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDRELATION:
     {
         _any = getBuildRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__IMPLEMENTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__IMPLEMENTATION:
     {
         _any = getImplementation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__GROUPEDBUILD:
+    case ::kdm::build::BuildPackage::BUILDSTEP__GROUPEDBUILD:
     {
         _any = getGroupedBuild().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__BUILDELEMENT:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDELEMENT:
     {
         _any = getBuildElement().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -123,7 +123,7 @@ void BuildStep::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -131,7 +131,7 @@ void BuildStep::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -139,7 +139,7 @@ void BuildStep::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -147,7 +147,7 @@ void BuildStep::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -155,7 +155,7 @@ void BuildStep::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::build::BuildPackage::BUILDSTEP__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -163,7 +163,7 @@ void BuildStep::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDRELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -171,7 +171,7 @@ void BuildStep::eSet(::ecore::EInt _featureID,
         getBuildRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__IMPLEMENTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__IMPLEMENTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -179,7 +179,7 @@ void BuildStep::eSet(::ecore::EInt _featureID,
         getImplementation().insert_all(*_t0);
     }
         return;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__GROUPEDBUILD:
+    case ::kdm::build::BuildPackage::BUILDSTEP__GROUPEDBUILD:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -187,7 +187,7 @@ void BuildStep::eSet(::ecore::EInt _featureID,
         getGroupedBuild().insert_all(*_t0);
     }
         return;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__BUILDELEMENT:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDELEMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -204,24 +204,24 @@ void BuildStep::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::build::BuildPackage::BUILDSTEP__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDRELATION:
         return getBuildRelation().size() > 0;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__IMPLEMENTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__IMPLEMENTATION:
         return getImplementation().size() > 0;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__GROUPEDBUILD:
+    case ::kdm::build::BuildPackage::BUILDSTEP__GROUPEDBUILD:
         return getGroupedBuild().size() > 0;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__BUILDELEMENT:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDELEMENT:
         return getBuildElement().size() > 0;
 
     }
@@ -240,7 +240,7 @@ void BuildStep::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr BuildStep::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::build::BuildPackage* >(::kdm::build::BuildPackage::_instance().get())->getBuildStep();
+            ::kdm::build::BuildPackage::_instance()->getBuildStep();
     return _eclass;
 }
 
@@ -251,35 +251,35 @@ void BuildStep::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDRELATION:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__IMPLEMENTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__GROUPEDBUILD:
+    case ::kdm::build::BuildPackage::BUILDSTEP__GROUPEDBUILD:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__BUILDELEMENT:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDELEMENT:
     {
     }
         return;
@@ -295,35 +295,35 @@ void BuildStep::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::build::BuildPackage::BUILDSTEP__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDRELATION:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__IMPLEMENTATION:
+    case ::kdm::build::BuildPackage::BUILDSTEP__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__GROUPEDBUILD:
+    case ::kdm::build::BuildPackage::BUILDSTEP__GROUPEDBUILD:
     {
     }
         return;
-    case ::kdm::build::BuildPackage::BUILDRESOURCE__BUILDELEMENT:
+    case ::kdm::build::BuildPackage::BUILDSTEP__BUILDELEMENT:
     {
     }
         return;

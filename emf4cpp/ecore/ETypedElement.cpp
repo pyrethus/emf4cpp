@@ -42,7 +42,6 @@ using namespace ::ecore;
 // Default constructor
 ETypedElement::ETypedElement()
 {
-
     /*PROTECTED REGION ID(ETypedElementImpl__ETypedElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

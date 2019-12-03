@@ -45,7 +45,6 @@ using namespace ::kdm::action;
 // Default constructor
 Flow::Flow()
 {
-
     /*PROTECTED REGION ID(FlowImpl__FlowImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

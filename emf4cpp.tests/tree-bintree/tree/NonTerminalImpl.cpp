@@ -41,9 +41,9 @@ void NonTerminal::_initialize()
     ::tree::TreeNode::_initialize();
 
     // References
-    for (size_t i = 0; i < m_children->size(); i++)
+    for (const auto &ref : getChildren())
     {
-        (*m_children)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(NonTerminalImpl__initialize) START*/
@@ -61,13 +61,13 @@ void NonTerminal::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::tree::TreePackage::TREENODE__DATA:
+    case ::tree::TreePackage::NONTERMINAL__DATA:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getData());
     }
         return _any;
-    case ::tree::TreePackage::TREENODE__PARENT:
+    case ::tree::TreePackage::NONTERMINAL__PARENT:
     {
         _any = ::ecore::as < ::ecore::EObject > (getParent());
     }
@@ -87,7 +87,7 @@ void NonTerminal::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::tree::TreePackage::TREENODE__DATA:
+    case ::tree::TreePackage::NONTERMINAL__DATA:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -95,7 +95,7 @@ void NonTerminal::eSet(::ecore::EInt _featureID,
         setData(_t0);
     }
         return;
-    case ::tree::TreePackage::TREENODE__PARENT:
+    case ::tree::TreePackage::NONTERMINAL__PARENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -120,10 +120,10 @@ void NonTerminal::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::tree::TreePackage::TREENODE__DATA:
+    case ::tree::TreePackage::NONTERMINAL__DATA:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getData());
-    case ::tree::TreePackage::TREENODE__PARENT:
+    case ::tree::TreePackage::NONTERMINAL__PARENT:
         return getParent().get() != nullptr;
     case ::tree::TreePackage::NONTERMINAL__CHILDREN:
         return getChildren().size() > 0;
@@ -144,7 +144,7 @@ void NonTerminal::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr NonTerminal::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::tree::TreePackage* >(::tree::TreePackage::_instance().get())->getNonTerminal();
+            ::tree::TreePackage::_instance()->getNonTerminal();
     return _eclass;
 }
 
@@ -155,7 +155,7 @@ void NonTerminal::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::tree::TreePackage::TREENODE__PARENT:
+    case ::tree::TreePackage::NONTERMINAL__PARENT:
     {
     }
         return;
@@ -175,7 +175,7 @@ void NonTerminal::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::tree::TreePackage::TREENODE__PARENT:
+    case ::tree::TreePackage::NONTERMINAL__PARENT:
     {
     }
         return;

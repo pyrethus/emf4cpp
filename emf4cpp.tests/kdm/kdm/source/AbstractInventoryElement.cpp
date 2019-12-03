@@ -47,13 +47,6 @@ using namespace ::kdm::source;
 // Default constructor
 AbstractInventoryElement::AbstractInventoryElement()
 {
-
-    m_inventoryRelation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::AbstractInventoryRelationship_ptr, -1, true,
-                    false >(this,
-                    ::kdm::source::SourcePackage::_instance()->getAbstractInventoryElement__inventoryRelation()));
-
     /*PROTECTED REGION ID(AbstractInventoryElementImpl__AbstractInventoryElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -75,11 +68,24 @@ AbstractInventoryElement::~AbstractInventoryElement()
 const ::ecorecpp::mapping::EList<
         ::kdm::source::AbstractInventoryRelationship_ptr >& AbstractInventoryElement::getInventoryRelation() const
 {
+    if (!m_inventoryRelation)
+        return const_cast< AbstractInventoryElement* >(this)->getInventoryRelation();
+
     return *m_inventoryRelation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::AbstractInventoryRelationship_ptr >& AbstractInventoryElement::getInventoryRelation()
 {
+    /*PROTECTED REGION ID(AbstractInventoryElement__getInventoryRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_inventoryRelation)
+        m_inventoryRelation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::AbstractInventoryRelationship_ptr, -1,
+                        true, false >(this,
+                        ::kdm::source::SourcePackage::_instance()->getAbstractInventoryElement__inventoryRelation()));
+    /*PROTECTED REGION END*/
     return *m_inventoryRelation;
 }
 

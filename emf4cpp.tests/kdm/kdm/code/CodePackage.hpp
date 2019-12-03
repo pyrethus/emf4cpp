@@ -42,1795 +42,1882 @@ namespace kdm
         static CodePackage_ptr _instance();
         static CodePackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier AbstractCodeElement
         static const int ABSTRACTCODEELEMENT = 0;
 
+        static const int ABSTRACTCODEELEMENT__ATTRIBUTE = 0;
+
+        static const int ABSTRACTCODEELEMENT__ANNOTATION = 1;
+
+        static const int ABSTRACTCODEELEMENT__STEREOTYPE = 2;
+
+        static const int ABSTRACTCODEELEMENT__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTCODEELEMENT__NAME = 4;
+
+        static const int ABSTRACTCODEELEMENT__SOURCE = 5;
+
+        static const int ABSTRACTCODEELEMENT__COMMENT = 6;
+
+        static const int ABSTRACTCODEELEMENT__CODERELATION = 7;
+
+        static const int ABSTRACTCODEELEMENT_FEATURE_COUNT = 8;
+
+        // IDs for classifier AbstractCodeRelationship
         static const int ABSTRACTCODERELATIONSHIP = 1;
 
+        static const int ABSTRACTCODERELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int ABSTRACTCODERELATIONSHIP__ANNOTATION = 1;
+
+        static const int ABSTRACTCODERELATIONSHIP__STEREOTYPE = 2;
+
+        static const int ABSTRACTCODERELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTCODERELATIONSHIP_FEATURE_COUNT = 4;
+
+        // IDs for classifier ArrayType
         static const int ARRAYTYPE = 2;
 
+        static const int ARRAYTYPE__ATTRIBUTE = 0;
+
+        static const int ARRAYTYPE__ANNOTATION = 1;
+
+        static const int ARRAYTYPE__STEREOTYPE = 2;
+
+        static const int ARRAYTYPE__TAGGEDVALUE = 3;
+
+        static const int ARRAYTYPE__NAME = 4;
+
+        static const int ARRAYTYPE__SOURCE = 5;
+
+        static const int ARRAYTYPE__COMMENT = 6;
+
+        static const int ARRAYTYPE__CODERELATION = 7;
+
+        static const int ARRAYTYPE__ITEMUNIT = 8;
+
+        static const int ARRAYTYPE__SIZE = 9;
+
+        static const int ARRAYTYPE__INDEXUNIT = 10;
+
+        static const int ARRAYTYPE_FEATURE_COUNT = 11;
+
+        // IDs for classifier BagType
         static const int BAGTYPE = 3;
 
+        static const int BAGTYPE__ATTRIBUTE = 0;
+
+        static const int BAGTYPE__ANNOTATION = 1;
+
+        static const int BAGTYPE__STEREOTYPE = 2;
+
+        static const int BAGTYPE__TAGGEDVALUE = 3;
+
+        static const int BAGTYPE__NAME = 4;
+
+        static const int BAGTYPE__SOURCE = 5;
+
+        static const int BAGTYPE__COMMENT = 6;
+
+        static const int BAGTYPE__CODERELATION = 7;
+
+        static const int BAGTYPE__ITEMUNIT = 8;
+
+        static const int BAGTYPE__SIZE = 9;
+
+        static const int BAGTYPE_FEATURE_COUNT = 10;
+
+        // IDs for classifier BitstringType
         static const int BITSTRINGTYPE = 4;
 
+        static const int BITSTRINGTYPE__ATTRIBUTE = 0;
+
+        static const int BITSTRINGTYPE__ANNOTATION = 1;
+
+        static const int BITSTRINGTYPE__STEREOTYPE = 2;
+
+        static const int BITSTRINGTYPE__TAGGEDVALUE = 3;
+
+        static const int BITSTRINGTYPE__NAME = 4;
+
+        static const int BITSTRINGTYPE__SOURCE = 5;
+
+        static const int BITSTRINGTYPE__COMMENT = 6;
+
+        static const int BITSTRINGTYPE__CODERELATION = 7;
+
+        static const int BITSTRINGTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier BitType
         static const int BITTYPE = 5;
 
+        static const int BITTYPE__ATTRIBUTE = 0;
+
+        static const int BITTYPE__ANNOTATION = 1;
+
+        static const int BITTYPE__STEREOTYPE = 2;
+
+        static const int BITTYPE__TAGGEDVALUE = 3;
+
+        static const int BITTYPE__NAME = 4;
+
+        static const int BITTYPE__SOURCE = 5;
+
+        static const int BITTYPE__COMMENT = 6;
+
+        static const int BITTYPE__CODERELATION = 7;
+
+        static const int BITTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier BooleanType
         static const int BOOLEANTYPE = 6;
 
+        static const int BOOLEANTYPE__ATTRIBUTE = 0;
+
+        static const int BOOLEANTYPE__ANNOTATION = 1;
+
+        static const int BOOLEANTYPE__STEREOTYPE = 2;
+
+        static const int BOOLEANTYPE__TAGGEDVALUE = 3;
+
+        static const int BOOLEANTYPE__NAME = 4;
+
+        static const int BOOLEANTYPE__SOURCE = 5;
+
+        static const int BOOLEANTYPE__COMMENT = 6;
+
+        static const int BOOLEANTYPE__CODERELATION = 7;
+
+        static const int BOOLEANTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier CallableKind
         static const int CALLABLEKIND = 7;
 
+        // IDs for classifier CallableUnit
         static const int CALLABLEUNIT = 8;
 
+        static const int CALLABLEUNIT__ATTRIBUTE = 0;
+
+        static const int CALLABLEUNIT__ANNOTATION = 1;
+
+        static const int CALLABLEUNIT__STEREOTYPE = 2;
+
+        static const int CALLABLEUNIT__TAGGEDVALUE = 3;
+
+        static const int CALLABLEUNIT__NAME = 4;
+
+        static const int CALLABLEUNIT__SOURCE = 5;
+
+        static const int CALLABLEUNIT__COMMENT = 6;
+
+        static const int CALLABLEUNIT__CODERELATION = 7;
+
+        static const int CALLABLEUNIT__TYPE = 8;
+
+        static const int CALLABLEUNIT__ENTRYFLOW = 9;
+
+        static const int CALLABLEUNIT__CODEELEMENT = 10;
+
+        static const int CALLABLEUNIT__KIND = 11;
+
+        static const int CALLABLEUNIT_FEATURE_COUNT = 12;
+
+        // IDs for classifier CharType
         static const int CHARTYPE = 9;
 
+        static const int CHARTYPE__ATTRIBUTE = 0;
+
+        static const int CHARTYPE__ANNOTATION = 1;
+
+        static const int CHARTYPE__STEREOTYPE = 2;
+
+        static const int CHARTYPE__TAGGEDVALUE = 3;
+
+        static const int CHARTYPE__NAME = 4;
+
+        static const int CHARTYPE__SOURCE = 5;
+
+        static const int CHARTYPE__COMMENT = 6;
+
+        static const int CHARTYPE__CODERELATION = 7;
+
+        static const int CHARTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier ChoiceType
         static const int CHOICETYPE = 10;
 
+        static const int CHOICETYPE__ATTRIBUTE = 0;
+
+        static const int CHOICETYPE__ANNOTATION = 1;
+
+        static const int CHOICETYPE__STEREOTYPE = 2;
+
+        static const int CHOICETYPE__TAGGEDVALUE = 3;
+
+        static const int CHOICETYPE__NAME = 4;
+
+        static const int CHOICETYPE__SOURCE = 5;
+
+        static const int CHOICETYPE__COMMENT = 6;
+
+        static const int CHOICETYPE__CODERELATION = 7;
+
+        static const int CHOICETYPE__ITEMUNIT = 8;
+
+        static const int CHOICETYPE_FEATURE_COUNT = 9;
+
+        // IDs for classifier ClassUnit
         static const int CLASSUNIT = 11;
 
+        static const int CLASSUNIT__ATTRIBUTE = 0;
+
+        static const int CLASSUNIT__ANNOTATION = 1;
+
+        static const int CLASSUNIT__STEREOTYPE = 2;
+
+        static const int CLASSUNIT__TAGGEDVALUE = 3;
+
+        static const int CLASSUNIT__NAME = 4;
+
+        static const int CLASSUNIT__SOURCE = 5;
+
+        static const int CLASSUNIT__COMMENT = 6;
+
+        static const int CLASSUNIT__CODERELATION = 7;
+
+        static const int CLASSUNIT__ISABSTRACT = 8;
+
+        static const int CLASSUNIT__CODEELEMENT = 9;
+
+        static const int CLASSUNIT_FEATURE_COUNT = 10;
+
+        // IDs for classifier CodeAssembly
         static const int CODEASSEMBLY = 12;
 
+        static const int CODEASSEMBLY__ATTRIBUTE = 0;
+
+        static const int CODEASSEMBLY__ANNOTATION = 1;
+
+        static const int CODEASSEMBLY__STEREOTYPE = 2;
+
+        static const int CODEASSEMBLY__TAGGEDVALUE = 3;
+
+        static const int CODEASSEMBLY__NAME = 4;
+
+        static const int CODEASSEMBLY__SOURCE = 5;
+
+        static const int CODEASSEMBLY__COMMENT = 6;
+
+        static const int CODEASSEMBLY__CODERELATION = 7;
+
+        static const int CODEASSEMBLY__CODEELEMENT = 8;
+
+        static const int CODEASSEMBLY_FEATURE_COUNT = 9;
+
+        // IDs for classifier CodeElement
         static const int CODEELEMENT = 13;
 
+        static const int CODEELEMENT__ATTRIBUTE = 0;
+
+        static const int CODEELEMENT__ANNOTATION = 1;
+
+        static const int CODEELEMENT__STEREOTYPE = 2;
+
+        static const int CODEELEMENT__TAGGEDVALUE = 3;
+
+        static const int CODEELEMENT__NAME = 4;
+
+        static const int CODEELEMENT__SOURCE = 5;
+
+        static const int CODEELEMENT__COMMENT = 6;
+
+        static const int CODEELEMENT__CODERELATION = 7;
+
+        static const int CODEELEMENT_FEATURE_COUNT = 8;
+
+        // IDs for classifier CodeItem
         static const int CODEITEM = 14;
 
+        static const int CODEITEM__ATTRIBUTE = 0;
+
+        static const int CODEITEM__ANNOTATION = 1;
+
+        static const int CODEITEM__STEREOTYPE = 2;
+
+        static const int CODEITEM__TAGGEDVALUE = 3;
+
+        static const int CODEITEM__NAME = 4;
+
+        static const int CODEITEM__SOURCE = 5;
+
+        static const int CODEITEM__COMMENT = 6;
+
+        static const int CODEITEM__CODERELATION = 7;
+
+        static const int CODEITEM_FEATURE_COUNT = 8;
+
+        // IDs for classifier CodeModel
         static const int CODEMODEL = 15;
 
+        static const int CODEMODEL__ATTRIBUTE = 0;
+
+        static const int CODEMODEL__ANNOTATION = 1;
+
+        static const int CODEMODEL__STEREOTYPE = 2;
+
+        static const int CODEMODEL__TAGGEDVALUE = 3;
+
+        static const int CODEMODEL__AUDIT = 4;
+
+        static const int CODEMODEL__EXTENSIONFAMILY = 5;
+
+        static const int CODEMODEL__NAME = 6;
+
+        static const int CODEMODEL__CODEELEMENT = 7;
+
+        static const int CODEMODEL_FEATURE_COUNT = 8;
+
+        // IDs for classifier CodeRelationship
         static const int CODERELATIONSHIP = 16;
 
+        static const int CODERELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int CODERELATIONSHIP__ANNOTATION = 1;
+
+        static const int CODERELATIONSHIP__STEREOTYPE = 2;
+
+        static const int CODERELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int CODERELATIONSHIP__TO = 4;
+
+        static const int CODERELATIONSHIP__FROM = 5;
+
+        static const int CODERELATIONSHIP_FEATURE_COUNT = 6;
+
+        // IDs for classifier CommentUnit
         static const int COMMENTUNIT = 17;
 
+        static const int COMMENTUNIT__ATTRIBUTE = 0;
+
+        static const int COMMENTUNIT__ANNOTATION = 1;
+
+        static const int COMMENTUNIT__STEREOTYPE = 2;
+
+        static const int COMMENTUNIT__TAGGEDVALUE = 3;
+
+        static const int COMMENTUNIT__TEXT = 4;
+
+        static const int COMMENTUNIT_FEATURE_COUNT = 5;
+
+        // IDs for classifier CompilationUnit
         static const int COMPILATIONUNIT = 18;
 
+        static const int COMPILATIONUNIT__ATTRIBUTE = 0;
+
+        static const int COMPILATIONUNIT__ANNOTATION = 1;
+
+        static const int COMPILATIONUNIT__STEREOTYPE = 2;
+
+        static const int COMPILATIONUNIT__TAGGEDVALUE = 3;
+
+        static const int COMPILATIONUNIT__NAME = 4;
+
+        static const int COMPILATIONUNIT__SOURCE = 5;
+
+        static const int COMPILATIONUNIT__COMMENT = 6;
+
+        static const int COMPILATIONUNIT__CODERELATION = 7;
+
+        static const int COMPILATIONUNIT__CODEELEMENT = 8;
+
+        static const int COMPILATIONUNIT_FEATURE_COUNT = 9;
+
+        // IDs for classifier CompositeType
         static const int COMPOSITETYPE = 19;
 
+        static const int COMPOSITETYPE__ATTRIBUTE = 0;
+
+        static const int COMPOSITETYPE__ANNOTATION = 1;
+
+        static const int COMPOSITETYPE__STEREOTYPE = 2;
+
+        static const int COMPOSITETYPE__TAGGEDVALUE = 3;
+
+        static const int COMPOSITETYPE__NAME = 4;
+
+        static const int COMPOSITETYPE__SOURCE = 5;
+
+        static const int COMPOSITETYPE__COMMENT = 6;
+
+        static const int COMPOSITETYPE__CODERELATION = 7;
+
+        static const int COMPOSITETYPE__ITEMUNIT = 8;
+
+        static const int COMPOSITETYPE_FEATURE_COUNT = 9;
+
+        // IDs for classifier ComputationalObject
         static const int COMPUTATIONALOBJECT = 20;
 
+        static const int COMPUTATIONALOBJECT__ATTRIBUTE = 0;
+
+        static const int COMPUTATIONALOBJECT__ANNOTATION = 1;
+
+        static const int COMPUTATIONALOBJECT__STEREOTYPE = 2;
+
+        static const int COMPUTATIONALOBJECT__TAGGEDVALUE = 3;
+
+        static const int COMPUTATIONALOBJECT__NAME = 4;
+
+        static const int COMPUTATIONALOBJECT__SOURCE = 5;
+
+        static const int COMPUTATIONALOBJECT__COMMENT = 6;
+
+        static const int COMPUTATIONALOBJECT__CODERELATION = 7;
+
+        static const int COMPUTATIONALOBJECT_FEATURE_COUNT = 8;
+
+        // IDs for classifier ConditionalDirective
         static const int CONDITIONALDIRECTIVE = 21;
 
+        static const int CONDITIONALDIRECTIVE__ATTRIBUTE = 0;
+
+        static const int CONDITIONALDIRECTIVE__ANNOTATION = 1;
+
+        static const int CONDITIONALDIRECTIVE__STEREOTYPE = 2;
+
+        static const int CONDITIONALDIRECTIVE__TAGGEDVALUE = 3;
+
+        static const int CONDITIONALDIRECTIVE__NAME = 4;
+
+        static const int CONDITIONALDIRECTIVE__SOURCE = 5;
+
+        static const int CONDITIONALDIRECTIVE__COMMENT = 6;
+
+        static const int CONDITIONALDIRECTIVE__CODERELATION = 7;
+
+        static const int CONDITIONALDIRECTIVE__CODEELEMENT = 8;
+
+        static const int CONDITIONALDIRECTIVE_FEATURE_COUNT = 9;
+
+        // IDs for classifier ControlElement
         static const int CONTROLELEMENT = 22;
 
+        static const int CONTROLELEMENT__ATTRIBUTE = 0;
+
+        static const int CONTROLELEMENT__ANNOTATION = 1;
+
+        static const int CONTROLELEMENT__STEREOTYPE = 2;
+
+        static const int CONTROLELEMENT__TAGGEDVALUE = 3;
+
+        static const int CONTROLELEMENT__NAME = 4;
+
+        static const int CONTROLELEMENT__SOURCE = 5;
+
+        static const int CONTROLELEMENT__COMMENT = 6;
+
+        static const int CONTROLELEMENT__CODERELATION = 7;
+
+        static const int CONTROLELEMENT__TYPE = 8;
+
+        static const int CONTROLELEMENT__ENTRYFLOW = 9;
+
+        static const int CONTROLELEMENT__CODEELEMENT = 10;
+
+        static const int CONTROLELEMENT_FEATURE_COUNT = 11;
+
+        // IDs for classifier DataElement
         static const int DATAELEMENT = 23;
 
+        static const int DATAELEMENT__ATTRIBUTE = 0;
+
+        static const int DATAELEMENT__ANNOTATION = 1;
+
+        static const int DATAELEMENT__STEREOTYPE = 2;
+
+        static const int DATAELEMENT__TAGGEDVALUE = 3;
+
+        static const int DATAELEMENT__NAME = 4;
+
+        static const int DATAELEMENT__SOURCE = 5;
+
+        static const int DATAELEMENT__COMMENT = 6;
+
+        static const int DATAELEMENT__CODERELATION = 7;
+
+        static const int DATAELEMENT__TYPE = 8;
+
+        static const int DATAELEMENT__EXT = 9;
+
+        static const int DATAELEMENT__SIZE = 10;
+
+        static const int DATAELEMENT__CODEELEMENT = 11;
+
+        static const int DATAELEMENT_FEATURE_COUNT = 12;
+
+        // IDs for classifier Datatype
         static const int DATATYPE = 24;
 
+        static const int DATATYPE__ATTRIBUTE = 0;
+
+        static const int DATATYPE__ANNOTATION = 1;
+
+        static const int DATATYPE__STEREOTYPE = 2;
+
+        static const int DATATYPE__TAGGEDVALUE = 3;
+
+        static const int DATATYPE__NAME = 4;
+
+        static const int DATATYPE__SOURCE = 5;
+
+        static const int DATATYPE__COMMENT = 6;
+
+        static const int DATATYPE__CODERELATION = 7;
+
+        static const int DATATYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier DateType
         static const int DATETYPE = 25;
 
+        static const int DATETYPE__ATTRIBUTE = 0;
+
+        static const int DATETYPE__ANNOTATION = 1;
+
+        static const int DATETYPE__STEREOTYPE = 2;
+
+        static const int DATETYPE__TAGGEDVALUE = 3;
+
+        static const int DATETYPE__NAME = 4;
+
+        static const int DATETYPE__SOURCE = 5;
+
+        static const int DATETYPE__COMMENT = 6;
+
+        static const int DATETYPE__CODERELATION = 7;
+
+        static const int DATETYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier DecimalType
         static const int DECIMALTYPE = 26;
 
+        static const int DECIMALTYPE__ATTRIBUTE = 0;
+
+        static const int DECIMALTYPE__ANNOTATION = 1;
+
+        static const int DECIMALTYPE__STEREOTYPE = 2;
+
+        static const int DECIMALTYPE__TAGGEDVALUE = 3;
+
+        static const int DECIMALTYPE__NAME = 4;
+
+        static const int DECIMALTYPE__SOURCE = 5;
+
+        static const int DECIMALTYPE__COMMENT = 6;
+
+        static const int DECIMALTYPE__CODERELATION = 7;
+
+        static const int DECIMALTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier DefinedType
         static const int DEFINEDTYPE = 27;
 
+        static const int DEFINEDTYPE__ATTRIBUTE = 0;
+
+        static const int DEFINEDTYPE__ANNOTATION = 1;
+
+        static const int DEFINEDTYPE__STEREOTYPE = 2;
+
+        static const int DEFINEDTYPE__TAGGEDVALUE = 3;
+
+        static const int DEFINEDTYPE__NAME = 4;
+
+        static const int DEFINEDTYPE__SOURCE = 5;
+
+        static const int DEFINEDTYPE__COMMENT = 6;
+
+        static const int DEFINEDTYPE__CODERELATION = 7;
+
+        static const int DEFINEDTYPE__TYPE = 8;
+
+        static const int DEFINEDTYPE__CODEELEMENT = 9;
+
+        static const int DEFINEDTYPE_FEATURE_COUNT = 10;
+
+        // IDs for classifier DerivedType
         static const int DERIVEDTYPE = 28;
 
+        static const int DERIVEDTYPE__ATTRIBUTE = 0;
+
+        static const int DERIVEDTYPE__ANNOTATION = 1;
+
+        static const int DERIVEDTYPE__STEREOTYPE = 2;
+
+        static const int DERIVEDTYPE__TAGGEDVALUE = 3;
+
+        static const int DERIVEDTYPE__NAME = 4;
+
+        static const int DERIVEDTYPE__SOURCE = 5;
+
+        static const int DERIVEDTYPE__COMMENT = 6;
+
+        static const int DERIVEDTYPE__CODERELATION = 7;
+
+        static const int DERIVEDTYPE__ITEMUNIT = 8;
+
+        static const int DERIVEDTYPE_FEATURE_COUNT = 9;
+
+        // IDs for classifier EnumeratedType
         static const int ENUMERATEDTYPE = 29;
 
+        static const int ENUMERATEDTYPE__ATTRIBUTE = 0;
+
+        static const int ENUMERATEDTYPE__ANNOTATION = 1;
+
+        static const int ENUMERATEDTYPE__STEREOTYPE = 2;
+
+        static const int ENUMERATEDTYPE__TAGGEDVALUE = 3;
+
+        static const int ENUMERATEDTYPE__NAME = 4;
+
+        static const int ENUMERATEDTYPE__SOURCE = 5;
+
+        static const int ENUMERATEDTYPE__COMMENT = 6;
+
+        static const int ENUMERATEDTYPE__CODERELATION = 7;
+
+        static const int ENUMERATEDTYPE__VALUE = 8;
+
+        static const int ENUMERATEDTYPE_FEATURE_COUNT = 9;
+
+        // IDs for classifier Expands
         static const int EXPANDS = 30;
 
+        static const int EXPANDS__ATTRIBUTE = 0;
+
+        static const int EXPANDS__ANNOTATION = 1;
+
+        static const int EXPANDS__STEREOTYPE = 2;
+
+        static const int EXPANDS__TAGGEDVALUE = 3;
+
+        static const int EXPANDS__TO = 4;
+
+        static const int EXPANDS__FROM = 5;
+
+        static const int EXPANDS_FEATURE_COUNT = 6;
+
+        // IDs for classifier ExportKind
         static const int EXPORTKIND = 31;
 
+        // IDs for classifier Extends
         static const int EXTENDS = 32;
 
+        static const int EXTENDS__ATTRIBUTE = 0;
+
+        static const int EXTENDS__ANNOTATION = 1;
+
+        static const int EXTENDS__STEREOTYPE = 2;
+
+        static const int EXTENDS__TAGGEDVALUE = 3;
+
+        static const int EXTENDS__TO = 4;
+
+        static const int EXTENDS__FROM = 5;
+
+        static const int EXTENDS_FEATURE_COUNT = 6;
+
+        // IDs for classifier FloatType
         static const int FLOATTYPE = 33;
 
+        static const int FLOATTYPE__ATTRIBUTE = 0;
+
+        static const int FLOATTYPE__ANNOTATION = 1;
+
+        static const int FLOATTYPE__STEREOTYPE = 2;
+
+        static const int FLOATTYPE__TAGGEDVALUE = 3;
+
+        static const int FLOATTYPE__NAME = 4;
+
+        static const int FLOATTYPE__SOURCE = 5;
+
+        static const int FLOATTYPE__COMMENT = 6;
+
+        static const int FLOATTYPE__CODERELATION = 7;
+
+        static const int FLOATTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier GeneratedFrom
         static const int GENERATEDFROM = 34;
 
+        static const int GENERATEDFROM__ATTRIBUTE = 0;
+
+        static const int GENERATEDFROM__ANNOTATION = 1;
+
+        static const int GENERATEDFROM__STEREOTYPE = 2;
+
+        static const int GENERATEDFROM__TAGGEDVALUE = 3;
+
+        static const int GENERATEDFROM__TO = 4;
+
+        static const int GENERATEDFROM__FROM = 5;
+
+        static const int GENERATEDFROM_FEATURE_COUNT = 6;
+
+        // IDs for classifier HasType
         static const int HASTYPE = 35;
 
+        static const int HASTYPE__ATTRIBUTE = 0;
+
+        static const int HASTYPE__ANNOTATION = 1;
+
+        static const int HASTYPE__STEREOTYPE = 2;
+
+        static const int HASTYPE__TAGGEDVALUE = 3;
+
+        static const int HASTYPE__TO = 4;
+
+        static const int HASTYPE__FROM = 5;
+
+        static const int HASTYPE_FEATURE_COUNT = 6;
+
+        // IDs for classifier HasValue
         static const int HASVALUE = 36;
 
+        static const int HASVALUE__ATTRIBUTE = 0;
+
+        static const int HASVALUE__ANNOTATION = 1;
+
+        static const int HASVALUE__STEREOTYPE = 2;
+
+        static const int HASVALUE__TAGGEDVALUE = 3;
+
+        static const int HASVALUE__TO = 4;
+
+        static const int HASVALUE__FROM = 5;
+
+        static const int HASVALUE_FEATURE_COUNT = 6;
+
+        // IDs for classifier ImplementationOf
         static const int IMPLEMENTATIONOF = 37;
 
+        static const int IMPLEMENTATIONOF__ATTRIBUTE = 0;
+
+        static const int IMPLEMENTATIONOF__ANNOTATION = 1;
+
+        static const int IMPLEMENTATIONOF__STEREOTYPE = 2;
+
+        static const int IMPLEMENTATIONOF__TAGGEDVALUE = 3;
+
+        static const int IMPLEMENTATIONOF__TO = 4;
+
+        static const int IMPLEMENTATIONOF__FROM = 5;
+
+        static const int IMPLEMENTATIONOF_FEATURE_COUNT = 6;
+
+        // IDs for classifier Implements
         static const int IMPLEMENTS = 38;
 
+        static const int IMPLEMENTS__ATTRIBUTE = 0;
+
+        static const int IMPLEMENTS__ANNOTATION = 1;
+
+        static const int IMPLEMENTS__STEREOTYPE = 2;
+
+        static const int IMPLEMENTS__TAGGEDVALUE = 3;
+
+        static const int IMPLEMENTS__TO = 4;
+
+        static const int IMPLEMENTS__FROM = 5;
+
+        static const int IMPLEMENTS_FEATURE_COUNT = 6;
+
+        // IDs for classifier Imports
         static const int IMPORTS = 39;
 
+        static const int IMPORTS__ATTRIBUTE = 0;
+
+        static const int IMPORTS__ANNOTATION = 1;
+
+        static const int IMPORTS__STEREOTYPE = 2;
+
+        static const int IMPORTS__TAGGEDVALUE = 3;
+
+        static const int IMPORTS__TO = 4;
+
+        static const int IMPORTS__FROM = 5;
+
+        static const int IMPORTS_FEATURE_COUNT = 6;
+
+        // IDs for classifier IncludeDirective
         static const int INCLUDEDIRECTIVE = 40;
 
+        static const int INCLUDEDIRECTIVE__ATTRIBUTE = 0;
+
+        static const int INCLUDEDIRECTIVE__ANNOTATION = 1;
+
+        static const int INCLUDEDIRECTIVE__STEREOTYPE = 2;
+
+        static const int INCLUDEDIRECTIVE__TAGGEDVALUE = 3;
+
+        static const int INCLUDEDIRECTIVE__NAME = 4;
+
+        static const int INCLUDEDIRECTIVE__SOURCE = 5;
+
+        static const int INCLUDEDIRECTIVE__COMMENT = 6;
+
+        static const int INCLUDEDIRECTIVE__CODERELATION = 7;
+
+        static const int INCLUDEDIRECTIVE__CODEELEMENT = 8;
+
+        static const int INCLUDEDIRECTIVE_FEATURE_COUNT = 9;
+
+        // IDs for classifier Includes
         static const int INCLUDES = 41;
 
+        static const int INCLUDES__ATTRIBUTE = 0;
+
+        static const int INCLUDES__ANNOTATION = 1;
+
+        static const int INCLUDES__STEREOTYPE = 2;
+
+        static const int INCLUDES__TAGGEDVALUE = 3;
+
+        static const int INCLUDES__TO = 4;
+
+        static const int INCLUDES__FROM = 5;
+
+        static const int INCLUDES_FEATURE_COUNT = 6;
+
+        // IDs for classifier IndexUnit
         static const int INDEXUNIT = 42;
 
+        static const int INDEXUNIT__ATTRIBUTE = 0;
+
+        static const int INDEXUNIT__ANNOTATION = 1;
+
+        static const int INDEXUNIT__STEREOTYPE = 2;
+
+        static const int INDEXUNIT__TAGGEDVALUE = 3;
+
+        static const int INDEXUNIT__NAME = 4;
+
+        static const int INDEXUNIT__SOURCE = 5;
+
+        static const int INDEXUNIT__COMMENT = 6;
+
+        static const int INDEXUNIT__CODERELATION = 7;
+
+        static const int INDEXUNIT__TYPE = 8;
+
+        static const int INDEXUNIT__EXT = 9;
+
+        static const int INDEXUNIT__SIZE = 10;
+
+        static const int INDEXUNIT__CODEELEMENT = 11;
+
+        static const int INDEXUNIT_FEATURE_COUNT = 12;
+
+        // IDs for classifier InstanceOf
         static const int INSTANCEOF = 43;
 
+        static const int INSTANCEOF__ATTRIBUTE = 0;
+
+        static const int INSTANCEOF__ANNOTATION = 1;
+
+        static const int INSTANCEOF__STEREOTYPE = 2;
+
+        static const int INSTANCEOF__TAGGEDVALUE = 3;
+
+        static const int INSTANCEOF__TO = 4;
+
+        static const int INSTANCEOF__FROM = 5;
+
+        static const int INSTANCEOF_FEATURE_COUNT = 6;
+
+        // IDs for classifier IntegerType
         static const int INTEGERTYPE = 44;
 
+        static const int INTEGERTYPE__ATTRIBUTE = 0;
+
+        static const int INTEGERTYPE__ANNOTATION = 1;
+
+        static const int INTEGERTYPE__STEREOTYPE = 2;
+
+        static const int INTEGERTYPE__TAGGEDVALUE = 3;
+
+        static const int INTEGERTYPE__NAME = 4;
+
+        static const int INTEGERTYPE__SOURCE = 5;
+
+        static const int INTEGERTYPE__COMMENT = 6;
+
+        static const int INTEGERTYPE__CODERELATION = 7;
+
+        static const int INTEGERTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier InterfaceUnit
         static const int INTERFACEUNIT = 45;
 
+        static const int INTERFACEUNIT__ATTRIBUTE = 0;
+
+        static const int INTERFACEUNIT__ANNOTATION = 1;
+
+        static const int INTERFACEUNIT__STEREOTYPE = 2;
+
+        static const int INTERFACEUNIT__TAGGEDVALUE = 3;
+
+        static const int INTERFACEUNIT__NAME = 4;
+
+        static const int INTERFACEUNIT__SOURCE = 5;
+
+        static const int INTERFACEUNIT__COMMENT = 6;
+
+        static const int INTERFACEUNIT__CODERELATION = 7;
+
+        static const int INTERFACEUNIT__CODEELEMENT = 8;
+
+        static const int INTERFACEUNIT_FEATURE_COUNT = 9;
+
+        // IDs for classifier ItemUnit
         static const int ITEMUNIT = 46;
 
+        static const int ITEMUNIT__ATTRIBUTE = 0;
+
+        static const int ITEMUNIT__ANNOTATION = 1;
+
+        static const int ITEMUNIT__STEREOTYPE = 2;
+
+        static const int ITEMUNIT__TAGGEDVALUE = 3;
+
+        static const int ITEMUNIT__NAME = 4;
+
+        static const int ITEMUNIT__SOURCE = 5;
+
+        static const int ITEMUNIT__COMMENT = 6;
+
+        static const int ITEMUNIT__CODERELATION = 7;
+
+        static const int ITEMUNIT__TYPE = 8;
+
+        static const int ITEMUNIT__EXT = 9;
+
+        static const int ITEMUNIT__SIZE = 10;
+
+        static const int ITEMUNIT__CODEELEMENT = 11;
+
+        static const int ITEMUNIT_FEATURE_COUNT = 12;
+
+        // IDs for classifier LanguageUnit
         static const int LANGUAGEUNIT = 47;
 
+        static const int LANGUAGEUNIT__ATTRIBUTE = 0;
+
+        static const int LANGUAGEUNIT__ANNOTATION = 1;
+
+        static const int LANGUAGEUNIT__STEREOTYPE = 2;
+
+        static const int LANGUAGEUNIT__TAGGEDVALUE = 3;
+
+        static const int LANGUAGEUNIT__NAME = 4;
+
+        static const int LANGUAGEUNIT__SOURCE = 5;
+
+        static const int LANGUAGEUNIT__COMMENT = 6;
+
+        static const int LANGUAGEUNIT__CODERELATION = 7;
+
+        static const int LANGUAGEUNIT__CODEELEMENT = 8;
+
+        static const int LANGUAGEUNIT_FEATURE_COUNT = 9;
+
+        // IDs for classifier MacroDirective
         static const int MACRODIRECTIVE = 48;
 
+        static const int MACRODIRECTIVE__ATTRIBUTE = 0;
+
+        static const int MACRODIRECTIVE__ANNOTATION = 1;
+
+        static const int MACRODIRECTIVE__STEREOTYPE = 2;
+
+        static const int MACRODIRECTIVE__TAGGEDVALUE = 3;
+
+        static const int MACRODIRECTIVE__NAME = 4;
+
+        static const int MACRODIRECTIVE__SOURCE = 5;
+
+        static const int MACRODIRECTIVE__COMMENT = 6;
+
+        static const int MACRODIRECTIVE__CODERELATION = 7;
+
+        static const int MACRODIRECTIVE__CODEELEMENT = 8;
+
+        static const int MACRODIRECTIVE_FEATURE_COUNT = 9;
+
+        // IDs for classifier MacroKind
         static const int MACROKIND = 49;
 
+        // IDs for classifier MacroUnit
         static const int MACROUNIT = 50;
 
+        static const int MACROUNIT__ATTRIBUTE = 0;
+
+        static const int MACROUNIT__ANNOTATION = 1;
+
+        static const int MACROUNIT__STEREOTYPE = 2;
+
+        static const int MACROUNIT__TAGGEDVALUE = 3;
+
+        static const int MACROUNIT__NAME = 4;
+
+        static const int MACROUNIT__SOURCE = 5;
+
+        static const int MACROUNIT__COMMENT = 6;
+
+        static const int MACROUNIT__CODERELATION = 7;
+
+        static const int MACROUNIT__CODEELEMENT = 8;
+
+        static const int MACROUNIT__KIND = 9;
+
+        static const int MACROUNIT_FEATURE_COUNT = 10;
+
+        // IDs for classifier MemberUnit
         static const int MEMBERUNIT = 51;
 
+        static const int MEMBERUNIT__ATTRIBUTE = 0;
+
+        static const int MEMBERUNIT__ANNOTATION = 1;
+
+        static const int MEMBERUNIT__STEREOTYPE = 2;
+
+        static const int MEMBERUNIT__TAGGEDVALUE = 3;
+
+        static const int MEMBERUNIT__NAME = 4;
+
+        static const int MEMBERUNIT__SOURCE = 5;
+
+        static const int MEMBERUNIT__COMMENT = 6;
+
+        static const int MEMBERUNIT__CODERELATION = 7;
+
+        static const int MEMBERUNIT__TYPE = 8;
+
+        static const int MEMBERUNIT__EXT = 9;
+
+        static const int MEMBERUNIT__SIZE = 10;
+
+        static const int MEMBERUNIT__CODEELEMENT = 11;
+
+        static const int MEMBERUNIT__EXPORT = 12;
+
+        static const int MEMBERUNIT_FEATURE_COUNT = 13;
+
+        // IDs for classifier MethodKind
         static const int METHODKIND = 52;
 
+        // IDs for classifier MethodUnit
         static const int METHODUNIT = 53;
 
+        static const int METHODUNIT__ATTRIBUTE = 0;
+
+        static const int METHODUNIT__ANNOTATION = 1;
+
+        static const int METHODUNIT__STEREOTYPE = 2;
+
+        static const int METHODUNIT__TAGGEDVALUE = 3;
+
+        static const int METHODUNIT__NAME = 4;
+
+        static const int METHODUNIT__SOURCE = 5;
+
+        static const int METHODUNIT__COMMENT = 6;
+
+        static const int METHODUNIT__CODERELATION = 7;
+
+        static const int METHODUNIT__TYPE = 8;
+
+        static const int METHODUNIT__ENTRYFLOW = 9;
+
+        static const int METHODUNIT__CODEELEMENT = 10;
+
+        static const int METHODUNIT__KIND = 11;
+
+        static const int METHODUNIT__EXPORT = 12;
+
+        static const int METHODUNIT_FEATURE_COUNT = 13;
+
+        // IDs for classifier Module
         static const int MODULE = 54;
 
+        static const int MODULE__ATTRIBUTE = 0;
+
+        static const int MODULE__ANNOTATION = 1;
+
+        static const int MODULE__STEREOTYPE = 2;
+
+        static const int MODULE__TAGGEDVALUE = 3;
+
+        static const int MODULE__NAME = 4;
+
+        static const int MODULE__SOURCE = 5;
+
+        static const int MODULE__COMMENT = 6;
+
+        static const int MODULE__CODERELATION = 7;
+
+        static const int MODULE__CODEELEMENT = 8;
+
+        static const int MODULE_FEATURE_COUNT = 9;
+
+        // IDs for classifier NamespaceUnit
         static const int NAMESPACEUNIT = 55;
 
+        static const int NAMESPACEUNIT__ATTRIBUTE = 0;
+
+        static const int NAMESPACEUNIT__ANNOTATION = 1;
+
+        static const int NAMESPACEUNIT__STEREOTYPE = 2;
+
+        static const int NAMESPACEUNIT__TAGGEDVALUE = 3;
+
+        static const int NAMESPACEUNIT__NAME = 4;
+
+        static const int NAMESPACEUNIT__SOURCE = 5;
+
+        static const int NAMESPACEUNIT__COMMENT = 6;
+
+        static const int NAMESPACEUNIT__CODERELATION = 7;
+
+        static const int NAMESPACEUNIT__GROUPEDCODE = 8;
+
+        static const int NAMESPACEUNIT_FEATURE_COUNT = 9;
+
+        // IDs for classifier OctetstringType
         static const int OCTETSTRINGTYPE = 56;
 
+        static const int OCTETSTRINGTYPE__ATTRIBUTE = 0;
+
+        static const int OCTETSTRINGTYPE__ANNOTATION = 1;
+
+        static const int OCTETSTRINGTYPE__STEREOTYPE = 2;
+
+        static const int OCTETSTRINGTYPE__TAGGEDVALUE = 3;
+
+        static const int OCTETSTRINGTYPE__NAME = 4;
+
+        static const int OCTETSTRINGTYPE__SOURCE = 5;
+
+        static const int OCTETSTRINGTYPE__COMMENT = 6;
+
+        static const int OCTETSTRINGTYPE__CODERELATION = 7;
+
+        static const int OCTETSTRINGTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier OctetType
         static const int OCTETTYPE = 57;
 
+        static const int OCTETTYPE__ATTRIBUTE = 0;
+
+        static const int OCTETTYPE__ANNOTATION = 1;
+
+        static const int OCTETTYPE__STEREOTYPE = 2;
+
+        static const int OCTETTYPE__TAGGEDVALUE = 3;
+
+        static const int OCTETTYPE__NAME = 4;
+
+        static const int OCTETTYPE__SOURCE = 5;
+
+        static const int OCTETTYPE__COMMENT = 6;
+
+        static const int OCTETTYPE__CODERELATION = 7;
+
+        static const int OCTETTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier OrdinalType
         static const int ORDINALTYPE = 58;
 
+        static const int ORDINALTYPE__ATTRIBUTE = 0;
+
+        static const int ORDINALTYPE__ANNOTATION = 1;
+
+        static const int ORDINALTYPE__STEREOTYPE = 2;
+
+        static const int ORDINALTYPE__TAGGEDVALUE = 3;
+
+        static const int ORDINALTYPE__NAME = 4;
+
+        static const int ORDINALTYPE__SOURCE = 5;
+
+        static const int ORDINALTYPE__COMMENT = 6;
+
+        static const int ORDINALTYPE__CODERELATION = 7;
+
+        static const int ORDINALTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier Package
         static const int PACKAGE = 59;
 
+        static const int PACKAGE__ATTRIBUTE = 0;
+
+        static const int PACKAGE__ANNOTATION = 1;
+
+        static const int PACKAGE__STEREOTYPE = 2;
+
+        static const int PACKAGE__TAGGEDVALUE = 3;
+
+        static const int PACKAGE__NAME = 4;
+
+        static const int PACKAGE__SOURCE = 5;
+
+        static const int PACKAGE__COMMENT = 6;
+
+        static const int PACKAGE__CODERELATION = 7;
+
+        static const int PACKAGE__CODEELEMENT = 8;
+
+        static const int PACKAGE_FEATURE_COUNT = 9;
+
+        // IDs for classifier ParameterKind
         static const int PARAMETERKIND = 60;
 
+        // IDs for classifier ParameterTo
         static const int PARAMETERTO = 61;
 
+        static const int PARAMETERTO__ATTRIBUTE = 0;
+
+        static const int PARAMETERTO__ANNOTATION = 1;
+
+        static const int PARAMETERTO__STEREOTYPE = 2;
+
+        static const int PARAMETERTO__TAGGEDVALUE = 3;
+
+        static const int PARAMETERTO__TO = 4;
+
+        static const int PARAMETERTO__FROM = 5;
+
+        static const int PARAMETERTO_FEATURE_COUNT = 6;
+
+        // IDs for classifier ParameterUnit
         static const int PARAMETERUNIT = 62;
 
+        static const int PARAMETERUNIT__ATTRIBUTE = 0;
+
+        static const int PARAMETERUNIT__ANNOTATION = 1;
+
+        static const int PARAMETERUNIT__STEREOTYPE = 2;
+
+        static const int PARAMETERUNIT__TAGGEDVALUE = 3;
+
+        static const int PARAMETERUNIT__NAME = 4;
+
+        static const int PARAMETERUNIT__SOURCE = 5;
+
+        static const int PARAMETERUNIT__COMMENT = 6;
+
+        static const int PARAMETERUNIT__CODERELATION = 7;
+
+        static const int PARAMETERUNIT__TYPE = 8;
+
+        static const int PARAMETERUNIT__EXT = 9;
+
+        static const int PARAMETERUNIT__SIZE = 10;
+
+        static const int PARAMETERUNIT__CODEELEMENT = 11;
+
+        static const int PARAMETERUNIT__KIND = 12;
+
+        static const int PARAMETERUNIT__POS = 13;
+
+        static const int PARAMETERUNIT_FEATURE_COUNT = 14;
+
+        // IDs for classifier PointerType
         static const int POINTERTYPE = 63;
 
+        static const int POINTERTYPE__ATTRIBUTE = 0;
+
+        static const int POINTERTYPE__ANNOTATION = 1;
+
+        static const int POINTERTYPE__STEREOTYPE = 2;
+
+        static const int POINTERTYPE__TAGGEDVALUE = 3;
+
+        static const int POINTERTYPE__NAME = 4;
+
+        static const int POINTERTYPE__SOURCE = 5;
+
+        static const int POINTERTYPE__COMMENT = 6;
+
+        static const int POINTERTYPE__CODERELATION = 7;
+
+        static const int POINTERTYPE__ITEMUNIT = 8;
+
+        static const int POINTERTYPE_FEATURE_COUNT = 9;
+
+        // IDs for classifier PreprocessorDirective
         static const int PREPROCESSORDIRECTIVE = 64;
 
+        static const int PREPROCESSORDIRECTIVE__ATTRIBUTE = 0;
+
+        static const int PREPROCESSORDIRECTIVE__ANNOTATION = 1;
+
+        static const int PREPROCESSORDIRECTIVE__STEREOTYPE = 2;
+
+        static const int PREPROCESSORDIRECTIVE__TAGGEDVALUE = 3;
+
+        static const int PREPROCESSORDIRECTIVE__NAME = 4;
+
+        static const int PREPROCESSORDIRECTIVE__SOURCE = 5;
+
+        static const int PREPROCESSORDIRECTIVE__COMMENT = 6;
+
+        static const int PREPROCESSORDIRECTIVE__CODERELATION = 7;
+
+        static const int PREPROCESSORDIRECTIVE__CODEELEMENT = 8;
+
+        static const int PREPROCESSORDIRECTIVE_FEATURE_COUNT = 9;
+
+        // IDs for classifier PrimitiveType
         static const int PRIMITIVETYPE = 65;
 
+        static const int PRIMITIVETYPE__ATTRIBUTE = 0;
+
+        static const int PRIMITIVETYPE__ANNOTATION = 1;
+
+        static const int PRIMITIVETYPE__STEREOTYPE = 2;
+
+        static const int PRIMITIVETYPE__TAGGEDVALUE = 3;
+
+        static const int PRIMITIVETYPE__NAME = 4;
+
+        static const int PRIMITIVETYPE__SOURCE = 5;
+
+        static const int PRIMITIVETYPE__COMMENT = 6;
+
+        static const int PRIMITIVETYPE__CODERELATION = 7;
+
+        static const int PRIMITIVETYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier RangeType
         static const int RANGETYPE = 66;
 
+        static const int RANGETYPE__ATTRIBUTE = 0;
+
+        static const int RANGETYPE__ANNOTATION = 1;
+
+        static const int RANGETYPE__STEREOTYPE = 2;
+
+        static const int RANGETYPE__TAGGEDVALUE = 3;
+
+        static const int RANGETYPE__NAME = 4;
+
+        static const int RANGETYPE__SOURCE = 5;
+
+        static const int RANGETYPE__COMMENT = 6;
+
+        static const int RANGETYPE__CODERELATION = 7;
+
+        static const int RANGETYPE__ITEMUNIT = 8;
+
+        static const int RANGETYPE__LOWER = 9;
+
+        static const int RANGETYPE__UPPER = 10;
+
+        static const int RANGETYPE_FEATURE_COUNT = 11;
+
+        // IDs for classifier RecordType
         static const int RECORDTYPE = 67;
 
+        static const int RECORDTYPE__ATTRIBUTE = 0;
+
+        static const int RECORDTYPE__ANNOTATION = 1;
+
+        static const int RECORDTYPE__STEREOTYPE = 2;
+
+        static const int RECORDTYPE__TAGGEDVALUE = 3;
+
+        static const int RECORDTYPE__NAME = 4;
+
+        static const int RECORDTYPE__SOURCE = 5;
+
+        static const int RECORDTYPE__COMMENT = 6;
+
+        static const int RECORDTYPE__CODERELATION = 7;
+
+        static const int RECORDTYPE__ITEMUNIT = 8;
+
+        static const int RECORDTYPE_FEATURE_COUNT = 9;
+
+        // IDs for classifier Redefines
         static const int REDEFINES = 68;
 
+        static const int REDEFINES__ATTRIBUTE = 0;
+
+        static const int REDEFINES__ANNOTATION = 1;
+
+        static const int REDEFINES__STEREOTYPE = 2;
+
+        static const int REDEFINES__TAGGEDVALUE = 3;
+
+        static const int REDEFINES__TO = 4;
+
+        static const int REDEFINES__FROM = 5;
+
+        static const int REDEFINES_FEATURE_COUNT = 6;
+
+        // IDs for classifier ScaledType
         static const int SCALEDTYPE = 69;
 
+        static const int SCALEDTYPE__ATTRIBUTE = 0;
+
+        static const int SCALEDTYPE__ANNOTATION = 1;
+
+        static const int SCALEDTYPE__STEREOTYPE = 2;
+
+        static const int SCALEDTYPE__TAGGEDVALUE = 3;
+
+        static const int SCALEDTYPE__NAME = 4;
+
+        static const int SCALEDTYPE__SOURCE = 5;
+
+        static const int SCALEDTYPE__COMMENT = 6;
+
+        static const int SCALEDTYPE__CODERELATION = 7;
+
+        static const int SCALEDTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier SequenceType
         static const int SEQUENCETYPE = 70;
 
+        static const int SEQUENCETYPE__ATTRIBUTE = 0;
+
+        static const int SEQUENCETYPE__ANNOTATION = 1;
+
+        static const int SEQUENCETYPE__STEREOTYPE = 2;
+
+        static const int SEQUENCETYPE__TAGGEDVALUE = 3;
+
+        static const int SEQUENCETYPE__NAME = 4;
+
+        static const int SEQUENCETYPE__SOURCE = 5;
+
+        static const int SEQUENCETYPE__COMMENT = 6;
+
+        static const int SEQUENCETYPE__CODERELATION = 7;
+
+        static const int SEQUENCETYPE__ITEMUNIT = 8;
+
+        static const int SEQUENCETYPE__SIZE = 9;
+
+        static const int SEQUENCETYPE_FEATURE_COUNT = 10;
+
+        // IDs for classifier SetType
         static const int SETTYPE = 71;
 
+        static const int SETTYPE__ATTRIBUTE = 0;
+
+        static const int SETTYPE__ANNOTATION = 1;
+
+        static const int SETTYPE__STEREOTYPE = 2;
+
+        static const int SETTYPE__TAGGEDVALUE = 3;
+
+        static const int SETTYPE__NAME = 4;
+
+        static const int SETTYPE__SOURCE = 5;
+
+        static const int SETTYPE__COMMENT = 6;
+
+        static const int SETTYPE__CODERELATION = 7;
+
+        static const int SETTYPE__ITEMUNIT = 8;
+
+        static const int SETTYPE__SIZE = 9;
+
+        static const int SETTYPE_FEATURE_COUNT = 10;
+
+        // IDs for classifier SharedUnit
         static const int SHAREDUNIT = 72;
 
+        static const int SHAREDUNIT__ATTRIBUTE = 0;
+
+        static const int SHAREDUNIT__ANNOTATION = 1;
+
+        static const int SHAREDUNIT__STEREOTYPE = 2;
+
+        static const int SHAREDUNIT__TAGGEDVALUE = 3;
+
+        static const int SHAREDUNIT__NAME = 4;
+
+        static const int SHAREDUNIT__SOURCE = 5;
+
+        static const int SHAREDUNIT__COMMENT = 6;
+
+        static const int SHAREDUNIT__CODERELATION = 7;
+
+        static const int SHAREDUNIT__CODEELEMENT = 8;
+
+        static const int SHAREDUNIT_FEATURE_COUNT = 9;
+
+        // IDs for classifier Signature
         static const int SIGNATURE = 73;
 
+        static const int SIGNATURE__ATTRIBUTE = 0;
+
+        static const int SIGNATURE__ANNOTATION = 1;
+
+        static const int SIGNATURE__STEREOTYPE = 2;
+
+        static const int SIGNATURE__TAGGEDVALUE = 3;
+
+        static const int SIGNATURE__NAME = 4;
+
+        static const int SIGNATURE__SOURCE = 5;
+
+        static const int SIGNATURE__COMMENT = 6;
+
+        static const int SIGNATURE__CODERELATION = 7;
+
+        static const int SIGNATURE__PARAMETERUNIT = 8;
+
+        static const int SIGNATURE_FEATURE_COUNT = 9;
+
+        // IDs for classifier StorableKind
         static const int STORABLEKIND = 74;
 
+        // IDs for classifier StorableUnit
         static const int STORABLEUNIT = 75;
 
+        static const int STORABLEUNIT__ATTRIBUTE = 0;
+
+        static const int STORABLEUNIT__ANNOTATION = 1;
+
+        static const int STORABLEUNIT__STEREOTYPE = 2;
+
+        static const int STORABLEUNIT__TAGGEDVALUE = 3;
+
+        static const int STORABLEUNIT__NAME = 4;
+
+        static const int STORABLEUNIT__SOURCE = 5;
+
+        static const int STORABLEUNIT__COMMENT = 6;
+
+        static const int STORABLEUNIT__CODERELATION = 7;
+
+        static const int STORABLEUNIT__TYPE = 8;
+
+        static const int STORABLEUNIT__EXT = 9;
+
+        static const int STORABLEUNIT__SIZE = 10;
+
+        static const int STORABLEUNIT__CODEELEMENT = 11;
+
+        static const int STORABLEUNIT__KIND = 12;
+
+        static const int STORABLEUNIT_FEATURE_COUNT = 13;
+
+        // IDs for classifier StringType
         static const int STRINGTYPE = 76;
 
+        static const int STRINGTYPE__ATTRIBUTE = 0;
+
+        static const int STRINGTYPE__ANNOTATION = 1;
+
+        static const int STRINGTYPE__STEREOTYPE = 2;
+
+        static const int STRINGTYPE__TAGGEDVALUE = 3;
+
+        static const int STRINGTYPE__NAME = 4;
+
+        static const int STRINGTYPE__SOURCE = 5;
+
+        static const int STRINGTYPE__COMMENT = 6;
+
+        static const int STRINGTYPE__CODERELATION = 7;
+
+        static const int STRINGTYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier SynonymType
         static const int SYNONYMTYPE = 77;
 
+        static const int SYNONYMTYPE__ATTRIBUTE = 0;
+
+        static const int SYNONYMTYPE__ANNOTATION = 1;
+
+        static const int SYNONYMTYPE__STEREOTYPE = 2;
+
+        static const int SYNONYMTYPE__TAGGEDVALUE = 3;
+
+        static const int SYNONYMTYPE__NAME = 4;
+
+        static const int SYNONYMTYPE__SOURCE = 5;
+
+        static const int SYNONYMTYPE__COMMENT = 6;
+
+        static const int SYNONYMTYPE__CODERELATION = 7;
+
+        static const int SYNONYMTYPE__TYPE = 8;
+
+        static const int SYNONYMTYPE__CODEELEMENT = 9;
+
+        static const int SYNONYMTYPE_FEATURE_COUNT = 10;
+
+        // IDs for classifier TemplateParameter
         static const int TEMPLATEPARAMETER = 78;
 
+        static const int TEMPLATEPARAMETER__ATTRIBUTE = 0;
+
+        static const int TEMPLATEPARAMETER__ANNOTATION = 1;
+
+        static const int TEMPLATEPARAMETER__STEREOTYPE = 2;
+
+        static const int TEMPLATEPARAMETER__TAGGEDVALUE = 3;
+
+        static const int TEMPLATEPARAMETER__NAME = 4;
+
+        static const int TEMPLATEPARAMETER__SOURCE = 5;
+
+        static const int TEMPLATEPARAMETER__COMMENT = 6;
+
+        static const int TEMPLATEPARAMETER__CODERELATION = 7;
+
+        static const int TEMPLATEPARAMETER_FEATURE_COUNT = 8;
+
+        // IDs for classifier TemplateType
         static const int TEMPLATETYPE = 79;
 
+        static const int TEMPLATETYPE__ATTRIBUTE = 0;
+
+        static const int TEMPLATETYPE__ANNOTATION = 1;
+
+        static const int TEMPLATETYPE__STEREOTYPE = 2;
+
+        static const int TEMPLATETYPE__TAGGEDVALUE = 3;
+
+        static const int TEMPLATETYPE__NAME = 4;
+
+        static const int TEMPLATETYPE__SOURCE = 5;
+
+        static const int TEMPLATETYPE__COMMENT = 6;
+
+        static const int TEMPLATETYPE__CODERELATION = 7;
+
+        static const int TEMPLATETYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier TemplateUnit
         static const int TEMPLATEUNIT = 80;
 
+        static const int TEMPLATEUNIT__ATTRIBUTE = 0;
+
+        static const int TEMPLATEUNIT__ANNOTATION = 1;
+
+        static const int TEMPLATEUNIT__STEREOTYPE = 2;
+
+        static const int TEMPLATEUNIT__TAGGEDVALUE = 3;
+
+        static const int TEMPLATEUNIT__NAME = 4;
+
+        static const int TEMPLATEUNIT__SOURCE = 5;
+
+        static const int TEMPLATEUNIT__COMMENT = 6;
+
+        static const int TEMPLATEUNIT__CODERELATION = 7;
+
+        static const int TEMPLATEUNIT__CODEELEMENT = 8;
+
+        static const int TEMPLATEUNIT_FEATURE_COUNT = 9;
+
+        // IDs for classifier TimeType
         static const int TIMETYPE = 81;
 
+        static const int TIMETYPE__ATTRIBUTE = 0;
+
+        static const int TIMETYPE__ANNOTATION = 1;
+
+        static const int TIMETYPE__STEREOTYPE = 2;
+
+        static const int TIMETYPE__TAGGEDVALUE = 3;
+
+        static const int TIMETYPE__NAME = 4;
+
+        static const int TIMETYPE__SOURCE = 5;
+
+        static const int TIMETYPE__COMMENT = 6;
+
+        static const int TIMETYPE__CODERELATION = 7;
+
+        static const int TIMETYPE_FEATURE_COUNT = 8;
+
+        // IDs for classifier TypeUnit
         static const int TYPEUNIT = 82;
 
+        static const int TYPEUNIT__ATTRIBUTE = 0;
+
+        static const int TYPEUNIT__ANNOTATION = 1;
+
+        static const int TYPEUNIT__STEREOTYPE = 2;
+
+        static const int TYPEUNIT__TAGGEDVALUE = 3;
+
+        static const int TYPEUNIT__NAME = 4;
+
+        static const int TYPEUNIT__SOURCE = 5;
+
+        static const int TYPEUNIT__COMMENT = 6;
+
+        static const int TYPEUNIT__CODERELATION = 7;
+
+        static const int TYPEUNIT__TYPE = 8;
+
+        static const int TYPEUNIT__CODEELEMENT = 9;
+
+        static const int TYPEUNIT_FEATURE_COUNT = 10;
+
+        // IDs for classifier Value
         static const int VALUE = 83;
 
+        static const int VALUE__ATTRIBUTE = 0;
+
+        static const int VALUE__ANNOTATION = 1;
+
+        static const int VALUE__STEREOTYPE = 2;
+
+        static const int VALUE__TAGGEDVALUE = 3;
+
+        static const int VALUE__NAME = 4;
+
+        static const int VALUE__SOURCE = 5;
+
+        static const int VALUE__COMMENT = 6;
+
+        static const int VALUE__CODERELATION = 7;
+
+        static const int VALUE__TYPE = 8;
+
+        static const int VALUE__EXT = 9;
+
+        static const int VALUE__SIZE = 10;
+
+        static const int VALUE__CODEELEMENT = 11;
+
+        static const int VALUE_FEATURE_COUNT = 12;
+
+        // IDs for classifier ValueElement
         static const int VALUEELEMENT = 84;
 
+        static const int VALUEELEMENT__ATTRIBUTE = 0;
+
+        static const int VALUEELEMENT__ANNOTATION = 1;
+
+        static const int VALUEELEMENT__STEREOTYPE = 2;
+
+        static const int VALUEELEMENT__TAGGEDVALUE = 3;
+
+        static const int VALUEELEMENT__NAME = 4;
+
+        static const int VALUEELEMENT__SOURCE = 5;
+
+        static const int VALUEELEMENT__COMMENT = 6;
+
+        static const int VALUEELEMENT__CODERELATION = 7;
+
+        static const int VALUEELEMENT__TYPE = 8;
+
+        static const int VALUEELEMENT__EXT = 9;
+
+        static const int VALUEELEMENT__SIZE = 10;
+
+        static const int VALUEELEMENT__CODEELEMENT = 11;
+
+        static const int VALUEELEMENT_FEATURE_COUNT = 12;
+
+        // IDs for classifier ValueList
         static const int VALUELIST = 85;
 
+        static const int VALUELIST__ATTRIBUTE = 0;
+
+        static const int VALUELIST__ANNOTATION = 1;
+
+        static const int VALUELIST__STEREOTYPE = 2;
+
+        static const int VALUELIST__TAGGEDVALUE = 3;
+
+        static const int VALUELIST__NAME = 4;
+
+        static const int VALUELIST__SOURCE = 5;
+
+        static const int VALUELIST__COMMENT = 6;
+
+        static const int VALUELIST__CODERELATION = 7;
+
+        static const int VALUELIST__TYPE = 8;
+
+        static const int VALUELIST__EXT = 9;
+
+        static const int VALUELIST__SIZE = 10;
+
+        static const int VALUELIST__CODEELEMENT = 11;
+
+        static const int VALUELIST__VALUEELEMENT = 12;
+
+        static const int VALUELIST_FEATURE_COUNT = 13;
+
+        // IDs for classifier VariantTo
         static const int VARIANTTO = 86;
 
+        static const int VARIANTTO__ATTRIBUTE = 0;
+
+        static const int VARIANTTO__ANNOTATION = 1;
+
+        static const int VARIANTTO__STEREOTYPE = 2;
+
+        static const int VARIANTTO__TAGGEDVALUE = 3;
+
+        static const int VARIANTTO__TO = 4;
+
+        static const int VARIANTTO__FROM = 5;
+
+        static const int VARIANTTO_FEATURE_COUNT = 6;
+
+        // IDs for classifier VisibleIn
         static const int VISIBLEIN = 87;
 
+        static const int VISIBLEIN__ATTRIBUTE = 0;
+
+        static const int VISIBLEIN__ANNOTATION = 1;
+
+        static const int VISIBLEIN__STEREOTYPE = 2;
+
+        static const int VISIBLEIN__TAGGEDVALUE = 3;
+
+        static const int VISIBLEIN__TO = 4;
+
+        static const int VISIBLEIN__FROM = 5;
+
+        static const int VISIBLEIN_FEATURE_COUNT = 6;
+
+        // IDs for classifier VoidType
         static const int VOIDTYPE = 88;
 
-        static const int ABSTRACTCODEELEMENT__SOURCE = 52;
+        static const int VOIDTYPE__ATTRIBUTE = 0;
 
-        static const int ABSTRACTCODEELEMENT__COMMENT = 53;
+        static const int VOIDTYPE__ANNOTATION = 1;
 
-        static const int ABSTRACTCODEELEMENT__CODERELATION = 54;
+        static const int VOIDTYPE__STEREOTYPE = 2;
 
-        static const int CONTROLELEMENT__TYPE = 55;
+        static const int VOIDTYPE__TAGGEDVALUE = 3;
 
-        static const int CONTROLELEMENT__ENTRYFLOW = 56;
+        static const int VOIDTYPE__NAME = 4;
 
-        static const int CONTROLELEMENT__CODEELEMENT = 57;
+        static const int VOIDTYPE__SOURCE = 5;
 
-        static const int METHODUNIT__KIND = 58;
+        static const int VOIDTYPE__COMMENT = 6;
 
-        static const int METHODUNIT__EXPORT = 59;
+        static const int VOIDTYPE__CODERELATION = 7;
 
-        static const int MODULE__CODEELEMENT = 60;
-
-        static const int CALLABLEUNIT__KIND = 61;
-
-        static const int TEMPLATEUNIT__CODEELEMENT = 62;
-
-        static const int INSTANCEOF__TO = 63;
-
-        static const int INSTANCEOF__FROM = 64;
-
-        static const int CODEMODEL__CODEELEMENT = 65;
-
-        static const int DERIVEDTYPE__ITEMUNIT = 66;
-
-        static const int ARRAYTYPE__SIZE = 67;
-
-        static const int ARRAYTYPE__INDEXUNIT = 68;
-
-        static const int CLASSUNIT__ISABSTRACT = 69;
-
-        static const int CLASSUNIT__CODEELEMENT = 70;
-
-        static const int COMPOSITETYPE__ITEMUNIT = 71;
-
-        static const int ENUMERATEDTYPE__VALUE = 72;
-
-        static const int EXTENDS__TO = 73;
-
-        static const int EXTENDS__FROM = 74;
-
-        static const int HASTYPE__TO = 75;
-
-        static const int HASTYPE__FROM = 76;
-
-        static const int IMPLEMENTATIONOF__TO = 77;
-
-        static const int IMPLEMENTATIONOF__FROM = 78;
-
-        static const int IMPLEMENTS__TO = 79;
-
-        static const int IMPLEMENTS__FROM = 80;
-
-        static const int INTERFACEUNIT__CODEELEMENT = 81;
-
-        static const int DEFINEDTYPE__TYPE = 82;
-
-        static const int DEFINEDTYPE__CODEELEMENT = 83;
-
-        static const int RANGETYPE__LOWER = 84;
-
-        static const int RANGETYPE__UPPER = 85;
-
-        static const int SIGNATURE__PARAMETERUNIT = 86;
-
-        static const int DATAELEMENT__TYPE = 87;
-
-        static const int DATAELEMENT__EXT = 88;
-
-        static const int DATAELEMENT__SIZE = 89;
-
-        static const int DATAELEMENT__CODEELEMENT = 90;
-
-        static const int NAMESPACEUNIT__GROUPEDCODE = 91;
-
-        static const int VISIBLEIN__TO = 92;
-
-        static const int VISIBLEIN__FROM = 93;
-
-        static const int COMMENTUNIT__TEXT = 94;
-
-        static const int VALUELIST__VALUEELEMENT = 95;
-
-        static const int STORABLEUNIT__KIND = 96;
-
-        static const int MEMBERUNIT__EXPORT = 97;
-
-        static const int PARAMETERUNIT__KIND = 98;
-
-        static const int PARAMETERUNIT__POS = 99;
-
-        static const int SEQUENCETYPE__SIZE = 100;
-
-        static const int BAGTYPE__SIZE = 101;
-
-        static const int SETTYPE__SIZE = 102;
-
-        static const int CODERELATIONSHIP__TO = 103;
-
-        static const int CODERELATIONSHIP__FROM = 104;
-
-        static const int IMPORTS__TO = 105;
-
-        static const int IMPORTS__FROM = 106;
-
-        static const int PARAMETERTO__TO = 107;
-
-        static const int PARAMETERTO__FROM = 108;
-
-        static const int PREPROCESSORDIRECTIVE__CODEELEMENT = 109;
-
-        static const int MACROUNIT__KIND = 110;
-
-        static const int VARIANTTO__TO = 111;
-
-        static const int VARIANTTO__FROM = 112;
-
-        static const int EXPANDS__TO = 113;
-
-        static const int EXPANDS__FROM = 114;
-
-        static const int REDEFINES__TO = 115;
-
-        static const int REDEFINES__FROM = 116;
-
-        static const int GENERATEDFROM__TO = 117;
-
-        static const int GENERATEDFROM__FROM = 118;
-
-        static const int INCLUDES__TO = 119;
-
-        static const int INCLUDES__FROM = 120;
-
-        static const int HASVALUE__TO = 121;
-
-        static const int HASVALUE__FROM = 122;
-
-        // IDs for classifiers for class AbstractCodeElement 
-
-        static const int ABSTRACTCODEELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTCODEELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTCODEELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTCODEELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ABSTRACTCODEELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        // IDs for classifiers for class AbstractCodeRelationship 
-
-        static const int ABSTRACTCODERELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTCODERELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTCODERELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTCODERELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ArrayType 
-
-        static const int ARRAYTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ARRAYTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ARRAYTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ARRAYTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ARRAYTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int ARRAYTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int ARRAYTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int ARRAYTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int ARRAYTYPE__ITEMUNIT = DERIVEDTYPE__ITEMUNIT;
-
-        // IDs for classifiers for class BagType 
-
-        static const int BAGTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int BAGTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int BAGTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int BAGTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int BAGTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int BAGTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int BAGTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int BAGTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int BAGTYPE__ITEMUNIT = DERIVEDTYPE__ITEMUNIT;
-
-        // IDs for classifiers for class BitstringType 
-
-        static const int BITSTRINGTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int BITSTRINGTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int BITSTRINGTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int BITSTRINGTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int BITSTRINGTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int BITSTRINGTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int BITSTRINGTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int BITSTRINGTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class BitType 
-
-        static const int BITTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int BITTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int BITTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int BITTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int BITTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int BITTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int BITTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int BITTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class BooleanType 
-
-        static const int BOOLEANTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int BOOLEANTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int BOOLEANTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int BOOLEANTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int BOOLEANTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int BOOLEANTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int BOOLEANTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int BOOLEANTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class CallableUnit 
-
-        static const int CALLABLEUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CALLABLEUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CALLABLEUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CALLABLEUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CALLABLEUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CALLABLEUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CALLABLEUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CALLABLEUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int CALLABLEUNIT__TYPE = CONTROLELEMENT__TYPE;
-
-        static const int CALLABLEUNIT__ENTRYFLOW = CONTROLELEMENT__ENTRYFLOW;
-
-        static const int CALLABLEUNIT__CODEELEMENT = CONTROLELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class CharType 
-
-        static const int CHARTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CHARTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CHARTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CHARTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CHARTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CHARTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CHARTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CHARTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class ChoiceType 
-
-        static const int CHOICETYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CHOICETYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CHOICETYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CHOICETYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CHOICETYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CHOICETYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CHOICETYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CHOICETYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int CHOICETYPE__ITEMUNIT = COMPOSITETYPE__ITEMUNIT;
-
-        // IDs for classifiers for class ClassUnit 
-
-        static const int CLASSUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CLASSUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CLASSUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CLASSUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CLASSUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CLASSUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CLASSUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CLASSUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class CodeAssembly 
-
-        static const int CODEASSEMBLY__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CODEASSEMBLY__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CODEASSEMBLY__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CODEASSEMBLY__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CODEASSEMBLY__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CODEASSEMBLY__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CODEASSEMBLY__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CODEASSEMBLY__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int CODEASSEMBLY__CODEELEMENT = MODULE__CODEELEMENT;
-
-        // IDs for classifiers for class CodeElement 
-
-        static const int CODEELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CODEELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CODEELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CODEELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CODEELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CODEELEMENT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CODEELEMENT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CODEELEMENT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class CodeItem 
-
-        static const int CODEITEM__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CODEITEM__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CODEITEM__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CODEITEM__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CODEITEM__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CODEITEM__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CODEITEM__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CODEITEM__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class CodeModel 
-
-        static const int CODEMODEL__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CODEMODEL__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CODEMODEL__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CODEMODEL__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CODEMODEL__AUDIT = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT;
-
-        static const int CODEMODEL__EXTENSIONFAMILY = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY;
-
-        static const int CODEMODEL__NAME = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME;
-
-        // IDs for classifiers for class CodeRelationship 
-
-        static const int CODERELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CODERELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CODERELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CODERELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class CommentUnit 
-
-        static const int COMMENTUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int COMMENTUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int COMMENTUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int COMMENTUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class CompilationUnit 
-
-        static const int COMPILATIONUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int COMPILATIONUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int COMPILATIONUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int COMPILATIONUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int COMPILATIONUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int COMPILATIONUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int COMPILATIONUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int COMPILATIONUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int COMPILATIONUNIT__CODEELEMENT = MODULE__CODEELEMENT;
-
-        // IDs for classifiers for class CompositeType 
-
-        static const int COMPOSITETYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int COMPOSITETYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int COMPOSITETYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int COMPOSITETYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int COMPOSITETYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int COMPOSITETYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int COMPOSITETYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int COMPOSITETYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class ComputationalObject 
-
-        static const int COMPUTATIONALOBJECT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int COMPUTATIONALOBJECT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int COMPUTATIONALOBJECT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int COMPUTATIONALOBJECT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int COMPUTATIONALOBJECT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int COMPUTATIONALOBJECT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int COMPUTATIONALOBJECT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int COMPUTATIONALOBJECT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class ConditionalDirective 
-
-        static const int CONDITIONALDIRECTIVE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CONDITIONALDIRECTIVE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CONDITIONALDIRECTIVE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CONDITIONALDIRECTIVE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CONDITIONALDIRECTIVE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CONDITIONALDIRECTIVE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CONDITIONALDIRECTIVE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CONDITIONALDIRECTIVE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int CONDITIONALDIRECTIVE__CODEELEMENT = PREPROCESSORDIRECTIVE__CODEELEMENT;
-
-        // IDs for classifiers for class ControlElement 
-
-        static const int CONTROLELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CONTROLELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CONTROLELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CONTROLELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CONTROLELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CONTROLELEMENT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CONTROLELEMENT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CONTROLELEMENT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class DataElement 
-
-        static const int DATAELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DATAELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DATAELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DATAELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DATAELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DATAELEMENT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int DATAELEMENT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int DATAELEMENT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class Datatype 
-
-        static const int DATATYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DATATYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DATATYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DATATYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DATATYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DATATYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int DATATYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int DATATYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class DateType 
-
-        static const int DATETYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DATETYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DATETYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DATETYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DATETYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DATETYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int DATETYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int DATETYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class DecimalType 
-
-        static const int DECIMALTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DECIMALTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DECIMALTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DECIMALTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DECIMALTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DECIMALTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int DECIMALTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int DECIMALTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class DefinedType 
-
-        static const int DEFINEDTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DEFINEDTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DEFINEDTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DEFINEDTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DEFINEDTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DEFINEDTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int DEFINEDTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int DEFINEDTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class DerivedType 
-
-        static const int DERIVEDTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DERIVEDTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DERIVEDTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DERIVEDTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int DERIVEDTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int DERIVEDTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int DERIVEDTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int DERIVEDTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class EnumeratedType 
-
-        static const int ENUMERATEDTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ENUMERATEDTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ENUMERATEDTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ENUMERATEDTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ENUMERATEDTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int ENUMERATEDTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int ENUMERATEDTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int ENUMERATEDTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class Expands 
-
-        static const int EXPANDS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXPANDS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EXPANDS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EXPANDS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Extends 
-
-        static const int EXTENDS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXTENDS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EXTENDS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EXTENDS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class FloatType 
-
-        static const int FLOATTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int FLOATTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int FLOATTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int FLOATTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int FLOATTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int FLOATTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int FLOATTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int FLOATTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class GeneratedFrom 
-
-        static const int GENERATEDFROM__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int GENERATEDFROM__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int GENERATEDFROM__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int GENERATEDFROM__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class HasType 
-
-        static const int HASTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int HASTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int HASTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int HASTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class HasValue 
-
-        static const int HASVALUE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int HASVALUE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int HASVALUE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int HASVALUE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ImplementationOf 
-
-        static const int IMPLEMENTATIONOF__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int IMPLEMENTATIONOF__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int IMPLEMENTATIONOF__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int IMPLEMENTATIONOF__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Implements 
-
-        static const int IMPLEMENTS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int IMPLEMENTS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int IMPLEMENTS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int IMPLEMENTS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Imports 
-
-        static const int IMPORTS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int IMPORTS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int IMPORTS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int IMPORTS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class IncludeDirective 
-
-        static const int INCLUDEDIRECTIVE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INCLUDEDIRECTIVE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INCLUDEDIRECTIVE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INCLUDEDIRECTIVE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int INCLUDEDIRECTIVE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int INCLUDEDIRECTIVE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int INCLUDEDIRECTIVE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int INCLUDEDIRECTIVE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int INCLUDEDIRECTIVE__CODEELEMENT = PREPROCESSORDIRECTIVE__CODEELEMENT;
-
-        // IDs for classifiers for class Includes 
-
-        static const int INCLUDES__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INCLUDES__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INCLUDES__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INCLUDES__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class IndexUnit 
-
-        static const int INDEXUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INDEXUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INDEXUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INDEXUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int INDEXUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int INDEXUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int INDEXUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int INDEXUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int INDEXUNIT__TYPE = DATAELEMENT__TYPE;
-
-        static const int INDEXUNIT__EXT = DATAELEMENT__EXT;
-
-        static const int INDEXUNIT__SIZE = DATAELEMENT__SIZE;
-
-        static const int INDEXUNIT__CODEELEMENT = DATAELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class InstanceOf 
-
-        static const int INSTANCEOF__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INSTANCEOF__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INSTANCEOF__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INSTANCEOF__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class IntegerType 
-
-        static const int INTEGERTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INTEGERTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INTEGERTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INTEGERTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int INTEGERTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int INTEGERTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int INTEGERTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int INTEGERTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class InterfaceUnit 
-
-        static const int INTERFACEUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int INTERFACEUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int INTERFACEUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int INTERFACEUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int INTERFACEUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int INTERFACEUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int INTERFACEUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int INTERFACEUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class ItemUnit 
-
-        static const int ITEMUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ITEMUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ITEMUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ITEMUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ITEMUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int ITEMUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int ITEMUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int ITEMUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int ITEMUNIT__TYPE = DATAELEMENT__TYPE;
-
-        static const int ITEMUNIT__EXT = DATAELEMENT__EXT;
-
-        static const int ITEMUNIT__SIZE = DATAELEMENT__SIZE;
-
-        static const int ITEMUNIT__CODEELEMENT = DATAELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class LanguageUnit 
-
-        static const int LANGUAGEUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int LANGUAGEUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int LANGUAGEUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int LANGUAGEUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int LANGUAGEUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int LANGUAGEUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int LANGUAGEUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int LANGUAGEUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int LANGUAGEUNIT__CODEELEMENT = MODULE__CODEELEMENT;
-
-        // IDs for classifiers for class MacroDirective 
-
-        static const int MACRODIRECTIVE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int MACRODIRECTIVE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int MACRODIRECTIVE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int MACRODIRECTIVE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int MACRODIRECTIVE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int MACRODIRECTIVE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int MACRODIRECTIVE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int MACRODIRECTIVE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int MACRODIRECTIVE__CODEELEMENT = PREPROCESSORDIRECTIVE__CODEELEMENT;
-
-        // IDs for classifiers for class MacroUnit 
-
-        static const int MACROUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int MACROUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int MACROUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int MACROUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int MACROUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int MACROUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int MACROUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int MACROUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int MACROUNIT__CODEELEMENT = PREPROCESSORDIRECTIVE__CODEELEMENT;
-
-        // IDs for classifiers for class MemberUnit 
-
-        static const int MEMBERUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int MEMBERUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int MEMBERUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int MEMBERUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int MEMBERUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int MEMBERUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int MEMBERUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int MEMBERUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int MEMBERUNIT__TYPE = DATAELEMENT__TYPE;
-
-        static const int MEMBERUNIT__EXT = DATAELEMENT__EXT;
-
-        static const int MEMBERUNIT__SIZE = DATAELEMENT__SIZE;
-
-        static const int MEMBERUNIT__CODEELEMENT = DATAELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class MethodUnit 
-
-        static const int METHODUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int METHODUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int METHODUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int METHODUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int METHODUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int METHODUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int METHODUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int METHODUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int METHODUNIT__TYPE = CONTROLELEMENT__TYPE;
-
-        static const int METHODUNIT__ENTRYFLOW = CONTROLELEMENT__ENTRYFLOW;
-
-        static const int METHODUNIT__CODEELEMENT = CONTROLELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class Module 
-
-        static const int MODULE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int MODULE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int MODULE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int MODULE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int MODULE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int MODULE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int MODULE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int MODULE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class NamespaceUnit 
-
-        static const int NAMESPACEUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int NAMESPACEUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int NAMESPACEUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int NAMESPACEUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int NAMESPACEUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int NAMESPACEUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int NAMESPACEUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int NAMESPACEUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class OctetstringType 
-
-        static const int OCTETSTRINGTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int OCTETSTRINGTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int OCTETSTRINGTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int OCTETSTRINGTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int OCTETSTRINGTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int OCTETSTRINGTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int OCTETSTRINGTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int OCTETSTRINGTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class OctetType 
-
-        static const int OCTETTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int OCTETTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int OCTETTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int OCTETTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int OCTETTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int OCTETTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int OCTETTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int OCTETTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class OrdinalType 
-
-        static const int ORDINALTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ORDINALTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ORDINALTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ORDINALTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ORDINALTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int ORDINALTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int ORDINALTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int ORDINALTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class Package 
-
-        static const int PACKAGE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PACKAGE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PACKAGE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PACKAGE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PACKAGE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int PACKAGE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int PACKAGE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int PACKAGE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int PACKAGE__CODEELEMENT = MODULE__CODEELEMENT;
-
-        // IDs for classifiers for class ParameterTo 
-
-        static const int PARAMETERTO__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PARAMETERTO__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PARAMETERTO__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PARAMETERTO__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ParameterUnit 
-
-        static const int PARAMETERUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PARAMETERUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PARAMETERUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PARAMETERUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PARAMETERUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int PARAMETERUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int PARAMETERUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int PARAMETERUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int PARAMETERUNIT__TYPE = DATAELEMENT__TYPE;
-
-        static const int PARAMETERUNIT__EXT = DATAELEMENT__EXT;
-
-        static const int PARAMETERUNIT__SIZE = DATAELEMENT__SIZE;
-
-        static const int PARAMETERUNIT__CODEELEMENT = DATAELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class PointerType 
-
-        static const int POINTERTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int POINTERTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int POINTERTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int POINTERTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int POINTERTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int POINTERTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int POINTERTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int POINTERTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int POINTERTYPE__ITEMUNIT = DERIVEDTYPE__ITEMUNIT;
-
-        // IDs for classifiers for class PreprocessorDirective 
-
-        static const int PREPROCESSORDIRECTIVE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PREPROCESSORDIRECTIVE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PREPROCESSORDIRECTIVE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PREPROCESSORDIRECTIVE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PREPROCESSORDIRECTIVE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int PREPROCESSORDIRECTIVE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int PREPROCESSORDIRECTIVE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int PREPROCESSORDIRECTIVE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class PrimitiveType 
-
-        static const int PRIMITIVETYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int PRIMITIVETYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int PRIMITIVETYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int PRIMITIVETYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int PRIMITIVETYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int PRIMITIVETYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int PRIMITIVETYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int PRIMITIVETYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class RangeType 
-
-        static const int RANGETYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int RANGETYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int RANGETYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int RANGETYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int RANGETYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int RANGETYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int RANGETYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int RANGETYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int RANGETYPE__ITEMUNIT = DERIVEDTYPE__ITEMUNIT;
-
-        // IDs for classifiers for class RecordType 
-
-        static const int RECORDTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int RECORDTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int RECORDTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int RECORDTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int RECORDTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int RECORDTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int RECORDTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int RECORDTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int RECORDTYPE__ITEMUNIT = COMPOSITETYPE__ITEMUNIT;
-
-        // IDs for classifiers for class Redefines 
-
-        static const int REDEFINES__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int REDEFINES__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int REDEFINES__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int REDEFINES__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ScaledType 
-
-        static const int SCALEDTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SCALEDTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SCALEDTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SCALEDTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int SCALEDTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int SCALEDTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int SCALEDTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int SCALEDTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class SequenceType 
-
-        static const int SEQUENCETYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SEQUENCETYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SEQUENCETYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SEQUENCETYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int SEQUENCETYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int SEQUENCETYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int SEQUENCETYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int SEQUENCETYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int SEQUENCETYPE__ITEMUNIT = DERIVEDTYPE__ITEMUNIT;
-
-        // IDs for classifiers for class SetType 
-
-        static const int SETTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SETTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SETTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SETTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int SETTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int SETTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int SETTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int SETTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int SETTYPE__ITEMUNIT = DERIVEDTYPE__ITEMUNIT;
-
-        // IDs for classifiers for class SharedUnit 
-
-        static const int SHAREDUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SHAREDUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SHAREDUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SHAREDUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int SHAREDUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int SHAREDUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int SHAREDUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int SHAREDUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int SHAREDUNIT__CODEELEMENT = MODULE__CODEELEMENT;
-
-        // IDs for classifiers for class Signature 
-
-        static const int SIGNATURE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SIGNATURE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SIGNATURE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SIGNATURE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int SIGNATURE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int SIGNATURE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int SIGNATURE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int SIGNATURE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class StorableUnit 
-
-        static const int STORABLEUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int STORABLEUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int STORABLEUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int STORABLEUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int STORABLEUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int STORABLEUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int STORABLEUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int STORABLEUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int STORABLEUNIT__TYPE = DATAELEMENT__TYPE;
-
-        static const int STORABLEUNIT__EXT = DATAELEMENT__EXT;
-
-        static const int STORABLEUNIT__SIZE = DATAELEMENT__SIZE;
-
-        static const int STORABLEUNIT__CODEELEMENT = DATAELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class StringType 
-
-        static const int STRINGTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int STRINGTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int STRINGTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int STRINGTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int STRINGTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int STRINGTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int STRINGTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int STRINGTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class SynonymType 
-
-        static const int SYNONYMTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SYNONYMTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SYNONYMTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SYNONYMTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int SYNONYMTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int SYNONYMTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int SYNONYMTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int SYNONYMTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int SYNONYMTYPE__TYPE = DEFINEDTYPE__TYPE;
-
-        static const int SYNONYMTYPE__CODEELEMENT = DEFINEDTYPE__CODEELEMENT;
-
-        // IDs for classifiers for class TemplateParameter 
-
-        static const int TEMPLATEPARAMETER__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TEMPLATEPARAMETER__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TEMPLATEPARAMETER__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int TEMPLATEPARAMETER__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int TEMPLATEPARAMETER__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int TEMPLATEPARAMETER__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int TEMPLATEPARAMETER__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int TEMPLATEPARAMETER__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class TemplateType 
-
-        static const int TEMPLATETYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TEMPLATETYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TEMPLATETYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int TEMPLATETYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int TEMPLATETYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int TEMPLATETYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int TEMPLATETYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int TEMPLATETYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class TemplateUnit 
-
-        static const int TEMPLATEUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TEMPLATEUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TEMPLATEUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int TEMPLATEUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int TEMPLATEUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int TEMPLATEUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int TEMPLATEUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int TEMPLATEUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class TimeType 
-
-        static const int TIMETYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TIMETYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TIMETYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int TIMETYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int TIMETYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int TIMETYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int TIMETYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int TIMETYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class TypeUnit 
-
-        static const int TYPEUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TYPEUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TYPEUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int TYPEUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int TYPEUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int TYPEUNIT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int TYPEUNIT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int TYPEUNIT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int TYPEUNIT__TYPE = DEFINEDTYPE__TYPE;
-
-        static const int TYPEUNIT__CODEELEMENT = DEFINEDTYPE__CODEELEMENT;
-
-        // IDs for classifiers for class Value 
-
-        static const int VALUE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int VALUE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int VALUE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int VALUE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int VALUE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int VALUE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int VALUE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int VALUE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int VALUE__TYPE = DATAELEMENT__TYPE;
-
-        static const int VALUE__EXT = DATAELEMENT__EXT;
-
-        static const int VALUE__SIZE = DATAELEMENT__SIZE;
-
-        static const int VALUE__CODEELEMENT = DATAELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class ValueElement 
-
-        static const int VALUEELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int VALUEELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int VALUEELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int VALUEELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int VALUEELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int VALUEELEMENT__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int VALUEELEMENT__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int VALUEELEMENT__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int VALUEELEMENT__TYPE = DATAELEMENT__TYPE;
-
-        static const int VALUEELEMENT__EXT = DATAELEMENT__EXT;
-
-        static const int VALUEELEMENT__SIZE = DATAELEMENT__SIZE;
-
-        static const int VALUEELEMENT__CODEELEMENT = DATAELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class ValueList 
-
-        static const int VALUELIST__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int VALUELIST__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int VALUELIST__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int VALUELIST__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int VALUELIST__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int VALUELIST__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int VALUELIST__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int VALUELIST__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int VALUELIST__TYPE = DATAELEMENT__TYPE;
-
-        static const int VALUELIST__EXT = DATAELEMENT__EXT;
-
-        static const int VALUELIST__SIZE = DATAELEMENT__SIZE;
-
-        static const int VALUELIST__CODEELEMENT = DATAELEMENT__CODEELEMENT;
-
-        // IDs for classifiers for class VariantTo 
-
-        static const int VARIANTTO__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int VARIANTTO__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int VARIANTTO__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int VARIANTTO__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class VisibleIn 
-
-        static const int VISIBLEIN__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int VISIBLEIN__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int VISIBLEIN__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int VISIBLEIN__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class VoidType 
-
-        static const int VOIDTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int VOIDTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int VOIDTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int VOIDTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int VOIDTYPE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int VOIDTYPE__SOURCE = ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int VOIDTYPE__COMMENT = ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int VOIDTYPE__CODERELATION = ABSTRACTCODEELEMENT__CODERELATION;
+        static const int VOIDTYPE_FEATURE_COUNT = 8;
 
         // EClassifiers methods
 

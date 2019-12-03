@@ -38,7 +38,6 @@ using namespace ::enumeration;
 // Default constructor
 Bird::Bird()
 {
-
     /*PROTECTED REGION ID(BirdImpl__BirdImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

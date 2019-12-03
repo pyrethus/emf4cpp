@@ -174,287 +174,378 @@ void ActionPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = ActionFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // ActionElement
     m_ActionElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ActionElementEClass->setClassifierID(ACTIONELEMENT);
-    m_ActionElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ActionElementEClass);
+    m_ActionElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ActionElementEClass);
     // m_ActionElement__kind has already been allocated above
     m_ActionElement__kind->setFeatureID(
             ::kdm::action::ActionPackage::ACTIONELEMENT__KIND);
-    m_ActionElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures()).basicAdd(
             m_ActionElement__kind);
+    m_ActionElement__kind->basicsetEContainingClass(m_ActionElementEClass);
     // m_ActionElement__codeElement has already been allocated above
     m_ActionElement__codeElement->setFeatureID(
             ::kdm::action::ActionPackage::ACTIONELEMENT__CODEELEMENT);
-    m_ActionElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures()).basicAdd(
             m_ActionElement__codeElement);
+    m_ActionElement__codeElement->basicsetEContainingClass(
+            m_ActionElementEClass);
     // m_ActionElement__actionRelation has already been allocated above
     m_ActionElement__actionRelation->setFeatureID(
             ::kdm::action::ActionPackage::ACTIONELEMENT__ACTIONRELATION);
-    m_ActionElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures()).basicAdd(
             m_ActionElement__actionRelation);
+    m_ActionElement__actionRelation->basicsetEContainingClass(
+            m_ActionElementEClass);
 
     // AbstractActionRelationship
     m_AbstractActionRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractActionRelationshipEClass->setClassifierID(
             ABSTRACTACTIONRELATIONSHIP);
-    m_AbstractActionRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractActionRelationshipEClass);
+    m_AbstractActionRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractActionRelationshipEClass);
 
     // ControlFlow
     m_ControlFlowEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ControlFlowEClass->setClassifierID(CONTROLFLOW);
-    m_ControlFlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ControlFlowEClass);
+    m_ControlFlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ControlFlowEClass);
     // m_ControlFlow__to has already been allocated above
     m_ControlFlow__to->setFeatureID(
             ::kdm::action::ActionPackage::CONTROLFLOW__TO);
-    m_ControlFlowEClass->getEStructuralFeatures().push_back(m_ControlFlow__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlFlowEClass->getEStructuralFeatures()).basicAdd(
+            m_ControlFlow__to);
+    m_ControlFlow__to->basicsetEContainingClass(m_ControlFlowEClass);
     // m_ControlFlow__from has already been allocated above
     m_ControlFlow__from->setFeatureID(
             ::kdm::action::ActionPackage::CONTROLFLOW__FROM);
-    m_ControlFlowEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlFlowEClass->getEStructuralFeatures()).basicAdd(
             m_ControlFlow__from);
+    m_ControlFlow__from->basicsetEContainingClass(m_ControlFlowEClass);
 
     // Calls
     m_CallsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CallsEClass->setClassifierID(CALLS);
-    m_CallsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CallsEClass);
+    m_CallsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CallsEClass);
     // m_Calls__to has already been allocated above
     m_Calls__to->setFeatureID(::kdm::action::ActionPackage::CALLS__TO);
-    m_CallsEClass->getEStructuralFeatures().push_back(m_Calls__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CallsEClass->getEStructuralFeatures()).basicAdd(
+            m_Calls__to);
+    m_Calls__to->basicsetEContainingClass(m_CallsEClass);
     // m_Calls__from has already been allocated above
     m_Calls__from->setFeatureID(::kdm::action::ActionPackage::CALLS__FROM);
-    m_CallsEClass->getEStructuralFeatures().push_back(m_Calls__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CallsEClass->getEStructuralFeatures()).basicAdd(
+            m_Calls__from);
+    m_Calls__from->basicsetEContainingClass(m_CallsEClass);
 
     // Creates
     m_CreatesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CreatesEClass->setClassifierID(CREATES);
-    m_CreatesEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CreatesEClass);
+    m_CreatesEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CreatesEClass);
     // m_Creates__to has already been allocated above
     m_Creates__to->setFeatureID(::kdm::action::ActionPackage::CREATES__TO);
-    m_CreatesEClass->getEStructuralFeatures().push_back(m_Creates__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CreatesEClass->getEStructuralFeatures()).basicAdd(
+            m_Creates__to);
+    m_Creates__to->basicsetEContainingClass(m_CreatesEClass);
     // m_Creates__from has already been allocated above
     m_Creates__from->setFeatureID(::kdm::action::ActionPackage::CREATES__FROM);
-    m_CreatesEClass->getEStructuralFeatures().push_back(m_Creates__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CreatesEClass->getEStructuralFeatures()).basicAdd(
+            m_Creates__from);
+    m_Creates__from->basicsetEContainingClass(m_CreatesEClass);
 
     // Reads
     m_ReadsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ReadsEClass->setClassifierID(READS);
-    m_ReadsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ReadsEClass);
+    m_ReadsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ReadsEClass);
     // m_Reads__to has already been allocated above
     m_Reads__to->setFeatureID(::kdm::action::ActionPackage::READS__TO);
-    m_ReadsEClass->getEStructuralFeatures().push_back(m_Reads__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsEClass->getEStructuralFeatures()).basicAdd(
+            m_Reads__to);
+    m_Reads__to->basicsetEContainingClass(m_ReadsEClass);
     // m_Reads__from has already been allocated above
     m_Reads__from->setFeatureID(::kdm::action::ActionPackage::READS__FROM);
-    m_ReadsEClass->getEStructuralFeatures().push_back(m_Reads__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsEClass->getEStructuralFeatures()).basicAdd(
+            m_Reads__from);
+    m_Reads__from->basicsetEContainingClass(m_ReadsEClass);
 
     // Writes
     m_WritesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_WritesEClass->setClassifierID(WRITES);
-    m_WritesEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_WritesEClass);
+    m_WritesEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_WritesEClass);
     // m_Writes__to has already been allocated above
     m_Writes__to->setFeatureID(::kdm::action::ActionPackage::WRITES__TO);
-    m_WritesEClass->getEStructuralFeatures().push_back(m_Writes__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesEClass->getEStructuralFeatures()).basicAdd(
+            m_Writes__to);
+    m_Writes__to->basicsetEContainingClass(m_WritesEClass);
     // m_Writes__from has already been allocated above
     m_Writes__from->setFeatureID(::kdm::action::ActionPackage::WRITES__FROM);
-    m_WritesEClass->getEStructuralFeatures().push_back(m_Writes__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesEClass->getEStructuralFeatures()).basicAdd(
+            m_Writes__from);
+    m_Writes__from->basicsetEContainingClass(m_WritesEClass);
 
     // CompliesTo
     m_CompliesToEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CompliesToEClass->setClassifierID(COMPLIESTO);
-    m_CompliesToEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CompliesToEClass);
+    m_CompliesToEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CompliesToEClass);
     // m_CompliesTo__to has already been allocated above
     m_CompliesTo__to->setFeatureID(
             ::kdm::action::ActionPackage::COMPLIESTO__TO);
-    m_CompliesToEClass->getEStructuralFeatures().push_back(m_CompliesTo__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompliesToEClass->getEStructuralFeatures()).basicAdd(
+            m_CompliesTo__to);
+    m_CompliesTo__to->basicsetEContainingClass(m_CompliesToEClass);
     // m_CompliesTo__from has already been allocated above
     m_CompliesTo__from->setFeatureID(
             ::kdm::action::ActionPackage::COMPLIESTO__FROM);
-    m_CompliesToEClass->getEStructuralFeatures().push_back(m_CompliesTo__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompliesToEClass->getEStructuralFeatures()).basicAdd(
+            m_CompliesTo__from);
+    m_CompliesTo__from->basicsetEContainingClass(m_CompliesToEClass);
 
     // Flow
     m_FlowEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_FlowEClass->setClassifierID(FLOW);
-    m_FlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FlowEClass);
+    m_FlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FlowEClass);
 
     // TrueFlow
     m_TrueFlowEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TrueFlowEClass->setClassifierID(TRUEFLOW);
-    m_TrueFlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TrueFlowEClass);
+    m_TrueFlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TrueFlowEClass);
 
     // FalseFlow
     m_FalseFlowEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_FalseFlowEClass->setClassifierID(FALSEFLOW);
-    m_FalseFlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FalseFlowEClass);
+    m_FalseFlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FalseFlowEClass);
 
     // GuardedFlow
     m_GuardedFlowEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_GuardedFlowEClass->setClassifierID(GUARDEDFLOW);
-    m_GuardedFlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_GuardedFlowEClass);
+    m_GuardedFlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_GuardedFlowEClass);
 
     // UsesType
     m_UsesTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_UsesTypeEClass->setClassifierID(USESTYPE);
-    m_UsesTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UsesTypeEClass);
+    m_UsesTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UsesTypeEClass);
     // m_UsesType__to has already been allocated above
     m_UsesType__to->setFeatureID(::kdm::action::ActionPackage::USESTYPE__TO);
-    m_UsesTypeEClass->getEStructuralFeatures().push_back(m_UsesType__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UsesTypeEClass->getEStructuralFeatures()).basicAdd(
+            m_UsesType__to);
+    m_UsesType__to->basicsetEContainingClass(m_UsesTypeEClass);
     // m_UsesType__from has already been allocated above
     m_UsesType__from->setFeatureID(
             ::kdm::action::ActionPackage::USESTYPE__FROM);
-    m_UsesTypeEClass->getEStructuralFeatures().push_back(m_UsesType__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UsesTypeEClass->getEStructuralFeatures()).basicAdd(
+            m_UsesType__from);
+    m_UsesType__from->basicsetEContainingClass(m_UsesTypeEClass);
 
     // Addresses
     m_AddressesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_AddressesEClass->setClassifierID(ADDRESSES);
-    m_AddressesEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AddressesEClass);
+    m_AddressesEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AddressesEClass);
     // m_Addresses__to has already been allocated above
     m_Addresses__to->setFeatureID(::kdm::action::ActionPackage::ADDRESSES__TO);
-    m_AddressesEClass->getEStructuralFeatures().push_back(m_Addresses__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AddressesEClass->getEStructuralFeatures()).basicAdd(
+            m_Addresses__to);
+    m_Addresses__to->basicsetEContainingClass(m_AddressesEClass);
     // m_Addresses__from has already been allocated above
     m_Addresses__from->setFeatureID(
             ::kdm::action::ActionPackage::ADDRESSES__FROM);
-    m_AddressesEClass->getEStructuralFeatures().push_back(m_Addresses__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AddressesEClass->getEStructuralFeatures()).basicAdd(
+            m_Addresses__from);
+    m_Addresses__from->basicsetEContainingClass(m_AddressesEClass);
 
     // ActionRelationship
     m_ActionRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ActionRelationshipEClass->setClassifierID(ACTIONRELATIONSHIP);
-    m_ActionRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ActionRelationshipEClass);
+    m_ActionRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ActionRelationshipEClass);
     // m_ActionRelationship__to has already been allocated above
     m_ActionRelationship__to->setFeatureID(
             ::kdm::action::ActionPackage::ACTIONRELATIONSHIP__TO);
-    m_ActionRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_ActionRelationship__to);
+    m_ActionRelationship__to->basicsetEContainingClass(
+            m_ActionRelationshipEClass);
     // m_ActionRelationship__from has already been allocated above
     m_ActionRelationship__from->setFeatureID(
             ::kdm::action::ActionPackage::ACTIONRELATIONSHIP__FROM);
-    m_ActionRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_ActionRelationship__from);
+    m_ActionRelationship__from->basicsetEContainingClass(
+            m_ActionRelationshipEClass);
 
     // Throws
     m_ThrowsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ThrowsEClass->setClassifierID(THROWS);
-    m_ThrowsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ThrowsEClass);
+    m_ThrowsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ThrowsEClass);
     // m_Throws__to has already been allocated above
     m_Throws__to->setFeatureID(::kdm::action::ActionPackage::THROWS__TO);
-    m_ThrowsEClass->getEStructuralFeatures().push_back(m_Throws__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ThrowsEClass->getEStructuralFeatures()).basicAdd(
+            m_Throws__to);
+    m_Throws__to->basicsetEContainingClass(m_ThrowsEClass);
     // m_Throws__from has already been allocated above
     m_Throws__from->setFeatureID(::kdm::action::ActionPackage::THROWS__FROM);
-    m_ThrowsEClass->getEStructuralFeatures().push_back(m_Throws__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ThrowsEClass->getEStructuralFeatures()).basicAdd(
+            m_Throws__from);
+    m_Throws__from->basicsetEContainingClass(m_ThrowsEClass);
 
     // Dispatches
     m_DispatchesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DispatchesEClass->setClassifierID(DISPATCHES);
-    m_DispatchesEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DispatchesEClass);
+    m_DispatchesEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DispatchesEClass);
     // m_Dispatches__to has already been allocated above
     m_Dispatches__to->setFeatureID(
             ::kdm::action::ActionPackage::DISPATCHES__TO);
-    m_DispatchesEClass->getEStructuralFeatures().push_back(m_Dispatches__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DispatchesEClass->getEStructuralFeatures()).basicAdd(
+            m_Dispatches__to);
+    m_Dispatches__to->basicsetEContainingClass(m_DispatchesEClass);
     // m_Dispatches__from has already been allocated above
     m_Dispatches__from->setFeatureID(
             ::kdm::action::ActionPackage::DISPATCHES__FROM);
-    m_DispatchesEClass->getEStructuralFeatures().push_back(m_Dispatches__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DispatchesEClass->getEStructuralFeatures()).basicAdd(
+            m_Dispatches__from);
+    m_Dispatches__from->basicsetEContainingClass(m_DispatchesEClass);
 
     // EntryFlow
     m_EntryFlowEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_EntryFlowEClass->setClassifierID(ENTRYFLOW);
-    m_EntryFlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_EntryFlowEClass);
+    m_EntryFlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_EntryFlowEClass);
     // m_EntryFlow__to has already been allocated above
     m_EntryFlow__to->setFeatureID(::kdm::action::ActionPackage::ENTRYFLOW__TO);
-    m_EntryFlowEClass->getEStructuralFeatures().push_back(m_EntryFlow__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntryFlowEClass->getEStructuralFeatures()).basicAdd(
+            m_EntryFlow__to);
+    m_EntryFlow__to->basicsetEContainingClass(m_EntryFlowEClass);
     // m_EntryFlow__from has already been allocated above
     m_EntryFlow__from->setFeatureID(
             ::kdm::action::ActionPackage::ENTRYFLOW__FROM);
-    m_EntryFlowEClass->getEStructuralFeatures().push_back(m_EntryFlow__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntryFlowEClass->getEStructuralFeatures()).basicAdd(
+            m_EntryFlow__from);
+    m_EntryFlow__from->basicsetEContainingClass(m_EntryFlowEClass);
 
     // BlockUnit
     m_BlockUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_BlockUnitEClass->setClassifierID(BLOCKUNIT);
-    m_BlockUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BlockUnitEClass);
+    m_BlockUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BlockUnitEClass);
 
     // ExceptionUnit
     m_ExceptionUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExceptionUnitEClass->setClassifierID(EXCEPTIONUNIT);
-    m_ExceptionUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExceptionUnitEClass);
+    m_ExceptionUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExceptionUnitEClass);
 
     // TryUnit
     m_TryUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TryUnitEClass->setClassifierID(TRYUNIT);
-    m_TryUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TryUnitEClass);
+    m_TryUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TryUnitEClass);
 
     // FinallyUnit
     m_FinallyUnitEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_FinallyUnitEClass->setClassifierID(FINALLYUNIT);
-    m_FinallyUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FinallyUnitEClass);
+    m_FinallyUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FinallyUnitEClass);
 
     // CatchUnit
     m_CatchUnitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CatchUnitEClass->setClassifierID(CATCHUNIT);
-    m_CatchUnitEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CatchUnitEClass);
+    m_CatchUnitEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CatchUnitEClass);
 
     // ExitFlow
     m_ExitFlowEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ExitFlowEClass->setClassifierID(EXITFLOW);
-    m_ExitFlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExitFlowEClass);
+    m_ExitFlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExitFlowEClass);
     // m_ExitFlow__to has already been allocated above
     m_ExitFlow__to->setFeatureID(::kdm::action::ActionPackage::EXITFLOW__TO);
-    m_ExitFlowEClass->getEStructuralFeatures().push_back(m_ExitFlow__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExitFlowEClass->getEStructuralFeatures()).basicAdd(
+            m_ExitFlow__to);
+    m_ExitFlow__to->basicsetEContainingClass(m_ExitFlowEClass);
     // m_ExitFlow__from has already been allocated above
     m_ExitFlow__from->setFeatureID(
             ::kdm::action::ActionPackage::EXITFLOW__FROM);
-    m_ExitFlowEClass->getEStructuralFeatures().push_back(m_ExitFlow__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExitFlowEClass->getEStructuralFeatures()).basicAdd(
+            m_ExitFlow__from);
+    m_ExitFlow__from->basicsetEContainingClass(m_ExitFlowEClass);
 
     // ExceptionFlow
     m_ExceptionFlowEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExceptionFlowEClass->setClassifierID(EXCEPTIONFLOW);
-    m_ExceptionFlowEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExceptionFlowEClass);
+    m_ExceptionFlowEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExceptionFlowEClass);
     // m_ExceptionFlow__to has already been allocated above
     m_ExceptionFlow__to->setFeatureID(
             ::kdm::action::ActionPackage::EXCEPTIONFLOW__TO);
-    m_ExceptionFlowEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExceptionFlowEClass->getEStructuralFeatures()).basicAdd(
             m_ExceptionFlow__to);
+    m_ExceptionFlow__to->basicsetEContainingClass(m_ExceptionFlowEClass);
     // m_ExceptionFlow__from has already been allocated above
     m_ExceptionFlow__from->setFeatureID(
             ::kdm::action::ActionPackage::EXCEPTIONFLOW__FROM);
-    m_ExceptionFlowEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExceptionFlowEClass->getEStructuralFeatures()).basicAdd(
             m_ExceptionFlow__from);
+    m_ExceptionFlow__from->basicsetEContainingClass(m_ExceptionFlowEClass);
 
     // Create enums
 

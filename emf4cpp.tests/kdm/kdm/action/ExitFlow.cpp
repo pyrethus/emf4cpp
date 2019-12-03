@@ -45,7 +45,6 @@ using namespace ::kdm::action;
 // Default constructor
 ExitFlow::ExitFlow()
 {
-
     /*PROTECTED REGION ID(ExitFlowImpl__ExitFlowImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

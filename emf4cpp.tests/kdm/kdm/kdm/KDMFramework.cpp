@@ -45,16 +45,6 @@ using namespace ::kdm::kdm;
 // Default constructor
 KDMFramework::KDMFramework()
 {
-
-    m_audit.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::kdm::kdm::Audit_ptr,
-                    -1, true, false >(this,
-                    ::kdm::kdm::KdmPackage::_instance()->getKDMFramework__audit()));
-    m_extensionFamily.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::kdm::ExtensionFamily_ptr, -1, true, false >(this,
-                    ::kdm::kdm::KdmPackage::_instance()->getKDMFramework__extensionFamily()));
-
     /*PROTECTED REGION ID(KDMFrameworkImpl__KDMFrameworkImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -101,21 +91,45 @@ void KDMFramework::setName(::kdm::core::String _name)
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::Audit_ptr >& KDMFramework::getAudit() const
 {
+    if (!m_audit)
+        return const_cast< KDMFramework* >(this)->getAudit();
+
     return *m_audit;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::Audit_ptr >& KDMFramework::getAudit()
 {
+    /*PROTECTED REGION ID(KDMFramework__getAudit) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_audit)
+        m_audit.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::Audit_ptr, -1, true, false >(this,
+                        ::kdm::kdm::KdmPackage::_instance()->getKDMFramework__audit()));
+    /*PROTECTED REGION END*/
     return *m_audit;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::ExtensionFamily_ptr >& KDMFramework::getExtensionFamily() const
 {
+    if (!m_extensionFamily)
+        return const_cast< KDMFramework* >(this)->getExtensionFamily();
+
     return *m_extensionFamily;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::ExtensionFamily_ptr >& KDMFramework::getExtensionFamily()
 {
+    /*PROTECTED REGION ID(KDMFramework__getExtensionFamily) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_extensionFamily)
+        m_extensionFamily.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::ExtensionFamily_ptr, -1, true, false >(this,
+                        ::kdm::kdm::KdmPackage::_instance()->getKDMFramework__extensionFamily()));
+    /*PROTECTED REGION END*/
     return *m_extensionFamily;
 }
 

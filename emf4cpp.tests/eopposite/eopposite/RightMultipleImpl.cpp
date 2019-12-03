@@ -58,7 +58,7 @@ void RightMultiple::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::RIGHTMULTIPLE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -79,7 +79,7 @@ void RightMultiple::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::RIGHTMULTIPLE__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -104,7 +104,7 @@ void RightMultiple::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::RIGHTMULTIPLE__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
     case ::eopposite::EoppositePackage::RIGHTMULTIPLE__LEFTEES:
@@ -126,7 +126,7 @@ void RightMultiple::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr RightMultiple::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::eopposite::EoppositePackage* >(::eopposite::EoppositePackage::_instance().get())->getRightMultiple();
+            ::eopposite::EoppositePackage::_instance()->getRightMultiple();
     return _eclass;
 }
 

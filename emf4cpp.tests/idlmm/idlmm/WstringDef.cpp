@@ -39,7 +39,6 @@ using namespace ::idlmm;
 // Default constructor
 WstringDef::WstringDef()
 {
-
     /*PROTECTED REGION ID(WstringDefImpl__WstringDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

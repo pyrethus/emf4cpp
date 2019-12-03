@@ -39,7 +39,6 @@ using namespace ::idlmm;
 // Default constructor
 FixedDef::FixedDef()
 {
-
     /*PROTECTED REGION ID(FixedDefImpl__FixedDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -39,13 +39,6 @@ using namespace ::xpand3::statement;
 // Default constructor
 AbstractStatementWithBody::AbstractStatementWithBody()
 {
-
-    m_body.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::statement::AbstractStatement_ptr, -1, true, false >(
-                    this,
-                    ::xpand3::statement::StatementPackage::_instance()->getAbstractStatementWithBody__body()));
-
     /*PROTECTED REGION ID(AbstractStatementWithBodyImpl__AbstractStatementWithBodyImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -66,11 +59,24 @@ AbstractStatementWithBody::~AbstractStatementWithBody()
 
 const ::ecorecpp::mapping::EList< ::xpand3::statement::AbstractStatement_ptr >& AbstractStatementWithBody::getBody() const
 {
+    if (!m_body)
+        return const_cast< AbstractStatementWithBody* >(this)->getBody();
+
     return *m_body;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::statement::AbstractStatement_ptr >& AbstractStatementWithBody::getBody()
 {
+    /*PROTECTED REGION ID(AbstractStatementWithBody__getBody) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_body)
+        m_body.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::statement::AbstractStatement_ptr, -1, true,
+                        false >(this,
+                        ::xpand3::statement::StatementPackage::_instance()->getAbstractStatementWithBody__body()));
+    /*PROTECTED REGION END*/
     return *m_body;
 }
 

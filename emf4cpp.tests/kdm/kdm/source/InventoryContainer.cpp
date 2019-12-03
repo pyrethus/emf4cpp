@@ -48,13 +48,6 @@ using namespace ::kdm::source;
 // Default constructor
 InventoryContainer::InventoryContainer()
 {
-
-    m_inventoryElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::AbstractInventoryElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::source::SourcePackage::_instance()->getInventoryContainer__inventoryElement()));
-
     /*PROTECTED REGION ID(InventoryContainerImpl__InventoryContainerImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -75,11 +68,24 @@ InventoryContainer::~InventoryContainer()
 
 const ::ecorecpp::mapping::EList< ::kdm::source::AbstractInventoryElement_ptr >& InventoryContainer::getInventoryElement() const
 {
+    if (!m_inventoryElement)
+        return const_cast< InventoryContainer* >(this)->getInventoryElement();
+
     return *m_inventoryElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::AbstractInventoryElement_ptr >& InventoryContainer::getInventoryElement()
 {
+    /*PROTECTED REGION ID(InventoryContainer__getInventoryElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_inventoryElement)
+        m_inventoryElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::AbstractInventoryElement_ptr, -1, true,
+                        false >(this,
+                        ::kdm::source::SourcePackage::_instance()->getInventoryContainer__inventoryElement()));
+    /*PROTECTED REGION END*/
     return *m_inventoryElement;
 }
 

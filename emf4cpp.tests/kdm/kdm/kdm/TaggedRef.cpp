@@ -43,7 +43,6 @@ using namespace ::kdm::kdm;
 // Default constructor
 TaggedRef::TaggedRef()
 {
-
     /*PROTECTED REGION ID(TaggedRefImpl__TaggedRefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

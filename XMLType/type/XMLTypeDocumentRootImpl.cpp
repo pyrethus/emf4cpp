@@ -41,17 +41,17 @@ void XMLTypeDocumentRoot::_initialize()
     // Supertypes
 
     // References
-    for (size_t i = 0; i < m_xMLNSPrefixMap->size(); i++)
+    for (const auto &ref : getXMLNSPrefixMap())
     {
-        (*m_xMLNSPrefixMap)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_xSISchemaLocation->size(); i++)
+    for (const auto &ref : getXSISchemaLocation())
     {
-        (*m_xSISchemaLocation)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_processingInstruction->size(); i++)
+    for (const auto &ref : getProcessingInstruction())
     {
-        (*m_processingInstruction)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(XMLTypeDocumentRootImpl__initialize) START*/
@@ -162,7 +162,7 @@ void XMLTypeDocumentRoot::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr XMLTypeDocumentRoot::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::type::TypePackage* >(::type::TypePackage::_instance().get())->getXMLTypeDocumentRoot();
+            ::type::TypePackage::_instance()->getXMLTypeDocumentRoot();
     return _eclass;
 }
 

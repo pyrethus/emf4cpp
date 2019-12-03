@@ -39,7 +39,6 @@ using namespace ::xpand3;
 // Default constructor
 Identifier::Identifier()
 {
-
     /*PROTECTED REGION ID(IdentifierImpl__IdentifierImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -41,7 +41,6 @@ using namespace ::eopposite;
 // Default constructor
 LeftHand::LeftHand()
 {
-
     /*PROTECTED REGION ID(LeftHandImpl__LeftHandImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -100,13 +99,15 @@ void LeftHand::setRightee(::eopposite::RightHand_ptr _rightee)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_rightee)
         {
-            _old_rightee->_inverseRemove(
-                    ::eopposite::EoppositePackage::RIGHTHAND__LEFTEE, _this);
+            _old_rightee->::ecore::EObject::_inverseRemove(
+                    ::eopposite::EoppositePackage::_instance()->getRightHand__leftee(),
+                    _this);
         }
-        if (_rightee)
+        if (_rightee && ::eopposite::EoppositePackage::_instance())
         {
-            _rightee->_inverseAdd(
-                    ::eopposite::EoppositePackage::RIGHTHAND__LEFTEE, _this);
+            _rightee->::ecore::EObject::_inverseAdd(
+                    ::eopposite::EoppositePackage::_instance()->getRightHand__leftee(),
+                    _this);
         }
         basicsetRightee(_rightee);
     }
@@ -153,14 +154,14 @@ void LeftHand::setRightMultiple(::eopposite::RightMultiple_ptr _rightMultiple)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_rightMultiple)
         {
-            _old_rightMultiple->_inverseRemove(
-                    ::eopposite::EoppositePackage::RIGHTMULTIPLE__LEFTEES,
+            _old_rightMultiple->::ecore::EObject::_inverseRemove(
+                    ::eopposite::EoppositePackage::_instance()->getRightMultiple__leftees(),
                     _this);
         }
-        if (_rightMultiple)
+        if (_rightMultiple && ::eopposite::EoppositePackage::_instance())
         {
-            _rightMultiple->_inverseAdd(
-                    ::eopposite::EoppositePackage::RIGHTMULTIPLE__LEFTEES,
+            _rightMultiple->::ecore::EObject::_inverseAdd(
+                    ::eopposite::EoppositePackage::_instance()->getRightMultiple__leftees(),
                     _this);
         }
         basicsetRightMultiple(_rightMultiple);

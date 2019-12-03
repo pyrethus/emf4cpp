@@ -48,75 +48,6 @@ using namespace ::ecore;
 // Default constructor
 EClass::EClass()
 {
-
-    m_eSuperTypes.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::ecore::EClass_ptr,
-                    -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eSuperTypes() :
-                            ::ecore::EReference_ptr()));
-    m_eOperations.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EOperation_ptr, -1, true, true >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eOperations() :
-                            ::ecore::EReference_ptr(),
-                    ::ecore::EcorePackage::EOPERATION__ECONTAININGCLASS));
-    m_eAllAttributes.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EAttribute_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eAllAttributes() :
-                            ::ecore::EReference_ptr()));
-    m_eAllReferences.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EReference_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eAllReferences() :
-                            ::ecore::EReference_ptr()));
-    m_eReferences.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EReference_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eReferences() :
-                            ::ecore::EReference_ptr()));
-    m_eAttributes.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EAttribute_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eAttributes() :
-                            ::ecore::EReference_ptr()));
-    m_eAllContainments.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EReference_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eAllContainments() :
-                            ::ecore::EReference_ptr()));
-    m_eAllOperations.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EOperation_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eAllOperations() :
-                            ::ecore::EReference_ptr()));
-    m_eAllStructuralFeatures.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EStructuralFeature_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eAllStructuralFeatures() :
-                            ::ecore::EReference_ptr()));
-    m_eAllSuperTypes.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::ecore::EClass_ptr,
-                    -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eAllSuperTypes() :
-                            ::ecore::EReference_ptr()));
-    m_eStructuralFeatures.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EStructuralFeature_ptr, -1, true, true >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eStructuralFeatures() :
-                            ::ecore::EReference_ptr(),
-                    ::ecore::EcorePackage::ESTRUCTURALFEATURE__ECONTAININGCLASS));
-    m_eGenericSuperTypes.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EGenericType_ptr, -1, true, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eGenericSuperTypes() :
-                            ::ecore::EReference_ptr()));
-    m_eAllGenericSuperTypes.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EGenericType_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEClass__eAllGenericSuperTypes() :
-                            ::ecore::EReference_ptr()));
-
     /*PROTECTED REGION ID(EClassImpl__EClassImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -189,101 +120,295 @@ void EClass::setInterface(::ecore::EBoolean _interface)
 
 const ::ecorecpp::mapping::EList< ::ecore::EClass_ptr >& EClass::getESuperTypes() const
 {
+    if (!m_eSuperTypes)
+        return const_cast< EClass* >(this)->getESuperTypes();
+
     return *m_eSuperTypes;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EClass_ptr >& EClass::getESuperTypes()
 {
+    /*PROTECTED REGION ID(EClass__getESuperTypes) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eSuperTypes)
+        m_eSuperTypes.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EClass_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eSuperTypes()));
+    /*PROTECTED REGION END*/
     return *m_eSuperTypes;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EOperation_ptr >& EClass::getEOperations() const
 {
+    if (!m_eOperations)
+        return const_cast< EClass* >(this)->getEOperations();
+
     return *m_eOperations;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EOperation_ptr >& EClass::getEOperations()
 {
+    /*PROTECTED REGION ID(EClass__getEOperations) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eOperations)
+        m_eOperations.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EOperation_ptr, -1, true, true >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eOperations(),
+                        ::ecore::EcorePackage::_instance()->getEOperation__eContainingClass()));
+    /*PROTECTED REGION END*/
     return *m_eOperations;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EAttribute_ptr >& EClass::getEAllAttributes() const
 {
+    if (!m_eAllAttributes)
+        return const_cast< EClass* >(this)->getEAllAttributes();
+
     return *m_eAllAttributes;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EAttribute_ptr >& EClass::getEAllAttributes()
 {
+    /*PROTECTED REGION ID(EClass__getEAllAttributes) ENABLED START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eAllAttributes)
+    {
+        m_eAllAttributes.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EAttribute_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eAllAttributes()));
+
+        for (const auto &esf : getEAllStructuralFeatures())
+        {
+            if (auto at = ::ecore::as < ::ecore::EAttribute > (esf))
+                m_eAllAttributes->push_back(at);
+        }
+    }
+    /*PROTECTED REGION END*/
     return *m_eAllAttributes;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EReference_ptr >& EClass::getEAllReferences() const
 {
+    if (!m_eAllReferences)
+        return const_cast< EClass* >(this)->getEAllReferences();
+
     return *m_eAllReferences;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EReference_ptr >& EClass::getEAllReferences()
 {
+    /*PROTECTED REGION ID(EClass__getEAllReferences) ENABLED START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eAllReferences)
+    {
+        m_eAllReferences.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EReference_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eAllReferences()));
+
+        for (const auto &esf : getEAllStructuralFeatures())
+        {
+            if (auto ref = ::ecore::as < ::ecore::EReference > (esf))
+                m_eAllReferences->push_back(ref);
+        }
+    }
+    /*PROTECTED REGION END*/
     return *m_eAllReferences;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EReference_ptr >& EClass::getEReferences() const
 {
+    if (!m_eReferences)
+        return const_cast< EClass* >(this)->getEReferences();
+
     return *m_eReferences;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EReference_ptr >& EClass::getEReferences()
 {
+    /*PROTECTED REGION ID(EClass__getEReferences) ENABLED START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eReferences)
+    {
+        m_eReferences.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EReference_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eReferences()));
+
+        for (const auto esf : getEStructuralFeatures())
+        {
+            if (auto ref = ::ecore::as < ::ecore::EReference > (esf))
+                m_eReferences->push_back(ref);
+        }
+    }
+    /*PROTECTED REGION END*/
     return *m_eReferences;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EAttribute_ptr >& EClass::getEAttributes() const
 {
+    if (!m_eAttributes)
+        return const_cast< EClass* >(this)->getEAttributes();
+
     return *m_eAttributes;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EAttribute_ptr >& EClass::getEAttributes()
 {
+    /*PROTECTED REGION ID(EClass__getEAttributes) ENABLED START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eAttributes)
+    {
+        m_eAttributes.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EAttribute_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eAttributes()));
+        for (const auto &esf : getEStructuralFeatures())
+        {
+            if (auto at = ::ecore::as < ::ecore::EAttribute > (esf))
+                m_eAttributes->push_back(at);
+        }
+    }
+    /*PROTECTED REGION END*/
     return *m_eAttributes;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EReference_ptr >& EClass::getEAllContainments() const
 {
+    if (!m_eAllContainments)
+        return const_cast< EClass* >(this)->getEAllContainments();
+
     return *m_eAllContainments;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EReference_ptr >& EClass::getEAllContainments()
 {
+    /*PROTECTED REGION ID(EClass__getEAllContainments) ENABLED START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eAllContainments)
+    {
+        m_eAllContainments.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EReference_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eAllContainments()));
+
+        for (const auto &ref : getEAllReferences())
+        {
+            if (ref->isContainment())
+                m_eAllContainments->push_back(ref);
+        }
+    }
+    /*PROTECTED REGION END*/
     return *m_eAllContainments;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EOperation_ptr >& EClass::getEAllOperations() const
 {
+    if (!m_eAllOperations)
+        return const_cast< EClass* >(this)->getEAllOperations();
+
     return *m_eAllOperations;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EOperation_ptr >& EClass::getEAllOperations()
 {
+    /*PROTECTED REGION ID(EClass__getEAllOperations) ENABLED START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eAllOperations)
+    {
+        m_eAllOperations.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EOperation_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eAllOperations()));
+
+        for (const auto &superType : getEAllSuperTypes())
+        {
+            m_eAllOperations->insert_all(superType->getEAllOperations());
+        }
+        m_eAllOperations->insert_all(getEOperations());
+    }
+    /*PROTECTED REGION END*/
     return *m_eAllOperations;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EStructuralFeature_ptr >& EClass::getEAllStructuralFeatures() const
 {
+    if (!m_eAllStructuralFeatures)
+        return const_cast< EClass* >(this)->getEAllStructuralFeatures();
+
     return *m_eAllStructuralFeatures;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EStructuralFeature_ptr >& EClass::getEAllStructuralFeatures()
 {
+    /*PROTECTED REGION ID(EClass__getEAllStructuralFeatures) ENABLED START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eAllStructuralFeatures)
+    {
+        m_eAllStructuralFeatures.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EStructuralFeature_ptr, -1, false, false >(
+                        this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eAllStructuralFeatures()));
+
+        for (auto superType : getESuperTypes())
+        {
+            m_eAllStructuralFeatures->insert_all(
+                    superType->getEAllStructuralFeatures());
+        }
+
+        m_eAllStructuralFeatures->insert_all(getEStructuralFeatures());
+
+        for (size_t ind = 0; ind < m_eAllStructuralFeatures->size(); ++ind)
+        {
+            auto esf = m_eAllStructuralFeatures->get(ind);
+            m_eAllStructuralFeaturesMap[esf->getName()] = esf;
+            m_eAllStructuralFeaturesIDMap[esf] = ind;
+        }
+    }
+    /*PROTECTED REGION END*/
     return *m_eAllStructuralFeatures;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EClass_ptr >& EClass::getEAllSuperTypes() const
 {
+    if (!m_eAllSuperTypes)
+        return const_cast< EClass* >(this)->getEAllSuperTypes();
+
     return *m_eAllSuperTypes;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EClass_ptr >& EClass::getEAllSuperTypes()
 {
+    /*PROTECTED REGION ID(EClass__getEAllSuperTypes) ENABLED START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eAllSuperTypes)
+    {
+        m_eAllSuperTypes.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EClass_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eAllSuperTypes()));
+
+        for (auto superType : getESuperTypes())
+        {
+            m_eAllSuperTypes->insert_all(superType->getEAllSuperTypes());
+            m_eAllSuperTypes->push_back(superType);
+        }
+    }
+    /*PROTECTED REGION END*/
     return *m_eAllSuperTypes;
 }
 
@@ -316,31 +441,78 @@ void EClass::setEIDAttribute(::ecore::EAttribute_ptr _eIDAttribute)
 
 const ::ecorecpp::mapping::EList< ::ecore::EStructuralFeature_ptr >& EClass::getEStructuralFeatures() const
 {
+    if (!m_eStructuralFeatures)
+        return const_cast< EClass* >(this)->getEStructuralFeatures();
+
     return *m_eStructuralFeatures;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EStructuralFeature_ptr >& EClass::getEStructuralFeatures()
 {
+    /*PROTECTED REGION ID(EClass__getEStructuralFeatures) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eStructuralFeatures)
+        m_eStructuralFeatures.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EStructuralFeature_ptr, -1, true, true >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eStructuralFeatures(),
+                        ::ecore::EcorePackage::_instance()->getEStructuralFeature__eContainingClass()));
+    /*PROTECTED REGION END*/
     return *m_eStructuralFeatures;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& EClass::getEGenericSuperTypes() const
 {
+    if (!m_eGenericSuperTypes)
+        return const_cast< EClass* >(this)->getEGenericSuperTypes();
+
     return *m_eGenericSuperTypes;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& EClass::getEGenericSuperTypes()
 {
+    /*PROTECTED REGION ID(EClass__getEGenericSuperTypes) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eGenericSuperTypes)
+        m_eGenericSuperTypes.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EGenericType_ptr, -1, true, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eGenericSuperTypes()));
+    /*PROTECTED REGION END*/
     return *m_eGenericSuperTypes;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& EClass::getEAllGenericSuperTypes() const
 {
+    if (!m_eAllGenericSuperTypes)
+        return const_cast< EClass* >(this)->getEAllGenericSuperTypes();
+
     return *m_eAllGenericSuperTypes;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& EClass::getEAllGenericSuperTypes()
 {
+    /*PROTECTED REGION ID(EClass__getEAllGenericSuperTypes) ENABLED START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eAllGenericSuperTypes)
+    {
+        m_eAllGenericSuperTypes.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EGenericType_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEClass__eAllGenericSuperTypes()));
+
+        for (auto superType : getESuperTypes())
+        {
+            m_eAllGenericSuperTypes->insert_all(
+                    superType->getEAllGenericSuperTypes());
+        }
+
+        m_eAllGenericSuperTypes->insert_all(getEGenericSuperTypes());
+    }
+    /*PROTECTED REGION END*/
     return *m_eAllGenericSuperTypes;
 }
 

@@ -38,9 +38,8 @@ using namespace ::ecore;
 
 bool EAnnotation::hasDetail(::ecore::EString const &key) const
 {
-    for (size_t i = 0; i < m_details->size(); i++)
+    for (const auto &detail : getDetails())
     {
-        auto detail = (*m_details)[i];
         if (detail->getKey() == key)
             return true;
     }
@@ -49,9 +48,8 @@ bool EAnnotation::hasDetail(::ecore::EString const &key) const
 
 ::ecore::EString EAnnotation::getDetail(::ecore::EString const &key) const
 {
-    for (size_t i = 0; i < m_details->size(); i++)
+    for (const auto &detail : getDetails())
     {
-        auto detail = (*m_details)[i];
         if (detail->getKey() == key)
             return detail->getValue();
     }
@@ -61,34 +59,28 @@ bool EAnnotation::hasDetail(::ecore::EString const &key) const
 void EAnnotation::setDetail(::ecore::EString const &key,
         ::ecore::EString const &value)
 {
-    size_t i = 0;
-    for (; i < m_details->size(); i++)
+    for (const auto &detail : getDetails())
     {
-        auto detail = (*m_details)[i];
         if (detail->getKey() == key)
-            break;
+        {
+            detail->setValue(value);
+            return;
+        }
     }
-    if (i < m_details->size())
-    {
-        (*m_details)[i]->setValue(value);
-    }
-    else
-    {
-        auto newDetail = ::ecore::create< ::ecore::EStringToStringMapEntry >();
-        newDetail->_initialize();
-        newDetail->setKey(key);
-        newDetail->setValue(value);
-        m_details->push_back(newDetail);
-    }
+
+    auto newDetail = ::ecore::create< ::ecore::EStringToStringMapEntry >();
+    newDetail->_initialize();
+    newDetail->setKey(key);
+    newDetail->setValue(value);
+    getDetails().push_back(newDetail);
 }
 
 void EAnnotation::removeDetail(::ecore::EString const &key)
 {
-    for (size_t i = 0; i < m_details->size(); i++)
+    for (const auto &detail : getDetails())
     {
-        auto detail = (*m_details)[i];
         if (detail->getKey() == key)
-            m_details->remove(detail);
+            getDetails().remove(detail);
     }
 }
 
@@ -103,13 +95,13 @@ void EAnnotation::_initialize()
     ::ecore::EModelElement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_details->size(); i++)
+    for (const auto &ref : getDetails())
     {
-        (*m_details)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_contents->size(); i++)
+    for (const auto &ref : getContents())
     {
-        (*m_contents)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(EAnnotationImpl__initialize) START*/
@@ -127,7 +119,7 @@ void EAnnotation::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EANNOTATION__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -168,7 +160,7 @@ void EAnnotation::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EANNOTATION__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -225,7 +217,7 @@ void EAnnotation::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EANNOTATION__EANNOTATIONS:
         return getEAnnotations().size() > 0;
     case ::ecore::EcorePackage::EANNOTATION__SOURCE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
@@ -255,7 +247,7 @@ void EAnnotation::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EAnnotation::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEAnnotation_();
+            ::ecore::EcorePackage::_instance()->getEAnnotation_();
     return _eclass;
 }
 
@@ -266,7 +258,7 @@ void EAnnotation::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EANNOTATION__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -295,8 +287,9 @@ void EAnnotation::_inverseAdd(::ecore::EInt _featureID,
         if (_old_eModelElement && _old_eModelElement != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_eModelElement->_inverseRemove(
-                    ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS, _this);
+            _old_eModelElement->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEModelElement__eAnnotations(),
+                    _this);
         }
 
         // set reference
@@ -323,7 +316,7 @@ void EAnnotation::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EANNOTATION__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

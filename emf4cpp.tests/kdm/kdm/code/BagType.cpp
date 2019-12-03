@@ -51,7 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 BagType::BagType()
 {
-
     /*PROTECTED REGION ID(BagTypeImpl__BagTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

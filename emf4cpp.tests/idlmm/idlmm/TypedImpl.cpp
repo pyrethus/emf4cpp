@@ -127,7 +127,7 @@ void Typed::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Typed::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getTyped();
+            ::idlmm::IdlmmPackage::_instance()->getTyped();
     return _eclass;
 }
 

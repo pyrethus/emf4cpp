@@ -48,17 +48,17 @@ void EOperation::_initialize()
     ::ecore::ETypedElement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_eTypeParameters->size(); i++)
+    for (const auto &ref : getETypeParameters())
     {
-        (*m_eTypeParameters)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_eParameters->size(); i++)
+    for (const auto &ref : getEParameters())
     {
-        (*m_eParameters)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_eGenericExceptions->size(); i++)
+    for (const auto &ref : getEGenericExceptions())
     {
-        (*m_eGenericExceptions)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(EOperationImpl__initialize) START*/
@@ -95,47 +95,47 @@ void EOperation::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EOPERATION__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EOPERATION__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ORDERED:
+    case ::ecore::EcorePackage::EOPERATION__ORDERED:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
                 > ::toAny(_any, isOrdered());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UNIQUE:
+    case ::ecore::EcorePackage::EOPERATION__UNIQUE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
                 > ::toAny(_any, isUnique());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__LOWERBOUND:
+    case ::ecore::EcorePackage::EOPERATION__LOWERBOUND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getLowerBound());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UPPERBOUND:
+    case ::ecore::EcorePackage::EOPERATION__UPPERBOUND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getUpperBound());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::EOPERATION__ETYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEType());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::EOPERATION__EGENERICTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEGenericType());
     }
@@ -175,7 +175,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EOPERATION__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -183,7 +183,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
         getEAnnotations().insert_all(*_t0);
     }
         return;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EOPERATION__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -191,7 +191,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ORDERED:
+    case ::ecore::EcorePackage::EOPERATION__ORDERED:
     {
         ::ecore::EBoolean _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -199,7 +199,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
         setOrdered(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UNIQUE:
+    case ::ecore::EcorePackage::EOPERATION__UNIQUE:
     {
         ::ecore::EBoolean _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -207,7 +207,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
         setUnique(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__LOWERBOUND:
+    case ::ecore::EcorePackage::EOPERATION__LOWERBOUND:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -215,7 +215,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
         setLowerBound(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UPPERBOUND:
+    case ::ecore::EcorePackage::EOPERATION__UPPERBOUND:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -223,7 +223,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
         setUpperBound(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::EOPERATION__ETYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -231,7 +231,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
         setEType(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::EOPERATION__EGENERICTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -288,29 +288,29 @@ void EOperation::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EOPERATION__EANNOTATIONS:
         return getEAnnotations().size() > 0;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EOPERATION__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ORDERED:
+    case ::ecore::EcorePackage::EOPERATION__ORDERED:
         return isOrdered() != true;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UNIQUE:
+    case ::ecore::EcorePackage::EOPERATION__UNIQUE:
         return isUnique() != true;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__LOWERBOUND:
+    case ::ecore::EcorePackage::EOPERATION__LOWERBOUND:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getLowerBound());
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UPPERBOUND:
+    case ::ecore::EcorePackage::EOPERATION__UPPERBOUND:
         return getUpperBound() != 1;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__MANY:
+    case ::ecore::EcorePackage::EOPERATION__MANY:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(isMany());
-    case ::ecore::EcorePackage::ETYPEDELEMENT__REQUIRED:
+    case ::ecore::EcorePackage::EOPERATION__REQUIRED:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(isRequired());
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::EOPERATION__ETYPE:
         return getEType().get() != nullptr;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::EOPERATION__EGENERICTYPE:
         return getEGenericType().get() != nullptr;
     case ::ecore::EcorePackage::EOPERATION__ECONTAININGCLASS:
         return getEContainingClass().get() != nullptr;
@@ -339,7 +339,7 @@ void EOperation::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EOperation::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEOperation();
+            ::ecore::EcorePackage::_instance()->getEOperation();
     return _eclass;
 }
 
@@ -350,7 +350,7 @@ void EOperation::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EOPERATION__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -364,11 +364,11 @@ void EOperation::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::EOPERATION__ETYPE:
     {
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::EOPERATION__EGENERICTYPE:
     {
     }
         return;
@@ -383,8 +383,9 @@ void EOperation::_inverseAdd(::ecore::EInt _featureID,
         if (_old_eContainingClass && _old_eContainingClass != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_eContainingClass->_inverseRemove(
-                    ::ecore::EcorePackage::ECLASS__EOPERATIONS, _this);
+            _old_eContainingClass->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEClass__eOperations(),
+                    _this);
         }
 
         // set reference
@@ -429,7 +430,7 @@ void EOperation::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EOPERATION__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -443,11 +444,11 @@ void EOperation::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::EOPERATION__ETYPE:
     {
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::EOPERATION__EGENERICTYPE:
     {
     }
         return;

@@ -42,12 +42,6 @@ using namespace ::kdm::kdm;
 // Default constructor
 ExtensionFamily::ExtensionFamily()
 {
-
-    m_stereotype.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::kdm::Stereotype_ptr, -1, true, false >(this,
-                    ::kdm::kdm::KdmPackage::_instance()->getExtensionFamily__stereotype()));
-
     /*PROTECTED REGION ID(ExtensionFamilyImpl__ExtensionFamilyImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -94,11 +88,23 @@ void ExtensionFamily::setName(::kdm::core::String _name)
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::Stereotype_ptr >& ExtensionFamily::getStereotype() const
 {
+    if (!m_stereotype)
+        return const_cast< ExtensionFamily* >(this)->getStereotype();
+
     return *m_stereotype;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::Stereotype_ptr >& ExtensionFamily::getStereotype()
 {
+    /*PROTECTED REGION ID(ExtensionFamily__getStereotype) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_stereotype)
+        m_stereotype.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::Stereotype_ptr, -1, true, false >(this,
+                        ::kdm::kdm::KdmPackage::_instance()->getExtensionFamily__stereotype()));
+    /*PROTECTED REGION END*/
     return *m_stereotype;
 }
 

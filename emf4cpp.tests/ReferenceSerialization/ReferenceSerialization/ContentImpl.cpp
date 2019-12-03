@@ -108,7 +108,7 @@ void Content::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Content::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ReferenceSerialization::ReferenceSerializationPackage* >(::ReferenceSerialization::ReferenceSerializationPackage::_instance().get())->getContent();
+            ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getContent();
     return _eclass;
 }
 

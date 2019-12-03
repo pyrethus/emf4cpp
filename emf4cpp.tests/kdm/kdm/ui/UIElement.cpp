@@ -51,7 +51,6 @@ using namespace ::kdm::ui;
 // Default constructor
 UIElement::UIElement()
 {
-
     /*PROTECTED REGION ID(UIElementImpl__UIElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -46,7 +46,6 @@ using namespace ::kdm::platform;
 // Default constructor
 ReadsResource::ReadsResource()
 {
-
     /*PROTECTED REGION ID(ReadsResourceImpl__ReadsResourceImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -39,13 +39,6 @@ using namespace ::SVG;
 // Default constructor
 ReferencedFile::ReferencedFile()
 {
-
-    m_referer.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Image_ptr, -1,
-                    false, true >(this,
-                    ::SVG::SVGPackage::_instance()->getReferencedFile__referer(),
-                    ::SVG::SVGPackage::IMAGE__REFEREE));
-
     /*PROTECTED REGION ID(ReferencedFileImpl__ReferencedFileImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -92,11 +85,24 @@ void ReferencedFile::setName(::PrimitiveTypes::String _name)
 
 const ::ecorecpp::mapping::EList< ::SVG::Image_ptr >& ReferencedFile::getReferer() const
 {
+    if (!m_referer)
+        return const_cast< ReferencedFile* >(this)->getReferer();
+
     return *m_referer;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Image_ptr >& ReferencedFile::getReferer()
 {
+    /*PROTECTED REGION ID(ReferencedFile__getReferer) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_referer)
+        m_referer.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Image_ptr,
+                        -1, false, true >(this,
+                        ::SVG::SVGPackage::_instance()->getReferencedFile__referer(),
+                        ::SVG::SVGPackage::_instance()->getImage__referee()));
+    /*PROTECTED REGION END*/
     return *m_referer;
 }
 

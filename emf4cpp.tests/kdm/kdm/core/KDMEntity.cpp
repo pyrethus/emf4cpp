@@ -47,7 +47,6 @@ using namespace ::kdm::core;
 // Default constructor
 KDMEntity::KDMEntity()
 {
-
     /*PROTECTED REGION ID(KDMEntityImpl__KDMEntityImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -38,7 +38,6 @@ using namespace ::ResourceTests;
 // Default constructor
 ReferenceTarget::ReferenceTarget()
 {
-
     /*PROTECTED REGION ID(ReferenceTargetImpl__ReferenceTargetImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

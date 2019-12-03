@@ -112,171 +112,228 @@ void KdmPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = KdmFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // KDMFramework
     m_KDMFrameworkEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_KDMFrameworkEClass->setClassifierID(KDMFRAMEWORK);
-    m_KDMFrameworkEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_KDMFrameworkEClass);
-    // m_KDMFramework__name has already been allocated above
-    m_KDMFramework__name->setFeatureID(
-            ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME);
-    m_KDMFrameworkEClass->getEStructuralFeatures().push_back(
-            m_KDMFramework__name);
+    m_KDMFrameworkEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_KDMFrameworkEClass);
     // m_KDMFramework__audit has already been allocated above
     m_KDMFramework__audit->setFeatureID(
             ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT);
-    m_KDMFrameworkEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMFrameworkEClass->getEStructuralFeatures()).basicAdd(
             m_KDMFramework__audit);
+    m_KDMFramework__audit->basicsetEContainingClass(m_KDMFrameworkEClass);
     // m_KDMFramework__extensionFamily has already been allocated above
     m_KDMFramework__extensionFamily->setFeatureID(
             ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY);
-    m_KDMFrameworkEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMFrameworkEClass->getEStructuralFeatures()).basicAdd(
             m_KDMFramework__extensionFamily);
+    m_KDMFramework__extensionFamily->basicsetEContainingClass(
+            m_KDMFrameworkEClass);
+    // m_KDMFramework__name has already been allocated above
+    m_KDMFramework__name->setFeatureID(
+            ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMFrameworkEClass->getEStructuralFeatures()).basicAdd(
+            m_KDMFramework__name);
+    m_KDMFramework__name->basicsetEContainingClass(m_KDMFrameworkEClass);
 
     // KDMModel
     m_KDMModelEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_KDMModelEClass->setClassifierID(KDMMODEL);
-    m_KDMModelEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_KDMModelEClass);
+    m_KDMModelEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_KDMModelEClass);
 
     // Audit
     m_AuditEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_AuditEClass->setClassifierID(AUDIT);
-    m_AuditEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AuditEClass);
+    m_AuditEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AuditEClass);
     // m_Audit__description has already been allocated above
     m_Audit__description->setFeatureID(
             ::kdm::kdm::KdmPackage::AUDIT__DESCRIPTION);
-    m_AuditEClass->getEStructuralFeatures().push_back(m_Audit__description);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AuditEClass->getEStructuralFeatures()).basicAdd(
+            m_Audit__description);
+    m_Audit__description->basicsetEContainingClass(m_AuditEClass);
     // m_Audit__author has already been allocated above
     m_Audit__author->setFeatureID(::kdm::kdm::KdmPackage::AUDIT__AUTHOR);
-    m_AuditEClass->getEStructuralFeatures().push_back(m_Audit__author);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AuditEClass->getEStructuralFeatures()).basicAdd(
+            m_Audit__author);
+    m_Audit__author->basicsetEContainingClass(m_AuditEClass);
     // m_Audit__date has already been allocated above
     m_Audit__date->setFeatureID(::kdm::kdm::KdmPackage::AUDIT__DATE);
-    m_AuditEClass->getEStructuralFeatures().push_back(m_Audit__date);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AuditEClass->getEStructuralFeatures()).basicAdd(
+            m_Audit__date);
+    m_Audit__date->basicsetEContainingClass(m_AuditEClass);
 
     // Segment
     m_SegmentEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SegmentEClass->setClassifierID(SEGMENT);
-    m_SegmentEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SegmentEClass);
+    m_SegmentEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SegmentEClass);
     // m_Segment__segment has already been allocated above
     m_Segment__segment->setFeatureID(::kdm::kdm::KdmPackage::SEGMENT__SEGMENT);
-    m_SegmentEClass->getEStructuralFeatures().push_back(m_Segment__segment);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SegmentEClass->getEStructuralFeatures()).basicAdd(
+            m_Segment__segment);
+    m_Segment__segment->basicsetEContainingClass(m_SegmentEClass);
     // m_Segment__model has already been allocated above
     m_Segment__model->setFeatureID(::kdm::kdm::KdmPackage::SEGMENT__MODEL);
-    m_SegmentEClass->getEStructuralFeatures().push_back(m_Segment__model);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SegmentEClass->getEStructuralFeatures()).basicAdd(
+            m_Segment__model);
+    m_Segment__model->basicsetEContainingClass(m_SegmentEClass);
 
     // Attribute
     m_AttributeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_AttributeEClass->setClassifierID(ATTRIBUTE);
-    m_AttributeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AttributeEClass);
+    m_AttributeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AttributeEClass);
     // m_Attribute__tag has already been allocated above
     m_Attribute__tag->setFeatureID(::kdm::kdm::KdmPackage::ATTRIBUTE__TAG);
-    m_AttributeEClass->getEStructuralFeatures().push_back(m_Attribute__tag);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AttributeEClass->getEStructuralFeatures()).basicAdd(
+            m_Attribute__tag);
+    m_Attribute__tag->basicsetEContainingClass(m_AttributeEClass);
     // m_Attribute__value has already been allocated above
     m_Attribute__value->setFeatureID(::kdm::kdm::KdmPackage::ATTRIBUTE__VALUE);
-    m_AttributeEClass->getEStructuralFeatures().push_back(m_Attribute__value);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AttributeEClass->getEStructuralFeatures()).basicAdd(
+            m_Attribute__value);
+    m_Attribute__value->basicsetEContainingClass(m_AttributeEClass);
 
     // Annotation
     m_AnnotationEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_AnnotationEClass->setClassifierID(ANNOTATION);
-    m_AnnotationEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AnnotationEClass);
+    m_AnnotationEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AnnotationEClass);
     // m_Annotation__text has already been allocated above
     m_Annotation__text->setFeatureID(::kdm::kdm::KdmPackage::ANNOTATION__TEXT);
-    m_AnnotationEClass->getEStructuralFeatures().push_back(m_Annotation__text);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnnotationEClass->getEStructuralFeatures()).basicAdd(
+            m_Annotation__text);
+    m_Annotation__text->basicsetEContainingClass(m_AnnotationEClass);
 
     // TagDefinition
     m_TagDefinitionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_TagDefinitionEClass->setClassifierID(TAGDEFINITION);
-    m_TagDefinitionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TagDefinitionEClass);
+    m_TagDefinitionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TagDefinitionEClass);
     // m_TagDefinition__tag has already been allocated above
     m_TagDefinition__tag->setFeatureID(
             ::kdm::kdm::KdmPackage::TAGDEFINITION__TAG);
-    m_TagDefinitionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TagDefinitionEClass->getEStructuralFeatures()).basicAdd(
             m_TagDefinition__tag);
+    m_TagDefinition__tag->basicsetEContainingClass(m_TagDefinitionEClass);
     // m_TagDefinition__type has already been allocated above
     m_TagDefinition__type->setFeatureID(
             ::kdm::kdm::KdmPackage::TAGDEFINITION__TYPE);
-    m_TagDefinitionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TagDefinitionEClass->getEStructuralFeatures()).basicAdd(
             m_TagDefinition__type);
+    m_TagDefinition__type->basicsetEContainingClass(m_TagDefinitionEClass);
 
     // ExtendedValue
     m_ExtendedValueEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExtendedValueEClass->setClassifierID(EXTENDEDVALUE);
-    m_ExtendedValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExtendedValueEClass);
+    m_ExtendedValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExtendedValueEClass);
     // m_ExtendedValue__tag has already been allocated above
     m_ExtendedValue__tag->setFeatureID(
             ::kdm::kdm::KdmPackage::EXTENDEDVALUE__TAG);
-    m_ExtendedValueEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtendedValueEClass->getEStructuralFeatures()).basicAdd(
             m_ExtendedValue__tag);
+    m_ExtendedValue__tag->basicsetEContainingClass(m_ExtendedValueEClass);
 
     // Stereotype
     m_StereotypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_StereotypeEClass->setClassifierID(STEREOTYPE);
-    m_StereotypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_StereotypeEClass);
-    // m_Stereotype__name has already been allocated above
-    m_Stereotype__name->setFeatureID(::kdm::kdm::KdmPackage::STEREOTYPE__NAME);
-    m_StereotypeEClass->getEStructuralFeatures().push_back(m_Stereotype__name);
-    // m_Stereotype__type has already been allocated above
-    m_Stereotype__type->setFeatureID(::kdm::kdm::KdmPackage::STEREOTYPE__TYPE);
-    m_StereotypeEClass->getEStructuralFeatures().push_back(m_Stereotype__type);
+    m_StereotypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StereotypeEClass);
     // m_Stereotype__tag has already been allocated above
     m_Stereotype__tag->setFeatureID(::kdm::kdm::KdmPackage::STEREOTYPE__TAG);
-    m_StereotypeEClass->getEStructuralFeatures().push_back(m_Stereotype__tag);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StereotypeEClass->getEStructuralFeatures()).basicAdd(
+            m_Stereotype__tag);
+    m_Stereotype__tag->basicsetEContainingClass(m_StereotypeEClass);
+    // m_Stereotype__name has already been allocated above
+    m_Stereotype__name->setFeatureID(::kdm::kdm::KdmPackage::STEREOTYPE__NAME);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StereotypeEClass->getEStructuralFeatures()).basicAdd(
+            m_Stereotype__name);
+    m_Stereotype__name->basicsetEContainingClass(m_StereotypeEClass);
+    // m_Stereotype__type has already been allocated above
+    m_Stereotype__type->setFeatureID(::kdm::kdm::KdmPackage::STEREOTYPE__TYPE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StereotypeEClass->getEStructuralFeatures()).basicAdd(
+            m_Stereotype__type);
+    m_Stereotype__type->basicsetEContainingClass(m_StereotypeEClass);
 
     // ExtensionFamily
     m_ExtensionFamilyEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExtensionFamilyEClass->setClassifierID(EXTENSIONFAMILY);
-    m_ExtensionFamilyEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExtensionFamilyEClass);
-    // m_ExtensionFamily__name has already been allocated above
-    m_ExtensionFamily__name->setFeatureID(
-            ::kdm::kdm::KdmPackage::EXTENSIONFAMILY__NAME);
-    m_ExtensionFamilyEClass->getEStructuralFeatures().push_back(
-            m_ExtensionFamily__name);
+    m_ExtensionFamilyEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExtensionFamilyEClass);
     // m_ExtensionFamily__stereotype has already been allocated above
     m_ExtensionFamily__stereotype->setFeatureID(
             ::kdm::kdm::KdmPackage::EXTENSIONFAMILY__STEREOTYPE);
-    m_ExtensionFamilyEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionFamilyEClass->getEStructuralFeatures()).basicAdd(
             m_ExtensionFamily__stereotype);
+    m_ExtensionFamily__stereotype->basicsetEContainingClass(
+            m_ExtensionFamilyEClass);
+    // m_ExtensionFamily__name has already been allocated above
+    m_ExtensionFamily__name->setFeatureID(
+            ::kdm::kdm::KdmPackage::EXTENSIONFAMILY__NAME);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionFamilyEClass->getEStructuralFeatures()).basicAdd(
+            m_ExtensionFamily__name);
+    m_ExtensionFamily__name->basicsetEContainingClass(m_ExtensionFamilyEClass);
 
     // TaggedRef
     m_TaggedRefEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TaggedRefEClass->setClassifierID(TAGGEDREF);
-    m_TaggedRefEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TaggedRefEClass);
+    m_TaggedRefEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TaggedRefEClass);
     // m_TaggedRef__reference has already been allocated above
     m_TaggedRef__reference->setFeatureID(
             ::kdm::kdm::KdmPackage::TAGGEDREF__REFERENCE);
-    m_TaggedRefEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TaggedRefEClass->getEStructuralFeatures()).basicAdd(
             m_TaggedRef__reference);
+    m_TaggedRef__reference->basicsetEContainingClass(m_TaggedRefEClass);
 
     // TaggedValue
     m_TaggedValueEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_TaggedValueEClass->setClassifierID(TAGGEDVALUE);
-    m_TaggedValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TaggedValueEClass);
+    m_TaggedValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TaggedValueEClass);
     // m_TaggedValue__value has already been allocated above
     m_TaggedValue__value->setFeatureID(
             ::kdm::kdm::KdmPackage::TAGGEDVALUE__VALUE);
-    m_TaggedValueEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TaggedValueEClass->getEStructuralFeatures()).basicAdd(
             m_TaggedValue__value);
+    m_TaggedValue__value->basicsetEContainingClass(m_TaggedValueEClass);
 
     // Create enums
 

@@ -43,7 +43,6 @@ using namespace ::ecore;
 // Default constructor
 EParameter::EParameter()
 {
-
     /*PROTECTED REGION ID(EParameterImpl__EParameterImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -102,13 +101,15 @@ void EParameter::setEOperation(::ecore::EOperation_ptr _eOperation)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_eOperation)
         {
-            _old_eOperation->_inverseRemove(
-                    ::ecore::EcorePackage::EOPERATION__EPARAMETERS, _this);
+            _old_eOperation->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEOperation__eParameters(),
+                    _this);
         }
-        if (_eOperation)
+        if (_eOperation && ::ecore::EcorePackage::_instance())
         {
-            _eOperation->_inverseAdd(
-                    ::ecore::EcorePackage::EOPERATION__EPARAMETERS, _this);
+            _eOperation->::ecore::EObject::_inverseAdd(
+                    ::ecore::EcorePackage::_instance()->getEOperation__eParameters(),
+                    _this);
         }
         basicsetEOperation(_eOperation);
     }

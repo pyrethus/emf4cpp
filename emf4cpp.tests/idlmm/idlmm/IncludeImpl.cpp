@@ -108,7 +108,7 @@ void Include::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Include::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getInclude();
+            ::idlmm::IdlmmPackage::_instance()->getInclude();
     return _eclass;
 }
 

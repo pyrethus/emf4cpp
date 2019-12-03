@@ -82,47 +82,47 @@ int EStructuralFeature::getContainerClass()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ORDERED:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ORDERED:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
                 > ::toAny(_any, isOrdered());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UNIQUE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__UNIQUE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
                 > ::toAny(_any, isUnique());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__LOWERBOUND:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__LOWERBOUND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getLowerBound());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UPPERBOUND:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__UPPERBOUND:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getUpperBound());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ETYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEType());
     }
         return _any;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EGENERICTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEGenericType());
     }
@@ -178,7 +178,7 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -186,7 +186,7 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
         getEAnnotations().insert_all(*_t0);
     }
         return;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -194,7 +194,7 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ORDERED:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ORDERED:
     {
         ::ecore::EBoolean _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -202,7 +202,7 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
         setOrdered(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UNIQUE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__UNIQUE:
     {
         ::ecore::EBoolean _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -210,7 +210,7 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
         setUnique(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__LOWERBOUND:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__LOWERBOUND:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -218,7 +218,7 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
         setLowerBound(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UPPERBOUND:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__UPPERBOUND:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -226,7 +226,7 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
         setUpperBound(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ETYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -234,7 +234,7 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
         setEType(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EGENERICTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -307,29 +307,29 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EANNOTATIONS:
         return getEAnnotations().size() > 0;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ORDERED:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ORDERED:
         return isOrdered() != true;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UNIQUE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__UNIQUE:
         return isUnique() != true;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__LOWERBOUND:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__LOWERBOUND:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getLowerBound());
-    case ::ecore::EcorePackage::ETYPEDELEMENT__UPPERBOUND:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__UPPERBOUND:
         return getUpperBound() != 1;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__MANY:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__MANY:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(isMany());
-    case ::ecore::EcorePackage::ETYPEDELEMENT__REQUIRED:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__REQUIRED:
         return ::ecorecpp::mapping::set_traits < ::ecore::EBoolean
                 > ::is_set(isRequired());
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ETYPE:
         return getEType().get() != nullptr;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EGENERICTYPE:
         return getEGenericType().get() != nullptr;
     case ::ecore::EcorePackage::ESTRUCTURALFEATURE__CHANGEABLE:
         return isChangeable() != true;
@@ -370,7 +370,7 @@ void EStructuralFeature::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EStructuralFeature::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStructuralFeature();
+            ::ecore::EcorePackage::_instance()->getEStructuralFeature();
     return _eclass;
 }
 
@@ -381,7 +381,7 @@ void EStructuralFeature::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -395,11 +395,11 @@ void EStructuralFeature::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ETYPE:
     {
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EGENERICTYPE:
     {
     }
         return;
@@ -414,8 +414,9 @@ void EStructuralFeature::_inverseAdd(::ecore::EInt _featureID,
         if (_old_eContainingClass && _old_eContainingClass != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_eContainingClass->_inverseRemove(
-                    ::ecore::EcorePackage::ECLASS__ESTRUCTURALFEATURES, _this);
+            _old_eContainingClass->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEClass__eStructuralFeatures(),
+                    _this);
         }
 
         // set reference
@@ -434,7 +435,7 @@ void EStructuralFeature::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -448,11 +449,11 @@ void EStructuralFeature::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ETYPE:
     {
     }
         return;
-    case ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE:
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__EGENERICTYPE:
     {
     }
         return;

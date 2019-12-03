@@ -57,13 +57,13 @@ void RelativeCoord::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::COORDINATES__X:
+    case ::SVG::SVGPackage::RELATIVECOORD__X:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::toAny(_any, getX());
     }
         return _any;
-    case ::SVG::SVGPackage::COORDINATES__Y:
+    case ::SVG::SVGPackage::RELATIVECOORD__Y:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
                 > ::toAny(_any, getY());
@@ -79,7 +79,7 @@ void RelativeCoord::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::COORDINATES__X:
+    case ::SVG::SVGPackage::RELATIVECOORD__X:
     {
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
@@ -87,7 +87,7 @@ void RelativeCoord::eSet(::ecore::EInt _featureID,
         setX(_t0);
     }
         return;
-    case ::SVG::SVGPackage::COORDINATES__Y:
+    case ::SVG::SVGPackage::RELATIVECOORD__Y:
     {
         ::PrimitiveTypes::Double _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::Double
@@ -104,10 +104,10 @@ void RelativeCoord::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::COORDINATES__X:
+    case ::SVG::SVGPackage::RELATIVECOORD__X:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
                 > ::is_set(getX());
-    case ::SVG::SVGPackage::COORDINATES__Y:
+    case ::SVG::SVGPackage::RELATIVECOORD__Y:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
                 > ::is_set(getY());
 
@@ -127,7 +127,7 @@ void RelativeCoord::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr RelativeCoord::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getRelativeCoord();
+            ::SVG::SVGPackage::_instance()->getRelativeCoord();
     return _eclass;
 }
 

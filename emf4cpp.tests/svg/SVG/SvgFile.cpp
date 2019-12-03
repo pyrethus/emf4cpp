@@ -42,13 +42,6 @@ using namespace ::SVG;
 // Default constructor
 SvgFile::SvgFile()
 {
-
-    m_elements.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr, -1,
-                    false, true >(this,
-                    ::SVG::SVGPackage::_instance()->getSvgFile__elements(),
-                    ::SVG::SVGPackage::ELEMENT__OWNER));
-
     /*PROTECTED REGION ID(SvgFileImpl__SvgFileImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -107,11 +100,13 @@ void SvgFile::setTag(::SVG::Svg_ptr _tag)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_tag)
         {
-            _old_tag->_inverseRemove(::SVG::SVGPackage::SVG__OWNER_SVG, _this);
+            _old_tag->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getSvg__owner_SVG(), _this);
         }
-        if (_tag)
+        if (_tag && ::SVG::SVGPackage::_instance())
         {
-            _tag->_inverseAdd(::SVG::SVGPackage::SVG__OWNER_SVG, _this);
+            _tag->::ecore::EObject::_inverseAdd(
+                    ::SVG::SVGPackage::_instance()->getSvg__owner_SVG(), _this);
         }
         basicsetTag(_tag);
     }
@@ -119,11 +114,24 @@ void SvgFile::setTag(::SVG::Svg_ptr _tag)
 
 const ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& SvgFile::getElements() const
 {
+    if (!m_elements)
+        return const_cast< SvgFile* >(this)->getElements();
+
     return *m_elements;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& SvgFile::getElements()
 {
+    /*PROTECTED REGION ID(SvgFile__getElements) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_elements)
+        m_elements.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
+                        -1, false, true >(this,
+                        ::SVG::SVGPackage::_instance()->getSvgFile__elements(),
+                        ::SVG::SVGPackage::_instance()->getElement__owner()));
+    /*PROTECTED REGION END*/
     return *m_elements;
 }
 

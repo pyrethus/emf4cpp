@@ -49,9 +49,9 @@ void AbstractInventoryElement::_initialize()
     ::kdm::core::KDMEntity::_initialize();
 
     // References
-    for (size_t i = 0; i < m_inventoryRelation->size(); i++)
+    for (const auto &ref : getInventoryRelation())
     {
-        (*m_inventoryRelation)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(AbstractInventoryElementImpl__initialize) START*/
@@ -69,27 +69,27 @@ void AbstractInventoryElement::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
@@ -110,7 +110,7 @@ void AbstractInventoryElement::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -118,7 +118,7 @@ void AbstractInventoryElement::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -126,7 +126,7 @@ void AbstractInventoryElement::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -134,7 +134,7 @@ void AbstractInventoryElement::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -142,7 +142,7 @@ void AbstractInventoryElement::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -167,15 +167,15 @@ void AbstractInventoryElement::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
     case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION:
@@ -197,7 +197,7 @@ void AbstractInventoryElement::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr AbstractInventoryElement::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getAbstractInventoryElement();
+            ::kdm::source::SourcePackage::_instance()->getAbstractInventoryElement();
     return _eclass;
 }
 
@@ -208,19 +208,19 @@ void AbstractInventoryElement::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__TAGGEDVALUE:
     {
     }
         return;
@@ -240,19 +240,19 @@ void AbstractInventoryElement::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__TAGGEDVALUE:
     {
     }
         return;

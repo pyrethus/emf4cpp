@@ -45,7 +45,6 @@ using namespace ::kdm::code;
 // Default constructor
 CodeRelationship::CodeRelationship()
 {
-
     /*PROTECTED REGION ID(CodeRelationshipImpl__CodeRelationshipImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

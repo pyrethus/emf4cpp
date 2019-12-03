@@ -40,7 +40,6 @@ using namespace ::SVG;
 // Default constructor
 Translate::Translate()
 {
-
     /*PROTECTED REGION ID(TranslateImpl__TranslateImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

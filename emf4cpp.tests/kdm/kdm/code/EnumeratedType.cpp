@@ -51,12 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 EnumeratedType::EnumeratedType()
 {
-
-    m_value.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::kdm::code::Value_ptr,
-                    -1, true, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getEnumeratedType__value()));
-
     /*PROTECTED REGION ID(EnumeratedTypeImpl__EnumeratedTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -77,11 +71,23 @@ EnumeratedType::~EnumeratedType()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::Value_ptr >& EnumeratedType::getValue() const
 {
+    if (!m_value)
+        return const_cast< EnumeratedType* >(this)->getValue();
+
     return *m_value;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::Value_ptr >& EnumeratedType::getValue()
 {
+    /*PROTECTED REGION ID(EnumeratedType__getValue) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_value)
+        m_value.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::Value_ptr, -1, true, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getEnumeratedType__value()));
+    /*PROTECTED REGION END*/
     return *m_value;
 }
 

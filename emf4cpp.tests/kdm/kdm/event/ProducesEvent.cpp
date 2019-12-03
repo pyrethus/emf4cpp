@@ -46,7 +46,6 @@ using namespace ::kdm::event;
 // Default constructor
 ProducesEvent::ProducesEvent()
 {
-
     /*PROTECTED REGION ID(ProducesEventImpl__ProducesEventImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -59,12 +59,12 @@ void ParameterDef::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__CONTAINEDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getContainedType());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__SHAREDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getSharedType());
     }
@@ -91,7 +91,7 @@ void ParameterDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__CONTAINEDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -99,7 +99,7 @@ void ParameterDef::eSet(::ecore::EInt _featureID,
         setContainedType(_t1);
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__SHAREDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -132,9 +132,9 @@ void ParameterDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__CONTAINEDTYPE:
         return getContainedType().get() != nullptr;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__SHAREDTYPE:
         return getSharedType().get() != nullptr;
     case ::idlmm::IdlmmPackage::PARAMETERDEF__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
@@ -159,7 +159,7 @@ void ParameterDef::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ParameterDef::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getParameterDef();
+            ::idlmm::IdlmmPackage::_instance()->getParameterDef();
     return _eclass;
 }
 
@@ -170,11 +170,11 @@ void ParameterDef::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__SHAREDTYPE:
     {
     }
         return;
@@ -190,11 +190,11 @@ void ParameterDef::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::PARAMETERDEF__SHAREDTYPE:
     {
     }
         return;

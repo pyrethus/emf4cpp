@@ -91,7 +91,7 @@ void PhonebookEntry::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr PhonebookEntry::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::company::CompanyPackage* >(::company::CompanyPackage::_instance().get())->getPhonebookEntry();
+            ::company::CompanyPackage::_instance()->getPhonebookEntry();
     return _eclass;
 }
 

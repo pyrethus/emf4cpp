@@ -30,6 +30,7 @@ int main(int argc, char* argv[])
 {
     ::ecore::EPackage_ptr _epkg = ::idlmm::IdlmmPackage::_instance();
     ::ecorecpp::util::print_all(_epkg);
+	std::cerr << _epkg->eClass() << std::endl;
     std::ofstream outfile ("metamodel.ecore");
     ::ecorecpp::serializer::serializer ser(outfile);
     ser.serialize(_epkg);

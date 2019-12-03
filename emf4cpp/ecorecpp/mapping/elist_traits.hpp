@@ -101,10 +101,10 @@ struct OppositePolicy
 {
 	using value_type = T;
 
-	static void set(value_type&, ::ecore::EObject_ptr, int) {
+	static void set(value_type&, ::ecore::EObject_ptr, ::ecore::EReference_ptr) {
 	}
 
-	static void unset(value_type&, ::ecore::EObject_ptr, int) {
+	static void unset(value_type&, ::ecore::EObject_ptr, ::ecore::EReference_ptr) {
 	}
 };
 
@@ -113,20 +113,20 @@ struct OppositePolicy< T, true >
 {
 	using value_type = T;
 
-	static void set(value_type& obj, ::ecore::EObject_ptr parent, int oppRef) {
-		if (oppRef == -1)
+	static void set(value_type& obj, ::ecore::EObject_ptr parent, ::ecore::EReference_ptr oppRef) {
+		if (!oppRef)
 			return;
 
 		if (obj)
-			obj->_inverseAdd(oppRef, parent);
+			obj->::ecore::EObject::_inverseAdd(oppRef, parent);
 	}
 
-	static void unset(value_type& obj, ::ecore::EObject_ptr parent, int oppRef) {
-		if (oppRef == -1)
+	static void unset(value_type& obj, ::ecore::EObject_ptr parent, ::ecore::EReference_ptr oppRef) {
+		if (!oppRef)
 			return;
 
 		if (obj)
-			obj->_inverseRemove(oppRef, parent);
+			obj->::ecore::EObject::_inverseRemove(oppRef, parent);
 	}
 };
 

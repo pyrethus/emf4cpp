@@ -110,7 +110,7 @@ void BooleanValue::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr BooleanValue::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::json::JsonPackage* >(::json::JsonPackage::_instance().get())->getBooleanValue();
+            ::json::JsonPackage::_instance()->getBooleanValue();
     return _eclass;
 }
 

@@ -47,7 +47,6 @@ using namespace ::SVG;
 // Default constructor
 Tspan::Tspan()
 {
-
     /*PROTECTED REGION ID(TspanImpl__TspanImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

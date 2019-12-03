@@ -53,9 +53,9 @@ void ContentItem::_initialize()
     ::kdm::data::AbstractContentElement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_contentElement->size(); i++)
+    for (const auto &ref : getContentElement())
     {
-        (*m_contentElement)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ContentItemImpl__initialize) START*/
@@ -73,43 +73,43 @@ void ContentItem::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::data::DataPackage::CONTENTITEM__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::data::DataPackage::CONTENTITEM__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::data::DataPackage::CONTENTITEM__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::data::DataPackage::CONTENTITEM__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__SOURCE:
+    case ::kdm::data::DataPackage::CONTENTITEM__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__DATARELATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__DATARELATION:
     {
         _any = getDataRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__ABSTRACTION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ABSTRACTION:
     {
         _any = getAbstraction().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -134,7 +134,7 @@ void ContentItem::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::data::DataPackage::CONTENTITEM__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -142,7 +142,7 @@ void ContentItem::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -150,7 +150,7 @@ void ContentItem::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::data::DataPackage::CONTENTITEM__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -158,7 +158,7 @@ void ContentItem::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::data::DataPackage::CONTENTITEM__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -166,7 +166,7 @@ void ContentItem::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::data::DataPackage::CONTENTITEM__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -174,7 +174,7 @@ void ContentItem::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__SOURCE:
+    case ::kdm::data::DataPackage::CONTENTITEM__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -182,7 +182,7 @@ void ContentItem::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__DATARELATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__DATARELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -190,7 +190,7 @@ void ContentItem::eSet(::ecore::EInt _featureID,
         getDataRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__ABSTRACTION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ABSTRACTION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -223,22 +223,22 @@ void ContentItem::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::data::DataPackage::CONTENTITEM__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::data::DataPackage::CONTENTITEM__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::data::DataPackage::CONTENTITEM__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::data::DataPackage::CONTENTITEM__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__SOURCE:
+    case ::kdm::data::DataPackage::CONTENTITEM__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__DATARELATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__DATARELATION:
         return getDataRelation().size() > 0;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__ABSTRACTION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ABSTRACTION:
         return getAbstraction().size() > 0;
     case ::kdm::data::DataPackage::CONTENTITEM__TYPE:
         return getType().get() != nullptr;
@@ -261,7 +261,7 @@ void ContentItem::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ContentItem::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::data::DataPackage* >(::kdm::data::DataPackage::_instance().get())->getContentItem();
+            ::kdm::data::DataPackage::_instance()->getContentItem();
     return _eclass;
 }
 
@@ -272,31 +272,31 @@ void ContentItem::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::data::DataPackage::CONTENTITEM__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::data::DataPackage::CONTENTITEM__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::data::DataPackage::CONTENTITEM__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__SOURCE:
+    case ::kdm::data::DataPackage::CONTENTITEM__SOURCE:
     {
     }
         return;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__DATARELATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__DATARELATION:
     {
     }
         return;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__ABSTRACTION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ABSTRACTION:
     {
     }
         return;
@@ -320,31 +320,31 @@ void ContentItem::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::data::DataPackage::CONTENTITEM__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::data::DataPackage::CONTENTITEM__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::data::DataPackage::CONTENTITEM__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__SOURCE:
+    case ::kdm::data::DataPackage::CONTENTITEM__SOURCE:
     {
     }
         return;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__DATARELATION:
+    case ::kdm::data::DataPackage::CONTENTITEM__DATARELATION:
     {
     }
         return;
-    case ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__ABSTRACTION:
+    case ::kdm::data::DataPackage::CONTENTITEM__ABSTRACTION:
     {
     }
         return;

@@ -45,7 +45,6 @@ using namespace ::kdm::code;
 // Default constructor
 Imports::Imports()
 {
-
     /*PROTECTED REGION ID(ImportsImpl__ImportsImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

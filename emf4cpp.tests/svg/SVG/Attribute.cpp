@@ -39,13 +39,6 @@ using namespace ::SVG;
 // Default constructor
 Attribute::Attribute()
 {
-
-    m_attOwner.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr, -1,
-                    false, true >(this,
-                    ::SVG::SVGPackage::_instance()->getAttribute__attOwner(),
-                    ::SVG::SVGPackage::ELEMENT__ATTRIBUTE));
-
     /*PROTECTED REGION ID(AttributeImpl__AttributeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -66,11 +59,24 @@ Attribute::~Attribute()
 
 const ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& Attribute::getAttOwner() const
 {
+    if (!m_attOwner)
+        return const_cast< Attribute* >(this)->getAttOwner();
+
     return *m_attOwner;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& Attribute::getAttOwner()
 {
+    /*PROTECTED REGION ID(Attribute__getAttOwner) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_attOwner)
+        m_attOwner.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
+                        -1, false, true >(this,
+                        ::SVG::SVGPackage::_instance()->getAttribute__attOwner(),
+                        ::SVG::SVGPackage::_instance()->getElement__attribute()));
+    /*PROTECTED REGION END*/
     return *m_attOwner;
 }
 

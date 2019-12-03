@@ -58,7 +58,7 @@ void Level2Class::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level2Package::LEVEL2CLASS__REFERENCE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getReference());
     }
@@ -73,7 +73,7 @@ void Level2Class::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level2Package::LEVEL2CLASS__REFERENCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -90,7 +90,7 @@ void Level2Class::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level2Package::LEVEL2CLASS__REFERENCE:
         return getReference().get() != nullptr;
 
     }
@@ -109,7 +109,7 @@ void Level2Class::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Level2Class::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::TopLevelPackage::Level1::Level2::Level2Package* >(::TopLevelPackage::Level1::Level2::Level2Package::_instance().get())->getLevel2Class();
+            ::TopLevelPackage::Level1::Level2::Level2Package::_instance()->getLevel2Class();
     return _eclass;
 }
 
@@ -120,7 +120,7 @@ void Level2Class::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level2Package::LEVEL2CLASS__REFERENCE:
     {
     }
         return;
@@ -136,7 +136,7 @@ void Level2Class::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE:
+    case ::TopLevelPackage::Level1::Level2::Level2Package::LEVEL2CLASS__REFERENCE:
     {
     }
         return;

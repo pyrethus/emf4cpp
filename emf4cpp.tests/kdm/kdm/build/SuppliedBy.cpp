@@ -46,7 +46,6 @@ using namespace ::kdm::build;
 // Default constructor
 SuppliedBy::SuppliedBy()
 {
-
     /*PROTECTED REGION ID(SuppliedByImpl__SuppliedByImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

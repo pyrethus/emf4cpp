@@ -46,13 +46,6 @@ using namespace ::kdm::structure;
 // Default constructor
 StructureModel::StructureModel()
 {
-
-    m_structureElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::structure::AbstractStructureElement_ptr, -1, true,
-                    false >(this,
-                    ::kdm::structure::StructurePackage::_instance()->getStructureModel__structureElement()));
-
     /*PROTECTED REGION ID(StructureModelImpl__StructureModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -73,11 +66,24 @@ StructureModel::~StructureModel()
 
 const ::ecorecpp::mapping::EList< ::kdm::structure::AbstractStructureElement_ptr >& StructureModel::getStructureElement() const
 {
+    if (!m_structureElement)
+        return const_cast< StructureModel* >(this)->getStructureElement();
+
     return *m_structureElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::structure::AbstractStructureElement_ptr >& StructureModel::getStructureElement()
 {
+    /*PROTECTED REGION ID(StructureModel__getStructureElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_structureElement)
+        m_structureElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::structure::AbstractStructureElement_ptr, -1,
+                        true, false >(this,
+                        ::kdm::structure::StructurePackage::_instance()->getStructureModel__structureElement()));
+    /*PROTECTED REGION END*/
     return *m_structureElement;
 }
 

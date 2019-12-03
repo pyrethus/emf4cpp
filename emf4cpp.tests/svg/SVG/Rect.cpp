@@ -47,7 +47,6 @@ using namespace ::SVG;
 // Default constructor
 Rect::Rect()
 {
-
     /*PROTECTED REGION ID(RectImpl__RectImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -50,12 +50,6 @@ using namespace ::kdm::data;
 // Default constructor
 DataContainer::DataContainer()
 {
-
-    m_dataElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::data::DataResource_ptr, -1, true, false >(this,
-                    ::kdm::data::DataPackage::_instance()->getDataContainer__dataElement()));
-
     /*PROTECTED REGION ID(DataContainerImpl__DataContainerImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -76,11 +70,23 @@ DataContainer::~DataContainer()
 
 const ::ecorecpp::mapping::EList< ::kdm::data::DataResource_ptr >& DataContainer::getDataElement() const
 {
+    if (!m_dataElement)
+        return const_cast< DataContainer* >(this)->getDataElement();
+
     return *m_dataElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::data::DataResource_ptr >& DataContainer::getDataElement()
 {
+    /*PROTECTED REGION ID(DataContainer__getDataElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_dataElement)
+        m_dataElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::data::DataResource_ptr, -1, true, false >(this,
+                        ::kdm::data::DataPackage::_instance()->getDataContainer__dataElement()));
+    /*PROTECTED REGION END*/
     return *m_dataElement;
 }
 

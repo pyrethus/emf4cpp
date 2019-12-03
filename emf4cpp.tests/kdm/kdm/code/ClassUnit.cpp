@@ -51,12 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 ClassUnit::ClassUnit()
 {
-
-    m_codeElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::CodeItem_ptr, -1, true, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getClassUnit__codeElement()));
-
     /*PROTECTED REGION ID(ClassUnitImpl__ClassUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -103,11 +97,23 @@ void ClassUnit::setIsAbstract(::kdm::core::Boolean _isAbstract)
 
 const ::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >& ClassUnit::getCodeElement() const
 {
+    if (!m_codeElement)
+        return const_cast< ClassUnit* >(this)->getCodeElement();
+
     return *m_codeElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::CodeItem_ptr >& ClassUnit::getCodeElement()
 {
+    /*PROTECTED REGION ID(ClassUnit__getCodeElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_codeElement)
+        m_codeElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::CodeItem_ptr, -1, true, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getClassUnit__codeElement()));
+    /*PROTECTED REGION END*/
     return *m_codeElement;
 }
 

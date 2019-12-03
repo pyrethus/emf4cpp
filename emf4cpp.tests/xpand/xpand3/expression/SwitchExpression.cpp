@@ -40,12 +40,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 SwitchExpression::SwitchExpression()
 {
-
-    m_cases.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::expression::Case_ptr, -1, true, false >(this,
-                    ::xpand3::expression::ExpressionPackage::_instance()->getSwitchExpression__cases()));
-
     /*PROTECTED REGION ID(SwitchExpressionImpl__SwitchExpressionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -144,11 +138,23 @@ void SwitchExpression::setDefaultExpr(
 
 const ::ecorecpp::mapping::EList< ::xpand3::expression::Case_ptr >& SwitchExpression::getCases() const
 {
+    if (!m_cases)
+        return const_cast< SwitchExpression* >(this)->getCases();
+
     return *m_cases;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::expression::Case_ptr >& SwitchExpression::getCases()
 {
+    /*PROTECTED REGION ID(SwitchExpression__getCases) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_cases)
+        m_cases.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::expression::Case_ptr, -1, true, false >(this,
+                        ::xpand3::expression::ExpressionPackage::_instance()->getSwitchExpression__cases()));
+    /*PROTECTED REGION END*/
     return *m_cases;
 }
 

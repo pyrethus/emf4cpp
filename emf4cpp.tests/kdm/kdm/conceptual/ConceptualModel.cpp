@@ -46,13 +46,6 @@ using namespace ::kdm::conceptual;
 // Default constructor
 ConceptualModel::ConceptualModel()
 {
-
-    m_conceptualElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::conceptual::AbstractConceptualElement_ptr, -1, true,
-                    false >(this,
-                    ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualModel__conceptualElement()));
-
     /*PROTECTED REGION ID(ConceptualModelImpl__ConceptualModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -74,11 +67,24 @@ ConceptualModel::~ConceptualModel()
 const ::ecorecpp::mapping::EList<
         ::kdm::conceptual::AbstractConceptualElement_ptr >& ConceptualModel::getConceptualElement() const
 {
+    if (!m_conceptualElement)
+        return const_cast< ConceptualModel* >(this)->getConceptualElement();
+
     return *m_conceptualElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::conceptual::AbstractConceptualElement_ptr >& ConceptualModel::getConceptualElement()
 {
+    /*PROTECTED REGION ID(ConceptualModel__getConceptualElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_conceptualElement)
+        m_conceptualElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::conceptual::AbstractConceptualElement_ptr, -1,
+                        true, false >(this,
+                        ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualModel__conceptualElement()));
+    /*PROTECTED REGION END*/
     return *m_conceptualElement;
 }
 

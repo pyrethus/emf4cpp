@@ -142,7 +142,7 @@ void Integer::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Integer::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::EOperationBody::EOperationBodyPackage* >(::EOperationBody::EOperationBodyPackage::_instance().get())->getInteger();
+            ::EOperationBody::EOperationBodyPackage::_instance()->getInteger();
     return _eclass;
 }
 

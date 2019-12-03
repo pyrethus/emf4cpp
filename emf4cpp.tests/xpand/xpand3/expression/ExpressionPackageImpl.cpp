@@ -153,315 +153,393 @@ void ExpressionPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = ExpressionFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // AbstractExpression
     m_AbstractExpressionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractExpressionEClass->setClassifierID(ABSTRACTEXPRESSION);
-    m_AbstractExpressionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractExpressionEClass);
+    m_AbstractExpressionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractExpressionEClass);
 
     // BooleanOperation
     m_BooleanOperationEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_BooleanOperationEClass->setClassifierID(BOOLEANOPERATION);
-    m_BooleanOperationEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BooleanOperationEClass);
+    m_BooleanOperationEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BooleanOperationEClass);
 
     // Cast
     m_CastEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CastEClass->setClassifierID(CAST);
-    m_CastEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CastEClass);
+    m_CastEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CastEClass);
     // m_Cast__type has already been allocated above
     m_Cast__type->setFeatureID(
             ::xpand3::expression::ExpressionPackage::CAST__TYPE);
-    m_CastEClass->getEStructuralFeatures().push_back(m_Cast__type);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CastEClass->getEStructuralFeatures()).basicAdd(
+            m_Cast__type);
+    m_Cast__type->basicsetEContainingClass(m_CastEClass);
     // m_Cast__target has already been allocated above
     m_Cast__target->setFeatureID(
             ::xpand3::expression::ExpressionPackage::CAST__TARGET);
-    m_CastEClass->getEStructuralFeatures().push_back(m_Cast__target);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CastEClass->getEStructuralFeatures()).basicAdd(
+            m_Cast__target);
+    m_Cast__target->basicsetEContainingClass(m_CastEClass);
 
     // ChainExpression
     m_ChainExpressionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ChainExpressionEClass->setClassifierID(CHAINEXPRESSION);
-    m_ChainExpressionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ChainExpressionEClass);
+    m_ChainExpressionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ChainExpressionEClass);
     // m_ChainExpression__first has already been allocated above
     m_ChainExpression__first->setFeatureID(
             ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__FIRST);
-    m_ChainExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ChainExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_ChainExpression__first);
+    m_ChainExpression__first->basicsetEContainingClass(m_ChainExpressionEClass);
     // m_ChainExpression__next has already been allocated above
     m_ChainExpression__next->setFeatureID(
             ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__NEXT);
-    m_ChainExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ChainExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_ChainExpression__next);
+    m_ChainExpression__next->basicsetEContainingClass(m_ChainExpressionEClass);
 
     // ConstructorCallExpression
     m_ConstructorCallExpressionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ConstructorCallExpressionEClass->setClassifierID(
             CONSTRUCTORCALLEXPRESSION);
-    m_ConstructorCallExpressionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ConstructorCallExpressionEClass);
+    m_ConstructorCallExpressionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ConstructorCallExpressionEClass);
     // m_ConstructorCallExpression__type has already been allocated above
     m_ConstructorCallExpression__type->setFeatureID(
             ::xpand3::expression::ExpressionPackage::CONSTRUCTORCALLEXPRESSION__TYPE);
-    m_ConstructorCallExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConstructorCallExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_ConstructorCallExpression__type);
+    m_ConstructorCallExpression__type->basicsetEContainingClass(
+            m_ConstructorCallExpressionEClass);
 
     // FeatureCall
     m_FeatureCallEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_FeatureCallEClass->setClassifierID(FEATURECALL);
-    m_FeatureCallEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FeatureCallEClass);
+    m_FeatureCallEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FeatureCallEClass);
     // m_FeatureCall__target has already been allocated above
     m_FeatureCall__target->setFeatureID(
             ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET);
-    m_FeatureCallEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FeatureCallEClass->getEStructuralFeatures()).basicAdd(
             m_FeatureCall__target);
+    m_FeatureCall__target->basicsetEContainingClass(m_FeatureCallEClass);
     // m_FeatureCall__name has already been allocated above
     m_FeatureCall__name->setFeatureID(
             ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME);
-    m_FeatureCallEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FeatureCallEClass->getEStructuralFeatures()).basicAdd(
             m_FeatureCall__name);
+    m_FeatureCall__name->basicsetEContainingClass(m_FeatureCallEClass);
 
     // CollectionExpression
     m_CollectionExpressionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_CollectionExpressionEClass->setClassifierID(COLLECTIONEXPRESSION);
-    m_CollectionExpressionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CollectionExpressionEClass);
+    m_CollectionExpressionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CollectionExpressionEClass);
     // m_CollectionExpression__closure has already been allocated above
     m_CollectionExpression__closure->setFeatureID(
             ::xpand3::expression::ExpressionPackage::COLLECTIONEXPRESSION__CLOSURE);
-    m_CollectionExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CollectionExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_CollectionExpression__closure);
+    m_CollectionExpression__closure->basicsetEContainingClass(
+            m_CollectionExpressionEClass);
     // m_CollectionExpression__eleName has already been allocated above
     m_CollectionExpression__eleName->setFeatureID(
             ::xpand3::expression::ExpressionPackage::COLLECTIONEXPRESSION__ELENAME);
-    m_CollectionExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CollectionExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_CollectionExpression__eleName);
+    m_CollectionExpression__eleName->basicsetEContainingClass(
+            m_CollectionExpressionEClass);
 
     // OperationCall
     m_OperationCallEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_OperationCallEClass->setClassifierID(OPERATIONCALL);
-    m_OperationCallEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_OperationCallEClass);
+    m_OperationCallEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_OperationCallEClass);
     // m_OperationCall__params has already been allocated above
     m_OperationCall__params->setFeatureID(
             ::xpand3::expression::ExpressionPackage::OPERATIONCALL__PARAMS);
-    m_OperationCallEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_OperationCallEClass->getEStructuralFeatures()).basicAdd(
             m_OperationCall__params);
+    m_OperationCall__params->basicsetEContainingClass(m_OperationCallEClass);
 
     // TypeSelectExpression
     m_TypeSelectExpressionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_TypeSelectExpressionEClass->setClassifierID(TYPESELECTEXPRESSION);
-    m_TypeSelectExpressionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TypeSelectExpressionEClass);
+    m_TypeSelectExpressionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TypeSelectExpressionEClass);
     // m_TypeSelectExpression__typeLiteral has already been allocated above
     m_TypeSelectExpression__typeLiteral->setFeatureID(
             ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TYPELITERAL);
-    m_TypeSelectExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypeSelectExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_TypeSelectExpression__typeLiteral);
+    m_TypeSelectExpression__typeLiteral->basicsetEContainingClass(
+            m_TypeSelectExpressionEClass);
 
     // GlobalVarExpression
     m_GlobalVarExpressionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_GlobalVarExpressionEClass->setClassifierID(GLOBALVAREXPRESSION);
-    m_GlobalVarExpressionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_GlobalVarExpressionEClass);
+    m_GlobalVarExpressionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_GlobalVarExpressionEClass);
     // m_GlobalVarExpression__globalVarName has already been allocated above
     m_GlobalVarExpression__globalVarName->setFeatureID(
             ::xpand3::expression::ExpressionPackage::GLOBALVAREXPRESSION__GLOBALVARNAME);
-    m_GlobalVarExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_GlobalVarExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_GlobalVarExpression__globalVarName);
+    m_GlobalVarExpression__globalVarName->basicsetEContainingClass(
+            m_GlobalVarExpressionEClass);
 
     // IfExpression
     m_IfExpressionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_IfExpressionEClass->setClassifierID(IFEXPRESSION);
-    m_IfExpressionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_IfExpressionEClass);
+    m_IfExpressionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IfExpressionEClass);
     // m_IfExpression__condition has already been allocated above
     m_IfExpression__condition->setFeatureID(
             ::xpand3::expression::ExpressionPackage::IFEXPRESSION__CONDITION);
-    m_IfExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_IfExpression__condition);
+    m_IfExpression__condition->basicsetEContainingClass(m_IfExpressionEClass);
     // m_IfExpression__thenPart has already been allocated above
     m_IfExpression__thenPart->setFeatureID(
             ::xpand3::expression::ExpressionPackage::IFEXPRESSION__THENPART);
-    m_IfExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_IfExpression__thenPart);
+    m_IfExpression__thenPart->basicsetEContainingClass(m_IfExpressionEClass);
     // m_IfExpression__elsePart has already been allocated above
     m_IfExpression__elsePart->setFeatureID(
             ::xpand3::expression::ExpressionPackage::IFEXPRESSION__ELSEPART);
-    m_IfExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_IfExpression__elsePart);
+    m_IfExpression__elsePart->basicsetEContainingClass(m_IfExpressionEClass);
 
     // LetExpression
     m_LetExpressionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_LetExpressionEClass->setClassifierID(LETEXPRESSION);
-    m_LetExpressionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LetExpressionEClass);
+    m_LetExpressionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LetExpressionEClass);
     // m_LetExpression__varExpression has already been allocated above
     m_LetExpression__varExpression->setFeatureID(
             ::xpand3::expression::ExpressionPackage::LETEXPRESSION__VAREXPRESSION);
-    m_LetExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_LetExpression__varExpression);
+    m_LetExpression__varExpression->basicsetEContainingClass(
+            m_LetExpressionEClass);
     // m_LetExpression__targetExpression has already been allocated above
     m_LetExpression__targetExpression->setFeatureID(
             ::xpand3::expression::ExpressionPackage::LETEXPRESSION__TARGETEXPRESSION);
-    m_LetExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_LetExpression__targetExpression);
+    m_LetExpression__targetExpression->basicsetEContainingClass(
+            m_LetExpressionEClass);
     // m_LetExpression__varName has already been allocated above
     m_LetExpression__varName->setFeatureID(
             ::xpand3::expression::ExpressionPackage::LETEXPRESSION__VARNAME);
-    m_LetExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_LetExpression__varName);
+    m_LetExpression__varName->basicsetEContainingClass(m_LetExpressionEClass);
 
     // ListLiteral
     m_ListLiteralEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ListLiteralEClass->setClassifierID(LISTLITERAL);
-    m_ListLiteralEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ListLiteralEClass);
+    m_ListLiteralEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ListLiteralEClass);
     // m_ListLiteral__elements has already been allocated above
     m_ListLiteral__elements->setFeatureID(
             ::xpand3::expression::ExpressionPackage::LISTLITERAL__ELEMENTS);
-    m_ListLiteralEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ListLiteralEClass->getEStructuralFeatures()).basicAdd(
             m_ListLiteral__elements);
+    m_ListLiteral__elements->basicsetEContainingClass(m_ListLiteralEClass);
 
     // Literal
     m_LiteralEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_LiteralEClass->setClassifierID(LITERAL);
-    m_LiteralEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LiteralEClass);
+    m_LiteralEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LiteralEClass);
     // m_Literal__literalValue has already been allocated above
     m_Literal__literalValue->setFeatureID(
             ::xpand3::expression::ExpressionPackage::LITERAL__LITERALVALUE);
-    m_LiteralEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LiteralEClass->getEStructuralFeatures()).basicAdd(
             m_Literal__literalValue);
+    m_Literal__literalValue->basicsetEContainingClass(m_LiteralEClass);
 
     // BooleanLiteral
     m_BooleanLiteralEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_BooleanLiteralEClass->setClassifierID(BOOLEANLITERAL);
-    m_BooleanLiteralEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BooleanLiteralEClass);
+    m_BooleanLiteralEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BooleanLiteralEClass);
 
     // IntegerLiteral
     m_IntegerLiteralEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_IntegerLiteralEClass->setClassifierID(INTEGERLITERAL);
-    m_IntegerLiteralEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_IntegerLiteralEClass);
+    m_IntegerLiteralEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IntegerLiteralEClass);
 
     // NullLiteral
     m_NullLiteralEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_NullLiteralEClass->setClassifierID(NULLLITERAL);
-    m_NullLiteralEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NullLiteralEClass);
+    m_NullLiteralEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NullLiteralEClass);
 
     // RealLiteral
     m_RealLiteralEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_RealLiteralEClass->setClassifierID(REALLITERAL);
-    m_RealLiteralEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RealLiteralEClass);
+    m_RealLiteralEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RealLiteralEClass);
 
     // StringLiteral
     m_StringLiteralEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_StringLiteralEClass->setClassifierID(STRINGLITERAL);
-    m_StringLiteralEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_StringLiteralEClass);
+    m_StringLiteralEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StringLiteralEClass);
 
     // SwitchExpression
     m_SwitchExpressionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_SwitchExpressionEClass->setClassifierID(SWITCHEXPRESSION);
-    m_SwitchExpressionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SwitchExpressionEClass);
+    m_SwitchExpressionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SwitchExpressionEClass);
     // m_SwitchExpression__switchExpr has already been allocated above
     m_SwitchExpression__switchExpr->setFeatureID(
             ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__SWITCHEXPR);
-    m_SwitchExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SwitchExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_SwitchExpression__switchExpr);
+    m_SwitchExpression__switchExpr->basicsetEContainingClass(
+            m_SwitchExpressionEClass);
     // m_SwitchExpression__defaultExpr has already been allocated above
     m_SwitchExpression__defaultExpr->setFeatureID(
             ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__DEFAULTEXPR);
-    m_SwitchExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SwitchExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_SwitchExpression__defaultExpr);
+    m_SwitchExpression__defaultExpr->basicsetEContainingClass(
+            m_SwitchExpressionEClass);
     // m_SwitchExpression__cases has already been allocated above
     m_SwitchExpression__cases->setFeatureID(
             ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__CASES);
-    m_SwitchExpressionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SwitchExpressionEClass->getEStructuralFeatures()).basicAdd(
             m_SwitchExpression__cases);
+    m_SwitchExpression__cases->basicsetEContainingClass(
+            m_SwitchExpressionEClass);
 
     // Case
     m_CaseEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_CaseEClass->setClassifierID(CASE);
-    m_CaseEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_CaseEClass);
+    m_CaseEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_CaseEClass);
     // m_Case__condition has already been allocated above
     m_Case__condition->setFeatureID(
             ::xpand3::expression::ExpressionPackage::CASE__CONDITION);
-    m_CaseEClass->getEStructuralFeatures().push_back(m_Case__condition);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CaseEClass->getEStructuralFeatures()).basicAdd(
+            m_Case__condition);
+    m_Case__condition->basicsetEContainingClass(m_CaseEClass);
     // m_Case__thenPart has already been allocated above
     m_Case__thenPart->setFeatureID(
             ::xpand3::expression::ExpressionPackage::CASE__THENPART);
-    m_CaseEClass->getEStructuralFeatures().push_back(m_Case__thenPart);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CaseEClass->getEStructuralFeatures()).basicAdd(
+            m_Case__thenPart);
+    m_Case__thenPart->basicsetEContainingClass(m_CaseEClass);
 
     // BinaryOperation
     m_BinaryOperationEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_BinaryOperationEClass->setClassifierID(BINARYOPERATION);
-    m_BinaryOperationEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BinaryOperationEClass);
+    m_BinaryOperationEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BinaryOperationEClass);
     // m_BinaryOperation__left has already been allocated above
     m_BinaryOperation__left->setFeatureID(
             ::xpand3::expression::ExpressionPackage::BINARYOPERATION__LEFT);
-    m_BinaryOperationEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinaryOperationEClass->getEStructuralFeatures()).basicAdd(
             m_BinaryOperation__left);
+    m_BinaryOperation__left->basicsetEContainingClass(m_BinaryOperationEClass);
     // m_BinaryOperation__right has already been allocated above
     m_BinaryOperation__right->setFeatureID(
             ::xpand3::expression::ExpressionPackage::BINARYOPERATION__RIGHT);
-    m_BinaryOperationEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinaryOperationEClass->getEStructuralFeatures()).basicAdd(
             m_BinaryOperation__right);
+    m_BinaryOperation__right->basicsetEContainingClass(m_BinaryOperationEClass);
     // m_BinaryOperation__operator has already been allocated above
     m_BinaryOperation__operator->setFeatureID(
             ::xpand3::expression::ExpressionPackage::BINARYOPERATION__OPERATOR);
-    m_BinaryOperationEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinaryOperationEClass->getEStructuralFeatures()).basicAdd(
             m_BinaryOperation__operator);
+    m_BinaryOperation__operator->basicsetEContainingClass(
+            m_BinaryOperationEClass);
 
     // UnaryOperation
     m_UnaryOperationEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_UnaryOperationEClass->setClassifierID(UNARYOPERATION);
-    m_UnaryOperationEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_UnaryOperationEClass);
+    m_UnaryOperationEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_UnaryOperationEClass);
     // m_UnaryOperation__operator has already been allocated above
     m_UnaryOperation__operator->setFeatureID(
             ::xpand3::expression::ExpressionPackage::UNARYOPERATION__OPERATOR);
-    m_UnaryOperationEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UnaryOperationEClass->getEStructuralFeatures()).basicAdd(
             m_UnaryOperation__operator);
+    m_UnaryOperation__operator->basicsetEContainingClass(
+            m_UnaryOperationEClass);
     // m_UnaryOperation__operand has already been allocated above
     m_UnaryOperation__operand->setFeatureID(
             ::xpand3::expression::ExpressionPackage::UNARYOPERATION__OPERAND);
-    m_UnaryOperationEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UnaryOperationEClass->getEStructuralFeatures()).basicAdd(
             m_UnaryOperation__operand);
+    m_UnaryOperation__operand->basicsetEContainingClass(m_UnaryOperationEClass);
 
     // Create enums
 

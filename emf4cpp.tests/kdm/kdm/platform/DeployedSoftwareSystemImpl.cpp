@@ -70,48 +70,48 @@ void DeployedSoftwareSystem::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__RELATION:
     {
         _any = getRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ABSTRACTION:
     {
         _any = getAbstraction().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__IMPLEMENTATION:
     {
         _any = getImplementation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -131,7 +131,7 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -139,7 +139,7 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -147,7 +147,7 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -155,7 +155,7 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -163,7 +163,7 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -171,7 +171,7 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -179,7 +179,7 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__RELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -187,7 +187,7 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
         getRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ABSTRACTION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -195,7 +195,7 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
         getAbstraction().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__IMPLEMENTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -220,24 +220,24 @@ void DeployedSoftwareSystem::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__RELATION:
         return getRelation().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ABSTRACTION:
         return getAbstraction().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__IMPLEMENTATION:
         return getImplementation().size() > 0;
     case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__GROUPEDCOMPONENT:
         return getGroupedComponent().size() > 0;
@@ -258,7 +258,7 @@ void DeployedSoftwareSystem::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr DeployedSoftwareSystem::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::platform::PlatformPackage* >(::kdm::platform::PlatformPackage::_instance().get())->getDeployedSoftwareSystem();
+            ::kdm::platform::PlatformPackage::_instance()->getDeployedSoftwareSystem();
     return _eclass;
 }
 
@@ -269,35 +269,35 @@ void DeployedSoftwareSystem::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__SOURCE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__RELATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__IMPLEMENTATION:
     {
     }
         return;
@@ -317,35 +317,35 @@ void DeployedSoftwareSystem::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__SOURCE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__RELATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__IMPLEMENTATION:
     {
     }
         return;

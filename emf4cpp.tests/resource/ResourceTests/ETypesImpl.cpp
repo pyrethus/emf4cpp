@@ -205,7 +205,7 @@ void ETypes::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ETypes::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ResourceTests::ResourceTestsPackage* >(::ResourceTests::ResourceTestsPackage::_instance().get())->getETypes();
+            ::ResourceTests::ResourceTestsPackage::_instance()->getETypes();
     return _eclass;
 }
 

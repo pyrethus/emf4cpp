@@ -41,9 +41,9 @@ void TreeNode::_initialize()
     // Supertypes
 
     // References
-    for (size_t i = 0; i < m_children->size(); i++)
+    for (const auto &ref : getChildren())
     {
-        (*m_children)[i]->_initialize();
+        ref->_initialize();
     }
     if (m_leaf)
     {
@@ -148,7 +148,7 @@ void TreeNode::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr TreeNode::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::treeiterator::TreeiteratorPackage* >(::treeiterator::TreeiteratorPackage::_instance().get())->getTreeNode();
+            ::treeiterator::TreeiteratorPackage::_instance()->getTreeNode();
     return _eclass;
 }
 

@@ -51,16 +51,6 @@ using namespace ::kdm::data;
 // Default constructor
 DataAction::DataAction()
 {
-
-    m_implementation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::action::ActionElement_ptr, -1, false, false >(this,
-                    ::kdm::data::DataPackage::_instance()->getDataAction__implementation()));
-    m_dataElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::data::DataEvent_ptr, -1, true, false >(this,
-                    ::kdm::data::DataPackage::_instance()->getDataAction__dataElement()));
-
     /*PROTECTED REGION ID(DataActionImpl__DataActionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -107,21 +97,46 @@ void DataAction::setKind(::kdm::core::String _kind)
 
 const ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& DataAction::getImplementation() const
 {
+    if (!m_implementation)
+        return const_cast< DataAction* >(this)->getImplementation();
+
     return *m_implementation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& DataAction::getImplementation()
 {
+    /*PROTECTED REGION ID(DataAction__getImplementation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_implementation)
+        m_implementation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::action::ActionElement_ptr, -1, false, false >(
+                        this,
+                        ::kdm::data::DataPackage::_instance()->getDataAction__implementation()));
+    /*PROTECTED REGION END*/
     return *m_implementation;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::data::DataEvent_ptr >& DataAction::getDataElement() const
 {
+    if (!m_dataElement)
+        return const_cast< DataAction* >(this)->getDataElement();
+
     return *m_dataElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::data::DataEvent_ptr >& DataAction::getDataElement()
 {
+    /*PROTECTED REGION ID(DataAction__getDataElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_dataElement)
+        m_dataElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::data::DataEvent_ptr, -1, true, false >(this,
+                        ::kdm::data::DataPackage::_instance()->getDataAction__dataElement()));
+    /*PROTECTED REGION END*/
     return *m_dataElement;
 }
 

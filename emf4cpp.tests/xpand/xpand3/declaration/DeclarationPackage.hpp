@@ -41,263 +41,271 @@ namespace xpand3
         static DeclarationPackage_ptr _instance();
         static DeclarationPackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier AbstractAspect
         static const int ABSTRACTASPECT = 0;
 
+        static const int ABSTRACTASPECT__LINE = 0;
+
+        static const int ABSTRACTASPECT__START = 1;
+
+        static const int ABSTRACTASPECT__END = 2;
+
+        static const int ABSTRACTASPECT__FILENAME = 3;
+
+        static const int ABSTRACTASPECT__OWNER = 4;
+
+        static const int ABSTRACTASPECT__PARAMS = 5;
+
+        static const int ABSTRACTASPECT__ISPRIVATE = 6;
+
+        static const int ABSTRACTASPECT__GUARD = 7;
+
+        static const int ABSTRACTASPECT__POINTCUT = 8;
+
+        static const int ABSTRACTASPECT__WILDPARAMS = 9;
+
+        static const int ABSTRACTASPECT_FEATURE_COUNT = 10;
+
+        // IDs for classifier AbstractDeclaration
         static const int ABSTRACTDECLARATION = 1;
 
+        static const int ABSTRACTDECLARATION__LINE = 0;
+
+        static const int ABSTRACTDECLARATION__START = 1;
+
+        static const int ABSTRACTDECLARATION__END = 2;
+
+        static const int ABSTRACTDECLARATION__FILENAME = 3;
+
+        static const int ABSTRACTDECLARATION__OWNER = 4;
+
+        static const int ABSTRACTDECLARATION__PARAMS = 5;
+
+        static const int ABSTRACTDECLARATION__ISPRIVATE = 6;
+
+        static const int ABSTRACTDECLARATION__GUARD = 7;
+
+        static const int ABSTRACTDECLARATION_FEATURE_COUNT = 8;
+
+        // IDs for classifier AbstractNamedDeclaration
         static const int ABSTRACTNAMEDDECLARATION = 2;
 
+        static const int ABSTRACTNAMEDDECLARATION__LINE = 0;
+
+        static const int ABSTRACTNAMEDDECLARATION__START = 1;
+
+        static const int ABSTRACTNAMEDDECLARATION__END = 2;
+
+        static const int ABSTRACTNAMEDDECLARATION__FILENAME = 3;
+
+        static const int ABSTRACTNAMEDDECLARATION__OWNER = 4;
+
+        static const int ABSTRACTNAMEDDECLARATION__PARAMS = 5;
+
+        static const int ABSTRACTNAMEDDECLARATION__ISPRIVATE = 6;
+
+        static const int ABSTRACTNAMEDDECLARATION__GUARD = 7;
+
+        static const int ABSTRACTNAMEDDECLARATION__NAME = 8;
+
+        static const int ABSTRACTNAMEDDECLARATION_FEATURE_COUNT = 9;
+
+        // IDs for classifier Check
         static const int CHECK = 3;
 
+        static const int CHECK__LINE = 0;
+
+        static const int CHECK__START = 1;
+
+        static const int CHECK__END = 2;
+
+        static const int CHECK__FILENAME = 3;
+
+        static const int CHECK__OWNER = 4;
+
+        static const int CHECK__PARAMS = 5;
+
+        static const int CHECK__ISPRIVATE = 6;
+
+        static const int CHECK__GUARD = 7;
+
+        static const int CHECK__ERRORSEVERITY = 8;
+
+        static const int CHECK__MSG = 9;
+
+        static const int CHECK__CONSTRAINT = 10;
+
+        static const int CHECK__FEATURE = 11;
+
+        static const int CHECK_FEATURE_COUNT = 12;
+
+        // IDs for classifier CreateExtension
         static const int CREATEEXTENSION = 4;
 
+        static const int CREATEEXTENSION__LINE = 0;
+
+        static const int CREATEEXTENSION__START = 1;
+
+        static const int CREATEEXTENSION__END = 2;
+
+        static const int CREATEEXTENSION__FILENAME = 3;
+
+        static const int CREATEEXTENSION__OWNER = 4;
+
+        static const int CREATEEXTENSION__PARAMS = 5;
+
+        static const int CREATEEXTENSION__ISPRIVATE = 6;
+
+        static const int CREATEEXTENSION__GUARD = 7;
+
+        static const int CREATEEXTENSION__NAME = 8;
+
+        static const int CREATEEXTENSION__CACHED = 9;
+
+        static const int CREATEEXTENSION__BODY = 10;
+
+        static const int CREATEEXTENSION__RETURNTYPE = 11;
+
+        static const int CREATEEXTENSION__TOBECREATED = 12;
+
+        static const int CREATEEXTENSION_FEATURE_COUNT = 13;
+
+        // IDs for classifier Definition
         static const int DEFINITION = 5;
 
+        static const int DEFINITION__LINE = 0;
+
+        static const int DEFINITION__START = 1;
+
+        static const int DEFINITION__END = 2;
+
+        static const int DEFINITION__FILENAME = 3;
+
+        static const int DEFINITION__OWNER = 4;
+
+        static const int DEFINITION__PARAMS = 5;
+
+        static const int DEFINITION__ISPRIVATE = 6;
+
+        static const int DEFINITION__GUARD = 7;
+
+        static const int DEFINITION__NAME = 8;
+
+        static const int DEFINITION__BODY = 9;
+
+        static const int DEFINITION_FEATURE_COUNT = 10;
+
+        // IDs for classifier DefinitionAspect
         static const int DEFINITIONASPECT = 6;
 
+        static const int DEFINITIONASPECT__LINE = 0;
+
+        static const int DEFINITIONASPECT__START = 1;
+
+        static const int DEFINITIONASPECT__END = 2;
+
+        static const int DEFINITIONASPECT__FILENAME = 3;
+
+        static const int DEFINITIONASPECT__OWNER = 4;
+
+        static const int DEFINITIONASPECT__PARAMS = 5;
+
+        static const int DEFINITIONASPECT__ISPRIVATE = 6;
+
+        static const int DEFINITIONASPECT__GUARD = 7;
+
+        static const int DEFINITIONASPECT__POINTCUT = 8;
+
+        static const int DEFINITIONASPECT__WILDPARAMS = 9;
+
+        static const int DEFINITIONASPECT__BODY = 10;
+
+        static const int DEFINITIONASPECT_FEATURE_COUNT = 11;
+
+        // IDs for classifier Extension
         static const int EXTENSION = 7;
 
+        static const int EXTENSION__LINE = 0;
+
+        static const int EXTENSION__START = 1;
+
+        static const int EXTENSION__END = 2;
+
+        static const int EXTENSION__FILENAME = 3;
+
+        static const int EXTENSION__OWNER = 4;
+
+        static const int EXTENSION__PARAMS = 5;
+
+        static const int EXTENSION__ISPRIVATE = 6;
+
+        static const int EXTENSION__GUARD = 7;
+
+        static const int EXTENSION__NAME = 8;
+
+        static const int EXTENSION__CACHED = 9;
+
+        static const int EXTENSION__BODY = 10;
+
+        static const int EXTENSION__RETURNTYPE = 11;
+
+        static const int EXTENSION_FEATURE_COUNT = 12;
+
+        // IDs for classifier ExtensionAspect
         static const int EXTENSIONASPECT = 8;
 
+        static const int EXTENSIONASPECT__LINE = 0;
+
+        static const int EXTENSIONASPECT__START = 1;
+
+        static const int EXTENSIONASPECT__END = 2;
+
+        static const int EXTENSIONASPECT__FILENAME = 3;
+
+        static const int EXTENSIONASPECT__OWNER = 4;
+
+        static const int EXTENSIONASPECT__PARAMS = 5;
+
+        static const int EXTENSIONASPECT__ISPRIVATE = 6;
+
+        static const int EXTENSIONASPECT__GUARD = 7;
+
+        static const int EXTENSIONASPECT__POINTCUT = 8;
+
+        static const int EXTENSIONASPECT__WILDPARAMS = 9;
+
+        static const int EXTENSIONASPECT__EXPRESSION = 10;
+
+        static const int EXTENSIONASPECT_FEATURE_COUNT = 11;
+
+        // IDs for classifier JavaExtension
         static const int JAVAEXTENSION = 9;
 
-        static const int ABSTRACTDECLARATION__OWNER = 66;
+        static const int JAVAEXTENSION__LINE = 0;
 
-        static const int ABSTRACTDECLARATION__PARAMS = 67;
+        static const int JAVAEXTENSION__START = 1;
 
-        static const int ABSTRACTDECLARATION__ISPRIVATE = 68;
+        static const int JAVAEXTENSION__END = 2;
 
-        static const int ABSTRACTDECLARATION__GUARD = 69;
+        static const int JAVAEXTENSION__FILENAME = 3;
 
-        static const int ABSTRACTNAMEDDECLARATION__NAME = 70;
+        static const int JAVAEXTENSION__OWNER = 4;
 
-        static const int DEFINITION__BODY = 71;
+        static const int JAVAEXTENSION__PARAMS = 5;
 
-        static const int EXTENSION__CACHED = 72;
+        static const int JAVAEXTENSION__ISPRIVATE = 6;
 
-        static const int EXTENSION__BODY = 73;
+        static const int JAVAEXTENSION__GUARD = 7;
 
-        static const int EXTENSION__RETURNTYPE = 74;
+        static const int JAVAEXTENSION__NAME = 8;
 
-        static const int ABSTRACTASPECT__POINTCUT = 75;
+        static const int JAVAEXTENSION__JAVATYPE = 9;
 
-        static const int ABSTRACTASPECT__WILDPARAMS = 76;
+        static const int JAVAEXTENSION__JAVAMETHOD = 10;
 
-        static const int EXTENSIONASPECT__EXPRESSION = 77;
+        static const int JAVAEXTENSION__JAVAPARAMTYPES = 11;
 
-        static const int DEFINITIONASPECT__BODY = 78;
-
-        static const int CHECK__ERRORSEVERITY = 79;
-
-        static const int CHECK__MSG = 80;
-
-        static const int CHECK__CONSTRAINT = 81;
-
-        static const int CHECK__FEATURE = 82;
-
-        static const int CREATEEXTENSION__TOBECREATED = 83;
-
-        static const int JAVAEXTENSION__JAVATYPE = 84;
-
-        static const int JAVAEXTENSION__JAVAMETHOD = 85;
-
-        static const int JAVAEXTENSION__JAVAPARAMTYPES = 86;
-
-        // IDs for classifiers for class AbstractAspect 
-
-        static const int ABSTRACTASPECT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int ABSTRACTASPECT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int ABSTRACTASPECT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int ABSTRACTASPECT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int ABSTRACTASPECT__OWNER = ABSTRACTDECLARATION__OWNER;
-
-        static const int ABSTRACTASPECT__PARAMS = ABSTRACTDECLARATION__PARAMS;
-
-        static const int ABSTRACTASPECT__ISPRIVATE = ABSTRACTDECLARATION__ISPRIVATE;
-
-        static const int ABSTRACTASPECT__GUARD = ABSTRACTDECLARATION__GUARD;
-
-        // IDs for classifiers for class AbstractDeclaration 
-
-        static const int ABSTRACTDECLARATION__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int ABSTRACTDECLARATION__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int ABSTRACTDECLARATION__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int ABSTRACTDECLARATION__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        // IDs for classifiers for class AbstractNamedDeclaration 
-
-        static const int ABSTRACTNAMEDDECLARATION__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int ABSTRACTNAMEDDECLARATION__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int ABSTRACTNAMEDDECLARATION__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int ABSTRACTNAMEDDECLARATION__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int ABSTRACTNAMEDDECLARATION__OWNER = ABSTRACTDECLARATION__OWNER;
-
-        static const int ABSTRACTNAMEDDECLARATION__PARAMS = ABSTRACTDECLARATION__PARAMS;
-
-        static const int ABSTRACTNAMEDDECLARATION__ISPRIVATE = ABSTRACTDECLARATION__ISPRIVATE;
-
-        static const int ABSTRACTNAMEDDECLARATION__GUARD = ABSTRACTDECLARATION__GUARD;
-
-        // IDs for classifiers for class Check 
-
-        static const int CHECK__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int CHECK__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int CHECK__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int CHECK__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int CHECK__OWNER = ABSTRACTDECLARATION__OWNER;
-
-        static const int CHECK__PARAMS = ABSTRACTDECLARATION__PARAMS;
-
-        static const int CHECK__ISPRIVATE = ABSTRACTDECLARATION__ISPRIVATE;
-
-        static const int CHECK__GUARD = ABSTRACTDECLARATION__GUARD;
-
-        // IDs for classifiers for class CreateExtension 
-
-        static const int CREATEEXTENSION__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int CREATEEXTENSION__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int CREATEEXTENSION__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int CREATEEXTENSION__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int CREATEEXTENSION__OWNER = ABSTRACTDECLARATION__OWNER;
-
-        static const int CREATEEXTENSION__PARAMS = ABSTRACTDECLARATION__PARAMS;
-
-        static const int CREATEEXTENSION__ISPRIVATE = ABSTRACTDECLARATION__ISPRIVATE;
-
-        static const int CREATEEXTENSION__GUARD = ABSTRACTDECLARATION__GUARD;
-
-        static const int CREATEEXTENSION__NAME = ABSTRACTNAMEDDECLARATION__NAME;
-
-        static const int CREATEEXTENSION__CACHED = EXTENSION__CACHED;
-
-        static const int CREATEEXTENSION__BODY = EXTENSION__BODY;
-
-        static const int CREATEEXTENSION__RETURNTYPE = EXTENSION__RETURNTYPE;
-
-        // IDs for classifiers for class Definition 
-
-        static const int DEFINITION__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int DEFINITION__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int DEFINITION__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int DEFINITION__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int DEFINITION__OWNER = ABSTRACTDECLARATION__OWNER;
-
-        static const int DEFINITION__PARAMS = ABSTRACTDECLARATION__PARAMS;
-
-        static const int DEFINITION__ISPRIVATE = ABSTRACTDECLARATION__ISPRIVATE;
-
-        static const int DEFINITION__GUARD = ABSTRACTDECLARATION__GUARD;
-
-        static const int DEFINITION__NAME = ABSTRACTNAMEDDECLARATION__NAME;
-
-        // IDs for classifiers for class DefinitionAspect 
-
-        static const int DEFINITIONASPECT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int DEFINITIONASPECT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int DEFINITIONASPECT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int DEFINITIONASPECT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int DEFINITIONASPECT__OWNER = ABSTRACTDECLARATION__OWNER;
-
-        static const int DEFINITIONASPECT__PARAMS = ABSTRACTDECLARATION__PARAMS;
-
-        static const int DEFINITIONASPECT__ISPRIVATE = ABSTRACTDECLARATION__ISPRIVATE;
-
-        static const int DEFINITIONASPECT__GUARD = ABSTRACTDECLARATION__GUARD;
-
-        static const int DEFINITIONASPECT__POINTCUT = ABSTRACTASPECT__POINTCUT;
-
-        static const int DEFINITIONASPECT__WILDPARAMS = ABSTRACTASPECT__WILDPARAMS;
-
-        // IDs for classifiers for class Extension 
-
-        static const int EXTENSION__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int EXTENSION__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int EXTENSION__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int EXTENSION__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int EXTENSION__OWNER = ABSTRACTDECLARATION__OWNER;
-
-        static const int EXTENSION__PARAMS = ABSTRACTDECLARATION__PARAMS;
-
-        static const int EXTENSION__ISPRIVATE = ABSTRACTDECLARATION__ISPRIVATE;
-
-        static const int EXTENSION__GUARD = ABSTRACTDECLARATION__GUARD;
-
-        static const int EXTENSION__NAME = ABSTRACTNAMEDDECLARATION__NAME;
-
-        // IDs for classifiers for class ExtensionAspect 
-
-        static const int EXTENSIONASPECT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int EXTENSIONASPECT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int EXTENSIONASPECT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int EXTENSIONASPECT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int EXTENSIONASPECT__OWNER = ABSTRACTDECLARATION__OWNER;
-
-        static const int EXTENSIONASPECT__PARAMS = ABSTRACTDECLARATION__PARAMS;
-
-        static const int EXTENSIONASPECT__ISPRIVATE = ABSTRACTDECLARATION__ISPRIVATE;
-
-        static const int EXTENSIONASPECT__GUARD = ABSTRACTDECLARATION__GUARD;
-
-        static const int EXTENSIONASPECT__POINTCUT = ABSTRACTASPECT__POINTCUT;
-
-        static const int EXTENSIONASPECT__WILDPARAMS = ABSTRACTASPECT__WILDPARAMS;
-
-        // IDs for classifiers for class JavaExtension 
-
-        static const int JAVAEXTENSION__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int JAVAEXTENSION__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int JAVAEXTENSION__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int JAVAEXTENSION__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int JAVAEXTENSION__OWNER = ABSTRACTDECLARATION__OWNER;
-
-        static const int JAVAEXTENSION__PARAMS = ABSTRACTDECLARATION__PARAMS;
-
-        static const int JAVAEXTENSION__ISPRIVATE = ABSTRACTDECLARATION__ISPRIVATE;
-
-        static const int JAVAEXTENSION__GUARD = ABSTRACTDECLARATION__GUARD;
-
-        static const int JAVAEXTENSION__NAME = ABSTRACTNAMEDDECLARATION__NAME;
+        static const int JAVAEXTENSION_FEATURE_COUNT = 12;
 
         // EClassifiers methods
 

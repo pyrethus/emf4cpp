@@ -48,22 +48,6 @@ using namespace ::kdm::build;
 // Default constructor
 BuildResource::BuildResource()
 {
-
-    m_implementation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::core::KDMEntity_ptr, -1, false, false >(this,
-                    ::kdm::build::BuildPackage::_instance()->getBuildResource__implementation()));
-    m_groupedBuild.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::build::AbstractBuildElement_ptr, -1, false, false >(
-                    this,
-                    ::kdm::build::BuildPackage::_instance()->getBuildResource__groupedBuild()));
-    m_buildElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::build::AbstractBuildElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::build::BuildPackage::_instance()->getBuildResource__buildElement()));
-
     /*PROTECTED REGION ID(BuildResourceImpl__BuildResourceImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -84,31 +68,69 @@ BuildResource::~BuildResource()
 
 const ::ecorecpp::mapping::EList< ::kdm::core::KDMEntity_ptr >& BuildResource::getImplementation() const
 {
+    if (!m_implementation)
+        return const_cast< BuildResource* >(this)->getImplementation();
+
     return *m_implementation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::core::KDMEntity_ptr >& BuildResource::getImplementation()
 {
+    /*PROTECTED REGION ID(BuildResource__getImplementation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_implementation)
+        m_implementation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::core::KDMEntity_ptr, -1, false, false >(this,
+                        ::kdm::build::BuildPackage::_instance()->getBuildResource__implementation()));
+    /*PROTECTED REGION END*/
     return *m_implementation;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildElement_ptr >& BuildResource::getGroupedBuild() const
 {
+    if (!m_groupedBuild)
+        return const_cast< BuildResource* >(this)->getGroupedBuild();
+
     return *m_groupedBuild;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildElement_ptr >& BuildResource::getGroupedBuild()
 {
+    /*PROTECTED REGION ID(BuildResource__getGroupedBuild) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_groupedBuild)
+        m_groupedBuild.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::build::AbstractBuildElement_ptr, -1, false, false >(
+                        this,
+                        ::kdm::build::BuildPackage::_instance()->getBuildResource__groupedBuild()));
+    /*PROTECTED REGION END*/
     return *m_groupedBuild;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildElement_ptr >& BuildResource::getBuildElement() const
 {
+    if (!m_buildElement)
+        return const_cast< BuildResource* >(this)->getBuildElement();
+
     return *m_buildElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildElement_ptr >& BuildResource::getBuildElement()
 {
+    /*PROTECTED REGION ID(BuildResource__getBuildElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_buildElement)
+        m_buildElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::build::AbstractBuildElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::build::BuildPackage::_instance()->getBuildResource__buildElement()));
+    /*PROTECTED REGION END*/
     return *m_buildElement;
 }
 

@@ -37,8 +37,7 @@ public:
     static BintreePackage_ptr _instance();
     static BintreePackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier BinTreeNode
     static const int BINTREENODE = 0;
 
     static const int BINTREENODE__PARENT = 0;
@@ -49,7 +48,7 @@ public:
 
     static const int BINTREENODE__DATA = 3;
 
-    // IDs for classifiers for class BinTreeNode 
+    static const int BINTREENODE_FEATURE_COUNT = 4;
 
     // EClassifiers methods
 

@@ -39,12 +39,6 @@ using namespace ::company;
 // Default constructor
 Department::Department()
 {
-
-    m_employees.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::company::Employee_ptr, -1, true, false >(this,
-                    ::company::CompanyPackage::_instance()->getDepartment__employees()));
-
     /*PROTECTED REGION ID(DepartmentImpl__DepartmentImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -91,11 +85,23 @@ void Department::setNumber(::ecore::EInt _number)
 
 const ::ecorecpp::mapping::EList< ::company::Employee_ptr >& Department::getEmployees() const
 {
+    if (!m_employees)
+        return const_cast< Department* >(this)->getEmployees();
+
     return *m_employees;
 }
 
 ::ecorecpp::mapping::EList< ::company::Employee_ptr >& Department::getEmployees()
 {
+    /*PROTECTED REGION ID(Department__getEmployees) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_employees)
+        m_employees.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::company::Employee_ptr, -1, true, false >(this,
+                        ::company::CompanyPackage::_instance()->getDepartment__employees()));
+    /*PROTECTED REGION END*/
     return *m_employees;
 }
 

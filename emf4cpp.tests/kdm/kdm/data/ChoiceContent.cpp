@@ -51,7 +51,6 @@ using namespace ::kdm::data;
 // Default constructor
 ChoiceContent::ChoiceContent()
 {
-
     /*PROTECTED REGION ID(ChoiceContentImpl__ChoiceContentImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

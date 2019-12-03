@@ -58,7 +58,7 @@ void Scale::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::SCALE__ATTOWNER:
     {
         _any = getAttOwner().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -85,7 +85,7 @@ void Scale::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::SCALE__ATTOWNER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -118,7 +118,7 @@ void Scale::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::SCALE__ATTOWNER:
         return getAttOwner().size() > 0;
     case ::SVG::SVGPackage::SCALE__SX:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::Double
@@ -143,7 +143,7 @@ void Scale::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Scale::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getScale();
+            ::SVG::SVGPackage::_instance()->getScale();
     return _eclass;
 }
 
@@ -154,7 +154,7 @@ void Scale::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::SCALE__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -180,7 +180,7 @@ void Scale::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER:
+    case ::SVG::SVGPackage::SCALE__ATTOWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

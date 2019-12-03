@@ -121,213 +121,282 @@ void StatementPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = StatementFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // AbstractStatement
     m_AbstractStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractStatementEClass->setClassifierID(ABSTRACTSTATEMENT);
-    m_AbstractStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractStatementEClass);
+    m_AbstractStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractStatementEClass);
 
     // ExpandStatement
     m_ExpandStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExpandStatementEClass->setClassifierID(EXPANDSTATEMENT);
-    m_ExpandStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExpandStatementEClass);
+    m_ExpandStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExpandStatementEClass);
     // m_ExpandStatement__foreach has already been allocated above
     m_ExpandStatement__foreach->setFeatureID(
             ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__FOREACH);
-    m_ExpandStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ExpandStatement__foreach);
+    m_ExpandStatement__foreach->basicsetEContainingClass(
+            m_ExpandStatementEClass);
     // m_ExpandStatement__parameters has already been allocated above
     m_ExpandStatement__parameters->setFeatureID(
             ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__PARAMETERS);
-    m_ExpandStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ExpandStatement__parameters);
+    m_ExpandStatement__parameters->basicsetEContainingClass(
+            m_ExpandStatementEClass);
     // m_ExpandStatement__separator has already been allocated above
     m_ExpandStatement__separator->setFeatureID(
             ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__SEPARATOR);
-    m_ExpandStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ExpandStatement__separator);
+    m_ExpandStatement__separator->basicsetEContainingClass(
+            m_ExpandStatementEClass);
     // m_ExpandStatement__target has already been allocated above
     m_ExpandStatement__target->setFeatureID(
             ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__TARGET);
-    m_ExpandStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ExpandStatement__target);
+    m_ExpandStatement__target->basicsetEContainingClass(
+            m_ExpandStatementEClass);
     // m_ExpandStatement__definition has already been allocated above
     m_ExpandStatement__definition->setFeatureID(
             ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__DEFINITION);
-    m_ExpandStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ExpandStatement__definition);
+    m_ExpandStatement__definition->basicsetEContainingClass(
+            m_ExpandStatementEClass);
 
     // ExpressionStatement
     m_ExpressionStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExpressionStatementEClass->setClassifierID(EXPRESSIONSTATEMENT);
-    m_ExpressionStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExpressionStatementEClass);
+    m_ExpressionStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExpressionStatementEClass);
     // m_ExpressionStatement__expression has already been allocated above
     m_ExpressionStatement__expression->setFeatureID(
             ::xpand3::statement::StatementPackage::EXPRESSIONSTATEMENT__EXPRESSION);
-    m_ExpressionStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpressionStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ExpressionStatement__expression);
+    m_ExpressionStatement__expression->basicsetEContainingClass(
+            m_ExpressionStatementEClass);
 
     // ErrorStatement
     m_ErrorStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ErrorStatementEClass->setClassifierID(ERRORSTATEMENT);
-    m_ErrorStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ErrorStatementEClass);
+    m_ErrorStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ErrorStatementEClass);
     // m_ErrorStatement__message has already been allocated above
     m_ErrorStatement__message->setFeatureID(
             ::xpand3::statement::StatementPackage::ERRORSTATEMENT__MESSAGE);
-    m_ErrorStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ErrorStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ErrorStatement__message);
+    m_ErrorStatement__message->basicsetEContainingClass(m_ErrorStatementEClass);
 
     // AbstractStatementWithBody
     m_AbstractStatementWithBodyEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractStatementWithBodyEClass->setClassifierID(
             ABSTRACTSTATEMENTWITHBODY);
-    m_AbstractStatementWithBodyEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractStatementWithBodyEClass);
+    m_AbstractStatementWithBodyEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractStatementWithBodyEClass);
     // m_AbstractStatementWithBody__body has already been allocated above
     m_AbstractStatementWithBody__body->setFeatureID(
             ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY);
-    m_AbstractStatementWithBodyEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractStatementWithBodyEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractStatementWithBody__body);
+    m_AbstractStatementWithBody__body->basicsetEContainingClass(
+            m_AbstractStatementWithBodyEClass);
 
     // FileStatement
     m_FileStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_FileStatementEClass->setClassifierID(FILESTATEMENT);
-    m_FileStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FileStatementEClass);
-    // m_FileStatement__once has already been allocated above
-    m_FileStatement__once->setFeatureID(
-            ::xpand3::statement::StatementPackage::FILESTATEMENT__ONCE);
-    m_FileStatementEClass->getEStructuralFeatures().push_back(
-            m_FileStatement__once);
+    m_FileStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FileStatementEClass);
     // m_FileStatement__fileNameExpression has already been allocated above
     m_FileStatement__fileNameExpression->setFeatureID(
             ::xpand3::statement::StatementPackage::FILESTATEMENT__FILENAMEEXPRESSION);
-    m_FileStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures()).basicAdd(
             m_FileStatement__fileNameExpression);
+    m_FileStatement__fileNameExpression->basicsetEContainingClass(
+            m_FileStatementEClass);
     // m_FileStatement__outletNameIdentifier has already been allocated above
     m_FileStatement__outletNameIdentifier->setFeatureID(
             ::xpand3::statement::StatementPackage::FILESTATEMENT__OUTLETNAMEIDENTIFIER);
-    m_FileStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures()).basicAdd(
             m_FileStatement__outletNameIdentifier);
+    m_FileStatement__outletNameIdentifier->basicsetEContainingClass(
+            m_FileStatementEClass);
+    // m_FileStatement__once has already been allocated above
+    m_FileStatement__once->setFeatureID(
+            ::xpand3::statement::StatementPackage::FILESTATEMENT__ONCE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures()).basicAdd(
+            m_FileStatement__once);
+    m_FileStatement__once->basicsetEContainingClass(m_FileStatementEClass);
 
     // ForEachStatement
     m_ForEachStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ForEachStatementEClass->setClassifierID(FOREACHSTATEMENT);
-    m_ForEachStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ForEachStatementEClass);
+    m_ForEachStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ForEachStatementEClass);
     // m_ForEachStatement__target has already been allocated above
     m_ForEachStatement__target->setFeatureID(
             ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__TARGET);
-    m_ForEachStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ForEachStatement__target);
+    m_ForEachStatement__target->basicsetEContainingClass(
+            m_ForEachStatementEClass);
     // m_ForEachStatement__separator has already been allocated above
     m_ForEachStatement__separator->setFeatureID(
             ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__SEPARATOR);
-    m_ForEachStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ForEachStatement__separator);
+    m_ForEachStatement__separator->basicsetEContainingClass(
+            m_ForEachStatementEClass);
     // m_ForEachStatement__variable has already been allocated above
     m_ForEachStatement__variable->setFeatureID(
             ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__VARIABLE);
-    m_ForEachStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ForEachStatement__variable);
+    m_ForEachStatement__variable->basicsetEContainingClass(
+            m_ForEachStatementEClass);
     // m_ForEachStatement__iteratorName has already been allocated above
     m_ForEachStatement__iteratorName->setFeatureID(
             ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__ITERATORNAME);
-    m_ForEachStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ForEachStatement__iteratorName);
+    m_ForEachStatement__iteratorName->basicsetEContainingClass(
+            m_ForEachStatementEClass);
 
     // IfStatement
     m_IfStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_IfStatementEClass->setClassifierID(IFSTATEMENT);
-    m_IfStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_IfStatementEClass);
+    m_IfStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IfStatementEClass);
     // m_IfStatement__condition has already been allocated above
     m_IfStatement__condition->setFeatureID(
             ::xpand3::statement::StatementPackage::IFSTATEMENT__CONDITION);
-    m_IfStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfStatementEClass->getEStructuralFeatures()).basicAdd(
             m_IfStatement__condition);
+    m_IfStatement__condition->basicsetEContainingClass(m_IfStatementEClass);
     // m_IfStatement__elseIf has already been allocated above
     m_IfStatement__elseIf->setFeatureID(
             ::xpand3::statement::StatementPackage::IFSTATEMENT__ELSEIF);
-    m_IfStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfStatementEClass->getEStructuralFeatures()).basicAdd(
             m_IfStatement__elseIf);
+    m_IfStatement__elseIf->basicsetEContainingClass(m_IfStatementEClass);
 
     // LetStatement
     m_LetStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_LetStatementEClass->setClassifierID(LETSTATEMENT);
-    m_LetStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LetStatementEClass);
+    m_LetStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LetStatementEClass);
     // m_LetStatement__varName has already been allocated above
     m_LetStatement__varName->setFeatureID(
             ::xpand3::statement::StatementPackage::LETSTATEMENT__VARNAME);
-    m_LetStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetStatementEClass->getEStructuralFeatures()).basicAdd(
             m_LetStatement__varName);
+    m_LetStatement__varName->basicsetEContainingClass(m_LetStatementEClass);
     // m_LetStatement__varValue has already been allocated above
     m_LetStatement__varValue->setFeatureID(
             ::xpand3::statement::StatementPackage::LETSTATEMENT__VARVALUE);
-    m_LetStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetStatementEClass->getEStructuralFeatures()).basicAdd(
             m_LetStatement__varValue);
+    m_LetStatement__varValue->basicsetEContainingClass(m_LetStatementEClass);
 
     // ProtectStatement
     m_ProtectStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ProtectStatementEClass->setClassifierID(PROTECTSTATEMENT);
-    m_ProtectStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ProtectStatementEClass);
-    // m_ProtectStatement__disable has already been allocated above
-    m_ProtectStatement__disable->setFeatureID(
-            ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__DISABLE);
-    m_ProtectStatementEClass->getEStructuralFeatures().push_back(
-            m_ProtectStatement__disable);
+    m_ProtectStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ProtectStatementEClass);
     // m_ProtectStatement__commentStart has already been allocated above
     m_ProtectStatement__commentStart->setFeatureID(
             ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTSTART);
-    m_ProtectStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ProtectStatement__commentStart);
+    m_ProtectStatement__commentStart->basicsetEContainingClass(
+            m_ProtectStatementEClass);
     // m_ProtectStatement__commentEnd has already been allocated above
     m_ProtectStatement__commentEnd->setFeatureID(
             ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTEND);
-    m_ProtectStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ProtectStatement__commentEnd);
+    m_ProtectStatement__commentEnd->basicsetEContainingClass(
+            m_ProtectStatementEClass);
     // m_ProtectStatement__id has already been allocated above
     m_ProtectStatement__id->setFeatureID(
             ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__ID);
-    m_ProtectStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ProtectStatement__id);
+    m_ProtectStatement__id->basicsetEContainingClass(m_ProtectStatementEClass);
+    // m_ProtectStatement__disable has already been allocated above
+    m_ProtectStatement__disable->setFeatureID(
+            ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__DISABLE);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
+            m_ProtectStatement__disable);
+    m_ProtectStatement__disable->basicsetEContainingClass(
+            m_ProtectStatementEClass);
 
     // TextStatement
     m_TextStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_TextStatementEClass->setClassifierID(TEXTSTATEMENT);
-    m_TextStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TextStatementEClass);
+    m_TextStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TextStatementEClass);
     // m_TextStatement__value has already been allocated above
     m_TextStatement__value->setFeatureID(
             ::xpand3::statement::StatementPackage::TEXTSTATEMENT__VALUE);
-    m_TextStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextStatementEClass->getEStructuralFeatures()).basicAdd(
             m_TextStatement__value);
+    m_TextStatement__value->basicsetEContainingClass(m_TextStatementEClass);
     // m_TextStatement__deleteLine has already been allocated above
     m_TextStatement__deleteLine->setFeatureID(
             ::xpand3::statement::StatementPackage::TEXTSTATEMENT__DELETELINE);
-    m_TextStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextStatementEClass->getEStructuralFeatures()).basicAdd(
             m_TextStatement__deleteLine);
+    m_TextStatement__deleteLine->basicsetEContainingClass(
+            m_TextStatementEClass);
 
     // Create enums
 

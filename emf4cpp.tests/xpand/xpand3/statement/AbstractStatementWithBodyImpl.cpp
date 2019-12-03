@@ -41,9 +41,9 @@ void AbstractStatementWithBody::_initialize()
     ::xpand3::statement::AbstractStatement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_body->size(); i++)
+    for (const auto &ref : getBody())
     {
-        (*m_body)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(AbstractStatementWithBodyImpl__initialize) START*/
@@ -61,25 +61,25 @@ void AbstractStatementWithBody::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__LINE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getLine());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getStart());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__END:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getEnd());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getFileName());
@@ -100,7 +100,7 @@ void AbstractStatementWithBody::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__LINE:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -108,7 +108,7 @@ void AbstractStatementWithBody::eSet(::ecore::EInt _featureID,
         setLine(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__START:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -116,7 +116,7 @@ void AbstractStatementWithBody::eSet(::ecore::EInt _featureID,
         setStart(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__END:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -124,7 +124,7 @@ void AbstractStatementWithBody::eSet(::ecore::EInt _featureID,
         setEnd(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__FILENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -149,16 +149,16 @@ void AbstractStatementWithBody::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getLine());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getStart());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__END:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getEnd());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getFileName());
     case ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY:
@@ -180,7 +180,7 @@ void AbstractStatementWithBody::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr AbstractStatementWithBody::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::xpand3::statement::StatementPackage* >(::xpand3::statement::StatementPackage::_instance().get())->getAbstractStatementWithBody();
+            ::xpand3::statement::StatementPackage::_instance()->getAbstractStatementWithBody();
     return _eclass;
 }
 

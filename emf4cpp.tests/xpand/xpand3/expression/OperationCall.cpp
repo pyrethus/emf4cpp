@@ -41,13 +41,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 OperationCall::OperationCall()
 {
-
-    m_params.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::expression::AbstractExpression_ptr, -1, true,
-                    false >(this,
-                    ::xpand3::expression::ExpressionPackage::_instance()->getOperationCall__params()));
-
     /*PROTECTED REGION ID(OperationCallImpl__OperationCallImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -68,11 +61,24 @@ OperationCall::~OperationCall()
 
 const ::ecorecpp::mapping::EList< ::xpand3::expression::AbstractExpression_ptr >& OperationCall::getParams() const
 {
+    if (!m_params)
+        return const_cast< OperationCall* >(this)->getParams();
+
     return *m_params;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::expression::AbstractExpression_ptr >& OperationCall::getParams()
 {
+    /*PROTECTED REGION ID(OperationCall__getParams) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_params)
+        m_params.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::expression::AbstractExpression_ptr, -1, true,
+                        false >(this,
+                        ::xpand3::expression::ExpressionPackage::_instance()->getOperationCall__params()));
+    /*PROTECTED REGION END*/
     return *m_params;
 }
 

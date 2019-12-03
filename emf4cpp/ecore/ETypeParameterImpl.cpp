@@ -43,9 +43,9 @@ void ETypeParameter::_initialize()
     ::ecore::ENamedElement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_eBounds->size(); i++)
+    for (const auto &ref : getEBounds())
     {
-        (*m_eBounds)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ETypeParameterImpl__initialize) START*/
@@ -63,12 +63,12 @@ void ETypeParameter::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ETYPEPARAMETER__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::ETYPEPARAMETER__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -89,7 +89,7 @@ void ETypeParameter::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ETYPEPARAMETER__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -97,7 +97,7 @@ void ETypeParameter::eSet(::ecore::EInt _featureID,
         getEAnnotations().insert_all(*_t0);
     }
         return;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::ETYPEPARAMETER__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -122,9 +122,9 @@ void ETypeParameter::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ETYPEPARAMETER__EANNOTATIONS:
         return getEAnnotations().size() > 0;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::ETYPEPARAMETER__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
     case ::ecore::EcorePackage::ETYPEPARAMETER__EBOUNDS:
@@ -146,7 +146,7 @@ void ETypeParameter::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ETypeParameter::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getETypeParameter();
+            ::ecore::EcorePackage::_instance()->getETypeParameter();
     return _eclass;
 }
 
@@ -157,7 +157,7 @@ void ETypeParameter::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ETYPEPARAMETER__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -187,7 +187,7 @@ void ETypeParameter::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::ETYPEPARAMETER__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

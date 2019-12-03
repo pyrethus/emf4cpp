@@ -46,7 +46,6 @@ using namespace ::kdm::action;
 // Default constructor
 EntryFlow::EntryFlow()
 {
-
     /*PROTECTED REGION ID(EntryFlowImpl__EntryFlowImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

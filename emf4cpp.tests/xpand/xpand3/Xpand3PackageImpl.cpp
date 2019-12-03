@@ -79,94 +79,125 @@ void Xpand3Package::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = Xpand3Factory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // SyntaxElement
     m_SyntaxElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_SyntaxElementEClass->setClassifierID(SYNTAXELEMENT);
-    m_SyntaxElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SyntaxElementEClass);
+    m_SyntaxElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SyntaxElementEClass);
     // m_SyntaxElement__line has already been allocated above
     m_SyntaxElement__line->setFeatureID(
             ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE);
-    m_SyntaxElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
             m_SyntaxElement__line);
+    m_SyntaxElement__line->basicsetEContainingClass(m_SyntaxElementEClass);
     // m_SyntaxElement__start has already been allocated above
     m_SyntaxElement__start->setFeatureID(
             ::xpand3::Xpand3Package::SYNTAXELEMENT__START);
-    m_SyntaxElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
             m_SyntaxElement__start);
+    m_SyntaxElement__start->basicsetEContainingClass(m_SyntaxElementEClass);
     // m_SyntaxElement__end has already been allocated above
     m_SyntaxElement__end->setFeatureID(
             ::xpand3::Xpand3Package::SYNTAXELEMENT__END);
-    m_SyntaxElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
             m_SyntaxElement__end);
+    m_SyntaxElement__end->basicsetEContainingClass(m_SyntaxElementEClass);
     // m_SyntaxElement__fileName has already been allocated above
     m_SyntaxElement__fileName->setFeatureID(
             ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME);
-    m_SyntaxElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
             m_SyntaxElement__fileName);
+    m_SyntaxElement__fileName->basicsetEContainingClass(m_SyntaxElementEClass);
 
     // File
     m_FileEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_FileEClass->setClassifierID(FILE);
-    m_FileEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FileEClass);
+    m_FileEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FileEClass);
     // m_File__imports has already been allocated above
     m_File__imports->setFeatureID(::xpand3::Xpand3Package::FILE__IMPORTS);
-    m_FileEClass->getEStructuralFeatures().push_back(m_File__imports);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileEClass->getEStructuralFeatures()).basicAdd(
+            m_File__imports);
+    m_File__imports->basicsetEContainingClass(m_FileEClass);
     // m_File__declarations has already been allocated above
     m_File__declarations->setFeatureID(
             ::xpand3::Xpand3Package::FILE__DECLARATIONS);
-    m_FileEClass->getEStructuralFeatures().push_back(m_File__declarations);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileEClass->getEStructuralFeatures()).basicAdd(
+            m_File__declarations);
+    m_File__declarations->basicsetEContainingClass(m_FileEClass);
 
     // ImportStatement
     m_ImportStatementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ImportStatementEClass->setClassifierID(IMPORTSTATEMENT);
-    m_ImportStatementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ImportStatementEClass);
-    // m_ImportStatement__exported has already been allocated above
-    m_ImportStatement__exported->setFeatureID(
-            ::xpand3::Xpand3Package::IMPORTSTATEMENT__EXPORTED);
-    m_ImportStatementEClass->getEStructuralFeatures().push_back(
-            m_ImportStatement__exported);
+    m_ImportStatementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ImportStatementEClass);
     // m_ImportStatement__importedId has already been allocated above
     m_ImportStatement__importedId->setFeatureID(
             ::xpand3::Xpand3Package::IMPORTSTATEMENT__IMPORTEDID);
-    m_ImportStatementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportStatementEClass->getEStructuralFeatures()).basicAdd(
             m_ImportStatement__importedId);
+    m_ImportStatement__importedId->basicsetEContainingClass(
+            m_ImportStatementEClass);
+    // m_ImportStatement__exported has already been allocated above
+    m_ImportStatement__exported->setFeatureID(
+            ::xpand3::Xpand3Package::IMPORTSTATEMENT__EXPORTED);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportStatementEClass->getEStructuralFeatures()).basicAdd(
+            m_ImportStatement__exported);
+    m_ImportStatement__exported->basicsetEContainingClass(
+            m_ImportStatementEClass);
 
     // Identifier
     m_IdentifierEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_IdentifierEClass->setClassifierID(IDENTIFIER);
-    m_IdentifierEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_IdentifierEClass);
+    m_IdentifierEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IdentifierEClass);
     // m_Identifier__value has already been allocated above
     m_Identifier__value->setFeatureID(
             ::xpand3::Xpand3Package::IDENTIFIER__VALUE);
-    m_IdentifierEClass->getEStructuralFeatures().push_back(m_Identifier__value);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IdentifierEClass->getEStructuralFeatures()).basicAdd(
+            m_Identifier__value);
+    m_Identifier__value->basicsetEContainingClass(m_IdentifierEClass);
 
     // DeclaredParameter
     m_DeclaredParameterEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DeclaredParameterEClass->setClassifierID(DECLAREDPARAMETER);
-    m_DeclaredParameterEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DeclaredParameterEClass);
+    m_DeclaredParameterEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DeclaredParameterEClass);
     // m_DeclaredParameter__name has already been allocated above
     m_DeclaredParameter__name->setFeatureID(
             ::xpand3::Xpand3Package::DECLAREDPARAMETER__NAME);
-    m_DeclaredParameterEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeclaredParameterEClass->getEStructuralFeatures()).basicAdd(
             m_DeclaredParameter__name);
+    m_DeclaredParameter__name->basicsetEContainingClass(
+            m_DeclaredParameterEClass);
     // m_DeclaredParameter__type has already been allocated above
     m_DeclaredParameter__type->setFeatureID(
             ::xpand3::Xpand3Package::DECLAREDPARAMETER__TYPE);
-    m_DeclaredParameterEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeclaredParameterEClass->getEStructuralFeatures()).basicAdd(
             m_DeclaredParameter__type);
+    m_DeclaredParameter__type->basicsetEContainingClass(
+            m_DeclaredParameterEClass);
 
     // Create enums
 

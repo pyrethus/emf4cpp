@@ -41,12 +41,6 @@ using namespace ::myDsl;
 // Default constructor
 Entity::Entity()
 {
-
-    m_properties.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::myDsl::Property_ptr,
-                    -1, true, false >(this,
-                    ::myDsl::MyDslPackage::_instance()->getEntity__properties()));
-
     /*PROTECTED REGION ID(EntityImpl__EntityImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -94,11 +88,23 @@ void Entity::setExtends(::myDsl::Entity_ptr _extends)
 
 const ::ecorecpp::mapping::EList< ::myDsl::Property_ptr >& Entity::getProperties() const
 {
+    if (!m_properties)
+        return const_cast< Entity* >(this)->getProperties();
+
     return *m_properties;
 }
 
 ::ecorecpp::mapping::EList< ::myDsl::Property_ptr >& Entity::getProperties()
 {
+    /*PROTECTED REGION ID(Entity__getProperties) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_properties)
+        m_properties.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::myDsl::Property_ptr, -1, true, false >(this,
+                        ::myDsl::MyDslPackage::_instance()->getEntity__properties()));
+    /*PROTECTED REGION END*/
     return *m_properties;
 }
 

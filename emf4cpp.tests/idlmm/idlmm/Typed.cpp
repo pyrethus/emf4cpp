@@ -40,7 +40,6 @@ using namespace ::idlmm;
 // Default constructor
 Typed::Typed()
 {
-
     /*PROTECTED REGION ID(TypedImpl__TypedImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

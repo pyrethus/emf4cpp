@@ -41,12 +41,6 @@ using namespace ::idlmm;
 // Default constructor
 ExceptionDef::ExceptionDef()
 {
-
-    m_members.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::idlmm::Field_ptr, -1,
-                    true, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getExceptionDef__members()));
-
     /*PROTECTED REGION ID(ExceptionDefImpl__ExceptionDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -93,11 +87,23 @@ void ExceptionDef::setTypeCode(::idlmm::ETypeCode _typeCode)
 
 const ::ecorecpp::mapping::EList< ::idlmm::Field_ptr >& ExceptionDef::getMembers() const
 {
+    if (!m_members)
+        return const_cast< ExceptionDef* >(this)->getMembers();
+
     return *m_members;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::Field_ptr >& ExceptionDef::getMembers()
 {
+    /*PROTECTED REGION ID(ExceptionDef__getMembers) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_members)
+        m_members.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::idlmm::Field_ptr,
+                        -1, true, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getExceptionDef__members()));
+    /*PROTECTED REGION END*/
     return *m_members;
 }
 

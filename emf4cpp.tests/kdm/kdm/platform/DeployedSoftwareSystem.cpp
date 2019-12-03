@@ -52,13 +52,6 @@ using namespace ::kdm::platform;
 // Default constructor
 DeployedSoftwareSystem::DeployedSoftwareSystem()
 {
-
-    m_groupedComponent.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::platform::DeployedComponent_ptr, -1, false, false >(
-                    this,
-                    ::kdm::platform::PlatformPackage::_instance()->getDeployedSoftwareSystem__groupedComponent()));
-
     /*PROTECTED REGION ID(DeployedSoftwareSystemImpl__DeployedSoftwareSystemImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -79,11 +72,24 @@ DeployedSoftwareSystem::~DeployedSoftwareSystem()
 
 const ::ecorecpp::mapping::EList< ::kdm::platform::DeployedComponent_ptr >& DeployedSoftwareSystem::getGroupedComponent() const
 {
+    if (!m_groupedComponent)
+        return const_cast< DeployedSoftwareSystem* >(this)->getGroupedComponent();
+
     return *m_groupedComponent;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::platform::DeployedComponent_ptr >& DeployedSoftwareSystem::getGroupedComponent()
 {
+    /*PROTECTED REGION ID(DeployedSoftwareSystem__getGroupedComponent) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_groupedComponent)
+        m_groupedComponent.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::platform::DeployedComponent_ptr, -1, false, false >(
+                        this,
+                        ::kdm::platform::PlatformPackage::_instance()->getDeployedSoftwareSystem__groupedComponent()));
+    /*PROTECTED REGION END*/
     return *m_groupedComponent;
 }
 

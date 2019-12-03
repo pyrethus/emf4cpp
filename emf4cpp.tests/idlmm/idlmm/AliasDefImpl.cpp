@@ -61,47 +61,47 @@ void AliasDef::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__CONTAINEDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getContainedType());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__SHAREDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getSharedType());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::toAny(_any, getTypeCode());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::ALIASDEF__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getIdentifier());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::ALIASDEF__REPOSITORYID:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getRepositoryId());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::ALIASDEF__VERSION:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getVersion());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::ALIASDEF__ABSOLUTENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getAbsoluteName());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ALIASDEF__DEFINEDIN:
     {
         _any = ::ecore::as < ::ecore::EObject > (getDefinedIn());
     }
@@ -116,7 +116,7 @@ void AliasDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__CONTAINEDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -124,7 +124,7 @@ void AliasDef::eSet(::ecore::EInt _featureID,
         setContainedType(_t1);
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__SHAREDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -132,7 +132,7 @@ void AliasDef::eSet(::ecore::EInt _featureID,
         setSharedType(_t1);
     }
         return;
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__TYPECODE:
     {
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
@@ -140,7 +140,7 @@ void AliasDef::eSet(::ecore::EInt _featureID,
         setTypeCode(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::ALIASDEF__IDENTIFIER:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -148,7 +148,7 @@ void AliasDef::eSet(::ecore::EInt _featureID,
         setIdentifier(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::ALIASDEF__REPOSITORYID:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -156,7 +156,7 @@ void AliasDef::eSet(::ecore::EInt _featureID,
         setRepositoryId(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::ALIASDEF__VERSION:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -164,7 +164,7 @@ void AliasDef::eSet(::ecore::EInt _featureID,
         setVersion(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::ALIASDEF__ABSOLUTENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -172,7 +172,7 @@ void AliasDef::eSet(::ecore::EInt _featureID,
         setAbsoluteName(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ALIASDEF__DEFINEDIN:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -189,26 +189,26 @@ void AliasDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__CONTAINEDTYPE:
         return getContainedType().get() != nullptr;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__SHAREDTYPE:
         return getSharedType().get() != nullptr;
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
                 > ::is_set(getTypeCode());
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::ALIASDEF__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getIdentifier());
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::ALIASDEF__REPOSITORYID:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getRepositoryId());
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::ALIASDEF__VERSION:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getVersion());
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::ALIASDEF__ABSOLUTENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getAbsoluteName());
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ALIASDEF__DEFINEDIN:
         return getDefinedIn().get() != nullptr;
 
     }
@@ -227,7 +227,7 @@ void AliasDef::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr AliasDef::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getAliasDef();
+            ::idlmm::IdlmmPackage::_instance()->getAliasDef();
     return _eclass;
 }
 
@@ -238,15 +238,15 @@ void AliasDef::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__SHAREDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ALIASDEF__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -257,8 +257,9 @@ void AliasDef::_inverseAdd(::ecore::EInt _featureID,
         if (_old_definedIn && _old_definedIn != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_definedIn->_inverseRemove(
-                    ::idlmm::IdlmmPackage::CONTAINER__CONTAINS, _this);
+            _old_definedIn->::ecore::EObject::_inverseRemove(
+                    ::idlmm::IdlmmPackage::_instance()->getContainer__contains(),
+                    _this);
         }
 
         // set reference
@@ -277,15 +278,15 @@ void AliasDef::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::ALIASDEF__SHAREDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::ALIASDEF__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

@@ -43,13 +43,13 @@ void File::_initialize()
     ::xpand3::SyntaxElement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_imports->size(); i++)
+    for (const auto &ref : getImports())
     {
-        (*m_imports)[i]->_initialize();
+        ref->_initialize();
     }
-    for (size_t i = 0; i < m_declarations->size(); i++)
+    for (const auto &ref : getDeclarations())
     {
-        (*m_declarations)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(FileImpl__initialize) START*/
@@ -67,25 +67,25 @@ void File::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::Xpand3Package::FILE__LINE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getLine());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::Xpand3Package::FILE__START:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getStart());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::Xpand3Package::FILE__END:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
                 > ::toAny(_any, getEnd());
     }
         return _any;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::Xpand3Package::FILE__FILENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getFileName());
@@ -110,7 +110,7 @@ void File::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::Xpand3Package::FILE__LINE:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -118,7 +118,7 @@ void File::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         setLine(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::Xpand3Package::FILE__START:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -126,7 +126,7 @@ void File::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         setStart(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::Xpand3Package::FILE__END:
     {
         ::ecore::EInt _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EInt
@@ -134,7 +134,7 @@ void File::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         setEnd(_t0);
     }
         return;
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::Xpand3Package::FILE__FILENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -167,16 +167,16 @@ void File::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE:
+    case ::xpand3::Xpand3Package::FILE__LINE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getLine());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__START:
+    case ::xpand3::Xpand3Package::FILE__START:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getStart());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__END:
+    case ::xpand3::Xpand3Package::FILE__END:
         return ::ecorecpp::mapping::set_traits < ::ecore::EInt
                 > ::is_set(getEnd());
-    case ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME:
+    case ::xpand3::Xpand3Package::FILE__FILENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getFileName());
     case ::xpand3::Xpand3Package::FILE__IMPORTS:
@@ -200,7 +200,7 @@ void File::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr File::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getFile();
+            ::xpand3::Xpand3Package::_instance()->getFile();
     return _eclass;
 }
 

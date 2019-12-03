@@ -107,7 +107,7 @@ void Referrer::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Referrer::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ResourceTests::ResourceTestsPackage* >(::ResourceTests::ResourceTestsPackage::_instance().get())->getReferrer();
+            ::ResourceTests::ResourceTestsPackage::_instance()->getReferrer();
     return _eclass;
 }
 

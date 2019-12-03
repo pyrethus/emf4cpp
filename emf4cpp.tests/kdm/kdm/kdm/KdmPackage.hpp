@@ -41,173 +41,183 @@ namespace kdm
         static KdmPackage_ptr _instance();
         static KdmPackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier Annotation
         static const int ANNOTATION = 0;
 
+        static const int ANNOTATION__ATTRIBUTE = 0;
+
+        static const int ANNOTATION__ANNOTATION = 1;
+
+        static const int ANNOTATION__TEXT = 2;
+
+        static const int ANNOTATION_FEATURE_COUNT = 3;
+
+        // IDs for classifier Attribute
         static const int ATTRIBUTE = 1;
 
+        static const int ATTRIBUTE__ATTRIBUTE = 0;
+
+        static const int ATTRIBUTE__ANNOTATION = 1;
+
+        static const int ATTRIBUTE__TAG = 2;
+
+        static const int ATTRIBUTE__VALUE = 3;
+
+        static const int ATTRIBUTE_FEATURE_COUNT = 4;
+
+        // IDs for classifier Audit
         static const int AUDIT = 2;
 
+        static const int AUDIT__ATTRIBUTE = 0;
+
+        static const int AUDIT__ANNOTATION = 1;
+
+        static const int AUDIT__DESCRIPTION = 2;
+
+        static const int AUDIT__AUTHOR = 3;
+
+        static const int AUDIT__DATE = 4;
+
+        static const int AUDIT_FEATURE_COUNT = 5;
+
+        // IDs for classifier ExtendedValue
         static const int EXTENDEDVALUE = 3;
 
+        static const int EXTENDEDVALUE__ATTRIBUTE = 0;
+
+        static const int EXTENDEDVALUE__ANNOTATION = 1;
+
+        static const int EXTENDEDVALUE__TAG = 2;
+
+        static const int EXTENDEDVALUE_FEATURE_COUNT = 3;
+
+        // IDs for classifier ExtensionFamily
         static const int EXTENSIONFAMILY = 4;
 
+        static const int EXTENSIONFAMILY__ATTRIBUTE = 0;
+
+        static const int EXTENSIONFAMILY__ANNOTATION = 1;
+
+        static const int EXTENSIONFAMILY__STEREOTYPE = 2;
+
+        static const int EXTENSIONFAMILY__NAME = 3;
+
+        static const int EXTENSIONFAMILY_FEATURE_COUNT = 4;
+
+        // IDs for classifier KDMFramework
         static const int KDMFRAMEWORK = 5;
 
+        static const int KDMFRAMEWORK__ATTRIBUTE = 0;
+
+        static const int KDMFRAMEWORK__ANNOTATION = 1;
+
+        static const int KDMFRAMEWORK__STEREOTYPE = 2;
+
+        static const int KDMFRAMEWORK__TAGGEDVALUE = 3;
+
+        static const int KDMFRAMEWORK__AUDIT = 4;
+
+        static const int KDMFRAMEWORK__EXTENSIONFAMILY = 5;
+
+        static const int KDMFRAMEWORK__NAME = 6;
+
+        static const int KDMFRAMEWORK_FEATURE_COUNT = 7;
+
+        // IDs for classifier KDMModel
         static const int KDMMODEL = 6;
 
+        static const int KDMMODEL__ATTRIBUTE = 0;
+
+        static const int KDMMODEL__ANNOTATION = 1;
+
+        static const int KDMMODEL__STEREOTYPE = 2;
+
+        static const int KDMMODEL__TAGGEDVALUE = 3;
+
+        static const int KDMMODEL__AUDIT = 4;
+
+        static const int KDMMODEL__EXTENSIONFAMILY = 5;
+
+        static const int KDMMODEL__NAME = 6;
+
+        static const int KDMMODEL_FEATURE_COUNT = 7;
+
+        // IDs for classifier Segment
         static const int SEGMENT = 7;
 
+        static const int SEGMENT__ATTRIBUTE = 0;
+
+        static const int SEGMENT__ANNOTATION = 1;
+
+        static const int SEGMENT__STEREOTYPE = 2;
+
+        static const int SEGMENT__TAGGEDVALUE = 3;
+
+        static const int SEGMENT__AUDIT = 4;
+
+        static const int SEGMENT__EXTENSIONFAMILY = 5;
+
+        static const int SEGMENT__NAME = 6;
+
+        static const int SEGMENT__SEGMENT = 7;
+
+        static const int SEGMENT__MODEL = 8;
+
+        static const int SEGMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier Stereotype
         static const int STEREOTYPE = 8;
 
+        static const int STEREOTYPE__ATTRIBUTE = 0;
+
+        static const int STEREOTYPE__ANNOTATION = 1;
+
+        static const int STEREOTYPE__TAG = 2;
+
+        static const int STEREOTYPE__NAME = 3;
+
+        static const int STEREOTYPE__TYPE = 4;
+
+        static const int STEREOTYPE_FEATURE_COUNT = 5;
+
+        // IDs for classifier TagDefinition
         static const int TAGDEFINITION = 9;
 
+        static const int TAGDEFINITION__ATTRIBUTE = 0;
+
+        static const int TAGDEFINITION__ANNOTATION = 1;
+
+        static const int TAGDEFINITION__TAG = 2;
+
+        static const int TAGDEFINITION__TYPE = 3;
+
+        static const int TAGDEFINITION_FEATURE_COUNT = 4;
+
+        // IDs for classifier TaggedRef
         static const int TAGGEDREF = 10;
 
+        static const int TAGGEDREF__ATTRIBUTE = 0;
+
+        static const int TAGGEDREF__ANNOTATION = 1;
+
+        static const int TAGGEDREF__TAG = 2;
+
+        static const int TAGGEDREF__REFERENCE = 3;
+
+        static const int TAGGEDREF_FEATURE_COUNT = 4;
+
+        // IDs for classifier TaggedValue
         static const int TAGGEDVALUE = 11;
 
-        static const int KDMFRAMEWORK__AUDIT = 269;
+        static const int TAGGEDVALUE__ATTRIBUTE = 0;
 
-        static const int KDMFRAMEWORK__EXTENSIONFAMILY = 270;
+        static const int TAGGEDVALUE__ANNOTATION = 1;
 
-        static const int KDMFRAMEWORK__NAME = 271;
+        static const int TAGGEDVALUE__TAG = 2;
 
-        static const int AUDIT__DESCRIPTION = 272;
+        static const int TAGGEDVALUE__VALUE = 3;
 
-        static const int AUDIT__AUTHOR = 273;
-
-        static const int AUDIT__DATE = 274;
-
-        static const int SEGMENT__SEGMENT = 275;
-
-        static const int SEGMENT__MODEL = 276;
-
-        static const int ATTRIBUTE__TAG = 277;
-
-        static const int ATTRIBUTE__VALUE = 278;
-
-        static const int ANNOTATION__TEXT = 279;
-
-        static const int TAGDEFINITION__TAG = 280;
-
-        static const int TAGDEFINITION__TYPE = 281;
-
-        static const int EXTENDEDVALUE__TAG = 282;
-
-        static const int STEREOTYPE__TAG = 283;
-
-        static const int STEREOTYPE__NAME = 284;
-
-        static const int STEREOTYPE__TYPE = 285;
-
-        static const int EXTENSIONFAMILY__STEREOTYPE = 286;
-
-        static const int EXTENSIONFAMILY__NAME = 287;
-
-        static const int TAGGEDREF__REFERENCE = 288;
-
-        static const int TAGGEDVALUE__VALUE = 289;
-
-        // IDs for classifiers for class Annotation 
-
-        static const int ANNOTATION__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ANNOTATION__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        // IDs for classifiers for class Attribute 
-
-        static const int ATTRIBUTE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ATTRIBUTE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        // IDs for classifiers for class Audit 
-
-        static const int AUDIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int AUDIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        // IDs for classifiers for class ExtendedValue 
-
-        static const int EXTENDEDVALUE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXTENDEDVALUE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        // IDs for classifiers for class ExtensionFamily 
-
-        static const int EXTENSIONFAMILY__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXTENSIONFAMILY__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        // IDs for classifiers for class KDMFramework 
-
-        static const int KDMFRAMEWORK__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int KDMFRAMEWORK__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int KDMFRAMEWORK__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int KDMFRAMEWORK__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class KDMModel 
-
-        static const int KDMMODEL__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int KDMMODEL__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int KDMMODEL__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int KDMMODEL__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int KDMMODEL__AUDIT = KDMFRAMEWORK__AUDIT;
-
-        static const int KDMMODEL__EXTENSIONFAMILY = KDMFRAMEWORK__EXTENSIONFAMILY;
-
-        static const int KDMMODEL__NAME = KDMFRAMEWORK__NAME;
-
-        // IDs for classifiers for class Segment 
-
-        static const int SEGMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SEGMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SEGMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SEGMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int SEGMENT__AUDIT = KDMFRAMEWORK__AUDIT;
-
-        static const int SEGMENT__EXTENSIONFAMILY = KDMFRAMEWORK__EXTENSIONFAMILY;
-
-        static const int SEGMENT__NAME = KDMFRAMEWORK__NAME;
-
-        // IDs for classifiers for class Stereotype 
-
-        static const int STEREOTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int STEREOTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        // IDs for classifiers for class TagDefinition 
-
-        static const int TAGDEFINITION__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TAGDEFINITION__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        // IDs for classifiers for class TaggedRef 
-
-        static const int TAGGEDREF__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TAGGEDREF__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TAGGEDREF__TAG = EXTENDEDVALUE__TAG;
-
-        // IDs for classifiers for class TaggedValue 
-
-        static const int TAGGEDVALUE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TAGGEDVALUE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TAGGEDVALUE__TAG = EXTENDEDVALUE__TAG;
+        static const int TAGGEDVALUE_FEATURE_COUNT = 4;
 
         // EClassifiers methods
 

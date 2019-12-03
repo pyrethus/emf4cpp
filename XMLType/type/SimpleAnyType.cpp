@@ -40,7 +40,6 @@ using namespace ::type;
 // Default constructor
 SimpleAnyType::SimpleAnyType()
 {
-
     /*PROTECTED REGION ID(SimpleAnyTypeImpl__SimpleAnyTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

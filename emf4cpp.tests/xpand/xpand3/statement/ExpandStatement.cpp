@@ -41,13 +41,6 @@ using namespace ::xpand3::statement;
 // Default constructor
 ExpandStatement::ExpandStatement()
 {
-
-    m_parameters.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::expression::AbstractExpression_ptr, -1, true,
-                    false >(this,
-                    ::xpand3::statement::StatementPackage::_instance()->getExpandStatement__parameters()));
-
     /*PROTECTED REGION ID(ExpandStatementImpl__ExpandStatementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -106,11 +99,24 @@ void ExpandStatement::setForeach(::ecore::EBoolean _foreach)
 
 const ::ecorecpp::mapping::EList< ::xpand3::expression::AbstractExpression_ptr >& ExpandStatement::getParameters() const
 {
+    if (!m_parameters)
+        return const_cast< ExpandStatement* >(this)->getParameters();
+
     return *m_parameters;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::expression::AbstractExpression_ptr >& ExpandStatement::getParameters()
 {
+    /*PROTECTED REGION ID(ExpandStatement__getParameters) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_parameters)
+        m_parameters.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::expression::AbstractExpression_ptr, -1, true,
+                        false >(this,
+                        ::xpand3::statement::StatementPackage::_instance()->getExpandStatement__parameters()));
+    /*PROTECTED REGION END*/
     return *m_parameters;
 }
 

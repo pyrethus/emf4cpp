@@ -51,7 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 SharedUnit::SharedUnit()
 {
-
     /*PROTECTED REGION ID(SharedUnitImpl__SharedUnitImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

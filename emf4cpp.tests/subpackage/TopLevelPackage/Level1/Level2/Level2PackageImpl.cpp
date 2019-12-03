@@ -48,17 +48,19 @@ void Level2Package::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = Level2Factory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Level2Class
     m_Level2ClassEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_Level2ClassEClass->setClassifierID(LEVEL2CLASS);
-    m_Level2ClassEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_Level2ClassEClass);
+    m_Level2ClassEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_Level2ClassEClass);
 
     // Create enums
 

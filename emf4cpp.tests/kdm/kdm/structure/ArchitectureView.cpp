@@ -48,7 +48,6 @@ using namespace ::kdm::structure;
 // Default constructor
 ArchitectureView::ArchitectureView()
 {
-
     /*PROTECTED REGION ID(ArchitectureViewImpl__ArchitectureViewImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

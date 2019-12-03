@@ -41,199 +41,208 @@ namespace xpand3
         static StatementPackage_ptr _instance();
         static StatementPackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier AbstractStatement
         static const int ABSTRACTSTATEMENT = 0;
 
+        static const int ABSTRACTSTATEMENT__LINE = 0;
+
+        static const int ABSTRACTSTATEMENT__START = 1;
+
+        static const int ABSTRACTSTATEMENT__END = 2;
+
+        static const int ABSTRACTSTATEMENT__FILENAME = 3;
+
+        static const int ABSTRACTSTATEMENT_FEATURE_COUNT = 4;
+
+        // IDs for classifier AbstractStatementWithBody
         static const int ABSTRACTSTATEMENTWITHBODY = 1;
 
+        static const int ABSTRACTSTATEMENTWITHBODY__LINE = 0;
+
+        static const int ABSTRACTSTATEMENTWITHBODY__START = 1;
+
+        static const int ABSTRACTSTATEMENTWITHBODY__END = 2;
+
+        static const int ABSTRACTSTATEMENTWITHBODY__FILENAME = 3;
+
+        static const int ABSTRACTSTATEMENTWITHBODY__BODY = 4;
+
+        static const int ABSTRACTSTATEMENTWITHBODY_FEATURE_COUNT = 5;
+
+        // IDs for classifier ErrorStatement
         static const int ERRORSTATEMENT = 2;
 
+        static const int ERRORSTATEMENT__LINE = 0;
+
+        static const int ERRORSTATEMENT__START = 1;
+
+        static const int ERRORSTATEMENT__END = 2;
+
+        static const int ERRORSTATEMENT__FILENAME = 3;
+
+        static const int ERRORSTATEMENT__MESSAGE = 4;
+
+        static const int ERRORSTATEMENT_FEATURE_COUNT = 5;
+
+        // IDs for classifier ExpandStatement
         static const int EXPANDSTATEMENT = 3;
 
+        static const int EXPANDSTATEMENT__LINE = 0;
+
+        static const int EXPANDSTATEMENT__START = 1;
+
+        static const int EXPANDSTATEMENT__END = 2;
+
+        static const int EXPANDSTATEMENT__FILENAME = 3;
+
+        static const int EXPANDSTATEMENT__FOREACH = 4;
+
+        static const int EXPANDSTATEMENT__PARAMETERS = 5;
+
+        static const int EXPANDSTATEMENT__SEPARATOR = 6;
+
+        static const int EXPANDSTATEMENT__TARGET = 7;
+
+        static const int EXPANDSTATEMENT__DEFINITION = 8;
+
+        static const int EXPANDSTATEMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier ExpressionStatement
         static const int EXPRESSIONSTATEMENT = 4;
 
+        static const int EXPRESSIONSTATEMENT__LINE = 0;
+
+        static const int EXPRESSIONSTATEMENT__START = 1;
+
+        static const int EXPRESSIONSTATEMENT__END = 2;
+
+        static const int EXPRESSIONSTATEMENT__FILENAME = 3;
+
+        static const int EXPRESSIONSTATEMENT__EXPRESSION = 4;
+
+        static const int EXPRESSIONSTATEMENT_FEATURE_COUNT = 5;
+
+        // IDs for classifier FileStatement
         static const int FILESTATEMENT = 5;
 
+        static const int FILESTATEMENT__LINE = 0;
+
+        static const int FILESTATEMENT__START = 1;
+
+        static const int FILESTATEMENT__END = 2;
+
+        static const int FILESTATEMENT__FILENAME = 3;
+
+        static const int FILESTATEMENT__BODY = 4;
+
+        static const int FILESTATEMENT__FILENAMEEXPRESSION = 5;
+
+        static const int FILESTATEMENT__OUTLETNAMEIDENTIFIER = 6;
+
+        static const int FILESTATEMENT__ONCE = 7;
+
+        static const int FILESTATEMENT_FEATURE_COUNT = 8;
+
+        // IDs for classifier ForEachStatement
         static const int FOREACHSTATEMENT = 6;
 
+        static const int FOREACHSTATEMENT__LINE = 0;
+
+        static const int FOREACHSTATEMENT__START = 1;
+
+        static const int FOREACHSTATEMENT__END = 2;
+
+        static const int FOREACHSTATEMENT__FILENAME = 3;
+
+        static const int FOREACHSTATEMENT__BODY = 4;
+
+        static const int FOREACHSTATEMENT__TARGET = 5;
+
+        static const int FOREACHSTATEMENT__SEPARATOR = 6;
+
+        static const int FOREACHSTATEMENT__VARIABLE = 7;
+
+        static const int FOREACHSTATEMENT__ITERATORNAME = 8;
+
+        static const int FOREACHSTATEMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier IfStatement
         static const int IFSTATEMENT = 7;
 
+        static const int IFSTATEMENT__LINE = 0;
+
+        static const int IFSTATEMENT__START = 1;
+
+        static const int IFSTATEMENT__END = 2;
+
+        static const int IFSTATEMENT__FILENAME = 3;
+
+        static const int IFSTATEMENT__BODY = 4;
+
+        static const int IFSTATEMENT__CONDITION = 5;
+
+        static const int IFSTATEMENT__ELSEIF = 6;
+
+        static const int IFSTATEMENT_FEATURE_COUNT = 7;
+
+        // IDs for classifier LetStatement
         static const int LETSTATEMENT = 8;
 
+        static const int LETSTATEMENT__LINE = 0;
+
+        static const int LETSTATEMENT__START = 1;
+
+        static const int LETSTATEMENT__END = 2;
+
+        static const int LETSTATEMENT__FILENAME = 3;
+
+        static const int LETSTATEMENT__BODY = 4;
+
+        static const int LETSTATEMENT__VARNAME = 5;
+
+        static const int LETSTATEMENT__VARVALUE = 6;
+
+        static const int LETSTATEMENT_FEATURE_COUNT = 7;
+
+        // IDs for classifier ProtectStatement
         static const int PROTECTSTATEMENT = 9;
 
+        static const int PROTECTSTATEMENT__LINE = 0;
+
+        static const int PROTECTSTATEMENT__START = 1;
+
+        static const int PROTECTSTATEMENT__END = 2;
+
+        static const int PROTECTSTATEMENT__FILENAME = 3;
+
+        static const int PROTECTSTATEMENT__BODY = 4;
+
+        static const int PROTECTSTATEMENT__COMMENTSTART = 5;
+
+        static const int PROTECTSTATEMENT__COMMENTEND = 6;
+
+        static const int PROTECTSTATEMENT__ID = 7;
+
+        static const int PROTECTSTATEMENT__DISABLE = 8;
+
+        static const int PROTECTSTATEMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier TextStatement
         static const int TEXTSTATEMENT = 10;
 
-        static const int EXPANDSTATEMENT__FOREACH = 41;
+        static const int TEXTSTATEMENT__LINE = 0;
 
-        static const int EXPANDSTATEMENT__PARAMETERS = 42;
+        static const int TEXTSTATEMENT__START = 1;
 
-        static const int EXPANDSTATEMENT__SEPARATOR = 43;
+        static const int TEXTSTATEMENT__END = 2;
 
-        static const int EXPANDSTATEMENT__TARGET = 44;
+        static const int TEXTSTATEMENT__FILENAME = 3;
 
-        static const int EXPANDSTATEMENT__DEFINITION = 45;
+        static const int TEXTSTATEMENT__VALUE = 4;
 
-        static const int EXPRESSIONSTATEMENT__EXPRESSION = 46;
+        static const int TEXTSTATEMENT__DELETELINE = 5;
 
-        static const int ERRORSTATEMENT__MESSAGE = 47;
-
-        static const int ABSTRACTSTATEMENTWITHBODY__BODY = 48;
-
-        static const int FILESTATEMENT__FILENAMEEXPRESSION = 49;
-
-        static const int FILESTATEMENT__OUTLETNAMEIDENTIFIER = 50;
-
-        static const int FILESTATEMENT__ONCE = 51;
-
-        static const int FOREACHSTATEMENT__TARGET = 52;
-
-        static const int FOREACHSTATEMENT__SEPARATOR = 53;
-
-        static const int FOREACHSTATEMENT__VARIABLE = 54;
-
-        static const int FOREACHSTATEMENT__ITERATORNAME = 55;
-
-        static const int IFSTATEMENT__CONDITION = 56;
-
-        static const int IFSTATEMENT__ELSEIF = 57;
-
-        static const int LETSTATEMENT__VARNAME = 58;
-
-        static const int LETSTATEMENT__VARVALUE = 59;
-
-        static const int PROTECTSTATEMENT__COMMENTSTART = 60;
-
-        static const int PROTECTSTATEMENT__COMMENTEND = 61;
-
-        static const int PROTECTSTATEMENT__ID = 62;
-
-        static const int PROTECTSTATEMENT__DISABLE = 63;
-
-        static const int TEXTSTATEMENT__VALUE = 64;
-
-        static const int TEXTSTATEMENT__DELETELINE = 65;
-
-        // IDs for classifiers for class AbstractStatement 
-
-        static const int ABSTRACTSTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int ABSTRACTSTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int ABSTRACTSTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int ABSTRACTSTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        // IDs for classifiers for class AbstractStatementWithBody 
-
-        static const int ABSTRACTSTATEMENTWITHBODY__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int ABSTRACTSTATEMENTWITHBODY__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int ABSTRACTSTATEMENTWITHBODY__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int ABSTRACTSTATEMENTWITHBODY__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        // IDs for classifiers for class ErrorStatement 
-
-        static const int ERRORSTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int ERRORSTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int ERRORSTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int ERRORSTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        // IDs for classifiers for class ExpandStatement 
-
-        static const int EXPANDSTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int EXPANDSTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int EXPANDSTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int EXPANDSTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        // IDs for classifiers for class ExpressionStatement 
-
-        static const int EXPRESSIONSTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int EXPRESSIONSTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int EXPRESSIONSTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int EXPRESSIONSTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        // IDs for classifiers for class FileStatement 
-
-        static const int FILESTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int FILESTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int FILESTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int FILESTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int FILESTATEMENT__BODY = ABSTRACTSTATEMENTWITHBODY__BODY;
-
-        // IDs for classifiers for class ForEachStatement 
-
-        static const int FOREACHSTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int FOREACHSTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int FOREACHSTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int FOREACHSTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int FOREACHSTATEMENT__BODY = ABSTRACTSTATEMENTWITHBODY__BODY;
-
-        // IDs for classifiers for class IfStatement 
-
-        static const int IFSTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int IFSTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int IFSTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int IFSTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int IFSTATEMENT__BODY = ABSTRACTSTATEMENTWITHBODY__BODY;
-
-        // IDs for classifiers for class LetStatement 
-
-        static const int LETSTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int LETSTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int LETSTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int LETSTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int LETSTATEMENT__BODY = ABSTRACTSTATEMENTWITHBODY__BODY;
-
-        // IDs for classifiers for class ProtectStatement 
-
-        static const int PROTECTSTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int PROTECTSTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int PROTECTSTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int PROTECTSTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
-
-        static const int PROTECTSTATEMENT__BODY = ABSTRACTSTATEMENTWITHBODY__BODY;
-
-        // IDs for classifiers for class TextStatement 
-
-        static const int TEXTSTATEMENT__LINE = ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE;
-
-        static const int TEXTSTATEMENT__START = ::xpand3::Xpand3Package::SYNTAXELEMENT__START;
-
-        static const int TEXTSTATEMENT__END = ::xpand3::Xpand3Package::SYNTAXELEMENT__END;
-
-        static const int TEXTSTATEMENT__FILENAME = ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME;
+        static const int TEXTSTATEMENT_FEATURE_COUNT = 6;
 
         // EClassifiers methods
 

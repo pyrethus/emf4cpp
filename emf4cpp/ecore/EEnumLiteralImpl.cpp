@@ -59,12 +59,12 @@ void EEnumLiteral::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUMLITERAL__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EENUMLITERAL__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -103,7 +103,7 @@ void EEnumLiteral::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUMLITERAL__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -111,7 +111,7 @@ void EEnumLiteral::eSet(::ecore::EInt _featureID,
         getEAnnotations().insert_all(*_t0);
     }
         return;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EENUMLITERAL__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -160,9 +160,9 @@ void EEnumLiteral::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUMLITERAL__EANNOTATIONS:
         return getEAnnotations().size() > 0;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EENUMLITERAL__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
     case ::ecore::EcorePackage::EENUMLITERAL__VALUE:
@@ -193,7 +193,7 @@ void EEnumLiteral::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EEnumLiteral::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEEnumLiteral();
+            ::ecore::EcorePackage::_instance()->getEEnumLiteral();
     return _eclass;
 }
 
@@ -204,7 +204,7 @@ void EEnumLiteral::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUMLITERAL__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -229,7 +229,8 @@ void EEnumLiteral::_inverseAdd(::ecore::EInt _featureID,
         if (_old_eEnum && _old_eEnum != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_eEnum->_inverseRemove(::ecore::EcorePackage::EENUM__ELITERALS,
+            _old_eEnum->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEEnum__eLiterals(),
                     _this);
         }
 
@@ -249,7 +250,7 @@ void EEnumLiteral::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUMLITERAL__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

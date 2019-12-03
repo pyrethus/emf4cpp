@@ -42,9 +42,9 @@ void ObjectValue::_initialize()
     ::json::Value::_initialize();
 
     // References
-    for (size_t i = 0; i < m_members->size(); i++)
+    for (const auto &ref : getMembers())
     {
-        (*m_members)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(ObjectValueImpl__initialize) START*/
@@ -113,7 +113,7 @@ void ObjectValue::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ObjectValue::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::json::JsonPackage* >(::json::JsonPackage::_instance().get())->getObjectValue();
+            ::json::JsonPackage::_instance()->getObjectValue();
     return _eclass;
 }
 

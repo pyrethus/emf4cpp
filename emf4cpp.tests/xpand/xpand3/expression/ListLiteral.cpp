@@ -39,13 +39,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 ListLiteral::ListLiteral()
 {
-
-    m_elements.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::expression::AbstractExpression_ptr, -1, true,
-                    false >(this,
-                    ::xpand3::expression::ExpressionPackage::_instance()->getListLiteral__elements()));
-
     /*PROTECTED REGION ID(ListLiteralImpl__ListLiteralImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -66,11 +59,24 @@ ListLiteral::~ListLiteral()
 
 const ::ecorecpp::mapping::EList< ::xpand3::expression::AbstractExpression_ptr >& ListLiteral::getElements() const
 {
+    if (!m_elements)
+        return const_cast< ListLiteral* >(this)->getElements();
+
     return *m_elements;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::expression::AbstractExpression_ptr >& ListLiteral::getElements()
 {
+    /*PROTECTED REGION ID(ListLiteral__getElements) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_elements)
+        m_elements.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::expression::AbstractExpression_ptr, -1, true,
+                        false >(this,
+                        ::xpand3::expression::ExpressionPackage::_instance()->getListLiteral__elements()));
+    /*PROTECTED REGION END*/
     return *m_elements;
 }
 

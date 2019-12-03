@@ -61,51 +61,65 @@ void ReferenceSerializationPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = ReferenceSerializationFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Container
     m_ContainerEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ContainerEClass->setClassifierID(CONTAINER);
-    m_ContainerEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ContainerEClass);
+    m_ContainerEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ContainerEClass);
     // m_Container__contents has already been allocated above
     m_Container__contents->setFeatureID(
             ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CONTENTS);
-    m_ContainerEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainerEClass->getEStructuralFeatures()).basicAdd(
             m_Container__contents);
+    m_Container__contents->basicsetEContainingClass(m_ContainerEClass);
     // m_Container__references has already been allocated above
     m_Container__references->setFeatureID(
             ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__REFERENCES);
-    m_ContainerEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainerEClass->getEStructuralFeatures()).basicAdd(
             m_Container__references);
+    m_Container__references->basicsetEContainingClass(m_ContainerEClass);
     // m_Container__child has already been allocated above
     m_Container__child->setFeatureID(
             ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILD);
-    m_ContainerEClass->getEStructuralFeatures().push_back(m_Container__child);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainerEClass->getEStructuralFeatures()).basicAdd(
+            m_Container__child);
+    m_Container__child->basicsetEContainingClass(m_ContainerEClass);
     // m_Container__childRef has already been allocated above
     m_Container__childRef->setFeatureID(
             ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILDREF);
-    m_ContainerEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainerEClass->getEStructuralFeatures()).basicAdd(
             m_Container__childRef);
+    m_Container__childRef->basicsetEContainingClass(m_ContainerEClass);
 
     // Content
     m_ContentEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ContentEClass->setClassifierID(CONTENT);
-    m_ContentEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ContentEClass);
+    m_ContentEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ContentEClass);
     // m_Content__name has already been allocated above
     m_Content__name->setFeatureID(
             ::ReferenceSerialization::ReferenceSerializationPackage::CONTENT__NAME);
-    m_ContentEClass->getEStructuralFeatures().push_back(m_Content__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContentEClass->getEStructuralFeatures()).basicAdd(
+            m_Content__name);
+    m_Content__name->basicsetEContainingClass(m_ContentEClass);
 
     // Child
     m_ChildEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ChildEClass->setClassifierID(CHILD);
-    m_ChildEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ChildEClass);
+    m_ChildEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ChildEClass);
 
     // Create enums
 

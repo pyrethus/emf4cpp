@@ -124,7 +124,7 @@ void ReferencedFile::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr ReferencedFile::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getReferencedFile();
+            ::SVG::SVGPackage::_instance()->getReferencedFile();
     return _eclass;
 }
 

@@ -37,13 +37,13 @@ public:
     static ReferenceSerializationPackage_ptr _instance();
     static ReferenceSerializationPackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier Child
     static const int CHILD = 0;
 
-    static const int CONTAINER = 1;
+    static const int CHILD_FEATURE_COUNT = 0;
 
-    static const int CONTENT = 2;
+    // IDs for classifier Container
+    static const int CONTAINER = 1;
 
     static const int CONTAINER__CONTENTS = 0;
 
@@ -53,13 +53,14 @@ public:
 
     static const int CONTAINER__CHILDREF = 3;
 
-    static const int CONTENT__NAME = 4;
+    static const int CONTAINER_FEATURE_COUNT = 4;
 
-    // IDs for classifiers for class Child 
+    // IDs for classifier Content
+    static const int CONTENT = 2;
 
-    // IDs for classifiers for class Container 
+    static const int CONTENT__NAME = 0;
 
-    // IDs for classifiers for class Content 
+    static const int CONTENT_FEATURE_COUNT = 1;
 
     // EClassifiers methods
 

@@ -59,7 +59,7 @@ void LeftHand::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::LEFTHAND__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
@@ -85,7 +85,7 @@ void LeftHand::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::LEFTHAND__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -118,7 +118,7 @@ void LeftHand::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::eopposite::EoppositePackage::NAMEDOBJECT__NAME:
+    case ::eopposite::EoppositePackage::LEFTHAND__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
     case ::eopposite::EoppositePackage::LEFTHAND__RIGHTEE:
@@ -142,7 +142,7 @@ void LeftHand::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr LeftHand::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::eopposite::EoppositePackage* >(::eopposite::EoppositePackage::_instance().get())->getLeftHand();
+            ::eopposite::EoppositePackage::_instance()->getLeftHand();
     return _eclass;
 }
 
@@ -164,8 +164,9 @@ void LeftHand::_inverseAdd(::ecore::EInt _featureID,
         if (_old_rightee && _old_rightee != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_rightee->_inverseRemove(
-                    ::eopposite::EoppositePackage::RIGHTHAND__LEFTEE, _this);
+            _old_rightee->::ecore::EObject::_inverseRemove(
+                    ::eopposite::EoppositePackage::_instance()->getRightHand__leftee(),
+                    _this);
         }
 
         // set reference
@@ -183,8 +184,8 @@ void LeftHand::_inverseAdd(::ecore::EInt _featureID,
         if (_old_rightMultiple && _old_rightMultiple != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_rightMultiple->_inverseRemove(
-                    ::eopposite::EoppositePackage::RIGHTMULTIPLE__LEFTEES,
+            _old_rightMultiple->::ecore::EObject::_inverseRemove(
+                    ::eopposite::EoppositePackage::_instance()->getRightMultiple__leftees(),
                     _this);
         }
 

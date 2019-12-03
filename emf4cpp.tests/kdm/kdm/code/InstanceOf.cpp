@@ -46,7 +46,6 @@ using namespace ::kdm::code;
 // Default constructor
 InstanceOf::InstanceOf()
 {
-
     /*PROTECTED REGION ID(InstanceOfImpl__InstanceOfImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -50,9 +50,9 @@ void Polyline::_initialize()
     ::SVG::Shape::_initialize();
 
     // References
-    for (size_t i = 0; i < m_waypoints->size(); i++)
+    for (const auto &ref : getWaypoints())
     {
-        (*m_waypoints)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(PolylineImpl__initialize) START*/
@@ -70,65 +70,65 @@ void Polyline::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::POLYLINE__OWNER:
     {
         _any = getOwner().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::POLYLINE__TARGET:
     {
         _any = getTarget().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::POLYLINE__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::POLYLINE__POSITION:
     {
         _any = ::ecore::as < ::ecore::EObject > (getPosition());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::POLYLINE__SIZE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getSize());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::POLYLINE__ROOT:
     {
         _any = ::ecore::as < ::ecore::EObject > (getRoot());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__FILL:
+    case ::SVG::SVGPackage::POLYLINE__FILL:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
                 > ::toAny(_any, getFill());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__VIEWBOX:
+    case ::SVG::SVGPackage::POLYLINE__VIEWBOX:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
                 > ::toAny(_any, getViewBox());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::POLYLINE__GROUP:
     {
         _any = ::ecore::as < ::ecore::EObject > (getGroup());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__IDENTIFIER:
+    case ::SVG::SVGPackage::POLYLINE__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
                 > ::toAny(_any, getIdentifier());
     }
         return _any;
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::POLYLINE__DRAWSMARKER:
     {
         _any = ::ecore::as < ::ecore::EObject > (getDrawsMarker());
     }
         return _any;
-    case ::SVG::SVGPackage::GRAPHICALELEMENT__STROKE:
+    case ::SVG::SVGPackage::POLYLINE__STROKE:
     {
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
                 > ::toAny(_any, getStroke());
@@ -167,7 +167,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::POLYLINE__OWNER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -175,7 +175,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         getOwner().insert_all(*_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::POLYLINE__TARGET:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -183,7 +183,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         getTarget().insert_all(*_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::POLYLINE__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -191,7 +191,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::POLYLINE__POSITION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -199,7 +199,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         setPosition(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::POLYLINE__SIZE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -207,7 +207,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         setSize(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::POLYLINE__ROOT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -215,7 +215,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         setRoot(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__FILL:
+    case ::SVG::SVGPackage::POLYLINE__FILL:
     {
         ::PrimitiveTypes::String _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
@@ -223,7 +223,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         setFill(_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__VIEWBOX:
+    case ::SVG::SVGPackage::POLYLINE__VIEWBOX:
     {
         ::PrimitiveTypes::String _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
@@ -231,7 +231,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         setViewBox(_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::POLYLINE__GROUP:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -239,7 +239,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         setGroup(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__IDENTIFIER:
+    case ::SVG::SVGPackage::POLYLINE__IDENTIFIER:
     {
         ::PrimitiveTypes::String _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
@@ -247,7 +247,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         setIdentifier(_t0);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::POLYLINE__DRAWSMARKER:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -255,7 +255,7 @@ void Polyline::eSet(::ecore::EInt _featureID,
         setDrawsMarker(_t1);
     }
         return;
-    case ::SVG::SVGPackage::GRAPHICALELEMENT__STROKE:
+    case ::SVG::SVGPackage::POLYLINE__STROKE:
     {
         ::PrimitiveTypes::String _t0;
         ::ecorecpp::mapping::any_traits < ::PrimitiveTypes::String
@@ -304,32 +304,32 @@ void Polyline::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::POLYLINE__OWNER:
         return getOwner().size() > 0;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::POLYLINE__TARGET:
         return getTarget().size() > 0;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::POLYLINE__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::POLYLINE__POSITION:
         return getPosition().get() != nullptr;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::POLYLINE__SIZE:
         return getSize().get() != nullptr;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::POLYLINE__ROOT:
         return getRoot().get() != nullptr;
-    case ::SVG::SVGPackage::ELEMENT__FILL:
+    case ::SVG::SVGPackage::POLYLINE__FILL:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(getFill());
-    case ::SVG::SVGPackage::ELEMENT__VIEWBOX:
+    case ::SVG::SVGPackage::POLYLINE__VIEWBOX:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(getViewBox());
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::POLYLINE__GROUP:
         return getGroup().get() != nullptr;
-    case ::SVG::SVGPackage::ELEMENT__IDENTIFIER:
+    case ::SVG::SVGPackage::POLYLINE__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(getIdentifier());
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::POLYLINE__DRAWSMARKER:
         return getDrawsMarker().get() != nullptr;
-    case ::SVG::SVGPackage::GRAPHICALELEMENT__STROKE:
+    case ::SVG::SVGPackage::POLYLINE__STROKE:
         return ::ecorecpp::mapping::set_traits < ::PrimitiveTypes::String
                 > ::is_set(getStroke());
     case ::SVG::SVGPackage::POLYLINE__WAYPOINTS:
@@ -360,7 +360,7 @@ void Polyline::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Polyline::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::SVG::SVGPackage* >(::SVG::SVGPackage::_instance().get())->getPolyline();
+            ::SVG::SVGPackage::_instance()->getPolyline();
     return _eclass;
 }
 
@@ -371,7 +371,7 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::POLYLINE__OWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -385,7 +385,7 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::POLYLINE__TARGET:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -397,7 +397,7 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::POLYLINE__ATTRIBUTE:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -411,15 +411,15 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::POLYLINE__POSITION:
     {
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::POLYLINE__SIZE:
     {
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::POLYLINE__ROOT:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -429,14 +429,15 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
         if (_old_root && _old_root != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_root->_inverseRemove(::SVG::SVGPackage::SVG__CHILDREN, _this);
+            _old_root->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getSvg__children(), _this);
         }
 
         // set reference
         basicsetRoot(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::POLYLINE__GROUP:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -447,15 +448,16 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
         if (_old_group && _old_group != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_group->_inverseRemove(
-                    ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT, _this);
+            _old_group->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getGroupingElement__groupContent(),
+                    _this);
         }
 
         // set reference
         basicsetGroup(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::POLYLINE__DRAWSMARKER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -466,7 +468,8 @@ void Polyline::_inverseAdd(::ecore::EInt _featureID,
         if (_old_drawsMarker && _old_drawsMarker != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_drawsMarker->_inverseRemove(::SVG::SVGPackage::MARKER__DRAWING,
+            _old_drawsMarker->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getMarker__drawing(),
                     _this);
         }
 
@@ -490,7 +493,7 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::SVG::SVGPackage::ELEMENT__OWNER:
+    case ::SVG::SVGPackage::POLYLINE__OWNER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -504,7 +507,7 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__TARGET:
+    case ::SVG::SVGPackage::POLYLINE__TARGET:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -516,7 +519,7 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ATTRIBUTE:
+    case ::SVG::SVGPackage::POLYLINE__ATTRIBUTE:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -530,15 +533,15 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__POSITION:
+    case ::SVG::SVGPackage::POLYLINE__POSITION:
     {
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__SIZE:
+    case ::SVG::SVGPackage::POLYLINE__SIZE:
     {
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__ROOT:
+    case ::SVG::SVGPackage::POLYLINE__ROOT:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -549,7 +552,7 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
             basicsetRoot(nullptr);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__GROUP:
+    case ::SVG::SVGPackage::POLYLINE__GROUP:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -561,7 +564,7 @@ void Polyline::_inverseRemove(::ecore::EInt _featureID,
             basicsetGroup(nullptr);
     }
         return;
-    case ::SVG::SVGPackage::ELEMENT__DRAWSMARKER:
+    case ::SVG::SVGPackage::POLYLINE__DRAWSMARKER:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

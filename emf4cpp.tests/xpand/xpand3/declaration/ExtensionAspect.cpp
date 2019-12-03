@@ -43,7 +43,6 @@ using namespace ::xpand3::declaration;
 // Default constructor
 ExtensionAspect::ExtensionAspect()
 {
-
     /*PROTECTED REGION ID(ExtensionAspectImpl__ExtensionAspectImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

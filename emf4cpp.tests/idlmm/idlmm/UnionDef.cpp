@@ -42,12 +42,6 @@ using namespace ::idlmm;
 // Default constructor
 UnionDef::UnionDef()
 {
-
-    m_unionMembers.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::idlmm::UnionField_ptr, -1, true, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getUnionDef__unionMembers()));
-
     /*PROTECTED REGION ID(UnionDefImpl__UnionDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -72,11 +66,23 @@ UnionDef::~UnionDef()
 
 const ::ecorecpp::mapping::EList< ::idlmm::UnionField_ptr >& UnionDef::getUnionMembers() const
 {
+    if (!m_unionMembers)
+        return const_cast< UnionDef* >(this)->getUnionMembers();
+
     return *m_unionMembers;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::UnionField_ptr >& UnionDef::getUnionMembers()
 {
+    /*PROTECTED REGION ID(UnionDef__getUnionMembers) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_unionMembers)
+        m_unionMembers.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::idlmm::UnionField_ptr, -1, true, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getUnionDef__unionMembers()));
+    /*PROTECTED REGION END*/
     return *m_unionMembers;
 }
 

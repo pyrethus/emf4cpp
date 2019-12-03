@@ -45,7 +45,6 @@ using namespace ::kdm::action;
 // Default constructor
 FalseFlow::FalseFlow()
 {
-
     /*PROTECTED REGION ID(FalseFlowImpl__FalseFlowImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

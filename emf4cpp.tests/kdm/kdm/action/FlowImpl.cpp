@@ -63,32 +63,32 @@ void Flow::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::FLOW__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::FLOW__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::FLOW__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::FLOW__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::FLOW__TO:
     {
         _any = ::ecore::as < ::ecore::EObject > (getTo());
     }
         return _any;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::FLOW__FROM:
     {
         _any = ::ecore::as < ::ecore::EObject > (getFrom());
     }
@@ -102,7 +102,7 @@ void Flow::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::FLOW__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -110,7 +110,7 @@ void Flow::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::FLOW__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -118,7 +118,7 @@ void Flow::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::FLOW__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -126,7 +126,7 @@ void Flow::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::FLOW__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -134,7 +134,7 @@ void Flow::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::FLOW__TO:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -142,7 +142,7 @@ void Flow::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         setTo(_t1);
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::FLOW__FROM:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -159,17 +159,17 @@ void Flow::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::FLOW__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::FLOW__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::FLOW__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::FLOW__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::FLOW__TO:
         return getTo().get() != nullptr;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::FLOW__FROM:
         return getFrom().get() != nullptr;
 
     }
@@ -188,7 +188,7 @@ void Flow::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Flow::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getFlow();
+            ::kdm::action::ActionPackage::_instance()->getFlow();
     return _eclass;
 }
 
@@ -199,27 +199,27 @@ void Flow::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::FLOW__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::FLOW__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::FLOW__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::FLOW__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::FLOW__TO:
     {
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::FLOW__FROM:
     {
     }
         return;
@@ -235,27 +235,27 @@ void Flow::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::action::ActionPackage::FLOW__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::action::ActionPackage::FLOW__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::action::ActionPackage::FLOW__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::action::ActionPackage::FLOW__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__TO:
+    case ::kdm::action::ActionPackage::FLOW__TO:
     {
     }
         return;
-    case ::kdm::action::ActionPackage::CONTROLFLOW__FROM:
+    case ::kdm::action::ActionPackage::FLOW__FROM:
     {
     }
         return;

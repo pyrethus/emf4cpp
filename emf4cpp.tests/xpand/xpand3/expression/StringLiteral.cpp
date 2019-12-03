@@ -40,7 +40,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 StringLiteral::StringLiteral()
 {
-
     /*PROTECTED REGION ID(StringLiteralImpl__StringLiteralImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

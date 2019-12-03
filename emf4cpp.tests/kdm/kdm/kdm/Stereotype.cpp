@@ -42,12 +42,6 @@ using namespace ::kdm::kdm;
 // Default constructor
 Stereotype::Stereotype()
 {
-
-    m_tag.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::kdm::TagDefinition_ptr, -1, true, false >(this,
-                    ::kdm::kdm::KdmPackage::_instance()->getStereotype__tag()));
-
     /*PROTECTED REGION ID(StereotypeImpl__StereotypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -120,11 +114,23 @@ void Stereotype::setType(::kdm::core::String _type)
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::TagDefinition_ptr >& Stereotype::getTag() const
 {
+    if (!m_tag)
+        return const_cast< Stereotype* >(this)->getTag();
+
     return *m_tag;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::TagDefinition_ptr >& Stereotype::getTag()
 {
+    /*PROTECTED REGION ID(Stereotype__getTag) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_tag)
+        m_tag.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::TagDefinition_ptr, -1, true, false >(this,
+                        ::kdm::kdm::KdmPackage::_instance()->getStereotype__tag()));
+    /*PROTECTED REGION END*/
     return *m_tag;
 }
 

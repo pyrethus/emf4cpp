@@ -50,7 +50,6 @@ using namespace ::kdm::data;
 // Default constructor
 ContentRestriction::ContentRestriction()
 {
-
     /*PROTECTED REGION ID(ContentRestrictionImpl__ContentRestrictionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

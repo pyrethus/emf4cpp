@@ -42,7 +42,6 @@ using namespace ::ecore;
 // Default constructor
 EDataType::EDataType()
 {
-
     /*PROTECTED REGION ID(EDataTypeImpl__EDataTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

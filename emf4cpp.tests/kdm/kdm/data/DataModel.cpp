@@ -46,13 +46,6 @@ using namespace ::kdm::data;
 // Default constructor
 DataModel::DataModel()
 {
-
-    m_dataElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::data::AbstractDataElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::data::DataPackage::_instance()->getDataModel__dataElement()));
-
     /*PROTECTED REGION ID(DataModelImpl__DataModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -73,11 +66,24 @@ DataModel::~DataModel()
 
 const ::ecorecpp::mapping::EList< ::kdm::data::AbstractDataElement_ptr >& DataModel::getDataElement() const
 {
+    if (!m_dataElement)
+        return const_cast< DataModel* >(this)->getDataElement();
+
     return *m_dataElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::data::AbstractDataElement_ptr >& DataModel::getDataElement()
 {
+    /*PROTECTED REGION ID(DataModel__getDataElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_dataElement)
+        m_dataElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::data::AbstractDataElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::data::DataPackage::_instance()->getDataModel__dataElement()));
+    /*PROTECTED REGION END*/
     return *m_dataElement;
 }
 

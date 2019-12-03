@@ -42,7 +42,6 @@ using namespace ::kdm::source;
 // Default constructor
 SourceRegion::SourceRegion()
 {
-
     /*PROTECTED REGION ID(SourceRegionImpl__SourceRegionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

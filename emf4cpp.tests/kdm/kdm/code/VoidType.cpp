@@ -50,7 +50,6 @@ using namespace ::kdm::code;
 // Default constructor
 VoidType::VoidType()
 {
-
     /*PROTECTED REGION ID(VoidTypeImpl__VoidTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

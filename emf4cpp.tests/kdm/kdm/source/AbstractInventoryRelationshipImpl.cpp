@@ -62,22 +62,22 @@ void AbstractInventoryRelationship::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -92,7 +92,7 @@ void AbstractInventoryRelationship::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -100,7 +100,7 @@ void AbstractInventoryRelationship::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -108,7 +108,7 @@ void AbstractInventoryRelationship::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -116,7 +116,7 @@ void AbstractInventoryRelationship::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -134,13 +134,13 @@ void AbstractInventoryRelationship::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
 
     }
@@ -159,7 +159,7 @@ void AbstractInventoryRelationship::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr AbstractInventoryRelationship::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getAbstractInventoryRelationship();
+            ::kdm::source::SourcePackage::_instance()->getAbstractInventoryRelationship();
     return _eclass;
 }
 
@@ -170,19 +170,19 @@ void AbstractInventoryRelationship::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__TAGGEDVALUE:
     {
     }
         return;
@@ -198,19 +198,19 @@ void AbstractInventoryRelationship::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::source::SourcePackage::ABSTRACTINVENTORYRELATIONSHIP__TAGGEDVALUE:
     {
     }
         return;

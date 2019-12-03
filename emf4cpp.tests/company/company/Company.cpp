@@ -39,12 +39,6 @@ using namespace ::company;
 // Default constructor
 Company::Company()
 {
-
-    m_departments.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::company::Department_ptr, -1, true, false >(this,
-                    ::company::CompanyPackage::_instance()->getCompany__departments()));
-
     /*PROTECTED REGION ID(CompanyImpl__CompanyImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -91,11 +85,23 @@ void Company::setName(::ecore::EString const &_name)
 
 const ::ecorecpp::mapping::EList< ::company::Department_ptr >& Company::getDepartments() const
 {
+    if (!m_departments)
+        return const_cast< Company* >(this)->getDepartments();
+
     return *m_departments;
 }
 
 ::ecorecpp::mapping::EList< ::company::Department_ptr >& Company::getDepartments()
 {
+    /*PROTECTED REGION ID(Company__getDepartments) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_departments)
+        m_departments.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::company::Department_ptr, -1, true, false >(this,
+                        ::company::CompanyPackage::_instance()->getCompany__departments()));
+    /*PROTECTED REGION END*/
     return *m_departments;
 }
 

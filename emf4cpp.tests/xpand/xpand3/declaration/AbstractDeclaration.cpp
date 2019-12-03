@@ -42,12 +42,6 @@ using namespace ::xpand3::declaration;
 // Default constructor
 AbstractDeclaration::AbstractDeclaration()
 {
-
-    m_params.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::xpand3::DeclaredParameter_ptr, -1, true, false >(this,
-                    ::xpand3::declaration::DeclarationPackage::_instance()->getAbstractDeclaration__params()));
-
     /*PROTECTED REGION ID(AbstractDeclarationImpl__AbstractDeclarationImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -136,11 +130,23 @@ void AbstractDeclaration::setOwner(::xpand3::File_ptr _owner)
 
 const ::ecorecpp::mapping::EList< ::xpand3::DeclaredParameter_ptr >& AbstractDeclaration::getParams() const
 {
+    if (!m_params)
+        return const_cast< AbstractDeclaration* >(this)->getParams();
+
     return *m_params;
 }
 
 ::ecorecpp::mapping::EList< ::xpand3::DeclaredParameter_ptr >& AbstractDeclaration::getParams()
 {
+    /*PROTECTED REGION ID(AbstractDeclaration__getParams) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_params)
+        m_params.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::xpand3::DeclaredParameter_ptr, -1, true, false >(this,
+                        ::xpand3::declaration::DeclarationPackage::_instance()->getAbstractDeclaration__params()));
+    /*PROTECTED REGION END*/
     return *m_params;
 }
 

@@ -77,87 +77,114 @@ void CorePackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = CoreFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
     ::ecore::EOperation_ptr _op;
     ::ecore::EParameter_ptr _pa;
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Element
     m_ElementEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ElementEClass->setClassifierID(ELEMENT);
-    m_ElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ElementEClass);
+    m_ElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ElementEClass);
     // m_Element__attribute has already been allocated above
     m_Element__attribute->setFeatureID(
             ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__attribute);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__attribute);
+    m_Element__attribute->basicsetEContainingClass(m_ElementEClass);
     // m_Element__annotation has already been allocated above
     m_Element__annotation->setFeatureID(
             ::kdm::core::CorePackage::ELEMENT__ANNOTATION);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__annotation);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__annotation);
+    m_Element__annotation->basicsetEContainingClass(m_ElementEClass);
 
     // ModelElement
     m_ModelElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ModelElementEClass->setClassifierID(MODELELEMENT);
-    m_ModelElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ModelElementEClass);
+    m_ModelElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ModelElementEClass);
     // m_ModelElement__stereotype has already been allocated above
     m_ModelElement__stereotype->setFeatureID(
             ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE);
-    m_ModelElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelElementEClass->getEStructuralFeatures()).basicAdd(
             m_ModelElement__stereotype);
+    m_ModelElement__stereotype->basicsetEContainingClass(m_ModelElementEClass);
     // m_ModelElement__taggedValue has already been allocated above
     m_ModelElement__taggedValue->setFeatureID(
             ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE);
-    m_ModelElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelElementEClass->getEStructuralFeatures()).basicAdd(
             m_ModelElement__taggedValue);
+    m_ModelElement__taggedValue->basicsetEContainingClass(m_ModelElementEClass);
 
     // KDMEntity
     m_KDMEntityEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_KDMEntityEClass->setClassifierID(KDMENTITY);
-    m_KDMEntityEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_KDMEntityEClass);
+    m_KDMEntityEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_KDMEntityEClass);
     // m_KDMEntity__name has already been allocated above
     m_KDMEntity__name->setFeatureID(::kdm::core::CorePackage::KDMENTITY__NAME);
-    m_KDMEntityEClass->getEStructuralFeatures().push_back(m_KDMEntity__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMEntityEClass->getEStructuralFeatures()).basicAdd(
+            m_KDMEntity__name);
+    m_KDMEntity__name->basicsetEContainingClass(m_KDMEntityEClass);
 
     // KDMRelationship
     m_KDMRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_KDMRelationshipEClass->setClassifierID(KDMRELATIONSHIP);
-    m_KDMRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_KDMRelationshipEClass);
+    m_KDMRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_KDMRelationshipEClass);
 
     // AggregatedRelationship
     m_AggregatedRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AggregatedRelationshipEClass->setClassifierID(AGGREGATEDRELATIONSHIP);
-    m_AggregatedRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AggregatedRelationshipEClass);
-    // m_AggregatedRelationship__density has already been allocated above
-    m_AggregatedRelationship__density->setFeatureID(
-            ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__DENSITY);
-    m_AggregatedRelationshipEClass->getEStructuralFeatures().push_back(
-            m_AggregatedRelationship__density);
+    m_AggregatedRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AggregatedRelationshipEClass);
     // m_AggregatedRelationship__from has already been allocated above
     m_AggregatedRelationship__from->setFeatureID(
             ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__FROM);
-    m_AggregatedRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_AggregatedRelationship__from);
+    m_AggregatedRelationship__from->basicsetEContainingClass(
+            m_AggregatedRelationshipEClass);
     // m_AggregatedRelationship__to has already been allocated above
     m_AggregatedRelationship__to->setFeatureID(
             ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TO);
-    m_AggregatedRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_AggregatedRelationship__to);
+    m_AggregatedRelationship__to->basicsetEContainingClass(
+            m_AggregatedRelationshipEClass);
     // m_AggregatedRelationship__relation has already been allocated above
     m_AggregatedRelationship__relation->setFeatureID(
             ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__RELATION);
-    m_AggregatedRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_AggregatedRelationship__relation);
+    m_AggregatedRelationship__relation->basicsetEContainingClass(
+            m_AggregatedRelationshipEClass);
+    // m_AggregatedRelationship__density has already been allocated above
+    m_AggregatedRelationship__density->setFeatureID(
+            ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__DENSITY);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
+            m_AggregatedRelationship__density);
+    m_AggregatedRelationship__density->basicsetEContainingClass(
+            m_AggregatedRelationshipEClass);
 
     // Create enums
 
@@ -166,20 +193,20 @@ void CorePackage::_initPackage()
     m_StringEDataType = ::ecore::Ptr < ::ecore::EDataType
             > (new ::ecore::EDataType);
     m_StringEDataType->setClassifierID(STRING);
-    m_StringEDataType->setEPackage(_this());
-    getEClassifiers().push_back(m_StringEDataType);
+    m_StringEDataType->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StringEDataType);
 
     m_IntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
             > (new ::ecore::EDataType);
     m_IntegerEDataType->setClassifierID(INTEGER);
-    m_IntegerEDataType->setEPackage(_this());
-    getEClassifiers().push_back(m_IntegerEDataType);
+    m_IntegerEDataType->basicsetEPackage(_this());
+    classifiers.basicAdd(m_IntegerEDataType);
 
     m_BooleanEDataType = ::ecore::Ptr < ::ecore::EDataType
             > (new ::ecore::EDataType);
     m_BooleanEDataType->setClassifierID(BOOLEAN);
-    m_BooleanEDataType->setEPackage(_this());
-    getEClassifiers().push_back(m_BooleanEDataType);
+    m_BooleanEDataType->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BooleanEDataType);
 
     // Initialize package
     setName("core");

@@ -71,9 +71,9 @@ public:
     virtual const ::ecorecpp::mapping::EList< ::ecore::ETypeParameter_ptr >& getETypeParameters () const;
     virtual ::ecorecpp::mapping::EList< ::ecore::ETypeParameter_ptr >& getETypeParameters ();
 
-    /*PROTECTED REGION ID(EClassifier) ENABLED START*/
-
-    // virtual void setClassifierID ( ::ecore::EInt _id) = 0;
+    /*PROTECTED REGION ID(EClassifier) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
     /*PROTECTED REGION END*/
 
     // EObjectImpl

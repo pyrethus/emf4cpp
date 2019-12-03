@@ -37,53 +37,57 @@ public:
     static MyDslPackage_ptr _instance();
     static MyDslPackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier Entity
     static const int ENTITY = 0;
 
+    static const int ENTITY__NAME = 0;
+
+    static const int ENTITY__EXTENDS = 1;
+
+    static const int ENTITY__PROPERTIES = 2;
+
+    static const int ENTITY_FEATURE_COUNT = 3;
+
+    // IDs for classifier Import
     static const int IMPORT = 1;
 
+    static const int IMPORT__IMPORTURI = 0;
+
+    static const int IMPORT_FEATURE_COUNT = 1;
+
+    // IDs for classifier Model
     static const int MODEL = 2;
-
-    static const int PROPERTY = 3;
-
-    static const int SIMPLETYPE = 4;
-
-    static const int TYPE = 5;
 
     static const int MODEL__IMPORTS = 0;
 
     static const int MODEL__ELEMENTS = 1;
 
-    static const int IMPORT__IMPORTURI = 2;
+    static const int MODEL_FEATURE_COUNT = 2;
 
-    static const int TYPE__NAME = 3;
+    // IDs for classifier Property
+    static const int PROPERTY = 3;
 
-    static const int ENTITY__EXTENDS = 4;
+    static const int PROPERTY__NAME = 0;
 
-    static const int ENTITY__PROPERTIES = 5;
+    static const int PROPERTY__TYPE = 1;
 
-    static const int PROPERTY__NAME = 6;
+    static const int PROPERTY__MANY = 2;
 
-    static const int PROPERTY__TYPE = 7;
+    static const int PROPERTY_FEATURE_COUNT = 3;
 
-    static const int PROPERTY__MANY = 8;
+    // IDs for classifier SimpleType
+    static const int SIMPLETYPE = 4;
 
-    // IDs for classifiers for class Entity 
+    static const int SIMPLETYPE__NAME = 0;
 
-    static const int ENTITY__NAME = TYPE__NAME;
+    static const int SIMPLETYPE_FEATURE_COUNT = 1;
 
-    // IDs for classifiers for class Import 
+    // IDs for classifier Type
+    static const int TYPE = 5;
 
-    // IDs for classifiers for class Model 
+    static const int TYPE__NAME = 0;
 
-    // IDs for classifiers for class Property 
-
-    // IDs for classifiers for class SimpleType 
-
-    static const int SIMPLETYPE__NAME = TYPE__NAME;
-
-    // IDs for classifiers for class Type 
+    static const int TYPE_FEATURE_COUNT = 1;
 
     // EClassifiers methods
 

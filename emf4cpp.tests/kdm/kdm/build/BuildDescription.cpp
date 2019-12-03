@@ -50,12 +50,6 @@ using namespace ::kdm::build;
 // Default constructor
 BuildDescription::BuildDescription()
 {
-
-    m_source.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::SourceRef_ptr, -1, true, false >(this,
-                    ::kdm::build::BuildPackage::_instance()->getBuildDescription__source()));
-
     /*PROTECTED REGION ID(BuildDescriptionImpl__BuildDescriptionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -102,11 +96,23 @@ void BuildDescription::setText(::kdm::core::String _text)
 
 const ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& BuildDescription::getSource() const
 {
+    if (!m_source)
+        return const_cast< BuildDescription* >(this)->getSource();
+
     return *m_source;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& BuildDescription::getSource()
 {
+    /*PROTECTED REGION ID(BuildDescription__getSource) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_source)
+        m_source.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::SourceRef_ptr, -1, true, false >(this,
+                        ::kdm::build::BuildPackage::_instance()->getBuildDescription__source()));
+    /*PROTECTED REGION END*/
     return *m_source;
 }
 

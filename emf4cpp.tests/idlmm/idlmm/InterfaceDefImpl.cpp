@@ -61,41 +61,41 @@ void InterfaceDef::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__IDENTIFIER:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getIdentifier());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__REPOSITORYID:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getRepositoryId());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__VERSION:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getVersion());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__ABSOLUTENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getAbsoluteName());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__DEFINEDIN:
     {
         _any = ::ecore::as < ::ecore::EObject > (getDefinedIn());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::CONTAINER__CONTAINS:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__CONTAINS:
     {
         _any = getContains().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__TYPECODE:
     {
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
                 > ::toAny(_any, getTypeCode());
@@ -134,7 +134,7 @@ void InterfaceDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__IDENTIFIER:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -142,7 +142,7 @@ void InterfaceDef::eSet(::ecore::EInt _featureID,
         setIdentifier(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__REPOSITORYID:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -150,7 +150,7 @@ void InterfaceDef::eSet(::ecore::EInt _featureID,
         setRepositoryId(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__VERSION:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -158,7 +158,7 @@ void InterfaceDef::eSet(::ecore::EInt _featureID,
         setVersion(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__ABSOLUTENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -166,7 +166,7 @@ void InterfaceDef::eSet(::ecore::EInt _featureID,
         setAbsoluteName(_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__DEFINEDIN:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -174,7 +174,7 @@ void InterfaceDef::eSet(::ecore::EInt _featureID,
         setDefinedIn(_t1);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINER__CONTAINS:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__CONTAINS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -182,7 +182,7 @@ void InterfaceDef::eSet(::ecore::EInt _featureID,
         getContains().insert_all(*_t0);
     }
         return;
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__TYPECODE:
     {
         ::idlmm::ETypeCode _t0;
         ::ecorecpp::mapping::any_traits < ::idlmm::ETypeCode
@@ -231,23 +231,23 @@ void InterfaceDef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getIdentifier());
-    case ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__REPOSITORYID:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getRepositoryId());
-    case ::idlmm::IdlmmPackage::CONTAINED__VERSION:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__VERSION:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getVersion());
-    case ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__ABSOLUTENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getAbsoluteName());
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__DEFINEDIN:
         return getDefinedIn().get() != nullptr;
-    case ::idlmm::IdlmmPackage::CONTAINER__CONTAINS:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__CONTAINS:
         return getContains().size() > 0;
-    case ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__TYPECODE:
         return ::ecorecpp::mapping::set_traits < ::idlmm::ETypeCode
                 > ::is_set(getTypeCode());
     case ::idlmm::IdlmmPackage::INTERFACEDEF__ISABSTRACT:
@@ -278,7 +278,7 @@ void InterfaceDef::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr InterfaceDef::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getInterfaceDef();
+            ::idlmm::IdlmmPackage::_instance()->getInterfaceDef();
     return _eclass;
 }
 
@@ -289,7 +289,7 @@ void InterfaceDef::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -300,15 +300,16 @@ void InterfaceDef::_inverseAdd(::ecore::EInt _featureID,
         if (_old_definedIn && _old_definedIn != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_definedIn->_inverseRemove(
-                    ::idlmm::IdlmmPackage::CONTAINER__CONTAINS, _this);
+            _old_definedIn->::ecore::EObject::_inverseRemove(
+                    ::idlmm::IdlmmPackage::_instance()->getContainer__contains(),
+                    _this);
         }
 
         // set reference
         basicsetDefinedIn(_t1);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINER__CONTAINS:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__CONTAINS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -338,7 +339,7 @@ void InterfaceDef::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__DEFINEDIN:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -350,7 +351,7 @@ void InterfaceDef::_inverseRemove(::ecore::EInt _featureID,
             basicsetDefinedIn(nullptr);
     }
         return;
-    case ::idlmm::IdlmmPackage::CONTAINER__CONTAINS:
+    case ::idlmm::IdlmmPackage::INTERFACEDEF__CONTAINS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);

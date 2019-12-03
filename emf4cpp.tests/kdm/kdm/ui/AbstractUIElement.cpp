@@ -50,26 +50,6 @@ using namespace ::kdm::ui;
 // Default constructor
 AbstractUIElement::AbstractUIElement()
 {
-
-    m_source.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::SourceRef_ptr, -1, true, false >(this,
-                    ::kdm::ui::UiPackage::_instance()->getAbstractUIElement__source()));
-    m_UIRelation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::ui::AbstractUIRelationship_ptr, -1, true, false >(
-                    this,
-                    ::kdm::ui::UiPackage::_instance()->getAbstractUIElement__UIRelation()));
-    m_implementation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::AbstractCodeElement_ptr, -1, false, false >(
-                    this,
-                    ::kdm::ui::UiPackage::_instance()->getAbstractUIElement__implementation()));
-    m_abstraction.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::action::ActionElement_ptr, -1, true, false >(this,
-                    ::kdm::ui::UiPackage::_instance()->getAbstractUIElement__abstraction()));
-
     /*PROTECTED REGION ID(AbstractUIElementImpl__AbstractUIElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -90,41 +70,92 @@ AbstractUIElement::~AbstractUIElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractUIElement::getSource() const
 {
+    if (!m_source)
+        return const_cast< AbstractUIElement* >(this)->getSource();
+
     return *m_source;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractUIElement::getSource()
 {
+    /*PROTECTED REGION ID(AbstractUIElement__getSource) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_source)
+        m_source.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::SourceRef_ptr, -1, true, false >(this,
+                        ::kdm::ui::UiPackage::_instance()->getAbstractUIElement__source()));
+    /*PROTECTED REGION END*/
     return *m_source;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::ui::AbstractUIRelationship_ptr >& AbstractUIElement::getUIRelation() const
 {
+    if (!m_UIRelation)
+        return const_cast< AbstractUIElement* >(this)->getUIRelation();
+
     return *m_UIRelation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::ui::AbstractUIRelationship_ptr >& AbstractUIElement::getUIRelation()
 {
+    /*PROTECTED REGION ID(AbstractUIElement__getUIRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_UIRelation)
+        m_UIRelation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::ui::AbstractUIRelationship_ptr, -1, true, false >(
+                        this,
+                        ::kdm::ui::UiPackage::_instance()->getAbstractUIElement__UIRelation()));
+    /*PROTECTED REGION END*/
     return *m_UIRelation;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& AbstractUIElement::getImplementation() const
 {
+    if (!m_implementation)
+        return const_cast< AbstractUIElement* >(this)->getImplementation();
+
     return *m_implementation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& AbstractUIElement::getImplementation()
 {
+    /*PROTECTED REGION ID(AbstractUIElement__getImplementation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_implementation)
+        m_implementation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::AbstractCodeElement_ptr, -1, false, false >(
+                        this,
+                        ::kdm::ui::UiPackage::_instance()->getAbstractUIElement__implementation()));
+    /*PROTECTED REGION END*/
     return *m_implementation;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractUIElement::getAbstraction() const
 {
+    if (!m_abstraction)
+        return const_cast< AbstractUIElement* >(this)->getAbstraction();
+
     return *m_abstraction;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractUIElement::getAbstraction()
 {
+    /*PROTECTED REGION ID(AbstractUIElement__getAbstraction) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_abstraction)
+        m_abstraction.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::action::ActionElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::ui::UiPackage::_instance()->getAbstractUIElement__abstraction()));
+    /*PROTECTED REGION END*/
     return *m_abstraction;
 }
 

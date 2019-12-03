@@ -46,23 +46,6 @@ using namespace ::SVG;
 // Default constructor
 Element::Element()
 {
-
-    m_owner.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::SvgFile_ptr, -1,
-                    false, true >(this,
-                    ::SVG::SVGPackage::_instance()->getElement__owner(),
-                    ::SVG::SVGPackage::SVGFILE__ELEMENTS));
-    m_target.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Use_ptr, -1,
-                    false, true >(this,
-                    ::SVG::SVGPackage::_instance()->getElement__target(),
-                    ::SVG::SVGPackage::USE__USE));
-    m_attribute.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Attribute_ptr,
-                    -1, false, true >(this,
-                    ::SVG::SVGPackage::_instance()->getElement__attribute(),
-                    ::SVG::SVGPackage::ATTRIBUTE__ATTOWNER));
-
     /*PROTECTED REGION ID(ElementImpl__ElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -169,31 +152,70 @@ void Element::setIdentifier(::PrimitiveTypes::String _identifier)
 
 const ::ecorecpp::mapping::EList< ::SVG::SvgFile_ptr >& Element::getOwner() const
 {
+    if (!m_owner)
+        return const_cast< Element* >(this)->getOwner();
+
     return *m_owner;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::SvgFile_ptr >& Element::getOwner()
 {
+    /*PROTECTED REGION ID(Element__getOwner) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_owner)
+        m_owner.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::SvgFile_ptr,
+                        -1, false, true >(this,
+                        ::SVG::SVGPackage::_instance()->getElement__owner(),
+                        ::SVG::SVGPackage::_instance()->getSvgFile__elements()));
+    /*PROTECTED REGION END*/
     return *m_owner;
 }
 
 const ::ecorecpp::mapping::EList< ::SVG::Use_ptr >& Element::getTarget() const
 {
+    if (!m_target)
+        return const_cast< Element* >(this)->getTarget();
+
     return *m_target;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Use_ptr >& Element::getTarget()
 {
+    /*PROTECTED REGION ID(Element__getTarget) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_target)
+        m_target.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Use_ptr, -1,
+                        false, true >(this,
+                        ::SVG::SVGPackage::_instance()->getElement__target(),
+                        ::SVG::SVGPackage::_instance()->getUse__use()));
+    /*PROTECTED REGION END*/
     return *m_target;
 }
 
 const ::ecorecpp::mapping::EList< ::SVG::Attribute_ptr >& Element::getAttribute() const
 {
+    if (!m_attribute)
+        return const_cast< Element* >(this)->getAttribute();
+
     return *m_attribute;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Attribute_ptr >& Element::getAttribute()
 {
+    /*PROTECTED REGION ID(Element__getAttribute) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_attribute)
+        m_attribute.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::SVG::Attribute_ptr, -1, false, true >(this,
+                        ::SVG::SVGPackage::_instance()->getElement__attribute(),
+                        ::SVG::SVGPackage::_instance()->getAttribute__attOwner()));
+    /*PROTECTED REGION END*/
     return *m_attribute;
 }
 
@@ -305,11 +327,13 @@ void Element::setRoot(::SVG::Svg_ptr _root)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_root)
         {
-            _old_root->_inverseRemove(::SVG::SVGPackage::SVG__CHILDREN, _this);
+            _old_root->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getSvg__children(), _this);
         }
-        if (_root)
+        if (_root && ::SVG::SVGPackage::_instance())
         {
-            _root->_inverseAdd(::SVG::SVGPackage::SVG__CHILDREN, _this);
+            _root->::ecore::EObject::_inverseAdd(
+                    ::SVG::SVGPackage::_instance()->getSvg__children(), _this);
         }
         basicsetRoot(_root);
     }
@@ -355,13 +379,15 @@ void Element::setGroup(::SVG::GroupingElement_ptr _group)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_group)
         {
-            _old_group->_inverseRemove(
-                    ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT, _this);
+            _old_group->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getGroupingElement__groupContent(),
+                    _this);
         }
-        if (_group)
+        if (_group && ::SVG::SVGPackage::_instance())
         {
-            _group->_inverseAdd(
-                    ::SVG::SVGPackage::GROUPINGELEMENT__GROUPCONTENT, _this);
+            _group->::ecore::EObject::_inverseAdd(
+                    ::SVG::SVGPackage::_instance()->getGroupingElement__groupContent(),
+                    _this);
         }
         basicsetGroup(_group);
     }
@@ -407,12 +433,14 @@ void Element::setDrawsMarker(::SVG::Marker_ptr _drawsMarker)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_drawsMarker)
         {
-            _old_drawsMarker->_inverseRemove(::SVG::SVGPackage::MARKER__DRAWING,
+            _old_drawsMarker->::ecore::EObject::_inverseRemove(
+                    ::SVG::SVGPackage::_instance()->getMarker__drawing(),
                     _this);
         }
-        if (_drawsMarker)
+        if (_drawsMarker && ::SVG::SVGPackage::_instance())
         {
-            _drawsMarker->_inverseAdd(::SVG::SVGPackage::MARKER__DRAWING,
+            _drawsMarker->::ecore::EObject::_inverseAdd(
+                    ::SVG::SVGPackage::_instance()->getMarker__drawing(),
                     _this);
         }
         basicsetDrawsMarker(_drawsMarker);

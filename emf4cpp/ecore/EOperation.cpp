@@ -46,29 +46,6 @@ using namespace ::ecore;
 // Default constructor
 EOperation::EOperation()
 {
-
-    m_eTypeParameters.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::ETypeParameter_ptr, -1, true, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEOperation__eTypeParameters() :
-                            ::ecore::EReference_ptr()));
-    m_eParameters.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EParameter_ptr, -1, true, true >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEOperation__eParameters() :
-                            ::ecore::EReference_ptr(),
-                    ::ecore::EcorePackage::EPARAMETER__EOPERATION));
-    m_eExceptions.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EClassifier_ptr, -1, false, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEOperation__eExceptions() :
-                            ::ecore::EReference_ptr()));
-    m_eGenericExceptions.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::ecore::EGenericType_ptr, -1, true, false >(this,
-                    ::ecore::EcorePackage::_instance() ? ::ecore::EcorePackage::_instance()->getEOperation__eGenericExceptions() :
-                            ::ecore::EReference_ptr()));
-
     /*PROTECTED REGION ID(EOperationImpl__EOperationImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -127,13 +104,15 @@ void EOperation::setEContainingClass(::ecore::EClass_ptr _eContainingClass)
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_eContainingClass)
         {
-            _old_eContainingClass->_inverseRemove(
-                    ::ecore::EcorePackage::ECLASS__EOPERATIONS, _this);
+            _old_eContainingClass->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEClass__eOperations(),
+                    _this);
         }
-        if (_eContainingClass)
+        if (_eContainingClass && ::ecore::EcorePackage::_instance())
         {
-            _eContainingClass->_inverseAdd(
-                    ::ecore::EcorePackage::ECLASS__EOPERATIONS, _this);
+            _eContainingClass->::ecore::EObject::_inverseAdd(
+                    ::ecore::EcorePackage::_instance()->getEClass__eOperations(),
+                    _this);
         }
         basicsetEContainingClass(_eContainingClass);
     }
@@ -141,41 +120,90 @@ void EOperation::setEContainingClass(::ecore::EClass_ptr _eContainingClass)
 
 const ::ecorecpp::mapping::EList< ::ecore::ETypeParameter_ptr >& EOperation::getETypeParameters() const
 {
+    if (!m_eTypeParameters)
+        return const_cast< EOperation* >(this)->getETypeParameters();
+
     return *m_eTypeParameters;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::ETypeParameter_ptr >& EOperation::getETypeParameters()
 {
+    /*PROTECTED REGION ID(EOperation__getETypeParameters) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eTypeParameters)
+        m_eTypeParameters.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::ETypeParameter_ptr, -1, true, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEOperation__eTypeParameters()));
+    /*PROTECTED REGION END*/
     return *m_eTypeParameters;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EParameter_ptr >& EOperation::getEParameters() const
 {
+    if (!m_eParameters)
+        return const_cast< EOperation* >(this)->getEParameters();
+
     return *m_eParameters;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EParameter_ptr >& EOperation::getEParameters()
 {
+    /*PROTECTED REGION ID(EOperation__getEParameters) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eParameters)
+        m_eParameters.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EParameter_ptr, -1, true, true >(this,
+                        ::ecore::EcorePackage::_instance()->getEOperation__eParameters(),
+                        ::ecore::EcorePackage::_instance()->getEParameter__eOperation()));
+    /*PROTECTED REGION END*/
     return *m_eParameters;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EClassifier_ptr >& EOperation::getEExceptions() const
 {
+    if (!m_eExceptions)
+        return const_cast< EOperation* >(this)->getEExceptions();
+
     return *m_eExceptions;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EClassifier_ptr >& EOperation::getEExceptions()
 {
+    /*PROTECTED REGION ID(EOperation__getEExceptions) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eExceptions)
+        m_eExceptions.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EClassifier_ptr, -1, false, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEOperation__eExceptions()));
+    /*PROTECTED REGION END*/
     return *m_eExceptions;
 }
 
 const ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& EOperation::getEGenericExceptions() const
 {
+    if (!m_eGenericExceptions)
+        return const_cast< EOperation* >(this)->getEGenericExceptions();
+
     return *m_eGenericExceptions;
 }
 
 ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr >& EOperation::getEGenericExceptions()
 {
+    /*PROTECTED REGION ID(EOperation__getEGenericExceptions) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eGenericExceptions)
+        m_eGenericExceptions.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::ecore::EGenericType_ptr, -1, true, false >(this,
+                        ::ecore::EcorePackage::_instance()->getEOperation__eGenericExceptions()));
+    /*PROTECTED REGION END*/
     return *m_eGenericExceptions;
 }
 

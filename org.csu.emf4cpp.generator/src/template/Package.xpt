@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 «EXTENSION template::FQN»
 «EXTENSION template::Mapping»
 «EXTENSION template::IDs»
+«EXTENSION template::Classes»
 «EXTENSION template::Packages»
 «EXTENSION template::Types»
 
@@ -54,28 +55,23 @@ public:
     static «name.toFirstUpper()»Package_ptr _instance();
     static «name.toFirstUpper()»Package_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
 «FOREACH EClassifiers.sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS class ITERATOR it»
+    // IDs for classifier «class.name»
     static const int «class.name.toUpperCase()» = «it.counter0»;
+	«IF EClass.isInstance(class)»
+		«FOREACH ((EClass)class).EAllStructuralFeatures AS esf»
+			static const int «esf.getFeatureIDFQN((EClass)class)» = «((EClass)class).getFeatureIDValue(esf)»;
+		«ENDFOREACH»
+		static const int «class.name.toUpperCase()»_FEATURE_COUNT = «((EClass)class).getFeatureCount()»;
+	«ENDIF»
 «ENDFOREACH»
 
-«FOREACH getFeatures() AS ef ITERATOR it»
-    static const int «ef.getFeatureIDFQN()» = «getFeatureIDValue(ef)»;
-«ENDFOREACH»
-
-«FOREACH EClassifiers.typeSelect(EClass).sortBy(e|e.name.toUpperCase()) AS class»
-    // IDs for classifiers for class «class.name» 
-   «FOREACH class.getParentsEstructuralFeatures() AS ef»
-    static const int «ef.getFeatureIDFQN(class)» = «ef.getFeatureIDFQN(this)»;
-   «ENDFOREACH»
-«ENDFOREACH»
-
-    // EClassifiers methods
+	// EClassifiers methods
 «FOREACH EClassifiers AS class»
     virtual ::ecore::«class.eClass().name»_ptr «getPackageGetAttribute(class)»();
 «ENDFOREACH»
 
-    // EStructuralFeatures methods
+	// EStructuralFeatures methods
 «FOREACH this.getStructuralFeatures() AS ef»
     virtual ::ecore::«ef.eClass().name»_ptr «getFeatureGetMember(ef)»();
 «ENDFOREACH»

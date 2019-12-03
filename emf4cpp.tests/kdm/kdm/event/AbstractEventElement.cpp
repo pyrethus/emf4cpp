@@ -50,26 +50,6 @@ using namespace ::kdm::event;
 // Default constructor
 AbstractEventElement::AbstractEventElement()
 {
-
-    m_source.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::SourceRef_ptr, -1, true, false >(this,
-                    ::kdm::event::EventPackage::_instance()->getAbstractEventElement__source()));
-    m_eventRelation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::event::AbstractEventRelationship_ptr, -1, true, false >(
-                    this,
-                    ::kdm::event::EventPackage::_instance()->getAbstractEventElement__eventRelation()));
-    m_abstraction.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::action::ActionElement_ptr, -1, true, false >(this,
-                    ::kdm::event::EventPackage::_instance()->getAbstractEventElement__abstraction()));
-    m_implementation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::AbstractCodeElement_ptr, -1, false, false >(
-                    this,
-                    ::kdm::event::EventPackage::_instance()->getAbstractEventElement__implementation()));
-
     /*PROTECTED REGION ID(AbstractEventElementImpl__AbstractEventElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -90,41 +70,92 @@ AbstractEventElement::~AbstractEventElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractEventElement::getSource() const
 {
+    if (!m_source)
+        return const_cast< AbstractEventElement* >(this)->getSource();
+
     return *m_source;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractEventElement::getSource()
 {
+    /*PROTECTED REGION ID(AbstractEventElement__getSource) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_source)
+        m_source.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::SourceRef_ptr, -1, true, false >(this,
+                        ::kdm::event::EventPackage::_instance()->getAbstractEventElement__source()));
+    /*PROTECTED REGION END*/
     return *m_source;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::event::AbstractEventRelationship_ptr >& AbstractEventElement::getEventRelation() const
 {
+    if (!m_eventRelation)
+        return const_cast< AbstractEventElement* >(this)->getEventRelation();
+
     return *m_eventRelation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::event::AbstractEventRelationship_ptr >& AbstractEventElement::getEventRelation()
 {
+    /*PROTECTED REGION ID(AbstractEventElement__getEventRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_eventRelation)
+        m_eventRelation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::event::AbstractEventRelationship_ptr, -1, true,
+                        false >(this,
+                        ::kdm::event::EventPackage::_instance()->getAbstractEventElement__eventRelation()));
+    /*PROTECTED REGION END*/
     return *m_eventRelation;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractEventElement::getAbstraction() const
 {
+    if (!m_abstraction)
+        return const_cast< AbstractEventElement* >(this)->getAbstraction();
+
     return *m_abstraction;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractEventElement::getAbstraction()
 {
+    /*PROTECTED REGION ID(AbstractEventElement__getAbstraction) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_abstraction)
+        m_abstraction.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::action::ActionElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::event::EventPackage::_instance()->getAbstractEventElement__abstraction()));
+    /*PROTECTED REGION END*/
     return *m_abstraction;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& AbstractEventElement::getImplementation() const
 {
+    if (!m_implementation)
+        return const_cast< AbstractEventElement* >(this)->getImplementation();
+
     return *m_implementation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::AbstractCodeElement_ptr >& AbstractEventElement::getImplementation()
 {
+    /*PROTECTED REGION ID(AbstractEventElement__getImplementation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_implementation)
+        m_implementation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::AbstractCodeElement_ptr, -1, false, false >(
+                        this,
+                        ::kdm::event::EventPackage::_instance()->getAbstractEventElement__implementation()));
+    /*PROTECTED REGION END*/
     return *m_implementation;
 }
 

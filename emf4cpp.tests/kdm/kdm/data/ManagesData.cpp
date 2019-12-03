@@ -46,7 +46,6 @@ using namespace ::kdm::data;
 // Default constructor
 ManagesData::ManagesData()
 {
-
     /*PROTECTED REGION ID(ManagesDataImpl__ManagesDataImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

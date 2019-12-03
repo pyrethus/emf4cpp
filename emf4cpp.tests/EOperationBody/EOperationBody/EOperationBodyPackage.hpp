@@ -37,13 +37,12 @@ public:
     static EOperationBodyPackage_ptr _instance();
     static EOperationBodyPackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier Integer
     static const int INTEGER = 0;
 
     static const int INTEGER__VALUE = 0;
 
-    // IDs for classifiers for class Integer 
+    static const int INTEGER_FEATURE_COUNT = 1;
 
     // EClassifiers methods
 

@@ -50,7 +50,6 @@ using namespace ::kdm::data;
 // Default constructor
 AbstractContentElement::AbstractContentElement()
 {
-
     /*PROTECTED REGION ID(AbstractContentElementImpl__AbstractContentElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

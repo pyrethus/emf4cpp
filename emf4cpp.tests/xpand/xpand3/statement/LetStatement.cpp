@@ -42,7 +42,6 @@ using namespace ::xpand3::statement;
 // Default constructor
 LetStatement::LetStatement()
 {
-
     /*PROTECTED REGION ID(LetStatementImpl__LetStatementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

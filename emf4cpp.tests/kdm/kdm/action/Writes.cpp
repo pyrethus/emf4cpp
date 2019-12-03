@@ -46,7 +46,6 @@ using namespace ::kdm::action;
 // Default constructor
 Writes::Writes()
 {
-
     /*PROTECTED REGION ID(WritesImpl__WritesImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

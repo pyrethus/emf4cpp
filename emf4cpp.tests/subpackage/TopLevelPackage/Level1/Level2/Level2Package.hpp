@@ -43,13 +43,12 @@ namespace TopLevelPackage
             static Level2Package_ptr _instance();
             static Level2Package_ptr _getInstanceAndRemoveOwnership();
 
-            // IDs for classifiers
-
+            // IDs for classifier Level2Class
             static const int LEVEL2CLASS = 0;
 
-            // IDs for classifiers for class Level2Class 
+            static const int LEVEL2CLASS__REFERENCE = 0;
 
-            static const int LEVEL2CLASS__REFERENCE = ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE;
+            static const int LEVEL2CLASS_FEATURE_COUNT = 1;
 
             // EClassifiers methods
 

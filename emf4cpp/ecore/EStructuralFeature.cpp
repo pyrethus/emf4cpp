@@ -43,7 +43,6 @@ using namespace ::ecore;
 // Default constructor
 EStructuralFeature::EStructuralFeature()
 {
-
     /*PROTECTED REGION ID(EStructuralFeatureImpl__EStructuralFeatureImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -288,13 +287,15 @@ void EStructuralFeature::setEContainingClass(
         ::ecore::EJavaObject _this = ::ecore::EObject::_this();
         if (_old_eContainingClass)
         {
-            _old_eContainingClass->_inverseRemove(
-                    ::ecore::EcorePackage::ECLASS__ESTRUCTURALFEATURES, _this);
+            _old_eContainingClass->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEClass__eStructuralFeatures(),
+                    _this);
         }
-        if (_eContainingClass)
+        if (_eContainingClass && ::ecore::EcorePackage::_instance())
         {
-            _eContainingClass->_inverseAdd(
-                    ::ecore::EcorePackage::ECLASS__ESTRUCTURALFEATURES, _this);
+            _eContainingClass->::ecore::EObject::_inverseAdd(
+                    ::ecore::EcorePackage::_instance()->getEClass__eStructuralFeatures(),
+                    _this);
         }
         basicsetEContainingClass(_eContainingClass);
     }

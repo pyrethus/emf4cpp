@@ -46,7 +46,6 @@ using namespace ::kdm::platform;
 // Default constructor
 Loads::Loads()
 {
-
     /*PROTECTED REGION ID(LoadsImpl__LoadsImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

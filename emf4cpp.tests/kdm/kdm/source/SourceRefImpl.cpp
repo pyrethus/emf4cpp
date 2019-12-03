@@ -44,9 +44,9 @@ void SourceRef::_initialize()
     ::kdm::core::Element::_initialize();
 
     // References
-    for (size_t i = 0; i < m_region->size(); i++)
+    for (const auto &ref : getRegion())
     {
-        (*m_region)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(SourceRefImpl__initialize) START*/
@@ -64,12 +64,12 @@ void SourceRef::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREF__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREF__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -101,7 +101,7 @@ void SourceRef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREF__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -109,7 +109,7 @@ void SourceRef::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREF__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -150,9 +150,9 @@ void SourceRef::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREF__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREF__ANNOTATION:
         return getAnnotation().size() > 0;
     case ::kdm::source::SourcePackage::SOURCEREF__REGION:
         return getRegion().size() > 0;
@@ -179,7 +179,7 @@ void SourceRef::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr SourceRef::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef();
+            ::kdm::source::SourcePackage::_instance()->getSourceRef();
     return _eclass;
 }
 
@@ -190,11 +190,11 @@ void SourceRef::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREF__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREF__ANNOTATION:
     {
     }
         return;
@@ -214,11 +214,11 @@ void SourceRef::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::source::SourcePackage::SOURCEREF__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::source::SourcePackage::SOURCEREF__ANNOTATION:
     {
     }
         return;

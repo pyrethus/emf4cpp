@@ -60,35 +60,35 @@ void EDataType::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EDATATYPE__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EDATATYPE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASSNAME:
+    case ::ecore::EcorePackage::EDATATYPE__INSTANCECLASSNAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getInstanceClassName());
     }
         return _any;
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCETYPENAME:
+    case ::ecore::EcorePackage::EDATATYPE__INSTANCETYPENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getInstanceTypeName());
     }
         return _any;
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EDATATYPE__EPACKAGE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEPackage());
     }
         return _any;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EDATATYPE__ETYPEPARAMETERS:
     {
         _any = getETypeParameters().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -109,7 +109,7 @@ void EDataType::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EDATATYPE__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -117,7 +117,7 @@ void EDataType::eSet(::ecore::EInt _featureID,
         getEAnnotations().insert_all(*_t0);
     }
         return;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EDATATYPE__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -125,7 +125,7 @@ void EDataType::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASSNAME:
+    case ::ecore::EcorePackage::EDATATYPE__INSTANCECLASSNAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -133,7 +133,7 @@ void EDataType::eSet(::ecore::EInt _featureID,
         setInstanceClassName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCETYPENAME:
+    case ::ecore::EcorePackage::EDATATYPE__INSTANCETYPENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -141,7 +141,7 @@ void EDataType::eSet(::ecore::EInt _featureID,
         setInstanceTypeName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EDATATYPE__EPACKAGE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -149,7 +149,7 @@ void EDataType::eSet(::ecore::EInt _featureID,
         setEPackage(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EDATATYPE__ETYPEPARAMETERS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -174,23 +174,23 @@ void EDataType::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EDATATYPE__EANNOTATIONS:
         return getEAnnotations().size() > 0;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EDATATYPE__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASSNAME:
+    case ::ecore::EcorePackage::EDATATYPE__INSTANCECLASSNAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getInstanceClassName());
-    case ::ecore::EcorePackage::ECLASSIFIER__DEFAULTVALUE:
+    case ::ecore::EcorePackage::EDATATYPE__DEFAULTVALUE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EJavaObject
                 > ::is_set(getDefaultValue());
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCETYPENAME:
+    case ::ecore::EcorePackage::EDATATYPE__INSTANCETYPENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getInstanceTypeName());
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EDATATYPE__EPACKAGE:
         return getEPackage().get() != nullptr;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EDATATYPE__ETYPEPARAMETERS:
         return getETypeParameters().size() > 0;
     case ::ecore::EcorePackage::EDATATYPE__SERIALIZABLE:
         return isSerializable() != true;
@@ -211,7 +211,7 @@ void EDataType::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EDataType::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDataType();
+            ::ecore::EcorePackage::_instance()->getEDataType();
     return _eclass;
 }
 
@@ -222,7 +222,7 @@ void EDataType::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EDATATYPE__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -236,7 +236,7 @@ void EDataType::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EDATATYPE__EPACKAGE:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -247,15 +247,16 @@ void EDataType::_inverseAdd(::ecore::EInt _featureID,
         if (_old_ePackage && _old_ePackage != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_ePackage->_inverseRemove(
-                    ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS, _this);
+            _old_ePackage->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEPackage__eClassifiers(),
+                    _this);
         }
 
         // set reference
         basicsetEPackage(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EDATATYPE__ETYPEPARAMETERS:
     {
     }
         return;
@@ -271,7 +272,7 @@ void EDataType::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EDATATYPE__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -285,7 +286,7 @@ void EDataType::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EDATATYPE__EPACKAGE:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -297,7 +298,7 @@ void EDataType::_inverseRemove(::ecore::EInt _featureID,
             basicsetEPackage(nullptr);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EDATATYPE__ETYPEPARAMETERS:
     {
     }
         return;

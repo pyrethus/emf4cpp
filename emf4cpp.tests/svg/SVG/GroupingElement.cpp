@@ -48,13 +48,6 @@ using namespace ::SVG;
 // Default constructor
 GroupingElement::GroupingElement()
 {
-
-    m_groupContent.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr, -1,
-                    true, true >(this,
-                    ::SVG::SVGPackage::_instance()->getGroupingElement__groupContent(),
-                    ::SVG::SVGPackage::ELEMENT__GROUP));
-
     /*PROTECTED REGION ID(GroupingElementImpl__GroupingElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -75,11 +68,24 @@ GroupingElement::~GroupingElement()
 
 const ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& GroupingElement::getGroupContent() const
 {
+    if (!m_groupContent)
+        return const_cast< GroupingElement* >(this)->getGroupContent();
+
     return *m_groupContent;
 }
 
 ::ecorecpp::mapping::EList< ::SVG::Element_ptr >& GroupingElement::getGroupContent()
 {
+    /*PROTECTED REGION ID(GroupingElement__getGroupContent) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_groupContent)
+        m_groupContent.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
+                        -1, true, true >(this,
+                        ::SVG::SVGPackage::_instance()->getGroupingElement__groupContent(),
+                        ::SVG::SVGPackage::_instance()->getElement__group()));
+    /*PROTECTED REGION END*/
     return *m_groupContent;
 }
 

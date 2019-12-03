@@ -124,7 +124,7 @@ void TreeNode::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr TreeNode::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::tree::TreePackage* >(::tree::TreePackage::_instance().get())->getTreeNode();
+            ::tree::TreePackage::_instance()->getTreeNode();
     return _eclass;
 }
 

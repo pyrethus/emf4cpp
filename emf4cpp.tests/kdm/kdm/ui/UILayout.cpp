@@ -45,7 +45,6 @@ using namespace ::kdm::ui;
 // Default constructor
 UILayout::UILayout()
 {
-
     /*PROTECTED REGION ID(UILayoutImpl__UILayoutImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

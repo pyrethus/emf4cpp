@@ -37,41 +37,43 @@ public:
     static CSTPackage_ptr _instance();
     static CSTPackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
+    // IDs for classifier Element
     static const int ELEMENT = 0;
-
-    static const int LEAF = 1;
-
-    static const int NODE = 2;
-
-    static const int TREE = 3;
 
     static const int ELEMENT__KIND = 0;
 
+    static const int ELEMENT_FEATURE_COUNT = 1;
+
+    // IDs for classifier Leaf
+    static const int LEAF = 1;
+
+    static const int LEAF__KIND = 0;
+
+    static const int LEAF__VALUE = 1;
+
+    static const int LEAF__POS = 2;
+
+    static const int LEAF__LINE = 3;
+
+    static const int LEAF_FEATURE_COUNT = 4;
+
+    // IDs for classifier Node
+    static const int NODE = 2;
+
+    static const int NODE__KIND = 0;
+
     static const int NODE__CHILDREN = 1;
 
-    static const int LEAF__VALUE = 2;
+    static const int NODE_FEATURE_COUNT = 2;
 
-    static const int LEAF__POS = 3;
+    // IDs for classifier Tree
+    static const int TREE = 3;
 
-    static const int LEAF__LINE = 4;
+    static const int TREE__KIND = 0;
 
-    // IDs for classifiers for class Element 
+    static const int TREE__CHILDREN = 1;
 
-    // IDs for classifiers for class Leaf 
-
-    static const int LEAF__KIND = ELEMENT__KIND;
-
-    // IDs for classifiers for class Node 
-
-    static const int NODE__KIND = ELEMENT__KIND;
-
-    // IDs for classifiers for class Tree 
-
-    static const int TREE__KIND = ELEMENT__KIND;
-
-    static const int TREE__CHILDREN = NODE__CHILDREN;
+    static const int TREE_FEATURE_COUNT = 2;
 
     // EClassifiers methods
 

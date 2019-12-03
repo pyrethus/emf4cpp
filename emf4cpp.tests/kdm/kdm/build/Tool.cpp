@@ -48,7 +48,6 @@ using namespace ::kdm::build;
 // Default constructor
 Tool::Tool()
 {
-
     /*PROTECTED REGION ID(ToolImpl__ToolImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

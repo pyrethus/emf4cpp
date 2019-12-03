@@ -45,7 +45,6 @@ using namespace ::kdm::kdm;
 // Default constructor
 KDMModel::KDMModel()
 {
-
     /*PROTECTED REGION ID(KDMModelImpl__KDMModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

@@ -46,13 +46,6 @@ using namespace ::kdm::build;
 // Default constructor
 BuildModel::BuildModel()
 {
-
-    m_buildElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::build::AbstractBuildElement_ptr, -1, true, false >(
-                    this,
-                    ::kdm::build::BuildPackage::_instance()->getBuildModel__buildElement()));
-
     /*PROTECTED REGION ID(BuildModelImpl__BuildModelImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -73,11 +66,24 @@ BuildModel::~BuildModel()
 
 const ::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildElement_ptr >& BuildModel::getBuildElement() const
 {
+    if (!m_buildElement)
+        return const_cast< BuildModel* >(this)->getBuildElement();
+
     return *m_buildElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildElement_ptr >& BuildModel::getBuildElement()
 {
+    /*PROTECTED REGION ID(BuildModel__getBuildElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_buildElement)
+        m_buildElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::build::AbstractBuildElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::build::BuildPackage::_instance()->getBuildModel__buildElement()));
+    /*PROTECTED REGION END*/
     return *m_buildElement;
 }
 

@@ -39,7 +39,6 @@ using namespace ::xpand3::expression;
 // Default constructor
 IfExpression::IfExpression()
 {
-
     /*PROTECTED REGION ID(IfExpressionImpl__IfExpressionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

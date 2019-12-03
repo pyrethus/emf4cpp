@@ -41,7 +41,6 @@ using namespace ::idlmm;
 // Default constructor
 ParameterDef::ParameterDef()
 {
-
     /*PROTECTED REGION ID(ParameterDefImpl__ParameterDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

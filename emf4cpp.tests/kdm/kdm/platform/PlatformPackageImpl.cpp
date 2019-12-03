@@ -189,373 +189,461 @@ void PlatformPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = PlatformFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // AbstractPlatformElement
     m_AbstractPlatformElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractPlatformElementEClass->setClassifierID(ABSTRACTPLATFORMELEMENT);
-    m_AbstractPlatformElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractPlatformElementEClass);
+    m_AbstractPlatformElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractPlatformElementEClass);
     // m_AbstractPlatformElement__source has already been allocated above
     m_AbstractPlatformElement__source->setFeatureID(
             ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE);
-    m_AbstractPlatformElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractPlatformElement__source);
+    m_AbstractPlatformElement__source->basicsetEContainingClass(
+            m_AbstractPlatformElementEClass);
     // m_AbstractPlatformElement__relation has already been allocated above
     m_AbstractPlatformElement__relation->setFeatureID(
             ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION);
-    m_AbstractPlatformElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractPlatformElement__relation);
+    m_AbstractPlatformElement__relation->basicsetEContainingClass(
+            m_AbstractPlatformElementEClass);
     // m_AbstractPlatformElement__abstraction has already been allocated above
     m_AbstractPlatformElement__abstraction->setFeatureID(
             ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION);
-    m_AbstractPlatformElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractPlatformElement__abstraction);
+    m_AbstractPlatformElement__abstraction->basicsetEContainingClass(
+            m_AbstractPlatformElementEClass);
     // m_AbstractPlatformElement__implementation has already been allocated above
     m_AbstractPlatformElement__implementation->setFeatureID(
             ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION);
-    m_AbstractPlatformElementEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
             m_AbstractPlatformElement__implementation);
+    m_AbstractPlatformElement__implementation->basicsetEContainingClass(
+            m_AbstractPlatformElementEClass);
 
     // PlatformModel
     m_PlatformModelEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_PlatformModelEClass->setClassifierID(PLATFORMMODEL);
-    m_PlatformModelEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PlatformModelEClass);
+    m_PlatformModelEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PlatformModelEClass);
     // m_PlatformModel__platformElement has already been allocated above
     m_PlatformModel__platformElement->setFeatureID(
             ::kdm::platform::PlatformPackage::PLATFORMMODEL__PLATFORMELEMENT);
-    m_PlatformModelEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformModelEClass->getEStructuralFeatures()).basicAdd(
             m_PlatformModel__platformElement);
+    m_PlatformModel__platformElement->basicsetEContainingClass(
+            m_PlatformModelEClass);
 
     // AbstractPlatformRelationship
     m_AbstractPlatformRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_AbstractPlatformRelationshipEClass->setClassifierID(
             ABSTRACTPLATFORMRELATIONSHIP);
-    m_AbstractPlatformRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_AbstractPlatformRelationshipEClass);
+    m_AbstractPlatformRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_AbstractPlatformRelationshipEClass);
 
     // Requires
     m_RequiresEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_RequiresEClass->setClassifierID(REQUIRES);
-    m_RequiresEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RequiresEClass);
+    m_RequiresEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RequiresEClass);
     // m_Requires__to has already been allocated above
     m_Requires__to->setFeatureID(
             ::kdm::platform::PlatformPackage::REQUIRES__TO);
-    m_RequiresEClass->getEStructuralFeatures().push_back(m_Requires__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RequiresEClass->getEStructuralFeatures()).basicAdd(
+            m_Requires__to);
+    m_Requires__to->basicsetEContainingClass(m_RequiresEClass);
     // m_Requires__from has already been allocated above
     m_Requires__from->setFeatureID(
             ::kdm::platform::PlatformPackage::REQUIRES__FROM);
-    m_RequiresEClass->getEStructuralFeatures().push_back(m_Requires__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RequiresEClass->getEStructuralFeatures()).basicAdd(
+            m_Requires__from);
+    m_Requires__from->basicsetEContainingClass(m_RequiresEClass);
 
     // ResourceType
     m_ResourceTypeEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ResourceTypeEClass->setClassifierID(RESOURCETYPE);
-    m_ResourceTypeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ResourceTypeEClass);
+    m_ResourceTypeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ResourceTypeEClass);
     // m_ResourceType__platformElement has already been allocated above
     m_ResourceType__platformElement->setFeatureID(
             ::kdm::platform::PlatformPackage::RESOURCETYPE__PLATFORMELEMENT);
-    m_ResourceTypeEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ResourceTypeEClass->getEStructuralFeatures()).basicAdd(
             m_ResourceType__platformElement);
+    m_ResourceType__platformElement->basicsetEContainingClass(
+            m_ResourceTypeEClass);
 
     // NamingResource
     m_NamingResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_NamingResourceEClass->setClassifierID(NAMINGRESOURCE);
-    m_NamingResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NamingResourceEClass);
+    m_NamingResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NamingResourceEClass);
 
     // MarshalledResource
     m_MarshalledResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_MarshalledResourceEClass->setClassifierID(MARSHALLEDRESOURCE);
-    m_MarshalledResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_MarshalledResourceEClass);
+    m_MarshalledResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MarshalledResourceEClass);
 
     // MessagingResource
     m_MessagingResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_MessagingResourceEClass->setClassifierID(MESSAGINGRESOURCE);
-    m_MessagingResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_MessagingResourceEClass);
+    m_MessagingResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MessagingResourceEClass);
 
     // FileResource
     m_FileResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_FileResourceEClass->setClassifierID(FILERESOURCE);
-    m_FileResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_FileResourceEClass);
+    m_FileResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_FileResourceEClass);
 
     // ExecutionResource
     m_ExecutionResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExecutionResourceEClass->setClassifierID(EXECUTIONRESOURCE);
-    m_ExecutionResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExecutionResourceEClass);
+    m_ExecutionResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExecutionResourceEClass);
 
     // PlatformAction
     m_PlatformActionEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_PlatformActionEClass->setClassifierID(PLATFORMACTION);
-    m_PlatformActionEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PlatformActionEClass);
+    m_PlatformActionEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PlatformActionEClass);
     // m_PlatformAction__kind has already been allocated above
     m_PlatformAction__kind->setFeatureID(
             ::kdm::platform::PlatformPackage::PLATFORMACTION__KIND);
-    m_PlatformActionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformActionEClass->getEStructuralFeatures()).basicAdd(
             m_PlatformAction__kind);
+    m_PlatformAction__kind->basicsetEContainingClass(m_PlatformActionEClass);
     // m_PlatformAction__platformElement has already been allocated above
     m_PlatformAction__platformElement->setFeatureID(
             ::kdm::platform::PlatformPackage::PLATFORMACTION__PLATFORMELEMENT);
-    m_PlatformActionEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformActionEClass->getEStructuralFeatures()).basicAdd(
             m_PlatformAction__platformElement);
+    m_PlatformAction__platformElement->basicsetEContainingClass(
+            m_PlatformActionEClass);
 
     // ExternalActor
     m_ExternalActorEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ExternalActorEClass->setClassifierID(EXTERNALACTOR);
-    m_ExternalActorEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ExternalActorEClass);
+    m_ExternalActorEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ExternalActorEClass);
 
     // DataManager
     m_DataManagerEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DataManagerEClass->setClassifierID(DATAMANAGER);
-    m_DataManagerEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DataManagerEClass);
+    m_DataManagerEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DataManagerEClass);
 
     // BindsTo
     m_BindsToEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_BindsToEClass->setClassifierID(BINDSTO);
-    m_BindsToEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BindsToEClass);
+    m_BindsToEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BindsToEClass);
     // m_BindsTo__to has already been allocated above
     m_BindsTo__to->setFeatureID(::kdm::platform::PlatformPackage::BINDSTO__TO);
-    m_BindsToEClass->getEStructuralFeatures().push_back(m_BindsTo__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BindsToEClass->getEStructuralFeatures()).basicAdd(
+            m_BindsTo__to);
+    m_BindsTo__to->basicsetEContainingClass(m_BindsToEClass);
     // m_BindsTo__from has already been allocated above
     m_BindsTo__from->setFeatureID(
             ::kdm::platform::PlatformPackage::BINDSTO__FROM);
-    m_BindsToEClass->getEStructuralFeatures().push_back(m_BindsTo__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BindsToEClass->getEStructuralFeatures()).basicAdd(
+            m_BindsTo__from);
+    m_BindsTo__from->basicsetEContainingClass(m_BindsToEClass);
 
     // PlatformElement
     m_PlatformElementEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_PlatformElementEClass->setClassifierID(PLATFORMELEMENT);
-    m_PlatformElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PlatformElementEClass);
+    m_PlatformElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PlatformElementEClass);
 
     // PlatformRelationship
     m_PlatformRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_PlatformRelationshipEClass->setClassifierID(PLATFORMRELATIONSHIP);
-    m_PlatformRelationshipEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PlatformRelationshipEClass);
+    m_PlatformRelationshipEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PlatformRelationshipEClass);
     // m_PlatformRelationship__to has already been allocated above
     m_PlatformRelationship__to->setFeatureID(
             ::kdm::platform::PlatformPackage::PLATFORMRELATIONSHIP__TO);
-    m_PlatformRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_PlatformRelationship__to);
+    m_PlatformRelationship__to->basicsetEContainingClass(
+            m_PlatformRelationshipEClass);
     // m_PlatformRelationship__from has already been allocated above
     m_PlatformRelationship__from->setFeatureID(
             ::kdm::platform::PlatformPackage::PLATFORMRELATIONSHIP__FROM);
-    m_PlatformRelationshipEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformRelationshipEClass->getEStructuralFeatures()).basicAdd(
             m_PlatformRelationship__from);
+    m_PlatformRelationship__from->basicsetEContainingClass(
+            m_PlatformRelationshipEClass);
 
     // PlatformEvent
     m_PlatformEventEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_PlatformEventEClass->setClassifierID(PLATFORMEVENT);
-    m_PlatformEventEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_PlatformEventEClass);
+    m_PlatformEventEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_PlatformEventEClass);
     // m_PlatformEvent__kind has already been allocated above
     m_PlatformEvent__kind->setFeatureID(
             ::kdm::platform::PlatformPackage::PLATFORMEVENT__KIND);
-    m_PlatformEventEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformEventEClass->getEStructuralFeatures()).basicAdd(
             m_PlatformEvent__kind);
+    m_PlatformEvent__kind->basicsetEContainingClass(m_PlatformEventEClass);
 
     // LockResource
     m_LockResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_LockResourceEClass->setClassifierID(LOCKRESOURCE);
-    m_LockResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LockResourceEClass);
+    m_LockResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LockResourceEClass);
 
     // DeployedSoftwareSystem
     m_DeployedSoftwareSystemEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DeployedSoftwareSystemEClass->setClassifierID(DEPLOYEDSOFTWARESYSTEM);
-    m_DeployedSoftwareSystemEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DeployedSoftwareSystemEClass);
+    m_DeployedSoftwareSystemEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DeployedSoftwareSystemEClass);
     // m_DeployedSoftwareSystem__groupedComponent has already been allocated above
     m_DeployedSoftwareSystem__groupedComponent->setFeatureID(
             ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__GROUPEDCOMPONENT);
-    m_DeployedSoftwareSystemEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedSoftwareSystemEClass->getEStructuralFeatures()).basicAdd(
             m_DeployedSoftwareSystem__groupedComponent);
+    m_DeployedSoftwareSystem__groupedComponent->basicsetEContainingClass(
+            m_DeployedSoftwareSystemEClass);
 
     // Machine
     m_MachineEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_MachineEClass->setClassifierID(MACHINE);
-    m_MachineEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_MachineEClass);
+    m_MachineEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_MachineEClass);
     // m_Machine__deployedComponent has already been allocated above
     m_Machine__deployedComponent->setFeatureID(
             ::kdm::platform::PlatformPackage::MACHINE__DEPLOYEDCOMPONENT);
-    m_MachineEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MachineEClass->getEStructuralFeatures()).basicAdd(
             m_Machine__deployedComponent);
+    m_Machine__deployedComponent->basicsetEContainingClass(m_MachineEClass);
     // m_Machine__deployedResource has already been allocated above
     m_Machine__deployedResource->setFeatureID(
             ::kdm::platform::PlatformPackage::MACHINE__DEPLOYEDRESOURCE);
-    m_MachineEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MachineEClass->getEStructuralFeatures()).basicAdd(
             m_Machine__deployedResource);
+    m_Machine__deployedResource->basicsetEContainingClass(m_MachineEClass);
 
     // DeployedComponent
     m_DeployedComponentEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DeployedComponentEClass->setClassifierID(DEPLOYEDCOMPONENT);
-    m_DeployedComponentEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DeployedComponentEClass);
+    m_DeployedComponentEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DeployedComponentEClass);
     // m_DeployedComponent__groupedCode has already been allocated above
     m_DeployedComponent__groupedCode->setFeatureID(
             ::kdm::platform::PlatformPackage::DEPLOYEDCOMPONENT__GROUPEDCODE);
-    m_DeployedComponentEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedComponentEClass->getEStructuralFeatures()).basicAdd(
             m_DeployedComponent__groupedCode);
+    m_DeployedComponent__groupedCode->basicsetEContainingClass(
+            m_DeployedComponentEClass);
 
     // DeployedResource
     m_DeployedResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_DeployedResourceEClass->setClassifierID(DEPLOYEDRESOURCE);
-    m_DeployedResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DeployedResourceEClass);
+    m_DeployedResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DeployedResourceEClass);
     // m_DeployedResource__platformElement has already been allocated above
     m_DeployedResource__platformElement->setFeatureID(
             ::kdm::platform::PlatformPackage::DEPLOYEDRESOURCE__PLATFORMELEMENT);
-    m_DeployedResourceEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedResourceEClass->getEStructuralFeatures()).basicAdd(
             m_DeployedResource__platformElement);
+    m_DeployedResource__platformElement->basicsetEContainingClass(
+            m_DeployedResourceEClass);
 
     // Loads
     m_LoadsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_LoadsEClass->setClassifierID(LOADS);
-    m_LoadsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LoadsEClass);
+    m_LoadsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LoadsEClass);
     // m_Loads__to has already been allocated above
     m_Loads__to->setFeatureID(::kdm::platform::PlatformPackage::LOADS__TO);
-    m_LoadsEClass->getEStructuralFeatures().push_back(m_Loads__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LoadsEClass->getEStructuralFeatures()).basicAdd(
+            m_Loads__to);
+    m_Loads__to->basicsetEContainingClass(m_LoadsEClass);
     // m_Loads__from has already been allocated above
     m_Loads__from->setFeatureID(::kdm::platform::PlatformPackage::LOADS__FROM);
-    m_LoadsEClass->getEStructuralFeatures().push_back(m_Loads__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LoadsEClass->getEStructuralFeatures()).basicAdd(
+            m_Loads__from);
+    m_Loads__from->basicsetEContainingClass(m_LoadsEClass);
 
     // Spawns
     m_SpawnsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_SpawnsEClass->setClassifierID(SPAWNS);
-    m_SpawnsEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_SpawnsEClass);
+    m_SpawnsEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_SpawnsEClass);
     // m_Spawns__to has already been allocated above
     m_Spawns__to->setFeatureID(::kdm::platform::PlatformPackage::SPAWNS__TO);
-    m_SpawnsEClass->getEStructuralFeatures().push_back(m_Spawns__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SpawnsEClass->getEStructuralFeatures()).basicAdd(
+            m_Spawns__to);
+    m_Spawns__to->basicsetEContainingClass(m_SpawnsEClass);
     // m_Spawns__from has already been allocated above
     m_Spawns__from->setFeatureID(
             ::kdm::platform::PlatformPackage::SPAWNS__FROM);
-    m_SpawnsEClass->getEStructuralFeatures().push_back(m_Spawns__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SpawnsEClass->getEStructuralFeatures()).basicAdd(
+            m_Spawns__from);
+    m_Spawns__from->basicsetEContainingClass(m_SpawnsEClass);
 
     // RuntimeResource
     m_RuntimeResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_RuntimeResourceEClass->setClassifierID(RUNTIMERESOURCE);
-    m_RuntimeResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_RuntimeResourceEClass);
+    m_RuntimeResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_RuntimeResourceEClass);
 
     // Thread
     m_ThreadEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ThreadEClass->setClassifierID(THREAD);
-    m_ThreadEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ThreadEClass);
+    m_ThreadEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ThreadEClass);
 
     // Process
     m_ProcessEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ProcessEClass->setClassifierID(PROCESS);
-    m_ProcessEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ProcessEClass);
+    m_ProcessEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ProcessEClass);
 
     // ReadsResource
     m_ReadsResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ReadsResourceEClass->setClassifierID(READSRESOURCE);
-    m_ReadsResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ReadsResourceEClass);
+    m_ReadsResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ReadsResourceEClass);
     // m_ReadsResource__to has already been allocated above
     m_ReadsResource__to->setFeatureID(
             ::kdm::platform::PlatformPackage::READSRESOURCE__TO);
-    m_ReadsResourceEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsResourceEClass->getEStructuralFeatures()).basicAdd(
             m_ReadsResource__to);
+    m_ReadsResource__to->basicsetEContainingClass(m_ReadsResourceEClass);
     // m_ReadsResource__from has already been allocated above
     m_ReadsResource__from->setFeatureID(
             ::kdm::platform::PlatformPackage::READSRESOURCE__FROM);
-    m_ReadsResourceEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsResourceEClass->getEStructuralFeatures()).basicAdd(
             m_ReadsResource__from);
+    m_ReadsResource__from->basicsetEContainingClass(m_ReadsResourceEClass);
 
     // WritesResource
     m_WritesResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_WritesResourceEClass->setClassifierID(WRITESRESOURCE);
-    m_WritesResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_WritesResourceEClass);
+    m_WritesResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_WritesResourceEClass);
     // m_WritesResource__to has already been allocated above
     m_WritesResource__to->setFeatureID(
             ::kdm::platform::PlatformPackage::WRITESRESOURCE__TO);
-    m_WritesResourceEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesResourceEClass->getEStructuralFeatures()).basicAdd(
             m_WritesResource__to);
+    m_WritesResource__to->basicsetEContainingClass(m_WritesResourceEClass);
     // m_WritesResource__from has already been allocated above
     m_WritesResource__from->setFeatureID(
             ::kdm::platform::PlatformPackage::WRITESRESOURCE__FROM);
-    m_WritesResourceEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesResourceEClass->getEStructuralFeatures()).basicAdd(
             m_WritesResource__from);
+    m_WritesResource__from->basicsetEContainingClass(m_WritesResourceEClass);
 
     // ManagesResource
     m_ManagesResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ManagesResourceEClass->setClassifierID(MANAGESRESOURCE);
-    m_ManagesResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ManagesResourceEClass);
+    m_ManagesResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ManagesResourceEClass);
     // m_ManagesResource__to has already been allocated above
     m_ManagesResource__to->setFeatureID(
             ::kdm::platform::PlatformPackage::MANAGESRESOURCE__TO);
-    m_ManagesResourceEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesResourceEClass->getEStructuralFeatures()).basicAdd(
             m_ManagesResource__to);
+    m_ManagesResource__to->basicsetEContainingClass(m_ManagesResourceEClass);
     // m_ManagesResource__from has already been allocated above
     m_ManagesResource__from->setFeatureID(
             ::kdm::platform::PlatformPackage::MANAGESRESOURCE__FROM);
-    m_ManagesResourceEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesResourceEClass->getEStructuralFeatures()).basicAdd(
             m_ManagesResource__from);
+    m_ManagesResource__from->basicsetEContainingClass(m_ManagesResourceEClass);
 
     // DefinedBy
     m_DefinedByEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_DefinedByEClass->setClassifierID(DEFINEDBY);
-    m_DefinedByEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_DefinedByEClass);
+    m_DefinedByEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_DefinedByEClass);
     // m_DefinedBy__to has already been allocated above
     m_DefinedBy__to->setFeatureID(
             ::kdm::platform::PlatformPackage::DEFINEDBY__TO);
-    m_DefinedByEClass->getEStructuralFeatures().push_back(m_DefinedBy__to);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedByEClass->getEStructuralFeatures()).basicAdd(
+            m_DefinedBy__to);
+    m_DefinedBy__to->basicsetEContainingClass(m_DefinedByEClass);
     // m_DefinedBy__from has already been allocated above
     m_DefinedBy__from->setFeatureID(
             ::kdm::platform::PlatformPackage::DEFINEDBY__FROM);
-    m_DefinedByEClass->getEStructuralFeatures().push_back(m_DefinedBy__from);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedByEClass->getEStructuralFeatures()).basicAdd(
+            m_DefinedBy__from);
+    m_DefinedBy__from->basicsetEContainingClass(m_DefinedByEClass);
 
     // StreamResource
     m_StreamResourceEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_StreamResourceEClass->setClassifierID(STREAMRESOURCE);
-    m_StreamResourceEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_StreamResourceEClass);
+    m_StreamResourceEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StreamResourceEClass);
 
     // Create enums
 

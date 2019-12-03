@@ -46,7 +46,6 @@ using namespace ::kdm::ui;
 // Default constructor
 Displays::Displays()
 {
-
     /*PROTECTED REGION ID(DisplaysImpl__DisplaysImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

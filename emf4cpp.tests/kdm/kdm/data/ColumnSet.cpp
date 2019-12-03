@@ -52,12 +52,6 @@ using namespace ::kdm::data;
 // Default constructor
 ColumnSet::ColumnSet()
 {
-
-    m_itemUnit.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::ItemUnit_ptr, -1, true, false >(this,
-                    ::kdm::data::DataPackage::_instance()->getColumnSet__itemUnit()));
-
     /*PROTECTED REGION ID(ColumnSetImpl__ColumnSetImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -78,11 +72,23 @@ ColumnSet::~ColumnSet()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::ItemUnit_ptr >& ColumnSet::getItemUnit() const
 {
+    if (!m_itemUnit)
+        return const_cast< ColumnSet* >(this)->getItemUnit();
+
     return *m_itemUnit;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::ItemUnit_ptr >& ColumnSet::getItemUnit()
 {
+    /*PROTECTED REGION ID(ColumnSet__getItemUnit) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_itemUnit)
+        m_itemUnit.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::ItemUnit_ptr, -1, true, false >(this,
+                        ::kdm::data::DataPackage::_instance()->getColumnSet__itemUnit()));
+    /*PROTECTED REGION END*/
     return *m_itemUnit;
 }
 

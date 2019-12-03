@@ -63,49 +63,66 @@ void CSTPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = CSTFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Tree
     m_TreeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TreeEClass->setClassifierID(TREE);
-    m_TreeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TreeEClass);
+    m_TreeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TreeEClass);
 
     // Element
     m_ElementEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ElementEClass->setClassifierID(ELEMENT);
-    m_ElementEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ElementEClass);
+    m_ElementEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ElementEClass);
     // m_Element__kind has already been allocated above
     m_Element__kind->setFeatureID(::CST::CSTPackage::ELEMENT__KIND);
-    m_ElementEClass->getEStructuralFeatures().push_back(m_Element__kind);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
+            m_Element__kind);
+    m_Element__kind->basicsetEContainingClass(m_ElementEClass);
 
     // Node
     m_NodeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_NodeEClass->setClassifierID(NODE);
-    m_NodeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NodeEClass);
+    m_NodeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NodeEClass);
     // m_Node__children has already been allocated above
     m_Node__children->setFeatureID(::CST::CSTPackage::NODE__CHILDREN);
-    m_NodeEClass->getEStructuralFeatures().push_back(m_Node__children);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NodeEClass->getEStructuralFeatures()).basicAdd(
+            m_Node__children);
+    m_Node__children->basicsetEContainingClass(m_NodeEClass);
 
     // Leaf
     m_LeafEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_LeafEClass->setClassifierID(LEAF);
-    m_LeafEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LeafEClass);
+    m_LeafEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LeafEClass);
     // m_Leaf__value has already been allocated above
     m_Leaf__value->setFeatureID(::CST::CSTPackage::LEAF__VALUE);
-    m_LeafEClass->getEStructuralFeatures().push_back(m_Leaf__value);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures()).basicAdd(
+            m_Leaf__value);
+    m_Leaf__value->basicsetEContainingClass(m_LeafEClass);
     // m_Leaf__pos has already been allocated above
     m_Leaf__pos->setFeatureID(::CST::CSTPackage::LEAF__POS);
-    m_LeafEClass->getEStructuralFeatures().push_back(m_Leaf__pos);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures()).basicAdd(
+            m_Leaf__pos);
+    m_Leaf__pos->basicsetEContainingClass(m_LeafEClass);
     // m_Leaf__line has already been allocated above
     m_Leaf__line->setFeatureID(::CST::CSTPackage::LEAF__LINE);
-    m_LeafEClass->getEStructuralFeatures().push_back(m_Leaf__line);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures()).basicAdd(
+            m_Leaf__line);
+    m_Leaf__line->basicsetEContainingClass(m_LeafEClass);
 
     // Create enums
 

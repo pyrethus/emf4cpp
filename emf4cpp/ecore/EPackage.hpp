@@ -86,8 +86,12 @@ public:
     virtual void basicsetESuperPackage (::ecore::EPackage_ptr _eSuperPackage);
 
     /*PROTECTED REGION ID(EPackage) ENABLED START*/
-    // Please, enable the protected region if you add manually written code.
-    // To do this, add the keyword ENABLED before START.
+
+    static constexpr uint64_t makeUniqueFeatureID( uint32_t classID, uint32_t featureID )
+    {
+        return (static_cast<uint64_t>(classID) << 32) | featureID;
+    }
+
 protected:
     // Hardcoded map to speed up getEClassifier operation
 

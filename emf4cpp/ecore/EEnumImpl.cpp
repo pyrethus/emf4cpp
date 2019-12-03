@@ -45,9 +45,9 @@ void EEnum::_initialize()
     ::ecore::EDataType::_initialize();
 
     // References
-    for (size_t i = 0; i < m_eLiterals->size(); i++)
+    for (const auto &ref : getELiterals())
     {
-        (*m_eLiterals)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(EEnumImpl__initialize) START*/
@@ -105,40 +105,40 @@ void EEnum::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUM__EANNOTATIONS:
     {
         _any = getEAnnotations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EENUM__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASSNAME:
+    case ::ecore::EcorePackage::EENUM__INSTANCECLASSNAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getInstanceClassName());
     }
         return _any;
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCETYPENAME:
+    case ::ecore::EcorePackage::EENUM__INSTANCETYPENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::toAny(_any, getInstanceTypeName());
     }
         return _any;
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EENUM__EPACKAGE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEPackage());
     }
         return _any;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EENUM__ETYPEPARAMETERS:
     {
         _any = getETypeParameters().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::ecore::EcorePackage::EDATATYPE__SERIALIZABLE:
+    case ::ecore::EcorePackage::EENUM__SERIALIZABLE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
                 > ::toAny(_any, isSerializable());
@@ -159,7 +159,7 @@ void EEnum::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUM__EANNOTATIONS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -167,7 +167,7 @@ void EEnum::eSet(::ecore::EInt _featureID,
         getEAnnotations().insert_all(*_t0);
     }
         return;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EENUM__NAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -175,7 +175,7 @@ void EEnum::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASSNAME:
+    case ::ecore::EcorePackage::EENUM__INSTANCECLASSNAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -183,7 +183,7 @@ void EEnum::eSet(::ecore::EInt _featureID,
         setInstanceClassName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCETYPENAME:
+    case ::ecore::EcorePackage::EENUM__INSTANCETYPENAME:
     {
         ::ecore::EString _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -191,7 +191,7 @@ void EEnum::eSet(::ecore::EInt _featureID,
         setInstanceTypeName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EENUM__EPACKAGE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -199,7 +199,7 @@ void EEnum::eSet(::ecore::EInt _featureID,
         setEPackage(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EENUM__ETYPEPARAMETERS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -207,7 +207,7 @@ void EEnum::eSet(::ecore::EInt _featureID,
         getETypeParameters().insert_all(*_t0);
     }
         return;
-    case ::ecore::EcorePackage::EDATATYPE__SERIALIZABLE:
+    case ::ecore::EcorePackage::EENUM__SERIALIZABLE:
     {
         ::ecore::EBoolean _t0;
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -232,25 +232,25 @@ void EEnum::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUM__EANNOTATIONS:
         return getEAnnotations().size() > 0;
-    case ::ecore::EcorePackage::ENAMEDELEMENT__NAME:
+    case ::ecore::EcorePackage::EENUM__NAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getName());
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASSNAME:
+    case ::ecore::EcorePackage::EENUM__INSTANCECLASSNAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getInstanceClassName());
-    case ::ecore::EcorePackage::ECLASSIFIER__DEFAULTVALUE:
+    case ::ecore::EcorePackage::EENUM__DEFAULTVALUE:
         return ::ecorecpp::mapping::set_traits < ::ecore::EJavaObject
                 > ::is_set(getDefaultValue());
-    case ::ecore::EcorePackage::ECLASSIFIER__INSTANCETYPENAME:
+    case ::ecore::EcorePackage::EENUM__INSTANCETYPENAME:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
                 > ::is_set(getInstanceTypeName());
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EENUM__EPACKAGE:
         return getEPackage().get() != nullptr;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EENUM__ETYPEPARAMETERS:
         return getETypeParameters().size() > 0;
-    case ::ecore::EcorePackage::EDATATYPE__SERIALIZABLE:
+    case ::ecore::EcorePackage::EENUM__SERIALIZABLE:
         return isSerializable() != true;
     case ::ecore::EcorePackage::EENUM__ELITERALS:
         return getELiterals().size() > 0;
@@ -271,7 +271,7 @@ void EEnum::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr EEnum::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEEnum();
+            ::ecore::EcorePackage::_instance()->getEEnum();
     return _eclass;
 }
 
@@ -282,7 +282,7 @@ void EEnum::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUM__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -296,7 +296,7 @@ void EEnum::_inverseAdd(::ecore::EInt _featureID,
         container.basicAdd(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EENUM__EPACKAGE:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_newValue);
@@ -307,15 +307,16 @@ void EEnum::_inverseAdd(::ecore::EInt _featureID,
         if (_old_ePackage && _old_ePackage != _t0)
         {
             ::ecore::EJavaObject _this = ::ecore::EObject::_this();
-            _old_ePackage->_inverseRemove(
-                    ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS, _this);
+            _old_ePackage->::ecore::EObject::_inverseRemove(
+                    ::ecore::EcorePackage::_instance()->getEPackage__eClassifiers(),
+                    _this);
         }
 
         // set reference
         basicsetEPackage(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EENUM__ETYPEPARAMETERS:
     {
     }
         return;
@@ -345,7 +346,7 @@ void EEnum::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS:
+    case ::ecore::EcorePackage::EENUM__EANNOTATIONS:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -359,7 +360,7 @@ void EEnum::_inverseRemove(::ecore::EInt _featureID,
         container.basicRemove(_t1);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE:
+    case ::ecore::EcorePackage::EENUM__EPACKAGE:
     {
         ::ecore::EObject_ptr _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EObject_ptr > (_oldValue);
@@ -371,7 +372,7 @@ void EEnum::_inverseRemove(::ecore::EInt _featureID,
             basicsetEPackage(nullptr);
     }
         return;
-    case ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS:
+    case ::ecore::EcorePackage::EENUM__ETYPEPARAMETERS:
     {
     }
         return;

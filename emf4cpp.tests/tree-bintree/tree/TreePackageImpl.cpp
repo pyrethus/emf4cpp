@@ -57,40 +57,50 @@ void TreePackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = TreeFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // TreeNode
     m_TreeNodeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_TreeNodeEClass->setClassifierID(TREENODE);
-    m_TreeNodeEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_TreeNodeEClass);
+    m_TreeNodeEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_TreeNodeEClass);
     // m_TreeNode__data has already been allocated above
     m_TreeNode__data->setFeatureID(::tree::TreePackage::TREENODE__DATA);
-    m_TreeNodeEClass->getEStructuralFeatures().push_back(m_TreeNode__data);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
+            m_TreeNode__data);
+    m_TreeNode__data->basicsetEContainingClass(m_TreeNodeEClass);
     // m_TreeNode__parent has already been allocated above
     m_TreeNode__parent->setFeatureID(::tree::TreePackage::TREENODE__PARENT);
-    m_TreeNodeEClass->getEStructuralFeatures().push_back(m_TreeNode__parent);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
+            m_TreeNode__parent);
+    m_TreeNode__parent->basicsetEContainingClass(m_TreeNodeEClass);
 
     // Leaf
     m_LeafEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_LeafEClass->setClassifierID(LEAF);
-    m_LeafEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_LeafEClass);
+    m_LeafEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_LeafEClass);
 
     // NonTerminal
     m_NonTerminalEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_NonTerminalEClass->setClassifierID(NONTERMINAL);
-    m_NonTerminalEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NonTerminalEClass);
+    m_NonTerminalEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NonTerminalEClass);
     // m_NonTerminal__children has already been allocated above
     m_NonTerminal__children->setFeatureID(
             ::tree::TreePackage::NONTERMINAL__CHILDREN);
-    m_NonTerminalEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NonTerminalEClass->getEStructuralFeatures()).basicAdd(
             m_NonTerminal__children);
+    m_NonTerminal__children->basicsetEContainingClass(m_NonTerminalEClass);
 
     // Create enums
 

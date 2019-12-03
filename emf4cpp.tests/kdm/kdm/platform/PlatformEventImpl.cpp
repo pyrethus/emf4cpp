@@ -69,48 +69,48 @@ void PlatformEvent::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__RELATION:
     {
         _any = getRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ABSTRACTION:
     {
         _any = getAbstraction().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__IMPLEMENTATION:
     {
         _any = getImplementation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -131,7 +131,7 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -139,7 +139,7 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -147,7 +147,7 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -155,7 +155,7 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -163,7 +163,7 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -171,7 +171,7 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -179,7 +179,7 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__RELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -187,7 +187,7 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
         getRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ABSTRACTION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -195,7 +195,7 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
         getAbstraction().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__IMPLEMENTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -220,24 +220,24 @@ void PlatformEvent::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__RELATION:
         return getRelation().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ABSTRACTION:
         return getAbstraction().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__IMPLEMENTATION:
         return getImplementation().size() > 0;
     case ::kdm::platform::PlatformPackage::PLATFORMEVENT__KIND:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
@@ -259,7 +259,7 @@ void PlatformEvent::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr PlatformEvent::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::platform::PlatformPackage* >(::kdm::platform::PlatformPackage::_instance().get())->getPlatformEvent();
+            ::kdm::platform::PlatformPackage::_instance()->getPlatformEvent();
     return _eclass;
 }
 
@@ -270,35 +270,35 @@ void PlatformEvent::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__SOURCE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__RELATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__IMPLEMENTATION:
     {
     }
         return;
@@ -314,35 +314,35 @@ void PlatformEvent::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__SOURCE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__RELATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMEVENT__IMPLEMENTATION:
     {
     }
         return;

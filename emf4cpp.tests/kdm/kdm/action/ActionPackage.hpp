@@ -42,463 +42,486 @@ namespace kdm
         static ActionPackage_ptr _instance();
         static ActionPackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier AbstractActionRelationship
         static const int ABSTRACTACTIONRELATIONSHIP = 0;
 
+        static const int ABSTRACTACTIONRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int ABSTRACTACTIONRELATIONSHIP__ANNOTATION = 1;
+
+        static const int ABSTRACTACTIONRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int ABSTRACTACTIONRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTACTIONRELATIONSHIP_FEATURE_COUNT = 4;
+
+        // IDs for classifier ActionElement
         static const int ACTIONELEMENT = 1;
 
+        static const int ACTIONELEMENT__ATTRIBUTE = 0;
+
+        static const int ACTIONELEMENT__ANNOTATION = 1;
+
+        static const int ACTIONELEMENT__STEREOTYPE = 2;
+
+        static const int ACTIONELEMENT__TAGGEDVALUE = 3;
+
+        static const int ACTIONELEMENT__NAME = 4;
+
+        static const int ACTIONELEMENT__SOURCE = 5;
+
+        static const int ACTIONELEMENT__COMMENT = 6;
+
+        static const int ACTIONELEMENT__CODERELATION = 7;
+
+        static const int ACTIONELEMENT__KIND = 8;
+
+        static const int ACTIONELEMENT__CODEELEMENT = 9;
+
+        static const int ACTIONELEMENT__ACTIONRELATION = 10;
+
+        static const int ACTIONELEMENT_FEATURE_COUNT = 11;
+
+        // IDs for classifier ActionRelationship
         static const int ACTIONRELATIONSHIP = 2;
 
+        static const int ACTIONRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int ACTIONRELATIONSHIP__ANNOTATION = 1;
+
+        static const int ACTIONRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int ACTIONRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int ACTIONRELATIONSHIP__TO = 4;
+
+        static const int ACTIONRELATIONSHIP__FROM = 5;
+
+        static const int ACTIONRELATIONSHIP_FEATURE_COUNT = 6;
+
+        // IDs for classifier Addresses
         static const int ADDRESSES = 3;
 
+        static const int ADDRESSES__ATTRIBUTE = 0;
+
+        static const int ADDRESSES__ANNOTATION = 1;
+
+        static const int ADDRESSES__STEREOTYPE = 2;
+
+        static const int ADDRESSES__TAGGEDVALUE = 3;
+
+        static const int ADDRESSES__TO = 4;
+
+        static const int ADDRESSES__FROM = 5;
+
+        static const int ADDRESSES_FEATURE_COUNT = 6;
+
+        // IDs for classifier BlockUnit
         static const int BLOCKUNIT = 4;
 
+        static const int BLOCKUNIT__ATTRIBUTE = 0;
+
+        static const int BLOCKUNIT__ANNOTATION = 1;
+
+        static const int BLOCKUNIT__STEREOTYPE = 2;
+
+        static const int BLOCKUNIT__TAGGEDVALUE = 3;
+
+        static const int BLOCKUNIT__NAME = 4;
+
+        static const int BLOCKUNIT__SOURCE = 5;
+
+        static const int BLOCKUNIT__COMMENT = 6;
+
+        static const int BLOCKUNIT__CODERELATION = 7;
+
+        static const int BLOCKUNIT__KIND = 8;
+
+        static const int BLOCKUNIT__CODEELEMENT = 9;
+
+        static const int BLOCKUNIT__ACTIONRELATION = 10;
+
+        static const int BLOCKUNIT_FEATURE_COUNT = 11;
+
+        // IDs for classifier Calls
         static const int CALLS = 5;
 
+        static const int CALLS__ATTRIBUTE = 0;
+
+        static const int CALLS__ANNOTATION = 1;
+
+        static const int CALLS__STEREOTYPE = 2;
+
+        static const int CALLS__TAGGEDVALUE = 3;
+
+        static const int CALLS__TO = 4;
+
+        static const int CALLS__FROM = 5;
+
+        static const int CALLS_FEATURE_COUNT = 6;
+
+        // IDs for classifier CatchUnit
         static const int CATCHUNIT = 6;
 
+        static const int CATCHUNIT__ATTRIBUTE = 0;
+
+        static const int CATCHUNIT__ANNOTATION = 1;
+
+        static const int CATCHUNIT__STEREOTYPE = 2;
+
+        static const int CATCHUNIT__TAGGEDVALUE = 3;
+
+        static const int CATCHUNIT__NAME = 4;
+
+        static const int CATCHUNIT__SOURCE = 5;
+
+        static const int CATCHUNIT__COMMENT = 6;
+
+        static const int CATCHUNIT__CODERELATION = 7;
+
+        static const int CATCHUNIT__KIND = 8;
+
+        static const int CATCHUNIT__CODEELEMENT = 9;
+
+        static const int CATCHUNIT__ACTIONRELATION = 10;
+
+        static const int CATCHUNIT_FEATURE_COUNT = 11;
+
+        // IDs for classifier CompliesTo
         static const int COMPLIESTO = 7;
 
+        static const int COMPLIESTO__ATTRIBUTE = 0;
+
+        static const int COMPLIESTO__ANNOTATION = 1;
+
+        static const int COMPLIESTO__STEREOTYPE = 2;
+
+        static const int COMPLIESTO__TAGGEDVALUE = 3;
+
+        static const int COMPLIESTO__TO = 4;
+
+        static const int COMPLIESTO__FROM = 5;
+
+        static const int COMPLIESTO_FEATURE_COUNT = 6;
+
+        // IDs for classifier ControlFlow
         static const int CONTROLFLOW = 8;
 
+        static const int CONTROLFLOW__ATTRIBUTE = 0;
+
+        static const int CONTROLFLOW__ANNOTATION = 1;
+
+        static const int CONTROLFLOW__STEREOTYPE = 2;
+
+        static const int CONTROLFLOW__TAGGEDVALUE = 3;
+
+        static const int CONTROLFLOW__TO = 4;
+
+        static const int CONTROLFLOW__FROM = 5;
+
+        static const int CONTROLFLOW_FEATURE_COUNT = 6;
+
+        // IDs for classifier Creates
         static const int CREATES = 9;
 
+        static const int CREATES__ATTRIBUTE = 0;
+
+        static const int CREATES__ANNOTATION = 1;
+
+        static const int CREATES__STEREOTYPE = 2;
+
+        static const int CREATES__TAGGEDVALUE = 3;
+
+        static const int CREATES__TO = 4;
+
+        static const int CREATES__FROM = 5;
+
+        static const int CREATES_FEATURE_COUNT = 6;
+
+        // IDs for classifier Dispatches
         static const int DISPATCHES = 10;
 
+        static const int DISPATCHES__ATTRIBUTE = 0;
+
+        static const int DISPATCHES__ANNOTATION = 1;
+
+        static const int DISPATCHES__STEREOTYPE = 2;
+
+        static const int DISPATCHES__TAGGEDVALUE = 3;
+
+        static const int DISPATCHES__TO = 4;
+
+        static const int DISPATCHES__FROM = 5;
+
+        static const int DISPATCHES_FEATURE_COUNT = 6;
+
+        // IDs for classifier EntryFlow
         static const int ENTRYFLOW = 11;
 
+        static const int ENTRYFLOW__ATTRIBUTE = 0;
+
+        static const int ENTRYFLOW__ANNOTATION = 1;
+
+        static const int ENTRYFLOW__STEREOTYPE = 2;
+
+        static const int ENTRYFLOW__TAGGEDVALUE = 3;
+
+        static const int ENTRYFLOW__TO = 4;
+
+        static const int ENTRYFLOW__FROM = 5;
+
+        static const int ENTRYFLOW_FEATURE_COUNT = 6;
+
+        // IDs for classifier ExceptionFlow
         static const int EXCEPTIONFLOW = 12;
 
+        static const int EXCEPTIONFLOW__ATTRIBUTE = 0;
+
+        static const int EXCEPTIONFLOW__ANNOTATION = 1;
+
+        static const int EXCEPTIONFLOW__STEREOTYPE = 2;
+
+        static const int EXCEPTIONFLOW__TAGGEDVALUE = 3;
+
+        static const int EXCEPTIONFLOW__TO = 4;
+
+        static const int EXCEPTIONFLOW__FROM = 5;
+
+        static const int EXCEPTIONFLOW_FEATURE_COUNT = 6;
+
+        // IDs for classifier ExceptionUnit
         static const int EXCEPTIONUNIT = 13;
 
+        static const int EXCEPTIONUNIT__ATTRIBUTE = 0;
+
+        static const int EXCEPTIONUNIT__ANNOTATION = 1;
+
+        static const int EXCEPTIONUNIT__STEREOTYPE = 2;
+
+        static const int EXCEPTIONUNIT__TAGGEDVALUE = 3;
+
+        static const int EXCEPTIONUNIT__NAME = 4;
+
+        static const int EXCEPTIONUNIT__SOURCE = 5;
+
+        static const int EXCEPTIONUNIT__COMMENT = 6;
+
+        static const int EXCEPTIONUNIT__CODERELATION = 7;
+
+        static const int EXCEPTIONUNIT__KIND = 8;
+
+        static const int EXCEPTIONUNIT__CODEELEMENT = 9;
+
+        static const int EXCEPTIONUNIT__ACTIONRELATION = 10;
+
+        static const int EXCEPTIONUNIT_FEATURE_COUNT = 11;
+
+        // IDs for classifier ExitFlow
         static const int EXITFLOW = 14;
 
+        static const int EXITFLOW__ATTRIBUTE = 0;
+
+        static const int EXITFLOW__ANNOTATION = 1;
+
+        static const int EXITFLOW__STEREOTYPE = 2;
+
+        static const int EXITFLOW__TAGGEDVALUE = 3;
+
+        static const int EXITFLOW__TO = 4;
+
+        static const int EXITFLOW__FROM = 5;
+
+        static const int EXITFLOW_FEATURE_COUNT = 6;
+
+        // IDs for classifier FalseFlow
         static const int FALSEFLOW = 15;
 
+        static const int FALSEFLOW__ATTRIBUTE = 0;
+
+        static const int FALSEFLOW__ANNOTATION = 1;
+
+        static const int FALSEFLOW__STEREOTYPE = 2;
+
+        static const int FALSEFLOW__TAGGEDVALUE = 3;
+
+        static const int FALSEFLOW__TO = 4;
+
+        static const int FALSEFLOW__FROM = 5;
+
+        static const int FALSEFLOW_FEATURE_COUNT = 6;
+
+        // IDs for classifier FinallyUnit
         static const int FINALLYUNIT = 16;
 
+        static const int FINALLYUNIT__ATTRIBUTE = 0;
+
+        static const int FINALLYUNIT__ANNOTATION = 1;
+
+        static const int FINALLYUNIT__STEREOTYPE = 2;
+
+        static const int FINALLYUNIT__TAGGEDVALUE = 3;
+
+        static const int FINALLYUNIT__NAME = 4;
+
+        static const int FINALLYUNIT__SOURCE = 5;
+
+        static const int FINALLYUNIT__COMMENT = 6;
+
+        static const int FINALLYUNIT__CODERELATION = 7;
+
+        static const int FINALLYUNIT__KIND = 8;
+
+        static const int FINALLYUNIT__CODEELEMENT = 9;
+
+        static const int FINALLYUNIT__ACTIONRELATION = 10;
+
+        static const int FINALLYUNIT_FEATURE_COUNT = 11;
+
+        // IDs for classifier Flow
         static const int FLOW = 17;
 
+        static const int FLOW__ATTRIBUTE = 0;
+
+        static const int FLOW__ANNOTATION = 1;
+
+        static const int FLOW__STEREOTYPE = 2;
+
+        static const int FLOW__TAGGEDVALUE = 3;
+
+        static const int FLOW__TO = 4;
+
+        static const int FLOW__FROM = 5;
+
+        static const int FLOW_FEATURE_COUNT = 6;
+
+        // IDs for classifier GuardedFlow
         static const int GUARDEDFLOW = 18;
 
+        static const int GUARDEDFLOW__ATTRIBUTE = 0;
+
+        static const int GUARDEDFLOW__ANNOTATION = 1;
+
+        static const int GUARDEDFLOW__STEREOTYPE = 2;
+
+        static const int GUARDEDFLOW__TAGGEDVALUE = 3;
+
+        static const int GUARDEDFLOW__TO = 4;
+
+        static const int GUARDEDFLOW__FROM = 5;
+
+        static const int GUARDEDFLOW_FEATURE_COUNT = 6;
+
+        // IDs for classifier Reads
         static const int READS = 19;
 
+        static const int READS__ATTRIBUTE = 0;
+
+        static const int READS__ANNOTATION = 1;
+
+        static const int READS__STEREOTYPE = 2;
+
+        static const int READS__TAGGEDVALUE = 3;
+
+        static const int READS__TO = 4;
+
+        static const int READS__FROM = 5;
+
+        static const int READS_FEATURE_COUNT = 6;
+
+        // IDs for classifier Throws
         static const int THROWS = 20;
 
+        static const int THROWS__ATTRIBUTE = 0;
+
+        static const int THROWS__ANNOTATION = 1;
+
+        static const int THROWS__STEREOTYPE = 2;
+
+        static const int THROWS__TAGGEDVALUE = 3;
+
+        static const int THROWS__TO = 4;
+
+        static const int THROWS__FROM = 5;
+
+        static const int THROWS_FEATURE_COUNT = 6;
+
+        // IDs for classifier TrueFlow
         static const int TRUEFLOW = 21;
 
+        static const int TRUEFLOW__ATTRIBUTE = 0;
+
+        static const int TRUEFLOW__ANNOTATION = 1;
+
+        static const int TRUEFLOW__STEREOTYPE = 2;
+
+        static const int TRUEFLOW__TAGGEDVALUE = 3;
+
+        static const int TRUEFLOW__TO = 4;
+
+        static const int TRUEFLOW__FROM = 5;
+
+        static const int TRUEFLOW_FEATURE_COUNT = 6;
+
+        // IDs for classifier TryUnit
         static const int TRYUNIT = 22;
 
+        static const int TRYUNIT__ATTRIBUTE = 0;
+
+        static const int TRYUNIT__ANNOTATION = 1;
+
+        static const int TRYUNIT__STEREOTYPE = 2;
+
+        static const int TRYUNIT__TAGGEDVALUE = 3;
+
+        static const int TRYUNIT__NAME = 4;
+
+        static const int TRYUNIT__SOURCE = 5;
+
+        static const int TRYUNIT__COMMENT = 6;
+
+        static const int TRYUNIT__CODERELATION = 7;
+
+        static const int TRYUNIT__KIND = 8;
+
+        static const int TRYUNIT__CODEELEMENT = 9;
+
+        static const int TRYUNIT__ACTIONRELATION = 10;
+
+        static const int TRYUNIT_FEATURE_COUNT = 11;
+
+        // IDs for classifier UsesType
         static const int USESTYPE = 23;
 
+        static const int USESTYPE__ATTRIBUTE = 0;
+
+        static const int USESTYPE__ANNOTATION = 1;
+
+        static const int USESTYPE__STEREOTYPE = 2;
+
+        static const int USESTYPE__TAGGEDVALUE = 3;
+
+        static const int USESTYPE__TO = 4;
+
+        static const int USESTYPE__FROM = 5;
+
+        static const int USESTYPE_FEATURE_COUNT = 6;
+
+        // IDs for classifier Writes
         static const int WRITES = 24;
 
-        static const int ACTIONELEMENT__KIND = 0;
+        static const int WRITES__ATTRIBUTE = 0;
 
-        static const int ACTIONELEMENT__CODEELEMENT = 1;
+        static const int WRITES__ANNOTATION = 1;
 
-        static const int ACTIONELEMENT__ACTIONRELATION = 2;
+        static const int WRITES__STEREOTYPE = 2;
 
-        static const int CONTROLFLOW__TO = 3;
+        static const int WRITES__TAGGEDVALUE = 3;
 
-        static const int CONTROLFLOW__FROM = 4;
+        static const int WRITES__TO = 4;
 
-        static const int CALLS__TO = 5;
+        static const int WRITES__FROM = 5;
 
-        static const int CALLS__FROM = 6;
-
-        static const int CREATES__TO = 7;
-
-        static const int CREATES__FROM = 8;
-
-        static const int READS__TO = 9;
-
-        static const int READS__FROM = 10;
-
-        static const int WRITES__TO = 11;
-
-        static const int WRITES__FROM = 12;
-
-        static const int COMPLIESTO__TO = 13;
-
-        static const int COMPLIESTO__FROM = 14;
-
-        static const int USESTYPE__TO = 15;
-
-        static const int USESTYPE__FROM = 16;
-
-        static const int ADDRESSES__TO = 17;
-
-        static const int ADDRESSES__FROM = 18;
-
-        static const int ACTIONRELATIONSHIP__TO = 19;
-
-        static const int ACTIONRELATIONSHIP__FROM = 20;
-
-        static const int THROWS__TO = 21;
-
-        static const int THROWS__FROM = 22;
-
-        static const int DISPATCHES__TO = 23;
-
-        static const int DISPATCHES__FROM = 24;
-
-        static const int ENTRYFLOW__TO = 25;
-
-        static const int ENTRYFLOW__FROM = 26;
-
-        static const int EXITFLOW__TO = 27;
-
-        static const int EXITFLOW__FROM = 28;
-
-        static const int EXCEPTIONFLOW__TO = 29;
-
-        static const int EXCEPTIONFLOW__FROM = 30;
-
-        // IDs for classifiers for class AbstractActionRelationship 
-
-        static const int ABSTRACTACTIONRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTACTIONRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTACTIONRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTACTIONRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ActionElement 
-
-        static const int ACTIONELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ACTIONELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ACTIONELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ACTIONELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ACTIONELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int ACTIONELEMENT__SOURCE = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int ACTIONELEMENT__COMMENT = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int ACTIONELEMENT__CODERELATION = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION;
-
-        // IDs for classifiers for class ActionRelationship 
-
-        static const int ACTIONRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ACTIONRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ACTIONRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ACTIONRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Addresses 
-
-        static const int ADDRESSES__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ADDRESSES__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ADDRESSES__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ADDRESSES__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class BlockUnit 
-
-        static const int BLOCKUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int BLOCKUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int BLOCKUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int BLOCKUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int BLOCKUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int BLOCKUNIT__SOURCE = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int BLOCKUNIT__COMMENT = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int BLOCKUNIT__CODERELATION = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int BLOCKUNIT__KIND = ACTIONELEMENT__KIND;
-
-        static const int BLOCKUNIT__CODEELEMENT = ACTIONELEMENT__CODEELEMENT;
-
-        static const int BLOCKUNIT__ACTIONRELATION = ACTIONELEMENT__ACTIONRELATION;
-
-        // IDs for classifiers for class Calls 
-
-        static const int CALLS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CALLS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CALLS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CALLS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class CatchUnit 
-
-        static const int CATCHUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CATCHUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CATCHUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CATCHUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int CATCHUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int CATCHUNIT__SOURCE = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int CATCHUNIT__COMMENT = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int CATCHUNIT__CODERELATION = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int CATCHUNIT__KIND = ACTIONELEMENT__KIND;
-
-        static const int CATCHUNIT__CODEELEMENT = ACTIONELEMENT__CODEELEMENT;
-
-        static const int CATCHUNIT__ACTIONRELATION = ACTIONELEMENT__ACTIONRELATION;
-
-        // IDs for classifiers for class CompliesTo 
-
-        static const int COMPLIESTO__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int COMPLIESTO__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int COMPLIESTO__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int COMPLIESTO__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ControlFlow 
-
-        static const int CONTROLFLOW__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CONTROLFLOW__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CONTROLFLOW__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CONTROLFLOW__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Creates 
-
-        static const int CREATES__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int CREATES__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int CREATES__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int CREATES__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Dispatches 
-
-        static const int DISPATCHES__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DISPATCHES__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DISPATCHES__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DISPATCHES__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class EntryFlow 
-
-        static const int ENTRYFLOW__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ENTRYFLOW__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ENTRYFLOW__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ENTRYFLOW__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ExceptionFlow 
-
-        static const int EXCEPTIONFLOW__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXCEPTIONFLOW__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EXCEPTIONFLOW__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EXCEPTIONFLOW__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ExceptionUnit 
-
-        static const int EXCEPTIONUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXCEPTIONUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EXCEPTIONUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EXCEPTIONUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int EXCEPTIONUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int EXCEPTIONUNIT__SOURCE = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int EXCEPTIONUNIT__COMMENT = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int EXCEPTIONUNIT__CODERELATION = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int EXCEPTIONUNIT__KIND = ACTIONELEMENT__KIND;
-
-        static const int EXCEPTIONUNIT__CODEELEMENT = ACTIONELEMENT__CODEELEMENT;
-
-        static const int EXCEPTIONUNIT__ACTIONRELATION = ACTIONELEMENT__ACTIONRELATION;
-
-        // IDs for classifiers for class ExitFlow 
-
-        static const int EXITFLOW__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int EXITFLOW__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int EXITFLOW__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int EXITFLOW__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class FalseFlow 
-
-        static const int FALSEFLOW__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int FALSEFLOW__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int FALSEFLOW__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int FALSEFLOW__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int FALSEFLOW__TO = CONTROLFLOW__TO;
-
-        static const int FALSEFLOW__FROM = CONTROLFLOW__FROM;
-
-        // IDs for classifiers for class FinallyUnit 
-
-        static const int FINALLYUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int FINALLYUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int FINALLYUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int FINALLYUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int FINALLYUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int FINALLYUNIT__SOURCE = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int FINALLYUNIT__COMMENT = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int FINALLYUNIT__CODERELATION = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int FINALLYUNIT__KIND = ACTIONELEMENT__KIND;
-
-        static const int FINALLYUNIT__CODEELEMENT = ACTIONELEMENT__CODEELEMENT;
-
-        static const int FINALLYUNIT__ACTIONRELATION = ACTIONELEMENT__ACTIONRELATION;
-
-        // IDs for classifiers for class Flow 
-
-        static const int FLOW__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int FLOW__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int FLOW__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int FLOW__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int FLOW__TO = CONTROLFLOW__TO;
-
-        static const int FLOW__FROM = CONTROLFLOW__FROM;
-
-        // IDs for classifiers for class GuardedFlow 
-
-        static const int GUARDEDFLOW__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int GUARDEDFLOW__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int GUARDEDFLOW__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int GUARDEDFLOW__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int GUARDEDFLOW__TO = CONTROLFLOW__TO;
-
-        static const int GUARDEDFLOW__FROM = CONTROLFLOW__FROM;
-
-        // IDs for classifiers for class Reads 
-
-        static const int READS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int READS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int READS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int READS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Throws 
-
-        static const int THROWS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int THROWS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int THROWS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int THROWS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class TrueFlow 
-
-        static const int TRUEFLOW__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TRUEFLOW__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TRUEFLOW__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int TRUEFLOW__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int TRUEFLOW__TO = CONTROLFLOW__TO;
-
-        static const int TRUEFLOW__FROM = CONTROLFLOW__FROM;
-
-        // IDs for classifiers for class TryUnit 
-
-        static const int TRYUNIT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int TRYUNIT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int TRYUNIT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int TRYUNIT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int TRYUNIT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int TRYUNIT__SOURCE = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE;
-
-        static const int TRYUNIT__COMMENT = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT;
-
-        static const int TRYUNIT__CODERELATION = ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION;
-
-        static const int TRYUNIT__KIND = ACTIONELEMENT__KIND;
-
-        static const int TRYUNIT__CODEELEMENT = ACTIONELEMENT__CODEELEMENT;
-
-        static const int TRYUNIT__ACTIONRELATION = ACTIONELEMENT__ACTIONRELATION;
-
-        // IDs for classifiers for class UsesType 
-
-        static const int USESTYPE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int USESTYPE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int USESTYPE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int USESTYPE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Writes 
-
-        static const int WRITES__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int WRITES__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int WRITES__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int WRITES__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
+        static const int WRITES_FEATURE_COUNT = 6;
 
         // EClassifiers methods
 

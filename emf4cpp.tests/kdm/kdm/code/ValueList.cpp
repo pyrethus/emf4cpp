@@ -51,12 +51,6 @@ using namespace ::kdm::code;
 // Default constructor
 ValueList::ValueList()
 {
-
-    m_valueElement.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::code::ValueElement_ptr, -1, true, false >(this,
-                    ::kdm::code::CodePackage::_instance()->getValueList__valueElement()));
-
     /*PROTECTED REGION ID(ValueListImpl__ValueListImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -77,11 +71,23 @@ ValueList::~ValueList()
 
 const ::ecorecpp::mapping::EList< ::kdm::code::ValueElement_ptr >& ValueList::getValueElement() const
 {
+    if (!m_valueElement)
+        return const_cast< ValueList* >(this)->getValueElement();
+
     return *m_valueElement;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::code::ValueElement_ptr >& ValueList::getValueElement()
 {
+    /*PROTECTED REGION ID(ValueList__getValueElement) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_valueElement)
+        m_valueElement.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::code::ValueElement_ptr, -1, true, false >(this,
+                        ::kdm::code::CodePackage::_instance()->getValueList__valueElement()));
+    /*PROTECTED REGION END*/
     return *m_valueElement;
 }
 

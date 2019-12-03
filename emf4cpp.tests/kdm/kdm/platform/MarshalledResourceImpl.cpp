@@ -70,53 +70,53 @@ void MarshalledResource::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__RELATION:
     {
         _any = getRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ABSTRACTION:
     {
         _any = getAbstraction().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__IMPLEMENTATION:
     {
         _any = getImplementation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::RESOURCETYPE__PLATFORMELEMENT:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__PLATFORMELEMENT:
     {
         _any = getPlatformElement().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -131,7 +131,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -139,7 +139,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -147,7 +147,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -155,7 +155,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -163,7 +163,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -171,7 +171,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -179,7 +179,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__RELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -187,7 +187,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
         getRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ABSTRACTION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -195,7 +195,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
         getAbstraction().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__IMPLEMENTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -203,7 +203,7 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
         getImplementation().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::RESOURCETYPE__PLATFORMELEMENT:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__PLATFORMELEMENT:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -220,26 +220,26 @@ void MarshalledResource::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__RELATION:
         return getRelation().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ABSTRACTION:
         return getAbstraction().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__IMPLEMENTATION:
         return getImplementation().size() > 0;
-    case ::kdm::platform::PlatformPackage::RESOURCETYPE__PLATFORMELEMENT:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__PLATFORMELEMENT:
         return getPlatformElement().size() > 0;
 
     }
@@ -258,7 +258,7 @@ void MarshalledResource::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr MarshalledResource::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::platform::PlatformPackage* >(::kdm::platform::PlatformPackage::_instance().get())->getMarshalledResource();
+            ::kdm::platform::PlatformPackage::_instance()->getMarshalledResource();
     return _eclass;
 }
 
@@ -269,39 +269,39 @@ void MarshalledResource::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__SOURCE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__RELATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::RESOURCETYPE__PLATFORMELEMENT:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__PLATFORMELEMENT:
     {
     }
         return;
@@ -317,39 +317,39 @@ void MarshalledResource::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__SOURCE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__RELATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__IMPLEMENTATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::RESOURCETYPE__PLATFORMELEMENT:
+    case ::kdm::platform::PlatformPackage::MARSHALLEDRESOURCE__PLATFORMELEMENT:
     {
     }
         return;

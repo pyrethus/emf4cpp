@@ -41,7 +41,6 @@ using namespace ::kdm::kdm;
 // Default constructor
 TagDefinition::TagDefinition()
 {
-
     /*PROTECTED REGION ID(TagDefinitionImpl__TagDefinitionImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

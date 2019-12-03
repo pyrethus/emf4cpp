@@ -75,90 +75,108 @@ void JsonPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = JsonFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // ObjectValue
     m_ObjectValueEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_ObjectValueEClass->setClassifierID(OBJECTVALUE);
-    m_ObjectValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ObjectValueEClass);
+    m_ObjectValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ObjectValueEClass);
     // m_ObjectValue__members has already been allocated above
     m_ObjectValue__members->setFeatureID(
             ::json::JsonPackage::OBJECTVALUE__MEMBERS);
-    m_ObjectValueEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ObjectValueEClass->getEStructuralFeatures()).basicAdd(
             m_ObjectValue__members);
+    m_ObjectValue__members->basicsetEContainingClass(m_ObjectValueEClass);
 
     // NVPair
     m_NVPairEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_NVPairEClass->setClassifierID(NVPAIR);
-    m_NVPairEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NVPairEClass);
+    m_NVPairEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NVPairEClass);
     // m_NVPair__name has already been allocated above
     m_NVPair__name->setFeatureID(::json::JsonPackage::NVPAIR__NAME);
-    m_NVPairEClass->getEStructuralFeatures().push_back(m_NVPair__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NVPairEClass->getEStructuralFeatures()).basicAdd(
+            m_NVPair__name);
+    m_NVPair__name->basicsetEContainingClass(m_NVPairEClass);
     // m_NVPair__value has already been allocated above
     m_NVPair__value->setFeatureID(::json::JsonPackage::NVPAIR__VALUE);
-    m_NVPairEClass->getEStructuralFeatures().push_back(m_NVPair__value);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NVPairEClass->getEStructuralFeatures()).basicAdd(
+            m_NVPair__value);
+    m_NVPair__value->basicsetEContainingClass(m_NVPairEClass);
 
     // Value
     m_ValueEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ValueEClass->setClassifierID(VALUE);
-    m_ValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ValueEClass);
+    m_ValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ValueEClass);
 
     // StringValue
     m_StringValueEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_StringValueEClass->setClassifierID(STRINGVALUE);
-    m_StringValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_StringValueEClass);
+    m_StringValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_StringValueEClass);
     // m_StringValue__value has already been allocated above
     m_StringValue__value->setFeatureID(::json::JsonPackage::STRINGVALUE__VALUE);
-    m_StringValueEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StringValueEClass->getEStructuralFeatures()).basicAdd(
             m_StringValue__value);
+    m_StringValue__value->basicsetEContainingClass(m_StringValueEClass);
 
     // NumberValue
     m_NumberValueEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_NumberValueEClass->setClassifierID(NUMBERVALUE);
-    m_NumberValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NumberValueEClass);
+    m_NumberValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NumberValueEClass);
     // m_NumberValue__value has already been allocated above
     m_NumberValue__value->setFeatureID(::json::JsonPackage::NUMBERVALUE__VALUE);
-    m_NumberValueEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NumberValueEClass->getEStructuralFeatures()).basicAdd(
             m_NumberValue__value);
+    m_NumberValue__value->basicsetEContainingClass(m_NumberValueEClass);
 
     // BooleanValue
     m_BooleanValueEClass = ::ecore::Ptr < ::ecore::EClass
             > (new ::ecore::EClass);
     m_BooleanValueEClass->setClassifierID(BOOLEANVALUE);
-    m_BooleanValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BooleanValueEClass);
+    m_BooleanValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BooleanValueEClass);
     // m_BooleanValue__value has already been allocated above
     m_BooleanValue__value->setFeatureID(
             ::json::JsonPackage::BOOLEANVALUE__VALUE);
-    m_BooleanValueEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BooleanValueEClass->getEStructuralFeatures()).basicAdd(
             m_BooleanValue__value);
+    m_BooleanValue__value->basicsetEContainingClass(m_BooleanValueEClass);
 
     // ArrayValue
     m_ArrayValueEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_ArrayValueEClass->setClassifierID(ARRAYVALUE);
-    m_ArrayValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_ArrayValueEClass);
+    m_ArrayValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_ArrayValueEClass);
     // m_ArrayValue__values has already been allocated above
     m_ArrayValue__values->setFeatureID(::json::JsonPackage::ARRAYVALUE__VALUES);
-    m_ArrayValueEClass->getEStructuralFeatures().push_back(
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ArrayValueEClass->getEStructuralFeatures()).basicAdd(
             m_ArrayValue__values);
+    m_ArrayValue__values->basicsetEContainingClass(m_ArrayValueEClass);
 
     // NullValue
     m_NullValueEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_NullValueEClass->setClassifierID(NULLVALUE);
-    m_NullValueEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_NullValueEClass);
+    m_NullValueEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_NullValueEClass);
 
     // Create enums
 

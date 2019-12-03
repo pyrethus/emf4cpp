@@ -59,12 +59,12 @@ void UnionField::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__CONTAINEDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getContainedType());
     }
         return _any;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__SHAREDTYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getSharedType());
     }
@@ -94,7 +94,7 @@ void UnionField::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__CONTAINEDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -102,7 +102,7 @@ void UnionField::eSet(::ecore::EInt _featureID,
         setContainedType(_t1);
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__SHAREDTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
                 > (_newValue);
@@ -135,9 +135,9 @@ void UnionField::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__CONTAINEDTYPE:
         return getContainedType().get() != nullptr;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__SHAREDTYPE:
         return getSharedType().get() != nullptr;
     case ::idlmm::IdlmmPackage::UNIONFIELD__IDENTIFIER:
         return ::ecorecpp::mapping::set_traits < ::ecore::EString
@@ -161,7 +161,7 @@ void UnionField::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr UnionField::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::idlmm::IdlmmPackage* >(::idlmm::IdlmmPackage::_instance().get())->getUnionField();
+            ::idlmm::IdlmmPackage::_instance()->getUnionField();
     return _eclass;
 }
 
@@ -172,11 +172,11 @@ void UnionField::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__SHAREDTYPE:
     {
     }
         return;
@@ -192,11 +192,11 @@ void UnionField::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__CONTAINEDTYPE:
     {
     }
         return;
-    case ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE:
+    case ::idlmm::IdlmmPackage::UNIONFIELD__SHAREDTYPE:
     {
     }
         return;

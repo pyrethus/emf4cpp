@@ -52,7 +52,6 @@ using namespace ::kdm::platform;
 // Default constructor
 LockResource::LockResource()
 {
-
     /*PROTECTED REGION ID(LockResourceImpl__LockResourceImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

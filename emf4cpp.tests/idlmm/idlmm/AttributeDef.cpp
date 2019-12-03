@@ -44,16 +44,6 @@ using namespace ::idlmm;
 // Default constructor
 AttributeDef::AttributeDef()
 {
-
-    m_getRaises.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::idlmm::ExceptionDef_ptr, -1, false, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getAttributeDef__getRaises()));
-    m_setRaises.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::idlmm::ExceptionDef_ptr, -1, false, false >(this,
-                    ::idlmm::IdlmmPackage::_instance()->getAttributeDef__setRaises()));
-
     /*PROTECTED REGION ID(AttributeDefImpl__AttributeDefImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -100,21 +90,45 @@ void AttributeDef::setIsReadonly(::ecore::EBoolean _isReadonly)
 
 const ::ecorecpp::mapping::EList< ::idlmm::ExceptionDef_ptr >& AttributeDef::getGetRaises() const
 {
+    if (!m_getRaises)
+        return const_cast< AttributeDef* >(this)->getGetRaises();
+
     return *m_getRaises;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::ExceptionDef_ptr >& AttributeDef::getGetRaises()
 {
+    /*PROTECTED REGION ID(AttributeDef__getGetRaises) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_getRaises)
+        m_getRaises.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::idlmm::ExceptionDef_ptr, -1, false, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getAttributeDef__getRaises()));
+    /*PROTECTED REGION END*/
     return *m_getRaises;
 }
 
 const ::ecorecpp::mapping::EList< ::idlmm::ExceptionDef_ptr >& AttributeDef::getSetRaises() const
 {
+    if (!m_setRaises)
+        return const_cast< AttributeDef* >(this)->getSetRaises();
+
     return *m_setRaises;
 }
 
 ::ecorecpp::mapping::EList< ::idlmm::ExceptionDef_ptr >& AttributeDef::getSetRaises()
 {
+    /*PROTECTED REGION ID(AttributeDef__getSetRaises) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_setRaises)
+        m_setRaises.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::idlmm::ExceptionDef_ptr, -1, false, false >(this,
+                        ::idlmm::IdlmmPackage::_instance()->getAttributeDef__setRaises()));
+    /*PROTECTED REGION END*/
     return *m_setRaises;
 }
 

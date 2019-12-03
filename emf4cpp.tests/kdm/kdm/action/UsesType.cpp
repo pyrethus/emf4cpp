@@ -46,7 +46,6 @@ using namespace ::kdm::action;
 // Default constructor
 UsesType::UsesType()
 {
-
     /*PROTECTED REGION ID(UsesTypeImpl__UsesTypeImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

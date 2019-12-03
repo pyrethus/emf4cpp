@@ -45,7 +45,6 @@ using namespace ::kdm::source;
 // Default constructor
 InventoryRelationship::InventoryRelationship()
 {
-
     /*PROTECTED REGION ID(InventoryRelationshipImpl__InventoryRelationshipImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

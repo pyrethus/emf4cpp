@@ -42,381 +42,398 @@ namespace kdm
         static UiPackage_ptr _instance();
         static UiPackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier AbstractUIElement
         static const int ABSTRACTUIELEMENT = 0;
 
+        static const int ABSTRACTUIELEMENT__ATTRIBUTE = 0;
+
+        static const int ABSTRACTUIELEMENT__ANNOTATION = 1;
+
+        static const int ABSTRACTUIELEMENT__STEREOTYPE = 2;
+
+        static const int ABSTRACTUIELEMENT__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTUIELEMENT__NAME = 4;
+
+        static const int ABSTRACTUIELEMENT__SOURCE = 5;
+
+        static const int ABSTRACTUIELEMENT__UIRELATION = 6;
+
+        static const int ABSTRACTUIELEMENT__IMPLEMENTATION = 7;
+
+        static const int ABSTRACTUIELEMENT__ABSTRACTION = 8;
+
+        static const int ABSTRACTUIELEMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier AbstractUIRelationship
         static const int ABSTRACTUIRELATIONSHIP = 1;
 
+        static const int ABSTRACTUIRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int ABSTRACTUIRELATIONSHIP__ANNOTATION = 1;
+
+        static const int ABSTRACTUIRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int ABSTRACTUIRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int ABSTRACTUIRELATIONSHIP_FEATURE_COUNT = 4;
+
+        // IDs for classifier Displays
         static const int DISPLAYS = 2;
 
+        static const int DISPLAYS__ATTRIBUTE = 0;
+
+        static const int DISPLAYS__ANNOTATION = 1;
+
+        static const int DISPLAYS__STEREOTYPE = 2;
+
+        static const int DISPLAYS__TAGGEDVALUE = 3;
+
+        static const int DISPLAYS__TO = 4;
+
+        static const int DISPLAYS__FROM = 5;
+
+        static const int DISPLAYS_FEATURE_COUNT = 6;
+
+        // IDs for classifier DisplaysImage
         static const int DISPLAYSIMAGE = 3;
 
+        static const int DISPLAYSIMAGE__ATTRIBUTE = 0;
+
+        static const int DISPLAYSIMAGE__ANNOTATION = 1;
+
+        static const int DISPLAYSIMAGE__STEREOTYPE = 2;
+
+        static const int DISPLAYSIMAGE__TAGGEDVALUE = 3;
+
+        static const int DISPLAYSIMAGE__TO = 4;
+
+        static const int DISPLAYSIMAGE__FROM = 5;
+
+        static const int DISPLAYSIMAGE_FEATURE_COUNT = 6;
+
+        // IDs for classifier ManagesUI
         static const int MANAGESUI = 4;
 
+        static const int MANAGESUI__ATTRIBUTE = 0;
+
+        static const int MANAGESUI__ANNOTATION = 1;
+
+        static const int MANAGESUI__STEREOTYPE = 2;
+
+        static const int MANAGESUI__TAGGEDVALUE = 3;
+
+        static const int MANAGESUI__TO = 4;
+
+        static const int MANAGESUI__FROM = 5;
+
+        static const int MANAGESUI_FEATURE_COUNT = 6;
+
+        // IDs for classifier ReadsUI
         static const int READSUI = 5;
 
+        static const int READSUI__ATTRIBUTE = 0;
+
+        static const int READSUI__ANNOTATION = 1;
+
+        static const int READSUI__STEREOTYPE = 2;
+
+        static const int READSUI__TAGGEDVALUE = 3;
+
+        static const int READSUI__TO = 4;
+
+        static const int READSUI__FROM = 5;
+
+        static const int READSUI_FEATURE_COUNT = 6;
+
+        // IDs for classifier Report
         static const int REPORT = 6;
 
+        static const int REPORT__ATTRIBUTE = 0;
+
+        static const int REPORT__ANNOTATION = 1;
+
+        static const int REPORT__STEREOTYPE = 2;
+
+        static const int REPORT__TAGGEDVALUE = 3;
+
+        static const int REPORT__NAME = 4;
+
+        static const int REPORT__SOURCE = 5;
+
+        static const int REPORT__UIRELATION = 6;
+
+        static const int REPORT__IMPLEMENTATION = 7;
+
+        static const int REPORT__ABSTRACTION = 8;
+
+        static const int REPORT__UIELEMENT = 9;
+
+        static const int REPORT_FEATURE_COUNT = 10;
+
+        // IDs for classifier Screen
         static const int SCREEN = 7;
 
+        static const int SCREEN__ATTRIBUTE = 0;
+
+        static const int SCREEN__ANNOTATION = 1;
+
+        static const int SCREEN__STEREOTYPE = 2;
+
+        static const int SCREEN__TAGGEDVALUE = 3;
+
+        static const int SCREEN__NAME = 4;
+
+        static const int SCREEN__SOURCE = 5;
+
+        static const int SCREEN__UIRELATION = 6;
+
+        static const int SCREEN__IMPLEMENTATION = 7;
+
+        static const int SCREEN__ABSTRACTION = 8;
+
+        static const int SCREEN__UIELEMENT = 9;
+
+        static const int SCREEN_FEATURE_COUNT = 10;
+
+        // IDs for classifier UIAction
         static const int UIACTION = 8;
 
+        static const int UIACTION__ATTRIBUTE = 0;
+
+        static const int UIACTION__ANNOTATION = 1;
+
+        static const int UIACTION__STEREOTYPE = 2;
+
+        static const int UIACTION__TAGGEDVALUE = 3;
+
+        static const int UIACTION__NAME = 4;
+
+        static const int UIACTION__SOURCE = 5;
+
+        static const int UIACTION__UIRELATION = 6;
+
+        static const int UIACTION__IMPLEMENTATION = 7;
+
+        static const int UIACTION__ABSTRACTION = 8;
+
+        static const int UIACTION__KIND = 9;
+
+        static const int UIACTION__UIELEMENT = 10;
+
+        static const int UIACTION_FEATURE_COUNT = 11;
+
+        // IDs for classifier UIDisplay
         static const int UIDISPLAY = 9;
 
+        static const int UIDISPLAY__ATTRIBUTE = 0;
+
+        static const int UIDISPLAY__ANNOTATION = 1;
+
+        static const int UIDISPLAY__STEREOTYPE = 2;
+
+        static const int UIDISPLAY__TAGGEDVALUE = 3;
+
+        static const int UIDISPLAY__NAME = 4;
+
+        static const int UIDISPLAY__SOURCE = 5;
+
+        static const int UIDISPLAY__UIRELATION = 6;
+
+        static const int UIDISPLAY__IMPLEMENTATION = 7;
+
+        static const int UIDISPLAY__ABSTRACTION = 8;
+
+        static const int UIDISPLAY__UIELEMENT = 9;
+
+        static const int UIDISPLAY_FEATURE_COUNT = 10;
+
+        // IDs for classifier UIElement
         static const int UIELEMENT = 10;
 
+        static const int UIELEMENT__ATTRIBUTE = 0;
+
+        static const int UIELEMENT__ANNOTATION = 1;
+
+        static const int UIELEMENT__STEREOTYPE = 2;
+
+        static const int UIELEMENT__TAGGEDVALUE = 3;
+
+        static const int UIELEMENT__NAME = 4;
+
+        static const int UIELEMENT__SOURCE = 5;
+
+        static const int UIELEMENT__UIRELATION = 6;
+
+        static const int UIELEMENT__IMPLEMENTATION = 7;
+
+        static const int UIELEMENT__ABSTRACTION = 8;
+
+        static const int UIELEMENT_FEATURE_COUNT = 9;
+
+        // IDs for classifier UIEvent
         static const int UIEVENT = 11;
 
+        static const int UIEVENT__ATTRIBUTE = 0;
+
+        static const int UIEVENT__ANNOTATION = 1;
+
+        static const int UIEVENT__STEREOTYPE = 2;
+
+        static const int UIEVENT__TAGGEDVALUE = 3;
+
+        static const int UIEVENT__NAME = 4;
+
+        static const int UIEVENT__SOURCE = 5;
+
+        static const int UIEVENT__UIRELATION = 6;
+
+        static const int UIEVENT__IMPLEMENTATION = 7;
+
+        static const int UIEVENT__ABSTRACTION = 8;
+
+        static const int UIEVENT__KIND = 9;
+
+        static const int UIEVENT_FEATURE_COUNT = 10;
+
+        // IDs for classifier UIField
         static const int UIFIELD = 12;
 
+        static const int UIFIELD__ATTRIBUTE = 0;
+
+        static const int UIFIELD__ANNOTATION = 1;
+
+        static const int UIFIELD__STEREOTYPE = 2;
+
+        static const int UIFIELD__TAGGEDVALUE = 3;
+
+        static const int UIFIELD__NAME = 4;
+
+        static const int UIFIELD__SOURCE = 5;
+
+        static const int UIFIELD__UIRELATION = 6;
+
+        static const int UIFIELD__IMPLEMENTATION = 7;
+
+        static const int UIFIELD__ABSTRACTION = 8;
+
+        static const int UIFIELD__UIELEMENT = 9;
+
+        static const int UIFIELD_FEATURE_COUNT = 10;
+
+        // IDs for classifier UIFlow
         static const int UIFLOW = 13;
 
+        static const int UIFLOW__ATTRIBUTE = 0;
+
+        static const int UIFLOW__ANNOTATION = 1;
+
+        static const int UIFLOW__STEREOTYPE = 2;
+
+        static const int UIFLOW__TAGGEDVALUE = 3;
+
+        static const int UIFLOW__TO = 4;
+
+        static const int UIFLOW__FROM = 5;
+
+        static const int UIFLOW_FEATURE_COUNT = 6;
+
+        // IDs for classifier UILayout
         static const int UILAYOUT = 14;
 
+        static const int UILAYOUT__ATTRIBUTE = 0;
+
+        static const int UILAYOUT__ANNOTATION = 1;
+
+        static const int UILAYOUT__STEREOTYPE = 2;
+
+        static const int UILAYOUT__TAGGEDVALUE = 3;
+
+        static const int UILAYOUT__TO = 4;
+
+        static const int UILAYOUT__FROM = 5;
+
+        static const int UILAYOUT_FEATURE_COUNT = 6;
+
+        // IDs for classifier UIModel
         static const int UIMODEL = 15;
 
+        static const int UIMODEL__ATTRIBUTE = 0;
+
+        static const int UIMODEL__ANNOTATION = 1;
+
+        static const int UIMODEL__STEREOTYPE = 2;
+
+        static const int UIMODEL__TAGGEDVALUE = 3;
+
+        static const int UIMODEL__AUDIT = 4;
+
+        static const int UIMODEL__EXTENSIONFAMILY = 5;
+
+        static const int UIMODEL__NAME = 6;
+
+        static const int UIMODEL__UIELEMENT = 7;
+
+        static const int UIMODEL_FEATURE_COUNT = 8;
+
+        // IDs for classifier UIRelationship
         static const int UIRELATIONSHIP = 16;
 
+        static const int UIRELATIONSHIP__ATTRIBUTE = 0;
+
+        static const int UIRELATIONSHIP__ANNOTATION = 1;
+
+        static const int UIRELATIONSHIP__STEREOTYPE = 2;
+
+        static const int UIRELATIONSHIP__TAGGEDVALUE = 3;
+
+        static const int UIRELATIONSHIP__TO = 4;
+
+        static const int UIRELATIONSHIP__FROM = 5;
+
+        static const int UIRELATIONSHIP_FEATURE_COUNT = 6;
+
+        // IDs for classifier UIResource
         static const int UIRESOURCE = 17;
 
+        static const int UIRESOURCE__ATTRIBUTE = 0;
+
+        static const int UIRESOURCE__ANNOTATION = 1;
+
+        static const int UIRESOURCE__STEREOTYPE = 2;
+
+        static const int UIRESOURCE__TAGGEDVALUE = 3;
+
+        static const int UIRESOURCE__NAME = 4;
+
+        static const int UIRESOURCE__SOURCE = 5;
+
+        static const int UIRESOURCE__UIRELATION = 6;
+
+        static const int UIRESOURCE__IMPLEMENTATION = 7;
+
+        static const int UIRESOURCE__ABSTRACTION = 8;
+
+        static const int UIRESOURCE__UIELEMENT = 9;
+
+        static const int UIRESOURCE_FEATURE_COUNT = 10;
+
+        // IDs for classifier WritesUI
         static const int WRITESUI = 18;
 
-        static const int ABSTRACTUIELEMENT__SOURCE = 290;
+        static const int WRITESUI__ATTRIBUTE = 0;
 
-        static const int ABSTRACTUIELEMENT__UIRELATION = 291;
+        static const int WRITESUI__ANNOTATION = 1;
 
-        static const int ABSTRACTUIELEMENT__IMPLEMENTATION = 292;
+        static const int WRITESUI__STEREOTYPE = 2;
 
-        static const int ABSTRACTUIELEMENT__ABSTRACTION = 293;
+        static const int WRITESUI__TAGGEDVALUE = 3;
 
-        static const int UIRESOURCE__UIELEMENT = 294;
+        static const int WRITESUI__TO = 4;
 
-        static const int UIMODEL__UIELEMENT = 295;
+        static const int WRITESUI__FROM = 5;
 
-        static const int UILAYOUT__TO = 296;
-
-        static const int UILAYOUT__FROM = 297;
-
-        static const int DISPLAYSIMAGE__TO = 298;
-
-        static const int DISPLAYSIMAGE__FROM = 299;
-
-        static const int DISPLAYS__TO = 300;
-
-        static const int DISPLAYS__FROM = 301;
-
-        static const int UIFLOW__TO = 302;
-
-        static const int UIFLOW__FROM = 303;
-
-        static const int UIRELATIONSHIP__TO = 304;
-
-        static const int UIRELATIONSHIP__FROM = 305;
-
-        static const int UIACTION__KIND = 306;
-
-        static const int UIACTION__UIELEMENT = 307;
-
-        static const int UIEVENT__KIND = 308;
-
-        static const int READSUI__TO = 309;
-
-        static const int READSUI__FROM = 310;
-
-        static const int WRITESUI__TO = 311;
-
-        static const int WRITESUI__FROM = 312;
-
-        static const int MANAGESUI__TO = 313;
-
-        static const int MANAGESUI__FROM = 314;
-
-        // IDs for classifiers for class AbstractUIElement 
-
-        static const int ABSTRACTUIELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTUIELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTUIELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTUIELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int ABSTRACTUIELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        // IDs for classifiers for class AbstractUIRelationship 
-
-        static const int ABSTRACTUIRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int ABSTRACTUIRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int ABSTRACTUIRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int ABSTRACTUIRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Displays 
-
-        static const int DISPLAYS__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DISPLAYS__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DISPLAYS__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DISPLAYS__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class DisplaysImage 
-
-        static const int DISPLAYSIMAGE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int DISPLAYSIMAGE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int DISPLAYSIMAGE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int DISPLAYSIMAGE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ManagesUI 
-
-        static const int MANAGESUI__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int MANAGESUI__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int MANAGESUI__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int MANAGESUI__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class ReadsUI 
-
-        static const int READSUI__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int READSUI__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int READSUI__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int READSUI__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class Report 
-
-        static const int REPORT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int REPORT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int REPORT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int REPORT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int REPORT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int REPORT__SOURCE = ABSTRACTUIELEMENT__SOURCE;
-
-        static const int REPORT__UIRELATION = ABSTRACTUIELEMENT__UIRELATION;
-
-        static const int REPORT__IMPLEMENTATION = ABSTRACTUIELEMENT__IMPLEMENTATION;
-
-        static const int REPORT__ABSTRACTION = ABSTRACTUIELEMENT__ABSTRACTION;
-
-        static const int REPORT__UIELEMENT = UIRESOURCE__UIELEMENT;
-
-        // IDs for classifiers for class Screen 
-
-        static const int SCREEN__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int SCREEN__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int SCREEN__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int SCREEN__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int SCREEN__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int SCREEN__SOURCE = ABSTRACTUIELEMENT__SOURCE;
-
-        static const int SCREEN__UIRELATION = ABSTRACTUIELEMENT__UIRELATION;
-
-        static const int SCREEN__IMPLEMENTATION = ABSTRACTUIELEMENT__IMPLEMENTATION;
-
-        static const int SCREEN__ABSTRACTION = ABSTRACTUIELEMENT__ABSTRACTION;
-
-        static const int SCREEN__UIELEMENT = UIRESOURCE__UIELEMENT;
-
-        // IDs for classifiers for class UIAction 
-
-        static const int UIACTION__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UIACTION__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UIACTION__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UIACTION__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int UIACTION__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int UIACTION__SOURCE = ABSTRACTUIELEMENT__SOURCE;
-
-        static const int UIACTION__UIRELATION = ABSTRACTUIELEMENT__UIRELATION;
-
-        static const int UIACTION__IMPLEMENTATION = ABSTRACTUIELEMENT__IMPLEMENTATION;
-
-        static const int UIACTION__ABSTRACTION = ABSTRACTUIELEMENT__ABSTRACTION;
-
-        // IDs for classifiers for class UIDisplay 
-
-        static const int UIDISPLAY__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UIDISPLAY__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UIDISPLAY__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UIDISPLAY__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int UIDISPLAY__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int UIDISPLAY__SOURCE = ABSTRACTUIELEMENT__SOURCE;
-
-        static const int UIDISPLAY__UIRELATION = ABSTRACTUIELEMENT__UIRELATION;
-
-        static const int UIDISPLAY__IMPLEMENTATION = ABSTRACTUIELEMENT__IMPLEMENTATION;
-
-        static const int UIDISPLAY__ABSTRACTION = ABSTRACTUIELEMENT__ABSTRACTION;
-
-        static const int UIDISPLAY__UIELEMENT = UIRESOURCE__UIELEMENT;
-
-        // IDs for classifiers for class UIElement 
-
-        static const int UIELEMENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UIELEMENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UIELEMENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UIELEMENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int UIELEMENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int UIELEMENT__SOURCE = ABSTRACTUIELEMENT__SOURCE;
-
-        static const int UIELEMENT__UIRELATION = ABSTRACTUIELEMENT__UIRELATION;
-
-        static const int UIELEMENT__IMPLEMENTATION = ABSTRACTUIELEMENT__IMPLEMENTATION;
-
-        static const int UIELEMENT__ABSTRACTION = ABSTRACTUIELEMENT__ABSTRACTION;
-
-        // IDs for classifiers for class UIEvent 
-
-        static const int UIEVENT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UIEVENT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UIEVENT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UIEVENT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int UIEVENT__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int UIEVENT__SOURCE = ABSTRACTUIELEMENT__SOURCE;
-
-        static const int UIEVENT__UIRELATION = ABSTRACTUIELEMENT__UIRELATION;
-
-        static const int UIEVENT__IMPLEMENTATION = ABSTRACTUIELEMENT__IMPLEMENTATION;
-
-        static const int UIEVENT__ABSTRACTION = ABSTRACTUIELEMENT__ABSTRACTION;
-
-        // IDs for classifiers for class UIField 
-
-        static const int UIFIELD__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UIFIELD__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UIFIELD__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UIFIELD__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int UIFIELD__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int UIFIELD__SOURCE = ABSTRACTUIELEMENT__SOURCE;
-
-        static const int UIFIELD__UIRELATION = ABSTRACTUIELEMENT__UIRELATION;
-
-        static const int UIFIELD__IMPLEMENTATION = ABSTRACTUIELEMENT__IMPLEMENTATION;
-
-        static const int UIFIELD__ABSTRACTION = ABSTRACTUIELEMENT__ABSTRACTION;
-
-        static const int UIFIELD__UIELEMENT = UIRESOURCE__UIELEMENT;
-
-        // IDs for classifiers for class UIFlow 
-
-        static const int UIFLOW__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UIFLOW__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UIFLOW__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UIFLOW__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class UILayout 
-
-        static const int UILAYOUT__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UILAYOUT__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UILAYOUT__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UILAYOUT__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class UIModel 
-
-        static const int UIMODEL__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UIMODEL__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UIMODEL__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UIMODEL__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int UIMODEL__AUDIT = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT;
-
-        static const int UIMODEL__EXTENSIONFAMILY = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY;
-
-        static const int UIMODEL__NAME = ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME;
-
-        // IDs for classifiers for class UIRelationship 
-
-        static const int UIRELATIONSHIP__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UIRELATIONSHIP__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UIRELATIONSHIP__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UIRELATIONSHIP__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        // IDs for classifiers for class UIResource 
-
-        static const int UIRESOURCE__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int UIRESOURCE__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int UIRESOURCE__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int UIRESOURCE__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
-
-        static const int UIRESOURCE__NAME = ::kdm::core::CorePackage::KDMENTITY__NAME;
-
-        static const int UIRESOURCE__SOURCE = ABSTRACTUIELEMENT__SOURCE;
-
-        static const int UIRESOURCE__UIRELATION = ABSTRACTUIELEMENT__UIRELATION;
-
-        static const int UIRESOURCE__IMPLEMENTATION = ABSTRACTUIELEMENT__IMPLEMENTATION;
-
-        static const int UIRESOURCE__ABSTRACTION = ABSTRACTUIELEMENT__ABSTRACTION;
-
-        // IDs for classifiers for class WritesUI 
-
-        static const int WRITESUI__ATTRIBUTE = ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE;
-
-        static const int WRITESUI__ANNOTATION = ::kdm::core::CorePackage::ELEMENT__ANNOTATION;
-
-        static const int WRITESUI__STEREOTYPE = ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE;
-
-        static const int WRITESUI__TAGGEDVALUE = ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE;
+        static const int WRITESUI_FEATURE_COUNT = 6;
 
         // EClassifiers methods
 

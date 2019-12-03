@@ -128,7 +128,7 @@ void Apollo11::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Apollo11::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::v_2_0::edate::EdatePackage* >(::v_2_0::edate::EdatePackage::_instance().get())->getApollo11();
+            ::v_2_0::edate::EdatePackage::_instance()->getApollo11();
     return _eclass;
 }
 

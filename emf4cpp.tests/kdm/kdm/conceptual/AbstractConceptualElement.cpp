@@ -49,25 +49,6 @@ using namespace ::kdm::conceptual;
 // Default constructor
 AbstractConceptualElement::AbstractConceptualElement()
 {
-
-    m_source.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::source::SourceRef_ptr, -1, true, false >(this,
-                    ::kdm::conceptual::ConceptualPackage::_instance()->getAbstractConceptualElement__source()));
-    m_implementation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::core::KDMEntity_ptr, -1, false, false >(this,
-                    ::kdm::conceptual::ConceptualPackage::_instance()->getAbstractConceptualElement__implementation()));
-    m_conceptualRelation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::conceptual::AbstractConceptualRelationship_ptr, -1,
-                    true, false >(this,
-                    ::kdm::conceptual::ConceptualPackage::_instance()->getAbstractConceptualElement__conceptualRelation()));
-    m_abstraction.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::action::ActionElement_ptr, -1, true, false >(this,
-                    ::kdm::conceptual::ConceptualPackage::_instance()->getAbstractConceptualElement__abstraction()));
-
     /*PROTECTED REGION ID(AbstractConceptualElementImpl__AbstractConceptualElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -88,43 +69,93 @@ AbstractConceptualElement::~AbstractConceptualElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractConceptualElement::getSource() const
 {
+    if (!m_source)
+        return const_cast< AbstractConceptualElement* >(this)->getSource();
+
     return *m_source;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::source::SourceRef_ptr >& AbstractConceptualElement::getSource()
 {
+    /*PROTECTED REGION ID(AbstractConceptualElement__getSource) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_source)
+        m_source.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::source::SourceRef_ptr, -1, true, false >(this,
+                        ::kdm::conceptual::ConceptualPackage::_instance()->getAbstractConceptualElement__source()));
+    /*PROTECTED REGION END*/
     return *m_source;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::core::KDMEntity_ptr >& AbstractConceptualElement::getImplementation() const
 {
+    if (!m_implementation)
+        return const_cast< AbstractConceptualElement* >(this)->getImplementation();
+
     return *m_implementation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::core::KDMEntity_ptr >& AbstractConceptualElement::getImplementation()
 {
+    /*PROTECTED REGION ID(AbstractConceptualElement__getImplementation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_implementation)
+        m_implementation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::core::KDMEntity_ptr, -1, false, false >(this,
+                        ::kdm::conceptual::ConceptualPackage::_instance()->getAbstractConceptualElement__implementation()));
+    /*PROTECTED REGION END*/
     return *m_implementation;
 }
 
 const ::ecorecpp::mapping::EList<
         ::kdm::conceptual::AbstractConceptualRelationship_ptr >& AbstractConceptualElement::getConceptualRelation() const
 {
+    if (!m_conceptualRelation)
+        return const_cast< AbstractConceptualElement* >(this)->getConceptualRelation();
+
     return *m_conceptualRelation;
 }
 
 ::ecorecpp::mapping::EList<
         ::kdm::conceptual::AbstractConceptualRelationship_ptr >& AbstractConceptualElement::getConceptualRelation()
 {
+    /*PROTECTED REGION ID(AbstractConceptualElement__getConceptualRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_conceptualRelation)
+        m_conceptualRelation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::conceptual::AbstractConceptualRelationship_ptr,
+                        -1, true, false >(this,
+                        ::kdm::conceptual::ConceptualPackage::_instance()->getAbstractConceptualElement__conceptualRelation()));
+    /*PROTECTED REGION END*/
     return *m_conceptualRelation;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractConceptualElement::getAbstraction() const
 {
+    if (!m_abstraction)
+        return const_cast< AbstractConceptualElement* >(this)->getAbstraction();
+
     return *m_abstraction;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::action::ActionElement_ptr >& AbstractConceptualElement::getAbstraction()
 {
+    /*PROTECTED REGION ID(AbstractConceptualElement__getAbstraction) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_abstraction)
+        m_abstraction.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::action::ActionElement_ptr, -1, true, false >(
+                        this,
+                        ::kdm::conceptual::ConceptualPackage::_instance()->getAbstractConceptualElement__abstraction()));
+    /*PROTECTED REGION END*/
     return *m_abstraction;
 }
 

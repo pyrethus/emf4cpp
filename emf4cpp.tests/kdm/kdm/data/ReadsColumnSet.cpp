@@ -46,7 +46,6 @@ using namespace ::kdm::data;
 // Default constructor
 ReadsColumnSet::ReadsColumnSet()
 {
-
     /*PROTECTED REGION ID(ReadsColumnSetImpl__ReadsColumnSetImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

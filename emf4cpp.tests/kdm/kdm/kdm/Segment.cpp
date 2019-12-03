@@ -47,16 +47,6 @@ using namespace ::kdm::kdm;
 // Default constructor
 Segment::Segment()
 {
-
-    m_segment.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::kdm::Segment_ptr, -1, true, false >(this,
-                    ::kdm::kdm::KdmPackage::_instance()->getSegment__segment()));
-    m_model.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::kdm::KDMModel_ptr, -1, true, false >(this,
-                    ::kdm::kdm::KdmPackage::_instance()->getSegment__model()));
-
     /*PROTECTED REGION ID(SegmentImpl__SegmentImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -77,21 +67,45 @@ Segment::~Segment()
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::Segment_ptr >& Segment::getSegment() const
 {
+    if (!m_segment)
+        return const_cast< Segment* >(this)->getSegment();
+
     return *m_segment;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::Segment_ptr >& Segment::getSegment()
 {
+    /*PROTECTED REGION ID(Segment__getSegment) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_segment)
+        m_segment.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::Segment_ptr, -1, true, false >(this,
+                        ::kdm::kdm::KdmPackage::_instance()->getSegment__segment()));
+    /*PROTECTED REGION END*/
     return *m_segment;
 }
 
 const ::ecorecpp::mapping::EList< ::kdm::kdm::KDMModel_ptr >& Segment::getModel() const
 {
+    if (!m_model)
+        return const_cast< Segment* >(this)->getModel();
+
     return *m_model;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::kdm::KDMModel_ptr >& Segment::getModel()
 {
+    /*PROTECTED REGION ID(Segment__getModel) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_model)
+        m_model.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::kdm::KDMModel_ptr, -1, true, false >(this,
+                        ::kdm::kdm::KdmPackage::_instance()->getSegment__model()));
+    /*PROTECTED REGION END*/
     return *m_model;
 }
 

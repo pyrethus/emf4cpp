@@ -47,13 +47,6 @@ using namespace ::kdm::build;
 // Default constructor
 AbstractBuildElement::AbstractBuildElement()
 {
-
-    m_buildRelation.reset(
-            new ::ecorecpp::mapping::ReferenceEListImpl<
-                    ::kdm::build::AbstractBuildRelationship_ptr, -1, true, false >(
-                    this,
-                    ::kdm::build::BuildPackage::_instance()->getAbstractBuildElement__buildRelation()));
-
     /*PROTECTED REGION ID(AbstractBuildElementImpl__AbstractBuildElementImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
@@ -74,11 +67,24 @@ AbstractBuildElement::~AbstractBuildElement()
 
 const ::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildRelationship_ptr >& AbstractBuildElement::getBuildRelation() const
 {
+    if (!m_buildRelation)
+        return const_cast< AbstractBuildElement* >(this)->getBuildRelation();
+
     return *m_buildRelation;
 }
 
 ::ecorecpp::mapping::EList< ::kdm::build::AbstractBuildRelationship_ptr >& AbstractBuildElement::getBuildRelation()
 {
+    /*PROTECTED REGION ID(AbstractBuildElement__getBuildRelation) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    if (!m_buildRelation)
+        m_buildRelation.reset(
+                new ::ecorecpp::mapping::ReferenceEListImpl<
+                        ::kdm::build::AbstractBuildRelationship_ptr, -1, true,
+                        false >(this,
+                        ::kdm::build::BuildPackage::_instance()->getAbstractBuildElement__buildRelation()));
+    /*PROTECTED REGION END*/
     return *m_buildRelation;
 }
 

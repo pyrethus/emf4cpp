@@ -37,8 +37,6 @@ public:
     static KdmPackage_ptr _instance();
     static KdmPackage_ptr _getInstanceAndRemoveOwnership();
 
-    // IDs for classifiers
-
     // EClassifiers methods
 
     // EStructuralFeatures methods

@@ -51,29 +51,37 @@ void EnumerationPackage::_initPackage()
 {
     // Factory
     ::ecore::EFactory_ptr _fa = EnumerationFactory::_instance();
-    setEFactoryInstance(_fa);
-    _fa->setEPackage(_this());
+    basicsetEFactoryInstance(_fa);
+    _fa->basicsetEPackage(_this());
 
-    // Create classes and their features
+// Create classes and their features
+    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
     // Bird
     m_BirdEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
     m_BirdEClass->setClassifierID(BIRD);
-    m_BirdEClass->setEPackage(_this());
-    getEClassifiers().push_back(m_BirdEClass);
+    m_BirdEClass->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BirdEClass);
     // m_Bird__type has already been allocated above
     m_Bird__type->setFeatureID(::enumeration::EnumerationPackage::BIRD__TYPE);
-    m_BirdEClass->getEStructuralFeatures().push_back(m_Bird__type);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BirdEClass->getEStructuralFeatures()).basicAdd(
+            m_Bird__type);
+    m_Bird__type->basicsetEContainingClass(m_BirdEClass);
     // m_Bird__name has already been allocated above
     m_Bird__name->setFeatureID(::enumeration::EnumerationPackage::BIRD__NAME);
-    m_BirdEClass->getEStructuralFeatures().push_back(m_Bird__name);
+    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BirdEClass->getEStructuralFeatures()).basicAdd(
+            m_Bird__name);
+    m_Bird__name->basicsetEContainingClass(m_BirdEClass);
 
     // Create enums
 
     m_BirdTypeEEnum = ::ecore::Ptr < ::ecore::EEnum > (new ::ecore::EEnum);
     m_BirdTypeEEnum->setClassifierID(BIRDTYPE);
-    m_BirdTypeEEnum->setEPackage(_this());
-    getEClassifiers().push_back(m_BirdTypeEEnum);
+    m_BirdTypeEEnum->basicsetEPackage(_this());
+    classifiers.basicAdd(m_BirdTypeEEnum);
 
     // Create data types
 

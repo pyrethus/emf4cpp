@@ -54,9 +54,9 @@ void PlatformAction::_initialize()
     ::kdm::platform::AbstractPlatformElement::_initialize();
 
     // References
-    for (size_t i = 0; i < m_platformElement->size(); i++)
+    for (const auto &ref : getPlatformElement())
     {
-        (*m_platformElement)[i]->_initialize();
+        ref->_initialize();
     }
 
     /*PROTECTED REGION ID(PlatformActionImpl__initialize) START*/
@@ -74,48 +74,48 @@ void PlatformAction::_initialize()
     ::ecore::EJavaObject _any;
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ATTRIBUTE:
     {
         _any = getAttribute().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ANNOTATION:
     {
         _any = getAnnotation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__STEREOTYPE:
     {
         _any = getStereotype().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__TAGGEDVALUE:
     {
         _any = getTaggedValue().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__NAME:
     {
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
                 > ::toAny(_any, getName());
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__SOURCE:
     {
         _any = getSource().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__RELATION:
     {
         _any = getRelation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ABSTRACTION:
     {
         _any = getAbstraction().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__IMPLEMENTATION:
     {
         _any = getImplementation().asEListOf< ::ecore::EObject_ptr >();
     }
@@ -141,7 +141,7 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ATTRIBUTE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -149,7 +149,7 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
         getAttribute().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ANNOTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -157,7 +157,7 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
         getAnnotation().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__STEREOTYPE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -165,7 +165,7 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
         getStereotype().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__TAGGEDVALUE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -173,7 +173,7 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
         getTaggedValue().insert_all(*_t0);
     }
         return;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__NAME:
     {
         ::kdm::core::String _t0;
         ::ecorecpp::mapping::any_traits < ::kdm::core::String
@@ -181,7 +181,7 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
         setName(_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__SOURCE:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -189,7 +189,7 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
         getSource().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__RELATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -197,7 +197,7 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
         getRelation().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ABSTRACTION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -205,7 +205,7 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
         getAbstraction().insert_all(*_t0);
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__IMPLEMENTATION:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
                 < ::ecore::EList_ptr< ::ecore::EObject_ptr > > (_newValue);
@@ -238,24 +238,24 @@ void PlatformAction::eSet(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ATTRIBUTE:
         return getAttribute().size() > 0;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ANNOTATION:
         return getAnnotation().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__STEREOTYPE:
         return getStereotype().size() > 0;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__TAGGEDVALUE:
         return getTaggedValue().size() > 0;
-    case ::kdm::core::CorePackage::KDMENTITY__NAME:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__NAME:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
                 > ::is_set(getName());
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__SOURCE:
         return getSource().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__RELATION:
         return getRelation().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ABSTRACTION:
         return getAbstraction().size() > 0;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__IMPLEMENTATION:
         return getImplementation().size() > 0;
     case ::kdm::platform::PlatformPackage::PLATFORMACTION__KIND:
         return ::ecorecpp::mapping::set_traits < ::kdm::core::String
@@ -279,7 +279,7 @@ void PlatformAction::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr PlatformAction::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::kdm::platform::PlatformPackage* >(::kdm::platform::PlatformPackage::_instance().get())->getPlatformAction();
+            ::kdm::platform::PlatformPackage::_instance()->getPlatformAction();
     return _eclass;
 }
 
@@ -290,35 +290,35 @@ void PlatformAction::_inverseAdd(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__SOURCE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__RELATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__IMPLEMENTATION:
     {
     }
         return;
@@ -338,35 +338,35 @@ void PlatformAction::_inverseRemove(::ecore::EInt _featureID,
 {
     switch (_featureID)
     {
-    case ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ATTRIBUTE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::ELEMENT__ANNOTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ANNOTATION:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__STEREOTYPE:
     {
     }
         return;
-    case ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__TAGGEDVALUE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__SOURCE:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__RELATION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__ABSTRACTION:
     {
     }
         return;
-    case ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION:
+    case ::kdm::platform::PlatformPackage::PLATFORMACTION__IMPLEMENTATION:
     {
     }
         return;

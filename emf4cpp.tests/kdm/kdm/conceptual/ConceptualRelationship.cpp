@@ -45,7 +45,6 @@ using namespace ::kdm::conceptual;
 // Default constructor
 ConceptualRelationship::ConceptualRelationship()
 {
-
     /*PROTECTED REGION ID(ConceptualRelationshipImpl__ConceptualRelationshipImpl) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.

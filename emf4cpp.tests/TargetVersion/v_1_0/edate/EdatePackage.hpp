@@ -39,23 +39,23 @@ namespace v_1_0
         static EdatePackage_ptr _instance();
         static EdatePackage_ptr _getInstanceAndRemoveOwnership();
 
-        // IDs for classifiers
-
+        // IDs for classifier Apollo11
         static const int APOLLO11 = 0;
 
+        static const int APOLLO11__FIRSTMANONMOONDATE = 0;
+
+        static const int APOLLO11__MEMBER = 1;
+
+        static const int APOLLO11_FEATURE_COUNT = 2;
+
+        // IDs for classifier Person
         static const int PERSON = 1;
 
         static const int PERSON__BIRTHDAY = 0;
 
         static const int PERSON__NAME = 1;
 
-        static const int APOLLO11__FIRSTMANONMOONDATE = 2;
-
-        static const int APOLLO11__MEMBER = 3;
-
-        // IDs for classifiers for class Apollo11 
-
-        // IDs for classifiers for class Person 
+        static const int PERSON_FEATURE_COUNT = 2;
 
         // EClassifiers methods
 

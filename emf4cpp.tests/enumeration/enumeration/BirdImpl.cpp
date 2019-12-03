@@ -122,7 +122,7 @@ void Bird::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr Bird::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::enumeration::EnumerationPackage* >(::enumeration::EnumerationPackage::_instance().get())->getBird();
+            ::enumeration::EnumerationPackage::_instance()->getBird();
     return _eclass;
 }
 

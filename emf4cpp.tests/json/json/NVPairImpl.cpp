@@ -128,7 +128,7 @@ void NVPair::eUnset(::ecore::EInt _featureID)
 ::ecore::EClass_ptr NVPair::_eClass()
 {
     static ::ecore::EClass_ptr _eclass =
-            dynamic_cast< ::json::JsonPackage* >(::json::JsonPackage::_instance().get())->getNVPair();
+            ::json::JsonPackage::_instance()->getNVPair();
     return _eclass;
 }
 
