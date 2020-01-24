@@ -61,7 +61,7 @@ StringDef::~StringDef()
     return m_bound;
 }
 
-void StringDef::setBound(::ecore::EString const& _bound)
+void StringDef::setBound(::ecore::EString const &_bound)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_bound = m_bound;
@@ -76,7 +76,7 @@ void StringDef::setBound(::ecore::EString const& _bound)
                 ::idlmm::IdlmmPackage::_instance()->getStringDef__bound(),
                 _old_bound,
                 m_bound
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -107,7 +107,7 @@ void Element::setFill(::PrimitiveTypes::String _fill)
                 ::SVG::SVGPackage::_instance()->getElement__fill(),
                 _old_fill,
                 m_fill
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -133,7 +133,7 @@ void Element::setViewBox(::PrimitiveTypes::String _viewBox)
                 ::SVG::SVGPackage::_instance()->getElement__viewBox(),
                 _old_viewBox,
                 m_viewBox
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -159,7 +159,7 @@ void Element::setIdentifier(::PrimitiveTypes::String _identifier)
                 ::SVG::SVGPackage::_instance()->getElement__identifier(),
                 _old_identifier,
                 m_identifier
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -225,7 +225,7 @@ void Element::setPosition(::SVG::Coordinates_ptr _position)
                 ::SVG::SVGPackage::_instance()->getElement__position(),
                 _old_position,
                 m_position
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -259,7 +259,7 @@ void Element::setSize(::SVG::Dimension_ptr _size)
                 ::SVG::SVGPackage::_instance()->getElement__size(),
                 _old_size,
                 m_size
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -291,7 +291,7 @@ void Element::basicsetRoot(::SVG::Svg_ptr _root)
                 ::SVG::SVGPackage::_instance()->getElement__root(),
                 _old_root,
                 m_root.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -341,7 +341,7 @@ void Element::basicsetGroup(::SVG::GroupingElement_ptr _group)
                 ::SVG::SVGPackage::_instance()->getElement__group(),
                 _old_group,
                 m_group.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -393,7 +393,7 @@ void Element::basicsetDrawsMarker(::SVG::Marker_ptr _drawsMarker)
                 ::SVG::SVGPackage::_instance()->getElement__drawsMarker(),
                 _old_drawsMarker,
                 m_drawsMarker.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

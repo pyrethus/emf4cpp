@@ -106,7 +106,7 @@ void ForEachStatement::setTarget(
                 ::xpand3::statement::StatementPackage::_instance()->getForEachStatement__target(),
                 _old_target,
                 m_target
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -141,7 +141,7 @@ void ForEachStatement::setSeparator(
                 ::xpand3::statement::StatementPackage::_instance()->getForEachStatement__separator(),
                 _old_separator,
                 m_separator
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -175,7 +175,7 @@ void ForEachStatement::setVariable(::xpand3::Identifier_ptr _variable)
                 ::xpand3::statement::StatementPackage::_instance()->getForEachStatement__variable(),
                 _old_variable,
                 m_variable
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -209,7 +209,7 @@ void ForEachStatement::setIteratorName(::xpand3::Identifier_ptr _iteratorName)
                 ::xpand3::statement::StatementPackage::_instance()->getForEachStatement__iteratorName(),
                 _old_iteratorName,
                 m_iteratorName
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -81,7 +81,7 @@ void Department::setNumber(::ecore::EInt _number)
                 ::company::CompanyPackage::_instance()->getDepartment__number(),
                 _old_number,
                 m_number
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -120,7 +120,7 @@ void Department::setManager(::company::Employee_ptr _manager)
                 ::company::CompanyPackage::_instance()->getDepartment__manager(),
                 _old_manager,
                 m_manager.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

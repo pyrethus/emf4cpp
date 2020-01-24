@@ -62,7 +62,7 @@ std::vector< ::ecore::EString > const& EnumDef::getMembers() const
     return m_members;
 }
 
-void EnumDef::setMembers(std::vector< ::ecore::EString > const& _members)
+void EnumDef::setMembers(std::vector< ::ecore::EString > const &_members)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     std::vector< ::ecore::EString > _old_members = m_members;
@@ -77,19 +77,19 @@ void EnumDef::setMembers(std::vector< ::ecore::EString > const& _members)
                 ::idlmm::IdlmmPackage::_instance()->getEnumDef__members(),
                 _old_members,
                 m_members
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
-void EnumDef::addMembers(::ecore::EString const& _new_element_in_members)
+void EnumDef::addMembers(::ecore::EString const &_new_element_in_members)
 {
     m_members.push_back(_new_element_in_members);
 }
 
 void EnumDef::setMembersAt(size_t _position,
-        ::ecore::EString const& _new_element_in_members)
+        ::ecore::EString const &_new_element_in_members)
 {
     if (_position >= m_members.size())
         m_members.resize(_position + 1, ::ecore::EString());

@@ -18,6 +18,7 @@ FILES="./tree-bintree/Tree.ecore
 ./treeiterator/treeiterator.ecore
 ./edate/edate.ecore
 ./ReferenceSerialization/ReferenceSerialization.ecore
+./EOperationBody/EOperationBody.ecore
 "
 
 EMF4CPP='${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}'

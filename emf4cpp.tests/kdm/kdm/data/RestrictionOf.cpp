@@ -85,7 +85,7 @@ void RestrictionOf::setTo(::kdm::data::ComplexContentType_ptr _to)
                 ::kdm::data::DataPackage::_instance()->getRestrictionOf__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void RestrictionOf::setFrom(::kdm::data::ComplexContentType_ptr _from)
                 ::kdm::data::DataPackage::_instance()->getRestrictionOf__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

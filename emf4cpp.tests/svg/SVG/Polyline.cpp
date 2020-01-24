@@ -90,7 +90,7 @@ void Polyline::setStrokeDashArray(::PrimitiveTypes::String _strokeDashArray)
                 ::SVG::SVGPackage::_instance()->getPolyline__strokeDashArray(),
                 _old_strokeDashArray,
                 m_strokeDashArray
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -116,7 +116,7 @@ void Polyline::setMarkerEnd(::PrimitiveTypes::String _markerEnd)
                 ::SVG::SVGPackage::_instance()->getPolyline__markerEnd(),
                 _old_markerEnd,
                 m_markerEnd
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -142,7 +142,7 @@ void Polyline::setMarkerStart(::PrimitiveTypes::String _markerStart)
                 ::SVG::SVGPackage::_instance()->getPolyline__markerStart(),
                 _old_markerStart,
                 m_markerStart
-        );
+            );
         eNotify(&notification);
     }
 #endif

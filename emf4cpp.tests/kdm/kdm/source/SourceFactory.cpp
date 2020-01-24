@@ -32,7 +32,7 @@ using namespace ::kdm::source;
     return s_holder;
 }
 
-void SourceFactory::_setFactoryInstance(const SourceFactory_ptr& fac)
+void SourceFactory::_setFactoryInstance(const SourceFactory_ptr &fac)
 {
     SourcePackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

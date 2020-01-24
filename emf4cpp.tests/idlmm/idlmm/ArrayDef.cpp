@@ -63,7 +63,7 @@ ArrayDef::~ArrayDef()
     return m_bound;
 }
 
-void ArrayDef::setBound(::ecore::EString const& _bound)
+void ArrayDef::setBound(::ecore::EString const &_bound)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_bound = m_bound;
@@ -78,7 +78,7 @@ void ArrayDef::setBound(::ecore::EString const& _bound)
                 ::idlmm::IdlmmPackage::_instance()->getArrayDef__bound(),
                 _old_bound,
                 m_bound
-        );
+            );
         eNotify(&notification);
     }
 #endif

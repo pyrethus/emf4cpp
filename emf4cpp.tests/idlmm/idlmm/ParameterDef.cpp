@@ -63,7 +63,7 @@ ParameterDef::~ParameterDef()
     return m_identifier;
 }
 
-void ParameterDef::setIdentifier(::ecore::EString const& _identifier)
+void ParameterDef::setIdentifier(::ecore::EString const &_identifier)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_identifier = m_identifier;
@@ -78,7 +78,7 @@ void ParameterDef::setIdentifier(::ecore::EString const& _identifier)
                 ::idlmm::IdlmmPackage::_instance()->getParameterDef__identifier(),
                 _old_identifier,
                 m_identifier
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -104,7 +104,7 @@ void ParameterDef::setDirection(::idlmm::ParameterMode _direction)
                 ::idlmm::IdlmmPackage::_instance()->getParameterDef__direction(),
                 _old_direction,
                 m_direction
-        );
+            );
         eNotify(&notification);
     }
 #endif

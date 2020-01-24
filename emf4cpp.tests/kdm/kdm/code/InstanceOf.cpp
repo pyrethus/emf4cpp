@@ -86,7 +86,7 @@ void InstanceOf::setTo(::kdm::code::TemplateUnit_ptr _to)
                 ::kdm::code::CodePackage::_instance()->getInstanceOf__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void InstanceOf::setFrom(::kdm::code::AbstractCodeElement_ptr _from)
                 ::kdm::code::CodePackage::_instance()->getInstanceOf__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

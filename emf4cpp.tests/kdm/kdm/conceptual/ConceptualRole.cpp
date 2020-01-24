@@ -91,7 +91,7 @@ void ConceptualRole::setConceptualElement(
                 ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualRole__conceptualElement(),
                 _old_conceptualElement,
                 m_conceptualElement.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

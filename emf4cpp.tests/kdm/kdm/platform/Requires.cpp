@@ -86,7 +86,7 @@ void Requires::setTo(::kdm::platform::AbstractPlatformElement_ptr _to)
                 ::kdm::platform::PlatformPackage::_instance()->getRequires__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void Requires::setFrom(::kdm::platform::DeployedComponent_ptr _from)
                 ::kdm::platform::PlatformPackage::_instance()->getRequires__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

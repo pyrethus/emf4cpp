@@ -88,7 +88,7 @@ void SequenceType::setSize(::kdm::core::Integer _size)
                 ::kdm::code::CodePackage::_instance()->getSequenceType__size(),
                 _old_size,
                 m_size
-        );
+            );
         eNotify(&notification);
     }
 #endif

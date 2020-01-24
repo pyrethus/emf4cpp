@@ -88,7 +88,7 @@ void MacroUnit::setKind(::kdm::code::MacroKind _kind)
                 ::kdm::code::CodePackage::_instance()->getMacroUnit__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

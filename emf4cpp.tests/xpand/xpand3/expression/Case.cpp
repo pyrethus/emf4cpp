@@ -95,7 +95,7 @@ void Case::setCondition(::xpand3::expression::AbstractExpression_ptr _condition)
                 ::xpand3::expression::ExpressionPackage::_instance()->getCase__condition(),
                 _old_condition,
                 m_condition
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -129,7 +129,7 @@ void Case::setThenPart(::xpand3::expression::AbstractExpression_ptr _thenPart)
                 ::xpand3::expression::ExpressionPackage::_instance()->getCase__thenPart(),
                 _old_thenPart,
                 m_thenPart
-        );
+            );
         eNotify(&notification);
     }
 #endif

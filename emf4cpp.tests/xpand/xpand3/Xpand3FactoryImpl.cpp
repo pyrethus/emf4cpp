@@ -56,7 +56,7 @@ Xpand3Factory::Xpand3Factory()
 
 ::ecore::EJavaObject Xpand3Factory::createFromString(
         ::ecore::EDataType_ptr _eDataType,
-        ::ecore::EString const& _literalValue)
+        ::ecore::EString const &_literalValue)
 {
     switch (_eDataType->getClassifierID())
     {
@@ -67,7 +67,7 @@ Xpand3Factory::Xpand3Factory()
 
 ::ecore::EString Xpand3Factory::convertToString(
         ::ecore::EDataType_ptr _eDataType,
-        ::ecore::EJavaObject const& _instanceValue)
+        ::ecore::EJavaObject const &_instanceValue)
 {
     switch (_eDataType->getClassifierID())
     {

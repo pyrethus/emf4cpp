@@ -34,7 +34,7 @@ using namespace ::ReferenceSerialization;
 }
 
 void ReferenceSerializationFactory::_setFactoryInstance(
-        const ReferenceSerializationFactory_ptr& fac)
+        const ReferenceSerializationFactory_ptr &fac)
 {
     ReferenceSerializationPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

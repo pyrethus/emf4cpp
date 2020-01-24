@@ -90,7 +90,7 @@ void CallableUnit::setKind(::kdm::code::CallableKind _kind)
                 ::kdm::code::CodePackage::_instance()->getCallableUnit__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

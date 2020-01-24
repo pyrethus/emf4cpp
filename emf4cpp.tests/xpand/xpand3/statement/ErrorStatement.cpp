@@ -92,7 +92,7 @@ void ErrorStatement::setMessage(
                 ::xpand3::statement::StatementPackage::_instance()->getErrorStatement__message(),
                 _old_message,
                 m_message
-        );
+            );
         eNotify(&notification);
     }
 #endif

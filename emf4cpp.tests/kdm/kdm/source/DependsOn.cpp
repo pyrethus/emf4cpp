@@ -85,7 +85,7 @@ void DependsOn::setTo(::kdm::source::AbstractInventoryElement_ptr _to)
                 ::kdm::source::SourcePackage::_instance()->getDependsOn__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void DependsOn::setFrom(::kdm::source::AbstractInventoryElement_ptr _from)
                 ::kdm::source::SourcePackage::_instance()->getDependsOn__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

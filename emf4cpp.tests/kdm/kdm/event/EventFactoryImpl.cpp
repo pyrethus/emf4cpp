@@ -95,7 +95,7 @@ EventFactory::EventFactory()
 
 ::ecore::EJavaObject EventFactory::createFromString(
         ::ecore::EDataType_ptr _eDataType,
-        ::ecore::EString const& _literalValue)
+        ::ecore::EString const &_literalValue)
 {
     switch (_eDataType->getClassifierID())
     {
@@ -106,7 +106,7 @@ EventFactory::EventFactory()
 
 ::ecore::EString EventFactory::convertToString(
         ::ecore::EDataType_ptr _eDataType,
-        ::ecore::EJavaObject const& _instanceValue)
+        ::ecore::EJavaObject const &_instanceValue)
 {
     switch (_eDataType->getClassifierID())
     {

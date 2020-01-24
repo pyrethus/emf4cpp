@@ -95,7 +95,7 @@ void Cast::setType(::xpand3::Identifier_ptr _type)
                 ::xpand3::expression::ExpressionPackage::_instance()->getCast__type(),
                 _old_type,
                 m_type
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -129,7 +129,7 @@ void Cast::setTarget(::xpand3::expression::AbstractExpression_ptr _target)
                 ::xpand3::expression::ExpressionPackage::_instance()->getCast__target(),
                 _old_target,
                 m_target
-        );
+            );
         eNotify(&notification);
     }
 #endif

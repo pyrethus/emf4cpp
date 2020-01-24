@@ -33,7 +33,7 @@ using namespace ::xpand3::declaration;
     return s_holder;
 }
 
-void DeclarationFactory::_setFactoryInstance(const DeclarationFactory_ptr& fac)
+void DeclarationFactory::_setFactoryInstance(const DeclarationFactory_ptr &fac)
 {
     DeclarationPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

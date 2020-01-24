@@ -91,7 +91,7 @@ void KDMFramework::setName(::kdm::core::String _name)
                 ::kdm::kdm::KdmPackage::_instance()->getKDMFramework__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

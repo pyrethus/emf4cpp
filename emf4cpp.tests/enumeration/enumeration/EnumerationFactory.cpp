@@ -33,7 +33,7 @@ using namespace ::enumeration;
     return s_holder;
 }
 
-void EnumerationFactory::_setFactoryInstance(const EnumerationFactory_ptr& fac)
+void EnumerationFactory::_setFactoryInstance(const EnumerationFactory_ptr &fac)
 {
     EnumerationPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

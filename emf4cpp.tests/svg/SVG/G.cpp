@@ -84,7 +84,7 @@ void G::setName(::PrimitiveTypes::String _name)
                 ::SVG::SVGPackage::_instance()->getG__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

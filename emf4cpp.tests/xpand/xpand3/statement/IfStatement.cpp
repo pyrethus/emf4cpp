@@ -98,7 +98,7 @@ void IfStatement::setCondition(
                 ::xpand3::statement::StatementPackage::_instance()->getIfStatement__condition(),
                 _old_condition,
                 m_condition
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -132,7 +132,7 @@ void IfStatement::setElseIf(::xpand3::statement::IfStatement_ptr _elseIf)
                 ::xpand3::statement::StatementPackage::_instance()->getIfStatement__elseIf(),
                 _old_elseIf,
                 m_elseIf
-        );
+            );
         eNotify(&notification);
     }
 #endif

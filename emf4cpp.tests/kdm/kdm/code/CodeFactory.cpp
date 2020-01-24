@@ -32,7 +32,7 @@ using namespace ::kdm::code;
     return s_holder;
 }
 
-void CodeFactory::_setFactoryInstance(const CodeFactory_ptr& fac)
+void CodeFactory::_setFactoryInstance(const CodeFactory_ptr &fac)
 {
     CodePackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

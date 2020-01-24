@@ -84,7 +84,7 @@ void AbstractAspect::setWildparams(::ecore::EBoolean _wildparams)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getAbstractAspect__wildparams(),
                 _old_wildparams,
                 m_wildparams
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -120,7 +120,7 @@ void AbstractAspect::setPointcut(::xpand3::Identifier_ptr _pointcut)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getAbstractAspect__pointcut(),
                 _old_pointcut,
                 m_pointcut
-        );
+            );
         eNotify(&notification);
     }
 #endif

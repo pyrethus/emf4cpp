@@ -86,7 +86,7 @@ void Spawns::setTo(::kdm::platform::RuntimeResource_ptr _to)
                 ::kdm::platform::PlatformPackage::_instance()->getSpawns__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void Spawns::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::platform::PlatformPackage::_instance()->getSpawns__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -75,7 +75,7 @@ void Coordinates::setX(::PrimitiveTypes::Double _x)
                 ::SVG::SVGPackage::_instance()->getCoordinates__x(),
                 _old_x,
                 m_x
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -101,7 +101,7 @@ void Coordinates::setY(::PrimitiveTypes::Double _y)
                 ::SVG::SVGPackage::_instance()->getCoordinates__y(),
                 _old_y,
                 m_y
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -32,7 +32,7 @@ using namespace ::eopposite;
     return s_holder;
 }
 
-void EoppositeFactory::_setFactoryInstance(const EoppositeFactory_ptr& fac)
+void EoppositeFactory::_setFactoryInstance(const EoppositeFactory_ptr &fac)
 {
     EoppositePackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

@@ -76,7 +76,7 @@ void PrimitiveDef::setKind(::idlmm::PrimitiveKind _kind)
                 ::idlmm::IdlmmPackage::_instance()->getPrimitiveDef__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -61,7 +61,7 @@ TreeNode::~TreeNode()
     return m_data;
 }
 
-void TreeNode::setData(::ecore::EString const& _data)
+void TreeNode::setData(::ecore::EString const &_data)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_data = m_data;
@@ -76,7 +76,7 @@ void TreeNode::setData(::ecore::EString const& _data)
                 ::tree::TreePackage::_instance()->getTreeNode__data(),
                 _old_data,
                 m_data
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -105,7 +105,7 @@ void TreeNode::setParent(::tree::TreeNode_ptr _parent)
                 ::tree::TreePackage::_instance()->getTreeNode__parent(),
                 _old_parent,
                 m_parent.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -60,7 +60,7 @@ Leaf::~Leaf()
     return m_name;
 }
 
-void Leaf::setName(::ecore::EString const& _name)
+void Leaf::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -75,7 +75,7 @@ void Leaf::setName(::ecore::EString const& _name)
                 ::treeiterator::TreeiteratorPackage::_instance()->getLeaf__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

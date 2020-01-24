@@ -86,7 +86,7 @@ void EntryFlow::setTo(::kdm::action::ActionElement_ptr _to)
                 ::kdm::action::ActionPackage::_instance()->getEntryFlow__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void EntryFlow::setFrom(::kdm::code::ControlElement_ptr _from)
                 ::kdm::action::ActionPackage::_instance()->getEntryFlow__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

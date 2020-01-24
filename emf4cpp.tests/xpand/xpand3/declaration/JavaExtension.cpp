@@ -103,7 +103,7 @@ void JavaExtension::setJavaType(::xpand3::Identifier_ptr _javaType)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getJavaExtension__javaType(),
                 _old_javaType,
                 m_javaType
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -137,7 +137,7 @@ void JavaExtension::setJavaMethod(::xpand3::Identifier_ptr _javaMethod)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getJavaExtension__javaMethod(),
                 _old_javaMethod,
                 m_javaMethod
-        );
+            );
         eNotify(&notification);
     }
 #endif

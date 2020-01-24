@@ -88,7 +88,7 @@ void SetType::setSize(::kdm::core::Integer _size)
                 ::kdm::code::CodePackage::_instance()->getSetType__size(),
                 _old_size,
                 m_size
-        );
+            );
         eNotify(&notification);
     }
 #endif

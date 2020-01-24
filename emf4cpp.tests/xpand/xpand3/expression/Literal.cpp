@@ -91,7 +91,7 @@ void Literal::setLiteralValue(::xpand3::Identifier_ptr _literalValue)
                 ::xpand3::expression::ExpressionPackage::_instance()->getLiteral__literalValue(),
                 _old_literalValue,
                 m_literalValue
-        );
+            );
         eNotify(&notification);
     }
 #endif

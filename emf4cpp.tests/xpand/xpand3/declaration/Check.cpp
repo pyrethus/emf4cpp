@@ -87,7 +87,7 @@ void Check::setErrorSeverity(::ecore::EBoolean _errorSeverity)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getCheck__errorSeverity(),
                 _old_errorSeverity,
                 m_errorSeverity
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -98,7 +98,7 @@ void Check::setErrorSeverity(::ecore::EBoolean _errorSeverity)
     return m_feature;
 }
 
-void Check::setFeature(::ecore::EString const& _feature)
+void Check::setFeature(::ecore::EString const &_feature)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_feature = m_feature;
@@ -113,7 +113,7 @@ void Check::setFeature(::ecore::EString const& _feature)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getCheck__feature(),
                 _old_feature,
                 m_feature
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -149,7 +149,7 @@ void Check::setMsg(::xpand3::expression::AbstractExpression_ptr _msg)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getCheck__msg(),
                 _old_msg,
                 m_msg
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -184,7 +184,7 @@ void Check::setConstraint(
                 ::xpand3::declaration::DeclarationPackage::_instance()->getCheck__constraint(),
                 _old_constraint,
                 m_constraint
-        );
+            );
         eNotify(&notification);
     }
 #endif

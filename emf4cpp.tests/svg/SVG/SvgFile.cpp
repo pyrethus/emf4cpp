@@ -93,7 +93,7 @@ void SvgFile::basicsetTag(::SVG::Svg_ptr _tag)
                 ::SVG::SVGPackage::_instance()->getSvgFile__tag(),
                 _old_tag,
                 m_tag.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

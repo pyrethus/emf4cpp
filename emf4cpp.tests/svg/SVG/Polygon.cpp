@@ -90,7 +90,7 @@ void Polygon::setMarkerEnd(::PrimitiveTypes::String _markerEnd)
                 ::SVG::SVGPackage::_instance()->getPolygon__markerEnd(),
                 _old_markerEnd,
                 m_markerEnd
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -116,7 +116,7 @@ void Polygon::setMarkerStart(::PrimitiveTypes::String _markerStart)
                 ::SVG::SVGPackage::_instance()->getPolygon__markerStart(),
                 _old_markerStart,
                 m_markerStart
-        );
+            );
         eNotify(&notification);
     }
 #endif

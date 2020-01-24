@@ -85,7 +85,7 @@ void UIRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 ::kdm::ui::UiPackage::_instance()->getUIRelationship__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void UIRelationship::setFrom(::kdm::ui::AbstractUIElement_ptr _from)
                 ::kdm::ui::UiPackage::_instance()->getUIRelationship__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

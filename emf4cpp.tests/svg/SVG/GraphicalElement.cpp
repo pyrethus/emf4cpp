@@ -84,7 +84,7 @@ void GraphicalElement::setStroke(::PrimitiveTypes::String _stroke)
                 ::SVG::SVGPackage::_instance()->getGraphicalElement__stroke(),
                 _old_stroke,
                 m_stroke
-        );
+            );
         eNotify(&notification);
     }
 #endif

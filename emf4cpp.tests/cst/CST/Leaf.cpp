@@ -61,7 +61,7 @@ Leaf::~Leaf()
     return m_value;
 }
 
-void Leaf::setValue(::ecore::EString const& _value)
+void Leaf::setValue(::ecore::EString const &_value)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_value = m_value;
@@ -76,7 +76,7 @@ void Leaf::setValue(::ecore::EString const& _value)
                 ::CST::CSTPackage::_instance()->getLeaf__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -102,7 +102,7 @@ void Leaf::setPos(::ecore::EInt _pos)
                 ::CST::CSTPackage::_instance()->getLeaf__pos(),
                 _old_pos,
                 m_pos
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -128,7 +128,7 @@ void Leaf::setLine(::ecore::EInt _line)
                 ::CST::CSTPackage::_instance()->getLeaf__line(),
                 _old_line,
                 m_line
-        );
+            );
         eNotify(&notification);
     }
 #endif

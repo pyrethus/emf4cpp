@@ -86,7 +86,7 @@ void SupportedBy::setTo(::kdm::build::Tool_ptr _to)
                 ::kdm::build::BuildPackage::_instance()->getSupportedBy__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void SupportedBy::setFrom(::kdm::build::BuildStep_ptr _from)
                 ::kdm::build::BuildPackage::_instance()->getSupportedBy__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

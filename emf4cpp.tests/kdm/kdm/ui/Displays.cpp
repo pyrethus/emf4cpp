@@ -86,7 +86,7 @@ void Displays::setTo(::kdm::ui::UIResource_ptr _to)
                 ::kdm::ui::UiPackage::_instance()->getDisplays__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void Displays::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::ui::UiPackage::_instance()->getDisplays__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

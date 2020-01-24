@@ -86,7 +86,7 @@ void DescribedBy::setTo(::kdm::build::BuildDescription_ptr _to)
                 ::kdm::build::BuildPackage::_instance()->getDescribedBy__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void DescribedBy::setFrom(::kdm::build::BuildStep_ptr _from)
                 ::kdm::build::BuildPackage::_instance()->getDescribedBy__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

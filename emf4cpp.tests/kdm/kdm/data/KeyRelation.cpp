@@ -86,7 +86,7 @@ void KeyRelation::setTo(::kdm::data::UniqueKey_ptr _to)
                 ::kdm::data::DataPackage::_instance()->getKeyRelation__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void KeyRelation::setFrom(::kdm::data::ReferenceKey_ptr _from)
                 ::kdm::data::DataPackage::_instance()->getKeyRelation__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

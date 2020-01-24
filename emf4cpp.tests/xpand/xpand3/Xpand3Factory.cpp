@@ -32,7 +32,7 @@ using namespace ::xpand3;
     return s_holder;
 }
 
-void Xpand3Factory::_setFactoryInstance(const Xpand3Factory_ptr& fac)
+void Xpand3Factory::_setFactoryInstance(const Xpand3Factory_ptr &fac)
 {
     Xpand3Package::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

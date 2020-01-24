@@ -32,7 +32,7 @@ using namespace ::kdm::data;
     return s_holder;
 }
 
-void DataFactory::_setFactoryInstance(const DataFactory_ptr& fac)
+void DataFactory::_setFactoryInstance(const DataFactory_ptr &fac)
 {
     DataPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

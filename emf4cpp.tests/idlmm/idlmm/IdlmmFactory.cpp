@@ -32,7 +32,7 @@ using namespace ::idlmm;
     return s_holder;
 }
 
-void IdlmmFactory::_setFactoryInstance(const IdlmmFactory_ptr& fac)
+void IdlmmFactory::_setFactoryInstance(const IdlmmFactory_ptr &fac)
 {
     IdlmmPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

@@ -34,7 +34,7 @@ using namespace ::TopLevelPackage;
 }
 
 void TopLevelPackageFactory::_setFactoryInstance(
-        const TopLevelPackageFactory_ptr& fac)
+        const TopLevelPackageFactory_ptr &fac)
 {
     TopLevelPackagePackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

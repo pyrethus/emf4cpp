@@ -88,7 +88,7 @@ void MemberUnit::setExport(::kdm::code::ExportKind _export)
                 ::kdm::code::CodePackage::_instance()->getMemberUnit__export(),
                 _old_export,
                 m_export
-        );
+            );
         eNotify(&notification);
     }
 #endif

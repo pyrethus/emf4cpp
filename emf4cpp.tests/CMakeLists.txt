@@ -56,4 +56,6 @@ add_subdirectory(xpand)
 add_subdirectory(xpand/antlr EXCLUDE_FROM_ALL)
 
 add_subdirectory(mapping-tests)
+add_subdirectory(EOperationBody)
+add_subdirectory(EOperationBody/test)
 

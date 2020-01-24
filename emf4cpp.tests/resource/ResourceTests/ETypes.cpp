@@ -60,7 +60,7 @@ ETypes::~ETypes()
     return m_string;
 }
 
-void ETypes::setString(::ecore::EString const& _string)
+void ETypes::setString(::ecore::EString const &_string)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_string = m_string;
@@ -75,7 +75,7 @@ void ETypes::setString(::ecore::EString const& _string)
                 ::ResourceTests::ResourceTestsPackage::_instance()->getETypes__string(),
                 _old_string,
                 m_string
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -86,7 +86,7 @@ void ETypes::setString(::ecore::EString const& _string)
     return m_emptyString;
 }
 
-void ETypes::setEmptyString(::ecore::EString const& _emptyString)
+void ETypes::setEmptyString(::ecore::EString const &_emptyString)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_emptyString = m_emptyString;
@@ -101,7 +101,7 @@ void ETypes::setEmptyString(::ecore::EString const& _emptyString)
                 ::ResourceTests::ResourceTestsPackage::_instance()->getETypes__emptyString(),
                 _old_emptyString,
                 m_emptyString
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -127,7 +127,7 @@ void ETypes::setDate(::ecore::EDate _date)
                 ::ResourceTests::ResourceTestsPackage::_instance()->getETypes__date(),
                 _old_date,
                 m_date
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -153,7 +153,7 @@ void ETypes::setChar(::ecore::EChar _char)
                 ::ResourceTests::ResourceTestsPackage::_instance()->getETypes__char(),
                 _old_char,
                 m_char
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -179,7 +179,7 @@ void ETypes::setBool(::ecore::EBoolean _bool)
                 ::ResourceTests::ResourceTestsPackage::_instance()->getETypes__bool(),
                 _old_bool,
                 m_bool
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -205,7 +205,7 @@ void ETypes::setDouble(::ecore::EDouble _double)
                 ::ResourceTests::ResourceTestsPackage::_instance()->getETypes__double(),
                 _old_double,
                 m_double
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -231,7 +231,7 @@ void ETypes::setInt(::ecore::EInt _int)
                 ::ResourceTests::ResourceTestsPackage::_instance()->getETypes__int(),
                 _old_int,
                 m_int
-        );
+            );
         eNotify(&notification);
     }
 #endif

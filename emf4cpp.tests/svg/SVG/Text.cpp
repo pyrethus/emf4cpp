@@ -84,7 +84,7 @@ void Text::setLengthAdjust(::PrimitiveTypes::String _lengthAdjust)
                 ::SVG::SVGPackage::_instance()->getText__lengthAdjust(),
                 _old_lengthAdjust,
                 m_lengthAdjust
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -110,7 +110,7 @@ void Text::setContent(::PrimitiveTypes::String _content)
                 ::SVG::SVGPackage::_instance()->getText__content(),
                 _old_content,
                 m_content
-        );
+            );
         eNotify(&notification);
     }
 #endif

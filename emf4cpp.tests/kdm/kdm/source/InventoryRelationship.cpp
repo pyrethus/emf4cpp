@@ -85,7 +85,7 @@ void InventoryRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 ::kdm::source::SourcePackage::_instance()->getInventoryRelationship__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void InventoryRelationship::setFrom(
                 ::kdm::source::SourcePackage::_instance()->getInventoryRelationship__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

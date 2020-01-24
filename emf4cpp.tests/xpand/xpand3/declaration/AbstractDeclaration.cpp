@@ -92,7 +92,7 @@ void AbstractDeclaration::setIsPrivate(::ecore::EBoolean _isPrivate)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getAbstractDeclaration__isPrivate(),
                 _old_isPrivate,
                 m_isPrivate
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -128,7 +128,7 @@ void AbstractDeclaration::setOwner(::xpand3::File_ptr _owner)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getAbstractDeclaration__owner(),
                 _old_owner,
                 m_owner
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -173,7 +173,7 @@ void AbstractDeclaration::setGuard(
                 ::xpand3::declaration::DeclarationPackage::_instance()->getAbstractDeclaration__guard(),
                 _old_guard,
                 m_guard
-        );
+            );
         eNotify(&notification);
     }
 #endif

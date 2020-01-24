@@ -86,7 +86,7 @@ void TypedBy::setTo(::kdm::data::ComplexContentType_ptr _to)
                 ::kdm::data::DataPackage::_instance()->getTypedBy__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void TypedBy::setFrom(::kdm::data::ContentItem_ptr _from)
                 ::kdm::data::DataPackage::_instance()->getTypedBy__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

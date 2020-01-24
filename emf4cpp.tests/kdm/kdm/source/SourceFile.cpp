@@ -85,7 +85,7 @@ void SourceFile::setLanguage(::kdm::core::String _language)
                 ::kdm::source::SourcePackage::_instance()->getSourceFile__language(),
                 _old_language,
                 m_language
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -111,7 +111,7 @@ void SourceFile::setEncoding(::kdm::core::String _encoding)
                 ::kdm::source::SourcePackage::_instance()->getSourceFile__encoding(),
                 _old_encoding,
                 m_encoding
-        );
+            );
         eNotify(&notification);
     }
 #endif

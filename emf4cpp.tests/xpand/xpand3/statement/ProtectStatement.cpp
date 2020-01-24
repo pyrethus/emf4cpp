@@ -90,7 +90,7 @@ void ProtectStatement::setDisable(::ecore::EBoolean _disable)
                 ::xpand3::statement::StatementPackage::_instance()->getProtectStatement__disable(),
                 _old_disable,
                 m_disable
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -127,7 +127,7 @@ void ProtectStatement::setCommentStart(
                 ::xpand3::statement::StatementPackage::_instance()->getProtectStatement__commentStart(),
                 _old_commentStart,
                 m_commentStart
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -162,7 +162,7 @@ void ProtectStatement::setCommentEnd(
                 ::xpand3::statement::StatementPackage::_instance()->getProtectStatement__commentEnd(),
                 _old_commentEnd,
                 m_commentEnd
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -196,7 +196,7 @@ void ProtectStatement::setId(::xpand3::expression::AbstractExpression_ptr _id)
                 ::xpand3::statement::StatementPackage::_instance()->getProtectStatement__id(),
                 _old_id,
                 m_id
-        );
+            );
         eNotify(&notification);
     }
 #endif

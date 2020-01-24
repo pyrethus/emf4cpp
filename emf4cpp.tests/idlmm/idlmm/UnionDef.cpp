@@ -108,7 +108,7 @@ void UnionDef::setContainedDiscrim(::idlmm::IDLType_ptr _containedDiscrim)
                 ::idlmm::IdlmmPackage::_instance()->getUnionDef__containedDiscrim(),
                 _old_containedDiscrim,
                 m_containedDiscrim
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -135,7 +135,7 @@ void UnionDef::setSharedDiscrim(::idlmm::TypedefDef_ptr _sharedDiscrim)
                 ::idlmm::IdlmmPackage::_instance()->getUnionDef__sharedDiscrim(),
                 _old_sharedDiscrim,
                 m_sharedDiscrim.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

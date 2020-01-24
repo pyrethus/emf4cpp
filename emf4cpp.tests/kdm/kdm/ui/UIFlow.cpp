@@ -85,7 +85,7 @@ void UIFlow::setTo(::kdm::ui::AbstractUIElement_ptr _to)
                 ::kdm::ui::UiPackage::_instance()->getUIFlow__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void UIFlow::setFrom(::kdm::ui::AbstractUIElement_ptr _from)
                 ::kdm::ui::UiPackage::_instance()->getUIFlow__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

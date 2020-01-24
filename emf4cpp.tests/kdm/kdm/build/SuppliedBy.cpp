@@ -86,7 +86,7 @@ void SuppliedBy::setTo(::kdm::build::Supplier_ptr _to)
                 ::kdm::build::BuildPackage::_instance()->getSuppliedBy__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void SuppliedBy::setFrom(::kdm::build::AbstractBuildElement_ptr _from)
                 ::kdm::build::BuildPackage::_instance()->getSuppliedBy__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -86,7 +86,7 @@ void Consumes::setTo(::kdm::build::AbstractBuildElement_ptr _to)
                 ::kdm::build::BuildPackage::_instance()->getConsumes__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void Consumes::setFrom(::kdm::build::BuildStep_ptr _from)
                 ::kdm::build::BuildPackage::_instance()->getConsumes__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -85,7 +85,7 @@ void UILayout::setTo(::kdm::ui::UIResource_ptr _to)
                 ::kdm::ui::UiPackage::_instance()->getUILayout__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void UILayout::setFrom(::kdm::ui::UIResource_ptr _from)
                 ::kdm::ui::UiPackage::_instance()->getUILayout__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

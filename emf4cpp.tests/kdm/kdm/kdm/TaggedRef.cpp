@@ -83,7 +83,7 @@ void TaggedRef::setReference(::kdm::core::ModelElement_ptr _reference)
                 ::kdm::kdm::KdmPackage::_instance()->getTaggedRef__reference(),
                 _old_reference,
                 m_reference.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

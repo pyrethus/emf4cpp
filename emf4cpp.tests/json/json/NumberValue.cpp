@@ -76,7 +76,7 @@ void NumberValue::setValue(::ecore::EDouble _value)
                 ::json::JsonPackage::_instance()->getNumberValue__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif

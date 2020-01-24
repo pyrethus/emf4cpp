@@ -99,7 +99,7 @@ void IfExpression::setCondition(
                 ::xpand3::expression::ExpressionPackage::_instance()->getIfExpression__condition(),
                 _old_condition,
                 m_condition
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -134,7 +134,7 @@ void IfExpression::setThenPart(
                 ::xpand3::expression::ExpressionPackage::_instance()->getIfExpression__thenPart(),
                 _old_thenPart,
                 m_thenPart
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -169,7 +169,7 @@ void IfExpression::setElsePart(
                 ::xpand3::expression::ExpressionPackage::_instance()->getIfExpression__elsePart(),
                 _old_elsePart,
                 m_elsePart
-        );
+            );
         eNotify(&notification);
     }
 #endif

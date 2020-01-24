@@ -88,7 +88,7 @@ void RangeType::setLower(::kdm::core::Integer _lower)
                 ::kdm::code::CodePackage::_instance()->getRangeType__lower(),
                 _old_lower,
                 m_lower
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -114,7 +114,7 @@ void RangeType::setUpper(::kdm::core::Integer _upper)
                 ::kdm::code::CodePackage::_instance()->getRangeType__upper(),
                 _old_upper,
                 m_upper
-        );
+            );
         eNotify(&notification);
     }
 #endif

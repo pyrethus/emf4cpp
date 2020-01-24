@@ -78,7 +78,7 @@ void Annotation::setText(::kdm::core::String _text)
                 ::kdm::kdm::KdmPackage::_instance()->getAnnotation__text(),
                 _old_text,
                 m_text
-        );
+            );
         eNotify(&notification);
     }
 #endif

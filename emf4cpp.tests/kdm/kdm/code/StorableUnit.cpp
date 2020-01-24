@@ -88,7 +88,7 @@ void StorableUnit::setKind(::kdm::code::StorableKind _kind)
                 ::kdm::code::CodePackage::_instance()->getStorableUnit__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

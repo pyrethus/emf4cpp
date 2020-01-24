@@ -82,7 +82,7 @@ void ExtendedValue::setTag(::kdm::kdm::TagDefinition_ptr _tag)
                 ::kdm::kdm::KdmPackage::_instance()->getExtendedValue__tag(),
                 _old_tag,
                 m_tag.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

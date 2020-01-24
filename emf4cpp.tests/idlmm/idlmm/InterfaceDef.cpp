@@ -84,7 +84,7 @@ void InterfaceDef::setIsAbstract(::ecore::EBoolean _isAbstract)
                 ::idlmm::IdlmmPackage::_instance()->getInterfaceDef__isAbstract(),
                 _old_isAbstract,
                 m_isAbstract
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -110,7 +110,7 @@ void InterfaceDef::setIsCustom(::ecore::EBoolean _isCustom)
                 ::idlmm::IdlmmPackage::_instance()->getInterfaceDef__isCustom(),
                 _old_isCustom,
                 m_isCustom
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -136,7 +136,7 @@ void InterfaceDef::setIsTruncatable(::ecore::EBoolean _isTruncatable)
                 ::idlmm::IdlmmPackage::_instance()->getInterfaceDef__isTruncatable(),
                 _old_isTruncatable,
                 m_isTruncatable
-        );
+            );
         eNotify(&notification);
     }
 #endif

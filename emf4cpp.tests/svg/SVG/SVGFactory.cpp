@@ -32,7 +32,7 @@ using namespace ::SVG;
     return s_holder;
 }
 
-void SVGFactory::_setFactoryInstance(const SVGFactory_ptr& fac)
+void SVGFactory::_setFactoryInstance(const SVGFactory_ptr &fac)
 {
     SVGPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

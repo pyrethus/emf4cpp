@@ -91,7 +91,7 @@ void Marker::setMarkerUnits(::PrimitiveTypes::String _markerUnits)
                 ::SVG::SVGPackage::_instance()->getMarker__markerUnits(),
                 _old_markerUnits,
                 m_markerUnits
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -117,7 +117,7 @@ void Marker::setRefX(::PrimitiveTypes::Double _refX)
                 ::SVG::SVGPackage::_instance()->getMarker__refX(),
                 _old_refX,
                 m_refX
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -143,7 +143,7 @@ void Marker::setRefY(::PrimitiveTypes::Double _refY)
                 ::SVG::SVGPackage::_instance()->getMarker__refY(),
                 _old_refY,
                 m_refY
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -169,7 +169,7 @@ void Marker::setMarkerWidth(::PrimitiveTypes::Double _markerWidth)
                 ::SVG::SVGPackage::_instance()->getMarker__markerWidth(),
                 _old_markerWidth,
                 m_markerWidth
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -195,7 +195,7 @@ void Marker::setMarkerHeight(::PrimitiveTypes::Double _markerHeight)
                 ::SVG::SVGPackage::_instance()->getMarker__markerHeight(),
                 _old_markerHeight,
                 m_markerHeight
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -221,7 +221,7 @@ void Marker::setOrient(::PrimitiveTypes::String _orient)
                 ::SVG::SVGPackage::_instance()->getMarker__orient(),
                 _old_orient,
                 m_orient
-        );
+            );
         eNotify(&notification);
     }
 #endif

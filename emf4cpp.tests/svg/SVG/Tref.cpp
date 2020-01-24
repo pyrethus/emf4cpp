@@ -87,7 +87,7 @@ void Tref::setXlinkHref(::SVG::TextElement_ptr _xlinkHref)
                 ::SVG::SVGPackage::_instance()->getTref__xlinkHref(),
                 _old_xlinkHref,
                 m_xlinkHref.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

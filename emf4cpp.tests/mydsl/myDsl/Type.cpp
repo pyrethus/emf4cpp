@@ -60,7 +60,7 @@ Type::~Type()
     return m_name;
 }
 
-void Type::setName(::ecore::EString const& _name)
+void Type::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -75,7 +75,7 @@ void Type::setName(::ecore::EString const& _name)
                 ::myDsl::MyDslPackage::_instance()->getType__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

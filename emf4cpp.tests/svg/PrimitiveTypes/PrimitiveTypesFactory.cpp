@@ -34,7 +34,7 @@ using namespace ::PrimitiveTypes;
 }
 
 void PrimitiveTypesFactory::_setFactoryInstance(
-        const PrimitiveTypesFactory_ptr& fac)
+        const PrimitiveTypesFactory_ptr &fac)
 {
     PrimitiveTypesPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

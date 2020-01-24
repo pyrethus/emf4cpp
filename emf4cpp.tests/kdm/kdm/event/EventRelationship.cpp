@@ -85,7 +85,7 @@ void EventRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 ::kdm::event::EventPackage::_instance()->getEventRelationship__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void EventRelationship::setFrom(::kdm::event::AbstractEventElement_ptr _from)
                 ::kdm::event::EventPackage::_instance()->getEventRelationship__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

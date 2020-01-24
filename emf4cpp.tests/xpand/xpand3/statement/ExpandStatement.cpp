@@ -96,7 +96,7 @@ void ExpandStatement::setForeach(::ecore::EBoolean _foreach)
                 ::xpand3::statement::StatementPackage::_instance()->getExpandStatement__foreach(),
                 _old_foreach,
                 m_foreach
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -143,7 +143,7 @@ void ExpandStatement::setSeparator(
                 ::xpand3::statement::StatementPackage::_instance()->getExpandStatement__separator(),
                 _old_separator,
                 m_separator
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -178,7 +178,7 @@ void ExpandStatement::setTarget(
                 ::xpand3::statement::StatementPackage::_instance()->getExpandStatement__target(),
                 _old_target,
                 m_target
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -212,7 +212,7 @@ void ExpandStatement::setDefinition(::xpand3::Identifier_ptr _definition)
                 ::xpand3::statement::StatementPackage::_instance()->getExpandStatement__definition(),
                 _old_definition,
                 m_definition
-        );
+            );
         eNotify(&notification);
     }
 #endif

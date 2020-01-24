@@ -63,7 +63,7 @@ UnionField::~UnionField()
     return m_identifier;
 }
 
-void UnionField::setIdentifier(::ecore::EString const& _identifier)
+void UnionField::setIdentifier(::ecore::EString const &_identifier)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_identifier = m_identifier;
@@ -78,7 +78,7 @@ void UnionField::setIdentifier(::ecore::EString const& _identifier)
                 ::idlmm::IdlmmPackage::_instance()->getUnionField__identifier(),
                 _old_identifier,
                 m_identifier
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -104,19 +104,19 @@ void UnionField::setLabel(std::vector< ::idlmm::EAny > _label)
                 ::idlmm::IdlmmPackage::_instance()->getUnionField__label(),
                 _old_label,
                 m_label
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
-void UnionField::addLabel(::idlmm::EAny const& _new_element_in_label)
+void UnionField::addLabel(::idlmm::EAny const &_new_element_in_label)
 {
     m_label.push_back(_new_element_in_label);
 }
 
 void UnionField::setLabelAt(size_t _position,
-        ::idlmm::EAny const& _new_element_in_label)
+        ::idlmm::EAny const &_new_element_in_label)
 {
     if (_position >= m_label.size())
         m_label.resize(_position + 1, ::idlmm::EAny());

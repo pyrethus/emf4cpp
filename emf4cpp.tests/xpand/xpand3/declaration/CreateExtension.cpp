@@ -84,7 +84,7 @@ void CreateExtension::setToBeCreated(
                 ::xpand3::declaration::DeclarationPackage::_instance()->getCreateExtension__toBeCreated(),
                 _old_toBeCreated,
                 m_toBeCreated.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -75,7 +75,7 @@ void IDLType::setTypeCode(::idlmm::ETypeCode _typeCode)
                 ::idlmm::IdlmmPackage::_instance()->getIDLType__typeCode(),
                 _old_typeCode,
                 m_typeCode
-        );
+            );
         eNotify(&notification);
     }
 #endif

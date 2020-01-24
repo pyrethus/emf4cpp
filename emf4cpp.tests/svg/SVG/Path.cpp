@@ -84,7 +84,7 @@ void Path::setPathLength(::PrimitiveTypes::Double _pathLength)
                 ::SVG::SVGPackage::_instance()->getPath__pathLength(),
                 _old_pathLength,
                 m_pathLength
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -110,7 +110,7 @@ void Path::setD(::PrimitiveTypes::String _d)
                 ::SVG::SVGPackage::_instance()->getPath__d(),
                 _old_d,
                 m_d
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -136,7 +136,7 @@ void Path::setMarkerEnd(::PrimitiveTypes::String _markerEnd)
                 ::SVG::SVGPackage::_instance()->getPath__markerEnd(),
                 _old_markerEnd,
                 m_markerEnd
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -162,7 +162,7 @@ void Path::setMarkerStart(::PrimitiveTypes::String _markerStart)
                 ::SVG::SVGPackage::_instance()->getPath__markerStart(),
                 _old_markerStart,
                 m_markerStart
-        );
+            );
         eNotify(&notification);
     }
 #endif

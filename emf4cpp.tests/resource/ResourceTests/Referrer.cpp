@@ -79,7 +79,7 @@ void Referrer::setReference(::ResourceTests::ReferenceTarget_ptr _reference)
                 ::ResourceTests::ResourceTestsPackage::_instance()->getReferrer__reference(),
                 _old_reference,
                 m_reference.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

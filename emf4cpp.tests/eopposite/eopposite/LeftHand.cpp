@@ -86,7 +86,7 @@ void LeftHand::basicsetRightee(::eopposite::RightHand_ptr _rightee)
                 ::eopposite::EoppositePackage::_instance()->getLeftHand__rightee(),
                 _old_rightee,
                 m_rightee.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -139,7 +139,7 @@ void LeftHand::basicsetRightMultiple(
                 ::eopposite::EoppositePackage::_instance()->getLeftHand__rightMultiple(),
                 _old_rightMultiple,
                 m_rightMultiple.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

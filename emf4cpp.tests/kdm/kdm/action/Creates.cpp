@@ -86,7 +86,7 @@ void Creates::setTo(::kdm::code::Datatype_ptr _to)
                 ::kdm::action::ActionPackage::_instance()->getCreates__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void Creates::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::action::ActionPackage::_instance()->getCreates__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

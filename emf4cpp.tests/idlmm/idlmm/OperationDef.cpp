@@ -91,7 +91,7 @@ void OperationDef::setIsOneway(::ecore::EBoolean _isOneway)
                 ::idlmm::IdlmmPackage::_instance()->getOperationDef__isOneway(),
                 _old_isOneway,
                 m_isOneway
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -102,7 +102,7 @@ std::vector< ::ecore::EString > const& OperationDef::getContexts() const
     return m_contexts;
 }
 
-void OperationDef::setContexts(std::vector< ::ecore::EString > const& _contexts)
+void OperationDef::setContexts(std::vector< ::ecore::EString > const &_contexts)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     std::vector< ::ecore::EString > _old_contexts = m_contexts;
@@ -117,19 +117,19 @@ void OperationDef::setContexts(std::vector< ::ecore::EString > const& _contexts)
                 ::idlmm::IdlmmPackage::_instance()->getOperationDef__contexts(),
                 _old_contexts,
                 m_contexts
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
-void OperationDef::addContexts(::ecore::EString const& _new_element_in_contexts)
+void OperationDef::addContexts(::ecore::EString const &_new_element_in_contexts)
 {
     m_contexts.push_back(_new_element_in_contexts);
 }
 
 void OperationDef::setContextsAt(size_t _position,
-        ::ecore::EString const& _new_element_in_contexts)
+        ::ecore::EString const &_new_element_in_contexts)
 {
     if (_position >= m_contexts.size())
         m_contexts.resize(_position + 1, ::ecore::EString());

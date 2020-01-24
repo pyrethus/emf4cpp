@@ -90,7 +90,7 @@ void MethodUnit::setKind(::kdm::code::MethodKind _kind)
                 ::kdm::code::CodePackage::_instance()->getMethodUnit__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -116,7 +116,7 @@ void MethodUnit::setExport(::kdm::code::ExportKind _export)
                 ::kdm::code::CodePackage::_instance()->getMethodUnit__export(),
                 _old_export,
                 m_export
-        );
+            );
         eNotify(&notification);
     }
 #endif

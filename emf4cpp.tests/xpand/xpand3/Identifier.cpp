@@ -61,7 +61,7 @@ Identifier::~Identifier()
     return m_value;
 }
 
-void Identifier::setValue(::ecore::EString const& _value)
+void Identifier::setValue(::ecore::EString const &_value)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_value = m_value;
@@ -76,7 +76,7 @@ void Identifier::setValue(::ecore::EString const& _value)
                 ::xpand3::Xpand3Package::_instance()->getIdentifier__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif

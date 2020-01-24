@@ -77,7 +77,7 @@ void Translate::setTx(::PrimitiveTypes::Double _tx)
                 ::SVG::SVGPackage::_instance()->getTranslate__tx(),
                 _old_tx,
                 m_tx
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -103,7 +103,7 @@ void Translate::setTy(::PrimitiveTypes::Double _ty)
                 ::SVG::SVGPackage::_instance()->getTranslate__ty(),
                 _old_ty,
                 m_ty
-        );
+            );
         eNotify(&notification);
     }
 #endif

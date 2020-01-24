@@ -91,7 +91,7 @@ void Typed::setContainedType(::idlmm::IDLType_ptr _containedType)
                 ::idlmm::IdlmmPackage::_instance()->getTyped__containedType(),
                 _old_containedType,
                 m_containedType
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -118,7 +118,7 @@ void Typed::setSharedType(::idlmm::TypedefDef_ptr _sharedType)
                 ::idlmm::IdlmmPackage::_instance()->getTyped__sharedType(),
                 _old_sharedType,
                 m_sharedType.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

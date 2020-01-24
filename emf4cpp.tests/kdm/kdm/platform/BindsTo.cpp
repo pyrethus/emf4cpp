@@ -85,7 +85,7 @@ void BindsTo::setTo(::kdm::platform::ResourceType_ptr _to)
                 ::kdm::platform::PlatformPackage::_instance()->getBindsTo__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void BindsTo::setFrom(::kdm::platform::ResourceType_ptr _from)
                 ::kdm::platform::PlatformPackage::_instance()->getBindsTo__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

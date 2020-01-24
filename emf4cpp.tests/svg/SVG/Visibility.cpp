@@ -77,7 +77,7 @@ void Visibility::setVisible(::PrimitiveTypes::Boolean _visible)
                 ::SVG::SVGPackage::_instance()->getVisibility__visible(),
                 _old_visible,
                 m_visible
-        );
+            );
         eNotify(&notification);
     }
 #endif

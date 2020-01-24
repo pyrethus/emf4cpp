@@ -32,7 +32,7 @@ using namespace ::myDsl;
     return s_holder;
 }
 
-void MyDslFactory::_setFactoryInstance(const MyDslFactory_ptr& fac)
+void MyDslFactory::_setFactoryInstance(const MyDslFactory_ptr &fac)
 {
     MyDslPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

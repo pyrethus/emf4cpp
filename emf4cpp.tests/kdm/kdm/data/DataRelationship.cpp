@@ -85,7 +85,7 @@ void DataRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 ::kdm::data::DataPackage::_instance()->getDataRelationship__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void DataRelationship::setFrom(::kdm::data::AbstractDataElement_ptr _from)
                 ::kdm::data::DataPackage::_instance()->getDataRelationship__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -71,7 +71,7 @@ TranslationUnit::~TranslationUnit()
     return m_identifier;
 }
 
-void TranslationUnit::setIdentifier(::ecore::EString const& _identifier)
+void TranslationUnit::setIdentifier(::ecore::EString const &_identifier)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_identifier = m_identifier;
@@ -86,7 +86,7 @@ void TranslationUnit::setIdentifier(::ecore::EString const& _identifier)
                 ::idlmm::IdlmmPackage::_instance()->getTranslationUnit__identifier(),
                 _old_identifier,
                 m_identifier
-        );
+            );
         eNotify(&notification);
     }
 #endif

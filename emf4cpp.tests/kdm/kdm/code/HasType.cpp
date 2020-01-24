@@ -86,7 +86,7 @@ void HasType::setTo(::kdm::code::Datatype_ptr _to)
                 ::kdm::code::CodePackage::_instance()->getHasType__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void HasType::setFrom(::kdm::code::CodeItem_ptr _from)
                 ::kdm::code::CodePackage::_instance()->getHasType__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

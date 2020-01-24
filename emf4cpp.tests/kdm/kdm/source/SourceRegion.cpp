@@ -79,7 +79,7 @@ void SourceRegion::setStartLine(::kdm::core::Integer _startLine)
                 ::kdm::source::SourcePackage::_instance()->getSourceRegion__startLine(),
                 _old_startLine,
                 m_startLine
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -105,7 +105,7 @@ void SourceRegion::setStartPosition(::kdm::core::Integer _startPosition)
                 ::kdm::source::SourcePackage::_instance()->getSourceRegion__startPosition(),
                 _old_startPosition,
                 m_startPosition
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -131,7 +131,7 @@ void SourceRegion::setEndLine(::kdm::core::Integer _endLine)
                 ::kdm::source::SourcePackage::_instance()->getSourceRegion__endLine(),
                 _old_endLine,
                 m_endLine
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -157,7 +157,7 @@ void SourceRegion::setEndPosition(::kdm::core::Integer _endPosition)
                 ::kdm::source::SourcePackage::_instance()->getSourceRegion__endPosition(),
                 _old_endPosition,
                 m_endPosition
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -183,7 +183,7 @@ void SourceRegion::setLanguage(::kdm::core::String _language)
                 ::kdm::source::SourcePackage::_instance()->getSourceRegion__language(),
                 _old_language,
                 m_language
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -209,7 +209,7 @@ void SourceRegion::setPath(::kdm::core::String _path)
                 ::kdm::source::SourcePackage::_instance()->getSourceRegion__path(),
                 _old_path,
                 m_path
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -238,7 +238,7 @@ void SourceRegion::setFile(::kdm::source::SourceFile_ptr _file)
                 ::kdm::source::SourcePackage::_instance()->getSourceRegion__file(),
                 _old_file,
                 m_file.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

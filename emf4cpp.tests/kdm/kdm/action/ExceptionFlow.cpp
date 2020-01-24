@@ -85,7 +85,7 @@ void ExceptionFlow::setTo(::kdm::action::ActionElement_ptr _to)
                 ::kdm::action::ActionPackage::_instance()->getExceptionFlow__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void ExceptionFlow::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::action::ActionPackage::_instance()->getExceptionFlow__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

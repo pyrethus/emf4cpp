@@ -92,7 +92,7 @@ void GlobalVarExpression::setGlobalVarName(
                 ::xpand3::expression::ExpressionPackage::_instance()->getGlobalVarExpression__globalVarName(),
                 _old_globalVarName,
                 m_globalVarName
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -86,7 +86,7 @@ void ProducesEvent::setTo(::kdm::event::Event_ptr _to)
                 ::kdm::event::EventPackage::_instance()->getProducesEvent__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void ProducesEvent::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::event::EventPackage::_instance()->getProducesEvent__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

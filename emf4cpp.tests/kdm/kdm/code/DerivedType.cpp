@@ -102,7 +102,7 @@ void DerivedType::setItemUnit(::kdm::code::ItemUnit_ptr _itemUnit)
                 ::kdm::code::CodePackage::_instance()->getDerivedType__itemUnit(),
                 _old_itemUnit,
                 m_itemUnit
-        );
+            );
         eNotify(&notification);
     }
 #endif

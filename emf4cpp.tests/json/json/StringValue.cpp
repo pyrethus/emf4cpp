@@ -61,7 +61,7 @@ StringValue::~StringValue()
     return m_value;
 }
 
-void StringValue::setValue(::ecore::EString const& _value)
+void StringValue::setValue(::ecore::EString const &_value)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_value = m_value;
@@ -76,7 +76,7 @@ void StringValue::setValue(::ecore::EString const& _value)
                 ::json::JsonPackage::_instance()->getStringValue__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif

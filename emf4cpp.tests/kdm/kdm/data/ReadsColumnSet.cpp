@@ -86,7 +86,7 @@ void ReadsColumnSet::setTo(::kdm::data::ColumnSet_ptr _to)
                 ::kdm::data::DataPackage::_instance()->getReadsColumnSet__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void ReadsColumnSet::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::data::DataPackage::_instance()->getReadsColumnSet__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

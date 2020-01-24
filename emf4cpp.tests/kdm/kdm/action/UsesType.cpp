@@ -86,7 +86,7 @@ void UsesType::setTo(::kdm::code::Datatype_ptr _to)
                 ::kdm::action::ActionPackage::_instance()->getUsesType__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void UsesType::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::action::ActionPackage::_instance()->getUsesType__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

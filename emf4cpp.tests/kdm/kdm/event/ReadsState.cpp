@@ -86,7 +86,7 @@ void ReadsState::setTo(::kdm::event::State_ptr _to)
                 ::kdm::event::EventPackage::_instance()->getReadsState__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void ReadsState::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::event::EventPackage::_instance()->getReadsState__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

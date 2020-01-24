@@ -93,7 +93,7 @@ void ArrayType::setSize(::kdm::core::Integer _size)
                 ::kdm::code::CodePackage::_instance()->getArrayType__size(),
                 _old_size,
                 m_size
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -129,7 +129,7 @@ void ArrayType::setIndexUnit(::kdm::code::IndexUnit_ptr _indexUnit)
                 ::kdm::code::CodePackage::_instance()->getArrayType__indexUnit(),
                 _old_indexUnit,
                 m_indexUnit
-        );
+            );
         eNotify(&notification);
     }
 #endif

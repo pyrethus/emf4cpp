@@ -96,7 +96,7 @@ void FeatureCall::setTarget(
                 ::xpand3::expression::ExpressionPackage::_instance()->getFeatureCall__target(),
                 _old_target,
                 m_target
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -130,7 +130,7 @@ void FeatureCall::setName(::xpand3::Identifier_ptr _name)
                 ::xpand3::expression::ExpressionPackage::_instance()->getFeatureCall__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

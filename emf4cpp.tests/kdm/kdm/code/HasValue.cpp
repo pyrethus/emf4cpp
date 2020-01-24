@@ -85,7 +85,7 @@ void HasValue::setTo(::kdm::code::CodeItem_ptr _to)
                 ::kdm::code::CodePackage::_instance()->getHasValue__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void HasValue::setFrom(::kdm::code::CodeItem_ptr _from)
                 ::kdm::code::CodePackage::_instance()->getHasValue__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

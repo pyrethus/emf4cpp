@@ -84,7 +84,7 @@ void Stereotype::setName(::kdm::core::String _name)
                 ::kdm::kdm::KdmPackage::_instance()->getStereotype__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -110,7 +110,7 @@ void Stereotype::setType(::kdm::core::String _type)
                 ::kdm::kdm::KdmPackage::_instance()->getStereotype__type(),
                 _old_type,
                 m_type
-        );
+            );
         eNotify(&notification);
     }
 #endif

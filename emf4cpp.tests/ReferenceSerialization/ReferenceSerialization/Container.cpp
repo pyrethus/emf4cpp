@@ -122,7 +122,7 @@ void Container::setChild(::ReferenceSerialization::Child_ptr _child)
                 ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getContainer__child(),
                 _old_child,
                 m_child
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -149,7 +149,7 @@ void Container::setChildRef(::ReferenceSerialization::Child_ptr _childRef)
                 ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getContainer__childRef(),
                 _old_childRef,
                 m_childRef.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

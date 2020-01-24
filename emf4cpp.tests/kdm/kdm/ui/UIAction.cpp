@@ -94,7 +94,7 @@ void UIAction::setKind(::kdm::core::String _kind)
                 ::kdm::ui::UiPackage::_instance()->getUIAction__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

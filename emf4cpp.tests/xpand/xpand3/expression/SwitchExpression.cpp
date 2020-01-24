@@ -101,7 +101,7 @@ void SwitchExpression::setSwitchExpr(
                 ::xpand3::expression::ExpressionPackage::_instance()->getSwitchExpression__switchExpr(),
                 _old_switchExpr,
                 m_switchExpr
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -136,7 +136,7 @@ void SwitchExpression::setDefaultExpr(
                 ::xpand3::expression::ExpressionPackage::_instance()->getSwitchExpression__defaultExpr(),
                 _old_defaultExpr,
                 m_defaultExpr
-        );
+            );
         eNotify(&notification);
     }
 #endif

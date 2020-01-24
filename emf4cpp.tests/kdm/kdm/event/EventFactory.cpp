@@ -32,7 +32,7 @@ using namespace ::kdm::event;
     return s_holder;
 }
 
-void EventFactory::_setFactoryInstance(const EventFactory_ptr& fac)
+void EventFactory::_setFactoryInstance(const EventFactory_ptr &fac)
 {
     EventPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

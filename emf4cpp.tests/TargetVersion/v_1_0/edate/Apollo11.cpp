@@ -80,7 +80,7 @@ void Apollo11::setFirstManOnMoonDate(::ecore::EDate _FirstManOnMoonDate)
                 ::v_1_0::edate::EdatePackage::_instance()->getApollo11__FirstManOnMoonDate(),
                 _old_FirstManOnMoonDate,
                 m_FirstManOnMoonDate
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -116,7 +116,7 @@ void Apollo11::setMember(::v_1_0::edate::Person_ptr _Member)
                 ::v_1_0::edate::EdatePackage::_instance()->getApollo11__Member(),
                 _old_Member,
                 m_Member
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -32,7 +32,7 @@ using namespace ::kdm::build;
     return s_holder;
 }
 
-void BuildFactory::_setFactoryInstance(const BuildFactory_ptr& fac)
+void BuildFactory::_setFactoryInstance(const BuildFactory_ptr &fac)
 {
     BuildPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

@@ -77,7 +77,7 @@ void FontWeight::setBold(::PrimitiveTypes::Boolean _bold)
                 ::SVG::SVGPackage::_instance()->getFontWeight__bold(),
                 _old_bold,
                 m_bold
-        );
+            );
         eNotify(&notification);
     }
 #endif

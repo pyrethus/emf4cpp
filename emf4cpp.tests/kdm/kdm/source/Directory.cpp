@@ -86,7 +86,7 @@ void Directory::setPath(::kdm::core::String _path)
                 ::kdm::source::SourcePackage::_instance()->getDirectory__path(),
                 _old_path,
                 m_path
-        );
+            );
         eNotify(&notification);
     }
 #endif

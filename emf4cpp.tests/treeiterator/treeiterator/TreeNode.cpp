@@ -71,7 +71,7 @@ TreeNode::~TreeNode()
     return m_name;
 }
 
-void TreeNode::setName(::ecore::EString const& _name)
+void TreeNode::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -86,7 +86,7 @@ void TreeNode::setName(::ecore::EString const& _name)
                 ::treeiterator::TreeiteratorPackage::_instance()->getTreeNode__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -132,7 +132,7 @@ void TreeNode::setLeaf(::treeiterator::Leaf_ptr _leaf)
                 ::treeiterator::TreeiteratorPackage::_instance()->getTreeNode__leaf(),
                 _old_leaf,
                 m_leaf
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -91,7 +91,7 @@ void ConstructorCallExpression::setType(::xpand3::Identifier_ptr _type)
                 ::xpand3::expression::ExpressionPackage::_instance()->getConstructorCallExpression__type(),
                 _old_type,
                 m_type
-        );
+            );
         eNotify(&notification);
     }
 #endif

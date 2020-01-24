@@ -61,7 +61,7 @@ FixedDef::~FixedDef()
     return m_digits;
 }
 
-void FixedDef::setDigits(::ecore::EString const& _digits)
+void FixedDef::setDigits(::ecore::EString const &_digits)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_digits = m_digits;
@@ -76,7 +76,7 @@ void FixedDef::setDigits(::ecore::EString const& _digits)
                 ::idlmm::IdlmmPackage::_instance()->getFixedDef__digits(),
                 _old_digits,
                 m_digits
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -87,7 +87,7 @@ void FixedDef::setDigits(::ecore::EString const& _digits)
     return m_scale;
 }
 
-void FixedDef::setScale(::ecore::EString const& _scale)
+void FixedDef::setScale(::ecore::EString const &_scale)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_scale = m_scale;
@@ -102,7 +102,7 @@ void FixedDef::setScale(::ecore::EString const& _scale)
                 ::idlmm::IdlmmPackage::_instance()->getFixedDef__scale(),
                 _old_scale,
                 m_scale
-        );
+            );
         eNotify(&notification);
     }
 #endif

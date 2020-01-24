@@ -88,7 +88,7 @@ void Extension::setCached(::ecore::EBoolean _cached)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getExtension__cached(),
                 _old_cached,
                 m_cached
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -124,7 +124,7 @@ void Extension::setBody(::xpand3::expression::AbstractExpression_ptr _body)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getExtension__body(),
                 _old_body,
                 m_body
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -158,7 +158,7 @@ void Extension::setReturnType(::xpand3::Identifier_ptr _returnType)
                 ::xpand3::declaration::DeclarationPackage::_instance()->getExtension__returnType(),
                 _old_returnType,
                 m_returnType
-        );
+            );
         eNotify(&notification);
     }
 #endif

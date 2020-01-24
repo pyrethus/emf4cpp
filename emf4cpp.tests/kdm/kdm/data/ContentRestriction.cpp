@@ -87,7 +87,7 @@ void ContentRestriction::setKind(::kdm::core::String _kind)
                 ::kdm::data::DataPackage::_instance()->getContentRestriction__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void ContentRestriction::setValue(::kdm::core::String _value)
                 ::kdm::data::DataPackage::_instance()->getContentRestriction__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif

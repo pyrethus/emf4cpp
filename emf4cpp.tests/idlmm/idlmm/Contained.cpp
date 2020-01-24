@@ -61,7 +61,7 @@ Contained::~Contained()
     return m_identifier;
 }
 
-void Contained::setIdentifier(::ecore::EString const& _identifier)
+void Contained::setIdentifier(::ecore::EString const &_identifier)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_identifier = m_identifier;
@@ -76,7 +76,7 @@ void Contained::setIdentifier(::ecore::EString const& _identifier)
                 ::idlmm::IdlmmPackage::_instance()->getContained__identifier(),
                 _old_identifier,
                 m_identifier
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -87,7 +87,7 @@ void Contained::setIdentifier(::ecore::EString const& _identifier)
     return m_repositoryId;
 }
 
-void Contained::setRepositoryId(::ecore::EString const& _repositoryId)
+void Contained::setRepositoryId(::ecore::EString const &_repositoryId)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_repositoryId = m_repositoryId;
@@ -102,7 +102,7 @@ void Contained::setRepositoryId(::ecore::EString const& _repositoryId)
                 ::idlmm::IdlmmPackage::_instance()->getContained__repositoryId(),
                 _old_repositoryId,
                 m_repositoryId
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void Contained::setRepositoryId(::ecore::EString const& _repositoryId)
     return m_version;
 }
 
-void Contained::setVersion(::ecore::EString const& _version)
+void Contained::setVersion(::ecore::EString const &_version)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_version = m_version;
@@ -128,7 +128,7 @@ void Contained::setVersion(::ecore::EString const& _version)
                 ::idlmm::IdlmmPackage::_instance()->getContained__version(),
                 _old_version,
                 m_version
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -139,7 +139,7 @@ void Contained::setVersion(::ecore::EString const& _version)
     return m_absoluteName;
 }
 
-void Contained::setAbsoluteName(::ecore::EString const& _absoluteName)
+void Contained::setAbsoluteName(::ecore::EString const &_absoluteName)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_absoluteName = m_absoluteName;
@@ -154,7 +154,7 @@ void Contained::setAbsoluteName(::ecore::EString const& _absoluteName)
                 ::idlmm::IdlmmPackage::_instance()->getContained__absoluteName(),
                 _old_absoluteName,
                 m_absoluteName
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -188,7 +188,7 @@ void Contained::basicsetDefinedIn(::idlmm::Container_ptr _definedIn)
                 ::idlmm::IdlmmPackage::_instance()->getContained__definedIn(),
                 _old_definedIn,
                 m_definedIn.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

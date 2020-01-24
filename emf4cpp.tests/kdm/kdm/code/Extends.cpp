@@ -85,7 +85,7 @@ void Extends::setTo(::kdm::code::Datatype_ptr _to)
                 ::kdm::code::CodePackage::_instance()->getExtends__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void Extends::setFrom(::kdm::code::Datatype_ptr _from)
                 ::kdm::code::CodePackage::_instance()->getExtends__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

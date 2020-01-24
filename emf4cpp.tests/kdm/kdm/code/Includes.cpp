@@ -86,7 +86,7 @@ void Includes::setTo(::kdm::code::AbstractCodeElement_ptr _to)
                 ::kdm::code::CodePackage::_instance()->getIncludes__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void Includes::setFrom(::kdm::code::PreprocessorDirective_ptr _from)
                 ::kdm::code::CodePackage::_instance()->getIncludes__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

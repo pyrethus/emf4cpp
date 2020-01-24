@@ -77,7 +77,7 @@ void FontStyle::setItalic(::PrimitiveTypes::Boolean _italic)
                 ::SVG::SVGPackage::_instance()->getFontStyle__italic(),
                 _old_italic,
                 m_italic
-        );
+            );
         eNotify(&notification);
     }
 #endif

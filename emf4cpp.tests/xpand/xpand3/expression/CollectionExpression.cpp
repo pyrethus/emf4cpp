@@ -97,7 +97,7 @@ void CollectionExpression::setClosure(
                 ::xpand3::expression::ExpressionPackage::_instance()->getCollectionExpression__closure(),
                 _old_closure,
                 m_closure
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -131,7 +131,7 @@ void CollectionExpression::setEleName(::xpand3::Identifier_ptr _eleName)
                 ::xpand3::expression::ExpressionPackage::_instance()->getCollectionExpression__eleName(),
                 _old_eleName,
                 m_eleName
-        );
+            );
         eNotify(&notification);
     }
 #endif

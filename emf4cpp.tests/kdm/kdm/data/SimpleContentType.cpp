@@ -94,7 +94,7 @@ void SimpleContentType::setKind(::kdm::core::String _kind)
                 ::kdm::data::DataPackage::_instance()->getSimpleContentType__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

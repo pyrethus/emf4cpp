@@ -77,7 +77,7 @@ void Scale::setSx(::PrimitiveTypes::Double _sx)
                 ::SVG::SVGPackage::_instance()->getScale__sx(),
                 _old_sx,
                 m_sx
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -103,7 +103,7 @@ void Scale::setSy(::PrimitiveTypes::Double _sy)
                 ::SVG::SVGPackage::_instance()->getScale__sy(),
                 _old_sy,
                 m_sy
-        );
+            );
         eNotify(&notification);
     }
 #endif

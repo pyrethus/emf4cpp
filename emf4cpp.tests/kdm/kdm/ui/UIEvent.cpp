@@ -88,7 +88,7 @@ void UIEvent::setKind(::kdm::core::String _kind)
                 ::kdm::ui::UiPackage::_instance()->getUIEvent__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

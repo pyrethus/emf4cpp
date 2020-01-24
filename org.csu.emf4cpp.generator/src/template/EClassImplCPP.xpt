@@ -88,10 +88,22 @@ void «name»::_initialize()
 «FOREACH this.EOperations AS op»
 «op.getCPPSignature(name+"::")»
 {
+«IF op.getBody() != null-»
+#if 0
+    // This is the original body of the EOperation as specified in
+    // the ecore. If you want to replace it by C++ code, enable
+    // the following protected region and implement it there.
+    «op.getBody()»
+#endif
+«ENDIF-»
     «PROTECT CSTART '/*' CEND '*/' ID (name+"Impl_"+op.getIPPFileUniqueName()) DISABLE»
     // Please, enable the protected region if you add manually written code.
     // To do this, add the keyword ENABLED before START.
+«IF op.getBody() == null-»
     throw "UnsupportedOperationException: «op.getFQN()»";
+«ELSE-»
+    «op.getBody()»
+«ENDIF-»
     «ENDPROTECT»
 }
 «ENDFOREACH»

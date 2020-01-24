@@ -85,7 +85,7 @@ void BuildRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 ::kdm::build::BuildPackage::_instance()->getBuildRelationship__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void BuildRelationship::setFrom(::kdm::build::AbstractBuildElement_ptr _from)
                 ::kdm::build::BuildPackage::_instance()->getBuildRelationship__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

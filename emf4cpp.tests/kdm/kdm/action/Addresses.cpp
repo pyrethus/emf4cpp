@@ -86,7 +86,7 @@ void Addresses::setTo(::kdm::code::ComputationalObject_ptr _to)
                 ::kdm::action::ActionPackage::_instance()->getAddresses__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void Addresses::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::action::ActionPackage::_instance()->getAddresses__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

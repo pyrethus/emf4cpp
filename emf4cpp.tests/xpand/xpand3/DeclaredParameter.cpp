@@ -95,7 +95,7 @@ void DeclaredParameter::setName(::xpand3::Identifier_ptr _name)
                 ::xpand3::Xpand3Package::_instance()->getDeclaredParameter__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -129,7 +129,7 @@ void DeclaredParameter::setType(::xpand3::Identifier_ptr _type)
                 ::xpand3::Xpand3Package::_instance()->getDeclaredParameter__type(),
                 _old_type,
                 m_type
-        );
+            );
         eNotify(&notification);
     }
 #endif

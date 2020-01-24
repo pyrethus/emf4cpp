@@ -86,7 +86,7 @@ void DatatypeOf::setTo(::kdm::code::Datatype_ptr _to)
                 ::kdm::data::DataPackage::_instance()->getDatatypeOf__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void DatatypeOf::setFrom(::kdm::data::ComplexContentType_ptr _from)
                 ::kdm::data::DataPackage::_instance()->getDatatypeOf__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

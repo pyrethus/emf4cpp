@@ -78,7 +78,7 @@ void TagDefinition::setTag(::kdm::core::String _tag)
                 ::kdm::kdm::KdmPackage::_instance()->getTagDefinition__tag(),
                 _old_tag,
                 m_tag
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -104,7 +104,7 @@ void TagDefinition::setType(::kdm::core::String _type)
                 ::kdm::kdm::KdmPackage::_instance()->getTagDefinition__type(),
                 _old_type,
                 m_type
-        );
+            );
         eNotify(&notification);
     }
 #endif

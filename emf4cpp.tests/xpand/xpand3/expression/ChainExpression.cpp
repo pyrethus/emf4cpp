@@ -95,7 +95,7 @@ void ChainExpression::setFirst(
                 ::xpand3::expression::ExpressionPackage::_instance()->getChainExpression__first(),
                 _old_first,
                 m_first
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -130,7 +130,7 @@ void ChainExpression::setNext(
                 ::xpand3::expression::ExpressionPackage::_instance()->getChainExpression__next(),
                 _old_next,
                 m_next
-        );
+            );
         eNotify(&notification);
     }
 #endif

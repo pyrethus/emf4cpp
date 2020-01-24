@@ -87,7 +87,7 @@ void SvgFile::_initialize()
 }
 
 void SvgFile::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -165,7 +165,7 @@ void SvgFile::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void SvgFile::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -176,7 +176,7 @@ void SvgFile::_inverseAdd(::ecore::EInt _featureID,
         ::SVG::Image_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Image > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Image_ptr, -1,
                         false, true >&) ::SVG::ReferencedFile::getReferer();
         container.basicAdd(_t1);
@@ -207,7 +207,7 @@ void SvgFile::_inverseAdd(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
                         -1, false, true >&) ::SVG::SvgFile::getElements();
         container.basicAdd(_t1);
@@ -221,7 +221,7 @@ void SvgFile::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void SvgFile::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {
@@ -232,7 +232,7 @@ void SvgFile::_inverseRemove(::ecore::EInt _featureID,
         ::SVG::Image_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Image > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Image_ptr, -1,
                         false, true >&) ::SVG::ReferencedFile::getReferer();
         container.basicRemove(_t1);
@@ -257,7 +257,7 @@ void SvgFile::_inverseRemove(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
                         -1, false, true >&) ::SVG::SvgFile::getElements();
         container.basicRemove(_t1);

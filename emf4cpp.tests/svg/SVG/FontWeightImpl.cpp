@@ -75,7 +75,7 @@ void FontWeight::_initialize()
 }
 
 void FontWeight::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -133,7 +133,7 @@ void FontWeight::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void FontWeight::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -145,7 +145,7 @@ void FontWeight::_inverseAdd(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
                         -1, false, true >&) ::SVG::Attribute::getAttOwner();
         container.basicAdd(_t1);
@@ -159,7 +159,7 @@ void FontWeight::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void FontWeight::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {
@@ -171,7 +171,7 @@ void FontWeight::_inverseRemove(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
                         -1, false, true >&) ::SVG::Attribute::getAttOwner();
         container.basicRemove(_t1);

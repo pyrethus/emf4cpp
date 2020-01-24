@@ -84,7 +84,7 @@ void SourceRef::setLanguage(::kdm::core::String _language)
                 ::kdm::source::SourcePackage::_instance()->getSourceRef__language(),
                 _old_language,
                 m_language
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -110,7 +110,7 @@ void SourceRef::setSnippet(::kdm::core::String _snippet)
                 ::kdm::source::SourcePackage::_instance()->getSourceRef__snippet(),
                 _old_snippet,
                 m_snippet
-        );
+            );
         eNotify(&notification);
     }
 #endif

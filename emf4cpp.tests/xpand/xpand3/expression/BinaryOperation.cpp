@@ -100,7 +100,7 @@ void BinaryOperation::setLeft(
                 ::xpand3::expression::ExpressionPackage::_instance()->getBinaryOperation__left(),
                 _old_left,
                 m_left
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -135,7 +135,7 @@ void BinaryOperation::setRight(
                 ::xpand3::expression::ExpressionPackage::_instance()->getBinaryOperation__right(),
                 _old_right,
                 m_right
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -169,7 +169,7 @@ void BinaryOperation::setOperator(::xpand3::Identifier_ptr _operator)
                 ::xpand3::expression::ExpressionPackage::_instance()->getBinaryOperation__operator(),
                 _old_operator,
                 m_operator
-        );
+            );
         eNotify(&notification);
     }
 #endif

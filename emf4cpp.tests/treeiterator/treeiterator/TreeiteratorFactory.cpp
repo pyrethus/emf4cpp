@@ -34,7 +34,7 @@ using namespace ::treeiterator;
 }
 
 void TreeiteratorFactory::_setFactoryInstance(
-        const TreeiteratorFactory_ptr& fac)
+        const TreeiteratorFactory_ptr &fac)
 {
     TreeiteratorPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

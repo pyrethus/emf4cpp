@@ -66,7 +66,7 @@ Company::~Company()
     return m_name;
 }
 
-void Company::setName(::ecore::EString const& _name)
+void Company::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -81,7 +81,7 @@ void Company::setName(::ecore::EString const& _name)
                 ::company::CompanyPackage::_instance()->getCompany__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

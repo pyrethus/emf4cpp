@@ -34,7 +34,7 @@ using namespace ::enduserlicense;
 }
 
 void EnduserlicenseFactory::_setFactoryInstance(
-        const EnduserlicenseFactory_ptr& fac)
+        const EnduserlicenseFactory_ptr &fac)
 {
     EnduserlicensePackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

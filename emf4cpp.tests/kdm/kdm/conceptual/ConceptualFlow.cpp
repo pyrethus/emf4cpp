@@ -85,7 +85,7 @@ void ConceptualFlow::setTo(::kdm::conceptual::ConceptualContainer_ptr _to)
                 ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualFlow__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void ConceptualFlow::setFrom(::kdm::conceptual::ConceptualContainer_ptr _from)
                 ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualFlow__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

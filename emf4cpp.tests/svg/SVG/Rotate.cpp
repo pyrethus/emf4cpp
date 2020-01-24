@@ -77,7 +77,7 @@ void Rotate::setAngle(::PrimitiveTypes::Double _angle)
                 ::SVG::SVGPackage::_instance()->getRotate__angle(),
                 _old_angle,
                 m_angle
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -103,7 +103,7 @@ void Rotate::setCx(::PrimitiveTypes::Double _cx)
                 ::SVG::SVGPackage::_instance()->getRotate__cx(),
                 _old_cx,
                 m_cx
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -129,7 +129,7 @@ void Rotate::setCy(::PrimitiveTypes::Double _cy)
                 ::SVG::SVGPackage::_instance()->getRotate__cy(),
                 _old_cy,
                 m_cy
-        );
+            );
         eNotify(&notification);
     }
 #endif

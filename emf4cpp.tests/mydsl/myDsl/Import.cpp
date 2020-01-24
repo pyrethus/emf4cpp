@@ -60,7 +60,7 @@ Import::~Import()
     return m_importURI;
 }
 
-void Import::setImportURI(::ecore::EString const& _importURI)
+void Import::setImportURI(::ecore::EString const &_importURI)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_importURI = m_importURI;
@@ -75,7 +75,7 @@ void Import::setImportURI(::ecore::EString const& _importURI)
                 ::myDsl::MyDslPackage::_instance()->getImport__importURI(),
                 _old_importURI,
                 m_importURI
-        );
+            );
         eNotify(&notification);
     }
 #endif

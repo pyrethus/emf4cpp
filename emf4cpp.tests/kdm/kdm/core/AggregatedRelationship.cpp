@@ -87,7 +87,7 @@ void AggregatedRelationship::setDensity(::kdm::core::Integer _density)
                 ::kdm::core::CorePackage::_instance()->getAggregatedRelationship__density(),
                 _old_density,
                 m_density
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -116,7 +116,7 @@ void AggregatedRelationship::setFrom(::kdm::core::KDMEntity_ptr _from)
                 ::kdm::core::CorePackage::_instance()->getAggregatedRelationship__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -143,7 +143,7 @@ void AggregatedRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 ::kdm::core::CorePackage::_instance()->getAggregatedRelationship__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

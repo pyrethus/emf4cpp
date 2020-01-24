@@ -76,7 +76,7 @@ void BooleanValue::setValue(::ecore::EBoolean _value)
                 ::json::JsonPackage::_instance()->getBooleanValue__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif

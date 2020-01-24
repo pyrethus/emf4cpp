@@ -60,7 +60,7 @@ Element::~Element()
     return m_kind;
 }
 
-void Element::setKind(::ecore::EString const& _kind)
+void Element::setKind(::ecore::EString const &_kind)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_kind = m_kind;
@@ -75,7 +75,7 @@ void Element::setKind(::ecore::EString const& _kind)
                 ::CST::CSTPackage::_instance()->getElement__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

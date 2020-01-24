@@ -84,7 +84,7 @@ void Tspan::setContent(::PrimitiveTypes::String _content)
                 ::SVG::SVGPackage::_instance()->getTspan__content(),
                 _old_content,
                 m_content
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -90,7 +90,7 @@ void Line::setMarkerEnd(::PrimitiveTypes::String _markerEnd)
                 ::SVG::SVGPackage::_instance()->getLine__markerEnd(),
                 _old_markerEnd,
                 m_markerEnd
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -116,7 +116,7 @@ void Line::setMarkerStart(::PrimitiveTypes::String _markerStart)
                 ::SVG::SVGPackage::_instance()->getLine__markerStart(),
                 _old_markerStart,
                 m_markerStart
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -94,7 +94,7 @@ void EventAction::setKind(::kdm::core::String _kind)
                 ::kdm::event::EventPackage::_instance()->getEventAction__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

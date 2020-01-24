@@ -88,7 +88,7 @@ void PlatformEvent::setKind(::kdm::core::String _kind)
                 ::kdm::platform::PlatformPackage::_instance()->getPlatformEvent__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

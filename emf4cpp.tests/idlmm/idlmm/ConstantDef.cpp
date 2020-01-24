@@ -80,7 +80,7 @@ void ConstantDef::setConstValue(::idlmm::EAny _constValue)
                 ::idlmm::IdlmmPackage::_instance()->getConstantDef__constValue(),
                 _old_constValue,
                 m_constValue
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -90,7 +90,7 @@ void AttributeDef::setIsReadonly(::ecore::EBoolean _isReadonly)
                 ::idlmm::IdlmmPackage::_instance()->getAttributeDef__isReadonly(),
                 _old_isReadonly,
                 m_isReadonly
-        );
+            );
         eNotify(&notification);
     }
 #endif

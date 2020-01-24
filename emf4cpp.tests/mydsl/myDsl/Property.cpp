@@ -61,7 +61,7 @@ Property::~Property()
     return m_name;
 }
 
-void Property::setName(::ecore::EString const& _name)
+void Property::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -76,7 +76,7 @@ void Property::setName(::ecore::EString const& _name)
                 ::myDsl::MyDslPackage::_instance()->getProperty__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -102,7 +102,7 @@ void Property::setMany(::ecore::EBoolean _many)
                 ::myDsl::MyDslPackage::_instance()->getProperty__many(),
                 _old_many,
                 m_many
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -131,7 +131,7 @@ void Property::setType(::myDsl::Type_ptr _type)
                 ::myDsl::MyDslPackage::_instance()->getProperty__type(),
                 _old_type,
                 m_type.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

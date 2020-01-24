@@ -75,7 +75,7 @@ void Dimension::setWidth(::PrimitiveTypes::Double _width)
                 ::SVG::SVGPackage::_instance()->getDimension__width(),
                 _old_width,
                 m_width
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -101,7 +101,7 @@ void Dimension::setHeight(::PrimitiveTypes::Double _height)
                 ::SVG::SVGPackage::_instance()->getDimension__height(),
                 _old_height,
                 m_height
-        );
+            );
         eNotify(&notification);
     }
 #endif

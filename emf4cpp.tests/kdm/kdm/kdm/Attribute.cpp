@@ -78,7 +78,7 @@ void Attribute::setTag(::kdm::core::String _tag)
                 ::kdm::kdm::KdmPackage::_instance()->getAttribute__tag(),
                 _old_tag,
                 m_tag
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -104,7 +104,7 @@ void Attribute::setValue(::kdm::core::String _value)
                 ::kdm::kdm::KdmPackage::_instance()->getAttribute__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif

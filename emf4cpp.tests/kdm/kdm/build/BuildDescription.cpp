@@ -92,7 +92,7 @@ void BuildDescription::setText(::kdm::core::String _text)
                 ::kdm::build::BuildPackage::_instance()->getBuildDescription__text(),
                 _old_text,
                 m_text
-        );
+            );
         eNotify(&notification);
     }
 #endif

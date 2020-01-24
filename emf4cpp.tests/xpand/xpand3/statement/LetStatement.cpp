@@ -97,7 +97,7 @@ void LetStatement::setVarName(::xpand3::Identifier_ptr _varName)
                 ::xpand3::statement::StatementPackage::_instance()->getLetStatement__varName(),
                 _old_varName,
                 m_varName
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -132,7 +132,7 @@ void LetStatement::setVarValue(
                 ::xpand3::statement::StatementPackage::_instance()->getLetStatement__varValue(),
                 _old_varValue,
                 m_varValue
-        );
+            );
         eNotify(&notification);
     }
 #endif

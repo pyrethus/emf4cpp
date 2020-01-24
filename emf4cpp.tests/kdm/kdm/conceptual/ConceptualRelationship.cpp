@@ -85,7 +85,7 @@ void ConceptualRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualRelationship__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void ConceptualRelationship::setFrom(
                 ::kdm::conceptual::ConceptualPackage::_instance()->getConceptualRelationship__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

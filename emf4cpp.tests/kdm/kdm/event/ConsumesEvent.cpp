@@ -86,7 +86,7 @@ void ConsumesEvent::setTo(::kdm::event::Event_ptr _to)
                 ::kdm::event::EventPackage::_instance()->getConsumesEvent__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void ConsumesEvent::setFrom(::kdm::event::Transition_ptr _from)
                 ::kdm::event::EventPackage::_instance()->getConsumesEvent__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

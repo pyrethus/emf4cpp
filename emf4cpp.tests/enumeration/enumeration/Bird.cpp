@@ -75,7 +75,7 @@ void Bird::setType(::enumeration::BirdType _type)
                 ::enumeration::EnumerationPackage::_instance()->getBird__type(),
                 _old_type,
                 m_type
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -86,7 +86,7 @@ void Bird::setType(::enumeration::BirdType _type)
     return m_name;
 }
 
-void Bird::setName(::ecore::EString const& _name)
+void Bird::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -101,7 +101,7 @@ void Bird::setName(::ecore::EString const& _name)
                 ::enumeration::EnumerationPackage::_instance()->getBird__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

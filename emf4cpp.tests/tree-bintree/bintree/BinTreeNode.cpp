@@ -69,7 +69,7 @@ BinTreeNode::~BinTreeNode()
     return m_data;
 }
 
-void BinTreeNode::setData(::ecore::EString const& _data)
+void BinTreeNode::setData(::ecore::EString const &_data)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_data = m_data;
@@ -84,7 +84,7 @@ void BinTreeNode::setData(::ecore::EString const& _data)
                 ::bintree::BintreePackage::_instance()->getBinTreeNode__data(),
                 _old_data,
                 m_data
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void BinTreeNode::setParent(::bintree::BinTreeNode_ptr _parent)
                 ::bintree::BintreePackage::_instance()->getBinTreeNode__parent(),
                 _old_parent,
                 m_parent.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -147,7 +147,7 @@ void BinTreeNode::setLeft(::bintree::BinTreeNode_ptr _left)
                 ::bintree::BintreePackage::_instance()->getBinTreeNode__left(),
                 _old_left,
                 m_left
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -181,7 +181,7 @@ void BinTreeNode::setRight(::bintree::BinTreeNode_ptr _right)
                 ::bintree::BintreePackage::_instance()->getBinTreeNode__right(),
                 _old_right,
                 m_right
-        );
+            );
         eNotify(&notification);
     }
 #endif

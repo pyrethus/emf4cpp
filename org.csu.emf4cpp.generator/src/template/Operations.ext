@@ -50,3 +50,15 @@ String getIPPFileUniqueName(EOperation this):
 		let oops = ops.sortBy(e|e.getCPPSignature()):
 		name + "_" + oops.indexOf(this)
 ;
+
+String getBody(EOperation this) :
+	let eAnnotation = EAnnotations.select(e|e.source == "http://www.eclipse.org/emf/2002/GenModel").first():
+	if eAnnotation == null then
+		null
+    else
+	    let body = eAnnotation.details.select(e|((ecore::EStringToStringMapEntry)e).key == "body").first():
+    	if body == null then
+	    	null
+		else
+			((ecore::EStringToStringMapEntry)body).value
+;

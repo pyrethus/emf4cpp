@@ -63,7 +63,7 @@ SequenceDef::~SequenceDef()
     return m_bound;
 }
 
-void SequenceDef::setBound(::ecore::EString const& _bound)
+void SequenceDef::setBound(::ecore::EString const &_bound)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_bound = m_bound;
@@ -78,7 +78,7 @@ void SequenceDef::setBound(::ecore::EString const& _bound)
                 ::idlmm::IdlmmPackage::_instance()->getSequenceDef__bound(),
                 _old_bound,
                 m_bound
-        );
+            );
         eNotify(&notification);
     }
 #endif

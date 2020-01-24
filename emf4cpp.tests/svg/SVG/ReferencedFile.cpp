@@ -82,7 +82,7 @@ void ReferencedFile::setName(::PrimitiveTypes::String _name)
                 ::SVG::SVGPackage::_instance()->getReferencedFile__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -96,7 +96,7 @@ void Svg::setNamespace(::PrimitiveTypes::String _namespace)
                 ::SVG::SVGPackage::_instance()->getSvg__namespace(),
                 _old_namespace,
                 m_namespace
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -122,7 +122,7 @@ void Svg::setVersion(::PrimitiveTypes::String _version)
                 ::SVG::SVGPackage::_instance()->getSvg__version(),
                 _old_version,
                 m_version
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -148,7 +148,7 @@ void Svg::setBaseProfile(::PrimitiveTypes::String _baseProfile)
                 ::SVG::SVGPackage::_instance()->getSvg__baseProfile(),
                 _old_baseProfile,
                 m_baseProfile
-        );
+            );
         eNotify(&notification);
     }
 #endif

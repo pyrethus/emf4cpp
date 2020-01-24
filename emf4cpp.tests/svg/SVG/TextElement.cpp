@@ -84,7 +84,7 @@ void TextElement::setRotate(::PrimitiveTypes::Double _rotate)
                 ::SVG::SVGPackage::_instance()->getTextElement__rotate(),
                 _old_rotate,
                 m_rotate
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -110,7 +110,7 @@ void TextElement::setTextLength(::PrimitiveTypes::String _textLength)
                 ::SVG::SVGPackage::_instance()->getTextElement__textLength(),
                 _old_textLength,
                 m_textLength
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -136,7 +136,7 @@ void TextElement::setFontSize(::PrimitiveTypes::String _fontSize)
                 ::SVG::SVGPackage::_instance()->getTextElement__fontSize(),
                 _old_fontSize,
                 m_fontSize
-        );
+            );
         eNotify(&notification);
     }
 #endif

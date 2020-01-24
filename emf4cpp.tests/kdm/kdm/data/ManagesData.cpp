@@ -86,7 +86,7 @@ void ManagesData::setTo(::kdm::data::AbstractDataElement_ptr _to)
                 ::kdm::data::DataPackage::_instance()->getManagesData__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void ManagesData::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::data::DataPackage::_instance()->getManagesData__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

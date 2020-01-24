@@ -60,7 +60,7 @@ Content::~Content()
     return m_name;
 }
 
-void Content::setName(::ecore::EString const& _name)
+void Content::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -75,7 +75,7 @@ void Content::setName(::ecore::EString const& _name)
                 ::ReferenceSerialization::ReferenceSerializationPackage::_instance()->getContent__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

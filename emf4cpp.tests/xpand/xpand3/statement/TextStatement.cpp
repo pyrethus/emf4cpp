@@ -61,7 +61,7 @@ TextStatement::~TextStatement()
     return m_value;
 }
 
-void TextStatement::setValue(::ecore::EString const& _value)
+void TextStatement::setValue(::ecore::EString const &_value)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_value = m_value;
@@ -76,7 +76,7 @@ void TextStatement::setValue(::ecore::EString const& _value)
                 ::xpand3::statement::StatementPackage::_instance()->getTextStatement__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -102,7 +102,7 @@ void TextStatement::setDeleteLine(::ecore::EBoolean _deleteLine)
                 ::xpand3::statement::StatementPackage::_instance()->getTextStatement__deleteLine(),
                 _old_deleteLine,
                 m_deleteLine
-        );
+            );
         eNotify(&notification);
     }
 #endif

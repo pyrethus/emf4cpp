@@ -84,7 +84,7 @@ void KDMEntity::setName(::kdm::core::String _name)
                 ::kdm::core::CorePackage::_instance()->getKDMEntity__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

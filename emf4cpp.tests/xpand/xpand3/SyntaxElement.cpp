@@ -75,7 +75,7 @@ void SyntaxElement::setLine(::ecore::EInt _line)
                 ::xpand3::Xpand3Package::_instance()->getSyntaxElement__line(),
                 _old_line,
                 m_line
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -101,7 +101,7 @@ void SyntaxElement::setStart(::ecore::EInt _start)
                 ::xpand3::Xpand3Package::_instance()->getSyntaxElement__start(),
                 _old_start,
                 m_start
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -127,7 +127,7 @@ void SyntaxElement::setEnd(::ecore::EInt _end)
                 ::xpand3::Xpand3Package::_instance()->getSyntaxElement__end(),
                 _old_end,
                 m_end
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -138,7 +138,7 @@ void SyntaxElement::setEnd(::ecore::EInt _end)
     return m_fileName;
 }
 
-void SyntaxElement::setFileName(::ecore::EString const& _fileName)
+void SyntaxElement::setFileName(::ecore::EString const &_fileName)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_fileName = m_fileName;
@@ -153,7 +153,7 @@ void SyntaxElement::setFileName(::ecore::EString const& _fileName)
                 ::xpand3::Xpand3Package::_instance()->getSyntaxElement__fileName(),
                 _old_fileName,
                 m_fileName
-        );
+            );
         eNotify(&notification);
     }
 #endif

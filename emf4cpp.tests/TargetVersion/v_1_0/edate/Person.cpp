@@ -75,7 +75,7 @@ void Person::setBirthday(::ecore::EDate _Birthday)
                 ::v_1_0::edate::EdatePackage::_instance()->getPerson__Birthday(),
                 _old_Birthday,
                 m_Birthday
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -86,7 +86,7 @@ void Person::setBirthday(::ecore::EDate _Birthday)
     return m_Name;
 }
 
-void Person::setName(::ecore::EString const& _Name)
+void Person::setName(::ecore::EString const &_Name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_Name = m_Name;
@@ -101,7 +101,7 @@ void Person::setName(::ecore::EString const& _Name)
                 ::v_1_0::edate::EdatePackage::_instance()->getPerson__Name(),
                 _old_Name,
                 m_Name
-        );
+            );
         eNotify(&notification);
     }
 #endif

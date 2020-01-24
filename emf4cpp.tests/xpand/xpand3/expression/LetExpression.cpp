@@ -100,7 +100,7 @@ void LetExpression::setVarExpression(
                 ::xpand3::expression::ExpressionPackage::_instance()->getLetExpression__varExpression(),
                 _old_varExpression,
                 m_varExpression
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -135,7 +135,7 @@ void LetExpression::setTargetExpression(
                 ::xpand3::expression::ExpressionPackage::_instance()->getLetExpression__targetExpression(),
                 _old_targetExpression,
                 m_targetExpression
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -169,7 +169,7 @@ void LetExpression::setVarName(::xpand3::Identifier_ptr _varName)
                 ::xpand3::expression::ExpressionPackage::_instance()->getLetExpression__varName(),
                 _old_varName,
                 m_varName
-        );
+            );
         eNotify(&notification);
     }
 #endif

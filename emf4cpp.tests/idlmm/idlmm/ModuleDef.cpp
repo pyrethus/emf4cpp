@@ -62,7 +62,7 @@ ModuleDef::~ModuleDef()
     return m_prefix;
 }
 
-void ModuleDef::setPrefix(::ecore::EString const& _prefix)
+void ModuleDef::setPrefix(::ecore::EString const &_prefix)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_prefix = m_prefix;
@@ -77,7 +77,7 @@ void ModuleDef::setPrefix(::ecore::EString const& _prefix)
                 ::idlmm::IdlmmPackage::_instance()->getModuleDef__prefix(),
                 _old_prefix,
                 m_prefix
-        );
+            );
         eNotify(&notification);
     }
 #endif

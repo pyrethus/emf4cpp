@@ -96,7 +96,7 @@ void Root::setTarget(::ResourceTests::ReferenceTarget_ptr _target)
                 ::ResourceTests::ResourceTestsPackage::_instance()->getRoot__target(),
                 _old_target,
                 m_target
-        );
+            );
         eNotify(&notification);
     }
 #endif

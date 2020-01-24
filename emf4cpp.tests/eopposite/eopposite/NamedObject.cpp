@@ -60,7 +60,7 @@ NamedObject::~NamedObject()
     return m_name;
 }
 
-void NamedObject::setName(::ecore::EString const& _name)
+void NamedObject::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -75,7 +75,7 @@ void NamedObject::setName(::ecore::EString const& _name)
                 ::eopposite::EoppositePackage::_instance()->getNamedObject__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

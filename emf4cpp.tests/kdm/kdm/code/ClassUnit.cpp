@@ -93,7 +93,7 @@ void ClassUnit::setIsAbstract(::kdm::core::Boolean _isAbstract)
                 ::kdm::code::CodePackage::_instance()->getClassUnit__isAbstract(),
                 _old_isAbstract,
                 m_isAbstract
-        );
+            );
         eNotify(&notification);
     }
 #endif

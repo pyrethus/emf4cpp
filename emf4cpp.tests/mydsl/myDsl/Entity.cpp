@@ -86,7 +86,7 @@ void Entity::setExtends(::myDsl::Entity_ptr _extends)
                 ::myDsl::MyDslPackage::_instance()->getEntity__extends(),
                 _old_extends,
                 m_extends.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

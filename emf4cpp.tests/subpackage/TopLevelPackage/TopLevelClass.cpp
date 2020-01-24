@@ -79,7 +79,7 @@ void TopLevelClass::setReference(::ecore::EObject_ptr _reference)
                 ::TopLevelPackage::TopLevelPackagePackage::_instance()->getTopLevelClass__reference(),
                 _old_reference,
                 m_reference.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

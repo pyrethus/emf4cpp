@@ -93,7 +93,7 @@ void DataElement::setExt(::kdm::core::String _ext)
                 ::kdm::code::CodePackage::_instance()->getDataElement__ext(),
                 _old_ext,
                 m_ext
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -119,7 +119,7 @@ void DataElement::setSize(::kdm::core::Integer _size)
                 ::kdm::code::CodePackage::_instance()->getDataElement__size(),
                 _old_size,
                 m_size
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -148,7 +148,7 @@ void DataElement::setType(::kdm::code::Datatype_ptr _type)
                 ::kdm::code::CodePackage::_instance()->getDataElement__type(),
                 _old_type,
                 m_type.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

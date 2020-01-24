@@ -32,7 +32,7 @@ using namespace ::company;
     return s_holder;
 }
 
-void CompanyFactory::_setFactoryInstance(const CompanyFactory_ptr& fac)
+void CompanyFactory::_setFactoryInstance(const CompanyFactory_ptr &fac)
 {
     CompanyPackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

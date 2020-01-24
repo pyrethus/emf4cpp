@@ -85,7 +85,7 @@ void InventoryItem::setVersion(::kdm::core::String _version)
                 ::kdm::source::SourcePackage::_instance()->getInventoryItem__version(),
                 _old_version,
                 m_version
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -111,7 +111,7 @@ void InventoryItem::setPath(::kdm::core::String _path)
                 ::kdm::source::SourcePackage::_instance()->getInventoryItem__path(),
                 _old_path,
                 m_path
-        );
+            );
         eNotify(&notification);
     }
 #endif

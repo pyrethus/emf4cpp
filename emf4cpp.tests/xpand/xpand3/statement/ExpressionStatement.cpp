@@ -92,7 +92,7 @@ void ExpressionStatement::setExpression(
                 ::xpand3::statement::StatementPackage::_instance()->getExpressionStatement__expression(),
                 _old_expression,
                 m_expression
-        );
+            );
         eNotify(&notification);
     }
 #endif

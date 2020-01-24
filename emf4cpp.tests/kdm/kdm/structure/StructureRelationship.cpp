@@ -85,7 +85,7 @@ void StructureRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 ::kdm::structure::StructurePackage::_instance()->getStructureRelationship__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void StructureRelationship::setFrom(
                 ::kdm::structure::StructurePackage::_instance()->getStructureRelationship__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

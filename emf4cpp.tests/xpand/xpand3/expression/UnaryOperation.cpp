@@ -91,7 +91,7 @@ void UnaryOperation::setOperator(::xpand3::Identifier_ptr _operator)
                 ::xpand3::expression::ExpressionPackage::_instance()->getUnaryOperation__operator(),
                 _old_operator,
                 m_operator
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -119,7 +119,7 @@ void UnaryOperation::setOperand(
                 ::xpand3::expression::ExpressionPackage::_instance()->getUnaryOperation__operand(),
                 _old_operand,
                 m_operand.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

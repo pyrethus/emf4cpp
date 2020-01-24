@@ -87,7 +87,7 @@ void Rotate::_initialize()
 }
 
 void Rotate::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -167,7 +167,7 @@ void Rotate::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void Rotate::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -179,7 +179,7 @@ void Rotate::_inverseAdd(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
                         -1, false, true >&) ::SVG::Attribute::getAttOwner();
         container.basicAdd(_t1);
@@ -193,7 +193,7 @@ void Rotate::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void Rotate::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {
@@ -205,7 +205,7 @@ void Rotate::_inverseRemove(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
                         -1, false, true >&) ::SVG::Attribute::getAttOwner();
         container.basicRemove(_t1);

@@ -97,7 +97,7 @@ void ContentItem::setType(::kdm::data::ComplexContentType_ptr _type)
                 ::kdm::data::DataPackage::_instance()->getContentItem__type(),
                 _old_type,
                 m_type.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

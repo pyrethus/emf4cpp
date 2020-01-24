@@ -94,7 +94,7 @@ void DefinedType::setType(::kdm::code::Datatype_ptr _type)
                 ::kdm::code::CodePackage::_instance()->getDefinedType__type(),
                 _old_type,
                 m_type.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -128,7 +128,7 @@ void DefinedType::setCodeElement(::kdm::code::Datatype_ptr _codeElement)
                 ::kdm::code::CodePackage::_instance()->getDefinedType__codeElement(),
                 _old_codeElement,
                 m_codeElement
-        );
+            );
         eNotify(&notification);
     }
 #endif

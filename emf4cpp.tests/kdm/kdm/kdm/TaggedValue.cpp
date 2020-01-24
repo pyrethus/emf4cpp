@@ -79,7 +79,7 @@ void TaggedValue::setValue(::kdm::core::String _value)
                 ::kdm::kdm::KdmPackage::_instance()->getTaggedValue__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif

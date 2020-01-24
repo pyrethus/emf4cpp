@@ -80,7 +80,7 @@ void CommentUnit::setText(::kdm::core::String _text)
                 ::kdm::code::CodePackage::_instance()->getCommentUnit__text(),
                 _old_text,
                 m_text
-        );
+            );
         eNotify(&notification);
     }
 #endif

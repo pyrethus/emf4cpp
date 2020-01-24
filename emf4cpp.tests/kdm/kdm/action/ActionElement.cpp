@@ -99,7 +99,7 @@ void ActionElement::setKind(::kdm::core::String _kind)
                 ::kdm::action::ActionPackage::_instance()->getActionElement__kind(),
                 _old_kind,
                 m_kind
-        );
+            );
         eNotify(&notification);
     }
 #endif

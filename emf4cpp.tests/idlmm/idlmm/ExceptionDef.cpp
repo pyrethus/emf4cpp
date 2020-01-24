@@ -83,7 +83,7 @@ void ExceptionDef::setTypeCode(::idlmm::ETypeCode _typeCode)
                 ::idlmm::IdlmmPackage::_instance()->getExceptionDef__typeCode(),
                 _old_typeCode,
                 m_typeCode
-        );
+            );
         eNotify(&notification);
     }
 #endif

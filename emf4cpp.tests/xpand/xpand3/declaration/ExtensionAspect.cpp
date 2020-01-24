@@ -95,7 +95,7 @@ void ExtensionAspect::setExpression(
                 ::xpand3::declaration::DeclarationPackage::_instance()->getExtensionAspect__expression(),
                 _old_expression,
                 m_expression
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -81,7 +81,7 @@ void ImportStatement::setExported(::ecore::EBoolean _exported)
                 ::xpand3::Xpand3Package::_instance()->getImportStatement__exported(),
                 _old_exported,
                 m_exported
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -117,7 +117,7 @@ void ImportStatement::setImportedId(::xpand3::Identifier_ptr _importedId)
                 ::xpand3::Xpand3Package::_instance()->getImportStatement__importedId(),
                 _old_importedId,
                 m_importedId
-        );
+            );
         eNotify(&notification);
     }
 #endif

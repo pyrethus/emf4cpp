@@ -61,7 +61,7 @@ WstringDef::~WstringDef()
     return m_bound;
 }
 
-void WstringDef::setBound(::ecore::EString const& _bound)
+void WstringDef::setBound(::ecore::EString const &_bound)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_bound = m_bound;
@@ -76,7 +76,7 @@ void WstringDef::setBound(::ecore::EString const& _bound)
                 ::idlmm::IdlmmPackage::_instance()->getWstringDef__bound(),
                 _old_bound,
                 m_bound
-        );
+            );
         eNotify(&notification);
     }
 #endif

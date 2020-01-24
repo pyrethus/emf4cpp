@@ -103,7 +103,7 @@ void ControlElement::setType(::kdm::code::Datatype_ptr _type)
                 ::kdm::code::CodePackage::_instance()->getControlElement__type(),
                 _old_type,
                 m_type.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

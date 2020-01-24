@@ -134,7 +134,7 @@ void Symbol::_initialize()
 }
 
 void Symbol::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -294,7 +294,7 @@ void Symbol::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void Symbol::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -306,7 +306,7 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::SvgFile_ptr,
                         -1, false, true >&) ::SVG::Element::getOwner();
         container.basicAdd(_t1);
@@ -319,7 +319,7 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
         ::SVG::Use_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Use > (_t0);
 
         // add to a list
-        auto& container = (::ecorecpp::mapping::ReferenceEListImpl<
+        auto &container = (::ecorecpp::mapping::ReferenceEListImpl<
                 ::SVG::Use_ptr, -1, false, true >&) ::SVG::Element::getTarget();
         container.basicAdd(_t1);
     }
@@ -332,7 +332,7 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Attribute_ptr,
                         -1, false, true >&) ::SVG::Element::getAttribute();
         container.basicAdd(_t1);
@@ -409,7 +409,7 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
                         -1, true, true >&) ::SVG::GroupingElement::getGroupContent();
         container.basicAdd(_t1);
@@ -423,7 +423,7 @@ void Symbol::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void Symbol::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {
@@ -435,7 +435,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::SvgFile_ptr,
                         -1, false, true >&) ::SVG::Element::getOwner();
         container.basicRemove(_t1);
@@ -448,7 +448,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
         ::SVG::Use_ptr _t1 = std::dynamic_pointer_cast < ::SVG::Use > (_t0);
 
         // add to a list
-        auto& container = (::ecorecpp::mapping::ReferenceEListImpl<
+        auto &container = (::ecorecpp::mapping::ReferenceEListImpl<
                 ::SVG::Use_ptr, -1, false, true >&) ::SVG::Element::getTarget();
         container.basicRemove(_t1);
     }
@@ -461,7 +461,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Attribute_ptr,
                         -1, false, true >&) ::SVG::Element::getAttribute();
         container.basicRemove(_t1);
@@ -518,7 +518,7 @@ void Symbol::_inverseRemove(::ecore::EInt _featureID,
                 > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::SVG::Element_ptr,
                         -1, true, true >&) ::SVG::GroupingElement::getGroupContent();
         container.basicRemove(_t1);

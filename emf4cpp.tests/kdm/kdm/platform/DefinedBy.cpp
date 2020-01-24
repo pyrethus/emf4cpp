@@ -86,7 +86,7 @@ void DefinedBy::setTo(::kdm::code::CodeItem_ptr _to)
                 ::kdm::platform::PlatformPackage::_instance()->getDefinedBy__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void DefinedBy::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::platform::PlatformPackage::_instance()->getDefinedBy__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -84,7 +84,7 @@ void ExtensionFamily::setName(::kdm::core::String _name)
                 ::kdm::kdm::KdmPackage::_instance()->getExtensionFamily__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -85,7 +85,7 @@ void PlatformRelationship::setTo(::kdm::core::KDMEntity_ptr _to)
                 ::kdm::platform::PlatformPackage::_instance()->getPlatformRelationship__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void PlatformRelationship::setFrom(
                 ::kdm::platform::PlatformPackage::_instance()->getPlatformRelationship__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

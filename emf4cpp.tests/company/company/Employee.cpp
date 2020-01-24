@@ -65,7 +65,7 @@ Employee::~Employee()
     return m_name;
 }
 
-void Employee::setName(::ecore::EString const& _name)
+void Employee::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -80,7 +80,7 @@ void Employee::setName(::ecore::EString const& _name)
                 ::company::CompanyPackage::_instance()->getEmployee__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -116,7 +116,7 @@ void Employee::setPhonebookEntry(::company::PhonebookEntry_ptr _phonebookEntry)
                 ::company::CompanyPackage::_instance()->getEmployee__phonebookEntry(),
                 _old_phonebookEntry,
                 m_phonebookEntry
-        );
+            );
         eNotify(&notification);
     }
 #endif

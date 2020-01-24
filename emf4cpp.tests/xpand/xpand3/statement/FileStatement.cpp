@@ -87,7 +87,7 @@ void FileStatement::setOnce(::ecore::EBoolean _once)
                 ::xpand3::statement::StatementPackage::_instance()->getFileStatement__once(),
                 _old_once,
                 m_once
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -124,7 +124,7 @@ void FileStatement::setFileNameExpression(
                 ::xpand3::statement::StatementPackage::_instance()->getFileStatement__fileNameExpression(),
                 _old_fileNameExpression,
                 m_fileNameExpression
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -159,7 +159,7 @@ void FileStatement::setOutletNameIdentifier(
                 ::xpand3::statement::StatementPackage::_instance()->getFileStatement__outletNameIdentifier(),
                 _old_outletNameIdentifier,
                 m_outletNameIdentifier
-        );
+            );
         eNotify(&notification);
     }
 #endif

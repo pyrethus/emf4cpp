@@ -130,7 +130,7 @@ void InterfaceDef::_initialize()
 }
 
 void InterfaceDef::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -285,7 +285,7 @@ void InterfaceDef::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void InterfaceDef::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -316,7 +316,7 @@ void InterfaceDef::_inverseAdd(::ecore::EInt _featureID,
                 < ::idlmm::Contained > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::idlmm::Contained_ptr, -1, true, true >&) ::idlmm::Container::getContains();
         container.basicAdd(_t1);
@@ -334,7 +334,7 @@ void InterfaceDef::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void InterfaceDef::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {
@@ -358,7 +358,7 @@ void InterfaceDef::_inverseRemove(::ecore::EInt _featureID,
                 < ::idlmm::Contained > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::idlmm::Contained_ptr, -1, true, true >&) ::idlmm::Container::getContains();
         container.basicRemove(_t1);

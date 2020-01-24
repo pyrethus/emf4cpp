@@ -86,7 +86,7 @@ void Loads::setTo(::kdm::platform::DeployedComponent_ptr _to)
                 ::kdm::platform::PlatformPackage::_instance()->getLoads__to(),
                 _old_to,
                 m_to.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -113,7 +113,7 @@ void Loads::setFrom(::kdm::action::ActionElement_ptr _from)
                 ::kdm::platform::PlatformPackage::_instance()->getLoads__from(),
                 _old_from,
                 m_from.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

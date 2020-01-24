@@ -84,7 +84,7 @@ void Rect::setRx(::PrimitiveTypes::Double _rx)
                 ::SVG::SVGPackage::_instance()->getRect__rx(),
                 _old_rx,
                 m_rx
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -110,7 +110,7 @@ void Rect::setRy(::PrimitiveTypes::Double _ry)
                 ::SVG::SVGPackage::_instance()->getRect__ry(),
                 _old_ry,
                 m_ry
-        );
+            );
         eNotify(&notification);
     }
 #endif

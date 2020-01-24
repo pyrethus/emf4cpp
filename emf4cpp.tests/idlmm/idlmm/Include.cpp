@@ -60,7 +60,7 @@ Include::~Include()
     return m_importURI;
 }
 
-void Include::setImportURI(::ecore::EString const& _importURI)
+void Include::setImportURI(::ecore::EString const &_importURI)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_importURI = m_importURI;
@@ -75,7 +75,7 @@ void Include::setImportURI(::ecore::EString const& _importURI)
                 ::idlmm::IdlmmPackage::_instance()->getInclude__importURI(),
                 _old_importURI,
                 m_importURI
-        );
+            );
         eNotify(&notification);
     }
 #endif

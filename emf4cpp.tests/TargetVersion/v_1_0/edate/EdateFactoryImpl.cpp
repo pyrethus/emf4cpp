@@ -47,7 +47,7 @@ EdateFactory::EdateFactory()
 
 ::ecore::EJavaObject EdateFactory::createFromString(
         ::ecore::EDataType_ptr _eDataType,
-        ::ecore::EString const& _literalValue)
+        ::ecore::EString const &_literalValue)
 {
     switch (_eDataType->getClassifierID())
     {
@@ -58,7 +58,7 @@ EdateFactory::EdateFactory()
 
 ::ecore::EString EdateFactory::convertToString(
         ::ecore::EDataType_ptr _eDataType,
-        ::ecore::EJavaObject const& _instanceValue)
+        ::ecore::EJavaObject const &_instanceValue)
 {
     switch (_eDataType->getClassifierID())
     {
