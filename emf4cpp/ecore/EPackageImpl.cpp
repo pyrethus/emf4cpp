@@ -62,7 +62,7 @@ void EPackage::_initialize()
 
 // Operations
 
-::ecore::EClassifier_ptr EPackage::getEClassifier(::ecore::EString const& _name)
+::ecore::EClassifier_ptr EPackage::getEClassifier(::ecore::EString const &_name)
 {
     /*PROTECTED REGION ID(EPackageImpl_getEClassifier) ENABLED START*/
     if (m_eClassifiersMap.size() == 0)
@@ -140,7 +140,7 @@ void EPackage::_initialize()
 }
 
 void EPackage::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -260,7 +260,7 @@ void EPackage::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void EPackage::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -272,7 +272,7 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EAnnotation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EAnnotation_ptr, -1, true, true >&) ::ecore::EModelElement::getEAnnotations();
         container.basicAdd(_t1);
@@ -305,7 +305,7 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EClassifier > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EClassifier_ptr, -1, true, true >&) ::ecore::EPackage::getEClassifiers();
         container.basicAdd(_t1);
@@ -319,7 +319,7 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EPackage > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::ecore::EPackage_ptr,
                         -1, true, true >&) ::ecore::EPackage::getESubpackages();
         container.basicAdd(_t1);
@@ -352,7 +352,7 @@ void EPackage::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void EPackage::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {
@@ -364,7 +364,7 @@ void EPackage::_inverseRemove(::ecore::EInt _featureID,
                 < ::ecore::EAnnotation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EAnnotation_ptr, -1, true, true >&) ::ecore::EModelElement::getEAnnotations();
         container.basicRemove(_t1);
@@ -390,7 +390,7 @@ void EPackage::_inverseRemove(::ecore::EInt _featureID,
                 < ::ecore::EClassifier > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EClassifier_ptr, -1, true, true >&) ::ecore::EPackage::getEClassifiers();
         container.basicRemove(_t1);
@@ -404,7 +404,7 @@ void EPackage::_inverseRemove(::ecore::EInt _featureID,
                 < ::ecore::EPackage > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl< ::ecore::EPackage_ptr,
                         -1, true, true >&) ::ecore::EPackage::getESubpackages();
         container.basicRemove(_t1);

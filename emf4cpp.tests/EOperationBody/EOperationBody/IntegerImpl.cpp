@@ -51,8 +51,9 @@ void Integer::_initialize()
 ::EOperationBody::Integer_ptr Integer::increment()
 {
 #if 0
-    // This is the original body of the EOperation as specified in the ecore.
-    // If you want to replace it by C++ code, enable the following protected region and implement it there.
+    // This is the original body of the EOperation as specified in
+    // the ecore. If you want to replace it by C++ code, enable
+    // the following protected region and implement it there.
     m_value++; return _this();
 #endif
     /*PROTECTED REGION ID(IntegerImpl_increment) START*/
@@ -67,8 +68,9 @@ void Integer::_initialize()
         ::EOperationBody::Integer_ptr _rhs)
 {
 #if 0
-    // This is the original body of the EOperation as specified in the ecore.
-    // If you want to replace it by C++ code, enable the following protected region and implement it there.
+    // This is the original body of the EOperation as specified in
+    // the ecore. If you want to replace it by C++ code, enable
+    // the following protected region and implement it there.
     Let us assume this would be some language different than C++
 #endif
     /*PROTECTED REGION ID(IntegerImpl_add) ENABLED START*/

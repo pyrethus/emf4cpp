@@ -60,7 +60,7 @@ EStringToStringMapEntry::~EStringToStringMapEntry()
     return m_key;
 }
 
-void EStringToStringMapEntry::setKey(::ecore::EString const& _key)
+void EStringToStringMapEntry::setKey(::ecore::EString const &_key)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_key = m_key;
@@ -75,7 +75,7 @@ void EStringToStringMapEntry::setKey(::ecore::EString const& _key)
                 ::ecore::EcorePackage::_instance()->getEStringToStringMapEntry__key(),
                 _old_key,
                 m_key
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -86,7 +86,7 @@ void EStringToStringMapEntry::setKey(::ecore::EString const& _key)
     return m_value;
 }
 
-void EStringToStringMapEntry::setValue(::ecore::EString const& _value)
+void EStringToStringMapEntry::setValue(::ecore::EString const &_value)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_value = m_value;
@@ -101,7 +101,7 @@ void EStringToStringMapEntry::setValue(::ecore::EString const& _value)
                 ::ecore::EcorePackage::_instance()->getEStringToStringMapEntry__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif

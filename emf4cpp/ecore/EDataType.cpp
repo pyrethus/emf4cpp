@@ -79,7 +79,7 @@ void EDataType::setSerializable(::ecore::EBoolean _serializable)
                 ::ecore::EcorePackage::_instance()->getEDataType__serializable(),
                 _old_serializable,
                 m_serializable
-        );
+            );
         eNotify(&notification);
     }
 #endif

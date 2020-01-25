@@ -97,7 +97,7 @@ void EClass::_init_collections()
     for (size_t i = 0; i < m_eAllSuperTypes->size(); i++)
     {
         ::ecore::EClass_ptr _st = (*m_eAllSuperTypes)[i];
-        ::ecorecpp::mapping::EList< ::ecore::EStructuralFeature_ptr > const& _s =
+        ::ecorecpp::mapping::EList< ::ecore::EStructuralFeature_ptr > const &_s =
                 _st->getEStructuralFeatures();
 
         for (size_t j = 0; j < _s.size(); j++)
@@ -134,7 +134,7 @@ void EClass::_init_collections()
     for (size_t i = 0; i < m_eAllSuperTypes->size(); i++)
     {
         ::ecore::EClass_ptr _st = (*m_eAllSuperTypes)[i];
-        ::ecorecpp::mapping::EList< ::ecore::EOperation_ptr > const& _s =
+        ::ecorecpp::mapping::EList< ::ecore::EOperation_ptr > const &_s =
                 _st->getEOperations();
 
         for (size_t j = 0; j < _s.size(); j++)
@@ -148,7 +148,7 @@ void EClass::_init_collections()
     for (size_t i = 0; i < m_eAllSuperTypes->size(); i++)
     {
         ::ecore::EClass_ptr _st = (*m_eAllSuperTypes)[i];
-        ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr > const& _s =
+        ::ecorecpp::mapping::EList< ::ecore::EGenericType_ptr > const &_s =
                 _st->getEGenericSuperTypes();
 
         for (size_t j = 0; j < _s.size(); j++)
@@ -221,7 +221,7 @@ void EClass::_initialize()
 }
 
 ::ecore::EStructuralFeature_ptr EClass::getEStructuralFeature(
-        ::ecore::EString const& _featureName)
+        ::ecore::EString const &_featureName)
 {
     /*PROTECTED REGION ID(EClassImpl_getEStructuralFeature_1) ENABLED START*/
 
@@ -235,7 +235,7 @@ void EClass::_initialize()
 
     std::cerr << "EClassImpl: " << getName()
             << " EStructuralFeature not found: " << _featureName << std::endl;
-    for (auto& e : m_eAllStructuralFeaturesMap)
+    for (auto &e : m_eAllStructuralFeaturesMap)
         std::cerr << "\t" << e.first << std::endl;
     throw "EClassImpl: EStructuralFeature not found";
 
@@ -356,7 +356,7 @@ void EClass::_initialize()
 }
 
 void EClass::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -541,7 +541,7 @@ void EClass::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void EClass::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -553,7 +553,7 @@ void EClass::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EAnnotation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EAnnotation_ptr, -1, true, true >&) ::ecore::EModelElement::getEAnnotations();
         container.basicAdd(_t1);
@@ -594,7 +594,7 @@ void EClass::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EOperation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EOperation_ptr, -1, true, true >&) ::ecore::EClass::getEOperations();
         container.basicAdd(_t1);
@@ -608,7 +608,7 @@ void EClass::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EStructuralFeature > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EStructuralFeature_ptr, -1, true, true >&) ::ecore::EClass::getEStructuralFeatures();
         container.basicAdd(_t1);
@@ -626,7 +626,7 @@ void EClass::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void EClass::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {
@@ -638,7 +638,7 @@ void EClass::_inverseRemove(::ecore::EInt _featureID,
                 < ::ecore::EAnnotation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EAnnotation_ptr, -1, true, true >&) ::ecore::EModelElement::getEAnnotations();
         container.basicRemove(_t1);
@@ -672,7 +672,7 @@ void EClass::_inverseRemove(::ecore::EInt _featureID,
                 < ::ecore::EOperation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EOperation_ptr, -1, true, true >&) ::ecore::EClass::getEOperations();
         container.basicRemove(_t1);
@@ -686,7 +686,7 @@ void EClass::_inverseRemove(::ecore::EInt _featureID,
                 < ::ecore::EStructuralFeature > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EStructuralFeature_ptr, -1, true, true >&) ::ecore::EClass::getEStructuralFeatures();
         container.basicRemove(_t1);

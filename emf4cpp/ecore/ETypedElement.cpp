@@ -83,7 +83,7 @@ void ETypedElement::setOrdered(::ecore::EBoolean _ordered)
                 ::ecore::EcorePackage::_instance()->getETypedElement__ordered(),
                 _old_ordered,
                 m_ordered
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -109,7 +109,7 @@ void ETypedElement::setUnique(::ecore::EBoolean _unique)
                 ::ecore::EcorePackage::_instance()->getETypedElement__unique(),
                 _old_unique,
                 m_unique
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -135,7 +135,7 @@ void ETypedElement::setLowerBound(::ecore::EInt _lowerBound)
                 ::ecore::EcorePackage::_instance()->getETypedElement__lowerBound(),
                 _old_lowerBound,
                 m_lowerBound
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -161,7 +161,7 @@ void ETypedElement::setUpperBound(::ecore::EInt _upperBound)
                 ::ecore::EcorePackage::_instance()->getETypedElement__upperBound(),
                 _old_upperBound,
                 m_upperBound
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -187,7 +187,7 @@ void ETypedElement::setMany(::ecore::EBoolean _many)
                 ::ecore::EcorePackage::_instance()->getETypedElement__many(),
                 _old_many,
                 m_many
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -213,7 +213,7 @@ void ETypedElement::setRequired(::ecore::EBoolean _required)
                 ::ecore::EcorePackage::_instance()->getETypedElement__required(),
                 _old_required,
                 m_required
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -242,7 +242,7 @@ void ETypedElement::setEType(::ecore::EClassifier_ptr _eType)
                 ::ecore::EcorePackage::_instance()->getETypedElement__eType(),
                 _old_eType,
                 m_eType.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -276,7 +276,7 @@ void ETypedElement::setEGenericType(::ecore::EGenericType_ptr _eGenericType)
                 ::ecore::EcorePackage::_instance()->getETypedElement__eGenericType(),
                 _old_eGenericType,
                 m_eGenericType
-        );
+            );
         eNotify(&notification);
     }
 #endif

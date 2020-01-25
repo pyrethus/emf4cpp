@@ -78,7 +78,7 @@ void EEnumLiteral::setValue(::ecore::EInt _value)
                 ::ecore::EcorePackage::_instance()->getEEnumLiteral__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -104,7 +104,7 @@ void EEnumLiteral::setInstance(::ecore::EEnumerator _instance)
                 ::ecore::EcorePackage::_instance()->getEEnumLiteral__instance(),
                 _old_instance,
                 m_instance
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -115,7 +115,7 @@ void EEnumLiteral::setInstance(::ecore::EEnumerator _instance)
     return m_literal;
 }
 
-void EEnumLiteral::setLiteral(::ecore::EString const& _literal)
+void EEnumLiteral::setLiteral(::ecore::EString const &_literal)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_literal = m_literal;
@@ -130,7 +130,7 @@ void EEnumLiteral::setLiteral(::ecore::EString const& _literal)
                 ::ecore::EcorePackage::_instance()->getEEnumLiteral__literal(),
                 _old_literal,
                 m_literal
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -164,7 +164,7 @@ void EEnumLiteral::basicsetEEnum(::ecore::EEnum_ptr _eEnum)
                 ::ecore::EcorePackage::_instance()->getEEnumLiteral__eEnum(),
                 _old_eEnum,
                 m_eEnum.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

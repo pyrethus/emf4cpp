@@ -93,20 +93,20 @@ void XMLTypeDocumentRoot::setMixed(
                 ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__mixed(),
                 _old_mixed,
                 m_mixed
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
 void XMLTypeDocumentRoot::addMixed(
-        ::ecore::EFeatureMapEntry const& _new_element_in_mixed)
+        ::ecore::EFeatureMapEntry const &_new_element_in_mixed)
 {
     m_mixed.push_back(_new_element_in_mixed);
 }
 
 void XMLTypeDocumentRoot::setMixedAt(size_t _position,
-        ::ecore::EFeatureMapEntry const& _new_element_in_mixed)
+        ::ecore::EFeatureMapEntry const &_new_element_in_mixed)
 {
     if (_position >= m_mixed.size())
         m_mixed.resize(_position + 1, ::ecore::EFeatureMapEntry());
@@ -144,19 +144,19 @@ void XMLTypeDocumentRoot::setCDATA(std::vector< ::type::String > _cDATA)
                 ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__cDATA(),
                 _old_cDATA,
                 m_cDATA
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
-void XMLTypeDocumentRoot::addCDATA(::type::String const& _new_element_in_cDATA)
+void XMLTypeDocumentRoot::addCDATA(::type::String const &_new_element_in_cDATA)
 {
     m_cDATA.push_back(_new_element_in_cDATA);
 }
 
 void XMLTypeDocumentRoot::setCDATAAt(size_t _position,
-        ::type::String const& _new_element_in_cDATA)
+        ::type::String const &_new_element_in_cDATA)
 {
     if (_position >= m_cDATA.size())
         m_cDATA.resize(_position + 1, ::type::String());
@@ -194,20 +194,20 @@ void XMLTypeDocumentRoot::setComment(std::vector< ::type::String > _comment)
                 ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__comment(),
                 _old_comment,
                 m_comment
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
 void XMLTypeDocumentRoot::addComment(
-        ::type::String const& _new_element_in_comment)
+        ::type::String const &_new_element_in_comment)
 {
     m_comment.push_back(_new_element_in_comment);
 }
 
 void XMLTypeDocumentRoot::setCommentAt(size_t _position,
-        ::type::String const& _new_element_in_comment)
+        ::type::String const &_new_element_in_comment)
 {
     if (_position >= m_comment.size())
         m_comment.resize(_position + 1, ::type::String());
@@ -245,19 +245,19 @@ void XMLTypeDocumentRoot::setText(std::vector< ::type::String > _text)
                 ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__text(),
                 _old_text,
                 m_text
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
-void XMLTypeDocumentRoot::addText(::type::String const& _new_element_in_text)
+void XMLTypeDocumentRoot::addText(::type::String const &_new_element_in_text)
 {
     m_text.push_back(_new_element_in_text);
 }
 
 void XMLTypeDocumentRoot::setTextAt(size_t _position,
-        ::type::String const& _new_element_in_text)
+        ::type::String const &_new_element_in_text)
 {
     if (_position >= m_text.size())
         m_text.resize(_position + 1, ::type::String());

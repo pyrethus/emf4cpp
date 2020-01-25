@@ -77,7 +77,7 @@ void SimpleAnyType::setRawValue(::type::String _rawValue)
                 ::type::TypePackage::_instance()->getSimpleAnyType__rawValue(),
                 _old_rawValue,
                 m_rawValue
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -103,7 +103,7 @@ void SimpleAnyType::setValue(::type::AnySimpleType _value)
                 ::type::TypePackage::_instance()->getSimpleAnyType__value(),
                 _old_value,
                 m_value
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -132,7 +132,7 @@ void SimpleAnyType::setInstanceType(::ecore::EDataType_ptr _instanceType)
                 ::type::TypePackage::_instance()->getSimpleAnyType__instanceType(),
                 _old_instanceType,
                 m_instanceType.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

@@ -102,7 +102,7 @@ void EGenericType::setEUpperBound(::ecore::EGenericType_ptr _eUpperBound)
                 ::ecore::EcorePackage::_instance()->getEGenericType__eUpperBound(),
                 _old_eUpperBound,
                 m_eUpperBound
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -139,7 +139,7 @@ void EGenericType::setERawType(::ecore::EClassifier_ptr _eRawType)
                 ::ecore::EcorePackage::_instance()->getEGenericType__eRawType(),
                 _old_eRawType,
                 m_eRawType.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -173,7 +173,7 @@ void EGenericType::setELowerBound(::ecore::EGenericType_ptr _eLowerBound)
                 ::ecore::EcorePackage::_instance()->getEGenericType__eLowerBound(),
                 _old_eLowerBound,
                 m_eLowerBound
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -201,7 +201,7 @@ void EGenericType::setETypeParameter(
                 ::ecore::EcorePackage::_instance()->getEGenericType__eTypeParameter(),
                 _old_eTypeParameter,
                 m_eTypeParameter.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -228,7 +228,7 @@ void EGenericType::setEClassifier(::ecore::EClassifier_ptr _eClassifier)
                 ::ecore::EcorePackage::_instance()->getEGenericType__eClassifier(),
                 _old_eClassifier,
                 m_eClassifier.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

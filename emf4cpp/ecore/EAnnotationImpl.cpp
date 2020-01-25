@@ -36,7 +36,7 @@
 
 using namespace ::ecore;
 
-bool EAnnotation::hasDetail(::ecore::EString const& key) const
+bool EAnnotation::hasDetail(::ecore::EString const &key) const
 {
     for (size_t i = 0; i < m_details->size(); i++)
     {
@@ -47,7 +47,7 @@ bool EAnnotation::hasDetail(::ecore::EString const& key) const
     return false;
 }
 
-::ecore::EString EAnnotation::getDetail(::ecore::EString const& key) const
+::ecore::EString EAnnotation::getDetail(::ecore::EString const &key) const
 {
     for (size_t i = 0; i < m_details->size(); i++)
     {
@@ -58,8 +58,8 @@ bool EAnnotation::hasDetail(::ecore::EString const& key) const
     throw "Error";
 }
 
-void EAnnotation::setDetail(::ecore::EString const& key,
-        ::ecore::EString const& value)
+void EAnnotation::setDetail(::ecore::EString const &key,
+        ::ecore::EString const &value)
 {
     size_t i = 0;
     for (; i < m_details->size(); i++)
@@ -82,7 +82,7 @@ void EAnnotation::setDetail(::ecore::EString const& key,
     }
 }
 
-void EAnnotation::removeDetail(::ecore::EString const& key)
+void EAnnotation::removeDetail(::ecore::EString const &key)
 {
     for (size_t i = 0; i < m_details->size(); i++)
     {
@@ -164,7 +164,7 @@ void EAnnotation::_initialize()
 }
 
 void EAnnotation::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -262,7 +262,7 @@ void EAnnotation::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void EAnnotation::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -274,7 +274,7 @@ void EAnnotation::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EAnnotation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EAnnotation_ptr, -1, true, true >&) ::ecore::EModelElement::getEAnnotations();
         container.basicAdd(_t1);
@@ -319,7 +319,7 @@ void EAnnotation::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void EAnnotation::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {
@@ -331,7 +331,7 @@ void EAnnotation::_inverseRemove(::ecore::EInt _featureID,
                 < ::ecore::EAnnotation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EAnnotation_ptr, -1, true, true >&) ::ecore::EModelElement::getEAnnotations();
         container.basicRemove(_t1);

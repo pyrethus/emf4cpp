@@ -71,7 +71,7 @@ EClassifier::~EClassifier()
 }
 
 void EClassifier::setInstanceClassName(
-        ::ecore::EString const& _instanceClassName)
+        ::ecore::EString const &_instanceClassName)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_instanceClassName = m_instanceClassName;
@@ -86,7 +86,7 @@ void EClassifier::setInstanceClassName(
                 ::ecore::EcorePackage::_instance()->getEClassifier__instanceClassName(),
                 _old_instanceClassName,
                 m_instanceClassName
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -112,7 +112,7 @@ void EClassifier::setInstanceClass(int _instanceClass)
                 ::ecore::EcorePackage::_instance()->getEClassifier__instanceClass(),
                 _old_instanceClass,
                 m_instanceClass
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -123,7 +123,7 @@ void EClassifier::setInstanceClass(int _instanceClass)
     return m_defaultValue;
 }
 
-void EClassifier::setDefaultValue(::ecore::EJavaObject const& _defaultValue)
+void EClassifier::setDefaultValue(::ecore::EJavaObject const &_defaultValue)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EJavaObject _old_defaultValue = m_defaultValue;
@@ -138,7 +138,7 @@ void EClassifier::setDefaultValue(::ecore::EJavaObject const& _defaultValue)
                 ::ecore::EcorePackage::_instance()->getEClassifier__defaultValue(),
                 _old_defaultValue,
                 m_defaultValue
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -149,7 +149,7 @@ void EClassifier::setDefaultValue(::ecore::EJavaObject const& _defaultValue)
     return m_instanceTypeName;
 }
 
-void EClassifier::setInstanceTypeName(::ecore::EString const& _instanceTypeName)
+void EClassifier::setInstanceTypeName(::ecore::EString const &_instanceTypeName)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_instanceTypeName = m_instanceTypeName;
@@ -164,7 +164,7 @@ void EClassifier::setInstanceTypeName(::ecore::EString const& _instanceTypeName)
                 ::ecore::EcorePackage::_instance()->getEClassifier__instanceTypeName(),
                 _old_instanceTypeName,
                 m_instanceTypeName
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -198,7 +198,7 @@ void EClassifier::basicsetEPackage(::ecore::EPackage_ptr _ePackage)
                 ::ecore::EcorePackage::_instance()->getEClassifier__ePackage(),
                 _old_ePackage,
                 m_ePackage.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

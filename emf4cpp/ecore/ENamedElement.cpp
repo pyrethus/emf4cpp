@@ -62,7 +62,7 @@ ENamedElement::~ENamedElement()
     return m_name;
 }
 
-void ENamedElement::setName(::ecore::EString const& _name)
+void ENamedElement::setName(::ecore::EString const &_name)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_name = m_name;
@@ -77,7 +77,7 @@ void ENamedElement::setName(::ecore::EString const& _name)
                 ::ecore::EcorePackage::_instance()->getENamedElement__name(),
                 _old_name,
                 m_name
-        );
+            );
         eNotify(&notification);
     }
 #endif

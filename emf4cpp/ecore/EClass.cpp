@@ -153,7 +153,7 @@ void EClass::setAbstract(::ecore::EBoolean _abstract)
                 ::ecore::EcorePackage::_instance()->getEClass__abstract(),
                 _old_abstract,
                 m_abstract
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -179,7 +179,7 @@ void EClass::setInterface(::ecore::EBoolean _interface)
                 ::ecore::EcorePackage::_instance()->getEClass__interface(),
                 _old_interface,
                 m_interface
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -308,7 +308,7 @@ void EClass::setEIDAttribute(::ecore::EAttribute_ptr _eIDAttribute)
                 ::ecore::EcorePackage::_instance()->getEClass__eIDAttribute(),
                 _old_eIDAttribute,
                 m_eIDAttribute.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

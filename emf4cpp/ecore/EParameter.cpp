@@ -88,7 +88,7 @@ void EParameter::basicsetEOperation(::ecore::EOperation_ptr _eOperation)
                 ::ecore::EcorePackage::_instance()->getEParameter__eOperation(),
                 _old_eOperation,
                 m_eOperation.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

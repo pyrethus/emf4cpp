@@ -51,25 +51,25 @@ namespace ecore
 
     /* A helper function to create objects and wrap them in the default pointer type. */
     template< class T, class ... Args >
-    Ptr< T > make(Args&&... args)
+    Ptr< T > make(Args &&... args)
     {
         return std::make_shared< T >(args...);
     }
 
     template< typename T, typename S >
-    inline T* as(S* _s)
+    inline T* as(S *_s)
     {
         return dynamic_cast< T* >(_s);
     }
 
     template< typename T, typename S >
-    inline Ptr< T > as(const Ptr< S >& _s)
+    inline Ptr< T > as(const Ptr< S > &_s)
     {
         return Ptr< T >(std::dynamic_pointer_cast < T > (_s));
     }
 
     template< typename T, typename S >
-    inline bool instanceOf(const Ptr< S >& _s)
+    inline bool instanceOf(const Ptr< S > &_s)
     {
         return (bool) dynamic_cast< T* >(_s.get());
     }

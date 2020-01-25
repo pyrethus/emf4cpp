@@ -113,7 +113,7 @@ void EOperation::basicsetEContainingClass(::ecore::EClass_ptr _eContainingClass)
                 ::ecore::EcorePackage::_instance()->getEOperation__eContainingClass(),
                 _old_eContainingClass,
                 m_eContainingClass.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

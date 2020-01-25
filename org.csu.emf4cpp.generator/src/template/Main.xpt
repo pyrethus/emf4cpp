@@ -47,6 +47,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     «EXPAND template::EEnumHPP::hpp FOREACH EClassifiers.typeSelect(EEnum)»
     «EXPAND template::Factory::hppcpp FOR this»
     «EXPAND template::FactoryImpl::hppcpp FOR this»
+    «EXPAND template::ItemDispatcher::hppcpp FOR this»
     «EXPAND template::Package::hppcpp FOR this»
     «EXPAND template::PackageImpl::hppcpp FOR this»	
     
@@ -57,7 +58,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 «ENDDEFINE»
 
 «DEFINE itemprovider FOR EPackage»
-    «EXPAND template::ItemDispatcher::hppcpp FOR this»
     «EXPAND template::ItemProvider::hppcpp FOR this»
 
     «EXPAND itemprovider FOREACH ESubpackages»

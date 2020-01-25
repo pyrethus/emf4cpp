@@ -32,7 +32,7 @@ using namespace ::type;
     return s_holder;
 }
 
-void TypeFactory::_setFactoryInstance(const TypeFactory_ptr& fac)
+void TypeFactory::_setFactoryInstance(const TypeFactory_ptr &fac)
 {
     TypePackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

@@ -81,7 +81,7 @@ void EAttribute::setID(::ecore::EBoolean _iD)
                 ::ecore::EcorePackage::_instance()->getEAttribute__iD(),
                 _old_iD,
                 m_iD
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -110,7 +110,7 @@ void EAttribute::setEAttributeType(::ecore::EDataType_ptr _eAttributeType)
                 ::ecore::EcorePackage::_instance()->getEAttribute__eAttributeType(),
                 _old_eAttributeType,
                 m_eAttributeType.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

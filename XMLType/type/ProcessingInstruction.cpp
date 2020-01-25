@@ -75,7 +75,7 @@ void ProcessingInstruction::setData(::type::String _data)
                 ::type::TypePackage::_instance()->getProcessingInstruction__data(),
                 _old_data,
                 m_data
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -101,7 +101,7 @@ void ProcessingInstruction::setTarget(::type::String _target)
                 ::type::TypePackage::_instance()->getProcessingInstruction__target(),
                 _old_target,
                 m_target
-        );
+            );
         eNotify(&notification);
     }
 #endif

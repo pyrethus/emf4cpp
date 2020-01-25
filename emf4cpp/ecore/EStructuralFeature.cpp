@@ -80,7 +80,7 @@ void EStructuralFeature::setChangeable(::ecore::EBoolean _changeable)
                 ::ecore::EcorePackage::_instance()->getEStructuralFeature__changeable(),
                 _old_changeable,
                 m_changeable
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -106,7 +106,7 @@ void EStructuralFeature::setVolatile(::ecore::EBoolean _volatile)
                 ::ecore::EcorePackage::_instance()->getEStructuralFeature__volatile(),
                 _old_volatile,
                 m_volatile
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -132,7 +132,7 @@ void EStructuralFeature::setTransient(::ecore::EBoolean _transient)
                 ::ecore::EcorePackage::_instance()->getEStructuralFeature__transient(),
                 _old_transient,
                 m_transient
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -144,7 +144,7 @@ void EStructuralFeature::setTransient(::ecore::EBoolean _transient)
 }
 
 void EStructuralFeature::setDefaultValueLiteral(
-        ::ecore::EString const& _defaultValueLiteral)
+        ::ecore::EString const &_defaultValueLiteral)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_defaultValueLiteral = m_defaultValueLiteral;
@@ -159,7 +159,7 @@ void EStructuralFeature::setDefaultValueLiteral(
                 ::ecore::EcorePackage::_instance()->getEStructuralFeature__defaultValueLiteral(),
                 _old_defaultValueLiteral,
                 m_defaultValueLiteral
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -171,7 +171,7 @@ void EStructuralFeature::setDefaultValueLiteral(
 }
 
 void EStructuralFeature::setDefaultValue(
-        ::ecore::EJavaObject const& _defaultValue)
+        ::ecore::EJavaObject const &_defaultValue)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EJavaObject _old_defaultValue = m_defaultValue;
@@ -186,7 +186,7 @@ void EStructuralFeature::setDefaultValue(
                 ::ecore::EcorePackage::_instance()->getEStructuralFeature__defaultValue(),
                 _old_defaultValue,
                 m_defaultValue
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -212,7 +212,7 @@ void EStructuralFeature::setUnsettable(::ecore::EBoolean _unsettable)
                 ::ecore::EcorePackage::_instance()->getEStructuralFeature__unsettable(),
                 _old_unsettable,
                 m_unsettable
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -238,7 +238,7 @@ void EStructuralFeature::setDerived(::ecore::EBoolean _derived)
                 ::ecore::EcorePackage::_instance()->getEStructuralFeature__derived(),
                 _old_derived,
                 m_derived
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -273,7 +273,7 @@ void EStructuralFeature::basicsetEContainingClass(
                 ::ecore::EcorePackage::_instance()->getEStructuralFeature__eContainingClass(),
                 _old_eContainingClass,
                 m_eContainingClass.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

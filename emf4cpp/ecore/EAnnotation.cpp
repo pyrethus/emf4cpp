@@ -81,7 +81,7 @@ EAnnotation::~EAnnotation()
     return m_source;
 }
 
-void EAnnotation::setSource(::ecore::EString const& _source)
+void EAnnotation::setSource(::ecore::EString const &_source)
 {
 #ifdef ECORECPP_NOTIFICATION_API
     ::ecore::EString _old_source = m_source;
@@ -96,7 +96,7 @@ void EAnnotation::setSource(::ecore::EString const& _source)
                 ::ecore::EcorePackage::_instance()->getEAnnotation__source(),
                 _old_source,
                 m_source
-        );
+            );
         eNotify(&notification);
     }
 #endif
@@ -141,7 +141,7 @@ void EAnnotation::basicsetEModelElement(
                 ::ecore::EcorePackage::_instance()->getEAnnotation__eModelElement(),
                 _old_eModelElement,
                 m_eModelElement.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

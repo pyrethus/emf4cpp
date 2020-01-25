@@ -189,7 +189,7 @@ void EObject::_initialize()
             ::ecorecpp::mapping::FeatureEListImpl< ::ecore::EObject_ptr > >();
 
     ::ecore::EClass_ptr eclass = eClass();
-    for (const auto& ref : eclass->getEAllReferences())
+    for (const auto &ref : eclass->getEAllReferences())
     {
         if (ref->isTransient() || !ref->isContainment() || !eIsSet(ref))
         {
@@ -243,7 +243,7 @@ void EObject::_initialize()
             ::ecorecpp::mapping::FeatureEListImpl< ::ecore::EObject_ptr > >();
 
     ::ecore::EClass_ptr eclass = eClass();
-    for (const auto& ref : eclass->getEAllReferences())
+    for (const auto &ref : eclass->getEAllReferences())
     {
         if (ref->isTransient() || ref->isContainment() || !eIsSet(ref))
         {
@@ -299,7 +299,7 @@ void EObject::_initialize()
 }
 
 void EObject::eSet(::ecore::EStructuralFeature_ptr _feature,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     /*PROTECTED REGION ID(EObjectImpl_eSet) ENABLED START*/
     eSet(_feature->getFeatureID(), _newValue);
@@ -321,7 +321,7 @@ void EObject::eUnset(::ecore::EStructuralFeature_ptr _feature)
 }
 
 ::ecore::EJavaObject EObject::eInvoke(::ecore::EOperation_ptr _operation,
-        ::ecore::EList_ptr< ::ecorecpp::mapping::any > const& _arguments)
+        ::ecore::EList_ptr< ::ecorecpp::mapping::any > const &_arguments)
 {
     /*PROTECTED REGION ID(EObjectImpl_eInvoke) START*/
     // Please, enable the protected region if you add manually written code.
@@ -343,7 +343,7 @@ void EObject::eUnset(::ecore::EStructuralFeature_ptr _feature)
 }
 
 void EObject::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -380,7 +380,7 @@ void EObject::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void EObject::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -392,7 +392,7 @@ void EObject::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void EObject::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {

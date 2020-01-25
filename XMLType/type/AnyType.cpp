@@ -75,19 +75,19 @@ void AnyType::setMixed(std::vector< ::ecore::EFeatureMapEntry > _mixed)
                 ::type::TypePackage::_instance()->getAnyType__mixed(),
                 _old_mixed,
                 m_mixed
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
-void AnyType::addMixed(::ecore::EFeatureMapEntry const& _new_element_in_mixed)
+void AnyType::addMixed(::ecore::EFeatureMapEntry const &_new_element_in_mixed)
 {
     m_mixed.push_back(_new_element_in_mixed);
 }
 
 void AnyType::setMixedAt(size_t _position,
-        ::ecore::EFeatureMapEntry const& _new_element_in_mixed)
+        ::ecore::EFeatureMapEntry const &_new_element_in_mixed)
 {
     if (_position >= m_mixed.size())
         m_mixed.resize(_position + 1, ::ecore::EFeatureMapEntry());
@@ -125,19 +125,19 @@ void AnyType::setAny(std::vector< ::ecore::EFeatureMapEntry > _any)
                 ::type::TypePackage::_instance()->getAnyType__any(),
                 _old_any,
                 m_any
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
-void AnyType::addAny(::ecore::EFeatureMapEntry const& _new_element_in_any)
+void AnyType::addAny(::ecore::EFeatureMapEntry const &_new_element_in_any)
 {
     m_any.push_back(_new_element_in_any);
 }
 
 void AnyType::setAnyAt(size_t _position,
-        ::ecore::EFeatureMapEntry const& _new_element_in_any)
+        ::ecore::EFeatureMapEntry const &_new_element_in_any)
 {
     if (_position >= m_any.size())
         m_any.resize(_position + 1, ::ecore::EFeatureMapEntry());
@@ -176,20 +176,20 @@ void AnyType::setAnyAttribute(
                 ::type::TypePackage::_instance()->getAnyType__anyAttribute(),
                 _old_anyAttribute,
                 m_anyAttribute
-        );
+            );
         eNotify(&notification);
     }
 #endif
 }
 
 void AnyType::addAnyAttribute(
-        ::ecore::EFeatureMapEntry const& _new_element_in_anyAttribute)
+        ::ecore::EFeatureMapEntry const &_new_element_in_anyAttribute)
 {
     m_anyAttribute.push_back(_new_element_in_anyAttribute);
 }
 
 void AnyType::setAnyAttributeAt(size_t _position,
-        ::ecore::EFeatureMapEntry const& _new_element_in_anyAttribute)
+        ::ecore::EFeatureMapEntry const &_new_element_in_anyAttribute)
 {
     if (_position >= m_anyAttribute.size())
         m_anyAttribute.resize(_position + 1, ::ecore::EFeatureMapEntry());

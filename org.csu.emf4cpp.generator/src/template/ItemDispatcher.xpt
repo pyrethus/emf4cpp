@@ -46,7 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 «EXPAND template::EClassHPP::namespaces_begin FOR this-»
 
 template<class T>
-class EXPORT_«getHeaderDefDLL()»_DLL
+class EXPORT_«getExportDLL()»_DLL
 «this.name.toFirstUpper()»ItemDispatcher
 {
 public:

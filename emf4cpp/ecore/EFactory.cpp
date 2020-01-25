@@ -89,7 +89,7 @@ void EFactory::basicsetEPackage(::ecore::EPackage_ptr _ePackage)
                 ::ecore::EcorePackage::_instance()->getEFactory__ePackage(),
                 _old_ePackage,
                 m_ePackage.lock()
-        );
+            );
         eNotify(&notification);
     }
 #endif

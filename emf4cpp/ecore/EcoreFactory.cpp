@@ -32,7 +32,7 @@ using namespace ::ecore;
     return s_holder;
 }
 
-void EcoreFactory::_setFactoryInstance(const EcoreFactory_ptr& fac)
+void EcoreFactory::_setFactoryInstance(const EcoreFactory_ptr &fac)
 {
     EcorePackage::_instance()->setEFactoryInstance(fac);
     s_holder = fac;

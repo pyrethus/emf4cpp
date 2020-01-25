@@ -53,7 +53,7 @@ void EModelElement::_initialize()
 // Operations
 
 ::ecore::EAnnotation_ptr EModelElement::getEAnnotation(
-        ::ecore::EString const& _source)
+        ::ecore::EString const &_source)
 {
     /*PROTECTED REGION ID(EModelElementImpl_getEAnnotation) ENABLED START*/
     for (size_t i = 0; i < m_eAnnotations->size(); i++)
@@ -88,7 +88,7 @@ void EModelElement::_initialize()
 }
 
 void EModelElement::eSet(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -135,7 +135,7 @@ void EModelElement::eUnset(::ecore::EInt _featureID)
 /** Set the local end of a reference with an EOpposite property.
  */
 void EModelElement::_inverseAdd(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _newValue)
+        ::ecore::EJavaObject const &_newValue)
 {
     switch (_featureID)
     {
@@ -147,7 +147,7 @@ void EModelElement::_inverseAdd(::ecore::EInt _featureID,
                 < ::ecore::EAnnotation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EAnnotation_ptr, -1, true, true >&) ::ecore::EModelElement::getEAnnotations();
         container.basicAdd(_t1);
@@ -161,7 +161,7 @@ void EModelElement::_inverseAdd(::ecore::EInt _featureID,
 /** Unset the local end of a reference with an EOpposite property.
  */
 void EModelElement::_inverseRemove(::ecore::EInt _featureID,
-        ::ecore::EJavaObject const& _oldValue)
+        ::ecore::EJavaObject const &_oldValue)
 {
     switch (_featureID)
     {
@@ -173,7 +173,7 @@ void EModelElement::_inverseRemove(::ecore::EInt _featureID,
                 < ::ecore::EAnnotation > (_t0);
 
         // add to a list
-        auto& container =
+        auto &container =
                 (::ecorecpp::mapping::ReferenceEListImpl<
                         ::ecore::EAnnotation_ptr, -1, true, true >&) ::ecore::EModelElement::getEAnnotations();
         container.basicRemove(_t1);
