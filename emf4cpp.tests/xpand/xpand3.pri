@@ -146,6 +146,7 @@ HEADERS += \
     xpand3_forward.hpp \
     xpand3/Xpand3Package.hpp \
     xpand3/Xpand3Factory.hpp \
+    xpand3/Xpand3ItemDispatcher.hpp \
     xpand3/SyntaxElement.hpp \
     xpand3/File.hpp \
     xpand3/ImportStatement.hpp \
@@ -155,6 +156,7 @@ HEADERS += \
     xpand3/expression_forward.hpp \
     xpand3/expression/ExpressionPackage.hpp \
     xpand3/expression/ExpressionFactory.hpp \
+    xpand3/expression/ExpressionItemDispatcher.hpp \
     xpand3/expression/AbstractExpression.hpp \
     xpand3/expression/BooleanOperation.hpp \
     xpand3/expression/Cast.hpp \
@@ -182,6 +184,7 @@ HEADERS += \
     xpand3/statement_forward.hpp \
     xpand3/statement/StatementPackage.hpp \
     xpand3/statement/StatementFactory.hpp \
+    xpand3/statement/StatementItemDispatcher.hpp \
     xpand3/statement/AbstractStatement.hpp \
     xpand3/statement/ExpandStatement.hpp \
     xpand3/statement/ExpressionStatement.hpp \
@@ -197,6 +200,7 @@ HEADERS += \
     xpand3/declaration_forward.hpp \
     xpand3/declaration/DeclarationPackage.hpp \
     xpand3/declaration/DeclarationFactory.hpp \
+    xpand3/declaration/DeclarationItemDispatcher.hpp \
     xpand3/declaration/AbstractDeclaration.hpp \
     xpand3/declaration/AbstractNamedDeclaration.hpp \
     xpand3/declaration/Definition.hpp \

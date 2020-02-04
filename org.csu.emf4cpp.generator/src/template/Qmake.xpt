@@ -40,6 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     «getFQN("/")»_forward.hpp \
     «getPackagePrefix("/")».hpp \
     «getFactoryPrefix("/")».hpp \
+    «getItemDispatcherPrefix("/")».hpp \
     «FOREACH EClassifiers.typeSelect(EClass) AS class-»
     «class.getFQN("/")».hpp \
     «ENDFOREACH-»

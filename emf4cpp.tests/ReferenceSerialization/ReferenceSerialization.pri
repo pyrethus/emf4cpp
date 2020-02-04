@@ -39,6 +39,7 @@ HEADERS += \
     ReferenceSerialization_forward.hpp \
     ReferenceSerialization/ReferenceSerializationPackage.hpp \
     ReferenceSerialization/ReferenceSerializationFactory.hpp \
+    ReferenceSerialization/ReferenceSerializationItemDispatcher.hpp \
     ReferenceSerialization/Container.hpp \
     ReferenceSerialization/Content.hpp \
     ReferenceSerialization/Child.hpp \

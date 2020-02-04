@@ -45,6 +45,7 @@ HEADERS += \
     myDsl_forward.hpp \
     myDsl/MyDslPackage.hpp \
     myDsl/MyDslFactory.hpp \
+    myDsl/MyDslItemDispatcher.hpp \
     myDsl/Model.hpp \
     myDsl/Import.hpp \
     myDsl/Type.hpp \

@@ -33,4 +33,5 @@ HEADERS += \
     PrimitiveTypes_forward.hpp \
     PrimitiveTypes/PrimitiveTypesPackage.hpp \
     PrimitiveTypes/PrimitiveTypesFactory.hpp \
+    PrimitiveTypes/PrimitiveTypesItemDispatcher.hpp \
 

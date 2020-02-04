@@ -73,6 +73,7 @@ HEADERS += \
     ecore_forward.hpp \
     ecore/EcorePackage.hpp \
     ecore/EcoreFactory.hpp \
+    ecore/EcoreItemDispatcher.hpp \
     ecore/EAttribute.hpp \
     ecore/EAnnotation.hpp \
     ecore/EClass.hpp \

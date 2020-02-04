@@ -693,10 +693,12 @@ HEADERS += \
     kdm_forward.hpp \
     kdm/KdmPackage.hpp \
     kdm/KdmFactory.hpp \
+    kdm/KdmItemDispatcher.hpp \
     kdm/action.hpp \
     kdm/action_forward.hpp \
     kdm/action/ActionPackage.hpp \
     kdm/action/ActionFactory.hpp \
+    kdm/action/ActionItemDispatcher.hpp \
     kdm/action/ActionElement.hpp \
     kdm/action/AbstractActionRelationship.hpp \
     kdm/action/ControlFlow.hpp \
@@ -726,6 +728,7 @@ HEADERS += \
     kdm/build_forward.hpp \
     kdm/build/BuildPackage.hpp \
     kdm/build/BuildFactory.hpp \
+    kdm/build/BuildItemDispatcher.hpp \
     kdm/build/AbstractBuildElement.hpp \
     kdm/build/BuildResource.hpp \
     kdm/build/BuildDescription.hpp \
@@ -750,6 +753,7 @@ HEADERS += \
     kdm/code_forward.hpp \
     kdm/code/CodePackage.hpp \
     kdm/code/CodeFactory.hpp \
+    kdm/code/CodeItemDispatcher.hpp \
     kdm/code/AbstractCodeElement.hpp \
     kdm/code/CodeItem.hpp \
     kdm/code/ComputationalObject.hpp \
@@ -837,6 +841,7 @@ HEADERS += \
     kdm/conceptual_forward.hpp \
     kdm/conceptual/ConceptualPackage.hpp \
     kdm/conceptual/ConceptualFactory.hpp \
+    kdm/conceptual/ConceptualItemDispatcher.hpp \
     kdm/conceptual/ConceptualModel.hpp \
     kdm/conceptual/AbstractConceptualElement.hpp \
     kdm/conceptual/TermUnit.hpp \
@@ -854,6 +859,7 @@ HEADERS += \
     kdm/core_forward.hpp \
     kdm/core/CorePackage.hpp \
     kdm/core/CoreFactory.hpp \
+    kdm/core/CoreItemDispatcher.hpp \
     kdm/core/Element.hpp \
     kdm/core/ModelElement.hpp \
     kdm/core/KDMEntity.hpp \
@@ -863,6 +869,7 @@ HEADERS += \
     kdm/data_forward.hpp \
     kdm/data/DataPackage.hpp \
     kdm/data/DataFactory.hpp \
+    kdm/data/DataItemDispatcher.hpp \
     kdm/data/DataModel.hpp \
     kdm/data/AbstractDataElement.hpp \
     kdm/data/DataResource.hpp \
@@ -912,6 +919,7 @@ HEADERS += \
     kdm/event_forward.hpp \
     kdm/event/EventPackage.hpp \
     kdm/event/EventFactory.hpp \
+    kdm/event/EventItemDispatcher.hpp \
     kdm/event/EventModel.hpp \
     kdm/event/AbstractEventElement.hpp \
     kdm/event/Event.hpp \
@@ -934,6 +942,7 @@ HEADERS += \
     kdm/source_forward.hpp \
     kdm/source/SourcePackage.hpp \
     kdm/source/SourceFactory.hpp \
+    kdm/source/SourceItemDispatcher.hpp \
     kdm/source/SourceRef.hpp \
     kdm/source/SourceRegion.hpp \
     kdm/source/InventoryModel.hpp \
@@ -956,6 +965,7 @@ HEADERS += \
     kdm/platform_forward.hpp \
     kdm/platform/PlatformPackage.hpp \
     kdm/platform/PlatformFactory.hpp \
+    kdm/platform/PlatformItemDispatcher.hpp \
     kdm/platform/AbstractPlatformElement.hpp \
     kdm/platform/PlatformModel.hpp \
     kdm/platform/AbstractPlatformRelationship.hpp \
@@ -992,6 +1002,7 @@ HEADERS += \
     kdm/structure_forward.hpp \
     kdm/structure/StructurePackage.hpp \
     kdm/structure/StructureFactory.hpp \
+    kdm/structure/StructureItemDispatcher.hpp \
     kdm/structure/AbstractStructureElement.hpp \
     kdm/structure/Subsystem.hpp \
     kdm/structure/Layer.hpp \
@@ -1006,6 +1017,7 @@ HEADERS += \
     kdm/kdm_forward.hpp \
     kdm/kdm/KdmPackage.hpp \
     kdm/kdm/KdmFactory.hpp \
+    kdm/kdm/KdmItemDispatcher.hpp \
     kdm/kdm/KDMFramework.hpp \
     kdm/kdm/KDMModel.hpp \
     kdm/kdm/Audit.hpp \
@@ -1022,6 +1034,7 @@ HEADERS += \
     kdm/ui_forward.hpp \
     kdm/ui/UiPackage.hpp \
     kdm/ui/UiFactory.hpp \
+    kdm/ui/UiItemDispatcher.hpp \
     kdm/ui/AbstractUIElement.hpp \
     kdm/ui/UIResource.hpp \
     kdm/ui/UIDisplay.hpp \

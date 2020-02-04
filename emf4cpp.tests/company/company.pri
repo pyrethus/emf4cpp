@@ -41,6 +41,7 @@ HEADERS += \
     company_forward.hpp \
     company/CompanyPackage.hpp \
     company/CompanyFactory.hpp \
+    company/CompanyItemDispatcher.hpp \
     company/Employee.hpp \
     company/Department.hpp \
     company/Company.hpp \

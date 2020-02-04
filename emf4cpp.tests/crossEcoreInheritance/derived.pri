@@ -37,6 +37,7 @@ HEADERS += \
     derived_forward.hpp \
     derived/DerivedPackage.hpp \
     derived/DerivedFactory.hpp \
+    derived/DerivedItemDispatcher.hpp \
     derived/Derived01.hpp \
     derived/Derived02.hpp \
 

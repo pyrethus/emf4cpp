@@ -35,5 +35,6 @@ HEADERS += \
     enumeration_forward.hpp \
     enumeration/EnumerationPackage.hpp \
     enumeration/EnumerationFactory.hpp \
+    enumeration/EnumerationItemDispatcher.hpp \
     enumeration/Bird.hpp \
 

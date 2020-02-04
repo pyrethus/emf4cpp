@@ -55,6 +55,7 @@ HEADERS += \
     base_forward.hpp \
     base/BasePackage.hpp \
     base/BaseFactory.hpp \
+    base/BaseItemDispatcher.hpp \
     base/Base01.hpp \
     base/Base02.hpp \
     base/Base03.hpp \
@@ -62,11 +63,13 @@ HEADERS += \
     base/base1_forward.hpp \
     base/base1/Base1Package.hpp \
     base/base1/Base1Factory.hpp \
+    base/base1/Base1ItemDispatcher.hpp \
     base/base1/Base10.hpp \
     base/base1/Base11.hpp \
     base/base1/base2.hpp \
     base/base1/base2_forward.hpp \
     base/base1/base2/Base2Package.hpp \
     base/base1/base2/Base2Factory.hpp \
+    base/base1/base2/Base2ItemDispatcher.hpp \
     base/base1/base2/Base20.hpp \
 

@@ -37,6 +37,7 @@ HEADERS += \
     v_1_0/edate_forward.hpp \
     v_1_0/edate/EdatePackage.hpp \
     v_1_0/edate/EdateFactory.hpp \
+    v_1_0/edate/EdateItemDispatcher.hpp \
     v_1_0/edate/Person.hpp \
     v_1_0/edate/Apollo11.hpp \
 

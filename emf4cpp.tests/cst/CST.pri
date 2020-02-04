@@ -41,6 +41,7 @@ HEADERS += \
     CST_forward.hpp \
     CST/CSTPackage.hpp \
     CST/CSTFactory.hpp \
+    CST/CSTItemDispatcher.hpp \
     CST/Tree.hpp \
     CST/Element.hpp \
     CST/Node.hpp \

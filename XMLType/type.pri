@@ -41,6 +41,7 @@ HEADERS += \
     type_forward.hpp \
     type/TypePackage.hpp \
     type/TypeFactory.hpp \
+    type/TypeItemDispatcher.hpp \
     type/AnyType.hpp \
     type/ProcessingInstruction.hpp \
     type/SimpleAnyType.hpp \

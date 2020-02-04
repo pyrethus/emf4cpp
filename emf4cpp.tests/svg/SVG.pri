@@ -109,6 +109,7 @@ HEADERS += \
     SVG_forward.hpp \
     SVG/SVGPackage.hpp \
     SVG/SVGFactory.hpp \
+    SVG/SVGItemDispatcher.hpp \
     SVG/Element.hpp \
     SVG/StructuralElement.hpp \
     SVG/Image.hpp \

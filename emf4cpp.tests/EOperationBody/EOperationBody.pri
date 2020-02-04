@@ -35,5 +35,6 @@ HEADERS += \
     EOperationBody_forward.hpp \
     EOperationBody/EOperationBodyPackage.hpp \
     EOperationBody/EOperationBodyFactory.hpp \
+    EOperationBody/EOperationBodyItemDispatcher.hpp \
     EOperationBody/Integer.hpp \
 

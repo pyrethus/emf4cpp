@@ -49,6 +49,7 @@ HEADERS += \
     json_forward.hpp \
     json/JsonPackage.hpp \
     json/JsonFactory.hpp \
+    json/JsonItemDispatcher.hpp \
     json/ObjectValue.hpp \
     json/NVPair.hpp \
     json/Value.hpp \

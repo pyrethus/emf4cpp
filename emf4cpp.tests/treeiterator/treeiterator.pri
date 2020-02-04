@@ -37,6 +37,7 @@ HEADERS += \
     treeiterator_forward.hpp \
     treeiterator/TreeiteratorPackage.hpp \
     treeiterator/TreeiteratorFactory.hpp \
+    treeiterator/TreeiteratorItemDispatcher.hpp \
     treeiterator/TreeNode.hpp \
     treeiterator/Leaf.hpp \
 

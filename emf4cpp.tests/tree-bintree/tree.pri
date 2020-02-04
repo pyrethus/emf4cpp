@@ -39,6 +39,7 @@ HEADERS += \
     tree_forward.hpp \
     tree/TreePackage.hpp \
     tree/TreeFactory.hpp \
+    tree/TreeItemDispatcher.hpp \
     tree/TreeNode.hpp \
     tree/Leaf.hpp \
     tree/NonTerminal.hpp \

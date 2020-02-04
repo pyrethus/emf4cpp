@@ -35,5 +35,6 @@ HEADERS += \
     bintree_forward.hpp \
     bintree/BintreePackage.hpp \
     bintree/BintreeFactory.hpp \
+    bintree/BintreeItemDispatcher.hpp \
     bintree/BinTreeNode.hpp \
 

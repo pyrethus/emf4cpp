@@ -33,4 +33,5 @@ HEADERS += \
     enduserlicense_forward.hpp \
     enduserlicense/EnduserlicensePackage.hpp \
     enduserlicense/EnduserlicenseFactory.hpp \
+    enduserlicense/EnduserlicenseItemDispatcher.hpp \
 

@@ -41,6 +41,7 @@ HEADERS += \
     ResourceTests_forward.hpp \
     ResourceTests/ResourceTestsPackage.hpp \
     ResourceTests/ResourceTestsFactory.hpp \
+    ResourceTests/ResourceTestsItemDispatcher.hpp \
     ResourceTests/Root.hpp \
     ResourceTests/ReferenceTarget.hpp \
     ResourceTests/Referrer.hpp \

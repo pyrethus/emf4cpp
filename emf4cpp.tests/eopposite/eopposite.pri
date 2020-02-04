@@ -43,6 +43,7 @@ HEADERS += \
     eopposite_forward.hpp \
     eopposite/EoppositePackage.hpp \
     eopposite/EoppositeFactory.hpp \
+    eopposite/EoppositeItemDispatcher.hpp \
     eopposite/TopLevel.hpp \
     eopposite/NamedObject.hpp \
     eopposite/LeftHand.hpp \

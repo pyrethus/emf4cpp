@@ -85,6 +85,7 @@ HEADERS += \
     idlmm_forward.hpp \
     idlmm/IdlmmPackage.hpp \
     idlmm/IdlmmFactory.hpp \
+    idlmm/IdlmmItemDispatcher.hpp \
     idlmm/Container.hpp \
     idlmm/Contained.hpp \
     idlmm/InterfaceDef.hpp \
