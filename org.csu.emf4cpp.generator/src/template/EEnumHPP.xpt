@@ -38,10 +38,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 «EXPAND template::EClassHPP::namespaces_begin FOR EPackage-»
 
 enum class «name» {
-		«FOREACH this.ELiterals AS el SEPARATOR ","-»
+«FOREACH this.ELiterals AS el SEPARATOR ","-»
 «REM»The name must not contain spaces, while the literal can contain spaces.«ENDREM-»
+	«IF el.value != 0-»
 		«el.name» = «el.value»
-		«ENDFOREACH»
+	«ELSE-»
+		«el.name»
+	«ENDIF-»
+«ENDFOREACH»
 };
 
 «EXPAND template::EClassHPP::namespaces_end FOR EPackage-»

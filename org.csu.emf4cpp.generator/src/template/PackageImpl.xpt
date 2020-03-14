@@ -291,7 +291,11 @@ auto& classifiers =
         ::ecore::EEnumLiteral_ptr _el = ::ecore::Ptr<::ecore::EEnumLiteral>(new ::ecore::EEnumLiteral);
         // «el»
         _el->setName("«el.name»");
+        «IF el.value != 0-»
         _el->setValue(«el.value»);
+        «ELSE-»
+        _el->setValue(«getPackageAttribute(ee)»->getELiterals().size());
+        «ENDIF-»
         _el->setLiteral("«el.literal»");
         _el->setEEnum(«getPackageAttribute(ee)»);
         «getPackageAttribute(ee)»->getELiterals().push_back(_el);
