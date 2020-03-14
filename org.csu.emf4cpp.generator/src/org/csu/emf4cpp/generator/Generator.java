@@ -40,7 +40,8 @@ public class Generator {
 
     public void generate(URI fileURI, String targetDir, String prSrcPaths, String ecPath,
 			boolean internalLicense, boolean bootstrap, boolean clear,
-			boolean createQt5Editor, String targetVersion, boolean staticLibrary) {
+			boolean createQt5Editor, String targetVersion, boolean staticLibrary,
+			boolean ignoreJavaBody) {
 
         ResourceSet rs = new ResourceSetImpl();
         rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore",
@@ -58,6 +59,7 @@ public class Generator {
         globalVarsMap.put("createqt5editor", new Variable("createqt5editor", createQt5Editor));
         globalVarsMap.put("targetVersion", new Variable("targetVersion", targetVersion));
         globalVarsMap.put("staticLibrary", new Variable("staticLibrary", staticLibrary));
+        globalVarsMap.put("ignoreJavaBody", new Variable("ignoreJavaBody", ignoreJavaBody));
 
         // Configure outlets
         CppBeautifier cppBeautifier = new CppBeautifier();
@@ -208,7 +210,8 @@ public class Generator {
 
         new Generator().generate(URI.createFileURI(filePath), targetDir, prSrcPaths, ecPath,
 				cmd.hasOption("i"), cmd.hasOption("b"), cmd.hasOption("c"),
-				cmd.hasOption("qt5"), targetVersion, cmd.hasOption("s"));
+				cmd.hasOption("qt5"), targetVersion, cmd.hasOption("s"),
+				cmd.hasOption("java"));
     }
 
     private final static Options options = new Options(); // Command line
@@ -242,5 +245,7 @@ public class Generator {
 			  "Additional version string (valid C++ symbol), used for toplevel namespace.");
         options.addOption("s", "static", false,
 			  "Generate CMake files to build a static library.");
+        options.addOption("java", "ignore-java-body", false,
+			  "The body implementation of EOperations contains Java and must not be emitted verbatim.");
     }
 }

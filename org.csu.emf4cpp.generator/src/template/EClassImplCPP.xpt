@@ -102,7 +102,11 @@ void «name»::_initialize()
 «IF op.getBody() == null-»
     throw "UnsupportedOperationException: «op.getFQN()»";
 «ELSE-»
+    «IF (boolean) GLOBALVAR ignoreJavaBody-»
+    throw "UnsupportedOperationException: «op.getFQN()»";
+    «ELSE-»
     «op.getBody()»
+    «ENDIF-»
 «ENDIF-»
     «ENDPROTECT»
 }
