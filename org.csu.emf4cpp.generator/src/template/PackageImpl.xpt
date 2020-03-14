@@ -76,14 +76,6 @@ void «name.toFirstUpper()»Package::_initPackage()
     ::ecore::EFactory_ptr _fa = «name.toFirstUpper()»Factory::_instance();
     basicsetEFactoryInstance(_fa);
     _fa->basicsetEPackage(_this());
-    
-«IF !EClassifiers.typeSelect(EClass).EOperations.isEmpty-»
-    ::ecore::EOperation_ptr _op;
-    «IF !EClassifiers.typeSelect(EClass).EOperations.EParameters.isEmpty-»
-        ::ecore::EParameter_ptr _pa;
-    «ENDIF-»
-«ENDIF-»
-
 
 // Create classes and their features
 «IF !EClassifiers.isEmpty-»
@@ -91,7 +83,7 @@ auto& classifiers =
 	          (::ecorecpp::mapping::ReferenceEListImpl<::ecore::EClassifier_ptr, -1, true, true >&)
 	          getEClassifiers();
 «FOREACH EClassifiers.typeSelect(EClass) AS class»
-    // «class.name»
+    { // «class.name»
     «getPackageAttribute(class)» = ::ecore::Ptr<::ecore::EClass>(new ::ecore::EClass);
     «getPackageAttribute(class)»->setClassifierID(«class.name.toUpperCase()»);
     «getPackageAttribute(class)»->basicsetEPackage(_this());
@@ -103,22 +95,27 @@ auto& classifiers =
     				«getPackageAttribute(class)»->getEStructuralFeatures()).basicAdd(«getFeatureMember(esf)»);
     «getFeatureMember(esf)»->basicsetEContainingClass(«getPackageAttribute(class)»);
     «ENDFOREACH-»
+    }
 «ENDFOREACH»
 
     // Create enums
 «FOREACH EClassifiers.typeSelect(EEnum) AS enum»
+	{ // «enum.name»
     «getPackageAttribute(enum)» = ::ecore::Ptr<::ecore::EEnum>(new ::ecore::EEnum);
     «getPackageAttribute(enum)»->setClassifierID(«enum.name.toUpperCase()»);
     «getPackageAttribute(enum)»->basicsetEPackage(_this());
     classifiers.basicAdd(«getPackageAttribute(enum)»);
+    }
 «ENDFOREACH»
 
     // Create data types
 «FOREACH EClassifiers.typeSelect(EDataType).select(e|!EEnum.isInstance(e)) AS dt»
+	{ // «dt.name»
     «getPackageAttribute(dt)» = ::ecore::Ptr<::ecore::EDataType>(new ::ecore::EDataType);
     «getPackageAttribute(dt)»->setClassifierID(«dt.name.toUpperCase()»);
     «getPackageAttribute(dt)»->basicsetEPackage(_this());
     classifiers.basicAdd(«getPackageAttribute(dt)»);
+    }
 «ENDFOREACH»
 «ENDIF-»
 
@@ -134,12 +131,13 @@ auto& classifiers =
 «IF !EClassifiers.typeSelect(EDataType).ETypeParameters.isEmpty-»
     // Create type parameters
     {
-        ::ecore::ETypeParameter_ptr _tp;
 «FOREACH EClassifiers.typeSelect(EDataType).select(e|!e.ETypeParameters.isEmpty) AS dt»
          «FOREACH dt.ETypeParameters AS tp-»
-        _tp = ::ecore::Ptr<::ecore::ETypeParameter>(new ::ecore::ETypeParameter);
+         {
+        auto _tp = ::ecore::Ptr<::ecore::ETypeParameter>(new ::ecore::ETypeParameter);
         _tp->setName("«tp.name»");
          «getPackageAttribute(dt)»->getETypeParameters().push_back( _tp );
+         }
         «ENDFOREACH-»
 «ENDFOREACH-»
     }
@@ -157,7 +155,7 @@ auto& classifiers =
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
 «FOREACH EClassifiers.typeSelect(EClass) AS class-»
-    // «class.name»
+    { // «class.name»
     «getPackageAttribute(class)»->setName("«class.name»");
     «getPackageAttribute(class)»->setAbstract(«class.abstract»);
     «getPackageAttribute(class)»->setInterface(«class.interface»);
@@ -190,6 +188,7 @@ auto& classifiers =
     «getFeatureMember(at)»->setDerived(«at.derived»);
     «getFeatureMember(at)»->setOrdered(«at.ordered»);
     «ENDFOREACH-»
+
     «FOREACH class.EReferences AS ref ITERATOR it-»
     «getFeatureMember(ref)»->setEType(«getPackageAttribute(ref.EType)»);
         «IF !ref.EGenericType.ETypeArguments.isEmpty-»
@@ -224,8 +223,10 @@ auto& classifiers =
             «ENDLET-»
         «ENDIF-»
     «ENDFOREACH-»
+
     «FOREACH class.EOperations AS op ITERATOR it-»
-    _op = ::ecore::Ptr<::ecore::EOperation>(new ::ecore::EOperation);
+    { // «op.name»()
+    auto _op = ::ecore::Ptr<::ecore::EOperation>(new ::ecore::EOperation);
         «IF op.EType != null-»
     _op->setEType(«getPackageAttribute(op.EType)»);
             «IF !op.EGenericType.ETypeArguments.isEmpty-»
@@ -249,7 +250,8 @@ auto& classifiers =
     _op->setUnique(«op.unique»);
     _op->setOrdered(«op.ordered»);
         «FOREACH op.EParameters AS pa-»
-    _pa = ::ecore::Ptr<::ecore::EParameter>(new ::ecore::EParameter);
+        { // «pa.name»
+    auto _pa = ::ecore::Ptr<::ecore::EParameter>(new ::ecore::EParameter);
     _pa->setEType(«getPackageAttribute(pa.EType)»);
             «IF !pa.EGenericType.ETypeArguments.isEmpty-»
     {
@@ -271,19 +273,24 @@ auto& classifiers =
     _pa->setUnique(«pa.unique»);
     _pa->setOrdered(«pa.ordered»);
     _op->getEParameters().push_back(_pa);
+        }
         «ENDFOREACH-»
     «getPackageAttribute(class)»->getEOperations().push_back(_op);
+    }
     «ENDFOREACH-»
+    }
+
 «ENDFOREACH»
 
     // TODO: Initialize data types
 «FOREACH EClassifiers.typeSelect(EDataType).select(e|!EEnum.isInstance(e)) AS dt»
-    // «dt.name»
+    { // «dt.name»
     «getPackageAttribute(dt)»->setName("«dt.name»");
     «getPackageAttribute(dt)»->setSerializable(«dt.serializable»);
+    }
 «ENDFOREACH»
 «FOREACH EClassifiers.typeSelect(EEnum) AS ee»
-    // «ee.name»
+    { // «ee.name»
     «getPackageAttribute(ee)»->setName("«ee.name»");
     «getPackageAttribute(ee)»->setSerializable(«ee.serializable»);
     «FOREACH ee.ELiterals AS el»
@@ -301,6 +308,7 @@ auto& classifiers =
         «getPackageAttribute(ee)»->getELiterals().push_back(_el);
     }
     «ENDFOREACH-»
+    }
 «ENDFOREACH»
 
     /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
