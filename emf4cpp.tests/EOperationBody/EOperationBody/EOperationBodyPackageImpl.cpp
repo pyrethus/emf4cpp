@@ -52,25 +52,24 @@ void EOperationBodyPackage::_initPackage()
     basicsetEFactoryInstance(_fa);
     _fa->basicsetEPackage(_this());
 
-    ::ecore::EOperation_ptr _op;
-    ::ecore::EParameter_ptr _pa;
-
 // Create classes and their features
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // Integer
-    m_IntegerEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_IntegerEClass->setClassifierID(INTEGER);
-    m_IntegerEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_IntegerEClass);
-    // m_Integer__value has already been allocated above
-    m_Integer__value->setFeatureID(
-            ::EOperationBody::EOperationBodyPackage::INTEGER__VALUE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IntegerEClass->getEStructuralFeatures()).basicAdd(
-            m_Integer__value);
-    m_Integer__value->basicsetEContainingClass(m_IntegerEClass);
+    { // Integer
+        m_IntegerEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_IntegerEClass->setClassifierID(INTEGER);
+        m_IntegerEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_IntegerEClass);
+        // m_Integer__value has already been allocated above
+        m_Integer__value->setFeatureID(
+                ::EOperationBody::EOperationBodyPackage::INTEGER__VALUE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IntegerEClass->getEStructuralFeatures()).basicAdd(
+                m_Integer__value);
+        m_Integer__value->basicsetEContainingClass(m_IntegerEClass);
+    }
 
     // Create enums
 
@@ -87,56 +86,70 @@ void EOperationBodyPackage::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // Integer
-    m_IntegerEClass->setName("Integer");
-    m_IntegerEClass->setAbstract(false);
-    m_IntegerEClass->setInterface(false);
-    m_Integer__value->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-    m_Integer__value->setName("value");
-    m_Integer__value->setDefaultValueLiteral("");
-    m_Integer__value->setLowerBound(0);
-    m_Integer__value->setUpperBound(1);
-    m_Integer__value->setTransient(false);
-    m_Integer__value->setVolatile(false);
-    m_Integer__value->setChangeable(true);
-    m_Integer__value->setUnsettable(false);
-    m_Integer__value->setID(false);
-    m_Integer__value->setUnique(true);
-    m_Integer__value->setDerived(false);
-    m_Integer__value->setOrdered(true);
-    _op = ::ecore::Ptr < ::ecore::EOperation > (new ::ecore::EOperation);
-    _op->setEType(m_IntegerEClass);
-    _op->setName("increment");
-    _op->setLowerBound(0);
-    _op->setUpperBound(1);
-    _op->setUnique(true);
-    _op->setOrdered(true);
-    m_IntegerEClass->getEOperations().push_back(_op);
-    _op = ::ecore::Ptr < ::ecore::EOperation > (new ::ecore::EOperation);
-    _op->setEType(m_IntegerEClass);
-    _op->setName("add");
-    _op->setLowerBound(0);
-    _op->setUpperBound(1);
-    _op->setUnique(true);
-    _op->setOrdered(true);
-    _pa = ::ecore::Ptr < ::ecore::EParameter > (new ::ecore::EParameter);
-    _pa->setEType(m_IntegerEClass);
-    _pa->setName("lhs");
-    _pa->setLowerBound(0);
-    _pa->setUpperBound(1);
-    _pa->setUnique(true);
-    _pa->setOrdered(true);
-    _op->getEParameters().push_back(_pa);
-    _pa = ::ecore::Ptr < ::ecore::EParameter > (new ::ecore::EParameter);
-    _pa->setEType(m_IntegerEClass);
-    _pa->setName("rhs");
-    _pa->setLowerBound(0);
-    _pa->setUpperBound(1);
-    _pa->setUnique(true);
-    _pa->setOrdered(true);
-    _op->getEParameters().push_back(_pa);
-    m_IntegerEClass->getEOperations().push_back(_op);
+    { // Integer
+        m_IntegerEClass->setName("Integer");
+        m_IntegerEClass->setAbstract(false);
+        m_IntegerEClass->setInterface(false);
+        m_Integer__value->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        m_Integer__value->setName("value");
+        m_Integer__value->setDefaultValueLiteral("");
+        m_Integer__value->setLowerBound(0);
+        m_Integer__value->setUpperBound(1);
+        m_Integer__value->setTransient(false);
+        m_Integer__value->setVolatile(false);
+        m_Integer__value->setChangeable(true);
+        m_Integer__value->setUnsettable(false);
+        m_Integer__value->setID(false);
+        m_Integer__value->setUnique(true);
+        m_Integer__value->setDerived(false);
+        m_Integer__value->setOrdered(true);
+
+        { // increment()
+            auto _op = ::ecore::Ptr < ::ecore::EOperation
+                    > (new ::ecore::EOperation);
+            _op->setEType(m_IntegerEClass);
+            _op->setName("increment");
+            _op->setLowerBound(0);
+            _op->setUpperBound(1);
+            _op->setUnique(true);
+            _op->setOrdered(true);
+            m_IntegerEClass->getEOperations().push_back(_op);
+        }
+        { // add()
+            auto _op = ::ecore::Ptr < ::ecore::EOperation
+                    > (new ::ecore::EOperation);
+            _op->setEType(m_IntegerEClass);
+            _op->setName("add");
+            _op->setLowerBound(0);
+            _op->setUpperBound(1);
+            _op->setUnique(true);
+            _op->setOrdered(true);
+            { // lhs
+                auto _pa = ::ecore::Ptr < ::ecore::EParameter
+                        > (new ::ecore::EParameter);
+                _pa->setEType(m_IntegerEClass);
+                _pa->setName("lhs");
+                _pa->setLowerBound(0);
+                _pa->setUpperBound(1);
+                _pa->setUnique(true);
+                _pa->setOrdered(true);
+                _op->getEParameters().push_back(_pa);
+            }
+            { // rhs
+                auto _pa = ::ecore::Ptr < ::ecore::EParameter
+                        > (new ::ecore::EParameter);
+                _pa->setEType(m_IntegerEClass);
+                _pa->setName("rhs");
+                _pa->setLowerBound(0);
+                _pa->setUpperBound(1);
+                _pa->setUnique(true);
+                _pa->setOrdered(true);
+                _op->getEParameters().push_back(_pa);
+            }
+            m_IntegerEClass->getEOperations().push_back(_op);
+        }
+    }
 
     // TODO: Initialize data types
 

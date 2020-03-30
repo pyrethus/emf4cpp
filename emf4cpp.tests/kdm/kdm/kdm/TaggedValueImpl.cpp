@@ -83,7 +83,7 @@ void TaggedValue::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void TaggedValue::eSet(::ecore::EInt _featureID,
@@ -125,7 +125,7 @@ void TaggedValue::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean TaggedValue::eIsSet(::ecore::EInt _featureID)
@@ -143,7 +143,7 @@ void TaggedValue::eSet(::ecore::EInt _featureID,
                 > ::is_set(getValue());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void TaggedValue::eUnset(::ecore::EInt _featureID)
@@ -152,7 +152,7 @@ void TaggedValue::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr TaggedValue::_eClass()

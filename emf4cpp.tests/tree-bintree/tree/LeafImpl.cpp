@@ -70,7 +70,7 @@ void Leaf::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Leaf::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
@@ -95,7 +95,7 @@ void Leaf::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Leaf::eIsSet(::ecore::EInt _featureID)
@@ -109,7 +109,7 @@ void Leaf::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return getParent().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Leaf::eUnset(::ecore::EInt _featureID)
@@ -118,7 +118,7 @@ void Leaf::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Leaf::_eClass()

@@ -46,7 +46,7 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
 	case "EJavaObject": "::ecorecpp::mapping::any"
 	case "ELong": "int64_t"
 	case "ELongObject": "int64_t" // Object/value?
-	case "EMap": "int" // TODO: As in EList, we should look for type parameters, in this case K,V.
+	case "EMap": "std::map<" + type_parameters +">"
 	                    // maybe std::map<std::string, ecore::EObject> ó la versión con shared_ptr 
 	case "EResource": "::ecorecpp::resource::Resource_ptr" // ?? Need class
 	case "EResourceSet": "::ecorecpp::resource::ResourceSet_ptr" // ?? Need class
@@ -123,6 +123,21 @@ String getEDataTypeMap(EDataType d, String type_parameters) : switch (d.name)
 String getEDataTypeMap(EDataType d) :
 	getEDataTypeMap(d, "")
 ;
+
+String getEDataTypeTemplateParameters(EDataType d, String prefix) :
+	getEDataTypeTemplateParametersImpl(d.ETypeParameters, prefix)
+;
+
+String getEDataTypeTemplateParametersImpl(List[ETypeParameter] this, String prefix) :
+if isEmpty then
+		""
+	else
+		if size == 1 then
+			prefix + first().name
+		else
+			prefix + first().name + "," + withoutFirst().getEDataTypeTemplateParametersImpl(prefix)
+;
+
 
 // C++ complex type? (i.e. not primitive, passed by const reference)
 boolean cppComplexType (EDataType d) : switch (d.name)

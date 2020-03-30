@@ -88,9 +88,41 @@ void XMLTypeDocumentRoot::_initialize()
         _any = getXSISchemaLocation().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
+    case ::type::TypePackage::XMLTYPEDOCUMENTROOT__CDATA:
+    {
+        std::vector < ::ecorecpp::mapping::any > _anys(getCDATA().size());
+        for (size_t _i = 0; _i < getCDATA().size(); _i++)
+            ::ecorecpp::mapping::any_traits < ::type::String
+                    > ::toAny(_anys[_i], getCDATA()[_i]);
+        _any = _anys;
+    }
+        return _any;
+    case ::type::TypePackage::XMLTYPEDOCUMENTROOT__COMMENT:
+    {
+        std::vector < ::ecorecpp::mapping::any > _anys(getComment().size());
+        for (size_t _i = 0; _i < getComment().size(); _i++)
+            ::ecorecpp::mapping::any_traits < ::type::String
+                    > ::toAny(_anys[_i], getComment()[_i]);
+        _any = _anys;
+    }
+        return _any;
+    case ::type::TypePackage::XMLTYPEDOCUMENTROOT__PROCESSINGINSTRUCTION:
+    {
+        _any = getProcessingInstruction().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
+    case ::type::TypePackage::XMLTYPEDOCUMENTROOT__TEXT:
+    {
+        std::vector < ::ecorecpp::mapping::any > _anys(getText().size());
+        for (size_t _i = 0; _i < getText().size(); _i++)
+            ::ecorecpp::mapping::any_traits < ::type::String
+                    > ::toAny(_anys[_i], getText()[_i]);
+        _any = _anys;
+    }
+        return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void XMLTypeDocumentRoot::eSet(::ecore::EInt _featureID,
@@ -124,7 +156,7 @@ void XMLTypeDocumentRoot::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean XMLTypeDocumentRoot::eIsSet(::ecore::EInt _featureID)
@@ -147,7 +179,7 @@ void XMLTypeDocumentRoot::eSet(::ecore::EInt _featureID,
         return getText().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void XMLTypeDocumentRoot::eUnset(::ecore::EInt _featureID)
@@ -156,7 +188,7 @@ void XMLTypeDocumentRoot::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr XMLTypeDocumentRoot::_eClass()

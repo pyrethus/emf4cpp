@@ -64,38 +64,42 @@ void DerivedPackage::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // Derived01
-    m_Derived01EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_Derived01EClass->setClassifierID(DERIVED01);
-    m_Derived01EClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_Derived01EClass);
-    // m_Derived01__valDerived01 has already been allocated above
-    m_Derived01__valDerived01->setFeatureID(
-            ::derived::DerivedPackage::DERIVED01__VALDERIVED01);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Derived01EClass->getEStructuralFeatures()).basicAdd(
-            m_Derived01__valDerived01);
-    m_Derived01__valDerived01->basicsetEContainingClass(m_Derived01EClass);
+    { // Derived01
+        m_Derived01EClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_Derived01EClass->setClassifierID(DERIVED01);
+        m_Derived01EClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_Derived01EClass);
+        // m_Derived01__valDerived01 has already been allocated above
+        m_Derived01__valDerived01->setFeatureID(
+                ::derived::DerivedPackage::DERIVED01__VALDERIVED01);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Derived01EClass->getEStructuralFeatures()).basicAdd(
+                m_Derived01__valDerived01);
+        m_Derived01__valDerived01->basicsetEContainingClass(m_Derived01EClass);
+    }
 
-    // Derived02
-    m_Derived02EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_Derived02EClass->setClassifierID(DERIVED02);
-    m_Derived02EClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_Derived02EClass);
-    // m_Derived02__valDerived02 has already been allocated above
-    m_Derived02__valDerived02->setFeatureID(
-            ::derived::DerivedPackage::DERIVED02__VALDERIVED02);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Derived02EClass->getEStructuralFeatures()).basicAdd(
-            m_Derived02__valDerived02);
-    m_Derived02__valDerived02->basicsetEContainingClass(m_Derived02EClass);
-    // m_Derived02__base01ref has already been allocated above
-    m_Derived02__base01ref->setFeatureID(
-            ::derived::DerivedPackage::DERIVED02__BASE01REF);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Derived02EClass->getEStructuralFeatures()).basicAdd(
-            m_Derived02__base01ref);
-    m_Derived02__base01ref->basicsetEContainingClass(m_Derived02EClass);
+    { // Derived02
+        m_Derived02EClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_Derived02EClass->setClassifierID(DERIVED02);
+        m_Derived02EClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_Derived02EClass);
+        // m_Derived02__valDerived02 has already been allocated above
+        m_Derived02__valDerived02->setFeatureID(
+                ::derived::DerivedPackage::DERIVED02__VALDERIVED02);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Derived02EClass->getEStructuralFeatures()).basicAdd(
+                m_Derived02__valDerived02);
+        m_Derived02__valDerived02->basicsetEContainingClass(m_Derived02EClass);
+        // m_Derived02__base01ref has already been allocated above
+        m_Derived02__base01ref->setFeatureID(
+                ::derived::DerivedPackage::DERIVED02__BASE01REF);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Derived02EClass->getEStructuralFeatures()).basicAdd(
+                m_Derived02__base01ref);
+        m_Derived02__base01ref->basicsetEContainingClass(m_Derived02EClass);
+    }
 
     // Create enums
 
@@ -115,59 +119,65 @@ void DerivedPackage::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // Derived01
-    m_Derived01EClass->setName("Derived01");
-    m_Derived01EClass->setAbstract(false);
-    m_Derived01EClass->setInterface(false);
-    m_Derived01__valDerived01->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-    m_Derived01__valDerived01->setName("valDerived01");
-    m_Derived01__valDerived01->setDefaultValueLiteral("");
-    m_Derived01__valDerived01->setLowerBound(0);
-    m_Derived01__valDerived01->setUpperBound(1);
-    m_Derived01__valDerived01->setTransient(false);
-    m_Derived01__valDerived01->setVolatile(false);
-    m_Derived01__valDerived01->setChangeable(true);
-    m_Derived01__valDerived01->setUnsettable(false);
-    m_Derived01__valDerived01->setID(false);
-    m_Derived01__valDerived01->setUnique(true);
-    m_Derived01__valDerived01->setDerived(false);
-    m_Derived01__valDerived01->setOrdered(true);
-    // Derived02
-    m_Derived02EClass->setName("Derived02");
-    m_Derived02EClass->setAbstract(false);
-    m_Derived02EClass->setInterface(false);
-    m_Derived02__valDerived02->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-    m_Derived02__valDerived02->setName("valDerived02");
-    m_Derived02__valDerived02->setDefaultValueLiteral("");
-    m_Derived02__valDerived02->setLowerBound(0);
-    m_Derived02__valDerived02->setUpperBound(1);
-    m_Derived02__valDerived02->setTransient(false);
-    m_Derived02__valDerived02->setVolatile(false);
-    m_Derived02__valDerived02->setChangeable(true);
-    m_Derived02__valDerived02->setUnsettable(false);
-    m_Derived02__valDerived02->setID(false);
-    m_Derived02__valDerived02->setUnique(true);
-    m_Derived02__valDerived02->setDerived(false);
-    m_Derived02__valDerived02->setOrdered(true);
-    m_Derived02__base01ref->setEType(
-            dynamic_cast< ::base::BasePackage* >(::base::BasePackage::_instance().get())->getBase01());
-    m_Derived02__base01ref->setName("base01ref");
-    m_Derived02__base01ref->setDefaultValueLiteral("");
-    m_Derived02__base01ref->setLowerBound(0);
-    m_Derived02__base01ref->setUpperBound(1);
-    m_Derived02__base01ref->setTransient(false);
-    m_Derived02__base01ref->setVolatile(false);
-    m_Derived02__base01ref->setChangeable(true);
-    m_Derived02__base01ref->setContainment(false);
-    m_Derived02__base01ref->setResolveProxies(true);
-    m_Derived02__base01ref->setUnique(true);
-    m_Derived02__base01ref->setDerived(false);
-    m_Derived02__base01ref->setOrdered(true);
-    m_Derived02__base01ref->setEOpposite(
-            ::ecore::as < ::ecore::EReference
-                    > (dynamic_cast< ::base::BasePackage* >(::base::BasePackage::_instance().get())->getBase01()->getEStructuralFeatures()[1]));
+    { // Derived01
+        m_Derived01EClass->setName("Derived01");
+        m_Derived01EClass->setAbstract(false);
+        m_Derived01EClass->setInterface(false);
+        m_Derived01__valDerived01->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        m_Derived01__valDerived01->setName("valDerived01");
+        m_Derived01__valDerived01->setDefaultValueLiteral("");
+        m_Derived01__valDerived01->setLowerBound(0);
+        m_Derived01__valDerived01->setUpperBound(1);
+        m_Derived01__valDerived01->setTransient(false);
+        m_Derived01__valDerived01->setVolatile(false);
+        m_Derived01__valDerived01->setChangeable(true);
+        m_Derived01__valDerived01->setUnsettable(false);
+        m_Derived01__valDerived01->setID(false);
+        m_Derived01__valDerived01->setUnique(true);
+        m_Derived01__valDerived01->setDerived(false);
+        m_Derived01__valDerived01->setOrdered(true);
+
+    }
+
+    { // Derived02
+        m_Derived02EClass->setName("Derived02");
+        m_Derived02EClass->setAbstract(false);
+        m_Derived02EClass->setInterface(false);
+        m_Derived02__valDerived02->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        m_Derived02__valDerived02->setName("valDerived02");
+        m_Derived02__valDerived02->setDefaultValueLiteral("");
+        m_Derived02__valDerived02->setLowerBound(0);
+        m_Derived02__valDerived02->setUpperBound(1);
+        m_Derived02__valDerived02->setTransient(false);
+        m_Derived02__valDerived02->setVolatile(false);
+        m_Derived02__valDerived02->setChangeable(true);
+        m_Derived02__valDerived02->setUnsettable(false);
+        m_Derived02__valDerived02->setID(false);
+        m_Derived02__valDerived02->setUnique(true);
+        m_Derived02__valDerived02->setDerived(false);
+        m_Derived02__valDerived02->setOrdered(true);
+
+        m_Derived02__base01ref->setEType(
+                dynamic_cast< ::base::BasePackage* >(::base::BasePackage::_instance().get())->getBase01());
+        m_Derived02__base01ref->setName("base01ref");
+        m_Derived02__base01ref->setDefaultValueLiteral("");
+        m_Derived02__base01ref->setLowerBound(0);
+        m_Derived02__base01ref->setUpperBound(1);
+        m_Derived02__base01ref->setTransient(false);
+        m_Derived02__base01ref->setVolatile(false);
+        m_Derived02__base01ref->setChangeable(true);
+        m_Derived02__base01ref->setContainment(false);
+        m_Derived02__base01ref->setResolveProxies(true);
+        m_Derived02__base01ref->setUnique(true);
+        m_Derived02__base01ref->setDerived(false);
+        m_Derived02__base01ref->setOrdered(true);
+        m_Derived02__base01ref->setEOpposite(
+                ::ecore::as < ::ecore::EReference
+                        > (dynamic_cast< ::base::BasePackage* >(::base::BasePackage::_instance().get())->getBase01()->getEStructuralFeatures()[1]));
+
+    }
 
     // TODO: Initialize data types
 

@@ -127,7 +127,7 @@ void AbstractConceptualElement::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void AbstractConceptualElement::eSet(::ecore::EInt _featureID,
@@ -209,7 +209,7 @@ void AbstractConceptualElement::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean AbstractConceptualElement::eIsSet(::ecore::EInt _featureID)
@@ -237,7 +237,7 @@ void AbstractConceptualElement::eSet(::ecore::EInt _featureID,
         return getAbstraction().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void AbstractConceptualElement::eUnset(::ecore::EInt _featureID)
@@ -246,7 +246,7 @@ void AbstractConceptualElement::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr AbstractConceptualElement::_eClass()

@@ -177,7 +177,7 @@ void Marker::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Marker::eSet(::ecore::EInt _featureID,
@@ -339,7 +339,7 @@ void Marker::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Marker::eIsSet(::ecore::EInt _featureID)
@@ -396,7 +396,7 @@ void Marker::eSet(::ecore::EInt _featureID,
         return getDrawing().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Marker::eUnset(::ecore::EInt _featureID)
@@ -405,7 +405,7 @@ void Marker::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Marker::_eClass()

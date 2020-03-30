@@ -67,6 +67,15 @@ void SimpleAnyType::_initialize()
         _any = _anys;
     }
         return _any;
+    case ::type::TypePackage::SIMPLEANYTYPE__ANY:
+    {
+        std::vector < ::ecorecpp::mapping::any > _anys(getAny().size());
+        for (size_t _i = 0; _i < getAny().size(); _i++)
+            ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
+                    > ::toAny(_anys[_i], getAny()[_i]);
+        _any = _anys;
+    }
+        return _any;
     case ::type::TypePackage::SIMPLEANYTYPE__ANYATTRIBUTE:
     {
         std::vector < ::ecorecpp::mapping::any
@@ -77,6 +86,18 @@ void SimpleAnyType::_initialize()
         _any = _anys;
     }
         return _any;
+    case ::type::TypePackage::SIMPLEANYTYPE__RAWVALUE:
+    {
+        ::ecorecpp::mapping::any_traits < ::type::String
+                > ::toAny(_any, getRawValue());
+    }
+        return _any;
+    case ::type::TypePackage::SIMPLEANYTYPE__VALUE:
+    {
+        ::ecorecpp::mapping::any_traits < ::type::AnySimpleType
+                > ::toAny(_any, getValue());
+    }
+        return _any;
     case ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getInstanceType());
@@ -84,7 +105,7 @@ void SimpleAnyType::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void SimpleAnyType::eSet(::ecore::EInt _featureID,
@@ -118,7 +139,7 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean SimpleAnyType::eIsSet(::ecore::EInt _featureID)
@@ -141,7 +162,7 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
         return getInstanceType().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void SimpleAnyType::eUnset(::ecore::EInt _featureID)
@@ -150,7 +171,7 @@ void SimpleAnyType::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr SimpleAnyType::_eClass()

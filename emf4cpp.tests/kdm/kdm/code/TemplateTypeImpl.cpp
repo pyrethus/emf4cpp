@@ -111,7 +111,7 @@ void TemplateType::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void TemplateType::eSet(::ecore::EInt _featureID,
@@ -185,7 +185,7 @@ void TemplateType::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean TemplateType::eIsSet(::ecore::EInt _featureID)
@@ -211,7 +211,7 @@ void TemplateType::eSet(::ecore::EInt _featureID,
         return getCodeRelation().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void TemplateType::eUnset(::ecore::EInt _featureID)
@@ -220,7 +220,7 @@ void TemplateType::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr TemplateType::_eClass()

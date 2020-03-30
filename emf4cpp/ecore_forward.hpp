@@ -85,147 +85,209 @@ namespace ecore
     /*PROTECTED REGION ID(ecore_EBigDecimal) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef long double EBigDecimal;
+    using EBigDecimal = long double;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EBigInteger) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int64_t EBigInteger;
+    using EBigInteger = int64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EBoolean) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef bool EBoolean;
+    using EBoolean = bool;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EBooleanObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef bool EBooleanObject;
+    using EBooleanObject = bool;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EByte) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef unsigned char EByte;
+    using EByte = unsigned char;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EByteArray) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef std::vector< unsigned char > EByteArray;
+    using EByteArray = std::vector<unsigned char>;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EByteObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef unsigned char EByteObject;
+    using EByteObject = unsigned char;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EChar) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef char16_t EChar;
+    using EChar = char16_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_ECharacterObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef char16_t ECharacterObject;
+    using ECharacterObject = char16_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EDate) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::EDate EDate;
+    using EDate = ::ecorecpp::mapping::EDate;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EDiagnosticChain) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int EDiagnosticChain;
+    using EDiagnosticChain = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EDouble) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef double EDouble;
+    using EDouble = double;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EDoubleObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef double EDoubleObject;
+    using EDoubleObject = double;
+
+    /*PROTECTED REGION END*/
+    /*PROTECTED REGION ID(ecore_EEList) START*/
+// Please, enable the protected region if you add manually written code.
+// To do this, add the keyword ENABLED before START.
+#if 0
+	template <class E>
+	using EEList = ::ecore::EList_ptr<E>;
+#endif
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EEnumerator) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int EEnumerator;
+    using EEnumerator = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EFeatureMap) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int EFeatureMap;
+    using EFeatureMap = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EFeatureMapEntry) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int EFeatureMapEntry;
+    using EFeatureMapEntry = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EFloat) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef float EFloat;
+    using EFloat = float;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EFloatObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef float EFloatObject;
+    using EFloatObject = float;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EInt) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int EInt;
+    using EInt = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EIntegerObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int EIntegerObject;
+    using EIntegerObject = int;
+
+    /*PROTECTED REGION END*/
+    /*PROTECTED REGION ID(ecore_EJavaClass) ENABLED START*/
+// Please, enable the protected region if you add manually written code.
+// To do this, add the keyword ENABLED before START.
+    using EJavaClass = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EJavaObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::any EJavaObject;
+    using EJavaObject = ::ecorecpp::mapping::any;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_ELong) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int64_t ELong;
+    using ELong = int64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_ELongObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int64_t ELongObject;
+    using ELongObject = int64_t;
+
+    /*PROTECTED REGION END*/
+    /*PROTECTED REGION ID(ecore_EMap) START*/
+// Please, enable the protected region if you add manually written code.
+// To do this, add the keyword ENABLED before START.
+#if 0
+	template <class K,class V>
+	using EMap = std::map<K,V>;
+#endif
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EResource) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::resource::Resource_ptr EResource;
+    using EResource = ::ecorecpp::resource::Resource_ptr;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EResourceSet) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::resource::ResourceSet_ptr EResourceSet;
+    using EResourceSet = ::ecorecpp::resource::ResourceSet_ptr;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EShort) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef short EShort;
+    using EShort = short;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EShortObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef short EShortObject;
+    using EShortObject = short;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EString) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t EString;
+    using EString = ::ecorecpp::mapping::type_definitions::string_t;
+
+    /*PROTECTED REGION END*/
+    /*PROTECTED REGION ID(ecore_ETreeIterator) START*/
+// Please, enable the protected region if you add manually written code.
+// To do this, add the keyword ENABLED before START.
+#if 0
+	template <class E>
+	using ETreeIterator = ::ecorecpp::util::TreeIterator<E>;
+#endif
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(ecore_EInvocationTargetException) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int EInvocationTargetException;
+    using EInvocationTargetException = int;
+
     /*PROTECTED REGION END*/
 
 // EClass

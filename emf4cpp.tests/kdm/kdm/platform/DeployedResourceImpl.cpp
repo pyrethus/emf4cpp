@@ -127,7 +127,7 @@ void DeployedResource::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void DeployedResource::eSet(::ecore::EInt _featureID,
@@ -217,7 +217,7 @@ void DeployedResource::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean DeployedResource::eIsSet(::ecore::EInt _featureID)
@@ -247,7 +247,7 @@ void DeployedResource::eSet(::ecore::EInt _featureID,
         return getPlatformElement().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void DeployedResource::eUnset(::ecore::EInt _featureID)
@@ -256,7 +256,7 @@ void DeployedResource::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr DeployedResource::_eClass()

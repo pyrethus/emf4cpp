@@ -62,9 +62,7 @@ public:
     virtual ::ecore::EString const& getDefaultValueLiteral () const;
     virtual void setDefaultValueLiteral (::ecore::EString const& _defaultValueLiteral);
 
-    virtual ::ecore::EJavaObject const& getDefaultValue () const;
-    virtual void setDefaultValue (::ecore::EJavaObject const& _defaultValue);
-
+    virtual ::ecore::EJavaObject getDefaultValue ();
     virtual ::ecore::EBoolean isUnsettable () const;
     virtual void setUnsettable (::ecore::EBoolean _unsettable);
 
@@ -119,9 +117,6 @@ protected:
     {};
 
     ::ecore::EString m_defaultValueLiteral
-    {};
-
-    ::ecore::EJavaObject m_defaultValue
     {};
 
     ::ecore::EBoolean m_unsettable

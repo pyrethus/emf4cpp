@@ -122,6 +122,18 @@ void EEnum::_initialize()
                 > ::toAny(_any, getInstanceClassName());
     }
         return _any;
+    case ::ecore::EcorePackage::EENUM__INSTANCECLASS:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EJavaClass
+                > ::toAny(_any, getInstanceClass());
+    }
+        return _any;
+    case ::ecore::EcorePackage::EENUM__DEFAULTVALUE:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EJavaObject
+                > ::toAny(_any, getDefaultValue());
+    }
+        return _any;
     case ::ecore::EcorePackage::EENUM__INSTANCETYPENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -151,7 +163,7 @@ void EEnum::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EEnum::eSet(::ecore::EInt _featureID,
@@ -191,14 +203,6 @@ void EEnum::eSet(::ecore::EInt _featureID,
         setInstanceTypeName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::EENUM__EPACKAGE:
-    {
-        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
-                > (_newValue);
-        auto _t1 = ::ecore::as < ::ecore::EPackage > (_t0);
-        setEPackage(_t1);
-    }
-        return;
     case ::ecore::EcorePackage::EENUM__ETYPEPARAMETERS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
@@ -225,7 +229,7 @@ void EEnum::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EEnum::eIsSet(::ecore::EInt _featureID)
@@ -256,7 +260,7 @@ void EEnum::eSet(::ecore::EInt _featureID,
         return getELiterals().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EEnum::eUnset(::ecore::EInt _featureID)
@@ -265,7 +269,7 @@ void EEnum::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EEnum::_eClass()

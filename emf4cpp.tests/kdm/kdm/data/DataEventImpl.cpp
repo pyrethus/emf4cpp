@@ -117,7 +117,7 @@ void DataEvent::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void DataEvent::eSet(::ecore::EInt _featureID,
@@ -199,7 +199,7 @@ void DataEvent::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean DataEvent::eIsSet(::ecore::EInt _featureID)
@@ -228,7 +228,7 @@ void DataEvent::eSet(::ecore::EInt _featureID,
                 > ::is_set(getKind());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void DataEvent::eUnset(::ecore::EInt _featureID)
@@ -237,7 +237,7 @@ void DataEvent::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr DataEvent::_eClass()

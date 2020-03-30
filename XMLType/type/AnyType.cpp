@@ -104,54 +104,13 @@ void AnyType::deleteMixedAt(size_t _position)
         m_mixed.resize(_position);
 }
 
-std::vector< ::ecore::EFeatureMapEntry > const& AnyType::getAny() const
+std::vector< ::ecore::EFeatureMapEntry > AnyType::getAny()
 {
-    return m_any;
-}
-
-void AnyType::setAny(std::vector< ::ecore::EFeatureMapEntry > _any)
-{
-#ifdef ECORECPP_NOTIFICATION_API
-    std::vector< ::ecore::EFeatureMapEntry > _old_any = m_any;
-#endif
-    m_any = _any;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::type::TypePackage::_instance()->getAnyType__any(),
-                _old_any,
-                m_any
-            );
-        eNotify(&notification);
-    }
-#endif
-}
-
-void AnyType::addAny(::ecore::EFeatureMapEntry const &_new_element_in_any)
-{
-    m_any.push_back(_new_element_in_any);
-}
-
-void AnyType::setAnyAt(size_t _position,
-        ::ecore::EFeatureMapEntry const &_new_element_in_any)
-{
-    if (_position >= m_any.size())
-        m_any.resize(_position + 1, ::ecore::EFeatureMapEntry());
-
-    m_any[_position] = _new_element_in_any;
-}
-
-void AnyType::deleteAnyAt(size_t _position)
-{
-    if (_position >= m_any.size())
-        throw "Attribute counter out of bounds!";
-
-    // TODO: This is not actually quite true
-    if (_position == m_any.size() - 1)
-        m_any.resize(_position);
+    /*PROTECTED REGION ID(AnyTypeImpl_Getter_any) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: type::AnyType::any";
+    /*PROTECTED REGION END*/
 }
 
 std::vector< ::ecore::EFeatureMapEntry > const& AnyType::getAnyAttribute() const

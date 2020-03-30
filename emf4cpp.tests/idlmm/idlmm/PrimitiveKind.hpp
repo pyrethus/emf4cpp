@@ -26,7 +26,7 @@ namespace idlmm
 
     enum class PrimitiveKind
     {
-        PK_NULL = 0,
+        PK_NULL,
         PK_VOID = 1,
         PK_SHORT = 2,
         PK_LONG = 3,

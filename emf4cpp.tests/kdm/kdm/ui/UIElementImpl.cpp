@@ -117,7 +117,7 @@ void UIElement::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void UIElement::eSet(::ecore::EInt _featureID,
@@ -199,7 +199,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean UIElement::eIsSet(::ecore::EInt _featureID)
@@ -227,7 +227,7 @@ void UIElement::eSet(::ecore::EInt _featureID,
         return getAbstraction().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void UIElement::eUnset(::ecore::EInt _featureID)
@@ -236,7 +236,7 @@ void UIElement::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr UIElement::_eClass()

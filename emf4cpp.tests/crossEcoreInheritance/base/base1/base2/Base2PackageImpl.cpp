@@ -58,18 +58,19 @@ void Base2Package::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // Base20
-    m_Base20EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_Base20EClass->setClassifierID(BASE20);
-    m_Base20EClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_Base20EClass);
-    // m_Base20__valBase20 has already been allocated above
-    m_Base20__valBase20->setFeatureID(
-            ::base::base1::base2::Base2Package::BASE20__VALBASE20);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base20EClass->getEStructuralFeatures()).basicAdd(
-            m_Base20__valBase20);
-    m_Base20__valBase20->basicsetEContainingClass(m_Base20EClass);
+    { // Base20
+        m_Base20EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_Base20EClass->setClassifierID(BASE20);
+        m_Base20EClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_Base20EClass);
+        // m_Base20__valBase20 has already been allocated above
+        m_Base20__valBase20->setFeatureID(
+                ::base::base1::base2::Base2Package::BASE20__VALBASE20);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base20EClass->getEStructuralFeatures()).basicAdd(
+                m_Base20__valBase20);
+        m_Base20__valBase20->basicsetEContainingClass(m_Base20EClass);
+    }
 
     // Create enums
 
@@ -90,24 +91,26 @@ void Base2Package::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // Base20
-    m_Base20EClass->setName("Base20");
-    m_Base20EClass->setAbstract(false);
-    m_Base20EClass->setInterface(false);
-    m_Base20__valBase20->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-    m_Base20__valBase20->setName("valBase20");
-    m_Base20__valBase20->setDefaultValueLiteral("");
-    m_Base20__valBase20->setLowerBound(0);
-    m_Base20__valBase20->setUpperBound(1);
-    m_Base20__valBase20->setTransient(false);
-    m_Base20__valBase20->setVolatile(false);
-    m_Base20__valBase20->setChangeable(true);
-    m_Base20__valBase20->setUnsettable(false);
-    m_Base20__valBase20->setID(false);
-    m_Base20__valBase20->setUnique(true);
-    m_Base20__valBase20->setDerived(false);
-    m_Base20__valBase20->setOrdered(true);
+    { // Base20
+        m_Base20EClass->setName("Base20");
+        m_Base20EClass->setAbstract(false);
+        m_Base20EClass->setInterface(false);
+        m_Base20__valBase20->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        m_Base20__valBase20->setName("valBase20");
+        m_Base20__valBase20->setDefaultValueLiteral("");
+        m_Base20__valBase20->setLowerBound(0);
+        m_Base20__valBase20->setUpperBound(1);
+        m_Base20__valBase20->setTransient(false);
+        m_Base20__valBase20->setVolatile(false);
+        m_Base20__valBase20->setChangeable(true);
+        m_Base20__valBase20->setUnsettable(false);
+        m_Base20__valBase20->setID(false);
+        m_Base20__valBase20->setUnique(true);
+        m_Base20__valBase20->setDerived(false);
+        m_Base20__valBase20->setOrdered(true);
+
+    }
 
     // TODO: Initialize data types
 

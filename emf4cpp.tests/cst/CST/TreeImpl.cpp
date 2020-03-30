@@ -71,7 +71,7 @@ void Tree::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Tree::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
@@ -96,7 +96,7 @@ void Tree::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Tree::eIsSet(::ecore::EInt _featureID)
@@ -110,7 +110,7 @@ void Tree::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return getChildren().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Tree::eUnset(::ecore::EInt _featureID)
@@ -119,7 +119,7 @@ void Tree::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Tree::_eClass()

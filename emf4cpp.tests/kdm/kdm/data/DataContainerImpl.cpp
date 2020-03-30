@@ -120,7 +120,7 @@ void DataContainer::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void DataContainer::eSet(::ecore::EInt _featureID,
@@ -202,7 +202,7 @@ void DataContainer::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean DataContainer::eIsSet(::ecore::EInt _featureID)
@@ -230,7 +230,7 @@ void DataContainer::eSet(::ecore::EInt _featureID,
         return getDataElement().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void DataContainer::eUnset(::ecore::EInt _featureID)
@@ -239,7 +239,7 @@ void DataContainer::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr DataContainer::_eClass()

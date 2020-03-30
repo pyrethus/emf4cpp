@@ -100,7 +100,7 @@ void ModuleDef::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ModuleDef::eSet(::ecore::EInt _featureID,
@@ -166,7 +166,7 @@ void ModuleDef::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ModuleDef::eIsSet(::ecore::EInt _featureID)
@@ -194,7 +194,7 @@ void ModuleDef::eSet(::ecore::EInt _featureID,
                 > ::is_set(getPrefix());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ModuleDef::eUnset(::ecore::EInt _featureID)
@@ -203,7 +203,7 @@ void ModuleDef::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ModuleDef::_eClass()

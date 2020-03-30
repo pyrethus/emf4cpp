@@ -83,7 +83,7 @@ void SvgFile::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void SvgFile::eSet(::ecore::EInt _featureID,
@@ -125,7 +125,7 @@ void SvgFile::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean SvgFile::eIsSet(::ecore::EInt _featureID)
@@ -143,7 +143,7 @@ void SvgFile::eSet(::ecore::EInt _featureID,
         return getElements().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void SvgFile::eUnset(::ecore::EInt _featureID)
@@ -152,7 +152,7 @@ void SvgFile::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr SvgFile::_eClass()

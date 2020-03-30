@@ -69,7 +69,7 @@ void Bird::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Bird::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
@@ -94,7 +94,7 @@ void Bird::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Bird::eIsSet(::ecore::EInt _featureID)
@@ -107,7 +107,7 @@ void Bird::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return getName() != "Birdy";
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Bird::eUnset(::ecore::EInt _featureID)
@@ -116,7 +116,7 @@ void Bird::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Bird::_eClass()

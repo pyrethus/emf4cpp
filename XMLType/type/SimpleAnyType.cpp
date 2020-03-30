@@ -56,56 +56,22 @@ SimpleAnyType::~SimpleAnyType()
 
 // Attributes
 
-::type::String SimpleAnyType::getRawValue() const
+::type::String SimpleAnyType::getRawValue()
 {
-    return m_rawValue;
+    /*PROTECTED REGION ID(SimpleAnyTypeImpl_Getter_rawValue) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: type::SimpleAnyType::rawValue";
+    /*PROTECTED REGION END*/
 }
 
-void SimpleAnyType::setRawValue(::type::String _rawValue)
+::type::AnySimpleType SimpleAnyType::getValue()
 {
-#ifdef ECORECPP_NOTIFICATION_API
-    ::type::String _old_rawValue = m_rawValue;
-#endif
-    m_rawValue = _rawValue;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::type::TypePackage::_instance()->getSimpleAnyType__rawValue(),
-                _old_rawValue,
-                m_rawValue
-            );
-        eNotify(&notification);
-    }
-#endif
-}
-
-::type::AnySimpleType SimpleAnyType::getValue() const
-{
-    return m_value;
-}
-
-void SimpleAnyType::setValue(::type::AnySimpleType _value)
-{
-#ifdef ECORECPP_NOTIFICATION_API
-    ::type::AnySimpleType _old_value = m_value;
-#endif
-    m_value = _value;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::type::TypePackage::_instance()->getSimpleAnyType__value(),
-                _old_value,
-                m_value
-            );
-        eNotify(&notification);
-    }
-#endif
+    /*PROTECTED REGION ID(SimpleAnyTypeImpl_Getter_value) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: type::SimpleAnyType::value";
+    /*PROTECTED REGION END*/
 }
 
 // References

@@ -117,6 +117,18 @@ int EStructuralFeature::getContainerClass()
                 > ::toAny(_any, getUpperBound());
     }
         return _any;
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__MANY:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isMany());
+    }
+        return _any;
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__REQUIRED:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isRequired());
+    }
+        return _any;
     case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ETYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEType());
@@ -151,6 +163,12 @@ int EStructuralFeature::getContainerClass()
                 > ::toAny(_any, getDefaultValueLiteral());
     }
         return _any;
+    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__DEFAULTVALUE:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EJavaObject
+                > ::toAny(_any, getDefaultValue());
+    }
+        return _any;
     case ::ecore::EcorePackage::ESTRUCTURALFEATURE__UNSETTABLE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -170,7 +188,7 @@ int EStructuralFeature::getContainerClass()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EStructuralFeature::eSet(::ecore::EInt _featureID,
@@ -290,17 +308,9 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
         setDerived(_t0);
     }
         return;
-    case ::ecore::EcorePackage::ESTRUCTURALFEATURE__ECONTAININGCLASS:
-    {
-        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
-                > (_newValue);
-        auto _t1 = ::ecore::as < ::ecore::EClass > (_t0);
-        setEContainingClass(_t1);
-    }
-        return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EStructuralFeature::eIsSet(::ecore::EInt _featureID)
@@ -355,7 +365,7 @@ void EStructuralFeature::eSet(::ecore::EInt _featureID,
         return getEContainingClass().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EStructuralFeature::eUnset(::ecore::EInt _featureID)
@@ -364,7 +374,7 @@ void EStructuralFeature::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EStructuralFeature::_eClass()

@@ -77,6 +77,18 @@ void EDataType::_initialize()
                 > ::toAny(_any, getInstanceClassName());
     }
         return _any;
+    case ::ecore::EcorePackage::EDATATYPE__INSTANCECLASS:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EJavaClass
+                > ::toAny(_any, getInstanceClass());
+    }
+        return _any;
+    case ::ecore::EcorePackage::EDATATYPE__DEFAULTVALUE:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EJavaObject
+                > ::toAny(_any, getDefaultValue());
+    }
+        return _any;
     case ::ecore::EcorePackage::EDATATYPE__INSTANCETYPENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -101,7 +113,7 @@ void EDataType::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EDataType::eSet(::ecore::EInt _featureID,
@@ -141,14 +153,6 @@ void EDataType::eSet(::ecore::EInt _featureID,
         setInstanceTypeName(_t0);
     }
         return;
-    case ::ecore::EcorePackage::EDATATYPE__EPACKAGE:
-    {
-        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
-                > (_newValue);
-        auto _t1 = ::ecore::as < ::ecore::EPackage > (_t0);
-        setEPackage(_t1);
-    }
-        return;
     case ::ecore::EcorePackage::EDATATYPE__ETYPEPARAMETERS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
@@ -167,7 +171,7 @@ void EDataType::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EDataType::eIsSet(::ecore::EInt _featureID)
@@ -196,7 +200,7 @@ void EDataType::eSet(::ecore::EInt _featureID,
         return isSerializable() != true;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EDataType::eUnset(::ecore::EInt _featureID)
@@ -205,7 +209,7 @@ void EDataType::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EDataType::_eClass()

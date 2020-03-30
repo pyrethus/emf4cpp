@@ -131,7 +131,7 @@ void Circle::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Circle::eSet(::ecore::EInt _featureID,
@@ -237,7 +237,7 @@ void Circle::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Circle::eIsSet(::ecore::EInt _featureID)
@@ -274,7 +274,7 @@ void Circle::eSet(::ecore::EInt _featureID,
                 > ::is_set(getStroke());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Circle::eUnset(::ecore::EInt _featureID)
@@ -283,7 +283,7 @@ void Circle::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Circle::_eClass()

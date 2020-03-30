@@ -97,7 +97,8 @@ void serializer::serialize_node(DOMElement* node, EObject_ptr obj)
 
             DEBUG_MSG(cout, indent << current_at->getName());
 
-            if (!current_at->isTransient() && obj->eIsSet(current_at))
+            if (!current_at->isTransient() && !current_at->isDerived()
+				&& obj->eIsSet(current_at))
             {
                 EDataType_ptr atc = as< EDataType >(at_classifier);
                 if (atc)
@@ -165,7 +166,8 @@ void serializer::serialize_node(DOMElement* node, EObject_ptr obj)
 
             DEBUG_MSG(cout, indent << current_ref->getName());
 
-            if (!current_ref->isTransient() && obj->eIsSet(current_ref))
+            if (!current_ref->isTransient() && !current_ref->isDerived()
+				&& obj->eIsSet(current_ref))
             {
                 boost::any any = obj->eGet(current_ref);
 

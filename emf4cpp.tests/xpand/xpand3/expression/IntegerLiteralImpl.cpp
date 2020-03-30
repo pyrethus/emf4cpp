@@ -89,7 +89,7 @@ void IntegerLiteral::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void IntegerLiteral::eSet(::ecore::EInt _featureID,
@@ -139,7 +139,7 @@ void IntegerLiteral::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean IntegerLiteral::eIsSet(::ecore::EInt _featureID)
@@ -162,7 +162,7 @@ void IntegerLiteral::eSet(::ecore::EInt _featureID,
         return getLiteralValue().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void IntegerLiteral::eUnset(::ecore::EInt _featureID)
@@ -171,7 +171,7 @@ void IntegerLiteral::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr IntegerLiteral::_eClass()

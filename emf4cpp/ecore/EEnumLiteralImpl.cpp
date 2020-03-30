@@ -95,7 +95,7 @@ void EEnumLiteral::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EEnumLiteral::eSet(::ecore::EInt _featureID,
@@ -143,17 +143,9 @@ void EEnumLiteral::eSet(::ecore::EInt _featureID,
         setLiteral(_t0);
     }
         return;
-    case ::ecore::EcorePackage::EENUMLITERAL__EENUM:
-    {
-        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
-                > (_newValue);
-        auto _t1 = ::ecore::as < ::ecore::EEnum > (_t0);
-        setEEnum(_t1);
-    }
-        return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EEnumLiteral::eIsSet(::ecore::EInt _featureID)
@@ -178,7 +170,7 @@ void EEnumLiteral::eSet(::ecore::EInt _featureID,
         return getEEnum().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EEnumLiteral::eUnset(::ecore::EInt _featureID)
@@ -187,7 +179,7 @@ void EEnumLiteral::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EEnumLiteral::_eClass()

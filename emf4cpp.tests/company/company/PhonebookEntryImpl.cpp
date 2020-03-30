@@ -57,7 +57,7 @@ void PhonebookEntry::_initialize()
     {
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void PhonebookEntry::eSet(::ecore::EInt _featureID,
@@ -67,7 +67,7 @@ void PhonebookEntry::eSet(::ecore::EInt _featureID,
     {
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean PhonebookEntry::eIsSet(::ecore::EInt _featureID)
@@ -76,7 +76,7 @@ void PhonebookEntry::eSet(::ecore::EInt _featureID,
     {
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void PhonebookEntry::eUnset(::ecore::EInt _featureID)
@@ -85,7 +85,7 @@ void PhonebookEntry::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr PhonebookEntry::_eClass()

@@ -50,16 +50,12 @@ public:
     virtual ::ecore::EInt getClassifierID ();
 
     // Attributes
-    virtual ::ecore::EString const& getInstanceClassName () const;
+    virtual ::ecore::EString getInstanceClassName ();
     virtual void setInstanceClassName (::ecore::EString const& _instanceClassName);
 
-    virtual int getInstanceClass () const;
-    virtual void setInstanceClass (int _instanceClass);
-
-    virtual ::ecore::EJavaObject const& getDefaultValue () const;
-    virtual void setDefaultValue (::ecore::EJavaObject const& _defaultValue);
-
-    virtual ::ecore::EString const& getInstanceTypeName () const;
+    virtual int getInstanceClass ();
+    virtual ::ecore::EJavaObject getDefaultValue ();
+    virtual ::ecore::EString getInstanceTypeName ();
     virtual void setInstanceTypeName (::ecore::EString const& _instanceTypeName);
 
     // References
@@ -102,18 +98,6 @@ protected:
     {   return std::dynamic_pointer_cast<EClassifier>(shared_from_this());}
 
     // Attributes
-
-    ::ecore::EString m_instanceClassName
-    {};
-
-    int m_instanceClass
-    {};
-
-    ::ecore::EJavaObject m_defaultValue
-    {};
-
-    ::ecore::EString m_instanceTypeName
-    {};
 
     // References
 

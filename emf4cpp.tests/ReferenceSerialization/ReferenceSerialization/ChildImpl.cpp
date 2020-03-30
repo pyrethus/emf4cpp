@@ -57,7 +57,7 @@ void Child::_initialize()
     {
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Child::eSet(::ecore::EInt _featureID,
@@ -67,7 +67,7 @@ void Child::eSet(::ecore::EInt _featureID,
     {
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Child::eIsSet(::ecore::EInt _featureID)
@@ -76,7 +76,7 @@ void Child::eSet(::ecore::EInt _featureID,
     {
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Child::eUnset(::ecore::EInt _featureID)
@@ -85,7 +85,7 @@ void Child::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Child::_eClass()

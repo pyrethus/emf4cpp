@@ -39,7 +39,6 @@ std::string EcoreUtil::getId( ::ecore::EObject_ptr obj ) {
 
 	for ( const auto& attr : attributes ) {
 		if ( attr->isID()
-				&& !attr->isTransient()
 				&& attr->getUpperBound() == 1
 				&& obj->eIsSet(attr) ) {
 

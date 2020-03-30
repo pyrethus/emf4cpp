@@ -121,7 +121,7 @@ void XMLSchema::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void XMLSchema::eSet(::ecore::EInt _featureID,
@@ -203,7 +203,7 @@ void XMLSchema::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean XMLSchema::eIsSet(::ecore::EInt _featureID)
@@ -231,7 +231,7 @@ void XMLSchema::eSet(::ecore::EInt _featureID,
         return getContentElement().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void XMLSchema::eUnset(::ecore::EInt _featureID)
@@ -240,7 +240,7 @@ void XMLSchema::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr XMLSchema::_eClass()

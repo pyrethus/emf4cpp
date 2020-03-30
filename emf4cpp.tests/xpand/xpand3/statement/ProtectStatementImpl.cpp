@@ -123,7 +123,7 @@ void ProtectStatement::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ProtectStatement::eSet(::ecore::EInt _featureID,
@@ -208,7 +208,7 @@ void ProtectStatement::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ProtectStatement::eIsSet(::ecore::EInt _featureID)
@@ -240,7 +240,7 @@ void ProtectStatement::eSet(::ecore::EInt _featureID,
                 > ::is_set(isDisable());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ProtectStatement::eUnset(::ecore::EInt _featureID)
@@ -249,7 +249,7 @@ void ProtectStatement::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ProtectStatement::_eClass()

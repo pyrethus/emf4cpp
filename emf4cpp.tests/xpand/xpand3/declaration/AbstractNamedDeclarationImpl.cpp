@@ -117,7 +117,7 @@ void AbstractNamedDeclaration::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void AbstractNamedDeclaration::eSet(::ecore::EInt _featureID,
@@ -200,7 +200,7 @@ void AbstractNamedDeclaration::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean AbstractNamedDeclaration::eIsSet(::ecore::EInt _featureID)
@@ -232,7 +232,7 @@ void AbstractNamedDeclaration::eSet(::ecore::EInt _featureID,
         return getName().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void AbstractNamedDeclaration::eUnset(::ecore::EInt _featureID)
@@ -241,7 +241,7 @@ void AbstractNamedDeclaration::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr AbstractNamedDeclaration::_eClass()

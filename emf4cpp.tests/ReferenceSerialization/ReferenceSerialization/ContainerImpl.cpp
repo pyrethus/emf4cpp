@@ -87,7 +87,7 @@ void Container::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Container::eSet(::ecore::EInt _featureID,
@@ -129,7 +129,7 @@ void Container::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Container::eIsSet(::ecore::EInt _featureID)
@@ -146,7 +146,7 @@ void Container::eSet(::ecore::EInt _featureID,
         return getChildRef().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Container::eUnset(::ecore::EInt _featureID)
@@ -155,7 +155,7 @@ void Container::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Container::_eClass()

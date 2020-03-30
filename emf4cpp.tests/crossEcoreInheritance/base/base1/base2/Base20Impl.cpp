@@ -103,7 +103,7 @@ void Base20::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Base20::eSet(::ecore::EInt _featureID,
@@ -169,7 +169,7 @@ void Base20::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Base20::eIsSet(::ecore::EInt _featureID)
@@ -198,7 +198,7 @@ void Base20::eSet(::ecore::EInt _featureID,
                 > ::is_set(getValBase20());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Base20::eUnset(::ecore::EInt _featureID)
@@ -207,7 +207,7 @@ void Base20::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Base20::_eClass()

@@ -111,7 +111,7 @@ void DataResource::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void DataResource::eSet(::ecore::EInt _featureID,
@@ -185,7 +185,7 @@ void DataResource::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean DataResource::eIsSet(::ecore::EInt _featureID)
@@ -211,7 +211,7 @@ void DataResource::eSet(::ecore::EInt _featureID,
         return getAbstraction().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void DataResource::eUnset(::ecore::EInt _featureID)
@@ -220,7 +220,7 @@ void DataResource::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr DataResource::_eClass()

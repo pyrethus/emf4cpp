@@ -26,12 +26,7 @@ namespace enumeration
 
     enum class BirdType
     {
-        unknown = -1,
-        blackbird = 0,
-        thrush = 1,
-        finch = 2,
-        starling = 3,
-        stork = 7
+        unknown = -1, blackbird, thrush = 1, finch = 2, starling = 3, stork = 7
 
     };
 

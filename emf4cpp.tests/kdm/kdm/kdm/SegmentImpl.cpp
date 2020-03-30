@@ -121,7 +121,7 @@ void Segment::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Segment::eSet(::ecore::EInt _featureID,
@@ -203,7 +203,7 @@ void Segment::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Segment::eIsSet(::ecore::EInt _featureID)
@@ -231,7 +231,7 @@ void Segment::eSet(::ecore::EInt _featureID,
         return getModel().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Segment::eUnset(::ecore::EInt _featureID)
@@ -240,7 +240,7 @@ void Segment::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Segment::_eClass()

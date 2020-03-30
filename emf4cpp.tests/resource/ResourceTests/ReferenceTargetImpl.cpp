@@ -57,7 +57,7 @@ void ReferenceTarget::_initialize()
     {
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ReferenceTarget::eSet(::ecore::EInt _featureID,
@@ -67,7 +67,7 @@ void ReferenceTarget::eSet(::ecore::EInt _featureID,
     {
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ReferenceTarget::eIsSet(::ecore::EInt _featureID)
@@ -76,7 +76,7 @@ void ReferenceTarget::eSet(::ecore::EInt _featureID,
     {
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ReferenceTarget::eUnset(::ecore::EInt _featureID)
@@ -85,7 +85,7 @@ void ReferenceTarget::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ReferenceTarget::_eClass()

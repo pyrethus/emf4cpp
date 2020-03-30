@@ -57,7 +57,7 @@ void Level1Class::_initialize()
     {
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Level1Class::eSet(::ecore::EInt _featureID,
@@ -67,7 +67,7 @@ void Level1Class::eSet(::ecore::EInt _featureID,
     {
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Level1Class::eIsSet(::ecore::EInt _featureID)
@@ -76,7 +76,7 @@ void Level1Class::eSet(::ecore::EInt _featureID,
     {
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Level1Class::eUnset(::ecore::EInt _featureID)
@@ -85,7 +85,7 @@ void Level1Class::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Level1Class::_eClass()

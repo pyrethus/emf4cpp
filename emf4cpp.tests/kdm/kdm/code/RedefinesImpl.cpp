@@ -95,7 +95,7 @@ void Redefines::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Redefines::eSet(::ecore::EInt _featureID,
@@ -153,7 +153,7 @@ void Redefines::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Redefines::eIsSet(::ecore::EInt _featureID)
@@ -174,7 +174,7 @@ void Redefines::eSet(::ecore::EInt _featureID,
         return getFrom().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Redefines::eUnset(::ecore::EInt _featureID)
@@ -183,7 +183,7 @@ void Redefines::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Redefines::_eClass()

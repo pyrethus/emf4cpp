@@ -215,6 +215,18 @@ void EClass::_initialize()
                 > ::toAny(_any, getInstanceClassName());
     }
         return _any;
+    case ::ecore::EcorePackage::ECLASS__INSTANCECLASS:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EJavaClass
+                > ::toAny(_any, getInstanceClass());
+    }
+        return _any;
+    case ::ecore::EcorePackage::ECLASS__DEFAULTVALUE:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EJavaObject
+                > ::toAny(_any, getDefaultValue());
+    }
+        return _any;
     case ::ecore::EcorePackage::ECLASS__INSTANCETYPENAME:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EString
@@ -253,6 +265,51 @@ void EClass::_initialize()
         _any = getEOperations().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
+    case ::ecore::EcorePackage::ECLASS__EALLATTRIBUTES:
+    {
+        _any = getEAllAttributes().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
+    case ::ecore::EcorePackage::ECLASS__EALLREFERENCES:
+    {
+        _any = getEAllReferences().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
+    case ::ecore::EcorePackage::ECLASS__EREFERENCES:
+    {
+        _any = getEReferences().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
+    case ::ecore::EcorePackage::ECLASS__EATTRIBUTES:
+    {
+        _any = getEAttributes().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
+    case ::ecore::EcorePackage::ECLASS__EALLCONTAINMENTS:
+    {
+        _any = getEAllContainments().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
+    case ::ecore::EcorePackage::ECLASS__EALLOPERATIONS:
+    {
+        _any = getEAllOperations().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
+    case ::ecore::EcorePackage::ECLASS__EALLSTRUCTURALFEATURES:
+    {
+        _any = getEAllStructuralFeatures().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
+    case ::ecore::EcorePackage::ECLASS__EALLSUPERTYPES:
+    {
+        _any = getEAllSuperTypes().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
+    case ::ecore::EcorePackage::ECLASS__EIDATTRIBUTE:
+    {
+        _any = ::ecore::as < ::ecore::EObject > (getEIDAttribute());
+    }
+        return _any;
     case ::ecore::EcorePackage::ECLASS__ESTRUCTURALFEATURES:
     {
         _any = getEStructuralFeatures().asEListOf< ::ecore::EObject_ptr >();
@@ -263,9 +320,14 @@ void EClass::_initialize()
         _any = getEGenericSuperTypes().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
+    case ::ecore::EcorePackage::ECLASS__EALLGENERICSUPERTYPES:
+    {
+        _any = getEAllGenericSuperTypes().asEListOf< ::ecore::EObject_ptr >();
+    }
+        return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EClass::eSet(::ecore::EInt _featureID,
@@ -303,14 +365,6 @@ void EClass::eSet(::ecore::EInt _featureID,
         ::ecorecpp::mapping::any_traits < ::ecore::EString
                 > ::fromAny(_newValue, _t0);
         setInstanceTypeName(_t0);
-    }
-        return;
-    case ::ecore::EcorePackage::ECLASS__EPACKAGE:
-    {
-        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
-                > (_newValue);
-        auto _t1 = ::ecore::as < ::ecore::EPackage > (_t0);
-        setEPackage(_t1);
     }
         return;
     case ::ecore::EcorePackage::ECLASS__ETYPEPARAMETERS:
@@ -371,7 +425,7 @@ void EClass::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EClass::eIsSet(::ecore::EInt _featureID)
@@ -432,7 +486,7 @@ void EClass::eSet(::ecore::EInt _featureID,
         return getEAllGenericSuperTypes().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EClass::eUnset(::ecore::EInt _featureID)
@@ -441,7 +495,7 @@ void EClass::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EClass::_eClass()

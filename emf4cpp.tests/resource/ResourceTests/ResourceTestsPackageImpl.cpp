@@ -80,100 +80,105 @@ void ResourceTestsPackage::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // Root
-    m_RootEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_RootEClass->setClassifierID(ROOT);
-    m_RootEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_RootEClass);
-    // m_Root__target has already been allocated above
-    m_Root__target->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::ROOT__TARGET);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RootEClass->getEStructuralFeatures()).basicAdd(
-            m_Root__target);
-    m_Root__target->basicsetEContainingClass(m_RootEClass);
-    // m_Root__referrers has already been allocated above
-    m_Root__referrers->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RootEClass->getEStructuralFeatures()).basicAdd(
-            m_Root__referrers);
-    m_Root__referrers->basicsetEContainingClass(m_RootEClass);
+    { // Root
+        m_RootEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_RootEClass->setClassifierID(ROOT);
+        m_RootEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_RootEClass);
+        // m_Root__target has already been allocated above
+        m_Root__target->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::ROOT__TARGET);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RootEClass->getEStructuralFeatures()).basicAdd(
+                m_Root__target);
+        m_Root__target->basicsetEContainingClass(m_RootEClass);
+        // m_Root__referrers has already been allocated above
+        m_Root__referrers->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RootEClass->getEStructuralFeatures()).basicAdd(
+                m_Root__referrers);
+        m_Root__referrers->basicsetEContainingClass(m_RootEClass);
+    }
 
-    // ReferenceTarget
-    m_ReferenceTargetEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_ReferenceTargetEClass->setClassifierID(REFERENCETARGET);
-    m_ReferenceTargetEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ReferenceTargetEClass);
+    { // ReferenceTarget
+        m_ReferenceTargetEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_ReferenceTargetEClass->setClassifierID(REFERENCETARGET);
+        m_ReferenceTargetEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ReferenceTargetEClass);
+    }
 
-    // Referrer
-    m_ReferrerEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_ReferrerEClass->setClassifierID(REFERRER);
-    m_ReferrerEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ReferrerEClass);
-    // m_Referrer__reference has already been allocated above
-    m_Referrer__reference->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::REFERRER__REFERENCE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReferrerEClass->getEStructuralFeatures()).basicAdd(
-            m_Referrer__reference);
-    m_Referrer__reference->basicsetEContainingClass(m_ReferrerEClass);
+    { // Referrer
+        m_ReferrerEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_ReferrerEClass->setClassifierID(REFERRER);
+        m_ReferrerEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ReferrerEClass);
+        // m_Referrer__reference has already been allocated above
+        m_Referrer__reference->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::REFERRER__REFERENCE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReferrerEClass->getEStructuralFeatures()).basicAdd(
+                m_Referrer__reference);
+        m_Referrer__reference->basicsetEContainingClass(m_ReferrerEClass);
+    }
 
-    // ETypes
-    m_ETypesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_ETypesEClass->setClassifierID(ETYPES);
-    m_ETypesEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ETypesEClass);
-    // m_ETypes__string has already been allocated above
-    m_ETypes__string->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::ETYPES__STRING);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
-            m_ETypes__string);
-    m_ETypes__string->basicsetEContainingClass(m_ETypesEClass);
-    // m_ETypes__emptyString has already been allocated above
-    m_ETypes__emptyString->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::ETYPES__EMPTYSTRING);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
-            m_ETypes__emptyString);
-    m_ETypes__emptyString->basicsetEContainingClass(m_ETypesEClass);
-    // m_ETypes__date has already been allocated above
-    m_ETypes__date->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::ETYPES__DATE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
-            m_ETypes__date);
-    m_ETypes__date->basicsetEContainingClass(m_ETypesEClass);
-    // m_ETypes__char has already been allocated above
-    m_ETypes__char->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::ETYPES__CHAR);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
-            m_ETypes__char);
-    m_ETypes__char->basicsetEContainingClass(m_ETypesEClass);
-    // m_ETypes__bool has already been allocated above
-    m_ETypes__bool->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::ETYPES__BOOL);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
-            m_ETypes__bool);
-    m_ETypes__bool->basicsetEContainingClass(m_ETypesEClass);
-    // m_ETypes__double has already been allocated above
-    m_ETypes__double->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::ETYPES__DOUBLE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
-            m_ETypes__double);
-    m_ETypes__double->basicsetEContainingClass(m_ETypesEClass);
-    // m_ETypes__int has already been allocated above
-    m_ETypes__int->setFeatureID(
-            ::ResourceTests::ResourceTestsPackage::ETYPES__INT);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
-            m_ETypes__int);
-    m_ETypes__int->basicsetEContainingClass(m_ETypesEClass);
+    { // ETypes
+        m_ETypesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_ETypesEClass->setClassifierID(ETYPES);
+        m_ETypesEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ETypesEClass);
+        // m_ETypes__string has already been allocated above
+        m_ETypes__string->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::ETYPES__STRING);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+                m_ETypes__string);
+        m_ETypes__string->basicsetEContainingClass(m_ETypesEClass);
+        // m_ETypes__emptyString has already been allocated above
+        m_ETypes__emptyString->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::ETYPES__EMPTYSTRING);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+                m_ETypes__emptyString);
+        m_ETypes__emptyString->basicsetEContainingClass(m_ETypesEClass);
+        // m_ETypes__date has already been allocated above
+        m_ETypes__date->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::ETYPES__DATE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+                m_ETypes__date);
+        m_ETypes__date->basicsetEContainingClass(m_ETypesEClass);
+        // m_ETypes__char has already been allocated above
+        m_ETypes__char->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::ETYPES__CHAR);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+                m_ETypes__char);
+        m_ETypes__char->basicsetEContainingClass(m_ETypesEClass);
+        // m_ETypes__bool has already been allocated above
+        m_ETypes__bool->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::ETYPES__BOOL);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+                m_ETypes__bool);
+        m_ETypes__bool->basicsetEContainingClass(m_ETypesEClass);
+        // m_ETypes__double has already been allocated above
+        m_ETypes__double->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::ETYPES__DOUBLE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+                m_ETypes__double);
+        m_ETypes__double->basicsetEContainingClass(m_ETypesEClass);
+        // m_ETypes__int has already been allocated above
+        m_ETypes__int->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::ETYPES__INT);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
+                m_ETypes__int);
+        m_ETypes__int->basicsetEContainingClass(m_ETypesEClass);
+    }
 
     // Create enums
 
@@ -190,159 +195,172 @@ void ResourceTestsPackage::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // Root
-    m_RootEClass->setName("Root");
-    m_RootEClass->setAbstract(false);
-    m_RootEClass->setInterface(false);
-    m_Root__target->setEType(m_ReferenceTargetEClass);
-    m_Root__target->setName("target");
-    m_Root__target->setDefaultValueLiteral("");
-    m_Root__target->setLowerBound(0);
-    m_Root__target->setUpperBound(1);
-    m_Root__target->setTransient(false);
-    m_Root__target->setVolatile(false);
-    m_Root__target->setChangeable(true);
-    m_Root__target->setContainment(true);
-    m_Root__target->setResolveProxies(true);
-    m_Root__target->setUnique(true);
-    m_Root__target->setDerived(false);
-    m_Root__target->setOrdered(true);
-    m_Root__referrers->setEType(m_ReferrerEClass);
-    m_Root__referrers->setName("referrers");
-    m_Root__referrers->setDefaultValueLiteral("");
-    m_Root__referrers->setLowerBound(0);
-    m_Root__referrers->setUpperBound(-1);
-    m_Root__referrers->setTransient(false);
-    m_Root__referrers->setVolatile(false);
-    m_Root__referrers->setChangeable(true);
-    m_Root__referrers->setContainment(true);
-    m_Root__referrers->setResolveProxies(true);
-    m_Root__referrers->setUnique(true);
-    m_Root__referrers->setDerived(false);
-    m_Root__referrers->setOrdered(true);
-    // ReferenceTarget
-    m_ReferenceTargetEClass->setName("ReferenceTarget");
-    m_ReferenceTargetEClass->setAbstract(false);
-    m_ReferenceTargetEClass->setInterface(false);
-    // Referrer
-    m_ReferrerEClass->setName("Referrer");
-    m_ReferrerEClass->setAbstract(false);
-    m_ReferrerEClass->setInterface(false);
-    m_Referrer__reference->setEType(m_ReferenceTargetEClass);
-    m_Referrer__reference->setName("reference");
-    m_Referrer__reference->setDefaultValueLiteral("");
-    m_Referrer__reference->setLowerBound(0);
-    m_Referrer__reference->setUpperBound(1);
-    m_Referrer__reference->setTransient(false);
-    m_Referrer__reference->setVolatile(false);
-    m_Referrer__reference->setChangeable(true);
-    m_Referrer__reference->setContainment(false);
-    m_Referrer__reference->setResolveProxies(true);
-    m_Referrer__reference->setUnique(true);
-    m_Referrer__reference->setDerived(false);
-    m_Referrer__reference->setOrdered(true);
-    // ETypes
-    m_ETypesEClass->setName("ETypes");
-    m_ETypesEClass->setAbstract(false);
-    m_ETypesEClass->setInterface(false);
-    m_ETypes__string->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-    m_ETypes__string->setName("string");
-    m_ETypes__string->setDefaultValueLiteral("Hallo Welt!");
-    m_ETypes__string->setLowerBound(0);
-    m_ETypes__string->setUpperBound(1);
-    m_ETypes__string->setTransient(false);
-    m_ETypes__string->setVolatile(false);
-    m_ETypes__string->setChangeable(true);
-    m_ETypes__string->setUnsettable(false);
-    m_ETypes__string->setID(false);
-    m_ETypes__string->setUnique(true);
-    m_ETypes__string->setDerived(false);
-    m_ETypes__string->setOrdered(true);
-    m_ETypes__emptyString->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-    m_ETypes__emptyString->setName("emptyString");
-    m_ETypes__emptyString->setDefaultValueLiteral("");
-    m_ETypes__emptyString->setLowerBound(0);
-    m_ETypes__emptyString->setUpperBound(1);
-    m_ETypes__emptyString->setTransient(false);
-    m_ETypes__emptyString->setVolatile(false);
-    m_ETypes__emptyString->setChangeable(true);
-    m_ETypes__emptyString->setUnsettable(false);
-    m_ETypes__emptyString->setID(false);
-    m_ETypes__emptyString->setUnique(true);
-    m_ETypes__emptyString->setDerived(false);
-    m_ETypes__emptyString->setOrdered(true);
-    m_ETypes__date->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDate());
-    m_ETypes__date->setName("date");
-    m_ETypes__date->setDefaultValueLiteral("1976-05-27T12:13:14.123-0300");
-    m_ETypes__date->setLowerBound(0);
-    m_ETypes__date->setUpperBound(1);
-    m_ETypes__date->setTransient(false);
-    m_ETypes__date->setVolatile(false);
-    m_ETypes__date->setChangeable(true);
-    m_ETypes__date->setUnsettable(false);
-    m_ETypes__date->setID(false);
-    m_ETypes__date->setUnique(true);
-    m_ETypes__date->setDerived(false);
-    m_ETypes__date->setOrdered(true);
-    m_ETypes__char->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEChar());
-    m_ETypes__char->setName("char");
-    m_ETypes__char->setDefaultValueLiteral("98");
-    m_ETypes__char->setLowerBound(0);
-    m_ETypes__char->setUpperBound(1);
-    m_ETypes__char->setTransient(false);
-    m_ETypes__char->setVolatile(false);
-    m_ETypes__char->setChangeable(true);
-    m_ETypes__char->setUnsettable(false);
-    m_ETypes__char->setID(false);
-    m_ETypes__char->setUnique(true);
-    m_ETypes__char->setDerived(false);
-    m_ETypes__char->setOrdered(true);
-    m_ETypes__bool->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-    m_ETypes__bool->setName("bool");
-    m_ETypes__bool->setDefaultValueLiteral("true");
-    m_ETypes__bool->setLowerBound(0);
-    m_ETypes__bool->setUpperBound(1);
-    m_ETypes__bool->setTransient(false);
-    m_ETypes__bool->setVolatile(false);
-    m_ETypes__bool->setChangeable(true);
-    m_ETypes__bool->setUnsettable(false);
-    m_ETypes__bool->setID(false);
-    m_ETypes__bool->setUnique(true);
-    m_ETypes__bool->setDerived(false);
-    m_ETypes__bool->setOrdered(true);
-    m_ETypes__double->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDouble());
-    m_ETypes__double->setName("double");
-    m_ETypes__double->setDefaultValueLiteral("3.14");
-    m_ETypes__double->setLowerBound(0);
-    m_ETypes__double->setUpperBound(1);
-    m_ETypes__double->setTransient(false);
-    m_ETypes__double->setVolatile(false);
-    m_ETypes__double->setChangeable(true);
-    m_ETypes__double->setUnsettable(false);
-    m_ETypes__double->setID(false);
-    m_ETypes__double->setUnique(true);
-    m_ETypes__double->setDerived(false);
-    m_ETypes__double->setOrdered(true);
-    m_ETypes__int->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-    m_ETypes__int->setName("int");
-    m_ETypes__int->setDefaultValueLiteral("10");
-    m_ETypes__int->setLowerBound(0);
-    m_ETypes__int->setUpperBound(1);
-    m_ETypes__int->setTransient(false);
-    m_ETypes__int->setVolatile(false);
-    m_ETypes__int->setChangeable(true);
-    m_ETypes__int->setUnsettable(false);
-    m_ETypes__int->setID(false);
-    m_ETypes__int->setUnique(true);
-    m_ETypes__int->setDerived(false);
-    m_ETypes__int->setOrdered(true);
+    { // Root
+        m_RootEClass->setName("Root");
+        m_RootEClass->setAbstract(false);
+        m_RootEClass->setInterface(false);
+
+        m_Root__target->setEType(m_ReferenceTargetEClass);
+        m_Root__target->setName("target");
+        m_Root__target->setDefaultValueLiteral("");
+        m_Root__target->setLowerBound(0);
+        m_Root__target->setUpperBound(1);
+        m_Root__target->setTransient(false);
+        m_Root__target->setVolatile(false);
+        m_Root__target->setChangeable(true);
+        m_Root__target->setContainment(true);
+        m_Root__target->setResolveProxies(true);
+        m_Root__target->setUnique(true);
+        m_Root__target->setDerived(false);
+        m_Root__target->setOrdered(true);
+        m_Root__referrers->setEType(m_ReferrerEClass);
+        m_Root__referrers->setName("referrers");
+        m_Root__referrers->setDefaultValueLiteral("");
+        m_Root__referrers->setLowerBound(0);
+        m_Root__referrers->setUpperBound(-1);
+        m_Root__referrers->setTransient(false);
+        m_Root__referrers->setVolatile(false);
+        m_Root__referrers->setChangeable(true);
+        m_Root__referrers->setContainment(true);
+        m_Root__referrers->setResolveProxies(true);
+        m_Root__referrers->setUnique(true);
+        m_Root__referrers->setDerived(false);
+        m_Root__referrers->setOrdered(true);
+
+    }
+
+    { // ReferenceTarget
+        m_ReferenceTargetEClass->setName("ReferenceTarget");
+        m_ReferenceTargetEClass->setAbstract(false);
+        m_ReferenceTargetEClass->setInterface(false);
+
+    }
+
+    { // Referrer
+        m_ReferrerEClass->setName("Referrer");
+        m_ReferrerEClass->setAbstract(false);
+        m_ReferrerEClass->setInterface(false);
+
+        m_Referrer__reference->setEType(m_ReferenceTargetEClass);
+        m_Referrer__reference->setName("reference");
+        m_Referrer__reference->setDefaultValueLiteral("");
+        m_Referrer__reference->setLowerBound(0);
+        m_Referrer__reference->setUpperBound(1);
+        m_Referrer__reference->setTransient(false);
+        m_Referrer__reference->setVolatile(false);
+        m_Referrer__reference->setChangeable(true);
+        m_Referrer__reference->setContainment(false);
+        m_Referrer__reference->setResolveProxies(true);
+        m_Referrer__reference->setUnique(true);
+        m_Referrer__reference->setDerived(false);
+        m_Referrer__reference->setOrdered(true);
+
+    }
+
+    { // ETypes
+        m_ETypesEClass->setName("ETypes");
+        m_ETypesEClass->setAbstract(false);
+        m_ETypesEClass->setInterface(false);
+        m_ETypes__string->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        m_ETypes__string->setName("string");
+        m_ETypes__string->setDefaultValueLiteral("Hallo Welt!");
+        m_ETypes__string->setLowerBound(0);
+        m_ETypes__string->setUpperBound(1);
+        m_ETypes__string->setTransient(false);
+        m_ETypes__string->setVolatile(false);
+        m_ETypes__string->setChangeable(true);
+        m_ETypes__string->setUnsettable(false);
+        m_ETypes__string->setID(false);
+        m_ETypes__string->setUnique(true);
+        m_ETypes__string->setDerived(false);
+        m_ETypes__string->setOrdered(true);
+        m_ETypes__emptyString->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        m_ETypes__emptyString->setName("emptyString");
+        m_ETypes__emptyString->setDefaultValueLiteral("");
+        m_ETypes__emptyString->setLowerBound(0);
+        m_ETypes__emptyString->setUpperBound(1);
+        m_ETypes__emptyString->setTransient(false);
+        m_ETypes__emptyString->setVolatile(false);
+        m_ETypes__emptyString->setChangeable(true);
+        m_ETypes__emptyString->setUnsettable(false);
+        m_ETypes__emptyString->setID(false);
+        m_ETypes__emptyString->setUnique(true);
+        m_ETypes__emptyString->setDerived(false);
+        m_ETypes__emptyString->setOrdered(true);
+        m_ETypes__date->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDate());
+        m_ETypes__date->setName("date");
+        m_ETypes__date->setDefaultValueLiteral("1976-05-27T12:13:14.123-0300");
+        m_ETypes__date->setLowerBound(0);
+        m_ETypes__date->setUpperBound(1);
+        m_ETypes__date->setTransient(false);
+        m_ETypes__date->setVolatile(false);
+        m_ETypes__date->setChangeable(true);
+        m_ETypes__date->setUnsettable(false);
+        m_ETypes__date->setID(false);
+        m_ETypes__date->setUnique(true);
+        m_ETypes__date->setDerived(false);
+        m_ETypes__date->setOrdered(true);
+        m_ETypes__char->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEChar());
+        m_ETypes__char->setName("char");
+        m_ETypes__char->setDefaultValueLiteral("98");
+        m_ETypes__char->setLowerBound(0);
+        m_ETypes__char->setUpperBound(1);
+        m_ETypes__char->setTransient(false);
+        m_ETypes__char->setVolatile(false);
+        m_ETypes__char->setChangeable(true);
+        m_ETypes__char->setUnsettable(false);
+        m_ETypes__char->setID(false);
+        m_ETypes__char->setUnique(true);
+        m_ETypes__char->setDerived(false);
+        m_ETypes__char->setOrdered(true);
+        m_ETypes__bool->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        m_ETypes__bool->setName("bool");
+        m_ETypes__bool->setDefaultValueLiteral("true");
+        m_ETypes__bool->setLowerBound(0);
+        m_ETypes__bool->setUpperBound(1);
+        m_ETypes__bool->setTransient(false);
+        m_ETypes__bool->setVolatile(false);
+        m_ETypes__bool->setChangeable(true);
+        m_ETypes__bool->setUnsettable(false);
+        m_ETypes__bool->setID(false);
+        m_ETypes__bool->setUnique(true);
+        m_ETypes__bool->setDerived(false);
+        m_ETypes__bool->setOrdered(true);
+        m_ETypes__double->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDouble());
+        m_ETypes__double->setName("double");
+        m_ETypes__double->setDefaultValueLiteral("3.14");
+        m_ETypes__double->setLowerBound(0);
+        m_ETypes__double->setUpperBound(1);
+        m_ETypes__double->setTransient(false);
+        m_ETypes__double->setVolatile(false);
+        m_ETypes__double->setChangeable(true);
+        m_ETypes__double->setUnsettable(false);
+        m_ETypes__double->setID(false);
+        m_ETypes__double->setUnique(true);
+        m_ETypes__double->setDerived(false);
+        m_ETypes__double->setOrdered(true);
+        m_ETypes__int->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        m_ETypes__int->setName("int");
+        m_ETypes__int->setDefaultValueLiteral("10");
+        m_ETypes__int->setLowerBound(0);
+        m_ETypes__int->setUpperBound(1);
+        m_ETypes__int->setTransient(false);
+        m_ETypes__int->setVolatile(false);
+        m_ETypes__int->setChangeable(true);
+        m_ETypes__int->setUnsettable(false);
+        m_ETypes__int->setID(false);
+        m_ETypes__int->setUnique(true);
+        m_ETypes__int->setDerived(false);
+        m_ETypes__int->setOrdered(true);
+
+    }
 
     // TODO: Initialize data types
 

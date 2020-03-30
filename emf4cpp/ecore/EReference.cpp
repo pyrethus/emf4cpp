@@ -87,30 +87,13 @@ void EReference::setContainment(::ecore::EBoolean _containment)
 #endif
 }
 
-::ecore::EBoolean EReference::isContainer() const
+::ecore::EBoolean EReference::isContainer()
 {
-    return m_container;
-}
-
-void EReference::setContainer(::ecore::EBoolean _container)
-{
-#ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EBoolean _old_container = m_container;
-#endif
-    m_container = _container;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::ecore::EcorePackage::_instance()->getEReference__container(),
-                _old_container,
-                m_container
-            );
-        eNotify(&notification);
-    }
-#endif
+    /*PROTECTED REGION ID(EReferenceImpl_Getter_container) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::EReference::container";
+    /*PROTECTED REGION END*/
 }
 
 ::ecore::EBoolean EReference::isResolveProxies() const

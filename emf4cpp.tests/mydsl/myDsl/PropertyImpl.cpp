@@ -75,7 +75,7 @@ void Property::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Property::eSet(::ecore::EInt _featureID,
@@ -109,7 +109,7 @@ void Property::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Property::eIsSet(::ecore::EInt _featureID)
@@ -126,7 +126,7 @@ void Property::eSet(::ecore::EInt _featureID,
                 > ::is_set(isMany());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Property::eUnset(::ecore::EInt _featureID)
@@ -135,7 +135,7 @@ void Property::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Property::_eClass()

@@ -164,31 +164,13 @@ void EStructuralFeature::setDefaultValueLiteral(
 #endif
 }
 
-::ecore::EJavaObject const& EStructuralFeature::getDefaultValue() const
+::ecore::EJavaObject EStructuralFeature::getDefaultValue()
 {
-    return m_defaultValue;
-}
-
-void EStructuralFeature::setDefaultValue(
-        ::ecore::EJavaObject const &_defaultValue)
-{
-#ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EJavaObject _old_defaultValue = m_defaultValue;
-#endif
-    m_defaultValue = _defaultValue;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::ecore::EcorePackage::_instance()->getEStructuralFeature__defaultValue(),
-                _old_defaultValue,
-                m_defaultValue
-            );
-        eNotify(&notification);
-    }
-#endif
+    /*PROTECTED REGION ID(EStructuralFeatureImpl_Getter_defaultValue) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::EStructuralFeature::defaultValue";
+    /*PROTECTED REGION END*/
 }
 
 ::ecore::EBoolean EStructuralFeature::isUnsettable() const

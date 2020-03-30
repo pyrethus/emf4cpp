@@ -128,7 +128,7 @@ void ExtensionAspect::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ExtensionAspect::eSet(::ecore::EInt _featureID,
@@ -228,7 +228,7 @@ void ExtensionAspect::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ExtensionAspect::eIsSet(::ecore::EInt _featureID)
@@ -265,7 +265,7 @@ void ExtensionAspect::eSet(::ecore::EInt _featureID,
         return getExpression().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ExtensionAspect::eUnset(::ecore::EInt _featureID)
@@ -274,7 +274,7 @@ void ExtensionAspect::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ExtensionAspect::_eClass()

@@ -149,7 +149,7 @@ void Polygon::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Polygon::eSet(::ecore::EInt _featureID,
@@ -279,7 +279,7 @@ void Polygon::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Polygon::eIsSet(::ecore::EInt _featureID)
@@ -324,7 +324,7 @@ void Polygon::eSet(::ecore::EInt _featureID,
                 > ::is_set(getMarkerStart());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Polygon::eUnset(::ecore::EInt _featureID)
@@ -333,7 +333,7 @@ void Polygon::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Polygon::_eClass()

@@ -123,7 +123,7 @@ void ContentElement::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ContentElement::eSet(::ecore::EInt _featureID,
@@ -213,7 +213,7 @@ void ContentElement::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ContentElement::eIsSet(::ecore::EInt _featureID)
@@ -243,7 +243,7 @@ void ContentElement::eSet(::ecore::EInt _featureID,
         return getContentElement().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ContentElement::eUnset(::ecore::EInt _featureID)
@@ -252,7 +252,7 @@ void ContentElement::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ContentElement::_eClass()

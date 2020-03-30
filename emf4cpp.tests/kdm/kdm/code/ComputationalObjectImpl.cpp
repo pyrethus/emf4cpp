@@ -111,7 +111,7 @@ void ComputationalObject::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ComputationalObject::eSet(::ecore::EInt _featureID,
@@ -185,7 +185,7 @@ void ComputationalObject::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ComputationalObject::eIsSet(::ecore::EInt _featureID)
@@ -211,7 +211,7 @@ void ComputationalObject::eSet(::ecore::EInt _featureID,
         return getCodeRelation().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ComputationalObject::eUnset(::ecore::EInt _featureID)
@@ -220,7 +220,7 @@ void ComputationalObject::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ComputationalObject::_eClass()

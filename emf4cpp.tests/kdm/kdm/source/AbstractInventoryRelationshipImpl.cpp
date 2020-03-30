@@ -84,7 +84,7 @@ void AbstractInventoryRelationship::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void AbstractInventoryRelationship::eSet(::ecore::EInt _featureID,
@@ -126,7 +126,7 @@ void AbstractInventoryRelationship::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean AbstractInventoryRelationship::eIsSet(
@@ -144,7 +144,7 @@ void AbstractInventoryRelationship::eSet(::ecore::EInt _featureID,
         return getTaggedValue().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void AbstractInventoryRelationship::eUnset(::ecore::EInt _featureID)
@@ -153,7 +153,7 @@ void AbstractInventoryRelationship::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr AbstractInventoryRelationship::_eClass()

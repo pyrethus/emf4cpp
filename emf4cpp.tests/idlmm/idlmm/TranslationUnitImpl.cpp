@@ -83,7 +83,7 @@ void TranslationUnit::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void TranslationUnit::eSet(::ecore::EInt _featureID,
@@ -117,7 +117,7 @@ void TranslationUnit::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean TranslationUnit::eIsSet(::ecore::EInt _featureID)
@@ -133,7 +133,7 @@ void TranslationUnit::eSet(::ecore::EInt _featureID,
         return getIncludes().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void TranslationUnit::eUnset(::ecore::EInt _featureID)
@@ -142,7 +142,7 @@ void TranslationUnit::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr TranslationUnit::_eClass()

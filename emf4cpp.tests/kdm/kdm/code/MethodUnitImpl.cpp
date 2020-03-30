@@ -141,7 +141,7 @@ void MethodUnit::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void MethodUnit::eSet(::ecore::EInt _featureID,
@@ -255,7 +255,7 @@ void MethodUnit::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean MethodUnit::eIsSet(::ecore::EInt _featureID)
@@ -293,7 +293,7 @@ void MethodUnit::eSet(::ecore::EInt _featureID,
                 > ::is_set(getExport());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void MethodUnit::eUnset(::ecore::EInt _featureID)
@@ -302,7 +302,7 @@ void MethodUnit::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr MethodUnit::_eClass()

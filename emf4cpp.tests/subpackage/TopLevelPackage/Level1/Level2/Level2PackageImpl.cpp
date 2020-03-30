@@ -55,12 +55,13 @@ void Level2Package::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // Level2Class
-    m_Level2ClassEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_Level2ClassEClass->setClassifierID(LEVEL2CLASS);
-    m_Level2ClassEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_Level2ClassEClass);
+    { // Level2Class
+        m_Level2ClassEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_Level2ClassEClass->setClassifierID(LEVEL2CLASS);
+        m_Level2ClassEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_Level2ClassEClass);
+    }
 
     // Create enums
 
@@ -82,10 +83,12 @@ void Level2Package::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // Level2Class
-    m_Level2ClassEClass->setName("Level2Class");
-    m_Level2ClassEClass->setAbstract(false);
-    m_Level2ClassEClass->setInterface(false);
+    { // Level2Class
+        m_Level2ClassEClass->setName("Level2Class");
+        m_Level2ClassEClass->setAbstract(false);
+        m_Level2ClassEClass->setInterface(false);
+
+    }
 
     // TODO: Initialize data types
 

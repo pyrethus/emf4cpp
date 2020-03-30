@@ -123,7 +123,7 @@ void RecordFile::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void RecordFile::eSet(::ecore::EInt _featureID,
@@ -213,7 +213,7 @@ void RecordFile::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean RecordFile::eIsSet(::ecore::EInt _featureID)
@@ -243,7 +243,7 @@ void RecordFile::eSet(::ecore::EInt _featureID,
         return getItemUnit().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void RecordFile::eUnset(::ecore::EInt _featureID)
@@ -252,7 +252,7 @@ void RecordFile::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr RecordFile::_eClass()

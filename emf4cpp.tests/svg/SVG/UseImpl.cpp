@@ -131,7 +131,7 @@ void Use::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Use::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
@@ -236,7 +236,7 @@ void Use::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Use::eIsSet(::ecore::EInt _featureID)
@@ -272,7 +272,7 @@ void Use::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return getUse().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Use::eUnset(::ecore::EInt _featureID)
@@ -281,7 +281,7 @@ void Use::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Use::_eClass()

@@ -26,7 +26,7 @@ namespace idlmm
 
     enum class ParameterMode
     {
-        PARAM_IN = 0, PARAM_OUT = 1, PARAM_INOUT = 2
+        PARAM_IN, PARAM_OUT = 1, PARAM_INOUT = 2
 
     };
 

@@ -144,272 +144,301 @@ void EventPackage::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // EventModel
-    m_EventModelEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_EventModelEClass->setClassifierID(EVENTMODEL);
-    m_EventModelEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_EventModelEClass);
-    // m_EventModel__eventElement has already been allocated above
-    m_EventModel__eventElement->setFeatureID(
-            ::kdm::event::EventPackage::EVENTMODEL__EVENTELEMENT);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventModelEClass->getEStructuralFeatures()).basicAdd(
-            m_EventModel__eventElement);
-    m_EventModel__eventElement->basicsetEContainingClass(m_EventModelEClass);
+    { // EventModel
+        m_EventModelEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_EventModelEClass->setClassifierID(EVENTMODEL);
+        m_EventModelEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_EventModelEClass);
+        // m_EventModel__eventElement has already been allocated above
+        m_EventModel__eventElement->setFeatureID(
+                ::kdm::event::EventPackage::EVENTMODEL__EVENTELEMENT);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventModelEClass->getEStructuralFeatures()).basicAdd(
+                m_EventModel__eventElement);
+        m_EventModel__eventElement->basicsetEContainingClass(
+                m_EventModelEClass);
+    }
 
-    // AbstractEventElement
-    m_AbstractEventElementEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_AbstractEventElementEClass->setClassifierID(ABSTRACTEVENTELEMENT);
-    m_AbstractEventElementEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_AbstractEventElementEClass);
-    // m_AbstractEventElement__source has already been allocated above
-    m_AbstractEventElement__source->setFeatureID(
-            ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__SOURCE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
-            m_AbstractEventElement__source);
-    m_AbstractEventElement__source->basicsetEContainingClass(
-            m_AbstractEventElementEClass);
-    // m_AbstractEventElement__eventRelation has already been allocated above
-    m_AbstractEventElement__eventRelation->setFeatureID(
-            ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__EVENTRELATION);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
-            m_AbstractEventElement__eventRelation);
-    m_AbstractEventElement__eventRelation->basicsetEContainingClass(
-            m_AbstractEventElementEClass);
-    // m_AbstractEventElement__abstraction has already been allocated above
-    m_AbstractEventElement__abstraction->setFeatureID(
-            ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__ABSTRACTION);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
-            m_AbstractEventElement__abstraction);
-    m_AbstractEventElement__abstraction->basicsetEContainingClass(
-            m_AbstractEventElementEClass);
-    // m_AbstractEventElement__implementation has already been allocated above
-    m_AbstractEventElement__implementation->setFeatureID(
-            ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__IMPLEMENTATION);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
-            m_AbstractEventElement__implementation);
-    m_AbstractEventElement__implementation->basicsetEContainingClass(
-            m_AbstractEventElementEClass);
+    { // AbstractEventElement
+        m_AbstractEventElementEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_AbstractEventElementEClass->setClassifierID(ABSTRACTEVENTELEMENT);
+        m_AbstractEventElementEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_AbstractEventElementEClass);
+        // m_AbstractEventElement__source has already been allocated above
+        m_AbstractEventElement__source->setFeatureID(
+                ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__SOURCE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
+                m_AbstractEventElement__source);
+        m_AbstractEventElement__source->basicsetEContainingClass(
+                m_AbstractEventElementEClass);
+        // m_AbstractEventElement__eventRelation has already been allocated above
+        m_AbstractEventElement__eventRelation->setFeatureID(
+                ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__EVENTRELATION);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
+                m_AbstractEventElement__eventRelation);
+        m_AbstractEventElement__eventRelation->basicsetEContainingClass(
+                m_AbstractEventElementEClass);
+        // m_AbstractEventElement__abstraction has already been allocated above
+        m_AbstractEventElement__abstraction->setFeatureID(
+                ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__ABSTRACTION);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
+                m_AbstractEventElement__abstraction);
+        m_AbstractEventElement__abstraction->basicsetEContainingClass(
+                m_AbstractEventElementEClass);
+        // m_AbstractEventElement__implementation has already been allocated above
+        m_AbstractEventElement__implementation->setFeatureID(
+                ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__IMPLEMENTATION);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
+                m_AbstractEventElement__implementation);
+        m_AbstractEventElement__implementation->basicsetEContainingClass(
+                m_AbstractEventElementEClass);
+    }
 
-    // Event
-    m_EventEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_EventEClass->setClassifierID(EVENT);
-    m_EventEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_EventEClass);
-    // m_Event__kind has already been allocated above
-    m_Event__kind->setFeatureID(::kdm::event::EventPackage::EVENT__KIND);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventEClass->getEStructuralFeatures()).basicAdd(
-            m_Event__kind);
-    m_Event__kind->basicsetEContainingClass(m_EventEClass);
+    { // Event
+        m_EventEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_EventEClass->setClassifierID(EVENT);
+        m_EventEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_EventEClass);
+        // m_Event__kind has already been allocated above
+        m_Event__kind->setFeatureID(::kdm::event::EventPackage::EVENT__KIND);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventEClass->getEStructuralFeatures()).basicAdd(
+                m_Event__kind);
+        m_Event__kind->basicsetEContainingClass(m_EventEClass);
+    }
 
-    // AbstractEventRelationship
-    m_AbstractEventRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_AbstractEventRelationshipEClass->setClassifierID(
-            ABSTRACTEVENTRELATIONSHIP);
-    m_AbstractEventRelationshipEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_AbstractEventRelationshipEClass);
+    { // AbstractEventRelationship
+        m_AbstractEventRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_AbstractEventRelationshipEClass->setClassifierID(
+                ABSTRACTEVENTRELATIONSHIP);
+        m_AbstractEventRelationshipEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_AbstractEventRelationshipEClass);
+    }
 
-    // EventRelationship
-    m_EventRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_EventRelationshipEClass->setClassifierID(EVENTRELATIONSHIP);
-    m_EventRelationshipEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_EventRelationshipEClass);
-    // m_EventRelationship__to has already been allocated above
-    m_EventRelationship__to->setFeatureID(
-            ::kdm::event::EventPackage::EVENTRELATIONSHIP__TO);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventRelationshipEClass->getEStructuralFeatures()).basicAdd(
-            m_EventRelationship__to);
-    m_EventRelationship__to->basicsetEContainingClass(
-            m_EventRelationshipEClass);
-    // m_EventRelationship__from has already been allocated above
-    m_EventRelationship__from->setFeatureID(
-            ::kdm::event::EventPackage::EVENTRELATIONSHIP__FROM);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventRelationshipEClass->getEStructuralFeatures()).basicAdd(
-            m_EventRelationship__from);
-    m_EventRelationship__from->basicsetEContainingClass(
-            m_EventRelationshipEClass);
+    { // EventRelationship
+        m_EventRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_EventRelationshipEClass->setClassifierID(EVENTRELATIONSHIP);
+        m_EventRelationshipEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_EventRelationshipEClass);
+        // m_EventRelationship__to has already been allocated above
+        m_EventRelationship__to->setFeatureID(
+                ::kdm::event::EventPackage::EVENTRELATIONSHIP__TO);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventRelationshipEClass->getEStructuralFeatures()).basicAdd(
+                m_EventRelationship__to);
+        m_EventRelationship__to->basicsetEContainingClass(
+                m_EventRelationshipEClass);
+        // m_EventRelationship__from has already been allocated above
+        m_EventRelationship__from->setFeatureID(
+                ::kdm::event::EventPackage::EVENTRELATIONSHIP__FROM);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventRelationshipEClass->getEStructuralFeatures()).basicAdd(
+                m_EventRelationship__from);
+        m_EventRelationship__from->basicsetEContainingClass(
+                m_EventRelationshipEClass);
+    }
 
-    // EventResource
-    m_EventResourceEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_EventResourceEClass->setClassifierID(EVENTRESOURCE);
-    m_EventResourceEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_EventResourceEClass);
-    // m_EventResource__eventElement has already been allocated above
-    m_EventResource__eventElement->setFeatureID(
-            ::kdm::event::EventPackage::EVENTRESOURCE__EVENTELEMENT);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventResourceEClass->getEStructuralFeatures()).basicAdd(
-            m_EventResource__eventElement);
-    m_EventResource__eventElement->basicsetEContainingClass(
-            m_EventResourceEClass);
+    { // EventResource
+        m_EventResourceEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_EventResourceEClass->setClassifierID(EVENTRESOURCE);
+        m_EventResourceEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_EventResourceEClass);
+        // m_EventResource__eventElement has already been allocated above
+        m_EventResource__eventElement->setFeatureID(
+                ::kdm::event::EventPackage::EVENTRESOURCE__EVENTELEMENT);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventResourceEClass->getEStructuralFeatures()).basicAdd(
+                m_EventResource__eventElement);
+        m_EventResource__eventElement->basicsetEContainingClass(
+                m_EventResourceEClass);
+    }
 
-    // State
-    m_StateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_StateEClass->setClassifierID(STATE);
-    m_StateEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_StateEClass);
+    { // State
+        m_StateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_StateEClass->setClassifierID(STATE);
+        m_StateEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_StateEClass);
+    }
 
-    // Transition
-    m_TransitionEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_TransitionEClass->setClassifierID(TRANSITION);
-    m_TransitionEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_TransitionEClass);
+    { // Transition
+        m_TransitionEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_TransitionEClass->setClassifierID(TRANSITION);
+        m_TransitionEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_TransitionEClass);
+    }
 
-    // OnEntry
-    m_OnEntryEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_OnEntryEClass->setClassifierID(ONENTRY);
-    m_OnEntryEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_OnEntryEClass);
+    { // OnEntry
+        m_OnEntryEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_OnEntryEClass->setClassifierID(ONENTRY);
+        m_OnEntryEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_OnEntryEClass);
+    }
 
-    // OnExit
-    m_OnExitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_OnExitEClass->setClassifierID(ONEXIT);
-    m_OnExitEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_OnExitEClass);
+    { // OnExit
+        m_OnExitEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_OnExitEClass->setClassifierID(ONEXIT);
+        m_OnExitEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_OnExitEClass);
+    }
 
-    // EventAction
-    m_EventActionEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_EventActionEClass->setClassifierID(EVENTACTION);
-    m_EventActionEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_EventActionEClass);
-    // m_EventAction__kind has already been allocated above
-    m_EventAction__kind->setFeatureID(
-            ::kdm::event::EventPackage::EVENTACTION__KIND);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventActionEClass->getEStructuralFeatures()).basicAdd(
-            m_EventAction__kind);
-    m_EventAction__kind->basicsetEContainingClass(m_EventActionEClass);
-    // m_EventAction__eventElement has already been allocated above
-    m_EventAction__eventElement->setFeatureID(
-            ::kdm::event::EventPackage::EVENTACTION__EVENTELEMENT);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventActionEClass->getEStructuralFeatures()).basicAdd(
-            m_EventAction__eventElement);
-    m_EventAction__eventElement->basicsetEContainingClass(m_EventActionEClass);
+    { // EventAction
+        m_EventActionEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_EventActionEClass->setClassifierID(EVENTACTION);
+        m_EventActionEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_EventActionEClass);
+        // m_EventAction__kind has already been allocated above
+        m_EventAction__kind->setFeatureID(
+                ::kdm::event::EventPackage::EVENTACTION__KIND);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventActionEClass->getEStructuralFeatures()).basicAdd(
+                m_EventAction__kind);
+        m_EventAction__kind->basicsetEContainingClass(m_EventActionEClass);
+        // m_EventAction__eventElement has already been allocated above
+        m_EventAction__eventElement->setFeatureID(
+                ::kdm::event::EventPackage::EVENTACTION__EVENTELEMENT);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventActionEClass->getEStructuralFeatures()).basicAdd(
+                m_EventAction__eventElement);
+        m_EventAction__eventElement->basicsetEContainingClass(
+                m_EventActionEClass);
+    }
 
-    // ReadsState
-    m_ReadsStateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_ReadsStateEClass->setClassifierID(READSSTATE);
-    m_ReadsStateEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ReadsStateEClass);
-    // m_ReadsState__to has already been allocated above
-    m_ReadsState__to->setFeatureID(::kdm::event::EventPackage::READSSTATE__TO);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsStateEClass->getEStructuralFeatures()).basicAdd(
-            m_ReadsState__to);
-    m_ReadsState__to->basicsetEContainingClass(m_ReadsStateEClass);
-    // m_ReadsState__from has already been allocated above
-    m_ReadsState__from->setFeatureID(
-            ::kdm::event::EventPackage::READSSTATE__FROM);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsStateEClass->getEStructuralFeatures()).basicAdd(
-            m_ReadsState__from);
-    m_ReadsState__from->basicsetEContainingClass(m_ReadsStateEClass);
+    { // ReadsState
+        m_ReadsStateEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_ReadsStateEClass->setClassifierID(READSSTATE);
+        m_ReadsStateEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ReadsStateEClass);
+        // m_ReadsState__to has already been allocated above
+        m_ReadsState__to->setFeatureID(
+                ::kdm::event::EventPackage::READSSTATE__TO);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsStateEClass->getEStructuralFeatures()).basicAdd(
+                m_ReadsState__to);
+        m_ReadsState__to->basicsetEContainingClass(m_ReadsStateEClass);
+        // m_ReadsState__from has already been allocated above
+        m_ReadsState__from->setFeatureID(
+                ::kdm::event::EventPackage::READSSTATE__FROM);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsStateEClass->getEStructuralFeatures()).basicAdd(
+                m_ReadsState__from);
+        m_ReadsState__from->basicsetEContainingClass(m_ReadsStateEClass);
+    }
 
-    // ProducesEvent
-    m_ProducesEventEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_ProducesEventEClass->setClassifierID(PRODUCESEVENT);
-    m_ProducesEventEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ProducesEventEClass);
-    // m_ProducesEvent__to has already been allocated above
-    m_ProducesEvent__to->setFeatureID(
-            ::kdm::event::EventPackage::PRODUCESEVENT__TO);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEventEClass->getEStructuralFeatures()).basicAdd(
-            m_ProducesEvent__to);
-    m_ProducesEvent__to->basicsetEContainingClass(m_ProducesEventEClass);
-    // m_ProducesEvent__from has already been allocated above
-    m_ProducesEvent__from->setFeatureID(
-            ::kdm::event::EventPackage::PRODUCESEVENT__FROM);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEventEClass->getEStructuralFeatures()).basicAdd(
-            m_ProducesEvent__from);
-    m_ProducesEvent__from->basicsetEContainingClass(m_ProducesEventEClass);
+    { // ProducesEvent
+        m_ProducesEventEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_ProducesEventEClass->setClassifierID(PRODUCESEVENT);
+        m_ProducesEventEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ProducesEventEClass);
+        // m_ProducesEvent__to has already been allocated above
+        m_ProducesEvent__to->setFeatureID(
+                ::kdm::event::EventPackage::PRODUCESEVENT__TO);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEventEClass->getEStructuralFeatures()).basicAdd(
+                m_ProducesEvent__to);
+        m_ProducesEvent__to->basicsetEContainingClass(m_ProducesEventEClass);
+        // m_ProducesEvent__from has already been allocated above
+        m_ProducesEvent__from->setFeatureID(
+                ::kdm::event::EventPackage::PRODUCESEVENT__FROM);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEventEClass->getEStructuralFeatures()).basicAdd(
+                m_ProducesEvent__from);
+        m_ProducesEvent__from->basicsetEContainingClass(m_ProducesEventEClass);
+    }
 
-    // ConsumesEvent
-    m_ConsumesEventEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_ConsumesEventEClass->setClassifierID(CONSUMESEVENT);
-    m_ConsumesEventEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ConsumesEventEClass);
-    // m_ConsumesEvent__to has already been allocated above
-    m_ConsumesEvent__to->setFeatureID(
-            ::kdm::event::EventPackage::CONSUMESEVENT__TO);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEventEClass->getEStructuralFeatures()).basicAdd(
-            m_ConsumesEvent__to);
-    m_ConsumesEvent__to->basicsetEContainingClass(m_ConsumesEventEClass);
-    // m_ConsumesEvent__from has already been allocated above
-    m_ConsumesEvent__from->setFeatureID(
-            ::kdm::event::EventPackage::CONSUMESEVENT__FROM);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEventEClass->getEStructuralFeatures()).basicAdd(
-            m_ConsumesEvent__from);
-    m_ConsumesEvent__from->basicsetEContainingClass(m_ConsumesEventEClass);
+    { // ConsumesEvent
+        m_ConsumesEventEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_ConsumesEventEClass->setClassifierID(CONSUMESEVENT);
+        m_ConsumesEventEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ConsumesEventEClass);
+        // m_ConsumesEvent__to has already been allocated above
+        m_ConsumesEvent__to->setFeatureID(
+                ::kdm::event::EventPackage::CONSUMESEVENT__TO);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEventEClass->getEStructuralFeatures()).basicAdd(
+                m_ConsumesEvent__to);
+        m_ConsumesEvent__to->basicsetEContainingClass(m_ConsumesEventEClass);
+        // m_ConsumesEvent__from has already been allocated above
+        m_ConsumesEvent__from->setFeatureID(
+                ::kdm::event::EventPackage::CONSUMESEVENT__FROM);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEventEClass->getEStructuralFeatures()).basicAdd(
+                m_ConsumesEvent__from);
+        m_ConsumesEvent__from->basicsetEContainingClass(m_ConsumesEventEClass);
+    }
 
-    // NextState
-    m_NextStateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_NextStateEClass->setClassifierID(NEXTSTATE);
-    m_NextStateEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NextStateEClass);
-    // m_NextState__to has already been allocated above
-    m_NextState__to->setFeatureID(::kdm::event::EventPackage::NEXTSTATE__TO);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NextStateEClass->getEStructuralFeatures()).basicAdd(
-            m_NextState__to);
-    m_NextState__to->basicsetEContainingClass(m_NextStateEClass);
-    // m_NextState__from has already been allocated above
-    m_NextState__from->setFeatureID(
-            ::kdm::event::EventPackage::NEXTSTATE__FROM);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NextStateEClass->getEStructuralFeatures()).basicAdd(
-            m_NextState__from);
-    m_NextState__from->basicsetEContainingClass(m_NextStateEClass);
+    { // NextState
+        m_NextStateEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_NextStateEClass->setClassifierID(NEXTSTATE);
+        m_NextStateEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NextStateEClass);
+        // m_NextState__to has already been allocated above
+        m_NextState__to->setFeatureID(
+                ::kdm::event::EventPackage::NEXTSTATE__TO);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NextStateEClass->getEStructuralFeatures()).basicAdd(
+                m_NextState__to);
+        m_NextState__to->basicsetEContainingClass(m_NextStateEClass);
+        // m_NextState__from has already been allocated above
+        m_NextState__from->setFeatureID(
+                ::kdm::event::EventPackage::NEXTSTATE__FROM);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NextStateEClass->getEStructuralFeatures()).basicAdd(
+                m_NextState__from);
+        m_NextState__from->basicsetEContainingClass(m_NextStateEClass);
+    }
 
-    // InitialState
-    m_InitialStateEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_InitialStateEClass->setClassifierID(INITIALSTATE);
-    m_InitialStateEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_InitialStateEClass);
+    { // InitialState
+        m_InitialStateEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_InitialStateEClass->setClassifierID(INITIALSTATE);
+        m_InitialStateEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_InitialStateEClass);
+    }
 
-    // EventElement
-    m_EventElementEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_EventElementEClass->setClassifierID(EVENTELEMENT);
-    m_EventElementEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_EventElementEClass);
+    { // EventElement
+        m_EventElementEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_EventElementEClass->setClassifierID(EVENTELEMENT);
+        m_EventElementEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_EventElementEClass);
+    }
 
-    // HasState
-    m_HasStateEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_HasStateEClass->setClassifierID(HASSTATE);
-    m_HasStateEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_HasStateEClass);
-    // m_HasState__to has already been allocated above
-    m_HasState__to->setFeatureID(::kdm::event::EventPackage::HASSTATE__TO);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasStateEClass->getEStructuralFeatures()).basicAdd(
-            m_HasState__to);
-    m_HasState__to->basicsetEContainingClass(m_HasStateEClass);
-    // m_HasState__from has already been allocated above
-    m_HasState__from->setFeatureID(::kdm::event::EventPackage::HASSTATE__FROM);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasStateEClass->getEStructuralFeatures()).basicAdd(
-            m_HasState__from);
-    m_HasState__from->basicsetEContainingClass(m_HasStateEClass);
+    { // HasState
+        m_HasStateEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_HasStateEClass->setClassifierID(HASSTATE);
+        m_HasStateEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_HasStateEClass);
+        // m_HasState__to has already been allocated above
+        m_HasState__to->setFeatureID(::kdm::event::EventPackage::HASSTATE__TO);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasStateEClass->getEStructuralFeatures()).basicAdd(
+                m_HasState__to);
+        m_HasState__to->basicsetEContainingClass(m_HasStateEClass);
+        // m_HasState__from has already been allocated above
+        m_HasState__from->setFeatureID(
+                ::kdm::event::EventPackage::HASSTATE__FROM);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasStateEClass->getEStructuralFeatures()).basicAdd(
+                m_HasState__from);
+        m_HasState__from->basicsetEContainingClass(m_HasStateEClass);
+    }
 
     // Create enums
 
@@ -456,361 +485,424 @@ void EventPackage::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // EventModel
-    m_EventModelEClass->setName("EventModel");
-    m_EventModelEClass->setAbstract(false);
-    m_EventModelEClass->setInterface(false);
-    m_EventModel__eventElement->setEType(m_AbstractEventElementEClass);
-    m_EventModel__eventElement->setName("eventElement");
-    m_EventModel__eventElement->setDefaultValueLiteral("");
-    m_EventModel__eventElement->setLowerBound(0);
-    m_EventModel__eventElement->setUpperBound(-1);
-    m_EventModel__eventElement->setTransient(false);
-    m_EventModel__eventElement->setVolatile(false);
-    m_EventModel__eventElement->setChangeable(true);
-    m_EventModel__eventElement->setContainment(true);
-    m_EventModel__eventElement->setResolveProxies(true);
-    m_EventModel__eventElement->setUnique(true);
-    m_EventModel__eventElement->setDerived(false);
-    m_EventModel__eventElement->setOrdered(false);
-    // AbstractEventElement
-    m_AbstractEventElementEClass->setName("AbstractEventElement");
-    m_AbstractEventElementEClass->setAbstract(true);
-    m_AbstractEventElementEClass->setInterface(false);
-    m_AbstractEventElement__source->setEType(
-            dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-    m_AbstractEventElement__source->setName("source");
-    m_AbstractEventElement__source->setDefaultValueLiteral("");
-    m_AbstractEventElement__source->setLowerBound(0);
-    m_AbstractEventElement__source->setUpperBound(-1);
-    m_AbstractEventElement__source->setTransient(false);
-    m_AbstractEventElement__source->setVolatile(false);
-    m_AbstractEventElement__source->setChangeable(true);
-    m_AbstractEventElement__source->setContainment(true);
-    m_AbstractEventElement__source->setResolveProxies(true);
-    m_AbstractEventElement__source->setUnique(true);
-    m_AbstractEventElement__source->setDerived(false);
-    m_AbstractEventElement__source->setOrdered(false);
-    m_AbstractEventElement__eventRelation->setEType(
-            m_AbstractEventRelationshipEClass);
-    m_AbstractEventElement__eventRelation->setName("eventRelation");
-    m_AbstractEventElement__eventRelation->setDefaultValueLiteral("");
-    m_AbstractEventElement__eventRelation->setLowerBound(0);
-    m_AbstractEventElement__eventRelation->setUpperBound(-1);
-    m_AbstractEventElement__eventRelation->setTransient(false);
-    m_AbstractEventElement__eventRelation->setVolatile(false);
-    m_AbstractEventElement__eventRelation->setChangeable(true);
-    m_AbstractEventElement__eventRelation->setContainment(true);
-    m_AbstractEventElement__eventRelation->setResolveProxies(true);
-    m_AbstractEventElement__eventRelation->setUnique(true);
-    m_AbstractEventElement__eventRelation->setDerived(false);
-    m_AbstractEventElement__eventRelation->setOrdered(false);
-    m_AbstractEventElement__abstraction->setEType(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-    m_AbstractEventElement__abstraction->setName("abstraction");
-    m_AbstractEventElement__abstraction->setDefaultValueLiteral("");
-    m_AbstractEventElement__abstraction->setLowerBound(0);
-    m_AbstractEventElement__abstraction->setUpperBound(-1);
-    m_AbstractEventElement__abstraction->setTransient(false);
-    m_AbstractEventElement__abstraction->setVolatile(false);
-    m_AbstractEventElement__abstraction->setChangeable(true);
-    m_AbstractEventElement__abstraction->setContainment(true);
-    m_AbstractEventElement__abstraction->setResolveProxies(true);
-    m_AbstractEventElement__abstraction->setUnique(true);
-    m_AbstractEventElement__abstraction->setDerived(false);
-    m_AbstractEventElement__abstraction->setOrdered(true);
-    m_AbstractEventElement__implementation->setEType(
-            dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
-    m_AbstractEventElement__implementation->setName("implementation");
-    m_AbstractEventElement__implementation->setDefaultValueLiteral("");
-    m_AbstractEventElement__implementation->setLowerBound(0);
-    m_AbstractEventElement__implementation->setUpperBound(-1);
-    m_AbstractEventElement__implementation->setTransient(false);
-    m_AbstractEventElement__implementation->setVolatile(false);
-    m_AbstractEventElement__implementation->setChangeable(true);
-    m_AbstractEventElement__implementation->setContainment(false);
-    m_AbstractEventElement__implementation->setResolveProxies(true);
-    m_AbstractEventElement__implementation->setUnique(true);
-    m_AbstractEventElement__implementation->setDerived(false);
-    m_AbstractEventElement__implementation->setOrdered(false);
-    // Event
-    m_EventEClass->setName("Event");
-    m_EventEClass->setAbstract(false);
-    m_EventEClass->setInterface(false);
-    m_Event__kind->setEType(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-    m_Event__kind->setName("kind");
-    m_Event__kind->setDefaultValueLiteral("");
-    m_Event__kind->setLowerBound(0);
-    m_Event__kind->setUpperBound(1);
-    m_Event__kind->setTransient(false);
-    m_Event__kind->setVolatile(false);
-    m_Event__kind->setChangeable(true);
-    m_Event__kind->setUnsettable(false);
-    m_Event__kind->setID(false);
-    m_Event__kind->setUnique(false);
-    m_Event__kind->setDerived(false);
-    m_Event__kind->setOrdered(false);
-    // AbstractEventRelationship
-    m_AbstractEventRelationshipEClass->setName("AbstractEventRelationship");
-    m_AbstractEventRelationshipEClass->setAbstract(true);
-    m_AbstractEventRelationshipEClass->setInterface(false);
-    // EventRelationship
-    m_EventRelationshipEClass->setName("EventRelationship");
-    m_EventRelationshipEClass->setAbstract(false);
-    m_EventRelationshipEClass->setInterface(false);
-    m_EventRelationship__to->setEType(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-    m_EventRelationship__to->setName("to");
-    m_EventRelationship__to->setDefaultValueLiteral("");
-    m_EventRelationship__to->setLowerBound(1);
-    m_EventRelationship__to->setUpperBound(1);
-    m_EventRelationship__to->setTransient(false);
-    m_EventRelationship__to->setVolatile(false);
-    m_EventRelationship__to->setChangeable(true);
-    m_EventRelationship__to->setContainment(false);
-    m_EventRelationship__to->setResolveProxies(true);
-    m_EventRelationship__to->setUnique(true);
-    m_EventRelationship__to->setDerived(false);
-    m_EventRelationship__to->setOrdered(false);
-    m_EventRelationship__from->setEType(m_AbstractEventElementEClass);
-    m_EventRelationship__from->setName("from");
-    m_EventRelationship__from->setDefaultValueLiteral("");
-    m_EventRelationship__from->setLowerBound(1);
-    m_EventRelationship__from->setUpperBound(1);
-    m_EventRelationship__from->setTransient(false);
-    m_EventRelationship__from->setVolatile(false);
-    m_EventRelationship__from->setChangeable(true);
-    m_EventRelationship__from->setContainment(false);
-    m_EventRelationship__from->setResolveProxies(true);
-    m_EventRelationship__from->setUnique(true);
-    m_EventRelationship__from->setDerived(false);
-    m_EventRelationship__from->setOrdered(false);
-    // EventResource
-    m_EventResourceEClass->setName("EventResource");
-    m_EventResourceEClass->setAbstract(false);
-    m_EventResourceEClass->setInterface(false);
-    m_EventResource__eventElement->setEType(m_AbstractEventElementEClass);
-    m_EventResource__eventElement->setName("eventElement");
-    m_EventResource__eventElement->setDefaultValueLiteral("");
-    m_EventResource__eventElement->setLowerBound(0);
-    m_EventResource__eventElement->setUpperBound(-1);
-    m_EventResource__eventElement->setTransient(false);
-    m_EventResource__eventElement->setVolatile(false);
-    m_EventResource__eventElement->setChangeable(true);
-    m_EventResource__eventElement->setContainment(true);
-    m_EventResource__eventElement->setResolveProxies(true);
-    m_EventResource__eventElement->setUnique(true);
-    m_EventResource__eventElement->setDerived(false);
-    m_EventResource__eventElement->setOrdered(false);
-    // State
-    m_StateEClass->setName("State");
-    m_StateEClass->setAbstract(false);
-    m_StateEClass->setInterface(false);
-    // Transition
-    m_TransitionEClass->setName("Transition");
-    m_TransitionEClass->setAbstract(false);
-    m_TransitionEClass->setInterface(false);
-    // OnEntry
-    m_OnEntryEClass->setName("OnEntry");
-    m_OnEntryEClass->setAbstract(false);
-    m_OnEntryEClass->setInterface(false);
-    // OnExit
-    m_OnExitEClass->setName("OnExit");
-    m_OnExitEClass->setAbstract(false);
-    m_OnExitEClass->setInterface(false);
-    // EventAction
-    m_EventActionEClass->setName("EventAction");
-    m_EventActionEClass->setAbstract(false);
-    m_EventActionEClass->setInterface(false);
-    m_EventAction__kind->setEType(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-    m_EventAction__kind->setName("kind");
-    m_EventAction__kind->setDefaultValueLiteral("");
-    m_EventAction__kind->setLowerBound(0);
-    m_EventAction__kind->setUpperBound(1);
-    m_EventAction__kind->setTransient(false);
-    m_EventAction__kind->setVolatile(false);
-    m_EventAction__kind->setChangeable(true);
-    m_EventAction__kind->setUnsettable(false);
-    m_EventAction__kind->setID(false);
-    m_EventAction__kind->setUnique(false);
-    m_EventAction__kind->setDerived(false);
-    m_EventAction__kind->setOrdered(false);
-    m_EventAction__eventElement->setEType(m_EventEClass);
-    m_EventAction__eventElement->setName("eventElement");
-    m_EventAction__eventElement->setDefaultValueLiteral("");
-    m_EventAction__eventElement->setLowerBound(0);
-    m_EventAction__eventElement->setUpperBound(-1);
-    m_EventAction__eventElement->setTransient(false);
-    m_EventAction__eventElement->setVolatile(false);
-    m_EventAction__eventElement->setChangeable(true);
-    m_EventAction__eventElement->setContainment(true);
-    m_EventAction__eventElement->setResolveProxies(true);
-    m_EventAction__eventElement->setUnique(true);
-    m_EventAction__eventElement->setDerived(false);
-    m_EventAction__eventElement->setOrdered(false);
-    // ReadsState
-    m_ReadsStateEClass->setName("ReadsState");
-    m_ReadsStateEClass->setAbstract(false);
-    m_ReadsStateEClass->setInterface(false);
-    m_ReadsState__to->setEType(m_StateEClass);
-    m_ReadsState__to->setName("to");
-    m_ReadsState__to->setDefaultValueLiteral("");
-    m_ReadsState__to->setLowerBound(1);
-    m_ReadsState__to->setUpperBound(1);
-    m_ReadsState__to->setTransient(false);
-    m_ReadsState__to->setVolatile(false);
-    m_ReadsState__to->setChangeable(true);
-    m_ReadsState__to->setContainment(false);
-    m_ReadsState__to->setResolveProxies(true);
-    m_ReadsState__to->setUnique(true);
-    m_ReadsState__to->setDerived(false);
-    m_ReadsState__to->setOrdered(false);
-    m_ReadsState__from->setEType(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-    m_ReadsState__from->setName("from");
-    m_ReadsState__from->setDefaultValueLiteral("");
-    m_ReadsState__from->setLowerBound(1);
-    m_ReadsState__from->setUpperBound(1);
-    m_ReadsState__from->setTransient(false);
-    m_ReadsState__from->setVolatile(false);
-    m_ReadsState__from->setChangeable(true);
-    m_ReadsState__from->setContainment(false);
-    m_ReadsState__from->setResolveProxies(true);
-    m_ReadsState__from->setUnique(true);
-    m_ReadsState__from->setDerived(false);
-    m_ReadsState__from->setOrdered(false);
-    // ProducesEvent
-    m_ProducesEventEClass->setName("ProducesEvent");
-    m_ProducesEventEClass->setAbstract(false);
-    m_ProducesEventEClass->setInterface(false);
-    m_ProducesEvent__to->setEType(m_EventEClass);
-    m_ProducesEvent__to->setName("to");
-    m_ProducesEvent__to->setDefaultValueLiteral("");
-    m_ProducesEvent__to->setLowerBound(1);
-    m_ProducesEvent__to->setUpperBound(1);
-    m_ProducesEvent__to->setTransient(false);
-    m_ProducesEvent__to->setVolatile(false);
-    m_ProducesEvent__to->setChangeable(true);
-    m_ProducesEvent__to->setContainment(false);
-    m_ProducesEvent__to->setResolveProxies(true);
-    m_ProducesEvent__to->setUnique(true);
-    m_ProducesEvent__to->setDerived(false);
-    m_ProducesEvent__to->setOrdered(false);
-    m_ProducesEvent__from->setEType(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-    m_ProducesEvent__from->setName("from");
-    m_ProducesEvent__from->setDefaultValueLiteral("");
-    m_ProducesEvent__from->setLowerBound(1);
-    m_ProducesEvent__from->setUpperBound(1);
-    m_ProducesEvent__from->setTransient(false);
-    m_ProducesEvent__from->setVolatile(false);
-    m_ProducesEvent__from->setChangeable(true);
-    m_ProducesEvent__from->setContainment(false);
-    m_ProducesEvent__from->setResolveProxies(true);
-    m_ProducesEvent__from->setUnique(true);
-    m_ProducesEvent__from->setDerived(false);
-    m_ProducesEvent__from->setOrdered(false);
-    // ConsumesEvent
-    m_ConsumesEventEClass->setName("ConsumesEvent");
-    m_ConsumesEventEClass->setAbstract(false);
-    m_ConsumesEventEClass->setInterface(false);
-    m_ConsumesEvent__to->setEType(m_EventEClass);
-    m_ConsumesEvent__to->setName("to");
-    m_ConsumesEvent__to->setDefaultValueLiteral("");
-    m_ConsumesEvent__to->setLowerBound(1);
-    m_ConsumesEvent__to->setUpperBound(1);
-    m_ConsumesEvent__to->setTransient(false);
-    m_ConsumesEvent__to->setVolatile(false);
-    m_ConsumesEvent__to->setChangeable(true);
-    m_ConsumesEvent__to->setContainment(false);
-    m_ConsumesEvent__to->setResolveProxies(true);
-    m_ConsumesEvent__to->setUnique(true);
-    m_ConsumesEvent__to->setDerived(false);
-    m_ConsumesEvent__to->setOrdered(false);
-    m_ConsumesEvent__from->setEType(m_TransitionEClass);
-    m_ConsumesEvent__from->setName("from");
-    m_ConsumesEvent__from->setDefaultValueLiteral("");
-    m_ConsumesEvent__from->setLowerBound(1);
-    m_ConsumesEvent__from->setUpperBound(1);
-    m_ConsumesEvent__from->setTransient(false);
-    m_ConsumesEvent__from->setVolatile(false);
-    m_ConsumesEvent__from->setChangeable(true);
-    m_ConsumesEvent__from->setContainment(false);
-    m_ConsumesEvent__from->setResolveProxies(true);
-    m_ConsumesEvent__from->setUnique(true);
-    m_ConsumesEvent__from->setDerived(false);
-    m_ConsumesEvent__from->setOrdered(false);
-    // NextState
-    m_NextStateEClass->setName("NextState");
-    m_NextStateEClass->setAbstract(false);
-    m_NextStateEClass->setInterface(false);
-    m_NextState__to->setEType(m_StateEClass);
-    m_NextState__to->setName("to");
-    m_NextState__to->setDefaultValueLiteral("");
-    m_NextState__to->setLowerBound(1);
-    m_NextState__to->setUpperBound(1);
-    m_NextState__to->setTransient(false);
-    m_NextState__to->setVolatile(false);
-    m_NextState__to->setChangeable(true);
-    m_NextState__to->setContainment(false);
-    m_NextState__to->setResolveProxies(true);
-    m_NextState__to->setUnique(true);
-    m_NextState__to->setDerived(false);
-    m_NextState__to->setOrdered(false);
-    m_NextState__from->setEType(m_TransitionEClass);
-    m_NextState__from->setName("from");
-    m_NextState__from->setDefaultValueLiteral("");
-    m_NextState__from->setLowerBound(1);
-    m_NextState__from->setUpperBound(1);
-    m_NextState__from->setTransient(false);
-    m_NextState__from->setVolatile(false);
-    m_NextState__from->setChangeable(true);
-    m_NextState__from->setContainment(false);
-    m_NextState__from->setResolveProxies(true);
-    m_NextState__from->setUnique(true);
-    m_NextState__from->setDerived(false);
-    m_NextState__from->setOrdered(false);
-    // InitialState
-    m_InitialStateEClass->setName("InitialState");
-    m_InitialStateEClass->setAbstract(false);
-    m_InitialStateEClass->setInterface(false);
-    // EventElement
-    m_EventElementEClass->setName("EventElement");
-    m_EventElementEClass->setAbstract(false);
-    m_EventElementEClass->setInterface(false);
-    // HasState
-    m_HasStateEClass->setName("HasState");
-    m_HasStateEClass->setAbstract(false);
-    m_HasStateEClass->setInterface(false);
-    m_HasState__to->setEType(m_AbstractEventElementEClass);
-    m_HasState__to->setName("to");
-    m_HasState__to->setDefaultValueLiteral("");
-    m_HasState__to->setLowerBound(1);
-    m_HasState__to->setUpperBound(1);
-    m_HasState__to->setTransient(false);
-    m_HasState__to->setVolatile(false);
-    m_HasState__to->setChangeable(true);
-    m_HasState__to->setContainment(false);
-    m_HasState__to->setResolveProxies(true);
-    m_HasState__to->setUnique(true);
-    m_HasState__to->setDerived(false);
-    m_HasState__to->setOrdered(false);
-    m_HasState__from->setEType(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-    m_HasState__from->setName("from");
-    m_HasState__from->setDefaultValueLiteral("");
-    m_HasState__from->setLowerBound(1);
-    m_HasState__from->setUpperBound(1);
-    m_HasState__from->setTransient(false);
-    m_HasState__from->setVolatile(false);
-    m_HasState__from->setChangeable(true);
-    m_HasState__from->setContainment(false);
-    m_HasState__from->setResolveProxies(true);
-    m_HasState__from->setUnique(true);
-    m_HasState__from->setDerived(false);
-    m_HasState__from->setOrdered(false);
+    { // EventModel
+        m_EventModelEClass->setName("EventModel");
+        m_EventModelEClass->setAbstract(false);
+        m_EventModelEClass->setInterface(false);
+
+        m_EventModel__eventElement->setEType(m_AbstractEventElementEClass);
+        m_EventModel__eventElement->setName("eventElement");
+        m_EventModel__eventElement->setDefaultValueLiteral("");
+        m_EventModel__eventElement->setLowerBound(0);
+        m_EventModel__eventElement->setUpperBound(-1);
+        m_EventModel__eventElement->setTransient(false);
+        m_EventModel__eventElement->setVolatile(false);
+        m_EventModel__eventElement->setChangeable(true);
+        m_EventModel__eventElement->setContainment(true);
+        m_EventModel__eventElement->setResolveProxies(true);
+        m_EventModel__eventElement->setUnique(true);
+        m_EventModel__eventElement->setDerived(false);
+        m_EventModel__eventElement->setOrdered(false);
+
+    }
+
+    { // AbstractEventElement
+        m_AbstractEventElementEClass->setName("AbstractEventElement");
+        m_AbstractEventElementEClass->setAbstract(true);
+        m_AbstractEventElementEClass->setInterface(false);
+
+        m_AbstractEventElement__source->setEType(
+                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+        m_AbstractEventElement__source->setName("source");
+        m_AbstractEventElement__source->setDefaultValueLiteral("");
+        m_AbstractEventElement__source->setLowerBound(0);
+        m_AbstractEventElement__source->setUpperBound(-1);
+        m_AbstractEventElement__source->setTransient(false);
+        m_AbstractEventElement__source->setVolatile(false);
+        m_AbstractEventElement__source->setChangeable(true);
+        m_AbstractEventElement__source->setContainment(true);
+        m_AbstractEventElement__source->setResolveProxies(true);
+        m_AbstractEventElement__source->setUnique(true);
+        m_AbstractEventElement__source->setDerived(false);
+        m_AbstractEventElement__source->setOrdered(false);
+        m_AbstractEventElement__eventRelation->setEType(
+                m_AbstractEventRelationshipEClass);
+        m_AbstractEventElement__eventRelation->setName("eventRelation");
+        m_AbstractEventElement__eventRelation->setDefaultValueLiteral("");
+        m_AbstractEventElement__eventRelation->setLowerBound(0);
+        m_AbstractEventElement__eventRelation->setUpperBound(-1);
+        m_AbstractEventElement__eventRelation->setTransient(false);
+        m_AbstractEventElement__eventRelation->setVolatile(false);
+        m_AbstractEventElement__eventRelation->setChangeable(true);
+        m_AbstractEventElement__eventRelation->setContainment(true);
+        m_AbstractEventElement__eventRelation->setResolveProxies(true);
+        m_AbstractEventElement__eventRelation->setUnique(true);
+        m_AbstractEventElement__eventRelation->setDerived(false);
+        m_AbstractEventElement__eventRelation->setOrdered(false);
+        m_AbstractEventElement__abstraction->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        m_AbstractEventElement__abstraction->setName("abstraction");
+        m_AbstractEventElement__abstraction->setDefaultValueLiteral("");
+        m_AbstractEventElement__abstraction->setLowerBound(0);
+        m_AbstractEventElement__abstraction->setUpperBound(-1);
+        m_AbstractEventElement__abstraction->setTransient(false);
+        m_AbstractEventElement__abstraction->setVolatile(false);
+        m_AbstractEventElement__abstraction->setChangeable(true);
+        m_AbstractEventElement__abstraction->setContainment(true);
+        m_AbstractEventElement__abstraction->setResolveProxies(true);
+        m_AbstractEventElement__abstraction->setUnique(true);
+        m_AbstractEventElement__abstraction->setDerived(false);
+        m_AbstractEventElement__abstraction->setOrdered(true);
+        m_AbstractEventElement__implementation->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
+        m_AbstractEventElement__implementation->setName("implementation");
+        m_AbstractEventElement__implementation->setDefaultValueLiteral("");
+        m_AbstractEventElement__implementation->setLowerBound(0);
+        m_AbstractEventElement__implementation->setUpperBound(-1);
+        m_AbstractEventElement__implementation->setTransient(false);
+        m_AbstractEventElement__implementation->setVolatile(false);
+        m_AbstractEventElement__implementation->setChangeable(true);
+        m_AbstractEventElement__implementation->setContainment(false);
+        m_AbstractEventElement__implementation->setResolveProxies(true);
+        m_AbstractEventElement__implementation->setUnique(true);
+        m_AbstractEventElement__implementation->setDerived(false);
+        m_AbstractEventElement__implementation->setOrdered(false);
+
+    }
+
+    { // Event
+        m_EventEClass->setName("Event");
+        m_EventEClass->setAbstract(false);
+        m_EventEClass->setInterface(false);
+        m_Event__kind->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        m_Event__kind->setName("kind");
+        m_Event__kind->setDefaultValueLiteral("");
+        m_Event__kind->setLowerBound(0);
+        m_Event__kind->setUpperBound(1);
+        m_Event__kind->setTransient(false);
+        m_Event__kind->setVolatile(false);
+        m_Event__kind->setChangeable(true);
+        m_Event__kind->setUnsettable(false);
+        m_Event__kind->setID(false);
+        m_Event__kind->setUnique(false);
+        m_Event__kind->setDerived(false);
+        m_Event__kind->setOrdered(false);
+
+    }
+
+    { // AbstractEventRelationship
+        m_AbstractEventRelationshipEClass->setName("AbstractEventRelationship");
+        m_AbstractEventRelationshipEClass->setAbstract(true);
+        m_AbstractEventRelationshipEClass->setInterface(false);
+
+    }
+
+    { // EventRelationship
+        m_EventRelationshipEClass->setName("EventRelationship");
+        m_EventRelationshipEClass->setAbstract(false);
+        m_EventRelationshipEClass->setInterface(false);
+
+        m_EventRelationship__to->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+        m_EventRelationship__to->setName("to");
+        m_EventRelationship__to->setDefaultValueLiteral("");
+        m_EventRelationship__to->setLowerBound(1);
+        m_EventRelationship__to->setUpperBound(1);
+        m_EventRelationship__to->setTransient(false);
+        m_EventRelationship__to->setVolatile(false);
+        m_EventRelationship__to->setChangeable(true);
+        m_EventRelationship__to->setContainment(false);
+        m_EventRelationship__to->setResolveProxies(true);
+        m_EventRelationship__to->setUnique(true);
+        m_EventRelationship__to->setDerived(false);
+        m_EventRelationship__to->setOrdered(false);
+        m_EventRelationship__from->setEType(m_AbstractEventElementEClass);
+        m_EventRelationship__from->setName("from");
+        m_EventRelationship__from->setDefaultValueLiteral("");
+        m_EventRelationship__from->setLowerBound(1);
+        m_EventRelationship__from->setUpperBound(1);
+        m_EventRelationship__from->setTransient(false);
+        m_EventRelationship__from->setVolatile(false);
+        m_EventRelationship__from->setChangeable(true);
+        m_EventRelationship__from->setContainment(false);
+        m_EventRelationship__from->setResolveProxies(true);
+        m_EventRelationship__from->setUnique(true);
+        m_EventRelationship__from->setDerived(false);
+        m_EventRelationship__from->setOrdered(false);
+
+    }
+
+    { // EventResource
+        m_EventResourceEClass->setName("EventResource");
+        m_EventResourceEClass->setAbstract(false);
+        m_EventResourceEClass->setInterface(false);
+
+        m_EventResource__eventElement->setEType(m_AbstractEventElementEClass);
+        m_EventResource__eventElement->setName("eventElement");
+        m_EventResource__eventElement->setDefaultValueLiteral("");
+        m_EventResource__eventElement->setLowerBound(0);
+        m_EventResource__eventElement->setUpperBound(-1);
+        m_EventResource__eventElement->setTransient(false);
+        m_EventResource__eventElement->setVolatile(false);
+        m_EventResource__eventElement->setChangeable(true);
+        m_EventResource__eventElement->setContainment(true);
+        m_EventResource__eventElement->setResolveProxies(true);
+        m_EventResource__eventElement->setUnique(true);
+        m_EventResource__eventElement->setDerived(false);
+        m_EventResource__eventElement->setOrdered(false);
+
+    }
+
+    { // State
+        m_StateEClass->setName("State");
+        m_StateEClass->setAbstract(false);
+        m_StateEClass->setInterface(false);
+
+    }
+
+    { // Transition
+        m_TransitionEClass->setName("Transition");
+        m_TransitionEClass->setAbstract(false);
+        m_TransitionEClass->setInterface(false);
+
+    }
+
+    { // OnEntry
+        m_OnEntryEClass->setName("OnEntry");
+        m_OnEntryEClass->setAbstract(false);
+        m_OnEntryEClass->setInterface(false);
+
+    }
+
+    { // OnExit
+        m_OnExitEClass->setName("OnExit");
+        m_OnExitEClass->setAbstract(false);
+        m_OnExitEClass->setInterface(false);
+
+    }
+
+    { // EventAction
+        m_EventActionEClass->setName("EventAction");
+        m_EventActionEClass->setAbstract(false);
+        m_EventActionEClass->setInterface(false);
+        m_EventAction__kind->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        m_EventAction__kind->setName("kind");
+        m_EventAction__kind->setDefaultValueLiteral("");
+        m_EventAction__kind->setLowerBound(0);
+        m_EventAction__kind->setUpperBound(1);
+        m_EventAction__kind->setTransient(false);
+        m_EventAction__kind->setVolatile(false);
+        m_EventAction__kind->setChangeable(true);
+        m_EventAction__kind->setUnsettable(false);
+        m_EventAction__kind->setID(false);
+        m_EventAction__kind->setUnique(false);
+        m_EventAction__kind->setDerived(false);
+        m_EventAction__kind->setOrdered(false);
+
+        m_EventAction__eventElement->setEType(m_EventEClass);
+        m_EventAction__eventElement->setName("eventElement");
+        m_EventAction__eventElement->setDefaultValueLiteral("");
+        m_EventAction__eventElement->setLowerBound(0);
+        m_EventAction__eventElement->setUpperBound(-1);
+        m_EventAction__eventElement->setTransient(false);
+        m_EventAction__eventElement->setVolatile(false);
+        m_EventAction__eventElement->setChangeable(true);
+        m_EventAction__eventElement->setContainment(true);
+        m_EventAction__eventElement->setResolveProxies(true);
+        m_EventAction__eventElement->setUnique(true);
+        m_EventAction__eventElement->setDerived(false);
+        m_EventAction__eventElement->setOrdered(false);
+
+    }
+
+    { // ReadsState
+        m_ReadsStateEClass->setName("ReadsState");
+        m_ReadsStateEClass->setAbstract(false);
+        m_ReadsStateEClass->setInterface(false);
+
+        m_ReadsState__to->setEType(m_StateEClass);
+        m_ReadsState__to->setName("to");
+        m_ReadsState__to->setDefaultValueLiteral("");
+        m_ReadsState__to->setLowerBound(1);
+        m_ReadsState__to->setUpperBound(1);
+        m_ReadsState__to->setTransient(false);
+        m_ReadsState__to->setVolatile(false);
+        m_ReadsState__to->setChangeable(true);
+        m_ReadsState__to->setContainment(false);
+        m_ReadsState__to->setResolveProxies(true);
+        m_ReadsState__to->setUnique(true);
+        m_ReadsState__to->setDerived(false);
+        m_ReadsState__to->setOrdered(false);
+        m_ReadsState__from->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        m_ReadsState__from->setName("from");
+        m_ReadsState__from->setDefaultValueLiteral("");
+        m_ReadsState__from->setLowerBound(1);
+        m_ReadsState__from->setUpperBound(1);
+        m_ReadsState__from->setTransient(false);
+        m_ReadsState__from->setVolatile(false);
+        m_ReadsState__from->setChangeable(true);
+        m_ReadsState__from->setContainment(false);
+        m_ReadsState__from->setResolveProxies(true);
+        m_ReadsState__from->setUnique(true);
+        m_ReadsState__from->setDerived(false);
+        m_ReadsState__from->setOrdered(false);
+
+    }
+
+    { // ProducesEvent
+        m_ProducesEventEClass->setName("ProducesEvent");
+        m_ProducesEventEClass->setAbstract(false);
+        m_ProducesEventEClass->setInterface(false);
+
+        m_ProducesEvent__to->setEType(m_EventEClass);
+        m_ProducesEvent__to->setName("to");
+        m_ProducesEvent__to->setDefaultValueLiteral("");
+        m_ProducesEvent__to->setLowerBound(1);
+        m_ProducesEvent__to->setUpperBound(1);
+        m_ProducesEvent__to->setTransient(false);
+        m_ProducesEvent__to->setVolatile(false);
+        m_ProducesEvent__to->setChangeable(true);
+        m_ProducesEvent__to->setContainment(false);
+        m_ProducesEvent__to->setResolveProxies(true);
+        m_ProducesEvent__to->setUnique(true);
+        m_ProducesEvent__to->setDerived(false);
+        m_ProducesEvent__to->setOrdered(false);
+        m_ProducesEvent__from->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        m_ProducesEvent__from->setName("from");
+        m_ProducesEvent__from->setDefaultValueLiteral("");
+        m_ProducesEvent__from->setLowerBound(1);
+        m_ProducesEvent__from->setUpperBound(1);
+        m_ProducesEvent__from->setTransient(false);
+        m_ProducesEvent__from->setVolatile(false);
+        m_ProducesEvent__from->setChangeable(true);
+        m_ProducesEvent__from->setContainment(false);
+        m_ProducesEvent__from->setResolveProxies(true);
+        m_ProducesEvent__from->setUnique(true);
+        m_ProducesEvent__from->setDerived(false);
+        m_ProducesEvent__from->setOrdered(false);
+
+    }
+
+    { // ConsumesEvent
+        m_ConsumesEventEClass->setName("ConsumesEvent");
+        m_ConsumesEventEClass->setAbstract(false);
+        m_ConsumesEventEClass->setInterface(false);
+
+        m_ConsumesEvent__to->setEType(m_EventEClass);
+        m_ConsumesEvent__to->setName("to");
+        m_ConsumesEvent__to->setDefaultValueLiteral("");
+        m_ConsumesEvent__to->setLowerBound(1);
+        m_ConsumesEvent__to->setUpperBound(1);
+        m_ConsumesEvent__to->setTransient(false);
+        m_ConsumesEvent__to->setVolatile(false);
+        m_ConsumesEvent__to->setChangeable(true);
+        m_ConsumesEvent__to->setContainment(false);
+        m_ConsumesEvent__to->setResolveProxies(true);
+        m_ConsumesEvent__to->setUnique(true);
+        m_ConsumesEvent__to->setDerived(false);
+        m_ConsumesEvent__to->setOrdered(false);
+        m_ConsumesEvent__from->setEType(m_TransitionEClass);
+        m_ConsumesEvent__from->setName("from");
+        m_ConsumesEvent__from->setDefaultValueLiteral("");
+        m_ConsumesEvent__from->setLowerBound(1);
+        m_ConsumesEvent__from->setUpperBound(1);
+        m_ConsumesEvent__from->setTransient(false);
+        m_ConsumesEvent__from->setVolatile(false);
+        m_ConsumesEvent__from->setChangeable(true);
+        m_ConsumesEvent__from->setContainment(false);
+        m_ConsumesEvent__from->setResolveProxies(true);
+        m_ConsumesEvent__from->setUnique(true);
+        m_ConsumesEvent__from->setDerived(false);
+        m_ConsumesEvent__from->setOrdered(false);
+
+    }
+
+    { // NextState
+        m_NextStateEClass->setName("NextState");
+        m_NextStateEClass->setAbstract(false);
+        m_NextStateEClass->setInterface(false);
+
+        m_NextState__to->setEType(m_StateEClass);
+        m_NextState__to->setName("to");
+        m_NextState__to->setDefaultValueLiteral("");
+        m_NextState__to->setLowerBound(1);
+        m_NextState__to->setUpperBound(1);
+        m_NextState__to->setTransient(false);
+        m_NextState__to->setVolatile(false);
+        m_NextState__to->setChangeable(true);
+        m_NextState__to->setContainment(false);
+        m_NextState__to->setResolveProxies(true);
+        m_NextState__to->setUnique(true);
+        m_NextState__to->setDerived(false);
+        m_NextState__to->setOrdered(false);
+        m_NextState__from->setEType(m_TransitionEClass);
+        m_NextState__from->setName("from");
+        m_NextState__from->setDefaultValueLiteral("");
+        m_NextState__from->setLowerBound(1);
+        m_NextState__from->setUpperBound(1);
+        m_NextState__from->setTransient(false);
+        m_NextState__from->setVolatile(false);
+        m_NextState__from->setChangeable(true);
+        m_NextState__from->setContainment(false);
+        m_NextState__from->setResolveProxies(true);
+        m_NextState__from->setUnique(true);
+        m_NextState__from->setDerived(false);
+        m_NextState__from->setOrdered(false);
+
+    }
+
+    { // InitialState
+        m_InitialStateEClass->setName("InitialState");
+        m_InitialStateEClass->setAbstract(false);
+        m_InitialStateEClass->setInterface(false);
+
+    }
+
+    { // EventElement
+        m_EventElementEClass->setName("EventElement");
+        m_EventElementEClass->setAbstract(false);
+        m_EventElementEClass->setInterface(false);
+
+    }
+
+    { // HasState
+        m_HasStateEClass->setName("HasState");
+        m_HasStateEClass->setAbstract(false);
+        m_HasStateEClass->setInterface(false);
+
+        m_HasState__to->setEType(m_AbstractEventElementEClass);
+        m_HasState__to->setName("to");
+        m_HasState__to->setDefaultValueLiteral("");
+        m_HasState__to->setLowerBound(1);
+        m_HasState__to->setUpperBound(1);
+        m_HasState__to->setTransient(false);
+        m_HasState__to->setVolatile(false);
+        m_HasState__to->setChangeable(true);
+        m_HasState__to->setContainment(false);
+        m_HasState__to->setResolveProxies(true);
+        m_HasState__to->setUnique(true);
+        m_HasState__to->setDerived(false);
+        m_HasState__to->setOrdered(false);
+        m_HasState__from->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        m_HasState__from->setName("from");
+        m_HasState__from->setDefaultValueLiteral("");
+        m_HasState__from->setLowerBound(1);
+        m_HasState__from->setUpperBound(1);
+        m_HasState__from->setTransient(false);
+        m_HasState__from->setVolatile(false);
+        m_HasState__from->setChangeable(true);
+        m_HasState__from->setContainment(false);
+        m_HasState__from->setResolveProxies(true);
+        m_HasState__from->setUnique(true);
+        m_HasState__from->setDerived(false);
+        m_HasState__from->setOrdered(false);
+
+    }
 
     // TODO: Initialize data types
 

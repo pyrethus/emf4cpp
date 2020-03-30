@@ -96,7 +96,7 @@ void ProducesEvent::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ProducesEvent::eSet(::ecore::EInt _featureID,
@@ -154,7 +154,7 @@ void ProducesEvent::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ProducesEvent::eIsSet(::ecore::EInt _featureID)
@@ -175,7 +175,7 @@ void ProducesEvent::eSet(::ecore::EInt _featureID,
         return getFrom().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ProducesEvent::eUnset(::ecore::EInt _featureID)
@@ -184,7 +184,7 @@ void ProducesEvent::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ProducesEvent::_eClass()

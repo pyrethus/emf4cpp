@@ -49,11 +49,8 @@ public:
     // Operations
 
     // Attributes
-    virtual ::type::String getRawValue () const;
-    virtual void setRawValue (::type::String _rawValue);
-
-    virtual ::type::AnySimpleType getValue () const;
-    virtual void setValue (::type::AnySimpleType _value);
+    virtual ::type::String getRawValue ();
+    virtual ::type::AnySimpleType getValue ();
 
     // References
     virtual ::ecore::EDataType_ptr getInstanceType () const;
@@ -87,12 +84,6 @@ protected:
     {   return std::dynamic_pointer_cast<SimpleAnyType>(shared_from_this());}
 
     // Attributes
-
-    ::type::String m_rawValue
-    {};
-
-    ::type::AnySimpleType m_value
-    {};
 
     // References
 

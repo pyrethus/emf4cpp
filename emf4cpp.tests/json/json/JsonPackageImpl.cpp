@@ -82,101 +82,114 @@ void JsonPackage::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // ObjectValue
-    m_ObjectValueEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_ObjectValueEClass->setClassifierID(OBJECTVALUE);
-    m_ObjectValueEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ObjectValueEClass);
-    // m_ObjectValue__members has already been allocated above
-    m_ObjectValue__members->setFeatureID(
-            ::json::JsonPackage::OBJECTVALUE__MEMBERS);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ObjectValueEClass->getEStructuralFeatures()).basicAdd(
-            m_ObjectValue__members);
-    m_ObjectValue__members->basicsetEContainingClass(m_ObjectValueEClass);
+    { // ObjectValue
+        m_ObjectValueEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_ObjectValueEClass->setClassifierID(OBJECTVALUE);
+        m_ObjectValueEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ObjectValueEClass);
+        // m_ObjectValue__members has already been allocated above
+        m_ObjectValue__members->setFeatureID(
+                ::json::JsonPackage::OBJECTVALUE__MEMBERS);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ObjectValueEClass->getEStructuralFeatures()).basicAdd(
+                m_ObjectValue__members);
+        m_ObjectValue__members->basicsetEContainingClass(m_ObjectValueEClass);
+    }
 
-    // NVPair
-    m_NVPairEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_NVPairEClass->setClassifierID(NVPAIR);
-    m_NVPairEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NVPairEClass);
-    // m_NVPair__name has already been allocated above
-    m_NVPair__name->setFeatureID(::json::JsonPackage::NVPAIR__NAME);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NVPairEClass->getEStructuralFeatures()).basicAdd(
-            m_NVPair__name);
-    m_NVPair__name->basicsetEContainingClass(m_NVPairEClass);
-    // m_NVPair__value has already been allocated above
-    m_NVPair__value->setFeatureID(::json::JsonPackage::NVPAIR__VALUE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NVPairEClass->getEStructuralFeatures()).basicAdd(
-            m_NVPair__value);
-    m_NVPair__value->basicsetEContainingClass(m_NVPairEClass);
+    { // NVPair
+        m_NVPairEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_NVPairEClass->setClassifierID(NVPAIR);
+        m_NVPairEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NVPairEClass);
+        // m_NVPair__name has already been allocated above
+        m_NVPair__name->setFeatureID(::json::JsonPackage::NVPAIR__NAME);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NVPairEClass->getEStructuralFeatures()).basicAdd(
+                m_NVPair__name);
+        m_NVPair__name->basicsetEContainingClass(m_NVPairEClass);
+        // m_NVPair__value has already been allocated above
+        m_NVPair__value->setFeatureID(::json::JsonPackage::NVPAIR__VALUE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NVPairEClass->getEStructuralFeatures()).basicAdd(
+                m_NVPair__value);
+        m_NVPair__value->basicsetEContainingClass(m_NVPairEClass);
+    }
 
-    // Value
-    m_ValueEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_ValueEClass->setClassifierID(VALUE);
-    m_ValueEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ValueEClass);
+    { // Value
+        m_ValueEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_ValueEClass->setClassifierID(VALUE);
+        m_ValueEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ValueEClass);
+    }
 
-    // StringValue
-    m_StringValueEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_StringValueEClass->setClassifierID(STRINGVALUE);
-    m_StringValueEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_StringValueEClass);
-    // m_StringValue__value has already been allocated above
-    m_StringValue__value->setFeatureID(::json::JsonPackage::STRINGVALUE__VALUE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StringValueEClass->getEStructuralFeatures()).basicAdd(
-            m_StringValue__value);
-    m_StringValue__value->basicsetEContainingClass(m_StringValueEClass);
+    { // StringValue
+        m_StringValueEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_StringValueEClass->setClassifierID(STRINGVALUE);
+        m_StringValueEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_StringValueEClass);
+        // m_StringValue__value has already been allocated above
+        m_StringValue__value->setFeatureID(
+                ::json::JsonPackage::STRINGVALUE__VALUE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StringValueEClass->getEStructuralFeatures()).basicAdd(
+                m_StringValue__value);
+        m_StringValue__value->basicsetEContainingClass(m_StringValueEClass);
+    }
 
-    // NumberValue
-    m_NumberValueEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_NumberValueEClass->setClassifierID(NUMBERVALUE);
-    m_NumberValueEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NumberValueEClass);
-    // m_NumberValue__value has already been allocated above
-    m_NumberValue__value->setFeatureID(::json::JsonPackage::NUMBERVALUE__VALUE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NumberValueEClass->getEStructuralFeatures()).basicAdd(
-            m_NumberValue__value);
-    m_NumberValue__value->basicsetEContainingClass(m_NumberValueEClass);
+    { // NumberValue
+        m_NumberValueEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_NumberValueEClass->setClassifierID(NUMBERVALUE);
+        m_NumberValueEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NumberValueEClass);
+        // m_NumberValue__value has already been allocated above
+        m_NumberValue__value->setFeatureID(
+                ::json::JsonPackage::NUMBERVALUE__VALUE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NumberValueEClass->getEStructuralFeatures()).basicAdd(
+                m_NumberValue__value);
+        m_NumberValue__value->basicsetEContainingClass(m_NumberValueEClass);
+    }
 
-    // BooleanValue
-    m_BooleanValueEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_BooleanValueEClass->setClassifierID(BOOLEANVALUE);
-    m_BooleanValueEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_BooleanValueEClass);
-    // m_BooleanValue__value has already been allocated above
-    m_BooleanValue__value->setFeatureID(
-            ::json::JsonPackage::BOOLEANVALUE__VALUE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BooleanValueEClass->getEStructuralFeatures()).basicAdd(
-            m_BooleanValue__value);
-    m_BooleanValue__value->basicsetEContainingClass(m_BooleanValueEClass);
+    { // BooleanValue
+        m_BooleanValueEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_BooleanValueEClass->setClassifierID(BOOLEANVALUE);
+        m_BooleanValueEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_BooleanValueEClass);
+        // m_BooleanValue__value has already been allocated above
+        m_BooleanValue__value->setFeatureID(
+                ::json::JsonPackage::BOOLEANVALUE__VALUE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BooleanValueEClass->getEStructuralFeatures()).basicAdd(
+                m_BooleanValue__value);
+        m_BooleanValue__value->basicsetEContainingClass(m_BooleanValueEClass);
+    }
 
-    // ArrayValue
-    m_ArrayValueEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_ArrayValueEClass->setClassifierID(ARRAYVALUE);
-    m_ArrayValueEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ArrayValueEClass);
-    // m_ArrayValue__values has already been allocated above
-    m_ArrayValue__values->setFeatureID(::json::JsonPackage::ARRAYVALUE__VALUES);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ArrayValueEClass->getEStructuralFeatures()).basicAdd(
-            m_ArrayValue__values);
-    m_ArrayValue__values->basicsetEContainingClass(m_ArrayValueEClass);
+    { // ArrayValue
+        m_ArrayValueEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_ArrayValueEClass->setClassifierID(ARRAYVALUE);
+        m_ArrayValueEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ArrayValueEClass);
+        // m_ArrayValue__values has already been allocated above
+        m_ArrayValue__values->setFeatureID(
+                ::json::JsonPackage::ARRAYVALUE__VALUES);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ArrayValueEClass->getEStructuralFeatures()).basicAdd(
+                m_ArrayValue__values);
+        m_ArrayValue__values->basicsetEContainingClass(m_ArrayValueEClass);
+    }
 
-    // NullValue
-    m_NullValueEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_NullValueEClass->setClassifierID(NULLVALUE);
-    m_NullValueEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NullValueEClass);
+    { // NullValue
+        m_NullValueEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_NullValueEClass->setClassifierID(NULLVALUE);
+        m_NullValueEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NullValueEClass);
+    }
 
     // Create enums
 
@@ -199,133 +212,159 @@ void JsonPackage::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // ObjectValue
-    m_ObjectValueEClass->setName("ObjectValue");
-    m_ObjectValueEClass->setAbstract(false);
-    m_ObjectValueEClass->setInterface(false);
-    m_ObjectValue__members->setEType(m_NVPairEClass);
-    m_ObjectValue__members->setName("members");
-    m_ObjectValue__members->setDefaultValueLiteral("");
-    m_ObjectValue__members->setLowerBound(1);
-    m_ObjectValue__members->setUpperBound(-1);
-    m_ObjectValue__members->setTransient(false);
-    m_ObjectValue__members->setVolatile(false);
-    m_ObjectValue__members->setChangeable(true);
-    m_ObjectValue__members->setContainment(true);
-    m_ObjectValue__members->setResolveProxies(true);
-    m_ObjectValue__members->setUnique(true);
-    m_ObjectValue__members->setDerived(false);
-    m_ObjectValue__members->setOrdered(true);
-    // NVPair
-    m_NVPairEClass->setName("NVPair");
-    m_NVPairEClass->setAbstract(false);
-    m_NVPairEClass->setInterface(false);
-    m_NVPair__name->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-    m_NVPair__name->setName("name");
-    m_NVPair__name->setDefaultValueLiteral("");
-    m_NVPair__name->setLowerBound(0);
-    m_NVPair__name->setUpperBound(1);
-    m_NVPair__name->setTransient(false);
-    m_NVPair__name->setVolatile(false);
-    m_NVPair__name->setChangeable(true);
-    m_NVPair__name->setUnsettable(false);
-    m_NVPair__name->setID(false);
-    m_NVPair__name->setUnique(true);
-    m_NVPair__name->setDerived(false);
-    m_NVPair__name->setOrdered(true);
-    m_NVPair__value->setEType(m_ValueEClass);
-    m_NVPair__value->setName("value");
-    m_NVPair__value->setDefaultValueLiteral("");
-    m_NVPair__value->setLowerBound(1);
-    m_NVPair__value->setUpperBound(1);
-    m_NVPair__value->setTransient(false);
-    m_NVPair__value->setVolatile(false);
-    m_NVPair__value->setChangeable(true);
-    m_NVPair__value->setContainment(true);
-    m_NVPair__value->setResolveProxies(true);
-    m_NVPair__value->setUnique(true);
-    m_NVPair__value->setDerived(false);
-    m_NVPair__value->setOrdered(true);
-    // Value
-    m_ValueEClass->setName("Value");
-    m_ValueEClass->setAbstract(true);
-    m_ValueEClass->setInterface(false);
-    // StringValue
-    m_StringValueEClass->setName("StringValue");
-    m_StringValueEClass->setAbstract(false);
-    m_StringValueEClass->setInterface(false);
-    m_StringValue__value->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-    m_StringValue__value->setName("value");
-    m_StringValue__value->setDefaultValueLiteral("");
-    m_StringValue__value->setLowerBound(0);
-    m_StringValue__value->setUpperBound(1);
-    m_StringValue__value->setTransient(false);
-    m_StringValue__value->setVolatile(false);
-    m_StringValue__value->setChangeable(true);
-    m_StringValue__value->setUnsettable(false);
-    m_StringValue__value->setID(false);
-    m_StringValue__value->setUnique(true);
-    m_StringValue__value->setDerived(false);
-    m_StringValue__value->setOrdered(true);
-    // NumberValue
-    m_NumberValueEClass->setName("NumberValue");
-    m_NumberValueEClass->setAbstract(false);
-    m_NumberValueEClass->setInterface(false);
-    m_NumberValue__value->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDouble());
-    m_NumberValue__value->setName("value");
-    m_NumberValue__value->setDefaultValueLiteral("");
-    m_NumberValue__value->setLowerBound(0);
-    m_NumberValue__value->setUpperBound(1);
-    m_NumberValue__value->setTransient(false);
-    m_NumberValue__value->setVolatile(false);
-    m_NumberValue__value->setChangeable(true);
-    m_NumberValue__value->setUnsettable(false);
-    m_NumberValue__value->setID(false);
-    m_NumberValue__value->setUnique(true);
-    m_NumberValue__value->setDerived(false);
-    m_NumberValue__value->setOrdered(true);
-    // BooleanValue
-    m_BooleanValueEClass->setName("BooleanValue");
-    m_BooleanValueEClass->setAbstract(false);
-    m_BooleanValueEClass->setInterface(false);
-    m_BooleanValue__value->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-    m_BooleanValue__value->setName("value");
-    m_BooleanValue__value->setDefaultValueLiteral("");
-    m_BooleanValue__value->setLowerBound(0);
-    m_BooleanValue__value->setUpperBound(1);
-    m_BooleanValue__value->setTransient(false);
-    m_BooleanValue__value->setVolatile(false);
-    m_BooleanValue__value->setChangeable(true);
-    m_BooleanValue__value->setUnsettable(false);
-    m_BooleanValue__value->setID(false);
-    m_BooleanValue__value->setUnique(true);
-    m_BooleanValue__value->setDerived(false);
-    m_BooleanValue__value->setOrdered(true);
-    // ArrayValue
-    m_ArrayValueEClass->setName("ArrayValue");
-    m_ArrayValueEClass->setAbstract(false);
-    m_ArrayValueEClass->setInterface(false);
-    m_ArrayValue__values->setEType(m_ValueEClass);
-    m_ArrayValue__values->setName("values");
-    m_ArrayValue__values->setDefaultValueLiteral("");
-    m_ArrayValue__values->setLowerBound(0);
-    m_ArrayValue__values->setUpperBound(-1);
-    m_ArrayValue__values->setTransient(false);
-    m_ArrayValue__values->setVolatile(false);
-    m_ArrayValue__values->setChangeable(true);
-    m_ArrayValue__values->setContainment(true);
-    m_ArrayValue__values->setResolveProxies(true);
-    m_ArrayValue__values->setUnique(true);
-    m_ArrayValue__values->setDerived(false);
-    m_ArrayValue__values->setOrdered(true);
-    // NullValue
-    m_NullValueEClass->setName("NullValue");
-    m_NullValueEClass->setAbstract(false);
-    m_NullValueEClass->setInterface(false);
+    { // ObjectValue
+        m_ObjectValueEClass->setName("ObjectValue");
+        m_ObjectValueEClass->setAbstract(false);
+        m_ObjectValueEClass->setInterface(false);
+
+        m_ObjectValue__members->setEType(m_NVPairEClass);
+        m_ObjectValue__members->setName("members");
+        m_ObjectValue__members->setDefaultValueLiteral("");
+        m_ObjectValue__members->setLowerBound(1);
+        m_ObjectValue__members->setUpperBound(-1);
+        m_ObjectValue__members->setTransient(false);
+        m_ObjectValue__members->setVolatile(false);
+        m_ObjectValue__members->setChangeable(true);
+        m_ObjectValue__members->setContainment(true);
+        m_ObjectValue__members->setResolveProxies(true);
+        m_ObjectValue__members->setUnique(true);
+        m_ObjectValue__members->setDerived(false);
+        m_ObjectValue__members->setOrdered(true);
+
+    }
+
+    { // NVPair
+        m_NVPairEClass->setName("NVPair");
+        m_NVPairEClass->setAbstract(false);
+        m_NVPairEClass->setInterface(false);
+        m_NVPair__name->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        m_NVPair__name->setName("name");
+        m_NVPair__name->setDefaultValueLiteral("");
+        m_NVPair__name->setLowerBound(0);
+        m_NVPair__name->setUpperBound(1);
+        m_NVPair__name->setTransient(false);
+        m_NVPair__name->setVolatile(false);
+        m_NVPair__name->setChangeable(true);
+        m_NVPair__name->setUnsettable(false);
+        m_NVPair__name->setID(false);
+        m_NVPair__name->setUnique(true);
+        m_NVPair__name->setDerived(false);
+        m_NVPair__name->setOrdered(true);
+
+        m_NVPair__value->setEType(m_ValueEClass);
+        m_NVPair__value->setName("value");
+        m_NVPair__value->setDefaultValueLiteral("");
+        m_NVPair__value->setLowerBound(1);
+        m_NVPair__value->setUpperBound(1);
+        m_NVPair__value->setTransient(false);
+        m_NVPair__value->setVolatile(false);
+        m_NVPair__value->setChangeable(true);
+        m_NVPair__value->setContainment(true);
+        m_NVPair__value->setResolveProxies(true);
+        m_NVPair__value->setUnique(true);
+        m_NVPair__value->setDerived(false);
+        m_NVPair__value->setOrdered(true);
+
+    }
+
+    { // Value
+        m_ValueEClass->setName("Value");
+        m_ValueEClass->setAbstract(true);
+        m_ValueEClass->setInterface(false);
+
+    }
+
+    { // StringValue
+        m_StringValueEClass->setName("StringValue");
+        m_StringValueEClass->setAbstract(false);
+        m_StringValueEClass->setInterface(false);
+        m_StringValue__value->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        m_StringValue__value->setName("value");
+        m_StringValue__value->setDefaultValueLiteral("");
+        m_StringValue__value->setLowerBound(0);
+        m_StringValue__value->setUpperBound(1);
+        m_StringValue__value->setTransient(false);
+        m_StringValue__value->setVolatile(false);
+        m_StringValue__value->setChangeable(true);
+        m_StringValue__value->setUnsettable(false);
+        m_StringValue__value->setID(false);
+        m_StringValue__value->setUnique(true);
+        m_StringValue__value->setDerived(false);
+        m_StringValue__value->setOrdered(true);
+
+    }
+
+    { // NumberValue
+        m_NumberValueEClass->setName("NumberValue");
+        m_NumberValueEClass->setAbstract(false);
+        m_NumberValueEClass->setInterface(false);
+        m_NumberValue__value->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDouble());
+        m_NumberValue__value->setName("value");
+        m_NumberValue__value->setDefaultValueLiteral("");
+        m_NumberValue__value->setLowerBound(0);
+        m_NumberValue__value->setUpperBound(1);
+        m_NumberValue__value->setTransient(false);
+        m_NumberValue__value->setVolatile(false);
+        m_NumberValue__value->setChangeable(true);
+        m_NumberValue__value->setUnsettable(false);
+        m_NumberValue__value->setID(false);
+        m_NumberValue__value->setUnique(true);
+        m_NumberValue__value->setDerived(false);
+        m_NumberValue__value->setOrdered(true);
+
+    }
+
+    { // BooleanValue
+        m_BooleanValueEClass->setName("BooleanValue");
+        m_BooleanValueEClass->setAbstract(false);
+        m_BooleanValueEClass->setInterface(false);
+        m_BooleanValue__value->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        m_BooleanValue__value->setName("value");
+        m_BooleanValue__value->setDefaultValueLiteral("");
+        m_BooleanValue__value->setLowerBound(0);
+        m_BooleanValue__value->setUpperBound(1);
+        m_BooleanValue__value->setTransient(false);
+        m_BooleanValue__value->setVolatile(false);
+        m_BooleanValue__value->setChangeable(true);
+        m_BooleanValue__value->setUnsettable(false);
+        m_BooleanValue__value->setID(false);
+        m_BooleanValue__value->setUnique(true);
+        m_BooleanValue__value->setDerived(false);
+        m_BooleanValue__value->setOrdered(true);
+
+    }
+
+    { // ArrayValue
+        m_ArrayValueEClass->setName("ArrayValue");
+        m_ArrayValueEClass->setAbstract(false);
+        m_ArrayValueEClass->setInterface(false);
+
+        m_ArrayValue__values->setEType(m_ValueEClass);
+        m_ArrayValue__values->setName("values");
+        m_ArrayValue__values->setDefaultValueLiteral("");
+        m_ArrayValue__values->setLowerBound(0);
+        m_ArrayValue__values->setUpperBound(-1);
+        m_ArrayValue__values->setTransient(false);
+        m_ArrayValue__values->setVolatile(false);
+        m_ArrayValue__values->setChangeable(true);
+        m_ArrayValue__values->setContainment(true);
+        m_ArrayValue__values->setResolveProxies(true);
+        m_ArrayValue__values->setUnique(true);
+        m_ArrayValue__values->setDerived(false);
+        m_ArrayValue__values->setOrdered(true);
+
+    }
+
+    { // NullValue
+        m_NullValueEClass->setName("NullValue");
+        m_NullValueEClass->setAbstract(false);
+        m_NullValueEClass->setInterface(false);
+
+    }
 
     // TODO: Initialize data types
 

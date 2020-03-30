@@ -109,7 +109,7 @@ void IfStatement::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void IfStatement::eSet(::ecore::EInt _featureID,
@@ -176,7 +176,7 @@ void IfStatement::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean IfStatement::eIsSet(::ecore::EInt _featureID)
@@ -203,7 +203,7 @@ void IfStatement::eSet(::ecore::EInt _featureID,
         return getElseIf().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void IfStatement::eUnset(::ecore::EInt _featureID)
@@ -212,7 +212,7 @@ void IfStatement::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr IfStatement::_eClass()

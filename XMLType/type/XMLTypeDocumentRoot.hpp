@@ -57,26 +57,9 @@ public:
     virtual void setMixedAt ( size_t _position, ::ecore::EFeatureMapEntry const& _new_element_in_mixed);
     virtual void deleteMixedAt ( size_t _position );
 
-    virtual std::vector< ::type::String > const& getCDATA () const;
-    virtual void setCDATA (std::vector< ::type::String > _cDATA);
-
-    virtual void addCDATA (::type::String const& _new_element_in_cDATA);
-    virtual void setCDATAAt ( size_t _position, ::type::String const& _new_element_in_cDATA);
-    virtual void deleteCDATAAt ( size_t _position );
-
-    virtual std::vector< ::type::String > const& getComment () const;
-    virtual void setComment (std::vector< ::type::String > _comment);
-
-    virtual void addComment (::type::String const& _new_element_in_comment);
-    virtual void setCommentAt ( size_t _position, ::type::String const& _new_element_in_comment);
-    virtual void deleteCommentAt ( size_t _position );
-
-    virtual std::vector< ::type::String > const& getText () const;
-    virtual void setText (std::vector< ::type::String > _text);
-
-    virtual void addText (::type::String const& _new_element_in_text);
-    virtual void setTextAt ( size_t _position, ::type::String const& _new_element_in_text);
-    virtual void deleteTextAt ( size_t _position );
+    virtual std::vector< ::type::String > getCDATA ();
+    virtual std::vector< ::type::String > getComment ();
+    virtual std::vector< ::type::String > getText ();
 
     // References
     virtual const ::ecorecpp::mapping::EList< ::ecore::EStringToStringMapEntry_ptr >& getXMLNSPrefixMap () const;
@@ -118,15 +101,6 @@ protected:
     // Attributes
 
     std::vector< ::ecore::EFeatureMapEntry > m_mixed
-    {};
-
-    std::vector< ::type::String > m_cDATA
-    {};
-
-    std::vector< ::type::String > m_comment
-    {};
-
-    std::vector< ::type::String > m_text
     {};
 
     // References

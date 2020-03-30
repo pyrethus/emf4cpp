@@ -57,13 +57,7 @@ public:
     virtual void setMixedAt ( size_t _position, ::ecore::EFeatureMapEntry const& _new_element_in_mixed);
     virtual void deleteMixedAt ( size_t _position );
 
-    virtual std::vector< ::ecore::EFeatureMapEntry > const& getAny () const;
-    virtual void setAny (std::vector< ::ecore::EFeatureMapEntry > _any);
-
-    virtual void addAny (::ecore::EFeatureMapEntry const& _new_element_in_any);
-    virtual void setAnyAt ( size_t _position, ::ecore::EFeatureMapEntry const& _new_element_in_any);
-    virtual void deleteAnyAt ( size_t _position );
-
+    virtual std::vector< ::ecore::EFeatureMapEntry > getAny ();
     virtual std::vector< ::ecore::EFeatureMapEntry > const& getAnyAttribute () const;
     virtual void setAnyAttribute (std::vector< ::ecore::EFeatureMapEntry > _anyAttribute);
 
@@ -103,9 +97,6 @@ protected:
     // Attributes
 
     std::vector< ::ecore::EFeatureMapEntry > m_mixed
-    {};
-
-    std::vector< ::ecore::EFeatureMapEntry > m_any
     {};
 
     std::vector< ::ecore::EFeatureMapEntry > m_anyAttribute

@@ -38,292 +38,350 @@ namespace type
     /*PROTECTED REGION ID(type_AnySimpleType) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::any AnySimpleType;
+    using AnySimpleType = ::ecorecpp::mapping::any;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_AnyURI) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t AnyURI;
+    using AnyURI = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Base64Binary) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t Base64Binary;
+    using Base64Binary = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Boolean) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef bool Boolean;
+    using Boolean = bool;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_BooleanObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef bool BooleanObject;
+    using BooleanObject = bool;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Byte) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int8_t Byte;
+    using Byte = int8_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_ByteObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int8_t ByteObject;
+    using ByteObject = int8_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Date) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::EDate Date;
+    using Date = ::ecorecpp::mapping::EDate;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_DateTime) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::EDate DateTime;
+    using DateTime = ::ecorecpp::mapping::EDate;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Decimal) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t Decimal;
+    using Decimal = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Double) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef double Double;
+    using Double = double;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_DoubleObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef double DoubleObject;
+    using DoubleObject = double;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Duration) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int Duration;
+    using Duration = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_ENTITIES) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > ENTITIES;
+    using ENTITIES = ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_ENTITIESBase) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t ENTITIESBase;
+    using ENTITIESBase = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_ENTITY) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t ENTITY;
+    using ENTITY = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Float) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef float Float;
+    using Float = float;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_FloatObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef float FloatObject;
+    using FloatObject = float;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_GDay) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int GDay;
+    using GDay = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_GMonth) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int GMonth;
+    using GMonth = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_GMonthDay) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int GMonthDay;
+    using GMonthDay = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_GYear) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int GYear;
+    using GYear = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_GYearMonth) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int GYearMonth;
+    using GYearMonth = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_HexBinary) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t HexBinary;
+    using HexBinary = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_ID) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t ID;
+    using ID = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_IDREF) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t IDREF;
+    using IDREF = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_IDREFS) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > IDREFS;
+    using IDREFS = ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_IDREFSBase) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > IDREFSBase;
+    using IDREFSBase = ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Int) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int Int;
+    using Int = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Integer) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int64_t Integer;
+    using Integer = int64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_IntObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int IntObject;
+    using IntObject = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Language) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t Language;
+    using Language = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Long) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int64_t Long;
+    using Long = int64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_LongObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int64_t LongObject;
+    using LongObject = int64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Name) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t Name;
+    using Name = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NCName) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t NCName;
+    using NCName = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NegativeInteger) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int64_t NegativeInteger;
+    using NegativeInteger = int64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NMTOKEN) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t NMTOKEN;
+    using NMTOKEN = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NMTOKENS) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > NMTOKENS;
+    using NMTOKENS = ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NMTOKENSBase) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t > NMTOKENSBase;
+    using NMTOKENSBase = ::ecore::EList_ptr< ::ecorecpp::mapping::type_definitions::string_t >;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NonNegativeInteger) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef uint64_t NonNegativeInteger;
+    using NonNegativeInteger = uint64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NonPositiveInteger) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int64_t NonPositiveInteger;
+    using NonPositiveInteger = int64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NormalizedString) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t NormalizedString;
+    using NormalizedString = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_NOTATION) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int NOTATION;
+    using NOTATION = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_PositiveInteger) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef uint64_t PositiveInteger;
+    using PositiveInteger = uint64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_QName) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t QName;
+    using QName = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Short) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int16_t Short;
+    using Short = int16_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_ShortObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int ShortObject;
+    using ShortObject = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_String) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t String;
+    using String = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Time) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int Time;
+    using Time = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_Token) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t Token;
+    using Token = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_UnsignedByte) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef uint8_t UnsignedByte;
+    using UnsignedByte = uint8_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_UnsignedByteObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef uint8_t UnsignedByteObject;
+    using UnsignedByteObject = uint8_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_UnsignedInt) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef unsigned int UnsignedInt;
+    using UnsignedInt = unsigned int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_UnsignedIntObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef unsigned int UnsignedIntObject;
+    using UnsignedIntObject = unsigned int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_UnsignedLong) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef uint64_t UnsignedLong;
+    using UnsignedLong = uint64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_UnsignedShort) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef uint16_t UnsignedShort;
+    using UnsignedShort = uint16_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(type_UnsignedShortObject) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef uint16_t UnsignedShortObject;
+    using UnsignedShortObject = uint16_t;
+
     /*PROTECTED REGION END*/
 
 // EClass

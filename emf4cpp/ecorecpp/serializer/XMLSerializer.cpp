@@ -274,7 +274,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 	 * Multiplicity-one attributes
 	 */
 	for (auto const& current_at : attributes) {
-		if ( current_at->isTransient()
+		if ( current_at->isTransient() || current_at->isDerived()
 				|| current_at->getUpperBound() != 1
 				|| (!obj->eIsSet(current_at) && !m_keepDefault) )
 			continue;
@@ -322,7 +322,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 	std::vector<std::array<::ecorecpp::mapping::type_definitions::string_t, 3>> crossReferences;
 
 	for ( auto const& current_ref : references ) {
-		if ( current_ref->isTransient()
+		if ( current_ref->isTransient() || current_ref->isDerived()
 				|| current_ref->isContainment()
 				|| !obj->eIsSet(current_ref) )
 			continue;
@@ -416,7 +416,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 	 * Multiplicity-many attributes
 	 */
 	for (auto const& current_at : attributes) {
-		if ( current_at->isTransient()
+		if ( current_at->isTransient() || current_at->isDerived()
 				|| current_at->getUpperBound() == 1
 				|| !obj->eIsSet(current_at) )
 			continue;
@@ -479,7 +479,7 @@ void XMLSerializer::serialize_node_children(EObject_ptr obj) {
 		try {
 			DEBUG_MSG(cout, indent << referenceName << " (from " << current_ref->getName() << ")");
 
-			if ( current_ref->isTransient()
+			if ( current_ref->isTransient() || current_ref->isDerived()
 					|| !current_ref->isContainment()
 					|| !obj->eIsSet(current_ref) )
 				continue;

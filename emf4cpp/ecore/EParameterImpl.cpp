@@ -96,6 +96,18 @@ void EParameter::_initialize()
                 > ::toAny(_any, getUpperBound());
     }
         return _any;
+    case ::ecore::EcorePackage::EPARAMETER__MANY:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isMany());
+    }
+        return _any;
+    case ::ecore::EcorePackage::EPARAMETER__REQUIRED:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isRequired());
+    }
+        return _any;
     case ::ecore::EcorePackage::EPARAMETER__ETYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEType());
@@ -113,7 +125,7 @@ void EParameter::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EParameter::eSet(::ecore::EInt _featureID,
@@ -185,17 +197,9 @@ void EParameter::eSet(::ecore::EInt _featureID,
         setEGenericType(_t1);
     }
         return;
-    case ::ecore::EcorePackage::EPARAMETER__EOPERATION:
-    {
-        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
-                > (_newValue);
-        auto _t1 = ::ecore::as < ::ecore::EOperation > (_t0);
-        setEOperation(_t1);
-    }
-        return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EParameter::eIsSet(::ecore::EInt _featureID)
@@ -230,7 +234,7 @@ void EParameter::eSet(::ecore::EInt _featureID,
         return getEOperation().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EParameter::eUnset(::ecore::EInt _featureID)
@@ -239,7 +243,7 @@ void EParameter::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EParameter::_eClass()

@@ -84,7 +84,7 @@ void AbstractActionRelationship::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void AbstractActionRelationship::eSet(::ecore::EInt _featureID,
@@ -126,7 +126,7 @@ void AbstractActionRelationship::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean AbstractActionRelationship::eIsSet(::ecore::EInt _featureID)
@@ -143,7 +143,7 @@ void AbstractActionRelationship::eSet(::ecore::EInt _featureID,
         return getTaggedValue().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void AbstractActionRelationship::eUnset(::ecore::EInt _featureID)
@@ -152,7 +152,7 @@ void AbstractActionRelationship::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr AbstractActionRelationship::_eClass()

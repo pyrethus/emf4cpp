@@ -129,7 +129,7 @@ void ExternalActor::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ExternalActor::eSet(::ecore::EInt _featureID,
@@ -227,7 +227,7 @@ void ExternalActor::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ExternalActor::eIsSet(::ecore::EInt _featureID)
@@ -260,7 +260,7 @@ void ExternalActor::eSet(::ecore::EInt _featureID,
         return getPlatformElement().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ExternalActor::eUnset(::ecore::EInt _featureID)
@@ -269,7 +269,7 @@ void ExternalActor::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ExternalActor::_eClass()

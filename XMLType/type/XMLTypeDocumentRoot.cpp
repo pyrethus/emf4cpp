@@ -108,155 +108,31 @@ void XMLTypeDocumentRoot::deleteMixedAt(size_t _position)
         m_mixed.resize(_position);
 }
 
-std::vector< ::type::String > const& XMLTypeDocumentRoot::getCDATA() const
+std::vector< ::type::String > XMLTypeDocumentRoot::getCDATA()
 {
-    return m_cDATA;
+    /*PROTECTED REGION ID(XMLTypeDocumentRootImpl_Getter_cDATA) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: type::XMLTypeDocumentRoot::cDATA";
+    /*PROTECTED REGION END*/
 }
 
-void XMLTypeDocumentRoot::setCDATA(std::vector< ::type::String > _cDATA)
+std::vector< ::type::String > XMLTypeDocumentRoot::getComment()
 {
-#ifdef ECORECPP_NOTIFICATION_API
-    std::vector< ::type::String > _old_cDATA = m_cDATA;
-#endif
-    m_cDATA = _cDATA;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__cDATA(),
-                _old_cDATA,
-                m_cDATA
-            );
-        eNotify(&notification);
-    }
-#endif
+    /*PROTECTED REGION ID(XMLTypeDocumentRootImpl_Getter_comment) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: type::XMLTypeDocumentRoot::comment";
+    /*PROTECTED REGION END*/
 }
 
-void XMLTypeDocumentRoot::addCDATA(::type::String const &_new_element_in_cDATA)
+std::vector< ::type::String > XMLTypeDocumentRoot::getText()
 {
-    m_cDATA.push_back(_new_element_in_cDATA);
-}
-
-void XMLTypeDocumentRoot::setCDATAAt(size_t _position,
-        ::type::String const &_new_element_in_cDATA)
-{
-    if (_position >= m_cDATA.size())
-        m_cDATA.resize(_position + 1, ::type::String());
-
-    m_cDATA[_position] = _new_element_in_cDATA;
-}
-
-void XMLTypeDocumentRoot::deleteCDATAAt(size_t _position)
-{
-    if (_position >= m_cDATA.size())
-        throw "Attribute counter out of bounds!";
-
-    // TODO: This is not actually quite true
-    if (_position == m_cDATA.size() - 1)
-        m_cDATA.resize(_position);
-}
-
-std::vector< ::type::String > const& XMLTypeDocumentRoot::getComment() const
-{
-    return m_comment;
-}
-
-void XMLTypeDocumentRoot::setComment(std::vector< ::type::String > _comment)
-{
-#ifdef ECORECPP_NOTIFICATION_API
-    std::vector< ::type::String > _old_comment = m_comment;
-#endif
-    m_comment = _comment;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__comment(),
-                _old_comment,
-                m_comment
-            );
-        eNotify(&notification);
-    }
-#endif
-}
-
-void XMLTypeDocumentRoot::addComment(
-        ::type::String const &_new_element_in_comment)
-{
-    m_comment.push_back(_new_element_in_comment);
-}
-
-void XMLTypeDocumentRoot::setCommentAt(size_t _position,
-        ::type::String const &_new_element_in_comment)
-{
-    if (_position >= m_comment.size())
-        m_comment.resize(_position + 1, ::type::String());
-
-    m_comment[_position] = _new_element_in_comment;
-}
-
-void XMLTypeDocumentRoot::deleteCommentAt(size_t _position)
-{
-    if (_position >= m_comment.size())
-        throw "Attribute counter out of bounds!";
-
-    // TODO: This is not actually quite true
-    if (_position == m_comment.size() - 1)
-        m_comment.resize(_position);
-}
-
-std::vector< ::type::String > const& XMLTypeDocumentRoot::getText() const
-{
-    return m_text;
-}
-
-void XMLTypeDocumentRoot::setText(std::vector< ::type::String > _text)
-{
-#ifdef ECORECPP_NOTIFICATION_API
-    std::vector< ::type::String > _old_text = m_text;
-#endif
-    m_text = _text;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::type::TypePackage::_instance()->getXMLTypeDocumentRoot__text(),
-                _old_text,
-                m_text
-            );
-        eNotify(&notification);
-    }
-#endif
-}
-
-void XMLTypeDocumentRoot::addText(::type::String const &_new_element_in_text)
-{
-    m_text.push_back(_new_element_in_text);
-}
-
-void XMLTypeDocumentRoot::setTextAt(size_t _position,
-        ::type::String const &_new_element_in_text)
-{
-    if (_position >= m_text.size())
-        m_text.resize(_position + 1, ::type::String());
-
-    m_text[_position] = _new_element_in_text;
-}
-
-void XMLTypeDocumentRoot::deleteTextAt(size_t _position)
-{
-    if (_position >= m_text.size())
-        throw "Attribute counter out of bounds!";
-
-    // TODO: This is not actually quite true
-    if (_position == m_text.size() - 1)
-        m_text.resize(_position);
+    /*PROTECTED REGION ID(XMLTypeDocumentRootImpl_Getter_text) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: type::XMLTypeDocumentRoot::text";
+    /*PROTECTED REGION END*/
 }
 
 // References

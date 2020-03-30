@@ -96,13 +96,65 @@ using namespace ::«EPackage.getFQN()»;
 
 // Attributes
 «FOREACH this.EAttributes AS at»
+«IF !at.derived && !at.volatile-»
 «at.getGetCPPSignatureConst(name+"::")»
+«ELSE-»
+«at.getGetCPPSignature(name+"::")»
+«ENDIF-»
 {
+«IF !at.volatile && !at.derived-»
     return «at.getAttrMemberName()»;
+«ELSE-»
+«IF at.getGetter() != null-»
+#if 0
+    // This is the original body of the EOperation as specified in
+    // the ecore. If you want to replace it by C++ code, enable
+    // the following protected region and implement it there.
+    «at.getGetter()»
+#endif
+«ENDIF-»
+    «PROTECT CSTART '/*' CEND '*/' ID (name+"Impl_"+"Getter_"+at.getIPPFileUniqueName()) DISABLE»
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+«IF at.getGetter() == null-»
+    throw "UnsupportedOperationException: «at.getFQN()»";
+«ELSE-»
+    «IF (boolean) GLOBALVAR ignoreJavaBody-»
+    throw "UnsupportedOperationException: «at.getFQN()»";
+    «ELSE-»
+    «at.getGetter()»
+    «ENDIF-»
+«ENDIF-»
+    «ENDPROTECT»
+«ENDIF-»
 }
 
-«at.getSetCPPSignature(name+"::")»    
+«IF at.changeable && !at.derived»
+«at.getSetCPPSignature(name+"::")»
 {
+«IF at.volatile-»
+«IF at.getSetter() != null-»
+#if 0
+    // This is the original body of the EOperation as specified in
+    // the ecore. If you want to replace it by C++ code, enable
+    // the following protected region and implement it there.
+    «at.getSetter()»
+#endif
+«ENDIF-»
+    «PROTECT CSTART '/*' CEND '*/' ID (name+"Impl_"+"Setter_"+at.getIPPFileUniqueName()) DISABLE»
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+«IF at.getSetter() == null-»
+    throw "UnsupportedOperationException: «at.getFQN()»";
+«ELSE-»
+    «IF (boolean) GLOBALVAR ignoreJavaBody-»
+    throw "UnsupportedOperationException: «at.getFQN()»";
+    «ELSE-»
+    «at.getSetter()»
+    «ENDIF-»
+«ENDIF-»
+	«ENDPROTECT»
+«ELSE-»
 #ifdef ECORECPP_NOTIFICATION_API
     «at.getCPPTypeSignature()» _old_«at.name» = «at.getAttrMemberName()»;
 #endif
@@ -120,16 +172,26 @@ using namespace ::«EPackage.getFQN()»;
         eNotify(&notification);
     }
 #endif
+«ENDIF-»
 }
 
 «IF at.isList() || at.isMultiple()-»
 «at.getAddCPPSignature(name+"::")»    
 {
+«IF !at.volatile-»
     «at.getAttrMemberName()».push_back( _new_element_in_«at.name» );
+«ELSE-»
+«PROTECT CSTART '/*' CEND '*/' ID (name+"Impl_"+"Add_"+at.getIPPFileUniqueName()) DISABLE»
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+	throw "UnsupportedOperationException: «at.getFQN()»";
+«ENDPROTECT-»
+«ENDIF-»
 }
 
 «at.getSetAtCPPSignature(name+"::")»    
 {
+«IF !at.volatile-»
     «LET at.getAttrMemberName() AS attrn-»
     «IF at.upperBound > 0-»«REM»must be greater than 1 also«ENDREM»
     if (_position + 1 > «at.upperBound»)
@@ -140,10 +202,18 @@ using namespace ::«EPackage.getFQN()»;
 
     «attrn»[_position] = _new_element_in_«at.name»;
     «ENDLET-»
+«ELSE-»
+«PROTECT CSTART '/*' CEND '*/' ID (name+"Impl_"+"SetAt_"+at.getIPPFileUniqueName()) DISABLE»
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+	throw "UnsupportedOperationException: «at.getFQN()»";
+«ENDPROTECT-»
+«ENDIF-»
 }
 
 «at.getDeleteAtCPPSignature(name+"::")»    
 {
+«IF !at.volatile-»
     «LET at.getAttrMemberName() AS attrn-»
     «IF at.upperBound > 0-»«REM»must be greater than 1 also«ENDREM»
     if (_position + 1 > «at.upperBound»)
@@ -156,7 +226,15 @@ using namespace ::«EPackage.getFQN()»;
     if (_position == «attrn».size() - 1)
         «attrn».resize(_position);
     «ENDLET-»
+«ELSE-»
+«PROTECT CSTART '/*' CEND '*/' ID (name+"Impl_"+"DeleteAt_"+at.getIPPFileUniqueName()) DISABLE»
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+	throw "UnsupportedOperationException: «at.getFQN()»";
+«ENDPROTECT-»
+«ENDIF-»
 }
+«ENDIF-»
 «ENDIF-»
 «ENDFOREACH-»
 

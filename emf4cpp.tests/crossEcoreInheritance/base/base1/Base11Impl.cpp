@@ -99,7 +99,7 @@ void Base11::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Base11::eSet(::ecore::EInt _featureID,
@@ -157,7 +157,7 @@ void Base11::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Base11::eIsSet(::ecore::EInt _featureID)
@@ -183,7 +183,7 @@ void Base11::eSet(::ecore::EInt _featureID,
                 > ::is_set(getValBase11());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Base11::eUnset(::ecore::EInt _featureID)
@@ -192,7 +192,7 @@ void Base11::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Base11::_eClass()

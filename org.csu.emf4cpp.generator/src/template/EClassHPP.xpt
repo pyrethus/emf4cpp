@@ -81,13 +81,19 @@ public:
     
     // Attributes
     «FOREACH this.EAttributes AS at-»
-    virtual «at.getGetCPPSignatureConst()»;
+    «IF !at.derived && !at.volatile-»
+   	virtual «at.getGetCPPSignatureConst()»;
+   	«ELSE-»
+   	virtual «at.getGetCPPSignature()»;
+   	«ENDIF-»
+    «IF at.changeable && !at.derived-»
     virtual «at.getSetCPPSignature()-»;
-    «IF at.isList() || at.isMultiple()»
+    	«IF at.isList() || at.isMultiple()»
     virtual «at.getAddCPPSignature()»;
     virtual «at.getSetAtCPPSignature()»;
     virtual «at.getDeleteAtCPPSignature()»;
-    «ENDIF»
+    	«ENDIF»
+    «ENDIF-»
     «ENDFOREACH-»
     
     // References
@@ -145,7 +151,9 @@ protected:
 
     // Attributes
     «FOREACH this.EAttributes AS at»
+		«IF !at.volatile && !at.derived-»
     «at.getCPPDeclaration()+"{"+at.getDefaultValue()+"}"»;
+		«ENDIF-»
     «ENDFOREACH»
 
     // References

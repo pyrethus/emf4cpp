@@ -38,22 +38,26 @@ namespace PrimitiveTypes
     /*PROTECTED REGION ID(PrimitiveTypes_Boolean) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef bool Boolean;
+    using Boolean = bool;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(PrimitiveTypes_Integer) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int64_t Integer;
+    using Integer = int64_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(PrimitiveTypes_String) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef ::ecorecpp::mapping::type_definitions::string_t String;
+    using String = ::ecorecpp::mapping::type_definitions::string_t;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(PrimitiveTypes_Double) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef double Double;
+    using Double = double;
+
     /*PROTECTED REGION END*/
 
 // EClass

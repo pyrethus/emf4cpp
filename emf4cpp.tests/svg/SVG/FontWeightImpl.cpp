@@ -71,7 +71,7 @@ void FontWeight::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void FontWeight::eSet(::ecore::EInt _featureID,
@@ -97,7 +97,7 @@ void FontWeight::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean FontWeight::eIsSet(::ecore::EInt _featureID)
@@ -111,7 +111,7 @@ void FontWeight::eSet(::ecore::EInt _featureID,
                 > ::is_set(getBold());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void FontWeight::eUnset(::ecore::EInt _featureID)
@@ -120,7 +120,7 @@ void FontWeight::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr FontWeight::_eClass()

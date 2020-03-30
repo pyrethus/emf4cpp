@@ -127,11 +127,18 @@ using EList_const_ptr = std::shared_ptr<const ::ecorecpp::mapping::EList<T> >;
 «ENDIF-»
 
 // EDataType
-«FOREACH EClassifiers.typeSelect(EDataType).select(e|e.ETypeParameters.isEmpty && !EEnum.isInstance(e)) AS type-»
+«FOREACH EClassifiers.typeSelect(EDataType).select(e|!EEnum.isInstance(e)) AS type-»
 «PROTECT CSTART '/*' CEND '*/' ID type.getFQN("_") DISABLE»
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-typedef «getEDataTypeMap(type)» «type.name»;
+«IF type.ETypeParameters.isEmpty-»
+	using «type.name» = «getEDataTypeMap(type)»;
+«ELSE»
+#if 0
+	template <«getEDataTypeTemplateParameters(type, "class ")»>
+	using «type.name» = «getEDataTypeMap(type, getEDataTypeTemplateParameters(type, ""))»;
+#endif
+«ENDIF»
 «ENDPROTECT»
 «ENDFOREACH»
 

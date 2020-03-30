@@ -98,6 +98,18 @@ void EReference::_initialize()
                 > ::toAny(_any, getUpperBound());
     }
         return _any;
+    case ::ecore::EcorePackage::EREFERENCE__MANY:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isMany());
+    }
+        return _any;
+    case ::ecore::EcorePackage::EREFERENCE__REQUIRED:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isRequired());
+    }
+        return _any;
     case ::ecore::EcorePackage::EREFERENCE__ETYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEType());
@@ -132,6 +144,12 @@ void EReference::_initialize()
                 > ::toAny(_any, getDefaultValueLiteral());
     }
         return _any;
+    case ::ecore::EcorePackage::EREFERENCE__DEFAULTVALUE:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EJavaObject
+                > ::toAny(_any, getDefaultValue());
+    }
+        return _any;
     case ::ecore::EcorePackage::EREFERENCE__UNSETTABLE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -155,6 +173,12 @@ void EReference::_initialize()
                 > ::toAny(_any, isContainment());
     }
         return _any;
+    case ::ecore::EcorePackage::EREFERENCE__CONTAINER:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isContainer());
+    }
+        return _any;
     case ::ecore::EcorePackage::EREFERENCE__RESOLVEPROXIES:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -166,6 +190,11 @@ void EReference::_initialize()
         _any = ::ecore::as < ::ecore::EObject > (getEOpposite());
     }
         return _any;
+    case ::ecore::EcorePackage::EREFERENCE__EREFERENCETYPE:
+    {
+        _any = ::ecore::as < ::ecore::EObject > (getEReferenceType());
+    }
+        return _any;
     case ::ecore::EcorePackage::EREFERENCE__EKEYS:
     {
         _any = getEKeys().asEListOf< ::ecore::EObject_ptr >();
@@ -173,7 +202,7 @@ void EReference::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EReference::eSet(::ecore::EInt _featureID,
@@ -293,14 +322,6 @@ void EReference::eSet(::ecore::EInt _featureID,
         setDerived(_t0);
     }
         return;
-    case ::ecore::EcorePackage::EREFERENCE__ECONTAININGCLASS:
-    {
-        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
-                > (_newValue);
-        auto _t1 = ::ecore::as < ::ecore::EClass > (_t0);
-        setEContainingClass(_t1);
-    }
-        return;
     case ::ecore::EcorePackage::EREFERENCE__CONTAINMENT:
     {
         ::ecore::EBoolean _t0;
@@ -335,7 +356,7 @@ void EReference::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EReference::eIsSet(::ecore::EInt _featureID)
@@ -404,7 +425,7 @@ void EReference::eSet(::ecore::EInt _featureID,
         return getEKeys().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EReference::eUnset(::ecore::EInt _featureID)
@@ -413,7 +434,7 @@ void EReference::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EReference::_eClass()

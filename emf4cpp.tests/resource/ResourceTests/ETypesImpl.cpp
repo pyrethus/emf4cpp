@@ -99,7 +99,7 @@ void ETypes::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ETypes::eSet(::ecore::EInt _featureID,
@@ -165,7 +165,7 @@ void ETypes::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ETypes::eIsSet(::ecore::EInt _featureID)
@@ -190,7 +190,7 @@ void ETypes::eSet(::ecore::EInt _featureID,
         return getInt() != 10;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ETypes::eUnset(::ecore::EInt _featureID)
@@ -199,7 +199,7 @@ void ETypes::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ETypes::_eClass()

@@ -43,7 +43,8 @@ namespace kdm
         /*PROTECTED REGION ID(kdm_core_Integer) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-        typedef int64_t Integer;
+        using Integer = int64_t;
+
         /*PROTECTED REGION END*/
         /*PROTECTED REGION ID(kdm_core_Boolean) ENABLED START*/
         typedef bool Boolean;

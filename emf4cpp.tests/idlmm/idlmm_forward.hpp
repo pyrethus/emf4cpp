@@ -38,12 +38,14 @@ namespace idlmm
     /*PROTECTED REGION ID(idlmm_EAny) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int EAny;
+    using EAny = int;
+
     /*PROTECTED REGION END*/
     /*PROTECTED REGION ID(idlmm_ETypeCode) START*/
 // Please, enable the protected region if you add manually written code.
 // To do this, add the keyword ENABLED before START.
-    typedef int ETypeCode;
+    using ETypeCode = int;
+
     /*PROTECTED REGION END*/
 
 // EClass

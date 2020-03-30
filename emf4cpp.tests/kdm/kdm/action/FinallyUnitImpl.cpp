@@ -129,7 +129,7 @@ void FinallyUnit::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void FinallyUnit::eSet(::ecore::EInt _featureID,
@@ -227,7 +227,7 @@ void FinallyUnit::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean FinallyUnit::eIsSet(::ecore::EInt _featureID)
@@ -260,7 +260,7 @@ void FinallyUnit::eSet(::ecore::EInt _featureID,
         return getActionRelation().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void FinallyUnit::eUnset(::ecore::EInt _featureID)
@@ -269,7 +269,7 @@ void FinallyUnit::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr FinallyUnit::_eClass()

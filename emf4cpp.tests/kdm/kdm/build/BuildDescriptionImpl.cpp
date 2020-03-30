@@ -131,7 +131,7 @@ void BuildDescription::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void BuildDescription::eSet(::ecore::EInt _featureID,
@@ -229,7 +229,7 @@ void BuildDescription::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean BuildDescription::eIsSet(::ecore::EInt _featureID)
@@ -262,7 +262,7 @@ void BuildDescription::eSet(::ecore::EInt _featureID,
                 > ::is_set(getText());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void BuildDescription::eUnset(::ecore::EInt _featureID)
@@ -271,7 +271,7 @@ void BuildDescription::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr BuildDescription::_eClass()

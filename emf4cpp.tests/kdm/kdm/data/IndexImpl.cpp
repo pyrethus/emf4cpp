@@ -117,7 +117,7 @@ void Index::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Index::eSet(::ecore::EInt _featureID,
@@ -199,7 +199,7 @@ void Index::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Index::eIsSet(::ecore::EInt _featureID)
@@ -227,7 +227,7 @@ void Index::eSet(::ecore::EInt _featureID,
         return getImplementation().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Index::eUnset(::ecore::EInt _featureID)
@@ -236,7 +236,7 @@ void Index::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Index::_eClass()

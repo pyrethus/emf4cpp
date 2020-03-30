@@ -122,7 +122,7 @@ void BehaviorUnit::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void BehaviorUnit::eSet(::ecore::EInt _featureID,
@@ -212,7 +212,7 @@ void BehaviorUnit::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean BehaviorUnit::eIsSet(::ecore::EInt _featureID)
@@ -242,7 +242,7 @@ void BehaviorUnit::eSet(::ecore::EInt _featureID,
         return getConceptualElement().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void BehaviorUnit::eUnset(::ecore::EInt _featureID)
@@ -251,7 +251,7 @@ void BehaviorUnit::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr BehaviorUnit::_eClass()

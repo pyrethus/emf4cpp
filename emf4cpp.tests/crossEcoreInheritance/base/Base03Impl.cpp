@@ -63,7 +63,7 @@ void Base03::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Base03::eSet(::ecore::EInt _featureID,
@@ -81,7 +81,7 @@ void Base03::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Base03::eIsSet(::ecore::EInt _featureID)
@@ -93,7 +93,7 @@ void Base03::eSet(::ecore::EInt _featureID,
                 > ::is_set(getValBase03());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Base03::eUnset(::ecore::EInt _featureID)
@@ -102,7 +102,7 @@ void Base03::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Base03::_eClass()

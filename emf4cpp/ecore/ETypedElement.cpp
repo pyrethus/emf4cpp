@@ -166,56 +166,22 @@ void ETypedElement::setUpperBound(::ecore::EInt _upperBound)
 #endif
 }
 
-::ecore::EBoolean ETypedElement::isMany() const
+::ecore::EBoolean ETypedElement::isMany()
 {
-    return m_many;
+    /*PROTECTED REGION ID(ETypedElementImpl_Getter_many) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::ETypedElement::many";
+    /*PROTECTED REGION END*/
 }
 
-void ETypedElement::setMany(::ecore::EBoolean _many)
+::ecore::EBoolean ETypedElement::isRequired()
 {
-#ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EBoolean _old_many = m_many;
-#endif
-    m_many = _many;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::ecore::EcorePackage::_instance()->getETypedElement__many(),
-                _old_many,
-                m_many
-            );
-        eNotify(&notification);
-    }
-#endif
-}
-
-::ecore::EBoolean ETypedElement::isRequired() const
-{
-    return m_required;
-}
-
-void ETypedElement::setRequired(::ecore::EBoolean _required)
-{
-#ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EBoolean _old_required = m_required;
-#endif
-    m_required = _required;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::ecore::EcorePackage::_instance()->getETypedElement__required(),
-                _old_required,
-                m_required
-            );
-        eNotify(&notification);
-    }
-#endif
+    /*PROTECTED REGION ID(ETypedElementImpl_Getter_required) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::ETypedElement::required";
+    /*PROTECTED REGION END*/
 }
 
 // References

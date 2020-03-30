@@ -62,31 +62,33 @@ void Base1Package::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // Base10
-    m_Base10EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_Base10EClass->setClassifierID(BASE10);
-    m_Base10EClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_Base10EClass);
-    // m_Base10__valBase10 has already been allocated above
-    m_Base10__valBase10->setFeatureID(
-            ::base::base1::Base1Package::BASE10__VALBASE10);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base10EClass->getEStructuralFeatures()).basicAdd(
-            m_Base10__valBase10);
-    m_Base10__valBase10->basicsetEContainingClass(m_Base10EClass);
+    { // Base10
+        m_Base10EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_Base10EClass->setClassifierID(BASE10);
+        m_Base10EClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_Base10EClass);
+        // m_Base10__valBase10 has already been allocated above
+        m_Base10__valBase10->setFeatureID(
+                ::base::base1::Base1Package::BASE10__VALBASE10);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base10EClass->getEStructuralFeatures()).basicAdd(
+                m_Base10__valBase10);
+        m_Base10__valBase10->basicsetEContainingClass(m_Base10EClass);
+    }
 
-    // Base11
-    m_Base11EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_Base11EClass->setClassifierID(BASE11);
-    m_Base11EClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_Base11EClass);
-    // m_Base11__valBase11 has already been allocated above
-    m_Base11__valBase11->setFeatureID(
-            ::base::base1::Base1Package::BASE11__VALBASE11);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base11EClass->getEStructuralFeatures()).basicAdd(
-            m_Base11__valBase11);
-    m_Base11__valBase11->basicsetEContainingClass(m_Base11EClass);
+    { // Base11
+        m_Base11EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
+        m_Base11EClass->setClassifierID(BASE11);
+        m_Base11EClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_Base11EClass);
+        // m_Base11__valBase11 has already been allocated above
+        m_Base11__valBase11->setFeatureID(
+                ::base::base1::Base1Package::BASE11__VALBASE11);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base11EClass->getEStructuralFeatures()).basicAdd(
+                m_Base11__valBase11);
+        m_Base11__valBase11->basicsetEContainingClass(m_Base11EClass);
+    }
 
     // Create enums
 
@@ -113,42 +115,47 @@ void Base1Package::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // Base10
-    m_Base10EClass->setName("Base10");
-    m_Base10EClass->setAbstract(false);
-    m_Base10EClass->setInterface(false);
-    m_Base10__valBase10->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-    m_Base10__valBase10->setName("valBase10");
-    m_Base10__valBase10->setDefaultValueLiteral("");
-    m_Base10__valBase10->setLowerBound(0);
-    m_Base10__valBase10->setUpperBound(1);
-    m_Base10__valBase10->setTransient(false);
-    m_Base10__valBase10->setVolatile(false);
-    m_Base10__valBase10->setChangeable(true);
-    m_Base10__valBase10->setUnsettable(false);
-    m_Base10__valBase10->setID(false);
-    m_Base10__valBase10->setUnique(true);
-    m_Base10__valBase10->setDerived(false);
-    m_Base10__valBase10->setOrdered(true);
-    // Base11
-    m_Base11EClass->setName("Base11");
-    m_Base11EClass->setAbstract(false);
-    m_Base11EClass->setInterface(false);
-    m_Base11__valBase11->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-    m_Base11__valBase11->setName("valBase11");
-    m_Base11__valBase11->setDefaultValueLiteral("");
-    m_Base11__valBase11->setLowerBound(0);
-    m_Base11__valBase11->setUpperBound(1);
-    m_Base11__valBase11->setTransient(false);
-    m_Base11__valBase11->setVolatile(false);
-    m_Base11__valBase11->setChangeable(true);
-    m_Base11__valBase11->setUnsettable(false);
-    m_Base11__valBase11->setID(false);
-    m_Base11__valBase11->setUnique(true);
-    m_Base11__valBase11->setDerived(false);
-    m_Base11__valBase11->setOrdered(true);
+    { // Base10
+        m_Base10EClass->setName("Base10");
+        m_Base10EClass->setAbstract(false);
+        m_Base10EClass->setInterface(false);
+        m_Base10__valBase10->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        m_Base10__valBase10->setName("valBase10");
+        m_Base10__valBase10->setDefaultValueLiteral("");
+        m_Base10__valBase10->setLowerBound(0);
+        m_Base10__valBase10->setUpperBound(1);
+        m_Base10__valBase10->setTransient(false);
+        m_Base10__valBase10->setVolatile(false);
+        m_Base10__valBase10->setChangeable(true);
+        m_Base10__valBase10->setUnsettable(false);
+        m_Base10__valBase10->setID(false);
+        m_Base10__valBase10->setUnique(true);
+        m_Base10__valBase10->setDerived(false);
+        m_Base10__valBase10->setOrdered(true);
+
+    }
+
+    { // Base11
+        m_Base11EClass->setName("Base11");
+        m_Base11EClass->setAbstract(false);
+        m_Base11EClass->setInterface(false);
+        m_Base11__valBase11->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        m_Base11__valBase11->setName("valBase11");
+        m_Base11__valBase11->setDefaultValueLiteral("");
+        m_Base11__valBase11->setLowerBound(0);
+        m_Base11__valBase11->setUpperBound(1);
+        m_Base11__valBase11->setTransient(false);
+        m_Base11__valBase11->setVolatile(false);
+        m_Base11__valBase11->setChangeable(true);
+        m_Base11__valBase11->setUnsettable(false);
+        m_Base11__valBase11->setID(false);
+        m_Base11__valBase11->setUnique(true);
+        m_Base11__valBase11->setDerived(false);
+        m_Base11__valBase11->setOrdered(true);
+
+    }
 
     // TODO: Initialize data types
 

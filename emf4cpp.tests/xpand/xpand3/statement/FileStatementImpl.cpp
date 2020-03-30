@@ -115,7 +115,7 @@ void FileStatement::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void FileStatement::eSet(::ecore::EInt _featureID,
@@ -190,7 +190,7 @@ void FileStatement::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean FileStatement::eIsSet(::ecore::EInt _featureID)
@@ -220,7 +220,7 @@ void FileStatement::eSet(::ecore::EInt _featureID,
                 > ::is_set(isOnce());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void FileStatement::eUnset(::ecore::EInt _featureID)
@@ -229,7 +229,7 @@ void FileStatement::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr FileStatement::_eClass()

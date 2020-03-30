@@ -97,6 +97,18 @@ void EAttribute::_initialize()
                 > ::toAny(_any, getUpperBound());
     }
         return _any;
+    case ::ecore::EcorePackage::EATTRIBUTE__MANY:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isMany());
+    }
+        return _any;
+    case ::ecore::EcorePackage::EATTRIBUTE__REQUIRED:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isRequired());
+    }
+        return _any;
     case ::ecore::EcorePackage::EATTRIBUTE__ETYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEType());
@@ -131,6 +143,12 @@ void EAttribute::_initialize()
                 > ::toAny(_any, getDefaultValueLiteral());
     }
         return _any;
+    case ::ecore::EcorePackage::EATTRIBUTE__DEFAULTVALUE:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EJavaObject
+                > ::toAny(_any, getDefaultValue());
+    }
+        return _any;
     case ::ecore::EcorePackage::EATTRIBUTE__UNSETTABLE:
     {
         ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
@@ -154,9 +172,14 @@ void EAttribute::_initialize()
                 > ::toAny(_any, isID());
     }
         return _any;
+    case ::ecore::EcorePackage::EATTRIBUTE__EATTRIBUTETYPE:
+    {
+        _any = ::ecore::as < ::ecore::EObject > (getEAttributeType());
+    }
+        return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EAttribute::eSet(::ecore::EInt _featureID,
@@ -276,14 +299,6 @@ void EAttribute::eSet(::ecore::EInt _featureID,
         setDerived(_t0);
     }
         return;
-    case ::ecore::EcorePackage::EATTRIBUTE__ECONTAININGCLASS:
-    {
-        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
-                > (_newValue);
-        auto _t1 = ::ecore::as < ::ecore::EClass > (_t0);
-        setEContainingClass(_t1);
-    }
-        return;
     case ::ecore::EcorePackage::EATTRIBUTE__ID:
     {
         ::ecore::EBoolean _t0;
@@ -294,7 +309,7 @@ void EAttribute::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EAttribute::eIsSet(::ecore::EInt _featureID)
@@ -354,7 +369,7 @@ void EAttribute::eSet(::ecore::EInt _featureID,
         return getEAttributeType().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EAttribute::eUnset(::ecore::EInt _featureID)
@@ -363,7 +378,7 @@ void EAttribute::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EAttribute::_eClass()

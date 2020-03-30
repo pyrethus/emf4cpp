@@ -149,7 +149,7 @@ void Line::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Line::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
@@ -278,7 +278,7 @@ void Line::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Line::eIsSet(::ecore::EInt _featureID)
@@ -323,7 +323,7 @@ void Line::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
                 > ::is_set(getMarkerStart());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Line::eUnset(::ecore::EInt _featureID)
@@ -332,7 +332,7 @@ void Line::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Line::_eClass()

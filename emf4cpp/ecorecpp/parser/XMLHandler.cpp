@@ -24,6 +24,7 @@
 #include <map> // for pair
 #include <vector>
 #include <ecore.hpp>
+#include <util/EcoreUtil.hpp>
 
 #include "../MetaModelRepository.hpp"
 #include "../mapping.hpp"
@@ -266,9 +267,6 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 		eobj = efac->create(eclass);
 		assert(eobj);
 
-		if (xmiId && !xmiId->empty())
-			_xmiIds.insert( std::make_pair(*xmiId, eobj) );
-
 		DEBUG_MSG(cout, "--- START: " << (m_level + 1));
 
 		// Attributes
@@ -342,23 +340,19 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 				peobj->eSet(esf, anyRef);
 			}
 
-			// Is a reference and has opposite
-			// TODO: remove when Notification implemented
-			EReference_ptr eopref;
-			if (eref && (eopref = eref->getEOpposite())) {
-				if (eopref->getUpperBound() != 1) {
-					// Gets the collection and adds the new element
-					anyRef = eobj->eGet(eopref);
-					mapping::EList<::ecore::EObject_ptr>::ptr_type list =
-							ecorecpp::mapping::any::any_cast<
-							mapping::EList<::ecore::EObject_ptr>::ptr_type>(anyRef);
+			// EOpposite relations are implemented via a call of _inverseAdd()
+			// and _inverseRemove(), which are called implicitly by eSet(). No
+			// need to call them extra.
+		}
 
-					list->push_back(peobj);
-				} else {
-					anyRef = peobj;
-					eobj->eSet(eopref, anyRef);
-				}
-			}
+		if (xmiId && !xmiId->empty())
+			_xmiIds.insert( std::make_pair(*xmiId, eobj) );
+		else {
+			// There may be an EAttribute marked as ID, it may even be
+			// transient.
+			auto id = ::ecorecpp::util::EcoreUtil::getId(eobj);
+			if (!id.empty())
+				_xmiIds.insert( std::make_pair(id, eobj) );
 		}
 
 		m_objects.push_back(eobj);

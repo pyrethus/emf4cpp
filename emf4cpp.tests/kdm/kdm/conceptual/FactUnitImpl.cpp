@@ -122,7 +122,7 @@ void FactUnit::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void FactUnit::eSet(::ecore::EInt _featureID,
@@ -212,7 +212,7 @@ void FactUnit::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean FactUnit::eIsSet(::ecore::EInt _featureID)
@@ -242,7 +242,7 @@ void FactUnit::eSet(::ecore::EInt _featureID,
         return getConceptualElement().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void FactUnit::eUnset(::ecore::EInt _featureID)
@@ -251,7 +251,7 @@ void FactUnit::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr FactUnit::_eClass()

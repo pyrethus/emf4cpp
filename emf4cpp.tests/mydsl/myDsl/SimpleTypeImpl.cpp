@@ -65,7 +65,7 @@ void SimpleType::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void SimpleType::eSet(::ecore::EInt _featureID,
@@ -83,7 +83,7 @@ void SimpleType::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean SimpleType::eIsSet(::ecore::EInt _featureID)
@@ -95,7 +95,7 @@ void SimpleType::eSet(::ecore::EInt _featureID,
                 > ::is_set(getName());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void SimpleType::eUnset(::ecore::EInt _featureID)
@@ -104,7 +104,7 @@ void SimpleType::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr SimpleType::_eClass()

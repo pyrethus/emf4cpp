@@ -77,7 +77,7 @@ void ExtendedValue::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ExtendedValue::eSet(::ecore::EInt _featureID,
@@ -111,7 +111,7 @@ void ExtendedValue::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ExtendedValue::eIsSet(::ecore::EInt _featureID)
@@ -126,7 +126,7 @@ void ExtendedValue::eSet(::ecore::EInt _featureID,
         return getTag().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ExtendedValue::eUnset(::ecore::EInt _featureID)
@@ -135,7 +135,7 @@ void ExtendedValue::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ExtendedValue::_eClass()

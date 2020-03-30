@@ -49,9 +49,7 @@ public:
     virtual ::ecore::EBoolean isContainment () const;
     virtual void setContainment (::ecore::EBoolean _containment);
 
-    virtual ::ecore::EBoolean isContainer () const;
-    virtual void setContainer (::ecore::EBoolean _container);
-
+    virtual ::ecore::EBoolean isContainer ();
     virtual ::ecore::EBoolean isResolveProxies () const;
     virtual void setResolveProxies (::ecore::EBoolean _resolveProxies);
 
@@ -91,9 +89,6 @@ protected:
     // Attributes
 
     ::ecore::EBoolean m_containment
-    {};
-
-    ::ecore::EBoolean m_container
     {};
 
     ::ecore::EBoolean m_resolveProxies

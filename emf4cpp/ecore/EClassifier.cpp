@@ -58,109 +58,59 @@ EClassifier::~EClassifier()
 
 // Attributes
 
-::ecore::EString const& EClassifier::getInstanceClassName() const
+::ecore::EString EClassifier::getInstanceClassName()
 {
-    return m_instanceClassName;
+    /*PROTECTED REGION ID(EClassifierImpl_Getter_instanceClassName) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::EClassifier::instanceClassName";
+    /*PROTECTED REGION END*/
 }
 
 void EClassifier::setInstanceClassName(
         ::ecore::EString const &_instanceClassName)
 {
-#ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EString _old_instanceClassName = m_instanceClassName;
-#endif
-    m_instanceClassName = _instanceClassName;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::ecore::EcorePackage::_instance()->getEClassifier__instanceClassName(),
-                _old_instanceClassName,
-                m_instanceClassName
-            );
-        eNotify(&notification);
-    }
-#endif
+    /*PROTECTED REGION ID(EClassifierImpl_Setter_instanceClassName) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::EClassifier::instanceClassName";
+    /*PROTECTED REGION END*/
 }
 
-int EClassifier::getInstanceClass() const
+int EClassifier::getInstanceClass()
 {
-    return m_instanceClass;
+    /*PROTECTED REGION ID(EClassifierImpl_Getter_instanceClass) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::EClassifier::instanceClass";
+    /*PROTECTED REGION END*/
 }
 
-void EClassifier::setInstanceClass(int _instanceClass)
+::ecore::EJavaObject EClassifier::getDefaultValue()
 {
-#ifdef ECORECPP_NOTIFICATION_API
-    int _old_instanceClass = m_instanceClass;
-#endif
-    m_instanceClass = _instanceClass;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::ecore::EcorePackage::_instance()->getEClassifier__instanceClass(),
-                _old_instanceClass,
-                m_instanceClass
-            );
-        eNotify(&notification);
-    }
-#endif
+    /*PROTECTED REGION ID(EClassifierImpl_Getter_defaultValue) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::EClassifier::defaultValue";
+    /*PROTECTED REGION END*/
 }
 
-::ecore::EJavaObject const& EClassifier::getDefaultValue() const
+::ecore::EString EClassifier::getInstanceTypeName()
 {
-    return m_defaultValue;
-}
-
-void EClassifier::setDefaultValue(::ecore::EJavaObject const &_defaultValue)
-{
-#ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EJavaObject _old_defaultValue = m_defaultValue;
-#endif
-    m_defaultValue = _defaultValue;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::ecore::EcorePackage::_instance()->getEClassifier__defaultValue(),
-                _old_defaultValue,
-                m_defaultValue
-            );
-        eNotify(&notification);
-    }
-#endif
-}
-
-::ecore::EString const& EClassifier::getInstanceTypeName() const
-{
-    return m_instanceTypeName;
+    /*PROTECTED REGION ID(EClassifierImpl_Getter_instanceTypeName) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::EClassifier::instanceTypeName";
+    /*PROTECTED REGION END*/
 }
 
 void EClassifier::setInstanceTypeName(::ecore::EString const &_instanceTypeName)
 {
-#ifdef ECORECPP_NOTIFICATION_API
-    ::ecore::EString _old_instanceTypeName = m_instanceTypeName;
-#endif
-    m_instanceTypeName = _instanceTypeName;
-#ifdef ECORECPP_NOTIFICATION_API
-    if (eNotificationRequired())
-    {
-        ::ecorecpp::notify::Notification notification(
-                ::ecorecpp::notify::Notification::SET,
-                _this(),
-                ::ecore::EcorePackage::_instance()->getEClassifier__instanceTypeName(),
-                _old_instanceTypeName,
-                m_instanceTypeName
-            );
-        eNotify(&notification);
-    }
-#endif
+    /*PROTECTED REGION ID(EClassifierImpl_Setter_instanceTypeName) START*/
+    // Please, enable the protected region if you add manually written code.
+    // To do this, add the keyword ENABLED before START.
+    throw "UnsupportedOperationException: ecore::EClassifier::instanceTypeName";
+    /*PROTECTED REGION END*/
 }
 
 // References

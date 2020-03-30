@@ -37,14 +37,12 @@ String getSetCPPSignature(EAttribute this, String prefix) :
 String getSetCPPSignature(EAttribute this) : 
 	getSetCPPSignature("");
 	
-/*
-// Get
+// Get, non-const
 String getGetCPPSignature(EAttribute this, String prefix) :
 	getCPPReturnType() + " " + prefix  +  (isBoolean() ? "is" : "get") + name.toFirstUpper() + " ()";
 
 String getGetCPPSignature(EAttribute this) : 
 	getGetCPPSignature("");
-*/
 
 // Get, const
 String getGetCPPSignatureConst(EAttribute this, String prefix) :
@@ -104,4 +102,37 @@ String getDefaultValue(EStructuralFeature this) :
 
 boolean getID(EAttribute this):
 	this.ID
+;
+
+String getGetter(EStructuralFeature this) :
+	let eAnnotation = EAnnotations.select(e|e.source == "http://www.eclipse.org/emf/2002/GenModel").first():
+	if eAnnotation == null then
+		null
+    else
+	    let body = eAnnotation.details.select(e|((ecore::EStringToStringMapEntry)e).key == "get").first():
+    	if body == null then
+	    	null
+		else
+			((ecore::EStringToStringMapEntry)body).value
+;
+
+String getSetter(EStructuralFeature this) :
+	let eAnnotation = EAnnotations.select(e|e.source == "http://www.eclipse.org/emf/2002/GenModel").first():
+	if eAnnotation == null then
+		null
+    else
+	    let body = eAnnotation.details.select(e|((ecore::EStringToStringMapEntry)e).key == "set").first():
+    	if body == null then
+	    	null
+		else
+			((ecore::EStringToStringMapEntry)body).value
+;
+
+String getIPPFileUniqueName(EAttribute this):
+	let ops = EContainingClass.EAttributes.select(e|e.name == name):
+	if ops.size == 1 then
+		name
+	else
+		let oops = ops.sortBy(e|e.name):
+		name + "_" + oops.indexOf(this)
 ;

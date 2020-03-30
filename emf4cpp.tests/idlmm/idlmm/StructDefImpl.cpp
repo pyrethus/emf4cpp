@@ -105,7 +105,7 @@ void StructDef::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void StructDef::eSet(::ecore::EInt _featureID,
@@ -171,7 +171,7 @@ void StructDef::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean StructDef::eIsSet(::ecore::EInt _featureID)
@@ -199,7 +199,7 @@ void StructDef::eSet(::ecore::EInt _featureID,
         return getMembers().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void StructDef::eUnset(::ecore::EInt _featureID)
@@ -208,7 +208,7 @@ void StructDef::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr StructDef::_eClass()

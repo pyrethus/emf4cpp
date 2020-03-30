@@ -111,7 +111,7 @@ void LetExpression::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void LetExpression::eSet(::ecore::EInt _featureID,
@@ -179,7 +179,7 @@ void LetExpression::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean LetExpression::eIsSet(::ecore::EInt _featureID)
@@ -206,7 +206,7 @@ void LetExpression::eSet(::ecore::EInt _featureID,
         return getVarName().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void LetExpression::eUnset(::ecore::EInt _featureID)
@@ -215,7 +215,7 @@ void LetExpression::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr LetExpression::_eClass()

@@ -107,7 +107,7 @@ void Derived01::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Derived01::eSet(::ecore::EInt _featureID,
@@ -181,7 +181,7 @@ void Derived01::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Derived01::eIsSet(::ecore::EInt _featureID)
@@ -213,7 +213,7 @@ void Derived01::eSet(::ecore::EInt _featureID,
                 > ::is_set(getValDerived01());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Derived01::eUnset(::ecore::EInt _featureID)
@@ -222,7 +222,7 @@ void Derived01::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Derived01::_eClass()

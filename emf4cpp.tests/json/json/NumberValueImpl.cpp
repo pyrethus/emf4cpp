@@ -65,7 +65,7 @@ void NumberValue::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void NumberValue::eSet(::ecore::EInt _featureID,
@@ -83,7 +83,7 @@ void NumberValue::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean NumberValue::eIsSet(::ecore::EInt _featureID)
@@ -95,7 +95,7 @@ void NumberValue::eSet(::ecore::EInt _featureID,
                 > ::is_set(getValue());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void NumberValue::eUnset(::ecore::EInt _featureID)
@@ -104,7 +104,7 @@ void NumberValue::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr NumberValue::_eClass()

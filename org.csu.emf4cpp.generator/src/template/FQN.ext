@@ -78,11 +78,19 @@ String getFQN(EOperation this, String separator) :
     this.EContainingClass.getFQN(separator) + separator + this.name
 ;
 
+String getFQN(EAttribute this, String separator) :
+    this.EContainingClass.getFQN(separator) + separator + this.name
+;
+
 String getFQN(EPackage this) :
     this.getFQN("::")
 ;
 
 String getFQN(EOperation this) :
+    this.getFQN("::")
+;
+
+String getFQN(EAttribute this) :
     this.getFQN("::")
 ;
 

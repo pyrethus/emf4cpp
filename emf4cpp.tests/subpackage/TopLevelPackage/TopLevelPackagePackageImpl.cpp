@@ -57,19 +57,21 @@ void TopLevelPackagePackage::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // TopLevelClass
-    m_TopLevelClassEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_TopLevelClassEClass->setClassifierID(TOPLEVELCLASS);
-    m_TopLevelClassEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_TopLevelClassEClass);
-    // m_TopLevelClass__reference has already been allocated above
-    m_TopLevelClass__reference->setFeatureID(
-            ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TopLevelClassEClass->getEStructuralFeatures()).basicAdd(
-            m_TopLevelClass__reference);
-    m_TopLevelClass__reference->basicsetEContainingClass(m_TopLevelClassEClass);
+    { // TopLevelClass
+        m_TopLevelClassEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_TopLevelClassEClass->setClassifierID(TOPLEVELCLASS);
+        m_TopLevelClassEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_TopLevelClassEClass);
+        // m_TopLevelClass__reference has already been allocated above
+        m_TopLevelClass__reference->setFeatureID(
+                ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TopLevelClassEClass->getEStructuralFeatures()).basicAdd(
+                m_TopLevelClass__reference);
+        m_TopLevelClass__reference->basicsetEContainingClass(
+                m_TopLevelClassEClass);
+    }
 
     // Create enums
 
@@ -89,24 +91,27 @@ void TopLevelPackagePackage::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // TopLevelClass
-    m_TopLevelClassEClass->setName("TopLevelClass");
-    m_TopLevelClassEClass->setAbstract(false);
-    m_TopLevelClassEClass->setInterface(false);
-    m_TopLevelClass__reference->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEObject());
-    m_TopLevelClass__reference->setName("reference");
-    m_TopLevelClass__reference->setDefaultValueLiteral("");
-    m_TopLevelClass__reference->setLowerBound(0);
-    m_TopLevelClass__reference->setUpperBound(1);
-    m_TopLevelClass__reference->setTransient(false);
-    m_TopLevelClass__reference->setVolatile(false);
-    m_TopLevelClass__reference->setChangeable(true);
-    m_TopLevelClass__reference->setContainment(false);
-    m_TopLevelClass__reference->setResolveProxies(true);
-    m_TopLevelClass__reference->setUnique(true);
-    m_TopLevelClass__reference->setDerived(false);
-    m_TopLevelClass__reference->setOrdered(true);
+    { // TopLevelClass
+        m_TopLevelClassEClass->setName("TopLevelClass");
+        m_TopLevelClassEClass->setAbstract(false);
+        m_TopLevelClassEClass->setInterface(false);
+
+        m_TopLevelClass__reference->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEObject());
+        m_TopLevelClass__reference->setName("reference");
+        m_TopLevelClass__reference->setDefaultValueLiteral("");
+        m_TopLevelClass__reference->setLowerBound(0);
+        m_TopLevelClass__reference->setUpperBound(1);
+        m_TopLevelClass__reference->setTransient(false);
+        m_TopLevelClass__reference->setVolatile(false);
+        m_TopLevelClass__reference->setChangeable(true);
+        m_TopLevelClass__reference->setContainment(false);
+        m_TopLevelClass__reference->setResolveProxies(true);
+        m_TopLevelClass__reference->setUnique(true);
+        m_TopLevelClass__reference->setDerived(false);
+        m_TopLevelClass__reference->setOrdered(true);
+
+    }
 
     // TODO: Initialize data types
 

@@ -64,6 +64,15 @@ void AnyType::_initialize()
         _any = _anys;
     }
         return _any;
+    case ::type::TypePackage::ANYTYPE__ANY:
+    {
+        std::vector < ::ecorecpp::mapping::any > _anys(getAny().size());
+        for (size_t _i = 0; _i < getAny().size(); _i++)
+            ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
+                    > ::toAny(_anys[_i], getAny()[_i]);
+        _any = _anys;
+    }
+        return _any;
     case ::type::TypePackage::ANYTYPE__ANYATTRIBUTE:
     {
         std::vector < ::ecorecpp::mapping::any
@@ -76,7 +85,7 @@ void AnyType::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void AnyType::eSet(::ecore::EInt _featureID,
@@ -102,7 +111,7 @@ void AnyType::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean AnyType::eIsSet(::ecore::EInt _featureID)
@@ -117,7 +126,7 @@ void AnyType::eSet(::ecore::EInt _featureID,
         return getAnyAttribute().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void AnyType::eUnset(::ecore::EInt _featureID)
@@ -126,7 +135,7 @@ void AnyType::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr AnyType::_eClass()

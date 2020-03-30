@@ -92,497 +92,619 @@ void TypePackage::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // AnyType
-    m_AnyTypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-    m_AnyTypeEClass->setClassifierID(ANYTYPE);
-    m_AnyTypeEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_AnyTypeEClass);
-    // m_AnyType__mixed has already been allocated above
-    m_AnyType__mixed->setFeatureID(::type::TypePackage::ANYTYPE__MIXED);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
-            m_AnyType__mixed);
-    m_AnyType__mixed->basicsetEContainingClass(m_AnyTypeEClass);
-    // m_AnyType__any has already been allocated above
-    m_AnyType__any->setFeatureID(::type::TypePackage::ANYTYPE__ANY);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
-            m_AnyType__any);
-    m_AnyType__any->basicsetEContainingClass(m_AnyTypeEClass);
-    // m_AnyType__anyAttribute has already been allocated above
-    m_AnyType__anyAttribute->setFeatureID(
-            ::type::TypePackage::ANYTYPE__ANYATTRIBUTE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
-            m_AnyType__anyAttribute);
-    m_AnyType__anyAttribute->basicsetEContainingClass(m_AnyTypeEClass);
+    { // AnyType
+        m_AnyTypeEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_AnyTypeEClass->setClassifierID(ANYTYPE);
+        m_AnyTypeEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_AnyTypeEClass);
+        // m_AnyType__mixed has already been allocated above
+        m_AnyType__mixed->setFeatureID(::type::TypePackage::ANYTYPE__MIXED);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
+                m_AnyType__mixed);
+        m_AnyType__mixed->basicsetEContainingClass(m_AnyTypeEClass);
+        // m_AnyType__any has already been allocated above
+        m_AnyType__any->setFeatureID(::type::TypePackage::ANYTYPE__ANY);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
+                m_AnyType__any);
+        m_AnyType__any->basicsetEContainingClass(m_AnyTypeEClass);
+        // m_AnyType__anyAttribute has already been allocated above
+        m_AnyType__anyAttribute->setFeatureID(
+                ::type::TypePackage::ANYTYPE__ANYATTRIBUTE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
+                m_AnyType__anyAttribute);
+        m_AnyType__anyAttribute->basicsetEContainingClass(m_AnyTypeEClass);
+    }
 
-    // ProcessingInstruction
-    m_ProcessingInstructionEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_ProcessingInstructionEClass->setClassifierID(PROCESSINGINSTRUCTION);
-    m_ProcessingInstructionEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ProcessingInstructionEClass);
-    // m_ProcessingInstruction__data has already been allocated above
-    m_ProcessingInstruction__data->setFeatureID(
-            ::type::TypePackage::PROCESSINGINSTRUCTION__DATA);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProcessingInstructionEClass->getEStructuralFeatures()).basicAdd(
-            m_ProcessingInstruction__data);
-    m_ProcessingInstruction__data->basicsetEContainingClass(
-            m_ProcessingInstructionEClass);
-    // m_ProcessingInstruction__target has already been allocated above
-    m_ProcessingInstruction__target->setFeatureID(
-            ::type::TypePackage::PROCESSINGINSTRUCTION__TARGET);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProcessingInstructionEClass->getEStructuralFeatures()).basicAdd(
-            m_ProcessingInstruction__target);
-    m_ProcessingInstruction__target->basicsetEContainingClass(
-            m_ProcessingInstructionEClass);
+    { // ProcessingInstruction
+        m_ProcessingInstructionEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_ProcessingInstructionEClass->setClassifierID(PROCESSINGINSTRUCTION);
+        m_ProcessingInstructionEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ProcessingInstructionEClass);
+        // m_ProcessingInstruction__data has already been allocated above
+        m_ProcessingInstruction__data->setFeatureID(
+                ::type::TypePackage::PROCESSINGINSTRUCTION__DATA);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProcessingInstructionEClass->getEStructuralFeatures()).basicAdd(
+                m_ProcessingInstruction__data);
+        m_ProcessingInstruction__data->basicsetEContainingClass(
+                m_ProcessingInstructionEClass);
+        // m_ProcessingInstruction__target has already been allocated above
+        m_ProcessingInstruction__target->setFeatureID(
+                ::type::TypePackage::PROCESSINGINSTRUCTION__TARGET);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProcessingInstructionEClass->getEStructuralFeatures()).basicAdd(
+                m_ProcessingInstruction__target);
+        m_ProcessingInstruction__target->basicsetEContainingClass(
+                m_ProcessingInstructionEClass);
+    }
 
-    // SimpleAnyType
-    m_SimpleAnyTypeEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_SimpleAnyTypeEClass->setClassifierID(SIMPLEANYTYPE);
-    m_SimpleAnyTypeEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_SimpleAnyTypeEClass);
-    // m_SimpleAnyType__rawValue has already been allocated above
-    m_SimpleAnyType__rawValue->setFeatureID(
-            ::type::TypePackage::SIMPLEANYTYPE__RAWVALUE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
-            m_SimpleAnyType__rawValue);
-    m_SimpleAnyType__rawValue->basicsetEContainingClass(m_SimpleAnyTypeEClass);
-    // m_SimpleAnyType__value has already been allocated above
-    m_SimpleAnyType__value->setFeatureID(
-            ::type::TypePackage::SIMPLEANYTYPE__VALUE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
-            m_SimpleAnyType__value);
-    m_SimpleAnyType__value->basicsetEContainingClass(m_SimpleAnyTypeEClass);
-    // m_SimpleAnyType__instanceType has already been allocated above
-    m_SimpleAnyType__instanceType->setFeatureID(
-            ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
-            m_SimpleAnyType__instanceType);
-    m_SimpleAnyType__instanceType->basicsetEContainingClass(
-            m_SimpleAnyTypeEClass);
+    { // SimpleAnyType
+        m_SimpleAnyTypeEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_SimpleAnyTypeEClass->setClassifierID(SIMPLEANYTYPE);
+        m_SimpleAnyTypeEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_SimpleAnyTypeEClass);
+        // m_SimpleAnyType__rawValue has already been allocated above
+        m_SimpleAnyType__rawValue->setFeatureID(
+                ::type::TypePackage::SIMPLEANYTYPE__RAWVALUE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
+                m_SimpleAnyType__rawValue);
+        m_SimpleAnyType__rawValue->basicsetEContainingClass(
+                m_SimpleAnyTypeEClass);
+        // m_SimpleAnyType__value has already been allocated above
+        m_SimpleAnyType__value->setFeatureID(
+                ::type::TypePackage::SIMPLEANYTYPE__VALUE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
+                m_SimpleAnyType__value);
+        m_SimpleAnyType__value->basicsetEContainingClass(m_SimpleAnyTypeEClass);
+        // m_SimpleAnyType__instanceType has already been allocated above
+        m_SimpleAnyType__instanceType->setFeatureID(
+                ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
+                m_SimpleAnyType__instanceType);
+        m_SimpleAnyType__instanceType->basicsetEContainingClass(
+                m_SimpleAnyTypeEClass);
+    }
 
-    // XMLTypeDocumentRoot
-    m_XMLTypeDocumentRootEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_XMLTypeDocumentRootEClass->setClassifierID(XMLTYPEDOCUMENTROOT);
-    m_XMLTypeDocumentRootEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_XMLTypeDocumentRootEClass);
-    // m_XMLTypeDocumentRoot__mixed has already been allocated above
-    m_XMLTypeDocumentRoot__mixed->setFeatureID(
-            ::type::TypePackage::XMLTYPEDOCUMENTROOT__MIXED);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-            m_XMLTypeDocumentRoot__mixed);
-    m_XMLTypeDocumentRoot__mixed->basicsetEContainingClass(
-            m_XMLTypeDocumentRootEClass);
-    // m_XMLTypeDocumentRoot__xMLNSPrefixMap has already been allocated above
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setFeatureID(
-            ::type::TypePackage::XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-            m_XMLTypeDocumentRoot__xMLNSPrefixMap);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->basicsetEContainingClass(
-            m_XMLTypeDocumentRootEClass);
-    // m_XMLTypeDocumentRoot__xSISchemaLocation has already been allocated above
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setFeatureID(
-            ::type::TypePackage::XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-            m_XMLTypeDocumentRoot__xSISchemaLocation);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->basicsetEContainingClass(
-            m_XMLTypeDocumentRootEClass);
-    // m_XMLTypeDocumentRoot__cDATA has already been allocated above
-    m_XMLTypeDocumentRoot__cDATA->setFeatureID(
-            ::type::TypePackage::XMLTYPEDOCUMENTROOT__CDATA);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-            m_XMLTypeDocumentRoot__cDATA);
-    m_XMLTypeDocumentRoot__cDATA->basicsetEContainingClass(
-            m_XMLTypeDocumentRootEClass);
-    // m_XMLTypeDocumentRoot__comment has already been allocated above
-    m_XMLTypeDocumentRoot__comment->setFeatureID(
-            ::type::TypePackage::XMLTYPEDOCUMENTROOT__COMMENT);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-            m_XMLTypeDocumentRoot__comment);
-    m_XMLTypeDocumentRoot__comment->basicsetEContainingClass(
-            m_XMLTypeDocumentRootEClass);
-    // m_XMLTypeDocumentRoot__processingInstruction has already been allocated above
-    m_XMLTypeDocumentRoot__processingInstruction->setFeatureID(
-            ::type::TypePackage::XMLTYPEDOCUMENTROOT__PROCESSINGINSTRUCTION);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-            m_XMLTypeDocumentRoot__processingInstruction);
-    m_XMLTypeDocumentRoot__processingInstruction->basicsetEContainingClass(
-            m_XMLTypeDocumentRootEClass);
-    // m_XMLTypeDocumentRoot__text has already been allocated above
-    m_XMLTypeDocumentRoot__text->setFeatureID(
-            ::type::TypePackage::XMLTYPEDOCUMENTROOT__TEXT);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-            m_XMLTypeDocumentRoot__text);
-    m_XMLTypeDocumentRoot__text->basicsetEContainingClass(
-            m_XMLTypeDocumentRootEClass);
+    { // XMLTypeDocumentRoot
+        m_XMLTypeDocumentRootEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_XMLTypeDocumentRootEClass->setClassifierID(XMLTYPEDOCUMENTROOT);
+        m_XMLTypeDocumentRootEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_XMLTypeDocumentRootEClass);
+        // m_XMLTypeDocumentRoot__mixed has already been allocated above
+        m_XMLTypeDocumentRoot__mixed->setFeatureID(
+                ::type::TypePackage::XMLTYPEDOCUMENTROOT__MIXED);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
+                m_XMLTypeDocumentRoot__mixed);
+        m_XMLTypeDocumentRoot__mixed->basicsetEContainingClass(
+                m_XMLTypeDocumentRootEClass);
+        // m_XMLTypeDocumentRoot__xMLNSPrefixMap has already been allocated above
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setFeatureID(
+                ::type::TypePackage::XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
+                m_XMLTypeDocumentRoot__xMLNSPrefixMap);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->basicsetEContainingClass(
+                m_XMLTypeDocumentRootEClass);
+        // m_XMLTypeDocumentRoot__xSISchemaLocation has already been allocated above
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setFeatureID(
+                ::type::TypePackage::XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
+                m_XMLTypeDocumentRoot__xSISchemaLocation);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->basicsetEContainingClass(
+                m_XMLTypeDocumentRootEClass);
+        // m_XMLTypeDocumentRoot__cDATA has already been allocated above
+        m_XMLTypeDocumentRoot__cDATA->setFeatureID(
+                ::type::TypePackage::XMLTYPEDOCUMENTROOT__CDATA);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
+                m_XMLTypeDocumentRoot__cDATA);
+        m_XMLTypeDocumentRoot__cDATA->basicsetEContainingClass(
+                m_XMLTypeDocumentRootEClass);
+        // m_XMLTypeDocumentRoot__comment has already been allocated above
+        m_XMLTypeDocumentRoot__comment->setFeatureID(
+                ::type::TypePackage::XMLTYPEDOCUMENTROOT__COMMENT);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
+                m_XMLTypeDocumentRoot__comment);
+        m_XMLTypeDocumentRoot__comment->basicsetEContainingClass(
+                m_XMLTypeDocumentRootEClass);
+        // m_XMLTypeDocumentRoot__processingInstruction has already been allocated above
+        m_XMLTypeDocumentRoot__processingInstruction->setFeatureID(
+                ::type::TypePackage::XMLTYPEDOCUMENTROOT__PROCESSINGINSTRUCTION);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
+                m_XMLTypeDocumentRoot__processingInstruction);
+        m_XMLTypeDocumentRoot__processingInstruction->basicsetEContainingClass(
+                m_XMLTypeDocumentRootEClass);
+        // m_XMLTypeDocumentRoot__text has already been allocated above
+        m_XMLTypeDocumentRoot__text->setFeatureID(
+                ::type::TypePackage::XMLTYPEDOCUMENTROOT__TEXT);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
+                m_XMLTypeDocumentRoot__text);
+        m_XMLTypeDocumentRoot__text->basicsetEContainingClass(
+                m_XMLTypeDocumentRootEClass);
+    }
 
     // Create enums
 
     // Create data types
 
-    m_AnySimpleTypeEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_AnySimpleTypeEDataType->setClassifierID(ANYSIMPLETYPE);
-    m_AnySimpleTypeEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_AnySimpleTypeEDataType);
+    { // AnySimpleType
+        m_AnySimpleTypeEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_AnySimpleTypeEDataType->setClassifierID(ANYSIMPLETYPE);
+        m_AnySimpleTypeEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_AnySimpleTypeEDataType);
+    }
 
-    m_AnyURIEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_AnyURIEDataType->setClassifierID(ANYURI);
-    m_AnyURIEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_AnyURIEDataType);
+    { // AnyURI
+        m_AnyURIEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_AnyURIEDataType->setClassifierID(ANYURI);
+        m_AnyURIEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_AnyURIEDataType);
+    }
 
-    m_Base64BinaryEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_Base64BinaryEDataType->setClassifierID(BASE64BINARY);
-    m_Base64BinaryEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_Base64BinaryEDataType);
+    { // Base64Binary
+        m_Base64BinaryEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_Base64BinaryEDataType->setClassifierID(BASE64BINARY);
+        m_Base64BinaryEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_Base64BinaryEDataType);
+    }
 
-    m_BooleanEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_BooleanEDataType->setClassifierID(BOOLEAN);
-    m_BooleanEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_BooleanEDataType);
+    { // Boolean
+        m_BooleanEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_BooleanEDataType->setClassifierID(BOOLEAN);
+        m_BooleanEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_BooleanEDataType);
+    }
 
-    m_BooleanObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_BooleanObjectEDataType->setClassifierID(BOOLEANOBJECT);
-    m_BooleanObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_BooleanObjectEDataType);
+    { // BooleanObject
+        m_BooleanObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_BooleanObjectEDataType->setClassifierID(BOOLEANOBJECT);
+        m_BooleanObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_BooleanObjectEDataType);
+    }
 
-    m_ByteEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_ByteEDataType->setClassifierID(BYTE);
-    m_ByteEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ByteEDataType);
+    { // Byte
+        m_ByteEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_ByteEDataType->setClassifierID(BYTE);
+        m_ByteEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ByteEDataType);
+    }
 
-    m_ByteObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_ByteObjectEDataType->setClassifierID(BYTEOBJECT);
-    m_ByteObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ByteObjectEDataType);
+    { // ByteObject
+        m_ByteObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_ByteObjectEDataType->setClassifierID(BYTEOBJECT);
+        m_ByteObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ByteObjectEDataType);
+    }
 
-    m_DateEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_DateEDataType->setClassifierID(DATE);
-    m_DateEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_DateEDataType);
+    { // Date
+        m_DateEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_DateEDataType->setClassifierID(DATE);
+        m_DateEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_DateEDataType);
+    }
 
-    m_DateTimeEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_DateTimeEDataType->setClassifierID(DATETIME);
-    m_DateTimeEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_DateTimeEDataType);
+    { // DateTime
+        m_DateTimeEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_DateTimeEDataType->setClassifierID(DATETIME);
+        m_DateTimeEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_DateTimeEDataType);
+    }
 
-    m_DecimalEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_DecimalEDataType->setClassifierID(DECIMAL);
-    m_DecimalEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_DecimalEDataType);
+    { // Decimal
+        m_DecimalEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_DecimalEDataType->setClassifierID(DECIMAL);
+        m_DecimalEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_DecimalEDataType);
+    }
 
-    m_DoubleEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_DoubleEDataType->setClassifierID(DOUBLE);
-    m_DoubleEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_DoubleEDataType);
+    { // Double
+        m_DoubleEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_DoubleEDataType->setClassifierID(DOUBLE);
+        m_DoubleEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_DoubleEDataType);
+    }
 
-    m_DoubleObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_DoubleObjectEDataType->setClassifierID(DOUBLEOBJECT);
-    m_DoubleObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_DoubleObjectEDataType);
+    { // DoubleObject
+        m_DoubleObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_DoubleObjectEDataType->setClassifierID(DOUBLEOBJECT);
+        m_DoubleObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_DoubleObjectEDataType);
+    }
 
-    m_DurationEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_DurationEDataType->setClassifierID(DURATION);
-    m_DurationEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_DurationEDataType);
+    { // Duration
+        m_DurationEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_DurationEDataType->setClassifierID(DURATION);
+        m_DurationEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_DurationEDataType);
+    }
 
-    m_ENTITIESEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_ENTITIESEDataType->setClassifierID(ENTITIES);
-    m_ENTITIESEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ENTITIESEDataType);
+    { // ENTITIES
+        m_ENTITIESEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_ENTITIESEDataType->setClassifierID(ENTITIES);
+        m_ENTITIESEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ENTITIESEDataType);
+    }
 
-    m_ENTITIESBaseEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_ENTITIESBaseEDataType->setClassifierID(ENTITIESBASE);
-    m_ENTITIESBaseEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ENTITIESBaseEDataType);
+    { // ENTITIESBase
+        m_ENTITIESBaseEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_ENTITIESBaseEDataType->setClassifierID(ENTITIESBASE);
+        m_ENTITIESBaseEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ENTITIESBaseEDataType);
+    }
 
-    m_ENTITYEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_ENTITYEDataType->setClassifierID(ENTITY);
-    m_ENTITYEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ENTITYEDataType);
+    { // ENTITY
+        m_ENTITYEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_ENTITYEDataType->setClassifierID(ENTITY);
+        m_ENTITYEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ENTITYEDataType);
+    }
 
-    m_FloatEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_FloatEDataType->setClassifierID(FLOAT);
-    m_FloatEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_FloatEDataType);
+    { // Float
+        m_FloatEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_FloatEDataType->setClassifierID(FLOAT);
+        m_FloatEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_FloatEDataType);
+    }
 
-    m_FloatObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_FloatObjectEDataType->setClassifierID(FLOATOBJECT);
-    m_FloatObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_FloatObjectEDataType);
+    { // FloatObject
+        m_FloatObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_FloatObjectEDataType->setClassifierID(FLOATOBJECT);
+        m_FloatObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_FloatObjectEDataType);
+    }
 
-    m_GDayEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_GDayEDataType->setClassifierID(GDAY);
-    m_GDayEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_GDayEDataType);
+    { // GDay
+        m_GDayEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_GDayEDataType->setClassifierID(GDAY);
+        m_GDayEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_GDayEDataType);
+    }
 
-    m_GMonthEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_GMonthEDataType->setClassifierID(GMONTH);
-    m_GMonthEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_GMonthEDataType);
+    { // GMonth
+        m_GMonthEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_GMonthEDataType->setClassifierID(GMONTH);
+        m_GMonthEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_GMonthEDataType);
+    }
 
-    m_GMonthDayEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_GMonthDayEDataType->setClassifierID(GMONTHDAY);
-    m_GMonthDayEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_GMonthDayEDataType);
+    { // GMonthDay
+        m_GMonthDayEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_GMonthDayEDataType->setClassifierID(GMONTHDAY);
+        m_GMonthDayEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_GMonthDayEDataType);
+    }
 
-    m_GYearEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_GYearEDataType->setClassifierID(GYEAR);
-    m_GYearEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_GYearEDataType);
+    { // GYear
+        m_GYearEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_GYearEDataType->setClassifierID(GYEAR);
+        m_GYearEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_GYearEDataType);
+    }
 
-    m_GYearMonthEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_GYearMonthEDataType->setClassifierID(GYEARMONTH);
-    m_GYearMonthEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_GYearMonthEDataType);
+    { // GYearMonth
+        m_GYearMonthEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_GYearMonthEDataType->setClassifierID(GYEARMONTH);
+        m_GYearMonthEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_GYearMonthEDataType);
+    }
 
-    m_HexBinaryEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_HexBinaryEDataType->setClassifierID(HEXBINARY);
-    m_HexBinaryEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_HexBinaryEDataType);
+    { // HexBinary
+        m_HexBinaryEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_HexBinaryEDataType->setClassifierID(HEXBINARY);
+        m_HexBinaryEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_HexBinaryEDataType);
+    }
 
-    m_IDEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_IDEDataType->setClassifierID(ID);
-    m_IDEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_IDEDataType);
+    { // ID
+        m_IDEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_IDEDataType->setClassifierID(ID);
+        m_IDEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_IDEDataType);
+    }
 
-    m_IDREFEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_IDREFEDataType->setClassifierID(IDREF);
-    m_IDREFEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_IDREFEDataType);
+    { // IDREF
+        m_IDREFEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_IDREFEDataType->setClassifierID(IDREF);
+        m_IDREFEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_IDREFEDataType);
+    }
 
-    m_IDREFSEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_IDREFSEDataType->setClassifierID(IDREFS);
-    m_IDREFSEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_IDREFSEDataType);
+    { // IDREFS
+        m_IDREFSEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_IDREFSEDataType->setClassifierID(IDREFS);
+        m_IDREFSEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_IDREFSEDataType);
+    }
 
-    m_IDREFSBaseEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_IDREFSBaseEDataType->setClassifierID(IDREFSBASE);
-    m_IDREFSBaseEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_IDREFSBaseEDataType);
+    { // IDREFSBase
+        m_IDREFSBaseEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_IDREFSBaseEDataType->setClassifierID(IDREFSBASE);
+        m_IDREFSBaseEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_IDREFSBaseEDataType);
+    }
 
-    m_IntEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_IntEDataType->setClassifierID(INT);
-    m_IntEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_IntEDataType);
+    { // Int
+        m_IntEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_IntEDataType->setClassifierID(INT);
+        m_IntEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_IntEDataType);
+    }
 
-    m_IntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_IntegerEDataType->setClassifierID(INTEGER);
-    m_IntegerEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_IntegerEDataType);
+    { // Integer
+        m_IntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_IntegerEDataType->setClassifierID(INTEGER);
+        m_IntegerEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_IntegerEDataType);
+    }
 
-    m_IntObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_IntObjectEDataType->setClassifierID(INTOBJECT);
-    m_IntObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_IntObjectEDataType);
+    { // IntObject
+        m_IntObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_IntObjectEDataType->setClassifierID(INTOBJECT);
+        m_IntObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_IntObjectEDataType);
+    }
 
-    m_LanguageEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_LanguageEDataType->setClassifierID(LANGUAGE);
-    m_LanguageEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_LanguageEDataType);
+    { // Language
+        m_LanguageEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_LanguageEDataType->setClassifierID(LANGUAGE);
+        m_LanguageEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_LanguageEDataType);
+    }
 
-    m_LongEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_LongEDataType->setClassifierID(LONG);
-    m_LongEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_LongEDataType);
+    { // Long
+        m_LongEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_LongEDataType->setClassifierID(LONG);
+        m_LongEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_LongEDataType);
+    }
 
-    m_LongObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_LongObjectEDataType->setClassifierID(LONGOBJECT);
-    m_LongObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_LongObjectEDataType);
+    { // LongObject
+        m_LongObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_LongObjectEDataType->setClassifierID(LONGOBJECT);
+        m_LongObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_LongObjectEDataType);
+    }
 
-    m_NameEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NameEDataType->setClassifierID(NAME);
-    m_NameEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NameEDataType);
+    { // Name
+        m_NameEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NameEDataType->setClassifierID(NAME);
+        m_NameEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NameEDataType);
+    }
 
-    m_NCNameEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NCNameEDataType->setClassifierID(NCNAME);
-    m_NCNameEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NCNameEDataType);
+    { // NCName
+        m_NCNameEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NCNameEDataType->setClassifierID(NCNAME);
+        m_NCNameEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NCNameEDataType);
+    }
 
-    m_NegativeIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NegativeIntegerEDataType->setClassifierID(NEGATIVEINTEGER);
-    m_NegativeIntegerEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NegativeIntegerEDataType);
+    { // NegativeInteger
+        m_NegativeIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NegativeIntegerEDataType->setClassifierID(NEGATIVEINTEGER);
+        m_NegativeIntegerEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NegativeIntegerEDataType);
+    }
 
-    m_NMTOKENEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NMTOKENEDataType->setClassifierID(NMTOKEN);
-    m_NMTOKENEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NMTOKENEDataType);
+    { // NMTOKEN
+        m_NMTOKENEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NMTOKENEDataType->setClassifierID(NMTOKEN);
+        m_NMTOKENEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NMTOKENEDataType);
+    }
 
-    m_NMTOKENSEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NMTOKENSEDataType->setClassifierID(NMTOKENS);
-    m_NMTOKENSEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NMTOKENSEDataType);
+    { // NMTOKENS
+        m_NMTOKENSEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NMTOKENSEDataType->setClassifierID(NMTOKENS);
+        m_NMTOKENSEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NMTOKENSEDataType);
+    }
 
-    m_NMTOKENSBaseEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NMTOKENSBaseEDataType->setClassifierID(NMTOKENSBASE);
-    m_NMTOKENSBaseEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NMTOKENSBaseEDataType);
+    { // NMTOKENSBase
+        m_NMTOKENSBaseEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NMTOKENSBaseEDataType->setClassifierID(NMTOKENSBASE);
+        m_NMTOKENSBaseEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NMTOKENSBaseEDataType);
+    }
 
-    m_NonNegativeIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NonNegativeIntegerEDataType->setClassifierID(NONNEGATIVEINTEGER);
-    m_NonNegativeIntegerEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NonNegativeIntegerEDataType);
+    { // NonNegativeInteger
+        m_NonNegativeIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NonNegativeIntegerEDataType->setClassifierID(NONNEGATIVEINTEGER);
+        m_NonNegativeIntegerEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NonNegativeIntegerEDataType);
+    }
 
-    m_NonPositiveIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NonPositiveIntegerEDataType->setClassifierID(NONPOSITIVEINTEGER);
-    m_NonPositiveIntegerEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NonPositiveIntegerEDataType);
+    { // NonPositiveInteger
+        m_NonPositiveIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NonPositiveIntegerEDataType->setClassifierID(NONPOSITIVEINTEGER);
+        m_NonPositiveIntegerEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NonPositiveIntegerEDataType);
+    }
 
-    m_NormalizedStringEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NormalizedStringEDataType->setClassifierID(NORMALIZEDSTRING);
-    m_NormalizedStringEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NormalizedStringEDataType);
+    { // NormalizedString
+        m_NormalizedStringEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NormalizedStringEDataType->setClassifierID(NORMALIZEDSTRING);
+        m_NormalizedStringEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NormalizedStringEDataType);
+    }
 
-    m_NOTATIONEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_NOTATIONEDataType->setClassifierID(NOTATION);
-    m_NOTATIONEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_NOTATIONEDataType);
+    { // NOTATION
+        m_NOTATIONEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_NOTATIONEDataType->setClassifierID(NOTATION);
+        m_NOTATIONEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_NOTATIONEDataType);
+    }
 
-    m_PositiveIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_PositiveIntegerEDataType->setClassifierID(POSITIVEINTEGER);
-    m_PositiveIntegerEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_PositiveIntegerEDataType);
+    { // PositiveInteger
+        m_PositiveIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_PositiveIntegerEDataType->setClassifierID(POSITIVEINTEGER);
+        m_PositiveIntegerEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_PositiveIntegerEDataType);
+    }
 
-    m_QNameEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_QNameEDataType->setClassifierID(QNAME);
-    m_QNameEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_QNameEDataType);
+    { // QName
+        m_QNameEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_QNameEDataType->setClassifierID(QNAME);
+        m_QNameEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_QNameEDataType);
+    }
 
-    m_ShortEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_ShortEDataType->setClassifierID(SHORT);
-    m_ShortEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ShortEDataType);
+    { // Short
+        m_ShortEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_ShortEDataType->setClassifierID(SHORT);
+        m_ShortEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ShortEDataType);
+    }
 
-    m_ShortObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_ShortObjectEDataType->setClassifierID(SHORTOBJECT);
-    m_ShortObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_ShortObjectEDataType);
+    { // ShortObject
+        m_ShortObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_ShortObjectEDataType->setClassifierID(SHORTOBJECT);
+        m_ShortObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_ShortObjectEDataType);
+    }
 
-    m_StringEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_StringEDataType->setClassifierID(STRING);
-    m_StringEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_StringEDataType);
+    { // String
+        m_StringEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_StringEDataType->setClassifierID(STRING);
+        m_StringEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_StringEDataType);
+    }
 
-    m_TimeEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_TimeEDataType->setClassifierID(TIME);
-    m_TimeEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_TimeEDataType);
+    { // Time
+        m_TimeEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_TimeEDataType->setClassifierID(TIME);
+        m_TimeEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_TimeEDataType);
+    }
 
-    m_TokenEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_TokenEDataType->setClassifierID(TOKEN);
-    m_TokenEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_TokenEDataType);
+    { // Token
+        m_TokenEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_TokenEDataType->setClassifierID(TOKEN);
+        m_TokenEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_TokenEDataType);
+    }
 
-    m_UnsignedByteEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_UnsignedByteEDataType->setClassifierID(UNSIGNEDBYTE);
-    m_UnsignedByteEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_UnsignedByteEDataType);
+    { // UnsignedByte
+        m_UnsignedByteEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_UnsignedByteEDataType->setClassifierID(UNSIGNEDBYTE);
+        m_UnsignedByteEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_UnsignedByteEDataType);
+    }
 
-    m_UnsignedByteObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_UnsignedByteObjectEDataType->setClassifierID(UNSIGNEDBYTEOBJECT);
-    m_UnsignedByteObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_UnsignedByteObjectEDataType);
+    { // UnsignedByteObject
+        m_UnsignedByteObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_UnsignedByteObjectEDataType->setClassifierID(UNSIGNEDBYTEOBJECT);
+        m_UnsignedByteObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_UnsignedByteObjectEDataType);
+    }
 
-    m_UnsignedIntEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_UnsignedIntEDataType->setClassifierID(UNSIGNEDINT);
-    m_UnsignedIntEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_UnsignedIntEDataType);
+    { // UnsignedInt
+        m_UnsignedIntEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_UnsignedIntEDataType->setClassifierID(UNSIGNEDINT);
+        m_UnsignedIntEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_UnsignedIntEDataType);
+    }
 
-    m_UnsignedIntObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_UnsignedIntObjectEDataType->setClassifierID(UNSIGNEDINTOBJECT);
-    m_UnsignedIntObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_UnsignedIntObjectEDataType);
+    { // UnsignedIntObject
+        m_UnsignedIntObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_UnsignedIntObjectEDataType->setClassifierID(UNSIGNEDINTOBJECT);
+        m_UnsignedIntObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_UnsignedIntObjectEDataType);
+    }
 
-    m_UnsignedLongEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_UnsignedLongEDataType->setClassifierID(UNSIGNEDLONG);
-    m_UnsignedLongEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_UnsignedLongEDataType);
+    { // UnsignedLong
+        m_UnsignedLongEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_UnsignedLongEDataType->setClassifierID(UNSIGNEDLONG);
+        m_UnsignedLongEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_UnsignedLongEDataType);
+    }
 
-    m_UnsignedShortEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_UnsignedShortEDataType->setClassifierID(UNSIGNEDSHORT);
-    m_UnsignedShortEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_UnsignedShortEDataType);
+    { // UnsignedShort
+        m_UnsignedShortEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_UnsignedShortEDataType->setClassifierID(UNSIGNEDSHORT);
+        m_UnsignedShortEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_UnsignedShortEDataType);
+    }
 
-    m_UnsignedShortObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-            > (new ::ecore::EDataType);
-    m_UnsignedShortObjectEDataType->setClassifierID(UNSIGNEDSHORTOBJECT);
-    m_UnsignedShortObjectEDataType->basicsetEPackage(_this());
-    classifiers.basicAdd(m_UnsignedShortObjectEDataType);
+    { // UnsignedShortObject
+        m_UnsignedShortObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
+                > (new ::ecore::EDataType);
+        m_UnsignedShortObjectEDataType->setClassifierID(UNSIGNEDSHORTOBJECT);
+        m_UnsignedShortObjectEDataType->basicsetEPackage(_this());
+        classifiers.basicAdd(m_UnsignedShortObjectEDataType);
+    }
 
     // Initialize package
     setName("type");
@@ -596,460 +718,532 @@ void TypePackage::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // AnyType
-    m_AnyTypeEClass->setName("AnyType");
-    m_AnyTypeEClass->setAbstract(false);
-    m_AnyTypeEClass->setInterface(false);
-    m_AnyType__mixed->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-    m_AnyType__mixed->setName("mixed");
-    m_AnyType__mixed->setDefaultValueLiteral("");
-    m_AnyType__mixed->setLowerBound(0);
-    m_AnyType__mixed->setUpperBound(-1);
-    m_AnyType__mixed->setTransient(false);
-    m_AnyType__mixed->setVolatile(false);
-    m_AnyType__mixed->setChangeable(true);
-    m_AnyType__mixed->setUnsettable(false);
-    m_AnyType__mixed->setID(false);
-    m_AnyType__mixed->setUnique(false);
-    m_AnyType__mixed->setDerived(false);
-    m_AnyType__mixed->setOrdered(true);
-    m_AnyType__any->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-    m_AnyType__any->setName("any");
-    m_AnyType__any->setDefaultValueLiteral("");
-    m_AnyType__any->setLowerBound(0);
-    m_AnyType__any->setUpperBound(-1);
-    m_AnyType__any->setTransient(true);
-    m_AnyType__any->setVolatile(true);
-    m_AnyType__any->setChangeable(true);
-    m_AnyType__any->setUnsettable(false);
-    m_AnyType__any->setID(false);
-    m_AnyType__any->setUnique(false);
-    m_AnyType__any->setDerived(true);
-    m_AnyType__any->setOrdered(true);
-    m_AnyType__anyAttribute->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-    m_AnyType__anyAttribute->setName("anyAttribute");
-    m_AnyType__anyAttribute->setDefaultValueLiteral("");
-    m_AnyType__anyAttribute->setLowerBound(0);
-    m_AnyType__anyAttribute->setUpperBound(-1);
-    m_AnyType__anyAttribute->setTransient(false);
-    m_AnyType__anyAttribute->setVolatile(false);
-    m_AnyType__anyAttribute->setChangeable(true);
-    m_AnyType__anyAttribute->setUnsettable(false);
-    m_AnyType__anyAttribute->setID(false);
-    m_AnyType__anyAttribute->setUnique(false);
-    m_AnyType__anyAttribute->setDerived(false);
-    m_AnyType__anyAttribute->setOrdered(true);
-    // ProcessingInstruction
-    m_ProcessingInstructionEClass->setName("ProcessingInstruction");
-    m_ProcessingInstructionEClass->setAbstract(false);
-    m_ProcessingInstructionEClass->setInterface(false);
-    m_ProcessingInstruction__data->setEType(m_StringEDataType);
-    m_ProcessingInstruction__data->setName("data");
-    m_ProcessingInstruction__data->setDefaultValueLiteral("");
-    m_ProcessingInstruction__data->setLowerBound(0);
-    m_ProcessingInstruction__data->setUpperBound(1);
-    m_ProcessingInstruction__data->setTransient(false);
-    m_ProcessingInstruction__data->setVolatile(false);
-    m_ProcessingInstruction__data->setChangeable(true);
-    m_ProcessingInstruction__data->setUnsettable(false);
-    m_ProcessingInstruction__data->setID(false);
-    m_ProcessingInstruction__data->setUnique(true);
-    m_ProcessingInstruction__data->setDerived(false);
-    m_ProcessingInstruction__data->setOrdered(true);
-    m_ProcessingInstruction__target->setEType(m_StringEDataType);
-    m_ProcessingInstruction__target->setName("target");
-    m_ProcessingInstruction__target->setDefaultValueLiteral("");
-    m_ProcessingInstruction__target->setLowerBound(1);
-    m_ProcessingInstruction__target->setUpperBound(1);
-    m_ProcessingInstruction__target->setTransient(false);
-    m_ProcessingInstruction__target->setVolatile(false);
-    m_ProcessingInstruction__target->setChangeable(true);
-    m_ProcessingInstruction__target->setUnsettable(false);
-    m_ProcessingInstruction__target->setID(false);
-    m_ProcessingInstruction__target->setUnique(true);
-    m_ProcessingInstruction__target->setDerived(false);
-    m_ProcessingInstruction__target->setOrdered(true);
-    // SimpleAnyType
-    m_SimpleAnyTypeEClass->setName("SimpleAnyType");
-    m_SimpleAnyTypeEClass->setAbstract(false);
-    m_SimpleAnyTypeEClass->setInterface(false);
-    m_SimpleAnyType__rawValue->setEType(m_StringEDataType);
-    m_SimpleAnyType__rawValue->setName("rawValue");
-    m_SimpleAnyType__rawValue->setDefaultValueLiteral("");
-    m_SimpleAnyType__rawValue->setLowerBound(0);
-    m_SimpleAnyType__rawValue->setUpperBound(1);
-    m_SimpleAnyType__rawValue->setTransient(true);
-    m_SimpleAnyType__rawValue->setVolatile(true);
-    m_SimpleAnyType__rawValue->setChangeable(true);
-    m_SimpleAnyType__rawValue->setUnsettable(false);
-    m_SimpleAnyType__rawValue->setID(false);
-    m_SimpleAnyType__rawValue->setUnique(true);
-    m_SimpleAnyType__rawValue->setDerived(true);
-    m_SimpleAnyType__rawValue->setOrdered(true);
-    m_SimpleAnyType__value->setEType(m_AnySimpleTypeEDataType);
-    m_SimpleAnyType__value->setName("value");
-    m_SimpleAnyType__value->setDefaultValueLiteral("");
-    m_SimpleAnyType__value->setLowerBound(0);
-    m_SimpleAnyType__value->setUpperBound(1);
-    m_SimpleAnyType__value->setTransient(true);
-    m_SimpleAnyType__value->setVolatile(true);
-    m_SimpleAnyType__value->setChangeable(true);
-    m_SimpleAnyType__value->setUnsettable(false);
-    m_SimpleAnyType__value->setID(false);
-    m_SimpleAnyType__value->setUnique(true);
-    m_SimpleAnyType__value->setDerived(true);
-    m_SimpleAnyType__value->setOrdered(true);
-    m_SimpleAnyType__instanceType->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDataType());
-    m_SimpleAnyType__instanceType->setName("instanceType");
-    m_SimpleAnyType__instanceType->setDefaultValueLiteral("");
-    m_SimpleAnyType__instanceType->setLowerBound(1);
-    m_SimpleAnyType__instanceType->setUpperBound(1);
-    m_SimpleAnyType__instanceType->setTransient(false);
-    m_SimpleAnyType__instanceType->setVolatile(false);
-    m_SimpleAnyType__instanceType->setChangeable(true);
-    m_SimpleAnyType__instanceType->setContainment(false);
-    m_SimpleAnyType__instanceType->setResolveProxies(false);
-    m_SimpleAnyType__instanceType->setUnique(true);
-    m_SimpleAnyType__instanceType->setDerived(false);
-    m_SimpleAnyType__instanceType->setOrdered(true);
-    // XMLTypeDocumentRoot
-    m_XMLTypeDocumentRootEClass->setName("XMLTypeDocumentRoot");
-    m_XMLTypeDocumentRootEClass->setAbstract(false);
-    m_XMLTypeDocumentRootEClass->setInterface(false);
-    m_XMLTypeDocumentRoot__mixed->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-    m_XMLTypeDocumentRoot__mixed->setName("mixed");
-    m_XMLTypeDocumentRoot__mixed->setDefaultValueLiteral("");
-    m_XMLTypeDocumentRoot__mixed->setLowerBound(0);
-    m_XMLTypeDocumentRoot__mixed->setUpperBound(-1);
-    m_XMLTypeDocumentRoot__mixed->setTransient(false);
-    m_XMLTypeDocumentRoot__mixed->setVolatile(false);
-    m_XMLTypeDocumentRoot__mixed->setChangeable(true);
-    m_XMLTypeDocumentRoot__mixed->setUnsettable(false);
-    m_XMLTypeDocumentRoot__mixed->setID(false);
-    m_XMLTypeDocumentRoot__mixed->setUnique(false);
-    m_XMLTypeDocumentRoot__mixed->setDerived(false);
-    m_XMLTypeDocumentRoot__mixed->setOrdered(true);
-    m_XMLTypeDocumentRoot__cDATA->setEType(m_StringEDataType);
-    m_XMLTypeDocumentRoot__cDATA->setName("cDATA");
-    m_XMLTypeDocumentRoot__cDATA->setDefaultValueLiteral("");
-    m_XMLTypeDocumentRoot__cDATA->setLowerBound(0);
-    m_XMLTypeDocumentRoot__cDATA->setUpperBound(-2);
-    m_XMLTypeDocumentRoot__cDATA->setTransient(true);
-    m_XMLTypeDocumentRoot__cDATA->setVolatile(true);
-    m_XMLTypeDocumentRoot__cDATA->setChangeable(true);
-    m_XMLTypeDocumentRoot__cDATA->setUnsettable(false);
-    m_XMLTypeDocumentRoot__cDATA->setID(false);
-    m_XMLTypeDocumentRoot__cDATA->setUnique(false);
-    m_XMLTypeDocumentRoot__cDATA->setDerived(true);
-    m_XMLTypeDocumentRoot__cDATA->setOrdered(true);
-    m_XMLTypeDocumentRoot__comment->setEType(m_StringEDataType);
-    m_XMLTypeDocumentRoot__comment->setName("comment");
-    m_XMLTypeDocumentRoot__comment->setDefaultValueLiteral("");
-    m_XMLTypeDocumentRoot__comment->setLowerBound(0);
-    m_XMLTypeDocumentRoot__comment->setUpperBound(-2);
-    m_XMLTypeDocumentRoot__comment->setTransient(true);
-    m_XMLTypeDocumentRoot__comment->setVolatile(true);
-    m_XMLTypeDocumentRoot__comment->setChangeable(true);
-    m_XMLTypeDocumentRoot__comment->setUnsettable(false);
-    m_XMLTypeDocumentRoot__comment->setID(false);
-    m_XMLTypeDocumentRoot__comment->setUnique(false);
-    m_XMLTypeDocumentRoot__comment->setDerived(true);
-    m_XMLTypeDocumentRoot__comment->setOrdered(true);
-    m_XMLTypeDocumentRoot__text->setEType(m_StringEDataType);
-    m_XMLTypeDocumentRoot__text->setName("text");
-    m_XMLTypeDocumentRoot__text->setDefaultValueLiteral("");
-    m_XMLTypeDocumentRoot__text->setLowerBound(0);
-    m_XMLTypeDocumentRoot__text->setUpperBound(-2);
-    m_XMLTypeDocumentRoot__text->setTransient(true);
-    m_XMLTypeDocumentRoot__text->setVolatile(true);
-    m_XMLTypeDocumentRoot__text->setChangeable(true);
-    m_XMLTypeDocumentRoot__text->setUnsettable(false);
-    m_XMLTypeDocumentRoot__text->setID(false);
-    m_XMLTypeDocumentRoot__text->setUnique(false);
-    m_XMLTypeDocumentRoot__text->setDerived(true);
-    m_XMLTypeDocumentRoot__text->setOrdered(true);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setName("xMLNSPrefixMap");
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setDefaultValueLiteral("");
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setLowerBound(0);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setUpperBound(-1);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setTransient(true);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setVolatile(false);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setChangeable(true);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setContainment(true);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setResolveProxies(false);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setUnique(true);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setDerived(false);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap->setOrdered(true);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setName("xSISchemaLocation");
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setDefaultValueLiteral("");
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setLowerBound(0);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setUpperBound(-1);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setTransient(true);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setVolatile(false);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setChangeable(true);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setContainment(true);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setResolveProxies(false);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setUnique(true);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setDerived(false);
-    m_XMLTypeDocumentRoot__xSISchemaLocation->setOrdered(true);
-    m_XMLTypeDocumentRoot__processingInstruction->setEType(
-            m_ProcessingInstructionEClass);
-    m_XMLTypeDocumentRoot__processingInstruction->setName(
-            "processingInstruction");
-    m_XMLTypeDocumentRoot__processingInstruction->setDefaultValueLiteral("");
-    m_XMLTypeDocumentRoot__processingInstruction->setLowerBound(0);
-    m_XMLTypeDocumentRoot__processingInstruction->setUpperBound(-2);
-    m_XMLTypeDocumentRoot__processingInstruction->setTransient(true);
-    m_XMLTypeDocumentRoot__processingInstruction->setVolatile(true);
-    m_XMLTypeDocumentRoot__processingInstruction->setChangeable(true);
-    m_XMLTypeDocumentRoot__processingInstruction->setContainment(true);
-    m_XMLTypeDocumentRoot__processingInstruction->setResolveProxies(false);
-    m_XMLTypeDocumentRoot__processingInstruction->setUnique(true);
-    m_XMLTypeDocumentRoot__processingInstruction->setDerived(true);
-    m_XMLTypeDocumentRoot__processingInstruction->setOrdered(true);
+    { // AnyType
+        m_AnyTypeEClass->setName("AnyType");
+        m_AnyTypeEClass->setAbstract(false);
+        m_AnyTypeEClass->setInterface(false);
+        m_AnyType__mixed->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+        m_AnyType__mixed->setName("mixed");
+        m_AnyType__mixed->setDefaultValueLiteral("");
+        m_AnyType__mixed->setLowerBound(0);
+        m_AnyType__mixed->setUpperBound(-1);
+        m_AnyType__mixed->setTransient(false);
+        m_AnyType__mixed->setVolatile(false);
+        m_AnyType__mixed->setChangeable(true);
+        m_AnyType__mixed->setUnsettable(false);
+        m_AnyType__mixed->setID(false);
+        m_AnyType__mixed->setUnique(false);
+        m_AnyType__mixed->setDerived(false);
+        m_AnyType__mixed->setOrdered(true);
+        m_AnyType__any->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+        m_AnyType__any->setName("any");
+        m_AnyType__any->setDefaultValueLiteral("");
+        m_AnyType__any->setLowerBound(0);
+        m_AnyType__any->setUpperBound(-1);
+        m_AnyType__any->setTransient(true);
+        m_AnyType__any->setVolatile(true);
+        m_AnyType__any->setChangeable(true);
+        m_AnyType__any->setUnsettable(false);
+        m_AnyType__any->setID(false);
+        m_AnyType__any->setUnique(false);
+        m_AnyType__any->setDerived(true);
+        m_AnyType__any->setOrdered(true);
+        m_AnyType__anyAttribute->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+        m_AnyType__anyAttribute->setName("anyAttribute");
+        m_AnyType__anyAttribute->setDefaultValueLiteral("");
+        m_AnyType__anyAttribute->setLowerBound(0);
+        m_AnyType__anyAttribute->setUpperBound(-1);
+        m_AnyType__anyAttribute->setTransient(false);
+        m_AnyType__anyAttribute->setVolatile(false);
+        m_AnyType__anyAttribute->setChangeable(true);
+        m_AnyType__anyAttribute->setUnsettable(false);
+        m_AnyType__anyAttribute->setID(false);
+        m_AnyType__anyAttribute->setUnique(false);
+        m_AnyType__anyAttribute->setDerived(false);
+        m_AnyType__anyAttribute->setOrdered(true);
+
+    }
+
+    { // ProcessingInstruction
+        m_ProcessingInstructionEClass->setName("ProcessingInstruction");
+        m_ProcessingInstructionEClass->setAbstract(false);
+        m_ProcessingInstructionEClass->setInterface(false);
+        m_ProcessingInstruction__data->setEType(m_StringEDataType);
+        m_ProcessingInstruction__data->setName("data");
+        m_ProcessingInstruction__data->setDefaultValueLiteral("");
+        m_ProcessingInstruction__data->setLowerBound(0);
+        m_ProcessingInstruction__data->setUpperBound(1);
+        m_ProcessingInstruction__data->setTransient(false);
+        m_ProcessingInstruction__data->setVolatile(false);
+        m_ProcessingInstruction__data->setChangeable(true);
+        m_ProcessingInstruction__data->setUnsettable(false);
+        m_ProcessingInstruction__data->setID(false);
+        m_ProcessingInstruction__data->setUnique(true);
+        m_ProcessingInstruction__data->setDerived(false);
+        m_ProcessingInstruction__data->setOrdered(true);
+        m_ProcessingInstruction__target->setEType(m_StringEDataType);
+        m_ProcessingInstruction__target->setName("target");
+        m_ProcessingInstruction__target->setDefaultValueLiteral("");
+        m_ProcessingInstruction__target->setLowerBound(1);
+        m_ProcessingInstruction__target->setUpperBound(1);
+        m_ProcessingInstruction__target->setTransient(false);
+        m_ProcessingInstruction__target->setVolatile(false);
+        m_ProcessingInstruction__target->setChangeable(true);
+        m_ProcessingInstruction__target->setUnsettable(false);
+        m_ProcessingInstruction__target->setID(false);
+        m_ProcessingInstruction__target->setUnique(true);
+        m_ProcessingInstruction__target->setDerived(false);
+        m_ProcessingInstruction__target->setOrdered(true);
+
+    }
+
+    { // SimpleAnyType
+        m_SimpleAnyTypeEClass->setName("SimpleAnyType");
+        m_SimpleAnyTypeEClass->setAbstract(false);
+        m_SimpleAnyTypeEClass->setInterface(false);
+        m_SimpleAnyType__rawValue->setEType(m_StringEDataType);
+        m_SimpleAnyType__rawValue->setName("rawValue");
+        m_SimpleAnyType__rawValue->setDefaultValueLiteral("");
+        m_SimpleAnyType__rawValue->setLowerBound(0);
+        m_SimpleAnyType__rawValue->setUpperBound(1);
+        m_SimpleAnyType__rawValue->setTransient(true);
+        m_SimpleAnyType__rawValue->setVolatile(true);
+        m_SimpleAnyType__rawValue->setChangeable(true);
+        m_SimpleAnyType__rawValue->setUnsettable(false);
+        m_SimpleAnyType__rawValue->setID(false);
+        m_SimpleAnyType__rawValue->setUnique(true);
+        m_SimpleAnyType__rawValue->setDerived(true);
+        m_SimpleAnyType__rawValue->setOrdered(true);
+        m_SimpleAnyType__value->setEType(m_AnySimpleTypeEDataType);
+        m_SimpleAnyType__value->setName("value");
+        m_SimpleAnyType__value->setDefaultValueLiteral("");
+        m_SimpleAnyType__value->setLowerBound(0);
+        m_SimpleAnyType__value->setUpperBound(1);
+        m_SimpleAnyType__value->setTransient(true);
+        m_SimpleAnyType__value->setVolatile(true);
+        m_SimpleAnyType__value->setChangeable(true);
+        m_SimpleAnyType__value->setUnsettable(false);
+        m_SimpleAnyType__value->setID(false);
+        m_SimpleAnyType__value->setUnique(true);
+        m_SimpleAnyType__value->setDerived(true);
+        m_SimpleAnyType__value->setOrdered(true);
+
+        m_SimpleAnyType__instanceType->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDataType());
+        m_SimpleAnyType__instanceType->setName("instanceType");
+        m_SimpleAnyType__instanceType->setDefaultValueLiteral("");
+        m_SimpleAnyType__instanceType->setLowerBound(1);
+        m_SimpleAnyType__instanceType->setUpperBound(1);
+        m_SimpleAnyType__instanceType->setTransient(false);
+        m_SimpleAnyType__instanceType->setVolatile(false);
+        m_SimpleAnyType__instanceType->setChangeable(true);
+        m_SimpleAnyType__instanceType->setContainment(false);
+        m_SimpleAnyType__instanceType->setResolveProxies(false);
+        m_SimpleAnyType__instanceType->setUnique(true);
+        m_SimpleAnyType__instanceType->setDerived(false);
+        m_SimpleAnyType__instanceType->setOrdered(true);
+
+    }
+
+    { // XMLTypeDocumentRoot
+        m_XMLTypeDocumentRootEClass->setName("XMLTypeDocumentRoot");
+        m_XMLTypeDocumentRootEClass->setAbstract(false);
+        m_XMLTypeDocumentRootEClass->setInterface(false);
+        m_XMLTypeDocumentRoot__mixed->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+        m_XMLTypeDocumentRoot__mixed->setName("mixed");
+        m_XMLTypeDocumentRoot__mixed->setDefaultValueLiteral("");
+        m_XMLTypeDocumentRoot__mixed->setLowerBound(0);
+        m_XMLTypeDocumentRoot__mixed->setUpperBound(-1);
+        m_XMLTypeDocumentRoot__mixed->setTransient(false);
+        m_XMLTypeDocumentRoot__mixed->setVolatile(false);
+        m_XMLTypeDocumentRoot__mixed->setChangeable(true);
+        m_XMLTypeDocumentRoot__mixed->setUnsettable(false);
+        m_XMLTypeDocumentRoot__mixed->setID(false);
+        m_XMLTypeDocumentRoot__mixed->setUnique(false);
+        m_XMLTypeDocumentRoot__mixed->setDerived(false);
+        m_XMLTypeDocumentRoot__mixed->setOrdered(true);
+        m_XMLTypeDocumentRoot__cDATA->setEType(m_StringEDataType);
+        m_XMLTypeDocumentRoot__cDATA->setName("cDATA");
+        m_XMLTypeDocumentRoot__cDATA->setDefaultValueLiteral("");
+        m_XMLTypeDocumentRoot__cDATA->setLowerBound(0);
+        m_XMLTypeDocumentRoot__cDATA->setUpperBound(-2);
+        m_XMLTypeDocumentRoot__cDATA->setTransient(true);
+        m_XMLTypeDocumentRoot__cDATA->setVolatile(true);
+        m_XMLTypeDocumentRoot__cDATA->setChangeable(true);
+        m_XMLTypeDocumentRoot__cDATA->setUnsettable(false);
+        m_XMLTypeDocumentRoot__cDATA->setID(false);
+        m_XMLTypeDocumentRoot__cDATA->setUnique(false);
+        m_XMLTypeDocumentRoot__cDATA->setDerived(true);
+        m_XMLTypeDocumentRoot__cDATA->setOrdered(true);
+        m_XMLTypeDocumentRoot__comment->setEType(m_StringEDataType);
+        m_XMLTypeDocumentRoot__comment->setName("comment");
+        m_XMLTypeDocumentRoot__comment->setDefaultValueLiteral("");
+        m_XMLTypeDocumentRoot__comment->setLowerBound(0);
+        m_XMLTypeDocumentRoot__comment->setUpperBound(-2);
+        m_XMLTypeDocumentRoot__comment->setTransient(true);
+        m_XMLTypeDocumentRoot__comment->setVolatile(true);
+        m_XMLTypeDocumentRoot__comment->setChangeable(true);
+        m_XMLTypeDocumentRoot__comment->setUnsettable(false);
+        m_XMLTypeDocumentRoot__comment->setID(false);
+        m_XMLTypeDocumentRoot__comment->setUnique(false);
+        m_XMLTypeDocumentRoot__comment->setDerived(true);
+        m_XMLTypeDocumentRoot__comment->setOrdered(true);
+        m_XMLTypeDocumentRoot__text->setEType(m_StringEDataType);
+        m_XMLTypeDocumentRoot__text->setName("text");
+        m_XMLTypeDocumentRoot__text->setDefaultValueLiteral("");
+        m_XMLTypeDocumentRoot__text->setLowerBound(0);
+        m_XMLTypeDocumentRoot__text->setUpperBound(-2);
+        m_XMLTypeDocumentRoot__text->setTransient(true);
+        m_XMLTypeDocumentRoot__text->setVolatile(true);
+        m_XMLTypeDocumentRoot__text->setChangeable(true);
+        m_XMLTypeDocumentRoot__text->setUnsettable(false);
+        m_XMLTypeDocumentRoot__text->setID(false);
+        m_XMLTypeDocumentRoot__text->setUnique(false);
+        m_XMLTypeDocumentRoot__text->setDerived(true);
+        m_XMLTypeDocumentRoot__text->setOrdered(true);
+
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setName("xMLNSPrefixMap");
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setDefaultValueLiteral("");
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setLowerBound(0);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setUpperBound(-1);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setTransient(true);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setVolatile(false);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setChangeable(true);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setContainment(true);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setResolveProxies(false);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setUnique(true);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setDerived(false);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setOrdered(true);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setName("xSISchemaLocation");
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setDefaultValueLiteral("");
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setLowerBound(0);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setUpperBound(-1);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setTransient(true);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setVolatile(false);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setChangeable(true);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setContainment(true);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setResolveProxies(false);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setUnique(true);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setDerived(false);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setOrdered(true);
+        m_XMLTypeDocumentRoot__processingInstruction->setEType(
+                m_ProcessingInstructionEClass);
+        m_XMLTypeDocumentRoot__processingInstruction->setName(
+                "processingInstruction");
+        m_XMLTypeDocumentRoot__processingInstruction->setDefaultValueLiteral(
+                "");
+        m_XMLTypeDocumentRoot__processingInstruction->setLowerBound(0);
+        m_XMLTypeDocumentRoot__processingInstruction->setUpperBound(-2);
+        m_XMLTypeDocumentRoot__processingInstruction->setTransient(true);
+        m_XMLTypeDocumentRoot__processingInstruction->setVolatile(true);
+        m_XMLTypeDocumentRoot__processingInstruction->setChangeable(true);
+        m_XMLTypeDocumentRoot__processingInstruction->setContainment(true);
+        m_XMLTypeDocumentRoot__processingInstruction->setResolveProxies(false);
+        m_XMLTypeDocumentRoot__processingInstruction->setUnique(true);
+        m_XMLTypeDocumentRoot__processingInstruction->setDerived(true);
+        m_XMLTypeDocumentRoot__processingInstruction->setOrdered(true);
+
+    }
 
     // TODO: Initialize data types
 
-    // AnySimpleType
-    m_AnySimpleTypeEDataType->setName("AnySimpleType");
-    m_AnySimpleTypeEDataType->setSerializable(true);
+    { // AnySimpleType
+        m_AnySimpleTypeEDataType->setName("AnySimpleType");
+        m_AnySimpleTypeEDataType->setSerializable(true);
+    }
 
-    // AnyURI
-    m_AnyURIEDataType->setName("AnyURI");
-    m_AnyURIEDataType->setSerializable(true);
+    { // AnyURI
+        m_AnyURIEDataType->setName("AnyURI");
+        m_AnyURIEDataType->setSerializable(true);
+    }
 
-    // Base64Binary
-    m_Base64BinaryEDataType->setName("Base64Binary");
-    m_Base64BinaryEDataType->setSerializable(true);
+    { // Base64Binary
+        m_Base64BinaryEDataType->setName("Base64Binary");
+        m_Base64BinaryEDataType->setSerializable(true);
+    }
 
-    // Boolean
-    m_BooleanEDataType->setName("Boolean");
-    m_BooleanEDataType->setSerializable(true);
+    { // Boolean
+        m_BooleanEDataType->setName("Boolean");
+        m_BooleanEDataType->setSerializable(true);
+    }
 
-    // BooleanObject
-    m_BooleanObjectEDataType->setName("BooleanObject");
-    m_BooleanObjectEDataType->setSerializable(true);
+    { // BooleanObject
+        m_BooleanObjectEDataType->setName("BooleanObject");
+        m_BooleanObjectEDataType->setSerializable(true);
+    }
 
-    // Byte
-    m_ByteEDataType->setName("Byte");
-    m_ByteEDataType->setSerializable(true);
+    { // Byte
+        m_ByteEDataType->setName("Byte");
+        m_ByteEDataType->setSerializable(true);
+    }
 
-    // ByteObject
-    m_ByteObjectEDataType->setName("ByteObject");
-    m_ByteObjectEDataType->setSerializable(true);
+    { // ByteObject
+        m_ByteObjectEDataType->setName("ByteObject");
+        m_ByteObjectEDataType->setSerializable(true);
+    }
 
-    // Date
-    m_DateEDataType->setName("Date");
-    m_DateEDataType->setSerializable(true);
+    { // Date
+        m_DateEDataType->setName("Date");
+        m_DateEDataType->setSerializable(true);
+    }
 
-    // DateTime
-    m_DateTimeEDataType->setName("DateTime");
-    m_DateTimeEDataType->setSerializable(true);
+    { // DateTime
+        m_DateTimeEDataType->setName("DateTime");
+        m_DateTimeEDataType->setSerializable(true);
+    }
 
-    // Decimal
-    m_DecimalEDataType->setName("Decimal");
-    m_DecimalEDataType->setSerializable(true);
+    { // Decimal
+        m_DecimalEDataType->setName("Decimal");
+        m_DecimalEDataType->setSerializable(true);
+    }
 
-    // Double
-    m_DoubleEDataType->setName("Double");
-    m_DoubleEDataType->setSerializable(true);
+    { // Double
+        m_DoubleEDataType->setName("Double");
+        m_DoubleEDataType->setSerializable(true);
+    }
 
-    // DoubleObject
-    m_DoubleObjectEDataType->setName("DoubleObject");
-    m_DoubleObjectEDataType->setSerializable(true);
+    { // DoubleObject
+        m_DoubleObjectEDataType->setName("DoubleObject");
+        m_DoubleObjectEDataType->setSerializable(true);
+    }
 
-    // Duration
-    m_DurationEDataType->setName("Duration");
-    m_DurationEDataType->setSerializable(true);
+    { // Duration
+        m_DurationEDataType->setName("Duration");
+        m_DurationEDataType->setSerializable(true);
+    }
 
-    // ENTITIES
-    m_ENTITIESEDataType->setName("ENTITIES");
-    m_ENTITIESEDataType->setSerializable(true);
+    { // ENTITIES
+        m_ENTITIESEDataType->setName("ENTITIES");
+        m_ENTITIESEDataType->setSerializable(true);
+    }
 
-    // ENTITIESBase
-    m_ENTITIESBaseEDataType->setName("ENTITIESBase");
-    m_ENTITIESBaseEDataType->setSerializable(true);
+    { // ENTITIESBase
+        m_ENTITIESBaseEDataType->setName("ENTITIESBase");
+        m_ENTITIESBaseEDataType->setSerializable(true);
+    }
 
-    // ENTITY
-    m_ENTITYEDataType->setName("ENTITY");
-    m_ENTITYEDataType->setSerializable(true);
+    { // ENTITY
+        m_ENTITYEDataType->setName("ENTITY");
+        m_ENTITYEDataType->setSerializable(true);
+    }
 
-    // Float
-    m_FloatEDataType->setName("Float");
-    m_FloatEDataType->setSerializable(true);
+    { // Float
+        m_FloatEDataType->setName("Float");
+        m_FloatEDataType->setSerializable(true);
+    }
 
-    // FloatObject
-    m_FloatObjectEDataType->setName("FloatObject");
-    m_FloatObjectEDataType->setSerializable(true);
+    { // FloatObject
+        m_FloatObjectEDataType->setName("FloatObject");
+        m_FloatObjectEDataType->setSerializable(true);
+    }
 
-    // GDay
-    m_GDayEDataType->setName("GDay");
-    m_GDayEDataType->setSerializable(true);
+    { // GDay
+        m_GDayEDataType->setName("GDay");
+        m_GDayEDataType->setSerializable(true);
+    }
 
-    // GMonth
-    m_GMonthEDataType->setName("GMonth");
-    m_GMonthEDataType->setSerializable(true);
+    { // GMonth
+        m_GMonthEDataType->setName("GMonth");
+        m_GMonthEDataType->setSerializable(true);
+    }
 
-    // GMonthDay
-    m_GMonthDayEDataType->setName("GMonthDay");
-    m_GMonthDayEDataType->setSerializable(true);
+    { // GMonthDay
+        m_GMonthDayEDataType->setName("GMonthDay");
+        m_GMonthDayEDataType->setSerializable(true);
+    }
 
-    // GYear
-    m_GYearEDataType->setName("GYear");
-    m_GYearEDataType->setSerializable(true);
+    { // GYear
+        m_GYearEDataType->setName("GYear");
+        m_GYearEDataType->setSerializable(true);
+    }
 
-    // GYearMonth
-    m_GYearMonthEDataType->setName("GYearMonth");
-    m_GYearMonthEDataType->setSerializable(true);
+    { // GYearMonth
+        m_GYearMonthEDataType->setName("GYearMonth");
+        m_GYearMonthEDataType->setSerializable(true);
+    }
 
-    // HexBinary
-    m_HexBinaryEDataType->setName("HexBinary");
-    m_HexBinaryEDataType->setSerializable(true);
+    { // HexBinary
+        m_HexBinaryEDataType->setName("HexBinary");
+        m_HexBinaryEDataType->setSerializable(true);
+    }
 
-    // ID
-    m_IDEDataType->setName("ID");
-    m_IDEDataType->setSerializable(true);
+    { // ID
+        m_IDEDataType->setName("ID");
+        m_IDEDataType->setSerializable(true);
+    }
 
-    // IDREF
-    m_IDREFEDataType->setName("IDREF");
-    m_IDREFEDataType->setSerializable(true);
+    { // IDREF
+        m_IDREFEDataType->setName("IDREF");
+        m_IDREFEDataType->setSerializable(true);
+    }
 
-    // IDREFS
-    m_IDREFSEDataType->setName("IDREFS");
-    m_IDREFSEDataType->setSerializable(true);
+    { // IDREFS
+        m_IDREFSEDataType->setName("IDREFS");
+        m_IDREFSEDataType->setSerializable(true);
+    }
 
-    // IDREFSBase
-    m_IDREFSBaseEDataType->setName("IDREFSBase");
-    m_IDREFSBaseEDataType->setSerializable(true);
+    { // IDREFSBase
+        m_IDREFSBaseEDataType->setName("IDREFSBase");
+        m_IDREFSBaseEDataType->setSerializable(true);
+    }
 
-    // Int
-    m_IntEDataType->setName("Int");
-    m_IntEDataType->setSerializable(true);
+    { // Int
+        m_IntEDataType->setName("Int");
+        m_IntEDataType->setSerializable(true);
+    }
 
-    // Integer
-    m_IntegerEDataType->setName("Integer");
-    m_IntegerEDataType->setSerializable(true);
+    { // Integer
+        m_IntegerEDataType->setName("Integer");
+        m_IntegerEDataType->setSerializable(true);
+    }
 
-    // IntObject
-    m_IntObjectEDataType->setName("IntObject");
-    m_IntObjectEDataType->setSerializable(true);
+    { // IntObject
+        m_IntObjectEDataType->setName("IntObject");
+        m_IntObjectEDataType->setSerializable(true);
+    }
 
-    // Language
-    m_LanguageEDataType->setName("Language");
-    m_LanguageEDataType->setSerializable(true);
+    { // Language
+        m_LanguageEDataType->setName("Language");
+        m_LanguageEDataType->setSerializable(true);
+    }
 
-    // Long
-    m_LongEDataType->setName("Long");
-    m_LongEDataType->setSerializable(true);
+    { // Long
+        m_LongEDataType->setName("Long");
+        m_LongEDataType->setSerializable(true);
+    }
 
-    // LongObject
-    m_LongObjectEDataType->setName("LongObject");
-    m_LongObjectEDataType->setSerializable(true);
+    { // LongObject
+        m_LongObjectEDataType->setName("LongObject");
+        m_LongObjectEDataType->setSerializable(true);
+    }
 
-    // Name
-    m_NameEDataType->setName("Name");
-    m_NameEDataType->setSerializable(true);
+    { // Name
+        m_NameEDataType->setName("Name");
+        m_NameEDataType->setSerializable(true);
+    }
 
-    // NCName
-    m_NCNameEDataType->setName("NCName");
-    m_NCNameEDataType->setSerializable(true);
+    { // NCName
+        m_NCNameEDataType->setName("NCName");
+        m_NCNameEDataType->setSerializable(true);
+    }
 
-    // NegativeInteger
-    m_NegativeIntegerEDataType->setName("NegativeInteger");
-    m_NegativeIntegerEDataType->setSerializable(true);
+    { // NegativeInteger
+        m_NegativeIntegerEDataType->setName("NegativeInteger");
+        m_NegativeIntegerEDataType->setSerializable(true);
+    }
 
-    // NMTOKEN
-    m_NMTOKENEDataType->setName("NMTOKEN");
-    m_NMTOKENEDataType->setSerializable(true);
+    { // NMTOKEN
+        m_NMTOKENEDataType->setName("NMTOKEN");
+        m_NMTOKENEDataType->setSerializable(true);
+    }
 
-    // NMTOKENS
-    m_NMTOKENSEDataType->setName("NMTOKENS");
-    m_NMTOKENSEDataType->setSerializable(true);
+    { // NMTOKENS
+        m_NMTOKENSEDataType->setName("NMTOKENS");
+        m_NMTOKENSEDataType->setSerializable(true);
+    }
 
-    // NMTOKENSBase
-    m_NMTOKENSBaseEDataType->setName("NMTOKENSBase");
-    m_NMTOKENSBaseEDataType->setSerializable(true);
+    { // NMTOKENSBase
+        m_NMTOKENSBaseEDataType->setName("NMTOKENSBase");
+        m_NMTOKENSBaseEDataType->setSerializable(true);
+    }
 
-    // NonNegativeInteger
-    m_NonNegativeIntegerEDataType->setName("NonNegativeInteger");
-    m_NonNegativeIntegerEDataType->setSerializable(true);
+    { // NonNegativeInteger
+        m_NonNegativeIntegerEDataType->setName("NonNegativeInteger");
+        m_NonNegativeIntegerEDataType->setSerializable(true);
+    }
 
-    // NonPositiveInteger
-    m_NonPositiveIntegerEDataType->setName("NonPositiveInteger");
-    m_NonPositiveIntegerEDataType->setSerializable(true);
+    { // NonPositiveInteger
+        m_NonPositiveIntegerEDataType->setName("NonPositiveInteger");
+        m_NonPositiveIntegerEDataType->setSerializable(true);
+    }
 
-    // NormalizedString
-    m_NormalizedStringEDataType->setName("NormalizedString");
-    m_NormalizedStringEDataType->setSerializable(true);
+    { // NormalizedString
+        m_NormalizedStringEDataType->setName("NormalizedString");
+        m_NormalizedStringEDataType->setSerializable(true);
+    }
 
-    // NOTATION
-    m_NOTATIONEDataType->setName("NOTATION");
-    m_NOTATIONEDataType->setSerializable(true);
+    { // NOTATION
+        m_NOTATIONEDataType->setName("NOTATION");
+        m_NOTATIONEDataType->setSerializable(true);
+    }
 
-    // PositiveInteger
-    m_PositiveIntegerEDataType->setName("PositiveInteger");
-    m_PositiveIntegerEDataType->setSerializable(true);
+    { // PositiveInteger
+        m_PositiveIntegerEDataType->setName("PositiveInteger");
+        m_PositiveIntegerEDataType->setSerializable(true);
+    }
 
-    // QName
-    m_QNameEDataType->setName("QName");
-    m_QNameEDataType->setSerializable(true);
+    { // QName
+        m_QNameEDataType->setName("QName");
+        m_QNameEDataType->setSerializable(true);
+    }
 
-    // Short
-    m_ShortEDataType->setName("Short");
-    m_ShortEDataType->setSerializable(true);
+    { // Short
+        m_ShortEDataType->setName("Short");
+        m_ShortEDataType->setSerializable(true);
+    }
 
-    // ShortObject
-    m_ShortObjectEDataType->setName("ShortObject");
-    m_ShortObjectEDataType->setSerializable(true);
+    { // ShortObject
+        m_ShortObjectEDataType->setName("ShortObject");
+        m_ShortObjectEDataType->setSerializable(true);
+    }
 
-    // String
-    m_StringEDataType->setName("String");
-    m_StringEDataType->setSerializable(true);
+    { // String
+        m_StringEDataType->setName("String");
+        m_StringEDataType->setSerializable(true);
+    }
 
-    // Time
-    m_TimeEDataType->setName("Time");
-    m_TimeEDataType->setSerializable(true);
+    { // Time
+        m_TimeEDataType->setName("Time");
+        m_TimeEDataType->setSerializable(true);
+    }
 
-    // Token
-    m_TokenEDataType->setName("Token");
-    m_TokenEDataType->setSerializable(true);
+    { // Token
+        m_TokenEDataType->setName("Token");
+        m_TokenEDataType->setSerializable(true);
+    }
 
-    // UnsignedByte
-    m_UnsignedByteEDataType->setName("UnsignedByte");
-    m_UnsignedByteEDataType->setSerializable(true);
+    { // UnsignedByte
+        m_UnsignedByteEDataType->setName("UnsignedByte");
+        m_UnsignedByteEDataType->setSerializable(true);
+    }
 
-    // UnsignedByteObject
-    m_UnsignedByteObjectEDataType->setName("UnsignedByteObject");
-    m_UnsignedByteObjectEDataType->setSerializable(true);
+    { // UnsignedByteObject
+        m_UnsignedByteObjectEDataType->setName("UnsignedByteObject");
+        m_UnsignedByteObjectEDataType->setSerializable(true);
+    }
 
-    // UnsignedInt
-    m_UnsignedIntEDataType->setName("UnsignedInt");
-    m_UnsignedIntEDataType->setSerializable(true);
+    { // UnsignedInt
+        m_UnsignedIntEDataType->setName("UnsignedInt");
+        m_UnsignedIntEDataType->setSerializable(true);
+    }
 
-    // UnsignedIntObject
-    m_UnsignedIntObjectEDataType->setName("UnsignedIntObject");
-    m_UnsignedIntObjectEDataType->setSerializable(true);
+    { // UnsignedIntObject
+        m_UnsignedIntObjectEDataType->setName("UnsignedIntObject");
+        m_UnsignedIntObjectEDataType->setSerializable(true);
+    }
 
-    // UnsignedLong
-    m_UnsignedLongEDataType->setName("UnsignedLong");
-    m_UnsignedLongEDataType->setSerializable(true);
+    { // UnsignedLong
+        m_UnsignedLongEDataType->setName("UnsignedLong");
+        m_UnsignedLongEDataType->setSerializable(true);
+    }
 
-    // UnsignedShort
-    m_UnsignedShortEDataType->setName("UnsignedShort");
-    m_UnsignedShortEDataType->setSerializable(true);
+    { // UnsignedShort
+        m_UnsignedShortEDataType->setName("UnsignedShort");
+        m_UnsignedShortEDataType->setSerializable(true);
+    }
 
-    // UnsignedShortObject
-    m_UnsignedShortObjectEDataType->setName("UnsignedShortObject");
-    m_UnsignedShortObjectEDataType->setSerializable(true);
+    { // UnsignedShortObject
+        m_UnsignedShortObjectEDataType->setName("UnsignedShortObject");
+        m_UnsignedShortObjectEDataType->setSerializable(true);
+    }
 
     /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
     ::ecore::EAnnotation_ptr _annotation;

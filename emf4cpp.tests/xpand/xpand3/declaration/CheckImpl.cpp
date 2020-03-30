@@ -137,7 +137,7 @@ void Check::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Check::eSet(::ecore::EInt _featureID,
@@ -246,7 +246,7 @@ void Check::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Check::eIsSet(::ecore::EInt _featureID)
@@ -286,7 +286,7 @@ void Check::eSet(::ecore::EInt _featureID,
                 > ::is_set(getFeature());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Check::eUnset(::ecore::EInt _featureID)
@@ -295,7 +295,7 @@ void Check::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Check::_eClass()

@@ -95,7 +95,7 @@ void VisibleIn::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void VisibleIn::eSet(::ecore::EInt _featureID,
@@ -153,7 +153,7 @@ void VisibleIn::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean VisibleIn::eIsSet(::ecore::EInt _featureID)
@@ -174,7 +174,7 @@ void VisibleIn::eSet(::ecore::EInt _featureID,
         return getFrom().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void VisibleIn::eUnset(::ecore::EInt _featureID)
@@ -183,7 +183,7 @@ void VisibleIn::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr VisibleIn::_eClass()

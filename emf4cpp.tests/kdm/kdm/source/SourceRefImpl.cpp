@@ -93,7 +93,7 @@ void SourceRef::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void SourceRef::eSet(::ecore::EInt _featureID,
@@ -143,7 +143,7 @@ void SourceRef::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean SourceRef::eIsSet(::ecore::EInt _featureID)
@@ -164,7 +164,7 @@ void SourceRef::eSet(::ecore::EInt _featureID,
                 > ::is_set(getSnippet());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void SourceRef::eUnset(::ecore::EInt _featureID)
@@ -173,7 +173,7 @@ void SourceRef::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr SourceRef::_eClass()

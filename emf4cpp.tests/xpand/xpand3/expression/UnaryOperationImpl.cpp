@@ -98,7 +98,7 @@ void UnaryOperation::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void UnaryOperation::eSet(::ecore::EInt _featureID,
@@ -157,7 +157,7 @@ void UnaryOperation::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean UnaryOperation::eIsSet(::ecore::EInt _featureID)
@@ -182,7 +182,7 @@ void UnaryOperation::eSet(::ecore::EInt _featureID,
         return getOperand().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void UnaryOperation::eUnset(::ecore::EInt _featureID)
@@ -191,7 +191,7 @@ void UnaryOperation::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr UnaryOperation::_eClass()

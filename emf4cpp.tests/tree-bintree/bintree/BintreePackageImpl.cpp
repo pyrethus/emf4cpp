@@ -62,40 +62,41 @@ void BintreePackage::_initPackage()
     auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
             ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
 
-    // BinTreeNode
-    m_BinTreeNodeEClass = ::ecore::Ptr < ::ecore::EClass
-            > (new ::ecore::EClass);
-    m_BinTreeNodeEClass->setClassifierID(BINTREENODE);
-    m_BinTreeNodeEClass->basicsetEPackage(_this());
-    classifiers.basicAdd(m_BinTreeNodeEClass);
-    // m_BinTreeNode__parent has already been allocated above
-    m_BinTreeNode__parent->setFeatureID(
-            ::bintree::BintreePackage::BINTREENODE__PARENT);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
-            m_BinTreeNode__parent);
-    m_BinTreeNode__parent->basicsetEContainingClass(m_BinTreeNodeEClass);
-    // m_BinTreeNode__left has already been allocated above
-    m_BinTreeNode__left->setFeatureID(
-            ::bintree::BintreePackage::BINTREENODE__LEFT);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
-            m_BinTreeNode__left);
-    m_BinTreeNode__left->basicsetEContainingClass(m_BinTreeNodeEClass);
-    // m_BinTreeNode__right has already been allocated above
-    m_BinTreeNode__right->setFeatureID(
-            ::bintree::BintreePackage::BINTREENODE__RIGHT);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
-            m_BinTreeNode__right);
-    m_BinTreeNode__right->basicsetEContainingClass(m_BinTreeNodeEClass);
-    // m_BinTreeNode__data has already been allocated above
-    m_BinTreeNode__data->setFeatureID(
-            ::bintree::BintreePackage::BINTREENODE__DATA);
-    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
-            m_BinTreeNode__data);
-    m_BinTreeNode__data->basicsetEContainingClass(m_BinTreeNodeEClass);
+    { // BinTreeNode
+        m_BinTreeNodeEClass = ::ecore::Ptr < ::ecore::EClass
+                > (new ::ecore::EClass);
+        m_BinTreeNodeEClass->setClassifierID(BINTREENODE);
+        m_BinTreeNodeEClass->basicsetEPackage(_this());
+        classifiers.basicAdd(m_BinTreeNodeEClass);
+        // m_BinTreeNode__parent has already been allocated above
+        m_BinTreeNode__parent->setFeatureID(
+                ::bintree::BintreePackage::BINTREENODE__PARENT);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
+                m_BinTreeNode__parent);
+        m_BinTreeNode__parent->basicsetEContainingClass(m_BinTreeNodeEClass);
+        // m_BinTreeNode__left has already been allocated above
+        m_BinTreeNode__left->setFeatureID(
+                ::bintree::BintreePackage::BINTREENODE__LEFT);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
+                m_BinTreeNode__left);
+        m_BinTreeNode__left->basicsetEContainingClass(m_BinTreeNodeEClass);
+        // m_BinTreeNode__right has already been allocated above
+        m_BinTreeNode__right->setFeatureID(
+                ::bintree::BintreePackage::BINTREENODE__RIGHT);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
+                m_BinTreeNode__right);
+        m_BinTreeNode__right->basicsetEContainingClass(m_BinTreeNodeEClass);
+        // m_BinTreeNode__data has already been allocated above
+        m_BinTreeNode__data->setFeatureID(
+                ::bintree::BintreePackage::BINTREENODE__DATA);
+        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
+                m_BinTreeNode__data);
+        m_BinTreeNode__data->basicsetEContainingClass(m_BinTreeNodeEClass);
+    }
 
     // Create enums
 
@@ -112,63 +113,66 @@ void BintreePackage::_initPackage()
 
     // TODO: Initialize classes and features; add operations and parameters
     // TODO: GenericTypes
-    // BinTreeNode
-    m_BinTreeNodeEClass->setName("BinTreeNode");
-    m_BinTreeNodeEClass->setAbstract(false);
-    m_BinTreeNodeEClass->setInterface(false);
-    m_BinTreeNode__data->setEType(
-            dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-    m_BinTreeNode__data->setName("data");
-    m_BinTreeNode__data->setDefaultValueLiteral("");
-    m_BinTreeNode__data->setLowerBound(0);
-    m_BinTreeNode__data->setUpperBound(1);
-    m_BinTreeNode__data->setTransient(false);
-    m_BinTreeNode__data->setVolatile(false);
-    m_BinTreeNode__data->setChangeable(true);
-    m_BinTreeNode__data->setUnsettable(false);
-    m_BinTreeNode__data->setID(false);
-    m_BinTreeNode__data->setUnique(true);
-    m_BinTreeNode__data->setDerived(false);
-    m_BinTreeNode__data->setOrdered(true);
-    m_BinTreeNode__parent->setEType(m_BinTreeNodeEClass);
-    m_BinTreeNode__parent->setName("parent");
-    m_BinTreeNode__parent->setDefaultValueLiteral("");
-    m_BinTreeNode__parent->setLowerBound(0);
-    m_BinTreeNode__parent->setUpperBound(1);
-    m_BinTreeNode__parent->setTransient(true);
-    m_BinTreeNode__parent->setVolatile(false);
-    m_BinTreeNode__parent->setChangeable(true);
-    m_BinTreeNode__parent->setContainment(false);
-    m_BinTreeNode__parent->setResolveProxies(true);
-    m_BinTreeNode__parent->setUnique(true);
-    m_BinTreeNode__parent->setDerived(false);
-    m_BinTreeNode__parent->setOrdered(true);
-    m_BinTreeNode__left->setEType(m_BinTreeNodeEClass);
-    m_BinTreeNode__left->setName("left");
-    m_BinTreeNode__left->setDefaultValueLiteral("");
-    m_BinTreeNode__left->setLowerBound(0);
-    m_BinTreeNode__left->setUpperBound(1);
-    m_BinTreeNode__left->setTransient(false);
-    m_BinTreeNode__left->setVolatile(false);
-    m_BinTreeNode__left->setChangeable(true);
-    m_BinTreeNode__left->setContainment(true);
-    m_BinTreeNode__left->setResolveProxies(true);
-    m_BinTreeNode__left->setUnique(true);
-    m_BinTreeNode__left->setDerived(false);
-    m_BinTreeNode__left->setOrdered(true);
-    m_BinTreeNode__right->setEType(m_BinTreeNodeEClass);
-    m_BinTreeNode__right->setName("right");
-    m_BinTreeNode__right->setDefaultValueLiteral("");
-    m_BinTreeNode__right->setLowerBound(0);
-    m_BinTreeNode__right->setUpperBound(1);
-    m_BinTreeNode__right->setTransient(false);
-    m_BinTreeNode__right->setVolatile(false);
-    m_BinTreeNode__right->setChangeable(true);
-    m_BinTreeNode__right->setContainment(true);
-    m_BinTreeNode__right->setResolveProxies(true);
-    m_BinTreeNode__right->setUnique(true);
-    m_BinTreeNode__right->setDerived(false);
-    m_BinTreeNode__right->setOrdered(true);
+    { // BinTreeNode
+        m_BinTreeNodeEClass->setName("BinTreeNode");
+        m_BinTreeNodeEClass->setAbstract(false);
+        m_BinTreeNodeEClass->setInterface(false);
+        m_BinTreeNode__data->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        m_BinTreeNode__data->setName("data");
+        m_BinTreeNode__data->setDefaultValueLiteral("");
+        m_BinTreeNode__data->setLowerBound(0);
+        m_BinTreeNode__data->setUpperBound(1);
+        m_BinTreeNode__data->setTransient(false);
+        m_BinTreeNode__data->setVolatile(false);
+        m_BinTreeNode__data->setChangeable(true);
+        m_BinTreeNode__data->setUnsettable(false);
+        m_BinTreeNode__data->setID(false);
+        m_BinTreeNode__data->setUnique(true);
+        m_BinTreeNode__data->setDerived(false);
+        m_BinTreeNode__data->setOrdered(true);
+
+        m_BinTreeNode__parent->setEType(m_BinTreeNodeEClass);
+        m_BinTreeNode__parent->setName("parent");
+        m_BinTreeNode__parent->setDefaultValueLiteral("");
+        m_BinTreeNode__parent->setLowerBound(0);
+        m_BinTreeNode__parent->setUpperBound(1);
+        m_BinTreeNode__parent->setTransient(true);
+        m_BinTreeNode__parent->setVolatile(false);
+        m_BinTreeNode__parent->setChangeable(true);
+        m_BinTreeNode__parent->setContainment(false);
+        m_BinTreeNode__parent->setResolveProxies(true);
+        m_BinTreeNode__parent->setUnique(true);
+        m_BinTreeNode__parent->setDerived(false);
+        m_BinTreeNode__parent->setOrdered(true);
+        m_BinTreeNode__left->setEType(m_BinTreeNodeEClass);
+        m_BinTreeNode__left->setName("left");
+        m_BinTreeNode__left->setDefaultValueLiteral("");
+        m_BinTreeNode__left->setLowerBound(0);
+        m_BinTreeNode__left->setUpperBound(1);
+        m_BinTreeNode__left->setTransient(false);
+        m_BinTreeNode__left->setVolatile(false);
+        m_BinTreeNode__left->setChangeable(true);
+        m_BinTreeNode__left->setContainment(true);
+        m_BinTreeNode__left->setResolveProxies(true);
+        m_BinTreeNode__left->setUnique(true);
+        m_BinTreeNode__left->setDerived(false);
+        m_BinTreeNode__left->setOrdered(true);
+        m_BinTreeNode__right->setEType(m_BinTreeNodeEClass);
+        m_BinTreeNode__right->setName("right");
+        m_BinTreeNode__right->setDefaultValueLiteral("");
+        m_BinTreeNode__right->setLowerBound(0);
+        m_BinTreeNode__right->setUpperBound(1);
+        m_BinTreeNode__right->setTransient(false);
+        m_BinTreeNode__right->setVolatile(false);
+        m_BinTreeNode__right->setChangeable(true);
+        m_BinTreeNode__right->setContainment(true);
+        m_BinTreeNode__right->setResolveProxies(true);
+        m_BinTreeNode__right->setUnique(true);
+        m_BinTreeNode__right->setDerived(false);
+        m_BinTreeNode__right->setOrdered(true);
+
+    }
 
     // TODO: Initialize data types
 

@@ -83,7 +83,7 @@ void ParameterDef::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void ParameterDef::eSet(::ecore::EInt _featureID,
@@ -125,7 +125,7 @@ void ParameterDef::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean ParameterDef::eIsSet(::ecore::EInt _featureID)
@@ -144,7 +144,7 @@ void ParameterDef::eSet(::ecore::EInt _featureID,
                 > ::is_set(getDirection());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void ParameterDef::eUnset(::ecore::EInt _featureID)
@@ -153,7 +153,7 @@ void ParameterDef::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr ParameterDef::_eClass()

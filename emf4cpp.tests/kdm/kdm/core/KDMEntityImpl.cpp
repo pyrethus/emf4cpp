@@ -202,7 +202,7 @@ void KDMEntity::deleteAggregation(
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void KDMEntity::eSet(::ecore::EInt _featureID,
@@ -252,7 +252,7 @@ void KDMEntity::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean KDMEntity::eIsSet(::ecore::EInt _featureID)
@@ -272,7 +272,7 @@ void KDMEntity::eSet(::ecore::EInt _featureID,
                 > ::is_set(getName());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void KDMEntity::eUnset(::ecore::EInt _featureID)
@@ -281,7 +281,7 @@ void KDMEntity::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr KDMEntity::_eClass()

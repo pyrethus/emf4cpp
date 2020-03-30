@@ -80,6 +80,11 @@ void EGenericType::_initialize()
         _any = getETypeArguments().asEListOf< ::ecore::EObject_ptr >();
     }
         return _any;
+    case ::ecore::EcorePackage::EGENERICTYPE__ERAWTYPE:
+    {
+        _any = ::ecore::as < ::ecore::EObject > (getERawType());
+    }
+        return _any;
     case ::ecore::EcorePackage::EGENERICTYPE__ELOWERBOUND:
     {
         _any = ::ecore::as < ::ecore::EObject > (getELowerBound());
@@ -97,7 +102,7 @@ void EGenericType::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EGenericType::eSet(::ecore::EInt _featureID,
@@ -147,7 +152,7 @@ void EGenericType::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EGenericType::eIsSet(::ecore::EInt _featureID)
@@ -168,7 +173,7 @@ void EGenericType::eSet(::ecore::EInt _featureID,
         return getEClassifier().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EGenericType::eUnset(::ecore::EInt _featureID)
@@ -177,7 +182,7 @@ void EGenericType::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EGenericType::_eClass()

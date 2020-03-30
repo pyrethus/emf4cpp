@@ -95,7 +95,7 @@ void PlatformRelationship::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void PlatformRelationship::eSet(::ecore::EInt _featureID,
@@ -154,7 +154,7 @@ void PlatformRelationship::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean PlatformRelationship::eIsSet(::ecore::EInt _featureID)
@@ -175,7 +175,7 @@ void PlatformRelationship::eSet(::ecore::EInt _featureID,
         return getFrom().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void PlatformRelationship::eUnset(::ecore::EInt _featureID)
@@ -184,7 +184,7 @@ void PlatformRelationship::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr PlatformRelationship::_eClass()

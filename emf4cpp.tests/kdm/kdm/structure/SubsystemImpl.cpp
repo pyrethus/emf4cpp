@@ -114,7 +114,7 @@ void Subsystem::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Subsystem::eSet(::ecore::EInt _featureID,
@@ -196,7 +196,7 @@ void Subsystem::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Subsystem::eIsSet(::ecore::EInt _featureID)
@@ -224,7 +224,7 @@ void Subsystem::eSet(::ecore::EInt _featureID,
         return getStructureRelationship().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Subsystem::eUnset(::ecore::EInt _featureID)
@@ -233,7 +233,7 @@ void Subsystem::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Subsystem::_eClass()

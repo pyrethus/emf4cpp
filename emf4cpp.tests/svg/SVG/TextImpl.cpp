@@ -161,7 +161,7 @@ void Text::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Text::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
@@ -306,7 +306,7 @@ void Text::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Text::eIsSet(::ecore::EInt _featureID)
@@ -358,7 +358,7 @@ void Text::eSet(::ecore::EInt _featureID, ::ecore::EJavaObject const &_newValue)
                 > ::is_set(getContent());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Text::eUnset(::ecore::EInt _featureID)
@@ -367,7 +367,7 @@ void Text::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Text::_eClass()

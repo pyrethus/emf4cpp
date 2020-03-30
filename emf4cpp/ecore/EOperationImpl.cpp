@@ -130,6 +130,18 @@ void EOperation::_initialize()
                 > ::toAny(_any, getUpperBound());
     }
         return _any;
+    case ::ecore::EcorePackage::EOPERATION__MANY:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isMany());
+    }
+        return _any;
+    case ::ecore::EcorePackage::EOPERATION__REQUIRED:
+    {
+        ::ecorecpp::mapping::any_traits < ::ecore::EBoolean
+                > ::toAny(_any, isRequired());
+    }
+        return _any;
     case ::ecore::EcorePackage::EOPERATION__ETYPE:
     {
         _any = ::ecore::as < ::ecore::EObject > (getEType());
@@ -167,7 +179,7 @@ void EOperation::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void EOperation::eSet(::ecore::EInt _featureID,
@@ -239,14 +251,6 @@ void EOperation::eSet(::ecore::EInt _featureID,
         setEGenericType(_t1);
     }
         return;
-    case ::ecore::EcorePackage::EOPERATION__ECONTAININGCLASS:
-    {
-        auto _t0 = ::ecorecpp::mapping::any::any_cast < ::ecore::EObject_ptr
-                > (_newValue);
-        auto _t1 = ::ecore::as < ::ecore::EClass > (_t0);
-        setEContainingClass(_t1);
-    }
-        return;
     case ::ecore::EcorePackage::EOPERATION__ETYPEPARAMETERS:
     {
         auto _t0 = ::ecorecpp::mapping::any::any_cast
@@ -281,7 +285,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean EOperation::eIsSet(::ecore::EInt _featureID)
@@ -324,7 +328,7 @@ void EOperation::eSet(::ecore::EInt _featureID,
         return getEGenericExceptions().size() > 0;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void EOperation::eUnset(::ecore::EInt _featureID)
@@ -333,7 +337,7 @@ void EOperation::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr EOperation::_eClass()

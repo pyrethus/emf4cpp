@@ -83,7 +83,7 @@ void Rotate::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Rotate::eSet(::ecore::EInt _featureID,
@@ -125,7 +125,7 @@ void Rotate::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Rotate::eIsSet(::ecore::EInt _featureID)
@@ -145,7 +145,7 @@ void Rotate::eSet(::ecore::EInt _featureID,
                 > ::is_set(getCy());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Rotate::eUnset(::ecore::EInt _featureID)
@@ -154,7 +154,7 @@ void Rotate::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Rotate::_eClass()

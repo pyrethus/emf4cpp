@@ -137,7 +137,7 @@ void Extension::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void Extension::eSet(::ecore::EInt _featureID,
@@ -245,7 +245,7 @@ void Extension::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean Extension::eIsSet(::ecore::EInt _featureID)
@@ -284,7 +284,7 @@ void Extension::eSet(::ecore::EInt _featureID,
         return getReturnType().get() != nullptr;
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void Extension::eUnset(::ecore::EInt _featureID)
@@ -293,7 +293,7 @@ void Extension::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr Extension::_eClass()

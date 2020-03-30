@@ -140,7 +140,7 @@ void StorableUnit::_initialize()
         return _any;
 
     }
-    throw "Error";
+    throw "Error: eGet() does not handle this featureID";
 }
 
 void StorableUnit::eSet(::ecore::EInt _featureID,
@@ -254,7 +254,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
         return;
 
     }
-    throw "Error";
+    throw "Error: eSet() does not handle this featureID";
 }
 
 ::ecore::EBoolean StorableUnit::eIsSet(::ecore::EInt _featureID)
@@ -293,7 +293,7 @@ void StorableUnit::eSet(::ecore::EInt _featureID,
                 > ::is_set(getKind());
 
     }
-    throw "Error";
+    throw "Error: eIsSet() does not handle this featureID";
 }
 
 void StorableUnit::eUnset(::ecore::EInt _featureID)
@@ -302,7 +302,7 @@ void StorableUnit::eUnset(::ecore::EInt _featureID)
     {
 
     }
-    throw "Error";
+    throw "Error: eUnset() does not handle this featureID";
 }
 
 ::ecore::EClass_ptr StorableUnit::_eClass()

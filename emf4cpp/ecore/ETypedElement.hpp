@@ -58,11 +58,8 @@ public:
     virtual ::ecore::EInt getUpperBound () const;
     virtual void setUpperBound (::ecore::EInt _upperBound);
 
-    virtual ::ecore::EBoolean isMany () const;
-    virtual void setMany (::ecore::EBoolean _many);
-
-    virtual ::ecore::EBoolean isRequired () const;
-    virtual void setRequired (::ecore::EBoolean _required);
+    virtual ::ecore::EBoolean isMany ();
+    virtual ::ecore::EBoolean isRequired ();
 
     // References
     virtual ::ecore::EClassifier_ptr getEType () const;
@@ -107,12 +104,6 @@ protected:
 
     ::ecore::EInt m_upperBound
     {   1};
-
-    ::ecore::EBoolean m_many
-    {};
-
-    ::ecore::EBoolean m_required
-    {};
 
     // References
 
