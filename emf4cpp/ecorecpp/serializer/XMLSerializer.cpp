@@ -88,21 +88,24 @@ void XMLSerializer::serialize(EObject_ptr obj) {
 	EPackage_ptr pkg = cl->getEPackage();
 	m_usedPackages.push_back(pkg);
 
-	// remove the XML processing instruction
-	m_internalBuffer.str(::ecorecpp::mapping::type_definitions::string_t());
-	// Serialize the top level object into m_internalBuffer
-	m_ser.open_object("", greedy_serializer::SilentMode::Silent);
-	serialize_node(obj);
-	m_ser.close_object("", greedy_serializer::SilentMode::Silent);
-
-	// Create a new serializer for the real output.
-	greedy_serializer output(m_out, m_mode == XmiIndentMode::Indentation);
-
 	::ecorecpp::mapping::type_definitions::string_t root_name(get_type(obj));
 	if ( m_extendedMetaData && obj->eContainer()
 		 && m_extendedMetaData->isDocumentRoot(obj->eContainer()->eClass()) ) {
 		root_name = get_reference(obj);
 	}
+
+	// Serialize the top level object into m_internalBuffer
+	// First remove the XML processing instruction
+	m_internalBuffer.str(::ecorecpp::mapping::type_definitions::string_t());
+	// Then change the internal state but do not output anything
+	m_ser.open_object("", greedy_serializer::SilentMode::Silent);
+	// Output attributes and child nodes
+	serialize_node(obj);
+	// The current state of m_internalBuffer controls the closing tag
+	m_ser.close_object(root_name, greedy_serializer::SilentMode::Loud);
+
+	// Create a new serializer for the real output.
+	greedy_serializer output(m_out, m_mode == XmiIndentMode::Indentation);
 	output.open_object(root_name);
 
 	// common attributes, following standard EMF order
@@ -131,9 +134,8 @@ void XMLSerializer::serialize(EObject_ptr obj) {
 		}
 	}
 
+	// m_internalBuffer is already correctly closed
 	output.append(m_internalBuffer.str());
-
-	output.close_object(root_name);
 }
 
 ::ecorecpp::mapping::type_definitions::string_t
