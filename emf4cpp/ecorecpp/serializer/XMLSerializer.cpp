@@ -70,6 +70,13 @@ bool XMLSerializer::getExtendedMetaData() const {
 	return !!m_extendedMetaData;
 }
 
+void XMLSerializer::setExternalReferences(
+		const std::list<::ecorecpp::parser::Reference>& refs) {
+	_unresolvedReferences.clear();
+	for ( const auto& ref : refs )
+		_unresolvedReferences.emplace(ref._obj, ref);
+}
+
 void XMLSerializer::serialize(EObject_ptr obj) {
 	m_root_obj = obj;
 
@@ -414,6 +421,26 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 		m_ser.close_object(crossRef[0]);
 	}
 
+	auto range = _unresolvedReferences.equal_range(obj);
+	for ( auto it = range.first; it != range.second; ++it ) {
+		auto& ref = it->second;
+		try {
+			auto eref = ::ecore::as<::ecore::EReference>(
+					getEStructuralFeature(cl, ref._featureName) );
+			if ( !eref || eref->isContainment() )
+				continue;
+
+		} catch (...) {
+			continue;
+		}
+
+		m_ser.open_object(ref._featureName);
+		if ( !ref._refType.empty() )
+			m_ser.add_attribute("xsi:type", ref._refType);
+		m_ser.add_attribute("href", ref._href);
+		m_ser.close_object(ref._featureName);
+	}
+
 	/*
 	 * Multiplicity-many attributes
 	 */
@@ -510,8 +537,45 @@ void XMLSerializer::serialize_node_children(EObject_ptr obj) {
 						create_node(obj, child, current_ref);
 				}
 			}
+
+			auto range = _unresolvedReferences.equal_range(obj);
+			for ( auto it = range.first; it != range.second; ++it ) {
+				const auto& ref = it->second;
+				try {
+					auto eref = ::ecore::as<::ecore::EReference>(
+							getEStructuralFeature(obj->eClass(),
+							ref._featureName) );
+
+					if ( !eref || !eref->isContainment() )
+						continue;
+
+				} catch (...) {
+					continue;
+				}
+
+				m_ser.open_object(ref._featureName);
+
+				// May be a subtype
+				if ( !ref._refType.empty() )
+					m_ser.add_attribute("xsi:type", ref._refType);
+
+				m_ser.add_attribute("href", ref._href);
+				m_ser.close_object(ref._featureName);
+			}
+
 		} catch (...) {
 			DEBUG_MSG(cerr, "exception catched! ");
 		}
 	}
+}
+
+::ecore::EStructuralFeature_ptr XMLSerializer::getEStructuralFeature(::ecore::EClass_ptr eclass,
+		::ecorecpp::mapping::type_definitions::string_t name) const {
+	if (m_extendedMetaData) {
+		for (const auto& ef : eclass->getEAllStructuralFeatures()) {
+			if (m_extendedMetaData->getName(ef) == name)
+				return ef;
+		}
+	}
+	return eclass->getEStructuralFeature(name);
 }

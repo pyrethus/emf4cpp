@@ -67,6 +67,20 @@ public:
 	 */
 	static const std::string OPTION_EXTENDED_META_DATA /*="EXTENDED_META_DATA"*/;
 
+	/**
+	 * If 'true' (default) all cross document references will be resolved by
+	 * loading the referenced resource.
+	 */
+	static const std::string OPTION_RESOLVE_EXTERNAL_REFERENCES /*=RESOLVE_EXTERNAL_REFERENCES*/;
+
+	/**
+	 * This can be one of "THROW" (default), "DISCARD", "RECORD". The default will be
+	 * "THROW" and throws an exception if there are dangling hrefs during serialization.
+	 * "RECORD" will write all dangling hrefs to the xmi.
+	 * "DISCARD" will ignore dangling hrefs.
+	 */
+	static const std::string OPTION_PROCESS_DANGLING_HREF /*=PROCESS_DANGLING_HREF*/;
+
 	explicit XMLResource(const QUrl&);
 	~XMLResource() override;
 
@@ -84,7 +98,7 @@ public:
 	/** Use ids from the map, where the user has set them. They are stored in
 	 * the attribue xmi:id. */
 	virtual bool useIDs() const;
-	/** Generate unique ids automatically. They are stored in the attribue
+	/** Generate unique ids automatically. They are stored in the attribute
 	 * xmi:id. */
 	virtual bool useUUIDs() const;
 	/* If all is disabled, xpath is used for references. */

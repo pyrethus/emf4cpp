@@ -30,6 +30,7 @@
 #include <QtCore/qurl.h>
 
 #include "../util/TreeIterator.hpp"
+#include "../parser/Reference.hpp"
 
 namespace ecore {
 	class EObject;
@@ -111,10 +112,14 @@ public:
 	/** Use intrinsic ids if available. Default: true */
 	virtual bool useIDAttributes() const;
 
+	std::list<::ecorecpp::parser::Reference>& getUnresolvedCrossDocumentReferences();
+
 protected:
 	explicit Resource(const QUrl&);
 
 	URIConverter* getURIConverter();
+
+	std::list<::ecorecpp::parser::Reference> _unresolvedCrossDocumentReferences{};
 
 private:
 	class ResourceContentEList;

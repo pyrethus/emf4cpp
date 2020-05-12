@@ -27,6 +27,7 @@
 
 #include "../mapping.hpp"
 #include "../dllEcorecpp.hpp"
+#include "../parser/Reference.hpp"
 #include "../util/ExtendedMetaData.hpp"
 #include "greedy_serializer.hpp"
 
@@ -52,11 +53,16 @@ public:
 	void setExtendedMetaData(bool);
 	bool getExtendedMetaData() const;
 
+	void setExternalReferences(const std::list<::ecorecpp::parser::Reference>&);
+
 protected:
 	::ecorecpp::mapping::type_definitions::string_t get_type(
 			::ecore::EObject_ptr obj) const;
 	::ecorecpp::mapping::type_definitions::string_t
 		  get_reference(::ecore::EObject_ptr obj) const;
+
+	::ecore::EStructuralFeature_ptr getEStructuralFeature(::ecore::EClass_ptr eclass,
+			::ecorecpp::mapping::type_definitions::string_t name) const;
 
 	::ecorecpp::mapping::type_definitions::string_t get_reference(
 			::ecore::EObject_ptr from, ::ecore::EObject_ptr to,
@@ -92,6 +98,9 @@ protected:
 
 	std::vector<::ecore::EPackage_ptr> m_usedPackages;
 	::ecore::Ptr<util::ExtendedMetaData> m_extendedMetaData;
+
+	std::unordered_multimap<::ecore::EObject_ptr,
+		::ecorecpp::parser::Reference> _unresolvedReferences;
 };
 
 } //serializer

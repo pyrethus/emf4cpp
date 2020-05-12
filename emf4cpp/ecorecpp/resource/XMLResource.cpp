@@ -40,6 +40,8 @@ Resource_ptr XMLResourceFactory::createResource(const QUrl& uri) {
 const std::string XMLResource::OPTION_KEEP_DEFAULT_CONTENT = "KEEP_DEFAULT_CONTENT";
 const std::string XMLResource::OPTION_FORMATTED = "FORMATTED";
 const std::string XMLResource::OPTION_EXTENDED_META_DATA = "EXTENDED_META_DATA";
+const std::string XMLResource::OPTION_RESOLVE_EXTERNAL_REFERENCES = "RESOLVE_EXTERNAL_REFERENCES";
+const std::string XMLResource::OPTION_PROCESS_DANGLING_HREF = "PROCESS_DANGLING_HREF";
 
 XMLResource::XMLResource(const QUrl& uri)
 	: Resource(uri) {
@@ -143,6 +145,22 @@ void XMLResource::save(std::ostream& os, const Resource::OptionMap& options) {
 	}
 	ser.setExtendedMetaData(extendedMetaData);
 
+	if ( !getUnresolvedCrossDocumentReferences().empty() ) {
+		if ( options.count(OPTION_PROCESS_DANGLING_HREF) ) {
+			std::string pdhStr = options.at(OPTION_PROCESS_DANGLING_HREF);
+			std::transform(pdhStr.begin(), pdhStr.end(), pdhStr.begin(),
+					[](unsigned char c){ return std::tolower(c); } );
+			if ( pdhStr == "throw" ) {
+				throw std::logic_error("Unresolved cross document references exist!");
+
+			} else if ( pdhStr == "record" ) {
+				ser.setExternalReferences(getUnresolvedCrossDocumentReferences());
+			}
+
+		} else
+			throw std::logic_error("Unresolved cross document references exist!");
+	}
+
 	ser.serialize(getContents()->get(0));
 }
 
@@ -163,6 +181,14 @@ void XMLResource::doLoad(
 		extendedMetaData = (emdStr != "false");
 	}
 	handler.setExtendedMetaData(extendedMetaData);
+
+	bool resolveExternalReferences = true;
+	if ( options.count(OPTION_RESOLVE_EXTERNAL_REFERENCES) ) {
+		std::string emdStr = options.at(OPTION_RESOLVE_EXTERNAL_REFERENCES);
+		std::transform(emdStr.begin(), emdStr.end(), emdStr.begin(),
+				[](unsigned char c){ return std::tolower(c); } );
+		resolveExternalReferences = (emdStr == "true");
+	}
 
 	xml_parser::SemanticState<XMLHandler> ss(handler);
 
@@ -191,7 +217,12 @@ void XMLResource::doLoad(
 	 * the (cross-document) references, too.
 	 */
 	handler.resolveReferences();
-	handler.resolveCrossDocumentReferences();
+
+	_unresolvedCrossDocumentReferences.clear();
+	if ( resolveExternalReferences )
+		handler.resolveCrossDocumentReferences();
+	else
+		_unresolvedCrossDocumentReferences = handler.getCrossDocumentReferences();
 }
 
 bool XMLResource::useIDs() const {

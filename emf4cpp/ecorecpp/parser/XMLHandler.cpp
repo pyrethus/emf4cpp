@@ -64,9 +64,9 @@ bool XMLHandler::getExtendedMetaData() const {
 ::ecore::EStructuralFeature_ptr XMLHandler::getEStructuralFeature(::ecore::EClass_ptr eclass,
 																  ::ecore::EString name) {
 	if (m_extendedMetaData) {
-		for (auto&& ef : eclass->getEAllStructuralFeatures()) {
+		for (const auto& ef : eclass->getEAllStructuralFeatures()) {
 			if (m_extendedMetaData->getName(ef) == name)
-				return std::move(ef);
+				return ef;
 		}
 	}
 	return eclass->getEStructuralFeature(name);
@@ -477,6 +477,10 @@ void XMLHandler::resolveCrossDocumentReferences() {
 			eobj->eSet(esf, resolvedObj);
 		}
 	}
+}
+
+const std::list<Reference>& XMLHandler::getCrossDocumentReferences() const {
+	return m_unresolved_cross_references;
 }
 
 } // parser

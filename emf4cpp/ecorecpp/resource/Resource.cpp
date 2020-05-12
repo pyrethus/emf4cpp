@@ -343,6 +343,10 @@ bool Resource::useIDAttributes() const {
 	return true;
 }
 
+std::list<::ecorecpp::parser::Reference>& Resource::getUnresolvedCrossDocumentReferences() {
+	return _unresolvedCrossDocumentReferences;
+}
+
 URIConverter* Resource::getURIConverter() {
 	if (auto rs = getResourceSet())
 		return rs->getURIConverter();

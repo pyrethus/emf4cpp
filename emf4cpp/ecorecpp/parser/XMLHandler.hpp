@@ -32,6 +32,7 @@
 #include "../dllEcorecpp.hpp"
 #include "../util/ExtendedMetaData.hpp"
 #include "simple_xml_parser.hpp"
+#include "Reference.hpp"
 
 namespace ecorecpp {
 namespace parser {
@@ -62,6 +63,8 @@ public:
 	void resolveReferences();
 	void resolveCrossDocumentReferences();
 
+	const std::list<Reference>& getCrossDocumentReferences() const;
+
 private:
 
 	int m_level;
@@ -71,13 +74,6 @@ private:
 
 	::ecore::EPackage_ptr m_current_metamodel;
 	::ecorecpp::mapping::type_definitions::string_t m_current_namespace;
-
-	struct Reference {
-		::ecore::EObject_ptr _obj;
-		::ecorecpp::mapping::type_definitions::string_t _featureName;
-		::ecorecpp::mapping::type_definitions::string_t _refType;
-		::ecorecpp::mapping::type_definitions::string_t _href;
-	};
 
 	std::list<Reference> m_unresolved_references;
 	std::list<Reference> m_unresolved_cross_references;
