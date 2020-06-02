@@ -91,5 +91,5 @@ String java(String raw) : JAVA
 ;
 
 String cxx(String raw) :
-    java( xml(raw) )
+    java( raw )
 ;
