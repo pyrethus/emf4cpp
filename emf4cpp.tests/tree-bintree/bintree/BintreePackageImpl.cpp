@@ -71,6 +71,7 @@ void BintreePackage::_initPackage()
         // m_BinTreeNode__parent has already been allocated above
         m_BinTreeNode__parent->setFeatureID(
                 ::bintree::BintreePackage::BINTREENODE__PARENT);
+        m_BinTreeNode__parent->setName("parent");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
                 m_BinTreeNode__parent);
@@ -78,6 +79,7 @@ void BintreePackage::_initPackage()
         // m_BinTreeNode__left has already been allocated above
         m_BinTreeNode__left->setFeatureID(
                 ::bintree::BintreePackage::BINTREENODE__LEFT);
+        m_BinTreeNode__left->setName("left");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
                 m_BinTreeNode__left);
@@ -85,6 +87,7 @@ void BintreePackage::_initPackage()
         // m_BinTreeNode__right has already been allocated above
         m_BinTreeNode__right->setFeatureID(
                 ::bintree::BintreePackage::BINTREENODE__RIGHT);
+        m_BinTreeNode__right->setName("right");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
                 m_BinTreeNode__right);
@@ -92,6 +95,7 @@ void BintreePackage::_initPackage()
         // m_BinTreeNode__data has already been allocated above
         m_BinTreeNode__data->setFeatureID(
                 ::bintree::BintreePackage::BINTREENODE__DATA);
+        m_BinTreeNode__data->setName("data");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinTreeNodeEClass->getEStructuralFeatures()).basicAdd(
                 m_BinTreeNode__data);
@@ -119,7 +123,6 @@ void BintreePackage::_initPackage()
         m_BinTreeNodeEClass->setInterface(false);
         m_BinTreeNode__data->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_BinTreeNode__data->setName("data");
         m_BinTreeNode__data->setDefaultValueLiteral("");
         m_BinTreeNode__data->setLowerBound(0);
         m_BinTreeNode__data->setUpperBound(1);
@@ -133,7 +136,6 @@ void BintreePackage::_initPackage()
         m_BinTreeNode__data->setOrdered(true);
 
         m_BinTreeNode__parent->setEType(m_BinTreeNodeEClass);
-        m_BinTreeNode__parent->setName("parent");
         m_BinTreeNode__parent->setDefaultValueLiteral("");
         m_BinTreeNode__parent->setLowerBound(0);
         m_BinTreeNode__parent->setUpperBound(1);
@@ -146,7 +148,6 @@ void BintreePackage::_initPackage()
         m_BinTreeNode__parent->setDerived(false);
         m_BinTreeNode__parent->setOrdered(true);
         m_BinTreeNode__left->setEType(m_BinTreeNodeEClass);
-        m_BinTreeNode__left->setName("left");
         m_BinTreeNode__left->setDefaultValueLiteral("");
         m_BinTreeNode__left->setLowerBound(0);
         m_BinTreeNode__left->setUpperBound(1);
@@ -159,7 +160,6 @@ void BintreePackage::_initPackage()
         m_BinTreeNode__left->setDerived(false);
         m_BinTreeNode__left->setOrdered(true);
         m_BinTreeNode__right->setEType(m_BinTreeNodeEClass);
-        m_BinTreeNode__right->setName("right");
         m_BinTreeNode__right->setDefaultValueLiteral("");
         m_BinTreeNode__right->setLowerBound(0);
         m_BinTreeNode__right->setUpperBound(1);

@@ -95,6 +95,7 @@ void Xpand3Package::_initPackage()
         // m_SyntaxElement__line has already been allocated above
         m_SyntaxElement__line->setFeatureID(
                 ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE);
+        m_SyntaxElement__line->setName("line");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
                 m_SyntaxElement__line);
@@ -102,6 +103,7 @@ void Xpand3Package::_initPackage()
         // m_SyntaxElement__start has already been allocated above
         m_SyntaxElement__start->setFeatureID(
                 ::xpand3::Xpand3Package::SYNTAXELEMENT__START);
+        m_SyntaxElement__start->setName("start");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
                 m_SyntaxElement__start);
@@ -109,6 +111,7 @@ void Xpand3Package::_initPackage()
         // m_SyntaxElement__end has already been allocated above
         m_SyntaxElement__end->setFeatureID(
                 ::xpand3::Xpand3Package::SYNTAXELEMENT__END);
+        m_SyntaxElement__end->setName("end");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
                 m_SyntaxElement__end);
@@ -116,6 +119,7 @@ void Xpand3Package::_initPackage()
         // m_SyntaxElement__fileName has already been allocated above
         m_SyntaxElement__fileName->setFeatureID(
                 ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME);
+        m_SyntaxElement__fileName->setName("fileName");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
                 m_SyntaxElement__fileName);
@@ -130,6 +134,7 @@ void Xpand3Package::_initPackage()
         classifiers.basicAdd(m_FileEClass);
         // m_File__imports has already been allocated above
         m_File__imports->setFeatureID(::xpand3::Xpand3Package::FILE__IMPORTS);
+        m_File__imports->setName("imports");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileEClass->getEStructuralFeatures()).basicAdd(
                 m_File__imports);
@@ -137,6 +142,7 @@ void Xpand3Package::_initPackage()
         // m_File__declarations has already been allocated above
         m_File__declarations->setFeatureID(
                 ::xpand3::Xpand3Package::FILE__DECLARATIONS);
+        m_File__declarations->setName("declarations");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileEClass->getEStructuralFeatures()).basicAdd(
                 m_File__declarations);
@@ -152,6 +158,7 @@ void Xpand3Package::_initPackage()
         // m_ImportStatement__importedId has already been allocated above
         m_ImportStatement__importedId->setFeatureID(
                 ::xpand3::Xpand3Package::IMPORTSTATEMENT__IMPORTEDID);
+        m_ImportStatement__importedId->setName("importedId");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ImportStatement__importedId);
@@ -160,6 +167,7 @@ void Xpand3Package::_initPackage()
         // m_ImportStatement__exported has already been allocated above
         m_ImportStatement__exported->setFeatureID(
                 ::xpand3::Xpand3Package::IMPORTSTATEMENT__EXPORTED);
+        m_ImportStatement__exported->setName("exported");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ImportStatement__exported);
@@ -176,6 +184,7 @@ void Xpand3Package::_initPackage()
         // m_Identifier__value has already been allocated above
         m_Identifier__value->setFeatureID(
                 ::xpand3::Xpand3Package::IDENTIFIER__VALUE);
+        m_Identifier__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IdentifierEClass->getEStructuralFeatures()).basicAdd(
                 m_Identifier__value);
@@ -191,6 +200,7 @@ void Xpand3Package::_initPackage()
         // m_DeclaredParameter__name has already been allocated above
         m_DeclaredParameter__name->setFeatureID(
                 ::xpand3::Xpand3Package::DECLAREDPARAMETER__NAME);
+        m_DeclaredParameter__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeclaredParameterEClass->getEStructuralFeatures()).basicAdd(
                 m_DeclaredParameter__name);
@@ -199,6 +209,7 @@ void Xpand3Package::_initPackage()
         // m_DeclaredParameter__type has already been allocated above
         m_DeclaredParameter__type->setFeatureID(
                 ::xpand3::Xpand3Package::DECLAREDPARAMETER__TYPE);
+        m_DeclaredParameter__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeclaredParameterEClass->getEStructuralFeatures()).basicAdd(
                 m_DeclaredParameter__type);
@@ -239,7 +250,6 @@ void Xpand3Package::_initPackage()
         m_SyntaxElementEClass->setInterface(false);
         m_SyntaxElement__line->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_SyntaxElement__line->setName("line");
         m_SyntaxElement__line->setDefaultValueLiteral("");
         m_SyntaxElement__line->setLowerBound(0);
         m_SyntaxElement__line->setUpperBound(1);
@@ -253,7 +263,6 @@ void Xpand3Package::_initPackage()
         m_SyntaxElement__line->setOrdered(true);
         m_SyntaxElement__start->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_SyntaxElement__start->setName("start");
         m_SyntaxElement__start->setDefaultValueLiteral("");
         m_SyntaxElement__start->setLowerBound(0);
         m_SyntaxElement__start->setUpperBound(1);
@@ -267,7 +276,6 @@ void Xpand3Package::_initPackage()
         m_SyntaxElement__start->setOrdered(true);
         m_SyntaxElement__end->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_SyntaxElement__end->setName("end");
         m_SyntaxElement__end->setDefaultValueLiteral("");
         m_SyntaxElement__end->setLowerBound(0);
         m_SyntaxElement__end->setUpperBound(1);
@@ -281,7 +289,6 @@ void Xpand3Package::_initPackage()
         m_SyntaxElement__end->setOrdered(true);
         m_SyntaxElement__fileName->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_SyntaxElement__fileName->setName("fileName");
         m_SyntaxElement__fileName->setDefaultValueLiteral("");
         m_SyntaxElement__fileName->setLowerBound(0);
         m_SyntaxElement__fileName->setUpperBound(1);
@@ -302,7 +309,6 @@ void Xpand3Package::_initPackage()
         m_FileEClass->setInterface(false);
 
         m_File__imports->setEType(m_ImportStatementEClass);
-        m_File__imports->setName("imports");
         m_File__imports->setDefaultValueLiteral("");
         m_File__imports->setLowerBound(0);
         m_File__imports->setUpperBound(-1);
@@ -316,7 +322,6 @@ void Xpand3Package::_initPackage()
         m_File__imports->setOrdered(true);
         m_File__declarations->setEType(
                 dynamic_cast< ::xpand3::declaration::DeclarationPackage* >(::xpand3::declaration::DeclarationPackage::_instance().get())->getAbstractDeclaration());
-        m_File__declarations->setName("declarations");
         m_File__declarations->setDefaultValueLiteral("");
         m_File__declarations->setLowerBound(1);
         m_File__declarations->setUpperBound(-1);
@@ -337,7 +342,6 @@ void Xpand3Package::_initPackage()
         m_ImportStatementEClass->setInterface(false);
         m_ImportStatement__exported->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_ImportStatement__exported->setName("exported");
         m_ImportStatement__exported->setDefaultValueLiteral("");
         m_ImportStatement__exported->setLowerBound(0);
         m_ImportStatement__exported->setUpperBound(1);
@@ -351,7 +355,6 @@ void Xpand3Package::_initPackage()
         m_ImportStatement__exported->setOrdered(true);
 
         m_ImportStatement__importedId->setEType(m_IdentifierEClass);
-        m_ImportStatement__importedId->setName("importedId");
         m_ImportStatement__importedId->setDefaultValueLiteral("");
         m_ImportStatement__importedId->setLowerBound(0);
         m_ImportStatement__importedId->setUpperBound(1);
@@ -372,7 +375,6 @@ void Xpand3Package::_initPackage()
         m_IdentifierEClass->setInterface(false);
         m_Identifier__value->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Identifier__value->setName("value");
         m_Identifier__value->setDefaultValueLiteral("");
         m_Identifier__value->setLowerBound(0);
         m_Identifier__value->setUpperBound(1);
@@ -393,7 +395,6 @@ void Xpand3Package::_initPackage()
         m_DeclaredParameterEClass->setInterface(false);
 
         m_DeclaredParameter__name->setEType(m_IdentifierEClass);
-        m_DeclaredParameter__name->setName("name");
         m_DeclaredParameter__name->setDefaultValueLiteral("");
         m_DeclaredParameter__name->setLowerBound(0);
         m_DeclaredParameter__name->setUpperBound(1);
@@ -406,7 +407,6 @@ void Xpand3Package::_initPackage()
         m_DeclaredParameter__name->setDerived(false);
         m_DeclaredParameter__name->setOrdered(true);
         m_DeclaredParameter__type->setEType(m_IdentifierEClass);
-        m_DeclaredParameter__type->setName("type");
         m_DeclaredParameter__type->setDefaultValueLiteral("");
         m_DeclaredParameter__type->setLowerBound(0);
         m_DeclaredParameter__type->setUpperBound(1);

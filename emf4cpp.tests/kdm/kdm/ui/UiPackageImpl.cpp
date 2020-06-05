@@ -164,6 +164,7 @@ void UiPackage::_initPackage()
         // m_AbstractUIElement__source has already been allocated above
         m_AbstractUIElement__source->setFeatureID(
                 ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__SOURCE);
+        m_AbstractUIElement__source->setName("source");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractUIElement__source);
@@ -172,6 +173,7 @@ void UiPackage::_initPackage()
         // m_AbstractUIElement__UIRelation has already been allocated above
         m_AbstractUIElement__UIRelation->setFeatureID(
                 ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__UIRELATION);
+        m_AbstractUIElement__UIRelation->setName("UIRelation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractUIElement__UIRelation);
@@ -180,6 +182,7 @@ void UiPackage::_initPackage()
         // m_AbstractUIElement__implementation has already been allocated above
         m_AbstractUIElement__implementation->setFeatureID(
                 ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__IMPLEMENTATION);
+        m_AbstractUIElement__implementation->setName("implementation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractUIElement__implementation);
@@ -188,6 +191,7 @@ void UiPackage::_initPackage()
         // m_AbstractUIElement__abstraction has already been allocated above
         m_AbstractUIElement__abstraction->setFeatureID(
                 ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__ABSTRACTION);
+        m_AbstractUIElement__abstraction->setName("abstraction");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractUIElement__abstraction);
@@ -204,6 +208,7 @@ void UiPackage::_initPackage()
         // m_UIResource__UIElement has already been allocated above
         m_UIResource__UIElement->setFeatureID(
                 ::kdm::ui::UiPackage::UIRESOURCE__UIELEMENT);
+        m_UIResource__UIElement->setName("UIElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_UIResource__UIElement);
@@ -241,6 +246,7 @@ void UiPackage::_initPackage()
         // m_UIModel__UIElement has already been allocated above
         m_UIModel__UIElement->setFeatureID(
                 ::kdm::ui::UiPackage::UIMODEL__UIELEMENT);
+        m_UIModel__UIElement->setName("UIElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIModelEClass->getEStructuralFeatures()).basicAdd(
                 m_UIModel__UIElement);
@@ -263,12 +269,14 @@ void UiPackage::_initPackage()
         classifiers.basicAdd(m_UILayoutEClass);
         // m_UILayout__to has already been allocated above
         m_UILayout__to->setFeatureID(::kdm::ui::UiPackage::UILAYOUT__TO);
+        m_UILayout__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UILayoutEClass->getEStructuralFeatures()).basicAdd(
                 m_UILayout__to);
         m_UILayout__to->basicsetEContainingClass(m_UILayoutEClass);
         // m_UILayout__from has already been allocated above
         m_UILayout__from->setFeatureID(::kdm::ui::UiPackage::UILAYOUT__FROM);
+        m_UILayout__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UILayoutEClass->getEStructuralFeatures()).basicAdd(
                 m_UILayout__from);
@@ -292,6 +300,7 @@ void UiPackage::_initPackage()
         // m_DisplaysImage__to has already been allocated above
         m_DisplaysImage__to->setFeatureID(
                 ::kdm::ui::UiPackage::DISPLAYSIMAGE__TO);
+        m_DisplaysImage__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysImageEClass->getEStructuralFeatures()).basicAdd(
                 m_DisplaysImage__to);
@@ -299,6 +308,7 @@ void UiPackage::_initPackage()
         // m_DisplaysImage__from has already been allocated above
         m_DisplaysImage__from->setFeatureID(
                 ::kdm::ui::UiPackage::DISPLAYSIMAGE__FROM);
+        m_DisplaysImage__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysImageEClass->getEStructuralFeatures()).basicAdd(
                 m_DisplaysImage__from);
@@ -313,12 +323,14 @@ void UiPackage::_initPackage()
         classifiers.basicAdd(m_DisplaysEClass);
         // m_Displays__to has already been allocated above
         m_Displays__to->setFeatureID(::kdm::ui::UiPackage::DISPLAYS__TO);
+        m_Displays__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysEClass->getEStructuralFeatures()).basicAdd(
                 m_Displays__to);
         m_Displays__to->basicsetEContainingClass(m_DisplaysEClass);
         // m_Displays__from has already been allocated above
         m_Displays__from->setFeatureID(::kdm::ui::UiPackage::DISPLAYS__FROM);
+        m_Displays__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysEClass->getEStructuralFeatures()).basicAdd(
                 m_Displays__from);
@@ -332,12 +344,14 @@ void UiPackage::_initPackage()
         classifiers.basicAdd(m_UIFlowEClass);
         // m_UIFlow__to has already been allocated above
         m_UIFlow__to->setFeatureID(::kdm::ui::UiPackage::UIFLOW__TO);
+        m_UIFlow__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_UIFlow__to);
         m_UIFlow__to->basicsetEContainingClass(m_UIFlowEClass);
         // m_UIFlow__from has already been allocated above
         m_UIFlow__from->setFeatureID(::kdm::ui::UiPackage::UIFLOW__FROM);
+        m_UIFlow__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_UIFlow__from);
@@ -361,6 +375,7 @@ void UiPackage::_initPackage()
         // m_UIRelationship__to has already been allocated above
         m_UIRelationship__to->setFeatureID(
                 ::kdm::ui::UiPackage::UIRELATIONSHIP__TO);
+        m_UIRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_UIRelationship__to);
@@ -368,6 +383,7 @@ void UiPackage::_initPackage()
         // m_UIRelationship__from has already been allocated above
         m_UIRelationship__from->setFeatureID(
                 ::kdm::ui::UiPackage::UIRELATIONSHIP__FROM);
+        m_UIRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_UIRelationship__from);
@@ -383,6 +399,7 @@ void UiPackage::_initPackage()
         classifiers.basicAdd(m_UIActionEClass);
         // m_UIAction__kind has already been allocated above
         m_UIAction__kind->setFeatureID(::kdm::ui::UiPackage::UIACTION__KIND);
+        m_UIAction__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIActionEClass->getEStructuralFeatures()).basicAdd(
                 m_UIAction__kind);
@@ -390,6 +407,7 @@ void UiPackage::_initPackage()
         // m_UIAction__UIElement has already been allocated above
         m_UIAction__UIElement->setFeatureID(
                 ::kdm::ui::UiPackage::UIACTION__UIELEMENT);
+        m_UIAction__UIElement->setName("UIElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIActionEClass->getEStructuralFeatures()).basicAdd(
                 m_UIAction__UIElement);
@@ -404,6 +422,7 @@ void UiPackage::_initPackage()
         classifiers.basicAdd(m_UIEventEClass);
         // m_UIEvent__kind has already been allocated above
         m_UIEvent__kind->setFeatureID(::kdm::ui::UiPackage::UIEVENT__KIND);
+        m_UIEvent__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIEventEClass->getEStructuralFeatures()).basicAdd(
                 m_UIEvent__kind);
@@ -418,12 +437,14 @@ void UiPackage::_initPackage()
         classifiers.basicAdd(m_ReadsUIEClass);
         // m_ReadsUI__to has already been allocated above
         m_ReadsUI__to->setFeatureID(::kdm::ui::UiPackage::READSUI__TO);
+        m_ReadsUI__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsUIEClass->getEStructuralFeatures()).basicAdd(
                 m_ReadsUI__to);
         m_ReadsUI__to->basicsetEContainingClass(m_ReadsUIEClass);
         // m_ReadsUI__from has already been allocated above
         m_ReadsUI__from->setFeatureID(::kdm::ui::UiPackage::READSUI__FROM);
+        m_ReadsUI__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsUIEClass->getEStructuralFeatures()).basicAdd(
                 m_ReadsUI__from);
@@ -438,12 +459,14 @@ void UiPackage::_initPackage()
         classifiers.basicAdd(m_WritesUIEClass);
         // m_WritesUI__to has already been allocated above
         m_WritesUI__to->setFeatureID(::kdm::ui::UiPackage::WRITESUI__TO);
+        m_WritesUI__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesUIEClass->getEStructuralFeatures()).basicAdd(
                 m_WritesUI__to);
         m_WritesUI__to->basicsetEContainingClass(m_WritesUIEClass);
         // m_WritesUI__from has already been allocated above
         m_WritesUI__from->setFeatureID(::kdm::ui::UiPackage::WRITESUI__FROM);
+        m_WritesUI__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesUIEClass->getEStructuralFeatures()).basicAdd(
                 m_WritesUI__from);
@@ -458,12 +481,14 @@ void UiPackage::_initPackage()
         classifiers.basicAdd(m_ManagesUIEClass);
         // m_ManagesUI__to has already been allocated above
         m_ManagesUI__to->setFeatureID(::kdm::ui::UiPackage::MANAGESUI__TO);
+        m_ManagesUI__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesUIEClass->getEStructuralFeatures()).basicAdd(
                 m_ManagesUI__to);
         m_ManagesUI__to->basicsetEContainingClass(m_ManagesUIEClass);
         // m_ManagesUI__from has already been allocated above
         m_ManagesUI__from->setFeatureID(::kdm::ui::UiPackage::MANAGESUI__FROM);
+        m_ManagesUI__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesUIEClass->getEStructuralFeatures()).basicAdd(
                 m_ManagesUI__from);
@@ -521,7 +546,6 @@ void UiPackage::_initPackage()
 
         m_AbstractUIElement__source->setEType(
                 dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_AbstractUIElement__source->setName("source");
         m_AbstractUIElement__source->setDefaultValueLiteral("");
         m_AbstractUIElement__source->setLowerBound(0);
         m_AbstractUIElement__source->setUpperBound(-1);
@@ -535,7 +559,6 @@ void UiPackage::_initPackage()
         m_AbstractUIElement__source->setOrdered(false);
         m_AbstractUIElement__UIRelation->setEType(
                 m_AbstractUIRelationshipEClass);
-        m_AbstractUIElement__UIRelation->setName("UIRelation");
         m_AbstractUIElement__UIRelation->setDefaultValueLiteral("");
         m_AbstractUIElement__UIRelation->setLowerBound(0);
         m_AbstractUIElement__UIRelation->setUpperBound(-1);
@@ -549,7 +572,6 @@ void UiPackage::_initPackage()
         m_AbstractUIElement__UIRelation->setOrdered(false);
         m_AbstractUIElement__implementation->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
-        m_AbstractUIElement__implementation->setName("implementation");
         m_AbstractUIElement__implementation->setDefaultValueLiteral("");
         m_AbstractUIElement__implementation->setLowerBound(0);
         m_AbstractUIElement__implementation->setUpperBound(-1);
@@ -563,7 +585,6 @@ void UiPackage::_initPackage()
         m_AbstractUIElement__implementation->setOrdered(false);
         m_AbstractUIElement__abstraction->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_AbstractUIElement__abstraction->setName("abstraction");
         m_AbstractUIElement__abstraction->setDefaultValueLiteral("");
         m_AbstractUIElement__abstraction->setLowerBound(0);
         m_AbstractUIElement__abstraction->setUpperBound(-1);
@@ -584,7 +605,6 @@ void UiPackage::_initPackage()
         m_UIResourceEClass->setInterface(false);
 
         m_UIResource__UIElement->setEType(m_AbstractUIElementEClass);
-        m_UIResource__UIElement->setName("UIElement");
         m_UIResource__UIElement->setDefaultValueLiteral("");
         m_UIResource__UIElement->setLowerBound(0);
         m_UIResource__UIElement->setUpperBound(-1);
@@ -626,7 +646,6 @@ void UiPackage::_initPackage()
         m_UIModelEClass->setInterface(false);
 
         m_UIModel__UIElement->setEType(m_AbstractUIElementEClass);
-        m_UIModel__UIElement->setName("UIElement");
         m_UIModel__UIElement->setDefaultValueLiteral("");
         m_UIModel__UIElement->setLowerBound(0);
         m_UIModel__UIElement->setUpperBound(-1);
@@ -654,7 +673,6 @@ void UiPackage::_initPackage()
         m_UILayoutEClass->setInterface(false);
 
         m_UILayout__to->setEType(m_UIResourceEClass);
-        m_UILayout__to->setName("to");
         m_UILayout__to->setDefaultValueLiteral("");
         m_UILayout__to->setLowerBound(1);
         m_UILayout__to->setUpperBound(1);
@@ -667,7 +685,6 @@ void UiPackage::_initPackage()
         m_UILayout__to->setDerived(false);
         m_UILayout__to->setOrdered(false);
         m_UILayout__from->setEType(m_UIResourceEClass);
-        m_UILayout__from->setName("from");
         m_UILayout__from->setDefaultValueLiteral("");
         m_UILayout__from->setLowerBound(1);
         m_UILayout__from->setUpperBound(1);
@@ -696,7 +713,6 @@ void UiPackage::_initPackage()
 
         m_DisplaysImage__to->setEType(
                 dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getImage());
-        m_DisplaysImage__to->setName("to");
         m_DisplaysImage__to->setDefaultValueLiteral("");
         m_DisplaysImage__to->setLowerBound(1);
         m_DisplaysImage__to->setUpperBound(1);
@@ -710,7 +726,6 @@ void UiPackage::_initPackage()
         m_DisplaysImage__to->setOrdered(false);
         m_DisplaysImage__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_DisplaysImage__from->setName("from");
         m_DisplaysImage__from->setDefaultValueLiteral("");
         m_DisplaysImage__from->setLowerBound(1);
         m_DisplaysImage__from->setUpperBound(1);
@@ -731,7 +746,6 @@ void UiPackage::_initPackage()
         m_DisplaysEClass->setInterface(false);
 
         m_Displays__to->setEType(m_UIResourceEClass);
-        m_Displays__to->setName("to");
         m_Displays__to->setDefaultValueLiteral("");
         m_Displays__to->setLowerBound(1);
         m_Displays__to->setUpperBound(1);
@@ -745,7 +759,6 @@ void UiPackage::_initPackage()
         m_Displays__to->setOrdered(false);
         m_Displays__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_Displays__from->setName("from");
         m_Displays__from->setDefaultValueLiteral("");
         m_Displays__from->setLowerBound(1);
         m_Displays__from->setUpperBound(1);
@@ -766,7 +779,6 @@ void UiPackage::_initPackage()
         m_UIFlowEClass->setInterface(false);
 
         m_UIFlow__to->setEType(m_AbstractUIElementEClass);
-        m_UIFlow__to->setName("to");
         m_UIFlow__to->setDefaultValueLiteral("");
         m_UIFlow__to->setLowerBound(1);
         m_UIFlow__to->setUpperBound(1);
@@ -779,7 +791,6 @@ void UiPackage::_initPackage()
         m_UIFlow__to->setDerived(false);
         m_UIFlow__to->setOrdered(false);
         m_UIFlow__from->setEType(m_AbstractUIElementEClass);
-        m_UIFlow__from->setName("from");
         m_UIFlow__from->setDefaultValueLiteral("");
         m_UIFlow__from->setLowerBound(1);
         m_UIFlow__from->setUpperBound(1);
@@ -808,7 +819,6 @@ void UiPackage::_initPackage()
 
         m_UIRelationship__to->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_UIRelationship__to->setName("to");
         m_UIRelationship__to->setDefaultValueLiteral("");
         m_UIRelationship__to->setLowerBound(1);
         m_UIRelationship__to->setUpperBound(1);
@@ -821,7 +831,6 @@ void UiPackage::_initPackage()
         m_UIRelationship__to->setDerived(false);
         m_UIRelationship__to->setOrdered(false);
         m_UIRelationship__from->setEType(m_AbstractUIElementEClass);
-        m_UIRelationship__from->setName("from");
         m_UIRelationship__from->setDefaultValueLiteral("");
         m_UIRelationship__from->setLowerBound(1);
         m_UIRelationship__from->setUpperBound(1);
@@ -842,7 +851,6 @@ void UiPackage::_initPackage()
         m_UIActionEClass->setInterface(false);
         m_UIAction__kind->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_UIAction__kind->setName("kind");
         m_UIAction__kind->setDefaultValueLiteral("");
         m_UIAction__kind->setLowerBound(0);
         m_UIAction__kind->setUpperBound(1);
@@ -856,7 +864,6 @@ void UiPackage::_initPackage()
         m_UIAction__kind->setOrdered(false);
 
         m_UIAction__UIElement->setEType(m_UIEventEClass);
-        m_UIAction__UIElement->setName("UIElement");
         m_UIAction__UIElement->setDefaultValueLiteral("");
         m_UIAction__UIElement->setLowerBound(0);
         m_UIAction__UIElement->setUpperBound(-1);
@@ -877,7 +884,6 @@ void UiPackage::_initPackage()
         m_UIEventEClass->setInterface(false);
         m_UIEvent__kind->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_UIEvent__kind->setName("kind");
         m_UIEvent__kind->setDefaultValueLiteral("");
         m_UIEvent__kind->setLowerBound(0);
         m_UIEvent__kind->setUpperBound(1);
@@ -898,7 +904,6 @@ void UiPackage::_initPackage()
         m_ReadsUIEClass->setInterface(false);
 
         m_ReadsUI__to->setEType(m_UIResourceEClass);
-        m_ReadsUI__to->setName("to");
         m_ReadsUI__to->setDefaultValueLiteral("");
         m_ReadsUI__to->setLowerBound(1);
         m_ReadsUI__to->setUpperBound(1);
@@ -912,7 +917,6 @@ void UiPackage::_initPackage()
         m_ReadsUI__to->setOrdered(false);
         m_ReadsUI__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ReadsUI__from->setName("from");
         m_ReadsUI__from->setDefaultValueLiteral("");
         m_ReadsUI__from->setLowerBound(1);
         m_ReadsUI__from->setUpperBound(1);
@@ -933,7 +937,6 @@ void UiPackage::_initPackage()
         m_WritesUIEClass->setInterface(false);
 
         m_WritesUI__to->setEType(m_UIResourceEClass);
-        m_WritesUI__to->setName("to");
         m_WritesUI__to->setDefaultValueLiteral("");
         m_WritesUI__to->setLowerBound(1);
         m_WritesUI__to->setUpperBound(1);
@@ -947,7 +950,6 @@ void UiPackage::_initPackage()
         m_WritesUI__to->setOrdered(false);
         m_WritesUI__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_WritesUI__from->setName("from");
         m_WritesUI__from->setDefaultValueLiteral("");
         m_WritesUI__from->setLowerBound(1);
         m_WritesUI__from->setUpperBound(1);
@@ -968,7 +970,6 @@ void UiPackage::_initPackage()
         m_ManagesUIEClass->setInterface(false);
 
         m_ManagesUI__to->setEType(m_UIResourceEClass);
-        m_ManagesUI__to->setName("to");
         m_ManagesUI__to->setDefaultValueLiteral("");
         m_ManagesUI__to->setLowerBound(1);
         m_ManagesUI__to->setUpperBound(1);
@@ -982,7 +983,6 @@ void UiPackage::_initPackage()
         m_ManagesUI__to->setOrdered(false);
         m_ManagesUI__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ManagesUI__from->setName("from");
         m_ManagesUI__from->setDefaultValueLiteral("");
         m_ManagesUI__from->setLowerBound(1);
         m_ManagesUI__from->setUpperBound(1);

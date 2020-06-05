@@ -66,6 +66,7 @@ void Base2Package::_initPackage()
         // m_Base20__valBase20 has already been allocated above
         m_Base20__valBase20->setFeatureID(
                 ::base::base1::base2::Base2Package::BASE20__VALBASE20);
+        m_Base20__valBase20->setName("valBase20");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base20EClass->getEStructuralFeatures()).basicAdd(
                 m_Base20__valBase20);
@@ -97,7 +98,6 @@ void Base2Package::_initPackage()
         m_Base20EClass->setInterface(false);
         m_Base20__valBase20->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Base20__valBase20->setName("valBase20");
         m_Base20__valBase20->setDefaultValueLiteral("");
         m_Base20__valBase20->setLowerBound(0);
         m_Base20__valBase20->setUpperBound(1);

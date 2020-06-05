@@ -89,12 +89,14 @@ void MyDslPackage::_initPackage()
         classifiers.basicAdd(m_ModelEClass);
         // m_Model__imports has already been allocated above
         m_Model__imports->setFeatureID(::myDsl::MyDslPackage::MODEL__IMPORTS);
+        m_Model__imports->setName("imports");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelEClass->getEStructuralFeatures()).basicAdd(
                 m_Model__imports);
         m_Model__imports->basicsetEContainingClass(m_ModelEClass);
         // m_Model__elements has already been allocated above
         m_Model__elements->setFeatureID(::myDsl::MyDslPackage::MODEL__ELEMENTS);
+        m_Model__elements->setName("elements");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelEClass->getEStructuralFeatures()).basicAdd(
                 m_Model__elements);
@@ -109,6 +111,7 @@ void MyDslPackage::_initPackage()
         // m_Import__importURI has already been allocated above
         m_Import__importURI->setFeatureID(
                 ::myDsl::MyDslPackage::IMPORT__IMPORTURI);
+        m_Import__importURI->setName("importURI");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportEClass->getEStructuralFeatures()).basicAdd(
                 m_Import__importURI);
@@ -122,6 +125,7 @@ void MyDslPackage::_initPackage()
         classifiers.basicAdd(m_TypeEClass);
         // m_Type__name has already been allocated above
         m_Type__name->setFeatureID(::myDsl::MyDslPackage::TYPE__NAME);
+        m_Type__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypeEClass->getEStructuralFeatures()).basicAdd(
                 m_Type__name);
@@ -143,6 +147,7 @@ void MyDslPackage::_initPackage()
         classifiers.basicAdd(m_EntityEClass);
         // m_Entity__extends has already been allocated above
         m_Entity__extends->setFeatureID(::myDsl::MyDslPackage::ENTITY__EXTENDS);
+        m_Entity__extends->setName("extends");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntityEClass->getEStructuralFeatures()).basicAdd(
                 m_Entity__extends);
@@ -150,6 +155,7 @@ void MyDslPackage::_initPackage()
         // m_Entity__properties has already been allocated above
         m_Entity__properties->setFeatureID(
                 ::myDsl::MyDslPackage::ENTITY__PROPERTIES);
+        m_Entity__properties->setName("properties");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntityEClass->getEStructuralFeatures()).basicAdd(
                 m_Entity__properties);
@@ -164,18 +170,21 @@ void MyDslPackage::_initPackage()
         classifiers.basicAdd(m_PropertyEClass);
         // m_Property__name has already been allocated above
         m_Property__name->setFeatureID(::myDsl::MyDslPackage::PROPERTY__NAME);
+        m_Property__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures()).basicAdd(
                 m_Property__name);
         m_Property__name->basicsetEContainingClass(m_PropertyEClass);
         // m_Property__type has already been allocated above
         m_Property__type->setFeatureID(::myDsl::MyDslPackage::PROPERTY__TYPE);
+        m_Property__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures()).basicAdd(
                 m_Property__type);
         m_Property__type->basicsetEContainingClass(m_PropertyEClass);
         // m_Property__many has already been allocated above
         m_Property__many->setFeatureID(::myDsl::MyDslPackage::PROPERTY__MANY);
+        m_Property__many->setName("many");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures()).basicAdd(
                 m_Property__many);
@@ -205,7 +214,6 @@ void MyDslPackage::_initPackage()
         m_ModelEClass->setInterface(false);
 
         m_Model__imports->setEType(m_ImportEClass);
-        m_Model__imports->setName("imports");
         m_Model__imports->setDefaultValueLiteral("");
         m_Model__imports->setLowerBound(0);
         m_Model__imports->setUpperBound(-1);
@@ -218,7 +226,6 @@ void MyDslPackage::_initPackage()
         m_Model__imports->setDerived(false);
         m_Model__imports->setOrdered(true);
         m_Model__elements->setEType(m_TypeEClass);
-        m_Model__elements->setName("elements");
         m_Model__elements->setDefaultValueLiteral("");
         m_Model__elements->setLowerBound(0);
         m_Model__elements->setUpperBound(-1);
@@ -239,7 +246,6 @@ void MyDslPackage::_initPackage()
         m_ImportEClass->setInterface(false);
         m_Import__importURI->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Import__importURI->setName("importURI");
         m_Import__importURI->setDefaultValueLiteral("");
         m_Import__importURI->setLowerBound(0);
         m_Import__importURI->setUpperBound(1);
@@ -260,7 +266,6 @@ void MyDslPackage::_initPackage()
         m_TypeEClass->setInterface(false);
         m_Type__name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Type__name->setName("name");
         m_Type__name->setDefaultValueLiteral("");
         m_Type__name->setLowerBound(0);
         m_Type__name->setUpperBound(1);
@@ -288,7 +293,6 @@ void MyDslPackage::_initPackage()
         m_EntityEClass->setInterface(false);
 
         m_Entity__extends->setEType(m_EntityEClass);
-        m_Entity__extends->setName("extends");
         m_Entity__extends->setDefaultValueLiteral("");
         m_Entity__extends->setLowerBound(0);
         m_Entity__extends->setUpperBound(1);
@@ -301,7 +305,6 @@ void MyDslPackage::_initPackage()
         m_Entity__extends->setDerived(false);
         m_Entity__extends->setOrdered(true);
         m_Entity__properties->setEType(m_PropertyEClass);
-        m_Entity__properties->setName("properties");
         m_Entity__properties->setDefaultValueLiteral("");
         m_Entity__properties->setLowerBound(0);
         m_Entity__properties->setUpperBound(-1);
@@ -322,7 +325,6 @@ void MyDslPackage::_initPackage()
         m_PropertyEClass->setInterface(false);
         m_Property__name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Property__name->setName("name");
         m_Property__name->setDefaultValueLiteral("");
         m_Property__name->setLowerBound(0);
         m_Property__name->setUpperBound(1);
@@ -336,7 +338,6 @@ void MyDslPackage::_initPackage()
         m_Property__name->setOrdered(true);
         m_Property__many->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_Property__many->setName("many");
         m_Property__many->setDefaultValueLiteral("");
         m_Property__many->setLowerBound(0);
         m_Property__many->setUpperBound(1);
@@ -350,7 +351,6 @@ void MyDslPackage::_initPackage()
         m_Property__many->setOrdered(true);
 
         m_Property__type->setEType(m_TypeEClass);
-        m_Property__type->setName("type");
         m_Property__type->setDefaultValueLiteral("");
         m_Property__type->setLowerBound(0);
         m_Property__type->setUpperBound(1);

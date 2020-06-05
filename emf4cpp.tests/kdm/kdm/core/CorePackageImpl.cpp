@@ -93,6 +93,7 @@ void CorePackage::_initPackage()
         // m_Element__attribute has already been allocated above
         m_Element__attribute->setFeatureID(
                 ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE);
+        m_Element__attribute->setName("attribute");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
                 m_Element__attribute);
@@ -100,6 +101,7 @@ void CorePackage::_initPackage()
         // m_Element__annotation has already been allocated above
         m_Element__annotation->setFeatureID(
                 ::kdm::core::CorePackage::ELEMENT__ANNOTATION);
+        m_Element__annotation->setName("annotation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
                 m_Element__annotation);
@@ -115,6 +117,7 @@ void CorePackage::_initPackage()
         // m_ModelElement__stereotype has already been allocated above
         m_ModelElement__stereotype->setFeatureID(
                 ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE);
+        m_ModelElement__stereotype->setName("stereotype");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ModelElement__stereotype);
@@ -123,6 +126,7 @@ void CorePackage::_initPackage()
         // m_ModelElement__taggedValue has already been allocated above
         m_ModelElement__taggedValue->setFeatureID(
                 ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE);
+        m_ModelElement__taggedValue->setName("taggedValue");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ModelElement__taggedValue);
@@ -139,6 +143,7 @@ void CorePackage::_initPackage()
         // m_KDMEntity__name has already been allocated above
         m_KDMEntity__name->setFeatureID(
                 ::kdm::core::CorePackage::KDMENTITY__NAME);
+        m_KDMEntity__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMEntityEClass->getEStructuralFeatures()).basicAdd(
                 m_KDMEntity__name);
@@ -162,6 +167,7 @@ void CorePackage::_initPackage()
         // m_AggregatedRelationship__from has already been allocated above
         m_AggregatedRelationship__from->setFeatureID(
                 ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__FROM);
+        m_AggregatedRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_AggregatedRelationship__from);
@@ -170,6 +176,7 @@ void CorePackage::_initPackage()
         // m_AggregatedRelationship__to has already been allocated above
         m_AggregatedRelationship__to->setFeatureID(
                 ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TO);
+        m_AggregatedRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_AggregatedRelationship__to);
@@ -178,6 +185,7 @@ void CorePackage::_initPackage()
         // m_AggregatedRelationship__relation has already been allocated above
         m_AggregatedRelationship__relation->setFeatureID(
                 ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__RELATION);
+        m_AggregatedRelationship__relation->setName("relation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_AggregatedRelationship__relation);
@@ -186,6 +194,7 @@ void CorePackage::_initPackage()
         // m_AggregatedRelationship__density has already been allocated above
         m_AggregatedRelationship__density->setFeatureID(
                 ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__DENSITY);
+        m_AggregatedRelationship__density->setName("density");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_AggregatedRelationship__density);
@@ -244,7 +253,6 @@ void CorePackage::_initPackage()
 
         m_Element__attribute->setEType(
                 dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getAttribute());
-        m_Element__attribute->setName("attribute");
         m_Element__attribute->setDefaultValueLiteral("");
         m_Element__attribute->setLowerBound(0);
         m_Element__attribute->setUpperBound(-1);
@@ -258,7 +266,6 @@ void CorePackage::_initPackage()
         m_Element__attribute->setOrdered(false);
         m_Element__annotation->setEType(
                 dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getAnnotation());
-        m_Element__annotation->setName("annotation");
         m_Element__annotation->setDefaultValueLiteral("");
         m_Element__annotation->setLowerBound(0);
         m_Element__annotation->setUpperBound(-1);
@@ -280,7 +287,6 @@ void CorePackage::_initPackage()
 
         m_ModelElement__stereotype->setEType(
                 dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getStereotype());
-        m_ModelElement__stereotype->setName("stereotype");
         m_ModelElement__stereotype->setDefaultValueLiteral("");
         m_ModelElement__stereotype->setLowerBound(0);
         m_ModelElement__stereotype->setUpperBound(-1);
@@ -294,7 +300,6 @@ void CorePackage::_initPackage()
         m_ModelElement__stereotype->setOrdered(false);
         m_ModelElement__taggedValue->setEType(
                 dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getExtendedValue());
-        m_ModelElement__taggedValue->setName("taggedValue");
         m_ModelElement__taggedValue->setDefaultValueLiteral("");
         m_ModelElement__taggedValue->setLowerBound(0);
         m_ModelElement__taggedValue->setUpperBound(-1);
@@ -314,7 +319,6 @@ void CorePackage::_initPackage()
         m_KDMEntityEClass->setAbstract(true);
         m_KDMEntityEClass->setInterface(false);
         m_KDMEntity__name->setEType(m_StringEDataType);
-        m_KDMEntity__name->setName("name");
         m_KDMEntity__name->setDefaultValueLiteral("");
         m_KDMEntity__name->setLowerBound(0);
         m_KDMEntity__name->setUpperBound(1);
@@ -516,7 +520,6 @@ void CorePackage::_initPackage()
         m_AggregatedRelationshipEClass->setAbstract(false);
         m_AggregatedRelationshipEClass->setInterface(false);
         m_AggregatedRelationship__density->setEType(m_IntegerEDataType);
-        m_AggregatedRelationship__density->setName("density");
         m_AggregatedRelationship__density->setDefaultValueLiteral("");
         m_AggregatedRelationship__density->setLowerBound(0);
         m_AggregatedRelationship__density->setUpperBound(1);
@@ -530,7 +533,6 @@ void CorePackage::_initPackage()
         m_AggregatedRelationship__density->setOrdered(false);
 
         m_AggregatedRelationship__from->setEType(m_KDMEntityEClass);
-        m_AggregatedRelationship__from->setName("from");
         m_AggregatedRelationship__from->setDefaultValueLiteral("");
         m_AggregatedRelationship__from->setLowerBound(1);
         m_AggregatedRelationship__from->setUpperBound(1);
@@ -543,7 +545,6 @@ void CorePackage::_initPackage()
         m_AggregatedRelationship__from->setDerived(false);
         m_AggregatedRelationship__from->setOrdered(false);
         m_AggregatedRelationship__to->setEType(m_KDMEntityEClass);
-        m_AggregatedRelationship__to->setName("to");
         m_AggregatedRelationship__to->setDefaultValueLiteral("");
         m_AggregatedRelationship__to->setLowerBound(1);
         m_AggregatedRelationship__to->setUpperBound(1);
@@ -556,7 +557,6 @@ void CorePackage::_initPackage()
         m_AggregatedRelationship__to->setDerived(false);
         m_AggregatedRelationship__to->setOrdered(false);
         m_AggregatedRelationship__relation->setEType(m_KDMRelationshipEClass);
-        m_AggregatedRelationship__relation->setName("relation");
         m_AggregatedRelationship__relation->setDefaultValueLiteral("");
         m_AggregatedRelationship__relation->setLowerBound(0);
         m_AggregatedRelationship__relation->setUpperBound(-1);

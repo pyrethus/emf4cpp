@@ -131,6 +131,7 @@ void DeclarationPackage::_initPackage()
         // m_AbstractDeclaration__owner has already been allocated above
         m_AbstractDeclaration__owner->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__OWNER);
+        m_AbstractDeclaration__owner->setName("owner");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDeclarationEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractDeclaration__owner);
@@ -139,6 +140,7 @@ void DeclarationPackage::_initPackage()
         // m_AbstractDeclaration__params has already been allocated above
         m_AbstractDeclaration__params->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__PARAMS);
+        m_AbstractDeclaration__params->setName("params");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDeclarationEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractDeclaration__params);
@@ -147,6 +149,7 @@ void DeclarationPackage::_initPackage()
         // m_AbstractDeclaration__isPrivate has already been allocated above
         m_AbstractDeclaration__isPrivate->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__ISPRIVATE);
+        m_AbstractDeclaration__isPrivate->setName("isPrivate");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDeclarationEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractDeclaration__isPrivate);
@@ -155,6 +158,7 @@ void DeclarationPackage::_initPackage()
         // m_AbstractDeclaration__guard has already been allocated above
         m_AbstractDeclaration__guard->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::ABSTRACTDECLARATION__GUARD);
+        m_AbstractDeclaration__guard->setName("guard");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDeclarationEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractDeclaration__guard);
@@ -172,6 +176,7 @@ void DeclarationPackage::_initPackage()
         // m_AbstractNamedDeclaration__name has already been allocated above
         m_AbstractNamedDeclaration__name->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::ABSTRACTNAMEDDECLARATION__NAME);
+        m_AbstractNamedDeclaration__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractNamedDeclarationEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractNamedDeclaration__name);
@@ -188,6 +193,7 @@ void DeclarationPackage::_initPackage()
         // m_Definition__body has already been allocated above
         m_Definition__body->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::DEFINITION__BODY);
+        m_Definition__body->setName("body");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinitionEClass->getEStructuralFeatures()).basicAdd(
                 m_Definition__body);
@@ -203,6 +209,7 @@ void DeclarationPackage::_initPackage()
         // m_Extension__cached has already been allocated above
         m_Extension__cached->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::EXTENSION__CACHED);
+        m_Extension__cached->setName("cached");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionEClass->getEStructuralFeatures()).basicAdd(
                 m_Extension__cached);
@@ -210,6 +217,7 @@ void DeclarationPackage::_initPackage()
         // m_Extension__body has already been allocated above
         m_Extension__body->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::EXTENSION__BODY);
+        m_Extension__body->setName("body");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionEClass->getEStructuralFeatures()).basicAdd(
                 m_Extension__body);
@@ -217,6 +225,7 @@ void DeclarationPackage::_initPackage()
         // m_Extension__returnType has already been allocated above
         m_Extension__returnType->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::EXTENSION__RETURNTYPE);
+        m_Extension__returnType->setName("returnType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionEClass->getEStructuralFeatures()).basicAdd(
                 m_Extension__returnType);
@@ -232,6 +241,7 @@ void DeclarationPackage::_initPackage()
         // m_AbstractAspect__pointcut has already been allocated above
         m_AbstractAspect__pointcut->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::ABSTRACTASPECT__POINTCUT);
+        m_AbstractAspect__pointcut->setName("pointcut");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractAspectEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractAspect__pointcut);
@@ -240,6 +250,7 @@ void DeclarationPackage::_initPackage()
         // m_AbstractAspect__wildparams has already been allocated above
         m_AbstractAspect__wildparams->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::ABSTRACTASPECT__WILDPARAMS);
+        m_AbstractAspect__wildparams->setName("wildparams");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractAspectEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractAspect__wildparams);
@@ -256,6 +267,7 @@ void DeclarationPackage::_initPackage()
         // m_ExtensionAspect__expression has already been allocated above
         m_ExtensionAspect__expression->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::EXTENSIONASPECT__EXPRESSION);
+        m_ExtensionAspect__expression->setName("expression");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionAspectEClass->getEStructuralFeatures()).basicAdd(
                 m_ExtensionAspect__expression);
@@ -272,6 +284,7 @@ void DeclarationPackage::_initPackage()
         // m_DefinitionAspect__body has already been allocated above
         m_DefinitionAspect__body->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::DEFINITIONASPECT__BODY);
+        m_DefinitionAspect__body->setName("body");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinitionAspectEClass->getEStructuralFeatures()).basicAdd(
                 m_DefinitionAspect__body);
@@ -287,6 +300,7 @@ void DeclarationPackage::_initPackage()
         // m_Check__errorSeverity has already been allocated above
         m_Check__errorSeverity->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::CHECK__ERRORSEVERITY);
+        m_Check__errorSeverity->setName("errorSeverity");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CheckEClass->getEStructuralFeatures()).basicAdd(
                 m_Check__errorSeverity);
@@ -294,6 +308,7 @@ void DeclarationPackage::_initPackage()
         // m_Check__msg has already been allocated above
         m_Check__msg->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::CHECK__MSG);
+        m_Check__msg->setName("msg");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CheckEClass->getEStructuralFeatures()).basicAdd(
                 m_Check__msg);
@@ -301,6 +316,7 @@ void DeclarationPackage::_initPackage()
         // m_Check__constraint has already been allocated above
         m_Check__constraint->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::CHECK__CONSTRAINT);
+        m_Check__constraint->setName("constraint");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CheckEClass->getEStructuralFeatures()).basicAdd(
                 m_Check__constraint);
@@ -308,6 +324,7 @@ void DeclarationPackage::_initPackage()
         // m_Check__feature has already been allocated above
         m_Check__feature->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::CHECK__FEATURE);
+        m_Check__feature->setName("feature");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CheckEClass->getEStructuralFeatures()).basicAdd(
                 m_Check__feature);
@@ -323,6 +340,7 @@ void DeclarationPackage::_initPackage()
         // m_CreateExtension__toBeCreated has already been allocated above
         m_CreateExtension__toBeCreated->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::CREATEEXTENSION__TOBECREATED);
+        m_CreateExtension__toBeCreated->setName("toBeCreated");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CreateExtensionEClass->getEStructuralFeatures()).basicAdd(
                 m_CreateExtension__toBeCreated);
@@ -339,6 +357,7 @@ void DeclarationPackage::_initPackage()
         // m_JavaExtension__javaType has already been allocated above
         m_JavaExtension__javaType->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::JAVAEXTENSION__JAVATYPE);
+        m_JavaExtension__javaType->setName("javaType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_JavaExtensionEClass->getEStructuralFeatures()).basicAdd(
                 m_JavaExtension__javaType);
@@ -347,6 +366,7 @@ void DeclarationPackage::_initPackage()
         // m_JavaExtension__javaMethod has already been allocated above
         m_JavaExtension__javaMethod->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::JAVAEXTENSION__JAVAMETHOD);
+        m_JavaExtension__javaMethod->setName("javaMethod");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_JavaExtensionEClass->getEStructuralFeatures()).basicAdd(
                 m_JavaExtension__javaMethod);
@@ -355,6 +375,7 @@ void DeclarationPackage::_initPackage()
         // m_JavaExtension__javaParamTypes has already been allocated above
         m_JavaExtension__javaParamTypes->setFeatureID(
                 ::xpand3::declaration::DeclarationPackage::JAVAEXTENSION__JAVAPARAMTYPES);
+        m_JavaExtension__javaParamTypes->setName("javaParamTypes");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_JavaExtensionEClass->getEStructuralFeatures()).basicAdd(
                 m_JavaExtension__javaParamTypes);
@@ -400,7 +421,6 @@ void DeclarationPackage::_initPackage()
         m_AbstractDeclarationEClass->setInterface(false);
         m_AbstractDeclaration__isPrivate->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_AbstractDeclaration__isPrivate->setName("isPrivate");
         m_AbstractDeclaration__isPrivate->setDefaultValueLiteral("");
         m_AbstractDeclaration__isPrivate->setLowerBound(0);
         m_AbstractDeclaration__isPrivate->setUpperBound(1);
@@ -415,7 +435,6 @@ void DeclarationPackage::_initPackage()
 
         m_AbstractDeclaration__owner->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getFile());
-        m_AbstractDeclaration__owner->setName("owner");
         m_AbstractDeclaration__owner->setDefaultValueLiteral("");
         m_AbstractDeclaration__owner->setLowerBound(1);
         m_AbstractDeclaration__owner->setUpperBound(1);
@@ -429,7 +448,6 @@ void DeclarationPackage::_initPackage()
         m_AbstractDeclaration__owner->setOrdered(true);
         m_AbstractDeclaration__params->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getDeclaredParameter());
-        m_AbstractDeclaration__params->setName("params");
         m_AbstractDeclaration__params->setDefaultValueLiteral("");
         m_AbstractDeclaration__params->setLowerBound(0);
         m_AbstractDeclaration__params->setUpperBound(-1);
@@ -443,7 +461,6 @@ void DeclarationPackage::_initPackage()
         m_AbstractDeclaration__params->setOrdered(true);
         m_AbstractDeclaration__guard->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_AbstractDeclaration__guard->setName("guard");
         m_AbstractDeclaration__guard->setDefaultValueLiteral("");
         m_AbstractDeclaration__guard->setLowerBound(0);
         m_AbstractDeclaration__guard->setUpperBound(1);
@@ -465,7 +482,6 @@ void DeclarationPackage::_initPackage()
 
         m_AbstractNamedDeclaration__name->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_AbstractNamedDeclaration__name->setName("name");
         m_AbstractNamedDeclaration__name->setDefaultValueLiteral("");
         m_AbstractNamedDeclaration__name->setLowerBound(0);
         m_AbstractNamedDeclaration__name->setUpperBound(1);
@@ -487,7 +503,6 @@ void DeclarationPackage::_initPackage()
 
         m_Definition__body->setEType(
                 dynamic_cast< ::xpand3::statement::StatementPackage* >(::xpand3::statement::StatementPackage::_instance().get())->getAbstractStatement());
-        m_Definition__body->setName("body");
         m_Definition__body->setDefaultValueLiteral("");
         m_Definition__body->setLowerBound(0);
         m_Definition__body->setUpperBound(-1);
@@ -508,7 +523,6 @@ void DeclarationPackage::_initPackage()
         m_ExtensionEClass->setInterface(false);
         m_Extension__cached->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_Extension__cached->setName("cached");
         m_Extension__cached->setDefaultValueLiteral("");
         m_Extension__cached->setLowerBound(0);
         m_Extension__cached->setUpperBound(1);
@@ -523,7 +537,6 @@ void DeclarationPackage::_initPackage()
 
         m_Extension__body->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_Extension__body->setName("body");
         m_Extension__body->setDefaultValueLiteral("");
         m_Extension__body->setLowerBound(1);
         m_Extension__body->setUpperBound(1);
@@ -537,7 +550,6 @@ void DeclarationPackage::_initPackage()
         m_Extension__body->setOrdered(true);
         m_Extension__returnType->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_Extension__returnType->setName("returnType");
         m_Extension__returnType->setDefaultValueLiteral("");
         m_Extension__returnType->setLowerBound(0);
         m_Extension__returnType->setUpperBound(1);
@@ -558,7 +570,6 @@ void DeclarationPackage::_initPackage()
         m_AbstractAspectEClass->setInterface(false);
         m_AbstractAspect__wildparams->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_AbstractAspect__wildparams->setName("wildparams");
         m_AbstractAspect__wildparams->setDefaultValueLiteral("");
         m_AbstractAspect__wildparams->setLowerBound(0);
         m_AbstractAspect__wildparams->setUpperBound(1);
@@ -573,7 +584,6 @@ void DeclarationPackage::_initPackage()
 
         m_AbstractAspect__pointcut->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_AbstractAspect__pointcut->setName("pointcut");
         m_AbstractAspect__pointcut->setDefaultValueLiteral("");
         m_AbstractAspect__pointcut->setLowerBound(0);
         m_AbstractAspect__pointcut->setUpperBound(1);
@@ -595,7 +605,6 @@ void DeclarationPackage::_initPackage()
 
         m_ExtensionAspect__expression->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ExtensionAspect__expression->setName("expression");
         m_ExtensionAspect__expression->setDefaultValueLiteral("");
         m_ExtensionAspect__expression->setLowerBound(0);
         m_ExtensionAspect__expression->setUpperBound(1);
@@ -617,7 +626,6 @@ void DeclarationPackage::_initPackage()
 
         m_DefinitionAspect__body->setEType(
                 dynamic_cast< ::xpand3::statement::StatementPackage* >(::xpand3::statement::StatementPackage::_instance().get())->getAbstractStatement());
-        m_DefinitionAspect__body->setName("body");
         m_DefinitionAspect__body->setDefaultValueLiteral("");
         m_DefinitionAspect__body->setLowerBound(0);
         m_DefinitionAspect__body->setUpperBound(-1);
@@ -638,7 +646,6 @@ void DeclarationPackage::_initPackage()
         m_CheckEClass->setInterface(false);
         m_Check__errorSeverity->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_Check__errorSeverity->setName("errorSeverity");
         m_Check__errorSeverity->setDefaultValueLiteral("");
         m_Check__errorSeverity->setLowerBound(0);
         m_Check__errorSeverity->setUpperBound(1);
@@ -652,7 +659,6 @@ void DeclarationPackage::_initPackage()
         m_Check__errorSeverity->setOrdered(true);
         m_Check__feature->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Check__feature->setName("feature");
         m_Check__feature->setDefaultValueLiteral("");
         m_Check__feature->setLowerBound(0);
         m_Check__feature->setUpperBound(1);
@@ -667,7 +673,6 @@ void DeclarationPackage::_initPackage()
 
         m_Check__msg->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_Check__msg->setName("msg");
         m_Check__msg->setDefaultValueLiteral("");
         m_Check__msg->setLowerBound(0);
         m_Check__msg->setUpperBound(1);
@@ -681,7 +686,6 @@ void DeclarationPackage::_initPackage()
         m_Check__msg->setOrdered(true);
         m_Check__constraint->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_Check__constraint->setName("constraint");
         m_Check__constraint->setDefaultValueLiteral("");
         m_Check__constraint->setLowerBound(0);
         m_Check__constraint->setUpperBound(1);
@@ -703,7 +707,6 @@ void DeclarationPackage::_initPackage()
 
         m_CreateExtension__toBeCreated->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getDeclaredParameter());
-        m_CreateExtension__toBeCreated->setName("toBeCreated");
         m_CreateExtension__toBeCreated->setDefaultValueLiteral("");
         m_CreateExtension__toBeCreated->setLowerBound(0);
         m_CreateExtension__toBeCreated->setUpperBound(1);
@@ -725,7 +728,6 @@ void DeclarationPackage::_initPackage()
 
         m_JavaExtension__javaType->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_JavaExtension__javaType->setName("javaType");
         m_JavaExtension__javaType->setDefaultValueLiteral("");
         m_JavaExtension__javaType->setLowerBound(0);
         m_JavaExtension__javaType->setUpperBound(1);
@@ -739,7 +741,6 @@ void DeclarationPackage::_initPackage()
         m_JavaExtension__javaType->setOrdered(true);
         m_JavaExtension__javaMethod->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_JavaExtension__javaMethod->setName("javaMethod");
         m_JavaExtension__javaMethod->setDefaultValueLiteral("");
         m_JavaExtension__javaMethod->setLowerBound(0);
         m_JavaExtension__javaMethod->setUpperBound(1);
@@ -753,7 +754,6 @@ void DeclarationPackage::_initPackage()
         m_JavaExtension__javaMethod->setOrdered(true);
         m_JavaExtension__javaParamTypes->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_JavaExtension__javaParamTypes->setName("javaParamTypes");
         m_JavaExtension__javaParamTypes->setDefaultValueLiteral("");
         m_JavaExtension__javaParamTypes->setLowerBound(0);
         m_JavaExtension__javaParamTypes->setUpperBound(-1);

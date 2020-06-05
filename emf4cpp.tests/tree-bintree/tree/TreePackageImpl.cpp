@@ -72,12 +72,14 @@ void TreePackage::_initPackage()
         classifiers.basicAdd(m_TreeNodeEClass);
         // m_TreeNode__data has already been allocated above
         m_TreeNode__data->setFeatureID(::tree::TreePackage::TREENODE__DATA);
+        m_TreeNode__data->setName("data");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
                 m_TreeNode__data);
         m_TreeNode__data->basicsetEContainingClass(m_TreeNodeEClass);
         // m_TreeNode__parent has already been allocated above
         m_TreeNode__parent->setFeatureID(::tree::TreePackage::TREENODE__PARENT);
+        m_TreeNode__parent->setName("parent");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
                 m_TreeNode__parent);
@@ -100,6 +102,7 @@ void TreePackage::_initPackage()
         // m_NonTerminal__children has already been allocated above
         m_NonTerminal__children->setFeatureID(
                 ::tree::TreePackage::NONTERMINAL__CHILDREN);
+        m_NonTerminal__children->setName("children");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NonTerminalEClass->getEStructuralFeatures()).basicAdd(
                 m_NonTerminal__children);
@@ -129,7 +132,6 @@ void TreePackage::_initPackage()
         m_TreeNodeEClass->setInterface(false);
         m_TreeNode__data->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_TreeNode__data->setName("data");
         m_TreeNode__data->setDefaultValueLiteral("");
         m_TreeNode__data->setLowerBound(0);
         m_TreeNode__data->setUpperBound(1);
@@ -143,7 +145,6 @@ void TreePackage::_initPackage()
         m_TreeNode__data->setOrdered(true);
 
         m_TreeNode__parent->setEType(m_TreeNodeEClass);
-        m_TreeNode__parent->setName("parent");
         m_TreeNode__parent->setDefaultValueLiteral("");
         m_TreeNode__parent->setLowerBound(0);
         m_TreeNode__parent->setUpperBound(1);
@@ -171,7 +172,6 @@ void TreePackage::_initPackage()
         m_NonTerminalEClass->setInterface(false);
 
         m_NonTerminal__children->setEType(m_TreeNodeEClass);
-        m_NonTerminal__children->setName("children");
         m_NonTerminal__children->setDefaultValueLiteral("");
         m_NonTerminal__children->setLowerBound(0);
         m_NonTerminal__children->setUpperBound(-1);

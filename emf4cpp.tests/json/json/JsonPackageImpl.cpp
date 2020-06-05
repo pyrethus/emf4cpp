@@ -91,6 +91,7 @@ void JsonPackage::_initPackage()
         // m_ObjectValue__members has already been allocated above
         m_ObjectValue__members->setFeatureID(
                 ::json::JsonPackage::OBJECTVALUE__MEMBERS);
+        m_ObjectValue__members->setName("members");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ObjectValueEClass->getEStructuralFeatures()).basicAdd(
                 m_ObjectValue__members);
@@ -104,12 +105,14 @@ void JsonPackage::_initPackage()
         classifiers.basicAdd(m_NVPairEClass);
         // m_NVPair__name has already been allocated above
         m_NVPair__name->setFeatureID(::json::JsonPackage::NVPAIR__NAME);
+        m_NVPair__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NVPairEClass->getEStructuralFeatures()).basicAdd(
                 m_NVPair__name);
         m_NVPair__name->basicsetEContainingClass(m_NVPairEClass);
         // m_NVPair__value has already been allocated above
         m_NVPair__value->setFeatureID(::json::JsonPackage::NVPAIR__VALUE);
+        m_NVPair__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NVPairEClass->getEStructuralFeatures()).basicAdd(
                 m_NVPair__value);
@@ -132,6 +135,7 @@ void JsonPackage::_initPackage()
         // m_StringValue__value has already been allocated above
         m_StringValue__value->setFeatureID(
                 ::json::JsonPackage::STRINGVALUE__VALUE);
+        m_StringValue__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StringValueEClass->getEStructuralFeatures()).basicAdd(
                 m_StringValue__value);
@@ -147,6 +151,7 @@ void JsonPackage::_initPackage()
         // m_NumberValue__value has already been allocated above
         m_NumberValue__value->setFeatureID(
                 ::json::JsonPackage::NUMBERVALUE__VALUE);
+        m_NumberValue__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NumberValueEClass->getEStructuralFeatures()).basicAdd(
                 m_NumberValue__value);
@@ -162,6 +167,7 @@ void JsonPackage::_initPackage()
         // m_BooleanValue__value has already been allocated above
         m_BooleanValue__value->setFeatureID(
                 ::json::JsonPackage::BOOLEANVALUE__VALUE);
+        m_BooleanValue__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BooleanValueEClass->getEStructuralFeatures()).basicAdd(
                 m_BooleanValue__value);
@@ -177,6 +183,7 @@ void JsonPackage::_initPackage()
         // m_ArrayValue__values has already been allocated above
         m_ArrayValue__values->setFeatureID(
                 ::json::JsonPackage::ARRAYVALUE__VALUES);
+        m_ArrayValue__values->setName("values");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ArrayValueEClass->getEStructuralFeatures()).basicAdd(
                 m_ArrayValue__values);
@@ -218,7 +225,6 @@ void JsonPackage::_initPackage()
         m_ObjectValueEClass->setInterface(false);
 
         m_ObjectValue__members->setEType(m_NVPairEClass);
-        m_ObjectValue__members->setName("members");
         m_ObjectValue__members->setDefaultValueLiteral("");
         m_ObjectValue__members->setLowerBound(1);
         m_ObjectValue__members->setUpperBound(-1);
@@ -239,7 +245,6 @@ void JsonPackage::_initPackage()
         m_NVPairEClass->setInterface(false);
         m_NVPair__name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_NVPair__name->setName("name");
         m_NVPair__name->setDefaultValueLiteral("");
         m_NVPair__name->setLowerBound(0);
         m_NVPair__name->setUpperBound(1);
@@ -253,7 +258,6 @@ void JsonPackage::_initPackage()
         m_NVPair__name->setOrdered(true);
 
         m_NVPair__value->setEType(m_ValueEClass);
-        m_NVPair__value->setName("value");
         m_NVPair__value->setDefaultValueLiteral("");
         m_NVPair__value->setLowerBound(1);
         m_NVPair__value->setUpperBound(1);
@@ -281,7 +285,6 @@ void JsonPackage::_initPackage()
         m_StringValueEClass->setInterface(false);
         m_StringValue__value->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_StringValue__value->setName("value");
         m_StringValue__value->setDefaultValueLiteral("");
         m_StringValue__value->setLowerBound(0);
         m_StringValue__value->setUpperBound(1);
@@ -302,7 +305,6 @@ void JsonPackage::_initPackage()
         m_NumberValueEClass->setInterface(false);
         m_NumberValue__value->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDouble());
-        m_NumberValue__value->setName("value");
         m_NumberValue__value->setDefaultValueLiteral("");
         m_NumberValue__value->setLowerBound(0);
         m_NumberValue__value->setUpperBound(1);
@@ -323,7 +325,6 @@ void JsonPackage::_initPackage()
         m_BooleanValueEClass->setInterface(false);
         m_BooleanValue__value->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_BooleanValue__value->setName("value");
         m_BooleanValue__value->setDefaultValueLiteral("");
         m_BooleanValue__value->setLowerBound(0);
         m_BooleanValue__value->setUpperBound(1);
@@ -344,7 +345,6 @@ void JsonPackage::_initPackage()
         m_ArrayValueEClass->setInterface(false);
 
         m_ArrayValue__values->setEType(m_ValueEClass);
-        m_ArrayValue__values->setName("values");
         m_ArrayValue__values->setDefaultValueLiteral("");
         m_ArrayValue__values->setLowerBound(0);
         m_ArrayValue__values->setUpperBound(-1);

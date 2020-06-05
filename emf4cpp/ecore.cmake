@@ -131,6 +131,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR} ../org.csu.emf4cpp.generator/../
 
 add_library(emf4cpp-ecore SHARED ${ecore_HEADERS} ${ecore_SOURCES})
 set_target_properties(emf4cpp-ecore PROPERTIES COMPILE_FLAGS "-DMAKE_ECORE_DLL" VERSION 0.0.1 SOVERSION 1)
+set_property(TARGET emf4cpp-ecore APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
 
 install(TARGETS emf4cpp-ecore DESTINATION lib)
 

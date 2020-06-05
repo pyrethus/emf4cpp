@@ -72,12 +72,14 @@ void EdatePackage::_initPackage()
         // m_Person__Birthday has already been allocated above
         m_Person__Birthday->setFeatureID(
                 ::edate::EdatePackage::PERSON__BIRTHDAY);
+        m_Person__Birthday->setName("Birthday");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PersonEClass->getEStructuralFeatures()).basicAdd(
                 m_Person__Birthday);
         m_Person__Birthday->basicsetEContainingClass(m_PersonEClass);
         // m_Person__Name has already been allocated above
         m_Person__Name->setFeatureID(::edate::EdatePackage::PERSON__NAME);
+        m_Person__Name->setName("Name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PersonEClass->getEStructuralFeatures()).basicAdd(
                 m_Person__Name);
@@ -93,6 +95,7 @@ void EdatePackage::_initPackage()
         // m_Apollo11__FirstManOnMoonDate has already been allocated above
         m_Apollo11__FirstManOnMoonDate->setFeatureID(
                 ::edate::EdatePackage::APOLLO11__FIRSTMANONMOONDATE);
+        m_Apollo11__FirstManOnMoonDate->setName("FirstManOnMoonDate");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Apollo11EClass->getEStructuralFeatures()).basicAdd(
                 m_Apollo11__FirstManOnMoonDate);
@@ -101,6 +104,7 @@ void EdatePackage::_initPackage()
         // m_Apollo11__Member has already been allocated above
         m_Apollo11__Member->setFeatureID(
                 ::edate::EdatePackage::APOLLO11__MEMBER);
+        m_Apollo11__Member->setName("Member");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Apollo11EClass->getEStructuralFeatures()).basicAdd(
                 m_Apollo11__Member);
@@ -128,7 +132,6 @@ void EdatePackage::_initPackage()
         m_PersonEClass->setInterface(false);
         m_Person__Birthday->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDate());
-        m_Person__Birthday->setName("Birthday");
         m_Person__Birthday->setDefaultValueLiteral("");
         m_Person__Birthday->setLowerBound(0);
         m_Person__Birthday->setUpperBound(1);
@@ -142,7 +145,6 @@ void EdatePackage::_initPackage()
         m_Person__Birthday->setOrdered(true);
         m_Person__Name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Person__Name->setName("Name");
         m_Person__Name->setDefaultValueLiteral("");
         m_Person__Name->setLowerBound(0);
         m_Person__Name->setUpperBound(1);
@@ -163,7 +165,6 @@ void EdatePackage::_initPackage()
         m_Apollo11EClass->setInterface(false);
         m_Apollo11__FirstManOnMoonDate->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDate());
-        m_Apollo11__FirstManOnMoonDate->setName("FirstManOnMoonDate");
         m_Apollo11__FirstManOnMoonDate->setDefaultValueLiteral(
                 "1969-07-20T20:18:00.000+0000");
         m_Apollo11__FirstManOnMoonDate->setLowerBound(0);
@@ -178,7 +179,6 @@ void EdatePackage::_initPackage()
         m_Apollo11__FirstManOnMoonDate->setOrdered(true);
 
         m_Apollo11__Member->setEType(m_PersonEClass);
-        m_Apollo11__Member->setName("Member");
         m_Apollo11__Member->setDefaultValueLiteral("");
         m_Apollo11__Member->setLowerBound(0);
         m_Apollo11__Member->setUpperBound(1);

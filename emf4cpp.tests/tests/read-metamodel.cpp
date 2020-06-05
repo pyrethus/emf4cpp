@@ -1,8 +1,12 @@
 #include <ecorecpp.hpp>
+#include <ecorecpp/resource/ResourceSet.hpp>
+#include <ecorecpp/resource/XMLResource.hpp>
 #include <ecore/EcorePackage.hpp>
 
 int main(int argc, char* argv[])
 {
+    using ::ecorecpp::resource::Resource;
+    using ::ecorecpp::resource::ResourceSet;
     // ::ecorecpp::util::print_all(::ecore::EcorePackage::_instance());
 
     assert(argc > 1);
@@ -14,8 +18,14 @@ int main(int argc, char* argv[])
     {
         try
         {
-            ::ecorecpp::parser::parser _parser;
-            ::ecore::EObject_ptr _eobj = _parser.load(argv[i]);
+            QUrl root{QUrl::fromLocalFile(argv[i])};
+            root.setFragment("//");
+
+            ResourceSet::getInstance().getResourceFactoryRegistry()
+                    ->getProtocolToFactoryMap()[root.scheme().toStdString()].reset(
+                            new ::ecorecpp::resource::XMLResourceFactory() );
+
+            ::ecore::EObject_ptr _eobj = ResourceSet::getInstance().getEObject(root, true);
 
             assert(_eobj);
 

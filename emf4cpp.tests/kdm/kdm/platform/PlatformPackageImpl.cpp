@@ -206,6 +206,7 @@ void PlatformPackage::_initPackage()
         // m_AbstractPlatformElement__source has already been allocated above
         m_AbstractPlatformElement__source->setFeatureID(
                 ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE);
+        m_AbstractPlatformElement__source->setName("source");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractPlatformElement__source);
@@ -214,6 +215,7 @@ void PlatformPackage::_initPackage()
         // m_AbstractPlatformElement__relation has already been allocated above
         m_AbstractPlatformElement__relation->setFeatureID(
                 ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION);
+        m_AbstractPlatformElement__relation->setName("relation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractPlatformElement__relation);
@@ -222,6 +224,7 @@ void PlatformPackage::_initPackage()
         // m_AbstractPlatformElement__abstraction has already been allocated above
         m_AbstractPlatformElement__abstraction->setFeatureID(
                 ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION);
+        m_AbstractPlatformElement__abstraction->setName("abstraction");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractPlatformElement__abstraction);
@@ -230,6 +233,7 @@ void PlatformPackage::_initPackage()
         // m_AbstractPlatformElement__implementation has already been allocated above
         m_AbstractPlatformElement__implementation->setFeatureID(
                 ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION);
+        m_AbstractPlatformElement__implementation->setName("implementation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractPlatformElement__implementation);
@@ -246,6 +250,7 @@ void PlatformPackage::_initPackage()
         // m_PlatformModel__platformElement has already been allocated above
         m_PlatformModel__platformElement->setFeatureID(
                 ::kdm::platform::PlatformPackage::PLATFORMMODEL__PLATFORMELEMENT);
+        m_PlatformModel__platformElement->setName("platformElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformModelEClass->getEStructuralFeatures()).basicAdd(
                 m_PlatformModel__platformElement);
@@ -271,6 +276,7 @@ void PlatformPackage::_initPackage()
         // m_Requires__to has already been allocated above
         m_Requires__to->setFeatureID(
                 ::kdm::platform::PlatformPackage::REQUIRES__TO);
+        m_Requires__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RequiresEClass->getEStructuralFeatures()).basicAdd(
                 m_Requires__to);
@@ -278,6 +284,7 @@ void PlatformPackage::_initPackage()
         // m_Requires__from has already been allocated above
         m_Requires__from->setFeatureID(
                 ::kdm::platform::PlatformPackage::REQUIRES__FROM);
+        m_Requires__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RequiresEClass->getEStructuralFeatures()).basicAdd(
                 m_Requires__from);
@@ -293,6 +300,7 @@ void PlatformPackage::_initPackage()
         // m_ResourceType__platformElement has already been allocated above
         m_ResourceType__platformElement->setFeatureID(
                 ::kdm::platform::PlatformPackage::RESOURCETYPE__PLATFORMELEMENT);
+        m_ResourceType__platformElement->setName("platformElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ResourceTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_ResourceType__platformElement);
@@ -349,6 +357,7 @@ void PlatformPackage::_initPackage()
         // m_PlatformAction__kind has already been allocated above
         m_PlatformAction__kind->setFeatureID(
                 ::kdm::platform::PlatformPackage::PLATFORMACTION__KIND);
+        m_PlatformAction__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformActionEClass->getEStructuralFeatures()).basicAdd(
                 m_PlatformAction__kind);
@@ -357,6 +366,7 @@ void PlatformPackage::_initPackage()
         // m_PlatformAction__platformElement has already been allocated above
         m_PlatformAction__platformElement->setFeatureID(
                 ::kdm::platform::PlatformPackage::PLATFORMACTION__PLATFORMELEMENT);
+        m_PlatformAction__platformElement->setName("platformElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformActionEClass->getEStructuralFeatures()).basicAdd(
                 m_PlatformAction__platformElement);
@@ -389,6 +399,7 @@ void PlatformPackage::_initPackage()
         // m_BindsTo__to has already been allocated above
         m_BindsTo__to->setFeatureID(
                 ::kdm::platform::PlatformPackage::BINDSTO__TO);
+        m_BindsTo__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BindsToEClass->getEStructuralFeatures()).basicAdd(
                 m_BindsTo__to);
@@ -396,6 +407,7 @@ void PlatformPackage::_initPackage()
         // m_BindsTo__from has already been allocated above
         m_BindsTo__from->setFeatureID(
                 ::kdm::platform::PlatformPackage::BINDSTO__FROM);
+        m_BindsTo__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BindsToEClass->getEStructuralFeatures()).basicAdd(
                 m_BindsTo__from);
@@ -419,6 +431,7 @@ void PlatformPackage::_initPackage()
         // m_PlatformRelationship__to has already been allocated above
         m_PlatformRelationship__to->setFeatureID(
                 ::kdm::platform::PlatformPackage::PLATFORMRELATIONSHIP__TO);
+        m_PlatformRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_PlatformRelationship__to);
@@ -427,6 +440,7 @@ void PlatformPackage::_initPackage()
         // m_PlatformRelationship__from has already been allocated above
         m_PlatformRelationship__from->setFeatureID(
                 ::kdm::platform::PlatformPackage::PLATFORMRELATIONSHIP__FROM);
+        m_PlatformRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_PlatformRelationship__from);
@@ -443,6 +457,7 @@ void PlatformPackage::_initPackage()
         // m_PlatformEvent__kind has already been allocated above
         m_PlatformEvent__kind->setFeatureID(
                 ::kdm::platform::PlatformPackage::PLATFORMEVENT__KIND);
+        m_PlatformEvent__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformEventEClass->getEStructuralFeatures()).basicAdd(
                 m_PlatformEvent__kind);
@@ -466,6 +481,7 @@ void PlatformPackage::_initPackage()
         // m_DeployedSoftwareSystem__groupedComponent has already been allocated above
         m_DeployedSoftwareSystem__groupedComponent->setFeatureID(
                 ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__GROUPEDCOMPONENT);
+        m_DeployedSoftwareSystem__groupedComponent->setName("groupedComponent");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedSoftwareSystemEClass->getEStructuralFeatures()).basicAdd(
                 m_DeployedSoftwareSystem__groupedComponent);
@@ -482,6 +498,7 @@ void PlatformPackage::_initPackage()
         // m_Machine__deployedComponent has already been allocated above
         m_Machine__deployedComponent->setFeatureID(
                 ::kdm::platform::PlatformPackage::MACHINE__DEPLOYEDCOMPONENT);
+        m_Machine__deployedComponent->setName("deployedComponent");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MachineEClass->getEStructuralFeatures()).basicAdd(
                 m_Machine__deployedComponent);
@@ -489,6 +506,7 @@ void PlatformPackage::_initPackage()
         // m_Machine__deployedResource has already been allocated above
         m_Machine__deployedResource->setFeatureID(
                 ::kdm::platform::PlatformPackage::MACHINE__DEPLOYEDRESOURCE);
+        m_Machine__deployedResource->setName("deployedResource");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MachineEClass->getEStructuralFeatures()).basicAdd(
                 m_Machine__deployedResource);
@@ -504,6 +522,7 @@ void PlatformPackage::_initPackage()
         // m_DeployedComponent__groupedCode has already been allocated above
         m_DeployedComponent__groupedCode->setFeatureID(
                 ::kdm::platform::PlatformPackage::DEPLOYEDCOMPONENT__GROUPEDCODE);
+        m_DeployedComponent__groupedCode->setName("groupedCode");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedComponentEClass->getEStructuralFeatures()).basicAdd(
                 m_DeployedComponent__groupedCode);
@@ -520,6 +539,7 @@ void PlatformPackage::_initPackage()
         // m_DeployedResource__platformElement has already been allocated above
         m_DeployedResource__platformElement->setFeatureID(
                 ::kdm::platform::PlatformPackage::DEPLOYEDRESOURCE__PLATFORMELEMENT);
+        m_DeployedResource__platformElement->setName("platformElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_DeployedResource__platformElement);
@@ -534,6 +554,7 @@ void PlatformPackage::_initPackage()
         classifiers.basicAdd(m_LoadsEClass);
         // m_Loads__to has already been allocated above
         m_Loads__to->setFeatureID(::kdm::platform::PlatformPackage::LOADS__TO);
+        m_Loads__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LoadsEClass->getEStructuralFeatures()).basicAdd(
                 m_Loads__to);
@@ -541,6 +562,7 @@ void PlatformPackage::_initPackage()
         // m_Loads__from has already been allocated above
         m_Loads__from->setFeatureID(
                 ::kdm::platform::PlatformPackage::LOADS__FROM);
+        m_Loads__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LoadsEClass->getEStructuralFeatures()).basicAdd(
                 m_Loads__from);
@@ -555,6 +577,7 @@ void PlatformPackage::_initPackage()
         // m_Spawns__to has already been allocated above
         m_Spawns__to->setFeatureID(
                 ::kdm::platform::PlatformPackage::SPAWNS__TO);
+        m_Spawns__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SpawnsEClass->getEStructuralFeatures()).basicAdd(
                 m_Spawns__to);
@@ -562,6 +585,7 @@ void PlatformPackage::_initPackage()
         // m_Spawns__from has already been allocated above
         m_Spawns__from->setFeatureID(
                 ::kdm::platform::PlatformPackage::SPAWNS__FROM);
+        m_Spawns__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SpawnsEClass->getEStructuralFeatures()).basicAdd(
                 m_Spawns__from);
@@ -600,6 +624,7 @@ void PlatformPackage::_initPackage()
         // m_ReadsResource__to has already been allocated above
         m_ReadsResource__to->setFeatureID(
                 ::kdm::platform::PlatformPackage::READSRESOURCE__TO);
+        m_ReadsResource__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_ReadsResource__to);
@@ -607,6 +632,7 @@ void PlatformPackage::_initPackage()
         // m_ReadsResource__from has already been allocated above
         m_ReadsResource__from->setFeatureID(
                 ::kdm::platform::PlatformPackage::READSRESOURCE__FROM);
+        m_ReadsResource__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_ReadsResource__from);
@@ -622,6 +648,7 @@ void PlatformPackage::_initPackage()
         // m_WritesResource__to has already been allocated above
         m_WritesResource__to->setFeatureID(
                 ::kdm::platform::PlatformPackage::WRITESRESOURCE__TO);
+        m_WritesResource__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_WritesResource__to);
@@ -629,6 +656,7 @@ void PlatformPackage::_initPackage()
         // m_WritesResource__from has already been allocated above
         m_WritesResource__from->setFeatureID(
                 ::kdm::platform::PlatformPackage::WRITESRESOURCE__FROM);
+        m_WritesResource__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_WritesResource__from);
@@ -645,6 +673,7 @@ void PlatformPackage::_initPackage()
         // m_ManagesResource__to has already been allocated above
         m_ManagesResource__to->setFeatureID(
                 ::kdm::platform::PlatformPackage::MANAGESRESOURCE__TO);
+        m_ManagesResource__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_ManagesResource__to);
@@ -653,6 +682,7 @@ void PlatformPackage::_initPackage()
         // m_ManagesResource__from has already been allocated above
         m_ManagesResource__from->setFeatureID(
                 ::kdm::platform::PlatformPackage::MANAGESRESOURCE__FROM);
+        m_ManagesResource__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_ManagesResource__from);
@@ -669,6 +699,7 @@ void PlatformPackage::_initPackage()
         // m_DefinedBy__to has already been allocated above
         m_DefinedBy__to->setFeatureID(
                 ::kdm::platform::PlatformPackage::DEFINEDBY__TO);
+        m_DefinedBy__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedByEClass->getEStructuralFeatures()).basicAdd(
                 m_DefinedBy__to);
@@ -676,6 +707,7 @@ void PlatformPackage::_initPackage()
         // m_DefinedBy__from has already been allocated above
         m_DefinedBy__from->setFeatureID(
                 ::kdm::platform::PlatformPackage::DEFINEDBY__FROM);
+        m_DefinedBy__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedByEClass->getEStructuralFeatures()).basicAdd(
                 m_DefinedBy__from);
@@ -765,7 +797,6 @@ void PlatformPackage::_initPackage()
 
         m_AbstractPlatformElement__source->setEType(
                 dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_AbstractPlatformElement__source->setName("source");
         m_AbstractPlatformElement__source->setDefaultValueLiteral("");
         m_AbstractPlatformElement__source->setLowerBound(0);
         m_AbstractPlatformElement__source->setUpperBound(-1);
@@ -779,7 +810,6 @@ void PlatformPackage::_initPackage()
         m_AbstractPlatformElement__source->setOrdered(false);
         m_AbstractPlatformElement__relation->setEType(
                 m_AbstractPlatformRelationshipEClass);
-        m_AbstractPlatformElement__relation->setName("relation");
         m_AbstractPlatformElement__relation->setDefaultValueLiteral("");
         m_AbstractPlatformElement__relation->setLowerBound(0);
         m_AbstractPlatformElement__relation->setUpperBound(-1);
@@ -793,7 +823,6 @@ void PlatformPackage::_initPackage()
         m_AbstractPlatformElement__relation->setOrdered(false);
         m_AbstractPlatformElement__abstraction->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_AbstractPlatformElement__abstraction->setName("abstraction");
         m_AbstractPlatformElement__abstraction->setDefaultValueLiteral("");
         m_AbstractPlatformElement__abstraction->setLowerBound(0);
         m_AbstractPlatformElement__abstraction->setUpperBound(-1);
@@ -807,7 +836,6 @@ void PlatformPackage::_initPackage()
         m_AbstractPlatformElement__abstraction->setOrdered(true);
         m_AbstractPlatformElement__implementation->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
-        m_AbstractPlatformElement__implementation->setName("implementation");
         m_AbstractPlatformElement__implementation->setDefaultValueLiteral("");
         m_AbstractPlatformElement__implementation->setLowerBound(0);
         m_AbstractPlatformElement__implementation->setUpperBound(-1);
@@ -829,7 +857,6 @@ void PlatformPackage::_initPackage()
 
         m_PlatformModel__platformElement->setEType(
                 m_AbstractPlatformElementEClass);
-        m_PlatformModel__platformElement->setName("platformElement");
         m_PlatformModel__platformElement->setDefaultValueLiteral("");
         m_PlatformModel__platformElement->setLowerBound(0);
         m_PlatformModel__platformElement->setUpperBound(-1);
@@ -858,7 +885,6 @@ void PlatformPackage::_initPackage()
         m_RequiresEClass->setInterface(false);
 
         m_Requires__to->setEType(m_AbstractPlatformElementEClass);
-        m_Requires__to->setName("to");
         m_Requires__to->setDefaultValueLiteral("");
         m_Requires__to->setLowerBound(1);
         m_Requires__to->setUpperBound(1);
@@ -871,7 +897,6 @@ void PlatformPackage::_initPackage()
         m_Requires__to->setDerived(false);
         m_Requires__to->setOrdered(false);
         m_Requires__from->setEType(m_DeployedComponentEClass);
-        m_Requires__from->setName("from");
         m_Requires__from->setDefaultValueLiteral("");
         m_Requires__from->setLowerBound(1);
         m_Requires__from->setUpperBound(1);
@@ -893,7 +918,6 @@ void PlatformPackage::_initPackage()
 
         m_ResourceType__platformElement->setEType(
                 m_AbstractPlatformElementEClass);
-        m_ResourceType__platformElement->setName("platformElement");
         m_ResourceType__platformElement->setDefaultValueLiteral("");
         m_ResourceType__platformElement->setLowerBound(0);
         m_ResourceType__platformElement->setUpperBound(-1);
@@ -949,7 +973,6 @@ void PlatformPackage::_initPackage()
         m_PlatformActionEClass->setInterface(false);
         m_PlatformAction__kind->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_PlatformAction__kind->setName("kind");
         m_PlatformAction__kind->setDefaultValueLiteral("");
         m_PlatformAction__kind->setLowerBound(0);
         m_PlatformAction__kind->setUpperBound(1);
@@ -963,7 +986,6 @@ void PlatformPackage::_initPackage()
         m_PlatformAction__kind->setOrdered(false);
 
         m_PlatformAction__platformElement->setEType(m_PlatformEventEClass);
-        m_PlatformAction__platformElement->setName("platformElement");
         m_PlatformAction__platformElement->setDefaultValueLiteral("");
         m_PlatformAction__platformElement->setLowerBound(0);
         m_PlatformAction__platformElement->setUpperBound(-1);
@@ -998,7 +1020,6 @@ void PlatformPackage::_initPackage()
         m_BindsToEClass->setInterface(false);
 
         m_BindsTo__to->setEType(m_ResourceTypeEClass);
-        m_BindsTo__to->setName("to");
         m_BindsTo__to->setDefaultValueLiteral("");
         m_BindsTo__to->setLowerBound(1);
         m_BindsTo__to->setUpperBound(1);
@@ -1011,7 +1032,6 @@ void PlatformPackage::_initPackage()
         m_BindsTo__to->setDerived(false);
         m_BindsTo__to->setOrdered(false);
         m_BindsTo__from->setEType(m_ResourceTypeEClass);
-        m_BindsTo__from->setName("from");
         m_BindsTo__from->setDefaultValueLiteral("");
         m_BindsTo__from->setLowerBound(1);
         m_BindsTo__from->setUpperBound(1);
@@ -1040,7 +1060,6 @@ void PlatformPackage::_initPackage()
 
         m_PlatformRelationship__to->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_PlatformRelationship__to->setName("to");
         m_PlatformRelationship__to->setDefaultValueLiteral("");
         m_PlatformRelationship__to->setLowerBound(1);
         m_PlatformRelationship__to->setUpperBound(1);
@@ -1053,7 +1072,6 @@ void PlatformPackage::_initPackage()
         m_PlatformRelationship__to->setDerived(false);
         m_PlatformRelationship__to->setOrdered(false);
         m_PlatformRelationship__from->setEType(m_AbstractPlatformElementEClass);
-        m_PlatformRelationship__from->setName("from");
         m_PlatformRelationship__from->setDefaultValueLiteral("");
         m_PlatformRelationship__from->setLowerBound(1);
         m_PlatformRelationship__from->setUpperBound(1);
@@ -1074,7 +1092,6 @@ void PlatformPackage::_initPackage()
         m_PlatformEventEClass->setInterface(false);
         m_PlatformEvent__kind->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_PlatformEvent__kind->setName("kind");
         m_PlatformEvent__kind->setDefaultValueLiteral("");
         m_PlatformEvent__kind->setLowerBound(0);
         m_PlatformEvent__kind->setUpperBound(1);
@@ -1103,7 +1120,6 @@ void PlatformPackage::_initPackage()
 
         m_DeployedSoftwareSystem__groupedComponent->setEType(
                 m_DeployedComponentEClass);
-        m_DeployedSoftwareSystem__groupedComponent->setName("groupedComponent");
         m_DeployedSoftwareSystem__groupedComponent->setDefaultValueLiteral("");
         m_DeployedSoftwareSystem__groupedComponent->setLowerBound(0);
         m_DeployedSoftwareSystem__groupedComponent->setUpperBound(-1);
@@ -1124,7 +1140,6 @@ void PlatformPackage::_initPackage()
         m_MachineEClass->setInterface(false);
 
         m_Machine__deployedComponent->setEType(m_DeployedComponentEClass);
-        m_Machine__deployedComponent->setName("deployedComponent");
         m_Machine__deployedComponent->setDefaultValueLiteral("");
         m_Machine__deployedComponent->setLowerBound(0);
         m_Machine__deployedComponent->setUpperBound(-1);
@@ -1137,7 +1152,6 @@ void PlatformPackage::_initPackage()
         m_Machine__deployedComponent->setDerived(false);
         m_Machine__deployedComponent->setOrdered(false);
         m_Machine__deployedResource->setEType(m_DeployedResourceEClass);
-        m_Machine__deployedResource->setName("deployedResource");
         m_Machine__deployedResource->setDefaultValueLiteral("");
         m_Machine__deployedResource->setLowerBound(0);
         m_Machine__deployedResource->setUpperBound(-1);
@@ -1159,7 +1173,6 @@ void PlatformPackage::_initPackage()
 
         m_DeployedComponent__groupedCode->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getModule());
-        m_DeployedComponent__groupedCode->setName("groupedCode");
         m_DeployedComponent__groupedCode->setDefaultValueLiteral("");
         m_DeployedComponent__groupedCode->setLowerBound(0);
         m_DeployedComponent__groupedCode->setUpperBound(-1);
@@ -1180,7 +1193,6 @@ void PlatformPackage::_initPackage()
         m_DeployedResourceEClass->setInterface(false);
 
         m_DeployedResource__platformElement->setEType(m_ResourceTypeEClass);
-        m_DeployedResource__platformElement->setName("platformElement");
         m_DeployedResource__platformElement->setDefaultValueLiteral("");
         m_DeployedResource__platformElement->setLowerBound(0);
         m_DeployedResource__platformElement->setUpperBound(-1);
@@ -1201,7 +1213,6 @@ void PlatformPackage::_initPackage()
         m_LoadsEClass->setInterface(false);
 
         m_Loads__to->setEType(m_DeployedComponentEClass);
-        m_Loads__to->setName("to");
         m_Loads__to->setDefaultValueLiteral("");
         m_Loads__to->setLowerBound(1);
         m_Loads__to->setUpperBound(1);
@@ -1215,7 +1226,6 @@ void PlatformPackage::_initPackage()
         m_Loads__to->setOrdered(false);
         m_Loads__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_Loads__from->setName("from");
         m_Loads__from->setDefaultValueLiteral("");
         m_Loads__from->setLowerBound(1);
         m_Loads__from->setUpperBound(1);
@@ -1236,7 +1246,6 @@ void PlatformPackage::_initPackage()
         m_SpawnsEClass->setInterface(false);
 
         m_Spawns__to->setEType(m_RuntimeResourceEClass);
-        m_Spawns__to->setName("to");
         m_Spawns__to->setDefaultValueLiteral("");
         m_Spawns__to->setLowerBound(1);
         m_Spawns__to->setUpperBound(1);
@@ -1250,7 +1259,6 @@ void PlatformPackage::_initPackage()
         m_Spawns__to->setOrdered(false);
         m_Spawns__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_Spawns__from->setName("from");
         m_Spawns__from->setDefaultValueLiteral("");
         m_Spawns__from->setLowerBound(1);
         m_Spawns__from->setUpperBound(1);
@@ -1292,7 +1300,6 @@ void PlatformPackage::_initPackage()
         m_ReadsResourceEClass->setInterface(false);
 
         m_ReadsResource__to->setEType(m_ResourceTypeEClass);
-        m_ReadsResource__to->setName("to");
         m_ReadsResource__to->setDefaultValueLiteral("");
         m_ReadsResource__to->setLowerBound(1);
         m_ReadsResource__to->setUpperBound(1);
@@ -1306,7 +1313,6 @@ void PlatformPackage::_initPackage()
         m_ReadsResource__to->setOrdered(false);
         m_ReadsResource__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ReadsResource__from->setName("from");
         m_ReadsResource__from->setDefaultValueLiteral("");
         m_ReadsResource__from->setLowerBound(1);
         m_ReadsResource__from->setUpperBound(1);
@@ -1327,7 +1333,6 @@ void PlatformPackage::_initPackage()
         m_WritesResourceEClass->setInterface(false);
 
         m_WritesResource__to->setEType(m_ResourceTypeEClass);
-        m_WritesResource__to->setName("to");
         m_WritesResource__to->setDefaultValueLiteral("");
         m_WritesResource__to->setLowerBound(1);
         m_WritesResource__to->setUpperBound(1);
@@ -1341,7 +1346,6 @@ void PlatformPackage::_initPackage()
         m_WritesResource__to->setOrdered(false);
         m_WritesResource__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_WritesResource__from->setName("from");
         m_WritesResource__from->setDefaultValueLiteral("");
         m_WritesResource__from->setLowerBound(1);
         m_WritesResource__from->setUpperBound(1);
@@ -1362,7 +1366,6 @@ void PlatformPackage::_initPackage()
         m_ManagesResourceEClass->setInterface(false);
 
         m_ManagesResource__to->setEType(m_ResourceTypeEClass);
-        m_ManagesResource__to->setName("to");
         m_ManagesResource__to->setDefaultValueLiteral("");
         m_ManagesResource__to->setLowerBound(1);
         m_ManagesResource__to->setUpperBound(1);
@@ -1376,7 +1379,6 @@ void PlatformPackage::_initPackage()
         m_ManagesResource__to->setOrdered(false);
         m_ManagesResource__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ManagesResource__from->setName("from");
         m_ManagesResource__from->setDefaultValueLiteral("");
         m_ManagesResource__from->setLowerBound(1);
         m_ManagesResource__from->setUpperBound(1);
@@ -1398,7 +1400,6 @@ void PlatformPackage::_initPackage()
 
         m_DefinedBy__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
-        m_DefinedBy__to->setName("to");
         m_DefinedBy__to->setDefaultValueLiteral("");
         m_DefinedBy__to->setLowerBound(1);
         m_DefinedBy__to->setUpperBound(1);
@@ -1412,7 +1413,6 @@ void PlatformPackage::_initPackage()
         m_DefinedBy__to->setOrdered(false);
         m_DefinedBy__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_DefinedBy__from->setName("from");
         m_DefinedBy__from->setDefaultValueLiteral("");
         m_DefinedBy__from->setLowerBound(1);
         m_DefinedBy__from->setUpperBound(1);

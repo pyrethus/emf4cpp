@@ -10,4 +10,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 add_executable(test-enum test.cpp)
 target_link_libraries(test-enum emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-enumeration)
 
-
+add_test(NAME test-enum COMMAND test-enum)

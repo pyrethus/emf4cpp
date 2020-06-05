@@ -153,6 +153,7 @@ void EventPackage::_initPackage()
         // m_EventModel__eventElement has already been allocated above
         m_EventModel__eventElement->setFeatureID(
                 ::kdm::event::EventPackage::EVENTMODEL__EVENTELEMENT);
+        m_EventModel__eventElement->setName("eventElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventModelEClass->getEStructuralFeatures()).basicAdd(
                 m_EventModel__eventElement);
@@ -169,6 +170,7 @@ void EventPackage::_initPackage()
         // m_AbstractEventElement__source has already been allocated above
         m_AbstractEventElement__source->setFeatureID(
                 ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__SOURCE);
+        m_AbstractEventElement__source->setName("source");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractEventElement__source);
@@ -177,6 +179,7 @@ void EventPackage::_initPackage()
         // m_AbstractEventElement__eventRelation has already been allocated above
         m_AbstractEventElement__eventRelation->setFeatureID(
                 ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__EVENTRELATION);
+        m_AbstractEventElement__eventRelation->setName("eventRelation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractEventElement__eventRelation);
@@ -185,6 +188,7 @@ void EventPackage::_initPackage()
         // m_AbstractEventElement__abstraction has already been allocated above
         m_AbstractEventElement__abstraction->setFeatureID(
                 ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__ABSTRACTION);
+        m_AbstractEventElement__abstraction->setName("abstraction");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractEventElement__abstraction);
@@ -193,6 +197,7 @@ void EventPackage::_initPackage()
         // m_AbstractEventElement__implementation has already been allocated above
         m_AbstractEventElement__implementation->setFeatureID(
                 ::kdm::event::EventPackage::ABSTRACTEVENTELEMENT__IMPLEMENTATION);
+        m_AbstractEventElement__implementation->setName("implementation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractEventElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractEventElement__implementation);
@@ -207,6 +212,7 @@ void EventPackage::_initPackage()
         classifiers.basicAdd(m_EventEClass);
         // m_Event__kind has already been allocated above
         m_Event__kind->setFeatureID(::kdm::event::EventPackage::EVENT__KIND);
+        m_Event__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventEClass->getEStructuralFeatures()).basicAdd(
                 m_Event__kind);
@@ -231,6 +237,7 @@ void EventPackage::_initPackage()
         // m_EventRelationship__to has already been allocated above
         m_EventRelationship__to->setFeatureID(
                 ::kdm::event::EventPackage::EVENTRELATIONSHIP__TO);
+        m_EventRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_EventRelationship__to);
@@ -239,6 +246,7 @@ void EventPackage::_initPackage()
         // m_EventRelationship__from has already been allocated above
         m_EventRelationship__from->setFeatureID(
                 ::kdm::event::EventPackage::EVENTRELATIONSHIP__FROM);
+        m_EventRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_EventRelationship__from);
@@ -255,6 +263,7 @@ void EventPackage::_initPackage()
         // m_EventResource__eventElement has already been allocated above
         m_EventResource__eventElement->setFeatureID(
                 ::kdm::event::EventPackage::EVENTRESOURCE__EVENTELEMENT);
+        m_EventResource__eventElement->setName("eventElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_EventResource__eventElement);
@@ -301,6 +310,7 @@ void EventPackage::_initPackage()
         // m_EventAction__kind has already been allocated above
         m_EventAction__kind->setFeatureID(
                 ::kdm::event::EventPackage::EVENTACTION__KIND);
+        m_EventAction__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventActionEClass->getEStructuralFeatures()).basicAdd(
                 m_EventAction__kind);
@@ -308,6 +318,7 @@ void EventPackage::_initPackage()
         // m_EventAction__eventElement has already been allocated above
         m_EventAction__eventElement->setFeatureID(
                 ::kdm::event::EventPackage::EVENTACTION__EVENTELEMENT);
+        m_EventAction__eventElement->setName("eventElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EventActionEClass->getEStructuralFeatures()).basicAdd(
                 m_EventAction__eventElement);
@@ -324,6 +335,7 @@ void EventPackage::_initPackage()
         // m_ReadsState__to has already been allocated above
         m_ReadsState__to->setFeatureID(
                 ::kdm::event::EventPackage::READSSTATE__TO);
+        m_ReadsState__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsStateEClass->getEStructuralFeatures()).basicAdd(
                 m_ReadsState__to);
@@ -331,6 +343,7 @@ void EventPackage::_initPackage()
         // m_ReadsState__from has already been allocated above
         m_ReadsState__from->setFeatureID(
                 ::kdm::event::EventPackage::READSSTATE__FROM);
+        m_ReadsState__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsStateEClass->getEStructuralFeatures()).basicAdd(
                 m_ReadsState__from);
@@ -346,6 +359,7 @@ void EventPackage::_initPackage()
         // m_ProducesEvent__to has already been allocated above
         m_ProducesEvent__to->setFeatureID(
                 ::kdm::event::EventPackage::PRODUCESEVENT__TO);
+        m_ProducesEvent__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEventEClass->getEStructuralFeatures()).basicAdd(
                 m_ProducesEvent__to);
@@ -353,6 +367,7 @@ void EventPackage::_initPackage()
         // m_ProducesEvent__from has already been allocated above
         m_ProducesEvent__from->setFeatureID(
                 ::kdm::event::EventPackage::PRODUCESEVENT__FROM);
+        m_ProducesEvent__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEventEClass->getEStructuralFeatures()).basicAdd(
                 m_ProducesEvent__from);
@@ -368,6 +383,7 @@ void EventPackage::_initPackage()
         // m_ConsumesEvent__to has already been allocated above
         m_ConsumesEvent__to->setFeatureID(
                 ::kdm::event::EventPackage::CONSUMESEVENT__TO);
+        m_ConsumesEvent__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEventEClass->getEStructuralFeatures()).basicAdd(
                 m_ConsumesEvent__to);
@@ -375,6 +391,7 @@ void EventPackage::_initPackage()
         // m_ConsumesEvent__from has already been allocated above
         m_ConsumesEvent__from->setFeatureID(
                 ::kdm::event::EventPackage::CONSUMESEVENT__FROM);
+        m_ConsumesEvent__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEventEClass->getEStructuralFeatures()).basicAdd(
                 m_ConsumesEvent__from);
@@ -390,6 +407,7 @@ void EventPackage::_initPackage()
         // m_NextState__to has already been allocated above
         m_NextState__to->setFeatureID(
                 ::kdm::event::EventPackage::NEXTSTATE__TO);
+        m_NextState__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NextStateEClass->getEStructuralFeatures()).basicAdd(
                 m_NextState__to);
@@ -397,6 +415,7 @@ void EventPackage::_initPackage()
         // m_NextState__from has already been allocated above
         m_NextState__from->setFeatureID(
                 ::kdm::event::EventPackage::NEXTSTATE__FROM);
+        m_NextState__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NextStateEClass->getEStructuralFeatures()).basicAdd(
                 m_NextState__from);
@@ -427,6 +446,7 @@ void EventPackage::_initPackage()
         classifiers.basicAdd(m_HasStateEClass);
         // m_HasState__to has already been allocated above
         m_HasState__to->setFeatureID(::kdm::event::EventPackage::HASSTATE__TO);
+        m_HasState__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasStateEClass->getEStructuralFeatures()).basicAdd(
                 m_HasState__to);
@@ -434,6 +454,7 @@ void EventPackage::_initPackage()
         // m_HasState__from has already been allocated above
         m_HasState__from->setFeatureID(
                 ::kdm::event::EventPackage::HASSTATE__FROM);
+        m_HasState__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasStateEClass->getEStructuralFeatures()).basicAdd(
                 m_HasState__from);
@@ -491,7 +512,6 @@ void EventPackage::_initPackage()
         m_EventModelEClass->setInterface(false);
 
         m_EventModel__eventElement->setEType(m_AbstractEventElementEClass);
-        m_EventModel__eventElement->setName("eventElement");
         m_EventModel__eventElement->setDefaultValueLiteral("");
         m_EventModel__eventElement->setLowerBound(0);
         m_EventModel__eventElement->setUpperBound(-1);
@@ -513,7 +533,6 @@ void EventPackage::_initPackage()
 
         m_AbstractEventElement__source->setEType(
                 dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_AbstractEventElement__source->setName("source");
         m_AbstractEventElement__source->setDefaultValueLiteral("");
         m_AbstractEventElement__source->setLowerBound(0);
         m_AbstractEventElement__source->setUpperBound(-1);
@@ -527,7 +546,6 @@ void EventPackage::_initPackage()
         m_AbstractEventElement__source->setOrdered(false);
         m_AbstractEventElement__eventRelation->setEType(
                 m_AbstractEventRelationshipEClass);
-        m_AbstractEventElement__eventRelation->setName("eventRelation");
         m_AbstractEventElement__eventRelation->setDefaultValueLiteral("");
         m_AbstractEventElement__eventRelation->setLowerBound(0);
         m_AbstractEventElement__eventRelation->setUpperBound(-1);
@@ -541,7 +559,6 @@ void EventPackage::_initPackage()
         m_AbstractEventElement__eventRelation->setOrdered(false);
         m_AbstractEventElement__abstraction->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_AbstractEventElement__abstraction->setName("abstraction");
         m_AbstractEventElement__abstraction->setDefaultValueLiteral("");
         m_AbstractEventElement__abstraction->setLowerBound(0);
         m_AbstractEventElement__abstraction->setUpperBound(-1);
@@ -555,7 +572,6 @@ void EventPackage::_initPackage()
         m_AbstractEventElement__abstraction->setOrdered(true);
         m_AbstractEventElement__implementation->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
-        m_AbstractEventElement__implementation->setName("implementation");
         m_AbstractEventElement__implementation->setDefaultValueLiteral("");
         m_AbstractEventElement__implementation->setLowerBound(0);
         m_AbstractEventElement__implementation->setUpperBound(-1);
@@ -576,7 +592,6 @@ void EventPackage::_initPackage()
         m_EventEClass->setInterface(false);
         m_Event__kind->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Event__kind->setName("kind");
         m_Event__kind->setDefaultValueLiteral("");
         m_Event__kind->setLowerBound(0);
         m_Event__kind->setUpperBound(1);
@@ -605,7 +620,6 @@ void EventPackage::_initPackage()
 
         m_EventRelationship__to->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_EventRelationship__to->setName("to");
         m_EventRelationship__to->setDefaultValueLiteral("");
         m_EventRelationship__to->setLowerBound(1);
         m_EventRelationship__to->setUpperBound(1);
@@ -618,7 +632,6 @@ void EventPackage::_initPackage()
         m_EventRelationship__to->setDerived(false);
         m_EventRelationship__to->setOrdered(false);
         m_EventRelationship__from->setEType(m_AbstractEventElementEClass);
-        m_EventRelationship__from->setName("from");
         m_EventRelationship__from->setDefaultValueLiteral("");
         m_EventRelationship__from->setLowerBound(1);
         m_EventRelationship__from->setUpperBound(1);
@@ -639,7 +652,6 @@ void EventPackage::_initPackage()
         m_EventResourceEClass->setInterface(false);
 
         m_EventResource__eventElement->setEType(m_AbstractEventElementEClass);
-        m_EventResource__eventElement->setName("eventElement");
         m_EventResource__eventElement->setDefaultValueLiteral("");
         m_EventResource__eventElement->setLowerBound(0);
         m_EventResource__eventElement->setUpperBound(-1);
@@ -688,7 +700,6 @@ void EventPackage::_initPackage()
         m_EventActionEClass->setInterface(false);
         m_EventAction__kind->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_EventAction__kind->setName("kind");
         m_EventAction__kind->setDefaultValueLiteral("");
         m_EventAction__kind->setLowerBound(0);
         m_EventAction__kind->setUpperBound(1);
@@ -702,7 +713,6 @@ void EventPackage::_initPackage()
         m_EventAction__kind->setOrdered(false);
 
         m_EventAction__eventElement->setEType(m_EventEClass);
-        m_EventAction__eventElement->setName("eventElement");
         m_EventAction__eventElement->setDefaultValueLiteral("");
         m_EventAction__eventElement->setLowerBound(0);
         m_EventAction__eventElement->setUpperBound(-1);
@@ -723,7 +733,6 @@ void EventPackage::_initPackage()
         m_ReadsStateEClass->setInterface(false);
 
         m_ReadsState__to->setEType(m_StateEClass);
-        m_ReadsState__to->setName("to");
         m_ReadsState__to->setDefaultValueLiteral("");
         m_ReadsState__to->setLowerBound(1);
         m_ReadsState__to->setUpperBound(1);
@@ -737,7 +746,6 @@ void EventPackage::_initPackage()
         m_ReadsState__to->setOrdered(false);
         m_ReadsState__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ReadsState__from->setName("from");
         m_ReadsState__from->setDefaultValueLiteral("");
         m_ReadsState__from->setLowerBound(1);
         m_ReadsState__from->setUpperBound(1);
@@ -758,7 +766,6 @@ void EventPackage::_initPackage()
         m_ProducesEventEClass->setInterface(false);
 
         m_ProducesEvent__to->setEType(m_EventEClass);
-        m_ProducesEvent__to->setName("to");
         m_ProducesEvent__to->setDefaultValueLiteral("");
         m_ProducesEvent__to->setLowerBound(1);
         m_ProducesEvent__to->setUpperBound(1);
@@ -772,7 +779,6 @@ void EventPackage::_initPackage()
         m_ProducesEvent__to->setOrdered(false);
         m_ProducesEvent__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ProducesEvent__from->setName("from");
         m_ProducesEvent__from->setDefaultValueLiteral("");
         m_ProducesEvent__from->setLowerBound(1);
         m_ProducesEvent__from->setUpperBound(1);
@@ -793,7 +799,6 @@ void EventPackage::_initPackage()
         m_ConsumesEventEClass->setInterface(false);
 
         m_ConsumesEvent__to->setEType(m_EventEClass);
-        m_ConsumesEvent__to->setName("to");
         m_ConsumesEvent__to->setDefaultValueLiteral("");
         m_ConsumesEvent__to->setLowerBound(1);
         m_ConsumesEvent__to->setUpperBound(1);
@@ -806,7 +811,6 @@ void EventPackage::_initPackage()
         m_ConsumesEvent__to->setDerived(false);
         m_ConsumesEvent__to->setOrdered(false);
         m_ConsumesEvent__from->setEType(m_TransitionEClass);
-        m_ConsumesEvent__from->setName("from");
         m_ConsumesEvent__from->setDefaultValueLiteral("");
         m_ConsumesEvent__from->setLowerBound(1);
         m_ConsumesEvent__from->setUpperBound(1);
@@ -827,7 +831,6 @@ void EventPackage::_initPackage()
         m_NextStateEClass->setInterface(false);
 
         m_NextState__to->setEType(m_StateEClass);
-        m_NextState__to->setName("to");
         m_NextState__to->setDefaultValueLiteral("");
         m_NextState__to->setLowerBound(1);
         m_NextState__to->setUpperBound(1);
@@ -840,7 +843,6 @@ void EventPackage::_initPackage()
         m_NextState__to->setDerived(false);
         m_NextState__to->setOrdered(false);
         m_NextState__from->setEType(m_TransitionEClass);
-        m_NextState__from->setName("from");
         m_NextState__from->setDefaultValueLiteral("");
         m_NextState__from->setLowerBound(1);
         m_NextState__from->setUpperBound(1);
@@ -875,7 +877,6 @@ void EventPackage::_initPackage()
         m_HasStateEClass->setInterface(false);
 
         m_HasState__to->setEType(m_AbstractEventElementEClass);
-        m_HasState__to->setName("to");
         m_HasState__to->setDefaultValueLiteral("");
         m_HasState__to->setLowerBound(1);
         m_HasState__to->setUpperBound(1);
@@ -889,7 +890,6 @@ void EventPackage::_initPackage()
         m_HasState__to->setOrdered(false);
         m_HasState__from->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_HasState__from->setName("from");
         m_HasState__from->setDefaultValueLiteral("");
         m_HasState__from->setLowerBound(1);
         m_HasState__from->setUpperBound(1);

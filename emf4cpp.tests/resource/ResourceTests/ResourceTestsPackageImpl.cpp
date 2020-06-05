@@ -88,6 +88,7 @@ void ResourceTestsPackage::_initPackage()
         // m_Root__target has already been allocated above
         m_Root__target->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::ROOT__TARGET);
+        m_Root__target->setName("target");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RootEClass->getEStructuralFeatures()).basicAdd(
                 m_Root__target);
@@ -95,6 +96,7 @@ void ResourceTestsPackage::_initPackage()
         // m_Root__referrers has already been allocated above
         m_Root__referrers->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::ROOT__REFERRERS);
+        m_Root__referrers->setName("referrers");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RootEClass->getEStructuralFeatures()).basicAdd(
                 m_Root__referrers);
@@ -118,6 +120,7 @@ void ResourceTestsPackage::_initPackage()
         // m_Referrer__reference has already been allocated above
         m_Referrer__reference->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::REFERRER__REFERENCE);
+        m_Referrer__reference->setName("reference");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReferrerEClass->getEStructuralFeatures()).basicAdd(
                 m_Referrer__reference);
@@ -132,6 +135,7 @@ void ResourceTestsPackage::_initPackage()
         // m_ETypes__string has already been allocated above
         m_ETypes__string->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::ETYPES__STRING);
+        m_ETypes__string->setName("string");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypes__string);
@@ -139,6 +143,7 @@ void ResourceTestsPackage::_initPackage()
         // m_ETypes__emptyString has already been allocated above
         m_ETypes__emptyString->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::ETYPES__EMPTYSTRING);
+        m_ETypes__emptyString->setName("emptyString");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypes__emptyString);
@@ -146,6 +151,7 @@ void ResourceTestsPackage::_initPackage()
         // m_ETypes__date has already been allocated above
         m_ETypes__date->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::ETYPES__DATE);
+        m_ETypes__date->setName("date");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypes__date);
@@ -153,6 +159,7 @@ void ResourceTestsPackage::_initPackage()
         // m_ETypes__char has already been allocated above
         m_ETypes__char->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::ETYPES__CHAR);
+        m_ETypes__char->setName("char");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypes__char);
@@ -160,6 +167,7 @@ void ResourceTestsPackage::_initPackage()
         // m_ETypes__bool has already been allocated above
         m_ETypes__bool->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::ETYPES__BOOL);
+        m_ETypes__bool->setName("bool");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypes__bool);
@@ -167,6 +175,7 @@ void ResourceTestsPackage::_initPackage()
         // m_ETypes__double has already been allocated above
         m_ETypes__double->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::ETYPES__DOUBLE);
+        m_ETypes__double->setName("double");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypes__double);
@@ -174,6 +183,7 @@ void ResourceTestsPackage::_initPackage()
         // m_ETypes__int has already been allocated above
         m_ETypes__int->setFeatureID(
                 ::ResourceTests::ResourceTestsPackage::ETYPES__INT);
+        m_ETypes__int->setName("int");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypesEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypes__int);
@@ -201,7 +211,6 @@ void ResourceTestsPackage::_initPackage()
         m_RootEClass->setInterface(false);
 
         m_Root__target->setEType(m_ReferenceTargetEClass);
-        m_Root__target->setName("target");
         m_Root__target->setDefaultValueLiteral("");
         m_Root__target->setLowerBound(0);
         m_Root__target->setUpperBound(1);
@@ -214,7 +223,6 @@ void ResourceTestsPackage::_initPackage()
         m_Root__target->setDerived(false);
         m_Root__target->setOrdered(true);
         m_Root__referrers->setEType(m_ReferrerEClass);
-        m_Root__referrers->setName("referrers");
         m_Root__referrers->setDefaultValueLiteral("");
         m_Root__referrers->setLowerBound(0);
         m_Root__referrers->setUpperBound(-1);
@@ -242,7 +250,6 @@ void ResourceTestsPackage::_initPackage()
         m_ReferrerEClass->setInterface(false);
 
         m_Referrer__reference->setEType(m_ReferenceTargetEClass);
-        m_Referrer__reference->setName("reference");
         m_Referrer__reference->setDefaultValueLiteral("");
         m_Referrer__reference->setLowerBound(0);
         m_Referrer__reference->setUpperBound(1);
@@ -263,7 +270,6 @@ void ResourceTestsPackage::_initPackage()
         m_ETypesEClass->setInterface(false);
         m_ETypes__string->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_ETypes__string->setName("string");
         m_ETypes__string->setDefaultValueLiteral("Hallo Welt!");
         m_ETypes__string->setLowerBound(0);
         m_ETypes__string->setUpperBound(1);
@@ -277,7 +283,6 @@ void ResourceTestsPackage::_initPackage()
         m_ETypes__string->setOrdered(true);
         m_ETypes__emptyString->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_ETypes__emptyString->setName("emptyString");
         m_ETypes__emptyString->setDefaultValueLiteral("");
         m_ETypes__emptyString->setLowerBound(0);
         m_ETypes__emptyString->setUpperBound(1);
@@ -291,7 +296,6 @@ void ResourceTestsPackage::_initPackage()
         m_ETypes__emptyString->setOrdered(true);
         m_ETypes__date->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDate());
-        m_ETypes__date->setName("date");
         m_ETypes__date->setDefaultValueLiteral("1976-05-27T12:13:14.123-0300");
         m_ETypes__date->setLowerBound(0);
         m_ETypes__date->setUpperBound(1);
@@ -305,7 +309,6 @@ void ResourceTestsPackage::_initPackage()
         m_ETypes__date->setOrdered(true);
         m_ETypes__char->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEChar());
-        m_ETypes__char->setName("char");
         m_ETypes__char->setDefaultValueLiteral("98");
         m_ETypes__char->setLowerBound(0);
         m_ETypes__char->setUpperBound(1);
@@ -319,7 +322,6 @@ void ResourceTestsPackage::_initPackage()
         m_ETypes__char->setOrdered(true);
         m_ETypes__bool->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_ETypes__bool->setName("bool");
         m_ETypes__bool->setDefaultValueLiteral("true");
         m_ETypes__bool->setLowerBound(0);
         m_ETypes__bool->setUpperBound(1);
@@ -333,7 +335,6 @@ void ResourceTestsPackage::_initPackage()
         m_ETypes__bool->setOrdered(true);
         m_ETypes__double->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDouble());
-        m_ETypes__double->setName("double");
         m_ETypes__double->setDefaultValueLiteral("3.14");
         m_ETypes__double->setLowerBound(0);
         m_ETypes__double->setUpperBound(1);
@@ -347,7 +348,6 @@ void ResourceTestsPackage::_initPackage()
         m_ETypes__double->setOrdered(true);
         m_ETypes__int->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_ETypes__int->setName("int");
         m_ETypes__int->setDefaultValueLiteral("10");
         m_ETypes__int->setLowerBound(0);
         m_ETypes__int->setUpperBound(1);

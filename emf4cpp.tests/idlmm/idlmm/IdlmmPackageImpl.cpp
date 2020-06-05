@@ -203,6 +203,7 @@ void IdlmmPackage::_initPackage()
         // m_Container__contains has already been allocated above
         m_Container__contains->setFeatureID(
                 ::idlmm::IdlmmPackage::CONTAINER__CONTAINS);
+        m_Container__contains->setName("contains");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainerEClass->getEStructuralFeatures()).basicAdd(
                 m_Container__contains);
@@ -218,6 +219,7 @@ void IdlmmPackage::_initPackage()
         // m_Contained__identifier has already been allocated above
         m_Contained__identifier->setFeatureID(
                 ::idlmm::IdlmmPackage::CONTAINED__IDENTIFIER);
+        m_Contained__identifier->setName("identifier");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainedEClass->getEStructuralFeatures()).basicAdd(
                 m_Contained__identifier);
@@ -225,6 +227,7 @@ void IdlmmPackage::_initPackage()
         // m_Contained__repositoryId has already been allocated above
         m_Contained__repositoryId->setFeatureID(
                 ::idlmm::IdlmmPackage::CONTAINED__REPOSITORYID);
+        m_Contained__repositoryId->setName("repositoryId");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainedEClass->getEStructuralFeatures()).basicAdd(
                 m_Contained__repositoryId);
@@ -232,6 +235,7 @@ void IdlmmPackage::_initPackage()
         // m_Contained__version has already been allocated above
         m_Contained__version->setFeatureID(
                 ::idlmm::IdlmmPackage::CONTAINED__VERSION);
+        m_Contained__version->setName("version");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainedEClass->getEStructuralFeatures()).basicAdd(
                 m_Contained__version);
@@ -239,6 +243,7 @@ void IdlmmPackage::_initPackage()
         // m_Contained__absoluteName has already been allocated above
         m_Contained__absoluteName->setFeatureID(
                 ::idlmm::IdlmmPackage::CONTAINED__ABSOLUTENAME);
+        m_Contained__absoluteName->setName("absoluteName");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainedEClass->getEStructuralFeatures()).basicAdd(
                 m_Contained__absoluteName);
@@ -246,6 +251,7 @@ void IdlmmPackage::_initPackage()
         // m_Contained__definedIn has already been allocated above
         m_Contained__definedIn->setFeatureID(
                 ::idlmm::IdlmmPackage::CONTAINED__DEFINEDIN);
+        m_Contained__definedIn->setName("definedIn");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainedEClass->getEStructuralFeatures()).basicAdd(
                 m_Contained__definedIn);
@@ -261,6 +267,7 @@ void IdlmmPackage::_initPackage()
         // m_InterfaceDef__isAbstract has already been allocated above
         m_InterfaceDef__isAbstract->setFeatureID(
                 ::idlmm::IdlmmPackage::INTERFACEDEF__ISABSTRACT);
+        m_InterfaceDef__isAbstract->setName("isAbstract");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InterfaceDefEClass->getEStructuralFeatures()).basicAdd(
                 m_InterfaceDef__isAbstract);
@@ -269,6 +276,7 @@ void IdlmmPackage::_initPackage()
         // m_InterfaceDef__isCustom has already been allocated above
         m_InterfaceDef__isCustom->setFeatureID(
                 ::idlmm::IdlmmPackage::INTERFACEDEF__ISCUSTOM);
+        m_InterfaceDef__isCustom->setName("isCustom");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InterfaceDefEClass->getEStructuralFeatures()).basicAdd(
                 m_InterfaceDef__isCustom);
@@ -277,6 +285,7 @@ void IdlmmPackage::_initPackage()
         // m_InterfaceDef__isTruncatable has already been allocated above
         m_InterfaceDef__isTruncatable->setFeatureID(
                 ::idlmm::IdlmmPackage::INTERFACEDEF__ISTRUNCATABLE);
+        m_InterfaceDef__isTruncatable->setName("isTruncatable");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InterfaceDefEClass->getEStructuralFeatures()).basicAdd(
                 m_InterfaceDef__isTruncatable);
@@ -285,6 +294,7 @@ void IdlmmPackage::_initPackage()
         // m_InterfaceDef__derivesFrom has already been allocated above
         m_InterfaceDef__derivesFrom->setFeatureID(
                 ::idlmm::IdlmmPackage::INTERFACEDEF__DERIVESFROM);
+        m_InterfaceDef__derivesFrom->setName("derivesFrom");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InterfaceDefEClass->getEStructuralFeatures()).basicAdd(
                 m_InterfaceDef__derivesFrom);
@@ -301,6 +311,7 @@ void IdlmmPackage::_initPackage()
         // m_ModuleDef__prefix has already been allocated above
         m_ModuleDef__prefix->setFeatureID(
                 ::idlmm::IdlmmPackage::MODULEDEF__PREFIX);
+        m_ModuleDef__prefix->setName("prefix");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModuleDefEClass->getEStructuralFeatures()).basicAdd(
                 m_ModuleDef__prefix);
@@ -316,6 +327,7 @@ void IdlmmPackage::_initPackage()
         // m_IDLType__typeCode has already been allocated above
         m_IDLType__typeCode->setFeatureID(
                 ::idlmm::IdlmmPackage::IDLTYPE__TYPECODE);
+        m_IDLType__typeCode->setName("typeCode");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IDLTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_IDLType__typeCode);
@@ -331,6 +343,7 @@ void IdlmmPackage::_initPackage()
         // m_OperationDef__parameters has already been allocated above
         m_OperationDef__parameters->setFeatureID(
                 ::idlmm::IdlmmPackage::OPERATIONDEF__PARAMETERS);
+        m_OperationDef__parameters->setName("parameters");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_OperationDefEClass->getEStructuralFeatures()).basicAdd(
                 m_OperationDef__parameters);
@@ -339,6 +352,7 @@ void IdlmmPackage::_initPackage()
         // m_OperationDef__isOneway has already been allocated above
         m_OperationDef__isOneway->setFeatureID(
                 ::idlmm::IdlmmPackage::OPERATIONDEF__ISONEWAY);
+        m_OperationDef__isOneway->setName("isOneway");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_OperationDefEClass->getEStructuralFeatures()).basicAdd(
                 m_OperationDef__isOneway);
@@ -347,6 +361,7 @@ void IdlmmPackage::_initPackage()
         // m_OperationDef__contexts has already been allocated above
         m_OperationDef__contexts->setFeatureID(
                 ::idlmm::IdlmmPackage::OPERATIONDEF__CONTEXTS);
+        m_OperationDef__contexts->setName("contexts");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_OperationDefEClass->getEStructuralFeatures()).basicAdd(
                 m_OperationDef__contexts);
@@ -355,6 +370,7 @@ void IdlmmPackage::_initPackage()
         // m_OperationDef__canRaise has already been allocated above
         m_OperationDef__canRaise->setFeatureID(
                 ::idlmm::IdlmmPackage::OPERATIONDEF__CANRAISE);
+        m_OperationDef__canRaise->setName("canRaise");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_OperationDefEClass->getEStructuralFeatures()).basicAdd(
                 m_OperationDef__canRaise);
@@ -371,6 +387,7 @@ void IdlmmPackage::_initPackage()
         // m_AttributeDef__getRaises has already been allocated above
         m_AttributeDef__getRaises->setFeatureID(
                 ::idlmm::IdlmmPackage::ATTRIBUTEDEF__GETRAISES);
+        m_AttributeDef__getRaises->setName("getRaises");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AttributeDefEClass->getEStructuralFeatures()).basicAdd(
                 m_AttributeDef__getRaises);
@@ -379,6 +396,7 @@ void IdlmmPackage::_initPackage()
         // m_AttributeDef__setRaises has already been allocated above
         m_AttributeDef__setRaises->setFeatureID(
                 ::idlmm::IdlmmPackage::ATTRIBUTEDEF__SETRAISES);
+        m_AttributeDef__setRaises->setName("setRaises");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AttributeDefEClass->getEStructuralFeatures()).basicAdd(
                 m_AttributeDef__setRaises);
@@ -387,6 +405,7 @@ void IdlmmPackage::_initPackage()
         // m_AttributeDef__isReadonly has already been allocated above
         m_AttributeDef__isReadonly->setFeatureID(
                 ::idlmm::IdlmmPackage::ATTRIBUTEDEF__ISREADONLY);
+        m_AttributeDef__isReadonly->setName("isReadonly");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AttributeDefEClass->getEStructuralFeatures()).basicAdd(
                 m_AttributeDef__isReadonly);
@@ -403,6 +422,7 @@ void IdlmmPackage::_initPackage()
         // m_ConstantDef__constValue has already been allocated above
         m_ConstantDef__constValue->setFeatureID(
                 ::idlmm::IdlmmPackage::CONSTANTDEF__CONSTVALUE);
+        m_ConstantDef__constValue->setName("constValue");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConstantDefEClass->getEStructuralFeatures()).basicAdd(
                 m_ConstantDef__constValue);
@@ -418,6 +438,7 @@ void IdlmmPackage::_initPackage()
         // m_Typed__containedType has already been allocated above
         m_Typed__containedType->setFeatureID(
                 ::idlmm::IdlmmPackage::TYPED__CONTAINEDTYPE);
+        m_Typed__containedType->setName("containedType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypedEClass->getEStructuralFeatures()).basicAdd(
                 m_Typed__containedType);
@@ -425,6 +446,7 @@ void IdlmmPackage::_initPackage()
         // m_Typed__sharedType has already been allocated above
         m_Typed__sharedType->setFeatureID(
                 ::idlmm::IdlmmPackage::TYPED__SHAREDTYPE);
+        m_Typed__sharedType->setName("sharedType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypedEClass->getEStructuralFeatures()).basicAdd(
                 m_Typed__sharedType);
@@ -440,6 +462,7 @@ void IdlmmPackage::_initPackage()
         // m_ParameterDef__identifier has already been allocated above
         m_ParameterDef__identifier->setFeatureID(
                 ::idlmm::IdlmmPackage::PARAMETERDEF__IDENTIFIER);
+        m_ParameterDef__identifier->setName("identifier");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterDefEClass->getEStructuralFeatures()).basicAdd(
                 m_ParameterDef__identifier);
@@ -448,6 +471,7 @@ void IdlmmPackage::_initPackage()
         // m_ParameterDef__direction has already been allocated above
         m_ParameterDef__direction->setFeatureID(
                 ::idlmm::IdlmmPackage::PARAMETERDEF__DIRECTION);
+        m_ParameterDef__direction->setName("direction");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterDefEClass->getEStructuralFeatures()).basicAdd(
                 m_ParameterDef__direction);
@@ -464,6 +488,7 @@ void IdlmmPackage::_initPackage()
         // m_PrimitiveDef__kind has already been allocated above
         m_PrimitiveDef__kind->setFeatureID(
                 ::idlmm::IdlmmPackage::PRIMITIVEDEF__KIND);
+        m_PrimitiveDef__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PrimitiveDefEClass->getEStructuralFeatures()).basicAdd(
                 m_PrimitiveDef__kind);
@@ -479,6 +504,7 @@ void IdlmmPackage::_initPackage()
         // m_ExceptionDef__typeCode has already been allocated above
         m_ExceptionDef__typeCode->setFeatureID(
                 ::idlmm::IdlmmPackage::EXCEPTIONDEF__TYPECODE);
+        m_ExceptionDef__typeCode->setName("typeCode");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExceptionDefEClass->getEStructuralFeatures()).basicAdd(
                 m_ExceptionDef__typeCode);
@@ -487,6 +513,7 @@ void IdlmmPackage::_initPackage()
         // m_ExceptionDef__members has already been allocated above
         m_ExceptionDef__members->setFeatureID(
                 ::idlmm::IdlmmPackage::EXCEPTIONDEF__MEMBERS);
+        m_ExceptionDef__members->setName("members");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExceptionDefEClass->getEStructuralFeatures()).basicAdd(
                 m_ExceptionDef__members);
@@ -501,6 +528,7 @@ void IdlmmPackage::_initPackage()
         // m_Field__identifier has already been allocated above
         m_Field__identifier->setFeatureID(
                 ::idlmm::IdlmmPackage::FIELD__IDENTIFIER);
+        m_Field__identifier->setName("identifier");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FieldEClass->getEStructuralFeatures()).basicAdd(
                 m_Field__identifier);
@@ -516,12 +544,14 @@ void IdlmmPackage::_initPackage()
         // m_FixedDef__digits has already been allocated above
         m_FixedDef__digits->setFeatureID(
                 ::idlmm::IdlmmPackage::FIXEDDEF__DIGITS);
+        m_FixedDef__digits->setName("digits");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FixedDefEClass->getEStructuralFeatures()).basicAdd(
                 m_FixedDef__digits);
         m_FixedDef__digits->basicsetEContainingClass(m_FixedDefEClass);
         // m_FixedDef__scale has already been allocated above
         m_FixedDef__scale->setFeatureID(::idlmm::IdlmmPackage::FIXEDDEF__SCALE);
+        m_FixedDef__scale->setName("scale");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FixedDefEClass->getEStructuralFeatures()).basicAdd(
                 m_FixedDef__scale);
@@ -537,6 +567,7 @@ void IdlmmPackage::_initPackage()
         // m_WstringDef__bound has already been allocated above
         m_WstringDef__bound->setFeatureID(
                 ::idlmm::IdlmmPackage::WSTRINGDEF__BOUND);
+        m_WstringDef__bound->setName("bound");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WstringDefEClass->getEStructuralFeatures()).basicAdd(
                 m_WstringDef__bound);
@@ -552,6 +583,7 @@ void IdlmmPackage::_initPackage()
         // m_StringDef__bound has already been allocated above
         m_StringDef__bound->setFeatureID(
                 ::idlmm::IdlmmPackage::STRINGDEF__BOUND);
+        m_StringDef__bound->setName("bound");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StringDefEClass->getEStructuralFeatures()).basicAdd(
                 m_StringDef__bound);
@@ -574,6 +606,7 @@ void IdlmmPackage::_initPackage()
         classifiers.basicAdd(m_ArrayDefEClass);
         // m_ArrayDef__bound has already been allocated above
         m_ArrayDef__bound->setFeatureID(::idlmm::IdlmmPackage::ARRAYDEF__BOUND);
+        m_ArrayDef__bound->setName("bound");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ArrayDefEClass->getEStructuralFeatures()).basicAdd(
                 m_ArrayDef__bound);
@@ -589,6 +622,7 @@ void IdlmmPackage::_initPackage()
         // m_SequenceDef__bound has already been allocated above
         m_SequenceDef__bound->setFeatureID(
                 ::idlmm::IdlmmPackage::SEQUENCEDEF__BOUND);
+        m_SequenceDef__bound->setName("bound");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SequenceDefEClass->getEStructuralFeatures()).basicAdd(
                 m_SequenceDef__bound);
@@ -604,6 +638,7 @@ void IdlmmPackage::_initPackage()
         // m_UnionField__identifier has already been allocated above
         m_UnionField__identifier->setFeatureID(
                 ::idlmm::IdlmmPackage::UNIONFIELD__IDENTIFIER);
+        m_UnionField__identifier->setName("identifier");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UnionFieldEClass->getEStructuralFeatures()).basicAdd(
                 m_UnionField__identifier);
@@ -611,6 +646,7 @@ void IdlmmPackage::_initPackage()
         // m_UnionField__label has already been allocated above
         m_UnionField__label->setFeatureID(
                 ::idlmm::IdlmmPackage::UNIONFIELD__LABEL);
+        m_UnionField__label->setName("label");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UnionFieldEClass->getEStructuralFeatures()).basicAdd(
                 m_UnionField__label);
@@ -634,6 +670,7 @@ void IdlmmPackage::_initPackage()
         // m_UnionDef__unionMembers has already been allocated above
         m_UnionDef__unionMembers->setFeatureID(
                 ::idlmm::IdlmmPackage::UNIONDEF__UNIONMEMBERS);
+        m_UnionDef__unionMembers->setName("unionMembers");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UnionDefEClass->getEStructuralFeatures()).basicAdd(
                 m_UnionDef__unionMembers);
@@ -641,6 +678,7 @@ void IdlmmPackage::_initPackage()
         // m_UnionDef__containedDiscrim has already been allocated above
         m_UnionDef__containedDiscrim->setFeatureID(
                 ::idlmm::IdlmmPackage::UNIONDEF__CONTAINEDDISCRIM);
+        m_UnionDef__containedDiscrim->setName("containedDiscrim");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UnionDefEClass->getEStructuralFeatures()).basicAdd(
                 m_UnionDef__containedDiscrim);
@@ -649,6 +687,7 @@ void IdlmmPackage::_initPackage()
         // m_UnionDef__sharedDiscrim has already been allocated above
         m_UnionDef__sharedDiscrim->setFeatureID(
                 ::idlmm::IdlmmPackage::UNIONDEF__SHAREDDISCRIM);
+        m_UnionDef__sharedDiscrim->setName("sharedDiscrim");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UnionDefEClass->getEStructuralFeatures()).basicAdd(
                 m_UnionDef__sharedDiscrim);
@@ -664,6 +703,7 @@ void IdlmmPackage::_initPackage()
         // m_EnumDef__members has already been allocated above
         m_EnumDef__members->setFeatureID(
                 ::idlmm::IdlmmPackage::ENUMDEF__MEMBERS);
+        m_EnumDef__members->setName("members");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EnumDefEClass->getEStructuralFeatures()).basicAdd(
                 m_EnumDef__members);
@@ -679,6 +719,7 @@ void IdlmmPackage::_initPackage()
         // m_StructDef__members has already been allocated above
         m_StructDef__members->setFeatureID(
                 ::idlmm::IdlmmPackage::STRUCTDEF__MEMBERS);
+        m_StructDef__members->setName("members");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StructDefEClass->getEStructuralFeatures()).basicAdd(
                 m_StructDef__members);
@@ -694,6 +735,7 @@ void IdlmmPackage::_initPackage()
         // m_TranslationUnit__contains has already been allocated above
         m_TranslationUnit__contains->setFeatureID(
                 ::idlmm::IdlmmPackage::TRANSLATIONUNIT__CONTAINS);
+        m_TranslationUnit__contains->setName("contains");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TranslationUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_TranslationUnit__contains);
@@ -702,6 +744,7 @@ void IdlmmPackage::_initPackage()
         // m_TranslationUnit__identifier has already been allocated above
         m_TranslationUnit__identifier->setFeatureID(
                 ::idlmm::IdlmmPackage::TRANSLATIONUNIT__IDENTIFIER);
+        m_TranslationUnit__identifier->setName("identifier");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TranslationUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_TranslationUnit__identifier);
@@ -710,6 +753,7 @@ void IdlmmPackage::_initPackage()
         // m_TranslationUnit__includes has already been allocated above
         m_TranslationUnit__includes->setFeatureID(
                 ::idlmm::IdlmmPackage::TRANSLATIONUNIT__INCLUDES);
+        m_TranslationUnit__includes->setName("includes");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TranslationUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_TranslationUnit__includes);
@@ -726,6 +770,7 @@ void IdlmmPackage::_initPackage()
         // m_Include__importURI has already been allocated above
         m_Include__importURI->setFeatureID(
                 ::idlmm::IdlmmPackage::INCLUDE__IMPORTURI);
+        m_Include__importURI->setName("importURI");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IncludeEClass->getEStructuralFeatures()).basicAdd(
                 m_Include__importURI);
@@ -814,7 +859,6 @@ void IdlmmPackage::_initPackage()
         m_ContainerEClass->setInterface(false);
 
         m_Container__contains->setEType(m_ContainedEClass);
-        m_Container__contains->setName("contains");
         m_Container__contains->setDefaultValueLiteral("");
         m_Container__contains->setLowerBound(0);
         m_Container__contains->setUpperBound(-1);
@@ -838,7 +882,6 @@ void IdlmmPackage::_initPackage()
         m_ContainedEClass->setInterface(false);
         m_Contained__identifier->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Contained__identifier->setName("identifier");
         m_Contained__identifier->setDefaultValueLiteral("");
         m_Contained__identifier->setLowerBound(0);
         m_Contained__identifier->setUpperBound(1);
@@ -852,7 +895,6 @@ void IdlmmPackage::_initPackage()
         m_Contained__identifier->setOrdered(true);
         m_Contained__repositoryId->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Contained__repositoryId->setName("repositoryId");
         m_Contained__repositoryId->setDefaultValueLiteral("");
         m_Contained__repositoryId->setLowerBound(0);
         m_Contained__repositoryId->setUpperBound(1);
@@ -866,7 +908,6 @@ void IdlmmPackage::_initPackage()
         m_Contained__repositoryId->setOrdered(true);
         m_Contained__version->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Contained__version->setName("version");
         m_Contained__version->setDefaultValueLiteral("");
         m_Contained__version->setLowerBound(0);
         m_Contained__version->setUpperBound(1);
@@ -880,7 +921,6 @@ void IdlmmPackage::_initPackage()
         m_Contained__version->setOrdered(true);
         m_Contained__absoluteName->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Contained__absoluteName->setName("absoluteName");
         m_Contained__absoluteName->setDefaultValueLiteral("");
         m_Contained__absoluteName->setLowerBound(0);
         m_Contained__absoluteName->setUpperBound(1);
@@ -894,7 +934,6 @@ void IdlmmPackage::_initPackage()
         m_Contained__absoluteName->setOrdered(true);
 
         m_Contained__definedIn->setEType(m_ContainerEClass);
-        m_Contained__definedIn->setName("definedIn");
         m_Contained__definedIn->setDefaultValueLiteral("");
         m_Contained__definedIn->setLowerBound(0);
         m_Contained__definedIn->setUpperBound(1);
@@ -918,7 +957,6 @@ void IdlmmPackage::_initPackage()
         m_InterfaceDefEClass->setInterface(false);
         m_InterfaceDef__isAbstract->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_InterfaceDef__isAbstract->setName("isAbstract");
         m_InterfaceDef__isAbstract->setDefaultValueLiteral("");
         m_InterfaceDef__isAbstract->setLowerBound(0);
         m_InterfaceDef__isAbstract->setUpperBound(1);
@@ -932,7 +970,6 @@ void IdlmmPackage::_initPackage()
         m_InterfaceDef__isAbstract->setOrdered(true);
         m_InterfaceDef__isCustom->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_InterfaceDef__isCustom->setName("isCustom");
         m_InterfaceDef__isCustom->setDefaultValueLiteral("");
         m_InterfaceDef__isCustom->setLowerBound(0);
         m_InterfaceDef__isCustom->setUpperBound(1);
@@ -946,7 +983,6 @@ void IdlmmPackage::_initPackage()
         m_InterfaceDef__isCustom->setOrdered(true);
         m_InterfaceDef__isTruncatable->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_InterfaceDef__isTruncatable->setName("isTruncatable");
         m_InterfaceDef__isTruncatable->setDefaultValueLiteral("");
         m_InterfaceDef__isTruncatable->setLowerBound(0);
         m_InterfaceDef__isTruncatable->setUpperBound(1);
@@ -960,7 +996,6 @@ void IdlmmPackage::_initPackage()
         m_InterfaceDef__isTruncatable->setOrdered(true);
 
         m_InterfaceDef__derivesFrom->setEType(m_InterfaceDefEClass);
-        m_InterfaceDef__derivesFrom->setName("derivesFrom");
         m_InterfaceDef__derivesFrom->setDefaultValueLiteral("");
         m_InterfaceDef__derivesFrom->setLowerBound(0);
         m_InterfaceDef__derivesFrom->setUpperBound(-1);
@@ -981,7 +1016,6 @@ void IdlmmPackage::_initPackage()
         m_ModuleDefEClass->setInterface(false);
         m_ModuleDef__prefix->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_ModuleDef__prefix->setName("prefix");
         m_ModuleDef__prefix->setDefaultValueLiteral("");
         m_ModuleDef__prefix->setLowerBound(0);
         m_ModuleDef__prefix->setUpperBound(1);
@@ -1001,7 +1035,6 @@ void IdlmmPackage::_initPackage()
         m_IDLTypeEClass->setAbstract(true);
         m_IDLTypeEClass->setInterface(false);
         m_IDLType__typeCode->setEType(m_ETypeCodeEDataType);
-        m_IDLType__typeCode->setName("typeCode");
         m_IDLType__typeCode->setDefaultValueLiteral("");
         m_IDLType__typeCode->setLowerBound(0);
         m_IDLType__typeCode->setUpperBound(1);
@@ -1022,7 +1055,6 @@ void IdlmmPackage::_initPackage()
         m_OperationDefEClass->setInterface(false);
         m_OperationDef__isOneway->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_OperationDef__isOneway->setName("isOneway");
         m_OperationDef__isOneway->setDefaultValueLiteral("");
         m_OperationDef__isOneway->setLowerBound(0);
         m_OperationDef__isOneway->setUpperBound(1);
@@ -1036,7 +1068,6 @@ void IdlmmPackage::_initPackage()
         m_OperationDef__isOneway->setOrdered(true);
         m_OperationDef__contexts->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_OperationDef__contexts->setName("contexts");
         m_OperationDef__contexts->setDefaultValueLiteral("");
         m_OperationDef__contexts->setLowerBound(0);
         m_OperationDef__contexts->setUpperBound(-1);
@@ -1050,7 +1081,6 @@ void IdlmmPackage::_initPackage()
         m_OperationDef__contexts->setOrdered(true);
 
         m_OperationDef__parameters->setEType(m_ParameterDefEClass);
-        m_OperationDef__parameters->setName("parameters");
         m_OperationDef__parameters->setDefaultValueLiteral("");
         m_OperationDef__parameters->setLowerBound(0);
         m_OperationDef__parameters->setUpperBound(-1);
@@ -1063,7 +1093,6 @@ void IdlmmPackage::_initPackage()
         m_OperationDef__parameters->setDerived(false);
         m_OperationDef__parameters->setOrdered(true);
         m_OperationDef__canRaise->setEType(m_ExceptionDefEClass);
-        m_OperationDef__canRaise->setName("canRaise");
         m_OperationDef__canRaise->setDefaultValueLiteral("");
         m_OperationDef__canRaise->setLowerBound(0);
         m_OperationDef__canRaise->setUpperBound(-1);
@@ -1084,7 +1113,6 @@ void IdlmmPackage::_initPackage()
         m_AttributeDefEClass->setInterface(false);
         m_AttributeDef__isReadonly->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_AttributeDef__isReadonly->setName("isReadonly");
         m_AttributeDef__isReadonly->setDefaultValueLiteral("");
         m_AttributeDef__isReadonly->setLowerBound(0);
         m_AttributeDef__isReadonly->setUpperBound(1);
@@ -1098,7 +1126,6 @@ void IdlmmPackage::_initPackage()
         m_AttributeDef__isReadonly->setOrdered(true);
 
         m_AttributeDef__getRaises->setEType(m_ExceptionDefEClass);
-        m_AttributeDef__getRaises->setName("getRaises");
         m_AttributeDef__getRaises->setDefaultValueLiteral("");
         m_AttributeDef__getRaises->setLowerBound(0);
         m_AttributeDef__getRaises->setUpperBound(-1);
@@ -1111,7 +1138,6 @@ void IdlmmPackage::_initPackage()
         m_AttributeDef__getRaises->setDerived(false);
         m_AttributeDef__getRaises->setOrdered(true);
         m_AttributeDef__setRaises->setEType(m_ExceptionDefEClass);
-        m_AttributeDef__setRaises->setName("setRaises");
         m_AttributeDef__setRaises->setDefaultValueLiteral("");
         m_AttributeDef__setRaises->setLowerBound(0);
         m_AttributeDef__setRaises->setUpperBound(-1);
@@ -1131,7 +1157,6 @@ void IdlmmPackage::_initPackage()
         m_ConstantDefEClass->setAbstract(false);
         m_ConstantDefEClass->setInterface(false);
         m_ConstantDef__constValue->setEType(m_EAnyEDataType);
-        m_ConstantDef__constValue->setName("constValue");
         m_ConstantDef__constValue->setDefaultValueLiteral("");
         m_ConstantDef__constValue->setLowerBound(0);
         m_ConstantDef__constValue->setUpperBound(1);
@@ -1152,7 +1177,6 @@ void IdlmmPackage::_initPackage()
         m_TypedEClass->setInterface(false);
 
         m_Typed__containedType->setEType(m_IDLTypeEClass);
-        m_Typed__containedType->setName("containedType");
         m_Typed__containedType->setDefaultValueLiteral("");
         m_Typed__containedType->setLowerBound(0);
         m_Typed__containedType->setUpperBound(1);
@@ -1165,7 +1189,6 @@ void IdlmmPackage::_initPackage()
         m_Typed__containedType->setDerived(false);
         m_Typed__containedType->setOrdered(true);
         m_Typed__sharedType->setEType(m_TypedefDefEClass);
-        m_Typed__sharedType->setName("sharedType");
         m_Typed__sharedType->setDefaultValueLiteral("");
         m_Typed__sharedType->setLowerBound(0);
         m_Typed__sharedType->setUpperBound(1);
@@ -1186,7 +1209,6 @@ void IdlmmPackage::_initPackage()
         m_ParameterDefEClass->setInterface(false);
         m_ParameterDef__identifier->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_ParameterDef__identifier->setName("identifier");
         m_ParameterDef__identifier->setDefaultValueLiteral("");
         m_ParameterDef__identifier->setLowerBound(0);
         m_ParameterDef__identifier->setUpperBound(1);
@@ -1199,7 +1221,6 @@ void IdlmmPackage::_initPackage()
         m_ParameterDef__identifier->setDerived(false);
         m_ParameterDef__identifier->setOrdered(true);
         m_ParameterDef__direction->setEType(m_ParameterModeEEnum);
-        m_ParameterDef__direction->setName("direction");
         m_ParameterDef__direction->setDefaultValueLiteral("");
         m_ParameterDef__direction->setLowerBound(0);
         m_ParameterDef__direction->setUpperBound(1);
@@ -1219,7 +1240,6 @@ void IdlmmPackage::_initPackage()
         m_PrimitiveDefEClass->setAbstract(false);
         m_PrimitiveDefEClass->setInterface(false);
         m_PrimitiveDef__kind->setEType(m_PrimitiveKindEEnum);
-        m_PrimitiveDef__kind->setName("kind");
         m_PrimitiveDef__kind->setDefaultValueLiteral("");
         m_PrimitiveDef__kind->setLowerBound(0);
         m_PrimitiveDef__kind->setUpperBound(1);
@@ -1239,7 +1259,6 @@ void IdlmmPackage::_initPackage()
         m_ExceptionDefEClass->setAbstract(false);
         m_ExceptionDefEClass->setInterface(false);
         m_ExceptionDef__typeCode->setEType(m_ETypeCodeEDataType);
-        m_ExceptionDef__typeCode->setName("typeCode");
         m_ExceptionDef__typeCode->setDefaultValueLiteral("");
         m_ExceptionDef__typeCode->setLowerBound(0);
         m_ExceptionDef__typeCode->setUpperBound(1);
@@ -1253,7 +1272,6 @@ void IdlmmPackage::_initPackage()
         m_ExceptionDef__typeCode->setOrdered(true);
 
         m_ExceptionDef__members->setEType(m_FieldEClass);
-        m_ExceptionDef__members->setName("members");
         m_ExceptionDef__members->setDefaultValueLiteral("");
         m_ExceptionDef__members->setLowerBound(0);
         m_ExceptionDef__members->setUpperBound(-1);
@@ -1274,7 +1292,6 @@ void IdlmmPackage::_initPackage()
         m_FieldEClass->setInterface(false);
         m_Field__identifier->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Field__identifier->setName("identifier");
         m_Field__identifier->setDefaultValueLiteral("");
         m_Field__identifier->setLowerBound(0);
         m_Field__identifier->setUpperBound(1);
@@ -1295,7 +1312,6 @@ void IdlmmPackage::_initPackage()
         m_FixedDefEClass->setInterface(false);
         m_FixedDef__digits->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_FixedDef__digits->setName("digits");
         m_FixedDef__digits->setDefaultValueLiteral("");
         m_FixedDef__digits->setLowerBound(0);
         m_FixedDef__digits->setUpperBound(1);
@@ -1309,7 +1325,6 @@ void IdlmmPackage::_initPackage()
         m_FixedDef__digits->setOrdered(true);
         m_FixedDef__scale->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_FixedDef__scale->setName("scale");
         m_FixedDef__scale->setDefaultValueLiteral("");
         m_FixedDef__scale->setLowerBound(0);
         m_FixedDef__scale->setUpperBound(1);
@@ -1330,7 +1345,6 @@ void IdlmmPackage::_initPackage()
         m_WstringDefEClass->setInterface(false);
         m_WstringDef__bound->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_WstringDef__bound->setName("bound");
         m_WstringDef__bound->setDefaultValueLiteral("");
         m_WstringDef__bound->setLowerBound(0);
         m_WstringDef__bound->setUpperBound(1);
@@ -1351,7 +1365,6 @@ void IdlmmPackage::_initPackage()
         m_StringDefEClass->setInterface(false);
         m_StringDef__bound->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_StringDef__bound->setName("bound");
         m_StringDef__bound->setDefaultValueLiteral("");
         m_StringDef__bound->setLowerBound(0);
         m_StringDef__bound->setUpperBound(1);
@@ -1379,7 +1392,6 @@ void IdlmmPackage::_initPackage()
         m_ArrayDefEClass->setInterface(false);
         m_ArrayDef__bound->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_ArrayDef__bound->setName("bound");
         m_ArrayDef__bound->setDefaultValueLiteral("");
         m_ArrayDef__bound->setLowerBound(0);
         m_ArrayDef__bound->setUpperBound(1);
@@ -1400,7 +1412,6 @@ void IdlmmPackage::_initPackage()
         m_SequenceDefEClass->setInterface(false);
         m_SequenceDef__bound->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_SequenceDef__bound->setName("bound");
         m_SequenceDef__bound->setDefaultValueLiteral("");
         m_SequenceDef__bound->setLowerBound(0);
         m_SequenceDef__bound->setUpperBound(1);
@@ -1421,7 +1432,6 @@ void IdlmmPackage::_initPackage()
         m_UnionFieldEClass->setInterface(false);
         m_UnionField__identifier->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_UnionField__identifier->setName("identifier");
         m_UnionField__identifier->setDefaultValueLiteral("");
         m_UnionField__identifier->setLowerBound(0);
         m_UnionField__identifier->setUpperBound(1);
@@ -1434,7 +1444,6 @@ void IdlmmPackage::_initPackage()
         m_UnionField__identifier->setDerived(false);
         m_UnionField__identifier->setOrdered(true);
         m_UnionField__label->setEType(m_EAnyEDataType);
-        m_UnionField__label->setName("label");
         m_UnionField__label->setDefaultValueLiteral("");
         m_UnionField__label->setLowerBound(0);
         m_UnionField__label->setUpperBound(-1);
@@ -1462,7 +1471,6 @@ void IdlmmPackage::_initPackage()
         m_UnionDefEClass->setInterface(false);
 
         m_UnionDef__unionMembers->setEType(m_UnionFieldEClass);
-        m_UnionDef__unionMembers->setName("unionMembers");
         m_UnionDef__unionMembers->setDefaultValueLiteral("");
         m_UnionDef__unionMembers->setLowerBound(0);
         m_UnionDef__unionMembers->setUpperBound(-1);
@@ -1475,7 +1483,6 @@ void IdlmmPackage::_initPackage()
         m_UnionDef__unionMembers->setDerived(false);
         m_UnionDef__unionMembers->setOrdered(true);
         m_UnionDef__containedDiscrim->setEType(m_IDLTypeEClass);
-        m_UnionDef__containedDiscrim->setName("containedDiscrim");
         m_UnionDef__containedDiscrim->setDefaultValueLiteral("");
         m_UnionDef__containedDiscrim->setLowerBound(0);
         m_UnionDef__containedDiscrim->setUpperBound(1);
@@ -1488,7 +1495,6 @@ void IdlmmPackage::_initPackage()
         m_UnionDef__containedDiscrim->setDerived(false);
         m_UnionDef__containedDiscrim->setOrdered(true);
         m_UnionDef__sharedDiscrim->setEType(m_TypedefDefEClass);
-        m_UnionDef__sharedDiscrim->setName("sharedDiscrim");
         m_UnionDef__sharedDiscrim->setDefaultValueLiteral("");
         m_UnionDef__sharedDiscrim->setLowerBound(0);
         m_UnionDef__sharedDiscrim->setUpperBound(1);
@@ -1509,7 +1515,6 @@ void IdlmmPackage::_initPackage()
         m_EnumDefEClass->setInterface(false);
         m_EnumDef__members->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_EnumDef__members->setName("members");
         m_EnumDef__members->setDefaultValueLiteral("");
         m_EnumDef__members->setLowerBound(0);
         m_EnumDef__members->setUpperBound(-1);
@@ -1530,7 +1535,6 @@ void IdlmmPackage::_initPackage()
         m_StructDefEClass->setInterface(false);
 
         m_StructDef__members->setEType(m_FieldEClass);
-        m_StructDef__members->setName("members");
         m_StructDef__members->setDefaultValueLiteral("");
         m_StructDef__members->setLowerBound(0);
         m_StructDef__members->setUpperBound(-1);
@@ -1551,7 +1555,6 @@ void IdlmmPackage::_initPackage()
         m_TranslationUnitEClass->setInterface(false);
         m_TranslationUnit__identifier->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_TranslationUnit__identifier->setName("identifier");
         m_TranslationUnit__identifier->setDefaultValueLiteral("");
         m_TranslationUnit__identifier->setLowerBound(0);
         m_TranslationUnit__identifier->setUpperBound(1);
@@ -1565,7 +1568,6 @@ void IdlmmPackage::_initPackage()
         m_TranslationUnit__identifier->setOrdered(true);
 
         m_TranslationUnit__contains->setEType(m_ContainedEClass);
-        m_TranslationUnit__contains->setName("contains");
         m_TranslationUnit__contains->setDefaultValueLiteral("");
         m_TranslationUnit__contains->setLowerBound(0);
         m_TranslationUnit__contains->setUpperBound(-1);
@@ -1578,7 +1580,6 @@ void IdlmmPackage::_initPackage()
         m_TranslationUnit__contains->setDerived(false);
         m_TranslationUnit__contains->setOrdered(true);
         m_TranslationUnit__includes->setEType(m_IncludeEClass);
-        m_TranslationUnit__includes->setName("includes");
         m_TranslationUnit__includes->setDefaultValueLiteral("");
         m_TranslationUnit__includes->setLowerBound(0);
         m_TranslationUnit__includes->setUpperBound(-1);
@@ -1599,7 +1600,6 @@ void IdlmmPackage::_initPackage()
         m_IncludeEClass->setInterface(false);
         m_Include__importURI->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Include__importURI->setName("importURI");
         m_Include__importURI->setDefaultValueLiteral("");
         m_Include__importURI->setLowerBound(0);
         m_Include__importURI->setUpperBound(1);

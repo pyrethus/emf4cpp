@@ -10,4 +10,8 @@ add_executable(test-uriconverter test-uriconverter.cpp)
 target_link_libraries(test-resourceoptions emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-ResourceTests)
 target_link_libraries(test-uriconverter emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-ResourceTests)
 
-
+add_test(NAME test-resourceoptions COMMAND test-resourceoptions)
+set_tests_properties(test-resourceoptions PROPERTIES WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+# Where is the package ResourceOptions
+set_tests_properties(test-resourceoptions PROPERTIES DISABLED True)
+add_test(NAME test-uriconverter COMMAND test-uriconverter)

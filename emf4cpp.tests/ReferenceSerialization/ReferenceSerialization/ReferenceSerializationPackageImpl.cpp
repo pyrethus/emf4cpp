@@ -77,6 +77,7 @@ void ReferenceSerializationPackage::_initPackage()
         // m_Container__contents has already been allocated above
         m_Container__contents->setFeatureID(
                 ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CONTENTS);
+        m_Container__contents->setName("contents");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainerEClass->getEStructuralFeatures()).basicAdd(
                 m_Container__contents);
@@ -84,6 +85,7 @@ void ReferenceSerializationPackage::_initPackage()
         // m_Container__references has already been allocated above
         m_Container__references->setFeatureID(
                 ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__REFERENCES);
+        m_Container__references->setName("references");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainerEClass->getEStructuralFeatures()).basicAdd(
                 m_Container__references);
@@ -91,6 +93,7 @@ void ReferenceSerializationPackage::_initPackage()
         // m_Container__child has already been allocated above
         m_Container__child->setFeatureID(
                 ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILD);
+        m_Container__child->setName("child");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainerEClass->getEStructuralFeatures()).basicAdd(
                 m_Container__child);
@@ -98,6 +101,7 @@ void ReferenceSerializationPackage::_initPackage()
         // m_Container__childRef has already been allocated above
         m_Container__childRef->setFeatureID(
                 ::ReferenceSerialization::ReferenceSerializationPackage::CONTAINER__CHILDREF);
+        m_Container__childRef->setName("childRef");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContainerEClass->getEStructuralFeatures()).basicAdd(
                 m_Container__childRef);
@@ -113,6 +117,7 @@ void ReferenceSerializationPackage::_initPackage()
         // m_Content__name has already been allocated above
         m_Content__name->setFeatureID(
                 ::ReferenceSerialization::ReferenceSerializationPackage::CONTENT__NAME);
+        m_Content__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContentEClass->getEStructuralFeatures()).basicAdd(
                 m_Content__name);
@@ -147,7 +152,6 @@ void ReferenceSerializationPackage::_initPackage()
         m_ContainerEClass->setInterface(false);
 
         m_Container__contents->setEType(m_ContentEClass);
-        m_Container__contents->setName("contents");
         m_Container__contents->setDefaultValueLiteral("");
         m_Container__contents->setLowerBound(0);
         m_Container__contents->setUpperBound(-1);
@@ -160,7 +164,6 @@ void ReferenceSerializationPackage::_initPackage()
         m_Container__contents->setDerived(false);
         m_Container__contents->setOrdered(true);
         m_Container__references->setEType(m_ContentEClass);
-        m_Container__references->setName("references");
         m_Container__references->setDefaultValueLiteral("");
         m_Container__references->setLowerBound(0);
         m_Container__references->setUpperBound(-1);
@@ -173,7 +176,6 @@ void ReferenceSerializationPackage::_initPackage()
         m_Container__references->setDerived(false);
         m_Container__references->setOrdered(true);
         m_Container__child->setEType(m_ChildEClass);
-        m_Container__child->setName("child");
         m_Container__child->setDefaultValueLiteral("");
         m_Container__child->setLowerBound(0);
         m_Container__child->setUpperBound(1);
@@ -186,7 +188,6 @@ void ReferenceSerializationPackage::_initPackage()
         m_Container__child->setDerived(false);
         m_Container__child->setOrdered(true);
         m_Container__childRef->setEType(m_ChildEClass);
-        m_Container__childRef->setName("childRef");
         m_Container__childRef->setDefaultValueLiteral("");
         m_Container__childRef->setLowerBound(0);
         m_Container__childRef->setUpperBound(1);
@@ -207,7 +208,6 @@ void ReferenceSerializationPackage::_initPackage()
         m_ContentEClass->setInterface(false);
         m_Content__name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Content__name->setName("name");
         m_Content__name->setDefaultValueLiteral("");
         m_Content__name->setLowerBound(0);
         m_Content__name->setUpperBound(1);

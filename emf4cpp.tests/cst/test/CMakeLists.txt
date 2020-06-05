@@ -10,4 +10,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 add_executable(test-cst test.cpp)
 target_link_libraries(test-cst emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-CST)
 
-
+add_test(NAME test-cst COMMAND test-cst)

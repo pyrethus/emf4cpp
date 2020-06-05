@@ -91,6 +91,7 @@ auto& classifiers =
     «FOREACH class.EStructuralFeatures AS esf-»
     // «getFeatureMember(esf)» has already been allocated above
     «getFeatureMember(esf)»->setFeatureID(«esf.getCPPFQN()»);
+    «getFeatureMember(esf)»->setName("«esf.name»");
     static_cast<::ecorecpp::mapping::ReferenceEListImpl<::ecore::EStructuralFeature_ptr, -1, true, true >&>(
     				«getPackageAttribute(class)»->getEStructuralFeatures()).basicAdd(«getFeatureMember(esf)»);
     «getFeatureMember(esf)»->basicsetEContainingClass(«getPackageAttribute(class)»);
@@ -175,7 +176,6 @@ auto& classifiers =
         «getFeatureMember(at)»->setEGenericType(_g0);
     }
         «ENDIF-»
-    «getFeatureMember(at)»->setName("«at.name»");
     «getFeatureMember(at)»->setDefaultValueLiteral("«at.defaultValueLiteral»");
     «getFeatureMember(at)»->setLowerBound(«at.lowerBound»);
     «getFeatureMember(at)»->setUpperBound(«at.upperBound»);
@@ -205,7 +205,6 @@ auto& classifiers =
         «getFeatureMember(ref)»->setEGenericType(_g0);
     }
         «ENDIF-»
-    «getFeatureMember(ref)»->setName("«ref.name»");
     «getFeatureMember(ref)»->setDefaultValueLiteral("«ref.defaultValueLiteral»");
     «getFeatureMember(ref)»->setLowerBound(«ref.lowerBound»);
     «getFeatureMember(ref)»->setUpperBound(«ref.upperBound»);

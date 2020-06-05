@@ -8,4 +8,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 add_executable(test-serialization test-serialization.cpp)
 target_link_libraries(test-serialization emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-ReferenceSerialization)
 
-
+add_test(NAME test-serialization COMMAND test-serialization)

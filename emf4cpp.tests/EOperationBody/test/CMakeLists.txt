@@ -11,4 +11,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 add_executable(test-EOperationBody test.cpp)
 target_link_libraries(test-EOperationBody emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-EOperationBody ${Qt5Core_LIBRARIES})
 
-
+add_test(NAME test-EOperationBody COMMAND test-EOperationBody)

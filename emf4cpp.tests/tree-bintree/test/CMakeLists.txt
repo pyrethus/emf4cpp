@@ -16,3 +16,10 @@ target_link_libraries(tree-transform emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-tree
 # test
 add_executable(test-tree test.cpp)
 target_link_libraries(test-tree emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-tree)
+
+add_test(NAME tree-read COMMAND tree-read ${CMAKE_CURRENT_SOURCE_DIR}/model.xmi)
+# it takes way too long, therefore disable the test
+set_tests_properties(tree-read PROPERTIES DISABLED True)
+add_test(NAME test-tree COMMAND test-tree)
+# it takes way too long, therefore disable the test
+set_tests_properties(test-tree PROPERTIES DISABLED True)

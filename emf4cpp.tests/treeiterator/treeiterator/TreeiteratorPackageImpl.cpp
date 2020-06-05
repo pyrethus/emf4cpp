@@ -73,6 +73,7 @@ void TreeiteratorPackage::_initPackage()
         // m_TreeNode__name has already been allocated above
         m_TreeNode__name->setFeatureID(
                 ::treeiterator::TreeiteratorPackage::TREENODE__NAME);
+        m_TreeNode__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
                 m_TreeNode__name);
@@ -80,6 +81,7 @@ void TreeiteratorPackage::_initPackage()
         // m_TreeNode__children has already been allocated above
         m_TreeNode__children->setFeatureID(
                 ::treeiterator::TreeiteratorPackage::TREENODE__CHILDREN);
+        m_TreeNode__children->setName("children");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
                 m_TreeNode__children);
@@ -87,6 +89,7 @@ void TreeiteratorPackage::_initPackage()
         // m_TreeNode__leaf has already been allocated above
         m_TreeNode__leaf->setFeatureID(
                 ::treeiterator::TreeiteratorPackage::TREENODE__LEAF);
+        m_TreeNode__leaf->setName("leaf");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
                 m_TreeNode__leaf);
@@ -101,6 +104,7 @@ void TreeiteratorPackage::_initPackage()
         // m_Leaf__name has already been allocated above
         m_Leaf__name->setFeatureID(
                 ::treeiterator::TreeiteratorPackage::LEAF__NAME);
+        m_Leaf__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures()).basicAdd(
                 m_Leaf__name);
@@ -128,7 +132,6 @@ void TreeiteratorPackage::_initPackage()
         m_TreeNodeEClass->setInterface(false);
         m_TreeNode__name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_TreeNode__name->setName("name");
         m_TreeNode__name->setDefaultValueLiteral("");
         m_TreeNode__name->setLowerBound(0);
         m_TreeNode__name->setUpperBound(1);
@@ -142,7 +145,6 @@ void TreeiteratorPackage::_initPackage()
         m_TreeNode__name->setOrdered(true);
 
         m_TreeNode__children->setEType(m_TreeNodeEClass);
-        m_TreeNode__children->setName("children");
         m_TreeNode__children->setDefaultValueLiteral("");
         m_TreeNode__children->setLowerBound(0);
         m_TreeNode__children->setUpperBound(-1);
@@ -155,7 +157,6 @@ void TreeiteratorPackage::_initPackage()
         m_TreeNode__children->setDerived(false);
         m_TreeNode__children->setOrdered(true);
         m_TreeNode__leaf->setEType(m_LeafEClass);
-        m_TreeNode__leaf->setName("leaf");
         m_TreeNode__leaf->setDefaultValueLiteral("");
         m_TreeNode__leaf->setLowerBound(0);
         m_TreeNode__leaf->setUpperBound(1);
@@ -176,7 +177,6 @@ void TreeiteratorPackage::_initPackage()
         m_LeafEClass->setInterface(false);
         m_Leaf__name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Leaf__name->setName("name");
         m_Leaf__name->setDefaultValueLiteral("");
         m_Leaf__name->setLowerBound(0);
         m_Leaf__name->setUpperBound(1);

@@ -105,6 +105,7 @@ void StructurePackage::_initPackage()
         // m_AbstractStructureElement__aggregated has already been allocated above
         m_AbstractStructureElement__aggregated->setFeatureID(
                 ::kdm::structure::StructurePackage::ABSTRACTSTRUCTUREELEMENT__AGGREGATED);
+        m_AbstractStructureElement__aggregated->setName("aggregated");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractStructureElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractStructureElement__aggregated);
@@ -113,6 +114,7 @@ void StructurePackage::_initPackage()
         // m_AbstractStructureElement__implementation has already been allocated above
         m_AbstractStructureElement__implementation->setFeatureID(
                 ::kdm::structure::StructurePackage::ABSTRACTSTRUCTUREELEMENT__IMPLEMENTATION);
+        m_AbstractStructureElement__implementation->setName("implementation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractStructureElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractStructureElement__implementation);
@@ -121,6 +123,8 @@ void StructurePackage::_initPackage()
         // m_AbstractStructureElement__structureElement has already been allocated above
         m_AbstractStructureElement__structureElement->setFeatureID(
                 ::kdm::structure::StructurePackage::ABSTRACTSTRUCTUREELEMENT__STRUCTUREELEMENT);
+        m_AbstractStructureElement__structureElement->setName(
+                "structureElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractStructureElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractStructureElement__structureElement);
@@ -129,6 +133,8 @@ void StructurePackage::_initPackage()
         // m_AbstractStructureElement__structureRelationship has already been allocated above
         m_AbstractStructureElement__structureRelationship->setFeatureID(
                 ::kdm::structure::StructurePackage::ABSTRACTSTRUCTUREELEMENT__STRUCTURERELATIONSHIP);
+        m_AbstractStructureElement__structureRelationship->setName(
+                "structureRelationship");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractStructureElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractStructureElement__structureRelationship);
@@ -160,6 +166,7 @@ void StructurePackage::_initPackage()
         // m_StructureModel__structureElement has already been allocated above
         m_StructureModel__structureElement->setFeatureID(
                 ::kdm::structure::StructurePackage::STRUCTUREMODEL__STRUCTUREELEMENT);
+        m_StructureModel__structureElement->setName("structureElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StructureModelEClass->getEStructuralFeatures()).basicAdd(
                 m_StructureModel__structureElement);
@@ -201,6 +208,7 @@ void StructurePackage::_initPackage()
         // m_StructureRelationship__to has already been allocated above
         m_StructureRelationship__to->setFeatureID(
                 ::kdm::structure::StructurePackage::STRUCTURERELATIONSHIP__TO);
+        m_StructureRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StructureRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_StructureRelationship__to);
@@ -209,6 +217,7 @@ void StructurePackage::_initPackage()
         // m_StructureRelationship__from has already been allocated above
         m_StructureRelationship__from->setFeatureID(
                 ::kdm::structure::StructurePackage::STRUCTURERELATIONSHIP__FROM);
+        m_StructureRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StructureRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_StructureRelationship__from);
@@ -273,7 +282,6 @@ void StructurePackage::_initPackage()
 
         m_AbstractStructureElement__aggregated->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getAggregatedRelationship());
-        m_AbstractStructureElement__aggregated->setName("aggregated");
         m_AbstractStructureElement__aggregated->setDefaultValueLiteral("");
         m_AbstractStructureElement__aggregated->setLowerBound(0);
         m_AbstractStructureElement__aggregated->setUpperBound(-1);
@@ -287,7 +295,6 @@ void StructurePackage::_initPackage()
         m_AbstractStructureElement__aggregated->setOrdered(false);
         m_AbstractStructureElement__implementation->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_AbstractStructureElement__implementation->setName("implementation");
         m_AbstractStructureElement__implementation->setDefaultValueLiteral("");
         m_AbstractStructureElement__implementation->setLowerBound(0);
         m_AbstractStructureElement__implementation->setUpperBound(-1);
@@ -301,8 +308,6 @@ void StructurePackage::_initPackage()
         m_AbstractStructureElement__implementation->setOrdered(false);
         m_AbstractStructureElement__structureElement->setEType(
                 m_AbstractStructureElementEClass);
-        m_AbstractStructureElement__structureElement->setName(
-                "structureElement");
         m_AbstractStructureElement__structureElement->setDefaultValueLiteral(
                 "");
         m_AbstractStructureElement__structureElement->setLowerBound(0);
@@ -317,8 +322,6 @@ void StructurePackage::_initPackage()
         m_AbstractStructureElement__structureElement->setOrdered(false);
         m_AbstractStructureElement__structureRelationship->setEType(
                 m_AbstractStructureRelationshipEClass);
-        m_AbstractStructureElement__structureRelationship->setName(
-                "structureRelationship");
         m_AbstractStructureElement__structureRelationship->setDefaultValueLiteral(
                 "");
         m_AbstractStructureElement__structureRelationship->setLowerBound(0);
@@ -356,7 +359,6 @@ void StructurePackage::_initPackage()
 
         m_StructureModel__structureElement->setEType(
                 m_AbstractStructureElementEClass);
-        m_StructureModel__structureElement->setName("structureElement");
         m_StructureModel__structureElement->setDefaultValueLiteral("");
         m_StructureModel__structureElement->setLowerBound(0);
         m_StructureModel__structureElement->setUpperBound(-1);
@@ -400,7 +402,6 @@ void StructurePackage::_initPackage()
 
         m_StructureRelationship__to->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_StructureRelationship__to->setName("to");
         m_StructureRelationship__to->setDefaultValueLiteral("");
         m_StructureRelationship__to->setLowerBound(1);
         m_StructureRelationship__to->setUpperBound(1);
@@ -414,7 +415,6 @@ void StructurePackage::_initPackage()
         m_StructureRelationship__to->setOrdered(false);
         m_StructureRelationship__from->setEType(
                 m_AbstractStructureElementEClass);
-        m_StructureRelationship__from->setName("from");
         m_StructureRelationship__from->setDefaultValueLiteral("");
         m_StructureRelationship__from->setLowerBound(1);
         m_StructureRelationship__from->setUpperBound(1);

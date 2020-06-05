@@ -85,6 +85,7 @@ void CSTPackage::_initPackage()
         classifiers.basicAdd(m_ElementEClass);
         // m_Element__kind has already been allocated above
         m_Element__kind->setFeatureID(::CST::CSTPackage::ELEMENT__KIND);
+        m_Element__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
                 m_Element__kind);
@@ -98,6 +99,7 @@ void CSTPackage::_initPackage()
         classifiers.basicAdd(m_NodeEClass);
         // m_Node__children has already been allocated above
         m_Node__children->setFeatureID(::CST::CSTPackage::NODE__CHILDREN);
+        m_Node__children->setName("children");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NodeEClass->getEStructuralFeatures()).basicAdd(
                 m_Node__children);
@@ -111,18 +113,21 @@ void CSTPackage::_initPackage()
         classifiers.basicAdd(m_LeafEClass);
         // m_Leaf__value has already been allocated above
         m_Leaf__value->setFeatureID(::CST::CSTPackage::LEAF__VALUE);
+        m_Leaf__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures()).basicAdd(
                 m_Leaf__value);
         m_Leaf__value->basicsetEContainingClass(m_LeafEClass);
         // m_Leaf__pos has already been allocated above
         m_Leaf__pos->setFeatureID(::CST::CSTPackage::LEAF__POS);
+        m_Leaf__pos->setName("pos");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures()).basicAdd(
                 m_Leaf__pos);
         m_Leaf__pos->basicsetEContainingClass(m_LeafEClass);
         // m_Leaf__line has already been allocated above
         m_Leaf__line->setFeatureID(::CST::CSTPackage::LEAF__LINE);
+        m_Leaf__line->setName("line");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures()).basicAdd(
                 m_Leaf__line);
@@ -160,7 +165,6 @@ void CSTPackage::_initPackage()
         m_ElementEClass->setInterface(false);
         m_Element__kind->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Element__kind->setName("kind");
         m_Element__kind->setDefaultValueLiteral("");
         m_Element__kind->setLowerBound(0);
         m_Element__kind->setUpperBound(1);
@@ -181,7 +185,6 @@ void CSTPackage::_initPackage()
         m_NodeEClass->setInterface(false);
 
         m_Node__children->setEType(m_ElementEClass);
-        m_Node__children->setName("children");
         m_Node__children->setDefaultValueLiteral("");
         m_Node__children->setLowerBound(0);
         m_Node__children->setUpperBound(-1);
@@ -202,7 +205,6 @@ void CSTPackage::_initPackage()
         m_LeafEClass->setInterface(false);
         m_Leaf__value->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Leaf__value->setName("value");
         m_Leaf__value->setDefaultValueLiteral("");
         m_Leaf__value->setLowerBound(0);
         m_Leaf__value->setUpperBound(1);
@@ -216,7 +218,6 @@ void CSTPackage::_initPackage()
         m_Leaf__value->setOrdered(true);
         m_Leaf__pos->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Leaf__pos->setName("pos");
         m_Leaf__pos->setDefaultValueLiteral("");
         m_Leaf__pos->setLowerBound(0);
         m_Leaf__pos->setUpperBound(1);
@@ -230,7 +231,6 @@ void CSTPackage::_initPackage()
         m_Leaf__pos->setOrdered(true);
         m_Leaf__line->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Leaf__line->setName("line");
         m_Leaf__line->setDefaultValueLiteral("");
         m_Leaf__line->setLowerBound(0);
         m_Leaf__line->setUpperBound(1);

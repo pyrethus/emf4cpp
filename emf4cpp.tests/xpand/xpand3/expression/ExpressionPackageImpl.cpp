@@ -184,6 +184,7 @@ void ExpressionPackage::_initPackage()
         // m_Cast__type has already been allocated above
         m_Cast__type->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::CAST__TYPE);
+        m_Cast__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CastEClass->getEStructuralFeatures()).basicAdd(
                 m_Cast__type);
@@ -191,6 +192,7 @@ void ExpressionPackage::_initPackage()
         // m_Cast__target has already been allocated above
         m_Cast__target->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::CAST__TARGET);
+        m_Cast__target->setName("target");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CastEClass->getEStructuralFeatures()).basicAdd(
                 m_Cast__target);
@@ -206,6 +208,7 @@ void ExpressionPackage::_initPackage()
         // m_ChainExpression__first has already been allocated above
         m_ChainExpression__first->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__FIRST);
+        m_ChainExpression__first->setName("first");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ChainExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_ChainExpression__first);
@@ -214,6 +217,7 @@ void ExpressionPackage::_initPackage()
         // m_ChainExpression__next has already been allocated above
         m_ChainExpression__next->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::CHAINEXPRESSION__NEXT);
+        m_ChainExpression__next->setName("next");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ChainExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_ChainExpression__next);
@@ -231,6 +235,7 @@ void ExpressionPackage::_initPackage()
         // m_ConstructorCallExpression__type has already been allocated above
         m_ConstructorCallExpression__type->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::CONSTRUCTORCALLEXPRESSION__TYPE);
+        m_ConstructorCallExpression__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConstructorCallExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_ConstructorCallExpression__type);
@@ -247,6 +252,7 @@ void ExpressionPackage::_initPackage()
         // m_FeatureCall__target has already been allocated above
         m_FeatureCall__target->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::FEATURECALL__TARGET);
+        m_FeatureCall__target->setName("target");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FeatureCallEClass->getEStructuralFeatures()).basicAdd(
                 m_FeatureCall__target);
@@ -254,6 +260,7 @@ void ExpressionPackage::_initPackage()
         // m_FeatureCall__name has already been allocated above
         m_FeatureCall__name->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::FEATURECALL__NAME);
+        m_FeatureCall__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FeatureCallEClass->getEStructuralFeatures()).basicAdd(
                 m_FeatureCall__name);
@@ -269,6 +276,7 @@ void ExpressionPackage::_initPackage()
         // m_CollectionExpression__closure has already been allocated above
         m_CollectionExpression__closure->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::COLLECTIONEXPRESSION__CLOSURE);
+        m_CollectionExpression__closure->setName("closure");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CollectionExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_CollectionExpression__closure);
@@ -277,6 +285,7 @@ void ExpressionPackage::_initPackage()
         // m_CollectionExpression__eleName has already been allocated above
         m_CollectionExpression__eleName->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::COLLECTIONEXPRESSION__ELENAME);
+        m_CollectionExpression__eleName->setName("eleName");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CollectionExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_CollectionExpression__eleName);
@@ -293,6 +302,7 @@ void ExpressionPackage::_initPackage()
         // m_OperationCall__params has already been allocated above
         m_OperationCall__params->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::OPERATIONCALL__PARAMS);
+        m_OperationCall__params->setName("params");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_OperationCallEClass->getEStructuralFeatures()).basicAdd(
                 m_OperationCall__params);
@@ -309,6 +319,7 @@ void ExpressionPackage::_initPackage()
         // m_TypeSelectExpression__typeLiteral has already been allocated above
         m_TypeSelectExpression__typeLiteral->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::TYPESELECTEXPRESSION__TYPELITERAL);
+        m_TypeSelectExpression__typeLiteral->setName("typeLiteral");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypeSelectExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_TypeSelectExpression__typeLiteral);
@@ -325,6 +336,7 @@ void ExpressionPackage::_initPackage()
         // m_GlobalVarExpression__globalVarName has already been allocated above
         m_GlobalVarExpression__globalVarName->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::GLOBALVAREXPRESSION__GLOBALVARNAME);
+        m_GlobalVarExpression__globalVarName->setName("globalVarName");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_GlobalVarExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_GlobalVarExpression__globalVarName);
@@ -341,6 +353,7 @@ void ExpressionPackage::_initPackage()
         // m_IfExpression__condition has already been allocated above
         m_IfExpression__condition->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::IFEXPRESSION__CONDITION);
+        m_IfExpression__condition->setName("condition");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_IfExpression__condition);
@@ -349,6 +362,7 @@ void ExpressionPackage::_initPackage()
         // m_IfExpression__thenPart has already been allocated above
         m_IfExpression__thenPart->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::IFEXPRESSION__THENPART);
+        m_IfExpression__thenPart->setName("thenPart");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_IfExpression__thenPart);
@@ -357,6 +371,7 @@ void ExpressionPackage::_initPackage()
         // m_IfExpression__elsePart has already been allocated above
         m_IfExpression__elsePart->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::IFEXPRESSION__ELSEPART);
+        m_IfExpression__elsePart->setName("elsePart");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_IfExpression__elsePart);
@@ -373,6 +388,7 @@ void ExpressionPackage::_initPackage()
         // m_LetExpression__varExpression has already been allocated above
         m_LetExpression__varExpression->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::LETEXPRESSION__VAREXPRESSION);
+        m_LetExpression__varExpression->setName("varExpression");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_LetExpression__varExpression);
@@ -381,6 +397,7 @@ void ExpressionPackage::_initPackage()
         // m_LetExpression__targetExpression has already been allocated above
         m_LetExpression__targetExpression->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::LETEXPRESSION__TARGETEXPRESSION);
+        m_LetExpression__targetExpression->setName("targetExpression");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_LetExpression__targetExpression);
@@ -389,6 +406,7 @@ void ExpressionPackage::_initPackage()
         // m_LetExpression__varName has already been allocated above
         m_LetExpression__varName->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::LETEXPRESSION__VARNAME);
+        m_LetExpression__varName->setName("varName");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_LetExpression__varName);
@@ -405,6 +423,7 @@ void ExpressionPackage::_initPackage()
         // m_ListLiteral__elements has already been allocated above
         m_ListLiteral__elements->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::LISTLITERAL__ELEMENTS);
+        m_ListLiteral__elements->setName("elements");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ListLiteralEClass->getEStructuralFeatures()).basicAdd(
                 m_ListLiteral__elements);
@@ -420,6 +439,7 @@ void ExpressionPackage::_initPackage()
         // m_Literal__literalValue has already been allocated above
         m_Literal__literalValue->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::LITERAL__LITERALVALUE);
+        m_Literal__literalValue->setName("literalValue");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LiteralEClass->getEStructuralFeatures()).basicAdd(
                 m_Literal__literalValue);
@@ -475,6 +495,7 @@ void ExpressionPackage::_initPackage()
         // m_SwitchExpression__switchExpr has already been allocated above
         m_SwitchExpression__switchExpr->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__SWITCHEXPR);
+        m_SwitchExpression__switchExpr->setName("switchExpr");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SwitchExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_SwitchExpression__switchExpr);
@@ -483,6 +504,7 @@ void ExpressionPackage::_initPackage()
         // m_SwitchExpression__defaultExpr has already been allocated above
         m_SwitchExpression__defaultExpr->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__DEFAULTEXPR);
+        m_SwitchExpression__defaultExpr->setName("defaultExpr");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SwitchExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_SwitchExpression__defaultExpr);
@@ -491,6 +513,7 @@ void ExpressionPackage::_initPackage()
         // m_SwitchExpression__cases has already been allocated above
         m_SwitchExpression__cases->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::SWITCHEXPRESSION__CASES);
+        m_SwitchExpression__cases->setName("cases");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SwitchExpressionEClass->getEStructuralFeatures()).basicAdd(
                 m_SwitchExpression__cases);
@@ -506,6 +529,7 @@ void ExpressionPackage::_initPackage()
         // m_Case__condition has already been allocated above
         m_Case__condition->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::CASE__CONDITION);
+        m_Case__condition->setName("condition");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CaseEClass->getEStructuralFeatures()).basicAdd(
                 m_Case__condition);
@@ -513,6 +537,7 @@ void ExpressionPackage::_initPackage()
         // m_Case__thenPart has already been allocated above
         m_Case__thenPart->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::CASE__THENPART);
+        m_Case__thenPart->setName("thenPart");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CaseEClass->getEStructuralFeatures()).basicAdd(
                 m_Case__thenPart);
@@ -528,6 +553,7 @@ void ExpressionPackage::_initPackage()
         // m_BinaryOperation__left has already been allocated above
         m_BinaryOperation__left->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::BINARYOPERATION__LEFT);
+        m_BinaryOperation__left->setName("left");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinaryOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_BinaryOperation__left);
@@ -536,6 +562,7 @@ void ExpressionPackage::_initPackage()
         // m_BinaryOperation__right has already been allocated above
         m_BinaryOperation__right->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::BINARYOPERATION__RIGHT);
+        m_BinaryOperation__right->setName("right");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinaryOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_BinaryOperation__right);
@@ -544,6 +571,7 @@ void ExpressionPackage::_initPackage()
         // m_BinaryOperation__operator has already been allocated above
         m_BinaryOperation__operator->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::BINARYOPERATION__OPERATOR);
+        m_BinaryOperation__operator->setName("operator");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BinaryOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_BinaryOperation__operator);
@@ -560,6 +588,7 @@ void ExpressionPackage::_initPackage()
         // m_UnaryOperation__operator has already been allocated above
         m_UnaryOperation__operator->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::UNARYOPERATION__OPERATOR);
+        m_UnaryOperation__operator->setName("operator");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UnaryOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_UnaryOperation__operator);
@@ -568,6 +597,7 @@ void ExpressionPackage::_initPackage()
         // m_UnaryOperation__operand has already been allocated above
         m_UnaryOperation__operand->setFeatureID(
                 ::xpand3::expression::ExpressionPackage::UNARYOPERATION__OPERAND);
+        m_UnaryOperation__operand->setName("operand");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UnaryOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_UnaryOperation__operand);
@@ -647,7 +677,6 @@ void ExpressionPackage::_initPackage()
 
         m_Cast__type->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_Cast__type->setName("type");
         m_Cast__type->setDefaultValueLiteral("");
         m_Cast__type->setLowerBound(0);
         m_Cast__type->setUpperBound(1);
@@ -660,7 +689,6 @@ void ExpressionPackage::_initPackage()
         m_Cast__type->setDerived(false);
         m_Cast__type->setOrdered(true);
         m_Cast__target->setEType(m_AbstractExpressionEClass);
-        m_Cast__target->setName("target");
         m_Cast__target->setDefaultValueLiteral("");
         m_Cast__target->setLowerBound(0);
         m_Cast__target->setUpperBound(1);
@@ -681,7 +709,6 @@ void ExpressionPackage::_initPackage()
         m_ChainExpressionEClass->setInterface(false);
 
         m_ChainExpression__first->setEType(m_AbstractExpressionEClass);
-        m_ChainExpression__first->setName("first");
         m_ChainExpression__first->setDefaultValueLiteral("");
         m_ChainExpression__first->setLowerBound(0);
         m_ChainExpression__first->setUpperBound(1);
@@ -694,7 +721,6 @@ void ExpressionPackage::_initPackage()
         m_ChainExpression__first->setDerived(false);
         m_ChainExpression__first->setOrdered(true);
         m_ChainExpression__next->setEType(m_AbstractExpressionEClass);
-        m_ChainExpression__next->setName("next");
         m_ChainExpression__next->setDefaultValueLiteral("");
         m_ChainExpression__next->setLowerBound(0);
         m_ChainExpression__next->setUpperBound(1);
@@ -716,7 +742,6 @@ void ExpressionPackage::_initPackage()
 
         m_ConstructorCallExpression__type->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_ConstructorCallExpression__type->setName("type");
         m_ConstructorCallExpression__type->setDefaultValueLiteral("");
         m_ConstructorCallExpression__type->setLowerBound(0);
         m_ConstructorCallExpression__type->setUpperBound(1);
@@ -737,7 +762,6 @@ void ExpressionPackage::_initPackage()
         m_FeatureCallEClass->setInterface(false);
 
         m_FeatureCall__target->setEType(m_AbstractExpressionEClass);
-        m_FeatureCall__target->setName("target");
         m_FeatureCall__target->setDefaultValueLiteral("");
         m_FeatureCall__target->setLowerBound(0);
         m_FeatureCall__target->setUpperBound(1);
@@ -751,7 +775,6 @@ void ExpressionPackage::_initPackage()
         m_FeatureCall__target->setOrdered(true);
         m_FeatureCall__name->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_FeatureCall__name->setName("name");
         m_FeatureCall__name->setDefaultValueLiteral("");
         m_FeatureCall__name->setLowerBound(0);
         m_FeatureCall__name->setUpperBound(1);
@@ -772,7 +795,6 @@ void ExpressionPackage::_initPackage()
         m_CollectionExpressionEClass->setInterface(false);
 
         m_CollectionExpression__closure->setEType(m_AbstractExpressionEClass);
-        m_CollectionExpression__closure->setName("closure");
         m_CollectionExpression__closure->setDefaultValueLiteral("");
         m_CollectionExpression__closure->setLowerBound(0);
         m_CollectionExpression__closure->setUpperBound(1);
@@ -786,7 +808,6 @@ void ExpressionPackage::_initPackage()
         m_CollectionExpression__closure->setOrdered(true);
         m_CollectionExpression__eleName->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_CollectionExpression__eleName->setName("eleName");
         m_CollectionExpression__eleName->setDefaultValueLiteral("");
         m_CollectionExpression__eleName->setLowerBound(0);
         m_CollectionExpression__eleName->setUpperBound(1);
@@ -807,7 +828,6 @@ void ExpressionPackage::_initPackage()
         m_OperationCallEClass->setInterface(false);
 
         m_OperationCall__params->setEType(m_AbstractExpressionEClass);
-        m_OperationCall__params->setName("params");
         m_OperationCall__params->setDefaultValueLiteral("");
         m_OperationCall__params->setLowerBound(0);
         m_OperationCall__params->setUpperBound(-1);
@@ -829,7 +849,6 @@ void ExpressionPackage::_initPackage()
 
         m_TypeSelectExpression__typeLiteral->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_TypeSelectExpression__typeLiteral->setName("typeLiteral");
         m_TypeSelectExpression__typeLiteral->setDefaultValueLiteral("");
         m_TypeSelectExpression__typeLiteral->setLowerBound(0);
         m_TypeSelectExpression__typeLiteral->setUpperBound(1);
@@ -851,7 +870,6 @@ void ExpressionPackage::_initPackage()
 
         m_GlobalVarExpression__globalVarName->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_GlobalVarExpression__globalVarName->setName("globalVarName");
         m_GlobalVarExpression__globalVarName->setDefaultValueLiteral("");
         m_GlobalVarExpression__globalVarName->setLowerBound(0);
         m_GlobalVarExpression__globalVarName->setUpperBound(1);
@@ -872,7 +890,6 @@ void ExpressionPackage::_initPackage()
         m_IfExpressionEClass->setInterface(false);
 
         m_IfExpression__condition->setEType(m_AbstractExpressionEClass);
-        m_IfExpression__condition->setName("condition");
         m_IfExpression__condition->setDefaultValueLiteral("");
         m_IfExpression__condition->setLowerBound(0);
         m_IfExpression__condition->setUpperBound(1);
@@ -885,7 +902,6 @@ void ExpressionPackage::_initPackage()
         m_IfExpression__condition->setDerived(false);
         m_IfExpression__condition->setOrdered(true);
         m_IfExpression__thenPart->setEType(m_AbstractExpressionEClass);
-        m_IfExpression__thenPart->setName("thenPart");
         m_IfExpression__thenPart->setDefaultValueLiteral("");
         m_IfExpression__thenPart->setLowerBound(0);
         m_IfExpression__thenPart->setUpperBound(1);
@@ -898,7 +914,6 @@ void ExpressionPackage::_initPackage()
         m_IfExpression__thenPart->setDerived(false);
         m_IfExpression__thenPart->setOrdered(true);
         m_IfExpression__elsePart->setEType(m_AbstractExpressionEClass);
-        m_IfExpression__elsePart->setName("elsePart");
         m_IfExpression__elsePart->setDefaultValueLiteral("");
         m_IfExpression__elsePart->setLowerBound(0);
         m_IfExpression__elsePart->setUpperBound(1);
@@ -919,7 +934,6 @@ void ExpressionPackage::_initPackage()
         m_LetExpressionEClass->setInterface(false);
 
         m_LetExpression__varExpression->setEType(m_AbstractExpressionEClass);
-        m_LetExpression__varExpression->setName("varExpression");
         m_LetExpression__varExpression->setDefaultValueLiteral("");
         m_LetExpression__varExpression->setLowerBound(0);
         m_LetExpression__varExpression->setUpperBound(1);
@@ -932,7 +946,6 @@ void ExpressionPackage::_initPackage()
         m_LetExpression__varExpression->setDerived(false);
         m_LetExpression__varExpression->setOrdered(true);
         m_LetExpression__targetExpression->setEType(m_AbstractExpressionEClass);
-        m_LetExpression__targetExpression->setName("targetExpression");
         m_LetExpression__targetExpression->setDefaultValueLiteral("");
         m_LetExpression__targetExpression->setLowerBound(0);
         m_LetExpression__targetExpression->setUpperBound(1);
@@ -946,7 +959,6 @@ void ExpressionPackage::_initPackage()
         m_LetExpression__targetExpression->setOrdered(true);
         m_LetExpression__varName->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_LetExpression__varName->setName("varName");
         m_LetExpression__varName->setDefaultValueLiteral("");
         m_LetExpression__varName->setLowerBound(0);
         m_LetExpression__varName->setUpperBound(1);
@@ -967,7 +979,6 @@ void ExpressionPackage::_initPackage()
         m_ListLiteralEClass->setInterface(false);
 
         m_ListLiteral__elements->setEType(m_AbstractExpressionEClass);
-        m_ListLiteral__elements->setName("elements");
         m_ListLiteral__elements->setDefaultValueLiteral("");
         m_ListLiteral__elements->setLowerBound(0);
         m_ListLiteral__elements->setUpperBound(-1);
@@ -989,7 +1000,6 @@ void ExpressionPackage::_initPackage()
 
         m_Literal__literalValue->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_Literal__literalValue->setName("literalValue");
         m_Literal__literalValue->setDefaultValueLiteral("");
         m_Literal__literalValue->setLowerBound(0);
         m_Literal__literalValue->setUpperBound(1);
@@ -1045,7 +1055,6 @@ void ExpressionPackage::_initPackage()
         m_SwitchExpressionEClass->setInterface(false);
 
         m_SwitchExpression__switchExpr->setEType(m_AbstractExpressionEClass);
-        m_SwitchExpression__switchExpr->setName("switchExpr");
         m_SwitchExpression__switchExpr->setDefaultValueLiteral("");
         m_SwitchExpression__switchExpr->setLowerBound(0);
         m_SwitchExpression__switchExpr->setUpperBound(1);
@@ -1058,7 +1067,6 @@ void ExpressionPackage::_initPackage()
         m_SwitchExpression__switchExpr->setDerived(false);
         m_SwitchExpression__switchExpr->setOrdered(true);
         m_SwitchExpression__defaultExpr->setEType(m_AbstractExpressionEClass);
-        m_SwitchExpression__defaultExpr->setName("defaultExpr");
         m_SwitchExpression__defaultExpr->setDefaultValueLiteral("");
         m_SwitchExpression__defaultExpr->setLowerBound(0);
         m_SwitchExpression__defaultExpr->setUpperBound(1);
@@ -1071,7 +1079,6 @@ void ExpressionPackage::_initPackage()
         m_SwitchExpression__defaultExpr->setDerived(false);
         m_SwitchExpression__defaultExpr->setOrdered(true);
         m_SwitchExpression__cases->setEType(m_CaseEClass);
-        m_SwitchExpression__cases->setName("cases");
         m_SwitchExpression__cases->setDefaultValueLiteral("");
         m_SwitchExpression__cases->setLowerBound(0);
         m_SwitchExpression__cases->setUpperBound(-1);
@@ -1092,7 +1099,6 @@ void ExpressionPackage::_initPackage()
         m_CaseEClass->setInterface(false);
 
         m_Case__condition->setEType(m_AbstractExpressionEClass);
-        m_Case__condition->setName("condition");
         m_Case__condition->setDefaultValueLiteral("");
         m_Case__condition->setLowerBound(0);
         m_Case__condition->setUpperBound(1);
@@ -1105,7 +1111,6 @@ void ExpressionPackage::_initPackage()
         m_Case__condition->setDerived(false);
         m_Case__condition->setOrdered(true);
         m_Case__thenPart->setEType(m_AbstractExpressionEClass);
-        m_Case__thenPart->setName("thenPart");
         m_Case__thenPart->setDefaultValueLiteral("");
         m_Case__thenPart->setLowerBound(0);
         m_Case__thenPart->setUpperBound(1);
@@ -1126,7 +1131,6 @@ void ExpressionPackage::_initPackage()
         m_BinaryOperationEClass->setInterface(false);
 
         m_BinaryOperation__left->setEType(m_AbstractExpressionEClass);
-        m_BinaryOperation__left->setName("left");
         m_BinaryOperation__left->setDefaultValueLiteral("");
         m_BinaryOperation__left->setLowerBound(0);
         m_BinaryOperation__left->setUpperBound(1);
@@ -1139,7 +1143,6 @@ void ExpressionPackage::_initPackage()
         m_BinaryOperation__left->setDerived(false);
         m_BinaryOperation__left->setOrdered(true);
         m_BinaryOperation__right->setEType(m_AbstractExpressionEClass);
-        m_BinaryOperation__right->setName("right");
         m_BinaryOperation__right->setDefaultValueLiteral("");
         m_BinaryOperation__right->setLowerBound(0);
         m_BinaryOperation__right->setUpperBound(1);
@@ -1153,7 +1156,6 @@ void ExpressionPackage::_initPackage()
         m_BinaryOperation__right->setOrdered(true);
         m_BinaryOperation__operator->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_BinaryOperation__operator->setName("operator");
         m_BinaryOperation__operator->setDefaultValueLiteral("");
         m_BinaryOperation__operator->setLowerBound(0);
         m_BinaryOperation__operator->setUpperBound(1);
@@ -1175,7 +1177,6 @@ void ExpressionPackage::_initPackage()
 
         m_UnaryOperation__operator->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_UnaryOperation__operator->setName("operator");
         m_UnaryOperation__operator->setDefaultValueLiteral("");
         m_UnaryOperation__operator->setLowerBound(0);
         m_UnaryOperation__operator->setUpperBound(1);
@@ -1188,7 +1189,6 @@ void ExpressionPackage::_initPackage()
         m_UnaryOperation__operator->setDerived(false);
         m_UnaryOperation__operator->setOrdered(true);
         m_UnaryOperation__operand->setEType(m_AbstractExpressionEClass);
-        m_UnaryOperation__operand->setName("operand");
         m_UnaryOperation__operand->setDefaultValueLiteral("");
         m_UnaryOperation__operand->setLowerBound(0);
         m_UnaryOperation__operand->setUpperBound(1);

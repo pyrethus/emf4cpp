@@ -10,4 +10,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 add_executable(test-edate test.cpp)
 target_link_libraries(test-edate emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-edate)
 
-
+add_test(NAME test-edate COMMAND test-edate)

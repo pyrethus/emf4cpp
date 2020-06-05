@@ -9,4 +9,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 add_executable(test-idlmm test.cpp)
 target_link_libraries(test-idlmm emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-idlmm)
 
-
+add_test(NAME test-idlmm COMMAND test-idlmm)

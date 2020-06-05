@@ -60,6 +60,7 @@ link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.
 
 add_library(emf4cpp-v_1_0_edate SHARED ${v_1_0_edate_HEADERS} ${v_1_0_edate_SOURCES})
 set_target_properties(emf4cpp-v_1_0_edate PROPERTIES COMPILE_FLAGS "-DMAKE_V_1_0_EDATE_DLL" VERSION 0.0.1 SOVERSION 1)
+set_property(TARGET emf4cpp-v_1_0_edate APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
 target_link_libraries(emf4cpp-v_1_0_edate emf4cpp-ecore)
 
 install(TARGETS emf4cpp-v_1_0_edate DESTINATION lib)

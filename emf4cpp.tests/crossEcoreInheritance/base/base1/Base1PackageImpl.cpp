@@ -70,6 +70,7 @@ void Base1Package::_initPackage()
         // m_Base10__valBase10 has already been allocated above
         m_Base10__valBase10->setFeatureID(
                 ::base::base1::Base1Package::BASE10__VALBASE10);
+        m_Base10__valBase10->setName("valBase10");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base10EClass->getEStructuralFeatures()).basicAdd(
                 m_Base10__valBase10);
@@ -84,6 +85,7 @@ void Base1Package::_initPackage()
         // m_Base11__valBase11 has already been allocated above
         m_Base11__valBase11->setFeatureID(
                 ::base::base1::Base1Package::BASE11__VALBASE11);
+        m_Base11__valBase11->setName("valBase11");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base11EClass->getEStructuralFeatures()).basicAdd(
                 m_Base11__valBase11);
@@ -121,7 +123,6 @@ void Base1Package::_initPackage()
         m_Base10EClass->setInterface(false);
         m_Base10__valBase10->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Base10__valBase10->setName("valBase10");
         m_Base10__valBase10->setDefaultValueLiteral("");
         m_Base10__valBase10->setLowerBound(0);
         m_Base10__valBase10->setUpperBound(1);
@@ -142,7 +143,6 @@ void Base1Package::_initPackage()
         m_Base11EClass->setInterface(false);
         m_Base11__valBase11->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Base11__valBase11->setName("valBase11");
         m_Base11__valBase11->setDefaultValueLiteral("");
         m_Base11__valBase11->setLowerBound(0);
         m_Base11__valBase11->setUpperBound(1);

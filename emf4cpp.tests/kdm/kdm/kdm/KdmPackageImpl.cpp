@@ -128,6 +128,7 @@ void KdmPackage::_initPackage()
         // m_KDMFramework__audit has already been allocated above
         m_KDMFramework__audit->setFeatureID(
                 ::kdm::kdm::KdmPackage::KDMFRAMEWORK__AUDIT);
+        m_KDMFramework__audit->setName("audit");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMFrameworkEClass->getEStructuralFeatures()).basicAdd(
                 m_KDMFramework__audit);
@@ -135,6 +136,7 @@ void KdmPackage::_initPackage()
         // m_KDMFramework__extensionFamily has already been allocated above
         m_KDMFramework__extensionFamily->setFeatureID(
                 ::kdm::kdm::KdmPackage::KDMFRAMEWORK__EXTENSIONFAMILY);
+        m_KDMFramework__extensionFamily->setName("extensionFamily");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMFrameworkEClass->getEStructuralFeatures()).basicAdd(
                 m_KDMFramework__extensionFamily);
@@ -143,6 +145,7 @@ void KdmPackage::_initPackage()
         // m_KDMFramework__name has already been allocated above
         m_KDMFramework__name->setFeatureID(
                 ::kdm::kdm::KdmPackage::KDMFRAMEWORK__NAME);
+        m_KDMFramework__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMFrameworkEClass->getEStructuralFeatures()).basicAdd(
                 m_KDMFramework__name);
@@ -165,18 +168,21 @@ void KdmPackage::_initPackage()
         // m_Audit__description has already been allocated above
         m_Audit__description->setFeatureID(
                 ::kdm::kdm::KdmPackage::AUDIT__DESCRIPTION);
+        m_Audit__description->setName("description");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AuditEClass->getEStructuralFeatures()).basicAdd(
                 m_Audit__description);
         m_Audit__description->basicsetEContainingClass(m_AuditEClass);
         // m_Audit__author has already been allocated above
         m_Audit__author->setFeatureID(::kdm::kdm::KdmPackage::AUDIT__AUTHOR);
+        m_Audit__author->setName("author");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AuditEClass->getEStructuralFeatures()).basicAdd(
                 m_Audit__author);
         m_Audit__author->basicsetEContainingClass(m_AuditEClass);
         // m_Audit__date has already been allocated above
         m_Audit__date->setFeatureID(::kdm::kdm::KdmPackage::AUDIT__DATE);
+        m_Audit__date->setName("date");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AuditEClass->getEStructuralFeatures()).basicAdd(
                 m_Audit__date);
@@ -192,12 +198,14 @@ void KdmPackage::_initPackage()
         // m_Segment__segment has already been allocated above
         m_Segment__segment->setFeatureID(
                 ::kdm::kdm::KdmPackage::SEGMENT__SEGMENT);
+        m_Segment__segment->setName("segment");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SegmentEClass->getEStructuralFeatures()).basicAdd(
                 m_Segment__segment);
         m_Segment__segment->basicsetEContainingClass(m_SegmentEClass);
         // m_Segment__model has already been allocated above
         m_Segment__model->setFeatureID(::kdm::kdm::KdmPackage::SEGMENT__MODEL);
+        m_Segment__model->setName("model");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SegmentEClass->getEStructuralFeatures()).basicAdd(
                 m_Segment__model);
@@ -212,6 +220,7 @@ void KdmPackage::_initPackage()
         classifiers.basicAdd(m_AttributeEClass);
         // m_Attribute__tag has already been allocated above
         m_Attribute__tag->setFeatureID(::kdm::kdm::KdmPackage::ATTRIBUTE__TAG);
+        m_Attribute__tag->setName("tag");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AttributeEClass->getEStructuralFeatures()).basicAdd(
                 m_Attribute__tag);
@@ -219,6 +228,7 @@ void KdmPackage::_initPackage()
         // m_Attribute__value has already been allocated above
         m_Attribute__value->setFeatureID(
                 ::kdm::kdm::KdmPackage::ATTRIBUTE__VALUE);
+        m_Attribute__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AttributeEClass->getEStructuralFeatures()).basicAdd(
                 m_Attribute__value);
@@ -234,6 +244,7 @@ void KdmPackage::_initPackage()
         // m_Annotation__text has already been allocated above
         m_Annotation__text->setFeatureID(
                 ::kdm::kdm::KdmPackage::ANNOTATION__TEXT);
+        m_Annotation__text->setName("text");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnnotationEClass->getEStructuralFeatures()).basicAdd(
                 m_Annotation__text);
@@ -249,6 +260,7 @@ void KdmPackage::_initPackage()
         // m_TagDefinition__tag has already been allocated above
         m_TagDefinition__tag->setFeatureID(
                 ::kdm::kdm::KdmPackage::TAGDEFINITION__TAG);
+        m_TagDefinition__tag->setName("tag");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TagDefinitionEClass->getEStructuralFeatures()).basicAdd(
                 m_TagDefinition__tag);
@@ -256,6 +268,7 @@ void KdmPackage::_initPackage()
         // m_TagDefinition__type has already been allocated above
         m_TagDefinition__type->setFeatureID(
                 ::kdm::kdm::KdmPackage::TAGDEFINITION__TYPE);
+        m_TagDefinition__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TagDefinitionEClass->getEStructuralFeatures()).basicAdd(
                 m_TagDefinition__type);
@@ -271,6 +284,7 @@ void KdmPackage::_initPackage()
         // m_ExtendedValue__tag has already been allocated above
         m_ExtendedValue__tag->setFeatureID(
                 ::kdm::kdm::KdmPackage::EXTENDEDVALUE__TAG);
+        m_ExtendedValue__tag->setName("tag");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtendedValueEClass->getEStructuralFeatures()).basicAdd(
                 m_ExtendedValue__tag);
@@ -286,6 +300,7 @@ void KdmPackage::_initPackage()
         // m_Stereotype__tag has already been allocated above
         m_Stereotype__tag->setFeatureID(
                 ::kdm::kdm::KdmPackage::STEREOTYPE__TAG);
+        m_Stereotype__tag->setName("tag");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StereotypeEClass->getEStructuralFeatures()).basicAdd(
                 m_Stereotype__tag);
@@ -293,6 +308,7 @@ void KdmPackage::_initPackage()
         // m_Stereotype__name has already been allocated above
         m_Stereotype__name->setFeatureID(
                 ::kdm::kdm::KdmPackage::STEREOTYPE__NAME);
+        m_Stereotype__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StereotypeEClass->getEStructuralFeatures()).basicAdd(
                 m_Stereotype__name);
@@ -300,6 +316,7 @@ void KdmPackage::_initPackage()
         // m_Stereotype__type has already been allocated above
         m_Stereotype__type->setFeatureID(
                 ::kdm::kdm::KdmPackage::STEREOTYPE__TYPE);
+        m_Stereotype__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StereotypeEClass->getEStructuralFeatures()).basicAdd(
                 m_Stereotype__type);
@@ -315,6 +332,7 @@ void KdmPackage::_initPackage()
         // m_ExtensionFamily__stereotype has already been allocated above
         m_ExtensionFamily__stereotype->setFeatureID(
                 ::kdm::kdm::KdmPackage::EXTENSIONFAMILY__STEREOTYPE);
+        m_ExtensionFamily__stereotype->setName("stereotype");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionFamilyEClass->getEStructuralFeatures()).basicAdd(
                 m_ExtensionFamily__stereotype);
@@ -323,6 +341,7 @@ void KdmPackage::_initPackage()
         // m_ExtensionFamily__name has already been allocated above
         m_ExtensionFamily__name->setFeatureID(
                 ::kdm::kdm::KdmPackage::EXTENSIONFAMILY__NAME);
+        m_ExtensionFamily__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionFamilyEClass->getEStructuralFeatures()).basicAdd(
                 m_ExtensionFamily__name);
@@ -339,6 +358,7 @@ void KdmPackage::_initPackage()
         // m_TaggedRef__reference has already been allocated above
         m_TaggedRef__reference->setFeatureID(
                 ::kdm::kdm::KdmPackage::TAGGEDREF__REFERENCE);
+        m_TaggedRef__reference->setName("reference");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TaggedRefEClass->getEStructuralFeatures()).basicAdd(
                 m_TaggedRef__reference);
@@ -354,6 +374,7 @@ void KdmPackage::_initPackage()
         // m_TaggedValue__value has already been allocated above
         m_TaggedValue__value->setFeatureID(
                 ::kdm::kdm::KdmPackage::TAGGEDVALUE__VALUE);
+        m_TaggedValue__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TaggedValueEClass->getEStructuralFeatures()).basicAdd(
                 m_TaggedValue__value);
@@ -401,7 +422,6 @@ void KdmPackage::_initPackage()
         m_KDMFrameworkEClass->setInterface(false);
         m_KDMFramework__name->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_KDMFramework__name->setName("name");
         m_KDMFramework__name->setDefaultValueLiteral("");
         m_KDMFramework__name->setLowerBound(0);
         m_KDMFramework__name->setUpperBound(1);
@@ -415,7 +435,6 @@ void KdmPackage::_initPackage()
         m_KDMFramework__name->setOrdered(false);
 
         m_KDMFramework__audit->setEType(m_AuditEClass);
-        m_KDMFramework__audit->setName("audit");
         m_KDMFramework__audit->setDefaultValueLiteral("");
         m_KDMFramework__audit->setLowerBound(0);
         m_KDMFramework__audit->setUpperBound(-1);
@@ -428,7 +447,6 @@ void KdmPackage::_initPackage()
         m_KDMFramework__audit->setDerived(false);
         m_KDMFramework__audit->setOrdered(false);
         m_KDMFramework__extensionFamily->setEType(m_ExtensionFamilyEClass);
-        m_KDMFramework__extensionFamily->setName("extensionFamily");
         m_KDMFramework__extensionFamily->setDefaultValueLiteral("");
         m_KDMFramework__extensionFamily->setLowerBound(0);
         m_KDMFramework__extensionFamily->setUpperBound(-1);
@@ -456,7 +474,6 @@ void KdmPackage::_initPackage()
         m_AuditEClass->setInterface(false);
         m_Audit__description->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Audit__description->setName("description");
         m_Audit__description->setDefaultValueLiteral("");
         m_Audit__description->setLowerBound(0);
         m_Audit__description->setUpperBound(1);
@@ -470,7 +487,6 @@ void KdmPackage::_initPackage()
         m_Audit__description->setOrdered(false);
         m_Audit__author->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Audit__author->setName("author");
         m_Audit__author->setDefaultValueLiteral("");
         m_Audit__author->setLowerBound(0);
         m_Audit__author->setUpperBound(1);
@@ -484,7 +500,6 @@ void KdmPackage::_initPackage()
         m_Audit__author->setOrdered(false);
         m_Audit__date->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Audit__date->setName("date");
         m_Audit__date->setDefaultValueLiteral("");
         m_Audit__date->setLowerBound(0);
         m_Audit__date->setUpperBound(1);
@@ -505,7 +520,6 @@ void KdmPackage::_initPackage()
         m_SegmentEClass->setInterface(false);
 
         m_Segment__segment->setEType(m_SegmentEClass);
-        m_Segment__segment->setName("segment");
         m_Segment__segment->setDefaultValueLiteral("");
         m_Segment__segment->setLowerBound(0);
         m_Segment__segment->setUpperBound(-1);
@@ -518,7 +532,6 @@ void KdmPackage::_initPackage()
         m_Segment__segment->setDerived(false);
         m_Segment__segment->setOrdered(false);
         m_Segment__model->setEType(m_KDMModelEClass);
-        m_Segment__model->setName("model");
         m_Segment__model->setDefaultValueLiteral("");
         m_Segment__model->setLowerBound(0);
         m_Segment__model->setUpperBound(-1);
@@ -539,7 +552,6 @@ void KdmPackage::_initPackage()
         m_AttributeEClass->setInterface(false);
         m_Attribute__tag->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Attribute__tag->setName("tag");
         m_Attribute__tag->setDefaultValueLiteral("");
         m_Attribute__tag->setLowerBound(0);
         m_Attribute__tag->setUpperBound(1);
@@ -553,7 +565,6 @@ void KdmPackage::_initPackage()
         m_Attribute__tag->setOrdered(false);
         m_Attribute__value->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Attribute__value->setName("value");
         m_Attribute__value->setDefaultValueLiteral("");
         m_Attribute__value->setLowerBound(0);
         m_Attribute__value->setUpperBound(1);
@@ -574,7 +585,6 @@ void KdmPackage::_initPackage()
         m_AnnotationEClass->setInterface(false);
         m_Annotation__text->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Annotation__text->setName("text");
         m_Annotation__text->setDefaultValueLiteral("");
         m_Annotation__text->setLowerBound(0);
         m_Annotation__text->setUpperBound(1);
@@ -595,7 +605,6 @@ void KdmPackage::_initPackage()
         m_TagDefinitionEClass->setInterface(false);
         m_TagDefinition__tag->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_TagDefinition__tag->setName("tag");
         m_TagDefinition__tag->setDefaultValueLiteral("");
         m_TagDefinition__tag->setLowerBound(0);
         m_TagDefinition__tag->setUpperBound(1);
@@ -609,7 +618,6 @@ void KdmPackage::_initPackage()
         m_TagDefinition__tag->setOrdered(false);
         m_TagDefinition__type->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_TagDefinition__type->setName("type");
         m_TagDefinition__type->setDefaultValueLiteral("");
         m_TagDefinition__type->setLowerBound(0);
         m_TagDefinition__type->setUpperBound(1);
@@ -630,7 +638,6 @@ void KdmPackage::_initPackage()
         m_ExtendedValueEClass->setInterface(false);
 
         m_ExtendedValue__tag->setEType(m_TagDefinitionEClass);
-        m_ExtendedValue__tag->setName("tag");
         m_ExtendedValue__tag->setDefaultValueLiteral("");
         m_ExtendedValue__tag->setLowerBound(1);
         m_ExtendedValue__tag->setUpperBound(1);
@@ -651,7 +658,6 @@ void KdmPackage::_initPackage()
         m_StereotypeEClass->setInterface(false);
         m_Stereotype__name->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Stereotype__name->setName("name");
         m_Stereotype__name->setDefaultValueLiteral("");
         m_Stereotype__name->setLowerBound(0);
         m_Stereotype__name->setUpperBound(1);
@@ -665,7 +671,6 @@ void KdmPackage::_initPackage()
         m_Stereotype__name->setOrdered(false);
         m_Stereotype__type->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Stereotype__type->setName("type");
         m_Stereotype__type->setDefaultValueLiteral("");
         m_Stereotype__type->setLowerBound(0);
         m_Stereotype__type->setUpperBound(1);
@@ -679,7 +684,6 @@ void KdmPackage::_initPackage()
         m_Stereotype__type->setOrdered(false);
 
         m_Stereotype__tag->setEType(m_TagDefinitionEClass);
-        m_Stereotype__tag->setName("tag");
         m_Stereotype__tag->setDefaultValueLiteral("");
         m_Stereotype__tag->setLowerBound(0);
         m_Stereotype__tag->setUpperBound(-1);
@@ -700,7 +704,6 @@ void KdmPackage::_initPackage()
         m_ExtensionFamilyEClass->setInterface(false);
         m_ExtensionFamily__name->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_ExtensionFamily__name->setName("name");
         m_ExtensionFamily__name->setDefaultValueLiteral("");
         m_ExtensionFamily__name->setLowerBound(0);
         m_ExtensionFamily__name->setUpperBound(1);
@@ -714,7 +717,6 @@ void KdmPackage::_initPackage()
         m_ExtensionFamily__name->setOrdered(false);
 
         m_ExtensionFamily__stereotype->setEType(m_StereotypeEClass);
-        m_ExtensionFamily__stereotype->setName("stereotype");
         m_ExtensionFamily__stereotype->setDefaultValueLiteral("");
         m_ExtensionFamily__stereotype->setLowerBound(0);
         m_ExtensionFamily__stereotype->setUpperBound(-1);
@@ -736,7 +738,6 @@ void KdmPackage::_initPackage()
 
         m_TaggedRef__reference->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getModelElement());
-        m_TaggedRef__reference->setName("reference");
         m_TaggedRef__reference->setDefaultValueLiteral("");
         m_TaggedRef__reference->setLowerBound(1);
         m_TaggedRef__reference->setUpperBound(1);
@@ -757,7 +758,6 @@ void KdmPackage::_initPackage()
         m_TaggedValueEClass->setInterface(false);
         m_TaggedValue__value->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_TaggedValue__value->setName("value");
         m_TaggedValue__value->setDefaultValueLiteral("");
         m_TaggedValue__value->setLowerBound(0);
         m_TaggedValue__value->setUpperBound(1);

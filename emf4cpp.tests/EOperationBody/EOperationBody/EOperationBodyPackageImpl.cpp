@@ -65,6 +65,7 @@ void EOperationBodyPackage::_initPackage()
         // m_Integer__value has already been allocated above
         m_Integer__value->setFeatureID(
                 ::EOperationBody::EOperationBodyPackage::INTEGER__VALUE);
+        m_Integer__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IntegerEClass->getEStructuralFeatures()).basicAdd(
                 m_Integer__value);
@@ -92,7 +93,6 @@ void EOperationBodyPackage::_initPackage()
         m_IntegerEClass->setInterface(false);
         m_Integer__value->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Integer__value->setName("value");
         m_Integer__value->setDefaultValueLiteral("");
         m_Integer__value->setLowerBound(0);
         m_Integer__value->setUpperBound(1);

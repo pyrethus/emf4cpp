@@ -20,4 +20,5 @@ int main(int argc, char* argv[])
 	sum->increment();
 
 	std::cout << "expected 42, got " << sum->getValue() << "\n";
+	return (42 == sum->getValue()) ? 0 : 1;
 }

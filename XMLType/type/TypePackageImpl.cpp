@@ -100,12 +100,14 @@ void TypePackage::_initPackage()
         classifiers.basicAdd(m_AnyTypeEClass);
         // m_AnyType__mixed has already been allocated above
         m_AnyType__mixed->setFeatureID(::type::TypePackage::ANYTYPE__MIXED);
+        m_AnyType__mixed->setName("mixed");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_AnyType__mixed);
         m_AnyType__mixed->basicsetEContainingClass(m_AnyTypeEClass);
         // m_AnyType__any has already been allocated above
         m_AnyType__any->setFeatureID(::type::TypePackage::ANYTYPE__ANY);
+        m_AnyType__any->setName("any");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_AnyType__any);
@@ -113,6 +115,7 @@ void TypePackage::_initPackage()
         // m_AnyType__anyAttribute has already been allocated above
         m_AnyType__anyAttribute->setFeatureID(
                 ::type::TypePackage::ANYTYPE__ANYATTRIBUTE);
+        m_AnyType__anyAttribute->setName("anyAttribute");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_AnyType__anyAttribute);
@@ -128,6 +131,7 @@ void TypePackage::_initPackage()
         // m_ProcessingInstruction__data has already been allocated above
         m_ProcessingInstruction__data->setFeatureID(
                 ::type::TypePackage::PROCESSINGINSTRUCTION__DATA);
+        m_ProcessingInstruction__data->setName("data");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProcessingInstructionEClass->getEStructuralFeatures()).basicAdd(
                 m_ProcessingInstruction__data);
@@ -136,6 +140,7 @@ void TypePackage::_initPackage()
         // m_ProcessingInstruction__target has already been allocated above
         m_ProcessingInstruction__target->setFeatureID(
                 ::type::TypePackage::PROCESSINGINSTRUCTION__TARGET);
+        m_ProcessingInstruction__target->setName("target");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProcessingInstructionEClass->getEStructuralFeatures()).basicAdd(
                 m_ProcessingInstruction__target);
@@ -152,6 +157,7 @@ void TypePackage::_initPackage()
         // m_SimpleAnyType__rawValue has already been allocated above
         m_SimpleAnyType__rawValue->setFeatureID(
                 ::type::TypePackage::SIMPLEANYTYPE__RAWVALUE);
+        m_SimpleAnyType__rawValue->setName("rawValue");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_SimpleAnyType__rawValue);
@@ -160,6 +166,7 @@ void TypePackage::_initPackage()
         // m_SimpleAnyType__value has already been allocated above
         m_SimpleAnyType__value->setFeatureID(
                 ::type::TypePackage::SIMPLEANYTYPE__VALUE);
+        m_SimpleAnyType__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_SimpleAnyType__value);
@@ -167,6 +174,7 @@ void TypePackage::_initPackage()
         // m_SimpleAnyType__instanceType has already been allocated above
         m_SimpleAnyType__instanceType->setFeatureID(
                 ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE);
+        m_SimpleAnyType__instanceType->setName("instanceType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_SimpleAnyType__instanceType);
@@ -183,6 +191,7 @@ void TypePackage::_initPackage()
         // m_XMLTypeDocumentRoot__mixed has already been allocated above
         m_XMLTypeDocumentRoot__mixed->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__MIXED);
+        m_XMLTypeDocumentRoot__mixed->setName("mixed");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
                 m_XMLTypeDocumentRoot__mixed);
@@ -191,6 +200,7 @@ void TypePackage::_initPackage()
         // m_XMLTypeDocumentRoot__xMLNSPrefixMap has already been allocated above
         m_XMLTypeDocumentRoot__xMLNSPrefixMap->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP);
+        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setName("xMLNSPrefixMap");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
                 m_XMLTypeDocumentRoot__xMLNSPrefixMap);
@@ -199,6 +209,7 @@ void TypePackage::_initPackage()
         // m_XMLTypeDocumentRoot__xSISchemaLocation has already been allocated above
         m_XMLTypeDocumentRoot__xSISchemaLocation->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION);
+        m_XMLTypeDocumentRoot__xSISchemaLocation->setName("xSISchemaLocation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
                 m_XMLTypeDocumentRoot__xSISchemaLocation);
@@ -207,6 +218,7 @@ void TypePackage::_initPackage()
         // m_XMLTypeDocumentRoot__cDATA has already been allocated above
         m_XMLTypeDocumentRoot__cDATA->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__CDATA);
+        m_XMLTypeDocumentRoot__cDATA->setName("cDATA");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
                 m_XMLTypeDocumentRoot__cDATA);
@@ -215,6 +227,7 @@ void TypePackage::_initPackage()
         // m_XMLTypeDocumentRoot__comment has already been allocated above
         m_XMLTypeDocumentRoot__comment->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__COMMENT);
+        m_XMLTypeDocumentRoot__comment->setName("comment");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
                 m_XMLTypeDocumentRoot__comment);
@@ -223,6 +236,8 @@ void TypePackage::_initPackage()
         // m_XMLTypeDocumentRoot__processingInstruction has already been allocated above
         m_XMLTypeDocumentRoot__processingInstruction->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__PROCESSINGINSTRUCTION);
+        m_XMLTypeDocumentRoot__processingInstruction->setName(
+                "processingInstruction");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
                 m_XMLTypeDocumentRoot__processingInstruction);
@@ -231,6 +246,7 @@ void TypePackage::_initPackage()
         // m_XMLTypeDocumentRoot__text has already been allocated above
         m_XMLTypeDocumentRoot__text->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__TEXT);
+        m_XMLTypeDocumentRoot__text->setName("text");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
                 m_XMLTypeDocumentRoot__text);
@@ -724,7 +740,6 @@ void TypePackage::_initPackage()
         m_AnyTypeEClass->setInterface(false);
         m_AnyType__mixed->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-        m_AnyType__mixed->setName("mixed");
         m_AnyType__mixed->setDefaultValueLiteral("");
         m_AnyType__mixed->setLowerBound(0);
         m_AnyType__mixed->setUpperBound(-1);
@@ -738,7 +753,6 @@ void TypePackage::_initPackage()
         m_AnyType__mixed->setOrdered(true);
         m_AnyType__any->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-        m_AnyType__any->setName("any");
         m_AnyType__any->setDefaultValueLiteral("");
         m_AnyType__any->setLowerBound(0);
         m_AnyType__any->setUpperBound(-1);
@@ -752,7 +766,6 @@ void TypePackage::_initPackage()
         m_AnyType__any->setOrdered(true);
         m_AnyType__anyAttribute->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-        m_AnyType__anyAttribute->setName("anyAttribute");
         m_AnyType__anyAttribute->setDefaultValueLiteral("");
         m_AnyType__anyAttribute->setLowerBound(0);
         m_AnyType__anyAttribute->setUpperBound(-1);
@@ -772,7 +785,6 @@ void TypePackage::_initPackage()
         m_ProcessingInstructionEClass->setAbstract(false);
         m_ProcessingInstructionEClass->setInterface(false);
         m_ProcessingInstruction__data->setEType(m_StringEDataType);
-        m_ProcessingInstruction__data->setName("data");
         m_ProcessingInstruction__data->setDefaultValueLiteral("");
         m_ProcessingInstruction__data->setLowerBound(0);
         m_ProcessingInstruction__data->setUpperBound(1);
@@ -785,7 +797,6 @@ void TypePackage::_initPackage()
         m_ProcessingInstruction__data->setDerived(false);
         m_ProcessingInstruction__data->setOrdered(true);
         m_ProcessingInstruction__target->setEType(m_StringEDataType);
-        m_ProcessingInstruction__target->setName("target");
         m_ProcessingInstruction__target->setDefaultValueLiteral("");
         m_ProcessingInstruction__target->setLowerBound(1);
         m_ProcessingInstruction__target->setUpperBound(1);
@@ -805,7 +816,6 @@ void TypePackage::_initPackage()
         m_SimpleAnyTypeEClass->setAbstract(false);
         m_SimpleAnyTypeEClass->setInterface(false);
         m_SimpleAnyType__rawValue->setEType(m_StringEDataType);
-        m_SimpleAnyType__rawValue->setName("rawValue");
         m_SimpleAnyType__rawValue->setDefaultValueLiteral("");
         m_SimpleAnyType__rawValue->setLowerBound(0);
         m_SimpleAnyType__rawValue->setUpperBound(1);
@@ -818,7 +828,6 @@ void TypePackage::_initPackage()
         m_SimpleAnyType__rawValue->setDerived(true);
         m_SimpleAnyType__rawValue->setOrdered(true);
         m_SimpleAnyType__value->setEType(m_AnySimpleTypeEDataType);
-        m_SimpleAnyType__value->setName("value");
         m_SimpleAnyType__value->setDefaultValueLiteral("");
         m_SimpleAnyType__value->setLowerBound(0);
         m_SimpleAnyType__value->setUpperBound(1);
@@ -833,7 +842,6 @@ void TypePackage::_initPackage()
 
         m_SimpleAnyType__instanceType->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDataType());
-        m_SimpleAnyType__instanceType->setName("instanceType");
         m_SimpleAnyType__instanceType->setDefaultValueLiteral("");
         m_SimpleAnyType__instanceType->setLowerBound(1);
         m_SimpleAnyType__instanceType->setUpperBound(1);
@@ -854,7 +862,6 @@ void TypePackage::_initPackage()
         m_XMLTypeDocumentRootEClass->setInterface(false);
         m_XMLTypeDocumentRoot__mixed->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-        m_XMLTypeDocumentRoot__mixed->setName("mixed");
         m_XMLTypeDocumentRoot__mixed->setDefaultValueLiteral("");
         m_XMLTypeDocumentRoot__mixed->setLowerBound(0);
         m_XMLTypeDocumentRoot__mixed->setUpperBound(-1);
@@ -867,7 +874,6 @@ void TypePackage::_initPackage()
         m_XMLTypeDocumentRoot__mixed->setDerived(false);
         m_XMLTypeDocumentRoot__mixed->setOrdered(true);
         m_XMLTypeDocumentRoot__cDATA->setEType(m_StringEDataType);
-        m_XMLTypeDocumentRoot__cDATA->setName("cDATA");
         m_XMLTypeDocumentRoot__cDATA->setDefaultValueLiteral("");
         m_XMLTypeDocumentRoot__cDATA->setLowerBound(0);
         m_XMLTypeDocumentRoot__cDATA->setUpperBound(-2);
@@ -880,7 +886,6 @@ void TypePackage::_initPackage()
         m_XMLTypeDocumentRoot__cDATA->setDerived(true);
         m_XMLTypeDocumentRoot__cDATA->setOrdered(true);
         m_XMLTypeDocumentRoot__comment->setEType(m_StringEDataType);
-        m_XMLTypeDocumentRoot__comment->setName("comment");
         m_XMLTypeDocumentRoot__comment->setDefaultValueLiteral("");
         m_XMLTypeDocumentRoot__comment->setLowerBound(0);
         m_XMLTypeDocumentRoot__comment->setUpperBound(-2);
@@ -893,7 +898,6 @@ void TypePackage::_initPackage()
         m_XMLTypeDocumentRoot__comment->setDerived(true);
         m_XMLTypeDocumentRoot__comment->setOrdered(true);
         m_XMLTypeDocumentRoot__text->setEType(m_StringEDataType);
-        m_XMLTypeDocumentRoot__text->setName("text");
         m_XMLTypeDocumentRoot__text->setDefaultValueLiteral("");
         m_XMLTypeDocumentRoot__text->setLowerBound(0);
         m_XMLTypeDocumentRoot__text->setUpperBound(-2);
@@ -908,7 +912,6 @@ void TypePackage::_initPackage()
 
         m_XMLTypeDocumentRoot__xMLNSPrefixMap->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setName("xMLNSPrefixMap");
         m_XMLTypeDocumentRoot__xMLNSPrefixMap->setDefaultValueLiteral("");
         m_XMLTypeDocumentRoot__xMLNSPrefixMap->setLowerBound(0);
         m_XMLTypeDocumentRoot__xMLNSPrefixMap->setUpperBound(-1);
@@ -922,7 +925,6 @@ void TypePackage::_initPackage()
         m_XMLTypeDocumentRoot__xMLNSPrefixMap->setOrdered(true);
         m_XMLTypeDocumentRoot__xSISchemaLocation->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setName("xSISchemaLocation");
         m_XMLTypeDocumentRoot__xSISchemaLocation->setDefaultValueLiteral("");
         m_XMLTypeDocumentRoot__xSISchemaLocation->setLowerBound(0);
         m_XMLTypeDocumentRoot__xSISchemaLocation->setUpperBound(-1);
@@ -936,8 +938,6 @@ void TypePackage::_initPackage()
         m_XMLTypeDocumentRoot__xSISchemaLocation->setOrdered(true);
         m_XMLTypeDocumentRoot__processingInstruction->setEType(
                 m_ProcessingInstructionEClass);
-        m_XMLTypeDocumentRoot__processingInstruction->setName(
-                "processingInstruction");
         m_XMLTypeDocumentRoot__processingInstruction->setDefaultValueLiteral(
                 "");
         m_XMLTypeDocumentRoot__processingInstruction->setLowerBound(0);

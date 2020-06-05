@@ -66,6 +66,7 @@ void TopLevelPackagePackage::_initPackage()
         // m_TopLevelClass__reference has already been allocated above
         m_TopLevelClass__reference->setFeatureID(
                 ::TopLevelPackage::TopLevelPackagePackage::TOPLEVELCLASS__REFERENCE);
+        m_TopLevelClass__reference->setName("reference");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TopLevelClassEClass->getEStructuralFeatures()).basicAdd(
                 m_TopLevelClass__reference);
@@ -98,7 +99,6 @@ void TopLevelPackagePackage::_initPackage()
 
         m_TopLevelClass__reference->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEObject());
-        m_TopLevelClass__reference->setName("reference");
         m_TopLevelClass__reference->setDefaultValueLiteral("");
         m_TopLevelClass__reference->setLowerBound(0);
         m_TopLevelClass__reference->setUpperBound(1);

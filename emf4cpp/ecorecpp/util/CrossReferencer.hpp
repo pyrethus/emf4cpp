@@ -21,7 +21,6 @@
 #define CrossReferencer_HPP
 
 #include <map>
-#include <boost/intrusive_ptr.hpp>
 
 #include <ecorecpp/dllEcorecpp.hpp>
 #include <ecorecpp/mapping/EListImpl.hpp>

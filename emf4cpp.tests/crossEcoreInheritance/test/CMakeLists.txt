@@ -8,4 +8,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 add_executable(test_base1 main.cpp)
 target_link_libraries(test_base1 emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-base emf4cpp-derived)
 
-
+add_test(NAME test-cross-inheritance COMMAND test_base1)

@@ -9,4 +9,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 add_executable(test-eopposite test.cpp)
 target_link_libraries(test-eopposite emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-eopposite)
 
-
+add_test(NAME test-eopposite COMMAND test-eopposite)

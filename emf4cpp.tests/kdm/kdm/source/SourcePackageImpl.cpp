@@ -149,6 +149,7 @@ void SourcePackage::_initPackage()
         // m_SourceRef__region has already been allocated above
         m_SourceRef__region->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREF__REGION);
+        m_SourceRef__region->setName("region");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRef__region);
@@ -156,6 +157,7 @@ void SourcePackage::_initPackage()
         // m_SourceRef__language has already been allocated above
         m_SourceRef__language->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREF__LANGUAGE);
+        m_SourceRef__language->setName("language");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRef__language);
@@ -163,6 +165,7 @@ void SourcePackage::_initPackage()
         // m_SourceRef__snippet has already been allocated above
         m_SourceRef__snippet->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREF__SNIPPET);
+        m_SourceRef__snippet->setName("snippet");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRef__snippet);
@@ -178,6 +181,7 @@ void SourcePackage::_initPackage()
         // m_SourceRegion__file has already been allocated above
         m_SourceRegion__file->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREGION__FILE);
+        m_SourceRegion__file->setName("file");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRegion__file);
@@ -185,6 +189,7 @@ void SourcePackage::_initPackage()
         // m_SourceRegion__startLine has already been allocated above
         m_SourceRegion__startLine->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREGION__STARTLINE);
+        m_SourceRegion__startLine->setName("startLine");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRegion__startLine);
@@ -193,6 +198,7 @@ void SourcePackage::_initPackage()
         // m_SourceRegion__startPosition has already been allocated above
         m_SourceRegion__startPosition->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREGION__STARTPOSITION);
+        m_SourceRegion__startPosition->setName("startPosition");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRegion__startPosition);
@@ -201,6 +207,7 @@ void SourcePackage::_initPackage()
         // m_SourceRegion__endLine has already been allocated above
         m_SourceRegion__endLine->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREGION__ENDLINE);
+        m_SourceRegion__endLine->setName("endLine");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRegion__endLine);
@@ -208,6 +215,7 @@ void SourcePackage::_initPackage()
         // m_SourceRegion__endPosition has already been allocated above
         m_SourceRegion__endPosition->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREGION__ENDPOSITION);
+        m_SourceRegion__endPosition->setName("endPosition");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRegion__endPosition);
@@ -216,6 +224,7 @@ void SourcePackage::_initPackage()
         // m_SourceRegion__language has already been allocated above
         m_SourceRegion__language->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREGION__LANGUAGE);
+        m_SourceRegion__language->setName("language");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRegion__language);
@@ -224,6 +233,7 @@ void SourcePackage::_initPackage()
         // m_SourceRegion__path has already been allocated above
         m_SourceRegion__path->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEREGION__PATH);
+        m_SourceRegion__path->setName("path");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceRegion__path);
@@ -239,6 +249,7 @@ void SourcePackage::_initPackage()
         // m_InventoryModel__inventoryElement has already been allocated above
         m_InventoryModel__inventoryElement->setFeatureID(
                 ::kdm::source::SourcePackage::INVENTORYMODEL__INVENTORYELEMENT);
+        m_InventoryModel__inventoryElement->setName("inventoryElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryModelEClass->getEStructuralFeatures()).basicAdd(
                 m_InventoryModel__inventoryElement);
@@ -256,6 +267,8 @@ void SourcePackage::_initPackage()
         // m_AbstractInventoryElement__inventoryRelation has already been allocated above
         m_AbstractInventoryElement__inventoryRelation->setFeatureID(
                 ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION);
+        m_AbstractInventoryElement__inventoryRelation->setName(
+                "inventoryRelation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractInventoryElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractInventoryElement__inventoryRelation);
@@ -272,6 +285,7 @@ void SourcePackage::_initPackage()
         // m_InventoryItem__version has already been allocated above
         m_InventoryItem__version->setFeatureID(
                 ::kdm::source::SourcePackage::INVENTORYITEM__VERSION);
+        m_InventoryItem__version->setName("version");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryItemEClass->getEStructuralFeatures()).basicAdd(
                 m_InventoryItem__version);
@@ -280,6 +294,7 @@ void SourcePackage::_initPackage()
         // m_InventoryItem__path has already been allocated above
         m_InventoryItem__path->setFeatureID(
                 ::kdm::source::SourcePackage::INVENTORYITEM__PATH);
+        m_InventoryItem__path->setName("path");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryItemEClass->getEStructuralFeatures()).basicAdd(
                 m_InventoryItem__path);
@@ -295,6 +310,7 @@ void SourcePackage::_initPackage()
         // m_SourceFile__language has already been allocated above
         m_SourceFile__language->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEFILE__LANGUAGE);
+        m_SourceFile__language->setName("language");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceFileEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceFile__language);
@@ -302,6 +318,7 @@ void SourcePackage::_initPackage()
         // m_SourceFile__encoding has already been allocated above
         m_SourceFile__encoding->setFeatureID(
                 ::kdm::source::SourcePackage::SOURCEFILE__ENCODING);
+        m_SourceFile__encoding->setName("encoding");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceFileEClass->getEStructuralFeatures()).basicAdd(
                 m_SourceFile__encoding);
@@ -340,6 +357,7 @@ void SourcePackage::_initPackage()
         // m_InventoryContainer__inventoryElement has already been allocated above
         m_InventoryContainer__inventoryElement->setFeatureID(
                 ::kdm::source::SourcePackage::INVENTORYCONTAINER__INVENTORYELEMENT);
+        m_InventoryContainer__inventoryElement->setName("inventoryElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryContainerEClass->getEStructuralFeatures()).basicAdd(
                 m_InventoryContainer__inventoryElement);
@@ -356,6 +374,7 @@ void SourcePackage::_initPackage()
         // m_Directory__path has already been allocated above
         m_Directory__path->setFeatureID(
                 ::kdm::source::SourcePackage::DIRECTORY__PATH);
+        m_Directory__path->setName("path");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DirectoryEClass->getEStructuralFeatures()).basicAdd(
                 m_Directory__path);
@@ -404,6 +423,7 @@ void SourcePackage::_initPackage()
         // m_DependsOn__to has already been allocated above
         m_DependsOn__to->setFeatureID(
                 ::kdm::source::SourcePackage::DEPENDSON__TO);
+        m_DependsOn__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DependsOnEClass->getEStructuralFeatures()).basicAdd(
                 m_DependsOn__to);
@@ -411,6 +431,7 @@ void SourcePackage::_initPackage()
         // m_DependsOn__from has already been allocated above
         m_DependsOn__from->setFeatureID(
                 ::kdm::source::SourcePackage::DEPENDSON__FROM);
+        m_DependsOn__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DependsOnEClass->getEStructuralFeatures()).basicAdd(
                 m_DependsOn__from);
@@ -434,6 +455,7 @@ void SourcePackage::_initPackage()
         // m_InventoryRelationship__to has already been allocated above
         m_InventoryRelationship__to->setFeatureID(
                 ::kdm::source::SourcePackage::INVENTORYRELATIONSHIP__TO);
+        m_InventoryRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_InventoryRelationship__to);
@@ -442,6 +464,7 @@ void SourcePackage::_initPackage()
         // m_InventoryRelationship__from has already been allocated above
         m_InventoryRelationship__from->setFeatureID(
                 ::kdm::source::SourcePackage::INVENTORYRELATIONSHIP__FROM);
+        m_InventoryRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_InventoryRelationship__from);
@@ -499,7 +522,6 @@ void SourcePackage::_initPackage()
         m_SourceRefEClass->setInterface(false);
         m_SourceRef__language->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceRef__language->setName("language");
         m_SourceRef__language->setDefaultValueLiteral("");
         m_SourceRef__language->setLowerBound(0);
         m_SourceRef__language->setUpperBound(1);
@@ -513,7 +535,6 @@ void SourcePackage::_initPackage()
         m_SourceRef__language->setOrdered(false);
         m_SourceRef__snippet->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceRef__snippet->setName("snippet");
         m_SourceRef__snippet->setDefaultValueLiteral("");
         m_SourceRef__snippet->setLowerBound(0);
         m_SourceRef__snippet->setUpperBound(1);
@@ -527,7 +548,6 @@ void SourcePackage::_initPackage()
         m_SourceRef__snippet->setOrdered(false);
 
         m_SourceRef__region->setEType(m_SourceRegionEClass);
-        m_SourceRef__region->setName("region");
         m_SourceRef__region->setDefaultValueLiteral("");
         m_SourceRef__region->setLowerBound(0);
         m_SourceRef__region->setUpperBound(-1);
@@ -548,7 +568,6 @@ void SourcePackage::_initPackage()
         m_SourceRegionEClass->setInterface(false);
         m_SourceRegion__startLine->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SourceRegion__startLine->setName("startLine");
         m_SourceRegion__startLine->setDefaultValueLiteral("");
         m_SourceRegion__startLine->setLowerBound(0);
         m_SourceRegion__startLine->setUpperBound(1);
@@ -562,7 +581,6 @@ void SourcePackage::_initPackage()
         m_SourceRegion__startLine->setOrdered(false);
         m_SourceRegion__startPosition->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SourceRegion__startPosition->setName("startPosition");
         m_SourceRegion__startPosition->setDefaultValueLiteral("");
         m_SourceRegion__startPosition->setLowerBound(0);
         m_SourceRegion__startPosition->setUpperBound(1);
@@ -576,7 +594,6 @@ void SourcePackage::_initPackage()
         m_SourceRegion__startPosition->setOrdered(false);
         m_SourceRegion__endLine->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SourceRegion__endLine->setName("endLine");
         m_SourceRegion__endLine->setDefaultValueLiteral("");
         m_SourceRegion__endLine->setLowerBound(0);
         m_SourceRegion__endLine->setUpperBound(1);
@@ -590,7 +607,6 @@ void SourcePackage::_initPackage()
         m_SourceRegion__endLine->setOrdered(false);
         m_SourceRegion__endPosition->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SourceRegion__endPosition->setName("endPosition");
         m_SourceRegion__endPosition->setDefaultValueLiteral("");
         m_SourceRegion__endPosition->setLowerBound(0);
         m_SourceRegion__endPosition->setUpperBound(1);
@@ -604,7 +620,6 @@ void SourcePackage::_initPackage()
         m_SourceRegion__endPosition->setOrdered(false);
         m_SourceRegion__language->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceRegion__language->setName("language");
         m_SourceRegion__language->setDefaultValueLiteral("");
         m_SourceRegion__language->setLowerBound(0);
         m_SourceRegion__language->setUpperBound(1);
@@ -618,7 +633,6 @@ void SourcePackage::_initPackage()
         m_SourceRegion__language->setOrdered(false);
         m_SourceRegion__path->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceRegion__path->setName("path");
         m_SourceRegion__path->setDefaultValueLiteral("");
         m_SourceRegion__path->setLowerBound(0);
         m_SourceRegion__path->setUpperBound(1);
@@ -632,7 +646,6 @@ void SourcePackage::_initPackage()
         m_SourceRegion__path->setOrdered(false);
 
         m_SourceRegion__file->setEType(m_SourceFileEClass);
-        m_SourceRegion__file->setName("file");
         m_SourceRegion__file->setDefaultValueLiteral("");
         m_SourceRegion__file->setLowerBound(0);
         m_SourceRegion__file->setUpperBound(1);
@@ -654,7 +667,6 @@ void SourcePackage::_initPackage()
 
         m_InventoryModel__inventoryElement->setEType(
                 m_AbstractInventoryElementEClass);
-        m_InventoryModel__inventoryElement->setName("inventoryElement");
         m_InventoryModel__inventoryElement->setDefaultValueLiteral("");
         m_InventoryModel__inventoryElement->setLowerBound(0);
         m_InventoryModel__inventoryElement->setUpperBound(-1);
@@ -676,8 +688,6 @@ void SourcePackage::_initPackage()
 
         m_AbstractInventoryElement__inventoryRelation->setEType(
                 m_AbstractInventoryRelationshipEClass);
-        m_AbstractInventoryElement__inventoryRelation->setName(
-                "inventoryRelation");
         m_AbstractInventoryElement__inventoryRelation->setDefaultValueLiteral(
                 "");
         m_AbstractInventoryElement__inventoryRelation->setLowerBound(0);
@@ -699,7 +709,6 @@ void SourcePackage::_initPackage()
         m_InventoryItemEClass->setInterface(false);
         m_InventoryItem__version->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_InventoryItem__version->setName("version");
         m_InventoryItem__version->setDefaultValueLiteral("");
         m_InventoryItem__version->setLowerBound(0);
         m_InventoryItem__version->setUpperBound(1);
@@ -713,7 +722,6 @@ void SourcePackage::_initPackage()
         m_InventoryItem__version->setOrdered(false);
         m_InventoryItem__path->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_InventoryItem__path->setName("path");
         m_InventoryItem__path->setDefaultValueLiteral("");
         m_InventoryItem__path->setLowerBound(0);
         m_InventoryItem__path->setUpperBound(1);
@@ -734,7 +742,6 @@ void SourcePackage::_initPackage()
         m_SourceFileEClass->setInterface(false);
         m_SourceFile__language->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceFile__language->setName("language");
         m_SourceFile__language->setDefaultValueLiteral("");
         m_SourceFile__language->setLowerBound(0);
         m_SourceFile__language->setUpperBound(1);
@@ -748,7 +755,6 @@ void SourcePackage::_initPackage()
         m_SourceFile__language->setOrdered(false);
         m_SourceFile__encoding->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceFile__encoding->setName("encoding");
         m_SourceFile__encoding->setDefaultValueLiteral("");
         m_SourceFile__encoding->setLowerBound(0);
         m_SourceFile__encoding->setUpperBound(1);
@@ -791,7 +797,6 @@ void SourcePackage::_initPackage()
 
         m_InventoryContainer__inventoryElement->setEType(
                 m_AbstractInventoryElementEClass);
-        m_InventoryContainer__inventoryElement->setName("inventoryElement");
         m_InventoryContainer__inventoryElement->setDefaultValueLiteral("");
         m_InventoryContainer__inventoryElement->setLowerBound(0);
         m_InventoryContainer__inventoryElement->setUpperBound(-1);
@@ -812,7 +817,6 @@ void SourcePackage::_initPackage()
         m_DirectoryEClass->setInterface(false);
         m_Directory__path->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Directory__path->setName("path");
         m_Directory__path->setDefaultValueLiteral("");
         m_Directory__path->setLowerBound(0);
         m_Directory__path->setUpperBound(1);
@@ -862,7 +866,6 @@ void SourcePackage::_initPackage()
         m_DependsOnEClass->setInterface(false);
 
         m_DependsOn__to->setEType(m_AbstractInventoryElementEClass);
-        m_DependsOn__to->setName("to");
         m_DependsOn__to->setDefaultValueLiteral("");
         m_DependsOn__to->setLowerBound(1);
         m_DependsOn__to->setUpperBound(1);
@@ -875,7 +878,6 @@ void SourcePackage::_initPackage()
         m_DependsOn__to->setDerived(false);
         m_DependsOn__to->setOrdered(false);
         m_DependsOn__from->setEType(m_AbstractInventoryElementEClass);
-        m_DependsOn__from->setName("from");
         m_DependsOn__from->setDefaultValueLiteral("");
         m_DependsOn__from->setLowerBound(1);
         m_DependsOn__from->setUpperBound(1);
@@ -904,7 +906,6 @@ void SourcePackage::_initPackage()
 
         m_InventoryRelationship__to->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_InventoryRelationship__to->setName("to");
         m_InventoryRelationship__to->setDefaultValueLiteral("");
         m_InventoryRelationship__to->setLowerBound(1);
         m_InventoryRelationship__to->setUpperBound(1);
@@ -918,7 +919,6 @@ void SourcePackage::_initPackage()
         m_InventoryRelationship__to->setOrdered(false);
         m_InventoryRelationship__from->setEType(
                 m_AbstractInventoryElementEClass);
-        m_InventoryRelationship__from->setName("from");
         m_InventoryRelationship__from->setDefaultValueLiteral("");
         m_InventoryRelationship__from->setLowerBound(1);
         m_InventoryRelationship__from->setUpperBound(1);

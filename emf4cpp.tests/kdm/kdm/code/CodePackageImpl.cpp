@@ -381,6 +381,7 @@ void CodePackage::_initPackage()
         // m_AbstractCodeElement__source has already been allocated above
         m_AbstractCodeElement__source->setFeatureID(
                 ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__SOURCE);
+        m_AbstractCodeElement__source->setName("source");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractCodeElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractCodeElement__source);
@@ -389,6 +390,7 @@ void CodePackage::_initPackage()
         // m_AbstractCodeElement__comment has already been allocated above
         m_AbstractCodeElement__comment->setFeatureID(
                 ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__COMMENT);
+        m_AbstractCodeElement__comment->setName("comment");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractCodeElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractCodeElement__comment);
@@ -397,6 +399,7 @@ void CodePackage::_initPackage()
         // m_AbstractCodeElement__codeRelation has already been allocated above
         m_AbstractCodeElement__codeRelation->setFeatureID(
                 ::kdm::code::CodePackage::ABSTRACTCODEELEMENT__CODERELATION);
+        m_AbstractCodeElement__codeRelation->setName("codeRelation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractCodeElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractCodeElement__codeRelation);
@@ -429,6 +432,7 @@ void CodePackage::_initPackage()
         // m_ControlElement__type has already been allocated above
         m_ControlElement__type->setFeatureID(
                 ::kdm::code::CodePackage::CONTROLELEMENT__TYPE);
+        m_ControlElement__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ControlElement__type);
@@ -437,6 +441,7 @@ void CodePackage::_initPackage()
         // m_ControlElement__entryFlow has already been allocated above
         m_ControlElement__entryFlow->setFeatureID(
                 ::kdm::code::CodePackage::CONTROLELEMENT__ENTRYFLOW);
+        m_ControlElement__entryFlow->setName("entryFlow");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ControlElement__entryFlow);
@@ -445,6 +450,7 @@ void CodePackage::_initPackage()
         // m_ControlElement__codeElement has already been allocated above
         m_ControlElement__codeElement->setFeatureID(
                 ::kdm::code::CodePackage::CONTROLELEMENT__CODEELEMENT);
+        m_ControlElement__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ControlElement__codeElement);
@@ -461,6 +467,7 @@ void CodePackage::_initPackage()
         // m_MethodUnit__kind has already been allocated above
         m_MethodUnit__kind->setFeatureID(
                 ::kdm::code::CodePackage::METHODUNIT__KIND);
+        m_MethodUnit__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MethodUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_MethodUnit__kind);
@@ -468,6 +475,7 @@ void CodePackage::_initPackage()
         // m_MethodUnit__export has already been allocated above
         m_MethodUnit__export->setFeatureID(
                 ::kdm::code::CodePackage::METHODUNIT__EXPORT);
+        m_MethodUnit__export->setName("export");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MethodUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_MethodUnit__export);
@@ -482,6 +490,7 @@ void CodePackage::_initPackage()
         // m_Module__codeElement has already been allocated above
         m_Module__codeElement->setFeatureID(
                 ::kdm::code::CodePackage::MODULE__CODEELEMENT);
+        m_Module__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModuleEClass->getEStructuralFeatures()).basicAdd(
                 m_Module__codeElement);
@@ -505,6 +514,7 @@ void CodePackage::_initPackage()
         // m_CallableUnit__kind has already been allocated above
         m_CallableUnit__kind->setFeatureID(
                 ::kdm::code::CodePackage::CALLABLEUNIT__KIND);
+        m_CallableUnit__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CallableUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_CallableUnit__kind);
@@ -528,6 +538,7 @@ void CodePackage::_initPackage()
         // m_TemplateUnit__codeElement has already been allocated above
         m_TemplateUnit__codeElement->setFeatureID(
                 ::kdm::code::CodePackage::TEMPLATEUNIT__CODEELEMENT);
+        m_TemplateUnit__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TemplateUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_TemplateUnit__codeElement);
@@ -561,6 +572,7 @@ void CodePackage::_initPackage()
         // m_InstanceOf__to has already been allocated above
         m_InstanceOf__to->setFeatureID(
                 ::kdm::code::CodePackage::INSTANCEOF__TO);
+        m_InstanceOf__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InstanceOfEClass->getEStructuralFeatures()).basicAdd(
                 m_InstanceOf__to);
@@ -568,6 +580,7 @@ void CodePackage::_initPackage()
         // m_InstanceOf__from has already been allocated above
         m_InstanceOf__from->setFeatureID(
                 ::kdm::code::CodePackage::INSTANCEOF__FROM);
+        m_InstanceOf__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InstanceOfEClass->getEStructuralFeatures()).basicAdd(
                 m_InstanceOf__from);
@@ -591,6 +604,7 @@ void CodePackage::_initPackage()
         // m_CodeModel__codeElement has already been allocated above
         m_CodeModel__codeElement->setFeatureID(
                 ::kdm::code::CodePackage::CODEMODEL__CODEELEMENT);
+        m_CodeModel__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CodeModelEClass->getEStructuralFeatures()).basicAdd(
                 m_CodeModel__codeElement);
@@ -606,6 +620,7 @@ void CodePackage::_initPackage()
         // m_DerivedType__itemUnit has already been allocated above
         m_DerivedType__itemUnit->setFeatureID(
                 ::kdm::code::CodePackage::DERIVEDTYPE__ITEMUNIT);
+        m_DerivedType__itemUnit->setName("itemUnit");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DerivedTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_DerivedType__itemUnit);
@@ -621,6 +636,7 @@ void CodePackage::_initPackage()
         // m_ArrayType__size has already been allocated above
         m_ArrayType__size->setFeatureID(
                 ::kdm::code::CodePackage::ARRAYTYPE__SIZE);
+        m_ArrayType__size->setName("size");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ArrayTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_ArrayType__size);
@@ -628,6 +644,7 @@ void CodePackage::_initPackage()
         // m_ArrayType__indexUnit has already been allocated above
         m_ArrayType__indexUnit->setFeatureID(
                 ::kdm::code::CodePackage::ARRAYTYPE__INDEXUNIT);
+        m_ArrayType__indexUnit->setName("indexUnit");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ArrayTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_ArrayType__indexUnit);
@@ -667,6 +684,7 @@ void CodePackage::_initPackage()
         // m_ClassUnit__isAbstract has already been allocated above
         m_ClassUnit__isAbstract->setFeatureID(
                 ::kdm::code::CodePackage::CLASSUNIT__ISABSTRACT);
+        m_ClassUnit__isAbstract->setName("isAbstract");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ClassUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_ClassUnit__isAbstract);
@@ -674,6 +692,7 @@ void CodePackage::_initPackage()
         // m_ClassUnit__codeElement has already been allocated above
         m_ClassUnit__codeElement->setFeatureID(
                 ::kdm::code::CodePackage::CLASSUNIT__CODEELEMENT);
+        m_ClassUnit__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ClassUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_ClassUnit__codeElement);
@@ -689,6 +708,7 @@ void CodePackage::_initPackage()
         // m_CompositeType__itemUnit has already been allocated above
         m_CompositeType__itemUnit->setFeatureID(
                 ::kdm::code::CodePackage::COMPOSITETYPE__ITEMUNIT);
+        m_CompositeType__itemUnit->setName("itemUnit");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompositeTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_CompositeType__itemUnit);
@@ -713,6 +733,7 @@ void CodePackage::_initPackage()
         // m_EnumeratedType__value has already been allocated above
         m_EnumeratedType__value->setFeatureID(
                 ::kdm::code::CodePackage::ENUMERATEDTYPE__VALUE);
+        m_EnumeratedType__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EnumeratedTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_EnumeratedType__value);
@@ -728,12 +749,14 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_ExtendsEClass);
         // m_Extends__to has already been allocated above
         m_Extends__to->setFeatureID(::kdm::code::CodePackage::EXTENDS__TO);
+        m_Extends__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtendsEClass->getEStructuralFeatures()).basicAdd(
                 m_Extends__to);
         m_Extends__to->basicsetEContainingClass(m_ExtendsEClass);
         // m_Extends__from has already been allocated above
         m_Extends__from->setFeatureID(::kdm::code::CodePackage::EXTENDS__FROM);
+        m_Extends__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtendsEClass->getEStructuralFeatures()).basicAdd(
                 m_Extends__from);
@@ -764,12 +787,14 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_HasTypeEClass);
         // m_HasType__to has already been allocated above
         m_HasType__to->setFeatureID(::kdm::code::CodePackage::HASTYPE__TO);
+        m_HasType__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_HasType__to);
         m_HasType__to->basicsetEContainingClass(m_HasTypeEClass);
         // m_HasType__from has already been allocated above
         m_HasType__from->setFeatureID(::kdm::code::CodePackage::HASTYPE__FROM);
+        m_HasType__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_HasType__from);
@@ -785,6 +810,7 @@ void CodePackage::_initPackage()
         // m_ImplementationOf__to has already been allocated above
         m_ImplementationOf__to->setFeatureID(
                 ::kdm::code::CodePackage::IMPLEMENTATIONOF__TO);
+        m_ImplementationOf__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImplementationOfEClass->getEStructuralFeatures()).basicAdd(
                 m_ImplementationOf__to);
@@ -793,6 +819,7 @@ void CodePackage::_initPackage()
         // m_ImplementationOf__from has already been allocated above
         m_ImplementationOf__from->setFeatureID(
                 ::kdm::code::CodePackage::IMPLEMENTATIONOF__FROM);
+        m_ImplementationOf__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImplementationOfEClass->getEStructuralFeatures()).basicAdd(
                 m_ImplementationOf__from);
@@ -809,6 +836,7 @@ void CodePackage::_initPackage()
         // m_Implements__to has already been allocated above
         m_Implements__to->setFeatureID(
                 ::kdm::code::CodePackage::IMPLEMENTS__TO);
+        m_Implements__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImplementsEClass->getEStructuralFeatures()).basicAdd(
                 m_Implements__to);
@@ -816,6 +844,7 @@ void CodePackage::_initPackage()
         // m_Implements__from has already been allocated above
         m_Implements__from->setFeatureID(
                 ::kdm::code::CodePackage::IMPLEMENTS__FROM);
+        m_Implements__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImplementsEClass->getEStructuralFeatures()).basicAdd(
                 m_Implements__from);
@@ -839,6 +868,7 @@ void CodePackage::_initPackage()
         // m_InterfaceUnit__codeElement has already been allocated above
         m_InterfaceUnit__codeElement->setFeatureID(
                 ::kdm::code::CodePackage::INTERFACEUNIT__CODEELEMENT);
+        m_InterfaceUnit__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InterfaceUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_InterfaceUnit__codeElement);
@@ -863,6 +893,7 @@ void CodePackage::_initPackage()
         // m_DefinedType__type has already been allocated above
         m_DefinedType__type->setFeatureID(
                 ::kdm::code::CodePackage::DEFINEDTYPE__TYPE);
+        m_DefinedType__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_DefinedType__type);
@@ -870,6 +901,7 @@ void CodePackage::_initPackage()
         // m_DefinedType__codeElement has already been allocated above
         m_DefinedType__codeElement->setFeatureID(
                 ::kdm::code::CodePackage::DEFINEDTYPE__CODEELEMENT);
+        m_DefinedType__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_DefinedType__codeElement);
@@ -894,6 +926,7 @@ void CodePackage::_initPackage()
         // m_RangeType__lower has already been allocated above
         m_RangeType__lower->setFeatureID(
                 ::kdm::code::CodePackage::RANGETYPE__LOWER);
+        m_RangeType__lower->setName("lower");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RangeTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_RangeType__lower);
@@ -901,6 +934,7 @@ void CodePackage::_initPackage()
         // m_RangeType__upper has already been allocated above
         m_RangeType__upper->setFeatureID(
                 ::kdm::code::CodePackage::RANGETYPE__UPPER);
+        m_RangeType__upper->setName("upper");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RangeTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_RangeType__upper);
@@ -916,6 +950,7 @@ void CodePackage::_initPackage()
         // m_Signature__parameterUnit has already been allocated above
         m_Signature__parameterUnit->setFeatureID(
                 ::kdm::code::CodePackage::SIGNATURE__PARAMETERUNIT);
+        m_Signature__parameterUnit->setName("parameterUnit");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SignatureEClass->getEStructuralFeatures()).basicAdd(
                 m_Signature__parameterUnit);
@@ -931,6 +966,7 @@ void CodePackage::_initPackage()
         // m_DataElement__type has already been allocated above
         m_DataElement__type->setFeatureID(
                 ::kdm::code::CodePackage::DATAELEMENT__TYPE);
+        m_DataElement__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataElementEClass->getEStructuralFeatures()).basicAdd(
                 m_DataElement__type);
@@ -938,6 +974,7 @@ void CodePackage::_initPackage()
         // m_DataElement__ext has already been allocated above
         m_DataElement__ext->setFeatureID(
                 ::kdm::code::CodePackage::DATAELEMENT__EXT);
+        m_DataElement__ext->setName("ext");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataElementEClass->getEStructuralFeatures()).basicAdd(
                 m_DataElement__ext);
@@ -945,6 +982,7 @@ void CodePackage::_initPackage()
         // m_DataElement__size has already been allocated above
         m_DataElement__size->setFeatureID(
                 ::kdm::code::CodePackage::DATAELEMENT__SIZE);
+        m_DataElement__size->setName("size");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataElementEClass->getEStructuralFeatures()).basicAdd(
                 m_DataElement__size);
@@ -952,6 +990,7 @@ void CodePackage::_initPackage()
         // m_DataElement__codeElement has already been allocated above
         m_DataElement__codeElement->setFeatureID(
                 ::kdm::code::CodePackage::DATAELEMENT__CODEELEMENT);
+        m_DataElement__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataElementEClass->getEStructuralFeatures()).basicAdd(
                 m_DataElement__codeElement);
@@ -984,6 +1023,7 @@ void CodePackage::_initPackage()
         // m_NamespaceUnit__groupedCode has already been allocated above
         m_NamespaceUnit__groupedCode->setFeatureID(
                 ::kdm::code::CodePackage::NAMESPACEUNIT__GROUPEDCODE);
+        m_NamespaceUnit__groupedCode->setName("groupedCode");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NamespaceUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_NamespaceUnit__groupedCode);
@@ -999,6 +1039,7 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_VisibleInEClass);
         // m_VisibleIn__to has already been allocated above
         m_VisibleIn__to->setFeatureID(::kdm::code::CodePackage::VISIBLEIN__TO);
+        m_VisibleIn__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_VisibleInEClass->getEStructuralFeatures()).basicAdd(
                 m_VisibleIn__to);
@@ -1006,6 +1047,7 @@ void CodePackage::_initPackage()
         // m_VisibleIn__from has already been allocated above
         m_VisibleIn__from->setFeatureID(
                 ::kdm::code::CodePackage::VISIBLEIN__FROM);
+        m_VisibleIn__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_VisibleInEClass->getEStructuralFeatures()).basicAdd(
                 m_VisibleIn__from);
@@ -1021,6 +1063,7 @@ void CodePackage::_initPackage()
         // m_CommentUnit__text has already been allocated above
         m_CommentUnit__text->setFeatureID(
                 ::kdm::code::CodePackage::COMMENTUNIT__TEXT);
+        m_CommentUnit__text->setName("text");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CommentUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_CommentUnit__text);
@@ -1091,6 +1134,7 @@ void CodePackage::_initPackage()
         // m_ValueList__valueElement has already been allocated above
         m_ValueList__valueElement->setFeatureID(
                 ::kdm::code::CodePackage::VALUELIST__VALUEELEMENT);
+        m_ValueList__valueElement->setName("valueElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ValueListEClass->getEStructuralFeatures()).basicAdd(
                 m_ValueList__valueElement);
@@ -1106,6 +1150,7 @@ void CodePackage::_initPackage()
         // m_StorableUnit__kind has already been allocated above
         m_StorableUnit__kind->setFeatureID(
                 ::kdm::code::CodePackage::STORABLEUNIT__KIND);
+        m_StorableUnit__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_StorableUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_StorableUnit__kind);
@@ -1121,6 +1166,7 @@ void CodePackage::_initPackage()
         // m_MemberUnit__export has already been allocated above
         m_MemberUnit__export->setFeatureID(
                 ::kdm::code::CodePackage::MEMBERUNIT__EXPORT);
+        m_MemberUnit__export->setName("export");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MemberUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_MemberUnit__export);
@@ -1136,6 +1182,7 @@ void CodePackage::_initPackage()
         // m_ParameterUnit__kind has already been allocated above
         m_ParameterUnit__kind->setFeatureID(
                 ::kdm::code::CodePackage::PARAMETERUNIT__KIND);
+        m_ParameterUnit__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_ParameterUnit__kind);
@@ -1143,6 +1190,7 @@ void CodePackage::_initPackage()
         // m_ParameterUnit__pos has already been allocated above
         m_ParameterUnit__pos->setFeatureID(
                 ::kdm::code::CodePackage::PARAMETERUNIT__POS);
+        m_ParameterUnit__pos->setName("pos");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_ParameterUnit__pos);
@@ -1182,6 +1230,7 @@ void CodePackage::_initPackage()
         // m_SequenceType__size has already been allocated above
         m_SequenceType__size->setFeatureID(
                 ::kdm::code::CodePackage::SEQUENCETYPE__SIZE);
+        m_SequenceType__size->setName("size");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SequenceTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_SequenceType__size);
@@ -1196,6 +1245,7 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_BagTypeEClass);
         // m_BagType__size has already been allocated above
         m_BagType__size->setFeatureID(::kdm::code::CodePackage::BAGTYPE__SIZE);
+        m_BagType__size->setName("size");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BagTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_BagType__size);
@@ -1210,6 +1260,7 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_SetTypeEClass);
         // m_SetType__size has already been allocated above
         m_SetType__size->setFeatureID(::kdm::code::CodePackage::SETTYPE__SIZE);
+        m_SetType__size->setName("size");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SetTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_SetType__size);
@@ -1233,6 +1284,7 @@ void CodePackage::_initPackage()
         // m_CodeRelationship__to has already been allocated above
         m_CodeRelationship__to->setFeatureID(
                 ::kdm::code::CodePackage::CODERELATIONSHIP__TO);
+        m_CodeRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CodeRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_CodeRelationship__to);
@@ -1241,6 +1293,7 @@ void CodePackage::_initPackage()
         // m_CodeRelationship__from has already been allocated above
         m_CodeRelationship__from->setFeatureID(
                 ::kdm::code::CodePackage::CODERELATIONSHIP__FROM);
+        m_CodeRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CodeRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_CodeRelationship__from);
@@ -1304,12 +1357,14 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_ImportsEClass);
         // m_Imports__to has already been allocated above
         m_Imports__to->setFeatureID(::kdm::code::CodePackage::IMPORTS__TO);
+        m_Imports__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportsEClass->getEStructuralFeatures()).basicAdd(
                 m_Imports__to);
         m_Imports__to->basicsetEContainingClass(m_ImportsEClass);
         // m_Imports__from has already been allocated above
         m_Imports__from->setFeatureID(::kdm::code::CodePackage::IMPORTS__FROM);
+        m_Imports__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportsEClass->getEStructuralFeatures()).basicAdd(
                 m_Imports__from);
@@ -1333,6 +1388,7 @@ void CodePackage::_initPackage()
         // m_ParameterTo__to has already been allocated above
         m_ParameterTo__to->setFeatureID(
                 ::kdm::code::CodePackage::PARAMETERTO__TO);
+        m_ParameterTo__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterToEClass->getEStructuralFeatures()).basicAdd(
                 m_ParameterTo__to);
@@ -1340,6 +1396,7 @@ void CodePackage::_initPackage()
         // m_ParameterTo__from has already been allocated above
         m_ParameterTo__from->setFeatureID(
                 ::kdm::code::CodePackage::PARAMETERTO__FROM);
+        m_ParameterTo__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ParameterToEClass->getEStructuralFeatures()).basicAdd(
                 m_ParameterTo__from);
@@ -1363,6 +1420,7 @@ void CodePackage::_initPackage()
         // m_PreprocessorDirective__codeElement has already been allocated above
         m_PreprocessorDirective__codeElement->setFeatureID(
                 ::kdm::code::CodePackage::PREPROCESSORDIRECTIVE__CODEELEMENT);
+        m_PreprocessorDirective__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PreprocessorDirectiveEClass->getEStructuralFeatures()).basicAdd(
                 m_PreprocessorDirective__codeElement);
@@ -1387,6 +1445,7 @@ void CodePackage::_initPackage()
         // m_MacroUnit__kind has already been allocated above
         m_MacroUnit__kind->setFeatureID(
                 ::kdm::code::CodePackage::MACROUNIT__KIND);
+        m_MacroUnit__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MacroUnitEClass->getEStructuralFeatures()).basicAdd(
                 m_MacroUnit__kind);
@@ -1417,6 +1476,7 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_VariantToEClass);
         // m_VariantTo__to has already been allocated above
         m_VariantTo__to->setFeatureID(::kdm::code::CodePackage::VARIANTTO__TO);
+        m_VariantTo__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_VariantToEClass->getEStructuralFeatures()).basicAdd(
                 m_VariantTo__to);
@@ -1424,6 +1484,7 @@ void CodePackage::_initPackage()
         // m_VariantTo__from has already been allocated above
         m_VariantTo__from->setFeatureID(
                 ::kdm::code::CodePackage::VARIANTTO__FROM);
+        m_VariantTo__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_VariantToEClass->getEStructuralFeatures()).basicAdd(
                 m_VariantTo__from);
@@ -1438,12 +1499,14 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_ExpandsEClass);
         // m_Expands__to has already been allocated above
         m_Expands__to->setFeatureID(::kdm::code::CodePackage::EXPANDS__TO);
+        m_Expands__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandsEClass->getEStructuralFeatures()).basicAdd(
                 m_Expands__to);
         m_Expands__to->basicsetEContainingClass(m_ExpandsEClass);
         // m_Expands__from has already been allocated above
         m_Expands__from->setFeatureID(::kdm::code::CodePackage::EXPANDS__FROM);
+        m_Expands__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandsEClass->getEStructuralFeatures()).basicAdd(
                 m_Expands__from);
@@ -1458,6 +1521,7 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_RedefinesEClass);
         // m_Redefines__to has already been allocated above
         m_Redefines__to->setFeatureID(::kdm::code::CodePackage::REDEFINES__TO);
+        m_Redefines__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RedefinesEClass->getEStructuralFeatures()).basicAdd(
                 m_Redefines__to);
@@ -1465,6 +1529,7 @@ void CodePackage::_initPackage()
         // m_Redefines__from has already been allocated above
         m_Redefines__from->setFeatureID(
                 ::kdm::code::CodePackage::REDEFINES__FROM);
+        m_Redefines__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RedefinesEClass->getEStructuralFeatures()).basicAdd(
                 m_Redefines__from);
@@ -1480,6 +1545,7 @@ void CodePackage::_initPackage()
         // m_GeneratedFrom__to has already been allocated above
         m_GeneratedFrom__to->setFeatureID(
                 ::kdm::code::CodePackage::GENERATEDFROM__TO);
+        m_GeneratedFrom__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_GeneratedFromEClass->getEStructuralFeatures()).basicAdd(
                 m_GeneratedFrom__to);
@@ -1487,6 +1553,7 @@ void CodePackage::_initPackage()
         // m_GeneratedFrom__from has already been allocated above
         m_GeneratedFrom__from->setFeatureID(
                 ::kdm::code::CodePackage::GENERATEDFROM__FROM);
+        m_GeneratedFrom__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_GeneratedFromEClass->getEStructuralFeatures()).basicAdd(
                 m_GeneratedFrom__from);
@@ -1501,6 +1568,7 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_IncludesEClass);
         // m_Includes__to has already been allocated above
         m_Includes__to->setFeatureID(::kdm::code::CodePackage::INCLUDES__TO);
+        m_Includes__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IncludesEClass->getEStructuralFeatures()).basicAdd(
                 m_Includes__to);
@@ -1508,6 +1576,7 @@ void CodePackage::_initPackage()
         // m_Includes__from has already been allocated above
         m_Includes__from->setFeatureID(
                 ::kdm::code::CodePackage::INCLUDES__FROM);
+        m_Includes__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IncludesEClass->getEStructuralFeatures()).basicAdd(
                 m_Includes__from);
@@ -1522,6 +1591,7 @@ void CodePackage::_initPackage()
         classifiers.basicAdd(m_HasValueEClass);
         // m_HasValue__to has already been allocated above
         m_HasValue__to->setFeatureID(::kdm::code::CodePackage::HASVALUE__TO);
+        m_HasValue__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasValueEClass->getEStructuralFeatures()).basicAdd(
                 m_HasValue__to);
@@ -1529,6 +1599,7 @@ void CodePackage::_initPackage()
         // m_HasValue__from has already been allocated above
         m_HasValue__from->setFeatureID(
                 ::kdm::code::CodePackage::HASVALUE__FROM);
+        m_HasValue__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasValueEClass->getEStructuralFeatures()).basicAdd(
                 m_HasValue__from);
@@ -1713,7 +1784,6 @@ void CodePackage::_initPackage()
 
         m_AbstractCodeElement__source->setEType(
                 dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_AbstractCodeElement__source->setName("source");
         m_AbstractCodeElement__source->setDefaultValueLiteral("");
         m_AbstractCodeElement__source->setLowerBound(0);
         m_AbstractCodeElement__source->setUpperBound(-1);
@@ -1726,7 +1796,6 @@ void CodePackage::_initPackage()
         m_AbstractCodeElement__source->setDerived(false);
         m_AbstractCodeElement__source->setOrdered(false);
         m_AbstractCodeElement__comment->setEType(m_CommentUnitEClass);
-        m_AbstractCodeElement__comment->setName("comment");
         m_AbstractCodeElement__comment->setDefaultValueLiteral("");
         m_AbstractCodeElement__comment->setLowerBound(0);
         m_AbstractCodeElement__comment->setUpperBound(-1);
@@ -1740,7 +1809,6 @@ void CodePackage::_initPackage()
         m_AbstractCodeElement__comment->setOrdered(false);
         m_AbstractCodeElement__codeRelation->setEType(
                 m_AbstractCodeRelationshipEClass);
-        m_AbstractCodeElement__codeRelation->setName("codeRelation");
         m_AbstractCodeElement__codeRelation->setDefaultValueLiteral("");
         m_AbstractCodeElement__codeRelation->setLowerBound(0);
         m_AbstractCodeElement__codeRelation->setUpperBound(-1);
@@ -1775,7 +1843,6 @@ void CodePackage::_initPackage()
         m_ControlElementEClass->setInterface(false);
 
         m_ControlElement__type->setEType(m_DatatypeEClass);
-        m_ControlElement__type->setName("type");
         m_ControlElement__type->setDefaultValueLiteral("");
         m_ControlElement__type->setLowerBound(0);
         m_ControlElement__type->setUpperBound(1);
@@ -1789,7 +1856,6 @@ void CodePackage::_initPackage()
         m_ControlElement__type->setOrdered(false);
         m_ControlElement__entryFlow->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getEntryFlow());
-        m_ControlElement__entryFlow->setName("entryFlow");
         m_ControlElement__entryFlow->setDefaultValueLiteral("");
         m_ControlElement__entryFlow->setLowerBound(0);
         m_ControlElement__entryFlow->setUpperBound(-1);
@@ -1802,7 +1868,6 @@ void CodePackage::_initPackage()
         m_ControlElement__entryFlow->setDerived(false);
         m_ControlElement__entryFlow->setOrdered(false);
         m_ControlElement__codeElement->setEType(m_AbstractCodeElementEClass);
-        m_ControlElement__codeElement->setName("codeElement");
         m_ControlElement__codeElement->setDefaultValueLiteral("");
         m_ControlElement__codeElement->setLowerBound(0);
         m_ControlElement__codeElement->setUpperBound(-1);
@@ -1822,7 +1887,6 @@ void CodePackage::_initPackage()
         m_MethodUnitEClass->setAbstract(false);
         m_MethodUnitEClass->setInterface(false);
         m_MethodUnit__kind->setEType(m_MethodKindEEnum);
-        m_MethodUnit__kind->setName("kind");
         m_MethodUnit__kind->setDefaultValueLiteral("");
         m_MethodUnit__kind->setLowerBound(0);
         m_MethodUnit__kind->setUpperBound(1);
@@ -1835,7 +1899,6 @@ void CodePackage::_initPackage()
         m_MethodUnit__kind->setDerived(false);
         m_MethodUnit__kind->setOrdered(false);
         m_MethodUnit__export->setEType(m_ExportKindEEnum);
-        m_MethodUnit__export->setName("export");
         m_MethodUnit__export->setDefaultValueLiteral("");
         m_MethodUnit__export->setLowerBound(0);
         m_MethodUnit__export->setUpperBound(1);
@@ -1856,7 +1919,6 @@ void CodePackage::_initPackage()
         m_ModuleEClass->setInterface(false);
 
         m_Module__codeElement->setEType(m_AbstractCodeElementEClass);
-        m_Module__codeElement->setName("codeElement");
         m_Module__codeElement->setDefaultValueLiteral("");
         m_Module__codeElement->setLowerBound(0);
         m_Module__codeElement->setUpperBound(-1);
@@ -1883,7 +1945,6 @@ void CodePackage::_initPackage()
         m_CallableUnitEClass->setAbstract(false);
         m_CallableUnitEClass->setInterface(false);
         m_CallableUnit__kind->setEType(m_CallableKindEEnum);
-        m_CallableUnit__kind->setName("kind");
         m_CallableUnit__kind->setDefaultValueLiteral("");
         m_CallableUnit__kind->setLowerBound(0);
         m_CallableUnit__kind->setUpperBound(1);
@@ -1911,7 +1972,6 @@ void CodePackage::_initPackage()
         m_TemplateUnitEClass->setInterface(false);
 
         m_TemplateUnit__codeElement->setEType(m_CodeItemEClass);
-        m_TemplateUnit__codeElement->setName("codeElement");
         m_TemplateUnit__codeElement->setDefaultValueLiteral("");
         m_TemplateUnit__codeElement->setLowerBound(0);
         m_TemplateUnit__codeElement->setUpperBound(-1);
@@ -1946,7 +2006,6 @@ void CodePackage::_initPackage()
         m_InstanceOfEClass->setInterface(false);
 
         m_InstanceOf__to->setEType(m_TemplateUnitEClass);
-        m_InstanceOf__to->setName("to");
         m_InstanceOf__to->setDefaultValueLiteral("");
         m_InstanceOf__to->setLowerBound(1);
         m_InstanceOf__to->setUpperBound(1);
@@ -1959,7 +2018,6 @@ void CodePackage::_initPackage()
         m_InstanceOf__to->setDerived(false);
         m_InstanceOf__to->setOrdered(false);
         m_InstanceOf__from->setEType(m_AbstractCodeElementEClass);
-        m_InstanceOf__from->setName("from");
         m_InstanceOf__from->setDefaultValueLiteral("");
         m_InstanceOf__from->setLowerBound(1);
         m_InstanceOf__from->setUpperBound(1);
@@ -1987,7 +2045,6 @@ void CodePackage::_initPackage()
         m_CodeModelEClass->setInterface(false);
 
         m_CodeModel__codeElement->setEType(m_AbstractCodeElementEClass);
-        m_CodeModel__codeElement->setName("codeElement");
         m_CodeModel__codeElement->setDefaultValueLiteral("");
         m_CodeModel__codeElement->setLowerBound(0);
         m_CodeModel__codeElement->setUpperBound(-1);
@@ -2008,7 +2065,6 @@ void CodePackage::_initPackage()
         m_DerivedTypeEClass->setInterface(false);
 
         m_DerivedType__itemUnit->setEType(m_ItemUnitEClass);
-        m_DerivedType__itemUnit->setName("itemUnit");
         m_DerivedType__itemUnit->setDefaultValueLiteral("");
         m_DerivedType__itemUnit->setLowerBound(1);
         m_DerivedType__itemUnit->setUpperBound(1);
@@ -2029,7 +2085,6 @@ void CodePackage::_initPackage()
         m_ArrayTypeEClass->setInterface(false);
         m_ArrayType__size->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_ArrayType__size->setName("size");
         m_ArrayType__size->setDefaultValueLiteral("");
         m_ArrayType__size->setLowerBound(0);
         m_ArrayType__size->setUpperBound(1);
@@ -2043,7 +2098,6 @@ void CodePackage::_initPackage()
         m_ArrayType__size->setOrdered(false);
 
         m_ArrayType__indexUnit->setEType(m_IndexUnitEClass);
-        m_ArrayType__indexUnit->setName("indexUnit");
         m_ArrayType__indexUnit->setDefaultValueLiteral("");
         m_ArrayType__indexUnit->setLowerBound(1);
         m_ArrayType__indexUnit->setUpperBound(1);
@@ -2085,7 +2139,6 @@ void CodePackage::_initPackage()
         m_ClassUnitEClass->setInterface(false);
         m_ClassUnit__isAbstract->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getBoolean());
-        m_ClassUnit__isAbstract->setName("isAbstract");
         m_ClassUnit__isAbstract->setDefaultValueLiteral("");
         m_ClassUnit__isAbstract->setLowerBound(0);
         m_ClassUnit__isAbstract->setUpperBound(1);
@@ -2099,7 +2152,6 @@ void CodePackage::_initPackage()
         m_ClassUnit__isAbstract->setOrdered(false);
 
         m_ClassUnit__codeElement->setEType(m_CodeItemEClass);
-        m_ClassUnit__codeElement->setName("codeElement");
         m_ClassUnit__codeElement->setDefaultValueLiteral("");
         m_ClassUnit__codeElement->setLowerBound(0);
         m_ClassUnit__codeElement->setUpperBound(-1);
@@ -2120,7 +2172,6 @@ void CodePackage::_initPackage()
         m_CompositeTypeEClass->setInterface(false);
 
         m_CompositeType__itemUnit->setEType(m_ItemUnitEClass);
-        m_CompositeType__itemUnit->setName("itemUnit");
         m_CompositeType__itemUnit->setDefaultValueLiteral("");
         m_CompositeType__itemUnit->setLowerBound(0);
         m_CompositeType__itemUnit->setUpperBound(-1);
@@ -2148,7 +2199,6 @@ void CodePackage::_initPackage()
         m_EnumeratedTypeEClass->setInterface(false);
 
         m_EnumeratedType__value->setEType(m_ValueEClass);
-        m_EnumeratedType__value->setName("value");
         m_EnumeratedType__value->setDefaultValueLiteral("");
         m_EnumeratedType__value->setLowerBound(0);
         m_EnumeratedType__value->setUpperBound(-1);
@@ -2169,7 +2219,6 @@ void CodePackage::_initPackage()
         m_ExtendsEClass->setInterface(false);
 
         m_Extends__to->setEType(m_DatatypeEClass);
-        m_Extends__to->setName("to");
         m_Extends__to->setDefaultValueLiteral("");
         m_Extends__to->setLowerBound(1);
         m_Extends__to->setUpperBound(1);
@@ -2182,7 +2231,6 @@ void CodePackage::_initPackage()
         m_Extends__to->setDerived(false);
         m_Extends__to->setOrdered(false);
         m_Extends__from->setEType(m_DatatypeEClass);
-        m_Extends__from->setName("from");
         m_Extends__from->setDefaultValueLiteral("");
         m_Extends__from->setLowerBound(1);
         m_Extends__from->setUpperBound(1);
@@ -2217,7 +2265,6 @@ void CodePackage::_initPackage()
         m_HasTypeEClass->setInterface(false);
 
         m_HasType__to->setEType(m_DatatypeEClass);
-        m_HasType__to->setName("to");
         m_HasType__to->setDefaultValueLiteral("");
         m_HasType__to->setLowerBound(1);
         m_HasType__to->setUpperBound(1);
@@ -2230,7 +2277,6 @@ void CodePackage::_initPackage()
         m_HasType__to->setDerived(false);
         m_HasType__to->setOrdered(false);
         m_HasType__from->setEType(m_CodeItemEClass);
-        m_HasType__from->setName("from");
         m_HasType__from->setDefaultValueLiteral("");
         m_HasType__from->setLowerBound(1);
         m_HasType__from->setUpperBound(1);
@@ -2251,7 +2297,6 @@ void CodePackage::_initPackage()
         m_ImplementationOfEClass->setInterface(false);
 
         m_ImplementationOf__to->setEType(m_CodeItemEClass);
-        m_ImplementationOf__to->setName("to");
         m_ImplementationOf__to->setDefaultValueLiteral("");
         m_ImplementationOf__to->setLowerBound(1);
         m_ImplementationOf__to->setUpperBound(1);
@@ -2264,7 +2309,6 @@ void CodePackage::_initPackage()
         m_ImplementationOf__to->setDerived(false);
         m_ImplementationOf__to->setOrdered(false);
         m_ImplementationOf__from->setEType(m_CodeItemEClass);
-        m_ImplementationOf__from->setName("from");
         m_ImplementationOf__from->setDefaultValueLiteral("");
         m_ImplementationOf__from->setLowerBound(1);
         m_ImplementationOf__from->setUpperBound(1);
@@ -2285,7 +2329,6 @@ void CodePackage::_initPackage()
         m_ImplementsEClass->setInterface(false);
 
         m_Implements__to->setEType(m_CodeItemEClass);
-        m_Implements__to->setName("to");
         m_Implements__to->setDefaultValueLiteral("");
         m_Implements__to->setLowerBound(1);
         m_Implements__to->setUpperBound(1);
@@ -2298,7 +2341,6 @@ void CodePackage::_initPackage()
         m_Implements__to->setDerived(false);
         m_Implements__to->setOrdered(false);
         m_Implements__from->setEType(m_CodeItemEClass);
-        m_Implements__from->setName("from");
         m_Implements__from->setDefaultValueLiteral("");
         m_Implements__from->setLowerBound(1);
         m_Implements__from->setUpperBound(1);
@@ -2326,7 +2368,6 @@ void CodePackage::_initPackage()
         m_InterfaceUnitEClass->setInterface(false);
 
         m_InterfaceUnit__codeElement->setEType(m_CodeItemEClass);
-        m_InterfaceUnit__codeElement->setName("codeElement");
         m_InterfaceUnit__codeElement->setDefaultValueLiteral("");
         m_InterfaceUnit__codeElement->setLowerBound(0);
         m_InterfaceUnit__codeElement->setUpperBound(-1);
@@ -2354,7 +2395,6 @@ void CodePackage::_initPackage()
         m_DefinedTypeEClass->setInterface(false);
 
         m_DefinedType__type->setEType(m_DatatypeEClass);
-        m_DefinedType__type->setName("type");
         m_DefinedType__type->setDefaultValueLiteral("");
         m_DefinedType__type->setLowerBound(1);
         m_DefinedType__type->setUpperBound(1);
@@ -2367,7 +2407,6 @@ void CodePackage::_initPackage()
         m_DefinedType__type->setDerived(false);
         m_DefinedType__type->setOrdered(false);
         m_DefinedType__codeElement->setEType(m_DatatypeEClass);
-        m_DefinedType__codeElement->setName("codeElement");
         m_DefinedType__codeElement->setDefaultValueLiteral("");
         m_DefinedType__codeElement->setLowerBound(0);
         m_DefinedType__codeElement->setUpperBound(1);
@@ -2395,7 +2434,6 @@ void CodePackage::_initPackage()
         m_RangeTypeEClass->setInterface(false);
         m_RangeType__lower->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_RangeType__lower->setName("lower");
         m_RangeType__lower->setDefaultValueLiteral("");
         m_RangeType__lower->setLowerBound(0);
         m_RangeType__lower->setUpperBound(1);
@@ -2409,7 +2447,6 @@ void CodePackage::_initPackage()
         m_RangeType__lower->setOrdered(false);
         m_RangeType__upper->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_RangeType__upper->setName("upper");
         m_RangeType__upper->setDefaultValueLiteral("");
         m_RangeType__upper->setLowerBound(0);
         m_RangeType__upper->setUpperBound(1);
@@ -2430,7 +2467,6 @@ void CodePackage::_initPackage()
         m_SignatureEClass->setInterface(false);
 
         m_Signature__parameterUnit->setEType(m_ParameterUnitEClass);
-        m_Signature__parameterUnit->setName("parameterUnit");
         m_Signature__parameterUnit->setDefaultValueLiteral("");
         m_Signature__parameterUnit->setLowerBound(0);
         m_Signature__parameterUnit->setUpperBound(-1);
@@ -2451,7 +2487,6 @@ void CodePackage::_initPackage()
         m_DataElementEClass->setInterface(false);
         m_DataElement__ext->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_DataElement__ext->setName("ext");
         m_DataElement__ext->setDefaultValueLiteral("");
         m_DataElement__ext->setLowerBound(0);
         m_DataElement__ext->setUpperBound(1);
@@ -2465,7 +2500,6 @@ void CodePackage::_initPackage()
         m_DataElement__ext->setOrdered(false);
         m_DataElement__size->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_DataElement__size->setName("size");
         m_DataElement__size->setDefaultValueLiteral("");
         m_DataElement__size->setLowerBound(0);
         m_DataElement__size->setUpperBound(1);
@@ -2479,7 +2513,6 @@ void CodePackage::_initPackage()
         m_DataElement__size->setOrdered(false);
 
         m_DataElement__type->setEType(m_DatatypeEClass);
-        m_DataElement__type->setName("type");
         m_DataElement__type->setDefaultValueLiteral("");
         m_DataElement__type->setLowerBound(1);
         m_DataElement__type->setUpperBound(1);
@@ -2492,7 +2525,6 @@ void CodePackage::_initPackage()
         m_DataElement__type->setDerived(false);
         m_DataElement__type->setOrdered(false);
         m_DataElement__codeElement->setEType(m_DatatypeEClass);
-        m_DataElement__codeElement->setName("codeElement");
         m_DataElement__codeElement->setDefaultValueLiteral("");
         m_DataElement__codeElement->setLowerBound(0);
         m_DataElement__codeElement->setUpperBound(-1);
@@ -2527,7 +2559,6 @@ void CodePackage::_initPackage()
         m_NamespaceUnitEClass->setInterface(false);
 
         m_NamespaceUnit__groupedCode->setEType(m_CodeItemEClass);
-        m_NamespaceUnit__groupedCode->setName("groupedCode");
         m_NamespaceUnit__groupedCode->setDefaultValueLiteral("");
         m_NamespaceUnit__groupedCode->setLowerBound(0);
         m_NamespaceUnit__groupedCode->setUpperBound(-1);
@@ -2548,7 +2579,6 @@ void CodePackage::_initPackage()
         m_VisibleInEClass->setInterface(false);
 
         m_VisibleIn__to->setEType(m_CodeItemEClass);
-        m_VisibleIn__to->setName("to");
         m_VisibleIn__to->setDefaultValueLiteral("");
         m_VisibleIn__to->setLowerBound(1);
         m_VisibleIn__to->setUpperBound(1);
@@ -2561,7 +2591,6 @@ void CodePackage::_initPackage()
         m_VisibleIn__to->setDerived(false);
         m_VisibleIn__to->setOrdered(false);
         m_VisibleIn__from->setEType(m_CodeItemEClass);
-        m_VisibleIn__from->setName("from");
         m_VisibleIn__from->setDefaultValueLiteral("");
         m_VisibleIn__from->setLowerBound(1);
         m_VisibleIn__from->setUpperBound(1);
@@ -2582,7 +2611,6 @@ void CodePackage::_initPackage()
         m_CommentUnitEClass->setInterface(false);
         m_CommentUnit__text->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_CommentUnit__text->setName("text");
         m_CommentUnit__text->setDefaultValueLiteral("");
         m_CommentUnit__text->setLowerBound(0);
         m_CommentUnit__text->setUpperBound(1);
@@ -2652,7 +2680,6 @@ void CodePackage::_initPackage()
         m_ValueListEClass->setInterface(false);
 
         m_ValueList__valueElement->setEType(m_ValueElementEClass);
-        m_ValueList__valueElement->setName("valueElement");
         m_ValueList__valueElement->setDefaultValueLiteral("");
         m_ValueList__valueElement->setLowerBound(0);
         m_ValueList__valueElement->setUpperBound(-1);
@@ -2672,7 +2699,6 @@ void CodePackage::_initPackage()
         m_StorableUnitEClass->setAbstract(false);
         m_StorableUnitEClass->setInterface(false);
         m_StorableUnit__kind->setEType(m_StorableKindEEnum);
-        m_StorableUnit__kind->setName("kind");
         m_StorableUnit__kind->setDefaultValueLiteral("");
         m_StorableUnit__kind->setLowerBound(0);
         m_StorableUnit__kind->setUpperBound(1);
@@ -2692,7 +2718,6 @@ void CodePackage::_initPackage()
         m_MemberUnitEClass->setAbstract(false);
         m_MemberUnitEClass->setInterface(false);
         m_MemberUnit__export->setEType(m_ExportKindEEnum);
-        m_MemberUnit__export->setName("export");
         m_MemberUnit__export->setDefaultValueLiteral("");
         m_MemberUnit__export->setLowerBound(0);
         m_MemberUnit__export->setUpperBound(1);
@@ -2712,7 +2737,6 @@ void CodePackage::_initPackage()
         m_ParameterUnitEClass->setAbstract(false);
         m_ParameterUnitEClass->setInterface(false);
         m_ParameterUnit__kind->setEType(m_ParameterKindEEnum);
-        m_ParameterUnit__kind->setName("kind");
         m_ParameterUnit__kind->setDefaultValueLiteral("");
         m_ParameterUnit__kind->setLowerBound(0);
         m_ParameterUnit__kind->setUpperBound(1);
@@ -2726,7 +2750,6 @@ void CodePackage::_initPackage()
         m_ParameterUnit__kind->setOrdered(false);
         m_ParameterUnit__pos->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_ParameterUnit__pos->setName("pos");
         m_ParameterUnit__pos->setDefaultValueLiteral("");
         m_ParameterUnit__pos->setLowerBound(0);
         m_ParameterUnit__pos->setUpperBound(1);
@@ -2768,7 +2791,6 @@ void CodePackage::_initPackage()
         m_SequenceTypeEClass->setInterface(false);
         m_SequenceType__size->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SequenceType__size->setName("size");
         m_SequenceType__size->setDefaultValueLiteral("");
         m_SequenceType__size->setLowerBound(0);
         m_SequenceType__size->setUpperBound(1);
@@ -2789,7 +2811,6 @@ void CodePackage::_initPackage()
         m_BagTypeEClass->setInterface(false);
         m_BagType__size->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_BagType__size->setName("size");
         m_BagType__size->setDefaultValueLiteral("");
         m_BagType__size->setLowerBound(0);
         m_BagType__size->setUpperBound(1);
@@ -2810,7 +2831,6 @@ void CodePackage::_initPackage()
         m_SetTypeEClass->setInterface(false);
         m_SetType__size->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SetType__size->setName("size");
         m_SetType__size->setDefaultValueLiteral("");
         m_SetType__size->setLowerBound(0);
         m_SetType__size->setUpperBound(1);
@@ -2839,7 +2859,6 @@ void CodePackage::_initPackage()
 
         m_CodeRelationship__to->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_CodeRelationship__to->setName("to");
         m_CodeRelationship__to->setDefaultValueLiteral("");
         m_CodeRelationship__to->setLowerBound(1);
         m_CodeRelationship__to->setUpperBound(1);
@@ -2852,7 +2871,6 @@ void CodePackage::_initPackage()
         m_CodeRelationship__to->setDerived(false);
         m_CodeRelationship__to->setOrdered(false);
         m_CodeRelationship__from->setEType(m_CodeItemEClass);
-        m_CodeRelationship__from->setName("from");
         m_CodeRelationship__from->setDefaultValueLiteral("");
         m_CodeRelationship__from->setLowerBound(1);
         m_CodeRelationship__from->setUpperBound(1);
@@ -2915,7 +2933,6 @@ void CodePackage::_initPackage()
         m_ImportsEClass->setInterface(false);
 
         m_Imports__to->setEType(m_CodeItemEClass);
-        m_Imports__to->setName("to");
         m_Imports__to->setDefaultValueLiteral("");
         m_Imports__to->setLowerBound(1);
         m_Imports__to->setUpperBound(1);
@@ -2928,7 +2945,6 @@ void CodePackage::_initPackage()
         m_Imports__to->setDerived(false);
         m_Imports__to->setOrdered(false);
         m_Imports__from->setEType(m_CodeItemEClass);
-        m_Imports__from->setName("from");
         m_Imports__from->setDefaultValueLiteral("");
         m_Imports__from->setLowerBound(1);
         m_Imports__from->setUpperBound(1);
@@ -2956,7 +2972,6 @@ void CodePackage::_initPackage()
         m_ParameterToEClass->setInterface(false);
 
         m_ParameterTo__to->setEType(m_CodeItemEClass);
-        m_ParameterTo__to->setName("to");
         m_ParameterTo__to->setDefaultValueLiteral("");
         m_ParameterTo__to->setLowerBound(1);
         m_ParameterTo__to->setUpperBound(1);
@@ -2969,7 +2984,6 @@ void CodePackage::_initPackage()
         m_ParameterTo__to->setDerived(false);
         m_ParameterTo__to->setOrdered(false);
         m_ParameterTo__from->setEType(m_AbstractCodeElementEClass);
-        m_ParameterTo__from->setName("from");
         m_ParameterTo__from->setDefaultValueLiteral("");
         m_ParameterTo__from->setLowerBound(1);
         m_ParameterTo__from->setUpperBound(1);
@@ -2998,7 +3012,6 @@ void CodePackage::_initPackage()
 
         m_PreprocessorDirective__codeElement->setEType(
                 m_AbstractCodeElementEClass);
-        m_PreprocessorDirective__codeElement->setName("codeElement");
         m_PreprocessorDirective__codeElement->setDefaultValueLiteral("");
         m_PreprocessorDirective__codeElement->setLowerBound(0);
         m_PreprocessorDirective__codeElement->setUpperBound(-1);
@@ -3025,7 +3038,6 @@ void CodePackage::_initPackage()
         m_MacroUnitEClass->setAbstract(false);
         m_MacroUnitEClass->setInterface(false);
         m_MacroUnit__kind->setEType(m_MacroKindEEnum);
-        m_MacroUnit__kind->setName("kind");
         m_MacroUnit__kind->setDefaultValueLiteral("");
         m_MacroUnit__kind->setLowerBound(0);
         m_MacroUnit__kind->setUpperBound(1);
@@ -3060,7 +3072,6 @@ void CodePackage::_initPackage()
         m_VariantToEClass->setInterface(false);
 
         m_VariantTo__to->setEType(m_PreprocessorDirectiveEClass);
-        m_VariantTo__to->setName("to");
         m_VariantTo__to->setDefaultValueLiteral("");
         m_VariantTo__to->setLowerBound(1);
         m_VariantTo__to->setUpperBound(1);
@@ -3073,7 +3084,6 @@ void CodePackage::_initPackage()
         m_VariantTo__to->setDerived(false);
         m_VariantTo__to->setOrdered(false);
         m_VariantTo__from->setEType(m_PreprocessorDirectiveEClass);
-        m_VariantTo__from->setName("from");
         m_VariantTo__from->setDefaultValueLiteral("");
         m_VariantTo__from->setLowerBound(1);
         m_VariantTo__from->setUpperBound(1);
@@ -3094,7 +3104,6 @@ void CodePackage::_initPackage()
         m_ExpandsEClass->setInterface(false);
 
         m_Expands__to->setEType(m_PreprocessorDirectiveEClass);
-        m_Expands__to->setName("to");
         m_Expands__to->setDefaultValueLiteral("");
         m_Expands__to->setLowerBound(1);
         m_Expands__to->setUpperBound(1);
@@ -3107,7 +3116,6 @@ void CodePackage::_initPackage()
         m_Expands__to->setDerived(false);
         m_Expands__to->setOrdered(false);
         m_Expands__from->setEType(m_PreprocessorDirectiveEClass);
-        m_Expands__from->setName("from");
         m_Expands__from->setDefaultValueLiteral("");
         m_Expands__from->setLowerBound(1);
         m_Expands__from->setUpperBound(1);
@@ -3128,7 +3136,6 @@ void CodePackage::_initPackage()
         m_RedefinesEClass->setInterface(false);
 
         m_Redefines__to->setEType(m_PreprocessorDirectiveEClass);
-        m_Redefines__to->setName("to");
         m_Redefines__to->setDefaultValueLiteral("");
         m_Redefines__to->setLowerBound(1);
         m_Redefines__to->setUpperBound(1);
@@ -3141,7 +3148,6 @@ void CodePackage::_initPackage()
         m_Redefines__to->setDerived(false);
         m_Redefines__to->setOrdered(false);
         m_Redefines__from->setEType(m_PreprocessorDirectiveEClass);
-        m_Redefines__from->setName("from");
         m_Redefines__from->setDefaultValueLiteral("");
         m_Redefines__from->setLowerBound(1);
         m_Redefines__from->setUpperBound(1);
@@ -3162,7 +3168,6 @@ void CodePackage::_initPackage()
         m_GeneratedFromEClass->setInterface(false);
 
         m_GeneratedFrom__to->setEType(m_PreprocessorDirectiveEClass);
-        m_GeneratedFrom__to->setName("to");
         m_GeneratedFrom__to->setDefaultValueLiteral("");
         m_GeneratedFrom__to->setLowerBound(1);
         m_GeneratedFrom__to->setUpperBound(1);
@@ -3175,7 +3180,6 @@ void CodePackage::_initPackage()
         m_GeneratedFrom__to->setDerived(false);
         m_GeneratedFrom__to->setOrdered(false);
         m_GeneratedFrom__from->setEType(m_AbstractCodeElementEClass);
-        m_GeneratedFrom__from->setName("from");
         m_GeneratedFrom__from->setDefaultValueLiteral("");
         m_GeneratedFrom__from->setLowerBound(1);
         m_GeneratedFrom__from->setUpperBound(1);
@@ -3196,7 +3200,6 @@ void CodePackage::_initPackage()
         m_IncludesEClass->setInterface(false);
 
         m_Includes__to->setEType(m_AbstractCodeElementEClass);
-        m_Includes__to->setName("to");
         m_Includes__to->setDefaultValueLiteral("");
         m_Includes__to->setLowerBound(1);
         m_Includes__to->setUpperBound(1);
@@ -3209,7 +3212,6 @@ void CodePackage::_initPackage()
         m_Includes__to->setDerived(false);
         m_Includes__to->setOrdered(false);
         m_Includes__from->setEType(m_PreprocessorDirectiveEClass);
-        m_Includes__from->setName("from");
         m_Includes__from->setDefaultValueLiteral("");
         m_Includes__from->setLowerBound(1);
         m_Includes__from->setUpperBound(1);
@@ -3230,7 +3232,6 @@ void CodePackage::_initPackage()
         m_HasValueEClass->setInterface(false);
 
         m_HasValue__to->setEType(m_CodeItemEClass);
-        m_HasValue__to->setName("to");
         m_HasValue__to->setDefaultValueLiteral("");
         m_HasValue__to->setLowerBound(1);
         m_HasValue__to->setUpperBound(1);
@@ -3243,7 +3244,6 @@ void CodePackage::_initPackage()
         m_HasValue__to->setDerived(false);
         m_HasValue__to->setOrdered(false);
         m_HasValue__from->setEType(m_CodeItemEClass);
-        m_HasValue__from->setName("from");
         m_HasValue__from->setDefaultValueLiteral("");
         m_HasValue__from->setLowerBound(1);
         m_HasValue__from->setUpperBound(1);

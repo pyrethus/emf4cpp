@@ -261,6 +261,7 @@ void EcorePackage::_initPackage()
         classifiers.basicAdd(m_EAttributeEClass);
         // m_EAttribute__iD has already been allocated above
         m_EAttribute__iD->setFeatureID(::ecore::EcorePackage::EATTRIBUTE__ID);
+        m_EAttribute__iD->setName("iD");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAttributeEClass->getEStructuralFeatures()).basicAdd(
                 m_EAttribute__iD);
@@ -268,6 +269,7 @@ void EcorePackage::_initPackage()
         // m_EAttribute__eAttributeType has already been allocated above
         m_EAttribute__eAttributeType->setFeatureID(
                 ::ecore::EcorePackage::EATTRIBUTE__EATTRIBUTETYPE);
+        m_EAttribute__eAttributeType->setName("eAttributeType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAttributeEClass->getEStructuralFeatures()).basicAdd(
                 m_EAttribute__eAttributeType);
@@ -284,6 +286,7 @@ void EcorePackage::_initPackage()
         // m_EAnnotation__source has already been allocated above
         m_EAnnotation__source->setFeatureID(
                 ::ecore::EcorePackage::EANNOTATION__SOURCE);
+        m_EAnnotation__source->setName("source");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
                 m_EAnnotation__source);
@@ -291,6 +294,7 @@ void EcorePackage::_initPackage()
         // m_EAnnotation__details has already been allocated above
         m_EAnnotation__details->setFeatureID(
                 ::ecore::EcorePackage::EANNOTATION__DETAILS);
+        m_EAnnotation__details->setName("details");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
                 m_EAnnotation__details);
@@ -298,6 +302,7 @@ void EcorePackage::_initPackage()
         // m_EAnnotation__eModelElement has already been allocated above
         m_EAnnotation__eModelElement->setFeatureID(
                 ::ecore::EcorePackage::EANNOTATION__EMODELELEMENT);
+        m_EAnnotation__eModelElement->setName("eModelElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
                 m_EAnnotation__eModelElement);
@@ -306,6 +311,7 @@ void EcorePackage::_initPackage()
         // m_EAnnotation__contents has already been allocated above
         m_EAnnotation__contents->setFeatureID(
                 ::ecore::EcorePackage::EANNOTATION__CONTENTS);
+        m_EAnnotation__contents->setName("contents");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
                 m_EAnnotation__contents);
@@ -313,6 +319,7 @@ void EcorePackage::_initPackage()
         // m_EAnnotation__references has already been allocated above
         m_EAnnotation__references->setFeatureID(
                 ::ecore::EcorePackage::EANNOTATION__REFERENCES);
+        m_EAnnotation__references->setName("references");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
                 m_EAnnotation__references);
@@ -328,6 +335,7 @@ void EcorePackage::_initPackage()
         // m_EClass__abstract has already been allocated above
         m_EClass__abstract->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__ABSTRACT);
+        m_EClass__abstract->setName("abstract");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__abstract);
@@ -335,6 +343,7 @@ void EcorePackage::_initPackage()
         // m_EClass__interface has already been allocated above
         m_EClass__interface->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__INTERFACE);
+        m_EClass__interface->setName("interface");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__interface);
@@ -342,6 +351,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eSuperTypes has already been allocated above
         m_EClass__eSuperTypes->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__ESUPERTYPES);
+        m_EClass__eSuperTypes->setName("eSuperTypes");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eSuperTypes);
@@ -349,6 +359,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eOperations has already been allocated above
         m_EClass__eOperations->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EOPERATIONS);
+        m_EClass__eOperations->setName("eOperations");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eOperations);
@@ -356,6 +367,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eAllAttributes has already been allocated above
         m_EClass__eAllAttributes->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EALLATTRIBUTES);
+        m_EClass__eAllAttributes->setName("eAllAttributes");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eAllAttributes);
@@ -363,6 +375,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eAllReferences has already been allocated above
         m_EClass__eAllReferences->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EALLREFERENCES);
+        m_EClass__eAllReferences->setName("eAllReferences");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eAllReferences);
@@ -370,6 +383,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eReferences has already been allocated above
         m_EClass__eReferences->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EREFERENCES);
+        m_EClass__eReferences->setName("eReferences");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eReferences);
@@ -377,6 +391,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eAttributes has already been allocated above
         m_EClass__eAttributes->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EATTRIBUTES);
+        m_EClass__eAttributes->setName("eAttributes");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eAttributes);
@@ -384,6 +399,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eAllContainments has already been allocated above
         m_EClass__eAllContainments->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EALLCONTAINMENTS);
+        m_EClass__eAllContainments->setName("eAllContainments");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eAllContainments);
@@ -391,6 +407,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eAllOperations has already been allocated above
         m_EClass__eAllOperations->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EALLOPERATIONS);
+        m_EClass__eAllOperations->setName("eAllOperations");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eAllOperations);
@@ -398,6 +415,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eAllStructuralFeatures has already been allocated above
         m_EClass__eAllStructuralFeatures->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EALLSTRUCTURALFEATURES);
+        m_EClass__eAllStructuralFeatures->setName("eAllStructuralFeatures");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eAllStructuralFeatures);
@@ -406,6 +424,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eAllSuperTypes has already been allocated above
         m_EClass__eAllSuperTypes->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EALLSUPERTYPES);
+        m_EClass__eAllSuperTypes->setName("eAllSuperTypes");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eAllSuperTypes);
@@ -413,6 +432,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eIDAttribute has already been allocated above
         m_EClass__eIDAttribute->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EIDATTRIBUTE);
+        m_EClass__eIDAttribute->setName("eIDAttribute");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eIDAttribute);
@@ -420,6 +440,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eStructuralFeatures has already been allocated above
         m_EClass__eStructuralFeatures->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__ESTRUCTURALFEATURES);
+        m_EClass__eStructuralFeatures->setName("eStructuralFeatures");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eStructuralFeatures);
@@ -427,6 +448,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eGenericSuperTypes has already been allocated above
         m_EClass__eGenericSuperTypes->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EGENERICSUPERTYPES);
+        m_EClass__eGenericSuperTypes->setName("eGenericSuperTypes");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eGenericSuperTypes);
@@ -434,6 +456,7 @@ void EcorePackage::_initPackage()
         // m_EClass__eAllGenericSuperTypes has already been allocated above
         m_EClass__eAllGenericSuperTypes->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EALLGENERICSUPERTYPES);
+        m_EClass__eAllGenericSuperTypes->setName("eAllGenericSuperTypes");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
                 m_EClass__eAllGenericSuperTypes);
@@ -450,6 +473,7 @@ void EcorePackage::_initPackage()
         // m_EClassifier__instanceClassName has already been allocated above
         m_EClassifier__instanceClassName->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASSNAME);
+        m_EClassifier__instanceClassName->setName("instanceClassName");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
                 m_EClassifier__instanceClassName);
@@ -458,6 +482,7 @@ void EcorePackage::_initPackage()
         // m_EClassifier__instanceClass has already been allocated above
         m_EClassifier__instanceClass->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASS);
+        m_EClassifier__instanceClass->setName("instanceClass");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
                 m_EClassifier__instanceClass);
@@ -466,6 +491,7 @@ void EcorePackage::_initPackage()
         // m_EClassifier__defaultValue has already been allocated above
         m_EClassifier__defaultValue->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__DEFAULTVALUE);
+        m_EClassifier__defaultValue->setName("defaultValue");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
                 m_EClassifier__defaultValue);
@@ -474,6 +500,7 @@ void EcorePackage::_initPackage()
         // m_EClassifier__instanceTypeName has already been allocated above
         m_EClassifier__instanceTypeName->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__INSTANCETYPENAME);
+        m_EClassifier__instanceTypeName->setName("instanceTypeName");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
                 m_EClassifier__instanceTypeName);
@@ -482,6 +509,7 @@ void EcorePackage::_initPackage()
         // m_EClassifier__ePackage has already been allocated above
         m_EClassifier__ePackage->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE);
+        m_EClassifier__ePackage->setName("ePackage");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
                 m_EClassifier__ePackage);
@@ -489,6 +517,7 @@ void EcorePackage::_initPackage()
         // m_EClassifier__eTypeParameters has already been allocated above
         m_EClassifier__eTypeParameters->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS);
+        m_EClassifier__eTypeParameters->setName("eTypeParameters");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
                 m_EClassifier__eTypeParameters);
@@ -505,6 +534,7 @@ void EcorePackage::_initPackage()
         // m_EDataType__serializable has already been allocated above
         m_EDataType__serializable->setFeatureID(
                 ::ecore::EcorePackage::EDATATYPE__SERIALIZABLE);
+        m_EDataType__serializable->setName("serializable");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EDataTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_EDataType__serializable);
@@ -519,6 +549,7 @@ void EcorePackage::_initPackage()
         // m_EEnum__eLiterals has already been allocated above
         m_EEnum__eLiterals->setFeatureID(
                 ::ecore::EcorePackage::EENUM__ELITERALS);
+        m_EEnum__eLiterals->setName("eLiterals");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumEClass->getEStructuralFeatures()).basicAdd(
                 m_EEnum__eLiterals);
@@ -534,6 +565,7 @@ void EcorePackage::_initPackage()
         // m_EEnumLiteral__value has already been allocated above
         m_EEnumLiteral__value->setFeatureID(
                 ::ecore::EcorePackage::EENUMLITERAL__VALUE);
+        m_EEnumLiteral__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumLiteralEClass->getEStructuralFeatures()).basicAdd(
                 m_EEnumLiteral__value);
@@ -541,6 +573,7 @@ void EcorePackage::_initPackage()
         // m_EEnumLiteral__instance has already been allocated above
         m_EEnumLiteral__instance->setFeatureID(
                 ::ecore::EcorePackage::EENUMLITERAL__INSTANCE);
+        m_EEnumLiteral__instance->setName("instance");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumLiteralEClass->getEStructuralFeatures()).basicAdd(
                 m_EEnumLiteral__instance);
@@ -549,6 +582,7 @@ void EcorePackage::_initPackage()
         // m_EEnumLiteral__literal has already been allocated above
         m_EEnumLiteral__literal->setFeatureID(
                 ::ecore::EcorePackage::EENUMLITERAL__LITERAL);
+        m_EEnumLiteral__literal->setName("literal");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumLiteralEClass->getEStructuralFeatures()).basicAdd(
                 m_EEnumLiteral__literal);
@@ -556,6 +590,7 @@ void EcorePackage::_initPackage()
         // m_EEnumLiteral__eEnum has already been allocated above
         m_EEnumLiteral__eEnum->setFeatureID(
                 ::ecore::EcorePackage::EENUMLITERAL__EENUM);
+        m_EEnumLiteral__eEnum->setName("eEnum");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumLiteralEClass->getEStructuralFeatures()).basicAdd(
                 m_EEnumLiteral__eEnum);
@@ -571,6 +606,7 @@ void EcorePackage::_initPackage()
         // m_EFactory__ePackage has already been allocated above
         m_EFactory__ePackage->setFeatureID(
                 ::ecore::EcorePackage::EFACTORY__EPACKAGE);
+        m_EFactory__ePackage->setName("ePackage");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EFactoryEClass->getEStructuralFeatures()).basicAdd(
                 m_EFactory__ePackage);
@@ -586,6 +622,7 @@ void EcorePackage::_initPackage()
         // m_EModelElement__eAnnotations has already been allocated above
         m_EModelElement__eAnnotations->setFeatureID(
                 ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS);
+        m_EModelElement__eAnnotations->setName("eAnnotations");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EModelElementEClass->getEStructuralFeatures()).basicAdd(
                 m_EModelElement__eAnnotations);
@@ -602,6 +639,7 @@ void EcorePackage::_initPackage()
         // m_ENamedElement__name has already been allocated above
         m_ENamedElement__name->setFeatureID(
                 ::ecore::EcorePackage::ENAMEDELEMENT__NAME);
+        m_ENamedElement__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ENamedElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ENamedElement__name);
@@ -625,6 +663,7 @@ void EcorePackage::_initPackage()
         // m_EOperation__eContainingClass has already been allocated above
         m_EOperation__eContainingClass->setFeatureID(
                 ::ecore::EcorePackage::EOPERATION__ECONTAININGCLASS);
+        m_EOperation__eContainingClass->setName("eContainingClass");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_EOperation__eContainingClass);
@@ -633,6 +672,7 @@ void EcorePackage::_initPackage()
         // m_EOperation__eTypeParameters has already been allocated above
         m_EOperation__eTypeParameters->setFeatureID(
                 ::ecore::EcorePackage::EOPERATION__ETYPEPARAMETERS);
+        m_EOperation__eTypeParameters->setName("eTypeParameters");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_EOperation__eTypeParameters);
@@ -641,6 +681,7 @@ void EcorePackage::_initPackage()
         // m_EOperation__eParameters has already been allocated above
         m_EOperation__eParameters->setFeatureID(
                 ::ecore::EcorePackage::EOPERATION__EPARAMETERS);
+        m_EOperation__eParameters->setName("eParameters");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_EOperation__eParameters);
@@ -648,6 +689,7 @@ void EcorePackage::_initPackage()
         // m_EOperation__eExceptions has already been allocated above
         m_EOperation__eExceptions->setFeatureID(
                 ::ecore::EcorePackage::EOPERATION__EEXCEPTIONS);
+        m_EOperation__eExceptions->setName("eExceptions");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_EOperation__eExceptions);
@@ -655,6 +697,7 @@ void EcorePackage::_initPackage()
         // m_EOperation__eGenericExceptions has already been allocated above
         m_EOperation__eGenericExceptions->setFeatureID(
                 ::ecore::EcorePackage::EOPERATION__EGENERICEXCEPTIONS);
+        m_EOperation__eGenericExceptions->setName("eGenericExceptions");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
                 m_EOperation__eGenericExceptions);
@@ -670,6 +713,7 @@ void EcorePackage::_initPackage()
         classifiers.basicAdd(m_EPackageEClass);
         // m_EPackage__nsURI has already been allocated above
         m_EPackage__nsURI->setFeatureID(::ecore::EcorePackage::EPACKAGE__NSURI);
+        m_EPackage__nsURI->setName("nsURI");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
                 m_EPackage__nsURI);
@@ -677,6 +721,7 @@ void EcorePackage::_initPackage()
         // m_EPackage__nsPrefix has already been allocated above
         m_EPackage__nsPrefix->setFeatureID(
                 ::ecore::EcorePackage::EPACKAGE__NSPREFIX);
+        m_EPackage__nsPrefix->setName("nsPrefix");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
                 m_EPackage__nsPrefix);
@@ -684,6 +729,7 @@ void EcorePackage::_initPackage()
         // m_EPackage__eFactoryInstance has already been allocated above
         m_EPackage__eFactoryInstance->setFeatureID(
                 ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE);
+        m_EPackage__eFactoryInstance->setName("eFactoryInstance");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
                 m_EPackage__eFactoryInstance);
@@ -692,6 +738,7 @@ void EcorePackage::_initPackage()
         // m_EPackage__eClassifiers has already been allocated above
         m_EPackage__eClassifiers->setFeatureID(
                 ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS);
+        m_EPackage__eClassifiers->setName("eClassifiers");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
                 m_EPackage__eClassifiers);
@@ -699,6 +746,7 @@ void EcorePackage::_initPackage()
         // m_EPackage__eSubpackages has already been allocated above
         m_EPackage__eSubpackages->setFeatureID(
                 ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES);
+        m_EPackage__eSubpackages->setName("eSubpackages");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
                 m_EPackage__eSubpackages);
@@ -706,6 +754,7 @@ void EcorePackage::_initPackage()
         // m_EPackage__eSuperPackage has already been allocated above
         m_EPackage__eSuperPackage->setFeatureID(
                 ::ecore::EcorePackage::EPACKAGE__ESUPERPACKAGE);
+        m_EPackage__eSuperPackage->setName("eSuperPackage");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
                 m_EPackage__eSuperPackage);
@@ -721,6 +770,7 @@ void EcorePackage::_initPackage()
         // m_EParameter__eOperation has already been allocated above
         m_EParameter__eOperation->setFeatureID(
                 ::ecore::EcorePackage::EPARAMETER__EOPERATION);
+        m_EParameter__eOperation->setName("eOperation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EParameterEClass->getEStructuralFeatures()).basicAdd(
                 m_EParameter__eOperation);
@@ -736,6 +786,7 @@ void EcorePackage::_initPackage()
         // m_EReference__containment has already been allocated above
         m_EReference__containment->setFeatureID(
                 ::ecore::EcorePackage::EREFERENCE__CONTAINMENT);
+        m_EReference__containment->setName("containment");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
                 m_EReference__containment);
@@ -743,6 +794,7 @@ void EcorePackage::_initPackage()
         // m_EReference__container has already been allocated above
         m_EReference__container->setFeatureID(
                 ::ecore::EcorePackage::EREFERENCE__CONTAINER);
+        m_EReference__container->setName("container");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
                 m_EReference__container);
@@ -750,6 +802,7 @@ void EcorePackage::_initPackage()
         // m_EReference__resolveProxies has already been allocated above
         m_EReference__resolveProxies->setFeatureID(
                 ::ecore::EcorePackage::EREFERENCE__RESOLVEPROXIES);
+        m_EReference__resolveProxies->setName("resolveProxies");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
                 m_EReference__resolveProxies);
@@ -758,6 +811,7 @@ void EcorePackage::_initPackage()
         // m_EReference__eOpposite has already been allocated above
         m_EReference__eOpposite->setFeatureID(
                 ::ecore::EcorePackage::EREFERENCE__EOPPOSITE);
+        m_EReference__eOpposite->setName("eOpposite");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
                 m_EReference__eOpposite);
@@ -765,6 +819,7 @@ void EcorePackage::_initPackage()
         // m_EReference__eReferenceType has already been allocated above
         m_EReference__eReferenceType->setFeatureID(
                 ::ecore::EcorePackage::EREFERENCE__EREFERENCETYPE);
+        m_EReference__eReferenceType->setName("eReferenceType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
                 m_EReference__eReferenceType);
@@ -773,6 +828,7 @@ void EcorePackage::_initPackage()
         // m_EReference__eKeys has already been allocated above
         m_EReference__eKeys->setFeatureID(
                 ::ecore::EcorePackage::EREFERENCE__EKEYS);
+        m_EReference__eKeys->setName("eKeys");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
                 m_EReference__eKeys);
@@ -788,6 +844,7 @@ void EcorePackage::_initPackage()
         // m_EStructuralFeature__changeable has already been allocated above
         m_EStructuralFeature__changeable->setFeatureID(
                 ::ecore::EcorePackage::ESTRUCTURALFEATURE__CHANGEABLE);
+        m_EStructuralFeature__changeable->setName("changeable");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
                 m_EStructuralFeature__changeable);
@@ -796,6 +853,7 @@ void EcorePackage::_initPackage()
         // m_EStructuralFeature__volatile has already been allocated above
         m_EStructuralFeature__volatile->setFeatureID(
                 ::ecore::EcorePackage::ESTRUCTURALFEATURE__VOLATILE);
+        m_EStructuralFeature__volatile->setName("volatile");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
                 m_EStructuralFeature__volatile);
@@ -804,6 +862,7 @@ void EcorePackage::_initPackage()
         // m_EStructuralFeature__transient has already been allocated above
         m_EStructuralFeature__transient->setFeatureID(
                 ::ecore::EcorePackage::ESTRUCTURALFEATURE__TRANSIENT);
+        m_EStructuralFeature__transient->setName("transient");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
                 m_EStructuralFeature__transient);
@@ -812,6 +871,8 @@ void EcorePackage::_initPackage()
         // m_EStructuralFeature__defaultValueLiteral has already been allocated above
         m_EStructuralFeature__defaultValueLiteral->setFeatureID(
                 ::ecore::EcorePackage::ESTRUCTURALFEATURE__DEFAULTVALUELITERAL);
+        m_EStructuralFeature__defaultValueLiteral->setName(
+                "defaultValueLiteral");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
                 m_EStructuralFeature__defaultValueLiteral);
@@ -820,6 +881,7 @@ void EcorePackage::_initPackage()
         // m_EStructuralFeature__defaultValue has already been allocated above
         m_EStructuralFeature__defaultValue->setFeatureID(
                 ::ecore::EcorePackage::ESTRUCTURALFEATURE__DEFAULTVALUE);
+        m_EStructuralFeature__defaultValue->setName("defaultValue");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
                 m_EStructuralFeature__defaultValue);
@@ -828,6 +890,7 @@ void EcorePackage::_initPackage()
         // m_EStructuralFeature__unsettable has already been allocated above
         m_EStructuralFeature__unsettable->setFeatureID(
                 ::ecore::EcorePackage::ESTRUCTURALFEATURE__UNSETTABLE);
+        m_EStructuralFeature__unsettable->setName("unsettable");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
                 m_EStructuralFeature__unsettable);
@@ -836,6 +899,7 @@ void EcorePackage::_initPackage()
         // m_EStructuralFeature__derived has already been allocated above
         m_EStructuralFeature__derived->setFeatureID(
                 ::ecore::EcorePackage::ESTRUCTURALFEATURE__DERIVED);
+        m_EStructuralFeature__derived->setName("derived");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
                 m_EStructuralFeature__derived);
@@ -844,6 +908,7 @@ void EcorePackage::_initPackage()
         // m_EStructuralFeature__eContainingClass has already been allocated above
         m_EStructuralFeature__eContainingClass->setFeatureID(
                 ::ecore::EcorePackage::ESTRUCTURALFEATURE__ECONTAININGCLASS);
+        m_EStructuralFeature__eContainingClass->setName("eContainingClass");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
                 m_EStructuralFeature__eContainingClass);
@@ -860,6 +925,7 @@ void EcorePackage::_initPackage()
         // m_ETypedElement__ordered has already been allocated above
         m_ETypedElement__ordered->setFeatureID(
                 ::ecore::EcorePackage::ETYPEDELEMENT__ORDERED);
+        m_ETypedElement__ordered->setName("ordered");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypedElement__ordered);
@@ -868,6 +934,7 @@ void EcorePackage::_initPackage()
         // m_ETypedElement__unique has already been allocated above
         m_ETypedElement__unique->setFeatureID(
                 ::ecore::EcorePackage::ETYPEDELEMENT__UNIQUE);
+        m_ETypedElement__unique->setName("unique");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypedElement__unique);
@@ -876,6 +943,7 @@ void EcorePackage::_initPackage()
         // m_ETypedElement__lowerBound has already been allocated above
         m_ETypedElement__lowerBound->setFeatureID(
                 ::ecore::EcorePackage::ETYPEDELEMENT__LOWERBOUND);
+        m_ETypedElement__lowerBound->setName("lowerBound");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypedElement__lowerBound);
@@ -884,6 +952,7 @@ void EcorePackage::_initPackage()
         // m_ETypedElement__upperBound has already been allocated above
         m_ETypedElement__upperBound->setFeatureID(
                 ::ecore::EcorePackage::ETYPEDELEMENT__UPPERBOUND);
+        m_ETypedElement__upperBound->setName("upperBound");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypedElement__upperBound);
@@ -892,6 +961,7 @@ void EcorePackage::_initPackage()
         // m_ETypedElement__many has already been allocated above
         m_ETypedElement__many->setFeatureID(
                 ::ecore::EcorePackage::ETYPEDELEMENT__MANY);
+        m_ETypedElement__many->setName("many");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypedElement__many);
@@ -899,6 +969,7 @@ void EcorePackage::_initPackage()
         // m_ETypedElement__required has already been allocated above
         m_ETypedElement__required->setFeatureID(
                 ::ecore::EcorePackage::ETYPEDELEMENT__REQUIRED);
+        m_ETypedElement__required->setName("required");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypedElement__required);
@@ -907,6 +978,7 @@ void EcorePackage::_initPackage()
         // m_ETypedElement__eType has already been allocated above
         m_ETypedElement__eType->setFeatureID(
                 ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE);
+        m_ETypedElement__eType->setName("eType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypedElement__eType);
@@ -914,6 +986,7 @@ void EcorePackage::_initPackage()
         // m_ETypedElement__eGenericType has already been allocated above
         m_ETypedElement__eGenericType->setFeatureID(
                 ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE);
+        m_ETypedElement__eGenericType->setName("eGenericType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypedElement__eGenericType);
@@ -931,6 +1004,7 @@ void EcorePackage::_initPackage()
         // m_EStringToStringMapEntry__key has already been allocated above
         m_EStringToStringMapEntry__key->setFeatureID(
                 ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__KEY);
+        m_EStringToStringMapEntry__key->setName("key");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStringToStringMapEntryEClass->getEStructuralFeatures()).basicAdd(
                 m_EStringToStringMapEntry__key);
@@ -939,6 +1013,7 @@ void EcorePackage::_initPackage()
         // m_EStringToStringMapEntry__value has already been allocated above
         m_EStringToStringMapEntry__value->setFeatureID(
                 ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__VALUE);
+        m_EStringToStringMapEntry__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStringToStringMapEntryEClass->getEStructuralFeatures()).basicAdd(
                 m_EStringToStringMapEntry__value);
@@ -955,6 +1030,7 @@ void EcorePackage::_initPackage()
         // m_EGenericType__eUpperBound has already been allocated above
         m_EGenericType__eUpperBound->setFeatureID(
                 ::ecore::EcorePackage::EGENERICTYPE__EUPPERBOUND);
+        m_EGenericType__eUpperBound->setName("eUpperBound");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_EGenericType__eUpperBound);
@@ -963,6 +1039,7 @@ void EcorePackage::_initPackage()
         // m_EGenericType__eTypeArguments has already been allocated above
         m_EGenericType__eTypeArguments->setFeatureID(
                 ::ecore::EcorePackage::EGENERICTYPE__ETYPEARGUMENTS);
+        m_EGenericType__eTypeArguments->setName("eTypeArguments");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_EGenericType__eTypeArguments);
@@ -971,6 +1048,7 @@ void EcorePackage::_initPackage()
         // m_EGenericType__eRawType has already been allocated above
         m_EGenericType__eRawType->setFeatureID(
                 ::ecore::EcorePackage::EGENERICTYPE__ERAWTYPE);
+        m_EGenericType__eRawType->setName("eRawType");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_EGenericType__eRawType);
@@ -979,6 +1057,7 @@ void EcorePackage::_initPackage()
         // m_EGenericType__eLowerBound has already been allocated above
         m_EGenericType__eLowerBound->setFeatureID(
                 ::ecore::EcorePackage::EGENERICTYPE__ELOWERBOUND);
+        m_EGenericType__eLowerBound->setName("eLowerBound");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_EGenericType__eLowerBound);
@@ -987,6 +1066,7 @@ void EcorePackage::_initPackage()
         // m_EGenericType__eTypeParameter has already been allocated above
         m_EGenericType__eTypeParameter->setFeatureID(
                 ::ecore::EcorePackage::EGENERICTYPE__ETYPEPARAMETER);
+        m_EGenericType__eTypeParameter->setName("eTypeParameter");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_EGenericType__eTypeParameter);
@@ -995,6 +1075,7 @@ void EcorePackage::_initPackage()
         // m_EGenericType__eClassifier has already been allocated above
         m_EGenericType__eClassifier->setFeatureID(
                 ::ecore::EcorePackage::EGENERICTYPE__ECLASSIFIER);
+        m_EGenericType__eClassifier->setName("eClassifier");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_EGenericType__eClassifier);
@@ -1011,6 +1092,7 @@ void EcorePackage::_initPackage()
         // m_ETypeParameter__eBounds has already been allocated above
         m_ETypeParameter__eBounds->setFeatureID(
                 ::ecore::EcorePackage::ETYPEPARAMETER__EBOUNDS);
+        m_ETypeParameter__eBounds->setName("eBounds");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypeParameterEClass->getEStructuralFeatures()).basicAdd(
                 m_ETypeParameter__eBounds);
@@ -1358,7 +1440,6 @@ void EcorePackage::_initPackage()
         m_EAttributeEClass->setAbstract(false);
         m_EAttributeEClass->setInterface(false);
         m_EAttribute__iD->setEType(m_EBooleanEDataType);
-        m_EAttribute__iD->setName("iD");
         m_EAttribute__iD->setDefaultValueLiteral("");
         m_EAttribute__iD->setLowerBound(0);
         m_EAttribute__iD->setUpperBound(1);
@@ -1372,7 +1453,6 @@ void EcorePackage::_initPackage()
         m_EAttribute__iD->setOrdered(true);
 
         m_EAttribute__eAttributeType->setEType(m_EDataTypeEClass);
-        m_EAttribute__eAttributeType->setName("eAttributeType");
         m_EAttribute__eAttributeType->setDefaultValueLiteral("");
         m_EAttribute__eAttributeType->setLowerBound(1);
         m_EAttribute__eAttributeType->setUpperBound(1);
@@ -1392,7 +1472,6 @@ void EcorePackage::_initPackage()
         m_EAnnotationEClass->setAbstract(false);
         m_EAnnotationEClass->setInterface(false);
         m_EAnnotation__source->setEType(m_EStringEDataType);
-        m_EAnnotation__source->setName("source");
         m_EAnnotation__source->setDefaultValueLiteral("");
         m_EAnnotation__source->setLowerBound(0);
         m_EAnnotation__source->setUpperBound(1);
@@ -1406,7 +1485,6 @@ void EcorePackage::_initPackage()
         m_EAnnotation__source->setOrdered(true);
 
         m_EAnnotation__details->setEType(m_EStringToStringMapEntryEClass);
-        m_EAnnotation__details->setName("details");
         m_EAnnotation__details->setDefaultValueLiteral("");
         m_EAnnotation__details->setLowerBound(0);
         m_EAnnotation__details->setUpperBound(-1);
@@ -1419,7 +1497,6 @@ void EcorePackage::_initPackage()
         m_EAnnotation__details->setDerived(false);
         m_EAnnotation__details->setOrdered(true);
         m_EAnnotation__eModelElement->setEType(m_EModelElementEClass);
-        m_EAnnotation__eModelElement->setName("eModelElement");
         m_EAnnotation__eModelElement->setDefaultValueLiteral("");
         m_EAnnotation__eModelElement->setLowerBound(0);
         m_EAnnotation__eModelElement->setUpperBound(1);
@@ -1435,7 +1512,6 @@ void EcorePackage::_initPackage()
                 ::ecore::as < ::ecore::EReference
                         > (m_EModelElementEClass->getEStructuralFeatures()[0]));
         m_EAnnotation__contents->setEType(m_EObjectEClass);
-        m_EAnnotation__contents->setName("contents");
         m_EAnnotation__contents->setDefaultValueLiteral("");
         m_EAnnotation__contents->setLowerBound(0);
         m_EAnnotation__contents->setUpperBound(-1);
@@ -1448,7 +1524,6 @@ void EcorePackage::_initPackage()
         m_EAnnotation__contents->setDerived(false);
         m_EAnnotation__contents->setOrdered(true);
         m_EAnnotation__references->setEType(m_EObjectEClass);
-        m_EAnnotation__references->setName("references");
         m_EAnnotation__references->setDefaultValueLiteral("");
         m_EAnnotation__references->setLowerBound(0);
         m_EAnnotation__references->setUpperBound(-1);
@@ -1468,7 +1543,6 @@ void EcorePackage::_initPackage()
         m_EClassEClass->setAbstract(false);
         m_EClassEClass->setInterface(false);
         m_EClass__abstract->setEType(m_EBooleanEDataType);
-        m_EClass__abstract->setName("abstract");
         m_EClass__abstract->setDefaultValueLiteral("");
         m_EClass__abstract->setLowerBound(0);
         m_EClass__abstract->setUpperBound(1);
@@ -1481,7 +1555,6 @@ void EcorePackage::_initPackage()
         m_EClass__abstract->setDerived(false);
         m_EClass__abstract->setOrdered(true);
         m_EClass__interface->setEType(m_EBooleanEDataType);
-        m_EClass__interface->setName("interface");
         m_EClass__interface->setDefaultValueLiteral("");
         m_EClass__interface->setLowerBound(0);
         m_EClass__interface->setUpperBound(1);
@@ -1495,7 +1568,6 @@ void EcorePackage::_initPackage()
         m_EClass__interface->setOrdered(true);
 
         m_EClass__eSuperTypes->setEType(m_EClassEClass);
-        m_EClass__eSuperTypes->setName("eSuperTypes");
         m_EClass__eSuperTypes->setDefaultValueLiteral("");
         m_EClass__eSuperTypes->setLowerBound(0);
         m_EClass__eSuperTypes->setUpperBound(-1);
@@ -1508,7 +1580,6 @@ void EcorePackage::_initPackage()
         m_EClass__eSuperTypes->setDerived(false);
         m_EClass__eSuperTypes->setOrdered(true);
         m_EClass__eOperations->setEType(m_EOperationEClass);
-        m_EClass__eOperations->setName("eOperations");
         m_EClass__eOperations->setDefaultValueLiteral("");
         m_EClass__eOperations->setLowerBound(0);
         m_EClass__eOperations->setUpperBound(-1);
@@ -1524,7 +1595,6 @@ void EcorePackage::_initPackage()
                 ::ecore::as < ::ecore::EReference
                         > (m_EOperationEClass->getEStructuralFeatures()[0]));
         m_EClass__eAllAttributes->setEType(m_EAttributeEClass);
-        m_EClass__eAllAttributes->setName("eAllAttributes");
         m_EClass__eAllAttributes->setDefaultValueLiteral("");
         m_EClass__eAllAttributes->setLowerBound(0);
         m_EClass__eAllAttributes->setUpperBound(-1);
@@ -1537,7 +1607,6 @@ void EcorePackage::_initPackage()
         m_EClass__eAllAttributes->setDerived(true);
         m_EClass__eAllAttributes->setOrdered(true);
         m_EClass__eAllReferences->setEType(m_EReferenceEClass);
-        m_EClass__eAllReferences->setName("eAllReferences");
         m_EClass__eAllReferences->setDefaultValueLiteral("");
         m_EClass__eAllReferences->setLowerBound(0);
         m_EClass__eAllReferences->setUpperBound(-1);
@@ -1550,7 +1619,6 @@ void EcorePackage::_initPackage()
         m_EClass__eAllReferences->setDerived(true);
         m_EClass__eAllReferences->setOrdered(true);
         m_EClass__eReferences->setEType(m_EReferenceEClass);
-        m_EClass__eReferences->setName("eReferences");
         m_EClass__eReferences->setDefaultValueLiteral("");
         m_EClass__eReferences->setLowerBound(0);
         m_EClass__eReferences->setUpperBound(-1);
@@ -1563,7 +1631,6 @@ void EcorePackage::_initPackage()
         m_EClass__eReferences->setDerived(true);
         m_EClass__eReferences->setOrdered(true);
         m_EClass__eAttributes->setEType(m_EAttributeEClass);
-        m_EClass__eAttributes->setName("eAttributes");
         m_EClass__eAttributes->setDefaultValueLiteral("");
         m_EClass__eAttributes->setLowerBound(0);
         m_EClass__eAttributes->setUpperBound(-1);
@@ -1576,7 +1643,6 @@ void EcorePackage::_initPackage()
         m_EClass__eAttributes->setDerived(true);
         m_EClass__eAttributes->setOrdered(true);
         m_EClass__eAllContainments->setEType(m_EReferenceEClass);
-        m_EClass__eAllContainments->setName("eAllContainments");
         m_EClass__eAllContainments->setDefaultValueLiteral("");
         m_EClass__eAllContainments->setLowerBound(0);
         m_EClass__eAllContainments->setUpperBound(-1);
@@ -1589,7 +1655,6 @@ void EcorePackage::_initPackage()
         m_EClass__eAllContainments->setDerived(true);
         m_EClass__eAllContainments->setOrdered(true);
         m_EClass__eAllOperations->setEType(m_EOperationEClass);
-        m_EClass__eAllOperations->setName("eAllOperations");
         m_EClass__eAllOperations->setDefaultValueLiteral("");
         m_EClass__eAllOperations->setLowerBound(0);
         m_EClass__eAllOperations->setUpperBound(-1);
@@ -1602,7 +1667,6 @@ void EcorePackage::_initPackage()
         m_EClass__eAllOperations->setDerived(true);
         m_EClass__eAllOperations->setOrdered(true);
         m_EClass__eAllStructuralFeatures->setEType(m_EStructuralFeatureEClass);
-        m_EClass__eAllStructuralFeatures->setName("eAllStructuralFeatures");
         m_EClass__eAllStructuralFeatures->setDefaultValueLiteral("");
         m_EClass__eAllStructuralFeatures->setLowerBound(0);
         m_EClass__eAllStructuralFeatures->setUpperBound(-1);
@@ -1615,7 +1679,6 @@ void EcorePackage::_initPackage()
         m_EClass__eAllStructuralFeatures->setDerived(true);
         m_EClass__eAllStructuralFeatures->setOrdered(true);
         m_EClass__eAllSuperTypes->setEType(m_EClassEClass);
-        m_EClass__eAllSuperTypes->setName("eAllSuperTypes");
         m_EClass__eAllSuperTypes->setDefaultValueLiteral("");
         m_EClass__eAllSuperTypes->setLowerBound(0);
         m_EClass__eAllSuperTypes->setUpperBound(-1);
@@ -1628,7 +1691,6 @@ void EcorePackage::_initPackage()
         m_EClass__eAllSuperTypes->setDerived(true);
         m_EClass__eAllSuperTypes->setOrdered(true);
         m_EClass__eIDAttribute->setEType(m_EAttributeEClass);
-        m_EClass__eIDAttribute->setName("eIDAttribute");
         m_EClass__eIDAttribute->setDefaultValueLiteral("");
         m_EClass__eIDAttribute->setLowerBound(0);
         m_EClass__eIDAttribute->setUpperBound(1);
@@ -1641,7 +1703,6 @@ void EcorePackage::_initPackage()
         m_EClass__eIDAttribute->setDerived(true);
         m_EClass__eIDAttribute->setOrdered(true);
         m_EClass__eStructuralFeatures->setEType(m_EStructuralFeatureEClass);
-        m_EClass__eStructuralFeatures->setName("eStructuralFeatures");
         m_EClass__eStructuralFeatures->setDefaultValueLiteral("");
         m_EClass__eStructuralFeatures->setLowerBound(0);
         m_EClass__eStructuralFeatures->setUpperBound(-1);
@@ -1657,7 +1718,6 @@ void EcorePackage::_initPackage()
                 ::ecore::as < ::ecore::EReference
                         > (m_EStructuralFeatureEClass->getEStructuralFeatures()[7]));
         m_EClass__eGenericSuperTypes->setEType(m_EGenericTypeEClass);
-        m_EClass__eGenericSuperTypes->setName("eGenericSuperTypes");
         m_EClass__eGenericSuperTypes->setDefaultValueLiteral("");
         m_EClass__eGenericSuperTypes->setLowerBound(0);
         m_EClass__eGenericSuperTypes->setUpperBound(-1);
@@ -1670,7 +1730,6 @@ void EcorePackage::_initPackage()
         m_EClass__eGenericSuperTypes->setDerived(false);
         m_EClass__eGenericSuperTypes->setOrdered(true);
         m_EClass__eAllGenericSuperTypes->setEType(m_EGenericTypeEClass);
-        m_EClass__eAllGenericSuperTypes->setName("eAllGenericSuperTypes");
         m_EClass__eAllGenericSuperTypes->setDefaultValueLiteral("");
         m_EClass__eAllGenericSuperTypes->setLowerBound(0);
         m_EClass__eAllGenericSuperTypes->setUpperBound(-1);
@@ -1866,7 +1925,6 @@ void EcorePackage::_initPackage()
         m_EClassifierEClass->setAbstract(true);
         m_EClassifierEClass->setInterface(false);
         m_EClassifier__instanceClassName->setEType(m_EStringEDataType);
-        m_EClassifier__instanceClassName->setName("instanceClassName");
         m_EClassifier__instanceClassName->setDefaultValueLiteral("");
         m_EClassifier__instanceClassName->setLowerBound(0);
         m_EClassifier__instanceClassName->setUpperBound(1);
@@ -1888,7 +1946,6 @@ void EcorePackage::_initPackage()
             _g0->getETypeArguments().push_back(_g1);
             m_EClassifier__instanceClass->setEGenericType(_g0);
         }
-        m_EClassifier__instanceClass->setName("instanceClass");
         m_EClassifier__instanceClass->setDefaultValueLiteral("");
         m_EClassifier__instanceClass->setLowerBound(0);
         m_EClassifier__instanceClass->setUpperBound(1);
@@ -1901,7 +1958,6 @@ void EcorePackage::_initPackage()
         m_EClassifier__instanceClass->setDerived(true);
         m_EClassifier__instanceClass->setOrdered(true);
         m_EClassifier__defaultValue->setEType(m_EJavaObjectEDataType);
-        m_EClassifier__defaultValue->setName("defaultValue");
         m_EClassifier__defaultValue->setDefaultValueLiteral("");
         m_EClassifier__defaultValue->setLowerBound(0);
         m_EClassifier__defaultValue->setUpperBound(1);
@@ -1914,7 +1970,6 @@ void EcorePackage::_initPackage()
         m_EClassifier__defaultValue->setDerived(true);
         m_EClassifier__defaultValue->setOrdered(true);
         m_EClassifier__instanceTypeName->setEType(m_EStringEDataType);
-        m_EClassifier__instanceTypeName->setName("instanceTypeName");
         m_EClassifier__instanceTypeName->setDefaultValueLiteral("");
         m_EClassifier__instanceTypeName->setLowerBound(0);
         m_EClassifier__instanceTypeName->setUpperBound(1);
@@ -1928,7 +1983,6 @@ void EcorePackage::_initPackage()
         m_EClassifier__instanceTypeName->setOrdered(true);
 
         m_EClassifier__ePackage->setEType(m_EPackageEClass);
-        m_EClassifier__ePackage->setName("ePackage");
         m_EClassifier__ePackage->setDefaultValueLiteral("");
         m_EClassifier__ePackage->setLowerBound(0);
         m_EClassifier__ePackage->setUpperBound(1);
@@ -1944,7 +1998,6 @@ void EcorePackage::_initPackage()
                 ::ecore::as < ::ecore::EReference
                         > (m_EPackageEClass->getEStructuralFeatures()[3]));
         m_EClassifier__eTypeParameters->setEType(m_ETypeParameterEClass);
-        m_EClassifier__eTypeParameters->setName("eTypeParameters");
         m_EClassifier__eTypeParameters->setDefaultValueLiteral("");
         m_EClassifier__eTypeParameters->setLowerBound(0);
         m_EClassifier__eTypeParameters->setUpperBound(-1);
@@ -1997,7 +2050,6 @@ void EcorePackage::_initPackage()
         m_EDataTypeEClass->setAbstract(false);
         m_EDataTypeEClass->setInterface(false);
         m_EDataType__serializable->setEType(m_EBooleanEDataType);
-        m_EDataType__serializable->setName("serializable");
         m_EDataType__serializable->setDefaultValueLiteral("true");
         m_EDataType__serializable->setLowerBound(0);
         m_EDataType__serializable->setUpperBound(1);
@@ -2018,7 +2070,6 @@ void EcorePackage::_initPackage()
         m_EEnumEClass->setInterface(false);
 
         m_EEnum__eLiterals->setEType(m_EEnumLiteralEClass);
-        m_EEnum__eLiterals->setName("eLiterals");
         m_EEnum__eLiterals->setDefaultValueLiteral("");
         m_EEnum__eLiterals->setLowerBound(0);
         m_EEnum__eLiterals->setUpperBound(-1);
@@ -2107,7 +2158,6 @@ void EcorePackage::_initPackage()
         m_EEnumLiteralEClass->setAbstract(false);
         m_EEnumLiteralEClass->setInterface(false);
         m_EEnumLiteral__value->setEType(m_EIntEDataType);
-        m_EEnumLiteral__value->setName("value");
         m_EEnumLiteral__value->setDefaultValueLiteral("");
         m_EEnumLiteral__value->setLowerBound(0);
         m_EEnumLiteral__value->setUpperBound(1);
@@ -2120,7 +2170,6 @@ void EcorePackage::_initPackage()
         m_EEnumLiteral__value->setDerived(false);
         m_EEnumLiteral__value->setOrdered(true);
         m_EEnumLiteral__instance->setEType(m_EEnumeratorEDataType);
-        m_EEnumLiteral__instance->setName("instance");
         m_EEnumLiteral__instance->setDefaultValueLiteral("");
         m_EEnumLiteral__instance->setLowerBound(0);
         m_EEnumLiteral__instance->setUpperBound(1);
@@ -2133,7 +2182,6 @@ void EcorePackage::_initPackage()
         m_EEnumLiteral__instance->setDerived(false);
         m_EEnumLiteral__instance->setOrdered(true);
         m_EEnumLiteral__literal->setEType(m_EStringEDataType);
-        m_EEnumLiteral__literal->setName("literal");
         m_EEnumLiteral__literal->setDefaultValueLiteral("");
         m_EEnumLiteral__literal->setLowerBound(0);
         m_EEnumLiteral__literal->setUpperBound(1);
@@ -2147,7 +2195,6 @@ void EcorePackage::_initPackage()
         m_EEnumLiteral__literal->setOrdered(true);
 
         m_EEnumLiteral__eEnum->setEType(m_EEnumEClass);
-        m_EEnumLiteral__eEnum->setName("eEnum");
         m_EEnumLiteral__eEnum->setDefaultValueLiteral("");
         m_EEnumLiteral__eEnum->setLowerBound(0);
         m_EEnumLiteral__eEnum->setUpperBound(1);
@@ -2171,7 +2218,6 @@ void EcorePackage::_initPackage()
         m_EFactoryEClass->setInterface(false);
 
         m_EFactory__ePackage->setEType(m_EPackageEClass);
-        m_EFactory__ePackage->setName("ePackage");
         m_EFactory__ePackage->setDefaultValueLiteral("");
         m_EFactory__ePackage->setLowerBound(1);
         m_EFactory__ePackage->setUpperBound(1);
@@ -2283,7 +2329,6 @@ void EcorePackage::_initPackage()
         m_EModelElementEClass->setInterface(false);
 
         m_EModelElement__eAnnotations->setEType(m_EAnnotationEClass);
-        m_EModelElement__eAnnotations->setName("eAnnotations");
         m_EModelElement__eAnnotations->setDefaultValueLiteral("");
         m_EModelElement__eAnnotations->setLowerBound(0);
         m_EModelElement__eAnnotations->setUpperBound(-1);
@@ -2328,7 +2373,6 @@ void EcorePackage::_initPackage()
         m_ENamedElementEClass->setAbstract(true);
         m_ENamedElementEClass->setInterface(false);
         m_ENamedElement__name->setEType(m_EStringEDataType);
-        m_ENamedElement__name->setName("name");
         m_ENamedElement__name->setDefaultValueLiteral("");
         m_ENamedElement__name->setLowerBound(0);
         m_ENamedElement__name->setUpperBound(1);
@@ -2659,7 +2703,6 @@ void EcorePackage::_initPackage()
         m_EOperationEClass->setInterface(false);
 
         m_EOperation__eContainingClass->setEType(m_EClassEClass);
-        m_EOperation__eContainingClass->setName("eContainingClass");
         m_EOperation__eContainingClass->setDefaultValueLiteral("");
         m_EOperation__eContainingClass->setLowerBound(0);
         m_EOperation__eContainingClass->setUpperBound(1);
@@ -2675,7 +2718,6 @@ void EcorePackage::_initPackage()
                 ::ecore::as < ::ecore::EReference
                         > (m_EClassEClass->getEStructuralFeatures()[3]));
         m_EOperation__eTypeParameters->setEType(m_ETypeParameterEClass);
-        m_EOperation__eTypeParameters->setName("eTypeParameters");
         m_EOperation__eTypeParameters->setDefaultValueLiteral("");
         m_EOperation__eTypeParameters->setLowerBound(0);
         m_EOperation__eTypeParameters->setUpperBound(-1);
@@ -2688,7 +2730,6 @@ void EcorePackage::_initPackage()
         m_EOperation__eTypeParameters->setDerived(false);
         m_EOperation__eTypeParameters->setOrdered(true);
         m_EOperation__eParameters->setEType(m_EParameterEClass);
-        m_EOperation__eParameters->setName("eParameters");
         m_EOperation__eParameters->setDefaultValueLiteral("");
         m_EOperation__eParameters->setLowerBound(0);
         m_EOperation__eParameters->setUpperBound(-1);
@@ -2704,7 +2745,6 @@ void EcorePackage::_initPackage()
                 ::ecore::as < ::ecore::EReference
                         > (m_EParameterEClass->getEStructuralFeatures()[0]));
         m_EOperation__eExceptions->setEType(m_EClassifierEClass);
-        m_EOperation__eExceptions->setName("eExceptions");
         m_EOperation__eExceptions->setDefaultValueLiteral("");
         m_EOperation__eExceptions->setLowerBound(0);
         m_EOperation__eExceptions->setUpperBound(-1);
@@ -2717,7 +2757,6 @@ void EcorePackage::_initPackage()
         m_EOperation__eExceptions->setDerived(false);
         m_EOperation__eExceptions->setOrdered(true);
         m_EOperation__eGenericExceptions->setEType(m_EGenericTypeEClass);
-        m_EOperation__eGenericExceptions->setName("eGenericExceptions");
         m_EOperation__eGenericExceptions->setDefaultValueLiteral("");
         m_EOperation__eGenericExceptions->setLowerBound(0);
         m_EOperation__eGenericExceptions->setUpperBound(-1);
@@ -2770,7 +2809,6 @@ void EcorePackage::_initPackage()
         m_EPackageEClass->setAbstract(false);
         m_EPackageEClass->setInterface(false);
         m_EPackage__nsURI->setEType(m_EStringEDataType);
-        m_EPackage__nsURI->setName("nsURI");
         m_EPackage__nsURI->setDefaultValueLiteral("");
         m_EPackage__nsURI->setLowerBound(0);
         m_EPackage__nsURI->setUpperBound(1);
@@ -2783,7 +2821,6 @@ void EcorePackage::_initPackage()
         m_EPackage__nsURI->setDerived(false);
         m_EPackage__nsURI->setOrdered(true);
         m_EPackage__nsPrefix->setEType(m_EStringEDataType);
-        m_EPackage__nsPrefix->setName("nsPrefix");
         m_EPackage__nsPrefix->setDefaultValueLiteral("");
         m_EPackage__nsPrefix->setLowerBound(0);
         m_EPackage__nsPrefix->setUpperBound(1);
@@ -2797,7 +2834,6 @@ void EcorePackage::_initPackage()
         m_EPackage__nsPrefix->setOrdered(true);
 
         m_EPackage__eFactoryInstance->setEType(m_EFactoryEClass);
-        m_EPackage__eFactoryInstance->setName("eFactoryInstance");
         m_EPackage__eFactoryInstance->setDefaultValueLiteral("");
         m_EPackage__eFactoryInstance->setLowerBound(1);
         m_EPackage__eFactoryInstance->setUpperBound(1);
@@ -2813,7 +2849,6 @@ void EcorePackage::_initPackage()
                 ::ecore::as < ::ecore::EReference
                         > (m_EFactoryEClass->getEStructuralFeatures()[0]));
         m_EPackage__eClassifiers->setEType(m_EClassifierEClass);
-        m_EPackage__eClassifiers->setName("eClassifiers");
         m_EPackage__eClassifiers->setDefaultValueLiteral("");
         m_EPackage__eClassifiers->setLowerBound(0);
         m_EPackage__eClassifiers->setUpperBound(-1);
@@ -2829,7 +2864,6 @@ void EcorePackage::_initPackage()
                 ::ecore::as < ::ecore::EReference
                         > (m_EClassifierEClass->getEStructuralFeatures()[4]));
         m_EPackage__eSubpackages->setEType(m_EPackageEClass);
-        m_EPackage__eSubpackages->setName("eSubpackages");
         m_EPackage__eSubpackages->setDefaultValueLiteral("");
         m_EPackage__eSubpackages->setLowerBound(0);
         m_EPackage__eSubpackages->setUpperBound(-1);
@@ -2845,7 +2879,6 @@ void EcorePackage::_initPackage()
                 ::ecore::as < ::ecore::EReference
                         > (m_EPackageEClass->getEStructuralFeatures()[5]));
         m_EPackage__eSuperPackage->setEType(m_EPackageEClass);
-        m_EPackage__eSuperPackage->setName("eSuperPackage");
         m_EPackage__eSuperPackage->setDefaultValueLiteral("");
         m_EPackage__eSuperPackage->setLowerBound(0);
         m_EPackage__eSuperPackage->setUpperBound(1);
@@ -2891,7 +2924,6 @@ void EcorePackage::_initPackage()
         m_EParameterEClass->setInterface(false);
 
         m_EParameter__eOperation->setEType(m_EOperationEClass);
-        m_EParameter__eOperation->setName("eOperation");
         m_EParameter__eOperation->setDefaultValueLiteral("");
         m_EParameter__eOperation->setLowerBound(0);
         m_EParameter__eOperation->setUpperBound(1);
@@ -2914,7 +2946,6 @@ void EcorePackage::_initPackage()
         m_EReferenceEClass->setAbstract(false);
         m_EReferenceEClass->setInterface(false);
         m_EReference__containment->setEType(m_EBooleanEDataType);
-        m_EReference__containment->setName("containment");
         m_EReference__containment->setDefaultValueLiteral("");
         m_EReference__containment->setLowerBound(0);
         m_EReference__containment->setUpperBound(1);
@@ -2927,7 +2958,6 @@ void EcorePackage::_initPackage()
         m_EReference__containment->setDerived(false);
         m_EReference__containment->setOrdered(true);
         m_EReference__container->setEType(m_EBooleanEDataType);
-        m_EReference__container->setName("container");
         m_EReference__container->setDefaultValueLiteral("");
         m_EReference__container->setLowerBound(0);
         m_EReference__container->setUpperBound(1);
@@ -2940,7 +2970,6 @@ void EcorePackage::_initPackage()
         m_EReference__container->setDerived(true);
         m_EReference__container->setOrdered(true);
         m_EReference__resolveProxies->setEType(m_EBooleanEDataType);
-        m_EReference__resolveProxies->setName("resolveProxies");
         m_EReference__resolveProxies->setDefaultValueLiteral("true");
         m_EReference__resolveProxies->setLowerBound(0);
         m_EReference__resolveProxies->setUpperBound(1);
@@ -2954,7 +2983,6 @@ void EcorePackage::_initPackage()
         m_EReference__resolveProxies->setOrdered(true);
 
         m_EReference__eOpposite->setEType(m_EReferenceEClass);
-        m_EReference__eOpposite->setName("eOpposite");
         m_EReference__eOpposite->setDefaultValueLiteral("");
         m_EReference__eOpposite->setLowerBound(0);
         m_EReference__eOpposite->setUpperBound(1);
@@ -2967,7 +2995,6 @@ void EcorePackage::_initPackage()
         m_EReference__eOpposite->setDerived(false);
         m_EReference__eOpposite->setOrdered(true);
         m_EReference__eReferenceType->setEType(m_EClassEClass);
-        m_EReference__eReferenceType->setName("eReferenceType");
         m_EReference__eReferenceType->setDefaultValueLiteral("");
         m_EReference__eReferenceType->setLowerBound(1);
         m_EReference__eReferenceType->setUpperBound(1);
@@ -2980,7 +3007,6 @@ void EcorePackage::_initPackage()
         m_EReference__eReferenceType->setDerived(true);
         m_EReference__eReferenceType->setOrdered(true);
         m_EReference__eKeys->setEType(m_EAttributeEClass);
-        m_EReference__eKeys->setName("eKeys");
         m_EReference__eKeys->setDefaultValueLiteral("");
         m_EReference__eKeys->setLowerBound(0);
         m_EReference__eKeys->setUpperBound(-1);
@@ -3000,7 +3026,6 @@ void EcorePackage::_initPackage()
         m_EStructuralFeatureEClass->setAbstract(true);
         m_EStructuralFeatureEClass->setInterface(false);
         m_EStructuralFeature__changeable->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__changeable->setName("changeable");
         m_EStructuralFeature__changeable->setDefaultValueLiteral("true");
         m_EStructuralFeature__changeable->setLowerBound(0);
         m_EStructuralFeature__changeable->setUpperBound(1);
@@ -3013,7 +3038,6 @@ void EcorePackage::_initPackage()
         m_EStructuralFeature__changeable->setDerived(false);
         m_EStructuralFeature__changeable->setOrdered(true);
         m_EStructuralFeature__volatile->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__volatile->setName("volatile");
         m_EStructuralFeature__volatile->setDefaultValueLiteral("");
         m_EStructuralFeature__volatile->setLowerBound(0);
         m_EStructuralFeature__volatile->setUpperBound(1);
@@ -3026,7 +3050,6 @@ void EcorePackage::_initPackage()
         m_EStructuralFeature__volatile->setDerived(false);
         m_EStructuralFeature__volatile->setOrdered(true);
         m_EStructuralFeature__transient->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__transient->setName("transient");
         m_EStructuralFeature__transient->setDefaultValueLiteral("");
         m_EStructuralFeature__transient->setLowerBound(0);
         m_EStructuralFeature__transient->setUpperBound(1);
@@ -3039,8 +3062,6 @@ void EcorePackage::_initPackage()
         m_EStructuralFeature__transient->setDerived(false);
         m_EStructuralFeature__transient->setOrdered(true);
         m_EStructuralFeature__defaultValueLiteral->setEType(m_EStringEDataType);
-        m_EStructuralFeature__defaultValueLiteral->setName(
-                "defaultValueLiteral");
         m_EStructuralFeature__defaultValueLiteral->setDefaultValueLiteral("");
         m_EStructuralFeature__defaultValueLiteral->setLowerBound(0);
         m_EStructuralFeature__defaultValueLiteral->setUpperBound(1);
@@ -3053,7 +3074,6 @@ void EcorePackage::_initPackage()
         m_EStructuralFeature__defaultValueLiteral->setDerived(false);
         m_EStructuralFeature__defaultValueLiteral->setOrdered(true);
         m_EStructuralFeature__defaultValue->setEType(m_EJavaObjectEDataType);
-        m_EStructuralFeature__defaultValue->setName("defaultValue");
         m_EStructuralFeature__defaultValue->setDefaultValueLiteral("");
         m_EStructuralFeature__defaultValue->setLowerBound(0);
         m_EStructuralFeature__defaultValue->setUpperBound(1);
@@ -3066,7 +3086,6 @@ void EcorePackage::_initPackage()
         m_EStructuralFeature__defaultValue->setDerived(true);
         m_EStructuralFeature__defaultValue->setOrdered(true);
         m_EStructuralFeature__unsettable->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__unsettable->setName("unsettable");
         m_EStructuralFeature__unsettable->setDefaultValueLiteral("");
         m_EStructuralFeature__unsettable->setLowerBound(0);
         m_EStructuralFeature__unsettable->setUpperBound(1);
@@ -3079,7 +3098,6 @@ void EcorePackage::_initPackage()
         m_EStructuralFeature__unsettable->setDerived(false);
         m_EStructuralFeature__unsettable->setOrdered(true);
         m_EStructuralFeature__derived->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__derived->setName("derived");
         m_EStructuralFeature__derived->setDefaultValueLiteral("");
         m_EStructuralFeature__derived->setLowerBound(0);
         m_EStructuralFeature__derived->setUpperBound(1);
@@ -3093,7 +3111,6 @@ void EcorePackage::_initPackage()
         m_EStructuralFeature__derived->setOrdered(true);
 
         m_EStructuralFeature__eContainingClass->setEType(m_EClassEClass);
-        m_EStructuralFeature__eContainingClass->setName("eContainingClass");
         m_EStructuralFeature__eContainingClass->setDefaultValueLiteral("");
         m_EStructuralFeature__eContainingClass->setLowerBound(0);
         m_EStructuralFeature__eContainingClass->setUpperBound(1);
@@ -3147,7 +3164,6 @@ void EcorePackage::_initPackage()
         m_ETypedElementEClass->setAbstract(true);
         m_ETypedElementEClass->setInterface(false);
         m_ETypedElement__ordered->setEType(m_EBooleanEDataType);
-        m_ETypedElement__ordered->setName("ordered");
         m_ETypedElement__ordered->setDefaultValueLiteral("true");
         m_ETypedElement__ordered->setLowerBound(0);
         m_ETypedElement__ordered->setUpperBound(1);
@@ -3160,7 +3176,6 @@ void EcorePackage::_initPackage()
         m_ETypedElement__ordered->setDerived(false);
         m_ETypedElement__ordered->setOrdered(true);
         m_ETypedElement__unique->setEType(m_EBooleanEDataType);
-        m_ETypedElement__unique->setName("unique");
         m_ETypedElement__unique->setDefaultValueLiteral("true");
         m_ETypedElement__unique->setLowerBound(0);
         m_ETypedElement__unique->setUpperBound(1);
@@ -3173,7 +3188,6 @@ void EcorePackage::_initPackage()
         m_ETypedElement__unique->setDerived(false);
         m_ETypedElement__unique->setOrdered(true);
         m_ETypedElement__lowerBound->setEType(m_EIntEDataType);
-        m_ETypedElement__lowerBound->setName("lowerBound");
         m_ETypedElement__lowerBound->setDefaultValueLiteral("");
         m_ETypedElement__lowerBound->setLowerBound(0);
         m_ETypedElement__lowerBound->setUpperBound(1);
@@ -3186,7 +3200,6 @@ void EcorePackage::_initPackage()
         m_ETypedElement__lowerBound->setDerived(false);
         m_ETypedElement__lowerBound->setOrdered(true);
         m_ETypedElement__upperBound->setEType(m_EIntEDataType);
-        m_ETypedElement__upperBound->setName("upperBound");
         m_ETypedElement__upperBound->setDefaultValueLiteral("1");
         m_ETypedElement__upperBound->setLowerBound(0);
         m_ETypedElement__upperBound->setUpperBound(1);
@@ -3199,7 +3212,6 @@ void EcorePackage::_initPackage()
         m_ETypedElement__upperBound->setDerived(false);
         m_ETypedElement__upperBound->setOrdered(true);
         m_ETypedElement__many->setEType(m_EBooleanEDataType);
-        m_ETypedElement__many->setName("many");
         m_ETypedElement__many->setDefaultValueLiteral("");
         m_ETypedElement__many->setLowerBound(0);
         m_ETypedElement__many->setUpperBound(1);
@@ -3212,7 +3224,6 @@ void EcorePackage::_initPackage()
         m_ETypedElement__many->setDerived(true);
         m_ETypedElement__many->setOrdered(true);
         m_ETypedElement__required->setEType(m_EBooleanEDataType);
-        m_ETypedElement__required->setName("required");
         m_ETypedElement__required->setDefaultValueLiteral("");
         m_ETypedElement__required->setLowerBound(0);
         m_ETypedElement__required->setUpperBound(1);
@@ -3226,7 +3237,6 @@ void EcorePackage::_initPackage()
         m_ETypedElement__required->setOrdered(true);
 
         m_ETypedElement__eType->setEType(m_EClassifierEClass);
-        m_ETypedElement__eType->setName("eType");
         m_ETypedElement__eType->setDefaultValueLiteral("");
         m_ETypedElement__eType->setLowerBound(0);
         m_ETypedElement__eType->setUpperBound(1);
@@ -3239,7 +3249,6 @@ void EcorePackage::_initPackage()
         m_ETypedElement__eType->setDerived(false);
         m_ETypedElement__eType->setOrdered(true);
         m_ETypedElement__eGenericType->setEType(m_EGenericTypeEClass);
-        m_ETypedElement__eGenericType->setName("eGenericType");
         m_ETypedElement__eGenericType->setDefaultValueLiteral("");
         m_ETypedElement__eGenericType->setLowerBound(0);
         m_ETypedElement__eGenericType->setUpperBound(1);
@@ -3259,7 +3268,6 @@ void EcorePackage::_initPackage()
         m_EStringToStringMapEntryEClass->setAbstract(false);
         m_EStringToStringMapEntryEClass->setInterface(false);
         m_EStringToStringMapEntry__key->setEType(m_EStringEDataType);
-        m_EStringToStringMapEntry__key->setName("key");
         m_EStringToStringMapEntry__key->setDefaultValueLiteral("");
         m_EStringToStringMapEntry__key->setLowerBound(0);
         m_EStringToStringMapEntry__key->setUpperBound(1);
@@ -3272,7 +3280,6 @@ void EcorePackage::_initPackage()
         m_EStringToStringMapEntry__key->setDerived(false);
         m_EStringToStringMapEntry__key->setOrdered(true);
         m_EStringToStringMapEntry__value->setEType(m_EStringEDataType);
-        m_EStringToStringMapEntry__value->setName("value");
         m_EStringToStringMapEntry__value->setDefaultValueLiteral("");
         m_EStringToStringMapEntry__value->setLowerBound(0);
         m_EStringToStringMapEntry__value->setUpperBound(1);
@@ -3293,7 +3300,6 @@ void EcorePackage::_initPackage()
         m_EGenericTypeEClass->setInterface(false);
 
         m_EGenericType__eUpperBound->setEType(m_EGenericTypeEClass);
-        m_EGenericType__eUpperBound->setName("eUpperBound");
         m_EGenericType__eUpperBound->setDefaultValueLiteral("");
         m_EGenericType__eUpperBound->setLowerBound(0);
         m_EGenericType__eUpperBound->setUpperBound(1);
@@ -3306,7 +3312,6 @@ void EcorePackage::_initPackage()
         m_EGenericType__eUpperBound->setDerived(false);
         m_EGenericType__eUpperBound->setOrdered(true);
         m_EGenericType__eTypeArguments->setEType(m_EGenericTypeEClass);
-        m_EGenericType__eTypeArguments->setName("eTypeArguments");
         m_EGenericType__eTypeArguments->setDefaultValueLiteral("");
         m_EGenericType__eTypeArguments->setLowerBound(0);
         m_EGenericType__eTypeArguments->setUpperBound(-1);
@@ -3319,7 +3324,6 @@ void EcorePackage::_initPackage()
         m_EGenericType__eTypeArguments->setDerived(false);
         m_EGenericType__eTypeArguments->setOrdered(true);
         m_EGenericType__eRawType->setEType(m_EClassifierEClass);
-        m_EGenericType__eRawType->setName("eRawType");
         m_EGenericType__eRawType->setDefaultValueLiteral("");
         m_EGenericType__eRawType->setLowerBound(1);
         m_EGenericType__eRawType->setUpperBound(1);
@@ -3332,7 +3336,6 @@ void EcorePackage::_initPackage()
         m_EGenericType__eRawType->setDerived(true);
         m_EGenericType__eRawType->setOrdered(true);
         m_EGenericType__eLowerBound->setEType(m_EGenericTypeEClass);
-        m_EGenericType__eLowerBound->setName("eLowerBound");
         m_EGenericType__eLowerBound->setDefaultValueLiteral("");
         m_EGenericType__eLowerBound->setLowerBound(0);
         m_EGenericType__eLowerBound->setUpperBound(1);
@@ -3345,7 +3348,6 @@ void EcorePackage::_initPackage()
         m_EGenericType__eLowerBound->setDerived(false);
         m_EGenericType__eLowerBound->setOrdered(true);
         m_EGenericType__eTypeParameter->setEType(m_ETypeParameterEClass);
-        m_EGenericType__eTypeParameter->setName("eTypeParameter");
         m_EGenericType__eTypeParameter->setDefaultValueLiteral("");
         m_EGenericType__eTypeParameter->setLowerBound(0);
         m_EGenericType__eTypeParameter->setUpperBound(1);
@@ -3358,7 +3360,6 @@ void EcorePackage::_initPackage()
         m_EGenericType__eTypeParameter->setDerived(false);
         m_EGenericType__eTypeParameter->setOrdered(true);
         m_EGenericType__eClassifier->setEType(m_EClassifierEClass);
-        m_EGenericType__eClassifier->setName("eClassifier");
         m_EGenericType__eClassifier->setDefaultValueLiteral("");
         m_EGenericType__eClassifier->setLowerBound(0);
         m_EGenericType__eClassifier->setUpperBound(1);
@@ -3379,7 +3380,6 @@ void EcorePackage::_initPackage()
         m_ETypeParameterEClass->setInterface(false);
 
         m_ETypeParameter__eBounds->setEType(m_EGenericTypeEClass);
-        m_ETypeParameter__eBounds->setName("eBounds");
         m_ETypeParameter__eBounds->setDefaultValueLiteral("");
         m_ETypeParameter__eBounds->setLowerBound(0);
         m_ETypeParameter__eBounds->setUpperBound(-1);

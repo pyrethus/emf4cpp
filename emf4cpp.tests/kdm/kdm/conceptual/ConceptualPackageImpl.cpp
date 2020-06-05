@@ -121,6 +121,7 @@ void ConceptualPackage::_initPackage()
         // m_ConceptualModel__conceptualElement has already been allocated above
         m_ConceptualModel__conceptualElement->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__CONCEPTUALELEMENT);
+        m_ConceptualModel__conceptualElement->setName("conceptualElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualModelEClass->getEStructuralFeatures()).basicAdd(
                 m_ConceptualModel__conceptualElement);
@@ -138,6 +139,7 @@ void ConceptualPackage::_initPackage()
         // m_AbstractConceptualElement__source has already been allocated above
         m_AbstractConceptualElement__source->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE);
+        m_AbstractConceptualElement__source->setName("source");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractConceptualElement__source);
@@ -146,6 +148,7 @@ void ConceptualPackage::_initPackage()
         // m_AbstractConceptualElement__implementation has already been allocated above
         m_AbstractConceptualElement__implementation->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION);
+        m_AbstractConceptualElement__implementation->setName("implementation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractConceptualElement__implementation);
@@ -154,6 +157,8 @@ void ConceptualPackage::_initPackage()
         // m_AbstractConceptualElement__conceptualRelation has already been allocated above
         m_AbstractConceptualElement__conceptualRelation->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION);
+        m_AbstractConceptualElement__conceptualRelation->setName(
+                "conceptualRelation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractConceptualElement__conceptualRelation);
@@ -162,6 +167,7 @@ void ConceptualPackage::_initPackage()
         // m_AbstractConceptualElement__abstraction has already been allocated above
         m_AbstractConceptualElement__abstraction->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION);
+        m_AbstractConceptualElement__abstraction->setName("abstraction");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractConceptualElement__abstraction);
@@ -186,6 +192,7 @@ void ConceptualPackage::_initPackage()
         // m_ConceptualContainer__conceptualElement has already been allocated above
         m_ConceptualContainer__conceptualElement->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALCONTAINER__CONCEPTUALELEMENT);
+        m_ConceptualContainer__conceptualElement->setName("conceptualElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualContainerEClass->getEStructuralFeatures()).basicAdd(
                 m_ConceptualContainer__conceptualElement);
@@ -219,6 +226,7 @@ void ConceptualPackage::_initPackage()
         // m_ConceptualRelationship__to has already been allocated above
         m_ConceptualRelationship__to->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALRELATIONSHIP__TO);
+        m_ConceptualRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_ConceptualRelationship__to);
@@ -227,6 +235,7 @@ void ConceptualPackage::_initPackage()
         // m_ConceptualRelationship__from has already been allocated above
         m_ConceptualRelationship__from->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALRELATIONSHIP__FROM);
+        m_ConceptualRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_ConceptualRelationship__from);
@@ -267,6 +276,7 @@ void ConceptualPackage::_initPackage()
         // m_ConceptualFlow__to has already been allocated above
         m_ConceptualFlow__to->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__TO);
+        m_ConceptualFlow__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_ConceptualFlow__to);
@@ -274,6 +284,7 @@ void ConceptualPackage::_initPackage()
         // m_ConceptualFlow__from has already been allocated above
         m_ConceptualFlow__from->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__FROM);
+        m_ConceptualFlow__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_ConceptualFlow__from);
@@ -298,6 +309,7 @@ void ConceptualPackage::_initPackage()
         // m_ConceptualRole__conceptualElement has already been allocated above
         m_ConceptualRole__conceptualElement->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALROLE__CONCEPTUALELEMENT);
+        m_ConceptualRole__conceptualElement->setName("conceptualElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRoleEClass->getEStructuralFeatures()).basicAdd(
                 m_ConceptualRole__conceptualElement);
@@ -351,7 +363,6 @@ void ConceptualPackage::_initPackage()
 
         m_ConceptualModel__conceptualElement->setEType(
                 m_AbstractConceptualElementEClass);
-        m_ConceptualModel__conceptualElement->setName("conceptualElement");
         m_ConceptualModel__conceptualElement->setDefaultValueLiteral("");
         m_ConceptualModel__conceptualElement->setLowerBound(0);
         m_ConceptualModel__conceptualElement->setUpperBound(-1);
@@ -373,7 +384,6 @@ void ConceptualPackage::_initPackage()
 
         m_AbstractConceptualElement__source->setEType(
                 dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_AbstractConceptualElement__source->setName("source");
         m_AbstractConceptualElement__source->setDefaultValueLiteral("");
         m_AbstractConceptualElement__source->setLowerBound(0);
         m_AbstractConceptualElement__source->setUpperBound(-1);
@@ -387,7 +397,6 @@ void ConceptualPackage::_initPackage()
         m_AbstractConceptualElement__source->setOrdered(false);
         m_AbstractConceptualElement__implementation->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_AbstractConceptualElement__implementation->setName("implementation");
         m_AbstractConceptualElement__implementation->setDefaultValueLiteral("");
         m_AbstractConceptualElement__implementation->setLowerBound(0);
         m_AbstractConceptualElement__implementation->setUpperBound(-1);
@@ -401,8 +410,6 @@ void ConceptualPackage::_initPackage()
         m_AbstractConceptualElement__implementation->setOrdered(false);
         m_AbstractConceptualElement__conceptualRelation->setEType(
                 m_AbstractConceptualRelationshipEClass);
-        m_AbstractConceptualElement__conceptualRelation->setName(
-                "conceptualRelation");
         m_AbstractConceptualElement__conceptualRelation->setDefaultValueLiteral(
                 "");
         m_AbstractConceptualElement__conceptualRelation->setLowerBound(0);
@@ -418,7 +425,6 @@ void ConceptualPackage::_initPackage()
         m_AbstractConceptualElement__conceptualRelation->setOrdered(false);
         m_AbstractConceptualElement__abstraction->setEType(
                 dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_AbstractConceptualElement__abstraction->setName("abstraction");
         m_AbstractConceptualElement__abstraction->setDefaultValueLiteral("");
         m_AbstractConceptualElement__abstraction->setLowerBound(0);
         m_AbstractConceptualElement__abstraction->setUpperBound(-1);
@@ -447,7 +453,6 @@ void ConceptualPackage::_initPackage()
 
         m_ConceptualContainer__conceptualElement->setEType(
                 m_AbstractConceptualElementEClass);
-        m_ConceptualContainer__conceptualElement->setName("conceptualElement");
         m_ConceptualContainer__conceptualElement->setDefaultValueLiteral("");
         m_ConceptualContainer__conceptualElement->setLowerBound(0);
         m_ConceptualContainer__conceptualElement->setUpperBound(-1);
@@ -484,7 +489,6 @@ void ConceptualPackage::_initPackage()
 
         m_ConceptualRelationship__to->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_ConceptualRelationship__to->setName("to");
         m_ConceptualRelationship__to->setDefaultValueLiteral("");
         m_ConceptualRelationship__to->setLowerBound(1);
         m_ConceptualRelationship__to->setUpperBound(1);
@@ -498,7 +502,6 @@ void ConceptualPackage::_initPackage()
         m_ConceptualRelationship__to->setOrdered(false);
         m_ConceptualRelationship__from->setEType(
                 m_AbstractConceptualElementEClass);
-        m_ConceptualRelationship__from->setName("from");
         m_ConceptualRelationship__from->setDefaultValueLiteral("");
         m_ConceptualRelationship__from->setLowerBound(1);
         m_ConceptualRelationship__from->setUpperBound(1);
@@ -540,7 +543,6 @@ void ConceptualPackage::_initPackage()
         m_ConceptualFlowEClass->setInterface(false);
 
         m_ConceptualFlow__to->setEType(m_ConceptualContainerEClass);
-        m_ConceptualFlow__to->setName("to");
         m_ConceptualFlow__to->setDefaultValueLiteral("");
         m_ConceptualFlow__to->setLowerBound(1);
         m_ConceptualFlow__to->setUpperBound(1);
@@ -553,7 +555,6 @@ void ConceptualPackage::_initPackage()
         m_ConceptualFlow__to->setDerived(false);
         m_ConceptualFlow__to->setOrdered(false);
         m_ConceptualFlow__from->setEType(m_ConceptualContainerEClass);
-        m_ConceptualFlow__from->setName("from");
         m_ConceptualFlow__from->setDefaultValueLiteral("");
         m_ConceptualFlow__from->setLowerBound(1);
         m_ConceptualFlow__from->setUpperBound(1);
@@ -582,7 +583,6 @@ void ConceptualPackage::_initPackage()
 
         m_ConceptualRole__conceptualElement->setEType(
                 m_AbstractConceptualElementEClass);
-        m_ConceptualRole__conceptualElement->setName("conceptualElement");
         m_ConceptualRole__conceptualElement->setDefaultValueLiteral("");
         m_ConceptualRole__conceptualElement->setLowerBound(1);
         m_ConceptualRole__conceptualElement->setUpperBound(1);

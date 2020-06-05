@@ -145,6 +145,7 @@ void StatementPackage::_initPackage()
         // m_ExpandStatement__foreach has already been allocated above
         m_ExpandStatement__foreach->setFeatureID(
                 ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__FOREACH);
+        m_ExpandStatement__foreach->setName("foreach");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ExpandStatement__foreach);
@@ -153,6 +154,7 @@ void StatementPackage::_initPackage()
         // m_ExpandStatement__parameters has already been allocated above
         m_ExpandStatement__parameters->setFeatureID(
                 ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__PARAMETERS);
+        m_ExpandStatement__parameters->setName("parameters");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ExpandStatement__parameters);
@@ -161,6 +163,7 @@ void StatementPackage::_initPackage()
         // m_ExpandStatement__separator has already been allocated above
         m_ExpandStatement__separator->setFeatureID(
                 ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__SEPARATOR);
+        m_ExpandStatement__separator->setName("separator");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ExpandStatement__separator);
@@ -169,6 +172,7 @@ void StatementPackage::_initPackage()
         // m_ExpandStatement__target has already been allocated above
         m_ExpandStatement__target->setFeatureID(
                 ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__TARGET);
+        m_ExpandStatement__target->setName("target");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ExpandStatement__target);
@@ -177,6 +181,7 @@ void StatementPackage::_initPackage()
         // m_ExpandStatement__definition has already been allocated above
         m_ExpandStatement__definition->setFeatureID(
                 ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__DEFINITION);
+        m_ExpandStatement__definition->setName("definition");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ExpandStatement__definition);
@@ -193,6 +198,7 @@ void StatementPackage::_initPackage()
         // m_ExpressionStatement__expression has already been allocated above
         m_ExpressionStatement__expression->setFeatureID(
                 ::xpand3::statement::StatementPackage::EXPRESSIONSTATEMENT__EXPRESSION);
+        m_ExpressionStatement__expression->setName("expression");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpressionStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ExpressionStatement__expression);
@@ -209,6 +215,7 @@ void StatementPackage::_initPackage()
         // m_ErrorStatement__message has already been allocated above
         m_ErrorStatement__message->setFeatureID(
                 ::xpand3::statement::StatementPackage::ERRORSTATEMENT__MESSAGE);
+        m_ErrorStatement__message->setName("message");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ErrorStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ErrorStatement__message);
@@ -226,6 +233,7 @@ void StatementPackage::_initPackage()
         // m_AbstractStatementWithBody__body has already been allocated above
         m_AbstractStatementWithBody__body->setFeatureID(
                 ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY);
+        m_AbstractStatementWithBody__body->setName("body");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractStatementWithBodyEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractStatementWithBody__body);
@@ -242,6 +250,7 @@ void StatementPackage::_initPackage()
         // m_FileStatement__fileNameExpression has already been allocated above
         m_FileStatement__fileNameExpression->setFeatureID(
                 ::xpand3::statement::StatementPackage::FILESTATEMENT__FILENAMEEXPRESSION);
+        m_FileStatement__fileNameExpression->setName("fileNameExpression");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_FileStatement__fileNameExpression);
@@ -250,6 +259,7 @@ void StatementPackage::_initPackage()
         // m_FileStatement__outletNameIdentifier has already been allocated above
         m_FileStatement__outletNameIdentifier->setFeatureID(
                 ::xpand3::statement::StatementPackage::FILESTATEMENT__OUTLETNAMEIDENTIFIER);
+        m_FileStatement__outletNameIdentifier->setName("outletNameIdentifier");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_FileStatement__outletNameIdentifier);
@@ -258,6 +268,7 @@ void StatementPackage::_initPackage()
         // m_FileStatement__once has already been allocated above
         m_FileStatement__once->setFeatureID(
                 ::xpand3::statement::StatementPackage::FILESTATEMENT__ONCE);
+        m_FileStatement__once->setName("once");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_FileStatement__once);
@@ -273,6 +284,7 @@ void StatementPackage::_initPackage()
         // m_ForEachStatement__target has already been allocated above
         m_ForEachStatement__target->setFeatureID(
                 ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__TARGET);
+        m_ForEachStatement__target->setName("target");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ForEachStatement__target);
@@ -281,6 +293,7 @@ void StatementPackage::_initPackage()
         // m_ForEachStatement__separator has already been allocated above
         m_ForEachStatement__separator->setFeatureID(
                 ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__SEPARATOR);
+        m_ForEachStatement__separator->setName("separator");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ForEachStatement__separator);
@@ -289,6 +302,7 @@ void StatementPackage::_initPackage()
         // m_ForEachStatement__variable has already been allocated above
         m_ForEachStatement__variable->setFeatureID(
                 ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__VARIABLE);
+        m_ForEachStatement__variable->setName("variable");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ForEachStatement__variable);
@@ -297,6 +311,7 @@ void StatementPackage::_initPackage()
         // m_ForEachStatement__iteratorName has already been allocated above
         m_ForEachStatement__iteratorName->setFeatureID(
                 ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__ITERATORNAME);
+        m_ForEachStatement__iteratorName->setName("iteratorName");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ForEachStatement__iteratorName);
@@ -313,6 +328,7 @@ void StatementPackage::_initPackage()
         // m_IfStatement__condition has already been allocated above
         m_IfStatement__condition->setFeatureID(
                 ::xpand3::statement::StatementPackage::IFSTATEMENT__CONDITION);
+        m_IfStatement__condition->setName("condition");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_IfStatement__condition);
@@ -320,6 +336,7 @@ void StatementPackage::_initPackage()
         // m_IfStatement__elseIf has already been allocated above
         m_IfStatement__elseIf->setFeatureID(
                 ::xpand3::statement::StatementPackage::IFSTATEMENT__ELSEIF);
+        m_IfStatement__elseIf->setName("elseIf");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_IfStatement__elseIf);
@@ -335,6 +352,7 @@ void StatementPackage::_initPackage()
         // m_LetStatement__varName has already been allocated above
         m_LetStatement__varName->setFeatureID(
                 ::xpand3::statement::StatementPackage::LETSTATEMENT__VARNAME);
+        m_LetStatement__varName->setName("varName");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_LetStatement__varName);
@@ -342,6 +360,7 @@ void StatementPackage::_initPackage()
         // m_LetStatement__varValue has already been allocated above
         m_LetStatement__varValue->setFeatureID(
                 ::xpand3::statement::StatementPackage::LETSTATEMENT__VARVALUE);
+        m_LetStatement__varValue->setName("varValue");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_LetStatement__varValue);
@@ -358,6 +377,7 @@ void StatementPackage::_initPackage()
         // m_ProtectStatement__commentStart has already been allocated above
         m_ProtectStatement__commentStart->setFeatureID(
                 ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTSTART);
+        m_ProtectStatement__commentStart->setName("commentStart");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ProtectStatement__commentStart);
@@ -366,6 +386,7 @@ void StatementPackage::_initPackage()
         // m_ProtectStatement__commentEnd has already been allocated above
         m_ProtectStatement__commentEnd->setFeatureID(
                 ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTEND);
+        m_ProtectStatement__commentEnd->setName("commentEnd");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ProtectStatement__commentEnd);
@@ -374,6 +395,7 @@ void StatementPackage::_initPackage()
         // m_ProtectStatement__id has already been allocated above
         m_ProtectStatement__id->setFeatureID(
                 ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__ID);
+        m_ProtectStatement__id->setName("id");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ProtectStatement__id);
@@ -382,6 +404,7 @@ void StatementPackage::_initPackage()
         // m_ProtectStatement__disable has already been allocated above
         m_ProtectStatement__disable->setFeatureID(
                 ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__DISABLE);
+        m_ProtectStatement__disable->setName("disable");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_ProtectStatement__disable);
@@ -398,6 +421,7 @@ void StatementPackage::_initPackage()
         // m_TextStatement__value has already been allocated above
         m_TextStatement__value->setFeatureID(
                 ::xpand3::statement::StatementPackage::TEXTSTATEMENT__VALUE);
+        m_TextStatement__value->setName("value");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_TextStatement__value);
@@ -405,6 +429,7 @@ void StatementPackage::_initPackage()
         // m_TextStatement__deleteLine has already been allocated above
         m_TextStatement__deleteLine->setFeatureID(
                 ::xpand3::statement::StatementPackage::TEXTSTATEMENT__DELETELINE);
+        m_TextStatement__deleteLine->setName("deleteLine");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextStatementEClass->getEStructuralFeatures()).basicAdd(
                 m_TextStatement__deleteLine);
@@ -462,7 +487,6 @@ void StatementPackage::_initPackage()
         m_ExpandStatementEClass->setInterface(false);
         m_ExpandStatement__foreach->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_ExpandStatement__foreach->setName("foreach");
         m_ExpandStatement__foreach->setDefaultValueLiteral("");
         m_ExpandStatement__foreach->setLowerBound(0);
         m_ExpandStatement__foreach->setUpperBound(1);
@@ -477,7 +501,6 @@ void StatementPackage::_initPackage()
 
         m_ExpandStatement__parameters->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ExpandStatement__parameters->setName("parameters");
         m_ExpandStatement__parameters->setDefaultValueLiteral("");
         m_ExpandStatement__parameters->setLowerBound(0);
         m_ExpandStatement__parameters->setUpperBound(-1);
@@ -491,7 +514,6 @@ void StatementPackage::_initPackage()
         m_ExpandStatement__parameters->setOrdered(true);
         m_ExpandStatement__separator->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ExpandStatement__separator->setName("separator");
         m_ExpandStatement__separator->setDefaultValueLiteral("");
         m_ExpandStatement__separator->setLowerBound(0);
         m_ExpandStatement__separator->setUpperBound(1);
@@ -505,7 +527,6 @@ void StatementPackage::_initPackage()
         m_ExpandStatement__separator->setOrdered(true);
         m_ExpandStatement__target->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ExpandStatement__target->setName("target");
         m_ExpandStatement__target->setDefaultValueLiteral("");
         m_ExpandStatement__target->setLowerBound(0);
         m_ExpandStatement__target->setUpperBound(1);
@@ -519,7 +540,6 @@ void StatementPackage::_initPackage()
         m_ExpandStatement__target->setOrdered(true);
         m_ExpandStatement__definition->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_ExpandStatement__definition->setName("definition");
         m_ExpandStatement__definition->setDefaultValueLiteral("");
         m_ExpandStatement__definition->setLowerBound(1);
         m_ExpandStatement__definition->setUpperBound(1);
@@ -541,7 +561,6 @@ void StatementPackage::_initPackage()
 
         m_ExpressionStatement__expression->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ExpressionStatement__expression->setName("expression");
         m_ExpressionStatement__expression->setDefaultValueLiteral("");
         m_ExpressionStatement__expression->setLowerBound(1);
         m_ExpressionStatement__expression->setUpperBound(1);
@@ -563,7 +582,6 @@ void StatementPackage::_initPackage()
 
         m_ErrorStatement__message->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ErrorStatement__message->setName("message");
         m_ErrorStatement__message->setDefaultValueLiteral("");
         m_ErrorStatement__message->setLowerBound(1);
         m_ErrorStatement__message->setUpperBound(1);
@@ -584,7 +602,6 @@ void StatementPackage::_initPackage()
         m_AbstractStatementWithBodyEClass->setInterface(false);
 
         m_AbstractStatementWithBody__body->setEType(m_AbstractStatementEClass);
-        m_AbstractStatementWithBody__body->setName("body");
         m_AbstractStatementWithBody__body->setDefaultValueLiteral("");
         m_AbstractStatementWithBody__body->setLowerBound(1);
         m_AbstractStatementWithBody__body->setUpperBound(-1);
@@ -605,7 +622,6 @@ void StatementPackage::_initPackage()
         m_FileStatementEClass->setInterface(false);
         m_FileStatement__once->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_FileStatement__once->setName("once");
         m_FileStatement__once->setDefaultValueLiteral("");
         m_FileStatement__once->setLowerBound(0);
         m_FileStatement__once->setUpperBound(1);
@@ -620,7 +636,6 @@ void StatementPackage::_initPackage()
 
         m_FileStatement__fileNameExpression->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_FileStatement__fileNameExpression->setName("fileNameExpression");
         m_FileStatement__fileNameExpression->setDefaultValueLiteral("");
         m_FileStatement__fileNameExpression->setLowerBound(0);
         m_FileStatement__fileNameExpression->setUpperBound(1);
@@ -634,7 +649,6 @@ void StatementPackage::_initPackage()
         m_FileStatement__fileNameExpression->setOrdered(true);
         m_FileStatement__outletNameIdentifier->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_FileStatement__outletNameIdentifier->setName("outletNameIdentifier");
         m_FileStatement__outletNameIdentifier->setDefaultValueLiteral("");
         m_FileStatement__outletNameIdentifier->setLowerBound(0);
         m_FileStatement__outletNameIdentifier->setUpperBound(1);
@@ -656,7 +670,6 @@ void StatementPackage::_initPackage()
 
         m_ForEachStatement__target->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ForEachStatement__target->setName("target");
         m_ForEachStatement__target->setDefaultValueLiteral("");
         m_ForEachStatement__target->setLowerBound(0);
         m_ForEachStatement__target->setUpperBound(1);
@@ -670,7 +683,6 @@ void StatementPackage::_initPackage()
         m_ForEachStatement__target->setOrdered(true);
         m_ForEachStatement__separator->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ForEachStatement__separator->setName("separator");
         m_ForEachStatement__separator->setDefaultValueLiteral("");
         m_ForEachStatement__separator->setLowerBound(0);
         m_ForEachStatement__separator->setUpperBound(1);
@@ -684,7 +696,6 @@ void StatementPackage::_initPackage()
         m_ForEachStatement__separator->setOrdered(true);
         m_ForEachStatement__variable->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_ForEachStatement__variable->setName("variable");
         m_ForEachStatement__variable->setDefaultValueLiteral("");
         m_ForEachStatement__variable->setLowerBound(0);
         m_ForEachStatement__variable->setUpperBound(1);
@@ -698,7 +709,6 @@ void StatementPackage::_initPackage()
         m_ForEachStatement__variable->setOrdered(true);
         m_ForEachStatement__iteratorName->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_ForEachStatement__iteratorName->setName("iteratorName");
         m_ForEachStatement__iteratorName->setDefaultValueLiteral("");
         m_ForEachStatement__iteratorName->setLowerBound(0);
         m_ForEachStatement__iteratorName->setUpperBound(1);
@@ -720,7 +730,6 @@ void StatementPackage::_initPackage()
 
         m_IfStatement__condition->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_IfStatement__condition->setName("condition");
         m_IfStatement__condition->setDefaultValueLiteral("");
         m_IfStatement__condition->setLowerBound(0);
         m_IfStatement__condition->setUpperBound(1);
@@ -733,7 +742,6 @@ void StatementPackage::_initPackage()
         m_IfStatement__condition->setDerived(false);
         m_IfStatement__condition->setOrdered(true);
         m_IfStatement__elseIf->setEType(m_IfStatementEClass);
-        m_IfStatement__elseIf->setName("elseIf");
         m_IfStatement__elseIf->setDefaultValueLiteral("");
         m_IfStatement__elseIf->setLowerBound(0);
         m_IfStatement__elseIf->setUpperBound(1);
@@ -755,7 +763,6 @@ void StatementPackage::_initPackage()
 
         m_LetStatement__varName->setEType(
                 dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_LetStatement__varName->setName("varName");
         m_LetStatement__varName->setDefaultValueLiteral("");
         m_LetStatement__varName->setLowerBound(0);
         m_LetStatement__varName->setUpperBound(1);
@@ -769,7 +776,6 @@ void StatementPackage::_initPackage()
         m_LetStatement__varName->setOrdered(true);
         m_LetStatement__varValue->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_LetStatement__varValue->setName("varValue");
         m_LetStatement__varValue->setDefaultValueLiteral("");
         m_LetStatement__varValue->setLowerBound(0);
         m_LetStatement__varValue->setUpperBound(1);
@@ -790,7 +796,6 @@ void StatementPackage::_initPackage()
         m_ProtectStatementEClass->setInterface(false);
         m_ProtectStatement__disable->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_ProtectStatement__disable->setName("disable");
         m_ProtectStatement__disable->setDefaultValueLiteral("");
         m_ProtectStatement__disable->setLowerBound(0);
         m_ProtectStatement__disable->setUpperBound(1);
@@ -805,7 +810,6 @@ void StatementPackage::_initPackage()
 
         m_ProtectStatement__commentStart->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ProtectStatement__commentStart->setName("commentStart");
         m_ProtectStatement__commentStart->setDefaultValueLiteral("");
         m_ProtectStatement__commentStart->setLowerBound(0);
         m_ProtectStatement__commentStart->setUpperBound(1);
@@ -819,7 +823,6 @@ void StatementPackage::_initPackage()
         m_ProtectStatement__commentStart->setOrdered(true);
         m_ProtectStatement__commentEnd->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ProtectStatement__commentEnd->setName("commentEnd");
         m_ProtectStatement__commentEnd->setDefaultValueLiteral("");
         m_ProtectStatement__commentEnd->setLowerBound(0);
         m_ProtectStatement__commentEnd->setUpperBound(1);
@@ -833,7 +836,6 @@ void StatementPackage::_initPackage()
         m_ProtectStatement__commentEnd->setOrdered(true);
         m_ProtectStatement__id->setEType(
                 dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ProtectStatement__id->setName("id");
         m_ProtectStatement__id->setDefaultValueLiteral("");
         m_ProtectStatement__id->setLowerBound(0);
         m_ProtectStatement__id->setUpperBound(1);
@@ -854,7 +856,6 @@ void StatementPackage::_initPackage()
         m_TextStatementEClass->setInterface(false);
         m_TextStatement__value->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_TextStatement__value->setName("value");
         m_TextStatement__value->setDefaultValueLiteral("");
         m_TextStatement__value->setLowerBound(0);
         m_TextStatement__value->setUpperBound(1);
@@ -868,7 +869,6 @@ void StatementPackage::_initPackage()
         m_TextStatement__value->setOrdered(true);
         m_TextStatement__deleteLine->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_TextStatement__deleteLine->setName("deleteLine");
         m_TextStatement__deleteLine->setDefaultValueLiteral("");
         m_TextStatement__deleteLine->setLowerBound(0);
         m_TextStatement__deleteLine->setUpperBound(1);

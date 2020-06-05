@@ -66,6 +66,7 @@ void EnumerationPackage::_initPackage()
         // m_Bird__type has already been allocated above
         m_Bird__type->setFeatureID(
                 ::enumeration::EnumerationPackage::BIRD__TYPE);
+        m_Bird__type->setName("type");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BirdEClass->getEStructuralFeatures()).basicAdd(
                 m_Bird__type);
@@ -73,6 +74,7 @@ void EnumerationPackage::_initPackage()
         // m_Bird__name has already been allocated above
         m_Bird__name->setFeatureID(
                 ::enumeration::EnumerationPackage::BIRD__NAME);
+        m_Bird__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BirdEClass->getEStructuralFeatures()).basicAdd(
                 m_Bird__name);
@@ -106,7 +108,6 @@ void EnumerationPackage::_initPackage()
         m_BirdEClass->setAbstract(false);
         m_BirdEClass->setInterface(false);
         m_Bird__type->setEType(m_BirdTypeEEnum);
-        m_Bird__type->setName("type");
         m_Bird__type->setDefaultValueLiteral("blackbird");
         m_Bird__type->setLowerBound(0);
         m_Bird__type->setUpperBound(1);
@@ -120,7 +121,6 @@ void EnumerationPackage::_initPackage()
         m_Bird__type->setOrdered(true);
         m_Bird__name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Bird__name->setName("name");
         m_Bird__name->setDefaultValueLiteral("Birdy");
         m_Bird__name->setLowerBound(0);
         m_Bird__name->setUpperBound(1);

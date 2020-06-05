@@ -83,6 +83,7 @@ void CompanyPackage::_initPackage()
         // m_Employee__name has already been allocated above
         m_Employee__name->setFeatureID(
                 ::company::CompanyPackage::EMPLOYEE__NAME);
+        m_Employee__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EmployeeEClass->getEStructuralFeatures()).basicAdd(
                 m_Employee__name);
@@ -90,6 +91,7 @@ void CompanyPackage::_initPackage()
         // m_Employee__phonebookEntry has already been allocated above
         m_Employee__phonebookEntry->setFeatureID(
                 ::company::CompanyPackage::EMPLOYEE__PHONEBOOKENTRY);
+        m_Employee__phonebookEntry->setName("phonebookEntry");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EmployeeEClass->getEStructuralFeatures()).basicAdd(
                 m_Employee__phonebookEntry);
@@ -105,6 +107,7 @@ void CompanyPackage::_initPackage()
         // m_Department__employees has already been allocated above
         m_Department__employees->setFeatureID(
                 ::company::CompanyPackage::DEPARTMENT__EMPLOYEES);
+        m_Department__employees->setName("employees");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures()).basicAdd(
                 m_Department__employees);
@@ -112,6 +115,7 @@ void CompanyPackage::_initPackage()
         // m_Department__manager has already been allocated above
         m_Department__manager->setFeatureID(
                 ::company::CompanyPackage::DEPARTMENT__MANAGER);
+        m_Department__manager->setName("manager");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures()).basicAdd(
                 m_Department__manager);
@@ -119,6 +123,7 @@ void CompanyPackage::_initPackage()
         // m_Department__number has already been allocated above
         m_Department__number->setFeatureID(
                 ::company::CompanyPackage::DEPARTMENT__NUMBER);
+        m_Department__number->setName("number");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures()).basicAdd(
                 m_Department__number);
@@ -133,6 +138,7 @@ void CompanyPackage::_initPackage()
         classifiers.basicAdd(m_CompanyEClass);
         // m_Company__name has already been allocated above
         m_Company__name->setFeatureID(::company::CompanyPackage::COMPANY__NAME);
+        m_Company__name->setName("name");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompanyEClass->getEStructuralFeatures()).basicAdd(
                 m_Company__name);
@@ -140,6 +146,7 @@ void CompanyPackage::_initPackage()
         // m_Company__departments has already been allocated above
         m_Company__departments->setFeatureID(
                 ::company::CompanyPackage::COMPANY__DEPARTMENTS);
+        m_Company__departments->setName("departments");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompanyEClass->getEStructuralFeatures()).basicAdd(
                 m_Company__departments);
@@ -175,7 +182,6 @@ void CompanyPackage::_initPackage()
         m_EmployeeEClass->setInterface(false);
         m_Employee__name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Employee__name->setName("name");
         m_Employee__name->setDefaultValueLiteral("");
         m_Employee__name->setLowerBound(0);
         m_Employee__name->setUpperBound(1);
@@ -189,7 +195,6 @@ void CompanyPackage::_initPackage()
         m_Employee__name->setOrdered(true);
 
         m_Employee__phonebookEntry->setEType(m_PhonebookEntryEClass);
-        m_Employee__phonebookEntry->setName("phonebookEntry");
         m_Employee__phonebookEntry->setDefaultValueLiteral("");
         m_Employee__phonebookEntry->setLowerBound(0);
         m_Employee__phonebookEntry->setUpperBound(1);
@@ -210,7 +215,6 @@ void CompanyPackage::_initPackage()
         m_DepartmentEClass->setInterface(false);
         m_Department__number->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Department__number->setName("number");
         m_Department__number->setDefaultValueLiteral("");
         m_Department__number->setLowerBound(0);
         m_Department__number->setUpperBound(1);
@@ -224,7 +228,6 @@ void CompanyPackage::_initPackage()
         m_Department__number->setOrdered(true);
 
         m_Department__employees->setEType(m_EmployeeEClass);
-        m_Department__employees->setName("employees");
         m_Department__employees->setDefaultValueLiteral("");
         m_Department__employees->setLowerBound(0);
         m_Department__employees->setUpperBound(-1);
@@ -237,7 +240,6 @@ void CompanyPackage::_initPackage()
         m_Department__employees->setDerived(false);
         m_Department__employees->setOrdered(true);
         m_Department__manager->setEType(m_EmployeeEClass);
-        m_Department__manager->setName("manager");
         m_Department__manager->setDefaultValueLiteral("");
         m_Department__manager->setLowerBound(1);
         m_Department__manager->setUpperBound(1);
@@ -258,7 +260,6 @@ void CompanyPackage::_initPackage()
         m_CompanyEClass->setInterface(false);
         m_Company__name->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Company__name->setName("name");
         m_Company__name->setDefaultValueLiteral("");
         m_Company__name->setLowerBound(0);
         m_Company__name->setUpperBound(1);
@@ -272,7 +273,6 @@ void CompanyPackage::_initPackage()
         m_Company__name->setOrdered(true);
 
         m_Company__departments->setEType(m_DepartmentEClass);
-        m_Company__departments->setName("departments");
         m_Company__departments->setDefaultValueLiteral("");
         m_Company__departments->setLowerBound(0);
         m_Company__departments->setUpperBound(-1);

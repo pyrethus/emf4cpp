@@ -190,6 +190,7 @@ void ActionPackage::_initPackage()
         // m_ActionElement__kind has already been allocated above
         m_ActionElement__kind->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONELEMENT__KIND);
+        m_ActionElement__kind->setName("kind");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ActionElement__kind);
@@ -197,6 +198,7 @@ void ActionPackage::_initPackage()
         // m_ActionElement__codeElement has already been allocated above
         m_ActionElement__codeElement->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONELEMENT__CODEELEMENT);
+        m_ActionElement__codeElement->setName("codeElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ActionElement__codeElement);
@@ -205,6 +207,7 @@ void ActionPackage::_initPackage()
         // m_ActionElement__actionRelation has already been allocated above
         m_ActionElement__actionRelation->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONELEMENT__ACTIONRELATION);
+        m_ActionElement__actionRelation->setName("actionRelation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures()).basicAdd(
                 m_ActionElement__actionRelation);
@@ -230,6 +233,7 @@ void ActionPackage::_initPackage()
         // m_ControlFlow__to has already been allocated above
         m_ControlFlow__to->setFeatureID(
                 ::kdm::action::ActionPackage::CONTROLFLOW__TO);
+        m_ControlFlow__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_ControlFlow__to);
@@ -237,6 +241,7 @@ void ActionPackage::_initPackage()
         // m_ControlFlow__from has already been allocated above
         m_ControlFlow__from->setFeatureID(
                 ::kdm::action::ActionPackage::CONTROLFLOW__FROM);
+        m_ControlFlow__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_ControlFlow__from);
@@ -250,12 +255,14 @@ void ActionPackage::_initPackage()
         classifiers.basicAdd(m_CallsEClass);
         // m_Calls__to has already been allocated above
         m_Calls__to->setFeatureID(::kdm::action::ActionPackage::CALLS__TO);
+        m_Calls__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CallsEClass->getEStructuralFeatures()).basicAdd(
                 m_Calls__to);
         m_Calls__to->basicsetEContainingClass(m_CallsEClass);
         // m_Calls__from has already been allocated above
         m_Calls__from->setFeatureID(::kdm::action::ActionPackage::CALLS__FROM);
+        m_Calls__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CallsEClass->getEStructuralFeatures()).basicAdd(
                 m_Calls__from);
@@ -270,6 +277,7 @@ void ActionPackage::_initPackage()
         classifiers.basicAdd(m_CreatesEClass);
         // m_Creates__to has already been allocated above
         m_Creates__to->setFeatureID(::kdm::action::ActionPackage::CREATES__TO);
+        m_Creates__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CreatesEClass->getEStructuralFeatures()).basicAdd(
                 m_Creates__to);
@@ -277,6 +285,7 @@ void ActionPackage::_initPackage()
         // m_Creates__from has already been allocated above
         m_Creates__from->setFeatureID(
                 ::kdm::action::ActionPackage::CREATES__FROM);
+        m_Creates__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CreatesEClass->getEStructuralFeatures()).basicAdd(
                 m_Creates__from);
@@ -290,12 +299,14 @@ void ActionPackage::_initPackage()
         classifiers.basicAdd(m_ReadsEClass);
         // m_Reads__to has already been allocated above
         m_Reads__to->setFeatureID(::kdm::action::ActionPackage::READS__TO);
+        m_Reads__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsEClass->getEStructuralFeatures()).basicAdd(
                 m_Reads__to);
         m_Reads__to->basicsetEContainingClass(m_ReadsEClass);
         // m_Reads__from has already been allocated above
         m_Reads__from->setFeatureID(::kdm::action::ActionPackage::READS__FROM);
+        m_Reads__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsEClass->getEStructuralFeatures()).basicAdd(
                 m_Reads__from);
@@ -309,6 +320,7 @@ void ActionPackage::_initPackage()
         classifiers.basicAdd(m_WritesEClass);
         // m_Writes__to has already been allocated above
         m_Writes__to->setFeatureID(::kdm::action::ActionPackage::WRITES__TO);
+        m_Writes__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesEClass->getEStructuralFeatures()).basicAdd(
                 m_Writes__to);
@@ -316,6 +328,7 @@ void ActionPackage::_initPackage()
         // m_Writes__from has already been allocated above
         m_Writes__from->setFeatureID(
                 ::kdm::action::ActionPackage::WRITES__FROM);
+        m_Writes__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesEClass->getEStructuralFeatures()).basicAdd(
                 m_Writes__from);
@@ -331,6 +344,7 @@ void ActionPackage::_initPackage()
         // m_CompliesTo__to has already been allocated above
         m_CompliesTo__to->setFeatureID(
                 ::kdm::action::ActionPackage::COMPLIESTO__TO);
+        m_CompliesTo__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompliesToEClass->getEStructuralFeatures()).basicAdd(
                 m_CompliesTo__to);
@@ -338,6 +352,7 @@ void ActionPackage::_initPackage()
         // m_CompliesTo__from has already been allocated above
         m_CompliesTo__from->setFeatureID(
                 ::kdm::action::ActionPackage::COMPLIESTO__FROM);
+        m_CompliesTo__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompliesToEClass->getEStructuralFeatures()).basicAdd(
                 m_CompliesTo__from);
@@ -384,6 +399,7 @@ void ActionPackage::_initPackage()
         // m_UsesType__to has already been allocated above
         m_UsesType__to->setFeatureID(
                 ::kdm::action::ActionPackage::USESTYPE__TO);
+        m_UsesType__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UsesTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_UsesType__to);
@@ -391,6 +407,7 @@ void ActionPackage::_initPackage()
         // m_UsesType__from has already been allocated above
         m_UsesType__from->setFeatureID(
                 ::kdm::action::ActionPackage::USESTYPE__FROM);
+        m_UsesType__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UsesTypeEClass->getEStructuralFeatures()).basicAdd(
                 m_UsesType__from);
@@ -406,6 +423,7 @@ void ActionPackage::_initPackage()
         // m_Addresses__to has already been allocated above
         m_Addresses__to->setFeatureID(
                 ::kdm::action::ActionPackage::ADDRESSES__TO);
+        m_Addresses__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AddressesEClass->getEStructuralFeatures()).basicAdd(
                 m_Addresses__to);
@@ -413,6 +431,7 @@ void ActionPackage::_initPackage()
         // m_Addresses__from has already been allocated above
         m_Addresses__from->setFeatureID(
                 ::kdm::action::ActionPackage::ADDRESSES__FROM);
+        m_Addresses__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AddressesEClass->getEStructuralFeatures()).basicAdd(
                 m_Addresses__from);
@@ -428,6 +447,7 @@ void ActionPackage::_initPackage()
         // m_ActionRelationship__to has already been allocated above
         m_ActionRelationship__to->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONRELATIONSHIP__TO);
+        m_ActionRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_ActionRelationship__to);
@@ -436,6 +456,7 @@ void ActionPackage::_initPackage()
         // m_ActionRelationship__from has already been allocated above
         m_ActionRelationship__from->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONRELATIONSHIP__FROM);
+        m_ActionRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_ActionRelationship__from);
@@ -450,6 +471,7 @@ void ActionPackage::_initPackage()
         classifiers.basicAdd(m_ThrowsEClass);
         // m_Throws__to has already been allocated above
         m_Throws__to->setFeatureID(::kdm::action::ActionPackage::THROWS__TO);
+        m_Throws__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ThrowsEClass->getEStructuralFeatures()).basicAdd(
                 m_Throws__to);
@@ -457,6 +479,7 @@ void ActionPackage::_initPackage()
         // m_Throws__from has already been allocated above
         m_Throws__from->setFeatureID(
                 ::kdm::action::ActionPackage::THROWS__FROM);
+        m_Throws__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ThrowsEClass->getEStructuralFeatures()).basicAdd(
                 m_Throws__from);
@@ -472,6 +495,7 @@ void ActionPackage::_initPackage()
         // m_Dispatches__to has already been allocated above
         m_Dispatches__to->setFeatureID(
                 ::kdm::action::ActionPackage::DISPATCHES__TO);
+        m_Dispatches__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DispatchesEClass->getEStructuralFeatures()).basicAdd(
                 m_Dispatches__to);
@@ -479,6 +503,7 @@ void ActionPackage::_initPackage()
         // m_Dispatches__from has already been allocated above
         m_Dispatches__from->setFeatureID(
                 ::kdm::action::ActionPackage::DISPATCHES__FROM);
+        m_Dispatches__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DispatchesEClass->getEStructuralFeatures()).basicAdd(
                 m_Dispatches__from);
@@ -494,6 +519,7 @@ void ActionPackage::_initPackage()
         // m_EntryFlow__to has already been allocated above
         m_EntryFlow__to->setFeatureID(
                 ::kdm::action::ActionPackage::ENTRYFLOW__TO);
+        m_EntryFlow__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntryFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_EntryFlow__to);
@@ -501,6 +527,7 @@ void ActionPackage::_initPackage()
         // m_EntryFlow__from has already been allocated above
         m_EntryFlow__from->setFeatureID(
                 ::kdm::action::ActionPackage::ENTRYFLOW__FROM);
+        m_EntryFlow__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntryFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_EntryFlow__from);
@@ -556,6 +583,7 @@ void ActionPackage::_initPackage()
         // m_ExitFlow__to has already been allocated above
         m_ExitFlow__to->setFeatureID(
                 ::kdm::action::ActionPackage::EXITFLOW__TO);
+        m_ExitFlow__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExitFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_ExitFlow__to);
@@ -563,6 +591,7 @@ void ActionPackage::_initPackage()
         // m_ExitFlow__from has already been allocated above
         m_ExitFlow__from->setFeatureID(
                 ::kdm::action::ActionPackage::EXITFLOW__FROM);
+        m_ExitFlow__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExitFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_ExitFlow__from);
@@ -578,6 +607,7 @@ void ActionPackage::_initPackage()
         // m_ExceptionFlow__to has already been allocated above
         m_ExceptionFlow__to->setFeatureID(
                 ::kdm::action::ActionPackage::EXCEPTIONFLOW__TO);
+        m_ExceptionFlow__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExceptionFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_ExceptionFlow__to);
@@ -585,6 +615,7 @@ void ActionPackage::_initPackage()
         // m_ExceptionFlow__from has already been allocated above
         m_ExceptionFlow__from->setFeatureID(
                 ::kdm::action::ActionPackage::EXCEPTIONFLOW__FROM);
+        m_ExceptionFlow__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExceptionFlowEClass->getEStructuralFeatures()).basicAdd(
                 m_ExceptionFlow__from);
@@ -653,7 +684,6 @@ void ActionPackage::_initPackage()
         m_ActionElementEClass->setInterface(false);
         m_ActionElement__kind->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_ActionElement__kind->setName("kind");
         m_ActionElement__kind->setDefaultValueLiteral("");
         m_ActionElement__kind->setLowerBound(0);
         m_ActionElement__kind->setUpperBound(1);
@@ -668,7 +698,6 @@ void ActionPackage::_initPackage()
 
         m_ActionElement__codeElement->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
-        m_ActionElement__codeElement->setName("codeElement");
         m_ActionElement__codeElement->setDefaultValueLiteral("");
         m_ActionElement__codeElement->setLowerBound(0);
         m_ActionElement__codeElement->setUpperBound(-1);
@@ -682,7 +711,6 @@ void ActionPackage::_initPackage()
         m_ActionElement__codeElement->setOrdered(false);
         m_ActionElement__actionRelation->setEType(
                 m_AbstractActionRelationshipEClass);
-        m_ActionElement__actionRelation->setName("actionRelation");
         m_ActionElement__actionRelation->setDefaultValueLiteral("");
         m_ActionElement__actionRelation->setLowerBound(0);
         m_ActionElement__actionRelation->setUpperBound(-1);
@@ -711,7 +739,6 @@ void ActionPackage::_initPackage()
         m_ControlFlowEClass->setInterface(false);
 
         m_ControlFlow__to->setEType(m_ActionElementEClass);
-        m_ControlFlow__to->setName("to");
         m_ControlFlow__to->setDefaultValueLiteral("");
         m_ControlFlow__to->setLowerBound(1);
         m_ControlFlow__to->setUpperBound(1);
@@ -724,7 +751,6 @@ void ActionPackage::_initPackage()
         m_ControlFlow__to->setDerived(false);
         m_ControlFlow__to->setOrdered(false);
         m_ControlFlow__from->setEType(m_ActionElementEClass);
-        m_ControlFlow__from->setName("from");
         m_ControlFlow__from->setDefaultValueLiteral("");
         m_ControlFlow__from->setLowerBound(1);
         m_ControlFlow__from->setUpperBound(1);
@@ -746,7 +772,6 @@ void ActionPackage::_initPackage()
 
         m_Calls__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getControlElement());
-        m_Calls__to->setName("to");
         m_Calls__to->setDefaultValueLiteral("");
         m_Calls__to->setLowerBound(1);
         m_Calls__to->setUpperBound(1);
@@ -759,7 +784,6 @@ void ActionPackage::_initPackage()
         m_Calls__to->setDerived(false);
         m_Calls__to->setOrdered(false);
         m_Calls__from->setEType(m_ActionElementEClass);
-        m_Calls__from->setName("from");
         m_Calls__from->setDefaultValueLiteral("");
         m_Calls__from->setLowerBound(1);
         m_Calls__from->setUpperBound(1);
@@ -781,7 +805,6 @@ void ActionPackage::_initPackage()
 
         m_Creates__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDatatype());
-        m_Creates__to->setName("to");
         m_Creates__to->setDefaultValueLiteral("");
         m_Creates__to->setLowerBound(1);
         m_Creates__to->setUpperBound(1);
@@ -794,7 +817,6 @@ void ActionPackage::_initPackage()
         m_Creates__to->setDerived(false);
         m_Creates__to->setOrdered(false);
         m_Creates__from->setEType(m_ActionElementEClass);
-        m_Creates__from->setName("from");
         m_Creates__from->setDefaultValueLiteral("");
         m_Creates__from->setLowerBound(1);
         m_Creates__from->setUpperBound(1);
@@ -816,7 +838,6 @@ void ActionPackage::_initPackage()
 
         m_Reads__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
-        m_Reads__to->setName("to");
         m_Reads__to->setDefaultValueLiteral("");
         m_Reads__to->setLowerBound(1);
         m_Reads__to->setUpperBound(1);
@@ -829,7 +850,6 @@ void ActionPackage::_initPackage()
         m_Reads__to->setDerived(false);
         m_Reads__to->setOrdered(false);
         m_Reads__from->setEType(m_ActionElementEClass);
-        m_Reads__from->setName("from");
         m_Reads__from->setDefaultValueLiteral("");
         m_Reads__from->setLowerBound(1);
         m_Reads__from->setUpperBound(1);
@@ -851,7 +871,6 @@ void ActionPackage::_initPackage()
 
         m_Writes__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
-        m_Writes__to->setName("to");
         m_Writes__to->setDefaultValueLiteral("");
         m_Writes__to->setLowerBound(1);
         m_Writes__to->setUpperBound(1);
@@ -864,7 +883,6 @@ void ActionPackage::_initPackage()
         m_Writes__to->setDerived(false);
         m_Writes__to->setOrdered(false);
         m_Writes__from->setEType(m_ActionElementEClass);
-        m_Writes__from->setName("from");
         m_Writes__from->setDefaultValueLiteral("");
         m_Writes__from->setLowerBound(1);
         m_Writes__from->setUpperBound(1);
@@ -886,7 +904,6 @@ void ActionPackage::_initPackage()
 
         m_CompliesTo__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
-        m_CompliesTo__to->setName("to");
         m_CompliesTo__to->setDefaultValueLiteral("");
         m_CompliesTo__to->setLowerBound(1);
         m_CompliesTo__to->setUpperBound(1);
@@ -899,7 +916,6 @@ void ActionPackage::_initPackage()
         m_CompliesTo__to->setDerived(false);
         m_CompliesTo__to->setOrdered(false);
         m_CompliesTo__from->setEType(m_ActionElementEClass);
-        m_CompliesTo__from->setName("from");
         m_CompliesTo__from->setDefaultValueLiteral("");
         m_CompliesTo__from->setLowerBound(1);
         m_CompliesTo__from->setUpperBound(1);
@@ -949,7 +965,6 @@ void ActionPackage::_initPackage()
 
         m_UsesType__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDatatype());
-        m_UsesType__to->setName("to");
         m_UsesType__to->setDefaultValueLiteral("");
         m_UsesType__to->setLowerBound(1);
         m_UsesType__to->setUpperBound(1);
@@ -962,7 +977,6 @@ void ActionPackage::_initPackage()
         m_UsesType__to->setDerived(false);
         m_UsesType__to->setOrdered(false);
         m_UsesType__from->setEType(m_ActionElementEClass);
-        m_UsesType__from->setName("from");
         m_UsesType__from->setDefaultValueLiteral("");
         m_UsesType__from->setLowerBound(1);
         m_UsesType__from->setUpperBound(1);
@@ -984,7 +998,6 @@ void ActionPackage::_initPackage()
 
         m_Addresses__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getComputationalObject());
-        m_Addresses__to->setName("to");
         m_Addresses__to->setDefaultValueLiteral("");
         m_Addresses__to->setLowerBound(1);
         m_Addresses__to->setUpperBound(1);
@@ -997,7 +1010,6 @@ void ActionPackage::_initPackage()
         m_Addresses__to->setDerived(false);
         m_Addresses__to->setOrdered(false);
         m_Addresses__from->setEType(m_ActionElementEClass);
-        m_Addresses__from->setName("from");
         m_Addresses__from->setDefaultValueLiteral("");
         m_Addresses__from->setLowerBound(1);
         m_Addresses__from->setUpperBound(1);
@@ -1019,7 +1031,6 @@ void ActionPackage::_initPackage()
 
         m_ActionRelationship__to->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_ActionRelationship__to->setName("to");
         m_ActionRelationship__to->setDefaultValueLiteral("");
         m_ActionRelationship__to->setLowerBound(1);
         m_ActionRelationship__to->setUpperBound(1);
@@ -1032,7 +1043,6 @@ void ActionPackage::_initPackage()
         m_ActionRelationship__to->setDerived(false);
         m_ActionRelationship__to->setOrdered(false);
         m_ActionRelationship__from->setEType(m_ActionElementEClass);
-        m_ActionRelationship__from->setName("from");
         m_ActionRelationship__from->setDefaultValueLiteral("");
         m_ActionRelationship__from->setLowerBound(1);
         m_ActionRelationship__from->setUpperBound(1);
@@ -1054,7 +1064,6 @@ void ActionPackage::_initPackage()
 
         m_Throws__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
-        m_Throws__to->setName("to");
         m_Throws__to->setDefaultValueLiteral("");
         m_Throws__to->setLowerBound(1);
         m_Throws__to->setUpperBound(1);
@@ -1067,7 +1076,6 @@ void ActionPackage::_initPackage()
         m_Throws__to->setDerived(false);
         m_Throws__to->setOrdered(false);
         m_Throws__from->setEType(m_ActionElementEClass);
-        m_Throws__from->setName("from");
         m_Throws__from->setDefaultValueLiteral("");
         m_Throws__from->setLowerBound(1);
         m_Throws__from->setUpperBound(1);
@@ -1089,7 +1097,6 @@ void ActionPackage::_initPackage()
 
         m_Dispatches__to->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
-        m_Dispatches__to->setName("to");
         m_Dispatches__to->setDefaultValueLiteral("");
         m_Dispatches__to->setLowerBound(1);
         m_Dispatches__to->setUpperBound(1);
@@ -1102,7 +1109,6 @@ void ActionPackage::_initPackage()
         m_Dispatches__to->setDerived(false);
         m_Dispatches__to->setOrdered(false);
         m_Dispatches__from->setEType(m_ActionElementEClass);
-        m_Dispatches__from->setName("from");
         m_Dispatches__from->setDefaultValueLiteral("");
         m_Dispatches__from->setLowerBound(1);
         m_Dispatches__from->setUpperBound(1);
@@ -1123,7 +1129,6 @@ void ActionPackage::_initPackage()
         m_EntryFlowEClass->setInterface(false);
 
         m_EntryFlow__to->setEType(m_ActionElementEClass);
-        m_EntryFlow__to->setName("to");
         m_EntryFlow__to->setDefaultValueLiteral("");
         m_EntryFlow__to->setLowerBound(1);
         m_EntryFlow__to->setUpperBound(1);
@@ -1137,7 +1142,6 @@ void ActionPackage::_initPackage()
         m_EntryFlow__to->setOrdered(false);
         m_EntryFlow__from->setEType(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getControlElement());
-        m_EntryFlow__from->setName("from");
         m_EntryFlow__from->setDefaultValueLiteral("");
         m_EntryFlow__from->setLowerBound(1);
         m_EntryFlow__from->setUpperBound(1);
@@ -1193,7 +1197,6 @@ void ActionPackage::_initPackage()
         m_ExitFlowEClass->setInterface(false);
 
         m_ExitFlow__to->setEType(m_ActionElementEClass);
-        m_ExitFlow__to->setName("to");
         m_ExitFlow__to->setDefaultValueLiteral("");
         m_ExitFlow__to->setLowerBound(1);
         m_ExitFlow__to->setUpperBound(1);
@@ -1206,7 +1209,6 @@ void ActionPackage::_initPackage()
         m_ExitFlow__to->setDerived(false);
         m_ExitFlow__to->setOrdered(false);
         m_ExitFlow__from->setEType(m_ActionElementEClass);
-        m_ExitFlow__from->setName("from");
         m_ExitFlow__from->setDefaultValueLiteral("");
         m_ExitFlow__from->setLowerBound(1);
         m_ExitFlow__from->setUpperBound(1);
@@ -1227,7 +1229,6 @@ void ActionPackage::_initPackage()
         m_ExceptionFlowEClass->setInterface(false);
 
         m_ExceptionFlow__to->setEType(m_ActionElementEClass);
-        m_ExceptionFlow__to->setName("to");
         m_ExceptionFlow__to->setDefaultValueLiteral("");
         m_ExceptionFlow__to->setLowerBound(1);
         m_ExceptionFlow__to->setUpperBound(1);
@@ -1240,7 +1241,6 @@ void ActionPackage::_initPackage()
         m_ExceptionFlow__to->setDerived(false);
         m_ExceptionFlow__to->setOrdered(false);
         m_ExceptionFlow__from->setEType(m_ActionElementEClass);
-        m_ExceptionFlow__from->setName("from");
         m_ExceptionFlow__from->setDefaultValueLiteral("");
         m_ExceptionFlow__from->setLowerBound(1);
         m_ExceptionFlow__from->setUpperBound(1);

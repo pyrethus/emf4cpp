@@ -9,4 +9,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -funroll-loops")
 add_executable(test-treeiterator test.cpp)
 target_link_libraries(test-treeiterator emf4cpp-ecorecpp emf4cpp-ecore emf4cpp-treeiterator)
 
-
+add_test(NAME test-treeiterator COMMAND test-treeiterator)

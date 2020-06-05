@@ -73,6 +73,7 @@ void DerivedPackage::_initPackage()
         // m_Derived01__valDerived01 has already been allocated above
         m_Derived01__valDerived01->setFeatureID(
                 ::derived::DerivedPackage::DERIVED01__VALDERIVED01);
+        m_Derived01__valDerived01->setName("valDerived01");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Derived01EClass->getEStructuralFeatures()).basicAdd(
                 m_Derived01__valDerived01);
@@ -88,6 +89,7 @@ void DerivedPackage::_initPackage()
         // m_Derived02__valDerived02 has already been allocated above
         m_Derived02__valDerived02->setFeatureID(
                 ::derived::DerivedPackage::DERIVED02__VALDERIVED02);
+        m_Derived02__valDerived02->setName("valDerived02");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Derived02EClass->getEStructuralFeatures()).basicAdd(
                 m_Derived02__valDerived02);
@@ -95,6 +97,7 @@ void DerivedPackage::_initPackage()
         // m_Derived02__base01ref has already been allocated above
         m_Derived02__base01ref->setFeatureID(
                 ::derived::DerivedPackage::DERIVED02__BASE01REF);
+        m_Derived02__base01ref->setName("base01ref");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Derived02EClass->getEStructuralFeatures()).basicAdd(
                 m_Derived02__base01ref);
@@ -125,7 +128,6 @@ void DerivedPackage::_initPackage()
         m_Derived01EClass->setInterface(false);
         m_Derived01__valDerived01->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Derived01__valDerived01->setName("valDerived01");
         m_Derived01__valDerived01->setDefaultValueLiteral("");
         m_Derived01__valDerived01->setLowerBound(0);
         m_Derived01__valDerived01->setUpperBound(1);
@@ -146,7 +148,6 @@ void DerivedPackage::_initPackage()
         m_Derived02EClass->setInterface(false);
         m_Derived02__valDerived02->setEType(
                 dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Derived02__valDerived02->setName("valDerived02");
         m_Derived02__valDerived02->setDefaultValueLiteral("");
         m_Derived02__valDerived02->setLowerBound(0);
         m_Derived02__valDerived02->setUpperBound(1);
@@ -161,7 +162,6 @@ void DerivedPackage::_initPackage()
 
         m_Derived02__base01ref->setEType(
                 dynamic_cast< ::base::BasePackage* >(::base::BasePackage::_instance().get())->getBase01());
-        m_Derived02__base01ref->setName("base01ref");
         m_Derived02__base01ref->setDefaultValueLiteral("");
         m_Derived02__base01ref->setLowerBound(0);
         m_Derived02__base01ref->setUpperBound(1);

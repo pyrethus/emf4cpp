@@ -153,6 +153,7 @@ void BuildPackage::_initPackage()
         // m_AbstractBuildElement__buildRelation has already been allocated above
         m_AbstractBuildElement__buildRelation->setFeatureID(
                 ::kdm::build::BuildPackage::ABSTRACTBUILDELEMENT__BUILDRELATION);
+        m_AbstractBuildElement__buildRelation->setName("buildRelation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractBuildElementEClass->getEStructuralFeatures()).basicAdd(
                 m_AbstractBuildElement__buildRelation);
@@ -169,6 +170,7 @@ void BuildPackage::_initPackage()
         // m_BuildResource__implementation has already been allocated above
         m_BuildResource__implementation->setFeatureID(
                 ::kdm::build::BuildPackage::BUILDRESOURCE__IMPLEMENTATION);
+        m_BuildResource__implementation->setName("implementation");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BuildResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_BuildResource__implementation);
@@ -177,6 +179,7 @@ void BuildPackage::_initPackage()
         // m_BuildResource__groupedBuild has already been allocated above
         m_BuildResource__groupedBuild->setFeatureID(
                 ::kdm::build::BuildPackage::BUILDRESOURCE__GROUPEDBUILD);
+        m_BuildResource__groupedBuild->setName("groupedBuild");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BuildResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_BuildResource__groupedBuild);
@@ -185,6 +188,7 @@ void BuildPackage::_initPackage()
         // m_BuildResource__buildElement has already been allocated above
         m_BuildResource__buildElement->setFeatureID(
                 ::kdm::build::BuildPackage::BUILDRESOURCE__BUILDELEMENT);
+        m_BuildResource__buildElement->setName("buildElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BuildResourceEClass->getEStructuralFeatures()).basicAdd(
                 m_BuildResource__buildElement);
@@ -201,6 +205,7 @@ void BuildPackage::_initPackage()
         // m_BuildDescription__source has already been allocated above
         m_BuildDescription__source->setFeatureID(
                 ::kdm::build::BuildPackage::BUILDDESCRIPTION__SOURCE);
+        m_BuildDescription__source->setName("source");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BuildDescriptionEClass->getEStructuralFeatures()).basicAdd(
                 m_BuildDescription__source);
@@ -209,6 +214,7 @@ void BuildPackage::_initPackage()
         // m_BuildDescription__text has already been allocated above
         m_BuildDescription__text->setFeatureID(
                 ::kdm::build::BuildPackage::BUILDDESCRIPTION__TEXT);
+        m_BuildDescription__text->setName("text");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BuildDescriptionEClass->getEStructuralFeatures()).basicAdd(
                 m_BuildDescription__text);
@@ -241,6 +247,7 @@ void BuildPackage::_initPackage()
         classifiers.basicAdd(m_LinksToEClass);
         // m_LinksTo__to has already been allocated above
         m_LinksTo__to->setFeatureID(::kdm::build::BuildPackage::LINKSTO__TO);
+        m_LinksTo__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LinksToEClass->getEStructuralFeatures()).basicAdd(
                 m_LinksTo__to);
@@ -248,6 +255,7 @@ void BuildPackage::_initPackage()
         // m_LinksTo__from has already been allocated above
         m_LinksTo__from->setFeatureID(
                 ::kdm::build::BuildPackage::LINKSTO__FROM);
+        m_LinksTo__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LinksToEClass->getEStructuralFeatures()).basicAdd(
                 m_LinksTo__from);
@@ -262,6 +270,7 @@ void BuildPackage::_initPackage()
         classifiers.basicAdd(m_ConsumesEClass);
         // m_Consumes__to has already been allocated above
         m_Consumes__to->setFeatureID(::kdm::build::BuildPackage::CONSUMES__TO);
+        m_Consumes__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEClass->getEStructuralFeatures()).basicAdd(
                 m_Consumes__to);
@@ -269,6 +278,7 @@ void BuildPackage::_initPackage()
         // m_Consumes__from has already been allocated above
         m_Consumes__from->setFeatureID(
                 ::kdm::build::BuildPackage::CONSUMES__FROM);
+        m_Consumes__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConsumesEClass->getEStructuralFeatures()).basicAdd(
                 m_Consumes__from);
@@ -284,6 +294,7 @@ void BuildPackage::_initPackage()
         // m_BuildModel__buildElement has already been allocated above
         m_BuildModel__buildElement->setFeatureID(
                 ::kdm::build::BuildPackage::BUILDMODEL__BUILDELEMENT);
+        m_BuildModel__buildElement->setName("buildElement");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BuildModelEClass->getEStructuralFeatures()).basicAdd(
                 m_BuildModel__buildElement);
@@ -331,6 +342,7 @@ void BuildPackage::_initPackage()
         // m_BuildRelationship__to has already been allocated above
         m_BuildRelationship__to->setFeatureID(
                 ::kdm::build::BuildPackage::BUILDRELATIONSHIP__TO);
+        m_BuildRelationship__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BuildRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_BuildRelationship__to);
@@ -339,6 +351,7 @@ void BuildPackage::_initPackage()
         // m_BuildRelationship__from has already been allocated above
         m_BuildRelationship__from->setFeatureID(
                 ::kdm::build::BuildPackage::BUILDRELATIONSHIP__FROM);
+        m_BuildRelationship__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BuildRelationshipEClass->getEStructuralFeatures()).basicAdd(
                 m_BuildRelationship__from);
@@ -355,6 +368,7 @@ void BuildPackage::_initPackage()
         // m_SuppliedBy__to has already been allocated above
         m_SuppliedBy__to->setFeatureID(
                 ::kdm::build::BuildPackage::SUPPLIEDBY__TO);
+        m_SuppliedBy__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SuppliedByEClass->getEStructuralFeatures()).basicAdd(
                 m_SuppliedBy__to);
@@ -362,6 +376,7 @@ void BuildPackage::_initPackage()
         // m_SuppliedBy__from has already been allocated above
         m_SuppliedBy__from->setFeatureID(
                 ::kdm::build::BuildPackage::SUPPLIEDBY__FROM);
+        m_SuppliedBy__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SuppliedByEClass->getEStructuralFeatures()).basicAdd(
                 m_SuppliedBy__from);
@@ -392,6 +407,7 @@ void BuildPackage::_initPackage()
         classifiers.basicAdd(m_ProducesEClass);
         // m_Produces__to has already been allocated above
         m_Produces__to->setFeatureID(::kdm::build::BuildPackage::PRODUCES__TO);
+        m_Produces__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEClass->getEStructuralFeatures()).basicAdd(
                 m_Produces__to);
@@ -399,6 +415,7 @@ void BuildPackage::_initPackage()
         // m_Produces__from has already been allocated above
         m_Produces__from->setFeatureID(
                 ::kdm::build::BuildPackage::PRODUCES__FROM);
+        m_Produces__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesEClass->getEStructuralFeatures()).basicAdd(
                 m_Produces__from);
@@ -414,6 +431,7 @@ void BuildPackage::_initPackage()
         // m_SupportedBy__to has already been allocated above
         m_SupportedBy__to->setFeatureID(
                 ::kdm::build::BuildPackage::SUPPORTEDBY__TO);
+        m_SupportedBy__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SupportedByEClass->getEStructuralFeatures()).basicAdd(
                 m_SupportedBy__to);
@@ -421,6 +439,7 @@ void BuildPackage::_initPackage()
         // m_SupportedBy__from has already been allocated above
         m_SupportedBy__from->setFeatureID(
                 ::kdm::build::BuildPackage::SUPPORTEDBY__FROM);
+        m_SupportedBy__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SupportedByEClass->getEStructuralFeatures()).basicAdd(
                 m_SupportedBy__from);
@@ -444,6 +463,7 @@ void BuildPackage::_initPackage()
         // m_DescribedBy__to has already been allocated above
         m_DescribedBy__to->setFeatureID(
                 ::kdm::build::BuildPackage::DESCRIBEDBY__TO);
+        m_DescribedBy__to->setName("to");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DescribedByEClass->getEStructuralFeatures()).basicAdd(
                 m_DescribedBy__to);
@@ -451,6 +471,7 @@ void BuildPackage::_initPackage()
         // m_DescribedBy__from has already been allocated above
         m_DescribedBy__from->setFeatureID(
                 ::kdm::build::BuildPackage::DESCRIBEDBY__FROM);
+        m_DescribedBy__from->setName("from");
         static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
                 ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DescribedByEClass->getEStructuralFeatures()).basicAdd(
                 m_DescribedBy__from);
@@ -512,7 +533,6 @@ void BuildPackage::_initPackage()
 
         m_AbstractBuildElement__buildRelation->setEType(
                 m_AbstractBuildRelationshipEClass);
-        m_AbstractBuildElement__buildRelation->setName("buildRelation");
         m_AbstractBuildElement__buildRelation->setDefaultValueLiteral("");
         m_AbstractBuildElement__buildRelation->setLowerBound(0);
         m_AbstractBuildElement__buildRelation->setUpperBound(-1);
@@ -534,7 +554,6 @@ void BuildPackage::_initPackage()
 
         m_BuildResource__implementation->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_BuildResource__implementation->setName("implementation");
         m_BuildResource__implementation->setDefaultValueLiteral("");
         m_BuildResource__implementation->setLowerBound(0);
         m_BuildResource__implementation->setUpperBound(-1);
@@ -547,7 +566,6 @@ void BuildPackage::_initPackage()
         m_BuildResource__implementation->setDerived(false);
         m_BuildResource__implementation->setOrdered(false);
         m_BuildResource__groupedBuild->setEType(m_AbstractBuildElementEClass);
-        m_BuildResource__groupedBuild->setName("groupedBuild");
         m_BuildResource__groupedBuild->setDefaultValueLiteral("");
         m_BuildResource__groupedBuild->setLowerBound(0);
         m_BuildResource__groupedBuild->setUpperBound(-1);
@@ -560,7 +578,6 @@ void BuildPackage::_initPackage()
         m_BuildResource__groupedBuild->setDerived(false);
         m_BuildResource__groupedBuild->setOrdered(false);
         m_BuildResource__buildElement->setEType(m_AbstractBuildElementEClass);
-        m_BuildResource__buildElement->setName("buildElement");
         m_BuildResource__buildElement->setDefaultValueLiteral("");
         m_BuildResource__buildElement->setLowerBound(0);
         m_BuildResource__buildElement->setUpperBound(-1);
@@ -581,7 +598,6 @@ void BuildPackage::_initPackage()
         m_BuildDescriptionEClass->setInterface(false);
         m_BuildDescription__text->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_BuildDescription__text->setName("text");
         m_BuildDescription__text->setDefaultValueLiteral("");
         m_BuildDescription__text->setLowerBound(0);
         m_BuildDescription__text->setUpperBound(1);
@@ -596,7 +612,6 @@ void BuildPackage::_initPackage()
 
         m_BuildDescription__source->setEType(
                 dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_BuildDescription__source->setName("source");
         m_BuildDescription__source->setDefaultValueLiteral("");
         m_BuildDescription__source->setLowerBound(0);
         m_BuildDescription__source->setUpperBound(-1);
@@ -631,7 +646,6 @@ void BuildPackage::_initPackage()
         m_LinksToEClass->setInterface(false);
 
         m_LinksTo__to->setEType(m_AbstractBuildElementEClass);
-        m_LinksTo__to->setName("to");
         m_LinksTo__to->setDefaultValueLiteral("");
         m_LinksTo__to->setLowerBound(1);
         m_LinksTo__to->setUpperBound(1);
@@ -644,7 +658,6 @@ void BuildPackage::_initPackage()
         m_LinksTo__to->setDerived(false);
         m_LinksTo__to->setOrdered(false);
         m_LinksTo__from->setEType(m_SymbolicLinkEClass);
-        m_LinksTo__from->setName("from");
         m_LinksTo__from->setDefaultValueLiteral("");
         m_LinksTo__from->setLowerBound(1);
         m_LinksTo__from->setUpperBound(1);
@@ -665,7 +678,6 @@ void BuildPackage::_initPackage()
         m_ConsumesEClass->setInterface(false);
 
         m_Consumes__to->setEType(m_AbstractBuildElementEClass);
-        m_Consumes__to->setName("to");
         m_Consumes__to->setDefaultValueLiteral("");
         m_Consumes__to->setLowerBound(1);
         m_Consumes__to->setUpperBound(1);
@@ -678,7 +690,6 @@ void BuildPackage::_initPackage()
         m_Consumes__to->setDerived(false);
         m_Consumes__to->setOrdered(false);
         m_Consumes__from->setEType(m_BuildStepEClass);
-        m_Consumes__from->setName("from");
         m_Consumes__from->setDefaultValueLiteral("");
         m_Consumes__from->setLowerBound(1);
         m_Consumes__from->setUpperBound(1);
@@ -699,7 +710,6 @@ void BuildPackage::_initPackage()
         m_BuildModelEClass->setInterface(false);
 
         m_BuildModel__buildElement->setEType(m_AbstractBuildElementEClass);
-        m_BuildModel__buildElement->setName("buildElement");
         m_BuildModel__buildElement->setDefaultValueLiteral("");
         m_BuildModel__buildElement->setLowerBound(0);
         m_BuildModel__buildElement->setUpperBound(-1);
@@ -749,7 +759,6 @@ void BuildPackage::_initPackage()
 
         m_BuildRelationship__to->setEType(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_BuildRelationship__to->setName("to");
         m_BuildRelationship__to->setDefaultValueLiteral("");
         m_BuildRelationship__to->setLowerBound(1);
         m_BuildRelationship__to->setUpperBound(1);
@@ -762,7 +771,6 @@ void BuildPackage::_initPackage()
         m_BuildRelationship__to->setDerived(false);
         m_BuildRelationship__to->setOrdered(false);
         m_BuildRelationship__from->setEType(m_AbstractBuildElementEClass);
-        m_BuildRelationship__from->setName("from");
         m_BuildRelationship__from->setDefaultValueLiteral("");
         m_BuildRelationship__from->setLowerBound(1);
         m_BuildRelationship__from->setUpperBound(1);
@@ -783,7 +791,6 @@ void BuildPackage::_initPackage()
         m_SuppliedByEClass->setInterface(false);
 
         m_SuppliedBy__to->setEType(m_SupplierEClass);
-        m_SuppliedBy__to->setName("to");
         m_SuppliedBy__to->setDefaultValueLiteral("");
         m_SuppliedBy__to->setLowerBound(1);
         m_SuppliedBy__to->setUpperBound(1);
@@ -796,7 +803,6 @@ void BuildPackage::_initPackage()
         m_SuppliedBy__to->setDerived(false);
         m_SuppliedBy__to->setOrdered(false);
         m_SuppliedBy__from->setEType(m_AbstractBuildElementEClass);
-        m_SuppliedBy__from->setName("from");
         m_SuppliedBy__from->setDefaultValueLiteral("");
         m_SuppliedBy__from->setLowerBound(1);
         m_SuppliedBy__from->setUpperBound(1);
@@ -831,7 +837,6 @@ void BuildPackage::_initPackage()
         m_ProducesEClass->setInterface(false);
 
         m_Produces__to->setEType(m_AbstractBuildElementEClass);
-        m_Produces__to->setName("to");
         m_Produces__to->setDefaultValueLiteral("");
         m_Produces__to->setLowerBound(1);
         m_Produces__to->setUpperBound(1);
@@ -844,7 +849,6 @@ void BuildPackage::_initPackage()
         m_Produces__to->setDerived(false);
         m_Produces__to->setOrdered(false);
         m_Produces__from->setEType(m_BuildStepEClass);
-        m_Produces__from->setName("from");
         m_Produces__from->setDefaultValueLiteral("");
         m_Produces__from->setLowerBound(1);
         m_Produces__from->setUpperBound(1);
@@ -865,7 +869,6 @@ void BuildPackage::_initPackage()
         m_SupportedByEClass->setInterface(false);
 
         m_SupportedBy__to->setEType(m_ToolEClass);
-        m_SupportedBy__to->setName("to");
         m_SupportedBy__to->setDefaultValueLiteral("");
         m_SupportedBy__to->setLowerBound(1);
         m_SupportedBy__to->setUpperBound(1);
@@ -878,7 +881,6 @@ void BuildPackage::_initPackage()
         m_SupportedBy__to->setDerived(false);
         m_SupportedBy__to->setOrdered(false);
         m_SupportedBy__from->setEType(m_BuildStepEClass);
-        m_SupportedBy__from->setName("from");
         m_SupportedBy__from->setDefaultValueLiteral("");
         m_SupportedBy__from->setLowerBound(1);
         m_SupportedBy__from->setUpperBound(1);
@@ -906,7 +908,6 @@ void BuildPackage::_initPackage()
         m_DescribedByEClass->setInterface(false);
 
         m_DescribedBy__to->setEType(m_BuildDescriptionEClass);
-        m_DescribedBy__to->setName("to");
         m_DescribedBy__to->setDefaultValueLiteral("");
         m_DescribedBy__to->setLowerBound(1);
         m_DescribedBy__to->setUpperBound(1);
@@ -919,7 +920,6 @@ void BuildPackage::_initPackage()
         m_DescribedBy__to->setDerived(false);
         m_DescribedBy__to->setOrdered(false);
         m_DescribedBy__from->setEType(m_BuildStepEClass);
-        m_DescribedBy__from->setName("from");
         m_DescribedBy__from->setDefaultValueLiteral("");
         m_DescribedBy__from->setLowerBound(1);
         m_DescribedBy__from->setUpperBound(1);
