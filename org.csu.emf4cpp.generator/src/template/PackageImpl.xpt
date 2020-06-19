@@ -279,6 +279,7 @@ void «name.toFirstUpper()»Package::_initPackage()
             «FOREACH class.EOperations AS op ITERATOR it-»
             { // Operation «op.name»()
                 auto _op = ::ecore::make<::ecore::EOperation>();
+                «EXPAND setAnnotations("_op") FOREACH op.EAnnotations-»
                 «IF op.EType != null-»
                     _op->setEType(«getPackageAttribute(op.EType)»);
                     «IF !op.EGenericType.ETypeArguments.isEmpty-»
@@ -293,6 +294,7 @@ void «name.toFirstUpper()»Package::_initPackage()
                 «FOREACH op.EParameters AS pa-»
                 { // «pa.name»
                     auto _pa = ::ecore::make<::ecore::EParameter>();
+                    «EXPAND setAnnotations("_pa") FOREACH pa.EAnnotations-»
                     _pa->setEType(«getPackageAttribute(pa.EType)»);
                     «IF !pa.EGenericType.ETypeArguments.isEmpty-»
                         «EXPAND addGenericType(this, "_pa") FOR pa.EGenericType-»
@@ -325,6 +327,7 @@ void «name.toFirstUpper()»Package::_initPackage()
         «FOREACH ee.ELiterals AS el-»
             { // Literal «el.name»
                 auto _el = ::ecore::make<::ecore::EEnumLiteral>();
+                «EXPAND setAnnotations("_el") FOREACH el.EAnnotations-»
                 _el->setName("«el.name»");
                 «IF el.value != 0-»
                 _el->setValue(«el.value»);
