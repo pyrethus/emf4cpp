@@ -54,932 +54,2302 @@ using namespace ::kdm::data;
 
 DataPackage::DataPackage()
 {
-
-    // Feature definitions of DataModel
-    m_DataModel__dataElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of AbstractDataElement
-    m_AbstractDataElement__source = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AbstractDataElement__dataRelation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AbstractDataElement__abstraction = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of DataResource
-
-    // Feature definitions of IndexElement
-    m_IndexElement__implementation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of UniqueKey
-
-    // Feature definitions of Index
-
-    // Feature definitions of AbstractDataRelationship
-
-    // Feature definitions of KeyRelation
-    m_KeyRelation__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_KeyRelation__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ReferenceKey
-
-    // Feature definitions of DataContainer
-    m_DataContainer__dataElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Catalog
-
-    // Feature definitions of RelationalSchema
-    m_RelationalSchema__codeElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ColumnSet
-    m_ColumnSet__itemUnit = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of RelationalTable
-
-    // Feature definitions of RelationalView
-
-    // Feature definitions of RecordFile
-
-    // Feature definitions of DataEvent
-    m_DataEvent__kind = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of XMLSchema
-    m_XMLSchema__contentElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of AbstractContentElement
-
-    // Feature definitions of ComplexContentType
-    m_ComplexContentType__contentElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of AllContent
-
-    // Feature definitions of SeqContent
-
-    // Feature definitions of ChoiceContent
-
-    // Feature definitions of ContentItem
-    m_ContentItem__type = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ContentItem__contentElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of GroupContent
-
-    // Feature definitions of ContentRestriction
-    m_ContentRestriction__kind = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ContentRestriction__value = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of SimpleContentType
-    m_SimpleContentType__kind = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SimpleContentType__type = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ExtendedDataElement
-
-    // Feature definitions of DataRelationship
-    m_DataRelationship__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_DataRelationship__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of MixedContent
-
-    // Feature definitions of ContentReference
-
-    // Feature definitions of DataAction
-    m_DataAction__kind = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_DataAction__implementation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_DataAction__dataElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ReadsColumnSet
-    m_ReadsColumnSet__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ReadsColumnSet__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ContentAttribute
-
-    // Feature definitions of TypedBy
-    m_TypedBy__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_TypedBy__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ReferenceTo
-    m_ReferenceTo__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ReferenceTo__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of RestrictionOf
-    m_RestrictionOf__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_RestrictionOf__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ExtensionTo
-    m_ExtensionTo__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ExtensionTo__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of DatatypeOf
-    m_DatatypeOf__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_DatatypeOf__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of HasContent
-    m_HasContent__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_HasContent__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of WritesColumnSet
-    m_WritesColumnSet__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_WritesColumnSet__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ProducesDataEvent
-    m_ProducesDataEvent__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ProducesDataEvent__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of DataSegment
-
-    // Feature definitions of ContentElement
-
-    // Feature definitions of ManagesData
-    m_ManagesData__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ManagesData__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_AbstractContentElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_AbstractDataElement__source = ::ecore::make< ::ecore::EReference >();
+    m_AbstractDataElement__dataRelation =
+            ::ecore::make< ::ecore::EReference >();
+    m_AbstractDataElement__abstraction = ::ecore::make< ::ecore::EReference >();
+    m_AbstractDataElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_AbstractDataRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_AllContentEClass = ::ecore::make< ::ecore::EClass >();
+    m_CatalogEClass = ::ecore::make< ::ecore::EClass >();
+    m_ChoiceContentEClass = ::ecore::make< ::ecore::EClass >();
+    m_ColumnSet__itemUnit = ::ecore::make< ::ecore::EReference >();
+    m_ColumnSetEClass = ::ecore::make< ::ecore::EClass >();
+    m_ComplexContentType__contentElement =
+            ::ecore::make< ::ecore::EReference >();
+    m_ComplexContentTypeEClass = ::ecore::make< ::ecore::EClass >();
+    m_ContentAttributeEClass = ::ecore::make< ::ecore::EClass >();
+    m_ContentElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ContentItem__type = ::ecore::make< ::ecore::EReference >();
+    m_ContentItem__contentElement = ::ecore::make< ::ecore::EReference >();
+    m_ContentItemEClass = ::ecore::make< ::ecore::EClass >();
+    m_ContentReferenceEClass = ::ecore::make< ::ecore::EClass >();
+    m_ContentRestriction__kind = ::ecore::make< ::ecore::EAttribute >();
+    m_ContentRestriction__value = ::ecore::make< ::ecore::EAttribute >();
+    m_ContentRestrictionEClass = ::ecore::make< ::ecore::EClass >();
+    m_DataAction__kind = ::ecore::make< ::ecore::EAttribute >();
+    m_DataAction__implementation = ::ecore::make< ::ecore::EReference >();
+    m_DataAction__dataElement = ::ecore::make< ::ecore::EReference >();
+    m_DataActionEClass = ::ecore::make< ::ecore::EClass >();
+    m_DataContainer__dataElement = ::ecore::make< ::ecore::EReference >();
+    m_DataContainerEClass = ::ecore::make< ::ecore::EClass >();
+    m_DataEvent__kind = ::ecore::make< ::ecore::EAttribute >();
+    m_DataEventEClass = ::ecore::make< ::ecore::EClass >();
+    m_DataModel__dataElement = ::ecore::make< ::ecore::EReference >();
+    m_DataModelEClass = ::ecore::make< ::ecore::EClass >();
+    m_DataRelationship__to = ::ecore::make< ::ecore::EReference >();
+    m_DataRelationship__from = ::ecore::make< ::ecore::EReference >();
+    m_DataRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_DataResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_DataSegmentEClass = ::ecore::make< ::ecore::EClass >();
+    m_DatatypeOf__to = ::ecore::make< ::ecore::EReference >();
+    m_DatatypeOf__from = ::ecore::make< ::ecore::EReference >();
+    m_DatatypeOfEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExtendedDataElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExtensionTo__to = ::ecore::make< ::ecore::EReference >();
+    m_ExtensionTo__from = ::ecore::make< ::ecore::EReference >();
+    m_ExtensionToEClass = ::ecore::make< ::ecore::EClass >();
+    m_GroupContentEClass = ::ecore::make< ::ecore::EClass >();
+    m_HasContent__to = ::ecore::make< ::ecore::EReference >();
+    m_HasContent__from = ::ecore::make< ::ecore::EReference >();
+    m_HasContentEClass = ::ecore::make< ::ecore::EClass >();
+    m_IndexEClass = ::ecore::make< ::ecore::EClass >();
+    m_IndexElement__implementation = ::ecore::make< ::ecore::EReference >();
+    m_IndexElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_KeyRelation__to = ::ecore::make< ::ecore::EReference >();
+    m_KeyRelation__from = ::ecore::make< ::ecore::EReference >();
+    m_KeyRelationEClass = ::ecore::make< ::ecore::EClass >();
+    m_ManagesData__to = ::ecore::make< ::ecore::EReference >();
+    m_ManagesData__from = ::ecore::make< ::ecore::EReference >();
+    m_ManagesDataEClass = ::ecore::make< ::ecore::EClass >();
+    m_MixedContentEClass = ::ecore::make< ::ecore::EClass >();
+    m_ProducesDataEvent__to = ::ecore::make< ::ecore::EReference >();
+    m_ProducesDataEvent__from = ::ecore::make< ::ecore::EReference >();
+    m_ProducesDataEventEClass = ::ecore::make< ::ecore::EClass >();
+    m_ReadsColumnSet__to = ::ecore::make< ::ecore::EReference >();
+    m_ReadsColumnSet__from = ::ecore::make< ::ecore::EReference >();
+    m_ReadsColumnSetEClass = ::ecore::make< ::ecore::EClass >();
+    m_RecordFileEClass = ::ecore::make< ::ecore::EClass >();
+    m_ReferenceKeyEClass = ::ecore::make< ::ecore::EClass >();
+    m_ReferenceTo__to = ::ecore::make< ::ecore::EReference >();
+    m_ReferenceTo__from = ::ecore::make< ::ecore::EReference >();
+    m_ReferenceToEClass = ::ecore::make< ::ecore::EClass >();
+    m_RelationalSchema__codeElement = ::ecore::make< ::ecore::EReference >();
+    m_RelationalSchemaEClass = ::ecore::make< ::ecore::EClass >();
+    m_RelationalTableEClass = ::ecore::make< ::ecore::EClass >();
+    m_RelationalViewEClass = ::ecore::make< ::ecore::EClass >();
+    m_RestrictionOf__to = ::ecore::make< ::ecore::EReference >();
+    m_RestrictionOf__from = ::ecore::make< ::ecore::EReference >();
+    m_RestrictionOfEClass = ::ecore::make< ::ecore::EClass >();
+    m_SeqContentEClass = ::ecore::make< ::ecore::EClass >();
+    m_SimpleContentType__type = ::ecore::make< ::ecore::EReference >();
+    m_SimpleContentType__kind = ::ecore::make< ::ecore::EAttribute >();
+    m_SimpleContentTypeEClass = ::ecore::make< ::ecore::EClass >();
+    m_TypedBy__to = ::ecore::make< ::ecore::EReference >();
+    m_TypedBy__from = ::ecore::make< ::ecore::EReference >();
+    m_TypedByEClass = ::ecore::make< ::ecore::EClass >();
+    m_UniqueKeyEClass = ::ecore::make< ::ecore::EClass >();
+    m_WritesColumnSet__to = ::ecore::make< ::ecore::EReference >();
+    m_WritesColumnSet__from = ::ecore::make< ::ecore::EReference >();
+    m_WritesColumnSetEClass = ::ecore::make< ::ecore::EClass >();
+    m_XMLSchema__contentElement = ::ecore::make< ::ecore::EReference >();
+    m_XMLSchemaEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void DataPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = DataFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = DataFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // DataModel
-        m_DataModelEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DataModelEClass->setClassifierID(DATAMODEL);
-        m_DataModelEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DataModelEClass);
-        // m_DataModel__dataElement has already been allocated above
-        m_DataModel__dataElement->setFeatureID(
-                ::kdm::data::DataPackage::DATAMODEL__DATAELEMENT);
-        m_DataModel__dataElement->setName("dataElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataModelEClass->getEStructuralFeatures()).basicAdd(
-                m_DataModel__dataElement);
-        m_DataModel__dataElement->basicsetEContainingClass(m_DataModelEClass);
-    }
+    [this]()
+    { // Classifier AbstractContentElement
+        auto &&classifier = m_AbstractContentElementEClass;
 
-    { // AbstractDataElement
-        m_AbstractDataElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractDataElementEClass->setClassifierID(ABSTRACTDATAELEMENT);
-        m_AbstractDataElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractDataElementEClass);
-        // m_AbstractDataElement__source has already been allocated above
-        m_AbstractDataElement__source->setFeatureID(
+        // ENamedElement
+        classifier->setName("AbstractContentElement");
+
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTCONTENTELEMENT);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature source of class AbstractDataElement
+        auto &&feature = m_AbstractDataElement__source;
+
+        // ENamedElement
+        feature->setName("source");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__SOURCE);
-        m_AbstractDataElement__source->setName("source");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDataElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractDataElement__source);
-        m_AbstractDataElement__source->basicsetEContainingClass(
-                m_AbstractDataElementEClass);
-        // m_AbstractDataElement__dataRelation has already been allocated above
-        m_AbstractDataElement__dataRelation->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractDataElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature dataRelation of class AbstractDataElement
+        auto &&feature = m_AbstractDataElement__dataRelation;
+
+        // ENamedElement
+        feature->setName("dataRelation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractDataRelationshipEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__DATARELATION);
-        m_AbstractDataElement__dataRelation->setName("dataRelation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDataElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractDataElement__dataRelation);
-        m_AbstractDataElement__dataRelation->basicsetEContainingClass(
-                m_AbstractDataElementEClass);
-        // m_AbstractDataElement__abstraction has already been allocated above
-        m_AbstractDataElement__abstraction->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractDataElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature abstraction of class AbstractDataElement
+        auto &&feature = m_AbstractDataElement__abstraction;
+
+        // ENamedElement
+        feature->setName("abstraction");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::ABSTRACTDATAELEMENT__ABSTRACTION);
-        m_AbstractDataElement__abstraction->setName("abstraction");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDataElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractDataElement__abstraction);
-        m_AbstractDataElement__abstraction->basicsetEContainingClass(
-                m_AbstractDataElementEClass);
-    }
+        feature->basicsetEContainingClass(m_AbstractDataElementEClass);
 
-    { // DataResource
-        m_DataResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DataResourceEClass->setClassifierID(DATARESOURCE);
-        m_DataResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DataResourceEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // IndexElement
-        m_IndexElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_IndexElementEClass->setClassifierID(INDEXELEMENT);
-        m_IndexElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IndexElementEClass);
-        // m_IndexElement__implementation has already been allocated above
-        m_IndexElement__implementation->setFeatureID(
-                ::kdm::data::DataPackage::INDEXELEMENT__IMPLEMENTATION);
-        m_IndexElement__implementation->setName("implementation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IndexElementEClass->getEStructuralFeatures()).basicAdd(
-                m_IndexElement__implementation);
-        m_IndexElement__implementation->basicsetEContainingClass(
-                m_IndexElementEClass);
-    }
+    [this]()
+    { // Classifier AbstractDataElement
+        auto &&classifier = m_AbstractDataElementEClass;
 
-    { // UniqueKey
-        m_UniqueKeyEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UniqueKeyEClass->setClassifierID(UNIQUEKEY);
-        m_UniqueKeyEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UniqueKeyEClass);
-    }
+        // ENamedElement
+        classifier->setName("AbstractDataElement");
 
-    { // Index
-        m_IndexEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_IndexEClass->setClassifierID(INDEX);
-        m_IndexEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IndexEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTDATAELEMENT);
 
-    { // AbstractDataRelationship
-        m_AbstractDataRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractDataRelationshipEClass->setClassifierID(
-                ABSTRACTDATARELATIONSHIP);
-        m_AbstractDataRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractDataRelationshipEClass);
-    }
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractDataElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_AbstractDataElement__source);
+            eStructuralFeatures.basicAdd(m_AbstractDataElement__dataRelation);
+            eStructuralFeatures.basicAdd(m_AbstractDataElement__abstraction);
+        }
+    }();
 
-    { // KeyRelation
-        m_KeyRelationEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_KeyRelationEClass->setClassifierID(KEYRELATION);
-        m_KeyRelationEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_KeyRelationEClass);
-        // m_KeyRelation__to has already been allocated above
-        m_KeyRelation__to->setFeatureID(
-                ::kdm::data::DataPackage::KEYRELATION__TO);
-        m_KeyRelation__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KeyRelationEClass->getEStructuralFeatures()).basicAdd(
-                m_KeyRelation__to);
-        m_KeyRelation__to->basicsetEContainingClass(m_KeyRelationEClass);
-        // m_KeyRelation__from has already been allocated above
-        m_KeyRelation__from->setFeatureID(
-                ::kdm::data::DataPackage::KEYRELATION__FROM);
-        m_KeyRelation__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KeyRelationEClass->getEStructuralFeatures()).basicAdd(
-                m_KeyRelation__from);
-        m_KeyRelation__from->basicsetEContainingClass(m_KeyRelationEClass);
-    }
+    [this]()
+    { // Classifier AbstractDataRelationship
+        auto &&classifier = m_AbstractDataRelationshipEClass;
 
-    { // ReferenceKey
-        m_ReferenceKeyEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ReferenceKeyEClass->setClassifierID(REFERENCEKEY);
-        m_ReferenceKeyEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ReferenceKeyEClass);
-    }
+        // ENamedElement
+        classifier->setName("AbstractDataRelationship");
 
-    { // DataContainer
-        m_DataContainerEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DataContainerEClass->setClassifierID(DATACONTAINER);
-        m_DataContainerEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DataContainerEClass);
-        // m_DataContainer__dataElement has already been allocated above
-        m_DataContainer__dataElement->setFeatureID(
-                ::kdm::data::DataPackage::DATACONTAINER__DATAELEMENT);
-        m_DataContainer__dataElement->setName("dataElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataContainerEClass->getEStructuralFeatures()).basicAdd(
-                m_DataContainer__dataElement);
-        m_DataContainer__dataElement->basicsetEContainingClass(
-                m_DataContainerEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTDATARELATIONSHIP);
 
-    { // Catalog
-        m_CatalogEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_CatalogEClass->setClassifierID(CATALOG);
-        m_CatalogEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_CatalogEClass);
-    }
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+    }();
 
-    { // RelationalSchema
-        m_RelationalSchemaEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_RelationalSchemaEClass->setClassifierID(RELATIONALSCHEMA);
-        m_RelationalSchemaEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_RelationalSchemaEClass);
-        // m_RelationalSchema__codeElement has already been allocated above
-        m_RelationalSchema__codeElement->setFeatureID(
-                ::kdm::data::DataPackage::RELATIONALSCHEMA__CODEELEMENT);
-        m_RelationalSchema__codeElement->setName("codeElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RelationalSchemaEClass->getEStructuralFeatures()).basicAdd(
-                m_RelationalSchema__codeElement);
-        m_RelationalSchema__codeElement->basicsetEContainingClass(
-                m_RelationalSchemaEClass);
-    }
+    [this]()
+    { // Classifier AllContent
+        auto &&classifier = m_AllContentEClass;
 
-    { // ColumnSet
-        m_ColumnSetEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ColumnSetEClass->setClassifierID(COLUMNSET);
-        m_ColumnSetEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ColumnSetEClass);
-        // m_ColumnSet__itemUnit has already been allocated above
-        m_ColumnSet__itemUnit->setFeatureID(
-                ::kdm::data::DataPackage::COLUMNSET__ITEMUNIT);
-        m_ColumnSet__itemUnit->setName("itemUnit");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ColumnSetEClass->getEStructuralFeatures()).basicAdd(
-                m_ColumnSet__itemUnit);
-        m_ColumnSet__itemUnit->basicsetEContainingClass(m_ColumnSetEClass);
-    }
+        // ENamedElement
+        classifier->setName("AllContent");
 
-    { // RelationalTable
-        m_RelationalTableEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_RelationalTableEClass->setClassifierID(RELATIONALTABLE);
-        m_RelationalTableEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_RelationalTableEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ALLCONTENT);
 
-    { // RelationalView
-        m_RelationalViewEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_RelationalViewEClass->setClassifierID(RELATIONALVIEW);
-        m_RelationalViewEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_RelationalViewEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
 
-    { // RecordFile
-        m_RecordFileEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_RecordFileEClass->setClassifierID(RECORDFILE);
-        m_RecordFileEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_RecordFileEClass);
-    }
+    [this]()
+    { // Classifier Catalog
+        auto &&classifier = m_CatalogEClass;
 
-    { // DataEvent
-        m_DataEventEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DataEventEClass->setClassifierID(DATAEVENT);
-        m_DataEventEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DataEventEClass);
-        // m_DataEvent__kind has already been allocated above
-        m_DataEvent__kind->setFeatureID(
-                ::kdm::data::DataPackage::DATAEVENT__KIND);
-        m_DataEvent__kind->setName("kind");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataEventEClass->getEStructuralFeatures()).basicAdd(
-                m_DataEvent__kind);
-        m_DataEvent__kind->basicsetEContainingClass(m_DataEventEClass);
-    }
+        // ENamedElement
+        classifier->setName("Catalog");
 
-    { // XMLSchema
-        m_XMLSchemaEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_XMLSchemaEClass->setClassifierID(XMLSCHEMA);
-        m_XMLSchemaEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_XMLSchemaEClass);
-        // m_XMLSchema__contentElement has already been allocated above
-        m_XMLSchema__contentElement->setFeatureID(
-                ::kdm::data::DataPackage::XMLSCHEMA__CONTENTELEMENT);
-        m_XMLSchema__contentElement->setName("contentElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLSchemaEClass->getEStructuralFeatures()).basicAdd(
-                m_XMLSchema__contentElement);
-        m_XMLSchema__contentElement->basicsetEContainingClass(
-                m_XMLSchemaEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(CATALOG);
 
-    { // AbstractContentElement
-        m_AbstractContentElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractContentElementEClass->setClassifierID(ABSTRACTCONTENTELEMENT);
-        m_AbstractContentElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractContentElementEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
 
-    { // ComplexContentType
-        m_ComplexContentTypeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ComplexContentTypeEClass->setClassifierID(COMPLEXCONTENTTYPE);
-        m_ComplexContentTypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ComplexContentTypeEClass);
-        // m_ComplexContentType__contentElement has already been allocated above
-        m_ComplexContentType__contentElement->setFeatureID(
+    [this]()
+    { // Classifier ChoiceContent
+        auto &&classifier = m_ChoiceContentEClass;
+
+        // ENamedElement
+        classifier->setName("ChoiceContent");
+
+        // EClassifier
+        classifier->setClassifierID(CHOICECONTENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature itemUnit of class ColumnSet
+        auto &&feature = m_ColumnSet__itemUnit;
+
+        // ENamedElement
+        feature->setName("itemUnit");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getItemUnit());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::COLUMNSET__ITEMUNIT);
+        feature->basicsetEContainingClass(m_ColumnSetEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ColumnSet
+        auto &&classifier = m_ColumnSetEClass;
+
+        // ENamedElement
+        classifier->setName("ColumnSet");
+
+        // EClassifier
+        classifier->setClassifierID(COLUMNSET);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ColumnSetEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ColumnSet__itemUnit);
+        }
+    }();
+
+    [this]()
+    { // Feature contentElement of class ComplexContentType
+        auto &&feature = m_ComplexContentType__contentElement;
+
+        // ENamedElement
+        feature->setName("contentElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractContentElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::COMPLEXCONTENTTYPE__CONTENTELEMENT);
-        m_ComplexContentType__contentElement->setName("contentElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ComplexContentTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_ComplexContentType__contentElement);
-        m_ComplexContentType__contentElement->basicsetEContainingClass(
-                m_ComplexContentTypeEClass);
-    }
+        feature->basicsetEContainingClass(m_ComplexContentTypeEClass);
 
-    { // AllContent
-        m_AllContentEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AllContentEClass->setClassifierID(ALLCONTENT);
-        m_AllContentEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AllContentEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // SeqContent
-        m_SeqContentEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_SeqContentEClass->setClassifierID(SEQCONTENT);
-        m_SeqContentEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_SeqContentEClass);
-    }
+    [this]()
+    { // Classifier ComplexContentType
+        auto &&classifier = m_ComplexContentTypeEClass;
 
-    { // ChoiceContent
-        m_ChoiceContentEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ChoiceContentEClass->setClassifierID(CHOICECONTENT);
-        m_ChoiceContentEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ChoiceContentEClass);
-    }
+        // ENamedElement
+        classifier->setName("ComplexContentType");
 
-    { // ContentItem
-        m_ContentItemEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ContentItemEClass->setClassifierID(CONTENTITEM);
-        m_ContentItemEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ContentItemEClass);
-        // m_ContentItem__type has already been allocated above
-        m_ContentItem__type->setFeatureID(
-                ::kdm::data::DataPackage::CONTENTITEM__TYPE);
-        m_ContentItem__type->setName("type");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContentItemEClass->getEStructuralFeatures()).basicAdd(
-                m_ContentItem__type);
-        m_ContentItem__type->basicsetEContainingClass(m_ContentItemEClass);
-        // m_ContentItem__contentElement has already been allocated above
-        m_ContentItem__contentElement->setFeatureID(
+        // EClassifier
+        classifier->setClassifierID(COMPLEXCONTENTTYPE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ComplexContentTypeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ComplexContentType__contentElement);
+        }
+    }();
+
+    [this]()
+    { // Classifier ContentAttribute
+        auto &&classifier = m_ContentAttributeEClass;
+
+        // ENamedElement
+        classifier->setName("ContentAttribute");
+
+        // EClassifier
+        classifier->setClassifierID(CONTENTATTRIBUTE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier ContentElement
+        auto &&classifier = m_ContentElementEClass;
+
+        // ENamedElement
+        classifier->setName("ContentElement");
+
+        // EClassifier
+        classifier->setClassifierID(CONTENTELEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature type of class ContentItem
+        auto &&feature = m_ContentItem__type;
+
+        // ENamedElement
+        feature->setName("type");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ComplexContentTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::CONTENTITEM__TYPE);
+        feature->basicsetEContainingClass(m_ContentItemEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature contentElement of class ContentItem
+        auto &&feature = m_ContentItem__contentElement;
+
+        // ENamedElement
+        feature->setName("contentElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractContentElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::CONTENTITEM__CONTENTELEMENT);
-        m_ContentItem__contentElement->setName("contentElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContentItemEClass->getEStructuralFeatures()).basicAdd(
-                m_ContentItem__contentElement);
-        m_ContentItem__contentElement->basicsetEContainingClass(
-                m_ContentItemEClass);
-    }
+        feature->basicsetEContainingClass(m_ContentItemEClass);
 
-    { // GroupContent
-        m_GroupContentEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_GroupContentEClass->setClassifierID(GROUPCONTENT);
-        m_GroupContentEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_GroupContentEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // ContentRestriction
-        m_ContentRestrictionEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ContentRestrictionEClass->setClassifierID(CONTENTRESTRICTION);
-        m_ContentRestrictionEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ContentRestrictionEClass);
-        // m_ContentRestriction__kind has already been allocated above
-        m_ContentRestriction__kind->setFeatureID(
+    [this]()
+    { // Classifier ContentItem
+        auto &&classifier = m_ContentItemEClass;
+
+        // ENamedElement
+        classifier->setName("ContentItem");
+
+        // EClassifier
+        classifier->setClassifierID(CONTENTITEM);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContentItemEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ContentItem__type);
+            eStructuralFeatures.basicAdd(m_ContentItem__contentElement);
+        }
+    }();
+
+    [this]()
+    { // Classifier ContentReference
+        auto &&classifier = m_ContentReferenceEClass;
+
+        // ENamedElement
+        classifier->setName("ContentReference");
+
+        // EClassifier
+        classifier->setClassifierID(CONTENTREFERENCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature kind of class ContentRestriction
+        auto &&feature = m_ContentRestriction__kind;
+
+        // ENamedElement
+        feature->setName("kind");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::CONTENTRESTRICTION__KIND);
-        m_ContentRestriction__kind->setName("kind");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContentRestrictionEClass->getEStructuralFeatures()).basicAdd(
-                m_ContentRestriction__kind);
-        m_ContentRestriction__kind->basicsetEContainingClass(
-                m_ContentRestrictionEClass);
-        // m_ContentRestriction__value has already been allocated above
-        m_ContentRestriction__value->setFeatureID(
+        feature->basicsetEContainingClass(m_ContentRestrictionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature value of class ContentRestriction
+        auto &&feature = m_ContentRestriction__value;
+
+        // ENamedElement
+        feature->setName("value");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::CONTENTRESTRICTION__VALUE);
-        m_ContentRestriction__value->setName("value");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContentRestrictionEClass->getEStructuralFeatures()).basicAdd(
-                m_ContentRestriction__value);
-        m_ContentRestriction__value->basicsetEContainingClass(
-                m_ContentRestrictionEClass);
-    }
+        feature->basicsetEContainingClass(m_ContentRestrictionEClass);
 
-    { // SimpleContentType
-        m_SimpleContentTypeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_SimpleContentTypeEClass->setClassifierID(SIMPLECONTENTTYPE);
-        m_SimpleContentTypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_SimpleContentTypeEClass);
-        // m_SimpleContentType__type has already been allocated above
-        m_SimpleContentType__type->setFeatureID(
-                ::kdm::data::DataPackage::SIMPLECONTENTTYPE__TYPE);
-        m_SimpleContentType__type->setName("type");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleContentTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_SimpleContentType__type);
-        m_SimpleContentType__type->basicsetEContainingClass(
-                m_SimpleContentTypeEClass);
-        // m_SimpleContentType__kind has already been allocated above
-        m_SimpleContentType__kind->setFeatureID(
-                ::kdm::data::DataPackage::SIMPLECONTENTTYPE__KIND);
-        m_SimpleContentType__kind->setName("kind");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleContentTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_SimpleContentType__kind);
-        m_SimpleContentType__kind->basicsetEContainingClass(
-                m_SimpleContentTypeEClass);
-    }
+        // EAttribute
+        feature->setID(false);
+    }();
 
-    { // ExtendedDataElement
-        m_ExtendedDataElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExtendedDataElementEClass->setClassifierID(EXTENDEDDATAELEMENT);
-        m_ExtendedDataElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExtendedDataElementEClass);
-    }
+    [this]()
+    { // Classifier ContentRestriction
+        auto &&classifier = m_ContentRestrictionEClass;
 
-    { // DataRelationship
-        m_DataRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DataRelationshipEClass->setClassifierID(DATARELATIONSHIP);
-        m_DataRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DataRelationshipEClass);
-        // m_DataRelationship__to has already been allocated above
-        m_DataRelationship__to->setFeatureID(
-                ::kdm::data::DataPackage::DATARELATIONSHIP__TO);
-        m_DataRelationship__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_DataRelationship__to);
-        m_DataRelationship__to->basicsetEContainingClass(
-                m_DataRelationshipEClass);
-        // m_DataRelationship__from has already been allocated above
-        m_DataRelationship__from->setFeatureID(
-                ::kdm::data::DataPackage::DATARELATIONSHIP__FROM);
-        m_DataRelationship__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_DataRelationship__from);
-        m_DataRelationship__from->basicsetEContainingClass(
-                m_DataRelationshipEClass);
-    }
+        // ENamedElement
+        classifier->setName("ContentRestriction");
 
-    { // MixedContent
-        m_MixedContentEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_MixedContentEClass->setClassifierID(MIXEDCONTENT);
-        m_MixedContentEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_MixedContentEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(CONTENTRESTRICTION);
 
-    { // ContentReference
-        m_ContentReferenceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ContentReferenceEClass->setClassifierID(CONTENTREFERENCE);
-        m_ContentReferenceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ContentReferenceEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ContentRestrictionEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ContentRestriction__kind);
+            eStructuralFeatures.basicAdd(m_ContentRestriction__value);
+        }
+    }();
 
-    { // DataAction
-        m_DataActionEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DataActionEClass->setClassifierID(DATAACTION);
-        m_DataActionEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DataActionEClass);
-        // m_DataAction__kind has already been allocated above
-        m_DataAction__kind->setFeatureID(
-                ::kdm::data::DataPackage::DATAACTION__KIND);
-        m_DataAction__kind->setName("kind");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataActionEClass->getEStructuralFeatures()).basicAdd(
-                m_DataAction__kind);
-        m_DataAction__kind->basicsetEContainingClass(m_DataActionEClass);
-        // m_DataAction__implementation has already been allocated above
-        m_DataAction__implementation->setFeatureID(
+    [this]()
+    { // Feature kind of class DataAction
+        auto &&feature = m_DataAction__kind;
+
+        // ENamedElement
+        feature->setName("kind");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::DATAACTION__KIND);
+        feature->basicsetEContainingClass(m_DataActionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature implementation of class DataAction
+        auto &&feature = m_DataAction__implementation;
+
+        // ENamedElement
+        feature->setName("implementation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::DATAACTION__IMPLEMENTATION);
-        m_DataAction__implementation->setName("implementation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataActionEClass->getEStructuralFeatures()).basicAdd(
-                m_DataAction__implementation);
-        m_DataAction__implementation->basicsetEContainingClass(
-                m_DataActionEClass);
-        // m_DataAction__dataElement has already been allocated above
-        m_DataAction__dataElement->setFeatureID(
+        feature->basicsetEContainingClass(m_DataActionEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature dataElement of class DataAction
+        auto &&feature = m_DataAction__dataElement;
+
+        // ENamedElement
+        feature->setName("dataElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_DataEventEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::DATAACTION__DATAELEMENT);
-        m_DataAction__dataElement->setName("dataElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataActionEClass->getEStructuralFeatures()).basicAdd(
-                m_DataAction__dataElement);
-        m_DataAction__dataElement->basicsetEContainingClass(m_DataActionEClass);
-    }
+        feature->basicsetEContainingClass(m_DataActionEClass);
 
-    { // ReadsColumnSet
-        m_ReadsColumnSetEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ReadsColumnSetEClass->setClassifierID(READSCOLUMNSET);
-        m_ReadsColumnSetEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ReadsColumnSetEClass);
-        // m_ReadsColumnSet__to has already been allocated above
-        m_ReadsColumnSet__to->setFeatureID(
-                ::kdm::data::DataPackage::READSCOLUMNSET__TO);
-        m_ReadsColumnSet__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsColumnSetEClass->getEStructuralFeatures()).basicAdd(
-                m_ReadsColumnSet__to);
-        m_ReadsColumnSet__to->basicsetEContainingClass(m_ReadsColumnSetEClass);
-        // m_ReadsColumnSet__from has already been allocated above
-        m_ReadsColumnSet__from->setFeatureID(
-                ::kdm::data::DataPackage::READSCOLUMNSET__FROM);
-        m_ReadsColumnSet__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsColumnSetEClass->getEStructuralFeatures()).basicAdd(
-                m_ReadsColumnSet__from);
-        m_ReadsColumnSet__from->basicsetEContainingClass(
-                m_ReadsColumnSetEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // ContentAttribute
-        m_ContentAttributeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ContentAttributeEClass->setClassifierID(CONTENTATTRIBUTE);
-        m_ContentAttributeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ContentAttributeEClass);
-    }
+    [this]()
+    { // Classifier DataAction
+        auto &&classifier = m_DataActionEClass;
 
-    { // TypedBy
-        m_TypedByEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_TypedByEClass->setClassifierID(TYPEDBY);
-        m_TypedByEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TypedByEClass);
-        // m_TypedBy__to has already been allocated above
-        m_TypedBy__to->setFeatureID(::kdm::data::DataPackage::TYPEDBY__TO);
-        m_TypedBy__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypedByEClass->getEStructuralFeatures()).basicAdd(
-                m_TypedBy__to);
-        m_TypedBy__to->basicsetEContainingClass(m_TypedByEClass);
-        // m_TypedBy__from has already been allocated above
-        m_TypedBy__from->setFeatureID(::kdm::data::DataPackage::TYPEDBY__FROM);
-        m_TypedBy__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypedByEClass->getEStructuralFeatures()).basicAdd(
-                m_TypedBy__from);
-        m_TypedBy__from->basicsetEContainingClass(m_TypedByEClass);
-    }
+        // ENamedElement
+        classifier->setName("DataAction");
 
-    { // ReferenceTo
-        m_ReferenceToEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ReferenceToEClass->setClassifierID(REFERENCETO);
-        m_ReferenceToEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ReferenceToEClass);
-        // m_ReferenceTo__to has already been allocated above
-        m_ReferenceTo__to->setFeatureID(
-                ::kdm::data::DataPackage::REFERENCETO__TO);
-        m_ReferenceTo__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReferenceToEClass->getEStructuralFeatures()).basicAdd(
-                m_ReferenceTo__to);
-        m_ReferenceTo__to->basicsetEContainingClass(m_ReferenceToEClass);
-        // m_ReferenceTo__from has already been allocated above
-        m_ReferenceTo__from->setFeatureID(
-                ::kdm::data::DataPackage::REFERENCETO__FROM);
-        m_ReferenceTo__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReferenceToEClass->getEStructuralFeatures()).basicAdd(
-                m_ReferenceTo__from);
-        m_ReferenceTo__from->basicsetEContainingClass(m_ReferenceToEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(DATAACTION);
 
-    { // RestrictionOf
-        m_RestrictionOfEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_RestrictionOfEClass->setClassifierID(RESTRICTIONOF);
-        m_RestrictionOfEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_RestrictionOfEClass);
-        // m_RestrictionOf__to has already been allocated above
-        m_RestrictionOf__to->setFeatureID(
-                ::kdm::data::DataPackage::RESTRICTIONOF__TO);
-        m_RestrictionOf__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RestrictionOfEClass->getEStructuralFeatures()).basicAdd(
-                m_RestrictionOf__to);
-        m_RestrictionOf__to->basicsetEContainingClass(m_RestrictionOfEClass);
-        // m_RestrictionOf__from has already been allocated above
-        m_RestrictionOf__from->setFeatureID(
-                ::kdm::data::DataPackage::RESTRICTIONOF__FROM);
-        m_RestrictionOf__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RestrictionOfEClass->getEStructuralFeatures()).basicAdd(
-                m_RestrictionOf__from);
-        m_RestrictionOf__from->basicsetEContainingClass(m_RestrictionOfEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataActionEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DataAction__kind);
+            eStructuralFeatures.basicAdd(m_DataAction__implementation);
+            eStructuralFeatures.basicAdd(m_DataAction__dataElement);
+        }
+    }();
 
-    { // ExtensionTo
-        m_ExtensionToEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExtensionToEClass->setClassifierID(EXTENSIONTO);
-        m_ExtensionToEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExtensionToEClass);
-        // m_ExtensionTo__to has already been allocated above
-        m_ExtensionTo__to->setFeatureID(
-                ::kdm::data::DataPackage::EXTENSIONTO__TO);
-        m_ExtensionTo__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionToEClass->getEStructuralFeatures()).basicAdd(
-                m_ExtensionTo__to);
-        m_ExtensionTo__to->basicsetEContainingClass(m_ExtensionToEClass);
-        // m_ExtensionTo__from has already been allocated above
-        m_ExtensionTo__from->setFeatureID(
-                ::kdm::data::DataPackage::EXTENSIONTO__FROM);
-        m_ExtensionTo__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionToEClass->getEStructuralFeatures()).basicAdd(
-                m_ExtensionTo__from);
-        m_ExtensionTo__from->basicsetEContainingClass(m_ExtensionToEClass);
-    }
+    [this]()
+    { // Feature dataElement of class DataContainer
+        auto &&feature = m_DataContainer__dataElement;
 
-    { // DatatypeOf
-        m_DatatypeOfEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DatatypeOfEClass->setClassifierID(DATATYPEOF);
-        m_DatatypeOfEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DatatypeOfEClass);
-        // m_DatatypeOf__to has already been allocated above
-        m_DatatypeOf__to->setFeatureID(
-                ::kdm::data::DataPackage::DATATYPEOF__TO);
-        m_DatatypeOf__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DatatypeOfEClass->getEStructuralFeatures()).basicAdd(
-                m_DatatypeOf__to);
-        m_DatatypeOf__to->basicsetEContainingClass(m_DatatypeOfEClass);
-        // m_DatatypeOf__from has already been allocated above
-        m_DatatypeOf__from->setFeatureID(
-                ::kdm::data::DataPackage::DATATYPEOF__FROM);
-        m_DatatypeOf__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DatatypeOfEClass->getEStructuralFeatures()).basicAdd(
-                m_DatatypeOf__from);
-        m_DatatypeOf__from->basicsetEContainingClass(m_DatatypeOfEClass);
-    }
+        // ENamedElement
+        feature->setName("dataElement");
 
-    { // HasContent
-        m_HasContentEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_HasContentEClass->setClassifierID(HASCONTENT);
-        m_HasContentEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_HasContentEClass);
-        // m_HasContent__to has already been allocated above
-        m_HasContent__to->setFeatureID(
-                ::kdm::data::DataPackage::HASCONTENT__TO);
-        m_HasContent__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasContentEClass->getEStructuralFeatures()).basicAdd(
-                m_HasContent__to);
-        m_HasContent__to->basicsetEContainingClass(m_HasContentEClass);
-        // m_HasContent__from has already been allocated above
-        m_HasContent__from->setFeatureID(
-                ::kdm::data::DataPackage::HASCONTENT__FROM);
-        m_HasContent__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasContentEClass->getEStructuralFeatures()).basicAdd(
-                m_HasContent__from);
-        m_HasContent__from->basicsetEContainingClass(m_HasContentEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
 
-    { // WritesColumnSet
-        m_WritesColumnSetEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_WritesColumnSetEClass->setClassifierID(WRITESCOLUMNSET);
-        m_WritesColumnSetEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_WritesColumnSetEClass);
-        // m_WritesColumnSet__to has already been allocated above
-        m_WritesColumnSet__to->setFeatureID(
-                ::kdm::data::DataPackage::WRITESCOLUMNSET__TO);
-        m_WritesColumnSet__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesColumnSetEClass->getEStructuralFeatures()).basicAdd(
-                m_WritesColumnSet__to);
-        m_WritesColumnSet__to->basicsetEContainingClass(
-                m_WritesColumnSetEClass);
-        // m_WritesColumnSet__from has already been allocated above
-        m_WritesColumnSet__from->setFeatureID(
-                ::kdm::data::DataPackage::WRITESCOLUMNSET__FROM);
-        m_WritesColumnSet__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesColumnSetEClass->getEStructuralFeatures()).basicAdd(
-                m_WritesColumnSet__from);
-        m_WritesColumnSet__from->basicsetEContainingClass(
-                m_WritesColumnSetEClass);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_DataResourceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // ProducesDataEvent
-        m_ProducesDataEventEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ProducesDataEventEClass->setClassifierID(PRODUCESDATAEVENT);
-        m_ProducesDataEventEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ProducesDataEventEClass);
-        // m_ProducesDataEvent__to has already been allocated above
-        m_ProducesDataEvent__to->setFeatureID(
-                ::kdm::data::DataPackage::PRODUCESDATAEVENT__TO);
-        m_ProducesDataEvent__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesDataEventEClass->getEStructuralFeatures()).basicAdd(
-                m_ProducesDataEvent__to);
-        m_ProducesDataEvent__to->basicsetEContainingClass(
-                m_ProducesDataEventEClass);
-        // m_ProducesDataEvent__from has already been allocated above
-        m_ProducesDataEvent__from->setFeatureID(
+        feature->setFeatureID(
+                ::kdm::data::DataPackage::DATACONTAINER__DATAELEMENT);
+        feature->basicsetEContainingClass(m_DataContainerEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DataContainer
+        auto &&classifier = m_DataContainerEClass;
+
+        // ENamedElement
+        classifier->setName("DataContainer");
+
+        // EClassifier
+        classifier->setClassifierID(DATACONTAINER);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataContainerEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DataContainer__dataElement);
+        }
+    }();
+
+    [this]()
+    { // Feature kind of class DataEvent
+        auto &&feature = m_DataEvent__kind;
+
+        // ENamedElement
+        feature->setName("kind");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::DATAEVENT__KIND);
+        feature->basicsetEContainingClass(m_DataEventEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier DataEvent
+        auto &&classifier = m_DataEventEClass;
+
+        // ENamedElement
+        classifier->setName("DataEvent");
+
+        // EClassifier
+        classifier->setClassifierID(DATAEVENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataEventEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DataEvent__kind);
+        }
+    }();
+
+    [this]()
+    { // Feature dataElement of class DataModel
+        auto &&feature = m_DataModel__dataElement;
+
+        // ENamedElement
+        feature->setName("dataElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractDataElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::DATAMODEL__DATAELEMENT);
+        feature->basicsetEContainingClass(m_DataModelEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DataModel
+        auto &&classifier = m_DataModelEClass;
+
+        // ENamedElement
+        classifier->setName("DataModel");
+
+        // EClassifier
+        classifier->setClassifierID(DATAMODEL);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataModelEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DataModel__dataElement);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class DataRelationship
+        auto &&feature = m_DataRelationship__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::DATARELATIONSHIP__TO);
+        feature->basicsetEContainingClass(m_DataRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class DataRelationship
+        auto &&feature = m_DataRelationship__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractDataElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::DATARELATIONSHIP__FROM);
+        feature->basicsetEContainingClass(m_DataRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DataRelationship
+        auto &&classifier = m_DataRelationshipEClass;
+
+        // ENamedElement
+        classifier->setName("DataRelationship");
+
+        // EClassifier
+        classifier->setClassifierID(DATARELATIONSHIP);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DataRelationshipEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DataRelationship__to);
+            eStructuralFeatures.basicAdd(m_DataRelationship__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier DataResource
+        auto &&classifier = m_DataResourceEClass;
+
+        // ENamedElement
+        classifier->setName("DataResource");
+
+        // EClassifier
+        classifier->setClassifierID(DATARESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier DataSegment
+        auto &&classifier = m_DataSegmentEClass;
+
+        // ENamedElement
+        classifier->setName("DataSegment");
+
+        // EClassifier
+        classifier->setClassifierID(DATASEGMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class DatatypeOf
+        auto &&feature = m_DatatypeOf__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDatatype());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::DATATYPEOF__TO);
+        feature->basicsetEContainingClass(m_DatatypeOfEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class DatatypeOf
+        auto &&feature = m_DatatypeOf__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ComplexContentTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::DATATYPEOF__FROM);
+        feature->basicsetEContainingClass(m_DatatypeOfEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DatatypeOf
+        auto &&classifier = m_DatatypeOfEClass;
+
+        // ENamedElement
+        classifier->setName("DatatypeOf");
+
+        // EClassifier
+        classifier->setClassifierID(DATATYPEOF);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DatatypeOfEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DatatypeOf__to);
+            eStructuralFeatures.basicAdd(m_DatatypeOf__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier ExtendedDataElement
+        auto &&classifier = m_ExtendedDataElementEClass;
+
+        // ENamedElement
+        classifier->setName("ExtendedDataElement");
+
+        // EClassifier
+        classifier->setClassifierID(EXTENDEDDATAELEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class ExtensionTo
+        auto &&feature = m_ExtensionTo__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ComplexContentTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::EXTENSIONTO__TO);
+        feature->basicsetEContainingClass(m_ExtensionToEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ExtensionTo
+        auto &&feature = m_ExtensionTo__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ComplexContentTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::EXTENSIONTO__FROM);
+        feature->basicsetEContainingClass(m_ExtensionToEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ExtensionTo
+        auto &&classifier = m_ExtensionToEClass;
+
+        // ENamedElement
+        classifier->setName("ExtensionTo");
+
+        // EClassifier
+        classifier->setClassifierID(EXTENSIONTO);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExtensionToEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ExtensionTo__to);
+            eStructuralFeatures.basicAdd(m_ExtensionTo__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier GroupContent
+        auto &&classifier = m_GroupContentEClass;
+
+        // ENamedElement
+        classifier->setName("GroupContent");
+
+        // EClassifier
+        classifier->setClassifierID(GROUPCONTENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class HasContent
+        auto &&feature = m_HasContent__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractDataElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::HASCONTENT__TO);
+        feature->basicsetEContainingClass(m_HasContentEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class HasContent
+        auto &&feature = m_HasContent__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::HASCONTENT__FROM);
+        feature->basicsetEContainingClass(m_HasContentEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier HasContent
+        auto &&classifier = m_HasContentEClass;
+
+        // ENamedElement
+        classifier->setName("HasContent");
+
+        // EClassifier
+        classifier->setClassifierID(HASCONTENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_HasContentEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_HasContent__to);
+            eStructuralFeatures.basicAdd(m_HasContent__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier Index
+        auto &&classifier = m_IndexEClass;
+
+        // ENamedElement
+        classifier->setName("Index");
+
+        // EClassifier
+        classifier->setClassifierID(INDEX);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature implementation of class IndexElement
+        auto &&feature = m_IndexElement__implementation;
+
+        // ENamedElement
+        feature->setName("implementation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getItemUnit());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::data::DataPackage::INDEXELEMENT__IMPLEMENTATION);
+        feature->basicsetEContainingClass(m_IndexElementEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier IndexElement
+        auto &&classifier = m_IndexElementEClass;
+
+        // ENamedElement
+        classifier->setName("IndexElement");
+
+        // EClassifier
+        classifier->setClassifierID(INDEXELEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IndexElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_IndexElement__implementation);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class KeyRelation
+        auto &&feature = m_KeyRelation__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_UniqueKeyEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::KEYRELATION__TO);
+        feature->basicsetEContainingClass(m_KeyRelationEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class KeyRelation
+        auto &&feature = m_KeyRelation__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ReferenceKeyEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::KEYRELATION__FROM);
+        feature->basicsetEContainingClass(m_KeyRelationEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier KeyRelation
+        auto &&classifier = m_KeyRelationEClass;
+
+        // ENamedElement
+        classifier->setName("KeyRelation");
+
+        // EClassifier
+        classifier->setClassifierID(KEYRELATION);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KeyRelationEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_KeyRelation__to);
+            eStructuralFeatures.basicAdd(m_KeyRelation__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class ManagesData
+        auto &&feature = m_ManagesData__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractDataElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::MANAGESDATA__TO);
+        feature->basicsetEContainingClass(m_ManagesDataEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ManagesData
+        auto &&feature = m_ManagesData__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::MANAGESDATA__FROM);
+        feature->basicsetEContainingClass(m_ManagesDataEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ManagesData
+        auto &&classifier = m_ManagesDataEClass;
+
+        // ENamedElement
+        classifier->setName("ManagesData");
+
+        // EClassifier
+        classifier->setClassifierID(MANAGESDATA);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesDataEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ManagesData__to);
+            eStructuralFeatures.basicAdd(m_ManagesData__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier MixedContent
+        auto &&classifier = m_MixedContentEClass;
+
+        // ENamedElement
+        classifier->setName("MixedContent");
+
+        // EClassifier
+        classifier->setClassifierID(MIXEDCONTENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class ProducesDataEvent
+        auto &&feature = m_ProducesDataEvent__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_DataEventEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::PRODUCESDATAEVENT__TO);
+        feature->basicsetEContainingClass(m_ProducesDataEventEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ProducesDataEvent
+        auto &&feature = m_ProducesDataEvent__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::data::DataPackage::PRODUCESDATAEVENT__FROM);
-        m_ProducesDataEvent__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesDataEventEClass->getEStructuralFeatures()).basicAdd(
-                m_ProducesDataEvent__from);
-        m_ProducesDataEvent__from->basicsetEContainingClass(
-                m_ProducesDataEventEClass);
-    }
+        feature->basicsetEContainingClass(m_ProducesDataEventEClass);
 
-    { // DataSegment
-        m_DataSegmentEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DataSegmentEClass->setClassifierID(DATASEGMENT);
-        m_DataSegmentEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DataSegmentEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    { // ContentElement
-        m_ContentElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ContentElementEClass->setClassifierID(CONTENTELEMENT);
-        m_ContentElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ContentElementEClass);
-    }
+    [this]()
+    { // Classifier ProducesDataEvent
+        auto &&classifier = m_ProducesDataEventEClass;
 
-    { // ManagesData
-        m_ManagesDataEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ManagesDataEClass->setClassifierID(MANAGESDATA);
-        m_ManagesDataEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ManagesDataEClass);
-        // m_ManagesData__to has already been allocated above
-        m_ManagesData__to->setFeatureID(
-                ::kdm::data::DataPackage::MANAGESDATA__TO);
-        m_ManagesData__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesDataEClass->getEStructuralFeatures()).basicAdd(
-                m_ManagesData__to);
-        m_ManagesData__to->basicsetEContainingClass(m_ManagesDataEClass);
-        // m_ManagesData__from has already been allocated above
-        m_ManagesData__from->setFeatureID(
-                ::kdm::data::DataPackage::MANAGESDATA__FROM);
-        m_ManagesData__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesDataEClass->getEStructuralFeatures()).basicAdd(
-                m_ManagesData__from);
-        m_ManagesData__from->basicsetEContainingClass(m_ManagesDataEClass);
-    }
+        // ENamedElement
+        classifier->setName("ProducesDataEvent");
 
-    // Create enums
+        // EClassifier
+        classifier->setClassifierID(PRODUCESDATAEVENT);
 
-    // Create data types
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProducesDataEventEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ProducesDataEvent__to);
+            eStructuralFeatures.basicAdd(m_ProducesDataEvent__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class ReadsColumnSet
+        auto &&feature = m_ReadsColumnSet__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ColumnSetEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::READSCOLUMNSET__TO);
+        feature->basicsetEContainingClass(m_ReadsColumnSetEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ReadsColumnSet
+        auto &&feature = m_ReadsColumnSet__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::READSCOLUMNSET__FROM);
+        feature->basicsetEContainingClass(m_ReadsColumnSetEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ReadsColumnSet
+        auto &&classifier = m_ReadsColumnSetEClass;
+
+        // ENamedElement
+        classifier->setName("ReadsColumnSet");
+
+        // EClassifier
+        classifier->setClassifierID(READSCOLUMNSET);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsColumnSetEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ReadsColumnSet__to);
+            eStructuralFeatures.basicAdd(m_ReadsColumnSet__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier RecordFile
+        auto &&classifier = m_RecordFileEClass;
+
+        // ENamedElement
+        classifier->setName("RecordFile");
+
+        // EClassifier
+        classifier->setClassifierID(RECORDFILE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier ReferenceKey
+        auto &&classifier = m_ReferenceKeyEClass;
+
+        // ENamedElement
+        classifier->setName("ReferenceKey");
+
+        // EClassifier
+        classifier->setClassifierID(REFERENCEKEY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class ReferenceTo
+        auto &&feature = m_ReferenceTo__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ContentItemEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::REFERENCETO__TO);
+        feature->basicsetEContainingClass(m_ReferenceToEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ReferenceTo
+        auto &&feature = m_ReferenceTo__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ContentItemEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::REFERENCETO__FROM);
+        feature->basicsetEContainingClass(m_ReferenceToEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ReferenceTo
+        auto &&classifier = m_ReferenceToEClass;
+
+        // ENamedElement
+        classifier->setName("ReferenceTo");
+
+        // EClassifier
+        classifier->setClassifierID(REFERENCETO);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReferenceToEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ReferenceTo__to);
+            eStructuralFeatures.basicAdd(m_ReferenceTo__from);
+        }
+    }();
+
+    [this]()
+    { // Feature codeElement of class RelationalSchema
+        auto &&feature = m_RelationalSchema__codeElement;
+
+        // ENamedElement
+        feature->setName("codeElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::data::DataPackage::RELATIONALSCHEMA__CODEELEMENT);
+        feature->basicsetEContainingClass(m_RelationalSchemaEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier RelationalSchema
+        auto &&classifier = m_RelationalSchemaEClass;
+
+        // ENamedElement
+        classifier->setName("RelationalSchema");
+
+        // EClassifier
+        classifier->setClassifierID(RELATIONALSCHEMA);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RelationalSchemaEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_RelationalSchema__codeElement);
+        }
+    }();
+
+    [this]()
+    { // Classifier RelationalTable
+        auto &&classifier = m_RelationalTableEClass;
+
+        // ENamedElement
+        classifier->setName("RelationalTable");
+
+        // EClassifier
+        classifier->setClassifierID(RELATIONALTABLE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier RelationalView
+        auto &&classifier = m_RelationalViewEClass;
+
+        // ENamedElement
+        classifier->setName("RelationalView");
+
+        // EClassifier
+        classifier->setClassifierID(RELATIONALVIEW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class RestrictionOf
+        auto &&feature = m_RestrictionOf__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ComplexContentTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::RESTRICTIONOF__TO);
+        feature->basicsetEContainingClass(m_RestrictionOfEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class RestrictionOf
+        auto &&feature = m_RestrictionOf__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ComplexContentTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::RESTRICTIONOF__FROM);
+        feature->basicsetEContainingClass(m_RestrictionOfEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier RestrictionOf
+        auto &&classifier = m_RestrictionOfEClass;
+
+        // ENamedElement
+        classifier->setName("RestrictionOf");
+
+        // EClassifier
+        classifier->setClassifierID(RESTRICTIONOF);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RestrictionOfEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_RestrictionOf__to);
+            eStructuralFeatures.basicAdd(m_RestrictionOf__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier SeqContent
+        auto &&classifier = m_SeqContentEClass;
+
+        // ENamedElement
+        classifier->setName("SeqContent");
+
+        // EClassifier
+        classifier->setClassifierID(SEQCONTENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature type of class SimpleContentType
+        auto &&feature = m_SimpleContentType__type;
+
+        // ENamedElement
+        feature->setName("type");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ComplexContentTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::data::DataPackage::SIMPLECONTENTTYPE__TYPE);
+        feature->basicsetEContainingClass(m_SimpleContentTypeEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature kind of class SimpleContentType
+        auto &&feature = m_SimpleContentType__kind;
+
+        // ENamedElement
+        feature->setName("kind");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::data::DataPackage::SIMPLECONTENTTYPE__KIND);
+        feature->basicsetEContainingClass(m_SimpleContentTypeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier SimpleContentType
+        auto &&classifier = m_SimpleContentTypeEClass;
+
+        // ENamedElement
+        classifier->setName("SimpleContentType");
+
+        // EClassifier
+        classifier->setClassifierID(SIMPLECONTENTTYPE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleContentTypeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_SimpleContentType__type);
+            eStructuralFeatures.basicAdd(m_SimpleContentType__kind);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class TypedBy
+        auto &&feature = m_TypedBy__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ComplexContentTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::TYPEDBY__TO);
+        feature->basicsetEContainingClass(m_TypedByEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class TypedBy
+        auto &&feature = m_TypedBy__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ContentItemEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::TYPEDBY__FROM);
+        feature->basicsetEContainingClass(m_TypedByEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier TypedBy
+        auto &&classifier = m_TypedByEClass;
+
+        // ENamedElement
+        classifier->setName("TypedBy");
+
+        // EClassifier
+        classifier->setClassifierID(TYPEDBY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypedByEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_TypedBy__to);
+            eStructuralFeatures.basicAdd(m_TypedBy__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier UniqueKey
+        auto &&classifier = m_UniqueKeyEClass;
+
+        // ENamedElement
+        classifier->setName("UniqueKey");
+
+        // EClassifier
+        classifier->setClassifierID(UNIQUEKEY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class WritesColumnSet
+        auto &&feature = m_WritesColumnSet__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ColumnSetEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::WRITESCOLUMNSET__TO);
+        feature->basicsetEContainingClass(m_WritesColumnSetEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class WritesColumnSet
+        auto &&feature = m_WritesColumnSet__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::data::DataPackage::WRITESCOLUMNSET__FROM);
+        feature->basicsetEContainingClass(m_WritesColumnSetEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier WritesColumnSet
+        auto &&classifier = m_WritesColumnSetEClass;
+
+        // ENamedElement
+        classifier->setName("WritesColumnSet");
+
+        // EClassifier
+        classifier->setClassifierID(WRITESCOLUMNSET);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesColumnSetEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_WritesColumnSet__to);
+            eStructuralFeatures.basicAdd(m_WritesColumnSet__from);
+        }
+    }();
+
+    [this]()
+    { // Feature contentElement of class XMLSchema
+        auto &&feature = m_XMLSchema__contentElement;
+
+        // ENamedElement
+        feature->setName("contentElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractContentElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::data::DataPackage::XMLSCHEMA__CONTENTELEMENT);
+        feature->basicsetEContainingClass(m_XMLSchemaEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier XMLSchema
+        auto &&classifier = m_XMLSchemaEClass;
+
+        // ENamedElement
+        classifier->setName("XMLSchema");
+
+        // EClassifier
+        classifier->setClassifierID(XMLSCHEMA);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLSchemaEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_XMLSchema__contentElement);
+        }
+    }();
 
     // Initialize package
     setName("data");
@@ -989,968 +2359,135 @@ void DataPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_DataModelEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
-    m_AbstractDataElementEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-    m_DataResourceEClass->getESuperTypes().push_back(
-            m_AbstractDataElementEClass);
-    m_IndexElementEClass->getESuperTypes().push_back(m_DataResourceEClass);
-    m_UniqueKeyEClass->getESuperTypes().push_back(m_IndexElementEClass);
-    m_IndexEClass->getESuperTypes().push_back(m_IndexElementEClass);
-    m_AbstractDataRelationshipEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
-    m_KeyRelationEClass->getESuperTypes().push_back(
-            m_AbstractDataRelationshipEClass);
-    m_ReferenceKeyEClass->getESuperTypes().push_back(m_IndexElementEClass);
-    m_DataContainerEClass->getESuperTypes().push_back(m_DataResourceEClass);
-    m_CatalogEClass->getESuperTypes().push_back(m_DataContainerEClass);
-    m_RelationalSchemaEClass->getESuperTypes().push_back(m_DataContainerEClass);
-    m_ColumnSetEClass->getESuperTypes().push_back(m_DataContainerEClass);
-    m_RelationalTableEClass->getESuperTypes().push_back(m_ColumnSetEClass);
-    m_RelationalViewEClass->getESuperTypes().push_back(m_ColumnSetEClass);
-    m_RecordFileEClass->getESuperTypes().push_back(m_ColumnSetEClass);
-    m_DataEventEClass->getESuperTypes().push_back(m_DataResourceEClass);
-    m_XMLSchemaEClass->getESuperTypes().push_back(m_AbstractDataElementEClass);
-    m_AbstractContentElementEClass->getESuperTypes().push_back(
-            m_AbstractDataElementEClass);
-    m_ComplexContentTypeEClass->getESuperTypes().push_back(
-            m_AbstractContentElementEClass);
-    m_AllContentEClass->getESuperTypes().push_back(m_ComplexContentTypeEClass);
-    m_SeqContentEClass->getESuperTypes().push_back(m_ComplexContentTypeEClass);
-    m_ChoiceContentEClass->getESuperTypes().push_back(
-            m_ComplexContentTypeEClass);
-    m_ContentItemEClass->getESuperTypes().push_back(
-            m_AbstractContentElementEClass);
-    m_GroupContentEClass->getESuperTypes().push_back(m_ContentItemEClass);
-    m_ContentRestrictionEClass->getESuperTypes().push_back(
-            m_AbstractContentElementEClass);
-    m_SimpleContentTypeEClass->getESuperTypes().push_back(
-            m_ComplexContentTypeEClass);
-    m_ExtendedDataElementEClass->getESuperTypes().push_back(
-            m_AbstractDataElementEClass);
-    m_DataRelationshipEClass->getESuperTypes().push_back(
-            m_AbstractDataRelationshipEClass);
-    m_MixedContentEClass->getESuperTypes().push_back(
-            m_ComplexContentTypeEClass);
-    m_ContentReferenceEClass->getESuperTypes().push_back(m_ContentItemEClass);
-    m_DataActionEClass->getESuperTypes().push_back(m_AbstractDataElementEClass);
-    m_ReadsColumnSetEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_ContentAttributeEClass->getESuperTypes().push_back(m_ContentItemEClass);
-    m_TypedByEClass->getESuperTypes().push_back(
-            m_AbstractDataRelationshipEClass);
-    m_ReferenceToEClass->getESuperTypes().push_back(
-            m_AbstractDataRelationshipEClass);
-    m_RestrictionOfEClass->getESuperTypes().push_back(
-            m_AbstractDataRelationshipEClass);
-    m_ExtensionToEClass->getESuperTypes().push_back(
-            m_AbstractDataRelationshipEClass);
-    m_DatatypeOfEClass->getESuperTypes().push_back(
-            m_AbstractDataRelationshipEClass);
-    m_HasContentEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_WritesColumnSetEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_ProducesDataEventEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_DataSegmentEClass->getESuperTypes().push_back(m_ColumnSetEClass);
-    m_ContentElementEClass->getESuperTypes().push_back(m_ContentItemEClass);
-    m_ManagesDataEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // DataModel
-        m_DataModelEClass->setName("DataModel");
-        m_DataModelEClass->setAbstract(false);
-        m_DataModelEClass->setInterface(false);
-
-        m_DataModel__dataElement->setEType(m_AbstractDataElementEClass);
-        m_DataModel__dataElement->setDefaultValueLiteral("");
-        m_DataModel__dataElement->setLowerBound(0);
-        m_DataModel__dataElement->setUpperBound(-1);
-        m_DataModel__dataElement->setTransient(false);
-        m_DataModel__dataElement->setVolatile(false);
-        m_DataModel__dataElement->setChangeable(true);
-        m_DataModel__dataElement->setContainment(true);
-        m_DataModel__dataElement->setResolveProxies(true);
-        m_DataModel__dataElement->setUnique(true);
-        m_DataModel__dataElement->setDerived(false);
-        m_DataModel__dataElement->setOrdered(false);
-
-    }
-
-    { // AbstractDataElement
-        m_AbstractDataElementEClass->setName("AbstractDataElement");
-        m_AbstractDataElementEClass->setAbstract(true);
-        m_AbstractDataElementEClass->setInterface(false);
-
-        m_AbstractDataElement__source->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_AbstractDataElement__source->setDefaultValueLiteral("");
-        m_AbstractDataElement__source->setLowerBound(0);
-        m_AbstractDataElement__source->setUpperBound(-1);
-        m_AbstractDataElement__source->setTransient(false);
-        m_AbstractDataElement__source->setVolatile(false);
-        m_AbstractDataElement__source->setChangeable(true);
-        m_AbstractDataElement__source->setContainment(true);
-        m_AbstractDataElement__source->setResolveProxies(true);
-        m_AbstractDataElement__source->setUnique(true);
-        m_AbstractDataElement__source->setDerived(false);
-        m_AbstractDataElement__source->setOrdered(false);
-        m_AbstractDataElement__dataRelation->setEType(
-                m_AbstractDataRelationshipEClass);
-        m_AbstractDataElement__dataRelation->setDefaultValueLiteral("");
-        m_AbstractDataElement__dataRelation->setLowerBound(0);
-        m_AbstractDataElement__dataRelation->setUpperBound(-1);
-        m_AbstractDataElement__dataRelation->setTransient(false);
-        m_AbstractDataElement__dataRelation->setVolatile(false);
-        m_AbstractDataElement__dataRelation->setChangeable(true);
-        m_AbstractDataElement__dataRelation->setContainment(true);
-        m_AbstractDataElement__dataRelation->setResolveProxies(true);
-        m_AbstractDataElement__dataRelation->setUnique(true);
-        m_AbstractDataElement__dataRelation->setDerived(false);
-        m_AbstractDataElement__dataRelation->setOrdered(false);
-        m_AbstractDataElement__abstraction->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_AbstractDataElement__abstraction->setDefaultValueLiteral("");
-        m_AbstractDataElement__abstraction->setLowerBound(0);
-        m_AbstractDataElement__abstraction->setUpperBound(-1);
-        m_AbstractDataElement__abstraction->setTransient(false);
-        m_AbstractDataElement__abstraction->setVolatile(false);
-        m_AbstractDataElement__abstraction->setChangeable(true);
-        m_AbstractDataElement__abstraction->setContainment(true);
-        m_AbstractDataElement__abstraction->setResolveProxies(true);
-        m_AbstractDataElement__abstraction->setUnique(true);
-        m_AbstractDataElement__abstraction->setDerived(false);
-        m_AbstractDataElement__abstraction->setOrdered(true);
-
-    }
-
-    { // DataResource
-        m_DataResourceEClass->setName("DataResource");
-        m_DataResourceEClass->setAbstract(false);
-        m_DataResourceEClass->setInterface(false);
-
-    }
-
-    { // IndexElement
-        m_IndexElementEClass->setName("IndexElement");
-        m_IndexElementEClass->setAbstract(false);
-        m_IndexElementEClass->setInterface(false);
-
-        m_IndexElement__implementation->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getItemUnit());
-        m_IndexElement__implementation->setDefaultValueLiteral("");
-        m_IndexElement__implementation->setLowerBound(0);
-        m_IndexElement__implementation->setUpperBound(-1);
-        m_IndexElement__implementation->setTransient(false);
-        m_IndexElement__implementation->setVolatile(false);
-        m_IndexElement__implementation->setChangeable(true);
-        m_IndexElement__implementation->setContainment(false);
-        m_IndexElement__implementation->setResolveProxies(true);
-        m_IndexElement__implementation->setUnique(true);
-        m_IndexElement__implementation->setDerived(false);
-        m_IndexElement__implementation->setOrdered(false);
-
-    }
-
-    { // UniqueKey
-        m_UniqueKeyEClass->setName("UniqueKey");
-        m_UniqueKeyEClass->setAbstract(false);
-        m_UniqueKeyEClass->setInterface(false);
-
-    }
-
-    { // Index
-        m_IndexEClass->setName("Index");
-        m_IndexEClass->setAbstract(false);
-        m_IndexEClass->setInterface(false);
-
-    }
-
-    { // AbstractDataRelationship
-        m_AbstractDataRelationshipEClass->setName("AbstractDataRelationship");
-        m_AbstractDataRelationshipEClass->setAbstract(true);
-        m_AbstractDataRelationshipEClass->setInterface(false);
-
-    }
-
-    { // KeyRelation
-        m_KeyRelationEClass->setName("KeyRelation");
-        m_KeyRelationEClass->setAbstract(false);
-        m_KeyRelationEClass->setInterface(false);
-
-        m_KeyRelation__to->setEType(m_UniqueKeyEClass);
-        m_KeyRelation__to->setDefaultValueLiteral("");
-        m_KeyRelation__to->setLowerBound(1);
-        m_KeyRelation__to->setUpperBound(1);
-        m_KeyRelation__to->setTransient(false);
-        m_KeyRelation__to->setVolatile(false);
-        m_KeyRelation__to->setChangeable(true);
-        m_KeyRelation__to->setContainment(false);
-        m_KeyRelation__to->setResolveProxies(true);
-        m_KeyRelation__to->setUnique(true);
-        m_KeyRelation__to->setDerived(false);
-        m_KeyRelation__to->setOrdered(false);
-        m_KeyRelation__from->setEType(m_ReferenceKeyEClass);
-        m_KeyRelation__from->setDefaultValueLiteral("");
-        m_KeyRelation__from->setLowerBound(1);
-        m_KeyRelation__from->setUpperBound(1);
-        m_KeyRelation__from->setTransient(false);
-        m_KeyRelation__from->setVolatile(false);
-        m_KeyRelation__from->setChangeable(true);
-        m_KeyRelation__from->setContainment(false);
-        m_KeyRelation__from->setResolveProxies(true);
-        m_KeyRelation__from->setUnique(true);
-        m_KeyRelation__from->setDerived(false);
-        m_KeyRelation__from->setOrdered(false);
-
-    }
-
-    { // ReferenceKey
-        m_ReferenceKeyEClass->setName("ReferenceKey");
-        m_ReferenceKeyEClass->setAbstract(false);
-        m_ReferenceKeyEClass->setInterface(false);
-
-    }
-
-    { // DataContainer
-        m_DataContainerEClass->setName("DataContainer");
-        m_DataContainerEClass->setAbstract(false);
-        m_DataContainerEClass->setInterface(false);
-
-        m_DataContainer__dataElement->setEType(m_DataResourceEClass);
-        m_DataContainer__dataElement->setDefaultValueLiteral("");
-        m_DataContainer__dataElement->setLowerBound(0);
-        m_DataContainer__dataElement->setUpperBound(-1);
-        m_DataContainer__dataElement->setTransient(false);
-        m_DataContainer__dataElement->setVolatile(false);
-        m_DataContainer__dataElement->setChangeable(true);
-        m_DataContainer__dataElement->setContainment(true);
-        m_DataContainer__dataElement->setResolveProxies(true);
-        m_DataContainer__dataElement->setUnique(true);
-        m_DataContainer__dataElement->setDerived(false);
-        m_DataContainer__dataElement->setOrdered(false);
-
-    }
-
-    { // Catalog
-        m_CatalogEClass->setName("Catalog");
-        m_CatalogEClass->setAbstract(false);
-        m_CatalogEClass->setInterface(false);
-
-    }
-
-    { // RelationalSchema
-        m_RelationalSchemaEClass->setName("RelationalSchema");
-        m_RelationalSchemaEClass->setAbstract(false);
-        m_RelationalSchemaEClass->setInterface(false);
-
-        m_RelationalSchema__codeElement->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
-        m_RelationalSchema__codeElement->setDefaultValueLiteral("");
-        m_RelationalSchema__codeElement->setLowerBound(0);
-        m_RelationalSchema__codeElement->setUpperBound(-1);
-        m_RelationalSchema__codeElement->setTransient(false);
-        m_RelationalSchema__codeElement->setVolatile(false);
-        m_RelationalSchema__codeElement->setChangeable(true);
-        m_RelationalSchema__codeElement->setContainment(true);
-        m_RelationalSchema__codeElement->setResolveProxies(true);
-        m_RelationalSchema__codeElement->setUnique(true);
-        m_RelationalSchema__codeElement->setDerived(false);
-        m_RelationalSchema__codeElement->setOrdered(false);
-
-    }
-
-    { // ColumnSet
-        m_ColumnSetEClass->setName("ColumnSet");
-        m_ColumnSetEClass->setAbstract(false);
-        m_ColumnSetEClass->setInterface(false);
-
-        m_ColumnSet__itemUnit->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getItemUnit());
-        m_ColumnSet__itemUnit->setDefaultValueLiteral("");
-        m_ColumnSet__itemUnit->setLowerBound(0);
-        m_ColumnSet__itemUnit->setUpperBound(-1);
-        m_ColumnSet__itemUnit->setTransient(false);
-        m_ColumnSet__itemUnit->setVolatile(false);
-        m_ColumnSet__itemUnit->setChangeable(true);
-        m_ColumnSet__itemUnit->setContainment(true);
-        m_ColumnSet__itemUnit->setResolveProxies(true);
-        m_ColumnSet__itemUnit->setUnique(true);
-        m_ColumnSet__itemUnit->setDerived(false);
-        m_ColumnSet__itemUnit->setOrdered(true);
-
-    }
-
-    { // RelationalTable
-        m_RelationalTableEClass->setName("RelationalTable");
-        m_RelationalTableEClass->setAbstract(false);
-        m_RelationalTableEClass->setInterface(false);
-
-    }
-
-    { // RelationalView
-        m_RelationalViewEClass->setName("RelationalView");
-        m_RelationalViewEClass->setAbstract(false);
-        m_RelationalViewEClass->setInterface(false);
-
-    }
-
-    { // RecordFile
-        m_RecordFileEClass->setName("RecordFile");
-        m_RecordFileEClass->setAbstract(false);
-        m_RecordFileEClass->setInterface(false);
-
-    }
-
-    { // DataEvent
-        m_DataEventEClass->setName("DataEvent");
-        m_DataEventEClass->setAbstract(false);
-        m_DataEventEClass->setInterface(false);
-        m_DataEvent__kind->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_DataEvent__kind->setDefaultValueLiteral("");
-        m_DataEvent__kind->setLowerBound(0);
-        m_DataEvent__kind->setUpperBound(1);
-        m_DataEvent__kind->setTransient(false);
-        m_DataEvent__kind->setVolatile(false);
-        m_DataEvent__kind->setChangeable(true);
-        m_DataEvent__kind->setUnsettable(false);
-        m_DataEvent__kind->setID(false);
-        m_DataEvent__kind->setUnique(false);
-        m_DataEvent__kind->setDerived(false);
-        m_DataEvent__kind->setOrdered(false);
-
-    }
-
-    { // XMLSchema
-        m_XMLSchemaEClass->setName("XMLSchema");
-        m_XMLSchemaEClass->setAbstract(false);
-        m_XMLSchemaEClass->setInterface(false);
-
-        m_XMLSchema__contentElement->setEType(m_AbstractContentElementEClass);
-        m_XMLSchema__contentElement->setDefaultValueLiteral("");
-        m_XMLSchema__contentElement->setLowerBound(0);
-        m_XMLSchema__contentElement->setUpperBound(-1);
-        m_XMLSchema__contentElement->setTransient(false);
-        m_XMLSchema__contentElement->setVolatile(false);
-        m_XMLSchema__contentElement->setChangeable(true);
-        m_XMLSchema__contentElement->setContainment(true);
-        m_XMLSchema__contentElement->setResolveProxies(true);
-        m_XMLSchema__contentElement->setUnique(true);
-        m_XMLSchema__contentElement->setDerived(false);
-        m_XMLSchema__contentElement->setOrdered(false);
-
-    }
-
-    { // AbstractContentElement
-        m_AbstractContentElementEClass->setName("AbstractContentElement");
-        m_AbstractContentElementEClass->setAbstract(true);
-        m_AbstractContentElementEClass->setInterface(false);
-
-    }
-
-    { // ComplexContentType
-        m_ComplexContentTypeEClass->setName("ComplexContentType");
-        m_ComplexContentTypeEClass->setAbstract(false);
-        m_ComplexContentTypeEClass->setInterface(false);
-
-        m_ComplexContentType__contentElement->setEType(
-                m_AbstractContentElementEClass);
-        m_ComplexContentType__contentElement->setDefaultValueLiteral("");
-        m_ComplexContentType__contentElement->setLowerBound(0);
-        m_ComplexContentType__contentElement->setUpperBound(-1);
-        m_ComplexContentType__contentElement->setTransient(false);
-        m_ComplexContentType__contentElement->setVolatile(false);
-        m_ComplexContentType__contentElement->setChangeable(true);
-        m_ComplexContentType__contentElement->setContainment(true);
-        m_ComplexContentType__contentElement->setResolveProxies(true);
-        m_ComplexContentType__contentElement->setUnique(true);
-        m_ComplexContentType__contentElement->setDerived(false);
-        m_ComplexContentType__contentElement->setOrdered(true);
-
-    }
-
-    { // AllContent
-        m_AllContentEClass->setName("AllContent");
-        m_AllContentEClass->setAbstract(false);
-        m_AllContentEClass->setInterface(false);
-
-    }
-
-    { // SeqContent
-        m_SeqContentEClass->setName("SeqContent");
-        m_SeqContentEClass->setAbstract(false);
-        m_SeqContentEClass->setInterface(false);
-
-    }
-
-    { // ChoiceContent
-        m_ChoiceContentEClass->setName("ChoiceContent");
-        m_ChoiceContentEClass->setAbstract(false);
-        m_ChoiceContentEClass->setInterface(false);
-
-    }
-
-    { // ContentItem
-        m_ContentItemEClass->setName("ContentItem");
-        m_ContentItemEClass->setAbstract(false);
-        m_ContentItemEClass->setInterface(false);
-
-        m_ContentItem__type->setEType(m_ComplexContentTypeEClass);
-        m_ContentItem__type->setDefaultValueLiteral("");
-        m_ContentItem__type->setLowerBound(0);
-        m_ContentItem__type->setUpperBound(1);
-        m_ContentItem__type->setTransient(false);
-        m_ContentItem__type->setVolatile(false);
-        m_ContentItem__type->setChangeable(true);
-        m_ContentItem__type->setContainment(false);
-        m_ContentItem__type->setResolveProxies(true);
-        m_ContentItem__type->setUnique(true);
-        m_ContentItem__type->setDerived(false);
-        m_ContentItem__type->setOrdered(false);
-        m_ContentItem__contentElement->setEType(m_AbstractContentElementEClass);
-        m_ContentItem__contentElement->setDefaultValueLiteral("");
-        m_ContentItem__contentElement->setLowerBound(0);
-        m_ContentItem__contentElement->setUpperBound(-1);
-        m_ContentItem__contentElement->setTransient(false);
-        m_ContentItem__contentElement->setVolatile(false);
-        m_ContentItem__contentElement->setChangeable(true);
-        m_ContentItem__contentElement->setContainment(true);
-        m_ContentItem__contentElement->setResolveProxies(true);
-        m_ContentItem__contentElement->setUnique(true);
-        m_ContentItem__contentElement->setDerived(false);
-        m_ContentItem__contentElement->setOrdered(false);
-
-    }
-
-    { // GroupContent
-        m_GroupContentEClass->setName("GroupContent");
-        m_GroupContentEClass->setAbstract(false);
-        m_GroupContentEClass->setInterface(false);
-
-    }
-
-    { // ContentRestriction
-        m_ContentRestrictionEClass->setName("ContentRestriction");
-        m_ContentRestrictionEClass->setAbstract(false);
-        m_ContentRestrictionEClass->setInterface(false);
-        m_ContentRestriction__kind->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_ContentRestriction__kind->setDefaultValueLiteral("");
-        m_ContentRestriction__kind->setLowerBound(0);
-        m_ContentRestriction__kind->setUpperBound(1);
-        m_ContentRestriction__kind->setTransient(false);
-        m_ContentRestriction__kind->setVolatile(false);
-        m_ContentRestriction__kind->setChangeable(true);
-        m_ContentRestriction__kind->setUnsettable(false);
-        m_ContentRestriction__kind->setID(false);
-        m_ContentRestriction__kind->setUnique(false);
-        m_ContentRestriction__kind->setDerived(false);
-        m_ContentRestriction__kind->setOrdered(false);
-        m_ContentRestriction__value->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_ContentRestriction__value->setDefaultValueLiteral("");
-        m_ContentRestriction__value->setLowerBound(0);
-        m_ContentRestriction__value->setUpperBound(1);
-        m_ContentRestriction__value->setTransient(false);
-        m_ContentRestriction__value->setVolatile(false);
-        m_ContentRestriction__value->setChangeable(true);
-        m_ContentRestriction__value->setUnsettable(false);
-        m_ContentRestriction__value->setID(false);
-        m_ContentRestriction__value->setUnique(false);
-        m_ContentRestriction__value->setDerived(false);
-        m_ContentRestriction__value->setOrdered(false);
-
-    }
-
-    { // SimpleContentType
-        m_SimpleContentTypeEClass->setName("SimpleContentType");
-        m_SimpleContentTypeEClass->setAbstract(false);
-        m_SimpleContentTypeEClass->setInterface(false);
-        m_SimpleContentType__kind->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SimpleContentType__kind->setDefaultValueLiteral("");
-        m_SimpleContentType__kind->setLowerBound(0);
-        m_SimpleContentType__kind->setUpperBound(1);
-        m_SimpleContentType__kind->setTransient(false);
-        m_SimpleContentType__kind->setVolatile(false);
-        m_SimpleContentType__kind->setChangeable(true);
-        m_SimpleContentType__kind->setUnsettable(false);
-        m_SimpleContentType__kind->setID(false);
-        m_SimpleContentType__kind->setUnique(false);
-        m_SimpleContentType__kind->setDerived(false);
-        m_SimpleContentType__kind->setOrdered(false);
-
-        m_SimpleContentType__type->setEType(m_ComplexContentTypeEClass);
-        m_SimpleContentType__type->setDefaultValueLiteral("");
-        m_SimpleContentType__type->setLowerBound(0);
-        m_SimpleContentType__type->setUpperBound(-1);
-        m_SimpleContentType__type->setTransient(false);
-        m_SimpleContentType__type->setVolatile(false);
-        m_SimpleContentType__type->setChangeable(true);
-        m_SimpleContentType__type->setContainment(false);
-        m_SimpleContentType__type->setResolveProxies(true);
-        m_SimpleContentType__type->setUnique(true);
-        m_SimpleContentType__type->setDerived(false);
-        m_SimpleContentType__type->setOrdered(false);
-
-    }
-
-    { // ExtendedDataElement
-        m_ExtendedDataElementEClass->setName("ExtendedDataElement");
-        m_ExtendedDataElementEClass->setAbstract(false);
-        m_ExtendedDataElementEClass->setInterface(false);
-
-    }
-
-    { // DataRelationship
-        m_DataRelationshipEClass->setName("DataRelationship");
-        m_DataRelationshipEClass->setAbstract(false);
-        m_DataRelationshipEClass->setInterface(false);
-
-        m_DataRelationship__to->setEType(
+    [this]()
+    {
+        m_DataModelEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+        m_AbstractDataElementEClass->getESuperTypes().push_back(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_DataRelationship__to->setDefaultValueLiteral("");
-        m_DataRelationship__to->setLowerBound(1);
-        m_DataRelationship__to->setUpperBound(1);
-        m_DataRelationship__to->setTransient(false);
-        m_DataRelationship__to->setVolatile(false);
-        m_DataRelationship__to->setChangeable(true);
-        m_DataRelationship__to->setContainment(false);
-        m_DataRelationship__to->setResolveProxies(true);
-        m_DataRelationship__to->setUnique(true);
-        m_DataRelationship__to->setDerived(false);
-        m_DataRelationship__to->setOrdered(false);
-        m_DataRelationship__from->setEType(m_AbstractDataElementEClass);
-        m_DataRelationship__from->setDefaultValueLiteral("");
-        m_DataRelationship__from->setLowerBound(1);
-        m_DataRelationship__from->setUpperBound(1);
-        m_DataRelationship__from->setTransient(false);
-        m_DataRelationship__from->setVolatile(false);
-        m_DataRelationship__from->setChangeable(true);
-        m_DataRelationship__from->setContainment(false);
-        m_DataRelationship__from->setResolveProxies(true);
-        m_DataRelationship__from->setUnique(true);
-        m_DataRelationship__from->setDerived(false);
-        m_DataRelationship__from->setOrdered(false);
+        m_DataResourceEClass->getESuperTypes().push_back(
+                m_AbstractDataElementEClass);
+        m_IndexElementEClass->getESuperTypes().push_back(m_DataResourceEClass);
+        m_UniqueKeyEClass->getESuperTypes().push_back(m_IndexElementEClass);
+        m_IndexEClass->getESuperTypes().push_back(m_IndexElementEClass);
+        m_AbstractDataRelationshipEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+        m_KeyRelationEClass->getESuperTypes().push_back(
+                m_AbstractDataRelationshipEClass);
+        m_ReferenceKeyEClass->getESuperTypes().push_back(m_IndexElementEClass);
+        m_DataContainerEClass->getESuperTypes().push_back(m_DataResourceEClass);
+        m_CatalogEClass->getESuperTypes().push_back(m_DataContainerEClass);
+        m_RelationalSchemaEClass->getESuperTypes().push_back(
+                m_DataContainerEClass);
+        m_ColumnSetEClass->getESuperTypes().push_back(m_DataContainerEClass);
+        m_RelationalTableEClass->getESuperTypes().push_back(m_ColumnSetEClass);
+        m_RelationalViewEClass->getESuperTypes().push_back(m_ColumnSetEClass);
+        m_RecordFileEClass->getESuperTypes().push_back(m_ColumnSetEClass);
+        m_DataEventEClass->getESuperTypes().push_back(m_DataResourceEClass);
+        m_XMLSchemaEClass->getESuperTypes().push_back(
+                m_AbstractDataElementEClass);
+        m_AbstractContentElementEClass->getESuperTypes().push_back(
+                m_AbstractDataElementEClass);
+        m_ComplexContentTypeEClass->getESuperTypes().push_back(
+                m_AbstractContentElementEClass);
+        m_AllContentEClass->getESuperTypes().push_back(
+                m_ComplexContentTypeEClass);
+        m_SeqContentEClass->getESuperTypes().push_back(
+                m_ComplexContentTypeEClass);
+        m_ChoiceContentEClass->getESuperTypes().push_back(
+                m_ComplexContentTypeEClass);
+        m_ContentItemEClass->getESuperTypes().push_back(
+                m_AbstractContentElementEClass);
+        m_GroupContentEClass->getESuperTypes().push_back(m_ContentItemEClass);
+        m_ContentRestrictionEClass->getESuperTypes().push_back(
+                m_AbstractContentElementEClass);
+        m_SimpleContentTypeEClass->getESuperTypes().push_back(
+                m_ComplexContentTypeEClass);
+        m_ExtendedDataElementEClass->getESuperTypes().push_back(
+                m_AbstractDataElementEClass);
+        m_DataRelationshipEClass->getESuperTypes().push_back(
+                m_AbstractDataRelationshipEClass);
+        m_MixedContentEClass->getESuperTypes().push_back(
+                m_ComplexContentTypeEClass);
+        m_ContentReferenceEClass->getESuperTypes().push_back(
+                m_ContentItemEClass);
+        m_DataActionEClass->getESuperTypes().push_back(
+                m_AbstractDataElementEClass);
+        m_ReadsColumnSetEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_ContentAttributeEClass->getESuperTypes().push_back(
+                m_ContentItemEClass);
+        m_TypedByEClass->getESuperTypes().push_back(
+                m_AbstractDataRelationshipEClass);
+        m_ReferenceToEClass->getESuperTypes().push_back(
+                m_AbstractDataRelationshipEClass);
+        m_RestrictionOfEClass->getESuperTypes().push_back(
+                m_AbstractDataRelationshipEClass);
+        m_ExtensionToEClass->getESuperTypes().push_back(
+                m_AbstractDataRelationshipEClass);
+        m_DatatypeOfEClass->getESuperTypes().push_back(
+                m_AbstractDataRelationshipEClass);
+        m_HasContentEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_WritesColumnSetEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_ProducesDataEventEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_DataSegmentEClass->getESuperTypes().push_back(m_ColumnSetEClass);
+        m_ContentElementEClass->getESuperTypes().push_back(m_ContentItemEClass);
+        m_ManagesDataEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+    }();
 
-    }
-
-    { // MixedContent
-        m_MixedContentEClass->setName("MixedContent");
-        m_MixedContentEClass->setAbstract(false);
-        m_MixedContentEClass->setInterface(false);
-
-    }
-
-    { // ContentReference
-        m_ContentReferenceEClass->setName("ContentReference");
-        m_ContentReferenceEClass->setAbstract(false);
-        m_ContentReferenceEClass->setInterface(false);
-
-    }
-
-    { // DataAction
-        m_DataActionEClass->setName("DataAction");
-        m_DataActionEClass->setAbstract(false);
-        m_DataActionEClass->setInterface(false);
-        m_DataAction__kind->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_DataAction__kind->setDefaultValueLiteral("");
-        m_DataAction__kind->setLowerBound(0);
-        m_DataAction__kind->setUpperBound(1);
-        m_DataAction__kind->setTransient(false);
-        m_DataAction__kind->setVolatile(false);
-        m_DataAction__kind->setChangeable(true);
-        m_DataAction__kind->setUnsettable(false);
-        m_DataAction__kind->setID(false);
-        m_DataAction__kind->setUnique(false);
-        m_DataAction__kind->setDerived(false);
-        m_DataAction__kind->setOrdered(false);
-
-        m_DataAction__implementation->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_DataAction__implementation->setDefaultValueLiteral("");
-        m_DataAction__implementation->setLowerBound(0);
-        m_DataAction__implementation->setUpperBound(-1);
-        m_DataAction__implementation->setTransient(false);
-        m_DataAction__implementation->setVolatile(false);
-        m_DataAction__implementation->setChangeable(true);
-        m_DataAction__implementation->setContainment(false);
-        m_DataAction__implementation->setResolveProxies(true);
-        m_DataAction__implementation->setUnique(true);
-        m_DataAction__implementation->setDerived(false);
-        m_DataAction__implementation->setOrdered(false);
-        m_DataAction__dataElement->setEType(m_DataEventEClass);
-        m_DataAction__dataElement->setDefaultValueLiteral("");
-        m_DataAction__dataElement->setLowerBound(0);
-        m_DataAction__dataElement->setUpperBound(-1);
-        m_DataAction__dataElement->setTransient(false);
-        m_DataAction__dataElement->setVolatile(false);
-        m_DataAction__dataElement->setChangeable(true);
-        m_DataAction__dataElement->setContainment(true);
-        m_DataAction__dataElement->setResolveProxies(true);
-        m_DataAction__dataElement->setUnique(true);
-        m_DataAction__dataElement->setDerived(false);
-        m_DataAction__dataElement->setOrdered(false);
-
-    }
-
-    { // ReadsColumnSet
-        m_ReadsColumnSetEClass->setName("ReadsColumnSet");
-        m_ReadsColumnSetEClass->setAbstract(false);
-        m_ReadsColumnSetEClass->setInterface(false);
-
-        m_ReadsColumnSet__to->setEType(m_ColumnSetEClass);
-        m_ReadsColumnSet__to->setDefaultValueLiteral("");
-        m_ReadsColumnSet__to->setLowerBound(1);
-        m_ReadsColumnSet__to->setUpperBound(1);
-        m_ReadsColumnSet__to->setTransient(false);
-        m_ReadsColumnSet__to->setVolatile(false);
-        m_ReadsColumnSet__to->setChangeable(true);
-        m_ReadsColumnSet__to->setContainment(false);
-        m_ReadsColumnSet__to->setResolveProxies(true);
-        m_ReadsColumnSet__to->setUnique(true);
-        m_ReadsColumnSet__to->setDerived(false);
-        m_ReadsColumnSet__to->setOrdered(false);
-        m_ReadsColumnSet__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ReadsColumnSet__from->setDefaultValueLiteral("");
-        m_ReadsColumnSet__from->setLowerBound(1);
-        m_ReadsColumnSet__from->setUpperBound(1);
-        m_ReadsColumnSet__from->setTransient(false);
-        m_ReadsColumnSet__from->setVolatile(false);
-        m_ReadsColumnSet__from->setChangeable(true);
-        m_ReadsColumnSet__from->setContainment(false);
-        m_ReadsColumnSet__from->setResolveProxies(true);
-        m_ReadsColumnSet__from->setUnique(true);
-        m_ReadsColumnSet__from->setDerived(false);
-        m_ReadsColumnSet__from->setOrdered(false);
-
-    }
-
-    { // ContentAttribute
-        m_ContentAttributeEClass->setName("ContentAttribute");
-        m_ContentAttributeEClass->setAbstract(false);
-        m_ContentAttributeEClass->setInterface(false);
-
-    }
-
-    { // TypedBy
-        m_TypedByEClass->setName("TypedBy");
-        m_TypedByEClass->setAbstract(false);
-        m_TypedByEClass->setInterface(false);
-
-        m_TypedBy__to->setEType(m_ComplexContentTypeEClass);
-        m_TypedBy__to->setDefaultValueLiteral("");
-        m_TypedBy__to->setLowerBound(1);
-        m_TypedBy__to->setUpperBound(1);
-        m_TypedBy__to->setTransient(false);
-        m_TypedBy__to->setVolatile(false);
-        m_TypedBy__to->setChangeable(true);
-        m_TypedBy__to->setContainment(false);
-        m_TypedBy__to->setResolveProxies(true);
-        m_TypedBy__to->setUnique(true);
-        m_TypedBy__to->setDerived(false);
-        m_TypedBy__to->setOrdered(false);
-        m_TypedBy__from->setEType(m_ContentItemEClass);
-        m_TypedBy__from->setDefaultValueLiteral("");
-        m_TypedBy__from->setLowerBound(1);
-        m_TypedBy__from->setUpperBound(1);
-        m_TypedBy__from->setTransient(false);
-        m_TypedBy__from->setVolatile(false);
-        m_TypedBy__from->setChangeable(true);
-        m_TypedBy__from->setContainment(false);
-        m_TypedBy__from->setResolveProxies(true);
-        m_TypedBy__from->setUnique(true);
-        m_TypedBy__from->setDerived(false);
-        m_TypedBy__from->setOrdered(false);
-
-    }
-
-    { // ReferenceTo
-        m_ReferenceToEClass->setName("ReferenceTo");
-        m_ReferenceToEClass->setAbstract(false);
-        m_ReferenceToEClass->setInterface(false);
-
-        m_ReferenceTo__to->setEType(m_ContentItemEClass);
-        m_ReferenceTo__to->setDefaultValueLiteral("");
-        m_ReferenceTo__to->setLowerBound(1);
-        m_ReferenceTo__to->setUpperBound(1);
-        m_ReferenceTo__to->setTransient(false);
-        m_ReferenceTo__to->setVolatile(false);
-        m_ReferenceTo__to->setChangeable(true);
-        m_ReferenceTo__to->setContainment(false);
-        m_ReferenceTo__to->setResolveProxies(true);
-        m_ReferenceTo__to->setUnique(true);
-        m_ReferenceTo__to->setDerived(false);
-        m_ReferenceTo__to->setOrdered(false);
-        m_ReferenceTo__from->setEType(m_ContentItemEClass);
-        m_ReferenceTo__from->setDefaultValueLiteral("");
-        m_ReferenceTo__from->setLowerBound(1);
-        m_ReferenceTo__from->setUpperBound(1);
-        m_ReferenceTo__from->setTransient(false);
-        m_ReferenceTo__from->setVolatile(false);
-        m_ReferenceTo__from->setChangeable(true);
-        m_ReferenceTo__from->setContainment(false);
-        m_ReferenceTo__from->setResolveProxies(true);
-        m_ReferenceTo__from->setUnique(true);
-        m_ReferenceTo__from->setDerived(false);
-        m_ReferenceTo__from->setOrdered(false);
-
-    }
-
-    { // RestrictionOf
-        m_RestrictionOfEClass->setName("RestrictionOf");
-        m_RestrictionOfEClass->setAbstract(false);
-        m_RestrictionOfEClass->setInterface(false);
-
-        m_RestrictionOf__to->setEType(m_ComplexContentTypeEClass);
-        m_RestrictionOf__to->setDefaultValueLiteral("");
-        m_RestrictionOf__to->setLowerBound(1);
-        m_RestrictionOf__to->setUpperBound(1);
-        m_RestrictionOf__to->setTransient(false);
-        m_RestrictionOf__to->setVolatile(false);
-        m_RestrictionOf__to->setChangeable(true);
-        m_RestrictionOf__to->setContainment(false);
-        m_RestrictionOf__to->setResolveProxies(true);
-        m_RestrictionOf__to->setUnique(true);
-        m_RestrictionOf__to->setDerived(false);
-        m_RestrictionOf__to->setOrdered(false);
-        m_RestrictionOf__from->setEType(m_ComplexContentTypeEClass);
-        m_RestrictionOf__from->setDefaultValueLiteral("");
-        m_RestrictionOf__from->setLowerBound(1);
-        m_RestrictionOf__from->setUpperBound(1);
-        m_RestrictionOf__from->setTransient(false);
-        m_RestrictionOf__from->setVolatile(false);
-        m_RestrictionOf__from->setChangeable(true);
-        m_RestrictionOf__from->setContainment(false);
-        m_RestrictionOf__from->setResolveProxies(true);
-        m_RestrictionOf__from->setUnique(true);
-        m_RestrictionOf__from->setDerived(false);
-        m_RestrictionOf__from->setOrdered(false);
-
-    }
-
-    { // ExtensionTo
-        m_ExtensionToEClass->setName("ExtensionTo");
-        m_ExtensionToEClass->setAbstract(false);
-        m_ExtensionToEClass->setInterface(false);
-
-        m_ExtensionTo__to->setEType(m_ComplexContentTypeEClass);
-        m_ExtensionTo__to->setDefaultValueLiteral("");
-        m_ExtensionTo__to->setLowerBound(1);
-        m_ExtensionTo__to->setUpperBound(1);
-        m_ExtensionTo__to->setTransient(false);
-        m_ExtensionTo__to->setVolatile(false);
-        m_ExtensionTo__to->setChangeable(true);
-        m_ExtensionTo__to->setContainment(false);
-        m_ExtensionTo__to->setResolveProxies(true);
-        m_ExtensionTo__to->setUnique(true);
-        m_ExtensionTo__to->setDerived(false);
-        m_ExtensionTo__to->setOrdered(false);
-        m_ExtensionTo__from->setEType(m_ComplexContentTypeEClass);
-        m_ExtensionTo__from->setDefaultValueLiteral("");
-        m_ExtensionTo__from->setLowerBound(1);
-        m_ExtensionTo__from->setUpperBound(1);
-        m_ExtensionTo__from->setTransient(false);
-        m_ExtensionTo__from->setVolatile(false);
-        m_ExtensionTo__from->setChangeable(true);
-        m_ExtensionTo__from->setContainment(false);
-        m_ExtensionTo__from->setResolveProxies(true);
-        m_ExtensionTo__from->setUnique(true);
-        m_ExtensionTo__from->setDerived(false);
-        m_ExtensionTo__from->setOrdered(false);
-
-    }
-
-    { // DatatypeOf
-        m_DatatypeOfEClass->setName("DatatypeOf");
-        m_DatatypeOfEClass->setAbstract(false);
-        m_DatatypeOfEClass->setInterface(false);
-
-        m_DatatypeOf__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDatatype());
-        m_DatatypeOf__to->setDefaultValueLiteral("");
-        m_DatatypeOf__to->setLowerBound(1);
-        m_DatatypeOf__to->setUpperBound(1);
-        m_DatatypeOf__to->setTransient(false);
-        m_DatatypeOf__to->setVolatile(false);
-        m_DatatypeOf__to->setChangeable(true);
-        m_DatatypeOf__to->setContainment(false);
-        m_DatatypeOf__to->setResolveProxies(true);
-        m_DatatypeOf__to->setUnique(true);
-        m_DatatypeOf__to->setDerived(false);
-        m_DatatypeOf__to->setOrdered(false);
-        m_DatatypeOf__from->setEType(m_ComplexContentTypeEClass);
-        m_DatatypeOf__from->setDefaultValueLiteral("");
-        m_DatatypeOf__from->setLowerBound(1);
-        m_DatatypeOf__from->setUpperBound(1);
-        m_DatatypeOf__from->setTransient(false);
-        m_DatatypeOf__from->setVolatile(false);
-        m_DatatypeOf__from->setChangeable(true);
-        m_DatatypeOf__from->setContainment(false);
-        m_DatatypeOf__from->setResolveProxies(true);
-        m_DatatypeOf__from->setUnique(true);
-        m_DatatypeOf__from->setDerived(false);
-        m_DatatypeOf__from->setOrdered(false);
-
-    }
-
-    { // HasContent
-        m_HasContentEClass->setName("HasContent");
-        m_HasContentEClass->setAbstract(false);
-        m_HasContentEClass->setInterface(false);
-
-        m_HasContent__to->setEType(m_AbstractDataElementEClass);
-        m_HasContent__to->setDefaultValueLiteral("");
-        m_HasContent__to->setLowerBound(1);
-        m_HasContent__to->setUpperBound(1);
-        m_HasContent__to->setTransient(false);
-        m_HasContent__to->setVolatile(false);
-        m_HasContent__to->setChangeable(true);
-        m_HasContent__to->setContainment(false);
-        m_HasContent__to->setResolveProxies(true);
-        m_HasContent__to->setUnique(true);
-        m_HasContent__to->setDerived(false);
-        m_HasContent__to->setOrdered(false);
-        m_HasContent__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_HasContent__from->setDefaultValueLiteral("");
-        m_HasContent__from->setLowerBound(1);
-        m_HasContent__from->setUpperBound(1);
-        m_HasContent__from->setTransient(false);
-        m_HasContent__from->setVolatile(false);
-        m_HasContent__from->setChangeable(true);
-        m_HasContent__from->setContainment(false);
-        m_HasContent__from->setResolveProxies(true);
-        m_HasContent__from->setUnique(true);
-        m_HasContent__from->setDerived(false);
-        m_HasContent__from->setOrdered(false);
-
-    }
-
-    { // WritesColumnSet
-        m_WritesColumnSetEClass->setName("WritesColumnSet");
-        m_WritesColumnSetEClass->setAbstract(false);
-        m_WritesColumnSetEClass->setInterface(false);
-
-        m_WritesColumnSet__to->setEType(m_ColumnSetEClass);
-        m_WritesColumnSet__to->setDefaultValueLiteral("");
-        m_WritesColumnSet__to->setLowerBound(1);
-        m_WritesColumnSet__to->setUpperBound(1);
-        m_WritesColumnSet__to->setTransient(false);
-        m_WritesColumnSet__to->setVolatile(false);
-        m_WritesColumnSet__to->setChangeable(true);
-        m_WritesColumnSet__to->setContainment(false);
-        m_WritesColumnSet__to->setResolveProxies(true);
-        m_WritesColumnSet__to->setUnique(true);
-        m_WritesColumnSet__to->setDerived(false);
-        m_WritesColumnSet__to->setOrdered(false);
-        m_WritesColumnSet__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_WritesColumnSet__from->setDefaultValueLiteral("");
-        m_WritesColumnSet__from->setLowerBound(1);
-        m_WritesColumnSet__from->setUpperBound(1);
-        m_WritesColumnSet__from->setTransient(false);
-        m_WritesColumnSet__from->setVolatile(false);
-        m_WritesColumnSet__from->setChangeable(true);
-        m_WritesColumnSet__from->setContainment(false);
-        m_WritesColumnSet__from->setResolveProxies(true);
-        m_WritesColumnSet__from->setUnique(true);
-        m_WritesColumnSet__from->setDerived(false);
-        m_WritesColumnSet__from->setOrdered(false);
-
-    }
-
-    { // ProducesDataEvent
-        m_ProducesDataEventEClass->setName("ProducesDataEvent");
-        m_ProducesDataEventEClass->setAbstract(false);
-        m_ProducesDataEventEClass->setInterface(false);
-
-        m_ProducesDataEvent__to->setEType(m_DataEventEClass);
-        m_ProducesDataEvent__to->setDefaultValueLiteral("");
-        m_ProducesDataEvent__to->setLowerBound(1);
-        m_ProducesDataEvent__to->setUpperBound(1);
-        m_ProducesDataEvent__to->setTransient(false);
-        m_ProducesDataEvent__to->setVolatile(false);
-        m_ProducesDataEvent__to->setChangeable(true);
-        m_ProducesDataEvent__to->setContainment(false);
-        m_ProducesDataEvent__to->setResolveProxies(true);
-        m_ProducesDataEvent__to->setUnique(true);
-        m_ProducesDataEvent__to->setDerived(false);
-        m_ProducesDataEvent__to->setOrdered(false);
-        m_ProducesDataEvent__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ProducesDataEvent__from->setDefaultValueLiteral("");
-        m_ProducesDataEvent__from->setLowerBound(1);
-        m_ProducesDataEvent__from->setUpperBound(1);
-        m_ProducesDataEvent__from->setTransient(false);
-        m_ProducesDataEvent__from->setVolatile(false);
-        m_ProducesDataEvent__from->setChangeable(true);
-        m_ProducesDataEvent__from->setContainment(false);
-        m_ProducesDataEvent__from->setResolveProxies(true);
-        m_ProducesDataEvent__from->setUnique(true);
-        m_ProducesDataEvent__from->setDerived(false);
-        m_ProducesDataEvent__from->setOrdered(false);
-
-    }
-
-    { // DataSegment
-        m_DataSegmentEClass->setName("DataSegment");
-        m_DataSegmentEClass->setAbstract(false);
-        m_DataSegmentEClass->setInterface(false);
-
-    }
-
-    { // ContentElement
-        m_ContentElementEClass->setName("ContentElement");
-        m_ContentElementEClass->setAbstract(false);
-        m_ContentElementEClass->setInterface(false);
-
-    }
-
-    { // ManagesData
-        m_ManagesDataEClass->setName("ManagesData");
-        m_ManagesDataEClass->setAbstract(false);
-        m_ManagesDataEClass->setInterface(false);
-
-        m_ManagesData__to->setEType(m_AbstractDataElementEClass);
-        m_ManagesData__to->setDefaultValueLiteral("");
-        m_ManagesData__to->setLowerBound(1);
-        m_ManagesData__to->setUpperBound(1);
-        m_ManagesData__to->setTransient(false);
-        m_ManagesData__to->setVolatile(false);
-        m_ManagesData__to->setChangeable(true);
-        m_ManagesData__to->setContainment(false);
-        m_ManagesData__to->setResolveProxies(true);
-        m_ManagesData__to->setUnique(true);
-        m_ManagesData__to->setDerived(false);
-        m_ManagesData__to->setOrdered(false);
-        m_ManagesData__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ManagesData__from->setDefaultValueLiteral("");
-        m_ManagesData__from->setLowerBound(1);
-        m_ManagesData__from->setUpperBound(1);
-        m_ManagesData__from->setTransient(false);
-        m_ManagesData__from->setVolatile(false);
-        m_ManagesData__from->setChangeable(true);
-        m_ManagesData__from->setContainment(false);
-        m_ManagesData__from->setResolveProxies(true);
-        m_ManagesData__from->setUnique(true);
-        m_ManagesData__from->setDerived(false);
-        m_ManagesData__from->setOrdered(false);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_AbstractContentElementEClass);
+        classifiers.push_back(m_AbstractDataElementEClass);
+        classifiers.push_back(m_AbstractDataRelationshipEClass);
+        classifiers.push_back(m_AllContentEClass);
+        classifiers.push_back(m_CatalogEClass);
+        classifiers.push_back(m_ChoiceContentEClass);
+        classifiers.push_back(m_ColumnSetEClass);
+        classifiers.push_back(m_ComplexContentTypeEClass);
+        classifiers.push_back(m_ContentAttributeEClass);
+        classifiers.push_back(m_ContentElementEClass);
+        classifiers.push_back(m_ContentItemEClass);
+        classifiers.push_back(m_ContentReferenceEClass);
+        classifiers.push_back(m_ContentRestrictionEClass);
+        classifiers.push_back(m_DataActionEClass);
+        classifiers.push_back(m_DataContainerEClass);
+        classifiers.push_back(m_DataEventEClass);
+        classifiers.push_back(m_DataModelEClass);
+        classifiers.push_back(m_DataRelationshipEClass);
+        classifiers.push_back(m_DataResourceEClass);
+        classifiers.push_back(m_DataSegmentEClass);
+        classifiers.push_back(m_DatatypeOfEClass);
+        classifiers.push_back(m_ExtendedDataElementEClass);
+        classifiers.push_back(m_ExtensionToEClass);
+        classifiers.push_back(m_GroupContentEClass);
+        classifiers.push_back(m_HasContentEClass);
+        classifiers.push_back(m_IndexEClass);
+        classifiers.push_back(m_IndexElementEClass);
+        classifiers.push_back(m_KeyRelationEClass);
+        classifiers.push_back(m_ManagesDataEClass);
+        classifiers.push_back(m_MixedContentEClass);
+        classifiers.push_back(m_ProducesDataEventEClass);
+        classifiers.push_back(m_ReadsColumnSetEClass);
+        classifiers.push_back(m_RecordFileEClass);
+        classifiers.push_back(m_ReferenceKeyEClass);
+        classifiers.push_back(m_ReferenceToEClass);
+        classifiers.push_back(m_RelationalSchemaEClass);
+        classifiers.push_back(m_RelationalTableEClass);
+        classifiers.push_back(m_RelationalViewEClass);
+        classifiers.push_back(m_RestrictionOfEClass);
+        classifiers.push_back(m_SeqContentEClass);
+        classifiers.push_back(m_SimpleContentTypeEClass);
+        classifiers.push_back(m_TypedByEClass);
+        classifiers.push_back(m_UniqueKeyEClass);
+        classifiers.push_back(m_WritesColumnSetEClass);
+        classifiers.push_back(m_XMLSchemaEClass);
+    }();
 
     _initialize();
 }

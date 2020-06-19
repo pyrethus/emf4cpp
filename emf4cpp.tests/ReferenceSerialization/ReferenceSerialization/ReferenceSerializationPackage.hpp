@@ -39,27 +39,19 @@ public:
 
     // IDs for classifier Child
     static const int CHILD = 0;
-
     static const int CHILD_FEATURE_COUNT = 0;
 
     // IDs for classifier Container
     static const int CONTAINER = 1;
-
     static const int CONTAINER__CONTENTS = 0;
-
     static const int CONTAINER__REFERENCES = 1;
-
     static const int CONTAINER__CHILD = 2;
-
     static const int CONTAINER__CHILDREF = 3;
-
     static const int CONTAINER_FEATURE_COUNT = 4;
 
     // IDs for classifier Content
     static const int CONTENT = 2;
-
     static const int CONTENT__NAME = 0;
-
     static const int CONTENT_FEATURE_COUNT = 1;
 
     // EClassifiers methods
@@ -89,17 +81,9 @@ protected:
     ReferenceSerializationPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_ContainerEClass;
-
-    ::ecore::EClass_ptr m_ContentEClass;
-
     ::ecore::EClass_ptr m_ChildEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_ContainerEClass;
+    ::ecore::EClass_ptr m_ContentEClass;
 
     // EStructuralFeatures instances
 

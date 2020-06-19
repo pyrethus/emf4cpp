@@ -42,404 +42,1089 @@ using namespace ::xpand3::statement;
 
 StatementPackage::StatementPackage()
 {
-
-    // Feature definitions of AbstractStatement
-
-    // Feature definitions of ExpandStatement
-    m_ExpandStatement__foreach = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ExpandStatement__parameters = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ExpandStatement__separator = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ExpandStatement__target = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ExpandStatement__definition = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ExpressionStatement
-    m_ExpressionStatement__expression = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ErrorStatement
-    m_ErrorStatement__message = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of AbstractStatementWithBody
-    m_AbstractStatementWithBody__body = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of FileStatement
-    m_FileStatement__once = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_FileStatement__fileNameExpression = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_FileStatement__outletNameIdentifier = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ForEachStatement
-    m_ForEachStatement__target = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ForEachStatement__separator = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ForEachStatement__variable = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ForEachStatement__iteratorName = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of IfStatement
-    m_IfStatement__condition = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_IfStatement__elseIf = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of LetStatement
-    m_LetStatement__varName = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_LetStatement__varValue = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ProtectStatement
-    m_ProtectStatement__disable = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ProtectStatement__commentStart = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ProtectStatement__commentEnd = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ProtectStatement__id = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of TextStatement
-    m_TextStatement__value = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_TextStatement__deleteLine = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
+    m_AbstractStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_AbstractStatementWithBody__body = ::ecore::make< ::ecore::EReference >();
+    m_AbstractStatementWithBodyEClass = ::ecore::make< ::ecore::EClass >();
+    m_ErrorStatement__message = ::ecore::make< ::ecore::EReference >();
+    m_ErrorStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExpandStatement__foreach = ::ecore::make< ::ecore::EAttribute >();
+    m_ExpandStatement__parameters = ::ecore::make< ::ecore::EReference >();
+    m_ExpandStatement__separator = ::ecore::make< ::ecore::EReference >();
+    m_ExpandStatement__target = ::ecore::make< ::ecore::EReference >();
+    m_ExpandStatement__definition = ::ecore::make< ::ecore::EReference >();
+    m_ExpandStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExpressionStatement__expression = ::ecore::make< ::ecore::EReference >();
+    m_ExpressionStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_FileStatement__fileNameExpression =
+            ::ecore::make< ::ecore::EReference >();
+    m_FileStatement__outletNameIdentifier =
+            ::ecore::make< ::ecore::EReference >();
+    m_FileStatement__once = ::ecore::make< ::ecore::EAttribute >();
+    m_FileStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ForEachStatement__target = ::ecore::make< ::ecore::EReference >();
+    m_ForEachStatement__separator = ::ecore::make< ::ecore::EReference >();
+    m_ForEachStatement__variable = ::ecore::make< ::ecore::EReference >();
+    m_ForEachStatement__iteratorName = ::ecore::make< ::ecore::EReference >();
+    m_ForEachStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_IfStatement__condition = ::ecore::make< ::ecore::EReference >();
+    m_IfStatement__elseIf = ::ecore::make< ::ecore::EReference >();
+    m_IfStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_LetStatement__varName = ::ecore::make< ::ecore::EReference >();
+    m_LetStatement__varValue = ::ecore::make< ::ecore::EReference >();
+    m_LetStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ProtectStatement__commentStart = ::ecore::make< ::ecore::EReference >();
+    m_ProtectStatement__commentEnd = ::ecore::make< ::ecore::EReference >();
+    m_ProtectStatement__id = ::ecore::make< ::ecore::EReference >();
+    m_ProtectStatement__disable = ::ecore::make< ::ecore::EAttribute >();
+    m_ProtectStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_TextStatement__value = ::ecore::make< ::ecore::EAttribute >();
+    m_TextStatement__deleteLine = ::ecore::make< ::ecore::EAttribute >();
+    m_TextStatementEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void StatementPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = StatementFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = StatementFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // AbstractStatement
-        m_AbstractStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractStatementEClass->setClassifierID(ABSTRACTSTATEMENT);
-        m_AbstractStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractStatementEClass);
-    }
+    [this]()
+    { // Classifier AbstractStatement
+        auto &&classifier = m_AbstractStatementEClass;
 
-    { // ExpandStatement
-        m_ExpandStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExpandStatementEClass->setClassifierID(EXPANDSTATEMENT);
-        m_ExpandStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExpandStatementEClass);
-        // m_ExpandStatement__foreach has already been allocated above
-        m_ExpandStatement__foreach->setFeatureID(
-                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__FOREACH);
-        m_ExpandStatement__foreach->setName("foreach");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ExpandStatement__foreach);
-        m_ExpandStatement__foreach->basicsetEContainingClass(
-                m_ExpandStatementEClass);
-        // m_ExpandStatement__parameters has already been allocated above
-        m_ExpandStatement__parameters->setFeatureID(
-                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__PARAMETERS);
-        m_ExpandStatement__parameters->setName("parameters");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ExpandStatement__parameters);
-        m_ExpandStatement__parameters->basicsetEContainingClass(
-                m_ExpandStatementEClass);
-        // m_ExpandStatement__separator has already been allocated above
-        m_ExpandStatement__separator->setFeatureID(
-                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__SEPARATOR);
-        m_ExpandStatement__separator->setName("separator");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ExpandStatement__separator);
-        m_ExpandStatement__separator->basicsetEContainingClass(
-                m_ExpandStatementEClass);
-        // m_ExpandStatement__target has already been allocated above
-        m_ExpandStatement__target->setFeatureID(
-                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__TARGET);
-        m_ExpandStatement__target->setName("target");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ExpandStatement__target);
-        m_ExpandStatement__target->basicsetEContainingClass(
-                m_ExpandStatementEClass);
-        // m_ExpandStatement__definition has already been allocated above
-        m_ExpandStatement__definition->setFeatureID(
-                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__DEFINITION);
-        m_ExpandStatement__definition->setName("definition");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ExpandStatement__definition);
-        m_ExpandStatement__definition->basicsetEContainingClass(
-                m_ExpandStatementEClass);
-    }
+        // ENamedElement
+        classifier->setName("AbstractStatement");
 
-    { // ExpressionStatement
-        m_ExpressionStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExpressionStatementEClass->setClassifierID(EXPRESSIONSTATEMENT);
-        m_ExpressionStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExpressionStatementEClass);
-        // m_ExpressionStatement__expression has already been allocated above
-        m_ExpressionStatement__expression->setFeatureID(
-                ::xpand3::statement::StatementPackage::EXPRESSIONSTATEMENT__EXPRESSION);
-        m_ExpressionStatement__expression->setName("expression");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpressionStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ExpressionStatement__expression);
-        m_ExpressionStatement__expression->basicsetEContainingClass(
-                m_ExpressionStatementEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTSTATEMENT);
 
-    { // ErrorStatement
-        m_ErrorStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ErrorStatementEClass->setClassifierID(ERRORSTATEMENT);
-        m_ErrorStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ErrorStatementEClass);
-        // m_ErrorStatement__message has already been allocated above
-        m_ErrorStatement__message->setFeatureID(
-                ::xpand3::statement::StatementPackage::ERRORSTATEMENT__MESSAGE);
-        m_ErrorStatement__message->setName("message");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ErrorStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ErrorStatement__message);
-        m_ErrorStatement__message->basicsetEContainingClass(
-                m_ErrorStatementEClass);
-    }
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+    }();
 
-    { // AbstractStatementWithBody
-        m_AbstractStatementWithBodyEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractStatementWithBodyEClass->setClassifierID(
-                ABSTRACTSTATEMENTWITHBODY);
-        m_AbstractStatementWithBodyEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractStatementWithBodyEClass);
-        // m_AbstractStatementWithBody__body has already been allocated above
-        m_AbstractStatementWithBody__body->setFeatureID(
+    [this]()
+    { // Feature body of class AbstractStatementWithBody
+        auto &&feature = m_AbstractStatementWithBody__body;
+
+        // ENamedElement
+        feature->setName("body");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractStatementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::ABSTRACTSTATEMENTWITHBODY__BODY);
-        m_AbstractStatementWithBody__body->setName("body");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractStatementWithBodyEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractStatementWithBody__body);
-        m_AbstractStatementWithBody__body->basicsetEContainingClass(
-                m_AbstractStatementWithBodyEClass);
-    }
+        feature->basicsetEContainingClass(m_AbstractStatementWithBodyEClass);
 
-    { // FileStatement
-        m_FileStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_FileStatementEClass->setClassifierID(FILESTATEMENT);
-        m_FileStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_FileStatementEClass);
-        // m_FileStatement__fileNameExpression has already been allocated above
-        m_FileStatement__fileNameExpression->setFeatureID(
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier AbstractStatementWithBody
+        auto &&classifier = m_AbstractStatementWithBodyEClass;
+
+        // ENamedElement
+        classifier->setName("AbstractStatementWithBody");
+
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTSTATEMENTWITHBODY);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractStatementWithBodyEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_AbstractStatementWithBody__body);
+        }
+    }();
+
+    [this]()
+    { // Feature message of class ErrorStatement
+        auto &&feature = m_ErrorStatement__message;
+
+        // ENamedElement
+        feature->setName("message");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::xpand3::statement::StatementPackage::ERRORSTATEMENT__MESSAGE);
+        feature->basicsetEContainingClass(m_ErrorStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ErrorStatement
+        auto &&classifier = m_ErrorStatementEClass;
+
+        // ENamedElement
+        classifier->setName("ErrorStatement");
+
+        // EClassifier
+        classifier->setClassifierID(ERRORSTATEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ErrorStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ErrorStatement__message);
+        }
+    }();
+
+    [this]()
+    { // Feature foreach of class ExpandStatement
+        auto &&feature = m_ExpandStatement__foreach;
+
+        // ENamedElement
+        feature->setName("foreach");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__FOREACH);
+        feature->basicsetEContainingClass(m_ExpandStatementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature parameters of class ExpandStatement
+        auto &&feature = m_ExpandStatement__parameters;
+
+        // ENamedElement
+        feature->setName("parameters");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__PARAMETERS);
+        feature->basicsetEContainingClass(m_ExpandStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature separator of class ExpandStatement
+        auto &&feature = m_ExpandStatement__separator;
+
+        // ENamedElement
+        feature->setName("separator");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__SEPARATOR);
+        feature->basicsetEContainingClass(m_ExpandStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature target of class ExpandStatement
+        auto &&feature = m_ExpandStatement__target;
+
+        // ENamedElement
+        feature->setName("target");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__TARGET);
+        feature->basicsetEContainingClass(m_ExpandStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature definition of class ExpandStatement
+        auto &&feature = m_ExpandStatement__definition;
+
+        // ENamedElement
+        feature->setName("definition");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::xpand3::statement::StatementPackage::EXPANDSTATEMENT__DEFINITION);
+        feature->basicsetEContainingClass(m_ExpandStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ExpandStatement
+        auto &&classifier = m_ExpandStatementEClass;
+
+        // ENamedElement
+        classifier->setName("ExpandStatement");
+
+        // EClassifier
+        classifier->setClassifierID(EXPANDSTATEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpandStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ExpandStatement__foreach);
+            eStructuralFeatures.basicAdd(m_ExpandStatement__parameters);
+            eStructuralFeatures.basicAdd(m_ExpandStatement__separator);
+            eStructuralFeatures.basicAdd(m_ExpandStatement__target);
+            eStructuralFeatures.basicAdd(m_ExpandStatement__definition);
+        }
+    }();
+
+    [this]()
+    { // Feature expression of class ExpressionStatement
+        auto &&feature = m_ExpressionStatement__expression;
+
+        // ENamedElement
+        feature->setName("expression");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::xpand3::statement::StatementPackage::EXPRESSIONSTATEMENT__EXPRESSION);
+        feature->basicsetEContainingClass(m_ExpressionStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ExpressionStatement
+        auto &&classifier = m_ExpressionStatementEClass;
+
+        // ENamedElement
+        classifier->setName("ExpressionStatement");
+
+        // EClassifier
+        classifier->setClassifierID(EXPRESSIONSTATEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExpressionStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ExpressionStatement__expression);
+        }
+    }();
+
+    [this]()
+    { // Feature fileNameExpression of class FileStatement
+        auto &&feature = m_FileStatement__fileNameExpression;
+
+        // ENamedElement
+        feature->setName("fileNameExpression");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::FILESTATEMENT__FILENAMEEXPRESSION);
-        m_FileStatement__fileNameExpression->setName("fileNameExpression");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_FileStatement__fileNameExpression);
-        m_FileStatement__fileNameExpression->basicsetEContainingClass(
-                m_FileStatementEClass);
-        // m_FileStatement__outletNameIdentifier has already been allocated above
-        m_FileStatement__outletNameIdentifier->setFeatureID(
+        feature->basicsetEContainingClass(m_FileStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature outletNameIdentifier of class FileStatement
+        auto &&feature = m_FileStatement__outletNameIdentifier;
+
+        // ENamedElement
+        feature->setName("outletNameIdentifier");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::FILESTATEMENT__OUTLETNAMEIDENTIFIER);
-        m_FileStatement__outletNameIdentifier->setName("outletNameIdentifier");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_FileStatement__outletNameIdentifier);
-        m_FileStatement__outletNameIdentifier->basicsetEContainingClass(
-                m_FileStatementEClass);
-        // m_FileStatement__once has already been allocated above
-        m_FileStatement__once->setFeatureID(
+        feature->basicsetEContainingClass(m_FileStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature once of class FileStatement
+        auto &&feature = m_FileStatement__once;
+
+        // ENamedElement
+        feature->setName("once");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::FILESTATEMENT__ONCE);
-        m_FileStatement__once->setName("once");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_FileStatement__once);
-        m_FileStatement__once->basicsetEContainingClass(m_FileStatementEClass);
-    }
+        feature->basicsetEContainingClass(m_FileStatementEClass);
 
-    { // ForEachStatement
-        m_ForEachStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ForEachStatementEClass->setClassifierID(FOREACHSTATEMENT);
-        m_ForEachStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ForEachStatementEClass);
-        // m_ForEachStatement__target has already been allocated above
-        m_ForEachStatement__target->setFeatureID(
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier FileStatement
+        auto &&classifier = m_FileStatementEClass;
+
+        // ENamedElement
+        classifier->setName("FileStatement");
+
+        // EClassifier
+        classifier->setClassifierID(FILESTATEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_FileStatement__fileNameExpression);
+            eStructuralFeatures.basicAdd(m_FileStatement__outletNameIdentifier);
+            eStructuralFeatures.basicAdd(m_FileStatement__once);
+        }
+    }();
+
+    [this]()
+    { // Feature target of class ForEachStatement
+        auto &&feature = m_ForEachStatement__target;
+
+        // ENamedElement
+        feature->setName("target");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__TARGET);
-        m_ForEachStatement__target->setName("target");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ForEachStatement__target);
-        m_ForEachStatement__target->basicsetEContainingClass(
-                m_ForEachStatementEClass);
-        // m_ForEachStatement__separator has already been allocated above
-        m_ForEachStatement__separator->setFeatureID(
+        feature->basicsetEContainingClass(m_ForEachStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature separator of class ForEachStatement
+        auto &&feature = m_ForEachStatement__separator;
+
+        // ENamedElement
+        feature->setName("separator");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__SEPARATOR);
-        m_ForEachStatement__separator->setName("separator");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ForEachStatement__separator);
-        m_ForEachStatement__separator->basicsetEContainingClass(
-                m_ForEachStatementEClass);
-        // m_ForEachStatement__variable has already been allocated above
-        m_ForEachStatement__variable->setFeatureID(
+        feature->basicsetEContainingClass(m_ForEachStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature variable of class ForEachStatement
+        auto &&feature = m_ForEachStatement__variable;
+
+        // ENamedElement
+        feature->setName("variable");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__VARIABLE);
-        m_ForEachStatement__variable->setName("variable");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ForEachStatement__variable);
-        m_ForEachStatement__variable->basicsetEContainingClass(
-                m_ForEachStatementEClass);
-        // m_ForEachStatement__iteratorName has already been allocated above
-        m_ForEachStatement__iteratorName->setFeatureID(
+        feature->basicsetEContainingClass(m_ForEachStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature iteratorName of class ForEachStatement
+        auto &&feature = m_ForEachStatement__iteratorName;
+
+        // ENamedElement
+        feature->setName("iteratorName");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::FOREACHSTATEMENT__ITERATORNAME);
-        m_ForEachStatement__iteratorName->setName("iteratorName");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ForEachStatement__iteratorName);
-        m_ForEachStatement__iteratorName->basicsetEContainingClass(
-                m_ForEachStatementEClass);
-    }
+        feature->basicsetEContainingClass(m_ForEachStatementEClass);
 
-    { // IfStatement
-        m_IfStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_IfStatementEClass->setClassifierID(IFSTATEMENT);
-        m_IfStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IfStatementEClass);
-        // m_IfStatement__condition has already been allocated above
-        m_IfStatement__condition->setFeatureID(
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ForEachStatement
+        auto &&classifier = m_ForEachStatementEClass;
+
+        // ENamedElement
+        classifier->setName("ForEachStatement");
+
+        // EClassifier
+        classifier->setClassifierID(FOREACHSTATEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ForEachStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ForEachStatement__target);
+            eStructuralFeatures.basicAdd(m_ForEachStatement__separator);
+            eStructuralFeatures.basicAdd(m_ForEachStatement__variable);
+            eStructuralFeatures.basicAdd(m_ForEachStatement__iteratorName);
+        }
+    }();
+
+    [this]()
+    { // Feature condition of class IfStatement
+        auto &&feature = m_IfStatement__condition;
+
+        // ENamedElement
+        feature->setName("condition");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::IFSTATEMENT__CONDITION);
-        m_IfStatement__condition->setName("condition");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_IfStatement__condition);
-        m_IfStatement__condition->basicsetEContainingClass(m_IfStatementEClass);
-        // m_IfStatement__elseIf has already been allocated above
-        m_IfStatement__elseIf->setFeatureID(
+        feature->basicsetEContainingClass(m_IfStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature elseIf of class IfStatement
+        auto &&feature = m_IfStatement__elseIf;
+
+        // ENamedElement
+        feature->setName("elseIf");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_IfStatementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::IFSTATEMENT__ELSEIF);
-        m_IfStatement__elseIf->setName("elseIf");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_IfStatement__elseIf);
-        m_IfStatement__elseIf->basicsetEContainingClass(m_IfStatementEClass);
-    }
+        feature->basicsetEContainingClass(m_IfStatementEClass);
 
-    { // LetStatement
-        m_LetStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_LetStatementEClass->setClassifierID(LETSTATEMENT);
-        m_LetStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_LetStatementEClass);
-        // m_LetStatement__varName has already been allocated above
-        m_LetStatement__varName->setFeatureID(
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier IfStatement
+        auto &&classifier = m_IfStatementEClass;
+
+        // ENamedElement
+        classifier->setName("IfStatement");
+
+        // EClassifier
+        classifier->setClassifierID(IFSTATEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IfStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_IfStatement__condition);
+            eStructuralFeatures.basicAdd(m_IfStatement__elseIf);
+        }
+    }();
+
+    [this]()
+    { // Feature varName of class LetStatement
+        auto &&feature = m_LetStatement__varName;
+
+        // ENamedElement
+        feature->setName("varName");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::LETSTATEMENT__VARNAME);
-        m_LetStatement__varName->setName("varName");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_LetStatement__varName);
-        m_LetStatement__varName->basicsetEContainingClass(m_LetStatementEClass);
-        // m_LetStatement__varValue has already been allocated above
-        m_LetStatement__varValue->setFeatureID(
+        feature->basicsetEContainingClass(m_LetStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature varValue of class LetStatement
+        auto &&feature = m_LetStatement__varValue;
+
+        // ENamedElement
+        feature->setName("varValue");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::LETSTATEMENT__VARVALUE);
-        m_LetStatement__varValue->setName("varValue");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_LetStatement__varValue);
-        m_LetStatement__varValue->basicsetEContainingClass(
-                m_LetStatementEClass);
-    }
+        feature->basicsetEContainingClass(m_LetStatementEClass);
 
-    { // ProtectStatement
-        m_ProtectStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ProtectStatementEClass->setClassifierID(PROTECTSTATEMENT);
-        m_ProtectStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ProtectStatementEClass);
-        // m_ProtectStatement__commentStart has already been allocated above
-        m_ProtectStatement__commentStart->setFeatureID(
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier LetStatement
+        auto &&classifier = m_LetStatementEClass;
+
+        // ENamedElement
+        classifier->setName("LetStatement");
+
+        // EClassifier
+        classifier->setClassifierID(LETSTATEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LetStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_LetStatement__varName);
+            eStructuralFeatures.basicAdd(m_LetStatement__varValue);
+        }
+    }();
+
+    [this]()
+    { // Feature commentStart of class ProtectStatement
+        auto &&feature = m_ProtectStatement__commentStart;
+
+        // ENamedElement
+        feature->setName("commentStart");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTSTART);
-        m_ProtectStatement__commentStart->setName("commentStart");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ProtectStatement__commentStart);
-        m_ProtectStatement__commentStart->basicsetEContainingClass(
-                m_ProtectStatementEClass);
-        // m_ProtectStatement__commentEnd has already been allocated above
-        m_ProtectStatement__commentEnd->setFeatureID(
+        feature->basicsetEContainingClass(m_ProtectStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature commentEnd of class ProtectStatement
+        auto &&feature = m_ProtectStatement__commentEnd;
+
+        // ENamedElement
+        feature->setName("commentEnd");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__COMMENTEND);
-        m_ProtectStatement__commentEnd->setName("commentEnd");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ProtectStatement__commentEnd);
-        m_ProtectStatement__commentEnd->basicsetEContainingClass(
-                m_ProtectStatementEClass);
-        // m_ProtectStatement__id has already been allocated above
-        m_ProtectStatement__id->setFeatureID(
+        feature->basicsetEContainingClass(m_ProtectStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature id of class ProtectStatement
+        auto &&feature = m_ProtectStatement__id;
+
+        // ENamedElement
+        feature->setName("id");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__ID);
-        m_ProtectStatement__id->setName("id");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ProtectStatement__id);
-        m_ProtectStatement__id->basicsetEContainingClass(
-                m_ProtectStatementEClass);
-        // m_ProtectStatement__disable has already been allocated above
-        m_ProtectStatement__disable->setFeatureID(
+        feature->basicsetEContainingClass(m_ProtectStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature disable of class ProtectStatement
+        auto &&feature = m_ProtectStatement__disable;
+
+        // ENamedElement
+        feature->setName("disable");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::PROTECTSTATEMENT__DISABLE);
-        m_ProtectStatement__disable->setName("disable");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ProtectStatement__disable);
-        m_ProtectStatement__disable->basicsetEContainingClass(
-                m_ProtectStatementEClass);
-    }
+        feature->basicsetEContainingClass(m_ProtectStatementEClass);
 
-    { // TextStatement
-        m_TextStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_TextStatementEClass->setClassifierID(TEXTSTATEMENT);
-        m_TextStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TextStatementEClass);
-        // m_TextStatement__value has already been allocated above
-        m_TextStatement__value->setFeatureID(
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier ProtectStatement
+        auto &&classifier = m_ProtectStatementEClass;
+
+        // ENamedElement
+        classifier->setName("ProtectStatement");
+
+        // EClassifier
+        classifier->setClassifierID(PROTECTSTATEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProtectStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ProtectStatement__commentStart);
+            eStructuralFeatures.basicAdd(m_ProtectStatement__commentEnd);
+            eStructuralFeatures.basicAdd(m_ProtectStatement__id);
+            eStructuralFeatures.basicAdd(m_ProtectStatement__disable);
+        }
+    }();
+
+    [this]()
+    { // Feature value of class TextStatement
+        auto &&feature = m_TextStatement__value;
+
+        // ENamedElement
+        feature->setName("value");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::TEXTSTATEMENT__VALUE);
-        m_TextStatement__value->setName("value");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_TextStatement__value);
-        m_TextStatement__value->basicsetEContainingClass(m_TextStatementEClass);
-        // m_TextStatement__deleteLine has already been allocated above
-        m_TextStatement__deleteLine->setFeatureID(
+        feature->basicsetEContainingClass(m_TextStatementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature deleteLine of class TextStatement
+        auto &&feature = m_TextStatement__deleteLine;
+
+        // ENamedElement
+        feature->setName("deleteLine");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::statement::StatementPackage::TEXTSTATEMENT__DELETELINE);
-        m_TextStatement__deleteLine->setName("deleteLine");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_TextStatement__deleteLine);
-        m_TextStatement__deleteLine->basicsetEContainingClass(
-                m_TextStatementEClass);
-    }
+        feature->basicsetEContainingClass(m_TextStatementEClass);
 
-    // Create enums
+        // EAttribute
+        feature->setID(false);
+    }();
 
-    // Create data types
+    [this]()
+    { // Classifier TextStatement
+        auto &&classifier = m_TextStatementEClass;
+
+        // ENamedElement
+        classifier->setName("TextStatement");
+
+        // EClassifier
+        classifier->setClassifierID(TEXTSTATEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TextStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_TextStatement__value);
+            eStructuralFeatures.basicAdd(m_TextStatement__deleteLine);
+        }
+    }();
 
     // Initialize package
     setName("statement");
@@ -449,444 +1134,47 @@ void StatementPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_AbstractStatementEClass->getESuperTypes().push_back(
-            dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getSyntaxElement());
-    m_ExpandStatementEClass->getESuperTypes().push_back(
-            m_AbstractStatementEClass);
-    m_ExpressionStatementEClass->getESuperTypes().push_back(
-            m_AbstractStatementEClass);
-    m_ErrorStatementEClass->getESuperTypes().push_back(
-            m_AbstractStatementEClass);
-    m_AbstractStatementWithBodyEClass->getESuperTypes().push_back(
-            m_AbstractStatementEClass);
-    m_FileStatementEClass->getESuperTypes().push_back(
-            m_AbstractStatementWithBodyEClass);
-    m_ForEachStatementEClass->getESuperTypes().push_back(
-            m_AbstractStatementWithBodyEClass);
-    m_IfStatementEClass->getESuperTypes().push_back(
-            m_AbstractStatementWithBodyEClass);
-    m_LetStatementEClass->getESuperTypes().push_back(
-            m_AbstractStatementWithBodyEClass);
-    m_ProtectStatementEClass->getESuperTypes().push_back(
-            m_AbstractStatementWithBodyEClass);
-    m_TextStatementEClass->getESuperTypes().push_back(
-            m_AbstractStatementEClass);
+    [this]()
+    {
+        m_AbstractStatementEClass->getESuperTypes().push_back(
+                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getSyntaxElement());
+        m_ExpandStatementEClass->getESuperTypes().push_back(
+                m_AbstractStatementEClass);
+        m_ExpressionStatementEClass->getESuperTypes().push_back(
+                m_AbstractStatementEClass);
+        m_ErrorStatementEClass->getESuperTypes().push_back(
+                m_AbstractStatementEClass);
+        m_AbstractStatementWithBodyEClass->getESuperTypes().push_back(
+                m_AbstractStatementEClass);
+        m_FileStatementEClass->getESuperTypes().push_back(
+                m_AbstractStatementWithBodyEClass);
+        m_ForEachStatementEClass->getESuperTypes().push_back(
+                m_AbstractStatementWithBodyEClass);
+        m_IfStatementEClass->getESuperTypes().push_back(
+                m_AbstractStatementWithBodyEClass);
+        m_LetStatementEClass->getESuperTypes().push_back(
+                m_AbstractStatementWithBodyEClass);
+        m_ProtectStatementEClass->getESuperTypes().push_back(
+                m_AbstractStatementWithBodyEClass);
+        m_TextStatementEClass->getESuperTypes().push_back(
+                m_AbstractStatementEClass);
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // AbstractStatement
-        m_AbstractStatementEClass->setName("AbstractStatement");
-        m_AbstractStatementEClass->setAbstract(true);
-        m_AbstractStatementEClass->setInterface(false);
-
-    }
-
-    { // ExpandStatement
-        m_ExpandStatementEClass->setName("ExpandStatement");
-        m_ExpandStatementEClass->setAbstract(false);
-        m_ExpandStatementEClass->setInterface(false);
-        m_ExpandStatement__foreach->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_ExpandStatement__foreach->setDefaultValueLiteral("");
-        m_ExpandStatement__foreach->setLowerBound(0);
-        m_ExpandStatement__foreach->setUpperBound(1);
-        m_ExpandStatement__foreach->setTransient(false);
-        m_ExpandStatement__foreach->setVolatile(false);
-        m_ExpandStatement__foreach->setChangeable(true);
-        m_ExpandStatement__foreach->setUnsettable(false);
-        m_ExpandStatement__foreach->setID(false);
-        m_ExpandStatement__foreach->setUnique(true);
-        m_ExpandStatement__foreach->setDerived(false);
-        m_ExpandStatement__foreach->setOrdered(true);
-
-        m_ExpandStatement__parameters->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ExpandStatement__parameters->setDefaultValueLiteral("");
-        m_ExpandStatement__parameters->setLowerBound(0);
-        m_ExpandStatement__parameters->setUpperBound(-1);
-        m_ExpandStatement__parameters->setTransient(false);
-        m_ExpandStatement__parameters->setVolatile(false);
-        m_ExpandStatement__parameters->setChangeable(true);
-        m_ExpandStatement__parameters->setContainment(true);
-        m_ExpandStatement__parameters->setResolveProxies(true);
-        m_ExpandStatement__parameters->setUnique(true);
-        m_ExpandStatement__parameters->setDerived(false);
-        m_ExpandStatement__parameters->setOrdered(true);
-        m_ExpandStatement__separator->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ExpandStatement__separator->setDefaultValueLiteral("");
-        m_ExpandStatement__separator->setLowerBound(0);
-        m_ExpandStatement__separator->setUpperBound(1);
-        m_ExpandStatement__separator->setTransient(false);
-        m_ExpandStatement__separator->setVolatile(false);
-        m_ExpandStatement__separator->setChangeable(true);
-        m_ExpandStatement__separator->setContainment(true);
-        m_ExpandStatement__separator->setResolveProxies(true);
-        m_ExpandStatement__separator->setUnique(true);
-        m_ExpandStatement__separator->setDerived(false);
-        m_ExpandStatement__separator->setOrdered(true);
-        m_ExpandStatement__target->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ExpandStatement__target->setDefaultValueLiteral("");
-        m_ExpandStatement__target->setLowerBound(0);
-        m_ExpandStatement__target->setUpperBound(1);
-        m_ExpandStatement__target->setTransient(false);
-        m_ExpandStatement__target->setVolatile(false);
-        m_ExpandStatement__target->setChangeable(true);
-        m_ExpandStatement__target->setContainment(true);
-        m_ExpandStatement__target->setResolveProxies(true);
-        m_ExpandStatement__target->setUnique(true);
-        m_ExpandStatement__target->setDerived(false);
-        m_ExpandStatement__target->setOrdered(true);
-        m_ExpandStatement__definition->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_ExpandStatement__definition->setDefaultValueLiteral("");
-        m_ExpandStatement__definition->setLowerBound(1);
-        m_ExpandStatement__definition->setUpperBound(1);
-        m_ExpandStatement__definition->setTransient(false);
-        m_ExpandStatement__definition->setVolatile(false);
-        m_ExpandStatement__definition->setChangeable(true);
-        m_ExpandStatement__definition->setContainment(true);
-        m_ExpandStatement__definition->setResolveProxies(true);
-        m_ExpandStatement__definition->setUnique(true);
-        m_ExpandStatement__definition->setDerived(false);
-        m_ExpandStatement__definition->setOrdered(true);
-
-    }
-
-    { // ExpressionStatement
-        m_ExpressionStatementEClass->setName("ExpressionStatement");
-        m_ExpressionStatementEClass->setAbstract(false);
-        m_ExpressionStatementEClass->setInterface(false);
-
-        m_ExpressionStatement__expression->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ExpressionStatement__expression->setDefaultValueLiteral("");
-        m_ExpressionStatement__expression->setLowerBound(1);
-        m_ExpressionStatement__expression->setUpperBound(1);
-        m_ExpressionStatement__expression->setTransient(false);
-        m_ExpressionStatement__expression->setVolatile(false);
-        m_ExpressionStatement__expression->setChangeable(true);
-        m_ExpressionStatement__expression->setContainment(true);
-        m_ExpressionStatement__expression->setResolveProxies(true);
-        m_ExpressionStatement__expression->setUnique(true);
-        m_ExpressionStatement__expression->setDerived(false);
-        m_ExpressionStatement__expression->setOrdered(true);
-
-    }
-
-    { // ErrorStatement
-        m_ErrorStatementEClass->setName("ErrorStatement");
-        m_ErrorStatementEClass->setAbstract(false);
-        m_ErrorStatementEClass->setInterface(false);
-
-        m_ErrorStatement__message->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ErrorStatement__message->setDefaultValueLiteral("");
-        m_ErrorStatement__message->setLowerBound(1);
-        m_ErrorStatement__message->setUpperBound(1);
-        m_ErrorStatement__message->setTransient(false);
-        m_ErrorStatement__message->setVolatile(false);
-        m_ErrorStatement__message->setChangeable(true);
-        m_ErrorStatement__message->setContainment(true);
-        m_ErrorStatement__message->setResolveProxies(true);
-        m_ErrorStatement__message->setUnique(true);
-        m_ErrorStatement__message->setDerived(false);
-        m_ErrorStatement__message->setOrdered(true);
-
-    }
-
-    { // AbstractStatementWithBody
-        m_AbstractStatementWithBodyEClass->setName("AbstractStatementWithBody");
-        m_AbstractStatementWithBodyEClass->setAbstract(true);
-        m_AbstractStatementWithBodyEClass->setInterface(false);
-
-        m_AbstractStatementWithBody__body->setEType(m_AbstractStatementEClass);
-        m_AbstractStatementWithBody__body->setDefaultValueLiteral("");
-        m_AbstractStatementWithBody__body->setLowerBound(1);
-        m_AbstractStatementWithBody__body->setUpperBound(-1);
-        m_AbstractStatementWithBody__body->setTransient(false);
-        m_AbstractStatementWithBody__body->setVolatile(false);
-        m_AbstractStatementWithBody__body->setChangeable(true);
-        m_AbstractStatementWithBody__body->setContainment(true);
-        m_AbstractStatementWithBody__body->setResolveProxies(true);
-        m_AbstractStatementWithBody__body->setUnique(true);
-        m_AbstractStatementWithBody__body->setDerived(false);
-        m_AbstractStatementWithBody__body->setOrdered(true);
-
-    }
-
-    { // FileStatement
-        m_FileStatementEClass->setName("FileStatement");
-        m_FileStatementEClass->setAbstract(false);
-        m_FileStatementEClass->setInterface(false);
-        m_FileStatement__once->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_FileStatement__once->setDefaultValueLiteral("");
-        m_FileStatement__once->setLowerBound(0);
-        m_FileStatement__once->setUpperBound(1);
-        m_FileStatement__once->setTransient(false);
-        m_FileStatement__once->setVolatile(false);
-        m_FileStatement__once->setChangeable(true);
-        m_FileStatement__once->setUnsettable(false);
-        m_FileStatement__once->setID(false);
-        m_FileStatement__once->setUnique(true);
-        m_FileStatement__once->setDerived(false);
-        m_FileStatement__once->setOrdered(true);
-
-        m_FileStatement__fileNameExpression->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_FileStatement__fileNameExpression->setDefaultValueLiteral("");
-        m_FileStatement__fileNameExpression->setLowerBound(0);
-        m_FileStatement__fileNameExpression->setUpperBound(1);
-        m_FileStatement__fileNameExpression->setTransient(false);
-        m_FileStatement__fileNameExpression->setVolatile(false);
-        m_FileStatement__fileNameExpression->setChangeable(true);
-        m_FileStatement__fileNameExpression->setContainment(true);
-        m_FileStatement__fileNameExpression->setResolveProxies(true);
-        m_FileStatement__fileNameExpression->setUnique(true);
-        m_FileStatement__fileNameExpression->setDerived(false);
-        m_FileStatement__fileNameExpression->setOrdered(true);
-        m_FileStatement__outletNameIdentifier->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_FileStatement__outletNameIdentifier->setDefaultValueLiteral("");
-        m_FileStatement__outletNameIdentifier->setLowerBound(0);
-        m_FileStatement__outletNameIdentifier->setUpperBound(1);
-        m_FileStatement__outletNameIdentifier->setTransient(false);
-        m_FileStatement__outletNameIdentifier->setVolatile(false);
-        m_FileStatement__outletNameIdentifier->setChangeable(true);
-        m_FileStatement__outletNameIdentifier->setContainment(true);
-        m_FileStatement__outletNameIdentifier->setResolveProxies(true);
-        m_FileStatement__outletNameIdentifier->setUnique(true);
-        m_FileStatement__outletNameIdentifier->setDerived(false);
-        m_FileStatement__outletNameIdentifier->setOrdered(true);
-
-    }
-
-    { // ForEachStatement
-        m_ForEachStatementEClass->setName("ForEachStatement");
-        m_ForEachStatementEClass->setAbstract(false);
-        m_ForEachStatementEClass->setInterface(false);
-
-        m_ForEachStatement__target->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ForEachStatement__target->setDefaultValueLiteral("");
-        m_ForEachStatement__target->setLowerBound(0);
-        m_ForEachStatement__target->setUpperBound(1);
-        m_ForEachStatement__target->setTransient(false);
-        m_ForEachStatement__target->setVolatile(false);
-        m_ForEachStatement__target->setChangeable(true);
-        m_ForEachStatement__target->setContainment(true);
-        m_ForEachStatement__target->setResolveProxies(true);
-        m_ForEachStatement__target->setUnique(true);
-        m_ForEachStatement__target->setDerived(false);
-        m_ForEachStatement__target->setOrdered(true);
-        m_ForEachStatement__separator->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ForEachStatement__separator->setDefaultValueLiteral("");
-        m_ForEachStatement__separator->setLowerBound(0);
-        m_ForEachStatement__separator->setUpperBound(1);
-        m_ForEachStatement__separator->setTransient(false);
-        m_ForEachStatement__separator->setVolatile(false);
-        m_ForEachStatement__separator->setChangeable(true);
-        m_ForEachStatement__separator->setContainment(true);
-        m_ForEachStatement__separator->setResolveProxies(true);
-        m_ForEachStatement__separator->setUnique(true);
-        m_ForEachStatement__separator->setDerived(false);
-        m_ForEachStatement__separator->setOrdered(true);
-        m_ForEachStatement__variable->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_ForEachStatement__variable->setDefaultValueLiteral("");
-        m_ForEachStatement__variable->setLowerBound(0);
-        m_ForEachStatement__variable->setUpperBound(1);
-        m_ForEachStatement__variable->setTransient(false);
-        m_ForEachStatement__variable->setVolatile(false);
-        m_ForEachStatement__variable->setChangeable(true);
-        m_ForEachStatement__variable->setContainment(true);
-        m_ForEachStatement__variable->setResolveProxies(true);
-        m_ForEachStatement__variable->setUnique(true);
-        m_ForEachStatement__variable->setDerived(false);
-        m_ForEachStatement__variable->setOrdered(true);
-        m_ForEachStatement__iteratorName->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_ForEachStatement__iteratorName->setDefaultValueLiteral("");
-        m_ForEachStatement__iteratorName->setLowerBound(0);
-        m_ForEachStatement__iteratorName->setUpperBound(1);
-        m_ForEachStatement__iteratorName->setTransient(false);
-        m_ForEachStatement__iteratorName->setVolatile(false);
-        m_ForEachStatement__iteratorName->setChangeable(true);
-        m_ForEachStatement__iteratorName->setContainment(true);
-        m_ForEachStatement__iteratorName->setResolveProxies(true);
-        m_ForEachStatement__iteratorName->setUnique(true);
-        m_ForEachStatement__iteratorName->setDerived(false);
-        m_ForEachStatement__iteratorName->setOrdered(true);
-
-    }
-
-    { // IfStatement
-        m_IfStatementEClass->setName("IfStatement");
-        m_IfStatementEClass->setAbstract(false);
-        m_IfStatementEClass->setInterface(false);
-
-        m_IfStatement__condition->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_IfStatement__condition->setDefaultValueLiteral("");
-        m_IfStatement__condition->setLowerBound(0);
-        m_IfStatement__condition->setUpperBound(1);
-        m_IfStatement__condition->setTransient(false);
-        m_IfStatement__condition->setVolatile(false);
-        m_IfStatement__condition->setChangeable(true);
-        m_IfStatement__condition->setContainment(true);
-        m_IfStatement__condition->setResolveProxies(true);
-        m_IfStatement__condition->setUnique(true);
-        m_IfStatement__condition->setDerived(false);
-        m_IfStatement__condition->setOrdered(true);
-        m_IfStatement__elseIf->setEType(m_IfStatementEClass);
-        m_IfStatement__elseIf->setDefaultValueLiteral("");
-        m_IfStatement__elseIf->setLowerBound(0);
-        m_IfStatement__elseIf->setUpperBound(1);
-        m_IfStatement__elseIf->setTransient(false);
-        m_IfStatement__elseIf->setVolatile(false);
-        m_IfStatement__elseIf->setChangeable(true);
-        m_IfStatement__elseIf->setContainment(true);
-        m_IfStatement__elseIf->setResolveProxies(true);
-        m_IfStatement__elseIf->setUnique(true);
-        m_IfStatement__elseIf->setDerived(false);
-        m_IfStatement__elseIf->setOrdered(true);
-
-    }
-
-    { // LetStatement
-        m_LetStatementEClass->setName("LetStatement");
-        m_LetStatementEClass->setAbstract(false);
-        m_LetStatementEClass->setInterface(false);
-
-        m_LetStatement__varName->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
-        m_LetStatement__varName->setDefaultValueLiteral("");
-        m_LetStatement__varName->setLowerBound(0);
-        m_LetStatement__varName->setUpperBound(1);
-        m_LetStatement__varName->setTransient(false);
-        m_LetStatement__varName->setVolatile(false);
-        m_LetStatement__varName->setChangeable(true);
-        m_LetStatement__varName->setContainment(true);
-        m_LetStatement__varName->setResolveProxies(true);
-        m_LetStatement__varName->setUnique(true);
-        m_LetStatement__varName->setDerived(false);
-        m_LetStatement__varName->setOrdered(true);
-        m_LetStatement__varValue->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_LetStatement__varValue->setDefaultValueLiteral("");
-        m_LetStatement__varValue->setLowerBound(0);
-        m_LetStatement__varValue->setUpperBound(1);
-        m_LetStatement__varValue->setTransient(false);
-        m_LetStatement__varValue->setVolatile(false);
-        m_LetStatement__varValue->setChangeable(true);
-        m_LetStatement__varValue->setContainment(true);
-        m_LetStatement__varValue->setResolveProxies(true);
-        m_LetStatement__varValue->setUnique(true);
-        m_LetStatement__varValue->setDerived(false);
-        m_LetStatement__varValue->setOrdered(true);
-
-    }
-
-    { // ProtectStatement
-        m_ProtectStatementEClass->setName("ProtectStatement");
-        m_ProtectStatementEClass->setAbstract(false);
-        m_ProtectStatementEClass->setInterface(false);
-        m_ProtectStatement__disable->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_ProtectStatement__disable->setDefaultValueLiteral("");
-        m_ProtectStatement__disable->setLowerBound(0);
-        m_ProtectStatement__disable->setUpperBound(1);
-        m_ProtectStatement__disable->setTransient(false);
-        m_ProtectStatement__disable->setVolatile(false);
-        m_ProtectStatement__disable->setChangeable(true);
-        m_ProtectStatement__disable->setUnsettable(false);
-        m_ProtectStatement__disable->setID(false);
-        m_ProtectStatement__disable->setUnique(true);
-        m_ProtectStatement__disable->setDerived(false);
-        m_ProtectStatement__disable->setOrdered(true);
-
-        m_ProtectStatement__commentStart->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ProtectStatement__commentStart->setDefaultValueLiteral("");
-        m_ProtectStatement__commentStart->setLowerBound(0);
-        m_ProtectStatement__commentStart->setUpperBound(1);
-        m_ProtectStatement__commentStart->setTransient(false);
-        m_ProtectStatement__commentStart->setVolatile(false);
-        m_ProtectStatement__commentStart->setChangeable(true);
-        m_ProtectStatement__commentStart->setContainment(true);
-        m_ProtectStatement__commentStart->setResolveProxies(true);
-        m_ProtectStatement__commentStart->setUnique(true);
-        m_ProtectStatement__commentStart->setDerived(false);
-        m_ProtectStatement__commentStart->setOrdered(true);
-        m_ProtectStatement__commentEnd->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ProtectStatement__commentEnd->setDefaultValueLiteral("");
-        m_ProtectStatement__commentEnd->setLowerBound(0);
-        m_ProtectStatement__commentEnd->setUpperBound(1);
-        m_ProtectStatement__commentEnd->setTransient(false);
-        m_ProtectStatement__commentEnd->setVolatile(false);
-        m_ProtectStatement__commentEnd->setChangeable(true);
-        m_ProtectStatement__commentEnd->setContainment(true);
-        m_ProtectStatement__commentEnd->setResolveProxies(true);
-        m_ProtectStatement__commentEnd->setUnique(true);
-        m_ProtectStatement__commentEnd->setDerived(false);
-        m_ProtectStatement__commentEnd->setOrdered(true);
-        m_ProtectStatement__id->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
-        m_ProtectStatement__id->setDefaultValueLiteral("");
-        m_ProtectStatement__id->setLowerBound(0);
-        m_ProtectStatement__id->setUpperBound(1);
-        m_ProtectStatement__id->setTransient(false);
-        m_ProtectStatement__id->setVolatile(false);
-        m_ProtectStatement__id->setChangeable(true);
-        m_ProtectStatement__id->setContainment(true);
-        m_ProtectStatement__id->setResolveProxies(true);
-        m_ProtectStatement__id->setUnique(true);
-        m_ProtectStatement__id->setDerived(false);
-        m_ProtectStatement__id->setOrdered(true);
-
-    }
-
-    { // TextStatement
-        m_TextStatementEClass->setName("TextStatement");
-        m_TextStatementEClass->setAbstract(false);
-        m_TextStatementEClass->setInterface(false);
-        m_TextStatement__value->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_TextStatement__value->setDefaultValueLiteral("");
-        m_TextStatement__value->setLowerBound(0);
-        m_TextStatement__value->setUpperBound(1);
-        m_TextStatement__value->setTransient(false);
-        m_TextStatement__value->setVolatile(false);
-        m_TextStatement__value->setChangeable(true);
-        m_TextStatement__value->setUnsettable(false);
-        m_TextStatement__value->setID(false);
-        m_TextStatement__value->setUnique(true);
-        m_TextStatement__value->setDerived(false);
-        m_TextStatement__value->setOrdered(true);
-        m_TextStatement__deleteLine->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_TextStatement__deleteLine->setDefaultValueLiteral("");
-        m_TextStatement__deleteLine->setLowerBound(0);
-        m_TextStatement__deleteLine->setUpperBound(1);
-        m_TextStatement__deleteLine->setTransient(false);
-        m_TextStatement__deleteLine->setVolatile(false);
-        m_TextStatement__deleteLine->setChangeable(true);
-        m_TextStatement__deleteLine->setUnsettable(false);
-        m_TextStatement__deleteLine->setID(false);
-        m_TextStatement__deleteLine->setUnique(true);
-        m_TextStatement__deleteLine->setDerived(false);
-        m_TextStatement__deleteLine->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_AbstractStatementEClass);
+        classifiers.push_back(m_AbstractStatementWithBodyEClass);
+        classifiers.push_back(m_ErrorStatementEClass);
+        classifiers.push_back(m_ExpandStatementEClass);
+        classifiers.push_back(m_ExpressionStatementEClass);
+        classifiers.push_back(m_FileStatementEClass);
+        classifiers.push_back(m_ForEachStatementEClass);
+        classifiers.push_back(m_IfStatementEClass);
+        classifiers.push_back(m_LetStatementEClass);
+        classifiers.push_back(m_ProtectStatementEClass);
+        classifiers.push_back(m_TextStatementEClass);
+    }();
 
     _initialize();
 }

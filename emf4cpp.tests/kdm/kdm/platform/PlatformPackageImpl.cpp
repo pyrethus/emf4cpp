@@ -54,677 +54,1687 @@ using namespace ::kdm::platform;
 
 PlatformPackage::PlatformPackage()
 {
-
-    // Feature definitions of AbstractPlatformElement
-    m_AbstractPlatformElement__source = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AbstractPlatformElement__relation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AbstractPlatformElement__abstraction = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AbstractPlatformElement__implementation = ::ecore::Ptr
-            < ::ecore::EReference > (new ::ecore::EReference);
-
-    // Feature definitions of PlatformModel
-    m_PlatformModel__platformElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of AbstractPlatformRelationship
-
-    // Feature definitions of Requires
-    m_Requires__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Requires__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ResourceType
-    m_ResourceType__platformElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of NamingResource
-
-    // Feature definitions of MarshalledResource
-
-    // Feature definitions of MessagingResource
-
-    // Feature definitions of FileResource
-
-    // Feature definitions of ExecutionResource
-
-    // Feature definitions of PlatformAction
-    m_PlatformAction__kind = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_PlatformAction__platformElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ExternalActor
-
-    // Feature definitions of DataManager
-
-    // Feature definitions of BindsTo
-    m_BindsTo__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_BindsTo__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of PlatformElement
-
-    // Feature definitions of PlatformRelationship
-    m_PlatformRelationship__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_PlatformRelationship__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of PlatformEvent
-    m_PlatformEvent__kind = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of LockResource
-
-    // Feature definitions of DeployedSoftwareSystem
-    m_DeployedSoftwareSystem__groupedComponent = ::ecore::Ptr
-            < ::ecore::EReference > (new ::ecore::EReference);
-
-    // Feature definitions of Machine
-    m_Machine__deployedComponent = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Machine__deployedResource = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of DeployedComponent
-    m_DeployedComponent__groupedCode = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of DeployedResource
-    m_DeployedResource__platformElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Loads
-    m_Loads__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Loads__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Spawns
-    m_Spawns__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Spawns__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of RuntimeResource
-
-    // Feature definitions of Thread
-
-    // Feature definitions of Process
-
-    // Feature definitions of ReadsResource
-    m_ReadsResource__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ReadsResource__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of WritesResource
-    m_WritesResource__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_WritesResource__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ManagesResource
-    m_ManagesResource__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ManagesResource__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of DefinedBy
-    m_DefinedBy__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_DefinedBy__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of StreamResource
-
+    m_AbstractPlatformElement__source = ::ecore::make< ::ecore::EReference >();
+    m_AbstractPlatformElement__relation =
+            ::ecore::make< ::ecore::EReference >();
+    m_AbstractPlatformElement__abstraction =
+            ::ecore::make< ::ecore::EReference >();
+    m_AbstractPlatformElement__implementation = ::ecore::make<
+            ::ecore::EReference >();
+    m_AbstractPlatformElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_AbstractPlatformRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_BindsTo__to = ::ecore::make< ::ecore::EReference >();
+    m_BindsTo__from = ::ecore::make< ::ecore::EReference >();
+    m_BindsToEClass = ::ecore::make< ::ecore::EClass >();
+    m_DataManagerEClass = ::ecore::make< ::ecore::EClass >();
+    m_DefinedBy__to = ::ecore::make< ::ecore::EReference >();
+    m_DefinedBy__from = ::ecore::make< ::ecore::EReference >();
+    m_DefinedByEClass = ::ecore::make< ::ecore::EClass >();
+    m_DeployedComponent__groupedCode = ::ecore::make< ::ecore::EReference >();
+    m_DeployedComponentEClass = ::ecore::make< ::ecore::EClass >();
+    m_DeployedResource__platformElement =
+            ::ecore::make< ::ecore::EReference >();
+    m_DeployedResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_DeployedSoftwareSystem__groupedComponent = ::ecore::make<
+            ::ecore::EReference >();
+    m_DeployedSoftwareSystemEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExecutionResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExternalActorEClass = ::ecore::make< ::ecore::EClass >();
+    m_FileResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_Loads__to = ::ecore::make< ::ecore::EReference >();
+    m_Loads__from = ::ecore::make< ::ecore::EReference >();
+    m_LoadsEClass = ::ecore::make< ::ecore::EClass >();
+    m_LockResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_Machine__deployedComponent = ::ecore::make< ::ecore::EReference >();
+    m_Machine__deployedResource = ::ecore::make< ::ecore::EReference >();
+    m_MachineEClass = ::ecore::make< ::ecore::EClass >();
+    m_ManagesResource__to = ::ecore::make< ::ecore::EReference >();
+    m_ManagesResource__from = ::ecore::make< ::ecore::EReference >();
+    m_ManagesResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_MarshalledResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_MessagingResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_NamingResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_PlatformAction__kind = ::ecore::make< ::ecore::EAttribute >();
+    m_PlatformAction__platformElement = ::ecore::make< ::ecore::EReference >();
+    m_PlatformActionEClass = ::ecore::make< ::ecore::EClass >();
+    m_PlatformElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_PlatformEvent__kind = ::ecore::make< ::ecore::EAttribute >();
+    m_PlatformEventEClass = ::ecore::make< ::ecore::EClass >();
+    m_PlatformModel__platformElement = ::ecore::make< ::ecore::EReference >();
+    m_PlatformModelEClass = ::ecore::make< ::ecore::EClass >();
+    m_PlatformRelationship__to = ::ecore::make< ::ecore::EReference >();
+    m_PlatformRelationship__from = ::ecore::make< ::ecore::EReference >();
+    m_PlatformRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_ProcessEClass = ::ecore::make< ::ecore::EClass >();
+    m_ReadsResource__to = ::ecore::make< ::ecore::EReference >();
+    m_ReadsResource__from = ::ecore::make< ::ecore::EReference >();
+    m_ReadsResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_Requires__to = ::ecore::make< ::ecore::EReference >();
+    m_Requires__from = ::ecore::make< ::ecore::EReference >();
+    m_RequiresEClass = ::ecore::make< ::ecore::EClass >();
+    m_ResourceType__platformElement = ::ecore::make< ::ecore::EReference >();
+    m_ResourceTypeEClass = ::ecore::make< ::ecore::EClass >();
+    m_RuntimeResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_Spawns__to = ::ecore::make< ::ecore::EReference >();
+    m_Spawns__from = ::ecore::make< ::ecore::EReference >();
+    m_SpawnsEClass = ::ecore::make< ::ecore::EClass >();
+    m_StreamResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_ThreadEClass = ::ecore::make< ::ecore::EClass >();
+    m_WritesResource__to = ::ecore::make< ::ecore::EReference >();
+    m_WritesResource__from = ::ecore::make< ::ecore::EReference >();
+    m_WritesResourceEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void PlatformPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = PlatformFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = PlatformFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // AbstractPlatformElement
-        m_AbstractPlatformElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractPlatformElementEClass->setClassifierID(
-                ABSTRACTPLATFORMELEMENT);
-        m_AbstractPlatformElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractPlatformElementEClass);
-        // m_AbstractPlatformElement__source has already been allocated above
-        m_AbstractPlatformElement__source->setFeatureID(
+    [this]()
+    { // Feature source of class AbstractPlatformElement
+        auto &&feature = m_AbstractPlatformElement__source;
+
+        // ENamedElement
+        feature->setName("source");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__SOURCE);
-        m_AbstractPlatformElement__source->setName("source");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractPlatformElement__source);
-        m_AbstractPlatformElement__source->basicsetEContainingClass(
-                m_AbstractPlatformElementEClass);
-        // m_AbstractPlatformElement__relation has already been allocated above
-        m_AbstractPlatformElement__relation->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractPlatformElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature relation of class AbstractPlatformElement
+        auto &&feature = m_AbstractPlatformElement__relation;
+
+        // ENamedElement
+        feature->setName("relation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractPlatformRelationshipEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__RELATION);
-        m_AbstractPlatformElement__relation->setName("relation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractPlatformElement__relation);
-        m_AbstractPlatformElement__relation->basicsetEContainingClass(
-                m_AbstractPlatformElementEClass);
-        // m_AbstractPlatformElement__abstraction has already been allocated above
-        m_AbstractPlatformElement__abstraction->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractPlatformElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature abstraction of class AbstractPlatformElement
+        auto &&feature = m_AbstractPlatformElement__abstraction;
+
+        // ENamedElement
+        feature->setName("abstraction");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__ABSTRACTION);
-        m_AbstractPlatformElement__abstraction->setName("abstraction");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractPlatformElement__abstraction);
-        m_AbstractPlatformElement__abstraction->basicsetEContainingClass(
-                m_AbstractPlatformElementEClass);
-        // m_AbstractPlatformElement__implementation has already been allocated above
-        m_AbstractPlatformElement__implementation->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractPlatformElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature implementation of class AbstractPlatformElement
+        auto &&feature = m_AbstractPlatformElement__implementation;
+
+        // ENamedElement
+        feature->setName("implementation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::platform::PlatformPackage::ABSTRACTPLATFORMELEMENT__IMPLEMENTATION);
-        m_AbstractPlatformElement__implementation->setName("implementation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractPlatformElement__implementation);
-        m_AbstractPlatformElement__implementation->basicsetEContainingClass(
-                m_AbstractPlatformElementEClass);
-    }
+        feature->basicsetEContainingClass(m_AbstractPlatformElementEClass);
 
-    { // PlatformModel
-        m_PlatformModelEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_PlatformModelEClass->setClassifierID(PLATFORMMODEL);
-        m_PlatformModelEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_PlatformModelEClass);
-        // m_PlatformModel__platformElement has already been allocated above
-        m_PlatformModel__platformElement->setFeatureID(
-                ::kdm::platform::PlatformPackage::PLATFORMMODEL__PLATFORMELEMENT);
-        m_PlatformModel__platformElement->setName("platformElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformModelEClass->getEStructuralFeatures()).basicAdd(
-                m_PlatformModel__platformElement);
-        m_PlatformModel__platformElement->basicsetEContainingClass(
-                m_PlatformModelEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    { // AbstractPlatformRelationship
-        m_AbstractPlatformRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractPlatformRelationshipEClass->setClassifierID(
-                ABSTRACTPLATFORMRELATIONSHIP);
-        m_AbstractPlatformRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractPlatformRelationshipEClass);
-    }
+    [this]()
+    { // Classifier AbstractPlatformElement
+        auto &&classifier = m_AbstractPlatformElementEClass;
 
-    { // Requires
-        m_RequiresEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_RequiresEClass->setClassifierID(REQUIRES);
-        m_RequiresEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_RequiresEClass);
-        // m_Requires__to has already been allocated above
-        m_Requires__to->setFeatureID(
-                ::kdm::platform::PlatformPackage::REQUIRES__TO);
-        m_Requires__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RequiresEClass->getEStructuralFeatures()).basicAdd(
-                m_Requires__to);
-        m_Requires__to->basicsetEContainingClass(m_RequiresEClass);
-        // m_Requires__from has already been allocated above
-        m_Requires__from->setFeatureID(
-                ::kdm::platform::PlatformPackage::REQUIRES__FROM);
-        m_Requires__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RequiresEClass->getEStructuralFeatures()).basicAdd(
-                m_Requires__from);
-        m_Requires__from->basicsetEContainingClass(m_RequiresEClass);
-    }
+        // ENamedElement
+        classifier->setName("AbstractPlatformElement");
 
-    { // ResourceType
-        m_ResourceTypeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ResourceTypeEClass->setClassifierID(RESOURCETYPE);
-        m_ResourceTypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ResourceTypeEClass);
-        // m_ResourceType__platformElement has already been allocated above
-        m_ResourceType__platformElement->setFeatureID(
-                ::kdm::platform::PlatformPackage::RESOURCETYPE__PLATFORMELEMENT);
-        m_ResourceType__platformElement->setName("platformElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ResourceTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_ResourceType__platformElement);
-        m_ResourceType__platformElement->basicsetEContainingClass(
-                m_ResourceTypeEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTPLATFORMELEMENT);
 
-    { // NamingResource
-        m_NamingResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_NamingResourceEClass->setClassifierID(NAMINGRESOURCE);
-        m_NamingResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NamingResourceEClass);
-    }
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractPlatformElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_AbstractPlatformElement__source);
+            eStructuralFeatures.basicAdd(m_AbstractPlatformElement__relation);
+            eStructuralFeatures.basicAdd(
+                    m_AbstractPlatformElement__abstraction);
+            eStructuralFeatures.basicAdd(
+                    m_AbstractPlatformElement__implementation);
+        }
+    }();
 
-    { // MarshalledResource
-        m_MarshalledResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_MarshalledResourceEClass->setClassifierID(MARSHALLEDRESOURCE);
-        m_MarshalledResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_MarshalledResourceEClass);
-    }
+    [this]()
+    { // Classifier AbstractPlatformRelationship
+        auto &&classifier = m_AbstractPlatformRelationshipEClass;
 
-    { // MessagingResource
-        m_MessagingResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_MessagingResourceEClass->setClassifierID(MESSAGINGRESOURCE);
-        m_MessagingResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_MessagingResourceEClass);
-    }
+        // ENamedElement
+        classifier->setName("AbstractPlatformRelationship");
 
-    { // FileResource
-        m_FileResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_FileResourceEClass->setClassifierID(FILERESOURCE);
-        m_FileResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_FileResourceEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTPLATFORMRELATIONSHIP);
 
-    { // ExecutionResource
-        m_ExecutionResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExecutionResourceEClass->setClassifierID(EXECUTIONRESOURCE);
-        m_ExecutionResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExecutionResourceEClass);
-    }
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+    }();
 
-    { // PlatformAction
-        m_PlatformActionEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_PlatformActionEClass->setClassifierID(PLATFORMACTION);
-        m_PlatformActionEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_PlatformActionEClass);
-        // m_PlatformAction__kind has already been allocated above
-        m_PlatformAction__kind->setFeatureID(
-                ::kdm::platform::PlatformPackage::PLATFORMACTION__KIND);
-        m_PlatformAction__kind->setName("kind");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformActionEClass->getEStructuralFeatures()).basicAdd(
-                m_PlatformAction__kind);
-        m_PlatformAction__kind->basicsetEContainingClass(
-                m_PlatformActionEClass);
-        // m_PlatformAction__platformElement has already been allocated above
-        m_PlatformAction__platformElement->setFeatureID(
-                ::kdm::platform::PlatformPackage::PLATFORMACTION__PLATFORMELEMENT);
-        m_PlatformAction__platformElement->setName("platformElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformActionEClass->getEStructuralFeatures()).basicAdd(
-                m_PlatformAction__platformElement);
-        m_PlatformAction__platformElement->basicsetEContainingClass(
-                m_PlatformActionEClass);
-    }
+    [this]()
+    { // Feature to of class BindsTo
+        auto &&feature = m_BindsTo__to;
 
-    { // ExternalActor
-        m_ExternalActorEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExternalActorEClass->setClassifierID(EXTERNALACTOR);
-        m_ExternalActorEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExternalActorEClass);
-    }
+        // ENamedElement
+        feature->setName("to");
 
-    { // DataManager
-        m_DataManagerEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DataManagerEClass->setClassifierID(DATAMANAGER);
-        m_DataManagerEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DataManagerEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    { // BindsTo
-        m_BindsToEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_BindsToEClass->setClassifierID(BINDSTO);
-        m_BindsToEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BindsToEClass);
-        // m_BindsTo__to has already been allocated above
-        m_BindsTo__to->setFeatureID(
-                ::kdm::platform::PlatformPackage::BINDSTO__TO);
-        m_BindsTo__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BindsToEClass->getEStructuralFeatures()).basicAdd(
-                m_BindsTo__to);
-        m_BindsTo__to->basicsetEContainingClass(m_BindsToEClass);
-        // m_BindsTo__from has already been allocated above
-        m_BindsTo__from->setFeatureID(
-                ::kdm::platform::PlatformPackage::BINDSTO__FROM);
-        m_BindsTo__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BindsToEClass->getEStructuralFeatures()).basicAdd(
-                m_BindsTo__from);
-        m_BindsTo__from->basicsetEContainingClass(m_BindsToEClass);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ResourceTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // PlatformElement
-        m_PlatformElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_PlatformElementEClass->setClassifierID(PLATFORMELEMENT);
-        m_PlatformElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_PlatformElementEClass);
-    }
+        feature->setFeatureID(::kdm::platform::PlatformPackage::BINDSTO__TO);
+        feature->basicsetEContainingClass(m_BindsToEClass);
 
-    { // PlatformRelationship
-        m_PlatformRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_PlatformRelationshipEClass->setClassifierID(PLATFORMRELATIONSHIP);
-        m_PlatformRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_PlatformRelationshipEClass);
-        // m_PlatformRelationship__to has already been allocated above
-        m_PlatformRelationship__to->setFeatureID(
-                ::kdm::platform::PlatformPackage::PLATFORMRELATIONSHIP__TO);
-        m_PlatformRelationship__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_PlatformRelationship__to);
-        m_PlatformRelationship__to->basicsetEContainingClass(
-                m_PlatformRelationshipEClass);
-        // m_PlatformRelationship__from has already been allocated above
-        m_PlatformRelationship__from->setFeatureID(
-                ::kdm::platform::PlatformPackage::PLATFORMRELATIONSHIP__FROM);
-        m_PlatformRelationship__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_PlatformRelationship__from);
-        m_PlatformRelationship__from->basicsetEContainingClass(
-                m_PlatformRelationshipEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    { // PlatformEvent
-        m_PlatformEventEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_PlatformEventEClass->setClassifierID(PLATFORMEVENT);
-        m_PlatformEventEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_PlatformEventEClass);
-        // m_PlatformEvent__kind has already been allocated above
-        m_PlatformEvent__kind->setFeatureID(
-                ::kdm::platform::PlatformPackage::PLATFORMEVENT__KIND);
-        m_PlatformEvent__kind->setName("kind");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformEventEClass->getEStructuralFeatures()).basicAdd(
-                m_PlatformEvent__kind);
-        m_PlatformEvent__kind->basicsetEContainingClass(m_PlatformEventEClass);
-    }
+    [this]()
+    { // Feature from of class BindsTo
+        auto &&feature = m_BindsTo__from;
 
-    { // LockResource
-        m_LockResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_LockResourceEClass->setClassifierID(LOCKRESOURCE);
-        m_LockResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_LockResourceEClass);
-    }
+        // ENamedElement
+        feature->setName("from");
 
-    { // DeployedSoftwareSystem
-        m_DeployedSoftwareSystemEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DeployedSoftwareSystemEClass->setClassifierID(DEPLOYEDSOFTWARESYSTEM);
-        m_DeployedSoftwareSystemEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DeployedSoftwareSystemEClass);
-        // m_DeployedSoftwareSystem__groupedComponent has already been allocated above
-        m_DeployedSoftwareSystem__groupedComponent->setFeatureID(
-                ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__GROUPEDCOMPONENT);
-        m_DeployedSoftwareSystem__groupedComponent->setName("groupedComponent");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedSoftwareSystemEClass->getEStructuralFeatures()).basicAdd(
-                m_DeployedSoftwareSystem__groupedComponent);
-        m_DeployedSoftwareSystem__groupedComponent->basicsetEContainingClass(
-                m_DeployedSoftwareSystemEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    { // Machine
-        m_MachineEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_MachineEClass->setClassifierID(MACHINE);
-        m_MachineEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_MachineEClass);
-        // m_Machine__deployedComponent has already been allocated above
-        m_Machine__deployedComponent->setFeatureID(
-                ::kdm::platform::PlatformPackage::MACHINE__DEPLOYEDCOMPONENT);
-        m_Machine__deployedComponent->setName("deployedComponent");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MachineEClass->getEStructuralFeatures()).basicAdd(
-                m_Machine__deployedComponent);
-        m_Machine__deployedComponent->basicsetEContainingClass(m_MachineEClass);
-        // m_Machine__deployedResource has already been allocated above
-        m_Machine__deployedResource->setFeatureID(
-                ::kdm::platform::PlatformPackage::MACHINE__DEPLOYEDRESOURCE);
-        m_Machine__deployedResource->setName("deployedResource");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MachineEClass->getEStructuralFeatures()).basicAdd(
-                m_Machine__deployedResource);
-        m_Machine__deployedResource->basicsetEContainingClass(m_MachineEClass);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ResourceTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // DeployedComponent
-        m_DeployedComponentEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DeployedComponentEClass->setClassifierID(DEPLOYEDCOMPONENT);
-        m_DeployedComponentEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DeployedComponentEClass);
-        // m_DeployedComponent__groupedCode has already been allocated above
-        m_DeployedComponent__groupedCode->setFeatureID(
-                ::kdm::platform::PlatformPackage::DEPLOYEDCOMPONENT__GROUPEDCODE);
-        m_DeployedComponent__groupedCode->setName("groupedCode");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedComponentEClass->getEStructuralFeatures()).basicAdd(
-                m_DeployedComponent__groupedCode);
-        m_DeployedComponent__groupedCode->basicsetEContainingClass(
-                m_DeployedComponentEClass);
-    }
+        feature->setFeatureID(::kdm::platform::PlatformPackage::BINDSTO__FROM);
+        feature->basicsetEContainingClass(m_BindsToEClass);
 
-    { // DeployedResource
-        m_DeployedResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DeployedResourceEClass->setClassifierID(DEPLOYEDRESOURCE);
-        m_DeployedResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DeployedResourceEClass);
-        // m_DeployedResource__platformElement has already been allocated above
-        m_DeployedResource__platformElement->setFeatureID(
-                ::kdm::platform::PlatformPackage::DEPLOYEDRESOURCE__PLATFORMELEMENT);
-        m_DeployedResource__platformElement->setName("platformElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedResourceEClass->getEStructuralFeatures()).basicAdd(
-                m_DeployedResource__platformElement);
-        m_DeployedResource__platformElement->basicsetEContainingClass(
-                m_DeployedResourceEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    { // Loads
-        m_LoadsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_LoadsEClass->setClassifierID(LOADS);
-        m_LoadsEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_LoadsEClass);
-        // m_Loads__to has already been allocated above
-        m_Loads__to->setFeatureID(::kdm::platform::PlatformPackage::LOADS__TO);
-        m_Loads__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LoadsEClass->getEStructuralFeatures()).basicAdd(
-                m_Loads__to);
-        m_Loads__to->basicsetEContainingClass(m_LoadsEClass);
-        // m_Loads__from has already been allocated above
-        m_Loads__from->setFeatureID(
-                ::kdm::platform::PlatformPackage::LOADS__FROM);
-        m_Loads__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LoadsEClass->getEStructuralFeatures()).basicAdd(
-                m_Loads__from);
-        m_Loads__from->basicsetEContainingClass(m_LoadsEClass);
-    }
+    [this]()
+    { // Classifier BindsTo
+        auto &&classifier = m_BindsToEClass;
 
-    { // Spawns
-        m_SpawnsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_SpawnsEClass->setClassifierID(SPAWNS);
-        m_SpawnsEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_SpawnsEClass);
-        // m_Spawns__to has already been allocated above
-        m_Spawns__to->setFeatureID(
-                ::kdm::platform::PlatformPackage::SPAWNS__TO);
-        m_Spawns__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SpawnsEClass->getEStructuralFeatures()).basicAdd(
-                m_Spawns__to);
-        m_Spawns__to->basicsetEContainingClass(m_SpawnsEClass);
-        // m_Spawns__from has already been allocated above
-        m_Spawns__from->setFeatureID(
-                ::kdm::platform::PlatformPackage::SPAWNS__FROM);
-        m_Spawns__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SpawnsEClass->getEStructuralFeatures()).basicAdd(
-                m_Spawns__from);
-        m_Spawns__from->basicsetEContainingClass(m_SpawnsEClass);
-    }
+        // ENamedElement
+        classifier->setName("BindsTo");
 
-    { // RuntimeResource
-        m_RuntimeResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_RuntimeResourceEClass->setClassifierID(RUNTIMERESOURCE);
-        m_RuntimeResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_RuntimeResourceEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(BINDSTO);
 
-    { // Thread
-        m_ThreadEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_ThreadEClass->setClassifierID(THREAD);
-        m_ThreadEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ThreadEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BindsToEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_BindsTo__to);
+            eStructuralFeatures.basicAdd(m_BindsTo__from);
+        }
+    }();
 
-    { // Process
-        m_ProcessEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ProcessEClass->setClassifierID(PROCESS);
-        m_ProcessEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ProcessEClass);
-    }
+    [this]()
+    { // Classifier DataManager
+        auto &&classifier = m_DataManagerEClass;
 
-    { // ReadsResource
-        m_ReadsResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ReadsResourceEClass->setClassifierID(READSRESOURCE);
-        m_ReadsResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ReadsResourceEClass);
-        // m_ReadsResource__to has already been allocated above
-        m_ReadsResource__to->setFeatureID(
-                ::kdm::platform::PlatformPackage::READSRESOURCE__TO);
-        m_ReadsResource__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsResourceEClass->getEStructuralFeatures()).basicAdd(
-                m_ReadsResource__to);
-        m_ReadsResource__to->basicsetEContainingClass(m_ReadsResourceEClass);
-        // m_ReadsResource__from has already been allocated above
-        m_ReadsResource__from->setFeatureID(
-                ::kdm::platform::PlatformPackage::READSRESOURCE__FROM);
-        m_ReadsResource__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsResourceEClass->getEStructuralFeatures()).basicAdd(
-                m_ReadsResource__from);
-        m_ReadsResource__from->basicsetEContainingClass(m_ReadsResourceEClass);
-    }
+        // ENamedElement
+        classifier->setName("DataManager");
 
-    { // WritesResource
-        m_WritesResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_WritesResourceEClass->setClassifierID(WRITESRESOURCE);
-        m_WritesResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_WritesResourceEClass);
-        // m_WritesResource__to has already been allocated above
-        m_WritesResource__to->setFeatureID(
-                ::kdm::platform::PlatformPackage::WRITESRESOURCE__TO);
-        m_WritesResource__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesResourceEClass->getEStructuralFeatures()).basicAdd(
-                m_WritesResource__to);
-        m_WritesResource__to->basicsetEContainingClass(m_WritesResourceEClass);
-        // m_WritesResource__from has already been allocated above
-        m_WritesResource__from->setFeatureID(
-                ::kdm::platform::PlatformPackage::WRITESRESOURCE__FROM);
-        m_WritesResource__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesResourceEClass->getEStructuralFeatures()).basicAdd(
-                m_WritesResource__from);
-        m_WritesResource__from->basicsetEContainingClass(
-                m_WritesResourceEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(DATAMANAGER);
 
-    { // ManagesResource
-        m_ManagesResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ManagesResourceEClass->setClassifierID(MANAGESRESOURCE);
-        m_ManagesResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ManagesResourceEClass);
-        // m_ManagesResource__to has already been allocated above
-        m_ManagesResource__to->setFeatureID(
-                ::kdm::platform::PlatformPackage::MANAGESRESOURCE__TO);
-        m_ManagesResource__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesResourceEClass->getEStructuralFeatures()).basicAdd(
-                m_ManagesResource__to);
-        m_ManagesResource__to->basicsetEContainingClass(
-                m_ManagesResourceEClass);
-        // m_ManagesResource__from has already been allocated above
-        m_ManagesResource__from->setFeatureID(
-                ::kdm::platform::PlatformPackage::MANAGESRESOURCE__FROM);
-        m_ManagesResource__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesResourceEClass->getEStructuralFeatures()).basicAdd(
-                m_ManagesResource__from);
-        m_ManagesResource__from->basicsetEContainingClass(
-                m_ManagesResourceEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
 
-    { // DefinedBy
-        m_DefinedByEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DefinedByEClass->setClassifierID(DEFINEDBY);
-        m_DefinedByEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DefinedByEClass);
-        // m_DefinedBy__to has already been allocated above
-        m_DefinedBy__to->setFeatureID(
-                ::kdm::platform::PlatformPackage::DEFINEDBY__TO);
-        m_DefinedBy__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedByEClass->getEStructuralFeatures()).basicAdd(
-                m_DefinedBy__to);
-        m_DefinedBy__to->basicsetEContainingClass(m_DefinedByEClass);
-        // m_DefinedBy__from has already been allocated above
-        m_DefinedBy__from->setFeatureID(
+    [this]()
+    { // Feature to of class DefinedBy
+        auto &&feature = m_DefinedBy__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::platform::PlatformPackage::DEFINEDBY__TO);
+        feature->basicsetEContainingClass(m_DefinedByEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class DefinedBy
+        auto &&feature = m_DefinedBy__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::platform::PlatformPackage::DEFINEDBY__FROM);
-        m_DefinedBy__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedByEClass->getEStructuralFeatures()).basicAdd(
-                m_DefinedBy__from);
-        m_DefinedBy__from->basicsetEContainingClass(m_DefinedByEClass);
-    }
+        feature->basicsetEContainingClass(m_DefinedByEClass);
 
-    { // StreamResource
-        m_StreamResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_StreamResourceEClass->setClassifierID(STREAMRESOURCE);
-        m_StreamResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_StreamResourceEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    // Create enums
+    [this]()
+    { // Classifier DefinedBy
+        auto &&classifier = m_DefinedByEClass;
 
-    // Create data types
+        // ENamedElement
+        classifier->setName("DefinedBy");
+
+        // EClassifier
+        classifier->setClassifierID(DEFINEDBY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DefinedByEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DefinedBy__to);
+            eStructuralFeatures.basicAdd(m_DefinedBy__from);
+        }
+    }();
+
+    [this]()
+    { // Feature groupedCode of class DeployedComponent
+        auto &&feature = m_DeployedComponent__groupedCode;
+
+        // ENamedElement
+        feature->setName("groupedCode");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getModule());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::DEPLOYEDCOMPONENT__GROUPEDCODE);
+        feature->basicsetEContainingClass(m_DeployedComponentEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DeployedComponent
+        auto &&classifier = m_DeployedComponentEClass;
+
+        // ENamedElement
+        classifier->setName("DeployedComponent");
+
+        // EClassifier
+        classifier->setClassifierID(DEPLOYEDCOMPONENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedComponentEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DeployedComponent__groupedCode);
+        }
+    }();
+
+    [this]()
+    { // Feature platformElement of class DeployedResource
+        auto &&feature = m_DeployedResource__platformElement;
+
+        // ENamedElement
+        feature->setName("platformElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ResourceTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::DEPLOYEDRESOURCE__PLATFORMELEMENT);
+        feature->basicsetEContainingClass(m_DeployedResourceEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DeployedResource
+        auto &&classifier = m_DeployedResourceEClass;
+
+        // ENamedElement
+        classifier->setName("DeployedResource");
+
+        // EClassifier
+        classifier->setClassifierID(DEPLOYEDRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedResourceEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DeployedResource__platformElement);
+        }
+    }();
+
+    [this]()
+    { // Feature groupedComponent of class DeployedSoftwareSystem
+        auto &&feature = m_DeployedSoftwareSystem__groupedComponent;
+
+        // ENamedElement
+        feature->setName("groupedComponent");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_DeployedComponentEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::DEPLOYEDSOFTWARESYSTEM__GROUPEDCOMPONENT);
+        feature->basicsetEContainingClass(m_DeployedSoftwareSystemEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DeployedSoftwareSystem
+        auto &&classifier = m_DeployedSoftwareSystemEClass;
+
+        // ENamedElement
+        classifier->setName("DeployedSoftwareSystem");
+
+        // EClassifier
+        classifier->setClassifierID(DEPLOYEDSOFTWARESYSTEM);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeployedSoftwareSystemEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(
+                    m_DeployedSoftwareSystem__groupedComponent);
+        }
+    }();
+
+    [this]()
+    { // Classifier ExecutionResource
+        auto &&classifier = m_ExecutionResourceEClass;
+
+        // ENamedElement
+        classifier->setName("ExecutionResource");
+
+        // EClassifier
+        classifier->setClassifierID(EXECUTIONRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier ExternalActor
+        auto &&classifier = m_ExternalActorEClass;
+
+        // ENamedElement
+        classifier->setName("ExternalActor");
+
+        // EClassifier
+        classifier->setClassifierID(EXTERNALACTOR);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier FileResource
+        auto &&classifier = m_FileResourceEClass;
+
+        // ENamedElement
+        classifier->setName("FileResource");
+
+        // EClassifier
+        classifier->setClassifierID(FILERESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class Loads
+        auto &&feature = m_Loads__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_DeployedComponentEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::platform::PlatformPackage::LOADS__TO);
+        feature->basicsetEContainingClass(m_LoadsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Loads
+        auto &&feature = m_Loads__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::platform::PlatformPackage::LOADS__FROM);
+        feature->basicsetEContainingClass(m_LoadsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Loads
+        auto &&classifier = m_LoadsEClass;
+
+        // ENamedElement
+        classifier->setName("Loads");
+
+        // EClassifier
+        classifier->setClassifierID(LOADS);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LoadsEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Loads__to);
+            eStructuralFeatures.basicAdd(m_Loads__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier LockResource
+        auto &&classifier = m_LockResourceEClass;
+
+        // ENamedElement
+        classifier->setName("LockResource");
+
+        // EClassifier
+        classifier->setClassifierID(LOCKRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature deployedComponent of class Machine
+        auto &&feature = m_Machine__deployedComponent;
+
+        // ENamedElement
+        feature->setName("deployedComponent");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_DeployedComponentEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::MACHINE__DEPLOYEDCOMPONENT);
+        feature->basicsetEContainingClass(m_MachineEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature deployedResource of class Machine
+        auto &&feature = m_Machine__deployedResource;
+
+        // ENamedElement
+        feature->setName("deployedResource");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_DeployedResourceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::MACHINE__DEPLOYEDRESOURCE);
+        feature->basicsetEContainingClass(m_MachineEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Machine
+        auto &&classifier = m_MachineEClass;
+
+        // ENamedElement
+        classifier->setName("Machine");
+
+        // EClassifier
+        classifier->setClassifierID(MACHINE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_MachineEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Machine__deployedComponent);
+            eStructuralFeatures.basicAdd(m_Machine__deployedResource);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class ManagesResource
+        auto &&feature = m_ManagesResource__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ResourceTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::MANAGESRESOURCE__TO);
+        feature->basicsetEContainingClass(m_ManagesResourceEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ManagesResource
+        auto &&feature = m_ManagesResource__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::MANAGESRESOURCE__FROM);
+        feature->basicsetEContainingClass(m_ManagesResourceEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ManagesResource
+        auto &&classifier = m_ManagesResourceEClass;
+
+        // ENamedElement
+        classifier->setName("ManagesResource");
+
+        // EClassifier
+        classifier->setClassifierID(MANAGESRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesResourceEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ManagesResource__to);
+            eStructuralFeatures.basicAdd(m_ManagesResource__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier MarshalledResource
+        auto &&classifier = m_MarshalledResourceEClass;
+
+        // ENamedElement
+        classifier->setName("MarshalledResource");
+
+        // EClassifier
+        classifier->setClassifierID(MARSHALLEDRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier MessagingResource
+        auto &&classifier = m_MessagingResourceEClass;
+
+        // ENamedElement
+        classifier->setName("MessagingResource");
+
+        // EClassifier
+        classifier->setClassifierID(MESSAGINGRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier NamingResource
+        auto &&classifier = m_NamingResourceEClass;
+
+        // ENamedElement
+        classifier->setName("NamingResource");
+
+        // EClassifier
+        classifier->setClassifierID(NAMINGRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature kind of class PlatformAction
+        auto &&feature = m_PlatformAction__kind;
+
+        // ENamedElement
+        feature->setName("kind");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::PLATFORMACTION__KIND);
+        feature->basicsetEContainingClass(m_PlatformActionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature platformElement of class PlatformAction
+        auto &&feature = m_PlatformAction__platformElement;
+
+        // ENamedElement
+        feature->setName("platformElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_PlatformEventEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::PLATFORMACTION__PLATFORMELEMENT);
+        feature->basicsetEContainingClass(m_PlatformActionEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier PlatformAction
+        auto &&classifier = m_PlatformActionEClass;
+
+        // ENamedElement
+        classifier->setName("PlatformAction");
+
+        // EClassifier
+        classifier->setClassifierID(PLATFORMACTION);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformActionEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_PlatformAction__kind);
+            eStructuralFeatures.basicAdd(m_PlatformAction__platformElement);
+        }
+    }();
+
+    [this]()
+    { // Classifier PlatformElement
+        auto &&classifier = m_PlatformElementEClass;
+
+        // ENamedElement
+        classifier->setName("PlatformElement");
+
+        // EClassifier
+        classifier->setClassifierID(PLATFORMELEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature kind of class PlatformEvent
+        auto &&feature = m_PlatformEvent__kind;
+
+        // ENamedElement
+        feature->setName("kind");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::PLATFORMEVENT__KIND);
+        feature->basicsetEContainingClass(m_PlatformEventEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier PlatformEvent
+        auto &&classifier = m_PlatformEventEClass;
+
+        // ENamedElement
+        classifier->setName("PlatformEvent");
+
+        // EClassifier
+        classifier->setClassifierID(PLATFORMEVENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformEventEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_PlatformEvent__kind);
+        }
+    }();
+
+    [this]()
+    { // Feature platformElement of class PlatformModel
+        auto &&feature = m_PlatformModel__platformElement;
+
+        // ENamedElement
+        feature->setName("platformElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractPlatformElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::PLATFORMMODEL__PLATFORMELEMENT);
+        feature->basicsetEContainingClass(m_PlatformModelEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier PlatformModel
+        auto &&classifier = m_PlatformModelEClass;
+
+        // ENamedElement
+        classifier->setName("PlatformModel");
+
+        // EClassifier
+        classifier->setClassifierID(PLATFORMMODEL);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformModelEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_PlatformModel__platformElement);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class PlatformRelationship
+        auto &&feature = m_PlatformRelationship__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::PLATFORMRELATIONSHIP__TO);
+        feature->basicsetEContainingClass(m_PlatformRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class PlatformRelationship
+        auto &&feature = m_PlatformRelationship__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractPlatformElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::PLATFORMRELATIONSHIP__FROM);
+        feature->basicsetEContainingClass(m_PlatformRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier PlatformRelationship
+        auto &&classifier = m_PlatformRelationshipEClass;
+
+        // ENamedElement
+        classifier->setName("PlatformRelationship");
+
+        // EClassifier
+        classifier->setClassifierID(PLATFORMRELATIONSHIP);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PlatformRelationshipEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_PlatformRelationship__to);
+            eStructuralFeatures.basicAdd(m_PlatformRelationship__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier Process
+        auto &&classifier = m_ProcessEClass;
+
+        // ENamedElement
+        classifier->setName("Process");
+
+        // EClassifier
+        classifier->setClassifierID(PROCESS);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class ReadsResource
+        auto &&feature = m_ReadsResource__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ResourceTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::READSRESOURCE__TO);
+        feature->basicsetEContainingClass(m_ReadsResourceEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ReadsResource
+        auto &&feature = m_ReadsResource__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::READSRESOURCE__FROM);
+        feature->basicsetEContainingClass(m_ReadsResourceEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ReadsResource
+        auto &&classifier = m_ReadsResourceEClass;
+
+        // ENamedElement
+        classifier->setName("ReadsResource");
+
+        // EClassifier
+        classifier->setClassifierID(READSRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsResourceEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ReadsResource__to);
+            eStructuralFeatures.basicAdd(m_ReadsResource__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class Requires
+        auto &&feature = m_Requires__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractPlatformElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::platform::PlatformPackage::REQUIRES__TO);
+        feature->basicsetEContainingClass(m_RequiresEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Requires
+        auto &&feature = m_Requires__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_DeployedComponentEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::platform::PlatformPackage::REQUIRES__FROM);
+        feature->basicsetEContainingClass(m_RequiresEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Requires
+        auto &&classifier = m_RequiresEClass;
+
+        // ENamedElement
+        classifier->setName("Requires");
+
+        // EClassifier
+        classifier->setClassifierID(REQUIRES);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_RequiresEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Requires__to);
+            eStructuralFeatures.basicAdd(m_Requires__from);
+        }
+    }();
+
+    [this]()
+    { // Feature platformElement of class ResourceType
+        auto &&feature = m_ResourceType__platformElement;
+
+        // ENamedElement
+        feature->setName("platformElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractPlatformElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::RESOURCETYPE__PLATFORMELEMENT);
+        feature->basicsetEContainingClass(m_ResourceTypeEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ResourceType
+        auto &&classifier = m_ResourceTypeEClass;
+
+        // ENamedElement
+        classifier->setName("ResourceType");
+
+        // EClassifier
+        classifier->setClassifierID(RESOURCETYPE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ResourceTypeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ResourceType__platformElement);
+        }
+    }();
+
+    [this]()
+    { // Classifier RuntimeResource
+        auto &&classifier = m_RuntimeResourceEClass;
+
+        // ENamedElement
+        classifier->setName("RuntimeResource");
+
+        // EClassifier
+        classifier->setClassifierID(RUNTIMERESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class Spawns
+        auto &&feature = m_Spawns__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_RuntimeResourceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::platform::PlatformPackage::SPAWNS__TO);
+        feature->basicsetEContainingClass(m_SpawnsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Spawns
+        auto &&feature = m_Spawns__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::platform::PlatformPackage::SPAWNS__FROM);
+        feature->basicsetEContainingClass(m_SpawnsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Spawns
+        auto &&classifier = m_SpawnsEClass;
+
+        // ENamedElement
+        classifier->setName("Spawns");
+
+        // EClassifier
+        classifier->setClassifierID(SPAWNS);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SpawnsEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Spawns__to);
+            eStructuralFeatures.basicAdd(m_Spawns__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier StreamResource
+        auto &&classifier = m_StreamResourceEClass;
+
+        // ENamedElement
+        classifier->setName("StreamResource");
+
+        // EClassifier
+        classifier->setClassifierID(STREAMRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier Thread
+        auto &&classifier = m_ThreadEClass;
+
+        // ENamedElement
+        classifier->setName("Thread");
+
+        // EClassifier
+        classifier->setClassifierID(THREAD);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class WritesResource
+        auto &&feature = m_WritesResource__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ResourceTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::WRITESRESOURCE__TO);
+        feature->basicsetEContainingClass(m_WritesResourceEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class WritesResource
+        auto &&feature = m_WritesResource__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::platform::PlatformPackage::WRITESRESOURCE__FROM);
+        feature->basicsetEContainingClass(m_WritesResourceEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier WritesResource
+        auto &&classifier = m_WritesResourceEClass;
+
+        // ENamedElement
+        classifier->setName("WritesResource");
+
+        // EClassifier
+        classifier->setClassifierID(WRITESRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesResourceEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_WritesResource__to);
+            eStructuralFeatures.basicAdd(m_WritesResource__from);
+        }
+    }();
 
     // Initialize package
     setName("platform");
@@ -734,710 +1744,105 @@ void PlatformPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_AbstractPlatformElementEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-    m_PlatformModelEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
-    m_AbstractPlatformRelationshipEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
-    m_RequiresEClass->getESuperTypes().push_back(
-            m_AbstractPlatformRelationshipEClass);
-    m_ResourceTypeEClass->getESuperTypes().push_back(
-            m_AbstractPlatformElementEClass);
-    m_NamingResourceEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
-    m_MarshalledResourceEClass->getESuperTypes().push_back(
-            m_ResourceTypeEClass);
-    m_MessagingResourceEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
-    m_FileResourceEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
-    m_ExecutionResourceEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
-    m_PlatformActionEClass->getESuperTypes().push_back(
-            m_AbstractPlatformElementEClass);
-    m_ExternalActorEClass->getESuperTypes().push_back(m_PlatformActionEClass);
-    m_DataManagerEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
-    m_BindsToEClass->getESuperTypes().push_back(
-            m_AbstractPlatformRelationshipEClass);
-    m_PlatformElementEClass->getESuperTypes().push_back(
-            m_AbstractPlatformElementEClass);
-    m_PlatformRelationshipEClass->getESuperTypes().push_back(
-            m_AbstractPlatformRelationshipEClass);
-    m_PlatformEventEClass->getESuperTypes().push_back(
-            m_AbstractPlatformElementEClass);
-    m_LockResourceEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
-    m_DeployedSoftwareSystemEClass->getESuperTypes().push_back(
-            m_AbstractPlatformElementEClass);
-    m_MachineEClass->getESuperTypes().push_back(
-            m_AbstractPlatformElementEClass);
-    m_DeployedComponentEClass->getESuperTypes().push_back(
-            m_AbstractPlatformElementEClass);
-    m_DeployedResourceEClass->getESuperTypes().push_back(
-            m_AbstractPlatformElementEClass);
-    m_LoadsEClass->getESuperTypes().push_back(
-            m_AbstractPlatformRelationshipEClass);
-    m_SpawnsEClass->getESuperTypes().push_back(
-            m_AbstractPlatformRelationshipEClass);
-    m_RuntimeResourceEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
-    m_ThreadEClass->getESuperTypes().push_back(m_RuntimeResourceEClass);
-    m_ProcessEClass->getESuperTypes().push_back(m_RuntimeResourceEClass);
-    m_ReadsResourceEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_WritesResourceEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_ManagesResourceEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_DefinedByEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_StreamResourceEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // AbstractPlatformElement
-        m_AbstractPlatformElementEClass->setName("AbstractPlatformElement");
-        m_AbstractPlatformElementEClass->setAbstract(true);
-        m_AbstractPlatformElementEClass->setInterface(false);
-
-        m_AbstractPlatformElement__source->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_AbstractPlatformElement__source->setDefaultValueLiteral("");
-        m_AbstractPlatformElement__source->setLowerBound(0);
-        m_AbstractPlatformElement__source->setUpperBound(-1);
-        m_AbstractPlatformElement__source->setTransient(false);
-        m_AbstractPlatformElement__source->setVolatile(false);
-        m_AbstractPlatformElement__source->setChangeable(true);
-        m_AbstractPlatformElement__source->setContainment(true);
-        m_AbstractPlatformElement__source->setResolveProxies(true);
-        m_AbstractPlatformElement__source->setUnique(true);
-        m_AbstractPlatformElement__source->setDerived(false);
-        m_AbstractPlatformElement__source->setOrdered(false);
-        m_AbstractPlatformElement__relation->setEType(
-                m_AbstractPlatformRelationshipEClass);
-        m_AbstractPlatformElement__relation->setDefaultValueLiteral("");
-        m_AbstractPlatformElement__relation->setLowerBound(0);
-        m_AbstractPlatformElement__relation->setUpperBound(-1);
-        m_AbstractPlatformElement__relation->setTransient(false);
-        m_AbstractPlatformElement__relation->setVolatile(false);
-        m_AbstractPlatformElement__relation->setChangeable(true);
-        m_AbstractPlatformElement__relation->setContainment(true);
-        m_AbstractPlatformElement__relation->setResolveProxies(true);
-        m_AbstractPlatformElement__relation->setUnique(true);
-        m_AbstractPlatformElement__relation->setDerived(false);
-        m_AbstractPlatformElement__relation->setOrdered(false);
-        m_AbstractPlatformElement__abstraction->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_AbstractPlatformElement__abstraction->setDefaultValueLiteral("");
-        m_AbstractPlatformElement__abstraction->setLowerBound(0);
-        m_AbstractPlatformElement__abstraction->setUpperBound(-1);
-        m_AbstractPlatformElement__abstraction->setTransient(false);
-        m_AbstractPlatformElement__abstraction->setVolatile(false);
-        m_AbstractPlatformElement__abstraction->setChangeable(true);
-        m_AbstractPlatformElement__abstraction->setContainment(true);
-        m_AbstractPlatformElement__abstraction->setResolveProxies(true);
-        m_AbstractPlatformElement__abstraction->setUnique(true);
-        m_AbstractPlatformElement__abstraction->setDerived(false);
-        m_AbstractPlatformElement__abstraction->setOrdered(true);
-        m_AbstractPlatformElement__implementation->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
-        m_AbstractPlatformElement__implementation->setDefaultValueLiteral("");
-        m_AbstractPlatformElement__implementation->setLowerBound(0);
-        m_AbstractPlatformElement__implementation->setUpperBound(-1);
-        m_AbstractPlatformElement__implementation->setTransient(false);
-        m_AbstractPlatformElement__implementation->setVolatile(false);
-        m_AbstractPlatformElement__implementation->setChangeable(true);
-        m_AbstractPlatformElement__implementation->setContainment(false);
-        m_AbstractPlatformElement__implementation->setResolveProxies(true);
-        m_AbstractPlatformElement__implementation->setUnique(true);
-        m_AbstractPlatformElement__implementation->setDerived(false);
-        m_AbstractPlatformElement__implementation->setOrdered(false);
-
-    }
-
-    { // PlatformModel
-        m_PlatformModelEClass->setName("PlatformModel");
-        m_PlatformModelEClass->setAbstract(false);
-        m_PlatformModelEClass->setInterface(false);
-
-        m_PlatformModel__platformElement->setEType(
-                m_AbstractPlatformElementEClass);
-        m_PlatformModel__platformElement->setDefaultValueLiteral("");
-        m_PlatformModel__platformElement->setLowerBound(0);
-        m_PlatformModel__platformElement->setUpperBound(-1);
-        m_PlatformModel__platformElement->setTransient(false);
-        m_PlatformModel__platformElement->setVolatile(false);
-        m_PlatformModel__platformElement->setChangeable(true);
-        m_PlatformModel__platformElement->setContainment(true);
-        m_PlatformModel__platformElement->setResolveProxies(true);
-        m_PlatformModel__platformElement->setUnique(true);
-        m_PlatformModel__platformElement->setDerived(false);
-        m_PlatformModel__platformElement->setOrdered(false);
-
-    }
-
-    { // AbstractPlatformRelationship
-        m_AbstractPlatformRelationshipEClass->setName(
-                "AbstractPlatformRelationship");
-        m_AbstractPlatformRelationshipEClass->setAbstract(true);
-        m_AbstractPlatformRelationshipEClass->setInterface(false);
-
-    }
-
-    { // Requires
-        m_RequiresEClass->setName("Requires");
-        m_RequiresEClass->setAbstract(false);
-        m_RequiresEClass->setInterface(false);
-
-        m_Requires__to->setEType(m_AbstractPlatformElementEClass);
-        m_Requires__to->setDefaultValueLiteral("");
-        m_Requires__to->setLowerBound(1);
-        m_Requires__to->setUpperBound(1);
-        m_Requires__to->setTransient(false);
-        m_Requires__to->setVolatile(false);
-        m_Requires__to->setChangeable(true);
-        m_Requires__to->setContainment(false);
-        m_Requires__to->setResolveProxies(true);
-        m_Requires__to->setUnique(true);
-        m_Requires__to->setDerived(false);
-        m_Requires__to->setOrdered(false);
-        m_Requires__from->setEType(m_DeployedComponentEClass);
-        m_Requires__from->setDefaultValueLiteral("");
-        m_Requires__from->setLowerBound(1);
-        m_Requires__from->setUpperBound(1);
-        m_Requires__from->setTransient(false);
-        m_Requires__from->setVolatile(false);
-        m_Requires__from->setChangeable(true);
-        m_Requires__from->setContainment(false);
-        m_Requires__from->setResolveProxies(true);
-        m_Requires__from->setUnique(true);
-        m_Requires__from->setDerived(false);
-        m_Requires__from->setOrdered(false);
-
-    }
-
-    { // ResourceType
-        m_ResourceTypeEClass->setName("ResourceType");
-        m_ResourceTypeEClass->setAbstract(false);
-        m_ResourceTypeEClass->setInterface(false);
-
-        m_ResourceType__platformElement->setEType(
-                m_AbstractPlatformElementEClass);
-        m_ResourceType__platformElement->setDefaultValueLiteral("");
-        m_ResourceType__platformElement->setLowerBound(0);
-        m_ResourceType__platformElement->setUpperBound(-1);
-        m_ResourceType__platformElement->setTransient(false);
-        m_ResourceType__platformElement->setVolatile(false);
-        m_ResourceType__platformElement->setChangeable(true);
-        m_ResourceType__platformElement->setContainment(true);
-        m_ResourceType__platformElement->setResolveProxies(true);
-        m_ResourceType__platformElement->setUnique(true);
-        m_ResourceType__platformElement->setDerived(false);
-        m_ResourceType__platformElement->setOrdered(false);
-
-    }
-
-    { // NamingResource
-        m_NamingResourceEClass->setName("NamingResource");
-        m_NamingResourceEClass->setAbstract(false);
-        m_NamingResourceEClass->setInterface(false);
-
-    }
-
-    { // MarshalledResource
-        m_MarshalledResourceEClass->setName("MarshalledResource");
-        m_MarshalledResourceEClass->setAbstract(false);
-        m_MarshalledResourceEClass->setInterface(false);
-
-    }
-
-    { // MessagingResource
-        m_MessagingResourceEClass->setName("MessagingResource");
-        m_MessagingResourceEClass->setAbstract(false);
-        m_MessagingResourceEClass->setInterface(false);
-
-    }
-
-    { // FileResource
-        m_FileResourceEClass->setName("FileResource");
-        m_FileResourceEClass->setAbstract(false);
-        m_FileResourceEClass->setInterface(false);
-
-    }
-
-    { // ExecutionResource
-        m_ExecutionResourceEClass->setName("ExecutionResource");
-        m_ExecutionResourceEClass->setAbstract(false);
-        m_ExecutionResourceEClass->setInterface(false);
-
-    }
-
-    { // PlatformAction
-        m_PlatformActionEClass->setName("PlatformAction");
-        m_PlatformActionEClass->setAbstract(false);
-        m_PlatformActionEClass->setInterface(false);
-        m_PlatformAction__kind->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_PlatformAction__kind->setDefaultValueLiteral("");
-        m_PlatformAction__kind->setLowerBound(0);
-        m_PlatformAction__kind->setUpperBound(1);
-        m_PlatformAction__kind->setTransient(false);
-        m_PlatformAction__kind->setVolatile(false);
-        m_PlatformAction__kind->setChangeable(true);
-        m_PlatformAction__kind->setUnsettable(false);
-        m_PlatformAction__kind->setID(false);
-        m_PlatformAction__kind->setUnique(false);
-        m_PlatformAction__kind->setDerived(false);
-        m_PlatformAction__kind->setOrdered(false);
-
-        m_PlatformAction__platformElement->setEType(m_PlatformEventEClass);
-        m_PlatformAction__platformElement->setDefaultValueLiteral("");
-        m_PlatformAction__platformElement->setLowerBound(0);
-        m_PlatformAction__platformElement->setUpperBound(-1);
-        m_PlatformAction__platformElement->setTransient(false);
-        m_PlatformAction__platformElement->setVolatile(false);
-        m_PlatformAction__platformElement->setChangeable(true);
-        m_PlatformAction__platformElement->setContainment(true);
-        m_PlatformAction__platformElement->setResolveProxies(true);
-        m_PlatformAction__platformElement->setUnique(true);
-        m_PlatformAction__platformElement->setDerived(false);
-        m_PlatformAction__platformElement->setOrdered(false);
-
-    }
-
-    { // ExternalActor
-        m_ExternalActorEClass->setName("ExternalActor");
-        m_ExternalActorEClass->setAbstract(false);
-        m_ExternalActorEClass->setInterface(false);
-
-    }
-
-    { // DataManager
-        m_DataManagerEClass->setName("DataManager");
-        m_DataManagerEClass->setAbstract(false);
-        m_DataManagerEClass->setInterface(false);
-
-    }
-
-    { // BindsTo
-        m_BindsToEClass->setName("BindsTo");
-        m_BindsToEClass->setAbstract(false);
-        m_BindsToEClass->setInterface(false);
-
-        m_BindsTo__to->setEType(m_ResourceTypeEClass);
-        m_BindsTo__to->setDefaultValueLiteral("");
-        m_BindsTo__to->setLowerBound(1);
-        m_BindsTo__to->setUpperBound(1);
-        m_BindsTo__to->setTransient(false);
-        m_BindsTo__to->setVolatile(false);
-        m_BindsTo__to->setChangeable(true);
-        m_BindsTo__to->setContainment(false);
-        m_BindsTo__to->setResolveProxies(true);
-        m_BindsTo__to->setUnique(true);
-        m_BindsTo__to->setDerived(false);
-        m_BindsTo__to->setOrdered(false);
-        m_BindsTo__from->setEType(m_ResourceTypeEClass);
-        m_BindsTo__from->setDefaultValueLiteral("");
-        m_BindsTo__from->setLowerBound(1);
-        m_BindsTo__from->setUpperBound(1);
-        m_BindsTo__from->setTransient(false);
-        m_BindsTo__from->setVolatile(false);
-        m_BindsTo__from->setChangeable(true);
-        m_BindsTo__from->setContainment(false);
-        m_BindsTo__from->setResolveProxies(true);
-        m_BindsTo__from->setUnique(true);
-        m_BindsTo__from->setDerived(false);
-        m_BindsTo__from->setOrdered(false);
-
-    }
-
-    { // PlatformElement
-        m_PlatformElementEClass->setName("PlatformElement");
-        m_PlatformElementEClass->setAbstract(false);
-        m_PlatformElementEClass->setInterface(false);
-
-    }
-
-    { // PlatformRelationship
-        m_PlatformRelationshipEClass->setName("PlatformRelationship");
-        m_PlatformRelationshipEClass->setAbstract(false);
-        m_PlatformRelationshipEClass->setInterface(false);
-
-        m_PlatformRelationship__to->setEType(
+    [this]()
+    {
+        m_AbstractPlatformElementEClass->getESuperTypes().push_back(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_PlatformRelationship__to->setDefaultValueLiteral("");
-        m_PlatformRelationship__to->setLowerBound(1);
-        m_PlatformRelationship__to->setUpperBound(1);
-        m_PlatformRelationship__to->setTransient(false);
-        m_PlatformRelationship__to->setVolatile(false);
-        m_PlatformRelationship__to->setChangeable(true);
-        m_PlatformRelationship__to->setContainment(false);
-        m_PlatformRelationship__to->setResolveProxies(true);
-        m_PlatformRelationship__to->setUnique(true);
-        m_PlatformRelationship__to->setDerived(false);
-        m_PlatformRelationship__to->setOrdered(false);
-        m_PlatformRelationship__from->setEType(m_AbstractPlatformElementEClass);
-        m_PlatformRelationship__from->setDefaultValueLiteral("");
-        m_PlatformRelationship__from->setLowerBound(1);
-        m_PlatformRelationship__from->setUpperBound(1);
-        m_PlatformRelationship__from->setTransient(false);
-        m_PlatformRelationship__from->setVolatile(false);
-        m_PlatformRelationship__from->setChangeable(true);
-        m_PlatformRelationship__from->setContainment(false);
-        m_PlatformRelationship__from->setResolveProxies(true);
-        m_PlatformRelationship__from->setUnique(true);
-        m_PlatformRelationship__from->setDerived(false);
-        m_PlatformRelationship__from->setOrdered(false);
+        m_PlatformModelEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+        m_AbstractPlatformRelationshipEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+        m_RequiresEClass->getESuperTypes().push_back(
+                m_AbstractPlatformRelationshipEClass);
+        m_ResourceTypeEClass->getESuperTypes().push_back(
+                m_AbstractPlatformElementEClass);
+        m_NamingResourceEClass->getESuperTypes().push_back(
+                m_ResourceTypeEClass);
+        m_MarshalledResourceEClass->getESuperTypes().push_back(
+                m_ResourceTypeEClass);
+        m_MessagingResourceEClass->getESuperTypes().push_back(
+                m_ResourceTypeEClass);
+        m_FileResourceEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
+        m_ExecutionResourceEClass->getESuperTypes().push_back(
+                m_ResourceTypeEClass);
+        m_PlatformActionEClass->getESuperTypes().push_back(
+                m_AbstractPlatformElementEClass);
+        m_ExternalActorEClass->getESuperTypes().push_back(
+                m_PlatformActionEClass);
+        m_DataManagerEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
+        m_BindsToEClass->getESuperTypes().push_back(
+                m_AbstractPlatformRelationshipEClass);
+        m_PlatformElementEClass->getESuperTypes().push_back(
+                m_AbstractPlatformElementEClass);
+        m_PlatformRelationshipEClass->getESuperTypes().push_back(
+                m_AbstractPlatformRelationshipEClass);
+        m_PlatformEventEClass->getESuperTypes().push_back(
+                m_AbstractPlatformElementEClass);
+        m_LockResourceEClass->getESuperTypes().push_back(m_ResourceTypeEClass);
+        m_DeployedSoftwareSystemEClass->getESuperTypes().push_back(
+                m_AbstractPlatformElementEClass);
+        m_MachineEClass->getESuperTypes().push_back(
+                m_AbstractPlatformElementEClass);
+        m_DeployedComponentEClass->getESuperTypes().push_back(
+                m_AbstractPlatformElementEClass);
+        m_DeployedResourceEClass->getESuperTypes().push_back(
+                m_AbstractPlatformElementEClass);
+        m_LoadsEClass->getESuperTypes().push_back(
+                m_AbstractPlatformRelationshipEClass);
+        m_SpawnsEClass->getESuperTypes().push_back(
+                m_AbstractPlatformRelationshipEClass);
+        m_RuntimeResourceEClass->getESuperTypes().push_back(
+                m_ResourceTypeEClass);
+        m_ThreadEClass->getESuperTypes().push_back(m_RuntimeResourceEClass);
+        m_ProcessEClass->getESuperTypes().push_back(m_RuntimeResourceEClass);
+        m_ReadsResourceEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_WritesResourceEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_ManagesResourceEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_DefinedByEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_StreamResourceEClass->getESuperTypes().push_back(
+                m_ResourceTypeEClass);
+    }();
 
-    }
-
-    { // PlatformEvent
-        m_PlatformEventEClass->setName("PlatformEvent");
-        m_PlatformEventEClass->setAbstract(false);
-        m_PlatformEventEClass->setInterface(false);
-        m_PlatformEvent__kind->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_PlatformEvent__kind->setDefaultValueLiteral("");
-        m_PlatformEvent__kind->setLowerBound(0);
-        m_PlatformEvent__kind->setUpperBound(1);
-        m_PlatformEvent__kind->setTransient(false);
-        m_PlatformEvent__kind->setVolatile(false);
-        m_PlatformEvent__kind->setChangeable(true);
-        m_PlatformEvent__kind->setUnsettable(false);
-        m_PlatformEvent__kind->setID(false);
-        m_PlatformEvent__kind->setUnique(false);
-        m_PlatformEvent__kind->setDerived(false);
-        m_PlatformEvent__kind->setOrdered(false);
-
-    }
-
-    { // LockResource
-        m_LockResourceEClass->setName("LockResource");
-        m_LockResourceEClass->setAbstract(false);
-        m_LockResourceEClass->setInterface(false);
-
-    }
-
-    { // DeployedSoftwareSystem
-        m_DeployedSoftwareSystemEClass->setName("DeployedSoftwareSystem");
-        m_DeployedSoftwareSystemEClass->setAbstract(false);
-        m_DeployedSoftwareSystemEClass->setInterface(false);
-
-        m_DeployedSoftwareSystem__groupedComponent->setEType(
-                m_DeployedComponentEClass);
-        m_DeployedSoftwareSystem__groupedComponent->setDefaultValueLiteral("");
-        m_DeployedSoftwareSystem__groupedComponent->setLowerBound(0);
-        m_DeployedSoftwareSystem__groupedComponent->setUpperBound(-1);
-        m_DeployedSoftwareSystem__groupedComponent->setTransient(false);
-        m_DeployedSoftwareSystem__groupedComponent->setVolatile(false);
-        m_DeployedSoftwareSystem__groupedComponent->setChangeable(true);
-        m_DeployedSoftwareSystem__groupedComponent->setContainment(false);
-        m_DeployedSoftwareSystem__groupedComponent->setResolveProxies(true);
-        m_DeployedSoftwareSystem__groupedComponent->setUnique(true);
-        m_DeployedSoftwareSystem__groupedComponent->setDerived(false);
-        m_DeployedSoftwareSystem__groupedComponent->setOrdered(false);
-
-    }
-
-    { // Machine
-        m_MachineEClass->setName("Machine");
-        m_MachineEClass->setAbstract(false);
-        m_MachineEClass->setInterface(false);
-
-        m_Machine__deployedComponent->setEType(m_DeployedComponentEClass);
-        m_Machine__deployedComponent->setDefaultValueLiteral("");
-        m_Machine__deployedComponent->setLowerBound(0);
-        m_Machine__deployedComponent->setUpperBound(-1);
-        m_Machine__deployedComponent->setTransient(false);
-        m_Machine__deployedComponent->setVolatile(false);
-        m_Machine__deployedComponent->setChangeable(true);
-        m_Machine__deployedComponent->setContainment(true);
-        m_Machine__deployedComponent->setResolveProxies(true);
-        m_Machine__deployedComponent->setUnique(true);
-        m_Machine__deployedComponent->setDerived(false);
-        m_Machine__deployedComponent->setOrdered(false);
-        m_Machine__deployedResource->setEType(m_DeployedResourceEClass);
-        m_Machine__deployedResource->setDefaultValueLiteral("");
-        m_Machine__deployedResource->setLowerBound(0);
-        m_Machine__deployedResource->setUpperBound(-1);
-        m_Machine__deployedResource->setTransient(false);
-        m_Machine__deployedResource->setVolatile(false);
-        m_Machine__deployedResource->setChangeable(true);
-        m_Machine__deployedResource->setContainment(true);
-        m_Machine__deployedResource->setResolveProxies(true);
-        m_Machine__deployedResource->setUnique(true);
-        m_Machine__deployedResource->setDerived(false);
-        m_Machine__deployedResource->setOrdered(false);
-
-    }
-
-    { // DeployedComponent
-        m_DeployedComponentEClass->setName("DeployedComponent");
-        m_DeployedComponentEClass->setAbstract(false);
-        m_DeployedComponentEClass->setInterface(false);
-
-        m_DeployedComponent__groupedCode->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getModule());
-        m_DeployedComponent__groupedCode->setDefaultValueLiteral("");
-        m_DeployedComponent__groupedCode->setLowerBound(0);
-        m_DeployedComponent__groupedCode->setUpperBound(-1);
-        m_DeployedComponent__groupedCode->setTransient(false);
-        m_DeployedComponent__groupedCode->setVolatile(false);
-        m_DeployedComponent__groupedCode->setChangeable(true);
-        m_DeployedComponent__groupedCode->setContainment(false);
-        m_DeployedComponent__groupedCode->setResolveProxies(true);
-        m_DeployedComponent__groupedCode->setUnique(true);
-        m_DeployedComponent__groupedCode->setDerived(false);
-        m_DeployedComponent__groupedCode->setOrdered(false);
-
-    }
-
-    { // DeployedResource
-        m_DeployedResourceEClass->setName("DeployedResource");
-        m_DeployedResourceEClass->setAbstract(false);
-        m_DeployedResourceEClass->setInterface(false);
-
-        m_DeployedResource__platformElement->setEType(m_ResourceTypeEClass);
-        m_DeployedResource__platformElement->setDefaultValueLiteral("");
-        m_DeployedResource__platformElement->setLowerBound(0);
-        m_DeployedResource__platformElement->setUpperBound(-1);
-        m_DeployedResource__platformElement->setTransient(false);
-        m_DeployedResource__platformElement->setVolatile(false);
-        m_DeployedResource__platformElement->setChangeable(true);
-        m_DeployedResource__platformElement->setContainment(true);
-        m_DeployedResource__platformElement->setResolveProxies(true);
-        m_DeployedResource__platformElement->setUnique(true);
-        m_DeployedResource__platformElement->setDerived(false);
-        m_DeployedResource__platformElement->setOrdered(false);
-
-    }
-
-    { // Loads
-        m_LoadsEClass->setName("Loads");
-        m_LoadsEClass->setAbstract(false);
-        m_LoadsEClass->setInterface(false);
-
-        m_Loads__to->setEType(m_DeployedComponentEClass);
-        m_Loads__to->setDefaultValueLiteral("");
-        m_Loads__to->setLowerBound(1);
-        m_Loads__to->setUpperBound(1);
-        m_Loads__to->setTransient(false);
-        m_Loads__to->setVolatile(false);
-        m_Loads__to->setChangeable(true);
-        m_Loads__to->setContainment(false);
-        m_Loads__to->setResolveProxies(true);
-        m_Loads__to->setUnique(true);
-        m_Loads__to->setDerived(false);
-        m_Loads__to->setOrdered(false);
-        m_Loads__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_Loads__from->setDefaultValueLiteral("");
-        m_Loads__from->setLowerBound(1);
-        m_Loads__from->setUpperBound(1);
-        m_Loads__from->setTransient(false);
-        m_Loads__from->setVolatile(false);
-        m_Loads__from->setChangeable(true);
-        m_Loads__from->setContainment(false);
-        m_Loads__from->setResolveProxies(true);
-        m_Loads__from->setUnique(true);
-        m_Loads__from->setDerived(false);
-        m_Loads__from->setOrdered(false);
-
-    }
-
-    { // Spawns
-        m_SpawnsEClass->setName("Spawns");
-        m_SpawnsEClass->setAbstract(false);
-        m_SpawnsEClass->setInterface(false);
-
-        m_Spawns__to->setEType(m_RuntimeResourceEClass);
-        m_Spawns__to->setDefaultValueLiteral("");
-        m_Spawns__to->setLowerBound(1);
-        m_Spawns__to->setUpperBound(1);
-        m_Spawns__to->setTransient(false);
-        m_Spawns__to->setVolatile(false);
-        m_Spawns__to->setChangeable(true);
-        m_Spawns__to->setContainment(false);
-        m_Spawns__to->setResolveProxies(true);
-        m_Spawns__to->setUnique(true);
-        m_Spawns__to->setDerived(false);
-        m_Spawns__to->setOrdered(false);
-        m_Spawns__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_Spawns__from->setDefaultValueLiteral("");
-        m_Spawns__from->setLowerBound(1);
-        m_Spawns__from->setUpperBound(1);
-        m_Spawns__from->setTransient(false);
-        m_Spawns__from->setVolatile(false);
-        m_Spawns__from->setChangeable(true);
-        m_Spawns__from->setContainment(false);
-        m_Spawns__from->setResolveProxies(true);
-        m_Spawns__from->setUnique(true);
-        m_Spawns__from->setDerived(false);
-        m_Spawns__from->setOrdered(false);
-
-    }
-
-    { // RuntimeResource
-        m_RuntimeResourceEClass->setName("RuntimeResource");
-        m_RuntimeResourceEClass->setAbstract(false);
-        m_RuntimeResourceEClass->setInterface(false);
-
-    }
-
-    { // Thread
-        m_ThreadEClass->setName("Thread");
-        m_ThreadEClass->setAbstract(false);
-        m_ThreadEClass->setInterface(false);
-
-    }
-
-    { // Process
-        m_ProcessEClass->setName("Process");
-        m_ProcessEClass->setAbstract(false);
-        m_ProcessEClass->setInterface(false);
-
-    }
-
-    { // ReadsResource
-        m_ReadsResourceEClass->setName("ReadsResource");
-        m_ReadsResourceEClass->setAbstract(false);
-        m_ReadsResourceEClass->setInterface(false);
-
-        m_ReadsResource__to->setEType(m_ResourceTypeEClass);
-        m_ReadsResource__to->setDefaultValueLiteral("");
-        m_ReadsResource__to->setLowerBound(1);
-        m_ReadsResource__to->setUpperBound(1);
-        m_ReadsResource__to->setTransient(false);
-        m_ReadsResource__to->setVolatile(false);
-        m_ReadsResource__to->setChangeable(true);
-        m_ReadsResource__to->setContainment(false);
-        m_ReadsResource__to->setResolveProxies(true);
-        m_ReadsResource__to->setUnique(true);
-        m_ReadsResource__to->setDerived(false);
-        m_ReadsResource__to->setOrdered(false);
-        m_ReadsResource__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ReadsResource__from->setDefaultValueLiteral("");
-        m_ReadsResource__from->setLowerBound(1);
-        m_ReadsResource__from->setUpperBound(1);
-        m_ReadsResource__from->setTransient(false);
-        m_ReadsResource__from->setVolatile(false);
-        m_ReadsResource__from->setChangeable(true);
-        m_ReadsResource__from->setContainment(false);
-        m_ReadsResource__from->setResolveProxies(true);
-        m_ReadsResource__from->setUnique(true);
-        m_ReadsResource__from->setDerived(false);
-        m_ReadsResource__from->setOrdered(false);
-
-    }
-
-    { // WritesResource
-        m_WritesResourceEClass->setName("WritesResource");
-        m_WritesResourceEClass->setAbstract(false);
-        m_WritesResourceEClass->setInterface(false);
-
-        m_WritesResource__to->setEType(m_ResourceTypeEClass);
-        m_WritesResource__to->setDefaultValueLiteral("");
-        m_WritesResource__to->setLowerBound(1);
-        m_WritesResource__to->setUpperBound(1);
-        m_WritesResource__to->setTransient(false);
-        m_WritesResource__to->setVolatile(false);
-        m_WritesResource__to->setChangeable(true);
-        m_WritesResource__to->setContainment(false);
-        m_WritesResource__to->setResolveProxies(true);
-        m_WritesResource__to->setUnique(true);
-        m_WritesResource__to->setDerived(false);
-        m_WritesResource__to->setOrdered(false);
-        m_WritesResource__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_WritesResource__from->setDefaultValueLiteral("");
-        m_WritesResource__from->setLowerBound(1);
-        m_WritesResource__from->setUpperBound(1);
-        m_WritesResource__from->setTransient(false);
-        m_WritesResource__from->setVolatile(false);
-        m_WritesResource__from->setChangeable(true);
-        m_WritesResource__from->setContainment(false);
-        m_WritesResource__from->setResolveProxies(true);
-        m_WritesResource__from->setUnique(true);
-        m_WritesResource__from->setDerived(false);
-        m_WritesResource__from->setOrdered(false);
-
-    }
-
-    { // ManagesResource
-        m_ManagesResourceEClass->setName("ManagesResource");
-        m_ManagesResourceEClass->setAbstract(false);
-        m_ManagesResourceEClass->setInterface(false);
-
-        m_ManagesResource__to->setEType(m_ResourceTypeEClass);
-        m_ManagesResource__to->setDefaultValueLiteral("");
-        m_ManagesResource__to->setLowerBound(1);
-        m_ManagesResource__to->setUpperBound(1);
-        m_ManagesResource__to->setTransient(false);
-        m_ManagesResource__to->setVolatile(false);
-        m_ManagesResource__to->setChangeable(true);
-        m_ManagesResource__to->setContainment(false);
-        m_ManagesResource__to->setResolveProxies(true);
-        m_ManagesResource__to->setUnique(true);
-        m_ManagesResource__to->setDerived(false);
-        m_ManagesResource__to->setOrdered(false);
-        m_ManagesResource__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ManagesResource__from->setDefaultValueLiteral("");
-        m_ManagesResource__from->setLowerBound(1);
-        m_ManagesResource__from->setUpperBound(1);
-        m_ManagesResource__from->setTransient(false);
-        m_ManagesResource__from->setVolatile(false);
-        m_ManagesResource__from->setChangeable(true);
-        m_ManagesResource__from->setContainment(false);
-        m_ManagesResource__from->setResolveProxies(true);
-        m_ManagesResource__from->setUnique(true);
-        m_ManagesResource__from->setDerived(false);
-        m_ManagesResource__from->setOrdered(false);
-
-    }
-
-    { // DefinedBy
-        m_DefinedByEClass->setName("DefinedBy");
-        m_DefinedByEClass->setAbstract(false);
-        m_DefinedByEClass->setInterface(false);
-
-        m_DefinedBy__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
-        m_DefinedBy__to->setDefaultValueLiteral("");
-        m_DefinedBy__to->setLowerBound(1);
-        m_DefinedBy__to->setUpperBound(1);
-        m_DefinedBy__to->setTransient(false);
-        m_DefinedBy__to->setVolatile(false);
-        m_DefinedBy__to->setChangeable(true);
-        m_DefinedBy__to->setContainment(false);
-        m_DefinedBy__to->setResolveProxies(true);
-        m_DefinedBy__to->setUnique(true);
-        m_DefinedBy__to->setDerived(false);
-        m_DefinedBy__to->setOrdered(false);
-        m_DefinedBy__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_DefinedBy__from->setDefaultValueLiteral("");
-        m_DefinedBy__from->setLowerBound(1);
-        m_DefinedBy__from->setUpperBound(1);
-        m_DefinedBy__from->setTransient(false);
-        m_DefinedBy__from->setVolatile(false);
-        m_DefinedBy__from->setChangeable(true);
-        m_DefinedBy__from->setContainment(false);
-        m_DefinedBy__from->setResolveProxies(true);
-        m_DefinedBy__from->setUnique(true);
-        m_DefinedBy__from->setDerived(false);
-        m_DefinedBy__from->setOrdered(false);
-
-    }
-
-    { // StreamResource
-        m_StreamResourceEClass->setName("StreamResource");
-        m_StreamResourceEClass->setAbstract(false);
-        m_StreamResourceEClass->setInterface(false);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_AbstractPlatformElementEClass);
+        classifiers.push_back(m_AbstractPlatformRelationshipEClass);
+        classifiers.push_back(m_BindsToEClass);
+        classifiers.push_back(m_DataManagerEClass);
+        classifiers.push_back(m_DefinedByEClass);
+        classifiers.push_back(m_DeployedComponentEClass);
+        classifiers.push_back(m_DeployedResourceEClass);
+        classifiers.push_back(m_DeployedSoftwareSystemEClass);
+        classifiers.push_back(m_ExecutionResourceEClass);
+        classifiers.push_back(m_ExternalActorEClass);
+        classifiers.push_back(m_FileResourceEClass);
+        classifiers.push_back(m_LoadsEClass);
+        classifiers.push_back(m_LockResourceEClass);
+        classifiers.push_back(m_MachineEClass);
+        classifiers.push_back(m_ManagesResourceEClass);
+        classifiers.push_back(m_MarshalledResourceEClass);
+        classifiers.push_back(m_MessagingResourceEClass);
+        classifiers.push_back(m_NamingResourceEClass);
+        classifiers.push_back(m_PlatformActionEClass);
+        classifiers.push_back(m_PlatformElementEClass);
+        classifiers.push_back(m_PlatformEventEClass);
+        classifiers.push_back(m_PlatformModelEClass);
+        classifiers.push_back(m_PlatformRelationshipEClass);
+        classifiers.push_back(m_ProcessEClass);
+        classifiers.push_back(m_ReadsResourceEClass);
+        classifiers.push_back(m_RequiresEClass);
+        classifiers.push_back(m_ResourceTypeEClass);
+        classifiers.push_back(m_RuntimeResourceEClass);
+        classifiers.push_back(m_SpawnsEClass);
+        classifiers.push_back(m_StreamResourceEClass);
+        classifiers.push_back(m_ThreadEClass);
+        classifiers.push_back(m_WritesResourceEClass);
+    }();
 
     _initialize();
 }

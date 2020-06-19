@@ -39,36 +39,41 @@ using namespace ::TopLevelPackage::Level1::Level2;
 
 Level2Package::Level2Package()
 {
-
-    // Feature definitions of Level2Class
-
+    m_Level2ClassEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void Level2Package::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = Level2Factory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = Level2Factory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // Level2Class
-        m_Level2ClassEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_Level2ClassEClass->setClassifierID(LEVEL2CLASS);
-        m_Level2ClassEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_Level2ClassEClass);
-    }
+    [this]()
+    { // Classifier Level2Class
+        auto &&classifier = m_Level2ClassEClass;
 
-    // Create enums
+        // ENamedElement
+        classifier->setName("Level2Class");
 
-    // Create data types
+        // EClassifier
+        classifier->setClassifierID(LEVEL2CLASS);
 
-    getESubpackages().push_back(
-            ::TopLevelPackage::Level1::Level2::Level3::Level3Package::_getInstanceAndRemoveOwnership());
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Subpackages of this package
+        auto &&eSubpackages = getESubpackages();
+        eSubpackages.push_back(
+                ::TopLevelPackage::Level1::Level2::Level3::Level3Package::_getInstanceAndRemoveOwnership());
+    }();
 
     // Initialize package
     setName("Level2");
@@ -78,22 +83,17 @@ void Level2Package::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_Level2ClassEClass->getESuperTypes().push_back(
-            dynamic_cast< ::TopLevelPackage::TopLevelPackagePackage* >(::TopLevelPackage::TopLevelPackagePackage::_instance().get())->getTopLevelClass());
+    [this]()
+    {
+        m_Level2ClassEClass->getESuperTypes().push_back(
+                dynamic_cast< ::TopLevelPackage::TopLevelPackagePackage* >(::TopLevelPackage::TopLevelPackagePackage::_instance().get())->getTopLevelClass());
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // Level2Class
-        m_Level2ClassEClass->setName("Level2Class");
-        m_Level2ClassEClass->setAbstract(false);
-        m_Level2ClassEClass->setInterface(false);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_Level2ClassEClass);
+    }();
 
     _initialize();
 }

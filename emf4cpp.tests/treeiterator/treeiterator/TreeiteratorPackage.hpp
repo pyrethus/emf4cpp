@@ -39,20 +39,14 @@ public:
 
     // IDs for classifier Leaf
     static const int LEAF = 0;
-
     static const int LEAF__NAME = 0;
-
     static const int LEAF_FEATURE_COUNT = 1;
 
     // IDs for classifier TreeNode
     static const int TREENODE = 1;
-
     static const int TREENODE__NAME = 0;
-
     static const int TREENODE__CHILDREN = 1;
-
     static const int TREENODE__LEAF = 2;
-
     static const int TREENODE_FEATURE_COUNT = 3;
 
     // EClassifiers methods
@@ -78,15 +72,8 @@ protected:
     TreeiteratorPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_TreeNodeEClass;
-
     ::ecore::EClass_ptr m_LeafEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_TreeNodeEClass;
 
     // EStructuralFeatures instances
 

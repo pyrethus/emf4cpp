@@ -40,93 +40,219 @@ using namespace ::base;
 
 BasePackage::BasePackage()
 {
-
-    // Feature definitions of Base01
-    m_Base01__valBase01 = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_Base01__derived02ref = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Base02
-    m_Base02__valBase02 = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of Base03
-    m_Base03__valBase03 = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
+    m_Base01__valBase01 = ::ecore::make< ::ecore::EAttribute >();
+    m_Base01__derived02ref = ::ecore::make< ::ecore::EReference >();
+    m_Base01EClass = ::ecore::make< ::ecore::EClass >();
+    m_Base02__valBase02 = ::ecore::make< ::ecore::EAttribute >();
+    m_Base02EClass = ::ecore::make< ::ecore::EClass >();
+    m_Base03__valBase03 = ::ecore::make< ::ecore::EAttribute >();
+    m_Base03EClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void BasePackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = BaseFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = BaseFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // Base01
-        m_Base01EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_Base01EClass->setClassifierID(BASE01);
-        m_Base01EClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_Base01EClass);
-        // m_Base01__valBase01 has already been allocated above
-        m_Base01__valBase01->setFeatureID(
-                ::base::BasePackage::BASE01__VALBASE01);
-        m_Base01__valBase01->setName("valBase01");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base01EClass->getEStructuralFeatures()).basicAdd(
-                m_Base01__valBase01);
-        m_Base01__valBase01->basicsetEContainingClass(m_Base01EClass);
-        // m_Base01__derived02ref has already been allocated above
-        m_Base01__derived02ref->setFeatureID(
-                ::base::BasePackage::BASE01__DERIVED02REF);
-        m_Base01__derived02ref->setName("derived02ref");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base01EClass->getEStructuralFeatures()).basicAdd(
-                m_Base01__derived02ref);
-        m_Base01__derived02ref->basicsetEContainingClass(m_Base01EClass);
-    }
+    [this]()
+    { // Feature valBase01 of class Base01
+        auto &&feature = m_Base01__valBase01;
 
-    { // Base02
-        m_Base02EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_Base02EClass->setClassifierID(BASE02);
-        m_Base02EClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_Base02EClass);
-        // m_Base02__valBase02 has already been allocated above
-        m_Base02__valBase02->setFeatureID(
-                ::base::BasePackage::BASE02__VALBASE02);
-        m_Base02__valBase02->setName("valBase02");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base02EClass->getEStructuralFeatures()).basicAdd(
-                m_Base02__valBase02);
-        m_Base02__valBase02->basicsetEContainingClass(m_Base02EClass);
-    }
+        // ENamedElement
+        feature->setName("valBase01");
 
-    { // Base03
-        m_Base03EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_Base03EClass->setClassifierID(BASE03);
-        m_Base03EClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_Base03EClass);
-        // m_Base03__valBase03 has already been allocated above
-        m_Base03__valBase03->setFeatureID(
-                ::base::BasePackage::BASE03__VALBASE03);
-        m_Base03__valBase03->setName("valBase03");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base03EClass->getEStructuralFeatures()).basicAdd(
-                m_Base03__valBase03);
-        m_Base03__valBase03->basicsetEContainingClass(m_Base03EClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    // Create enums
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    // Create data types
+        feature->setFeatureID(::base::BasePackage::BASE01__VALBASE01);
+        feature->basicsetEContainingClass(m_Base01EClass);
 
-    getESubpackages().push_back(
-            ::base::base1::Base1Package::_getInstanceAndRemoveOwnership());
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature derived02ref of class Base01
+        auto &&feature = m_Base01__derived02ref;
+
+        // ENamedElement
+        feature->setName("derived02ref");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::derived::DerivedPackage* >(::derived::DerivedPackage::_instance().get())->getDerived02());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::base::BasePackage::BASE01__DERIVED02REF);
+        feature->basicsetEContainingClass(m_Base01EClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(
+                ::derived::DerivedPackage::_instance()->getDerived02__base01ref());
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Base01
+        auto &&classifier = m_Base01EClass;
+
+        // ENamedElement
+        classifier->setName("Base01");
+
+        // EClassifier
+        classifier->setClassifierID(BASE01);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base01EClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Base01__valBase01);
+            eStructuralFeatures.basicAdd(m_Base01__derived02ref);
+        }
+    }();
+
+    [this]()
+    { // Feature valBase02 of class Base02
+        auto &&feature = m_Base02__valBase02;
+
+        // ENamedElement
+        feature->setName("valBase02");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::base::BasePackage::BASE02__VALBASE02);
+        feature->basicsetEContainingClass(m_Base02EClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Base02
+        auto &&classifier = m_Base02EClass;
+
+        // ENamedElement
+        classifier->setName("Base02");
+
+        // EClassifier
+        classifier->setClassifierID(BASE02);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base02EClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Base02__valBase02);
+        }
+    }();
+
+    [this]()
+    { // Feature valBase03 of class Base03
+        auto &&feature = m_Base03__valBase03;
+
+        // ENamedElement
+        feature->setName("valBase03");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::base::BasePackage::BASE03__VALBASE03);
+        feature->basicsetEContainingClass(m_Base03EClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Base03
+        auto &&classifier = m_Base03EClass;
+
+        // ENamedElement
+        classifier->setName("Base03");
+
+        // EClassifier
+        classifier->setClassifierID(BASE03);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base03EClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Base03__valBase03);
+        }
+    }();
+
+    [this]()
+    { // Subpackages of this package
+        auto &&eSubpackages = getESubpackages();
+        eSubpackages.push_back(
+                ::base::base1::Base1Package::_getInstanceAndRemoveOwnership());
+    }();
 
     // Initialize package
     setName("base");
@@ -136,90 +262,17 @@ void BasePackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
+    [this]()
+    {
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // Base01
-        m_Base01EClass->setName("Base01");
-        m_Base01EClass->setAbstract(false);
-        m_Base01EClass->setInterface(false);
-        m_Base01__valBase01->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Base01__valBase01->setDefaultValueLiteral("");
-        m_Base01__valBase01->setLowerBound(0);
-        m_Base01__valBase01->setUpperBound(1);
-        m_Base01__valBase01->setTransient(false);
-        m_Base01__valBase01->setVolatile(false);
-        m_Base01__valBase01->setChangeable(true);
-        m_Base01__valBase01->setUnsettable(false);
-        m_Base01__valBase01->setID(false);
-        m_Base01__valBase01->setUnique(true);
-        m_Base01__valBase01->setDerived(false);
-        m_Base01__valBase01->setOrdered(true);
-
-        m_Base01__derived02ref->setEType(
-                dynamic_cast< ::derived::DerivedPackage* >(::derived::DerivedPackage::_instance().get())->getDerived02());
-        m_Base01__derived02ref->setDefaultValueLiteral("");
-        m_Base01__derived02ref->setLowerBound(0);
-        m_Base01__derived02ref->setUpperBound(1);
-        m_Base01__derived02ref->setTransient(false);
-        m_Base01__derived02ref->setVolatile(false);
-        m_Base01__derived02ref->setChangeable(true);
-        m_Base01__derived02ref->setContainment(false);
-        m_Base01__derived02ref->setResolveProxies(true);
-        m_Base01__derived02ref->setUnique(true);
-        m_Base01__derived02ref->setDerived(false);
-        m_Base01__derived02ref->setOrdered(true);
-        m_Base01__derived02ref->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (dynamic_cast< ::derived::DerivedPackage* >(::derived::DerivedPackage::_instance().get())->getDerived02()->getEStructuralFeatures()[1]));
-
-    }
-
-    { // Base02
-        m_Base02EClass->setName("Base02");
-        m_Base02EClass->setAbstract(false);
-        m_Base02EClass->setInterface(false);
-        m_Base02__valBase02->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Base02__valBase02->setDefaultValueLiteral("");
-        m_Base02__valBase02->setLowerBound(0);
-        m_Base02__valBase02->setUpperBound(1);
-        m_Base02__valBase02->setTransient(false);
-        m_Base02__valBase02->setVolatile(false);
-        m_Base02__valBase02->setChangeable(true);
-        m_Base02__valBase02->setUnsettable(false);
-        m_Base02__valBase02->setID(false);
-        m_Base02__valBase02->setUnique(true);
-        m_Base02__valBase02->setDerived(false);
-        m_Base02__valBase02->setOrdered(true);
-
-    }
-
-    { // Base03
-        m_Base03EClass->setName("Base03");
-        m_Base03EClass->setAbstract(false);
-        m_Base03EClass->setInterface(false);
-        m_Base03__valBase03->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Base03__valBase03->setDefaultValueLiteral("");
-        m_Base03__valBase03->setLowerBound(0);
-        m_Base03__valBase03->setUpperBound(1);
-        m_Base03__valBase03->setTransient(false);
-        m_Base03__valBase03->setVolatile(false);
-        m_Base03__valBase03->setChangeable(true);
-        m_Base03__valBase03->setUnsettable(false);
-        m_Base03__valBase03->setID(false);
-        m_Base03__valBase03->setUnique(true);
-        m_Base03__valBase03->setDerived(false);
-        m_Base03__valBase03->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_Base01EClass);
+        classifiers.push_back(m_Base02EClass);
+        classifiers.push_back(m_Base03EClass);
+    }();
 
     _initialize();
 }

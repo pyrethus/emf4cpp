@@ -48,12 +48,6 @@ protected:
     KdmPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    // EEnuminstances 
-
-    // EDataType instances 
-
     // EStructuralFeatures instances
 
 };

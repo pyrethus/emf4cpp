@@ -37,19 +37,20 @@ using namespace ::enduserlicense;
 
 EnduserlicensePackage::EnduserlicensePackage()
 {
-
 }
 
 void EnduserlicensePackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = EnduserlicenseFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = EnduserlicenseFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
+    // Create classes and their features
 
-// Initialize package
+    // Initialize package
     setName("enduserlicense");
     setNsPrefix("enduserlicense");
     setNsURI("http:///com.example.enduserlicense.ecore");
@@ -57,14 +58,9 @@ void EnduserlicensePackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    {
+    }();
 
     _initialize();
 }

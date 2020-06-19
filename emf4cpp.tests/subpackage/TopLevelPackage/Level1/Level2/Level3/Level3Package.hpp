@@ -47,9 +47,7 @@ namespace TopLevelPackage
 
                 // IDs for classifier Level3Class
                 static const int LEVEL3CLASS = 0;
-
                 static const int LEVEL3CLASS__REFERENCE = 0;
-
                 static const int LEVEL3CLASS_FEATURE_COUNT = 1;
 
                 // EClassifiers methods
@@ -65,13 +63,7 @@ namespace TopLevelPackage
                 Level3Package();
                 void _initPackage();
 
-                // EClass instances 
-
                 ::ecore::EClass_ptr m_Level3ClassEClass;
-
-                // EEnuminstances 
-
-                // EDataType instances 
 
                 // EStructuralFeatures instances
 

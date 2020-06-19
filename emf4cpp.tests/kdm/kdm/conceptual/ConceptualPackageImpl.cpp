@@ -50,276 +50,634 @@ using namespace ::kdm::conceptual;
 
 ConceptualPackage::ConceptualPackage()
 {
-
-    // Feature definitions of ConceptualModel
-    m_ConceptualModel__conceptualElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of AbstractConceptualElement
-    m_AbstractConceptualElement__source = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AbstractConceptualElement__implementation = ::ecore::Ptr
-            < ::ecore::EReference > (new ::ecore::EReference);
-    m_AbstractConceptualElement__conceptualRelation = ::ecore::Ptr
-            < ::ecore::EReference > (new ::ecore::EReference);
-    m_AbstractConceptualElement__abstraction = ::ecore::Ptr
-            < ::ecore::EReference > (new ::ecore::EReference);
-
-    // Feature definitions of TermUnit
-
-    // Feature definitions of ConceptualContainer
-    m_ConceptualContainer__conceptualElement = ::ecore::Ptr
-            < ::ecore::EReference > (new ::ecore::EReference);
-
-    // Feature definitions of FactUnit
-
-    // Feature definitions of AbstractConceptualRelationship
-
-    // Feature definitions of ConceptualRelationship
-    m_ConceptualRelationship__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ConceptualRelationship__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of BehaviorUnit
-
-    // Feature definitions of RuleUnit
-
-    // Feature definitions of ScenarioUnit
-
-    // Feature definitions of ConceptualFlow
-    m_ConceptualFlow__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ConceptualFlow__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ConceptualElement
-
-    // Feature definitions of ConceptualRole
-    m_ConceptualRole__conceptualElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_AbstractConceptualElement__source =
+            ::ecore::make< ::ecore::EReference >();
+    m_AbstractConceptualElement__implementation = ::ecore::make<
+            ::ecore::EReference >();
+    m_AbstractConceptualElement__conceptualRelation = ::ecore::make<
+            ::ecore::EReference >();
+    m_AbstractConceptualElement__abstraction = ::ecore::make<
+            ::ecore::EReference >();
+    m_AbstractConceptualElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_AbstractConceptualRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_BehaviorUnitEClass = ::ecore::make< ::ecore::EClass >();
+    m_ConceptualContainer__conceptualElement = ::ecore::make<
+            ::ecore::EReference >();
+    m_ConceptualContainerEClass = ::ecore::make< ::ecore::EClass >();
+    m_ConceptualElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ConceptualFlow__to = ::ecore::make< ::ecore::EReference >();
+    m_ConceptualFlow__from = ::ecore::make< ::ecore::EReference >();
+    m_ConceptualFlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_ConceptualModel__conceptualElement =
+            ::ecore::make< ::ecore::EReference >();
+    m_ConceptualModelEClass = ::ecore::make< ::ecore::EClass >();
+    m_ConceptualRelationship__to = ::ecore::make< ::ecore::EReference >();
+    m_ConceptualRelationship__from = ::ecore::make< ::ecore::EReference >();
+    m_ConceptualRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_ConceptualRole__conceptualElement =
+            ::ecore::make< ::ecore::EReference >();
+    m_ConceptualRoleEClass = ::ecore::make< ::ecore::EClass >();
+    m_FactUnitEClass = ::ecore::make< ::ecore::EClass >();
+    m_RuleUnitEClass = ::ecore::make< ::ecore::EClass >();
+    m_ScenarioUnitEClass = ::ecore::make< ::ecore::EClass >();
+    m_TermUnitEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void ConceptualPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = ConceptualFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = ConceptualFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // ConceptualModel
-        m_ConceptualModelEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ConceptualModelEClass->setClassifierID(CONCEPTUALMODEL);
-        m_ConceptualModelEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ConceptualModelEClass);
-        // m_ConceptualModel__conceptualElement has already been allocated above
-        m_ConceptualModel__conceptualElement->setFeatureID(
-                ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__CONCEPTUALELEMENT);
-        m_ConceptualModel__conceptualElement->setName("conceptualElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualModelEClass->getEStructuralFeatures()).basicAdd(
-                m_ConceptualModel__conceptualElement);
-        m_ConceptualModel__conceptualElement->basicsetEContainingClass(
-                m_ConceptualModelEClass);
-    }
+    [this]()
+    { // Feature source of class AbstractConceptualElement
+        auto &&feature = m_AbstractConceptualElement__source;
 
-    { // AbstractConceptualElement
-        m_AbstractConceptualElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractConceptualElementEClass->setClassifierID(
-                ABSTRACTCONCEPTUALELEMENT);
-        m_AbstractConceptualElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractConceptualElementEClass);
-        // m_AbstractConceptualElement__source has already been allocated above
-        m_AbstractConceptualElement__source->setFeatureID(
+        // ENamedElement
+        feature->setName("source");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__SOURCE);
-        m_AbstractConceptualElement__source->setName("source");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractConceptualElement__source);
-        m_AbstractConceptualElement__source->basicsetEContainingClass(
-                m_AbstractConceptualElementEClass);
-        // m_AbstractConceptualElement__implementation has already been allocated above
-        m_AbstractConceptualElement__implementation->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractConceptualElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature implementation of class AbstractConceptualElement
+        auto &&feature = m_AbstractConceptualElement__implementation;
+
+        // ENamedElement
+        feature->setName("implementation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION);
-        m_AbstractConceptualElement__implementation->setName("implementation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractConceptualElement__implementation);
-        m_AbstractConceptualElement__implementation->basicsetEContainingClass(
-                m_AbstractConceptualElementEClass);
-        // m_AbstractConceptualElement__conceptualRelation has already been allocated above
-        m_AbstractConceptualElement__conceptualRelation->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractConceptualElementEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature conceptualRelation of class AbstractConceptualElement
+        auto &&feature = m_AbstractConceptualElement__conceptualRelation;
+
+        // ENamedElement
+        feature->setName("conceptualRelation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractConceptualRelationshipEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION);
-        m_AbstractConceptualElement__conceptualRelation->setName(
-                "conceptualRelation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractConceptualElement__conceptualRelation);
-        m_AbstractConceptualElement__conceptualRelation->basicsetEContainingClass(
-                m_AbstractConceptualElementEClass);
-        // m_AbstractConceptualElement__abstraction has already been allocated above
-        m_AbstractConceptualElement__abstraction->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractConceptualElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature abstraction of class AbstractConceptualElement
+        auto &&feature = m_AbstractConceptualElement__abstraction;
+
+        // ENamedElement
+        feature->setName("abstraction");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::ABSTRACTCONCEPTUALELEMENT__ABSTRACTION);
-        m_AbstractConceptualElement__abstraction->setName("abstraction");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractConceptualElement__abstraction);
-        m_AbstractConceptualElement__abstraction->basicsetEContainingClass(
-                m_AbstractConceptualElementEClass);
-    }
+        feature->basicsetEContainingClass(m_AbstractConceptualElementEClass);
 
-    { // TermUnit
-        m_TermUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_TermUnitEClass->setClassifierID(TERMUNIT);
-        m_TermUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TermUnitEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // ConceptualContainer
-        m_ConceptualContainerEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ConceptualContainerEClass->setClassifierID(CONCEPTUALCONTAINER);
-        m_ConceptualContainerEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ConceptualContainerEClass);
-        // m_ConceptualContainer__conceptualElement has already been allocated above
-        m_ConceptualContainer__conceptualElement->setFeatureID(
+    [this]()
+    { // Classifier AbstractConceptualElement
+        auto &&classifier = m_AbstractConceptualElementEClass;
+
+        // ENamedElement
+        classifier->setName("AbstractConceptualElement");
+
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTCONCEPTUALELEMENT);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractConceptualElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_AbstractConceptualElement__source);
+            eStructuralFeatures.basicAdd(
+                    m_AbstractConceptualElement__implementation);
+            eStructuralFeatures.basicAdd(
+                    m_AbstractConceptualElement__conceptualRelation);
+            eStructuralFeatures.basicAdd(
+                    m_AbstractConceptualElement__abstraction);
+        }
+    }();
+
+    [this]()
+    { // Classifier AbstractConceptualRelationship
+        auto &&classifier = m_AbstractConceptualRelationshipEClass;
+
+        // ENamedElement
+        classifier->setName("AbstractConceptualRelationship");
+
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTCONCEPTUALRELATIONSHIP);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier BehaviorUnit
+        auto &&classifier = m_BehaviorUnitEClass;
+
+        // ENamedElement
+        classifier->setName("BehaviorUnit");
+
+        // EClassifier
+        classifier->setClassifierID(BEHAVIORUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature conceptualElement of class ConceptualContainer
+        auto &&feature = m_ConceptualContainer__conceptualElement;
+
+        // ENamedElement
+        feature->setName("conceptualElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractConceptualElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALCONTAINER__CONCEPTUALELEMENT);
-        m_ConceptualContainer__conceptualElement->setName("conceptualElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualContainerEClass->getEStructuralFeatures()).basicAdd(
-                m_ConceptualContainer__conceptualElement);
-        m_ConceptualContainer__conceptualElement->basicsetEContainingClass(
-                m_ConceptualContainerEClass);
-    }
+        feature->basicsetEContainingClass(m_ConceptualContainerEClass);
 
-    { // FactUnit
-        m_FactUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_FactUnitEClass->setClassifierID(FACTUNIT);
-        m_FactUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_FactUnitEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // AbstractConceptualRelationship
-        m_AbstractConceptualRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractConceptualRelationshipEClass->setClassifierID(
-                ABSTRACTCONCEPTUALRELATIONSHIP);
-        m_AbstractConceptualRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractConceptualRelationshipEClass);
-    }
+    [this]()
+    { // Classifier ConceptualContainer
+        auto &&classifier = m_ConceptualContainerEClass;
 
-    { // ConceptualRelationship
-        m_ConceptualRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ConceptualRelationshipEClass->setClassifierID(CONCEPTUALRELATIONSHIP);
-        m_ConceptualRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ConceptualRelationshipEClass);
-        // m_ConceptualRelationship__to has already been allocated above
-        m_ConceptualRelationship__to->setFeatureID(
-                ::kdm::conceptual::ConceptualPackage::CONCEPTUALRELATIONSHIP__TO);
-        m_ConceptualRelationship__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_ConceptualRelationship__to);
-        m_ConceptualRelationship__to->basicsetEContainingClass(
-                m_ConceptualRelationshipEClass);
-        // m_ConceptualRelationship__from has already been allocated above
-        m_ConceptualRelationship__from->setFeatureID(
-                ::kdm::conceptual::ConceptualPackage::CONCEPTUALRELATIONSHIP__FROM);
-        m_ConceptualRelationship__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_ConceptualRelationship__from);
-        m_ConceptualRelationship__from->basicsetEContainingClass(
-                m_ConceptualRelationshipEClass);
-    }
+        // ENamedElement
+        classifier->setName("ConceptualContainer");
 
-    { // BehaviorUnit
-        m_BehaviorUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_BehaviorUnitEClass->setClassifierID(BEHAVIORUNIT);
-        m_BehaviorUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BehaviorUnitEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(CONCEPTUALCONTAINER);
 
-    { // RuleUnit
-        m_RuleUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_RuleUnitEClass->setClassifierID(RULEUNIT);
-        m_RuleUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_RuleUnitEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualContainerEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(
+                    m_ConceptualContainer__conceptualElement);
+        }
+    }();
 
-    { // ScenarioUnit
-        m_ScenarioUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ScenarioUnitEClass->setClassifierID(SCENARIOUNIT);
-        m_ScenarioUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ScenarioUnitEClass);
-    }
+    [this]()
+    { // Classifier ConceptualElement
+        auto &&classifier = m_ConceptualElementEClass;
 
-    { // ConceptualFlow
-        m_ConceptualFlowEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ConceptualFlowEClass->setClassifierID(CONCEPTUALFLOW);
-        m_ConceptualFlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ConceptualFlowEClass);
-        // m_ConceptualFlow__to has already been allocated above
-        m_ConceptualFlow__to->setFeatureID(
+        // ENamedElement
+        classifier->setName("ConceptualElement");
+
+        // EClassifier
+        classifier->setClassifierID(CONCEPTUALELEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class ConceptualFlow
+        auto &&feature = m_ConceptualFlow__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ConceptualContainerEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__TO);
-        m_ConceptualFlow__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_ConceptualFlow__to);
-        m_ConceptualFlow__to->basicsetEContainingClass(m_ConceptualFlowEClass);
-        // m_ConceptualFlow__from has already been allocated above
-        m_ConceptualFlow__from->setFeatureID(
+        feature->basicsetEContainingClass(m_ConceptualFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ConceptualFlow
+        auto &&feature = m_ConceptualFlow__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ConceptualContainerEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALFLOW__FROM);
-        m_ConceptualFlow__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_ConceptualFlow__from);
-        m_ConceptualFlow__from->basicsetEContainingClass(
-                m_ConceptualFlowEClass);
-    }
+        feature->basicsetEContainingClass(m_ConceptualFlowEClass);
 
-    { // ConceptualElement
-        m_ConceptualElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ConceptualElementEClass->setClassifierID(CONCEPTUALELEMENT);
-        m_ConceptualElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ConceptualElementEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    { // ConceptualRole
-        m_ConceptualRoleEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ConceptualRoleEClass->setClassifierID(CONCEPTUALROLE);
-        m_ConceptualRoleEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ConceptualRoleEClass);
-        // m_ConceptualRole__conceptualElement has already been allocated above
-        m_ConceptualRole__conceptualElement->setFeatureID(
+    [this]()
+    { // Classifier ConceptualFlow
+        auto &&classifier = m_ConceptualFlowEClass;
+
+        // ENamedElement
+        classifier->setName("ConceptualFlow");
+
+        // EClassifier
+        classifier->setClassifierID(CONCEPTUALFLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualFlowEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ConceptualFlow__to);
+            eStructuralFeatures.basicAdd(m_ConceptualFlow__from);
+        }
+    }();
+
+    [this]()
+    { // Feature conceptualElement of class ConceptualModel
+        auto &&feature = m_ConceptualModel__conceptualElement;
+
+        // ENamedElement
+        feature->setName("conceptualElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractConceptualElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::conceptual::ConceptualPackage::CONCEPTUALMODEL__CONCEPTUALELEMENT);
+        feature->basicsetEContainingClass(m_ConceptualModelEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ConceptualModel
+        auto &&classifier = m_ConceptualModelEClass;
+
+        // ENamedElement
+        classifier->setName("ConceptualModel");
+
+        // EClassifier
+        classifier->setClassifierID(CONCEPTUALMODEL);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualModelEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ConceptualModel__conceptualElement);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class ConceptualRelationship
+        auto &&feature = m_ConceptualRelationship__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::conceptual::ConceptualPackage::CONCEPTUALRELATIONSHIP__TO);
+        feature->basicsetEContainingClass(m_ConceptualRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ConceptualRelationship
+        auto &&feature = m_ConceptualRelationship__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractConceptualElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::conceptual::ConceptualPackage::CONCEPTUALRELATIONSHIP__FROM);
+        feature->basicsetEContainingClass(m_ConceptualRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ConceptualRelationship
+        auto &&classifier = m_ConceptualRelationshipEClass;
+
+        // ENamedElement
+        classifier->setName("ConceptualRelationship");
+
+        // EClassifier
+        classifier->setClassifierID(CONCEPTUALRELATIONSHIP);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRelationshipEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ConceptualRelationship__to);
+            eStructuralFeatures.basicAdd(m_ConceptualRelationship__from);
+        }
+    }();
+
+    [this]()
+    { // Feature conceptualElement of class ConceptualRole
+        auto &&feature = m_ConceptualRole__conceptualElement;
+
+        // ENamedElement
+        feature->setName("conceptualElement");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractConceptualElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::conceptual::ConceptualPackage::CONCEPTUALROLE__CONCEPTUALELEMENT);
-        m_ConceptualRole__conceptualElement->setName("conceptualElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRoleEClass->getEStructuralFeatures()).basicAdd(
-                m_ConceptualRole__conceptualElement);
-        m_ConceptualRole__conceptualElement->basicsetEContainingClass(
-                m_ConceptualRoleEClass);
-    }
+        feature->basicsetEContainingClass(m_ConceptualRoleEClass);
 
-    // Create enums
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    // Create data types
+    [this]()
+    { // Classifier ConceptualRole
+        auto &&classifier = m_ConceptualRoleEClass;
+
+        // ENamedElement
+        classifier->setName("ConceptualRole");
+
+        // EClassifier
+        classifier->setClassifierID(CONCEPTUALROLE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ConceptualRoleEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ConceptualRole__conceptualElement);
+        }
+    }();
+
+    [this]()
+    { // Classifier FactUnit
+        auto &&classifier = m_FactUnitEClass;
+
+        // ENamedElement
+        classifier->setName("FactUnit");
+
+        // EClassifier
+        classifier->setClassifierID(FACTUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier RuleUnit
+        auto &&classifier = m_RuleUnitEClass;
+
+        // ENamedElement
+        classifier->setName("RuleUnit");
+
+        // EClassifier
+        classifier->setClassifierID(RULEUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier ScenarioUnit
+        auto &&classifier = m_ScenarioUnitEClass;
+
+        // ENamedElement
+        classifier->setName("ScenarioUnit");
+
+        // EClassifier
+        classifier->setClassifierID(SCENARIOUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier TermUnit
+        auto &&classifier = m_TermUnitEClass;
+
+        // ENamedElement
+        classifier->setName("TermUnit");
+
+        // EClassifier
+        classifier->setClassifierID(TERMUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
 
     // Initialize package
     setName("conceptual");
@@ -329,278 +687,53 @@ void ConceptualPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_ConceptualModelEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
-    m_AbstractConceptualElementEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-    m_TermUnitEClass->getESuperTypes().push_back(
-            m_AbstractConceptualElementEClass);
-    m_ConceptualContainerEClass->getESuperTypes().push_back(
-            m_AbstractConceptualElementEClass);
-    m_FactUnitEClass->getESuperTypes().push_back(m_ConceptualContainerEClass);
-    m_AbstractConceptualRelationshipEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
-    m_ConceptualRelationshipEClass->getESuperTypes().push_back(
-            m_AbstractConceptualRelationshipEClass);
-    m_BehaviorUnitEClass->getESuperTypes().push_back(
-            m_ConceptualContainerEClass);
-    m_RuleUnitEClass->getESuperTypes().push_back(m_ConceptualContainerEClass);
-    m_ScenarioUnitEClass->getESuperTypes().push_back(
-            m_ConceptualContainerEClass);
-    m_ConceptualFlowEClass->getESuperTypes().push_back(
-            m_AbstractConceptualRelationshipEClass);
-    m_ConceptualElementEClass->getESuperTypes().push_back(
-            m_AbstractConceptualElementEClass);
-    m_ConceptualRoleEClass->getESuperTypes().push_back(
-            m_AbstractConceptualElementEClass);
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // ConceptualModel
-        m_ConceptualModelEClass->setName("ConceptualModel");
-        m_ConceptualModelEClass->setAbstract(false);
-        m_ConceptualModelEClass->setInterface(false);
-
-        m_ConceptualModel__conceptualElement->setEType(
-                m_AbstractConceptualElementEClass);
-        m_ConceptualModel__conceptualElement->setDefaultValueLiteral("");
-        m_ConceptualModel__conceptualElement->setLowerBound(0);
-        m_ConceptualModel__conceptualElement->setUpperBound(-1);
-        m_ConceptualModel__conceptualElement->setTransient(false);
-        m_ConceptualModel__conceptualElement->setVolatile(false);
-        m_ConceptualModel__conceptualElement->setChangeable(true);
-        m_ConceptualModel__conceptualElement->setContainment(true);
-        m_ConceptualModel__conceptualElement->setResolveProxies(true);
-        m_ConceptualModel__conceptualElement->setUnique(true);
-        m_ConceptualModel__conceptualElement->setDerived(false);
-        m_ConceptualModel__conceptualElement->setOrdered(false);
-
-    }
-
-    { // AbstractConceptualElement
-        m_AbstractConceptualElementEClass->setName("AbstractConceptualElement");
-        m_AbstractConceptualElementEClass->setAbstract(true);
-        m_AbstractConceptualElementEClass->setInterface(false);
-
-        m_AbstractConceptualElement__source->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_AbstractConceptualElement__source->setDefaultValueLiteral("");
-        m_AbstractConceptualElement__source->setLowerBound(0);
-        m_AbstractConceptualElement__source->setUpperBound(-1);
-        m_AbstractConceptualElement__source->setTransient(false);
-        m_AbstractConceptualElement__source->setVolatile(false);
-        m_AbstractConceptualElement__source->setChangeable(true);
-        m_AbstractConceptualElement__source->setContainment(true);
-        m_AbstractConceptualElement__source->setResolveProxies(true);
-        m_AbstractConceptualElement__source->setUnique(true);
-        m_AbstractConceptualElement__source->setDerived(false);
-        m_AbstractConceptualElement__source->setOrdered(false);
-        m_AbstractConceptualElement__implementation->setEType(
+    [this]()
+    {
+        m_ConceptualModelEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+        m_AbstractConceptualElementEClass->getESuperTypes().push_back(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_AbstractConceptualElement__implementation->setDefaultValueLiteral("");
-        m_AbstractConceptualElement__implementation->setLowerBound(0);
-        m_AbstractConceptualElement__implementation->setUpperBound(-1);
-        m_AbstractConceptualElement__implementation->setTransient(false);
-        m_AbstractConceptualElement__implementation->setVolatile(false);
-        m_AbstractConceptualElement__implementation->setChangeable(true);
-        m_AbstractConceptualElement__implementation->setContainment(false);
-        m_AbstractConceptualElement__implementation->setResolveProxies(true);
-        m_AbstractConceptualElement__implementation->setUnique(true);
-        m_AbstractConceptualElement__implementation->setDerived(false);
-        m_AbstractConceptualElement__implementation->setOrdered(false);
-        m_AbstractConceptualElement__conceptualRelation->setEType(
+        m_TermUnitEClass->getESuperTypes().push_back(
+                m_AbstractConceptualElementEClass);
+        m_ConceptualContainerEClass->getESuperTypes().push_back(
+                m_AbstractConceptualElementEClass);
+        m_FactUnitEClass->getESuperTypes().push_back(
+                m_ConceptualContainerEClass);
+        m_AbstractConceptualRelationshipEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+        m_ConceptualRelationshipEClass->getESuperTypes().push_back(
                 m_AbstractConceptualRelationshipEClass);
-        m_AbstractConceptualElement__conceptualRelation->setDefaultValueLiteral(
-                "");
-        m_AbstractConceptualElement__conceptualRelation->setLowerBound(0);
-        m_AbstractConceptualElement__conceptualRelation->setUpperBound(-1);
-        m_AbstractConceptualElement__conceptualRelation->setTransient(false);
-        m_AbstractConceptualElement__conceptualRelation->setVolatile(false);
-        m_AbstractConceptualElement__conceptualRelation->setChangeable(true);
-        m_AbstractConceptualElement__conceptualRelation->setContainment(true);
-        m_AbstractConceptualElement__conceptualRelation->setResolveProxies(
-                true);
-        m_AbstractConceptualElement__conceptualRelation->setUnique(true);
-        m_AbstractConceptualElement__conceptualRelation->setDerived(false);
-        m_AbstractConceptualElement__conceptualRelation->setOrdered(false);
-        m_AbstractConceptualElement__abstraction->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_AbstractConceptualElement__abstraction->setDefaultValueLiteral("");
-        m_AbstractConceptualElement__abstraction->setLowerBound(0);
-        m_AbstractConceptualElement__abstraction->setUpperBound(-1);
-        m_AbstractConceptualElement__abstraction->setTransient(false);
-        m_AbstractConceptualElement__abstraction->setVolatile(false);
-        m_AbstractConceptualElement__abstraction->setChangeable(true);
-        m_AbstractConceptualElement__abstraction->setContainment(true);
-        m_AbstractConceptualElement__abstraction->setResolveProxies(true);
-        m_AbstractConceptualElement__abstraction->setUnique(true);
-        m_AbstractConceptualElement__abstraction->setDerived(false);
-        m_AbstractConceptualElement__abstraction->setOrdered(false);
-
-    }
-
-    { // TermUnit
-        m_TermUnitEClass->setName("TermUnit");
-        m_TermUnitEClass->setAbstract(false);
-        m_TermUnitEClass->setInterface(false);
-
-    }
-
-    { // ConceptualContainer
-        m_ConceptualContainerEClass->setName("ConceptualContainer");
-        m_ConceptualContainerEClass->setAbstract(false);
-        m_ConceptualContainerEClass->setInterface(false);
-
-        m_ConceptualContainer__conceptualElement->setEType(
+        m_BehaviorUnitEClass->getESuperTypes().push_back(
+                m_ConceptualContainerEClass);
+        m_RuleUnitEClass->getESuperTypes().push_back(
+                m_ConceptualContainerEClass);
+        m_ScenarioUnitEClass->getESuperTypes().push_back(
+                m_ConceptualContainerEClass);
+        m_ConceptualFlowEClass->getESuperTypes().push_back(
+                m_AbstractConceptualRelationshipEClass);
+        m_ConceptualElementEClass->getESuperTypes().push_back(
                 m_AbstractConceptualElementEClass);
-        m_ConceptualContainer__conceptualElement->setDefaultValueLiteral("");
-        m_ConceptualContainer__conceptualElement->setLowerBound(0);
-        m_ConceptualContainer__conceptualElement->setUpperBound(-1);
-        m_ConceptualContainer__conceptualElement->setTransient(false);
-        m_ConceptualContainer__conceptualElement->setVolatile(false);
-        m_ConceptualContainer__conceptualElement->setChangeable(true);
-        m_ConceptualContainer__conceptualElement->setContainment(true);
-        m_ConceptualContainer__conceptualElement->setResolveProxies(true);
-        m_ConceptualContainer__conceptualElement->setUnique(true);
-        m_ConceptualContainer__conceptualElement->setDerived(false);
-        m_ConceptualContainer__conceptualElement->setOrdered(false);
-
-    }
-
-    { // FactUnit
-        m_FactUnitEClass->setName("FactUnit");
-        m_FactUnitEClass->setAbstract(false);
-        m_FactUnitEClass->setInterface(false);
-
-    }
-
-    { // AbstractConceptualRelationship
-        m_AbstractConceptualRelationshipEClass->setName(
-                "AbstractConceptualRelationship");
-        m_AbstractConceptualRelationshipEClass->setAbstract(true);
-        m_AbstractConceptualRelationshipEClass->setInterface(false);
-
-    }
-
-    { // ConceptualRelationship
-        m_ConceptualRelationshipEClass->setName("ConceptualRelationship");
-        m_ConceptualRelationshipEClass->setAbstract(false);
-        m_ConceptualRelationshipEClass->setInterface(false);
-
-        m_ConceptualRelationship__to->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_ConceptualRelationship__to->setDefaultValueLiteral("");
-        m_ConceptualRelationship__to->setLowerBound(1);
-        m_ConceptualRelationship__to->setUpperBound(1);
-        m_ConceptualRelationship__to->setTransient(false);
-        m_ConceptualRelationship__to->setVolatile(false);
-        m_ConceptualRelationship__to->setChangeable(true);
-        m_ConceptualRelationship__to->setContainment(false);
-        m_ConceptualRelationship__to->setResolveProxies(true);
-        m_ConceptualRelationship__to->setUnique(true);
-        m_ConceptualRelationship__to->setDerived(false);
-        m_ConceptualRelationship__to->setOrdered(false);
-        m_ConceptualRelationship__from->setEType(
+        m_ConceptualRoleEClass->getESuperTypes().push_back(
                 m_AbstractConceptualElementEClass);
-        m_ConceptualRelationship__from->setDefaultValueLiteral("");
-        m_ConceptualRelationship__from->setLowerBound(1);
-        m_ConceptualRelationship__from->setUpperBound(1);
-        m_ConceptualRelationship__from->setTransient(false);
-        m_ConceptualRelationship__from->setVolatile(false);
-        m_ConceptualRelationship__from->setChangeable(true);
-        m_ConceptualRelationship__from->setContainment(false);
-        m_ConceptualRelationship__from->setResolveProxies(true);
-        m_ConceptualRelationship__from->setUnique(true);
-        m_ConceptualRelationship__from->setDerived(false);
-        m_ConceptualRelationship__from->setOrdered(false);
+    }();
 
-    }
-
-    { // BehaviorUnit
-        m_BehaviorUnitEClass->setName("BehaviorUnit");
-        m_BehaviorUnitEClass->setAbstract(false);
-        m_BehaviorUnitEClass->setInterface(false);
-
-    }
-
-    { // RuleUnit
-        m_RuleUnitEClass->setName("RuleUnit");
-        m_RuleUnitEClass->setAbstract(false);
-        m_RuleUnitEClass->setInterface(false);
-
-    }
-
-    { // ScenarioUnit
-        m_ScenarioUnitEClass->setName("ScenarioUnit");
-        m_ScenarioUnitEClass->setAbstract(false);
-        m_ScenarioUnitEClass->setInterface(false);
-
-    }
-
-    { // ConceptualFlow
-        m_ConceptualFlowEClass->setName("ConceptualFlow");
-        m_ConceptualFlowEClass->setAbstract(false);
-        m_ConceptualFlowEClass->setInterface(false);
-
-        m_ConceptualFlow__to->setEType(m_ConceptualContainerEClass);
-        m_ConceptualFlow__to->setDefaultValueLiteral("");
-        m_ConceptualFlow__to->setLowerBound(1);
-        m_ConceptualFlow__to->setUpperBound(1);
-        m_ConceptualFlow__to->setTransient(false);
-        m_ConceptualFlow__to->setVolatile(false);
-        m_ConceptualFlow__to->setChangeable(true);
-        m_ConceptualFlow__to->setContainment(false);
-        m_ConceptualFlow__to->setResolveProxies(true);
-        m_ConceptualFlow__to->setUnique(true);
-        m_ConceptualFlow__to->setDerived(false);
-        m_ConceptualFlow__to->setOrdered(false);
-        m_ConceptualFlow__from->setEType(m_ConceptualContainerEClass);
-        m_ConceptualFlow__from->setDefaultValueLiteral("");
-        m_ConceptualFlow__from->setLowerBound(1);
-        m_ConceptualFlow__from->setUpperBound(1);
-        m_ConceptualFlow__from->setTransient(false);
-        m_ConceptualFlow__from->setVolatile(false);
-        m_ConceptualFlow__from->setChangeable(true);
-        m_ConceptualFlow__from->setContainment(false);
-        m_ConceptualFlow__from->setResolveProxies(true);
-        m_ConceptualFlow__from->setUnique(true);
-        m_ConceptualFlow__from->setDerived(false);
-        m_ConceptualFlow__from->setOrdered(false);
-
-    }
-
-    { // ConceptualElement
-        m_ConceptualElementEClass->setName("ConceptualElement");
-        m_ConceptualElementEClass->setAbstract(false);
-        m_ConceptualElementEClass->setInterface(false);
-
-    }
-
-    { // ConceptualRole
-        m_ConceptualRoleEClass->setName("ConceptualRole");
-        m_ConceptualRoleEClass->setAbstract(false);
-        m_ConceptualRoleEClass->setInterface(false);
-
-        m_ConceptualRole__conceptualElement->setEType(
-                m_AbstractConceptualElementEClass);
-        m_ConceptualRole__conceptualElement->setDefaultValueLiteral("");
-        m_ConceptualRole__conceptualElement->setLowerBound(1);
-        m_ConceptualRole__conceptualElement->setUpperBound(1);
-        m_ConceptualRole__conceptualElement->setTransient(false);
-        m_ConceptualRole__conceptualElement->setVolatile(false);
-        m_ConceptualRole__conceptualElement->setChangeable(true);
-        m_ConceptualRole__conceptualElement->setContainment(false);
-        m_ConceptualRole__conceptualElement->setResolveProxies(true);
-        m_ConceptualRole__conceptualElement->setUnique(true);
-        m_ConceptualRole__conceptualElement->setDerived(false);
-        m_ConceptualRole__conceptualElement->setOrdered(false);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_AbstractConceptualElementEClass);
+        classifiers.push_back(m_AbstractConceptualRelationshipEClass);
+        classifiers.push_back(m_BehaviorUnitEClass);
+        classifiers.push_back(m_ConceptualContainerEClass);
+        classifiers.push_back(m_ConceptualElementEClass);
+        classifiers.push_back(m_ConceptualFlowEClass);
+        classifiers.push_back(m_ConceptualModelEClass);
+        classifiers.push_back(m_ConceptualRelationshipEClass);
+        classifiers.push_back(m_ConceptualRoleEClass);
+        classifiers.push_back(m_FactUnitEClass);
+        classifiers.push_back(m_RuleUnitEClass);
+        classifiers.push_back(m_ScenarioUnitEClass);
+        classifiers.push_back(m_TermUnitEClass);
+    }();
 
     _initialize();
 }

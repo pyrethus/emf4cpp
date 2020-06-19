@@ -39,916 +39,516 @@ public:
 
     // IDs for classifier AbsoluteCoord
     static const int ABSOLUTECOORD = 0;
-
     static const int ABSOLUTECOORD__X = 0;
-
     static const int ABSOLUTECOORD__Y = 1;
-
     static const int ABSOLUTECOORD_FEATURE_COUNT = 2;
 
     // IDs for classifier Attribute
     static const int ATTRIBUTE = 1;
-
     static const int ATTRIBUTE__ATTOWNER = 0;
-
     static const int ATTRIBUTE_FEATURE_COUNT = 1;
 
     // IDs for classifier Circle
     static const int CIRCLE = 2;
-
     static const int CIRCLE__OWNER = 0;
-
     static const int CIRCLE__TARGET = 1;
-
     static const int CIRCLE__ATTRIBUTE = 2;
-
     static const int CIRCLE__POSITION = 3;
-
     static const int CIRCLE__SIZE = 4;
-
     static const int CIRCLE__ROOT = 5;
-
     static const int CIRCLE__FILL = 6;
-
     static const int CIRCLE__VIEWBOX = 7;
-
     static const int CIRCLE__GROUP = 8;
-
     static const int CIRCLE__IDENTIFIER = 9;
-
     static const int CIRCLE__DRAWSMARKER = 10;
-
     static const int CIRCLE__STROKE = 11;
-
     static const int CIRCLE_FEATURE_COUNT = 12;
 
     // IDs for classifier Coordinates
     static const int COORDINATES = 3;
-
     static const int COORDINATES__X = 0;
-
     static const int COORDINATES__Y = 1;
-
     static const int COORDINATES_FEATURE_COUNT = 2;
 
     // IDs for classifier Defs
     static const int DEFS = 4;
-
     static const int DEFS__OWNER = 0;
-
     static const int DEFS__TARGET = 1;
-
     static const int DEFS__ATTRIBUTE = 2;
-
     static const int DEFS__POSITION = 3;
-
     static const int DEFS__SIZE = 4;
-
     static const int DEFS__ROOT = 5;
-
     static const int DEFS__FILL = 6;
-
     static const int DEFS__VIEWBOX = 7;
-
     static const int DEFS__GROUP = 8;
-
     static const int DEFS__IDENTIFIER = 9;
-
     static const int DEFS__DRAWSMARKER = 10;
-
     static const int DEFS__GROUPCONTENT = 11;
-
     static const int DEFS_FEATURE_COUNT = 12;
 
     // IDs for classifier Dimension
     static const int DIMENSION = 5;
-
     static const int DIMENSION__WIDTH = 0;
-
     static const int DIMENSION__HEIGHT = 1;
-
     static const int DIMENSION_FEATURE_COUNT = 2;
 
     // IDs for classifier Element
     static const int ELEMENT = 6;
-
     static const int ELEMENT__OWNER = 0;
-
     static const int ELEMENT__TARGET = 1;
-
     static const int ELEMENT__ATTRIBUTE = 2;
-
     static const int ELEMENT__POSITION = 3;
-
     static const int ELEMENT__SIZE = 4;
-
     static const int ELEMENT__ROOT = 5;
-
     static const int ELEMENT__FILL = 6;
-
     static const int ELEMENT__VIEWBOX = 7;
-
     static const int ELEMENT__GROUP = 8;
-
     static const int ELEMENT__IDENTIFIER = 9;
-
     static const int ELEMENT__DRAWSMARKER = 10;
-
     static const int ELEMENT_FEATURE_COUNT = 11;
 
     // IDs for classifier Ellipse
     static const int ELLIPSE = 7;
-
     static const int ELLIPSE__OWNER = 0;
-
     static const int ELLIPSE__TARGET = 1;
-
     static const int ELLIPSE__ATTRIBUTE = 2;
-
     static const int ELLIPSE__POSITION = 3;
-
     static const int ELLIPSE__SIZE = 4;
-
     static const int ELLIPSE__ROOT = 5;
-
     static const int ELLIPSE__FILL = 6;
-
     static const int ELLIPSE__VIEWBOX = 7;
-
     static const int ELLIPSE__GROUP = 8;
-
     static const int ELLIPSE__IDENTIFIER = 9;
-
     static const int ELLIPSE__DRAWSMARKER = 10;
-
     static const int ELLIPSE__STROKE = 11;
-
     static const int ELLIPSE_FEATURE_COUNT = 12;
 
     // IDs for classifier FontStyle
     static const int FONTSTYLE = 8;
-
     static const int FONTSTYLE__ATTOWNER = 0;
-
     static const int FONTSTYLE__ITALIC = 1;
-
     static const int FONTSTYLE_FEATURE_COUNT = 2;
 
     // IDs for classifier FontWeight
     static const int FONTWEIGHT = 9;
-
     static const int FONTWEIGHT__ATTOWNER = 0;
-
     static const int FONTWEIGHT__BOLD = 1;
-
     static const int FONTWEIGHT_FEATURE_COUNT = 2;
 
     // IDs for classifier G
     static const int G = 10;
-
     static const int G__OWNER = 0;
-
     static const int G__TARGET = 1;
-
     static const int G__ATTRIBUTE = 2;
-
     static const int G__POSITION = 3;
-
     static const int G__SIZE = 4;
-
     static const int G__ROOT = 5;
-
     static const int G__FILL = 6;
-
     static const int G__VIEWBOX = 7;
-
     static const int G__GROUP = 8;
-
     static const int G__IDENTIFIER = 9;
-
     static const int G__DRAWSMARKER = 10;
-
     static const int G__GROUPCONTENT = 11;
-
     static const int G__NAME = 12;
-
     static const int G_FEATURE_COUNT = 13;
 
     // IDs for classifier GraphicalElement
     static const int GRAPHICALELEMENT = 11;
-
     static const int GRAPHICALELEMENT__OWNER = 0;
-
     static const int GRAPHICALELEMENT__TARGET = 1;
-
     static const int GRAPHICALELEMENT__ATTRIBUTE = 2;
-
     static const int GRAPHICALELEMENT__POSITION = 3;
-
     static const int GRAPHICALELEMENT__SIZE = 4;
-
     static const int GRAPHICALELEMENT__ROOT = 5;
-
     static const int GRAPHICALELEMENT__FILL = 6;
-
     static const int GRAPHICALELEMENT__VIEWBOX = 7;
-
     static const int GRAPHICALELEMENT__GROUP = 8;
-
     static const int GRAPHICALELEMENT__IDENTIFIER = 9;
-
     static const int GRAPHICALELEMENT__DRAWSMARKER = 10;
-
     static const int GRAPHICALELEMENT__STROKE = 11;
-
     static const int GRAPHICALELEMENT_FEATURE_COUNT = 12;
 
     // IDs for classifier GroupingElement
     static const int GROUPINGELEMENT = 12;
-
     static const int GROUPINGELEMENT__OWNER = 0;
-
     static const int GROUPINGELEMENT__TARGET = 1;
-
     static const int GROUPINGELEMENT__ATTRIBUTE = 2;
-
     static const int GROUPINGELEMENT__POSITION = 3;
-
     static const int GROUPINGELEMENT__SIZE = 4;
-
     static const int GROUPINGELEMENT__ROOT = 5;
-
     static const int GROUPINGELEMENT__FILL = 6;
-
     static const int GROUPINGELEMENT__VIEWBOX = 7;
-
     static const int GROUPINGELEMENT__GROUP = 8;
-
     static const int GROUPINGELEMENT__IDENTIFIER = 9;
-
     static const int GROUPINGELEMENT__DRAWSMARKER = 10;
-
     static const int GROUPINGELEMENT__GROUPCONTENT = 11;
-
     static const int GROUPINGELEMENT_FEATURE_COUNT = 12;
 
     // IDs for classifier Image
     static const int IMAGE = 13;
-
     static const int IMAGE__OWNER = 0;
-
     static const int IMAGE__TARGET = 1;
-
     static const int IMAGE__ATTRIBUTE = 2;
-
     static const int IMAGE__POSITION = 3;
-
     static const int IMAGE__SIZE = 4;
-
     static const int IMAGE__ROOT = 5;
-
     static const int IMAGE__FILL = 6;
-
     static const int IMAGE__VIEWBOX = 7;
-
     static const int IMAGE__GROUP = 8;
-
     static const int IMAGE__IDENTIFIER = 9;
-
     static const int IMAGE__DRAWSMARKER = 10;
-
     static const int IMAGE__REFEREE = 11;
-
     static const int IMAGE_FEATURE_COUNT = 12;
 
     // IDs for classifier Line
     static const int LINE = 14;
-
     static const int LINE__OWNER = 0;
-
     static const int LINE__TARGET = 1;
-
     static const int LINE__ATTRIBUTE = 2;
-
     static const int LINE__POSITION = 3;
-
     static const int LINE__SIZE = 4;
-
     static const int LINE__ROOT = 5;
-
     static const int LINE__FILL = 6;
-
     static const int LINE__VIEWBOX = 7;
-
     static const int LINE__GROUP = 8;
-
     static const int LINE__IDENTIFIER = 9;
-
     static const int LINE__DRAWSMARKER = 10;
-
     static const int LINE__STROKE = 11;
-
     static const int LINE__BETWEEN = 12;
-
     static const int LINE__MARKEREND = 13;
-
     static const int LINE__MARKERSTART = 14;
-
     static const int LINE_FEATURE_COUNT = 15;
 
     // IDs for classifier Marker
     static const int MARKER = 15;
-
     static const int MARKER__OWNER = 0;
-
     static const int MARKER__TARGET = 1;
-
     static const int MARKER__ATTRIBUTE = 2;
-
     static const int MARKER__POSITION = 3;
-
     static const int MARKER__SIZE = 4;
-
     static const int MARKER__ROOT = 5;
-
     static const int MARKER__FILL = 6;
-
     static const int MARKER__VIEWBOX = 7;
-
     static const int MARKER__GROUP = 8;
-
     static const int MARKER__IDENTIFIER = 9;
-
     static const int MARKER__DRAWSMARKER = 10;
-
     static const int MARKER__STROKE = 11;
-
     static const int MARKER__MARKERUNITS = 12;
-
     static const int MARKER__REFX = 13;
-
     static const int MARKER__REFY = 14;
-
     static const int MARKER__MARKERWIDTH = 15;
-
     static const int MARKER__MARKERHEIGHT = 16;
-
     static const int MARKER__ORIENT = 17;
-
     static const int MARKER__DRAWING = 18;
-
     static const int MARKER_FEATURE_COUNT = 19;
 
     // IDs for classifier Path
     static const int PATH = 16;
-
     static const int PATH__OWNER = 0;
-
     static const int PATH__TARGET = 1;
-
     static const int PATH__ATTRIBUTE = 2;
-
     static const int PATH__POSITION = 3;
-
     static const int PATH__SIZE = 4;
-
     static const int PATH__ROOT = 5;
-
     static const int PATH__FILL = 6;
-
     static const int PATH__VIEWBOX = 7;
-
     static const int PATH__GROUP = 8;
-
     static const int PATH__IDENTIFIER = 9;
-
     static const int PATH__DRAWSMARKER = 10;
-
     static const int PATH__STROKE = 11;
-
     static const int PATH__PATHLENGTH = 12;
-
     static const int PATH__D = 13;
-
     static const int PATH__MARKEREND = 14;
-
     static const int PATH__MARKERSTART = 15;
-
     static const int PATH_FEATURE_COUNT = 16;
 
     // IDs for classifier Point
     static const int POINT = 17;
-
     static const int POINT__OWNER = 0;
-
     static const int POINT__TARGET = 1;
-
     static const int POINT__ATTRIBUTE = 2;
-
     static const int POINT__POSITION = 3;
-
     static const int POINT__SIZE = 4;
-
     static const int POINT__ROOT = 5;
-
     static const int POINT__FILL = 6;
-
     static const int POINT__VIEWBOX = 7;
-
     static const int POINT__GROUP = 8;
-
     static const int POINT__IDENTIFIER = 9;
-
     static const int POINT__DRAWSMARKER = 10;
-
     static const int POINT__STROKE = 11;
-
     static const int POINT_FEATURE_COUNT = 12;
 
     // IDs for classifier Polygon
     static const int POLYGON = 18;
-
     static const int POLYGON__OWNER = 0;
-
     static const int POLYGON__TARGET = 1;
-
     static const int POLYGON__ATTRIBUTE = 2;
-
     static const int POLYGON__POSITION = 3;
-
     static const int POLYGON__SIZE = 4;
-
     static const int POLYGON__ROOT = 5;
-
     static const int POLYGON__FILL = 6;
-
     static const int POLYGON__VIEWBOX = 7;
-
     static const int POLYGON__GROUP = 8;
-
     static const int POLYGON__IDENTIFIER = 9;
-
     static const int POLYGON__DRAWSMARKER = 10;
-
     static const int POLYGON__STROKE = 11;
-
     static const int POLYGON__WAYPOINTS = 12;
-
     static const int POLYGON__MARKEREND = 13;
-
     static const int POLYGON__MARKERSTART = 14;
-
     static const int POLYGON_FEATURE_COUNT = 15;
 
     // IDs for classifier Polyline
     static const int POLYLINE = 19;
-
     static const int POLYLINE__OWNER = 0;
-
     static const int POLYLINE__TARGET = 1;
-
     static const int POLYLINE__ATTRIBUTE = 2;
-
     static const int POLYLINE__POSITION = 3;
-
     static const int POLYLINE__SIZE = 4;
-
     static const int POLYLINE__ROOT = 5;
-
     static const int POLYLINE__FILL = 6;
-
     static const int POLYLINE__VIEWBOX = 7;
-
     static const int POLYLINE__GROUP = 8;
-
     static const int POLYLINE__IDENTIFIER = 9;
-
     static const int POLYLINE__DRAWSMARKER = 10;
-
     static const int POLYLINE__STROKE = 11;
-
     static const int POLYLINE__WAYPOINTS = 12;
-
     static const int POLYLINE__STROKEDASHARRAY = 13;
-
     static const int POLYLINE__MARKEREND = 14;
-
     static const int POLYLINE__MARKERSTART = 15;
-
     static const int POLYLINE_FEATURE_COUNT = 16;
 
     // IDs for classifier Rect
     static const int RECT = 20;
-
     static const int RECT__OWNER = 0;
-
     static const int RECT__TARGET = 1;
-
     static const int RECT__ATTRIBUTE = 2;
-
     static const int RECT__POSITION = 3;
-
     static const int RECT__SIZE = 4;
-
     static const int RECT__ROOT = 5;
-
     static const int RECT__FILL = 6;
-
     static const int RECT__VIEWBOX = 7;
-
     static const int RECT__GROUP = 8;
-
     static const int RECT__IDENTIFIER = 9;
-
     static const int RECT__DRAWSMARKER = 10;
-
     static const int RECT__STROKE = 11;
-
     static const int RECT__RX = 12;
-
     static const int RECT__RY = 13;
-
     static const int RECT_FEATURE_COUNT = 14;
 
     // IDs for classifier ReferencedFile
     static const int REFERENCEDFILE = 21;
-
     static const int REFERENCEDFILE__REFERER = 0;
-
     static const int REFERENCEDFILE__NAME = 1;
-
     static const int REFERENCEDFILE_FEATURE_COUNT = 2;
 
     // IDs for classifier RelativeCoord
     static const int RELATIVECOORD = 22;
-
     static const int RELATIVECOORD__X = 0;
-
     static const int RELATIVECOORD__Y = 1;
-
     static const int RELATIVECOORD_FEATURE_COUNT = 2;
 
     // IDs for classifier Rotate
     static const int ROTATE = 23;
-
     static const int ROTATE__ATTOWNER = 0;
-
     static const int ROTATE__ANGLE = 1;
-
     static const int ROTATE__CX = 2;
-
     static const int ROTATE__CY = 3;
-
     static const int ROTATE_FEATURE_COUNT = 4;
 
     // IDs for classifier Scale
     static const int SCALE = 24;
-
     static const int SCALE__ATTOWNER = 0;
-
     static const int SCALE__SX = 1;
-
     static const int SCALE__SY = 2;
-
     static const int SCALE_FEATURE_COUNT = 3;
 
     // IDs for classifier Shape
     static const int SHAPE = 25;
-
     static const int SHAPE__OWNER = 0;
-
     static const int SHAPE__TARGET = 1;
-
     static const int SHAPE__ATTRIBUTE = 2;
-
     static const int SHAPE__POSITION = 3;
-
     static const int SHAPE__SIZE = 4;
-
     static const int SHAPE__ROOT = 5;
-
     static const int SHAPE__FILL = 6;
-
     static const int SHAPE__VIEWBOX = 7;
-
     static const int SHAPE__GROUP = 8;
-
     static const int SHAPE__IDENTIFIER = 9;
-
     static const int SHAPE__DRAWSMARKER = 10;
-
     static const int SHAPE__STROKE = 11;
-
     static const int SHAPE_FEATURE_COUNT = 12;
 
     // IDs for classifier StructuralElement
     static const int STRUCTURALELEMENT = 26;
-
     static const int STRUCTURALELEMENT__OWNER = 0;
-
     static const int STRUCTURALELEMENT__TARGET = 1;
-
     static const int STRUCTURALELEMENT__ATTRIBUTE = 2;
-
     static const int STRUCTURALELEMENT__POSITION = 3;
-
     static const int STRUCTURALELEMENT__SIZE = 4;
-
     static const int STRUCTURALELEMENT__ROOT = 5;
-
     static const int STRUCTURALELEMENT__FILL = 6;
-
     static const int STRUCTURALELEMENT__VIEWBOX = 7;
-
     static const int STRUCTURALELEMENT__GROUP = 8;
-
     static const int STRUCTURALELEMENT__IDENTIFIER = 9;
-
     static const int STRUCTURALELEMENT__DRAWSMARKER = 10;
-
     static const int STRUCTURALELEMENT_FEATURE_COUNT = 11;
 
     // IDs for classifier Svg
     static const int SVG = 27;
-
     static const int SVG__OWNER = 0;
-
     static const int SVG__TARGET = 1;
-
     static const int SVG__ATTRIBUTE = 2;
-
     static const int SVG__POSITION = 3;
-
     static const int SVG__SIZE = 4;
-
     static const int SVG__ROOT = 5;
-
     static const int SVG__FILL = 6;
-
     static const int SVG__VIEWBOX = 7;
-
     static const int SVG__GROUP = 8;
-
     static const int SVG__IDENTIFIER = 9;
-
     static const int SVG__DRAWSMARKER = 10;
-
     static const int SVG__OWNER_SVG = 11;
-
     static const int SVG__CHILDREN = 12;
-
     static const int SVG__NAMESPACE = 13;
-
     static const int SVG__VERSION = 14;
-
     static const int SVG__BASEPROFILE = 15;
-
     static const int SVG_FEATURE_COUNT = 16;
 
     // IDs for classifier SvgFile
     static const int SVGFILE = 28;
-
     static const int SVGFILE__REFERER = 0;
-
     static const int SVGFILE__NAME = 1;
-
     static const int SVGFILE__TAG = 2;
-
     static const int SVGFILE__ELEMENTS = 3;
-
     static const int SVGFILE_FEATURE_COUNT = 4;
 
     // IDs for classifier Symbol
     static const int SYMBOL = 29;
-
     static const int SYMBOL__OWNER = 0;
-
     static const int SYMBOL__TARGET = 1;
-
     static const int SYMBOL__ATTRIBUTE = 2;
-
     static const int SYMBOL__POSITION = 3;
-
     static const int SYMBOL__SIZE = 4;
-
     static const int SYMBOL__ROOT = 5;
-
     static const int SYMBOL__FILL = 6;
-
     static const int SYMBOL__VIEWBOX = 7;
-
     static const int SYMBOL__GROUP = 8;
-
     static const int SYMBOL__IDENTIFIER = 9;
-
     static const int SYMBOL__DRAWSMARKER = 10;
-
     static const int SYMBOL__GROUPCONTENT = 11;
-
     static const int SYMBOL_FEATURE_COUNT = 12;
 
     // IDs for classifier Text
     static const int TEXT = 30;
-
     static const int TEXT__OWNER = 0;
-
     static const int TEXT__TARGET = 1;
-
     static const int TEXT__ATTRIBUTE = 2;
-
     static const int TEXT__POSITION = 3;
-
     static const int TEXT__SIZE = 4;
-
     static const int TEXT__ROOT = 5;
-
     static const int TEXT__FILL = 6;
-
     static const int TEXT__VIEWBOX = 7;
-
     static const int TEXT__GROUP = 8;
-
     static const int TEXT__IDENTIFIER = 9;
-
     static const int TEXT__DRAWSMARKER = 10;
-
     static const int TEXT__STROKE = 11;
-
     static const int TEXT__ROTATE = 12;
-
     static const int TEXT__TEXTLENGTH = 13;
-
     static const int TEXT__FONTSIZE = 14;
-
     static const int TEXT__LENGTHADJUST = 15;
-
     static const int TEXT__CONTENT = 16;
-
     static const int TEXT_FEATURE_COUNT = 17;
 
     // IDs for classifier TextElement
     static const int TEXTELEMENT = 31;
-
     static const int TEXTELEMENT__OWNER = 0;
-
     static const int TEXTELEMENT__TARGET = 1;
-
     static const int TEXTELEMENT__ATTRIBUTE = 2;
-
     static const int TEXTELEMENT__POSITION = 3;
-
     static const int TEXTELEMENT__SIZE = 4;
-
     static const int TEXTELEMENT__ROOT = 5;
-
     static const int TEXTELEMENT__FILL = 6;
-
     static const int TEXTELEMENT__VIEWBOX = 7;
-
     static const int TEXTELEMENT__GROUP = 8;
-
     static const int TEXTELEMENT__IDENTIFIER = 9;
-
     static const int TEXTELEMENT__DRAWSMARKER = 10;
-
     static const int TEXTELEMENT__STROKE = 11;
-
     static const int TEXTELEMENT__ROTATE = 12;
-
     static const int TEXTELEMENT__TEXTLENGTH = 13;
-
     static const int TEXTELEMENT__FONTSIZE = 14;
-
     static const int TEXTELEMENT_FEATURE_COUNT = 15;
 
     // IDs for classifier Transform
     static const int TRANSFORM = 32;
-
     static const int TRANSFORM__ATTOWNER = 0;
-
     static const int TRANSFORM_FEATURE_COUNT = 1;
 
     // IDs for classifier Translate
     static const int TRANSLATE = 33;
-
     static const int TRANSLATE__ATTOWNER = 0;
-
     static const int TRANSLATE__TX = 1;
-
     static const int TRANSLATE__TY = 2;
-
     static const int TRANSLATE_FEATURE_COUNT = 3;
 
     // IDs for classifier Tref
     static const int TREF = 34;
-
     static const int TREF__OWNER = 0;
-
     static const int TREF__TARGET = 1;
-
     static const int TREF__ATTRIBUTE = 2;
-
     static const int TREF__POSITION = 3;
-
     static const int TREF__SIZE = 4;
-
     static const int TREF__ROOT = 5;
-
     static const int TREF__FILL = 6;
-
     static const int TREF__VIEWBOX = 7;
-
     static const int TREF__GROUP = 8;
-
     static const int TREF__IDENTIFIER = 9;
-
     static const int TREF__DRAWSMARKER = 10;
-
     static const int TREF__STROKE = 11;
-
     static const int TREF__ROTATE = 12;
-
     static const int TREF__TEXTLENGTH = 13;
-
     static const int TREF__FONTSIZE = 14;
-
     static const int TREF__XLINKHREF = 15;
-
     static const int TREF_FEATURE_COUNT = 16;
 
     // IDs for classifier Tspan
     static const int TSPAN = 35;
-
     static const int TSPAN__OWNER = 0;
-
     static const int TSPAN__TARGET = 1;
-
     static const int TSPAN__ATTRIBUTE = 2;
-
     static const int TSPAN__POSITION = 3;
-
     static const int TSPAN__SIZE = 4;
-
     static const int TSPAN__ROOT = 5;
-
     static const int TSPAN__FILL = 6;
-
     static const int TSPAN__VIEWBOX = 7;
-
     static const int TSPAN__GROUP = 8;
-
     static const int TSPAN__IDENTIFIER = 9;
-
     static const int TSPAN__DRAWSMARKER = 10;
-
     static const int TSPAN__STROKE = 11;
-
     static const int TSPAN__ROTATE = 12;
-
     static const int TSPAN__TEXTLENGTH = 13;
-
     static const int TSPAN__FONTSIZE = 14;
-
     static const int TSPAN__CONTENT = 15;
-
     static const int TSPAN_FEATURE_COUNT = 16;
 
     // IDs for classifier Use
     static const int USE = 36;
-
     static const int USE__OWNER = 0;
-
     static const int USE__TARGET = 1;
-
     static const int USE__ATTRIBUTE = 2;
-
     static const int USE__POSITION = 3;
-
     static const int USE__SIZE = 4;
-
     static const int USE__ROOT = 5;
-
     static const int USE__FILL = 6;
-
     static const int USE__VIEWBOX = 7;
-
     static const int USE__GROUP = 8;
-
     static const int USE__IDENTIFIER = 9;
-
     static const int USE__DRAWSMARKER = 10;
-
     static const int USE__USE = 11;
-
     static const int USE_FEATURE_COUNT = 12;
 
     // IDs for classifier Visibility
     static const int VISIBILITY = 37;
-
     static const int VISIBILITY__ATTOWNER = 0;
-
     static const int VISIBILITY__VISIBLE = 1;
-
     static const int VISIBILITY_FEATURE_COUNT = 2;
 
     // EClassifiers methods
@@ -1178,87 +778,44 @@ protected:
     SVGPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_ElementEClass;
-
-    ::ecore::EClass_ptr m_StructuralElementEClass;
-
-    ::ecore::EClass_ptr m_ImageEClass;
-
-    ::ecore::EClass_ptr m_SvgEClass;
-
-    ::ecore::EClass_ptr m_GroupingElementEClass;
-
-    ::ecore::EClass_ptr m_GEClass;
-
-    ::ecore::EClass_ptr m_DefsEClass;
-
-    ::ecore::EClass_ptr m_SymbolEClass;
-
-    ::ecore::EClass_ptr m_UseEClass;
-
-    ::ecore::EClass_ptr m_GraphicalElementEClass;
-
-    ::ecore::EClass_ptr m_ShapeEClass;
-
-    ::ecore::EClass_ptr m_TextElementEClass;
-
-    ::ecore::EClass_ptr m_RectEClass;
-
-    ::ecore::EClass_ptr m_CircleEClass;
-
-    ::ecore::EClass_ptr m_EllipseEClass;
-
-    ::ecore::EClass_ptr m_LineEClass;
-
-    ::ecore::EClass_ptr m_PolylineEClass;
-
-    ::ecore::EClass_ptr m_PolygonEClass;
-
-    ::ecore::EClass_ptr m_PathEClass;
-
-    ::ecore::EClass_ptr m_PointEClass;
-
-    ::ecore::EClass_ptr m_MarkerEClass;
-
-    ::ecore::EClass_ptr m_TextEClass;
-
-    ::ecore::EClass_ptr m_TspanEClass;
-
-    ::ecore::EClass_ptr m_TrefEClass;
-
-    ::ecore::EClass_ptr m_AttributeEClass;
-
-    ::ecore::EClass_ptr m_TransformEClass;
-
-    ::ecore::EClass_ptr m_ScaleEClass;
-
-    ::ecore::EClass_ptr m_TranslateEClass;
-
-    ::ecore::EClass_ptr m_RotateEClass;
-
-    ::ecore::EClass_ptr m_VisibilityEClass;
-
-    ::ecore::EClass_ptr m_FontWeightEClass;
-
-    ::ecore::EClass_ptr m_FontStyleEClass;
-
-    ::ecore::EClass_ptr m_DimensionEClass;
-
-    ::ecore::EClass_ptr m_CoordinatesEClass;
-
-    ::ecore::EClass_ptr m_RelativeCoordEClass;
-
     ::ecore::EClass_ptr m_AbsoluteCoordEClass;
-
+    ::ecore::EClass_ptr m_AttributeEClass;
+    ::ecore::EClass_ptr m_CircleEClass;
+    ::ecore::EClass_ptr m_CoordinatesEClass;
+    ::ecore::EClass_ptr m_DefsEClass;
+    ::ecore::EClass_ptr m_DimensionEClass;
+    ::ecore::EClass_ptr m_ElementEClass;
+    ::ecore::EClass_ptr m_EllipseEClass;
+    ::ecore::EClass_ptr m_FontStyleEClass;
+    ::ecore::EClass_ptr m_FontWeightEClass;
+    ::ecore::EClass_ptr m_GEClass;
+    ::ecore::EClass_ptr m_GraphicalElementEClass;
+    ::ecore::EClass_ptr m_GroupingElementEClass;
+    ::ecore::EClass_ptr m_ImageEClass;
+    ::ecore::EClass_ptr m_LineEClass;
+    ::ecore::EClass_ptr m_MarkerEClass;
+    ::ecore::EClass_ptr m_PathEClass;
+    ::ecore::EClass_ptr m_PointEClass;
+    ::ecore::EClass_ptr m_PolygonEClass;
+    ::ecore::EClass_ptr m_PolylineEClass;
+    ::ecore::EClass_ptr m_RectEClass;
     ::ecore::EClass_ptr m_ReferencedFileEClass;
-
+    ::ecore::EClass_ptr m_RelativeCoordEClass;
+    ::ecore::EClass_ptr m_RotateEClass;
+    ::ecore::EClass_ptr m_ScaleEClass;
+    ::ecore::EClass_ptr m_ShapeEClass;
+    ::ecore::EClass_ptr m_StructuralElementEClass;
+    ::ecore::EClass_ptr m_SvgEClass;
     ::ecore::EClass_ptr m_SvgFileEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_SymbolEClass;
+    ::ecore::EClass_ptr m_TextEClass;
+    ::ecore::EClass_ptr m_TextElementEClass;
+    ::ecore::EClass_ptr m_TransformEClass;
+    ::ecore::EClass_ptr m_TranslateEClass;
+    ::ecore::EClass_ptr m_TrefEClass;
+    ::ecore::EClass_ptr m_TspanEClass;
+    ::ecore::EClass_ptr m_UseEClass;
+    ::ecore::EClass_ptr m_VisibilityEClass;
 
     // EStructuralFeatures instances
 

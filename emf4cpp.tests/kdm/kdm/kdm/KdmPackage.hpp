@@ -43,180 +43,109 @@ namespace kdm
 
         // IDs for classifier Annotation
         static const int ANNOTATION = 0;
-
         static const int ANNOTATION__ATTRIBUTE = 0;
-
         static const int ANNOTATION__ANNOTATION = 1;
-
         static const int ANNOTATION__TEXT = 2;
-
         static const int ANNOTATION_FEATURE_COUNT = 3;
 
         // IDs for classifier Attribute
         static const int ATTRIBUTE = 1;
-
         static const int ATTRIBUTE__ATTRIBUTE = 0;
-
         static const int ATTRIBUTE__ANNOTATION = 1;
-
         static const int ATTRIBUTE__TAG = 2;
-
         static const int ATTRIBUTE__VALUE = 3;
-
         static const int ATTRIBUTE_FEATURE_COUNT = 4;
 
         // IDs for classifier Audit
         static const int AUDIT = 2;
-
         static const int AUDIT__ATTRIBUTE = 0;
-
         static const int AUDIT__ANNOTATION = 1;
-
         static const int AUDIT__DESCRIPTION = 2;
-
         static const int AUDIT__AUTHOR = 3;
-
         static const int AUDIT__DATE = 4;
-
         static const int AUDIT_FEATURE_COUNT = 5;
 
         // IDs for classifier ExtendedValue
         static const int EXTENDEDVALUE = 3;
-
         static const int EXTENDEDVALUE__ATTRIBUTE = 0;
-
         static const int EXTENDEDVALUE__ANNOTATION = 1;
-
         static const int EXTENDEDVALUE__TAG = 2;
-
         static const int EXTENDEDVALUE_FEATURE_COUNT = 3;
 
         // IDs for classifier ExtensionFamily
         static const int EXTENSIONFAMILY = 4;
-
         static const int EXTENSIONFAMILY__ATTRIBUTE = 0;
-
         static const int EXTENSIONFAMILY__ANNOTATION = 1;
-
         static const int EXTENSIONFAMILY__STEREOTYPE = 2;
-
         static const int EXTENSIONFAMILY__NAME = 3;
-
         static const int EXTENSIONFAMILY_FEATURE_COUNT = 4;
 
         // IDs for classifier KDMFramework
         static const int KDMFRAMEWORK = 5;
-
         static const int KDMFRAMEWORK__ATTRIBUTE = 0;
-
         static const int KDMFRAMEWORK__ANNOTATION = 1;
-
         static const int KDMFRAMEWORK__STEREOTYPE = 2;
-
         static const int KDMFRAMEWORK__TAGGEDVALUE = 3;
-
         static const int KDMFRAMEWORK__AUDIT = 4;
-
         static const int KDMFRAMEWORK__EXTENSIONFAMILY = 5;
-
         static const int KDMFRAMEWORK__NAME = 6;
-
         static const int KDMFRAMEWORK_FEATURE_COUNT = 7;
 
         // IDs for classifier KDMModel
         static const int KDMMODEL = 6;
-
         static const int KDMMODEL__ATTRIBUTE = 0;
-
         static const int KDMMODEL__ANNOTATION = 1;
-
         static const int KDMMODEL__STEREOTYPE = 2;
-
         static const int KDMMODEL__TAGGEDVALUE = 3;
-
         static const int KDMMODEL__AUDIT = 4;
-
         static const int KDMMODEL__EXTENSIONFAMILY = 5;
-
         static const int KDMMODEL__NAME = 6;
-
         static const int KDMMODEL_FEATURE_COUNT = 7;
 
         // IDs for classifier Segment
         static const int SEGMENT = 7;
-
         static const int SEGMENT__ATTRIBUTE = 0;
-
         static const int SEGMENT__ANNOTATION = 1;
-
         static const int SEGMENT__STEREOTYPE = 2;
-
         static const int SEGMENT__TAGGEDVALUE = 3;
-
         static const int SEGMENT__AUDIT = 4;
-
         static const int SEGMENT__EXTENSIONFAMILY = 5;
-
         static const int SEGMENT__NAME = 6;
-
         static const int SEGMENT__SEGMENT = 7;
-
         static const int SEGMENT__MODEL = 8;
-
         static const int SEGMENT_FEATURE_COUNT = 9;
 
         // IDs for classifier Stereotype
         static const int STEREOTYPE = 8;
-
         static const int STEREOTYPE__ATTRIBUTE = 0;
-
         static const int STEREOTYPE__ANNOTATION = 1;
-
         static const int STEREOTYPE__TAG = 2;
-
         static const int STEREOTYPE__NAME = 3;
-
         static const int STEREOTYPE__TYPE = 4;
-
         static const int STEREOTYPE_FEATURE_COUNT = 5;
 
         // IDs for classifier TagDefinition
         static const int TAGDEFINITION = 9;
-
         static const int TAGDEFINITION__ATTRIBUTE = 0;
-
         static const int TAGDEFINITION__ANNOTATION = 1;
-
         static const int TAGDEFINITION__TAG = 2;
-
         static const int TAGDEFINITION__TYPE = 3;
-
         static const int TAGDEFINITION_FEATURE_COUNT = 4;
 
         // IDs for classifier TaggedRef
         static const int TAGGEDREF = 10;
-
         static const int TAGGEDREF__ATTRIBUTE = 0;
-
         static const int TAGGEDREF__ANNOTATION = 1;
-
         static const int TAGGEDREF__TAG = 2;
-
         static const int TAGGEDREF__REFERENCE = 3;
-
         static const int TAGGEDREF_FEATURE_COUNT = 4;
 
         // IDs for classifier TaggedValue
         static const int TAGGEDVALUE = 11;
-
         static const int TAGGEDVALUE__ATTRIBUTE = 0;
-
         static const int TAGGEDVALUE__ANNOTATION = 1;
-
         static const int TAGGEDVALUE__TAG = 2;
-
         static const int TAGGEDVALUE__VALUE = 3;
-
         static const int TAGGEDVALUE_FEATURE_COUNT = 4;
 
         // EClassifiers methods
@@ -296,35 +225,18 @@ namespace kdm
         KdmPackage();
         void _initPackage();
 
-        // EClass instances 
-
-        ::ecore::EClass_ptr m_KDMFrameworkEClass;
-
-        ::ecore::EClass_ptr m_KDMModelEClass;
-
-        ::ecore::EClass_ptr m_AuditEClass;
-
-        ::ecore::EClass_ptr m_SegmentEClass;
-
-        ::ecore::EClass_ptr m_AttributeEClass;
-
         ::ecore::EClass_ptr m_AnnotationEClass;
-
-        ::ecore::EClass_ptr m_TagDefinitionEClass;
-
+        ::ecore::EClass_ptr m_AttributeEClass;
+        ::ecore::EClass_ptr m_AuditEClass;
         ::ecore::EClass_ptr m_ExtendedValueEClass;
-
-        ::ecore::EClass_ptr m_StereotypeEClass;
-
         ::ecore::EClass_ptr m_ExtensionFamilyEClass;
-
+        ::ecore::EClass_ptr m_KDMFrameworkEClass;
+        ::ecore::EClass_ptr m_KDMModelEClass;
+        ::ecore::EClass_ptr m_SegmentEClass;
+        ::ecore::EClass_ptr m_StereotypeEClass;
+        ::ecore::EClass_ptr m_TagDefinitionEClass;
         ::ecore::EClass_ptr m_TaggedRefEClass;
-
         ::ecore::EClass_ptr m_TaggedValueEClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
 
         // EStructuralFeatures instances
 

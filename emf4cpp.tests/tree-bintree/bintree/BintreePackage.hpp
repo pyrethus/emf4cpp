@@ -39,15 +39,10 @@ public:
 
     // IDs for classifier BinTreeNode
     static const int BINTREENODE = 0;
-
     static const int BINTREENODE__PARENT = 0;
-
     static const int BINTREENODE__LEFT = 1;
-
     static const int BINTREENODE__RIGHT = 2;
-
     static const int BINTREENODE__DATA = 3;
-
     static const int BINTREENODE_FEATURE_COUNT = 4;
 
     // EClassifiers methods
@@ -71,13 +66,7 @@ protected:
     BintreePackage();
     void _initPackage();
 
-    // EClass instances 
-
     ::ecore::EClass_ptr m_BinTreeNodeEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
 
     // EStructuralFeatures instances
 

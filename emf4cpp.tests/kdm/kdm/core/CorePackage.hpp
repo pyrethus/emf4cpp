@@ -41,23 +41,14 @@ namespace kdm
 
         // IDs for classifier AggregatedRelationship
         static const int AGGREGATEDRELATIONSHIP = 0;
-
         static const int AGGREGATEDRELATIONSHIP__ATTRIBUTE = 0;
-
         static const int AGGREGATEDRELATIONSHIP__ANNOTATION = 1;
-
         static const int AGGREGATEDRELATIONSHIP__STEREOTYPE = 2;
-
         static const int AGGREGATEDRELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int AGGREGATEDRELATIONSHIP__FROM = 4;
-
         static const int AGGREGATEDRELATIONSHIP__TO = 5;
-
         static const int AGGREGATEDRELATIONSHIP__RELATION = 6;
-
         static const int AGGREGATEDRELATIONSHIP__DENSITY = 7;
-
         static const int AGGREGATEDRELATIONSHIP_FEATURE_COUNT = 8;
 
         // IDs for classifier Boolean
@@ -65,11 +56,8 @@ namespace kdm
 
         // IDs for classifier Element
         static const int ELEMENT = 2;
-
         static const int ELEMENT__ATTRIBUTE = 0;
-
         static const int ELEMENT__ANNOTATION = 1;
-
         static const int ELEMENT_FEATURE_COUNT = 2;
 
         // IDs for classifier Integer
@@ -77,43 +65,27 @@ namespace kdm
 
         // IDs for classifier KDMEntity
         static const int KDMENTITY = 4;
-
         static const int KDMENTITY__ATTRIBUTE = 0;
-
         static const int KDMENTITY__ANNOTATION = 1;
-
         static const int KDMENTITY__STEREOTYPE = 2;
-
         static const int KDMENTITY__TAGGEDVALUE = 3;
-
         static const int KDMENTITY__NAME = 4;
-
         static const int KDMENTITY_FEATURE_COUNT = 5;
 
         // IDs for classifier KDMRelationship
         static const int KDMRELATIONSHIP = 5;
-
         static const int KDMRELATIONSHIP__ATTRIBUTE = 0;
-
         static const int KDMRELATIONSHIP__ANNOTATION = 1;
-
         static const int KDMRELATIONSHIP__STEREOTYPE = 2;
-
         static const int KDMRELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int KDMRELATIONSHIP_FEATURE_COUNT = 4;
 
         // IDs for classifier ModelElement
         static const int MODELELEMENT = 6;
-
         static const int MODELELEMENT__ATTRIBUTE = 0;
-
         static const int MODELELEMENT__ANNOTATION = 1;
-
         static const int MODELELEMENT__STEREOTYPE = 2;
-
         static const int MODELELEMENT__TAGGEDVALUE = 3;
-
         static const int MODELELEMENT_FEATURE_COUNT = 4;
 
         // IDs for classifier String
@@ -164,27 +136,14 @@ namespace kdm
         CorePackage();
         void _initPackage();
 
-        // EClass instances 
-
-        ::ecore::EClass_ptr m_ElementEClass;
-
-        ::ecore::EClass_ptr m_ModelElementEClass;
-
-        ::ecore::EClass_ptr m_KDMEntityEClass;
-
-        ::ecore::EClass_ptr m_KDMRelationshipEClass;
-
         ::ecore::EClass_ptr m_AggregatedRelationshipEClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
-
-        ::ecore::EDataType_ptr m_StringEDataType;
-
-        ::ecore::EDataType_ptr m_IntegerEDataType;
-
         ::ecore::EDataType_ptr m_BooleanEDataType;
+        ::ecore::EClass_ptr m_ElementEClass;
+        ::ecore::EDataType_ptr m_IntegerEDataType;
+        ::ecore::EClass_ptr m_KDMEntityEClass;
+        ::ecore::EClass_ptr m_KDMRelationshipEClass;
+        ::ecore::EClass_ptr m_ModelElementEClass;
+        ::ecore::EDataType_ptr m_StringEDataType;
 
         // EStructuralFeatures instances
 

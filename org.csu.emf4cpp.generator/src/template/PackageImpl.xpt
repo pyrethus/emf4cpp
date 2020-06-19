@@ -25,6 +25,67 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 «EXTENSION template::Attributes»
 «EXTENSION template::Types»
 
+
+«DEFINE makeInstance FOR EClassifier-»
+    «EPackage.getPackageAttribute(this)» = ::ecore::make<::ecore::«eClass().name»>();
+«ENDDEFINE-»
+
+«DEFINE makeInstance FOR EStructuralFeature-»
+    «EContainingClass.EPackage.getFeatureMember(this)» = ::ecore::make<::ecore::«eClass().name»>();
+«ENDDEFINE-»
+
+«DEFINE makeInstance FOR EOperation-»
+    «REM»«EContainingClass.EPackage.getOperationMember(this)» = ::ecore::make<::ecore::«eClass().name»>();«ENDREM-»
+«ENDDEFINE-»
+
+«DEFINE makeInstance FOR EClass-»
+    «EXPAND makeInstance FOREACH EOperations-»
+    «EXPAND makeInstance FOREACH EStructuralFeatures-»
+    «EPackage.getPackageAttribute(this)» = ::ecore::make<::ecore::«eClass().name»>();
+«ENDDEFINE-»
+
+
+«REM»
+param variableName is the C-identifier of a variable that is an instance of EModelElement
+«ENDREM»
+«DEFINE setAnnotations(String variableName) FOR EAnnotation-»
+    { // Annotations for «source»
+        auto&& eAnnotation = «variableName»->getEAnnotation("«source»");
+        «FOREACH details AS detail-»
+            eAnnotation->setDetail( "«((ecore::EStringToStringMapEntry)detail).key»", "«cxx(((ecore::EStringToStringMapEntry)detail).value)»" );
+        «ENDFOREACH-»
+    }
+«ENDDEFINE-»
+
+«REM»
+param pkg is the EPackage for which to generate this code (usually "this")
+param variableName is the C-identifier of a variable that is a reference to an instance of EList<EGenericType>
+«ENDREM»
+«DEFINE addTypeArgument(EPackage pkg, String variableName) FOR EGenericType-»
+    {
+        auto&& eTypeArgument = ::ecore::make<::ecore::EGenericType>();
+        «IF EClassifier != null-»
+            eTypeArgument->setEClassifier(«pkg.getPackageAttribute(EClassifier)»);
+        «ENDIF-»
+        «variableName».push_back(eTypeArgument);
+    }
+«ENDDEFINE-»
+
+«REM»
+param pkg is the EPackage for which to generate this code (usually "this")
+param variableName is the C-identifier of a variable that is an instance of ETypedElement
+«ENDREM»
+«DEFINE addGenericType(EPackage pkg, String variableName) FOR EGenericType-»
+    { // GenericType
+        auto eGenericType = ::ecore::make<::ecore::EGenericType>();
+        eGenericType->setEClassifier(«pkg.getPackageAttribute(EClassifier)»);
+        auto&& eTypeArguments = eGenericType->getETypeArguments();
+        «EXPAND addTypeArgument(pkg, "eTypeArguments") FOREACH ETypeArguments-»
+        «variableName»->setEGenericType(eGenericType);
+    }
+«ENDDEFINE-»
+
+
 «DEFINE hppcpp FOR EPackage»
 «FILE getPackagePrefix()+"Impl.cpp"-»
 «IF (boolean) GLOBALVAR internalLicense»
@@ -58,297 +119,252 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using namespace ::«getFQN()»;
 
 «name.toFirstUpper()»Package::«name.toFirstUpper()»Package()
-{    
-«FOREACH EClassifiers.typeSelect(EClass) AS class»
-    // Feature definitions of «class.name»
-    «FOREACH class.EAttributes AS at-»
-    «getFeatureMember(at)» = ::ecore::Ptr<::ecore::EAttribute>(new ::ecore::EAttribute);
-    «ENDFOREACH-»
-    «FOREACH class.EReferences AS ref-»
-    «getFeatureMember(ref)» = ::ecore::Ptr<::ecore::EReference>(new ::ecore::EReference);
-    «ENDFOREACH-»
-«ENDFOREACH»
+{
+    «EXPAND makeInstance FOREACH EClassifiers.sortBy(e|e.name).sortBy(e|e.name.toUpperCase())-»
 }
 
 void «name.toFirstUpper()»Package::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = «name.toFirstUpper()»Factory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this](){ // Factory
+        auto&& _fa = «name.toFirstUpper()»Factory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-«IF !EClassifiers.isEmpty-»
-auto& classifiers =
-	          (::ecorecpp::mapping::ReferenceEListImpl<::ecore::EClassifier_ptr, -1, true, true >&)
-	          getEClassifiers();
-«FOREACH EClassifiers.typeSelect(EClass) AS class»
-    { // «class.name»
-    «getPackageAttribute(class)» = ::ecore::Ptr<::ecore::EClass>(new ::ecore::EClass);
-    «getPackageAttribute(class)»->setClassifierID(«class.name.toUpperCase()»);
-    «getPackageAttribute(class)»->basicsetEPackage(_this());
-    classifiers.basicAdd(«getPackageAttribute(class)»);   
-    «FOREACH class.EStructuralFeatures AS esf-»
-    // «getFeatureMember(esf)» has already been allocated above
-    «getFeatureMember(esf)»->setFeatureID(«esf.getCPPFQN()»);
-    «getFeatureMember(esf)»->setName("«esf.name»");
-    static_cast<::ecorecpp::mapping::ReferenceEListImpl<::ecore::EStructuralFeature_ptr, -1, true, true >&>(
-    				«getPackageAttribute(class)»->getEStructuralFeatures()).basicAdd(«getFeatureMember(esf)»);
-    «getFeatureMember(esf)»->basicsetEContainingClass(«getPackageAttribute(class)»);
-    «ENDFOREACH-»
-    }
-«ENDFOREACH»
+    // Create classes and their features
+«FOREACH EClassifiers.sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS classifier ITERATOR it»
+    «IF EClass.isInstance(classifier)»
+    «LET ((EClass)classifier) AS class-»
+        «FOREACH class.EStructuralFeatures AS esf»
+    [this]() { // Feature «esf.name» of class «class.name»
+        auto&& feature = «getFeatureMember(esf)»;
 
-    // Create enums
-«FOREACH EClassifiers.typeSelect(EEnum) AS enum»
-	{ // «enum.name»
-    «getPackageAttribute(enum)» = ::ecore::Ptr<::ecore::EEnum>(new ::ecore::EEnum);
-    «getPackageAttribute(enum)»->setClassifierID(«enum.name.toUpperCase()»);
-    «getPackageAttribute(enum)»->basicsetEPackage(_this());
-    classifiers.basicAdd(«getPackageAttribute(enum)»);
-    }
-«ENDFOREACH»
+        // ENamedElement
+        feature->setName("«esf.name»");
 
-    // Create data types
-«FOREACH EClassifiers.typeSelect(EDataType).select(e|!EEnum.isInstance(e)) AS dt»
-	{ // «dt.name»
-    «getPackageAttribute(dt)» = ::ecore::Ptr<::ecore::EDataType>(new ::ecore::EDataType);
-    «getPackageAttribute(dt)»->setClassifierID(«dt.name.toUpperCase()»);
-    «getPackageAttribute(dt)»->basicsetEPackage(_this());
-    classifiers.basicAdd(«getPackageAttribute(dt)»);
-    }
+        // ETypedElement
+        feature->setLowerBound(«esf.lowerBound»);
+        feature->setOrdered(«esf.ordered»);
+        feature->setUnique(«esf.unique»);
+        feature->setUpperBound(«esf.upperBound»);
+
+        // EStructuralFeature
+        feature->setChangeable(«esf.changeable»);
+        feature->setDefaultValueLiteral("«esf.defaultValueLiteral»");
+        feature->setDerived(«esf.derived»);
+        feature->setEType(«getPackageAttribute(esf.EType)»);
+        feature->setTransient(«esf.transient»);
+        feature->setUnsettable(«esf.unsettable»);
+        feature->setVolatile(«esf.volatile»);
+
+        feature->setFeatureID(«esf.getCPPFQN()»);
+        feature->basicsetEContainingClass(«getPackageAttribute(class)»);
+        «IF EAttribute.isInstance(esf)-»
+            «LET ((EAttribute)esf) AS at-»
+
+        // EAttribute
+        feature->setID(«at.getID()»);
+            «ENDLET-»
+        «ENDIF-»
+        «IF EReference.isInstance(esf)-»
+            «LET ((EReference)esf) AS ref-»
+
+        // EReference
+        feature->setContainment(«ref.containment»);
+            «IF ref.EOpposite != null-»
+        feature->setEOpposite( «getFeatureMember(ref.EOpposite)» );
+            «ENDIF-»
+        feature->setResolveProxies(«ref.resolveProxies»);
+            «ENDLET-»
+        «ENDIF-»
+    }();
+        «ENDFOREACH»
+    «ENDLET-»
+    «ENDIF»
+
+    [this]() { // Classifier «classifier.name»
+        auto&& classifier = «getPackageAttribute(classifier)»;
+
+        // ENamedElement
+        classifier->setName("«classifier.name»");
+
+        // EClassifier
+        classifier->setClassifierID(«classifier.name.toUpperCase()»);
+        «IF EClass.isInstance(classifier)-»
+            «LET ((EClass)classifier) AS class-»
+
+        // EClass
+        classifier->setAbstract(«class.abstract»);
+        classifier->setInterface(«class.interface»);
+                «IF !class.EStructuralFeatures.isEmpty-»
+        {
+            auto&& eStructuralFeatures = static_cast<::ecorecpp::mapping::ReferenceEListImpl<::ecore::EStructuralFeature_ptr, -1, true, true >&>(«getPackageAttribute(class)»->getEStructuralFeatures());
+                    «FOREACH class.EStructuralFeatures AS esf-»
+            eStructuralFeatures.basicAdd(«getFeatureMember(esf)»);
+                    «ENDFOREACH-»
+         }
+                «ENDIF-»
+            «ENDLET-»
+        «ENDIF-»
+        «IF EDataType.isInstance(classifier)-»
+            «LET ((EDataType)classifier) AS dt-»
+
+        // EDataType
+        classifier->setSerializable(«dt.serializable»);
+            «ENDLET-»
+        «ENDIF-»
+    }();
 «ENDFOREACH»
+«IF !ESubpackages.isEmpty-»
+
+    [this]() { // Subpackages of this package
+        auto&& eSubpackages = getESubpackages();
+        «FOREACH ESubpackages AS sub-»
+            eSubpackages.push_back( ::«sub.getPackagePrefix("::")»::_getInstanceAndRemoveOwnership());
+        «ENDFOREACH-»
+    }();
 «ENDIF-»
-
-«FOREACH ESubpackages AS sub-»
-    getESubpackages().push_back( ::«sub.getPackagePrefix("::")»::_getInstanceAndRemoveOwnership());
-«ENDFOREACH-»
 
     // Initialize package
     setName("«this.name»");
     setNsPrefix("«this.nsPrefix»");
     setNsURI("«this.nsURI»");
 
+    // TODO: bounds for type parameters
 «IF !EClassifiers.typeSelect(EDataType).ETypeParameters.isEmpty-»
     // Create type parameters
-    {
-«FOREACH EClassifiers.typeSelect(EDataType).select(e|!e.ETypeParameters.isEmpty) AS dt»
-         «FOREACH dt.ETypeParameters AS tp-»
-         {
-        auto _tp = ::ecore::Ptr<::ecore::ETypeParameter>(new ::ecore::ETypeParameter);
-        _tp->setName("«tp.name»");
-         «getPackageAttribute(dt)»->getETypeParameters().push_back( _tp );
-         }
+    [this](){
+        «FOREACH EClassifiers.typeSelect(EDataType).select(e|!e.ETypeParameters.isEmpty) AS dt»
+            «FOREACH dt.ETypeParameters AS tp-»
+            {
+            auto _tp = ::ecore::make<::ecore::ETypeParameter>();
+            _tp->setName("«tp.name»");
+            «getPackageAttribute(dt)»->getETypeParameters().push_back( _tp );
+            }
+            «ENDFOREACH-»
         «ENDFOREACH-»
-«ENDFOREACH-»
-    }
+    }();
 «ENDIF-»
 
-    // TODO: bounds for type parameters
-    
     // Add supertypes to classes
-«FOREACH EClassifiers.typeSelect(EClass) AS class-»   
-    «FOREACH class.ESuperTypes AS st-»
-    «getPackageAttribute(class)»->getESuperTypes().push_back(«getPackageAttribute(st)»);
-    «ENDFOREACH-»
-«ENDFOREACH-»
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-«FOREACH EClassifiers.typeSelect(EClass) AS class-»
-    { // «class.name»
-    «getPackageAttribute(class)»->setName("«class.name»");
-    «getPackageAttribute(class)»->setAbstract(«class.abstract»);
-    «getPackageAttribute(class)»->setInterface(«class.interface»);
-    «FOREACH class.EAttributes AS at ITERATOR it-»
-    «getFeatureMember(at)»->setEType(«getPackageAttribute(at.EType)»);
-        «IF !at.EGenericType.ETypeArguments.isEmpty-»
-    {
-        ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr<::ecore::EGenericType>(new ::ecore::EGenericType);
-        _g0->setEClassifier(«getPackageAttribute(at.EGenericType.EClassifier)»);
-            «FOREACH at.EGenericType.ETypeArguments AS ta ITERATOR it-»
-        ::ecore::EGenericType_ptr _g«it.counter1» = ::ecore::Ptr<::ecore::EGenericType>(new ::ecore::EGenericType);
-                «IF ta.EClassifier != null-»
-        _g«it.counter1»->setEClassifier(«getPackageAttribute(ta.EClassifier)»);
-                «ENDIF-»
-        _g0->getETypeArguments().push_back(_g«it.counter1»);
+    [this]() {
+        «FOREACH EClassifiers.typeSelect(EClass) AS class-»
+            «FOREACH class.ESuperTypes AS st-»
+                «getPackageAttribute(class)»->getESuperTypes().push_back(«getPackageAttribute(st)»);
             «ENDFOREACH-»
-        «getFeatureMember(at)»->setEGenericType(_g0);
-    }
-        «ENDIF-»
-    «getFeatureMember(at)»->setDefaultValueLiteral("«at.defaultValueLiteral»");
-    «getFeatureMember(at)»->setLowerBound(«at.lowerBound»);
-    «getFeatureMember(at)»->setUpperBound(«at.upperBound»);
-    «getFeatureMember(at)»->setTransient(«at.transient»);
-    «getFeatureMember(at)»->setVolatile(«at.volatile»);
-    «getFeatureMember(at)»->setChangeable(«at.changeable»);
-    «getFeatureMember(at)»->setUnsettable(«at.unsettable»);
-    «getFeatureMember(at)»->setID(«at.getID()»);
-    «getFeatureMember(at)»->setUnique(«at.unique»);
-    «getFeatureMember(at)»->setDerived(«at.derived»);
-    «getFeatureMember(at)»->setOrdered(«at.ordered»);
-    «ENDFOREACH-»
-
-    «FOREACH class.EReferences AS ref ITERATOR it-»
-    «getFeatureMember(ref)»->setEType(«getPackageAttribute(ref.EType)»);
-        «IF !ref.EGenericType.ETypeArguments.isEmpty-»
-    {
-        ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr<::ecore::EGenericType>(new ::ecore::EGenericType);
-        _g0->setEClassifier(«getPackageAttribute(ref.EGenericType.EClassifier)»);
-            «FOREACH ref.EGenericType.ETypeArguments AS ta ITERATOR it-»
-        ::ecore::EGenericType_ptr _g«it.counter1» = ::ecore::Ptr<::ecore::EGenericType>(new ::ecore::EGenericType);
-                «IF ta.EClassifier != null-»
-        _g«it.counter1»->setEClassifier(«getPackageAttribute(ta.EClassifier)»);
-                «ENDIF-»
-        _g0->getETypeArguments().push_back(_g«it.counter1»);
-            «ENDFOREACH-»
-        «getFeatureMember(ref)»->setEGenericType(_g0);
-    }
-        «ENDIF-»
-    «getFeatureMember(ref)»->setDefaultValueLiteral("«ref.defaultValueLiteral»");
-    «getFeatureMember(ref)»->setLowerBound(«ref.lowerBound»);
-    «getFeatureMember(ref)»->setUpperBound(«ref.upperBound»);
-    «getFeatureMember(ref)»->setTransient(«ref.transient»);
-    «getFeatureMember(ref)»->setVolatile(«ref.volatile»);
-    «getFeatureMember(ref)»->setChangeable(«ref.changeable»);
-    «getFeatureMember(ref)»->setContainment(«ref.containment»);
-    «getFeatureMember(ref)»->setResolveProxies(«ref.resolveProxies»);
-    «getFeatureMember(ref)»->setUnique(«ref.unique»);
-    «getFeatureMember(ref)»->setDerived(«ref.derived»);
-    «getFeatureMember(ref)»->setOrdered(«ref.ordered»);
-        «IF ref.EOpposite != null-»
-            «LET ref.EOpposite.EContainingClass AS opc-»
-    «getFeatureMember(ref)»->setEOpposite( ::ecore::as< ::ecore::EReference > («getPackageAttribute(opc)»->getEStructuralFeatures()[«opc.EAttributes.size+opc.EReferences.indexOf(ref.EOpposite)»]));
-            «ENDLET-»
-        «ENDIF-»
-    «ENDFOREACH-»
-
-    «FOREACH class.EOperations AS op ITERATOR it-»
-    { // «op.name»()
-    auto _op = ::ecore::Ptr<::ecore::EOperation>(new ::ecore::EOperation);
-        «IF op.EType != null-»
-    _op->setEType(«getPackageAttribute(op.EType)»);
-            «IF !op.EGenericType.ETypeArguments.isEmpty-»
-    {
-        ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr<::ecore::EGenericType>(new ::ecore::EGenericType);
-        _g0->setEClassifier(«getPackageAttribute(op.EGenericType.EClassifier)»);
-                «FOREACH op.EGenericType.ETypeArguments AS ta ITERATOR it-»
-        ::ecore::EGenericType_ptr _g«it.counter1» = ::ecore::Ptr<::ecore::EGenericType>(new ::ecore::EGenericType);
-                    «IF ta.EClassifier != null-»
-        _g«it.counter1»->setEClassifier(«getPackageAttribute(ta.EClassifier)»);
-                    «ENDIF-»
-        _g0->getETypeArguments().push_back(_g«it.counter1»);
-                «ENDFOREACH-»
-        _op->setEGenericType(_g0);
-    }
-            «ENDIF-»
-        «ENDIF-»
-    _op->setName("«op.name»");
-    _op->setLowerBound(«op.lowerBound»);
-    _op->setUpperBound(«op.upperBound»);
-    _op->setUnique(«op.unique»);
-    _op->setOrdered(«op.ordered»);
-        «FOREACH op.EParameters AS pa-»
-        { // «pa.name»
-    auto _pa = ::ecore::Ptr<::ecore::EParameter>(new ::ecore::EParameter);
-    _pa->setEType(«getPackageAttribute(pa.EType)»);
-            «IF !pa.EGenericType.ETypeArguments.isEmpty-»
-    {
-        ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr<::ecore::EGenericType>(new ::ecore::EGenericType);
-        _g0->setEClassifier(«getPackageAttribute(pa.EGenericType.EClassifier)»);
-                «FOREACH pa.EGenericType.ETypeArguments AS ta ITERATOR it-»
-        ::ecore::EGenericType_ptr _g«it.counter1» = ::ecore::Ptr<::ecore::EGenericType>(new ::ecore::EGenericType);
-                    «IF ta.EClassifier != null-»
-        _g«it.counter1»->setEClassifier(«getPackageAttribute(ta.EClassifier)»);
-                    «ENDIF-»
-        _g0->getETypeArguments().push_back(_g«it.counter1»);
-                «ENDFOREACH-»
-        _pa->setEGenericType(_g0);
-    }
-            «ENDIF-»
-    _pa->setName("«pa.name»");
-    _pa->setLowerBound(«pa.lowerBound»);
-    _pa->setUpperBound(«pa.upperBound»);
-    _pa->setUnique(«pa.unique»);
-    _pa->setOrdered(«pa.ordered»);
-    _op->getEParameters().push_back(_pa);
-        }
         «ENDFOREACH-»
-    «getPackageAttribute(class)»->getEOperations().push_back(_op);
-    }
-    «ENDFOREACH-»
-    }
-
-«ENDFOREACH»
-
-    // TODO: Initialize data types
-«FOREACH EClassifiers.typeSelect(EDataType).select(e|!EEnum.isInstance(e)) AS dt»
-    { // «dt.name»
-    «getPackageAttribute(dt)»->setName("«dt.name»");
-    «getPackageAttribute(dt)»->setSerializable(«dt.serializable»);
-    }
-«ENDFOREACH»
-«FOREACH EClassifiers.typeSelect(EEnum) AS ee»
-    { // «ee.name»
-    «getPackageAttribute(ee)»->setName("«ee.name»");
-    «getPackageAttribute(ee)»->setSerializable(«ee.serializable»);
-    «FOREACH ee.ELiterals AS el»
-    {
-        ::ecore::EEnumLiteral_ptr _el = ::ecore::Ptr<::ecore::EEnumLiteral>(new ::ecore::EEnumLiteral);
-        // «el»
-        _el->setName("«el.name»");
-        «IF el.value != 0-»
-        _el->setValue(«el.value»);
-        «ELSE-»
-        _el->setValue(«getPackageAttribute(ee)»->getELiterals().size());
-        «ENDIF-»
-        _el->setLiteral("«el.literal»");
-        _el->setEEnum(«getPackageAttribute(ee)»);
-        «getPackageAttribute(ee)»->getELiterals().push_back(_el);
-    }
-    «ENDFOREACH-»
-    }
-«ENDFOREACH»
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
-«FOREACH EAnnotations AS annotation-»
-    _annotation = getEAnnotation("«annotation.source»");
-  «FOREACH annotation.details AS detail-»
-«REM»detail.key and detail.value are flagged as an error, but in reality it works.
-«detail.key»=«detail.value»
-«ENDREM-»
-	_annotation->setDetail( "«((ecore::EStringToStringMapEntry)detail).key»", "«cxx(((ecore::EStringToStringMapEntry)detail).value)»" );
-  «ENDFOREACH»
-«ENDFOREACH-»
+    }();
 
 «FOREACH EClassifiers.typeSelect(EClass) AS class-»
-  «FOREACH class.EAnnotations AS annotation-»
-    _annotation = «getPackageAttribute(class)»->getEAnnotation("«annotation.source»");
-    «FOREACH annotation.details AS detail-»
-	_annotation->setDetail( "«((ecore::EStringToStringMapEntry)detail).key»", "«cxx(((ecore::EStringToStringMapEntry)detail).value)»" );
-    «ENDFOREACH»
-  «ENDFOREACH-»
 
-  «FOREACH class.EStructuralFeatures AS feature-»
-    «FOREACH feature.EAnnotations AS annotation-»
-    _annotation = «getFeatureMember(feature)»->getEAnnotation("«annotation.source»");
-      «FOREACH annotation.details AS detail-»
-	_annotation->setDetail( "«((ecore::EStringToStringMapEntry)detail).key»", "«cxx(((ecore::EStringToStringMapEntry)detail).value)»" );
-      «ENDFOREACH»
+    «FOREACH class.EStructuralFeatures AS esf ITERATOR it-»
+    «IF !esf.EAnnotations.isEmpty || !esf.EGenericType.ETypeArguments.isEmpty-»
+    [this]() { // Feature «esf.name» of class «class.name»
+        auto&& feature = «getFeatureMember(esf)»;
+        «EXPAND setAnnotations("feature") FOREACH esf.EAnnotations-»
+        «IF !esf.EGenericType.ETypeArguments.isEmpty-»
+            «EXPAND addGenericType(this, "feature") FOR esf.EGenericType-»
+        «ENDIF-»
+    }();
+    «ENDIF-»
     «ENDFOREACH-»
-  «ENDFOREACH-»
-«ENDFOREACH-»
+    «IF !class.EAnnotations.isEmpty || !class.EOperations.isEmpty-»
 
-«FOREACH EClassifiers.typeSelect(EDataType) AS datatype-»
-  «FOREACH datatype.EAnnotations AS annotation-»
-    _annotation = «getPackageAttribute(datatype)»->getEAnnotation("«annotation.source»");
-    «FOREACH annotation.details AS detail-»
-	_annotation->setDetail( "«((ecore::EStringToStringMapEntry)detail).key»", "«cxx(((ecore::EStringToStringMapEntry)detail).value)»" );
-    «ENDFOREACH»
-  «ENDFOREACH-»
-«REM»Theoretically EEnumLiterals may have EAnnotations, too.«ENDREM-»
+    [this]() { // Class «class.name»
+        auto&& cls = «getPackageAttribute(class)»;
+        «EXPAND setAnnotations("cls") FOREACH class.EAnnotations-»
+        «IF !class.EOperations.isEmpty-»
+
+            auto&& eOperations = cls->getEOperations();
+            «FOREACH class.EOperations AS op ITERATOR it-»
+            { // Operation «op.name»()
+                auto _op = ::ecore::make<::ecore::EOperation>();
+                «IF op.EType != null-»
+                    _op->setEType(«getPackageAttribute(op.EType)»);
+                    «IF !op.EGenericType.ETypeArguments.isEmpty-»
+                        «EXPAND addGenericType(this, "_op") FOR op.EGenericType-»
+                    «ENDIF-»
+                «ENDIF-»
+                _op->setName("«op.name»");
+                _op->setLowerBound(«op.lowerBound»);
+                _op->setUpperBound(«op.upperBound»);
+                _op->setUnique(«op.unique»);
+                _op->setOrdered(«op.ordered»);
+                «FOREACH op.EParameters AS pa-»
+                { // «pa.name»
+                    auto _pa = ::ecore::make<::ecore::EParameter>();
+                    _pa->setEType(«getPackageAttribute(pa.EType)»);
+                    «IF !pa.EGenericType.ETypeArguments.isEmpty-»
+                        «EXPAND addGenericType(this, "_pa") FOR pa.EGenericType-»
+                    «ENDIF-»
+                    _pa->setName("«pa.name»");
+                    _pa->setLowerBound(«pa.lowerBound»);
+                    _pa->setUpperBound(«pa.upperBound»);
+                    _pa->setUnique(«pa.unique»);
+                    _pa->setOrdered(«pa.ordered»);
+                    _op->getEParameters().push_back(_pa);
+                }
+                «ENDFOREACH-»
+                eOperations.push_back(_op);
+            }
+            «ENDFOREACH-»
+        «ENDIF-»
+    }();
+    «ENDIF-»
+
+«ENDFOREACH»
+
+«FOREACH EClassifiers.typeSelect(EEnum) AS ee»
+    «IF !ee.EAnnotations.isEmpty || !ee.ELiterals.isEmpty-»
+    [this]() { // EEnum «ee.name»
+        auto&& eEnum = «getPackageAttribute(ee)»;
+        «EXPAND setAnnotations("eEnum") FOREACH ee.EAnnotations-»
+    «IF !ee.ELiterals.isEmpty-»
+        { // Literals
+        auto&& eLiterals = eEnum->getELiterals();
+        «FOREACH ee.ELiterals AS el-»
+            { // Literal «el.name»
+                auto _el = ::ecore::make<::ecore::EEnumLiteral>();
+                _el->setName("«el.name»");
+                «IF el.value != 0-»
+                _el->setValue(«el.value»);
+                «ELSE-»
+                _el->setValue(eLiterals.size());
+                «ENDIF-»
+                _el->setLiteral("«el.literal»");
+                _el->setEEnum(eEnum);
+                eLiterals.push_back(_el);
+            }
+        «ENDFOREACH-»
+        }
+    «ENDIF-»
+    }();
+    «ENDIF-»
+«ENDFOREACH»
+
+«FOREACH EClassifiers.typeSelect(EDataType).select(e|!EEnum.isInstance(e)) AS datatype-»
+    «IF !datatype.EAnnotations.isEmpty-»
+        [this]() { // Annotations for Datatype «datatype.name»
+            auto&& datatype = «getPackageAttribute(datatype)»;
+            «EXPAND setAnnotations("datatype") FOREACH datatype.EAnnotations-»
+        }();
+    «ENDIF-»
 «ENDFOREACH-»
+«IF !EAnnotations.isEmpty-»
+
+    [this]() { // Annotations for this package
+        «EXPAND setAnnotations("this") FOREACH EAnnotations-»
+    }();
+«ENDIF-»
+«IF !EClassifiers.isEmpty-»
+
+    [this]() { // Classifiers of this package
+        auto&& classifiers = getEClassifiers();
+        «FOREACH EClassifiers.sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS classifier-»
+            classifiers.push_back(«getPackageAttribute(classifier)»);
+        «ENDFOREACH-»
+    }();
+«ENDIF-»
 
     _initialize();
 }
@@ -360,7 +376,7 @@ auto& classifiers =
 }
 «ENDFOREACH-»
 
-«FOREACH getStructuralFeatures() AS ef-»  
+«FOREACH getStructuralFeatures() AS ef-»
 ::ecore::«ef.eClass().name»_ptr «name.toFirstUpper()»Package::«getFeatureGetMember(ef)»()
 {
     return «getFeatureMember(ef)»;

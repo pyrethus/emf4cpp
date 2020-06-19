@@ -39,51 +39,34 @@ public:
 
     // IDs for classifier LeftHand
     static const int LEFTHAND = 0;
-
     static const int LEFTHAND__NAME = 0;
-
     static const int LEFTHAND__RIGHTEE = 1;
-
     static const int LEFTHAND__RIGHTMULTIPLE = 2;
-
     static const int LEFTHAND_FEATURE_COUNT = 3;
 
     // IDs for classifier NamedObject
     static const int NAMEDOBJECT = 1;
-
     static const int NAMEDOBJECT__NAME = 0;
-
     static const int NAMEDOBJECT_FEATURE_COUNT = 1;
 
     // IDs for classifier RightHand
     static const int RIGHTHAND = 2;
-
     static const int RIGHTHAND__NAME = 0;
-
     static const int RIGHTHAND__LEFTEE = 1;
-
     static const int RIGHTHAND_FEATURE_COUNT = 2;
 
     // IDs for classifier RightMultiple
     static const int RIGHTMULTIPLE = 3;
-
     static const int RIGHTMULTIPLE__NAME = 0;
-
     static const int RIGHTMULTIPLE__LEFTEES = 1;
-
     static const int RIGHTMULTIPLE_FEATURE_COUNT = 2;
 
     // IDs for classifier TopLevel
     static const int TOPLEVEL = 4;
-
     static const int TOPLEVEL__NAME = 0;
-
     static const int TOPLEVEL__LEFTEES = 1;
-
     static const int TOPLEVEL__RIGHTEES = 2;
-
     static const int TOPLEVEL__RIGHTMULTIPLES = 3;
-
     static const int TOPLEVEL_FEATURE_COUNT = 4;
 
     // EClassifiers methods
@@ -123,21 +106,11 @@ protected:
     EoppositePackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_TopLevelEClass;
-
-    ::ecore::EClass_ptr m_NamedObjectEClass;
-
     ::ecore::EClass_ptr m_LeftHandEClass;
-
+    ::ecore::EClass_ptr m_NamedObjectEClass;
     ::ecore::EClass_ptr m_RightHandEClass;
-
     ::ecore::EClass_ptr m_RightMultipleEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_TopLevelEClass;
 
     // EStructuralFeatures instances
 

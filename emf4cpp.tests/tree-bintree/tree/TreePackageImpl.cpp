@@ -38,80 +38,172 @@ using namespace ::tree;
 
 TreePackage::TreePackage()
 {
-
-    // Feature definitions of TreeNode
-    m_TreeNode__data = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_TreeNode__parent = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Leaf
-
-    // Feature definitions of NonTerminal
-    m_NonTerminal__children = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_LeafEClass = ::ecore::make< ::ecore::EClass >();
+    m_NonTerminal__children = ::ecore::make< ::ecore::EReference >();
+    m_NonTerminalEClass = ::ecore::make< ::ecore::EClass >();
+    m_TreeNode__data = ::ecore::make< ::ecore::EAttribute >();
+    m_TreeNode__parent = ::ecore::make< ::ecore::EReference >();
+    m_TreeNodeEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void TreePackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = TreeFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = TreeFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // TreeNode
-        m_TreeNodeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_TreeNodeEClass->setClassifierID(TREENODE);
-        m_TreeNodeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TreeNodeEClass);
-        // m_TreeNode__data has already been allocated above
-        m_TreeNode__data->setFeatureID(::tree::TreePackage::TREENODE__DATA);
-        m_TreeNode__data->setName("data");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
-                m_TreeNode__data);
-        m_TreeNode__data->basicsetEContainingClass(m_TreeNodeEClass);
-        // m_TreeNode__parent has already been allocated above
-        m_TreeNode__parent->setFeatureID(::tree::TreePackage::TREENODE__PARENT);
-        m_TreeNode__parent->setName("parent");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
-                m_TreeNode__parent);
-        m_TreeNode__parent->basicsetEContainingClass(m_TreeNodeEClass);
-    }
+    [this]()
+    { // Classifier Leaf
+        auto &&classifier = m_LeafEClass;
 
-    { // Leaf
-        m_LeafEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_LeafEClass->setClassifierID(LEAF);
-        m_LeafEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_LeafEClass);
-    }
+        // ENamedElement
+        classifier->setName("Leaf");
 
-    { // NonTerminal
-        m_NonTerminalEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_NonTerminalEClass->setClassifierID(NONTERMINAL);
-        m_NonTerminalEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NonTerminalEClass);
-        // m_NonTerminal__children has already been allocated above
-        m_NonTerminal__children->setFeatureID(
-                ::tree::TreePackage::NONTERMINAL__CHILDREN);
-        m_NonTerminal__children->setName("children");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NonTerminalEClass->getEStructuralFeatures()).basicAdd(
-                m_NonTerminal__children);
-        m_NonTerminal__children->basicsetEContainingClass(m_NonTerminalEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(LEAF);
 
-    // Create enums
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
 
-    // Create data types
+    [this]()
+    { // Feature children of class NonTerminal
+        auto &&feature = m_NonTerminal__children;
+
+        // ENamedElement
+        feature->setName("children");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_TreeNodeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::tree::TreePackage::NONTERMINAL__CHILDREN);
+        feature->basicsetEContainingClass(m_NonTerminalEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier NonTerminal
+        auto &&classifier = m_NonTerminalEClass;
+
+        // ENamedElement
+        classifier->setName("NonTerminal");
+
+        // EClassifier
+        classifier->setClassifierID(NONTERMINAL);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NonTerminalEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_NonTerminal__children);
+        }
+    }();
+
+    [this]()
+    { // Feature data of class TreeNode
+        auto &&feature = m_TreeNode__data;
+
+        // ENamedElement
+        feature->setName("data");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::tree::TreePackage::TREENODE__DATA);
+        feature->basicsetEContainingClass(m_TreeNodeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature parent of class TreeNode
+        auto &&feature = m_TreeNode__parent;
+
+        // ENamedElement
+        feature->setName("parent");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_TreeNodeEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::tree::TreePackage::TREENODE__PARENT);
+        feature->basicsetEContainingClass(m_TreeNodeEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier TreeNode
+        auto &&classifier = m_TreeNodeEClass;
+
+        // ENamedElement
+        classifier->setName("TreeNode");
+
+        // EClassifier
+        classifier->setClassifierID(TREENODE);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_TreeNode__data);
+            eStructuralFeatures.basicAdd(m_TreeNode__parent);
+        }
+    }();
 
     // Initialize package
     setName("tree");
@@ -121,75 +213,19 @@ void TreePackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_LeafEClass->getESuperTypes().push_back(m_TreeNodeEClass);
-    m_NonTerminalEClass->getESuperTypes().push_back(m_TreeNodeEClass);
+    [this]()
+    {
+        m_LeafEClass->getESuperTypes().push_back(m_TreeNodeEClass);
+        m_NonTerminalEClass->getESuperTypes().push_back(m_TreeNodeEClass);
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // TreeNode
-        m_TreeNodeEClass->setName("TreeNode");
-        m_TreeNodeEClass->setAbstract(true);
-        m_TreeNodeEClass->setInterface(false);
-        m_TreeNode__data->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_TreeNode__data->setDefaultValueLiteral("");
-        m_TreeNode__data->setLowerBound(0);
-        m_TreeNode__data->setUpperBound(1);
-        m_TreeNode__data->setTransient(false);
-        m_TreeNode__data->setVolatile(false);
-        m_TreeNode__data->setChangeable(true);
-        m_TreeNode__data->setUnsettable(false);
-        m_TreeNode__data->setID(false);
-        m_TreeNode__data->setUnique(true);
-        m_TreeNode__data->setDerived(false);
-        m_TreeNode__data->setOrdered(true);
-
-        m_TreeNode__parent->setEType(m_TreeNodeEClass);
-        m_TreeNode__parent->setDefaultValueLiteral("");
-        m_TreeNode__parent->setLowerBound(0);
-        m_TreeNode__parent->setUpperBound(1);
-        m_TreeNode__parent->setTransient(true);
-        m_TreeNode__parent->setVolatile(false);
-        m_TreeNode__parent->setChangeable(true);
-        m_TreeNode__parent->setContainment(false);
-        m_TreeNode__parent->setResolveProxies(true);
-        m_TreeNode__parent->setUnique(true);
-        m_TreeNode__parent->setDerived(false);
-        m_TreeNode__parent->setOrdered(true);
-
-    }
-
-    { // Leaf
-        m_LeafEClass->setName("Leaf");
-        m_LeafEClass->setAbstract(false);
-        m_LeafEClass->setInterface(false);
-
-    }
-
-    { // NonTerminal
-        m_NonTerminalEClass->setName("NonTerminal");
-        m_NonTerminalEClass->setAbstract(false);
-        m_NonTerminalEClass->setInterface(false);
-
-        m_NonTerminal__children->setEType(m_TreeNodeEClass);
-        m_NonTerminal__children->setDefaultValueLiteral("");
-        m_NonTerminal__children->setLowerBound(0);
-        m_NonTerminal__children->setUpperBound(-1);
-        m_NonTerminal__children->setTransient(false);
-        m_NonTerminal__children->setVolatile(false);
-        m_NonTerminal__children->setChangeable(true);
-        m_NonTerminal__children->setContainment(true);
-        m_NonTerminal__children->setResolveProxies(true);
-        m_NonTerminal__children->setUnique(true);
-        m_NonTerminal__children->setDerived(false);
-        m_NonTerminal__children->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_LeafEClass);
+        classifiers.push_back(m_NonTerminalEClass);
+        classifiers.push_back(m_TreeNodeEClass);
+    }();
 
     _initialize();
 }

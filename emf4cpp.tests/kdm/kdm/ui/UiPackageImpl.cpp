@@ -53,451 +53,1201 @@ using namespace ::kdm::ui;
 
 UiPackage::UiPackage()
 {
-
-    // Feature definitions of AbstractUIElement
-    m_AbstractUIElement__source = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AbstractUIElement__UIRelation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AbstractUIElement__implementation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AbstractUIElement__abstraction = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of UIResource
-    m_UIResource__UIElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of UIDisplay
-
-    // Feature definitions of Screen
-
-    // Feature definitions of Report
-
-    // Feature definitions of UIModel
-    m_UIModel__UIElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of AbstractUIRelationship
-
-    // Feature definitions of UILayout
-    m_UILayout__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_UILayout__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of UIField
-
-    // Feature definitions of DisplaysImage
-    m_DisplaysImage__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_DisplaysImage__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Displays
-    m_Displays__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Displays__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of UIFlow
-    m_UIFlow__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_UIFlow__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of UIElement
-
-    // Feature definitions of UIRelationship
-    m_UIRelationship__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_UIRelationship__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of UIAction
-    m_UIAction__kind = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_UIAction__UIElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of UIEvent
-    m_UIEvent__kind = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of ReadsUI
-    m_ReadsUI__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ReadsUI__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of WritesUI
-    m_WritesUI__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_WritesUI__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ManagesUI
-    m_ManagesUI__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ManagesUI__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_AbstractUIElement__source = ::ecore::make< ::ecore::EReference >();
+    m_AbstractUIElement__UIRelation = ::ecore::make< ::ecore::EReference >();
+    m_AbstractUIElement__implementation =
+            ::ecore::make< ::ecore::EReference >();
+    m_AbstractUIElement__abstraction = ::ecore::make< ::ecore::EReference >();
+    m_AbstractUIElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_AbstractUIRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_Displays__to = ::ecore::make< ::ecore::EReference >();
+    m_Displays__from = ::ecore::make< ::ecore::EReference >();
+    m_DisplaysEClass = ::ecore::make< ::ecore::EClass >();
+    m_DisplaysImage__to = ::ecore::make< ::ecore::EReference >();
+    m_DisplaysImage__from = ::ecore::make< ::ecore::EReference >();
+    m_DisplaysImageEClass = ::ecore::make< ::ecore::EClass >();
+    m_ManagesUI__to = ::ecore::make< ::ecore::EReference >();
+    m_ManagesUI__from = ::ecore::make< ::ecore::EReference >();
+    m_ManagesUIEClass = ::ecore::make< ::ecore::EClass >();
+    m_ReadsUI__to = ::ecore::make< ::ecore::EReference >();
+    m_ReadsUI__from = ::ecore::make< ::ecore::EReference >();
+    m_ReadsUIEClass = ::ecore::make< ::ecore::EClass >();
+    m_ReportEClass = ::ecore::make< ::ecore::EClass >();
+    m_ScreenEClass = ::ecore::make< ::ecore::EClass >();
+    m_UIAction__kind = ::ecore::make< ::ecore::EAttribute >();
+    m_UIAction__UIElement = ::ecore::make< ::ecore::EReference >();
+    m_UIActionEClass = ::ecore::make< ::ecore::EClass >();
+    m_UIDisplayEClass = ::ecore::make< ::ecore::EClass >();
+    m_UIElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_UIEvent__kind = ::ecore::make< ::ecore::EAttribute >();
+    m_UIEventEClass = ::ecore::make< ::ecore::EClass >();
+    m_UIFieldEClass = ::ecore::make< ::ecore::EClass >();
+    m_UIFlow__to = ::ecore::make< ::ecore::EReference >();
+    m_UIFlow__from = ::ecore::make< ::ecore::EReference >();
+    m_UIFlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_UILayout__to = ::ecore::make< ::ecore::EReference >();
+    m_UILayout__from = ::ecore::make< ::ecore::EReference >();
+    m_UILayoutEClass = ::ecore::make< ::ecore::EClass >();
+    m_UIModel__UIElement = ::ecore::make< ::ecore::EReference >();
+    m_UIModelEClass = ::ecore::make< ::ecore::EClass >();
+    m_UIRelationship__to = ::ecore::make< ::ecore::EReference >();
+    m_UIRelationship__from = ::ecore::make< ::ecore::EReference >();
+    m_UIRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_UIResource__UIElement = ::ecore::make< ::ecore::EReference >();
+    m_UIResourceEClass = ::ecore::make< ::ecore::EClass >();
+    m_WritesUI__to = ::ecore::make< ::ecore::EReference >();
+    m_WritesUI__from = ::ecore::make< ::ecore::EReference >();
+    m_WritesUIEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void UiPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = UiFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = UiFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // AbstractUIElement
-        m_AbstractUIElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractUIElementEClass->setClassifierID(ABSTRACTUIELEMENT);
-        m_AbstractUIElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractUIElementEClass);
-        // m_AbstractUIElement__source has already been allocated above
-        m_AbstractUIElement__source->setFeatureID(
-                ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__SOURCE);
-        m_AbstractUIElement__source->setName("source");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractUIElement__source);
-        m_AbstractUIElement__source->basicsetEContainingClass(
-                m_AbstractUIElementEClass);
-        // m_AbstractUIElement__UIRelation has already been allocated above
-        m_AbstractUIElement__UIRelation->setFeatureID(
+    [this]()
+    { // Feature source of class AbstractUIElement
+        auto &&feature = m_AbstractUIElement__source;
+
+        // ENamedElement
+        feature->setName("source");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::ABSTRACTUIELEMENT__SOURCE);
+        feature->basicsetEContainingClass(m_AbstractUIElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature UIRelation of class AbstractUIElement
+        auto &&feature = m_AbstractUIElement__UIRelation;
+
+        // ENamedElement
+        feature->setName("UIRelation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractUIRelationshipEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__UIRELATION);
-        m_AbstractUIElement__UIRelation->setName("UIRelation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractUIElement__UIRelation);
-        m_AbstractUIElement__UIRelation->basicsetEContainingClass(
-                m_AbstractUIElementEClass);
-        // m_AbstractUIElement__implementation has already been allocated above
-        m_AbstractUIElement__implementation->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractUIElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature implementation of class AbstractUIElement
+        auto &&feature = m_AbstractUIElement__implementation;
+
+        // ENamedElement
+        feature->setName("implementation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__IMPLEMENTATION);
-        m_AbstractUIElement__implementation->setName("implementation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractUIElement__implementation);
-        m_AbstractUIElement__implementation->basicsetEContainingClass(
-                m_AbstractUIElementEClass);
-        // m_AbstractUIElement__abstraction has already been allocated above
-        m_AbstractUIElement__abstraction->setFeatureID(
+        feature->basicsetEContainingClass(m_AbstractUIElementEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature abstraction of class AbstractUIElement
+        auto &&feature = m_AbstractUIElement__abstraction;
+
+        // ENamedElement
+        feature->setName("abstraction");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::ui::UiPackage::ABSTRACTUIELEMENT__ABSTRACTION);
-        m_AbstractUIElement__abstraction->setName("abstraction");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractUIElement__abstraction);
-        m_AbstractUIElement__abstraction->basicsetEContainingClass(
-                m_AbstractUIElementEClass);
-    }
+        feature->basicsetEContainingClass(m_AbstractUIElementEClass);
 
-    { // UIResource
-        m_UIResourceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UIResourceEClass->setClassifierID(UIRESOURCE);
-        m_UIResourceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UIResourceEClass);
-        // m_UIResource__UIElement has already been allocated above
-        m_UIResource__UIElement->setFeatureID(
-                ::kdm::ui::UiPackage::UIRESOURCE__UIELEMENT);
-        m_UIResource__UIElement->setName("UIElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIResourceEClass->getEStructuralFeatures()).basicAdd(
-                m_UIResource__UIElement);
-        m_UIResource__UIElement->basicsetEContainingClass(m_UIResourceEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // UIDisplay
-        m_UIDisplayEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UIDisplayEClass->setClassifierID(UIDISPLAY);
-        m_UIDisplayEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UIDisplayEClass);
-    }
+    [this]()
+    { // Classifier AbstractUIElement
+        auto &&classifier = m_AbstractUIElementEClass;
 
-    { // Screen
-        m_ScreenEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_ScreenEClass->setClassifierID(SCREEN);
-        m_ScreenEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ScreenEClass);
-    }
+        // ENamedElement
+        classifier->setName("AbstractUIElement");
 
-    { // Report
-        m_ReportEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_ReportEClass->setClassifierID(REPORT);
-        m_ReportEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ReportEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTUIELEMENT);
 
-    { // UIModel
-        m_UIModelEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UIModelEClass->setClassifierID(UIMODEL);
-        m_UIModelEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UIModelEClass);
-        // m_UIModel__UIElement has already been allocated above
-        m_UIModel__UIElement->setFeatureID(
-                ::kdm::ui::UiPackage::UIMODEL__UIELEMENT);
-        m_UIModel__UIElement->setName("UIElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIModelEClass->getEStructuralFeatures()).basicAdd(
-                m_UIModel__UIElement);
-        m_UIModel__UIElement->basicsetEContainingClass(m_UIModelEClass);
-    }
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractUIElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_AbstractUIElement__source);
+            eStructuralFeatures.basicAdd(m_AbstractUIElement__UIRelation);
+            eStructuralFeatures.basicAdd(m_AbstractUIElement__implementation);
+            eStructuralFeatures.basicAdd(m_AbstractUIElement__abstraction);
+        }
+    }();
 
-    { // AbstractUIRelationship
-        m_AbstractUIRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractUIRelationshipEClass->setClassifierID(ABSTRACTUIRELATIONSHIP);
-        m_AbstractUIRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractUIRelationshipEClass);
-    }
+    [this]()
+    { // Classifier AbstractUIRelationship
+        auto &&classifier = m_AbstractUIRelationshipEClass;
 
-    { // UILayout
-        m_UILayoutEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UILayoutEClass->setClassifierID(UILAYOUT);
-        m_UILayoutEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UILayoutEClass);
-        // m_UILayout__to has already been allocated above
-        m_UILayout__to->setFeatureID(::kdm::ui::UiPackage::UILAYOUT__TO);
-        m_UILayout__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UILayoutEClass->getEStructuralFeatures()).basicAdd(
-                m_UILayout__to);
-        m_UILayout__to->basicsetEContainingClass(m_UILayoutEClass);
-        // m_UILayout__from has already been allocated above
-        m_UILayout__from->setFeatureID(::kdm::ui::UiPackage::UILAYOUT__FROM);
-        m_UILayout__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UILayoutEClass->getEStructuralFeatures()).basicAdd(
-                m_UILayout__from);
-        m_UILayout__from->basicsetEContainingClass(m_UILayoutEClass);
-    }
+        // ENamedElement
+        classifier->setName("AbstractUIRelationship");
 
-    { // UIField
-        m_UIFieldEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UIFieldEClass->setClassifierID(UIFIELD);
-        m_UIFieldEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UIFieldEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTUIRELATIONSHIP);
 
-    { // DisplaysImage
-        m_DisplaysImageEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DisplaysImageEClass->setClassifierID(DISPLAYSIMAGE);
-        m_DisplaysImageEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DisplaysImageEClass);
-        // m_DisplaysImage__to has already been allocated above
-        m_DisplaysImage__to->setFeatureID(
-                ::kdm::ui::UiPackage::DISPLAYSIMAGE__TO);
-        m_DisplaysImage__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysImageEClass->getEStructuralFeatures()).basicAdd(
-                m_DisplaysImage__to);
-        m_DisplaysImage__to->basicsetEContainingClass(m_DisplaysImageEClass);
-        // m_DisplaysImage__from has already been allocated above
-        m_DisplaysImage__from->setFeatureID(
-                ::kdm::ui::UiPackage::DISPLAYSIMAGE__FROM);
-        m_DisplaysImage__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysImageEClass->getEStructuralFeatures()).basicAdd(
-                m_DisplaysImage__from);
-        m_DisplaysImage__from->basicsetEContainingClass(m_DisplaysImageEClass);
-    }
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+    }();
 
-    { // Displays
-        m_DisplaysEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DisplaysEClass->setClassifierID(DISPLAYS);
-        m_DisplaysEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DisplaysEClass);
-        // m_Displays__to has already been allocated above
-        m_Displays__to->setFeatureID(::kdm::ui::UiPackage::DISPLAYS__TO);
-        m_Displays__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysEClass->getEStructuralFeatures()).basicAdd(
-                m_Displays__to);
-        m_Displays__to->basicsetEContainingClass(m_DisplaysEClass);
-        // m_Displays__from has already been allocated above
-        m_Displays__from->setFeatureID(::kdm::ui::UiPackage::DISPLAYS__FROM);
-        m_Displays__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysEClass->getEStructuralFeatures()).basicAdd(
-                m_Displays__from);
-        m_Displays__from->basicsetEContainingClass(m_DisplaysEClass);
-    }
+    [this]()
+    { // Feature to of class Displays
+        auto &&feature = m_Displays__to;
 
-    { // UIFlow
-        m_UIFlowEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_UIFlowEClass->setClassifierID(UIFLOW);
-        m_UIFlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UIFlowEClass);
-        // m_UIFlow__to has already been allocated above
-        m_UIFlow__to->setFeatureID(::kdm::ui::UiPackage::UIFLOW__TO);
-        m_UIFlow__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_UIFlow__to);
-        m_UIFlow__to->basicsetEContainingClass(m_UIFlowEClass);
-        // m_UIFlow__from has already been allocated above
-        m_UIFlow__from->setFeatureID(::kdm::ui::UiPackage::UIFLOW__FROM);
-        m_UIFlow__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_UIFlow__from);
-        m_UIFlow__from->basicsetEContainingClass(m_UIFlowEClass);
-    }
+        // ENamedElement
+        feature->setName("to");
 
-    { // UIElement
-        m_UIElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UIElementEClass->setClassifierID(UIELEMENT);
-        m_UIElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UIElementEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    { // UIRelationship
-        m_UIRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UIRelationshipEClass->setClassifierID(UIRELATIONSHIP);
-        m_UIRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UIRelationshipEClass);
-        // m_UIRelationship__to has already been allocated above
-        m_UIRelationship__to->setFeatureID(
-                ::kdm::ui::UiPackage::UIRELATIONSHIP__TO);
-        m_UIRelationship__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_UIRelationship__to);
-        m_UIRelationship__to->basicsetEContainingClass(m_UIRelationshipEClass);
-        // m_UIRelationship__from has already been allocated above
-        m_UIRelationship__from->setFeatureID(
-                ::kdm::ui::UiPackage::UIRELATIONSHIP__FROM);
-        m_UIRelationship__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_UIRelationship__from);
-        m_UIRelationship__from->basicsetEContainingClass(
-                m_UIRelationshipEClass);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_UIResourceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // UIAction
-        m_UIActionEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UIActionEClass->setClassifierID(UIACTION);
-        m_UIActionEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UIActionEClass);
-        // m_UIAction__kind has already been allocated above
-        m_UIAction__kind->setFeatureID(::kdm::ui::UiPackage::UIACTION__KIND);
-        m_UIAction__kind->setName("kind");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIActionEClass->getEStructuralFeatures()).basicAdd(
-                m_UIAction__kind);
-        m_UIAction__kind->basicsetEContainingClass(m_UIActionEClass);
-        // m_UIAction__UIElement has already been allocated above
-        m_UIAction__UIElement->setFeatureID(
-                ::kdm::ui::UiPackage::UIACTION__UIELEMENT);
-        m_UIAction__UIElement->setName("UIElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIActionEClass->getEStructuralFeatures()).basicAdd(
-                m_UIAction__UIElement);
-        m_UIAction__UIElement->basicsetEContainingClass(m_UIActionEClass);
-    }
+        feature->setFeatureID(::kdm::ui::UiPackage::DISPLAYS__TO);
+        feature->basicsetEContainingClass(m_DisplaysEClass);
 
-    { // UIEvent
-        m_UIEventEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UIEventEClass->setClassifierID(UIEVENT);
-        m_UIEventEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UIEventEClass);
-        // m_UIEvent__kind has already been allocated above
-        m_UIEvent__kind->setFeatureID(::kdm::ui::UiPackage::UIEVENT__KIND);
-        m_UIEvent__kind->setName("kind");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIEventEClass->getEStructuralFeatures()).basicAdd(
-                m_UIEvent__kind);
-        m_UIEvent__kind->basicsetEContainingClass(m_UIEventEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    { // ReadsUI
-        m_ReadsUIEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ReadsUIEClass->setClassifierID(READSUI);
-        m_ReadsUIEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ReadsUIEClass);
-        // m_ReadsUI__to has already been allocated above
-        m_ReadsUI__to->setFeatureID(::kdm::ui::UiPackage::READSUI__TO);
-        m_ReadsUI__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsUIEClass->getEStructuralFeatures()).basicAdd(
-                m_ReadsUI__to);
-        m_ReadsUI__to->basicsetEContainingClass(m_ReadsUIEClass);
-        // m_ReadsUI__from has already been allocated above
-        m_ReadsUI__from->setFeatureID(::kdm::ui::UiPackage::READSUI__FROM);
-        m_ReadsUI__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsUIEClass->getEStructuralFeatures()).basicAdd(
-                m_ReadsUI__from);
-        m_ReadsUI__from->basicsetEContainingClass(m_ReadsUIEClass);
-    }
+    [this]()
+    { // Feature from of class Displays
+        auto &&feature = m_Displays__from;
 
-    { // WritesUI
-        m_WritesUIEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_WritesUIEClass->setClassifierID(WRITESUI);
-        m_WritesUIEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_WritesUIEClass);
-        // m_WritesUI__to has already been allocated above
-        m_WritesUI__to->setFeatureID(::kdm::ui::UiPackage::WRITESUI__TO);
-        m_WritesUI__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesUIEClass->getEStructuralFeatures()).basicAdd(
-                m_WritesUI__to);
-        m_WritesUI__to->basicsetEContainingClass(m_WritesUIEClass);
-        // m_WritesUI__from has already been allocated above
-        m_WritesUI__from->setFeatureID(::kdm::ui::UiPackage::WRITESUI__FROM);
-        m_WritesUI__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesUIEClass->getEStructuralFeatures()).basicAdd(
-                m_WritesUI__from);
-        m_WritesUI__from->basicsetEContainingClass(m_WritesUIEClass);
-    }
+        // ENamedElement
+        feature->setName("from");
 
-    { // ManagesUI
-        m_ManagesUIEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ManagesUIEClass->setClassifierID(MANAGESUI);
-        m_ManagesUIEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ManagesUIEClass);
-        // m_ManagesUI__to has already been allocated above
-        m_ManagesUI__to->setFeatureID(::kdm::ui::UiPackage::MANAGESUI__TO);
-        m_ManagesUI__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesUIEClass->getEStructuralFeatures()).basicAdd(
-                m_ManagesUI__to);
-        m_ManagesUI__to->basicsetEContainingClass(m_ManagesUIEClass);
-        // m_ManagesUI__from has already been allocated above
-        m_ManagesUI__from->setFeatureID(::kdm::ui::UiPackage::MANAGESUI__FROM);
-        m_ManagesUI__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesUIEClass->getEStructuralFeatures()).basicAdd(
-                m_ManagesUI__from);
-        m_ManagesUI__from->basicsetEContainingClass(m_ManagesUIEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    // Create enums
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    // Create data types
+        feature->setFeatureID(::kdm::ui::UiPackage::DISPLAYS__FROM);
+        feature->basicsetEContainingClass(m_DisplaysEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Displays
+        auto &&classifier = m_DisplaysEClass;
+
+        // ENamedElement
+        classifier->setName("Displays");
+
+        // EClassifier
+        classifier->setClassifierID(DISPLAYS);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Displays__to);
+            eStructuralFeatures.basicAdd(m_Displays__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class DisplaysImage
+        auto &&feature = m_DisplaysImage__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getImage());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::DISPLAYSIMAGE__TO);
+        feature->basicsetEContainingClass(m_DisplaysImageEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class DisplaysImage
+        auto &&feature = m_DisplaysImage__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::DISPLAYSIMAGE__FROM);
+        feature->basicsetEContainingClass(m_DisplaysImageEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DisplaysImage
+        auto &&classifier = m_DisplaysImageEClass;
+
+        // ENamedElement
+        classifier->setName("DisplaysImage");
+
+        // EClassifier
+        classifier->setClassifierID(DISPLAYSIMAGE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DisplaysImageEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DisplaysImage__to);
+            eStructuralFeatures.basicAdd(m_DisplaysImage__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class ManagesUI
+        auto &&feature = m_ManagesUI__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_UIResourceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::MANAGESUI__TO);
+        feature->basicsetEContainingClass(m_ManagesUIEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ManagesUI
+        auto &&feature = m_ManagesUI__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::MANAGESUI__FROM);
+        feature->basicsetEContainingClass(m_ManagesUIEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ManagesUI
+        auto &&classifier = m_ManagesUIEClass;
+
+        // ENamedElement
+        classifier->setName("ManagesUI");
+
+        // EClassifier
+        classifier->setClassifierID(MANAGESUI);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ManagesUIEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ManagesUI__to);
+            eStructuralFeatures.basicAdd(m_ManagesUI__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class ReadsUI
+        auto &&feature = m_ReadsUI__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_UIResourceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::READSUI__TO);
+        feature->basicsetEContainingClass(m_ReadsUIEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ReadsUI
+        auto &&feature = m_ReadsUI__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::READSUI__FROM);
+        feature->basicsetEContainingClass(m_ReadsUIEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ReadsUI
+        auto &&classifier = m_ReadsUIEClass;
+
+        // ENamedElement
+        classifier->setName("ReadsUI");
+
+        // EClassifier
+        classifier->setClassifierID(READSUI);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsUIEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ReadsUI__to);
+            eStructuralFeatures.basicAdd(m_ReadsUI__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier Report
+        auto &&classifier = m_ReportEClass;
+
+        // ENamedElement
+        classifier->setName("Report");
+
+        // EClassifier
+        classifier->setClassifierID(REPORT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier Screen
+        auto &&classifier = m_ScreenEClass;
+
+        // ENamedElement
+        classifier->setName("Screen");
+
+        // EClassifier
+        classifier->setClassifierID(SCREEN);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature kind of class UIAction
+        auto &&feature = m_UIAction__kind;
+
+        // ENamedElement
+        feature->setName("kind");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UIACTION__KIND);
+        feature->basicsetEContainingClass(m_UIActionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature UIElement of class UIAction
+        auto &&feature = m_UIAction__UIElement;
+
+        // ENamedElement
+        feature->setName("UIElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_UIEventEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UIACTION__UIELEMENT);
+        feature->basicsetEContainingClass(m_UIActionEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier UIAction
+        auto &&classifier = m_UIActionEClass;
+
+        // ENamedElement
+        classifier->setName("UIAction");
+
+        // EClassifier
+        classifier->setClassifierID(UIACTION);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIActionEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_UIAction__kind);
+            eStructuralFeatures.basicAdd(m_UIAction__UIElement);
+        }
+    }();
+
+    [this]()
+    { // Classifier UIDisplay
+        auto &&classifier = m_UIDisplayEClass;
+
+        // ENamedElement
+        classifier->setName("UIDisplay");
+
+        // EClassifier
+        classifier->setClassifierID(UIDISPLAY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier UIElement
+        auto &&classifier = m_UIElementEClass;
+
+        // ENamedElement
+        classifier->setName("UIElement");
+
+        // EClassifier
+        classifier->setClassifierID(UIELEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature kind of class UIEvent
+        auto &&feature = m_UIEvent__kind;
+
+        // ENamedElement
+        feature->setName("kind");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UIEVENT__KIND);
+        feature->basicsetEContainingClass(m_UIEventEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier UIEvent
+        auto &&classifier = m_UIEventEClass;
+
+        // ENamedElement
+        classifier->setName("UIEvent");
+
+        // EClassifier
+        classifier->setClassifierID(UIEVENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIEventEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_UIEvent__kind);
+        }
+    }();
+
+    [this]()
+    { // Classifier UIField
+        auto &&classifier = m_UIFieldEClass;
+
+        // ENamedElement
+        classifier->setName("UIField");
+
+        // EClassifier
+        classifier->setClassifierID(UIFIELD);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class UIFlow
+        auto &&feature = m_UIFlow__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractUIElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UIFLOW__TO);
+        feature->basicsetEContainingClass(m_UIFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class UIFlow
+        auto &&feature = m_UIFlow__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractUIElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UIFLOW__FROM);
+        feature->basicsetEContainingClass(m_UIFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier UIFlow
+        auto &&classifier = m_UIFlowEClass;
+
+        // ENamedElement
+        classifier->setName("UIFlow");
+
+        // EClassifier
+        classifier->setClassifierID(UIFLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIFlowEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_UIFlow__to);
+            eStructuralFeatures.basicAdd(m_UIFlow__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class UILayout
+        auto &&feature = m_UILayout__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_UIResourceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UILAYOUT__TO);
+        feature->basicsetEContainingClass(m_UILayoutEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class UILayout
+        auto &&feature = m_UILayout__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_UIResourceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UILAYOUT__FROM);
+        feature->basicsetEContainingClass(m_UILayoutEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier UILayout
+        auto &&classifier = m_UILayoutEClass;
+
+        // ENamedElement
+        classifier->setName("UILayout");
+
+        // EClassifier
+        classifier->setClassifierID(UILAYOUT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UILayoutEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_UILayout__to);
+            eStructuralFeatures.basicAdd(m_UILayout__from);
+        }
+    }();
+
+    [this]()
+    { // Feature UIElement of class UIModel
+        auto &&feature = m_UIModel__UIElement;
+
+        // ENamedElement
+        feature->setName("UIElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractUIElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UIMODEL__UIELEMENT);
+        feature->basicsetEContainingClass(m_UIModelEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier UIModel
+        auto &&classifier = m_UIModelEClass;
+
+        // ENamedElement
+        classifier->setName("UIModel");
+
+        // EClassifier
+        classifier->setClassifierID(UIMODEL);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIModelEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_UIModel__UIElement);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class UIRelationship
+        auto &&feature = m_UIRelationship__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UIRELATIONSHIP__TO);
+        feature->basicsetEContainingClass(m_UIRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class UIRelationship
+        auto &&feature = m_UIRelationship__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractUIElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UIRELATIONSHIP__FROM);
+        feature->basicsetEContainingClass(m_UIRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier UIRelationship
+        auto &&classifier = m_UIRelationshipEClass;
+
+        // ENamedElement
+        classifier->setName("UIRelationship");
+
+        // EClassifier
+        classifier->setClassifierID(UIRELATIONSHIP);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIRelationshipEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_UIRelationship__to);
+            eStructuralFeatures.basicAdd(m_UIRelationship__from);
+        }
+    }();
+
+    [this]()
+    { // Feature UIElement of class UIResource
+        auto &&feature = m_UIResource__UIElement;
+
+        // ENamedElement
+        feature->setName("UIElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractUIElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::UIRESOURCE__UIELEMENT);
+        feature->basicsetEContainingClass(m_UIResourceEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier UIResource
+        auto &&classifier = m_UIResourceEClass;
+
+        // ENamedElement
+        classifier->setName("UIResource");
+
+        // EClassifier
+        classifier->setClassifierID(UIRESOURCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UIResourceEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_UIResource__UIElement);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class WritesUI
+        auto &&feature = m_WritesUI__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_UIResourceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::WRITESUI__TO);
+        feature->basicsetEContainingClass(m_WritesUIEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class WritesUI
+        auto &&feature = m_WritesUI__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::ui::UiPackage::WRITESUI__FROM);
+        feature->basicsetEContainingClass(m_WritesUIEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier WritesUI
+        auto &&classifier = m_WritesUIEClass;
+
+        // ENamedElement
+        classifier->setName("WritesUI");
+
+        // EClassifier
+        classifier->setClassifierID(WRITESUI);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesUIEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_WritesUI__to);
+            eStructuralFeatures.basicAdd(m_WritesUI__from);
+        }
+    }();
 
     // Initialize package
     setName("ui");
@@ -507,500 +1257,65 @@ void UiPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_AbstractUIElementEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-    m_UIResourceEClass->getESuperTypes().push_back(m_AbstractUIElementEClass);
-    m_UIDisplayEClass->getESuperTypes().push_back(m_UIResourceEClass);
-    m_ScreenEClass->getESuperTypes().push_back(m_UIDisplayEClass);
-    m_ReportEClass->getESuperTypes().push_back(m_UIDisplayEClass);
-    m_UIModelEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
-    m_AbstractUIRelationshipEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
-    m_UILayoutEClass->getESuperTypes().push_back(
-            m_AbstractUIRelationshipEClass);
-    m_UIFieldEClass->getESuperTypes().push_back(m_UIResourceEClass);
-    m_DisplaysImageEClass->getESuperTypes().push_back(
-            m_AbstractUIRelationshipEClass);
-    m_DisplaysEClass->getESuperTypes().push_back(
-            m_AbstractUIRelationshipEClass);
-    m_UIFlowEClass->getESuperTypes().push_back(m_AbstractUIRelationshipEClass);
-    m_UIElementEClass->getESuperTypes().push_back(m_AbstractUIElementEClass);
-    m_UIRelationshipEClass->getESuperTypes().push_back(
-            m_AbstractUIRelationshipEClass);
-    m_UIActionEClass->getESuperTypes().push_back(m_AbstractUIElementEClass);
-    m_UIEventEClass->getESuperTypes().push_back(m_AbstractUIElementEClass);
-    m_ReadsUIEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_WritesUIEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-    m_ManagesUIEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // AbstractUIElement
-        m_AbstractUIElementEClass->setName("AbstractUIElement");
-        m_AbstractUIElementEClass->setAbstract(true);
-        m_AbstractUIElementEClass->setInterface(false);
-
-        m_AbstractUIElement__source->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
-        m_AbstractUIElement__source->setDefaultValueLiteral("");
-        m_AbstractUIElement__source->setLowerBound(0);
-        m_AbstractUIElement__source->setUpperBound(-1);
-        m_AbstractUIElement__source->setTransient(false);
-        m_AbstractUIElement__source->setVolatile(false);
-        m_AbstractUIElement__source->setChangeable(true);
-        m_AbstractUIElement__source->setContainment(true);
-        m_AbstractUIElement__source->setResolveProxies(true);
-        m_AbstractUIElement__source->setUnique(true);
-        m_AbstractUIElement__source->setDerived(false);
-        m_AbstractUIElement__source->setOrdered(false);
-        m_AbstractUIElement__UIRelation->setEType(
-                m_AbstractUIRelationshipEClass);
-        m_AbstractUIElement__UIRelation->setDefaultValueLiteral("");
-        m_AbstractUIElement__UIRelation->setLowerBound(0);
-        m_AbstractUIElement__UIRelation->setUpperBound(-1);
-        m_AbstractUIElement__UIRelation->setTransient(false);
-        m_AbstractUIElement__UIRelation->setVolatile(false);
-        m_AbstractUIElement__UIRelation->setChangeable(true);
-        m_AbstractUIElement__UIRelation->setContainment(true);
-        m_AbstractUIElement__UIRelation->setResolveProxies(true);
-        m_AbstractUIElement__UIRelation->setUnique(true);
-        m_AbstractUIElement__UIRelation->setDerived(false);
-        m_AbstractUIElement__UIRelation->setOrdered(false);
-        m_AbstractUIElement__implementation->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
-        m_AbstractUIElement__implementation->setDefaultValueLiteral("");
-        m_AbstractUIElement__implementation->setLowerBound(0);
-        m_AbstractUIElement__implementation->setUpperBound(-1);
-        m_AbstractUIElement__implementation->setTransient(false);
-        m_AbstractUIElement__implementation->setVolatile(false);
-        m_AbstractUIElement__implementation->setChangeable(true);
-        m_AbstractUIElement__implementation->setContainment(false);
-        m_AbstractUIElement__implementation->setResolveProxies(true);
-        m_AbstractUIElement__implementation->setUnique(true);
-        m_AbstractUIElement__implementation->setDerived(false);
-        m_AbstractUIElement__implementation->setOrdered(false);
-        m_AbstractUIElement__abstraction->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_AbstractUIElement__abstraction->setDefaultValueLiteral("");
-        m_AbstractUIElement__abstraction->setLowerBound(0);
-        m_AbstractUIElement__abstraction->setUpperBound(-1);
-        m_AbstractUIElement__abstraction->setTransient(false);
-        m_AbstractUIElement__abstraction->setVolatile(false);
-        m_AbstractUIElement__abstraction->setChangeable(true);
-        m_AbstractUIElement__abstraction->setContainment(true);
-        m_AbstractUIElement__abstraction->setResolveProxies(true);
-        m_AbstractUIElement__abstraction->setUnique(true);
-        m_AbstractUIElement__abstraction->setDerived(false);
-        m_AbstractUIElement__abstraction->setOrdered(true);
-
-    }
-
-    { // UIResource
-        m_UIResourceEClass->setName("UIResource");
-        m_UIResourceEClass->setAbstract(false);
-        m_UIResourceEClass->setInterface(false);
-
-        m_UIResource__UIElement->setEType(m_AbstractUIElementEClass);
-        m_UIResource__UIElement->setDefaultValueLiteral("");
-        m_UIResource__UIElement->setLowerBound(0);
-        m_UIResource__UIElement->setUpperBound(-1);
-        m_UIResource__UIElement->setTransient(false);
-        m_UIResource__UIElement->setVolatile(false);
-        m_UIResource__UIElement->setChangeable(true);
-        m_UIResource__UIElement->setContainment(true);
-        m_UIResource__UIElement->setResolveProxies(true);
-        m_UIResource__UIElement->setUnique(true);
-        m_UIResource__UIElement->setDerived(false);
-        m_UIResource__UIElement->setOrdered(false);
-
-    }
-
-    { // UIDisplay
-        m_UIDisplayEClass->setName("UIDisplay");
-        m_UIDisplayEClass->setAbstract(false);
-        m_UIDisplayEClass->setInterface(false);
-
-    }
-
-    { // Screen
-        m_ScreenEClass->setName("Screen");
-        m_ScreenEClass->setAbstract(false);
-        m_ScreenEClass->setInterface(false);
-
-    }
-
-    { // Report
-        m_ReportEClass->setName("Report");
-        m_ReportEClass->setAbstract(false);
-        m_ReportEClass->setInterface(false);
-
-    }
-
-    { // UIModel
-        m_UIModelEClass->setName("UIModel");
-        m_UIModelEClass->setAbstract(false);
-        m_UIModelEClass->setInterface(false);
-
-        m_UIModel__UIElement->setEType(m_AbstractUIElementEClass);
-        m_UIModel__UIElement->setDefaultValueLiteral("");
-        m_UIModel__UIElement->setLowerBound(0);
-        m_UIModel__UIElement->setUpperBound(-1);
-        m_UIModel__UIElement->setTransient(false);
-        m_UIModel__UIElement->setVolatile(false);
-        m_UIModel__UIElement->setChangeable(true);
-        m_UIModel__UIElement->setContainment(true);
-        m_UIModel__UIElement->setResolveProxies(true);
-        m_UIModel__UIElement->setUnique(true);
-        m_UIModel__UIElement->setDerived(false);
-        m_UIModel__UIElement->setOrdered(false);
-
-    }
-
-    { // AbstractUIRelationship
-        m_AbstractUIRelationshipEClass->setName("AbstractUIRelationship");
-        m_AbstractUIRelationshipEClass->setAbstract(true);
-        m_AbstractUIRelationshipEClass->setInterface(false);
-
-    }
-
-    { // UILayout
-        m_UILayoutEClass->setName("UILayout");
-        m_UILayoutEClass->setAbstract(false);
-        m_UILayoutEClass->setInterface(false);
-
-        m_UILayout__to->setEType(m_UIResourceEClass);
-        m_UILayout__to->setDefaultValueLiteral("");
-        m_UILayout__to->setLowerBound(1);
-        m_UILayout__to->setUpperBound(1);
-        m_UILayout__to->setTransient(false);
-        m_UILayout__to->setVolatile(false);
-        m_UILayout__to->setChangeable(true);
-        m_UILayout__to->setContainment(false);
-        m_UILayout__to->setResolveProxies(true);
-        m_UILayout__to->setUnique(true);
-        m_UILayout__to->setDerived(false);
-        m_UILayout__to->setOrdered(false);
-        m_UILayout__from->setEType(m_UIResourceEClass);
-        m_UILayout__from->setDefaultValueLiteral("");
-        m_UILayout__from->setLowerBound(1);
-        m_UILayout__from->setUpperBound(1);
-        m_UILayout__from->setTransient(false);
-        m_UILayout__from->setVolatile(false);
-        m_UILayout__from->setChangeable(true);
-        m_UILayout__from->setContainment(false);
-        m_UILayout__from->setResolveProxies(true);
-        m_UILayout__from->setUnique(true);
-        m_UILayout__from->setDerived(false);
-        m_UILayout__from->setOrdered(false);
-
-    }
-
-    { // UIField
-        m_UIFieldEClass->setName("UIField");
-        m_UIFieldEClass->setAbstract(false);
-        m_UIFieldEClass->setInterface(false);
-
-    }
-
-    { // DisplaysImage
-        m_DisplaysImageEClass->setName("DisplaysImage");
-        m_DisplaysImageEClass->setAbstract(false);
-        m_DisplaysImageEClass->setInterface(false);
-
-        m_DisplaysImage__to->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getImage());
-        m_DisplaysImage__to->setDefaultValueLiteral("");
-        m_DisplaysImage__to->setLowerBound(1);
-        m_DisplaysImage__to->setUpperBound(1);
-        m_DisplaysImage__to->setTransient(false);
-        m_DisplaysImage__to->setVolatile(false);
-        m_DisplaysImage__to->setChangeable(true);
-        m_DisplaysImage__to->setContainment(false);
-        m_DisplaysImage__to->setResolveProxies(true);
-        m_DisplaysImage__to->setUnique(true);
-        m_DisplaysImage__to->setDerived(false);
-        m_DisplaysImage__to->setOrdered(false);
-        m_DisplaysImage__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_DisplaysImage__from->setDefaultValueLiteral("");
-        m_DisplaysImage__from->setLowerBound(1);
-        m_DisplaysImage__from->setUpperBound(1);
-        m_DisplaysImage__from->setTransient(false);
-        m_DisplaysImage__from->setVolatile(false);
-        m_DisplaysImage__from->setChangeable(true);
-        m_DisplaysImage__from->setContainment(false);
-        m_DisplaysImage__from->setResolveProxies(true);
-        m_DisplaysImage__from->setUnique(true);
-        m_DisplaysImage__from->setDerived(false);
-        m_DisplaysImage__from->setOrdered(false);
-
-    }
-
-    { // Displays
-        m_DisplaysEClass->setName("Displays");
-        m_DisplaysEClass->setAbstract(false);
-        m_DisplaysEClass->setInterface(false);
-
-        m_Displays__to->setEType(m_UIResourceEClass);
-        m_Displays__to->setDefaultValueLiteral("");
-        m_Displays__to->setLowerBound(1);
-        m_Displays__to->setUpperBound(1);
-        m_Displays__to->setTransient(false);
-        m_Displays__to->setVolatile(false);
-        m_Displays__to->setChangeable(true);
-        m_Displays__to->setContainment(false);
-        m_Displays__to->setResolveProxies(true);
-        m_Displays__to->setUnique(true);
-        m_Displays__to->setDerived(false);
-        m_Displays__to->setOrdered(false);
-        m_Displays__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_Displays__from->setDefaultValueLiteral("");
-        m_Displays__from->setLowerBound(1);
-        m_Displays__from->setUpperBound(1);
-        m_Displays__from->setTransient(false);
-        m_Displays__from->setVolatile(false);
-        m_Displays__from->setChangeable(true);
-        m_Displays__from->setContainment(false);
-        m_Displays__from->setResolveProxies(true);
-        m_Displays__from->setUnique(true);
-        m_Displays__from->setDerived(false);
-        m_Displays__from->setOrdered(false);
-
-    }
-
-    { // UIFlow
-        m_UIFlowEClass->setName("UIFlow");
-        m_UIFlowEClass->setAbstract(false);
-        m_UIFlowEClass->setInterface(false);
-
-        m_UIFlow__to->setEType(m_AbstractUIElementEClass);
-        m_UIFlow__to->setDefaultValueLiteral("");
-        m_UIFlow__to->setLowerBound(1);
-        m_UIFlow__to->setUpperBound(1);
-        m_UIFlow__to->setTransient(false);
-        m_UIFlow__to->setVolatile(false);
-        m_UIFlow__to->setChangeable(true);
-        m_UIFlow__to->setContainment(false);
-        m_UIFlow__to->setResolveProxies(true);
-        m_UIFlow__to->setUnique(true);
-        m_UIFlow__to->setDerived(false);
-        m_UIFlow__to->setOrdered(false);
-        m_UIFlow__from->setEType(m_AbstractUIElementEClass);
-        m_UIFlow__from->setDefaultValueLiteral("");
-        m_UIFlow__from->setLowerBound(1);
-        m_UIFlow__from->setUpperBound(1);
-        m_UIFlow__from->setTransient(false);
-        m_UIFlow__from->setVolatile(false);
-        m_UIFlow__from->setChangeable(true);
-        m_UIFlow__from->setContainment(false);
-        m_UIFlow__from->setResolveProxies(true);
-        m_UIFlow__from->setUnique(true);
-        m_UIFlow__from->setDerived(false);
-        m_UIFlow__from->setOrdered(false);
-
-    }
-
-    { // UIElement
-        m_UIElementEClass->setName("UIElement");
-        m_UIElementEClass->setAbstract(false);
-        m_UIElementEClass->setInterface(false);
-
-    }
-
-    { // UIRelationship
-        m_UIRelationshipEClass->setName("UIRelationship");
-        m_UIRelationshipEClass->setAbstract(false);
-        m_UIRelationshipEClass->setInterface(false);
-
-        m_UIRelationship__to->setEType(
+    [this]()
+    {
+        m_AbstractUIElementEClass->getESuperTypes().push_back(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_UIRelationship__to->setDefaultValueLiteral("");
-        m_UIRelationship__to->setLowerBound(1);
-        m_UIRelationship__to->setUpperBound(1);
-        m_UIRelationship__to->setTransient(false);
-        m_UIRelationship__to->setVolatile(false);
-        m_UIRelationship__to->setChangeable(true);
-        m_UIRelationship__to->setContainment(false);
-        m_UIRelationship__to->setResolveProxies(true);
-        m_UIRelationship__to->setUnique(true);
-        m_UIRelationship__to->setDerived(false);
-        m_UIRelationship__to->setOrdered(false);
-        m_UIRelationship__from->setEType(m_AbstractUIElementEClass);
-        m_UIRelationship__from->setDefaultValueLiteral("");
-        m_UIRelationship__from->setLowerBound(1);
-        m_UIRelationship__from->setUpperBound(1);
-        m_UIRelationship__from->setTransient(false);
-        m_UIRelationship__from->setVolatile(false);
-        m_UIRelationship__from->setChangeable(true);
-        m_UIRelationship__from->setContainment(false);
-        m_UIRelationship__from->setResolveProxies(true);
-        m_UIRelationship__from->setUnique(true);
-        m_UIRelationship__from->setDerived(false);
-        m_UIRelationship__from->setOrdered(false);
+        m_UIResourceEClass->getESuperTypes().push_back(
+                m_AbstractUIElementEClass);
+        m_UIDisplayEClass->getESuperTypes().push_back(m_UIResourceEClass);
+        m_ScreenEClass->getESuperTypes().push_back(m_UIDisplayEClass);
+        m_ReportEClass->getESuperTypes().push_back(m_UIDisplayEClass);
+        m_UIModelEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+        m_AbstractUIRelationshipEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+        m_UILayoutEClass->getESuperTypes().push_back(
+                m_AbstractUIRelationshipEClass);
+        m_UIFieldEClass->getESuperTypes().push_back(m_UIResourceEClass);
+        m_DisplaysImageEClass->getESuperTypes().push_back(
+                m_AbstractUIRelationshipEClass);
+        m_DisplaysEClass->getESuperTypes().push_back(
+                m_AbstractUIRelationshipEClass);
+        m_UIFlowEClass->getESuperTypes().push_back(
+                m_AbstractUIRelationshipEClass);
+        m_UIElementEClass->getESuperTypes().push_back(
+                m_AbstractUIElementEClass);
+        m_UIRelationshipEClass->getESuperTypes().push_back(
+                m_AbstractUIRelationshipEClass);
+        m_UIActionEClass->getESuperTypes().push_back(m_AbstractUIElementEClass);
+        m_UIEventEClass->getESuperTypes().push_back(m_AbstractUIElementEClass);
+        m_ReadsUIEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_WritesUIEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+        m_ManagesUIEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+    }();
 
-    }
-
-    { // UIAction
-        m_UIActionEClass->setName("UIAction");
-        m_UIActionEClass->setAbstract(false);
-        m_UIActionEClass->setInterface(false);
-        m_UIAction__kind->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_UIAction__kind->setDefaultValueLiteral("");
-        m_UIAction__kind->setLowerBound(0);
-        m_UIAction__kind->setUpperBound(1);
-        m_UIAction__kind->setTransient(false);
-        m_UIAction__kind->setVolatile(false);
-        m_UIAction__kind->setChangeable(true);
-        m_UIAction__kind->setUnsettable(false);
-        m_UIAction__kind->setID(false);
-        m_UIAction__kind->setUnique(false);
-        m_UIAction__kind->setDerived(false);
-        m_UIAction__kind->setOrdered(false);
-
-        m_UIAction__UIElement->setEType(m_UIEventEClass);
-        m_UIAction__UIElement->setDefaultValueLiteral("");
-        m_UIAction__UIElement->setLowerBound(0);
-        m_UIAction__UIElement->setUpperBound(-1);
-        m_UIAction__UIElement->setTransient(false);
-        m_UIAction__UIElement->setVolatile(false);
-        m_UIAction__UIElement->setChangeable(true);
-        m_UIAction__UIElement->setContainment(true);
-        m_UIAction__UIElement->setResolveProxies(true);
-        m_UIAction__UIElement->setUnique(true);
-        m_UIAction__UIElement->setDerived(false);
-        m_UIAction__UIElement->setOrdered(false);
-
-    }
-
-    { // UIEvent
-        m_UIEventEClass->setName("UIEvent");
-        m_UIEventEClass->setAbstract(false);
-        m_UIEventEClass->setInterface(false);
-        m_UIEvent__kind->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_UIEvent__kind->setDefaultValueLiteral("");
-        m_UIEvent__kind->setLowerBound(0);
-        m_UIEvent__kind->setUpperBound(1);
-        m_UIEvent__kind->setTransient(false);
-        m_UIEvent__kind->setVolatile(false);
-        m_UIEvent__kind->setChangeable(true);
-        m_UIEvent__kind->setUnsettable(false);
-        m_UIEvent__kind->setID(false);
-        m_UIEvent__kind->setUnique(false);
-        m_UIEvent__kind->setDerived(false);
-        m_UIEvent__kind->setOrdered(false);
-
-    }
-
-    { // ReadsUI
-        m_ReadsUIEClass->setName("ReadsUI");
-        m_ReadsUIEClass->setAbstract(false);
-        m_ReadsUIEClass->setInterface(false);
-
-        m_ReadsUI__to->setEType(m_UIResourceEClass);
-        m_ReadsUI__to->setDefaultValueLiteral("");
-        m_ReadsUI__to->setLowerBound(1);
-        m_ReadsUI__to->setUpperBound(1);
-        m_ReadsUI__to->setTransient(false);
-        m_ReadsUI__to->setVolatile(false);
-        m_ReadsUI__to->setChangeable(true);
-        m_ReadsUI__to->setContainment(false);
-        m_ReadsUI__to->setResolveProxies(true);
-        m_ReadsUI__to->setUnique(true);
-        m_ReadsUI__to->setDerived(false);
-        m_ReadsUI__to->setOrdered(false);
-        m_ReadsUI__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ReadsUI__from->setDefaultValueLiteral("");
-        m_ReadsUI__from->setLowerBound(1);
-        m_ReadsUI__from->setUpperBound(1);
-        m_ReadsUI__from->setTransient(false);
-        m_ReadsUI__from->setVolatile(false);
-        m_ReadsUI__from->setChangeable(true);
-        m_ReadsUI__from->setContainment(false);
-        m_ReadsUI__from->setResolveProxies(true);
-        m_ReadsUI__from->setUnique(true);
-        m_ReadsUI__from->setDerived(false);
-        m_ReadsUI__from->setOrdered(false);
-
-    }
-
-    { // WritesUI
-        m_WritesUIEClass->setName("WritesUI");
-        m_WritesUIEClass->setAbstract(false);
-        m_WritesUIEClass->setInterface(false);
-
-        m_WritesUI__to->setEType(m_UIResourceEClass);
-        m_WritesUI__to->setDefaultValueLiteral("");
-        m_WritesUI__to->setLowerBound(1);
-        m_WritesUI__to->setUpperBound(1);
-        m_WritesUI__to->setTransient(false);
-        m_WritesUI__to->setVolatile(false);
-        m_WritesUI__to->setChangeable(true);
-        m_WritesUI__to->setContainment(false);
-        m_WritesUI__to->setResolveProxies(true);
-        m_WritesUI__to->setUnique(true);
-        m_WritesUI__to->setDerived(false);
-        m_WritesUI__to->setOrdered(false);
-        m_WritesUI__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_WritesUI__from->setDefaultValueLiteral("");
-        m_WritesUI__from->setLowerBound(1);
-        m_WritesUI__from->setUpperBound(1);
-        m_WritesUI__from->setTransient(false);
-        m_WritesUI__from->setVolatile(false);
-        m_WritesUI__from->setChangeable(true);
-        m_WritesUI__from->setContainment(false);
-        m_WritesUI__from->setResolveProxies(true);
-        m_WritesUI__from->setUnique(true);
-        m_WritesUI__from->setDerived(false);
-        m_WritesUI__from->setOrdered(false);
-
-    }
-
-    { // ManagesUI
-        m_ManagesUIEClass->setName("ManagesUI");
-        m_ManagesUIEClass->setAbstract(false);
-        m_ManagesUIEClass->setInterface(false);
-
-        m_ManagesUI__to->setEType(m_UIResourceEClass);
-        m_ManagesUI__to->setDefaultValueLiteral("");
-        m_ManagesUI__to->setLowerBound(1);
-        m_ManagesUI__to->setUpperBound(1);
-        m_ManagesUI__to->setTransient(false);
-        m_ManagesUI__to->setVolatile(false);
-        m_ManagesUI__to->setChangeable(true);
-        m_ManagesUI__to->setContainment(false);
-        m_ManagesUI__to->setResolveProxies(true);
-        m_ManagesUI__to->setUnique(true);
-        m_ManagesUI__to->setDerived(false);
-        m_ManagesUI__to->setOrdered(false);
-        m_ManagesUI__from->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
-        m_ManagesUI__from->setDefaultValueLiteral("");
-        m_ManagesUI__from->setLowerBound(1);
-        m_ManagesUI__from->setUpperBound(1);
-        m_ManagesUI__from->setTransient(false);
-        m_ManagesUI__from->setVolatile(false);
-        m_ManagesUI__from->setChangeable(true);
-        m_ManagesUI__from->setContainment(false);
-        m_ManagesUI__from->setResolveProxies(true);
-        m_ManagesUI__from->setUnique(true);
-        m_ManagesUI__from->setDerived(false);
-        m_ManagesUI__from->setOrdered(false);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_AbstractUIElementEClass);
+        classifiers.push_back(m_AbstractUIRelationshipEClass);
+        classifiers.push_back(m_DisplaysEClass);
+        classifiers.push_back(m_DisplaysImageEClass);
+        classifiers.push_back(m_ManagesUIEClass);
+        classifiers.push_back(m_ReadsUIEClass);
+        classifiers.push_back(m_ReportEClass);
+        classifiers.push_back(m_ScreenEClass);
+        classifiers.push_back(m_UIActionEClass);
+        classifiers.push_back(m_UIDisplayEClass);
+        classifiers.push_back(m_UIElementEClass);
+        classifiers.push_back(m_UIEventEClass);
+        classifiers.push_back(m_UIFieldEClass);
+        classifiers.push_back(m_UIFlowEClass);
+        classifiers.push_back(m_UILayoutEClass);
+        classifiers.push_back(m_UIModelEClass);
+        classifiers.push_back(m_UIRelationshipEClass);
+        classifiers.push_back(m_UIResourceEClass);
+        classifiers.push_back(m_WritesUIEClass);
+    }();
 
     _initialize();
 }

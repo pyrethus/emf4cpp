@@ -41,7 +41,6 @@ namespace TopLevelPackage
 
         // IDs for classifier Level1Class
         static const int LEVEL1CLASS = 0;
-
         static const int LEVEL1CLASS_FEATURE_COUNT = 0;
 
         // EClassifiers methods
@@ -57,13 +56,7 @@ namespace TopLevelPackage
         Level1Package();
         void _initPackage();
 
-        // EClass instances 
-
         ::ecore::EClass_ptr m_Level1ClassEClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
 
         // EStructuralFeatures instances
 

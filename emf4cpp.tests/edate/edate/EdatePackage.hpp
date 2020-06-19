@@ -39,20 +39,14 @@ public:
 
     // IDs for classifier Apollo11
     static const int APOLLO11 = 0;
-
     static const int APOLLO11__FIRSTMANONMOONDATE = 0;
-
     static const int APOLLO11__MEMBER = 1;
-
     static const int APOLLO11_FEATURE_COUNT = 2;
 
     // IDs for classifier Person
     static const int PERSON = 1;
-
     static const int PERSON__BIRTHDAY = 0;
-
     static const int PERSON__NAME = 1;
-
     static const int PERSON_FEATURE_COUNT = 2;
 
     // EClassifiers methods
@@ -78,15 +72,8 @@ protected:
     EdatePackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_PersonEClass;
-
     ::ecore::EClass_ptr m_Apollo11EClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_PersonEClass;
 
     // EStructuralFeatures instances
 

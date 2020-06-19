@@ -40,42 +40,72 @@ using namespace ::base::base1::base2;
 
 Base2Package::Base2Package()
 {
-
-    // Feature definitions of Base20
-    m_Base20__valBase20 = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
+    m_Base20__valBase20 = ::ecore::make< ::ecore::EAttribute >();
+    m_Base20EClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void Base2Package::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = Base2Factory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = Base2Factory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // Base20
-        m_Base20EClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_Base20EClass->setClassifierID(BASE20);
-        m_Base20EClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_Base20EClass);
-        // m_Base20__valBase20 has already been allocated above
-        m_Base20__valBase20->setFeatureID(
+    [this]()
+    { // Feature valBase20 of class Base20
+        auto &&feature = m_Base20__valBase20;
+
+        // ENamedElement
+        feature->setName("valBase20");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::base::base1::base2::Base2Package::BASE20__VALBASE20);
-        m_Base20__valBase20->setName("valBase20");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base20EClass->getEStructuralFeatures()).basicAdd(
-                m_Base20__valBase20);
-        m_Base20__valBase20->basicsetEContainingClass(m_Base20EClass);
-    }
+        feature->basicsetEContainingClass(m_Base20EClass);
 
-    // Create enums
+        // EAttribute
+        feature->setID(false);
+    }();
 
-    // Create data types
+    [this]()
+    { // Classifier Base20
+        auto &&classifier = m_Base20EClass;
+
+        // ENamedElement
+        classifier->setName("Base20");
+
+        // EClassifier
+        classifier->setClassifierID(BASE20);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_Base20EClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Base20__valBase20);
+        }
+    }();
 
     // Initialize package
     setName("base2");
@@ -85,37 +115,19 @@ void Base2Package::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_Base20EClass->getESuperTypes().push_back(
-            dynamic_cast< ::base::base1::Base1Package* >(::base::base1::Base1Package::_instance().get())->getBase10());
-    m_Base20EClass->getESuperTypes().push_back(
-            dynamic_cast< ::base::base1::Base1Package* >(::base::base1::Base1Package::_instance().get())->getBase11());
+    [this]()
+    {
+        m_Base20EClass->getESuperTypes().push_back(
+                dynamic_cast< ::base::base1::Base1Package* >(::base::base1::Base1Package::_instance().get())->getBase10());
+        m_Base20EClass->getESuperTypes().push_back(
+                dynamic_cast< ::base::base1::Base1Package* >(::base::base1::Base1Package::_instance().get())->getBase11());
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // Base20
-        m_Base20EClass->setName("Base20");
-        m_Base20EClass->setAbstract(false);
-        m_Base20EClass->setInterface(false);
-        m_Base20__valBase20->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Base20__valBase20->setDefaultValueLiteral("");
-        m_Base20__valBase20->setLowerBound(0);
-        m_Base20__valBase20->setUpperBound(1);
-        m_Base20__valBase20->setTransient(false);
-        m_Base20__valBase20->setVolatile(false);
-        m_Base20__valBase20->setChangeable(true);
-        m_Base20__valBase20->setUnsettable(false);
-        m_Base20__valBase20->setID(false);
-        m_Base20__valBase20->setUnique(true);
-        m_Base20__valBase20->setDerived(false);
-        m_Base20__valBase20->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_Base20EClass);
+    }();
 
     _initialize();
 }

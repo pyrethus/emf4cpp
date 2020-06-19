@@ -39,81 +39,49 @@ public:
 
     // IDs for classifier DeclaredParameter
     static const int DECLAREDPARAMETER = 0;
-
     static const int DECLAREDPARAMETER__LINE = 0;
-
     static const int DECLAREDPARAMETER__START = 1;
-
     static const int DECLAREDPARAMETER__END = 2;
-
     static const int DECLAREDPARAMETER__FILENAME = 3;
-
     static const int DECLAREDPARAMETER__NAME = 4;
-
     static const int DECLAREDPARAMETER__TYPE = 5;
-
     static const int DECLAREDPARAMETER_FEATURE_COUNT = 6;
 
     // IDs for classifier File
     static const int FILE = 1;
-
     static const int FILE__LINE = 0;
-
     static const int FILE__START = 1;
-
     static const int FILE__END = 2;
-
     static const int FILE__FILENAME = 3;
-
     static const int FILE__IMPORTS = 4;
-
     static const int FILE__DECLARATIONS = 5;
-
     static const int FILE_FEATURE_COUNT = 6;
 
     // IDs for classifier Identifier
     static const int IDENTIFIER = 2;
-
     static const int IDENTIFIER__LINE = 0;
-
     static const int IDENTIFIER__START = 1;
-
     static const int IDENTIFIER__END = 2;
-
     static const int IDENTIFIER__FILENAME = 3;
-
     static const int IDENTIFIER__VALUE = 4;
-
     static const int IDENTIFIER_FEATURE_COUNT = 5;
 
     // IDs for classifier ImportStatement
     static const int IMPORTSTATEMENT = 3;
-
     static const int IMPORTSTATEMENT__LINE = 0;
-
     static const int IMPORTSTATEMENT__START = 1;
-
     static const int IMPORTSTATEMENT__END = 2;
-
     static const int IMPORTSTATEMENT__FILENAME = 3;
-
     static const int IMPORTSTATEMENT__IMPORTEDID = 4;
-
     static const int IMPORTSTATEMENT__EXPORTED = 5;
-
     static const int IMPORTSTATEMENT_FEATURE_COUNT = 6;
 
     // IDs for classifier SyntaxElement
     static const int SYNTAXELEMENT = 4;
-
     static const int SYNTAXELEMENT__LINE = 0;
-
     static const int SYNTAXELEMENT__START = 1;
-
     static const int SYNTAXELEMENT__END = 2;
-
     static const int SYNTAXELEMENT__FILENAME = 3;
-
     static const int SYNTAXELEMENT_FEATURE_COUNT = 4;
 
     // EClassifiers methods
@@ -159,21 +127,11 @@ protected:
     Xpand3Package();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_SyntaxElementEClass;
-
-    ::ecore::EClass_ptr m_FileEClass;
-
-    ::ecore::EClass_ptr m_ImportStatementEClass;
-
-    ::ecore::EClass_ptr m_IdentifierEClass;
-
     ::ecore::EClass_ptr m_DeclaredParameterEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_FileEClass;
+    ::ecore::EClass_ptr m_IdentifierEClass;
+    ::ecore::EClass_ptr m_ImportStatementEClass;
+    ::ecore::EClass_ptr m_SyntaxElementEClass;
 
     // EStructuralFeatures instances
 

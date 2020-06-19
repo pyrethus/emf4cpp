@@ -39,9 +39,7 @@ public:
 
     // IDs for classifier Integer
     static const int INTEGER = 0;
-
     static const int INTEGER__VALUE = 0;
-
     static const int INTEGER_FEATURE_COUNT = 1;
 
     // EClassifiers methods
@@ -59,13 +57,7 @@ protected:
     EOperationBodyPackage();
     void _initPackage();
 
-    // EClass instances 
-
     ::ecore::EClass_ptr m_IntegerEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
 
     // EStructuralFeatures instances
 

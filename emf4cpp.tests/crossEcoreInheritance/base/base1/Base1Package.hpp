@@ -43,30 +43,19 @@ namespace base
 
         // IDs for classifier Base10
         static const int BASE10 = 0;
-
         static const int BASE10__VALBASE01 = 0;
-
         static const int BASE10__DERIVED02REF = 1;
-
         static const int BASE10__VALBASE10 = 2;
-
         static const int BASE10_FEATURE_COUNT = 3;
 
         // IDs for classifier Base11
         static const int BASE11 = 1;
-
         static const int BASE11__VALBASE01 = 0;
-
         static const int BASE11__DERIVED02REF = 1;
-
         static const int BASE11__VALBASE10 = 2;
-
         static const int BASE11__VALBASE02 = 3;
-
         static const int BASE11__VALBASE03 = 4;
-
         static const int BASE11__VALBASE11 = 5;
-
         static const int BASE11_FEATURE_COUNT = 6;
 
         // EClassifiers methods
@@ -88,15 +77,8 @@ namespace base
         Base1Package();
         void _initPackage();
 
-        // EClass instances 
-
         ::ecore::EClass_ptr m_Base10EClass;
-
         ::ecore::EClass_ptr m_Base11EClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
 
         // EStructuralFeatures instances
 

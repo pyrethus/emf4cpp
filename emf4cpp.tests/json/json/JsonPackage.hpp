@@ -39,56 +39,41 @@ public:
 
     // IDs for classifier ArrayValue
     static const int ARRAYVALUE = 0;
-
     static const int ARRAYVALUE__VALUES = 0;
-
     static const int ARRAYVALUE_FEATURE_COUNT = 1;
 
     // IDs for classifier BooleanValue
     static const int BOOLEANVALUE = 1;
-
     static const int BOOLEANVALUE__VALUE = 0;
-
     static const int BOOLEANVALUE_FEATURE_COUNT = 1;
 
     // IDs for classifier NullValue
     static const int NULLVALUE = 2;
-
     static const int NULLVALUE_FEATURE_COUNT = 0;
 
     // IDs for classifier NumberValue
     static const int NUMBERVALUE = 3;
-
     static const int NUMBERVALUE__VALUE = 0;
-
     static const int NUMBERVALUE_FEATURE_COUNT = 1;
 
     // IDs for classifier NVPair
     static const int NVPAIR = 4;
-
     static const int NVPAIR__NAME = 0;
-
     static const int NVPAIR__VALUE = 1;
-
     static const int NVPAIR_FEATURE_COUNT = 2;
 
     // IDs for classifier ObjectValue
     static const int OBJECTVALUE = 5;
-
     static const int OBJECTVALUE__MEMBERS = 0;
-
     static const int OBJECTVALUE_FEATURE_COUNT = 1;
 
     // IDs for classifier StringValue
     static const int STRINGVALUE = 6;
-
     static const int STRINGVALUE__VALUE = 0;
-
     static const int STRINGVALUE_FEATURE_COUNT = 1;
 
     // IDs for classifier Value
     static const int VALUE = 7;
-
     static const int VALUE_FEATURE_COUNT = 0;
 
     // EClassifiers methods
@@ -132,27 +117,14 @@ protected:
     JsonPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_ObjectValueEClass;
-
-    ::ecore::EClass_ptr m_NVPairEClass;
-
-    ::ecore::EClass_ptr m_ValueEClass;
-
-    ::ecore::EClass_ptr m_StringValueEClass;
-
-    ::ecore::EClass_ptr m_NumberValueEClass;
-
-    ::ecore::EClass_ptr m_BooleanValueEClass;
-
     ::ecore::EClass_ptr m_ArrayValueEClass;
-
+    ::ecore::EClass_ptr m_BooleanValueEClass;
+    ::ecore::EClass_ptr m_NVPairEClass;
     ::ecore::EClass_ptr m_NullValueEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_NumberValueEClass;
+    ::ecore::EClass_ptr m_ObjectValueEClass;
+    ::ecore::EClass_ptr m_StringValueEClass;
+    ::ecore::EClass_ptr m_ValueEClass;
 
     // EStructuralFeatures instances
 

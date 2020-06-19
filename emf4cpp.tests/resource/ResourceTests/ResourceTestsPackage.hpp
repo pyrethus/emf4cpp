@@ -39,42 +39,28 @@ public:
 
     // IDs for classifier ETypes
     static const int ETYPES = 0;
-
     static const int ETYPES__STRING = 0;
-
     static const int ETYPES__EMPTYSTRING = 1;
-
     static const int ETYPES__DATE = 2;
-
     static const int ETYPES__CHAR = 3;
-
     static const int ETYPES__BOOL = 4;
-
     static const int ETYPES__DOUBLE = 5;
-
     static const int ETYPES__INT = 6;
-
     static const int ETYPES_FEATURE_COUNT = 7;
 
     // IDs for classifier ReferenceTarget
     static const int REFERENCETARGET = 1;
-
     static const int REFERENCETARGET_FEATURE_COUNT = 0;
 
     // IDs for classifier Referrer
     static const int REFERRER = 2;
-
     static const int REFERRER__REFERENCE = 0;
-
     static const int REFERRER_FEATURE_COUNT = 1;
 
     // IDs for classifier Root
     static const int ROOT = 3;
-
     static const int ROOT__TARGET = 0;
-
     static const int ROOT__REFERRERS = 1;
-
     static const int ROOT_FEATURE_COUNT = 2;
 
     // EClassifiers methods
@@ -116,19 +102,10 @@ protected:
     ResourceTestsPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_RootEClass;
-
-    ::ecore::EClass_ptr m_ReferenceTargetEClass;
-
-    ::ecore::EClass_ptr m_ReferrerEClass;
-
     ::ecore::EClass_ptr m_ETypesEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_ReferenceTargetEClass;
+    ::ecore::EClass_ptr m_ReferrerEClass;
+    ::ecore::EClass_ptr m_RootEClass;
 
     // EStructuralFeatures instances
 

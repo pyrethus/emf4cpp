@@ -58,12 +58,12 @@ public:
 «FOREACH EClassifiers.sortBy(e|e.name).sortBy(e|e.name.toUpperCase()) AS class ITERATOR it»
     // IDs for classifier «class.name»
     static const int «class.name.toUpperCase()» = «it.counter0»;
-	«IF EClass.isInstance(class)»
-		«FOREACH ((EClass)class).EAllStructuralFeatures AS esf»
+	«IF EClass.isInstance(class)-»
+		«FOREACH ((EClass)class).EAllStructuralFeatures AS esf-»
 			static const int «esf.getFeatureIDFQN((EClass)class)» = «((EClass)class).getFeatureIDValue(esf)»;
-		«ENDFOREACH»
+		«ENDFOREACH-»
 		static const int «class.name.toUpperCase()»_FEATURE_COUNT = «((EClass)class).getFeatureCount()»;
-	«ENDIF»
+	«ENDIF-»
 «ENDFOREACH»
 
 	// EClassifiers methods
@@ -82,21 +82,10 @@ protected:
 
     «name.toFirstUpper()»Package();
     void _initPackage();
-    
-    // EClass instances 
-«FOREACH EClassifiers.typeSelect(EClass) AS class»
-    ::ecore::EClass_ptr «getPackageAttribute(class)»;
-«ENDFOREACH»
 
-    // EEnuminstances 
-«FOREACH EClassifiers.typeSelect(EEnum) AS enum»
-    ::ecore::EEnum_ptr «getPackageAttribute(enum)»;
-«ENDFOREACH»
-
-    // EDataType instances 
-«FOREACH EClassifiers.typeSelect(EDataType).select(e|!EEnum.isInstance(e)) AS dt»
-    ::ecore::EDataType_ptr «getPackageAttribute(dt)»;
-«ENDFOREACH»
+«FOREACH EClassifiers.sortBy(e|e.name) AS classifier-»
+    ::ecore::«classifier.eClass().name»_ptr «getPackageAttribute(classifier)»;
+«ENDFOREACH-»
 
     // EStructuralFeatures instances
 «FOREACH this.getStructuralFeatures() AS ef»

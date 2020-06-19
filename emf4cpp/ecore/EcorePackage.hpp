@@ -39,64 +39,36 @@ public:
 
     // IDs for classifier EAnnotation
     static const int EANNOTATION = 0;
-
     static const int EANNOTATION__EANNOTATIONS = 0;
-
     static const int EANNOTATION__SOURCE = 1;
-
     static const int EANNOTATION__DETAILS = 2;
-
     static const int EANNOTATION__EMODELELEMENT = 3;
-
     static const int EANNOTATION__CONTENTS = 4;
-
     static const int EANNOTATION__REFERENCES = 5;
-
     static const int EANNOTATION_FEATURE_COUNT = 6;
 
     // IDs for classifier EAttribute
     static const int EATTRIBUTE = 1;
-
     static const int EATTRIBUTE__EANNOTATIONS = 0;
-
     static const int EATTRIBUTE__NAME = 1;
-
     static const int EATTRIBUTE__ORDERED = 2;
-
     static const int EATTRIBUTE__UNIQUE = 3;
-
     static const int EATTRIBUTE__LOWERBOUND = 4;
-
     static const int EATTRIBUTE__UPPERBOUND = 5;
-
     static const int EATTRIBUTE__MANY = 6;
-
     static const int EATTRIBUTE__REQUIRED = 7;
-
     static const int EATTRIBUTE__ETYPE = 8;
-
     static const int EATTRIBUTE__EGENERICTYPE = 9;
-
     static const int EATTRIBUTE__CHANGEABLE = 10;
-
     static const int EATTRIBUTE__VOLATILE = 11;
-
     static const int EATTRIBUTE__TRANSIENT = 12;
-
     static const int EATTRIBUTE__DEFAULTVALUELITERAL = 13;
-
     static const int EATTRIBUTE__DEFAULTVALUE = 14;
-
     static const int EATTRIBUTE__UNSETTABLE = 15;
-
     static const int EATTRIBUTE__DERIVED = 16;
-
     static const int EATTRIBUTE__ECONTAININGCLASS = 17;
-
     static const int EATTRIBUTE__ID = 18;
-
     static const int EATTRIBUTE__EATTRIBUTETYPE = 19;
-
     static const int EATTRIBUTE_FEATURE_COUNT = 20;
 
     // IDs for classifier EBigDecimal
@@ -128,99 +100,55 @@ public:
 
     // IDs for classifier EClass
     static const int ECLASS = 11;
-
     static const int ECLASS__EANNOTATIONS = 0;
-
     static const int ECLASS__NAME = 1;
-
     static const int ECLASS__INSTANCECLASSNAME = 2;
-
     static const int ECLASS__INSTANCECLASS = 3;
-
     static const int ECLASS__DEFAULTVALUE = 4;
-
     static const int ECLASS__INSTANCETYPENAME = 5;
-
     static const int ECLASS__EPACKAGE = 6;
-
     static const int ECLASS__ETYPEPARAMETERS = 7;
-
     static const int ECLASS__ABSTRACT = 8;
-
     static const int ECLASS__INTERFACE = 9;
-
     static const int ECLASS__ESUPERTYPES = 10;
-
     static const int ECLASS__EOPERATIONS = 11;
-
     static const int ECLASS__EALLATTRIBUTES = 12;
-
     static const int ECLASS__EALLREFERENCES = 13;
-
     static const int ECLASS__EREFERENCES = 14;
-
     static const int ECLASS__EATTRIBUTES = 15;
-
     static const int ECLASS__EALLCONTAINMENTS = 16;
-
     static const int ECLASS__EALLOPERATIONS = 17;
-
     static const int ECLASS__EALLSTRUCTURALFEATURES = 18;
-
     static const int ECLASS__EALLSUPERTYPES = 19;
-
     static const int ECLASS__EIDATTRIBUTE = 20;
-
     static const int ECLASS__ESTRUCTURALFEATURES = 21;
-
     static const int ECLASS__EGENERICSUPERTYPES = 22;
-
     static const int ECLASS__EALLGENERICSUPERTYPES = 23;
-
     static const int ECLASS_FEATURE_COUNT = 24;
 
     // IDs for classifier EClassifier
     static const int ECLASSIFIER = 12;
-
     static const int ECLASSIFIER__EANNOTATIONS = 0;
-
     static const int ECLASSIFIER__NAME = 1;
-
     static const int ECLASSIFIER__INSTANCECLASSNAME = 2;
-
     static const int ECLASSIFIER__INSTANCECLASS = 3;
-
     static const int ECLASSIFIER__DEFAULTVALUE = 4;
-
     static const int ECLASSIFIER__INSTANCETYPENAME = 5;
-
     static const int ECLASSIFIER__EPACKAGE = 6;
-
     static const int ECLASSIFIER__ETYPEPARAMETERS = 7;
-
     static const int ECLASSIFIER_FEATURE_COUNT = 8;
 
     // IDs for classifier EDataType
     static const int EDATATYPE = 13;
-
     static const int EDATATYPE__EANNOTATIONS = 0;
-
     static const int EDATATYPE__NAME = 1;
-
     static const int EDATATYPE__INSTANCECLASSNAME = 2;
-
     static const int EDATATYPE__INSTANCECLASS = 3;
-
     static const int EDATATYPE__DEFAULTVALUE = 4;
-
     static const int EDATATYPE__INSTANCETYPENAME = 5;
-
     static const int EDATATYPE__EPACKAGE = 6;
-
     static const int EDATATYPE__ETYPEPARAMETERS = 7;
-
     static const int EDATATYPE__SERIALIZABLE = 8;
-
     static const int EDATATYPE_FEATURE_COUNT = 9;
 
     // IDs for classifier EDate
@@ -240,27 +168,16 @@ public:
 
     // IDs for classifier EEnum
     static const int EENUM = 19;
-
     static const int EENUM__EANNOTATIONS = 0;
-
     static const int EENUM__NAME = 1;
-
     static const int EENUM__INSTANCECLASSNAME = 2;
-
     static const int EENUM__INSTANCECLASS = 3;
-
     static const int EENUM__DEFAULTVALUE = 4;
-
     static const int EENUM__INSTANCETYPENAME = 5;
-
     static const int EENUM__EPACKAGE = 6;
-
     static const int EENUM__ETYPEPARAMETERS = 7;
-
     static const int EENUM__SERIALIZABLE = 8;
-
     static const int EENUM__ELITERALS = 9;
-
     static const int EENUM_FEATURE_COUNT = 10;
 
     // IDs for classifier EEnumerator
@@ -268,28 +185,18 @@ public:
 
     // IDs for classifier EEnumLiteral
     static const int EENUMLITERAL = 21;
-
     static const int EENUMLITERAL__EANNOTATIONS = 0;
-
     static const int EENUMLITERAL__NAME = 1;
-
     static const int EENUMLITERAL__VALUE = 2;
-
     static const int EENUMLITERAL__INSTANCE = 3;
-
     static const int EENUMLITERAL__LITERAL = 4;
-
     static const int EENUMLITERAL__EENUM = 5;
-
     static const int EENUMLITERAL_FEATURE_COUNT = 6;
 
     // IDs for classifier EFactory
     static const int EFACTORY = 22;
-
     static const int EFACTORY__EANNOTATIONS = 0;
-
     static const int EFACTORY__EPACKAGE = 1;
-
     static const int EFACTORY_FEATURE_COUNT = 2;
 
     // IDs for classifier EFeatureMap
@@ -306,19 +213,12 @@ public:
 
     // IDs for classifier EGenericType
     static const int EGENERICTYPE = 27;
-
     static const int EGENERICTYPE__EUPPERBOUND = 0;
-
     static const int EGENERICTYPE__ETYPEARGUMENTS = 1;
-
     static const int EGENERICTYPE__ERAWTYPE = 2;
-
     static const int EGENERICTYPE__ELOWERBOUND = 3;
-
     static const int EGENERICTYPE__ETYPEPARAMETER = 4;
-
     static const int EGENERICTYPE__ECLASSIFIER = 5;
-
     static const int EGENERICTYPE_FEATURE_COUNT = 6;
 
     // IDs for classifier EInt
@@ -347,159 +247,91 @@ public:
 
     // IDs for classifier EModelElement
     static const int EMODELELEMENT = 36;
-
     static const int EMODELELEMENT__EANNOTATIONS = 0;
-
     static const int EMODELELEMENT_FEATURE_COUNT = 1;
 
     // IDs for classifier ENamedElement
     static const int ENAMEDELEMENT = 37;
-
     static const int ENAMEDELEMENT__EANNOTATIONS = 0;
-
     static const int ENAMEDELEMENT__NAME = 1;
-
     static const int ENAMEDELEMENT_FEATURE_COUNT = 2;
 
     // IDs for classifier EObject
     static const int EOBJECT = 38;
-
     static const int EOBJECT_FEATURE_COUNT = 0;
 
     // IDs for classifier EOperation
     static const int EOPERATION = 39;
-
     static const int EOPERATION__EANNOTATIONS = 0;
-
     static const int EOPERATION__NAME = 1;
-
     static const int EOPERATION__ORDERED = 2;
-
     static const int EOPERATION__UNIQUE = 3;
-
     static const int EOPERATION__LOWERBOUND = 4;
-
     static const int EOPERATION__UPPERBOUND = 5;
-
     static const int EOPERATION__MANY = 6;
-
     static const int EOPERATION__REQUIRED = 7;
-
     static const int EOPERATION__ETYPE = 8;
-
     static const int EOPERATION__EGENERICTYPE = 9;
-
     static const int EOPERATION__ECONTAININGCLASS = 10;
-
     static const int EOPERATION__ETYPEPARAMETERS = 11;
-
     static const int EOPERATION__EPARAMETERS = 12;
-
     static const int EOPERATION__EEXCEPTIONS = 13;
-
     static const int EOPERATION__EGENERICEXCEPTIONS = 14;
-
     static const int EOPERATION_FEATURE_COUNT = 15;
 
     // IDs for classifier EPackage
     static const int EPACKAGE = 40;
-
     static const int EPACKAGE__EANNOTATIONS = 0;
-
     static const int EPACKAGE__NAME = 1;
-
     static const int EPACKAGE__NSURI = 2;
-
     static const int EPACKAGE__NSPREFIX = 3;
-
     static const int EPACKAGE__EFACTORYINSTANCE = 4;
-
     static const int EPACKAGE__ECLASSIFIERS = 5;
-
     static const int EPACKAGE__ESUBPACKAGES = 6;
-
     static const int EPACKAGE__ESUPERPACKAGE = 7;
-
     static const int EPACKAGE_FEATURE_COUNT = 8;
 
     // IDs for classifier EParameter
     static const int EPARAMETER = 41;
-
     static const int EPARAMETER__EANNOTATIONS = 0;
-
     static const int EPARAMETER__NAME = 1;
-
     static const int EPARAMETER__ORDERED = 2;
-
     static const int EPARAMETER__UNIQUE = 3;
-
     static const int EPARAMETER__LOWERBOUND = 4;
-
     static const int EPARAMETER__UPPERBOUND = 5;
-
     static const int EPARAMETER__MANY = 6;
-
     static const int EPARAMETER__REQUIRED = 7;
-
     static const int EPARAMETER__ETYPE = 8;
-
     static const int EPARAMETER__EGENERICTYPE = 9;
-
     static const int EPARAMETER__EOPERATION = 10;
-
     static const int EPARAMETER_FEATURE_COUNT = 11;
 
     // IDs for classifier EReference
     static const int EREFERENCE = 42;
-
     static const int EREFERENCE__EANNOTATIONS = 0;
-
     static const int EREFERENCE__NAME = 1;
-
     static const int EREFERENCE__ORDERED = 2;
-
     static const int EREFERENCE__UNIQUE = 3;
-
     static const int EREFERENCE__LOWERBOUND = 4;
-
     static const int EREFERENCE__UPPERBOUND = 5;
-
     static const int EREFERENCE__MANY = 6;
-
     static const int EREFERENCE__REQUIRED = 7;
-
     static const int EREFERENCE__ETYPE = 8;
-
     static const int EREFERENCE__EGENERICTYPE = 9;
-
     static const int EREFERENCE__CHANGEABLE = 10;
-
     static const int EREFERENCE__VOLATILE = 11;
-
     static const int EREFERENCE__TRANSIENT = 12;
-
     static const int EREFERENCE__DEFAULTVALUELITERAL = 13;
-
     static const int EREFERENCE__DEFAULTVALUE = 14;
-
     static const int EREFERENCE__UNSETTABLE = 15;
-
     static const int EREFERENCE__DERIVED = 16;
-
     static const int EREFERENCE__ECONTAININGCLASS = 17;
-
     static const int EREFERENCE__CONTAINMENT = 18;
-
     static const int EREFERENCE__CONTAINER = 19;
-
     static const int EREFERENCE__RESOLVEPROXIES = 20;
-
     static const int EREFERENCE__EOPPOSITE = 21;
-
     static const int EREFERENCE__EREFERENCETYPE = 22;
-
     static const int EREFERENCE__EKEYS = 23;
-
     static const int EREFERENCE_FEATURE_COUNT = 24;
 
     // IDs for classifier EResource
@@ -519,52 +351,30 @@ public:
 
     // IDs for classifier EStringToStringMapEntry
     static const int ESTRINGTOSTRINGMAPENTRY = 48;
-
     static const int ESTRINGTOSTRINGMAPENTRY__KEY = 0;
-
     static const int ESTRINGTOSTRINGMAPENTRY__VALUE = 1;
-
     static const int ESTRINGTOSTRINGMAPENTRY_FEATURE_COUNT = 2;
 
     // IDs for classifier EStructuralFeature
     static const int ESTRUCTURALFEATURE = 49;
-
     static const int ESTRUCTURALFEATURE__EANNOTATIONS = 0;
-
     static const int ESTRUCTURALFEATURE__NAME = 1;
-
     static const int ESTRUCTURALFEATURE__ORDERED = 2;
-
     static const int ESTRUCTURALFEATURE__UNIQUE = 3;
-
     static const int ESTRUCTURALFEATURE__LOWERBOUND = 4;
-
     static const int ESTRUCTURALFEATURE__UPPERBOUND = 5;
-
     static const int ESTRUCTURALFEATURE__MANY = 6;
-
     static const int ESTRUCTURALFEATURE__REQUIRED = 7;
-
     static const int ESTRUCTURALFEATURE__ETYPE = 8;
-
     static const int ESTRUCTURALFEATURE__EGENERICTYPE = 9;
-
     static const int ESTRUCTURALFEATURE__CHANGEABLE = 10;
-
     static const int ESTRUCTURALFEATURE__VOLATILE = 11;
-
     static const int ESTRUCTURALFEATURE__TRANSIENT = 12;
-
     static const int ESTRUCTURALFEATURE__DEFAULTVALUELITERAL = 13;
-
     static const int ESTRUCTURALFEATURE__DEFAULTVALUE = 14;
-
     static const int ESTRUCTURALFEATURE__UNSETTABLE = 15;
-
     static const int ESTRUCTURALFEATURE__DERIVED = 16;
-
     static const int ESTRUCTURALFEATURE__ECONTAININGCLASS = 17;
-
     static const int ESTRUCTURALFEATURE_FEATURE_COUNT = 18;
 
     // IDs for classifier ETreeIterator
@@ -572,38 +382,23 @@ public:
 
     // IDs for classifier ETypedElement
     static const int ETYPEDELEMENT = 51;
-
     static const int ETYPEDELEMENT__EANNOTATIONS = 0;
-
     static const int ETYPEDELEMENT__NAME = 1;
-
     static const int ETYPEDELEMENT__ORDERED = 2;
-
     static const int ETYPEDELEMENT__UNIQUE = 3;
-
     static const int ETYPEDELEMENT__LOWERBOUND = 4;
-
     static const int ETYPEDELEMENT__UPPERBOUND = 5;
-
     static const int ETYPEDELEMENT__MANY = 6;
-
     static const int ETYPEDELEMENT__REQUIRED = 7;
-
     static const int ETYPEDELEMENT__ETYPE = 8;
-
     static const int ETYPEDELEMENT__EGENERICTYPE = 9;
-
     static const int ETYPEDELEMENT_FEATURE_COUNT = 10;
 
     // IDs for classifier ETypeParameter
     static const int ETYPEPARAMETER = 52;
-
     static const int ETYPEPARAMETER__EANNOTATIONS = 0;
-
     static const int ETYPEPARAMETER__NAME = 1;
-
     static const int ETYPEPARAMETER__EBOUNDS = 2;
-
     static const int ETYPEPARAMETER_FEATURE_COUNT = 3;
 
     // EClassifiers methods
@@ -885,117 +680,59 @@ protected:
     EcorePackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_EAttributeEClass;
-
     ::ecore::EClass_ptr m_EAnnotationEClass;
-
-    ::ecore::EClass_ptr m_EClassEClass;
-
-    ::ecore::EClass_ptr m_EClassifierEClass;
-
-    ::ecore::EClass_ptr m_EDataTypeEClass;
-
-    ::ecore::EClass_ptr m_EEnumEClass;
-
-    ::ecore::EClass_ptr m_EEnumLiteralEClass;
-
-    ::ecore::EClass_ptr m_EFactoryEClass;
-
-    ::ecore::EClass_ptr m_EModelElementEClass;
-
-    ::ecore::EClass_ptr m_ENamedElementEClass;
-
-    ::ecore::EClass_ptr m_EObjectEClass;
-
-    ::ecore::EClass_ptr m_EOperationEClass;
-
-    ::ecore::EClass_ptr m_EPackageEClass;
-
-    ::ecore::EClass_ptr m_EParameterEClass;
-
-    ::ecore::EClass_ptr m_EReferenceEClass;
-
-    ::ecore::EClass_ptr m_EStructuralFeatureEClass;
-
-    ::ecore::EClass_ptr m_ETypedElementEClass;
-
-    ::ecore::EClass_ptr m_EStringToStringMapEntryEClass;
-
-    ::ecore::EClass_ptr m_EGenericTypeEClass;
-
-    ::ecore::EClass_ptr m_ETypeParameterEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
-
+    ::ecore::EClass_ptr m_EAttributeEClass;
     ::ecore::EDataType_ptr m_EBigDecimalEDataType;
-
     ::ecore::EDataType_ptr m_EBigIntegerEDataType;
-
     ::ecore::EDataType_ptr m_EBooleanEDataType;
-
     ::ecore::EDataType_ptr m_EBooleanObjectEDataType;
-
     ::ecore::EDataType_ptr m_EByteEDataType;
-
     ::ecore::EDataType_ptr m_EByteArrayEDataType;
-
     ::ecore::EDataType_ptr m_EByteObjectEDataType;
-
     ::ecore::EDataType_ptr m_ECharEDataType;
-
     ::ecore::EDataType_ptr m_ECharacterObjectEDataType;
-
+    ::ecore::EClass_ptr m_EClassEClass;
+    ::ecore::EClass_ptr m_EClassifierEClass;
+    ::ecore::EClass_ptr m_EDataTypeEClass;
     ::ecore::EDataType_ptr m_EDateEDataType;
-
     ::ecore::EDataType_ptr m_EDiagnosticChainEDataType;
-
     ::ecore::EDataType_ptr m_EDoubleEDataType;
-
     ::ecore::EDataType_ptr m_EDoubleObjectEDataType;
-
     ::ecore::EDataType_ptr m_EEListEDataType;
-
+    ::ecore::EClass_ptr m_EEnumEClass;
+    ::ecore::EClass_ptr m_EEnumLiteralEClass;
     ::ecore::EDataType_ptr m_EEnumeratorEDataType;
-
+    ::ecore::EClass_ptr m_EFactoryEClass;
     ::ecore::EDataType_ptr m_EFeatureMapEDataType;
-
     ::ecore::EDataType_ptr m_EFeatureMapEntryEDataType;
-
     ::ecore::EDataType_ptr m_EFloatEDataType;
-
     ::ecore::EDataType_ptr m_EFloatObjectEDataType;
-
+    ::ecore::EClass_ptr m_EGenericTypeEClass;
     ::ecore::EDataType_ptr m_EIntEDataType;
-
     ::ecore::EDataType_ptr m_EIntegerObjectEDataType;
-
-    ::ecore::EDataType_ptr m_EJavaClassEDataType;
-
-    ::ecore::EDataType_ptr m_EJavaObjectEDataType;
-
-    ::ecore::EDataType_ptr m_ELongEDataType;
-
-    ::ecore::EDataType_ptr m_ELongObjectEDataType;
-
-    ::ecore::EDataType_ptr m_EMapEDataType;
-
-    ::ecore::EDataType_ptr m_EResourceEDataType;
-
-    ::ecore::EDataType_ptr m_EResourceSetEDataType;
-
-    ::ecore::EDataType_ptr m_EShortEDataType;
-
-    ::ecore::EDataType_ptr m_EShortObjectEDataType;
-
-    ::ecore::EDataType_ptr m_EStringEDataType;
-
-    ::ecore::EDataType_ptr m_ETreeIteratorEDataType;
-
     ::ecore::EDataType_ptr m_EInvocationTargetExceptionEDataType;
+    ::ecore::EDataType_ptr m_EJavaClassEDataType;
+    ::ecore::EDataType_ptr m_EJavaObjectEDataType;
+    ::ecore::EDataType_ptr m_ELongEDataType;
+    ::ecore::EDataType_ptr m_ELongObjectEDataType;
+    ::ecore::EDataType_ptr m_EMapEDataType;
+    ::ecore::EClass_ptr m_EModelElementEClass;
+    ::ecore::EClass_ptr m_ENamedElementEClass;
+    ::ecore::EClass_ptr m_EObjectEClass;
+    ::ecore::EClass_ptr m_EOperationEClass;
+    ::ecore::EClass_ptr m_EPackageEClass;
+    ::ecore::EClass_ptr m_EParameterEClass;
+    ::ecore::EClass_ptr m_EReferenceEClass;
+    ::ecore::EDataType_ptr m_EResourceEDataType;
+    ::ecore::EDataType_ptr m_EResourceSetEDataType;
+    ::ecore::EDataType_ptr m_EShortEDataType;
+    ::ecore::EDataType_ptr m_EShortObjectEDataType;
+    ::ecore::EDataType_ptr m_EStringEDataType;
+    ::ecore::EClass_ptr m_EStringToStringMapEntryEClass;
+    ::ecore::EClass_ptr m_EStructuralFeatureEClass;
+    ::ecore::EDataType_ptr m_ETreeIteratorEDataType;
+    ::ecore::EClass_ptr m_ETypeParameterEClass;
+    ::ecore::EClass_ptr m_ETypedElementEClass;
 
     // EStructuralFeatures instances
 

@@ -55,576 +55,1503 @@ using namespace ::kdm::action;
 
 ActionPackage::ActionPackage()
 {
-
-    // Feature definitions of ActionElement
-    m_ActionElement__kind = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ActionElement__codeElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ActionElement__actionRelation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of AbstractActionRelationship
-
-    // Feature definitions of ControlFlow
-    m_ControlFlow__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ControlFlow__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Calls
-    m_Calls__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Calls__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Creates
-    m_Creates__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Creates__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Reads
-    m_Reads__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Reads__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Writes
-    m_Writes__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Writes__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of CompliesTo
-    m_CompliesTo__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_CompliesTo__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Flow
-
-    // Feature definitions of TrueFlow
-
-    // Feature definitions of FalseFlow
-
-    // Feature definitions of GuardedFlow
-
-    // Feature definitions of UsesType
-    m_UsesType__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_UsesType__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Addresses
-    m_Addresses__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Addresses__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ActionRelationship
-    m_ActionRelationship__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ActionRelationship__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Throws
-    m_Throws__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Throws__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Dispatches
-    m_Dispatches__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Dispatches__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EntryFlow
-    m_EntryFlow__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EntryFlow__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of BlockUnit
-
-    // Feature definitions of ExceptionUnit
-
-    // Feature definitions of TryUnit
-
-    // Feature definitions of FinallyUnit
-
-    // Feature definitions of CatchUnit
-
-    // Feature definitions of ExitFlow
-    m_ExitFlow__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ExitFlow__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ExceptionFlow
-    m_ExceptionFlow__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ExceptionFlow__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_AbstractActionRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_ActionElement__kind = ::ecore::make< ::ecore::EAttribute >();
+    m_ActionElement__codeElement = ::ecore::make< ::ecore::EReference >();
+    m_ActionElement__actionRelation = ::ecore::make< ::ecore::EReference >();
+    m_ActionElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ActionRelationship__to = ::ecore::make< ::ecore::EReference >();
+    m_ActionRelationship__from = ::ecore::make< ::ecore::EReference >();
+    m_ActionRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_Addresses__to = ::ecore::make< ::ecore::EReference >();
+    m_Addresses__from = ::ecore::make< ::ecore::EReference >();
+    m_AddressesEClass = ::ecore::make< ::ecore::EClass >();
+    m_BlockUnitEClass = ::ecore::make< ::ecore::EClass >();
+    m_Calls__to = ::ecore::make< ::ecore::EReference >();
+    m_Calls__from = ::ecore::make< ::ecore::EReference >();
+    m_CallsEClass = ::ecore::make< ::ecore::EClass >();
+    m_CatchUnitEClass = ::ecore::make< ::ecore::EClass >();
+    m_CompliesTo__to = ::ecore::make< ::ecore::EReference >();
+    m_CompliesTo__from = ::ecore::make< ::ecore::EReference >();
+    m_CompliesToEClass = ::ecore::make< ::ecore::EClass >();
+    m_ControlFlow__to = ::ecore::make< ::ecore::EReference >();
+    m_ControlFlow__from = ::ecore::make< ::ecore::EReference >();
+    m_ControlFlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_Creates__to = ::ecore::make< ::ecore::EReference >();
+    m_Creates__from = ::ecore::make< ::ecore::EReference >();
+    m_CreatesEClass = ::ecore::make< ::ecore::EClass >();
+    m_Dispatches__to = ::ecore::make< ::ecore::EReference >();
+    m_Dispatches__from = ::ecore::make< ::ecore::EReference >();
+    m_DispatchesEClass = ::ecore::make< ::ecore::EClass >();
+    m_EntryFlow__to = ::ecore::make< ::ecore::EReference >();
+    m_EntryFlow__from = ::ecore::make< ::ecore::EReference >();
+    m_EntryFlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExceptionFlow__to = ::ecore::make< ::ecore::EReference >();
+    m_ExceptionFlow__from = ::ecore::make< ::ecore::EReference >();
+    m_ExceptionFlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExceptionUnitEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExitFlow__to = ::ecore::make< ::ecore::EReference >();
+    m_ExitFlow__from = ::ecore::make< ::ecore::EReference >();
+    m_ExitFlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_FalseFlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_FinallyUnitEClass = ::ecore::make< ::ecore::EClass >();
+    m_FlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_GuardedFlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_Reads__to = ::ecore::make< ::ecore::EReference >();
+    m_Reads__from = ::ecore::make< ::ecore::EReference >();
+    m_ReadsEClass = ::ecore::make< ::ecore::EClass >();
+    m_Throws__to = ::ecore::make< ::ecore::EReference >();
+    m_Throws__from = ::ecore::make< ::ecore::EReference >();
+    m_ThrowsEClass = ::ecore::make< ::ecore::EClass >();
+    m_TrueFlowEClass = ::ecore::make< ::ecore::EClass >();
+    m_TryUnitEClass = ::ecore::make< ::ecore::EClass >();
+    m_UsesType__to = ::ecore::make< ::ecore::EReference >();
+    m_UsesType__from = ::ecore::make< ::ecore::EReference >();
+    m_UsesTypeEClass = ::ecore::make< ::ecore::EClass >();
+    m_Writes__to = ::ecore::make< ::ecore::EReference >();
+    m_Writes__from = ::ecore::make< ::ecore::EReference >();
+    m_WritesEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void ActionPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = ActionFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = ActionFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // ActionElement
-        m_ActionElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ActionElementEClass->setClassifierID(ACTIONELEMENT);
-        m_ActionElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ActionElementEClass);
-        // m_ActionElement__kind has already been allocated above
-        m_ActionElement__kind->setFeatureID(
+    [this]()
+    { // Classifier AbstractActionRelationship
+        auto &&classifier = m_AbstractActionRelationshipEClass;
+
+        // ENamedElement
+        classifier->setName("AbstractActionRelationship");
+
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTACTIONRELATIONSHIP);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature kind of class ActionElement
+        auto &&feature = m_ActionElement__kind;
+
+        // ENamedElement
+        feature->setName("kind");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONELEMENT__KIND);
-        m_ActionElement__kind->setName("kind");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ActionElement__kind);
-        m_ActionElement__kind->basicsetEContainingClass(m_ActionElementEClass);
-        // m_ActionElement__codeElement has already been allocated above
-        m_ActionElement__codeElement->setFeatureID(
+        feature->basicsetEContainingClass(m_ActionElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature codeElement of class ActionElement
+        auto &&feature = m_ActionElement__codeElement;
+
+        // ENamedElement
+        feature->setName("codeElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONELEMENT__CODEELEMENT);
-        m_ActionElement__codeElement->setName("codeElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ActionElement__codeElement);
-        m_ActionElement__codeElement->basicsetEContainingClass(
-                m_ActionElementEClass);
-        // m_ActionElement__actionRelation has already been allocated above
-        m_ActionElement__actionRelation->setFeatureID(
+        feature->basicsetEContainingClass(m_ActionElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature actionRelation of class ActionElement
+        auto &&feature = m_ActionElement__actionRelation;
+
+        // ENamedElement
+        feature->setName("actionRelation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractActionRelationshipEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONELEMENT__ACTIONRELATION);
-        m_ActionElement__actionRelation->setName("actionRelation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ActionElement__actionRelation);
-        m_ActionElement__actionRelation->basicsetEContainingClass(
-                m_ActionElementEClass);
-    }
+        feature->basicsetEContainingClass(m_ActionElementEClass);
 
-    { // AbstractActionRelationship
-        m_AbstractActionRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractActionRelationshipEClass->setClassifierID(
-                ABSTRACTACTIONRELATIONSHIP);
-        m_AbstractActionRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractActionRelationshipEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // ControlFlow
-        m_ControlFlowEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ControlFlowEClass->setClassifierID(CONTROLFLOW);
-        m_ControlFlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ControlFlowEClass);
-        // m_ControlFlow__to has already been allocated above
-        m_ControlFlow__to->setFeatureID(
-                ::kdm::action::ActionPackage::CONTROLFLOW__TO);
-        m_ControlFlow__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_ControlFlow__to);
-        m_ControlFlow__to->basicsetEContainingClass(m_ControlFlowEClass);
-        // m_ControlFlow__from has already been allocated above
-        m_ControlFlow__from->setFeatureID(
-                ::kdm::action::ActionPackage::CONTROLFLOW__FROM);
-        m_ControlFlow__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_ControlFlow__from);
-        m_ControlFlow__from->basicsetEContainingClass(m_ControlFlowEClass);
-    }
+    [this]()
+    { // Classifier ActionElement
+        auto &&classifier = m_ActionElementEClass;
 
-    { // Calls
-        m_CallsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_CallsEClass->setClassifierID(CALLS);
-        m_CallsEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_CallsEClass);
-        // m_Calls__to has already been allocated above
-        m_Calls__to->setFeatureID(::kdm::action::ActionPackage::CALLS__TO);
-        m_Calls__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CallsEClass->getEStructuralFeatures()).basicAdd(
-                m_Calls__to);
-        m_Calls__to->basicsetEContainingClass(m_CallsEClass);
-        // m_Calls__from has already been allocated above
-        m_Calls__from->setFeatureID(::kdm::action::ActionPackage::CALLS__FROM);
-        m_Calls__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CallsEClass->getEStructuralFeatures()).basicAdd(
-                m_Calls__from);
-        m_Calls__from->basicsetEContainingClass(m_CallsEClass);
-    }
+        // ENamedElement
+        classifier->setName("ActionElement");
 
-    { // Creates
-        m_CreatesEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_CreatesEClass->setClassifierID(CREATES);
-        m_CreatesEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_CreatesEClass);
-        // m_Creates__to has already been allocated above
-        m_Creates__to->setFeatureID(::kdm::action::ActionPackage::CREATES__TO);
-        m_Creates__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CreatesEClass->getEStructuralFeatures()).basicAdd(
-                m_Creates__to);
-        m_Creates__to->basicsetEContainingClass(m_CreatesEClass);
-        // m_Creates__from has already been allocated above
-        m_Creates__from->setFeatureID(
-                ::kdm::action::ActionPackage::CREATES__FROM);
-        m_Creates__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CreatesEClass->getEStructuralFeatures()).basicAdd(
-                m_Creates__from);
-        m_Creates__from->basicsetEContainingClass(m_CreatesEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ACTIONELEMENT);
 
-    { // Reads
-        m_ReadsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_ReadsEClass->setClassifierID(READS);
-        m_ReadsEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ReadsEClass);
-        // m_Reads__to has already been allocated above
-        m_Reads__to->setFeatureID(::kdm::action::ActionPackage::READS__TO);
-        m_Reads__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsEClass->getEStructuralFeatures()).basicAdd(
-                m_Reads__to);
-        m_Reads__to->basicsetEContainingClass(m_ReadsEClass);
-        // m_Reads__from has already been allocated above
-        m_Reads__from->setFeatureID(::kdm::action::ActionPackage::READS__FROM);
-        m_Reads__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsEClass->getEStructuralFeatures()).basicAdd(
-                m_Reads__from);
-        m_Reads__from->basicsetEContainingClass(m_ReadsEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ActionElement__kind);
+            eStructuralFeatures.basicAdd(m_ActionElement__codeElement);
+            eStructuralFeatures.basicAdd(m_ActionElement__actionRelation);
+        }
+    }();
 
-    { // Writes
-        m_WritesEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_WritesEClass->setClassifierID(WRITES);
-        m_WritesEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_WritesEClass);
-        // m_Writes__to has already been allocated above
-        m_Writes__to->setFeatureID(::kdm::action::ActionPackage::WRITES__TO);
-        m_Writes__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesEClass->getEStructuralFeatures()).basicAdd(
-                m_Writes__to);
-        m_Writes__to->basicsetEContainingClass(m_WritesEClass);
-        // m_Writes__from has already been allocated above
-        m_Writes__from->setFeatureID(
-                ::kdm::action::ActionPackage::WRITES__FROM);
-        m_Writes__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesEClass->getEStructuralFeatures()).basicAdd(
-                m_Writes__from);
-        m_Writes__from->basicsetEContainingClass(m_WritesEClass);
-    }
+    [this]()
+    { // Feature to of class ActionRelationship
+        auto &&feature = m_ActionRelationship__to;
 
-    { // CompliesTo
-        m_CompliesToEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_CompliesToEClass->setClassifierID(COMPLIESTO);
-        m_CompliesToEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_CompliesToEClass);
-        // m_CompliesTo__to has already been allocated above
-        m_CompliesTo__to->setFeatureID(
-                ::kdm::action::ActionPackage::COMPLIESTO__TO);
-        m_CompliesTo__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompliesToEClass->getEStructuralFeatures()).basicAdd(
-                m_CompliesTo__to);
-        m_CompliesTo__to->basicsetEContainingClass(m_CompliesToEClass);
-        // m_CompliesTo__from has already been allocated above
-        m_CompliesTo__from->setFeatureID(
-                ::kdm::action::ActionPackage::COMPLIESTO__FROM);
-        m_CompliesTo__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompliesToEClass->getEStructuralFeatures()).basicAdd(
-                m_CompliesTo__from);
-        m_CompliesTo__from->basicsetEContainingClass(m_CompliesToEClass);
-    }
+        // ENamedElement
+        feature->setName("to");
 
-    { // Flow
-        m_FlowEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_FlowEClass->setClassifierID(FLOW);
-        m_FlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_FlowEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    { // TrueFlow
-        m_TrueFlowEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_TrueFlowEClass->setClassifierID(TRUEFLOW);
-        m_TrueFlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TrueFlowEClass);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // FalseFlow
-        m_FalseFlowEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_FalseFlowEClass->setClassifierID(FALSEFLOW);
-        m_FalseFlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_FalseFlowEClass);
-    }
-
-    { // GuardedFlow
-        m_GuardedFlowEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_GuardedFlowEClass->setClassifierID(GUARDEDFLOW);
-        m_GuardedFlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_GuardedFlowEClass);
-    }
-
-    { // UsesType
-        m_UsesTypeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_UsesTypeEClass->setClassifierID(USESTYPE);
-        m_UsesTypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UsesTypeEClass);
-        // m_UsesType__to has already been allocated above
-        m_UsesType__to->setFeatureID(
-                ::kdm::action::ActionPackage::USESTYPE__TO);
-        m_UsesType__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UsesTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_UsesType__to);
-        m_UsesType__to->basicsetEContainingClass(m_UsesTypeEClass);
-        // m_UsesType__from has already been allocated above
-        m_UsesType__from->setFeatureID(
-                ::kdm::action::ActionPackage::USESTYPE__FROM);
-        m_UsesType__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UsesTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_UsesType__from);
-        m_UsesType__from->basicsetEContainingClass(m_UsesTypeEClass);
-    }
-
-    { // Addresses
-        m_AddressesEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AddressesEClass->setClassifierID(ADDRESSES);
-        m_AddressesEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AddressesEClass);
-        // m_Addresses__to has already been allocated above
-        m_Addresses__to->setFeatureID(
-                ::kdm::action::ActionPackage::ADDRESSES__TO);
-        m_Addresses__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AddressesEClass->getEStructuralFeatures()).basicAdd(
-                m_Addresses__to);
-        m_Addresses__to->basicsetEContainingClass(m_AddressesEClass);
-        // m_Addresses__from has already been allocated above
-        m_Addresses__from->setFeatureID(
-                ::kdm::action::ActionPackage::ADDRESSES__FROM);
-        m_Addresses__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AddressesEClass->getEStructuralFeatures()).basicAdd(
-                m_Addresses__from);
-        m_Addresses__from->basicsetEContainingClass(m_AddressesEClass);
-    }
-
-    { // ActionRelationship
-        m_ActionRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ActionRelationshipEClass->setClassifierID(ACTIONRELATIONSHIP);
-        m_ActionRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ActionRelationshipEClass);
-        // m_ActionRelationship__to has already been allocated above
-        m_ActionRelationship__to->setFeatureID(
+        feature->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONRELATIONSHIP__TO);
-        m_ActionRelationship__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_ActionRelationship__to);
-        m_ActionRelationship__to->basicsetEContainingClass(
-                m_ActionRelationshipEClass);
-        // m_ActionRelationship__from has already been allocated above
-        m_ActionRelationship__from->setFeatureID(
+        feature->basicsetEContainingClass(m_ActionRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ActionRelationship
+        auto &&feature = m_ActionRelationship__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::action::ActionPackage::ACTIONRELATIONSHIP__FROM);
-        m_ActionRelationship__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_ActionRelationship__from);
-        m_ActionRelationship__from->basicsetEContainingClass(
-                m_ActionRelationshipEClass);
-    }
+        feature->basicsetEContainingClass(m_ActionRelationshipEClass);
 
-    { // Throws
-        m_ThrowsEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_ThrowsEClass->setClassifierID(THROWS);
-        m_ThrowsEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ThrowsEClass);
-        // m_Throws__to has already been allocated above
-        m_Throws__to->setFeatureID(::kdm::action::ActionPackage::THROWS__TO);
-        m_Throws__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ThrowsEClass->getEStructuralFeatures()).basicAdd(
-                m_Throws__to);
-        m_Throws__to->basicsetEContainingClass(m_ThrowsEClass);
-        // m_Throws__from has already been allocated above
-        m_Throws__from->setFeatureID(
-                ::kdm::action::ActionPackage::THROWS__FROM);
-        m_Throws__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ThrowsEClass->getEStructuralFeatures()).basicAdd(
-                m_Throws__from);
-        m_Throws__from->basicsetEContainingClass(m_ThrowsEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    { // Dispatches
-        m_DispatchesEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DispatchesEClass->setClassifierID(DISPATCHES);
-        m_DispatchesEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DispatchesEClass);
-        // m_Dispatches__to has already been allocated above
-        m_Dispatches__to->setFeatureID(
-                ::kdm::action::ActionPackage::DISPATCHES__TO);
-        m_Dispatches__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DispatchesEClass->getEStructuralFeatures()).basicAdd(
-                m_Dispatches__to);
-        m_Dispatches__to->basicsetEContainingClass(m_DispatchesEClass);
-        // m_Dispatches__from has already been allocated above
-        m_Dispatches__from->setFeatureID(
-                ::kdm::action::ActionPackage::DISPATCHES__FROM);
-        m_Dispatches__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DispatchesEClass->getEStructuralFeatures()).basicAdd(
-                m_Dispatches__from);
-        m_Dispatches__from->basicsetEContainingClass(m_DispatchesEClass);
-    }
+    [this]()
+    { // Classifier ActionRelationship
+        auto &&classifier = m_ActionRelationshipEClass;
 
-    { // EntryFlow
-        m_EntryFlowEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EntryFlowEClass->setClassifierID(ENTRYFLOW);
-        m_EntryFlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EntryFlowEClass);
-        // m_EntryFlow__to has already been allocated above
-        m_EntryFlow__to->setFeatureID(
-                ::kdm::action::ActionPackage::ENTRYFLOW__TO);
-        m_EntryFlow__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntryFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_EntryFlow__to);
-        m_EntryFlow__to->basicsetEContainingClass(m_EntryFlowEClass);
-        // m_EntryFlow__from has already been allocated above
-        m_EntryFlow__from->setFeatureID(
-                ::kdm::action::ActionPackage::ENTRYFLOW__FROM);
-        m_EntryFlow__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntryFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_EntryFlow__from);
-        m_EntryFlow__from->basicsetEContainingClass(m_EntryFlowEClass);
-    }
+        // ENamedElement
+        classifier->setName("ActionRelationship");
 
-    { // BlockUnit
-        m_BlockUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_BlockUnitEClass->setClassifierID(BLOCKUNIT);
-        m_BlockUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BlockUnitEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ACTIONRELATIONSHIP);
 
-    { // ExceptionUnit
-        m_ExceptionUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExceptionUnitEClass->setClassifierID(EXCEPTIONUNIT);
-        m_ExceptionUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExceptionUnitEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ActionRelationshipEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ActionRelationship__to);
+            eStructuralFeatures.basicAdd(m_ActionRelationship__from);
+        }
+    }();
 
-    { // TryUnit
-        m_TryUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_TryUnitEClass->setClassifierID(TRYUNIT);
-        m_TryUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TryUnitEClass);
-    }
+    [this]()
+    { // Feature to of class Addresses
+        auto &&feature = m_Addresses__to;
 
-    { // FinallyUnit
-        m_FinallyUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_FinallyUnitEClass->setClassifierID(FINALLYUNIT);
-        m_FinallyUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_FinallyUnitEClass);
-    }
+        // ENamedElement
+        feature->setName("to");
 
-    { // CatchUnit
-        m_CatchUnitEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_CatchUnitEClass->setClassifierID(CATCHUNIT);
-        m_CatchUnitEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_CatchUnitEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    { // ExitFlow
-        m_ExitFlowEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExitFlowEClass->setClassifierID(EXITFLOW);
-        m_ExitFlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExitFlowEClass);
-        // m_ExitFlow__to has already been allocated above
-        m_ExitFlow__to->setFeatureID(
-                ::kdm::action::ActionPackage::EXITFLOW__TO);
-        m_ExitFlow__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExitFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_ExitFlow__to);
-        m_ExitFlow__to->basicsetEContainingClass(m_ExitFlowEClass);
-        // m_ExitFlow__from has already been allocated above
-        m_ExitFlow__from->setFeatureID(
-                ::kdm::action::ActionPackage::EXITFLOW__FROM);
-        m_ExitFlow__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExitFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_ExitFlow__from);
-        m_ExitFlow__from->basicsetEContainingClass(m_ExitFlowEClass);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getComputationalObject());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // ExceptionFlow
-        m_ExceptionFlowEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExceptionFlowEClass->setClassifierID(EXCEPTIONFLOW);
-        m_ExceptionFlowEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExceptionFlowEClass);
-        // m_ExceptionFlow__to has already been allocated above
-        m_ExceptionFlow__to->setFeatureID(
-                ::kdm::action::ActionPackage::EXCEPTIONFLOW__TO);
-        m_ExceptionFlow__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExceptionFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_ExceptionFlow__to);
-        m_ExceptionFlow__to->basicsetEContainingClass(m_ExceptionFlowEClass);
-        // m_ExceptionFlow__from has already been allocated above
-        m_ExceptionFlow__from->setFeatureID(
+        feature->setFeatureID(::kdm::action::ActionPackage::ADDRESSES__TO);
+        feature->basicsetEContainingClass(m_AddressesEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Addresses
+        auto &&feature = m_Addresses__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::ADDRESSES__FROM);
+        feature->basicsetEContainingClass(m_AddressesEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Addresses
+        auto &&classifier = m_AddressesEClass;
+
+        // ENamedElement
+        classifier->setName("Addresses");
+
+        // EClassifier
+        classifier->setClassifierID(ADDRESSES);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AddressesEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Addresses__to);
+            eStructuralFeatures.basicAdd(m_Addresses__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier BlockUnit
+        auto &&classifier = m_BlockUnitEClass;
+
+        // ENamedElement
+        classifier->setName("BlockUnit");
+
+        // EClassifier
+        classifier->setClassifierID(BLOCKUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class Calls
+        auto &&feature = m_Calls__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getControlElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::CALLS__TO);
+        feature->basicsetEContainingClass(m_CallsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Calls
+        auto &&feature = m_Calls__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::CALLS__FROM);
+        feature->basicsetEContainingClass(m_CallsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Calls
+        auto &&classifier = m_CallsEClass;
+
+        // ENamedElement
+        classifier->setName("Calls");
+
+        // EClassifier
+        classifier->setClassifierID(CALLS);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CallsEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Calls__to);
+            eStructuralFeatures.basicAdd(m_Calls__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier CatchUnit
+        auto &&classifier = m_CatchUnitEClass;
+
+        // ENamedElement
+        classifier->setName("CatchUnit");
+
+        // EClassifier
+        classifier->setClassifierID(CATCHUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class CompliesTo
+        auto &&feature = m_CompliesTo__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::COMPLIESTO__TO);
+        feature->basicsetEContainingClass(m_CompliesToEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class CompliesTo
+        auto &&feature = m_CompliesTo__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::COMPLIESTO__FROM);
+        feature->basicsetEContainingClass(m_CompliesToEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier CompliesTo
+        auto &&classifier = m_CompliesToEClass;
+
+        // ENamedElement
+        classifier->setName("CompliesTo");
+
+        // EClassifier
+        classifier->setClassifierID(COMPLIESTO);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompliesToEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_CompliesTo__to);
+            eStructuralFeatures.basicAdd(m_CompliesTo__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class ControlFlow
+        auto &&feature = m_ControlFlow__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::CONTROLFLOW__TO);
+        feature->basicsetEContainingClass(m_ControlFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ControlFlow
+        auto &&feature = m_ControlFlow__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::CONTROLFLOW__FROM);
+        feature->basicsetEContainingClass(m_ControlFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ControlFlow
+        auto &&classifier = m_ControlFlowEClass;
+
+        // ENamedElement
+        classifier->setName("ControlFlow");
+
+        // EClassifier
+        classifier->setClassifierID(CONTROLFLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ControlFlowEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ControlFlow__to);
+            eStructuralFeatures.basicAdd(m_ControlFlow__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class Creates
+        auto &&feature = m_Creates__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDatatype());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::CREATES__TO);
+        feature->basicsetEContainingClass(m_CreatesEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Creates
+        auto &&feature = m_Creates__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::CREATES__FROM);
+        feature->basicsetEContainingClass(m_CreatesEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Creates
+        auto &&classifier = m_CreatesEClass;
+
+        // ENamedElement
+        classifier->setName("Creates");
+
+        // EClassifier
+        classifier->setClassifierID(CREATES);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CreatesEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Creates__to);
+            eStructuralFeatures.basicAdd(m_Creates__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class Dispatches
+        auto &&feature = m_Dispatches__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::DISPATCHES__TO);
+        feature->basicsetEContainingClass(m_DispatchesEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Dispatches
+        auto &&feature = m_Dispatches__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::DISPATCHES__FROM);
+        feature->basicsetEContainingClass(m_DispatchesEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Dispatches
+        auto &&classifier = m_DispatchesEClass;
+
+        // ENamedElement
+        classifier->setName("Dispatches");
+
+        // EClassifier
+        classifier->setClassifierID(DISPATCHES);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DispatchesEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Dispatches__to);
+            eStructuralFeatures.basicAdd(m_Dispatches__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class EntryFlow
+        auto &&feature = m_EntryFlow__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::ENTRYFLOW__TO);
+        feature->basicsetEContainingClass(m_EntryFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class EntryFlow
+        auto &&feature = m_EntryFlow__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getControlElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::ENTRYFLOW__FROM);
+        feature->basicsetEContainingClass(m_EntryFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier EntryFlow
+        auto &&classifier = m_EntryFlowEClass;
+
+        // ENamedElement
+        classifier->setName("EntryFlow");
+
+        // EClassifier
+        classifier->setClassifierID(ENTRYFLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntryFlowEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EntryFlow__to);
+            eStructuralFeatures.basicAdd(m_EntryFlow__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class ExceptionFlow
+        auto &&feature = m_ExceptionFlow__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::EXCEPTIONFLOW__TO);
+        feature->basicsetEContainingClass(m_ExceptionFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ExceptionFlow
+        auto &&feature = m_ExceptionFlow__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::action::ActionPackage::EXCEPTIONFLOW__FROM);
-        m_ExceptionFlow__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExceptionFlowEClass->getEStructuralFeatures()).basicAdd(
-                m_ExceptionFlow__from);
-        m_ExceptionFlow__from->basicsetEContainingClass(m_ExceptionFlowEClass);
-    }
+        feature->basicsetEContainingClass(m_ExceptionFlowEClass);
 
-    // Create enums
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    // Create data types
+    [this]()
+    { // Classifier ExceptionFlow
+        auto &&classifier = m_ExceptionFlowEClass;
+
+        // ENamedElement
+        classifier->setName("ExceptionFlow");
+
+        // EClassifier
+        classifier->setClassifierID(EXCEPTIONFLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExceptionFlowEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ExceptionFlow__to);
+            eStructuralFeatures.basicAdd(m_ExceptionFlow__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier ExceptionUnit
+        auto &&classifier = m_ExceptionUnitEClass;
+
+        // ENamedElement
+        classifier->setName("ExceptionUnit");
+
+        // EClassifier
+        classifier->setClassifierID(EXCEPTIONUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class ExitFlow
+        auto &&feature = m_ExitFlow__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::EXITFLOW__TO);
+        feature->basicsetEContainingClass(m_ExitFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class ExitFlow
+        auto &&feature = m_ExitFlow__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::EXITFLOW__FROM);
+        feature->basicsetEContainingClass(m_ExitFlowEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ExitFlow
+        auto &&classifier = m_ExitFlowEClass;
+
+        // ENamedElement
+        classifier->setName("ExitFlow");
+
+        // EClassifier
+        classifier->setClassifierID(EXITFLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ExitFlowEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ExitFlow__to);
+            eStructuralFeatures.basicAdd(m_ExitFlow__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier FalseFlow
+        auto &&classifier = m_FalseFlowEClass;
+
+        // ENamedElement
+        classifier->setName("FalseFlow");
+
+        // EClassifier
+        classifier->setClassifierID(FALSEFLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier FinallyUnit
+        auto &&classifier = m_FinallyUnitEClass;
+
+        // ENamedElement
+        classifier->setName("FinallyUnit");
+
+        // EClassifier
+        classifier->setClassifierID(FINALLYUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier Flow
+        auto &&classifier = m_FlowEClass;
+
+        // ENamedElement
+        classifier->setName("Flow");
+
+        // EClassifier
+        classifier->setClassifierID(FLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier GuardedFlow
+        auto &&classifier = m_GuardedFlowEClass;
+
+        // ENamedElement
+        classifier->setName("GuardedFlow");
+
+        // EClassifier
+        classifier->setClassifierID(GUARDEDFLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class Reads
+        auto &&feature = m_Reads__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::READS__TO);
+        feature->basicsetEContainingClass(m_ReadsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Reads
+        auto &&feature = m_Reads__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::READS__FROM);
+        feature->basicsetEContainingClass(m_ReadsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Reads
+        auto &&classifier = m_ReadsEClass;
+
+        // ENamedElement
+        classifier->setName("Reads");
+
+        // EClassifier
+        classifier->setClassifierID(READS);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ReadsEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Reads__to);
+            eStructuralFeatures.basicAdd(m_Reads__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class Throws
+        auto &&feature = m_Throws__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::THROWS__TO);
+        feature->basicsetEContainingClass(m_ThrowsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Throws
+        auto &&feature = m_Throws__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::THROWS__FROM);
+        feature->basicsetEContainingClass(m_ThrowsEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Throws
+        auto &&classifier = m_ThrowsEClass;
+
+        // ENamedElement
+        classifier->setName("Throws");
+
+        // EClassifier
+        classifier->setClassifierID(THROWS);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ThrowsEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Throws__to);
+            eStructuralFeatures.basicAdd(m_Throws__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier TrueFlow
+        auto &&classifier = m_TrueFlowEClass;
+
+        // ENamedElement
+        classifier->setName("TrueFlow");
+
+        // EClassifier
+        classifier->setClassifierID(TRUEFLOW);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier TryUnit
+        auto &&classifier = m_TryUnitEClass;
+
+        // ENamedElement
+        classifier->setName("TryUnit");
+
+        // EClassifier
+        classifier->setClassifierID(TRYUNIT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class UsesType
+        auto &&feature = m_UsesType__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDatatype());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::USESTYPE__TO);
+        feature->basicsetEContainingClass(m_UsesTypeEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class UsesType
+        auto &&feature = m_UsesType__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::USESTYPE__FROM);
+        feature->basicsetEContainingClass(m_UsesTypeEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier UsesType
+        auto &&classifier = m_UsesTypeEClass;
+
+        // ENamedElement
+        classifier->setName("UsesType");
+
+        // EClassifier
+        classifier->setClassifierID(USESTYPE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_UsesTypeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_UsesType__to);
+            eStructuralFeatures.basicAdd(m_UsesType__from);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class Writes
+        auto &&feature = m_Writes__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::WRITES__TO);
+        feature->basicsetEContainingClass(m_WritesEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class Writes
+        auto &&feature = m_Writes__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ActionElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::action::ActionPackage::WRITES__FROM);
+        feature->basicsetEContainingClass(m_WritesEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Writes
+        auto &&classifier = m_WritesEClass;
+
+        // ENamedElement
+        classifier->setName("Writes");
+
+        // EClassifier
+        classifier->setClassifierID(WRITES);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_WritesEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Writes__to);
+            eStructuralFeatures.basicAdd(m_Writes__from);
+        }
+    }();
 
     // Initialize package
     setName("action");
@@ -634,631 +1561,80 @@ void ActionPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_ActionElementEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
-    m_AbstractActionRelationshipEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
-    m_ControlFlowEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_CallsEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_CreatesEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_ReadsEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_WritesEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_CompliesToEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_FlowEClass->getESuperTypes().push_back(m_ControlFlowEClass);
-    m_TrueFlowEClass->getESuperTypes().push_back(m_ControlFlowEClass);
-    m_FalseFlowEClass->getESuperTypes().push_back(m_ControlFlowEClass);
-    m_GuardedFlowEClass->getESuperTypes().push_back(m_ControlFlowEClass);
-    m_UsesTypeEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_AddressesEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_ActionRelationshipEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_ThrowsEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_DispatchesEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_EntryFlowEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_BlockUnitEClass->getESuperTypes().push_back(m_ActionElementEClass);
-    m_ExceptionUnitEClass->getESuperTypes().push_back(m_BlockUnitEClass);
-    m_TryUnitEClass->getESuperTypes().push_back(m_ExceptionUnitEClass);
-    m_FinallyUnitEClass->getESuperTypes().push_back(m_ExceptionUnitEClass);
-    m_CatchUnitEClass->getESuperTypes().push_back(m_ExceptionUnitEClass);
-    m_ExitFlowEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-    m_ExceptionFlowEClass->getESuperTypes().push_back(
-            m_AbstractActionRelationshipEClass);
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // ActionElement
-        m_ActionElementEClass->setName("ActionElement");
-        m_ActionElementEClass->setAbstract(false);
-        m_ActionElementEClass->setInterface(false);
-        m_ActionElement__kind->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_ActionElement__kind->setDefaultValueLiteral("");
-        m_ActionElement__kind->setLowerBound(0);
-        m_ActionElement__kind->setUpperBound(1);
-        m_ActionElement__kind->setTransient(false);
-        m_ActionElement__kind->setVolatile(false);
-        m_ActionElement__kind->setChangeable(true);
-        m_ActionElement__kind->setUnsettable(false);
-        m_ActionElement__kind->setID(false);
-        m_ActionElement__kind->setUnique(false);
-        m_ActionElement__kind->setDerived(false);
-        m_ActionElement__kind->setOrdered(false);
-
-        m_ActionElement__codeElement->setEType(
+    [this]()
+    {
+        m_ActionElementEClass->getESuperTypes().push_back(
                 dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
-        m_ActionElement__codeElement->setDefaultValueLiteral("");
-        m_ActionElement__codeElement->setLowerBound(0);
-        m_ActionElement__codeElement->setUpperBound(-1);
-        m_ActionElement__codeElement->setTransient(false);
-        m_ActionElement__codeElement->setVolatile(false);
-        m_ActionElement__codeElement->setChangeable(true);
-        m_ActionElement__codeElement->setContainment(true);
-        m_ActionElement__codeElement->setResolveProxies(true);
-        m_ActionElement__codeElement->setUnique(true);
-        m_ActionElement__codeElement->setDerived(false);
-        m_ActionElement__codeElement->setOrdered(false);
-        m_ActionElement__actionRelation->setEType(
+        m_AbstractActionRelationshipEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+        m_ControlFlowEClass->getESuperTypes().push_back(
                 m_AbstractActionRelationshipEClass);
-        m_ActionElement__actionRelation->setDefaultValueLiteral("");
-        m_ActionElement__actionRelation->setLowerBound(0);
-        m_ActionElement__actionRelation->setUpperBound(-1);
-        m_ActionElement__actionRelation->setTransient(false);
-        m_ActionElement__actionRelation->setVolatile(false);
-        m_ActionElement__actionRelation->setChangeable(true);
-        m_ActionElement__actionRelation->setContainment(true);
-        m_ActionElement__actionRelation->setResolveProxies(true);
-        m_ActionElement__actionRelation->setUnique(true);
-        m_ActionElement__actionRelation->setDerived(false);
-        m_ActionElement__actionRelation->setOrdered(true);
-
-    }
-
-    { // AbstractActionRelationship
-        m_AbstractActionRelationshipEClass->setName(
-                "AbstractActionRelationship");
-        m_AbstractActionRelationshipEClass->setAbstract(true);
-        m_AbstractActionRelationshipEClass->setInterface(false);
-
-    }
-
-    { // ControlFlow
-        m_ControlFlowEClass->setName("ControlFlow");
-        m_ControlFlowEClass->setAbstract(false);
-        m_ControlFlowEClass->setInterface(false);
-
-        m_ControlFlow__to->setEType(m_ActionElementEClass);
-        m_ControlFlow__to->setDefaultValueLiteral("");
-        m_ControlFlow__to->setLowerBound(1);
-        m_ControlFlow__to->setUpperBound(1);
-        m_ControlFlow__to->setTransient(false);
-        m_ControlFlow__to->setVolatile(false);
-        m_ControlFlow__to->setChangeable(true);
-        m_ControlFlow__to->setContainment(false);
-        m_ControlFlow__to->setResolveProxies(true);
-        m_ControlFlow__to->setUnique(true);
-        m_ControlFlow__to->setDerived(false);
-        m_ControlFlow__to->setOrdered(false);
-        m_ControlFlow__from->setEType(m_ActionElementEClass);
-        m_ControlFlow__from->setDefaultValueLiteral("");
-        m_ControlFlow__from->setLowerBound(1);
-        m_ControlFlow__from->setUpperBound(1);
-        m_ControlFlow__from->setTransient(false);
-        m_ControlFlow__from->setVolatile(false);
-        m_ControlFlow__from->setChangeable(true);
-        m_ControlFlow__from->setContainment(false);
-        m_ControlFlow__from->setResolveProxies(true);
-        m_ControlFlow__from->setUnique(true);
-        m_ControlFlow__from->setDerived(false);
-        m_ControlFlow__from->setOrdered(false);
-
-    }
-
-    { // Calls
-        m_CallsEClass->setName("Calls");
-        m_CallsEClass->setAbstract(false);
-        m_CallsEClass->setInterface(false);
-
-        m_Calls__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getControlElement());
-        m_Calls__to->setDefaultValueLiteral("");
-        m_Calls__to->setLowerBound(1);
-        m_Calls__to->setUpperBound(1);
-        m_Calls__to->setTransient(false);
-        m_Calls__to->setVolatile(false);
-        m_Calls__to->setChangeable(true);
-        m_Calls__to->setContainment(false);
-        m_Calls__to->setResolveProxies(true);
-        m_Calls__to->setUnique(true);
-        m_Calls__to->setDerived(false);
-        m_Calls__to->setOrdered(false);
-        m_Calls__from->setEType(m_ActionElementEClass);
-        m_Calls__from->setDefaultValueLiteral("");
-        m_Calls__from->setLowerBound(1);
-        m_Calls__from->setUpperBound(1);
-        m_Calls__from->setTransient(false);
-        m_Calls__from->setVolatile(false);
-        m_Calls__from->setChangeable(true);
-        m_Calls__from->setContainment(false);
-        m_Calls__from->setResolveProxies(true);
-        m_Calls__from->setUnique(true);
-        m_Calls__from->setDerived(false);
-        m_Calls__from->setOrdered(false);
-
-    }
-
-    { // Creates
-        m_CreatesEClass->setName("Creates");
-        m_CreatesEClass->setAbstract(false);
-        m_CreatesEClass->setInterface(false);
-
-        m_Creates__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDatatype());
-        m_Creates__to->setDefaultValueLiteral("");
-        m_Creates__to->setLowerBound(1);
-        m_Creates__to->setUpperBound(1);
-        m_Creates__to->setTransient(false);
-        m_Creates__to->setVolatile(false);
-        m_Creates__to->setChangeable(true);
-        m_Creates__to->setContainment(false);
-        m_Creates__to->setResolveProxies(true);
-        m_Creates__to->setUnique(true);
-        m_Creates__to->setDerived(false);
-        m_Creates__to->setOrdered(false);
-        m_Creates__from->setEType(m_ActionElementEClass);
-        m_Creates__from->setDefaultValueLiteral("");
-        m_Creates__from->setLowerBound(1);
-        m_Creates__from->setUpperBound(1);
-        m_Creates__from->setTransient(false);
-        m_Creates__from->setVolatile(false);
-        m_Creates__from->setChangeable(true);
-        m_Creates__from->setContainment(false);
-        m_Creates__from->setResolveProxies(true);
-        m_Creates__from->setUnique(true);
-        m_Creates__from->setDerived(false);
-        m_Creates__from->setOrdered(false);
-
-    }
-
-    { // Reads
-        m_ReadsEClass->setName("Reads");
-        m_ReadsEClass->setAbstract(false);
-        m_ReadsEClass->setInterface(false);
-
-        m_Reads__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
-        m_Reads__to->setDefaultValueLiteral("");
-        m_Reads__to->setLowerBound(1);
-        m_Reads__to->setUpperBound(1);
-        m_Reads__to->setTransient(false);
-        m_Reads__to->setVolatile(false);
-        m_Reads__to->setChangeable(true);
-        m_Reads__to->setContainment(false);
-        m_Reads__to->setResolveProxies(true);
-        m_Reads__to->setUnique(true);
-        m_Reads__to->setDerived(false);
-        m_Reads__to->setOrdered(false);
-        m_Reads__from->setEType(m_ActionElementEClass);
-        m_Reads__from->setDefaultValueLiteral("");
-        m_Reads__from->setLowerBound(1);
-        m_Reads__from->setUpperBound(1);
-        m_Reads__from->setTransient(false);
-        m_Reads__from->setVolatile(false);
-        m_Reads__from->setChangeable(true);
-        m_Reads__from->setContainment(false);
-        m_Reads__from->setResolveProxies(true);
-        m_Reads__from->setUnique(true);
-        m_Reads__from->setDerived(false);
-        m_Reads__from->setOrdered(false);
-
-    }
-
-    { // Writes
-        m_WritesEClass->setName("Writes");
-        m_WritesEClass->setAbstract(false);
-        m_WritesEClass->setInterface(false);
-
-        m_Writes__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
-        m_Writes__to->setDefaultValueLiteral("");
-        m_Writes__to->setLowerBound(1);
-        m_Writes__to->setUpperBound(1);
-        m_Writes__to->setTransient(false);
-        m_Writes__to->setVolatile(false);
-        m_Writes__to->setChangeable(true);
-        m_Writes__to->setContainment(false);
-        m_Writes__to->setResolveProxies(true);
-        m_Writes__to->setUnique(true);
-        m_Writes__to->setDerived(false);
-        m_Writes__to->setOrdered(false);
-        m_Writes__from->setEType(m_ActionElementEClass);
-        m_Writes__from->setDefaultValueLiteral("");
-        m_Writes__from->setLowerBound(1);
-        m_Writes__from->setUpperBound(1);
-        m_Writes__from->setTransient(false);
-        m_Writes__from->setVolatile(false);
-        m_Writes__from->setChangeable(true);
-        m_Writes__from->setContainment(false);
-        m_Writes__from->setResolveProxies(true);
-        m_Writes__from->setUnique(true);
-        m_Writes__from->setDerived(false);
-        m_Writes__from->setOrdered(false);
-
-    }
-
-    { // CompliesTo
-        m_CompliesToEClass->setName("CompliesTo");
-        m_CompliesToEClass->setAbstract(false);
-        m_CompliesToEClass->setInterface(false);
-
-        m_CompliesTo__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
-        m_CompliesTo__to->setDefaultValueLiteral("");
-        m_CompliesTo__to->setLowerBound(1);
-        m_CompliesTo__to->setUpperBound(1);
-        m_CompliesTo__to->setTransient(false);
-        m_CompliesTo__to->setVolatile(false);
-        m_CompliesTo__to->setChangeable(true);
-        m_CompliesTo__to->setContainment(false);
-        m_CompliesTo__to->setResolveProxies(true);
-        m_CompliesTo__to->setUnique(true);
-        m_CompliesTo__to->setDerived(false);
-        m_CompliesTo__to->setOrdered(false);
-        m_CompliesTo__from->setEType(m_ActionElementEClass);
-        m_CompliesTo__from->setDefaultValueLiteral("");
-        m_CompliesTo__from->setLowerBound(1);
-        m_CompliesTo__from->setUpperBound(1);
-        m_CompliesTo__from->setTransient(false);
-        m_CompliesTo__from->setVolatile(false);
-        m_CompliesTo__from->setChangeable(true);
-        m_CompliesTo__from->setContainment(false);
-        m_CompliesTo__from->setResolveProxies(true);
-        m_CompliesTo__from->setUnique(true);
-        m_CompliesTo__from->setDerived(false);
-        m_CompliesTo__from->setOrdered(false);
-
-    }
-
-    { // Flow
-        m_FlowEClass->setName("Flow");
-        m_FlowEClass->setAbstract(false);
-        m_FlowEClass->setInterface(false);
-
-    }
-
-    { // TrueFlow
-        m_TrueFlowEClass->setName("TrueFlow");
-        m_TrueFlowEClass->setAbstract(false);
-        m_TrueFlowEClass->setInterface(false);
-
-    }
-
-    { // FalseFlow
-        m_FalseFlowEClass->setName("FalseFlow");
-        m_FalseFlowEClass->setAbstract(false);
-        m_FalseFlowEClass->setInterface(false);
-
-    }
-
-    { // GuardedFlow
-        m_GuardedFlowEClass->setName("GuardedFlow");
-        m_GuardedFlowEClass->setAbstract(false);
-        m_GuardedFlowEClass->setInterface(false);
-
-    }
-
-    { // UsesType
-        m_UsesTypeEClass->setName("UsesType");
-        m_UsesTypeEClass->setAbstract(false);
-        m_UsesTypeEClass->setInterface(false);
-
-        m_UsesType__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDatatype());
-        m_UsesType__to->setDefaultValueLiteral("");
-        m_UsesType__to->setLowerBound(1);
-        m_UsesType__to->setUpperBound(1);
-        m_UsesType__to->setTransient(false);
-        m_UsesType__to->setVolatile(false);
-        m_UsesType__to->setChangeable(true);
-        m_UsesType__to->setContainment(false);
-        m_UsesType__to->setResolveProxies(true);
-        m_UsesType__to->setUnique(true);
-        m_UsesType__to->setDerived(false);
-        m_UsesType__to->setOrdered(false);
-        m_UsesType__from->setEType(m_ActionElementEClass);
-        m_UsesType__from->setDefaultValueLiteral("");
-        m_UsesType__from->setLowerBound(1);
-        m_UsesType__from->setUpperBound(1);
-        m_UsesType__from->setTransient(false);
-        m_UsesType__from->setVolatile(false);
-        m_UsesType__from->setChangeable(true);
-        m_UsesType__from->setContainment(false);
-        m_UsesType__from->setResolveProxies(true);
-        m_UsesType__from->setUnique(true);
-        m_UsesType__from->setDerived(false);
-        m_UsesType__from->setOrdered(false);
-
-    }
-
-    { // Addresses
-        m_AddressesEClass->setName("Addresses");
-        m_AddressesEClass->setAbstract(false);
-        m_AddressesEClass->setInterface(false);
-
-        m_Addresses__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getComputationalObject());
-        m_Addresses__to->setDefaultValueLiteral("");
-        m_Addresses__to->setLowerBound(1);
-        m_Addresses__to->setUpperBound(1);
-        m_Addresses__to->setTransient(false);
-        m_Addresses__to->setVolatile(false);
-        m_Addresses__to->setChangeable(true);
-        m_Addresses__to->setContainment(false);
-        m_Addresses__to->setResolveProxies(true);
-        m_Addresses__to->setUnique(true);
-        m_Addresses__to->setDerived(false);
-        m_Addresses__to->setOrdered(false);
-        m_Addresses__from->setEType(m_ActionElementEClass);
-        m_Addresses__from->setDefaultValueLiteral("");
-        m_Addresses__from->setLowerBound(1);
-        m_Addresses__from->setUpperBound(1);
-        m_Addresses__from->setTransient(false);
-        m_Addresses__from->setVolatile(false);
-        m_Addresses__from->setChangeable(true);
-        m_Addresses__from->setContainment(false);
-        m_Addresses__from->setResolveProxies(true);
-        m_Addresses__from->setUnique(true);
-        m_Addresses__from->setDerived(false);
-        m_Addresses__from->setOrdered(false);
-
-    }
-
-    { // ActionRelationship
-        m_ActionRelationshipEClass->setName("ActionRelationship");
-        m_ActionRelationshipEClass->setAbstract(false);
-        m_ActionRelationshipEClass->setInterface(false);
-
-        m_ActionRelationship__to->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_ActionRelationship__to->setDefaultValueLiteral("");
-        m_ActionRelationship__to->setLowerBound(1);
-        m_ActionRelationship__to->setUpperBound(1);
-        m_ActionRelationship__to->setTransient(false);
-        m_ActionRelationship__to->setVolatile(false);
-        m_ActionRelationship__to->setChangeable(true);
-        m_ActionRelationship__to->setContainment(false);
-        m_ActionRelationship__to->setResolveProxies(true);
-        m_ActionRelationship__to->setUnique(true);
-        m_ActionRelationship__to->setDerived(false);
-        m_ActionRelationship__to->setOrdered(false);
-        m_ActionRelationship__from->setEType(m_ActionElementEClass);
-        m_ActionRelationship__from->setDefaultValueLiteral("");
-        m_ActionRelationship__from->setLowerBound(1);
-        m_ActionRelationship__from->setUpperBound(1);
-        m_ActionRelationship__from->setTransient(false);
-        m_ActionRelationship__from->setVolatile(false);
-        m_ActionRelationship__from->setChangeable(true);
-        m_ActionRelationship__from->setContainment(false);
-        m_ActionRelationship__from->setResolveProxies(true);
-        m_ActionRelationship__from->setUnique(true);
-        m_ActionRelationship__from->setDerived(false);
-        m_ActionRelationship__from->setOrdered(false);
-
-    }
-
-    { // Throws
-        m_ThrowsEClass->setName("Throws");
-        m_ThrowsEClass->setAbstract(false);
-        m_ThrowsEClass->setInterface(false);
-
-        m_Throws__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
-        m_Throws__to->setDefaultValueLiteral("");
-        m_Throws__to->setLowerBound(1);
-        m_Throws__to->setUpperBound(1);
-        m_Throws__to->setTransient(false);
-        m_Throws__to->setVolatile(false);
-        m_Throws__to->setChangeable(true);
-        m_Throws__to->setContainment(false);
-        m_Throws__to->setResolveProxies(true);
-        m_Throws__to->setUnique(true);
-        m_Throws__to->setDerived(false);
-        m_Throws__to->setOrdered(false);
-        m_Throws__from->setEType(m_ActionElementEClass);
-        m_Throws__from->setDefaultValueLiteral("");
-        m_Throws__from->setLowerBound(1);
-        m_Throws__from->setUpperBound(1);
-        m_Throws__from->setTransient(false);
-        m_Throws__from->setVolatile(false);
-        m_Throws__from->setChangeable(true);
-        m_Throws__from->setContainment(false);
-        m_Throws__from->setResolveProxies(true);
-        m_Throws__from->setUnique(true);
-        m_Throws__from->setDerived(false);
-        m_Throws__from->setOrdered(false);
-
-    }
-
-    { // Dispatches
-        m_DispatchesEClass->setName("Dispatches");
-        m_DispatchesEClass->setAbstract(false);
-        m_DispatchesEClass->setInterface(false);
-
-        m_Dispatches__to->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDataElement());
-        m_Dispatches__to->setDefaultValueLiteral("");
-        m_Dispatches__to->setLowerBound(1);
-        m_Dispatches__to->setUpperBound(1);
-        m_Dispatches__to->setTransient(false);
-        m_Dispatches__to->setVolatile(false);
-        m_Dispatches__to->setChangeable(true);
-        m_Dispatches__to->setContainment(false);
-        m_Dispatches__to->setResolveProxies(true);
-        m_Dispatches__to->setUnique(true);
-        m_Dispatches__to->setDerived(false);
-        m_Dispatches__to->setOrdered(false);
-        m_Dispatches__from->setEType(m_ActionElementEClass);
-        m_Dispatches__from->setDefaultValueLiteral("");
-        m_Dispatches__from->setLowerBound(1);
-        m_Dispatches__from->setUpperBound(1);
-        m_Dispatches__from->setTransient(false);
-        m_Dispatches__from->setVolatile(false);
-        m_Dispatches__from->setChangeable(true);
-        m_Dispatches__from->setContainment(false);
-        m_Dispatches__from->setResolveProxies(true);
-        m_Dispatches__from->setUnique(true);
-        m_Dispatches__from->setDerived(false);
-        m_Dispatches__from->setOrdered(false);
-
-    }
-
-    { // EntryFlow
-        m_EntryFlowEClass->setName("EntryFlow");
-        m_EntryFlowEClass->setAbstract(false);
-        m_EntryFlowEClass->setInterface(false);
-
-        m_EntryFlow__to->setEType(m_ActionElementEClass);
-        m_EntryFlow__to->setDefaultValueLiteral("");
-        m_EntryFlow__to->setLowerBound(1);
-        m_EntryFlow__to->setUpperBound(1);
-        m_EntryFlow__to->setTransient(false);
-        m_EntryFlow__to->setVolatile(false);
-        m_EntryFlow__to->setChangeable(true);
-        m_EntryFlow__to->setContainment(false);
-        m_EntryFlow__to->setResolveProxies(true);
-        m_EntryFlow__to->setUnique(true);
-        m_EntryFlow__to->setDerived(false);
-        m_EntryFlow__to->setOrdered(false);
-        m_EntryFlow__from->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getControlElement());
-        m_EntryFlow__from->setDefaultValueLiteral("");
-        m_EntryFlow__from->setLowerBound(1);
-        m_EntryFlow__from->setUpperBound(1);
-        m_EntryFlow__from->setTransient(false);
-        m_EntryFlow__from->setVolatile(false);
-        m_EntryFlow__from->setChangeable(true);
-        m_EntryFlow__from->setContainment(false);
-        m_EntryFlow__from->setResolveProxies(true);
-        m_EntryFlow__from->setUnique(true);
-        m_EntryFlow__from->setDerived(false);
-        m_EntryFlow__from->setOrdered(false);
-
-    }
-
-    { // BlockUnit
-        m_BlockUnitEClass->setName("BlockUnit");
-        m_BlockUnitEClass->setAbstract(false);
-        m_BlockUnitEClass->setInterface(false);
-
-    }
-
-    { // ExceptionUnit
-        m_ExceptionUnitEClass->setName("ExceptionUnit");
-        m_ExceptionUnitEClass->setAbstract(false);
-        m_ExceptionUnitEClass->setInterface(false);
-
-    }
-
-    { // TryUnit
-        m_TryUnitEClass->setName("TryUnit");
-        m_TryUnitEClass->setAbstract(false);
-        m_TryUnitEClass->setInterface(false);
-
-    }
-
-    { // FinallyUnit
-        m_FinallyUnitEClass->setName("FinallyUnit");
-        m_FinallyUnitEClass->setAbstract(false);
-        m_FinallyUnitEClass->setInterface(false);
-
-    }
-
-    { // CatchUnit
-        m_CatchUnitEClass->setName("CatchUnit");
-        m_CatchUnitEClass->setAbstract(false);
-        m_CatchUnitEClass->setInterface(false);
-
-    }
-
-    { // ExitFlow
-        m_ExitFlowEClass->setName("ExitFlow");
-        m_ExitFlowEClass->setAbstract(false);
-        m_ExitFlowEClass->setInterface(false);
-
-        m_ExitFlow__to->setEType(m_ActionElementEClass);
-        m_ExitFlow__to->setDefaultValueLiteral("");
-        m_ExitFlow__to->setLowerBound(1);
-        m_ExitFlow__to->setUpperBound(1);
-        m_ExitFlow__to->setTransient(false);
-        m_ExitFlow__to->setVolatile(false);
-        m_ExitFlow__to->setChangeable(true);
-        m_ExitFlow__to->setContainment(false);
-        m_ExitFlow__to->setResolveProxies(true);
-        m_ExitFlow__to->setUnique(true);
-        m_ExitFlow__to->setDerived(false);
-        m_ExitFlow__to->setOrdered(false);
-        m_ExitFlow__from->setEType(m_ActionElementEClass);
-        m_ExitFlow__from->setDefaultValueLiteral("");
-        m_ExitFlow__from->setLowerBound(1);
-        m_ExitFlow__from->setUpperBound(1);
-        m_ExitFlow__from->setTransient(false);
-        m_ExitFlow__from->setVolatile(false);
-        m_ExitFlow__from->setChangeable(true);
-        m_ExitFlow__from->setContainment(false);
-        m_ExitFlow__from->setResolveProxies(true);
-        m_ExitFlow__from->setUnique(true);
-        m_ExitFlow__from->setDerived(false);
-        m_ExitFlow__from->setOrdered(false);
-
-    }
-
-    { // ExceptionFlow
-        m_ExceptionFlowEClass->setName("ExceptionFlow");
-        m_ExceptionFlowEClass->setAbstract(false);
-        m_ExceptionFlowEClass->setInterface(false);
-
-        m_ExceptionFlow__to->setEType(m_ActionElementEClass);
-        m_ExceptionFlow__to->setDefaultValueLiteral("");
-        m_ExceptionFlow__to->setLowerBound(1);
-        m_ExceptionFlow__to->setUpperBound(1);
-        m_ExceptionFlow__to->setTransient(false);
-        m_ExceptionFlow__to->setVolatile(false);
-        m_ExceptionFlow__to->setChangeable(true);
-        m_ExceptionFlow__to->setContainment(false);
-        m_ExceptionFlow__to->setResolveProxies(true);
-        m_ExceptionFlow__to->setUnique(true);
-        m_ExceptionFlow__to->setDerived(false);
-        m_ExceptionFlow__to->setOrdered(false);
-        m_ExceptionFlow__from->setEType(m_ActionElementEClass);
-        m_ExceptionFlow__from->setDefaultValueLiteral("");
-        m_ExceptionFlow__from->setLowerBound(1);
-        m_ExceptionFlow__from->setUpperBound(1);
-        m_ExceptionFlow__from->setTransient(false);
-        m_ExceptionFlow__from->setVolatile(false);
-        m_ExceptionFlow__from->setChangeable(true);
-        m_ExceptionFlow__from->setContainment(false);
-        m_ExceptionFlow__from->setResolveProxies(true);
-        m_ExceptionFlow__from->setUnique(true);
-        m_ExceptionFlow__from->setDerived(false);
-        m_ExceptionFlow__from->setOrdered(false);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+        m_CallsEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_CreatesEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_ReadsEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_WritesEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_CompliesToEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_FlowEClass->getESuperTypes().push_back(m_ControlFlowEClass);
+        m_TrueFlowEClass->getESuperTypes().push_back(m_ControlFlowEClass);
+        m_FalseFlowEClass->getESuperTypes().push_back(m_ControlFlowEClass);
+        m_GuardedFlowEClass->getESuperTypes().push_back(m_ControlFlowEClass);
+        m_UsesTypeEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_AddressesEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_ActionRelationshipEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_ThrowsEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_DispatchesEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_EntryFlowEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_BlockUnitEClass->getESuperTypes().push_back(m_ActionElementEClass);
+        m_ExceptionUnitEClass->getESuperTypes().push_back(m_BlockUnitEClass);
+        m_TryUnitEClass->getESuperTypes().push_back(m_ExceptionUnitEClass);
+        m_FinallyUnitEClass->getESuperTypes().push_back(m_ExceptionUnitEClass);
+        m_CatchUnitEClass->getESuperTypes().push_back(m_ExceptionUnitEClass);
+        m_ExitFlowEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+        m_ExceptionFlowEClass->getESuperTypes().push_back(
+                m_AbstractActionRelationshipEClass);
+    }();
+
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_AbstractActionRelationshipEClass);
+        classifiers.push_back(m_ActionElementEClass);
+        classifiers.push_back(m_ActionRelationshipEClass);
+        classifiers.push_back(m_AddressesEClass);
+        classifiers.push_back(m_BlockUnitEClass);
+        classifiers.push_back(m_CallsEClass);
+        classifiers.push_back(m_CatchUnitEClass);
+        classifiers.push_back(m_CompliesToEClass);
+        classifiers.push_back(m_ControlFlowEClass);
+        classifiers.push_back(m_CreatesEClass);
+        classifiers.push_back(m_DispatchesEClass);
+        classifiers.push_back(m_EntryFlowEClass);
+        classifiers.push_back(m_ExceptionFlowEClass);
+        classifiers.push_back(m_ExceptionUnitEClass);
+        classifiers.push_back(m_ExitFlowEClass);
+        classifiers.push_back(m_FalseFlowEClass);
+        classifiers.push_back(m_FinallyUnitEClass);
+        classifiers.push_back(m_FlowEClass);
+        classifiers.push_back(m_GuardedFlowEClass);
+        classifiers.push_back(m_ReadsEClass);
+        classifiers.push_back(m_ThrowsEClass);
+        classifiers.push_back(m_TrueFlowEClass);
+        classifiers.push_back(m_TryUnitEClass);
+        classifiers.push_back(m_UsesTypeEClass);
+        classifiers.push_back(m_WritesEClass);
+    }();
 
     _initialize();
 }

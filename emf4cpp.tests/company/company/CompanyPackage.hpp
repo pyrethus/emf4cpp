@@ -39,36 +39,25 @@ public:
 
     // IDs for classifier Company
     static const int COMPANY = 0;
-
     static const int COMPANY__NAME = 0;
-
     static const int COMPANY__DEPARTMENTS = 1;
-
     static const int COMPANY_FEATURE_COUNT = 2;
 
     // IDs for classifier Department
     static const int DEPARTMENT = 1;
-
     static const int DEPARTMENT__EMPLOYEES = 0;
-
     static const int DEPARTMENT__MANAGER = 1;
-
     static const int DEPARTMENT__NUMBER = 2;
-
     static const int DEPARTMENT_FEATURE_COUNT = 3;
 
     // IDs for classifier Employee
     static const int EMPLOYEE = 2;
-
     static const int EMPLOYEE__NAME = 0;
-
     static const int EMPLOYEE__PHONEBOOKENTRY = 1;
-
     static const int EMPLOYEE_FEATURE_COUNT = 2;
 
     // IDs for classifier PhonebookEntry
     static const int PHONEBOOKENTRY = 3;
-
     static const int PHONEBOOKENTRY_FEATURE_COUNT = 0;
 
     // EClassifiers methods
@@ -104,19 +93,10 @@ protected:
     CompanyPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_EmployeeEClass;
-
-    ::ecore::EClass_ptr m_DepartmentEClass;
-
     ::ecore::EClass_ptr m_CompanyEClass;
-
+    ::ecore::EClass_ptr m_DepartmentEClass;
+    ::ecore::EClass_ptr m_EmployeeEClass;
     ::ecore::EClass_ptr m_PhonebookEntryEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
 
     // EStructuralFeatures instances
 

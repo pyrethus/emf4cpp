@@ -46,21 +46,13 @@ namespace base
 
             // IDs for classifier Base20
             static const int BASE20 = 0;
-
             static const int BASE20__VALBASE01 = 0;
-
             static const int BASE20__DERIVED02REF = 1;
-
             static const int BASE20__VALBASE10 = 2;
-
             static const int BASE20__VALBASE02 = 3;
-
             static const int BASE20__VALBASE03 = 4;
-
             static const int BASE20__VALBASE11 = 5;
-
             static const int BASE20__VALBASE20 = 6;
-
             static const int BASE20_FEATURE_COUNT = 7;
 
             // EClassifiers methods
@@ -78,13 +70,7 @@ namespace base
             Base2Package();
             void _initPackage();
 
-            // EClass instances 
-
             ::ecore::EClass_ptr m_Base20EClass;
-
-            // EEnuminstances 
-
-            // EDataType instances 
 
             // EStructuralFeatures instances
 

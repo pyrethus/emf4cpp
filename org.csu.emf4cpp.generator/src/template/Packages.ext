@@ -49,7 +49,11 @@ int getFeatureIDValue(EPackage this, EStructuralFeature ef) :
 ;
 
 String getFeatureMember(EPackage this, EStructuralFeature ef) :
-    getMemberPrefix() + ef.EContainingClass.name + "__" + ef.name
+    let pkg = ef.EContainingClass.EPackage :
+    if pkg.name == name then
+        getMemberPrefix() + ef.EContainingClass.name + "__" + ef.name
+    else
+        pkg.getFeatureGetMemberCall(ef)
 ;
 
 String getFeatureGetMember(EPackage this, EStructuralFeature ef) :

@@ -39,11 +39,8 @@ public:
 
     // IDs for classifier Bird
     static const int BIRD = 0;
-
     static const int BIRD__TYPE = 0;
-
     static const int BIRD__NAME = 1;
-
     static const int BIRD_FEATURE_COUNT = 2;
 
     // IDs for classifier BirdType
@@ -68,15 +65,8 @@ protected:
     EnumerationPackage();
     void _initPackage();
 
-    // EClass instances 
-
     ::ecore::EClass_ptr m_BirdEClass;
-
-    // EEnuminstances 
-
     ::ecore::EEnum_ptr m_BirdTypeEEnum;
-
-    // EDataType instances 
 
     // EStructuralFeatures instances
 

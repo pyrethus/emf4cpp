@@ -44,214 +44,123 @@ namespace kdm
 
         // IDs for classifier AbstractStructureElement
         static const int ABSTRACTSTRUCTUREELEMENT = 0;
-
         static const int ABSTRACTSTRUCTUREELEMENT__ATTRIBUTE = 0;
-
         static const int ABSTRACTSTRUCTUREELEMENT__ANNOTATION = 1;
-
         static const int ABSTRACTSTRUCTUREELEMENT__STEREOTYPE = 2;
-
         static const int ABSTRACTSTRUCTUREELEMENT__TAGGEDVALUE = 3;
-
         static const int ABSTRACTSTRUCTUREELEMENT__NAME = 4;
-
         static const int ABSTRACTSTRUCTUREELEMENT__AGGREGATED = 5;
-
         static const int ABSTRACTSTRUCTUREELEMENT__IMPLEMENTATION = 6;
-
         static const int ABSTRACTSTRUCTUREELEMENT__STRUCTUREELEMENT = 7;
-
         static const int ABSTRACTSTRUCTUREELEMENT__STRUCTURERELATIONSHIP = 8;
-
         static const int ABSTRACTSTRUCTUREELEMENT_FEATURE_COUNT = 9;
 
         // IDs for classifier AbstractStructureRelationship
         static const int ABSTRACTSTRUCTURERELATIONSHIP = 1;
-
         static const int ABSTRACTSTRUCTURERELATIONSHIP__ATTRIBUTE = 0;
-
         static const int ABSTRACTSTRUCTURERELATIONSHIP__ANNOTATION = 1;
-
         static const int ABSTRACTSTRUCTURERELATIONSHIP__STEREOTYPE = 2;
-
         static const int ABSTRACTSTRUCTURERELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int ABSTRACTSTRUCTURERELATIONSHIP_FEATURE_COUNT = 4;
 
         // IDs for classifier ArchitectureView
         static const int ARCHITECTUREVIEW = 2;
-
         static const int ARCHITECTUREVIEW__ATTRIBUTE = 0;
-
         static const int ARCHITECTUREVIEW__ANNOTATION = 1;
-
         static const int ARCHITECTUREVIEW__STEREOTYPE = 2;
-
         static const int ARCHITECTUREVIEW__TAGGEDVALUE = 3;
-
         static const int ARCHITECTUREVIEW__NAME = 4;
-
         static const int ARCHITECTUREVIEW__AGGREGATED = 5;
-
         static const int ARCHITECTUREVIEW__IMPLEMENTATION = 6;
-
         static const int ARCHITECTUREVIEW__STRUCTUREELEMENT = 7;
-
         static const int ARCHITECTUREVIEW__STRUCTURERELATIONSHIP = 8;
-
         static const int ARCHITECTUREVIEW_FEATURE_COUNT = 9;
 
         // IDs for classifier Component
         static const int COMPONENT = 3;
-
         static const int COMPONENT__ATTRIBUTE = 0;
-
         static const int COMPONENT__ANNOTATION = 1;
-
         static const int COMPONENT__STEREOTYPE = 2;
-
         static const int COMPONENT__TAGGEDVALUE = 3;
-
         static const int COMPONENT__NAME = 4;
-
         static const int COMPONENT__AGGREGATED = 5;
-
         static const int COMPONENT__IMPLEMENTATION = 6;
-
         static const int COMPONENT__STRUCTUREELEMENT = 7;
-
         static const int COMPONENT__STRUCTURERELATIONSHIP = 8;
-
         static const int COMPONENT_FEATURE_COUNT = 9;
 
         // IDs for classifier Layer
         static const int LAYER = 4;
-
         static const int LAYER__ATTRIBUTE = 0;
-
         static const int LAYER__ANNOTATION = 1;
-
         static const int LAYER__STEREOTYPE = 2;
-
         static const int LAYER__TAGGEDVALUE = 3;
-
         static const int LAYER__NAME = 4;
-
         static const int LAYER__AGGREGATED = 5;
-
         static const int LAYER__IMPLEMENTATION = 6;
-
         static const int LAYER__STRUCTUREELEMENT = 7;
-
         static const int LAYER__STRUCTURERELATIONSHIP = 8;
-
         static const int LAYER_FEATURE_COUNT = 9;
 
         // IDs for classifier SoftwareSystem
         static const int SOFTWARESYSTEM = 5;
-
         static const int SOFTWARESYSTEM__ATTRIBUTE = 0;
-
         static const int SOFTWARESYSTEM__ANNOTATION = 1;
-
         static const int SOFTWARESYSTEM__STEREOTYPE = 2;
-
         static const int SOFTWARESYSTEM__TAGGEDVALUE = 3;
-
         static const int SOFTWARESYSTEM__NAME = 4;
-
         static const int SOFTWARESYSTEM__AGGREGATED = 5;
-
         static const int SOFTWARESYSTEM__IMPLEMENTATION = 6;
-
         static const int SOFTWARESYSTEM__STRUCTUREELEMENT = 7;
-
         static const int SOFTWARESYSTEM__STRUCTURERELATIONSHIP = 8;
-
         static const int SOFTWARESYSTEM_FEATURE_COUNT = 9;
 
         // IDs for classifier StructureElement
         static const int STRUCTUREELEMENT = 6;
-
         static const int STRUCTUREELEMENT__ATTRIBUTE = 0;
-
         static const int STRUCTUREELEMENT__ANNOTATION = 1;
-
         static const int STRUCTUREELEMENT__STEREOTYPE = 2;
-
         static const int STRUCTUREELEMENT__TAGGEDVALUE = 3;
-
         static const int STRUCTUREELEMENT__NAME = 4;
-
         static const int STRUCTUREELEMENT__AGGREGATED = 5;
-
         static const int STRUCTUREELEMENT__IMPLEMENTATION = 6;
-
         static const int STRUCTUREELEMENT__STRUCTUREELEMENT = 7;
-
         static const int STRUCTUREELEMENT__STRUCTURERELATIONSHIP = 8;
-
         static const int STRUCTUREELEMENT_FEATURE_COUNT = 9;
 
         // IDs for classifier StructureModel
         static const int STRUCTUREMODEL = 7;
-
         static const int STRUCTUREMODEL__ATTRIBUTE = 0;
-
         static const int STRUCTUREMODEL__ANNOTATION = 1;
-
         static const int STRUCTUREMODEL__STEREOTYPE = 2;
-
         static const int STRUCTUREMODEL__TAGGEDVALUE = 3;
-
         static const int STRUCTUREMODEL__AUDIT = 4;
-
         static const int STRUCTUREMODEL__EXTENSIONFAMILY = 5;
-
         static const int STRUCTUREMODEL__NAME = 6;
-
         static const int STRUCTUREMODEL__STRUCTUREELEMENT = 7;
-
         static const int STRUCTUREMODEL_FEATURE_COUNT = 8;
 
         // IDs for classifier StructureRelationship
         static const int STRUCTURERELATIONSHIP = 8;
-
         static const int STRUCTURERELATIONSHIP__ATTRIBUTE = 0;
-
         static const int STRUCTURERELATIONSHIP__ANNOTATION = 1;
-
         static const int STRUCTURERELATIONSHIP__STEREOTYPE = 2;
-
         static const int STRUCTURERELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int STRUCTURERELATIONSHIP__TO = 4;
-
         static const int STRUCTURERELATIONSHIP__FROM = 5;
-
         static const int STRUCTURERELATIONSHIP_FEATURE_COUNT = 6;
 
         // IDs for classifier Subsystem
         static const int SUBSYSTEM = 9;
-
         static const int SUBSYSTEM__ATTRIBUTE = 0;
-
         static const int SUBSYSTEM__ANNOTATION = 1;
-
         static const int SUBSYSTEM__STEREOTYPE = 2;
-
         static const int SUBSYSTEM__TAGGEDVALUE = 3;
-
         static const int SUBSYSTEM__NAME = 4;
-
         static const int SUBSYSTEM__AGGREGATED = 5;
-
         static const int SUBSYSTEM__IMPLEMENTATION = 6;
-
         static const int SUBSYSTEM__STRUCTUREELEMENT = 7;
-
         static const int SUBSYSTEM__STRUCTURERELATIONSHIP = 8;
-
         static const int SUBSYSTEM_FEATURE_COUNT = 9;
 
         // EClassifiers methods
@@ -299,31 +208,16 @@ namespace kdm
         StructurePackage();
         void _initPackage();
 
-        // EClass instances 
-
         ::ecore::EClass_ptr m_AbstractStructureElementEClass;
-
-        ::ecore::EClass_ptr m_SubsystemEClass;
-
-        ::ecore::EClass_ptr m_LayerEClass;
-
-        ::ecore::EClass_ptr m_StructureModelEClass;
-
-        ::ecore::EClass_ptr m_ComponentEClass;
-
-        ::ecore::EClass_ptr m_SoftwareSystemEClass;
-
         ::ecore::EClass_ptr m_AbstractStructureRelationshipEClass;
-
-        ::ecore::EClass_ptr m_StructureRelationshipEClass;
-
         ::ecore::EClass_ptr m_ArchitectureViewEClass;
-
+        ::ecore::EClass_ptr m_ComponentEClass;
+        ::ecore::EClass_ptr m_LayerEClass;
+        ::ecore::EClass_ptr m_SoftwareSystemEClass;
         ::ecore::EClass_ptr m_StructureElementEClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
+        ::ecore::EClass_ptr m_StructureModelEClass;
+        ::ecore::EClass_ptr m_StructureRelationshipEClass;
+        ::ecore::EClass_ptr m_SubsystemEClass;
 
         // EStructuralFeatures instances
 

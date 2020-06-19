@@ -44,289 +44,165 @@ namespace kdm
 
         // IDs for classifier AbstractConceptualElement
         static const int ABSTRACTCONCEPTUALELEMENT = 0;
-
         static const int ABSTRACTCONCEPTUALELEMENT__ATTRIBUTE = 0;
-
         static const int ABSTRACTCONCEPTUALELEMENT__ANNOTATION = 1;
-
         static const int ABSTRACTCONCEPTUALELEMENT__STEREOTYPE = 2;
-
         static const int ABSTRACTCONCEPTUALELEMENT__TAGGEDVALUE = 3;
-
         static const int ABSTRACTCONCEPTUALELEMENT__NAME = 4;
-
         static const int ABSTRACTCONCEPTUALELEMENT__SOURCE = 5;
-
         static const int ABSTRACTCONCEPTUALELEMENT__IMPLEMENTATION = 6;
-
         static const int ABSTRACTCONCEPTUALELEMENT__CONCEPTUALRELATION = 7;
-
         static const int ABSTRACTCONCEPTUALELEMENT__ABSTRACTION = 8;
-
         static const int ABSTRACTCONCEPTUALELEMENT_FEATURE_COUNT = 9;
 
         // IDs for classifier AbstractConceptualRelationship
         static const int ABSTRACTCONCEPTUALRELATIONSHIP = 1;
-
         static const int ABSTRACTCONCEPTUALRELATIONSHIP__ATTRIBUTE = 0;
-
         static const int ABSTRACTCONCEPTUALRELATIONSHIP__ANNOTATION = 1;
-
         static const int ABSTRACTCONCEPTUALRELATIONSHIP__STEREOTYPE = 2;
-
         static const int ABSTRACTCONCEPTUALRELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int ABSTRACTCONCEPTUALRELATIONSHIP_FEATURE_COUNT = 4;
 
         // IDs for classifier BehaviorUnit
         static const int BEHAVIORUNIT = 2;
-
         static const int BEHAVIORUNIT__ATTRIBUTE = 0;
-
         static const int BEHAVIORUNIT__ANNOTATION = 1;
-
         static const int BEHAVIORUNIT__STEREOTYPE = 2;
-
         static const int BEHAVIORUNIT__TAGGEDVALUE = 3;
-
         static const int BEHAVIORUNIT__NAME = 4;
-
         static const int BEHAVIORUNIT__SOURCE = 5;
-
         static const int BEHAVIORUNIT__IMPLEMENTATION = 6;
-
         static const int BEHAVIORUNIT__CONCEPTUALRELATION = 7;
-
         static const int BEHAVIORUNIT__ABSTRACTION = 8;
-
         static const int BEHAVIORUNIT__CONCEPTUALELEMENT = 9;
-
         static const int BEHAVIORUNIT_FEATURE_COUNT = 10;
 
         // IDs for classifier ConceptualContainer
         static const int CONCEPTUALCONTAINER = 3;
-
         static const int CONCEPTUALCONTAINER__ATTRIBUTE = 0;
-
         static const int CONCEPTUALCONTAINER__ANNOTATION = 1;
-
         static const int CONCEPTUALCONTAINER__STEREOTYPE = 2;
-
         static const int CONCEPTUALCONTAINER__TAGGEDVALUE = 3;
-
         static const int CONCEPTUALCONTAINER__NAME = 4;
-
         static const int CONCEPTUALCONTAINER__SOURCE = 5;
-
         static const int CONCEPTUALCONTAINER__IMPLEMENTATION = 6;
-
         static const int CONCEPTUALCONTAINER__CONCEPTUALRELATION = 7;
-
         static const int CONCEPTUALCONTAINER__ABSTRACTION = 8;
-
         static const int CONCEPTUALCONTAINER__CONCEPTUALELEMENT = 9;
-
         static const int CONCEPTUALCONTAINER_FEATURE_COUNT = 10;
 
         // IDs for classifier ConceptualElement
         static const int CONCEPTUALELEMENT = 4;
-
         static const int CONCEPTUALELEMENT__ATTRIBUTE = 0;
-
         static const int CONCEPTUALELEMENT__ANNOTATION = 1;
-
         static const int CONCEPTUALELEMENT__STEREOTYPE = 2;
-
         static const int CONCEPTUALELEMENT__TAGGEDVALUE = 3;
-
         static const int CONCEPTUALELEMENT__NAME = 4;
-
         static const int CONCEPTUALELEMENT__SOURCE = 5;
-
         static const int CONCEPTUALELEMENT__IMPLEMENTATION = 6;
-
         static const int CONCEPTUALELEMENT__CONCEPTUALRELATION = 7;
-
         static const int CONCEPTUALELEMENT__ABSTRACTION = 8;
-
         static const int CONCEPTUALELEMENT_FEATURE_COUNT = 9;
 
         // IDs for classifier ConceptualFlow
         static const int CONCEPTUALFLOW = 5;
-
         static const int CONCEPTUALFLOW__ATTRIBUTE = 0;
-
         static const int CONCEPTUALFLOW__ANNOTATION = 1;
-
         static const int CONCEPTUALFLOW__STEREOTYPE = 2;
-
         static const int CONCEPTUALFLOW__TAGGEDVALUE = 3;
-
         static const int CONCEPTUALFLOW__TO = 4;
-
         static const int CONCEPTUALFLOW__FROM = 5;
-
         static const int CONCEPTUALFLOW_FEATURE_COUNT = 6;
 
         // IDs for classifier ConceptualModel
         static const int CONCEPTUALMODEL = 6;
-
         static const int CONCEPTUALMODEL__ATTRIBUTE = 0;
-
         static const int CONCEPTUALMODEL__ANNOTATION = 1;
-
         static const int CONCEPTUALMODEL__STEREOTYPE = 2;
-
         static const int CONCEPTUALMODEL__TAGGEDVALUE = 3;
-
         static const int CONCEPTUALMODEL__AUDIT = 4;
-
         static const int CONCEPTUALMODEL__EXTENSIONFAMILY = 5;
-
         static const int CONCEPTUALMODEL__NAME = 6;
-
         static const int CONCEPTUALMODEL__CONCEPTUALELEMENT = 7;
-
         static const int CONCEPTUALMODEL_FEATURE_COUNT = 8;
 
         // IDs for classifier ConceptualRelationship
         static const int CONCEPTUALRELATIONSHIP = 7;
-
         static const int CONCEPTUALRELATIONSHIP__ATTRIBUTE = 0;
-
         static const int CONCEPTUALRELATIONSHIP__ANNOTATION = 1;
-
         static const int CONCEPTUALRELATIONSHIP__STEREOTYPE = 2;
-
         static const int CONCEPTUALRELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int CONCEPTUALRELATIONSHIP__TO = 4;
-
         static const int CONCEPTUALRELATIONSHIP__FROM = 5;
-
         static const int CONCEPTUALRELATIONSHIP_FEATURE_COUNT = 6;
 
         // IDs for classifier ConceptualRole
         static const int CONCEPTUALROLE = 8;
-
         static const int CONCEPTUALROLE__ATTRIBUTE = 0;
-
         static const int CONCEPTUALROLE__ANNOTATION = 1;
-
         static const int CONCEPTUALROLE__STEREOTYPE = 2;
-
         static const int CONCEPTUALROLE__TAGGEDVALUE = 3;
-
         static const int CONCEPTUALROLE__NAME = 4;
-
         static const int CONCEPTUALROLE__SOURCE = 5;
-
         static const int CONCEPTUALROLE__IMPLEMENTATION = 6;
-
         static const int CONCEPTUALROLE__CONCEPTUALRELATION = 7;
-
         static const int CONCEPTUALROLE__ABSTRACTION = 8;
-
         static const int CONCEPTUALROLE__CONCEPTUALELEMENT = 9;
-
         static const int CONCEPTUALROLE_FEATURE_COUNT = 10;
 
         // IDs for classifier FactUnit
         static const int FACTUNIT = 9;
-
         static const int FACTUNIT__ATTRIBUTE = 0;
-
         static const int FACTUNIT__ANNOTATION = 1;
-
         static const int FACTUNIT__STEREOTYPE = 2;
-
         static const int FACTUNIT__TAGGEDVALUE = 3;
-
         static const int FACTUNIT__NAME = 4;
-
         static const int FACTUNIT__SOURCE = 5;
-
         static const int FACTUNIT__IMPLEMENTATION = 6;
-
         static const int FACTUNIT__CONCEPTUALRELATION = 7;
-
         static const int FACTUNIT__ABSTRACTION = 8;
-
         static const int FACTUNIT__CONCEPTUALELEMENT = 9;
-
         static const int FACTUNIT_FEATURE_COUNT = 10;
 
         // IDs for classifier RuleUnit
         static const int RULEUNIT = 10;
-
         static const int RULEUNIT__ATTRIBUTE = 0;
-
         static const int RULEUNIT__ANNOTATION = 1;
-
         static const int RULEUNIT__STEREOTYPE = 2;
-
         static const int RULEUNIT__TAGGEDVALUE = 3;
-
         static const int RULEUNIT__NAME = 4;
-
         static const int RULEUNIT__SOURCE = 5;
-
         static const int RULEUNIT__IMPLEMENTATION = 6;
-
         static const int RULEUNIT__CONCEPTUALRELATION = 7;
-
         static const int RULEUNIT__ABSTRACTION = 8;
-
         static const int RULEUNIT__CONCEPTUALELEMENT = 9;
-
         static const int RULEUNIT_FEATURE_COUNT = 10;
 
         // IDs for classifier ScenarioUnit
         static const int SCENARIOUNIT = 11;
-
         static const int SCENARIOUNIT__ATTRIBUTE = 0;
-
         static const int SCENARIOUNIT__ANNOTATION = 1;
-
         static const int SCENARIOUNIT__STEREOTYPE = 2;
-
         static const int SCENARIOUNIT__TAGGEDVALUE = 3;
-
         static const int SCENARIOUNIT__NAME = 4;
-
         static const int SCENARIOUNIT__SOURCE = 5;
-
         static const int SCENARIOUNIT__IMPLEMENTATION = 6;
-
         static const int SCENARIOUNIT__CONCEPTUALRELATION = 7;
-
         static const int SCENARIOUNIT__ABSTRACTION = 8;
-
         static const int SCENARIOUNIT__CONCEPTUALELEMENT = 9;
-
         static const int SCENARIOUNIT_FEATURE_COUNT = 10;
 
         // IDs for classifier TermUnit
         static const int TERMUNIT = 12;
-
         static const int TERMUNIT__ATTRIBUTE = 0;
-
         static const int TERMUNIT__ANNOTATION = 1;
-
         static const int TERMUNIT__STEREOTYPE = 2;
-
         static const int TERMUNIT__TAGGEDVALUE = 3;
-
         static const int TERMUNIT__NAME = 4;
-
         static const int TERMUNIT__SOURCE = 5;
-
         static const int TERMUNIT__IMPLEMENTATION = 6;
-
         static const int TERMUNIT__CONCEPTUALRELATION = 7;
-
         static const int TERMUNIT__ABSTRACTION = 8;
-
         static const int TERMUNIT_FEATURE_COUNT = 9;
 
         // EClassifiers methods
@@ -388,37 +264,19 @@ namespace kdm
         ConceptualPackage();
         void _initPackage();
 
-        // EClass instances 
-
-        ::ecore::EClass_ptr m_ConceptualModelEClass;
-
         ::ecore::EClass_ptr m_AbstractConceptualElementEClass;
-
-        ::ecore::EClass_ptr m_TermUnitEClass;
-
-        ::ecore::EClass_ptr m_ConceptualContainerEClass;
-
-        ::ecore::EClass_ptr m_FactUnitEClass;
-
         ::ecore::EClass_ptr m_AbstractConceptualRelationshipEClass;
-
-        ::ecore::EClass_ptr m_ConceptualRelationshipEClass;
-
         ::ecore::EClass_ptr m_BehaviorUnitEClass;
-
-        ::ecore::EClass_ptr m_RuleUnitEClass;
-
-        ::ecore::EClass_ptr m_ScenarioUnitEClass;
-
-        ::ecore::EClass_ptr m_ConceptualFlowEClass;
-
+        ::ecore::EClass_ptr m_ConceptualContainerEClass;
         ::ecore::EClass_ptr m_ConceptualElementEClass;
-
+        ::ecore::EClass_ptr m_ConceptualFlowEClass;
+        ::ecore::EClass_ptr m_ConceptualModelEClass;
+        ::ecore::EClass_ptr m_ConceptualRelationshipEClass;
         ::ecore::EClass_ptr m_ConceptualRoleEClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
+        ::ecore::EClass_ptr m_FactUnitEClass;
+        ::ecore::EClass_ptr m_RuleUnitEClass;
+        ::ecore::EClass_ptr m_ScenarioUnitEClass;
+        ::ecore::EClass_ptr m_TermUnitEClass;
 
         // EStructuralFeatures instances
 

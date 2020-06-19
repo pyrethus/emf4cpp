@@ -38,59 +38,117 @@ using namespace ::enumeration;
 
 EnumerationPackage::EnumerationPackage()
 {
-
-    // Feature definitions of Bird
-    m_Bird__type = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_Bird__name = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
+    m_Bird__type = ::ecore::make< ::ecore::EAttribute >();
+    m_Bird__name = ::ecore::make< ::ecore::EAttribute >();
+    m_BirdEClass = ::ecore::make< ::ecore::EClass >();
+    m_BirdTypeEEnum = ::ecore::make< ::ecore::EEnum >();
 }
 
 void EnumerationPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = EnumerationFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = EnumerationFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // Bird
-        m_BirdEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_BirdEClass->setClassifierID(BIRD);
-        m_BirdEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BirdEClass);
-        // m_Bird__type has already been allocated above
-        m_Bird__type->setFeatureID(
-                ::enumeration::EnumerationPackage::BIRD__TYPE);
-        m_Bird__type->setName("type");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BirdEClass->getEStructuralFeatures()).basicAdd(
-                m_Bird__type);
-        m_Bird__type->basicsetEContainingClass(m_BirdEClass);
-        // m_Bird__name has already been allocated above
-        m_Bird__name->setFeatureID(
-                ::enumeration::EnumerationPackage::BIRD__NAME);
-        m_Bird__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BirdEClass->getEStructuralFeatures()).basicAdd(
-                m_Bird__name);
-        m_Bird__name->basicsetEContainingClass(m_BirdEClass);
-    }
+    [this]()
+    { // Feature type of class Bird
+        auto &&feature = m_Bird__type;
 
-    // Create enums
+        // ENamedElement
+        feature->setName("type");
 
-    { // BirdType
-        m_BirdTypeEEnum = ::ecore::Ptr < ::ecore::EEnum > (new ::ecore::EEnum);
-        m_BirdTypeEEnum->setClassifierID(BIRDTYPE);
-        m_BirdTypeEEnum->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BirdTypeEEnum);
-    }
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    // Create data types
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("blackbird");
+        feature->setDerived(false);
+        feature->setEType(m_BirdTypeEEnum);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::enumeration::EnumerationPackage::BIRD__TYPE);
+        feature->basicsetEContainingClass(m_BirdEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature name of class Bird
+        auto &&feature = m_Bird__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("Birdy");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::enumeration::EnumerationPackage::BIRD__NAME);
+        feature->basicsetEContainingClass(m_BirdEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Bird
+        auto &&classifier = m_BirdEClass;
+
+        // ENamedElement
+        classifier->setName("Bird");
+
+        // EClassifier
+        classifier->setClassifierID(BIRD);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_BirdEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Bird__type);
+            eStructuralFeatures.basicAdd(m_Bird__name);
+        }
+    }();
+
+    [this]()
+    { // Classifier BirdType
+        auto &&classifier = m_BirdTypeEEnum;
+
+        // ENamedElement
+        classifier->setName("BirdType");
+
+        // EClassifier
+        classifier->setClassifierID(BIRDTYPE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
 
     // Initialize package
     setName("enumeration");
@@ -100,116 +158,72 @@ void EnumerationPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
+    [this]()
+    {
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // Bird
-        m_BirdEClass->setName("Bird");
-        m_BirdEClass->setAbstract(false);
-        m_BirdEClass->setInterface(false);
-        m_Bird__type->setEType(m_BirdTypeEEnum);
-        m_Bird__type->setDefaultValueLiteral("blackbird");
-        m_Bird__type->setLowerBound(0);
-        m_Bird__type->setUpperBound(1);
-        m_Bird__type->setTransient(false);
-        m_Bird__type->setVolatile(false);
-        m_Bird__type->setChangeable(true);
-        m_Bird__type->setUnsettable(false);
-        m_Bird__type->setID(false);
-        m_Bird__type->setUnique(true);
-        m_Bird__type->setDerived(false);
-        m_Bird__type->setOrdered(true);
-        m_Bird__name->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Bird__name->setDefaultValueLiteral("Birdy");
-        m_Bird__name->setLowerBound(0);
-        m_Bird__name->setUpperBound(1);
-        m_Bird__name->setTransient(false);
-        m_Bird__name->setVolatile(false);
-        m_Bird__name->setChangeable(true);
-        m_Bird__name->setUnsettable(false);
-        m_Bird__name->setID(false);
-        m_Bird__name->setUnique(true);
-        m_Bird__name->setDerived(false);
-        m_Bird__name->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    { // BirdType
-        m_BirdTypeEEnum->setName("BirdType");
-        m_BirdTypeEEnum->setSerializable(true);
-
-        {
-            ::ecore::EEnumLiteral_ptr _el = ::ecore::Ptr < ::ecore::EEnumLiteral
-                    > (new ::ecore::EEnumLiteral);
-            // unknown
-            _el->setName("unknown");
-            _el->setValue(-1);
-            _el->setLiteral("unknown");
-            _el->setEEnum(m_BirdTypeEEnum);
-            m_BirdTypeEEnum->getELiterals().push_back(_el);
+    [this]()
+    { // EEnum BirdType
+        auto &&eEnum = m_BirdTypeEEnum;
+        { // Literals
+            auto &&eLiterals = eEnum->getELiterals();
+            { // Literal unknown
+                auto _el = ::ecore::make< ::ecore::EEnumLiteral >();
+                _el->setName("unknown");
+                _el->setValue(-1);
+                _el->setLiteral("unknown");
+                _el->setEEnum(eEnum);
+                eLiterals.push_back(_el);
+            }
+            { // Literal blackbird
+                auto _el = ::ecore::make< ::ecore::EEnumLiteral >();
+                _el->setName("blackbird");
+                _el->setValue(eLiterals.size());
+                _el->setLiteral("blackbird");
+                _el->setEEnum(eEnum);
+                eLiterals.push_back(_el);
+            }
+            { // Literal thrush
+                auto _el = ::ecore::make< ::ecore::EEnumLiteral >();
+                _el->setName("thrush");
+                _el->setValue(1);
+                _el->setLiteral("thrush");
+                _el->setEEnum(eEnum);
+                eLiterals.push_back(_el);
+            }
+            { // Literal finch
+                auto _el = ::ecore::make< ::ecore::EEnumLiteral >();
+                _el->setName("finch");
+                _el->setValue(2);
+                _el->setLiteral("finch");
+                _el->setEEnum(eEnum);
+                eLiterals.push_back(_el);
+            }
+            { // Literal starling
+                auto _el = ::ecore::make< ::ecore::EEnumLiteral >();
+                _el->setName("starling");
+                _el->setValue(3);
+                _el->setLiteral("starling");
+                _el->setEEnum(eEnum);
+                eLiterals.push_back(_el);
+            }
+            { // Literal stork
+                auto _el = ::ecore::make< ::ecore::EEnumLiteral >();
+                _el->setName("stork");
+                _el->setValue(7);
+                _el->setLiteral("stork");
+                _el->setEEnum(eEnum);
+                eLiterals.push_back(_el);
+            }
         }
+    }();
 
-        {
-            ::ecore::EEnumLiteral_ptr _el = ::ecore::Ptr < ::ecore::EEnumLiteral
-                    > (new ::ecore::EEnumLiteral);
-            // blackbird
-            _el->setName("blackbird");
-            _el->setValue(m_BirdTypeEEnum->getELiterals().size());
-            _el->setLiteral("blackbird");
-            _el->setEEnum(m_BirdTypeEEnum);
-            m_BirdTypeEEnum->getELiterals().push_back(_el);
-        }
-
-        {
-            ::ecore::EEnumLiteral_ptr _el = ::ecore::Ptr < ::ecore::EEnumLiteral
-                    > (new ::ecore::EEnumLiteral);
-            // thrush
-            _el->setName("thrush");
-            _el->setValue(1);
-            _el->setLiteral("thrush");
-            _el->setEEnum(m_BirdTypeEEnum);
-            m_BirdTypeEEnum->getELiterals().push_back(_el);
-        }
-
-        {
-            ::ecore::EEnumLiteral_ptr _el = ::ecore::Ptr < ::ecore::EEnumLiteral
-                    > (new ::ecore::EEnumLiteral);
-            // finch
-            _el->setName("finch");
-            _el->setValue(2);
-            _el->setLiteral("finch");
-            _el->setEEnum(m_BirdTypeEEnum);
-            m_BirdTypeEEnum->getELiterals().push_back(_el);
-        }
-
-        {
-            ::ecore::EEnumLiteral_ptr _el = ::ecore::Ptr < ::ecore::EEnumLiteral
-                    > (new ::ecore::EEnumLiteral);
-            // starling
-            _el->setName("starling");
-            _el->setValue(3);
-            _el->setLiteral("starling");
-            _el->setEEnum(m_BirdTypeEEnum);
-            m_BirdTypeEEnum->getELiterals().push_back(_el);
-        }
-
-        {
-            ::ecore::EEnumLiteral_ptr _el = ::ecore::Ptr < ::ecore::EEnumLiteral
-                    > (new ::ecore::EEnumLiteral);
-            // stork
-            _el->setName("stork");
-            _el->setValue(7);
-            _el->setLiteral("stork");
-            _el->setEEnum(m_BirdTypeEEnum);
-            m_BirdTypeEEnum->getELiterals().push_back(_el);
-        }
-    }
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_BirdEClass);
+        classifiers.push_back(m_BirdTypeEEnum);
+    }();
 
     _initialize();
 }

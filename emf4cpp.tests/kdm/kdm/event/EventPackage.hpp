@@ -44,386 +44,221 @@ namespace kdm
 
         // IDs for classifier AbstractEventElement
         static const int ABSTRACTEVENTELEMENT = 0;
-
         static const int ABSTRACTEVENTELEMENT__ATTRIBUTE = 0;
-
         static const int ABSTRACTEVENTELEMENT__ANNOTATION = 1;
-
         static const int ABSTRACTEVENTELEMENT__STEREOTYPE = 2;
-
         static const int ABSTRACTEVENTELEMENT__TAGGEDVALUE = 3;
-
         static const int ABSTRACTEVENTELEMENT__NAME = 4;
-
         static const int ABSTRACTEVENTELEMENT__SOURCE = 5;
-
         static const int ABSTRACTEVENTELEMENT__EVENTRELATION = 6;
-
         static const int ABSTRACTEVENTELEMENT__ABSTRACTION = 7;
-
         static const int ABSTRACTEVENTELEMENT__IMPLEMENTATION = 8;
-
         static const int ABSTRACTEVENTELEMENT_FEATURE_COUNT = 9;
 
         // IDs for classifier AbstractEventRelationship
         static const int ABSTRACTEVENTRELATIONSHIP = 1;
-
         static const int ABSTRACTEVENTRELATIONSHIP__ATTRIBUTE = 0;
-
         static const int ABSTRACTEVENTRELATIONSHIP__ANNOTATION = 1;
-
         static const int ABSTRACTEVENTRELATIONSHIP__STEREOTYPE = 2;
-
         static const int ABSTRACTEVENTRELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int ABSTRACTEVENTRELATIONSHIP_FEATURE_COUNT = 4;
 
         // IDs for classifier ConsumesEvent
         static const int CONSUMESEVENT = 2;
-
         static const int CONSUMESEVENT__ATTRIBUTE = 0;
-
         static const int CONSUMESEVENT__ANNOTATION = 1;
-
         static const int CONSUMESEVENT__STEREOTYPE = 2;
-
         static const int CONSUMESEVENT__TAGGEDVALUE = 3;
-
         static const int CONSUMESEVENT__TO = 4;
-
         static const int CONSUMESEVENT__FROM = 5;
-
         static const int CONSUMESEVENT_FEATURE_COUNT = 6;
 
         // IDs for classifier Event
         static const int EVENT = 3;
-
         static const int EVENT__ATTRIBUTE = 0;
-
         static const int EVENT__ANNOTATION = 1;
-
         static const int EVENT__STEREOTYPE = 2;
-
         static const int EVENT__TAGGEDVALUE = 3;
-
         static const int EVENT__NAME = 4;
-
         static const int EVENT__SOURCE = 5;
-
         static const int EVENT__EVENTRELATION = 6;
-
         static const int EVENT__ABSTRACTION = 7;
-
         static const int EVENT__IMPLEMENTATION = 8;
-
         static const int EVENT__KIND = 9;
-
         static const int EVENT_FEATURE_COUNT = 10;
 
         // IDs for classifier EventAction
         static const int EVENTACTION = 4;
-
         static const int EVENTACTION__ATTRIBUTE = 0;
-
         static const int EVENTACTION__ANNOTATION = 1;
-
         static const int EVENTACTION__STEREOTYPE = 2;
-
         static const int EVENTACTION__TAGGEDVALUE = 3;
-
         static const int EVENTACTION__NAME = 4;
-
         static const int EVENTACTION__SOURCE = 5;
-
         static const int EVENTACTION__EVENTRELATION = 6;
-
         static const int EVENTACTION__ABSTRACTION = 7;
-
         static const int EVENTACTION__IMPLEMENTATION = 8;
-
         static const int EVENTACTION__KIND = 9;
-
         static const int EVENTACTION__EVENTELEMENT = 10;
-
         static const int EVENTACTION_FEATURE_COUNT = 11;
 
         // IDs for classifier EventElement
         static const int EVENTELEMENT = 5;
-
         static const int EVENTELEMENT__ATTRIBUTE = 0;
-
         static const int EVENTELEMENT__ANNOTATION = 1;
-
         static const int EVENTELEMENT__STEREOTYPE = 2;
-
         static const int EVENTELEMENT__TAGGEDVALUE = 3;
-
         static const int EVENTELEMENT__NAME = 4;
-
         static const int EVENTELEMENT__SOURCE = 5;
-
         static const int EVENTELEMENT__EVENTRELATION = 6;
-
         static const int EVENTELEMENT__ABSTRACTION = 7;
-
         static const int EVENTELEMENT__IMPLEMENTATION = 8;
-
         static const int EVENTELEMENT_FEATURE_COUNT = 9;
 
         // IDs for classifier EventModel
         static const int EVENTMODEL = 6;
-
         static const int EVENTMODEL__ATTRIBUTE = 0;
-
         static const int EVENTMODEL__ANNOTATION = 1;
-
         static const int EVENTMODEL__STEREOTYPE = 2;
-
         static const int EVENTMODEL__TAGGEDVALUE = 3;
-
         static const int EVENTMODEL__AUDIT = 4;
-
         static const int EVENTMODEL__EXTENSIONFAMILY = 5;
-
         static const int EVENTMODEL__NAME = 6;
-
         static const int EVENTMODEL__EVENTELEMENT = 7;
-
         static const int EVENTMODEL_FEATURE_COUNT = 8;
 
         // IDs for classifier EventRelationship
         static const int EVENTRELATIONSHIP = 7;
-
         static const int EVENTRELATIONSHIP__ATTRIBUTE = 0;
-
         static const int EVENTRELATIONSHIP__ANNOTATION = 1;
-
         static const int EVENTRELATIONSHIP__STEREOTYPE = 2;
-
         static const int EVENTRELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int EVENTRELATIONSHIP__TO = 4;
-
         static const int EVENTRELATIONSHIP__FROM = 5;
-
         static const int EVENTRELATIONSHIP_FEATURE_COUNT = 6;
 
         // IDs for classifier EventResource
         static const int EVENTRESOURCE = 8;
-
         static const int EVENTRESOURCE__ATTRIBUTE = 0;
-
         static const int EVENTRESOURCE__ANNOTATION = 1;
-
         static const int EVENTRESOURCE__STEREOTYPE = 2;
-
         static const int EVENTRESOURCE__TAGGEDVALUE = 3;
-
         static const int EVENTRESOURCE__NAME = 4;
-
         static const int EVENTRESOURCE__SOURCE = 5;
-
         static const int EVENTRESOURCE__EVENTRELATION = 6;
-
         static const int EVENTRESOURCE__ABSTRACTION = 7;
-
         static const int EVENTRESOURCE__IMPLEMENTATION = 8;
-
         static const int EVENTRESOURCE__EVENTELEMENT = 9;
-
         static const int EVENTRESOURCE_FEATURE_COUNT = 10;
 
         // IDs for classifier HasState
         static const int HASSTATE = 9;
-
         static const int HASSTATE__ATTRIBUTE = 0;
-
         static const int HASSTATE__ANNOTATION = 1;
-
         static const int HASSTATE__STEREOTYPE = 2;
-
         static const int HASSTATE__TAGGEDVALUE = 3;
-
         static const int HASSTATE__TO = 4;
-
         static const int HASSTATE__FROM = 5;
-
         static const int HASSTATE_FEATURE_COUNT = 6;
 
         // IDs for classifier InitialState
         static const int INITIALSTATE = 10;
-
         static const int INITIALSTATE__ATTRIBUTE = 0;
-
         static const int INITIALSTATE__ANNOTATION = 1;
-
         static const int INITIALSTATE__STEREOTYPE = 2;
-
         static const int INITIALSTATE__TAGGEDVALUE = 3;
-
         static const int INITIALSTATE__NAME = 4;
-
         static const int INITIALSTATE__SOURCE = 5;
-
         static const int INITIALSTATE__EVENTRELATION = 6;
-
         static const int INITIALSTATE__ABSTRACTION = 7;
-
         static const int INITIALSTATE__IMPLEMENTATION = 8;
-
         static const int INITIALSTATE__EVENTELEMENT = 9;
-
         static const int INITIALSTATE_FEATURE_COUNT = 10;
 
         // IDs for classifier NextState
         static const int NEXTSTATE = 11;
-
         static const int NEXTSTATE__ATTRIBUTE = 0;
-
         static const int NEXTSTATE__ANNOTATION = 1;
-
         static const int NEXTSTATE__STEREOTYPE = 2;
-
         static const int NEXTSTATE__TAGGEDVALUE = 3;
-
         static const int NEXTSTATE__TO = 4;
-
         static const int NEXTSTATE__FROM = 5;
-
         static const int NEXTSTATE_FEATURE_COUNT = 6;
 
         // IDs for classifier OnEntry
         static const int ONENTRY = 12;
-
         static const int ONENTRY__ATTRIBUTE = 0;
-
         static const int ONENTRY__ANNOTATION = 1;
-
         static const int ONENTRY__STEREOTYPE = 2;
-
         static const int ONENTRY__TAGGEDVALUE = 3;
-
         static const int ONENTRY__NAME = 4;
-
         static const int ONENTRY__SOURCE = 5;
-
         static const int ONENTRY__EVENTRELATION = 6;
-
         static const int ONENTRY__ABSTRACTION = 7;
-
         static const int ONENTRY__IMPLEMENTATION = 8;
-
         static const int ONENTRY__EVENTELEMENT = 9;
-
         static const int ONENTRY_FEATURE_COUNT = 10;
 
         // IDs for classifier OnExit
         static const int ONEXIT = 13;
-
         static const int ONEXIT__ATTRIBUTE = 0;
-
         static const int ONEXIT__ANNOTATION = 1;
-
         static const int ONEXIT__STEREOTYPE = 2;
-
         static const int ONEXIT__TAGGEDVALUE = 3;
-
         static const int ONEXIT__NAME = 4;
-
         static const int ONEXIT__SOURCE = 5;
-
         static const int ONEXIT__EVENTRELATION = 6;
-
         static const int ONEXIT__ABSTRACTION = 7;
-
         static const int ONEXIT__IMPLEMENTATION = 8;
-
         static const int ONEXIT__EVENTELEMENT = 9;
-
         static const int ONEXIT_FEATURE_COUNT = 10;
 
         // IDs for classifier ProducesEvent
         static const int PRODUCESEVENT = 14;
-
         static const int PRODUCESEVENT__ATTRIBUTE = 0;
-
         static const int PRODUCESEVENT__ANNOTATION = 1;
-
         static const int PRODUCESEVENT__STEREOTYPE = 2;
-
         static const int PRODUCESEVENT__TAGGEDVALUE = 3;
-
         static const int PRODUCESEVENT__TO = 4;
-
         static const int PRODUCESEVENT__FROM = 5;
-
         static const int PRODUCESEVENT_FEATURE_COUNT = 6;
 
         // IDs for classifier ReadsState
         static const int READSSTATE = 15;
-
         static const int READSSTATE__ATTRIBUTE = 0;
-
         static const int READSSTATE__ANNOTATION = 1;
-
         static const int READSSTATE__STEREOTYPE = 2;
-
         static const int READSSTATE__TAGGEDVALUE = 3;
-
         static const int READSSTATE__TO = 4;
-
         static const int READSSTATE__FROM = 5;
-
         static const int READSSTATE_FEATURE_COUNT = 6;
 
         // IDs for classifier State
         static const int STATE = 16;
-
         static const int STATE__ATTRIBUTE = 0;
-
         static const int STATE__ANNOTATION = 1;
-
         static const int STATE__STEREOTYPE = 2;
-
         static const int STATE__TAGGEDVALUE = 3;
-
         static const int STATE__NAME = 4;
-
         static const int STATE__SOURCE = 5;
-
         static const int STATE__EVENTRELATION = 6;
-
         static const int STATE__ABSTRACTION = 7;
-
         static const int STATE__IMPLEMENTATION = 8;
-
         static const int STATE__EVENTELEMENT = 9;
-
         static const int STATE_FEATURE_COUNT = 10;
 
         // IDs for classifier Transition
         static const int TRANSITION = 17;
-
         static const int TRANSITION__ATTRIBUTE = 0;
-
         static const int TRANSITION__ANNOTATION = 1;
-
         static const int TRANSITION__STEREOTYPE = 2;
-
         static const int TRANSITION__TAGGEDVALUE = 3;
-
         static const int TRANSITION__NAME = 4;
-
         static const int TRANSITION__SOURCE = 5;
-
         static const int TRANSITION__EVENTRELATION = 6;
-
         static const int TRANSITION__ABSTRACTION = 7;
-
         static const int TRANSITION__IMPLEMENTATION = 8;
-
         static const int TRANSITION__EVENTELEMENT = 9;
-
         static const int TRANSITION_FEATURE_COUNT = 10;
 
         // EClassifiers methods
@@ -515,47 +350,24 @@ namespace kdm
         EventPackage();
         void _initPackage();
 
-        // EClass instances 
-
-        ::ecore::EClass_ptr m_EventModelEClass;
-
         ::ecore::EClass_ptr m_AbstractEventElementEClass;
-
-        ::ecore::EClass_ptr m_EventEClass;
-
         ::ecore::EClass_ptr m_AbstractEventRelationshipEClass;
-
-        ::ecore::EClass_ptr m_EventRelationshipEClass;
-
-        ::ecore::EClass_ptr m_EventResourceEClass;
-
-        ::ecore::EClass_ptr m_StateEClass;
-
-        ::ecore::EClass_ptr m_TransitionEClass;
-
-        ::ecore::EClass_ptr m_OnEntryEClass;
-
-        ::ecore::EClass_ptr m_OnExitEClass;
-
-        ::ecore::EClass_ptr m_EventActionEClass;
-
-        ::ecore::EClass_ptr m_ReadsStateEClass;
-
-        ::ecore::EClass_ptr m_ProducesEventEClass;
-
         ::ecore::EClass_ptr m_ConsumesEventEClass;
-
-        ::ecore::EClass_ptr m_NextStateEClass;
-
-        ::ecore::EClass_ptr m_InitialStateEClass;
-
+        ::ecore::EClass_ptr m_EventEClass;
+        ::ecore::EClass_ptr m_EventActionEClass;
         ::ecore::EClass_ptr m_EventElementEClass;
-
+        ::ecore::EClass_ptr m_EventModelEClass;
+        ::ecore::EClass_ptr m_EventRelationshipEClass;
+        ::ecore::EClass_ptr m_EventResourceEClass;
         ::ecore::EClass_ptr m_HasStateEClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
+        ::ecore::EClass_ptr m_InitialStateEClass;
+        ::ecore::EClass_ptr m_NextStateEClass;
+        ::ecore::EClass_ptr m_OnEntryEClass;
+        ::ecore::EClass_ptr m_OnExitEClass;
+        ::ecore::EClass_ptr m_ProducesEventEClass;
+        ::ecore::EClass_ptr m_ReadsStateEClass;
+        ::ecore::EClass_ptr m_StateEClass;
+        ::ecore::EClass_ptr m_TransitionEClass;
 
         // EStructuralFeatures instances
 

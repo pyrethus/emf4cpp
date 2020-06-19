@@ -43,48 +43,28 @@ public:
 
     // IDs for classifier Derived01
     static const int DERIVED01 = 0;
-
     static const int DERIVED01__VALBASE01 = 0;
-
     static const int DERIVED01__DERIVED02REF = 1;
-
     static const int DERIVED01__VALBASE10 = 2;
-
     static const int DERIVED01__VALBASE02 = 3;
-
     static const int DERIVED01__VALBASE03 = 4;
-
     static const int DERIVED01__VALBASE11 = 5;
-
     static const int DERIVED01__VALBASE20 = 6;
-
     static const int DERIVED01__VALDERIVED01 = 7;
-
     static const int DERIVED01_FEATURE_COUNT = 8;
 
     // IDs for classifier Derived02
     static const int DERIVED02 = 1;
-
     static const int DERIVED02__VALBASE01 = 0;
-
     static const int DERIVED02__DERIVED02REF = 1;
-
     static const int DERIVED02__VALBASE10 = 2;
-
     static const int DERIVED02__VALBASE02 = 3;
-
     static const int DERIVED02__VALBASE03 = 4;
-
     static const int DERIVED02__VALBASE11 = 5;
-
     static const int DERIVED02__VALBASE20 = 6;
-
     static const int DERIVED02__VALDERIVED01 = 7;
-
     static const int DERIVED02__VALDERIVED02 = 8;
-
     static const int DERIVED02__BASE01REF = 9;
-
     static const int DERIVED02_FEATURE_COUNT = 10;
 
     // EClassifiers methods
@@ -108,15 +88,8 @@ protected:
     DerivedPackage();
     void _initPackage();
 
-    // EClass instances 
-
     ::ecore::EClass_ptr m_Derived01EClass;
-
     ::ecore::EClass_ptr m_Derived02EClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
 
     // EStructuralFeatures instances
 

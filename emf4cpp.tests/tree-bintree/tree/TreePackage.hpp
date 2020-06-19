@@ -39,31 +39,21 @@ public:
 
     // IDs for classifier Leaf
     static const int LEAF = 0;
-
     static const int LEAF__DATA = 0;
-
     static const int LEAF__PARENT = 1;
-
     static const int LEAF_FEATURE_COUNT = 2;
 
     // IDs for classifier NonTerminal
     static const int NONTERMINAL = 1;
-
     static const int NONTERMINAL__DATA = 0;
-
     static const int NONTERMINAL__PARENT = 1;
-
     static const int NONTERMINAL__CHILDREN = 2;
-
     static const int NONTERMINAL_FEATURE_COUNT = 3;
 
     // IDs for classifier TreeNode
     static const int TREENODE = 2;
-
     static const int TREENODE__DATA = 0;
-
     static const int TREENODE__PARENT = 1;
-
     static const int TREENODE_FEATURE_COUNT = 2;
 
     // EClassifiers methods
@@ -89,17 +79,9 @@ protected:
     TreePackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_TreeNodeEClass;
-
     ::ecore::EClass_ptr m_LeafEClass;
-
     ::ecore::EClass_ptr m_NonTerminalEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_TreeNodeEClass;
 
     // EStructuralFeatures instances
 

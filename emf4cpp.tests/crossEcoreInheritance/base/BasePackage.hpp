@@ -39,25 +39,18 @@ public:
 
     // IDs for classifier Base01
     static const int BASE01 = 0;
-
     static const int BASE01__VALBASE01 = 0;
-
     static const int BASE01__DERIVED02REF = 1;
-
     static const int BASE01_FEATURE_COUNT = 2;
 
     // IDs for classifier Base02
     static const int BASE02 = 1;
-
     static const int BASE02__VALBASE02 = 0;
-
     static const int BASE02_FEATURE_COUNT = 1;
 
     // IDs for classifier Base03
     static const int BASE03 = 2;
-
     static const int BASE03__VALBASE03 = 0;
-
     static const int BASE03_FEATURE_COUNT = 1;
 
     // EClassifiers methods
@@ -85,17 +78,9 @@ protected:
     BasePackage();
     void _initPackage();
 
-    // EClass instances 
-
     ::ecore::EClass_ptr m_Base01EClass;
-
     ::ecore::EClass_ptr m_Base02EClass;
-
     ::ecore::EClass_ptr m_Base03EClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
 
     // EStructuralFeatures instances
 

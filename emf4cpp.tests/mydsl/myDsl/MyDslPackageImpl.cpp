@@ -38,162 +38,427 @@ using namespace ::myDsl;
 
 MyDslPackage::MyDslPackage()
 {
-
-    // Feature definitions of Model
-    m_Model__imports = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Model__elements = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Import
-    m_Import__importURI = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of Type
-    m_Type__name = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of SimpleType
-
-    // Feature definitions of Entity
-    m_Entity__extends = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Entity__properties = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Property
-    m_Property__name = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_Property__many = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_Property__type = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_Entity__extends = ::ecore::make< ::ecore::EReference >();
+    m_Entity__properties = ::ecore::make< ::ecore::EReference >();
+    m_EntityEClass = ::ecore::make< ::ecore::EClass >();
+    m_Import__importURI = ::ecore::make< ::ecore::EAttribute >();
+    m_ImportEClass = ::ecore::make< ::ecore::EClass >();
+    m_Model__imports = ::ecore::make< ::ecore::EReference >();
+    m_Model__elements = ::ecore::make< ::ecore::EReference >();
+    m_ModelEClass = ::ecore::make< ::ecore::EClass >();
+    m_Property__name = ::ecore::make< ::ecore::EAttribute >();
+    m_Property__type = ::ecore::make< ::ecore::EReference >();
+    m_Property__many = ::ecore::make< ::ecore::EAttribute >();
+    m_PropertyEClass = ::ecore::make< ::ecore::EClass >();
+    m_SimpleTypeEClass = ::ecore::make< ::ecore::EClass >();
+    m_Type__name = ::ecore::make< ::ecore::EAttribute >();
+    m_TypeEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void MyDslPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = MyDslFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = MyDslFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // Model
-        m_ModelEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_ModelEClass->setClassifierID(MODEL);
-        m_ModelEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ModelEClass);
-        // m_Model__imports has already been allocated above
-        m_Model__imports->setFeatureID(::myDsl::MyDslPackage::MODEL__IMPORTS);
-        m_Model__imports->setName("imports");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelEClass->getEStructuralFeatures()).basicAdd(
-                m_Model__imports);
-        m_Model__imports->basicsetEContainingClass(m_ModelEClass);
-        // m_Model__elements has already been allocated above
-        m_Model__elements->setFeatureID(::myDsl::MyDslPackage::MODEL__ELEMENTS);
-        m_Model__elements->setName("elements");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelEClass->getEStructuralFeatures()).basicAdd(
-                m_Model__elements);
-        m_Model__elements->basicsetEContainingClass(m_ModelEClass);
-    }
+    [this]()
+    { // Feature extends of class Entity
+        auto &&feature = m_Entity__extends;
 
-    { // Import
-        m_ImportEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_ImportEClass->setClassifierID(IMPORT);
-        m_ImportEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ImportEClass);
-        // m_Import__importURI has already been allocated above
-        m_Import__importURI->setFeatureID(
-                ::myDsl::MyDslPackage::IMPORT__IMPORTURI);
-        m_Import__importURI->setName("importURI");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportEClass->getEStructuralFeatures()).basicAdd(
-                m_Import__importURI);
-        m_Import__importURI->basicsetEContainingClass(m_ImportEClass);
-    }
+        // ENamedElement
+        feature->setName("extends");
 
-    { // Type
-        m_TypeEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_TypeEClass->setClassifierID(TYPE);
-        m_TypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TypeEClass);
-        // m_Type__name has already been allocated above
-        m_Type__name->setFeatureID(::myDsl::MyDslPackage::TYPE__NAME);
-        m_Type__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypeEClass->getEStructuralFeatures()).basicAdd(
-                m_Type__name);
-        m_Type__name->basicsetEContainingClass(m_TypeEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    { // SimpleType
-        m_SimpleTypeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_SimpleTypeEClass->setClassifierID(SIMPLETYPE);
-        m_SimpleTypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_SimpleTypeEClass);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EntityEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // Entity
-        m_EntityEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_EntityEClass->setClassifierID(ENTITY);
-        m_EntityEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EntityEClass);
-        // m_Entity__extends has already been allocated above
-        m_Entity__extends->setFeatureID(::myDsl::MyDslPackage::ENTITY__EXTENDS);
-        m_Entity__extends->setName("extends");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntityEClass->getEStructuralFeatures()).basicAdd(
-                m_Entity__extends);
-        m_Entity__extends->basicsetEContainingClass(m_EntityEClass);
-        // m_Entity__properties has already been allocated above
-        m_Entity__properties->setFeatureID(
-                ::myDsl::MyDslPackage::ENTITY__PROPERTIES);
-        m_Entity__properties->setName("properties");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntityEClass->getEStructuralFeatures()).basicAdd(
-                m_Entity__properties);
-        m_Entity__properties->basicsetEContainingClass(m_EntityEClass);
-    }
+        feature->setFeatureID(::myDsl::MyDslPackage::ENTITY__EXTENDS);
+        feature->basicsetEContainingClass(m_EntityEClass);
 
-    { // Property
-        m_PropertyEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_PropertyEClass->setClassifierID(PROPERTY);
-        m_PropertyEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_PropertyEClass);
-        // m_Property__name has already been allocated above
-        m_Property__name->setFeatureID(::myDsl::MyDslPackage::PROPERTY__NAME);
-        m_Property__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures()).basicAdd(
-                m_Property__name);
-        m_Property__name->basicsetEContainingClass(m_PropertyEClass);
-        // m_Property__type has already been allocated above
-        m_Property__type->setFeatureID(::myDsl::MyDslPackage::PROPERTY__TYPE);
-        m_Property__type->setName("type");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures()).basicAdd(
-                m_Property__type);
-        m_Property__type->basicsetEContainingClass(m_PropertyEClass);
-        // m_Property__many has already been allocated above
-        m_Property__many->setFeatureID(::myDsl::MyDslPackage::PROPERTY__MANY);
-        m_Property__many->setName("many");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures()).basicAdd(
-                m_Property__many);
-        m_Property__many->basicsetEContainingClass(m_PropertyEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    // Create enums
+    [this]()
+    { // Feature properties of class Entity
+        auto &&feature = m_Entity__properties;
 
-    // Create data types
+        // ENamedElement
+        feature->setName("properties");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_PropertyEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::myDsl::MyDslPackage::ENTITY__PROPERTIES);
+        feature->basicsetEContainingClass(m_EntityEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Entity
+        auto &&classifier = m_EntityEClass;
+
+        // ENamedElement
+        classifier->setName("Entity");
+
+        // EClassifier
+        classifier->setClassifierID(ENTITY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EntityEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Entity__extends);
+            eStructuralFeatures.basicAdd(m_Entity__properties);
+        }
+    }();
+
+    [this]()
+    { // Feature importURI of class Import
+        auto &&feature = m_Import__importURI;
+
+        // ENamedElement
+        feature->setName("importURI");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::myDsl::MyDslPackage::IMPORT__IMPORTURI);
+        feature->basicsetEContainingClass(m_ImportEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Import
+        auto &&classifier = m_ImportEClass;
+
+        // ENamedElement
+        classifier->setName("Import");
+
+        // EClassifier
+        classifier->setClassifierID(IMPORT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Import__importURI);
+        }
+    }();
+
+    [this]()
+    { // Feature imports of class Model
+        auto &&feature = m_Model__imports;
+
+        // ENamedElement
+        feature->setName("imports");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ImportEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::myDsl::MyDslPackage::MODEL__IMPORTS);
+        feature->basicsetEContainingClass(m_ModelEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature elements of class Model
+        auto &&feature = m_Model__elements;
+
+        // ENamedElement
+        feature->setName("elements");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_TypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::myDsl::MyDslPackage::MODEL__ELEMENTS);
+        feature->basicsetEContainingClass(m_ModelEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Model
+        auto &&classifier = m_ModelEClass;
+
+        // ENamedElement
+        classifier->setName("Model");
+
+        // EClassifier
+        classifier->setClassifierID(MODEL);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Model__imports);
+            eStructuralFeatures.basicAdd(m_Model__elements);
+        }
+    }();
+
+    [this]()
+    { // Feature name of class Property
+        auto &&feature = m_Property__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::myDsl::MyDslPackage::PROPERTY__NAME);
+        feature->basicsetEContainingClass(m_PropertyEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature type of class Property
+        auto &&feature = m_Property__type;
+
+        // ENamedElement
+        feature->setName("type");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_TypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::myDsl::MyDslPackage::PROPERTY__TYPE);
+        feature->basicsetEContainingClass(m_PropertyEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature many of class Property
+        auto &&feature = m_Property__many;
+
+        // ENamedElement
+        feature->setName("many");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::myDsl::MyDslPackage::PROPERTY__MANY);
+        feature->basicsetEContainingClass(m_PropertyEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Property
+        auto &&classifier = m_PropertyEClass;
+
+        // ENamedElement
+        classifier->setName("Property");
+
+        // EClassifier
+        classifier->setClassifierID(PROPERTY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_PropertyEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Property__name);
+            eStructuralFeatures.basicAdd(m_Property__type);
+            eStructuralFeatures.basicAdd(m_Property__many);
+        }
+    }();
+
+    [this]()
+    { // Classifier SimpleType
+        auto &&classifier = m_SimpleTypeEClass;
+
+        // ENamedElement
+        classifier->setName("SimpleType");
+
+        // EClassifier
+        classifier->setClassifierID(SIMPLETYPE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature name of class Type
+        auto &&feature = m_Type__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::myDsl::MyDslPackage::TYPE__NAME);
+        feature->basicsetEContainingClass(m_TypeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Type
+        auto &&classifier = m_TypeEClass;
+
+        // ENamedElement
+        classifier->setName("Type");
+
+        // EClassifier
+        classifier->setClassifierID(TYPE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TypeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Type__name);
+        }
+    }();
 
     // Initialize package
     setName("myDsl");
@@ -203,172 +468,22 @@ void MyDslPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_SimpleTypeEClass->getESuperTypes().push_back(m_TypeEClass);
-    m_EntityEClass->getESuperTypes().push_back(m_TypeEClass);
+    [this]()
+    {
+        m_SimpleTypeEClass->getESuperTypes().push_back(m_TypeEClass);
+        m_EntityEClass->getESuperTypes().push_back(m_TypeEClass);
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // Model
-        m_ModelEClass->setName("Model");
-        m_ModelEClass->setAbstract(false);
-        m_ModelEClass->setInterface(false);
-
-        m_Model__imports->setEType(m_ImportEClass);
-        m_Model__imports->setDefaultValueLiteral("");
-        m_Model__imports->setLowerBound(0);
-        m_Model__imports->setUpperBound(-1);
-        m_Model__imports->setTransient(false);
-        m_Model__imports->setVolatile(false);
-        m_Model__imports->setChangeable(true);
-        m_Model__imports->setContainment(true);
-        m_Model__imports->setResolveProxies(true);
-        m_Model__imports->setUnique(true);
-        m_Model__imports->setDerived(false);
-        m_Model__imports->setOrdered(true);
-        m_Model__elements->setEType(m_TypeEClass);
-        m_Model__elements->setDefaultValueLiteral("");
-        m_Model__elements->setLowerBound(0);
-        m_Model__elements->setUpperBound(-1);
-        m_Model__elements->setTransient(false);
-        m_Model__elements->setVolatile(false);
-        m_Model__elements->setChangeable(true);
-        m_Model__elements->setContainment(true);
-        m_Model__elements->setResolveProxies(true);
-        m_Model__elements->setUnique(true);
-        m_Model__elements->setDerived(false);
-        m_Model__elements->setOrdered(true);
-
-    }
-
-    { // Import
-        m_ImportEClass->setName("Import");
-        m_ImportEClass->setAbstract(false);
-        m_ImportEClass->setInterface(false);
-        m_Import__importURI->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Import__importURI->setDefaultValueLiteral("");
-        m_Import__importURI->setLowerBound(0);
-        m_Import__importURI->setUpperBound(1);
-        m_Import__importURI->setTransient(false);
-        m_Import__importURI->setVolatile(false);
-        m_Import__importURI->setChangeable(true);
-        m_Import__importURI->setUnsettable(false);
-        m_Import__importURI->setID(false);
-        m_Import__importURI->setUnique(true);
-        m_Import__importURI->setDerived(false);
-        m_Import__importURI->setOrdered(true);
-
-    }
-
-    { // Type
-        m_TypeEClass->setName("Type");
-        m_TypeEClass->setAbstract(false);
-        m_TypeEClass->setInterface(false);
-        m_Type__name->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Type__name->setDefaultValueLiteral("");
-        m_Type__name->setLowerBound(0);
-        m_Type__name->setUpperBound(1);
-        m_Type__name->setTransient(false);
-        m_Type__name->setVolatile(false);
-        m_Type__name->setChangeable(true);
-        m_Type__name->setUnsettable(false);
-        m_Type__name->setID(false);
-        m_Type__name->setUnique(true);
-        m_Type__name->setDerived(false);
-        m_Type__name->setOrdered(true);
-
-    }
-
-    { // SimpleType
-        m_SimpleTypeEClass->setName("SimpleType");
-        m_SimpleTypeEClass->setAbstract(false);
-        m_SimpleTypeEClass->setInterface(false);
-
-    }
-
-    { // Entity
-        m_EntityEClass->setName("Entity");
-        m_EntityEClass->setAbstract(false);
-        m_EntityEClass->setInterface(false);
-
-        m_Entity__extends->setEType(m_EntityEClass);
-        m_Entity__extends->setDefaultValueLiteral("");
-        m_Entity__extends->setLowerBound(0);
-        m_Entity__extends->setUpperBound(1);
-        m_Entity__extends->setTransient(false);
-        m_Entity__extends->setVolatile(false);
-        m_Entity__extends->setChangeable(true);
-        m_Entity__extends->setContainment(false);
-        m_Entity__extends->setResolveProxies(true);
-        m_Entity__extends->setUnique(true);
-        m_Entity__extends->setDerived(false);
-        m_Entity__extends->setOrdered(true);
-        m_Entity__properties->setEType(m_PropertyEClass);
-        m_Entity__properties->setDefaultValueLiteral("");
-        m_Entity__properties->setLowerBound(0);
-        m_Entity__properties->setUpperBound(-1);
-        m_Entity__properties->setTransient(false);
-        m_Entity__properties->setVolatile(false);
-        m_Entity__properties->setChangeable(true);
-        m_Entity__properties->setContainment(true);
-        m_Entity__properties->setResolveProxies(true);
-        m_Entity__properties->setUnique(true);
-        m_Entity__properties->setDerived(false);
-        m_Entity__properties->setOrdered(true);
-
-    }
-
-    { // Property
-        m_PropertyEClass->setName("Property");
-        m_PropertyEClass->setAbstract(false);
-        m_PropertyEClass->setInterface(false);
-        m_Property__name->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Property__name->setDefaultValueLiteral("");
-        m_Property__name->setLowerBound(0);
-        m_Property__name->setUpperBound(1);
-        m_Property__name->setTransient(false);
-        m_Property__name->setVolatile(false);
-        m_Property__name->setChangeable(true);
-        m_Property__name->setUnsettable(false);
-        m_Property__name->setID(false);
-        m_Property__name->setUnique(true);
-        m_Property__name->setDerived(false);
-        m_Property__name->setOrdered(true);
-        m_Property__many->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_Property__many->setDefaultValueLiteral("");
-        m_Property__many->setLowerBound(0);
-        m_Property__many->setUpperBound(1);
-        m_Property__many->setTransient(false);
-        m_Property__many->setVolatile(false);
-        m_Property__many->setChangeable(true);
-        m_Property__many->setUnsettable(false);
-        m_Property__many->setID(false);
-        m_Property__many->setUnique(true);
-        m_Property__many->setDerived(false);
-        m_Property__many->setOrdered(true);
-
-        m_Property__type->setEType(m_TypeEClass);
-        m_Property__type->setDefaultValueLiteral("");
-        m_Property__type->setLowerBound(0);
-        m_Property__type->setUpperBound(1);
-        m_Property__type->setTransient(false);
-        m_Property__type->setVolatile(false);
-        m_Property__type->setChangeable(true);
-        m_Property__type->setContainment(false);
-        m_Property__type->setResolveProxies(true);
-        m_Property__type->setUnique(true);
-        m_Property__type->setDerived(false);
-        m_Property__type->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_EntityEClass);
+        classifiers.push_back(m_ImportEClass);
+        classifiers.push_back(m_ModelEClass);
+        classifiers.push_back(m_PropertyEClass);
+        classifiers.push_back(m_SimpleTypeEClass);
+        classifiers.push_back(m_TypeEClass);
+    }();
 
     _initialize();
 }

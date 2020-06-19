@@ -37,42 +37,47 @@ using namespace ::kdm;
 
 KdmPackage::KdmPackage()
 {
-
 }
 
 void KdmPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = KdmFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = KdmFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
+    // Create classes and their features
 
-    getESubpackages().push_back(
-            ::kdm::action::ActionPackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::build::BuildPackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::code::CodePackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::conceptual::ConceptualPackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::core::CorePackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::data::DataPackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::event::EventPackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::source::SourcePackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::platform::PlatformPackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::structure::StructurePackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::kdm::KdmPackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::kdm::ui::UiPackage::_getInstanceAndRemoveOwnership());
+    [this]()
+    { // Subpackages of this package
+        auto &&eSubpackages = getESubpackages();
+        eSubpackages.push_back(
+                ::kdm::action::ActionPackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::build::BuildPackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::code::CodePackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::conceptual::ConceptualPackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::core::CorePackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::data::DataPackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::event::EventPackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::source::SourcePackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::platform::PlatformPackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::structure::StructurePackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::kdm::KdmPackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::kdm::ui::UiPackage::_getInstanceAndRemoveOwnership());
+    }();
 
     // Initialize package
     setName("kdm");
@@ -82,14 +87,9 @@ void KdmPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    {
+    }();
 
     _initialize();
 }

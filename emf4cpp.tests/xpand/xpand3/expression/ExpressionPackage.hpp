@@ -43,389 +43,230 @@ namespace xpand3
 
         // IDs for classifier AbstractExpression
         static const int ABSTRACTEXPRESSION = 0;
-
         static const int ABSTRACTEXPRESSION__LINE = 0;
-
         static const int ABSTRACTEXPRESSION__START = 1;
-
         static const int ABSTRACTEXPRESSION__END = 2;
-
         static const int ABSTRACTEXPRESSION__FILENAME = 3;
-
         static const int ABSTRACTEXPRESSION_FEATURE_COUNT = 4;
 
         // IDs for classifier BinaryOperation
         static const int BINARYOPERATION = 1;
-
         static const int BINARYOPERATION__LINE = 0;
-
         static const int BINARYOPERATION__START = 1;
-
         static const int BINARYOPERATION__END = 2;
-
         static const int BINARYOPERATION__FILENAME = 3;
-
         static const int BINARYOPERATION__LEFT = 4;
-
         static const int BINARYOPERATION__RIGHT = 5;
-
         static const int BINARYOPERATION__OPERATOR = 6;
-
         static const int BINARYOPERATION_FEATURE_COUNT = 7;
 
         // IDs for classifier BooleanLiteral
         static const int BOOLEANLITERAL = 2;
-
         static const int BOOLEANLITERAL__LINE = 0;
-
         static const int BOOLEANLITERAL__START = 1;
-
         static const int BOOLEANLITERAL__END = 2;
-
         static const int BOOLEANLITERAL__FILENAME = 3;
-
         static const int BOOLEANLITERAL__LITERALVALUE = 4;
-
         static const int BOOLEANLITERAL_FEATURE_COUNT = 5;
 
         // IDs for classifier BooleanOperation
         static const int BOOLEANOPERATION = 3;
-
         static const int BOOLEANOPERATION__LINE = 0;
-
         static const int BOOLEANOPERATION__START = 1;
-
         static const int BOOLEANOPERATION__END = 2;
-
         static const int BOOLEANOPERATION__FILENAME = 3;
-
         static const int BOOLEANOPERATION__LEFT = 4;
-
         static const int BOOLEANOPERATION__RIGHT = 5;
-
         static const int BOOLEANOPERATION__OPERATOR = 6;
-
         static const int BOOLEANOPERATION_FEATURE_COUNT = 7;
 
         // IDs for classifier Case
         static const int CASE = 4;
-
         static const int CASE__LINE = 0;
-
         static const int CASE__START = 1;
-
         static const int CASE__END = 2;
-
         static const int CASE__FILENAME = 3;
-
         static const int CASE__CONDITION = 4;
-
         static const int CASE__THENPART = 5;
-
         static const int CASE_FEATURE_COUNT = 6;
 
         // IDs for classifier Cast
         static const int CAST = 5;
-
         static const int CAST__LINE = 0;
-
         static const int CAST__START = 1;
-
         static const int CAST__END = 2;
-
         static const int CAST__FILENAME = 3;
-
         static const int CAST__TYPE = 4;
-
         static const int CAST__TARGET = 5;
-
         static const int CAST_FEATURE_COUNT = 6;
 
         // IDs for classifier ChainExpression
         static const int CHAINEXPRESSION = 6;
-
         static const int CHAINEXPRESSION__LINE = 0;
-
         static const int CHAINEXPRESSION__START = 1;
-
         static const int CHAINEXPRESSION__END = 2;
-
         static const int CHAINEXPRESSION__FILENAME = 3;
-
         static const int CHAINEXPRESSION__FIRST = 4;
-
         static const int CHAINEXPRESSION__NEXT = 5;
-
         static const int CHAINEXPRESSION_FEATURE_COUNT = 6;
 
         // IDs for classifier CollectionExpression
         static const int COLLECTIONEXPRESSION = 7;
-
         static const int COLLECTIONEXPRESSION__LINE = 0;
-
         static const int COLLECTIONEXPRESSION__START = 1;
-
         static const int COLLECTIONEXPRESSION__END = 2;
-
         static const int COLLECTIONEXPRESSION__FILENAME = 3;
-
         static const int COLLECTIONEXPRESSION__TARGET = 4;
-
         static const int COLLECTIONEXPRESSION__NAME = 5;
-
         static const int COLLECTIONEXPRESSION__CLOSURE = 6;
-
         static const int COLLECTIONEXPRESSION__ELENAME = 7;
-
         static const int COLLECTIONEXPRESSION_FEATURE_COUNT = 8;
 
         // IDs for classifier ConstructorCallExpression
         static const int CONSTRUCTORCALLEXPRESSION = 8;
-
         static const int CONSTRUCTORCALLEXPRESSION__LINE = 0;
-
         static const int CONSTRUCTORCALLEXPRESSION__START = 1;
-
         static const int CONSTRUCTORCALLEXPRESSION__END = 2;
-
         static const int CONSTRUCTORCALLEXPRESSION__FILENAME = 3;
-
         static const int CONSTRUCTORCALLEXPRESSION__TYPE = 4;
-
         static const int CONSTRUCTORCALLEXPRESSION_FEATURE_COUNT = 5;
 
         // IDs for classifier FeatureCall
         static const int FEATURECALL = 9;
-
         static const int FEATURECALL__LINE = 0;
-
         static const int FEATURECALL__START = 1;
-
         static const int FEATURECALL__END = 2;
-
         static const int FEATURECALL__FILENAME = 3;
-
         static const int FEATURECALL__TARGET = 4;
-
         static const int FEATURECALL__NAME = 5;
-
         static const int FEATURECALL_FEATURE_COUNT = 6;
 
         // IDs for classifier GlobalVarExpression
         static const int GLOBALVAREXPRESSION = 10;
-
         static const int GLOBALVAREXPRESSION__LINE = 0;
-
         static const int GLOBALVAREXPRESSION__START = 1;
-
         static const int GLOBALVAREXPRESSION__END = 2;
-
         static const int GLOBALVAREXPRESSION__FILENAME = 3;
-
         static const int GLOBALVAREXPRESSION__GLOBALVARNAME = 4;
-
         static const int GLOBALVAREXPRESSION_FEATURE_COUNT = 5;
 
         // IDs for classifier IfExpression
         static const int IFEXPRESSION = 11;
-
         static const int IFEXPRESSION__LINE = 0;
-
         static const int IFEXPRESSION__START = 1;
-
         static const int IFEXPRESSION__END = 2;
-
         static const int IFEXPRESSION__FILENAME = 3;
-
         static const int IFEXPRESSION__CONDITION = 4;
-
         static const int IFEXPRESSION__THENPART = 5;
-
         static const int IFEXPRESSION__ELSEPART = 6;
-
         static const int IFEXPRESSION_FEATURE_COUNT = 7;
 
         // IDs for classifier IntegerLiteral
         static const int INTEGERLITERAL = 12;
-
         static const int INTEGERLITERAL__LINE = 0;
-
         static const int INTEGERLITERAL__START = 1;
-
         static const int INTEGERLITERAL__END = 2;
-
         static const int INTEGERLITERAL__FILENAME = 3;
-
         static const int INTEGERLITERAL__LITERALVALUE = 4;
-
         static const int INTEGERLITERAL_FEATURE_COUNT = 5;
 
         // IDs for classifier LetExpression
         static const int LETEXPRESSION = 13;
-
         static const int LETEXPRESSION__LINE = 0;
-
         static const int LETEXPRESSION__START = 1;
-
         static const int LETEXPRESSION__END = 2;
-
         static const int LETEXPRESSION__FILENAME = 3;
-
         static const int LETEXPRESSION__VAREXPRESSION = 4;
-
         static const int LETEXPRESSION__TARGETEXPRESSION = 5;
-
         static const int LETEXPRESSION__VARNAME = 6;
-
         static const int LETEXPRESSION_FEATURE_COUNT = 7;
 
         // IDs for classifier ListLiteral
         static const int LISTLITERAL = 14;
-
         static const int LISTLITERAL__LINE = 0;
-
         static const int LISTLITERAL__START = 1;
-
         static const int LISTLITERAL__END = 2;
-
         static const int LISTLITERAL__FILENAME = 3;
-
         static const int LISTLITERAL__ELEMENTS = 4;
-
         static const int LISTLITERAL_FEATURE_COUNT = 5;
 
         // IDs for classifier Literal
         static const int LITERAL = 15;
-
         static const int LITERAL__LINE = 0;
-
         static const int LITERAL__START = 1;
-
         static const int LITERAL__END = 2;
-
         static const int LITERAL__FILENAME = 3;
-
         static const int LITERAL__LITERALVALUE = 4;
-
         static const int LITERAL_FEATURE_COUNT = 5;
 
         // IDs for classifier NullLiteral
         static const int NULLLITERAL = 16;
-
         static const int NULLLITERAL__LINE = 0;
-
         static const int NULLLITERAL__START = 1;
-
         static const int NULLLITERAL__END = 2;
-
         static const int NULLLITERAL__FILENAME = 3;
-
         static const int NULLLITERAL__LITERALVALUE = 4;
-
         static const int NULLLITERAL_FEATURE_COUNT = 5;
 
         // IDs for classifier OperationCall
         static const int OPERATIONCALL = 17;
-
         static const int OPERATIONCALL__LINE = 0;
-
         static const int OPERATIONCALL__START = 1;
-
         static const int OPERATIONCALL__END = 2;
-
         static const int OPERATIONCALL__FILENAME = 3;
-
         static const int OPERATIONCALL__TARGET = 4;
-
         static const int OPERATIONCALL__NAME = 5;
-
         static const int OPERATIONCALL__PARAMS = 6;
-
         static const int OPERATIONCALL_FEATURE_COUNT = 7;
 
         // IDs for classifier RealLiteral
         static const int REALLITERAL = 18;
-
         static const int REALLITERAL__LINE = 0;
-
         static const int REALLITERAL__START = 1;
-
         static const int REALLITERAL__END = 2;
-
         static const int REALLITERAL__FILENAME = 3;
-
         static const int REALLITERAL__LITERALVALUE = 4;
-
         static const int REALLITERAL_FEATURE_COUNT = 5;
 
         // IDs for classifier StringLiteral
         static const int STRINGLITERAL = 19;
-
         static const int STRINGLITERAL__LINE = 0;
-
         static const int STRINGLITERAL__START = 1;
-
         static const int STRINGLITERAL__END = 2;
-
         static const int STRINGLITERAL__FILENAME = 3;
-
         static const int STRINGLITERAL__LITERALVALUE = 4;
-
         static const int STRINGLITERAL_FEATURE_COUNT = 5;
 
         // IDs for classifier SwitchExpression
         static const int SWITCHEXPRESSION = 20;
-
         static const int SWITCHEXPRESSION__LINE = 0;
-
         static const int SWITCHEXPRESSION__START = 1;
-
         static const int SWITCHEXPRESSION__END = 2;
-
         static const int SWITCHEXPRESSION__FILENAME = 3;
-
         static const int SWITCHEXPRESSION__SWITCHEXPR = 4;
-
         static const int SWITCHEXPRESSION__DEFAULTEXPR = 5;
-
         static const int SWITCHEXPRESSION__CASES = 6;
-
         static const int SWITCHEXPRESSION_FEATURE_COUNT = 7;
 
         // IDs for classifier TypeSelectExpression
         static const int TYPESELECTEXPRESSION = 21;
-
         static const int TYPESELECTEXPRESSION__LINE = 0;
-
         static const int TYPESELECTEXPRESSION__START = 1;
-
         static const int TYPESELECTEXPRESSION__END = 2;
-
         static const int TYPESELECTEXPRESSION__FILENAME = 3;
-
         static const int TYPESELECTEXPRESSION__TARGET = 4;
-
         static const int TYPESELECTEXPRESSION__NAME = 5;
-
         static const int TYPESELECTEXPRESSION__TYPELITERAL = 6;
-
         static const int TYPESELECTEXPRESSION_FEATURE_COUNT = 7;
 
         // IDs for classifier UnaryOperation
         static const int UNARYOPERATION = 22;
-
         static const int UNARYOPERATION__LINE = 0;
-
         static const int UNARYOPERATION__START = 1;
-
         static const int UNARYOPERATION__END = 2;
-
         static const int UNARYOPERATION__FILENAME = 3;
-
         static const int UNARYOPERATION__OPERATOR = 4;
-
         static const int UNARYOPERATION__OPERAND = 5;
-
         static const int UNARYOPERATION_FEATURE_COUNT = 6;
 
         // EClassifiers methods
@@ -545,57 +386,29 @@ namespace xpand3
         ExpressionPackage();
         void _initPackage();
 
-        // EClass instances 
-
         ::ecore::EClass_ptr m_AbstractExpressionEClass;
-
-        ::ecore::EClass_ptr m_BooleanOperationEClass;
-
-        ::ecore::EClass_ptr m_CastEClass;
-
-        ::ecore::EClass_ptr m_ChainExpressionEClass;
-
-        ::ecore::EClass_ptr m_ConstructorCallExpressionEClass;
-
-        ::ecore::EClass_ptr m_FeatureCallEClass;
-
-        ::ecore::EClass_ptr m_CollectionExpressionEClass;
-
-        ::ecore::EClass_ptr m_OperationCallEClass;
-
-        ::ecore::EClass_ptr m_TypeSelectExpressionEClass;
-
-        ::ecore::EClass_ptr m_GlobalVarExpressionEClass;
-
-        ::ecore::EClass_ptr m_IfExpressionEClass;
-
-        ::ecore::EClass_ptr m_LetExpressionEClass;
-
-        ::ecore::EClass_ptr m_ListLiteralEClass;
-
-        ::ecore::EClass_ptr m_LiteralEClass;
-
-        ::ecore::EClass_ptr m_BooleanLiteralEClass;
-
-        ::ecore::EClass_ptr m_IntegerLiteralEClass;
-
-        ::ecore::EClass_ptr m_NullLiteralEClass;
-
-        ::ecore::EClass_ptr m_RealLiteralEClass;
-
-        ::ecore::EClass_ptr m_StringLiteralEClass;
-
-        ::ecore::EClass_ptr m_SwitchExpressionEClass;
-
-        ::ecore::EClass_ptr m_CaseEClass;
-
         ::ecore::EClass_ptr m_BinaryOperationEClass;
-
+        ::ecore::EClass_ptr m_BooleanLiteralEClass;
+        ::ecore::EClass_ptr m_BooleanOperationEClass;
+        ::ecore::EClass_ptr m_CaseEClass;
+        ::ecore::EClass_ptr m_CastEClass;
+        ::ecore::EClass_ptr m_ChainExpressionEClass;
+        ::ecore::EClass_ptr m_CollectionExpressionEClass;
+        ::ecore::EClass_ptr m_ConstructorCallExpressionEClass;
+        ::ecore::EClass_ptr m_FeatureCallEClass;
+        ::ecore::EClass_ptr m_GlobalVarExpressionEClass;
+        ::ecore::EClass_ptr m_IfExpressionEClass;
+        ::ecore::EClass_ptr m_IntegerLiteralEClass;
+        ::ecore::EClass_ptr m_LetExpressionEClass;
+        ::ecore::EClass_ptr m_ListLiteralEClass;
+        ::ecore::EClass_ptr m_LiteralEClass;
+        ::ecore::EClass_ptr m_NullLiteralEClass;
+        ::ecore::EClass_ptr m_OperationCallEClass;
+        ::ecore::EClass_ptr m_RealLiteralEClass;
+        ::ecore::EClass_ptr m_StringLiteralEClass;
+        ::ecore::EClass_ptr m_SwitchExpressionEClass;
+        ::ecore::EClass_ptr m_TypeSelectExpressionEClass;
         ::ecore::EClass_ptr m_UnaryOperationEClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
 
         // EStructuralFeatures instances
 

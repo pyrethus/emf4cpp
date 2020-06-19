@@ -43,268 +43,150 @@ namespace xpand3
 
         // IDs for classifier AbstractAspect
         static const int ABSTRACTASPECT = 0;
-
         static const int ABSTRACTASPECT__LINE = 0;
-
         static const int ABSTRACTASPECT__START = 1;
-
         static const int ABSTRACTASPECT__END = 2;
-
         static const int ABSTRACTASPECT__FILENAME = 3;
-
         static const int ABSTRACTASPECT__OWNER = 4;
-
         static const int ABSTRACTASPECT__PARAMS = 5;
-
         static const int ABSTRACTASPECT__ISPRIVATE = 6;
-
         static const int ABSTRACTASPECT__GUARD = 7;
-
         static const int ABSTRACTASPECT__POINTCUT = 8;
-
         static const int ABSTRACTASPECT__WILDPARAMS = 9;
-
         static const int ABSTRACTASPECT_FEATURE_COUNT = 10;
 
         // IDs for classifier AbstractDeclaration
         static const int ABSTRACTDECLARATION = 1;
-
         static const int ABSTRACTDECLARATION__LINE = 0;
-
         static const int ABSTRACTDECLARATION__START = 1;
-
         static const int ABSTRACTDECLARATION__END = 2;
-
         static const int ABSTRACTDECLARATION__FILENAME = 3;
-
         static const int ABSTRACTDECLARATION__OWNER = 4;
-
         static const int ABSTRACTDECLARATION__PARAMS = 5;
-
         static const int ABSTRACTDECLARATION__ISPRIVATE = 6;
-
         static const int ABSTRACTDECLARATION__GUARD = 7;
-
         static const int ABSTRACTDECLARATION_FEATURE_COUNT = 8;
 
         // IDs for classifier AbstractNamedDeclaration
         static const int ABSTRACTNAMEDDECLARATION = 2;
-
         static const int ABSTRACTNAMEDDECLARATION__LINE = 0;
-
         static const int ABSTRACTNAMEDDECLARATION__START = 1;
-
         static const int ABSTRACTNAMEDDECLARATION__END = 2;
-
         static const int ABSTRACTNAMEDDECLARATION__FILENAME = 3;
-
         static const int ABSTRACTNAMEDDECLARATION__OWNER = 4;
-
         static const int ABSTRACTNAMEDDECLARATION__PARAMS = 5;
-
         static const int ABSTRACTNAMEDDECLARATION__ISPRIVATE = 6;
-
         static const int ABSTRACTNAMEDDECLARATION__GUARD = 7;
-
         static const int ABSTRACTNAMEDDECLARATION__NAME = 8;
-
         static const int ABSTRACTNAMEDDECLARATION_FEATURE_COUNT = 9;
 
         // IDs for classifier Check
         static const int CHECK = 3;
-
         static const int CHECK__LINE = 0;
-
         static const int CHECK__START = 1;
-
         static const int CHECK__END = 2;
-
         static const int CHECK__FILENAME = 3;
-
         static const int CHECK__OWNER = 4;
-
         static const int CHECK__PARAMS = 5;
-
         static const int CHECK__ISPRIVATE = 6;
-
         static const int CHECK__GUARD = 7;
-
         static const int CHECK__ERRORSEVERITY = 8;
-
         static const int CHECK__MSG = 9;
-
         static const int CHECK__CONSTRAINT = 10;
-
         static const int CHECK__FEATURE = 11;
-
         static const int CHECK_FEATURE_COUNT = 12;
 
         // IDs for classifier CreateExtension
         static const int CREATEEXTENSION = 4;
-
         static const int CREATEEXTENSION__LINE = 0;
-
         static const int CREATEEXTENSION__START = 1;
-
         static const int CREATEEXTENSION__END = 2;
-
         static const int CREATEEXTENSION__FILENAME = 3;
-
         static const int CREATEEXTENSION__OWNER = 4;
-
         static const int CREATEEXTENSION__PARAMS = 5;
-
         static const int CREATEEXTENSION__ISPRIVATE = 6;
-
         static const int CREATEEXTENSION__GUARD = 7;
-
         static const int CREATEEXTENSION__NAME = 8;
-
         static const int CREATEEXTENSION__CACHED = 9;
-
         static const int CREATEEXTENSION__BODY = 10;
-
         static const int CREATEEXTENSION__RETURNTYPE = 11;
-
         static const int CREATEEXTENSION__TOBECREATED = 12;
-
         static const int CREATEEXTENSION_FEATURE_COUNT = 13;
 
         // IDs for classifier Definition
         static const int DEFINITION = 5;
-
         static const int DEFINITION__LINE = 0;
-
         static const int DEFINITION__START = 1;
-
         static const int DEFINITION__END = 2;
-
         static const int DEFINITION__FILENAME = 3;
-
         static const int DEFINITION__OWNER = 4;
-
         static const int DEFINITION__PARAMS = 5;
-
         static const int DEFINITION__ISPRIVATE = 6;
-
         static const int DEFINITION__GUARD = 7;
-
         static const int DEFINITION__NAME = 8;
-
         static const int DEFINITION__BODY = 9;
-
         static const int DEFINITION_FEATURE_COUNT = 10;
 
         // IDs for classifier DefinitionAspect
         static const int DEFINITIONASPECT = 6;
-
         static const int DEFINITIONASPECT__LINE = 0;
-
         static const int DEFINITIONASPECT__START = 1;
-
         static const int DEFINITIONASPECT__END = 2;
-
         static const int DEFINITIONASPECT__FILENAME = 3;
-
         static const int DEFINITIONASPECT__OWNER = 4;
-
         static const int DEFINITIONASPECT__PARAMS = 5;
-
         static const int DEFINITIONASPECT__ISPRIVATE = 6;
-
         static const int DEFINITIONASPECT__GUARD = 7;
-
         static const int DEFINITIONASPECT__POINTCUT = 8;
-
         static const int DEFINITIONASPECT__WILDPARAMS = 9;
-
         static const int DEFINITIONASPECT__BODY = 10;
-
         static const int DEFINITIONASPECT_FEATURE_COUNT = 11;
 
         // IDs for classifier Extension
         static const int EXTENSION = 7;
-
         static const int EXTENSION__LINE = 0;
-
         static const int EXTENSION__START = 1;
-
         static const int EXTENSION__END = 2;
-
         static const int EXTENSION__FILENAME = 3;
-
         static const int EXTENSION__OWNER = 4;
-
         static const int EXTENSION__PARAMS = 5;
-
         static const int EXTENSION__ISPRIVATE = 6;
-
         static const int EXTENSION__GUARD = 7;
-
         static const int EXTENSION__NAME = 8;
-
         static const int EXTENSION__CACHED = 9;
-
         static const int EXTENSION__BODY = 10;
-
         static const int EXTENSION__RETURNTYPE = 11;
-
         static const int EXTENSION_FEATURE_COUNT = 12;
 
         // IDs for classifier ExtensionAspect
         static const int EXTENSIONASPECT = 8;
-
         static const int EXTENSIONASPECT__LINE = 0;
-
         static const int EXTENSIONASPECT__START = 1;
-
         static const int EXTENSIONASPECT__END = 2;
-
         static const int EXTENSIONASPECT__FILENAME = 3;
-
         static const int EXTENSIONASPECT__OWNER = 4;
-
         static const int EXTENSIONASPECT__PARAMS = 5;
-
         static const int EXTENSIONASPECT__ISPRIVATE = 6;
-
         static const int EXTENSIONASPECT__GUARD = 7;
-
         static const int EXTENSIONASPECT__POINTCUT = 8;
-
         static const int EXTENSIONASPECT__WILDPARAMS = 9;
-
         static const int EXTENSIONASPECT__EXPRESSION = 10;
-
         static const int EXTENSIONASPECT_FEATURE_COUNT = 11;
 
         // IDs for classifier JavaExtension
         static const int JAVAEXTENSION = 9;
-
         static const int JAVAEXTENSION__LINE = 0;
-
         static const int JAVAEXTENSION__START = 1;
-
         static const int JAVAEXTENSION__END = 2;
-
         static const int JAVAEXTENSION__FILENAME = 3;
-
         static const int JAVAEXTENSION__OWNER = 4;
-
         static const int JAVAEXTENSION__PARAMS = 5;
-
         static const int JAVAEXTENSION__ISPRIVATE = 6;
-
         static const int JAVAEXTENSION__GUARD = 7;
-
         static const int JAVAEXTENSION__NAME = 8;
-
         static const int JAVAEXTENSION__JAVATYPE = 9;
-
         static const int JAVAEXTENSION__JAVAMETHOD = 10;
-
         static const int JAVAEXTENSION__JAVAPARAMTYPES = 11;
-
         static const int JAVAEXTENSION_FEATURE_COUNT = 12;
 
         // EClassifiers methods
@@ -380,31 +262,16 @@ namespace xpand3
         DeclarationPackage();
         void _initPackage();
 
-        // EClass instances 
-
-        ::ecore::EClass_ptr m_AbstractDeclarationEClass;
-
-        ::ecore::EClass_ptr m_AbstractNamedDeclarationEClass;
-
-        ::ecore::EClass_ptr m_DefinitionEClass;
-
-        ::ecore::EClass_ptr m_ExtensionEClass;
-
         ::ecore::EClass_ptr m_AbstractAspectEClass;
-
-        ::ecore::EClass_ptr m_ExtensionAspectEClass;
-
-        ::ecore::EClass_ptr m_DefinitionAspectEClass;
-
+        ::ecore::EClass_ptr m_AbstractDeclarationEClass;
+        ::ecore::EClass_ptr m_AbstractNamedDeclarationEClass;
         ::ecore::EClass_ptr m_CheckEClass;
-
         ::ecore::EClass_ptr m_CreateExtensionEClass;
-
+        ::ecore::EClass_ptr m_DefinitionEClass;
+        ::ecore::EClass_ptr m_DefinitionAspectEClass;
+        ::ecore::EClass_ptr m_ExtensionEClass;
+        ::ecore::EClass_ptr m_ExtensionAspectEClass;
         ::ecore::EClass_ptr m_JavaExtensionEClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
 
         // EStructuralFeatures instances
 

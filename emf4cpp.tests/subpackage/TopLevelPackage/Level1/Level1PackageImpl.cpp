@@ -37,36 +37,41 @@ using namespace ::TopLevelPackage::Level1;
 
 Level1Package::Level1Package()
 {
-
-    // Feature definitions of Level1Class
-
+    m_Level1ClassEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void Level1Package::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = Level1Factory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = Level1Factory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // Level1Class
-        m_Level1ClassEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_Level1ClassEClass->setClassifierID(LEVEL1CLASS);
-        m_Level1ClassEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_Level1ClassEClass);
-    }
+    [this]()
+    { // Classifier Level1Class
+        auto &&classifier = m_Level1ClassEClass;
 
-    // Create enums
+        // ENamedElement
+        classifier->setName("Level1Class");
 
-    // Create data types
+        // EClassifier
+        classifier->setClassifierID(LEVEL1CLASS);
 
-    getESubpackages().push_back(
-            ::TopLevelPackage::Level1::Level2::Level2Package::_getInstanceAndRemoveOwnership());
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Subpackages of this package
+        auto &&eSubpackages = getESubpackages();
+        eSubpackages.push_back(
+                ::TopLevelPackage::Level1::Level2::Level2Package::_getInstanceAndRemoveOwnership());
+    }();
 
     // Initialize package
     setName("Level1");
@@ -76,20 +81,15 @@ void Level1Package::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
+    [this]()
+    {
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // Level1Class
-        m_Level1ClassEClass->setName("Level1Class");
-        m_Level1ClassEClass->setAbstract(false);
-        m_Level1ClassEClass->setInterface(false);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_Level1ClassEClass);
+    }();
 
     _initialize();
 }

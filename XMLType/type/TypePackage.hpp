@@ -42,13 +42,9 @@ public:
 
     // IDs for classifier AnyType
     static const int ANYTYPE = 1;
-
     static const int ANYTYPE__MIXED = 0;
-
     static const int ANYTYPE__ANY = 1;
-
     static const int ANYTYPE__ANYATTRIBUTE = 2;
-
     static const int ANYTYPE_FEATURE_COUNT = 3;
 
     // IDs for classifier AnyURI
@@ -185,11 +181,8 @@ public:
 
     // IDs for classifier ProcessingInstruction
     static const int PROCESSINGINSTRUCTION = 46;
-
     static const int PROCESSINGINSTRUCTION__DATA = 0;
-
     static const int PROCESSINGINSTRUCTION__TARGET = 1;
-
     static const int PROCESSINGINSTRUCTION_FEATURE_COUNT = 2;
 
     // IDs for classifier QName
@@ -203,19 +196,12 @@ public:
 
     // IDs for classifier SimpleAnyType
     static const int SIMPLEANYTYPE = 50;
-
     static const int SIMPLEANYTYPE__MIXED = 0;
-
     static const int SIMPLEANYTYPE__ANY = 1;
-
     static const int SIMPLEANYTYPE__ANYATTRIBUTE = 2;
-
     static const int SIMPLEANYTYPE__RAWVALUE = 3;
-
     static const int SIMPLEANYTYPE__VALUE = 4;
-
     static const int SIMPLEANYTYPE__INSTANCETYPE = 5;
-
     static const int SIMPLEANYTYPE_FEATURE_COUNT = 6;
 
     // IDs for classifier String
@@ -250,21 +236,13 @@ public:
 
     // IDs for classifier XMLTypeDocumentRoot
     static const int XMLTYPEDOCUMENTROOT = 61;
-
     static const int XMLTYPEDOCUMENTROOT__MIXED = 0;
-
     static const int XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP = 1;
-
     static const int XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION = 2;
-
     static const int XMLTYPEDOCUMENTROOT__CDATA = 3;
-
     static const int XMLTYPEDOCUMENTROOT__COMMENT = 4;
-
     static const int XMLTYPEDOCUMENTROOT__PROCESSINGINSTRUCTION = 5;
-
     static const int XMLTYPEDOCUMENTROOT__TEXT = 6;
-
     static const int XMLTYPEDOCUMENTROOT_FEATURE_COUNT = 7;
 
     // EClassifiers methods
@@ -432,135 +410,68 @@ protected:
     TypePackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_AnyTypeEClass;
-
-    ::ecore::EClass_ptr m_ProcessingInstructionEClass;
-
-    ::ecore::EClass_ptr m_SimpleAnyTypeEClass;
-
-    ::ecore::EClass_ptr m_XMLTypeDocumentRootEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
-
     ::ecore::EDataType_ptr m_AnySimpleTypeEDataType;
-
+    ::ecore::EClass_ptr m_AnyTypeEClass;
     ::ecore::EDataType_ptr m_AnyURIEDataType;
-
     ::ecore::EDataType_ptr m_Base64BinaryEDataType;
-
     ::ecore::EDataType_ptr m_BooleanEDataType;
-
     ::ecore::EDataType_ptr m_BooleanObjectEDataType;
-
     ::ecore::EDataType_ptr m_ByteEDataType;
-
     ::ecore::EDataType_ptr m_ByteObjectEDataType;
-
     ::ecore::EDataType_ptr m_DateEDataType;
-
     ::ecore::EDataType_ptr m_DateTimeEDataType;
-
     ::ecore::EDataType_ptr m_DecimalEDataType;
-
     ::ecore::EDataType_ptr m_DoubleEDataType;
-
     ::ecore::EDataType_ptr m_DoubleObjectEDataType;
-
     ::ecore::EDataType_ptr m_DurationEDataType;
-
     ::ecore::EDataType_ptr m_ENTITIESEDataType;
-
     ::ecore::EDataType_ptr m_ENTITIESBaseEDataType;
-
     ::ecore::EDataType_ptr m_ENTITYEDataType;
-
     ::ecore::EDataType_ptr m_FloatEDataType;
-
     ::ecore::EDataType_ptr m_FloatObjectEDataType;
-
     ::ecore::EDataType_ptr m_GDayEDataType;
-
     ::ecore::EDataType_ptr m_GMonthEDataType;
-
     ::ecore::EDataType_ptr m_GMonthDayEDataType;
-
     ::ecore::EDataType_ptr m_GYearEDataType;
-
     ::ecore::EDataType_ptr m_GYearMonthEDataType;
-
     ::ecore::EDataType_ptr m_HexBinaryEDataType;
-
     ::ecore::EDataType_ptr m_IDEDataType;
-
     ::ecore::EDataType_ptr m_IDREFEDataType;
-
     ::ecore::EDataType_ptr m_IDREFSEDataType;
-
     ::ecore::EDataType_ptr m_IDREFSBaseEDataType;
-
     ::ecore::EDataType_ptr m_IntEDataType;
-
-    ::ecore::EDataType_ptr m_IntegerEDataType;
-
     ::ecore::EDataType_ptr m_IntObjectEDataType;
-
+    ::ecore::EDataType_ptr m_IntegerEDataType;
     ::ecore::EDataType_ptr m_LanguageEDataType;
-
     ::ecore::EDataType_ptr m_LongEDataType;
-
     ::ecore::EDataType_ptr m_LongObjectEDataType;
-
-    ::ecore::EDataType_ptr m_NameEDataType;
-
     ::ecore::EDataType_ptr m_NCNameEDataType;
-
-    ::ecore::EDataType_ptr m_NegativeIntegerEDataType;
-
     ::ecore::EDataType_ptr m_NMTOKENEDataType;
-
     ::ecore::EDataType_ptr m_NMTOKENSEDataType;
-
     ::ecore::EDataType_ptr m_NMTOKENSBaseEDataType;
-
-    ::ecore::EDataType_ptr m_NonNegativeIntegerEDataType;
-
-    ::ecore::EDataType_ptr m_NonPositiveIntegerEDataType;
-
-    ::ecore::EDataType_ptr m_NormalizedStringEDataType;
-
     ::ecore::EDataType_ptr m_NOTATIONEDataType;
-
+    ::ecore::EDataType_ptr m_NameEDataType;
+    ::ecore::EDataType_ptr m_NegativeIntegerEDataType;
+    ::ecore::EDataType_ptr m_NonNegativeIntegerEDataType;
+    ::ecore::EDataType_ptr m_NonPositiveIntegerEDataType;
+    ::ecore::EDataType_ptr m_NormalizedStringEDataType;
     ::ecore::EDataType_ptr m_PositiveIntegerEDataType;
-
+    ::ecore::EClass_ptr m_ProcessingInstructionEClass;
     ::ecore::EDataType_ptr m_QNameEDataType;
-
     ::ecore::EDataType_ptr m_ShortEDataType;
-
     ::ecore::EDataType_ptr m_ShortObjectEDataType;
-
+    ::ecore::EClass_ptr m_SimpleAnyTypeEClass;
     ::ecore::EDataType_ptr m_StringEDataType;
-
     ::ecore::EDataType_ptr m_TimeEDataType;
-
     ::ecore::EDataType_ptr m_TokenEDataType;
-
     ::ecore::EDataType_ptr m_UnsignedByteEDataType;
-
     ::ecore::EDataType_ptr m_UnsignedByteObjectEDataType;
-
     ::ecore::EDataType_ptr m_UnsignedIntEDataType;
-
     ::ecore::EDataType_ptr m_UnsignedIntObjectEDataType;
-
     ::ecore::EDataType_ptr m_UnsignedLongEDataType;
-
     ::ecore::EDataType_ptr m_UnsignedShortEDataType;
-
     ::ecore::EDataType_ptr m_UnsignedShortObjectEDataType;
+    ::ecore::EClass_ptr m_XMLTypeDocumentRootEClass;
 
     // EStructuralFeatures instances
 

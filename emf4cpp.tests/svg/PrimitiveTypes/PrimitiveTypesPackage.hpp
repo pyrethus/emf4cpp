@@ -68,19 +68,10 @@ protected:
     PrimitiveTypesPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    // EEnuminstances 
-
-    // EDataType instances 
-
     ::ecore::EDataType_ptr m_BooleanEDataType;
-
-    ::ecore::EDataType_ptr m_IntegerEDataType;
-
-    ::ecore::EDataType_ptr m_StringEDataType;
-
     ::ecore::EDataType_ptr m_DoubleEDataType;
+    ::ecore::EDataType_ptr m_IntegerEDataType;
+    ::ecore::EDataType_ptr m_StringEDataType;
 
     // EStructuralFeatures instances
 

@@ -40,193 +40,489 @@ using namespace ::xpand3;
 
 Xpand3Package::Xpand3Package()
 {
-
-    // Feature definitions of SyntaxElement
-    m_SyntaxElement__line = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SyntaxElement__start = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SyntaxElement__end = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SyntaxElement__fileName = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of File
-    m_File__imports = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_File__declarations = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ImportStatement
-    m_ImportStatement__exported = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ImportStatement__importedId = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Identifier
-    m_Identifier__value = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of DeclaredParameter
-    m_DeclaredParameter__name = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_DeclaredParameter__type = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_DeclaredParameter__name = ::ecore::make< ::ecore::EReference >();
+    m_DeclaredParameter__type = ::ecore::make< ::ecore::EReference >();
+    m_DeclaredParameterEClass = ::ecore::make< ::ecore::EClass >();
+    m_File__imports = ::ecore::make< ::ecore::EReference >();
+    m_File__declarations = ::ecore::make< ::ecore::EReference >();
+    m_FileEClass = ::ecore::make< ::ecore::EClass >();
+    m_Identifier__value = ::ecore::make< ::ecore::EAttribute >();
+    m_IdentifierEClass = ::ecore::make< ::ecore::EClass >();
+    m_ImportStatement__importedId = ::ecore::make< ::ecore::EReference >();
+    m_ImportStatement__exported = ::ecore::make< ::ecore::EAttribute >();
+    m_ImportStatementEClass = ::ecore::make< ::ecore::EClass >();
+    m_SyntaxElement__line = ::ecore::make< ::ecore::EAttribute >();
+    m_SyntaxElement__start = ::ecore::make< ::ecore::EAttribute >();
+    m_SyntaxElement__end = ::ecore::make< ::ecore::EAttribute >();
+    m_SyntaxElement__fileName = ::ecore::make< ::ecore::EAttribute >();
+    m_SyntaxElementEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void Xpand3Package::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = Xpand3Factory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = Xpand3Factory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // SyntaxElement
-        m_SyntaxElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_SyntaxElementEClass->setClassifierID(SYNTAXELEMENT);
-        m_SyntaxElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_SyntaxElementEClass);
-        // m_SyntaxElement__line has already been allocated above
-        m_SyntaxElement__line->setFeatureID(
-                ::xpand3::Xpand3Package::SYNTAXELEMENT__LINE);
-        m_SyntaxElement__line->setName("line");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
-                m_SyntaxElement__line);
-        m_SyntaxElement__line->basicsetEContainingClass(m_SyntaxElementEClass);
-        // m_SyntaxElement__start has already been allocated above
-        m_SyntaxElement__start->setFeatureID(
-                ::xpand3::Xpand3Package::SYNTAXELEMENT__START);
-        m_SyntaxElement__start->setName("start");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
-                m_SyntaxElement__start);
-        m_SyntaxElement__start->basicsetEContainingClass(m_SyntaxElementEClass);
-        // m_SyntaxElement__end has already been allocated above
-        m_SyntaxElement__end->setFeatureID(
-                ::xpand3::Xpand3Package::SYNTAXELEMENT__END);
-        m_SyntaxElement__end->setName("end");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
-                m_SyntaxElement__end);
-        m_SyntaxElement__end->basicsetEContainingClass(m_SyntaxElementEClass);
-        // m_SyntaxElement__fileName has already been allocated above
-        m_SyntaxElement__fileName->setFeatureID(
-                ::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME);
-        m_SyntaxElement__fileName->setName("fileName");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures()).basicAdd(
-                m_SyntaxElement__fileName);
-        m_SyntaxElement__fileName->basicsetEContainingClass(
-                m_SyntaxElementEClass);
-    }
+    [this]()
+    { // Feature name of class DeclaredParameter
+        auto &&feature = m_DeclaredParameter__name;
 
-    { // File
-        m_FileEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_FileEClass->setClassifierID(FILE);
-        m_FileEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_FileEClass);
-        // m_File__imports has already been allocated above
-        m_File__imports->setFeatureID(::xpand3::Xpand3Package::FILE__IMPORTS);
-        m_File__imports->setName("imports");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileEClass->getEStructuralFeatures()).basicAdd(
-                m_File__imports);
-        m_File__imports->basicsetEContainingClass(m_FileEClass);
-        // m_File__declarations has already been allocated above
-        m_File__declarations->setFeatureID(
-                ::xpand3::Xpand3Package::FILE__DECLARATIONS);
-        m_File__declarations->setName("declarations");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileEClass->getEStructuralFeatures()).basicAdd(
-                m_File__declarations);
-        m_File__declarations->basicsetEContainingClass(m_FileEClass);
-    }
+        // ENamedElement
+        feature->setName("name");
 
-    { // ImportStatement
-        m_ImportStatementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ImportStatementEClass->setClassifierID(IMPORTSTATEMENT);
-        m_ImportStatementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ImportStatementEClass);
-        // m_ImportStatement__importedId has already been allocated above
-        m_ImportStatement__importedId->setFeatureID(
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_IdentifierEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::xpand3::Xpand3Package::DECLAREDPARAMETER__NAME);
+        feature->basicsetEContainingClass(m_DeclaredParameterEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature type of class DeclaredParameter
+        auto &&feature = m_DeclaredParameter__type;
+
+        // ENamedElement
+        feature->setName("type");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_IdentifierEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::xpand3::Xpand3Package::DECLAREDPARAMETER__TYPE);
+        feature->basicsetEContainingClass(m_DeclaredParameterEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DeclaredParameter
+        auto &&classifier = m_DeclaredParameterEClass;
+
+        // ENamedElement
+        classifier->setName("DeclaredParameter");
+
+        // EClassifier
+        classifier->setClassifierID(DECLAREDPARAMETER);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeclaredParameterEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DeclaredParameter__name);
+            eStructuralFeatures.basicAdd(m_DeclaredParameter__type);
+        }
+    }();
+
+    [this]()
+    { // Feature imports of class File
+        auto &&feature = m_File__imports;
+
+        // ENamedElement
+        feature->setName("imports");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ImportStatementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::xpand3::Xpand3Package::FILE__IMPORTS);
+        feature->basicsetEContainingClass(m_FileEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature declarations of class File
+        auto &&feature = m_File__declarations;
+
+        // ENamedElement
+        feature->setName("declarations");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::xpand3::declaration::DeclarationPackage* >(::xpand3::declaration::DeclarationPackage::_instance().get())->getAbstractDeclaration());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::xpand3::Xpand3Package::FILE__DECLARATIONS);
+        feature->basicsetEContainingClass(m_FileEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier File
+        auto &&classifier = m_FileEClass;
+
+        // ENamedElement
+        classifier->setName("File");
+
+        // EClassifier
+        classifier->setClassifierID(FILE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_FileEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_File__imports);
+            eStructuralFeatures.basicAdd(m_File__declarations);
+        }
+    }();
+
+    [this]()
+    { // Feature value of class Identifier
+        auto &&feature = m_Identifier__value;
+
+        // ENamedElement
+        feature->setName("value");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::xpand3::Xpand3Package::IDENTIFIER__VALUE);
+        feature->basicsetEContainingClass(m_IdentifierEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Identifier
+        auto &&classifier = m_IdentifierEClass;
+
+        // ENamedElement
+        classifier->setName("Identifier");
+
+        // EClassifier
+        classifier->setClassifierID(IDENTIFIER);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IdentifierEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Identifier__value);
+        }
+    }();
+
+    [this]()
+    { // Feature importedId of class ImportStatement
+        auto &&feature = m_ImportStatement__importedId;
+
+        // ENamedElement
+        feature->setName("importedId");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_IdentifierEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::Xpand3Package::IMPORTSTATEMENT__IMPORTEDID);
-        m_ImportStatement__importedId->setName("importedId");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ImportStatement__importedId);
-        m_ImportStatement__importedId->basicsetEContainingClass(
-                m_ImportStatementEClass);
-        // m_ImportStatement__exported has already been allocated above
-        m_ImportStatement__exported->setFeatureID(
+        feature->basicsetEContainingClass(m_ImportStatementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature exported of class ImportStatement
+        auto &&feature = m_ImportStatement__exported;
+
+        // ENamedElement
+        feature->setName("exported");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::xpand3::Xpand3Package::IMPORTSTATEMENT__EXPORTED);
-        m_ImportStatement__exported->setName("exported");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportStatementEClass->getEStructuralFeatures()).basicAdd(
-                m_ImportStatement__exported);
-        m_ImportStatement__exported->basicsetEContainingClass(
-                m_ImportStatementEClass);
-    }
+        feature->basicsetEContainingClass(m_ImportStatementEClass);
 
-    { // Identifier
-        m_IdentifierEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_IdentifierEClass->setClassifierID(IDENTIFIER);
-        m_IdentifierEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IdentifierEClass);
-        // m_Identifier__value has already been allocated above
-        m_Identifier__value->setFeatureID(
-                ::xpand3::Xpand3Package::IDENTIFIER__VALUE);
-        m_Identifier__value->setName("value");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_IdentifierEClass->getEStructuralFeatures()).basicAdd(
-                m_Identifier__value);
-        m_Identifier__value->basicsetEContainingClass(m_IdentifierEClass);
-    }
+        // EAttribute
+        feature->setID(false);
+    }();
 
-    { // DeclaredParameter
-        m_DeclaredParameterEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DeclaredParameterEClass->setClassifierID(DECLAREDPARAMETER);
-        m_DeclaredParameterEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DeclaredParameterEClass);
-        // m_DeclaredParameter__name has already been allocated above
-        m_DeclaredParameter__name->setFeatureID(
-                ::xpand3::Xpand3Package::DECLAREDPARAMETER__NAME);
-        m_DeclaredParameter__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeclaredParameterEClass->getEStructuralFeatures()).basicAdd(
-                m_DeclaredParameter__name);
-        m_DeclaredParameter__name->basicsetEContainingClass(
-                m_DeclaredParameterEClass);
-        // m_DeclaredParameter__type has already been allocated above
-        m_DeclaredParameter__type->setFeatureID(
-                ::xpand3::Xpand3Package::DECLAREDPARAMETER__TYPE);
-        m_DeclaredParameter__type->setName("type");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DeclaredParameterEClass->getEStructuralFeatures()).basicAdd(
-                m_DeclaredParameter__type);
-        m_DeclaredParameter__type->basicsetEContainingClass(
-                m_DeclaredParameterEClass);
-    }
+    [this]()
+    { // Classifier ImportStatement
+        auto &&classifier = m_ImportStatementEClass;
 
-    // Create enums
+        // ENamedElement
+        classifier->setName("ImportStatement");
 
-    // Create data types
+        // EClassifier
+        classifier->setClassifierID(IMPORTSTATEMENT);
 
-    getESubpackages().push_back(
-            ::xpand3::expression::ExpressionPackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::xpand3::statement::StatementPackage::_getInstanceAndRemoveOwnership());
-    getESubpackages().push_back(
-            ::xpand3::declaration::DeclarationPackage::_getInstanceAndRemoveOwnership());
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ImportStatementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ImportStatement__importedId);
+            eStructuralFeatures.basicAdd(m_ImportStatement__exported);
+        }
+    }();
+
+    [this]()
+    { // Feature line of class SyntaxElement
+        auto &&feature = m_SyntaxElement__line;
+
+        // ENamedElement
+        feature->setName("line");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::xpand3::Xpand3Package::SYNTAXELEMENT__LINE);
+        feature->basicsetEContainingClass(m_SyntaxElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature start of class SyntaxElement
+        auto &&feature = m_SyntaxElement__start;
+
+        // ENamedElement
+        feature->setName("start");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::xpand3::Xpand3Package::SYNTAXELEMENT__START);
+        feature->basicsetEContainingClass(m_SyntaxElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature end of class SyntaxElement
+        auto &&feature = m_SyntaxElement__end;
+
+        // ENamedElement
+        feature->setName("end");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::xpand3::Xpand3Package::SYNTAXELEMENT__END);
+        feature->basicsetEContainingClass(m_SyntaxElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature fileName of class SyntaxElement
+        auto &&feature = m_SyntaxElement__fileName;
+
+        // ENamedElement
+        feature->setName("fileName");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::xpand3::Xpand3Package::SYNTAXELEMENT__FILENAME);
+        feature->basicsetEContainingClass(m_SyntaxElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier SyntaxElement
+        auto &&classifier = m_SyntaxElementEClass;
+
+        // ENamedElement
+        classifier->setName("SyntaxElement");
+
+        // EClassifier
+        classifier->setClassifierID(SYNTAXELEMENT);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SyntaxElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_SyntaxElement__line);
+            eStructuralFeatures.basicAdd(m_SyntaxElement__start);
+            eStructuralFeatures.basicAdd(m_SyntaxElement__end);
+            eStructuralFeatures.basicAdd(m_SyntaxElement__fileName);
+        }
+    }();
+
+    [this]()
+    { // Subpackages of this package
+        auto &&eSubpackages = getESubpackages();
+        eSubpackages.push_back(
+                ::xpand3::expression::ExpressionPackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::xpand3::statement::StatementPackage::_getInstanceAndRemoveOwnership());
+        eSubpackages.push_back(
+                ::xpand3::declaration::DeclarationPackage::_getInstanceAndRemoveOwnership());
+    }();
 
     // Initialize package
     setName("xpand3");
@@ -236,195 +532,25 @@ void Xpand3Package::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_FileEClass->getESuperTypes().push_back(m_SyntaxElementEClass);
-    m_ImportStatementEClass->getESuperTypes().push_back(m_SyntaxElementEClass);
-    m_IdentifierEClass->getESuperTypes().push_back(m_SyntaxElementEClass);
-    m_DeclaredParameterEClass->getESuperTypes().push_back(
-            m_SyntaxElementEClass);
+    [this]()
+    {
+        m_FileEClass->getESuperTypes().push_back(m_SyntaxElementEClass);
+        m_ImportStatementEClass->getESuperTypes().push_back(
+                m_SyntaxElementEClass);
+        m_IdentifierEClass->getESuperTypes().push_back(m_SyntaxElementEClass);
+        m_DeclaredParameterEClass->getESuperTypes().push_back(
+                m_SyntaxElementEClass);
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // SyntaxElement
-        m_SyntaxElementEClass->setName("SyntaxElement");
-        m_SyntaxElementEClass->setAbstract(true);
-        m_SyntaxElementEClass->setInterface(false);
-        m_SyntaxElement__line->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_SyntaxElement__line->setDefaultValueLiteral("");
-        m_SyntaxElement__line->setLowerBound(0);
-        m_SyntaxElement__line->setUpperBound(1);
-        m_SyntaxElement__line->setTransient(false);
-        m_SyntaxElement__line->setVolatile(false);
-        m_SyntaxElement__line->setChangeable(true);
-        m_SyntaxElement__line->setUnsettable(false);
-        m_SyntaxElement__line->setID(false);
-        m_SyntaxElement__line->setUnique(true);
-        m_SyntaxElement__line->setDerived(false);
-        m_SyntaxElement__line->setOrdered(true);
-        m_SyntaxElement__start->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_SyntaxElement__start->setDefaultValueLiteral("");
-        m_SyntaxElement__start->setLowerBound(0);
-        m_SyntaxElement__start->setUpperBound(1);
-        m_SyntaxElement__start->setTransient(false);
-        m_SyntaxElement__start->setVolatile(false);
-        m_SyntaxElement__start->setChangeable(true);
-        m_SyntaxElement__start->setUnsettable(false);
-        m_SyntaxElement__start->setID(false);
-        m_SyntaxElement__start->setUnique(true);
-        m_SyntaxElement__start->setDerived(false);
-        m_SyntaxElement__start->setOrdered(true);
-        m_SyntaxElement__end->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_SyntaxElement__end->setDefaultValueLiteral("");
-        m_SyntaxElement__end->setLowerBound(0);
-        m_SyntaxElement__end->setUpperBound(1);
-        m_SyntaxElement__end->setTransient(false);
-        m_SyntaxElement__end->setVolatile(false);
-        m_SyntaxElement__end->setChangeable(true);
-        m_SyntaxElement__end->setUnsettable(false);
-        m_SyntaxElement__end->setID(false);
-        m_SyntaxElement__end->setUnique(true);
-        m_SyntaxElement__end->setDerived(false);
-        m_SyntaxElement__end->setOrdered(true);
-        m_SyntaxElement__fileName->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_SyntaxElement__fileName->setDefaultValueLiteral("");
-        m_SyntaxElement__fileName->setLowerBound(0);
-        m_SyntaxElement__fileName->setUpperBound(1);
-        m_SyntaxElement__fileName->setTransient(false);
-        m_SyntaxElement__fileName->setVolatile(false);
-        m_SyntaxElement__fileName->setChangeable(true);
-        m_SyntaxElement__fileName->setUnsettable(false);
-        m_SyntaxElement__fileName->setID(false);
-        m_SyntaxElement__fileName->setUnique(true);
-        m_SyntaxElement__fileName->setDerived(false);
-        m_SyntaxElement__fileName->setOrdered(true);
-
-    }
-
-    { // File
-        m_FileEClass->setName("File");
-        m_FileEClass->setAbstract(false);
-        m_FileEClass->setInterface(false);
-
-        m_File__imports->setEType(m_ImportStatementEClass);
-        m_File__imports->setDefaultValueLiteral("");
-        m_File__imports->setLowerBound(0);
-        m_File__imports->setUpperBound(-1);
-        m_File__imports->setTransient(false);
-        m_File__imports->setVolatile(false);
-        m_File__imports->setChangeable(true);
-        m_File__imports->setContainment(true);
-        m_File__imports->setResolveProxies(true);
-        m_File__imports->setUnique(true);
-        m_File__imports->setDerived(false);
-        m_File__imports->setOrdered(true);
-        m_File__declarations->setEType(
-                dynamic_cast< ::xpand3::declaration::DeclarationPackage* >(::xpand3::declaration::DeclarationPackage::_instance().get())->getAbstractDeclaration());
-        m_File__declarations->setDefaultValueLiteral("");
-        m_File__declarations->setLowerBound(1);
-        m_File__declarations->setUpperBound(-1);
-        m_File__declarations->setTransient(false);
-        m_File__declarations->setVolatile(false);
-        m_File__declarations->setChangeable(true);
-        m_File__declarations->setContainment(true);
-        m_File__declarations->setResolveProxies(true);
-        m_File__declarations->setUnique(true);
-        m_File__declarations->setDerived(false);
-        m_File__declarations->setOrdered(true);
-
-    }
-
-    { // ImportStatement
-        m_ImportStatementEClass->setName("ImportStatement");
-        m_ImportStatementEClass->setAbstract(false);
-        m_ImportStatementEClass->setInterface(false);
-        m_ImportStatement__exported->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
-        m_ImportStatement__exported->setDefaultValueLiteral("");
-        m_ImportStatement__exported->setLowerBound(0);
-        m_ImportStatement__exported->setUpperBound(1);
-        m_ImportStatement__exported->setTransient(false);
-        m_ImportStatement__exported->setVolatile(false);
-        m_ImportStatement__exported->setChangeable(true);
-        m_ImportStatement__exported->setUnsettable(false);
-        m_ImportStatement__exported->setID(false);
-        m_ImportStatement__exported->setUnique(true);
-        m_ImportStatement__exported->setDerived(false);
-        m_ImportStatement__exported->setOrdered(true);
-
-        m_ImportStatement__importedId->setEType(m_IdentifierEClass);
-        m_ImportStatement__importedId->setDefaultValueLiteral("");
-        m_ImportStatement__importedId->setLowerBound(0);
-        m_ImportStatement__importedId->setUpperBound(1);
-        m_ImportStatement__importedId->setTransient(false);
-        m_ImportStatement__importedId->setVolatile(false);
-        m_ImportStatement__importedId->setChangeable(true);
-        m_ImportStatement__importedId->setContainment(true);
-        m_ImportStatement__importedId->setResolveProxies(true);
-        m_ImportStatement__importedId->setUnique(true);
-        m_ImportStatement__importedId->setDerived(false);
-        m_ImportStatement__importedId->setOrdered(true);
-
-    }
-
-    { // Identifier
-        m_IdentifierEClass->setName("Identifier");
-        m_IdentifierEClass->setAbstract(false);
-        m_IdentifierEClass->setInterface(false);
-        m_Identifier__value->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Identifier__value->setDefaultValueLiteral("");
-        m_Identifier__value->setLowerBound(0);
-        m_Identifier__value->setUpperBound(1);
-        m_Identifier__value->setTransient(false);
-        m_Identifier__value->setVolatile(false);
-        m_Identifier__value->setChangeable(true);
-        m_Identifier__value->setUnsettable(false);
-        m_Identifier__value->setID(false);
-        m_Identifier__value->setUnique(true);
-        m_Identifier__value->setDerived(false);
-        m_Identifier__value->setOrdered(true);
-
-    }
-
-    { // DeclaredParameter
-        m_DeclaredParameterEClass->setName("DeclaredParameter");
-        m_DeclaredParameterEClass->setAbstract(false);
-        m_DeclaredParameterEClass->setInterface(false);
-
-        m_DeclaredParameter__name->setEType(m_IdentifierEClass);
-        m_DeclaredParameter__name->setDefaultValueLiteral("");
-        m_DeclaredParameter__name->setLowerBound(0);
-        m_DeclaredParameter__name->setUpperBound(1);
-        m_DeclaredParameter__name->setTransient(false);
-        m_DeclaredParameter__name->setVolatile(false);
-        m_DeclaredParameter__name->setChangeable(true);
-        m_DeclaredParameter__name->setContainment(true);
-        m_DeclaredParameter__name->setResolveProxies(true);
-        m_DeclaredParameter__name->setUnique(true);
-        m_DeclaredParameter__name->setDerived(false);
-        m_DeclaredParameter__name->setOrdered(true);
-        m_DeclaredParameter__type->setEType(m_IdentifierEClass);
-        m_DeclaredParameter__type->setDefaultValueLiteral("");
-        m_DeclaredParameter__type->setLowerBound(0);
-        m_DeclaredParameter__type->setUpperBound(1);
-        m_DeclaredParameter__type->setTransient(false);
-        m_DeclaredParameter__type->setVolatile(false);
-        m_DeclaredParameter__type->setChangeable(true);
-        m_DeclaredParameter__type->setContainment(true);
-        m_DeclaredParameter__type->setResolveProxies(true);
-        m_DeclaredParameter__type->setUnique(true);
-        m_DeclaredParameter__type->setDerived(false);
-        m_DeclaredParameter__type->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_DeclaredParameterEClass);
+        classifiers.push_back(m_FileEClass);
+        classifiers.push_back(m_IdentifierEClass);
+        classifiers.push_back(m_ImportStatementEClass);
+        classifiers.push_back(m_SyntaxElementEClass);
+    }();
 
     _initialize();
 }

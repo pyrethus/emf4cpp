@@ -38,132 +38,322 @@ using namespace ::company;
 
 CompanyPackage::CompanyPackage()
 {
-
-    // Feature definitions of Employee
-    m_Employee__name = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_Employee__phonebookEntry = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Department
-    m_Department__number = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_Department__employees = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Department__manager = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Company
-    m_Company__name = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_Company__departments = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of PhonebookEntry
-
+    m_Company__name = ::ecore::make< ::ecore::EAttribute >();
+    m_Company__departments = ::ecore::make< ::ecore::EReference >();
+    m_CompanyEClass = ::ecore::make< ::ecore::EClass >();
+    m_Department__employees = ::ecore::make< ::ecore::EReference >();
+    m_Department__manager = ::ecore::make< ::ecore::EReference >();
+    m_Department__number = ::ecore::make< ::ecore::EAttribute >();
+    m_DepartmentEClass = ::ecore::make< ::ecore::EClass >();
+    m_Employee__name = ::ecore::make< ::ecore::EAttribute >();
+    m_Employee__phonebookEntry = ::ecore::make< ::ecore::EReference >();
+    m_EmployeeEClass = ::ecore::make< ::ecore::EClass >();
+    m_PhonebookEntryEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void CompanyPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = CompanyFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = CompanyFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // Employee
-        m_EmployeeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EmployeeEClass->setClassifierID(EMPLOYEE);
-        m_EmployeeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EmployeeEClass);
-        // m_Employee__name has already been allocated above
-        m_Employee__name->setFeatureID(
-                ::company::CompanyPackage::EMPLOYEE__NAME);
-        m_Employee__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EmployeeEClass->getEStructuralFeatures()).basicAdd(
-                m_Employee__name);
-        m_Employee__name->basicsetEContainingClass(m_EmployeeEClass);
-        // m_Employee__phonebookEntry has already been allocated above
-        m_Employee__phonebookEntry->setFeatureID(
+    [this]()
+    { // Feature name of class Company
+        auto &&feature = m_Company__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::company::CompanyPackage::COMPANY__NAME);
+        feature->basicsetEContainingClass(m_CompanyEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature departments of class Company
+        auto &&feature = m_Company__departments;
+
+        // ENamedElement
+        feature->setName("departments");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_DepartmentEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::company::CompanyPackage::COMPANY__DEPARTMENTS);
+        feature->basicsetEContainingClass(m_CompanyEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Company
+        auto &&classifier = m_CompanyEClass;
+
+        // ENamedElement
+        classifier->setName("Company");
+
+        // EClassifier
+        classifier->setClassifierID(COMPANY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompanyEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Company__name);
+            eStructuralFeatures.basicAdd(m_Company__departments);
+        }
+    }();
+
+    [this]()
+    { // Feature employees of class Department
+        auto &&feature = m_Department__employees;
+
+        // ENamedElement
+        feature->setName("employees");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EmployeeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::company::CompanyPackage::DEPARTMENT__EMPLOYEES);
+        feature->basicsetEContainingClass(m_DepartmentEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature manager of class Department
+        auto &&feature = m_Department__manager;
+
+        // ENamedElement
+        feature->setName("manager");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EmployeeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::company::CompanyPackage::DEPARTMENT__MANAGER);
+        feature->basicsetEContainingClass(m_DepartmentEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature number of class Department
+        auto &&feature = m_Department__number;
+
+        // ENamedElement
+        feature->setName("number");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::company::CompanyPackage::DEPARTMENT__NUMBER);
+        feature->basicsetEContainingClass(m_DepartmentEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Department
+        auto &&classifier = m_DepartmentEClass;
+
+        // ENamedElement
+        classifier->setName("Department");
+
+        // EClassifier
+        classifier->setClassifierID(DEPARTMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Department__employees);
+            eStructuralFeatures.basicAdd(m_Department__manager);
+            eStructuralFeatures.basicAdd(m_Department__number);
+        }
+    }();
+
+    [this]()
+    { // Feature name of class Employee
+        auto &&feature = m_Employee__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::company::CompanyPackage::EMPLOYEE__NAME);
+        feature->basicsetEContainingClass(m_EmployeeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature phonebookEntry of class Employee
+        auto &&feature = m_Employee__phonebookEntry;
+
+        // ENamedElement
+        feature->setName("phonebookEntry");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_PhonebookEntryEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::company::CompanyPackage::EMPLOYEE__PHONEBOOKENTRY);
-        m_Employee__phonebookEntry->setName("phonebookEntry");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EmployeeEClass->getEStructuralFeatures()).basicAdd(
-                m_Employee__phonebookEntry);
-        m_Employee__phonebookEntry->basicsetEContainingClass(m_EmployeeEClass);
-    }
+        feature->basicsetEContainingClass(m_EmployeeEClass);
 
-    { // Department
-        m_DepartmentEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DepartmentEClass->setClassifierID(DEPARTMENT);
-        m_DepartmentEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DepartmentEClass);
-        // m_Department__employees has already been allocated above
-        m_Department__employees->setFeatureID(
-                ::company::CompanyPackage::DEPARTMENT__EMPLOYEES);
-        m_Department__employees->setName("employees");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures()).basicAdd(
-                m_Department__employees);
-        m_Department__employees->basicsetEContainingClass(m_DepartmentEClass);
-        // m_Department__manager has already been allocated above
-        m_Department__manager->setFeatureID(
-                ::company::CompanyPackage::DEPARTMENT__MANAGER);
-        m_Department__manager->setName("manager");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures()).basicAdd(
-                m_Department__manager);
-        m_Department__manager->basicsetEContainingClass(m_DepartmentEClass);
-        // m_Department__number has already been allocated above
-        m_Department__number->setFeatureID(
-                ::company::CompanyPackage::DEPARTMENT__NUMBER);
-        m_Department__number->setName("number");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DepartmentEClass->getEStructuralFeatures()).basicAdd(
-                m_Department__number);
-        m_Department__number->basicsetEContainingClass(m_DepartmentEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // Company
-        m_CompanyEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_CompanyEClass->setClassifierID(COMPANY);
-        m_CompanyEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_CompanyEClass);
-        // m_Company__name has already been allocated above
-        m_Company__name->setFeatureID(::company::CompanyPackage::COMPANY__NAME);
-        m_Company__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompanyEClass->getEStructuralFeatures()).basicAdd(
-                m_Company__name);
-        m_Company__name->basicsetEContainingClass(m_CompanyEClass);
-        // m_Company__departments has already been allocated above
-        m_Company__departments->setFeatureID(
-                ::company::CompanyPackage::COMPANY__DEPARTMENTS);
-        m_Company__departments->setName("departments");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_CompanyEClass->getEStructuralFeatures()).basicAdd(
-                m_Company__departments);
-        m_Company__departments->basicsetEContainingClass(m_CompanyEClass);
-    }
+    [this]()
+    { // Classifier Employee
+        auto &&classifier = m_EmployeeEClass;
 
-    { // PhonebookEntry
-        m_PhonebookEntryEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_PhonebookEntryEClass->setClassifierID(PHONEBOOKENTRY);
-        m_PhonebookEntryEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_PhonebookEntryEClass);
-    }
+        // ENamedElement
+        classifier->setName("Employee");
 
-    // Create enums
+        // EClassifier
+        classifier->setClassifierID(EMPLOYEE);
 
-    // Create data types
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EmployeeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Employee__name);
+            eStructuralFeatures.basicAdd(m_Employee__phonebookEntry);
+        }
+    }();
+
+    [this]()
+    { // Classifier PhonebookEntry
+        auto &&classifier = m_PhonebookEntryEClass;
+
+        // ENamedElement
+        classifier->setName("PhonebookEntry");
+
+        // EClassifier
+        classifier->setClassifierID(PHONEBOOKENTRY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
 
     // Initialize package
     setName("company");
@@ -173,131 +363,18 @@ void CompanyPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
+    [this]()
+    {
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // Employee
-        m_EmployeeEClass->setName("Employee");
-        m_EmployeeEClass->setAbstract(false);
-        m_EmployeeEClass->setInterface(false);
-        m_Employee__name->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Employee__name->setDefaultValueLiteral("");
-        m_Employee__name->setLowerBound(0);
-        m_Employee__name->setUpperBound(1);
-        m_Employee__name->setTransient(false);
-        m_Employee__name->setVolatile(false);
-        m_Employee__name->setChangeable(true);
-        m_Employee__name->setUnsettable(false);
-        m_Employee__name->setID(false);
-        m_Employee__name->setUnique(true);
-        m_Employee__name->setDerived(false);
-        m_Employee__name->setOrdered(true);
-
-        m_Employee__phonebookEntry->setEType(m_PhonebookEntryEClass);
-        m_Employee__phonebookEntry->setDefaultValueLiteral("");
-        m_Employee__phonebookEntry->setLowerBound(0);
-        m_Employee__phonebookEntry->setUpperBound(1);
-        m_Employee__phonebookEntry->setTransient(false);
-        m_Employee__phonebookEntry->setVolatile(false);
-        m_Employee__phonebookEntry->setChangeable(true);
-        m_Employee__phonebookEntry->setContainment(true);
-        m_Employee__phonebookEntry->setResolveProxies(true);
-        m_Employee__phonebookEntry->setUnique(true);
-        m_Employee__phonebookEntry->setDerived(false);
-        m_Employee__phonebookEntry->setOrdered(true);
-
-    }
-
-    { // Department
-        m_DepartmentEClass->setName("Department");
-        m_DepartmentEClass->setAbstract(false);
-        m_DepartmentEClass->setInterface(false);
-        m_Department__number->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
-        m_Department__number->setDefaultValueLiteral("");
-        m_Department__number->setLowerBound(0);
-        m_Department__number->setUpperBound(1);
-        m_Department__number->setTransient(false);
-        m_Department__number->setVolatile(false);
-        m_Department__number->setChangeable(true);
-        m_Department__number->setUnsettable(false);
-        m_Department__number->setID(false);
-        m_Department__number->setUnique(true);
-        m_Department__number->setDerived(false);
-        m_Department__number->setOrdered(true);
-
-        m_Department__employees->setEType(m_EmployeeEClass);
-        m_Department__employees->setDefaultValueLiteral("");
-        m_Department__employees->setLowerBound(0);
-        m_Department__employees->setUpperBound(-1);
-        m_Department__employees->setTransient(false);
-        m_Department__employees->setVolatile(false);
-        m_Department__employees->setChangeable(true);
-        m_Department__employees->setContainment(true);
-        m_Department__employees->setResolveProxies(true);
-        m_Department__employees->setUnique(true);
-        m_Department__employees->setDerived(false);
-        m_Department__employees->setOrdered(true);
-        m_Department__manager->setEType(m_EmployeeEClass);
-        m_Department__manager->setDefaultValueLiteral("");
-        m_Department__manager->setLowerBound(1);
-        m_Department__manager->setUpperBound(1);
-        m_Department__manager->setTransient(false);
-        m_Department__manager->setVolatile(false);
-        m_Department__manager->setChangeable(true);
-        m_Department__manager->setContainment(false);
-        m_Department__manager->setResolveProxies(true);
-        m_Department__manager->setUnique(true);
-        m_Department__manager->setDerived(false);
-        m_Department__manager->setOrdered(true);
-
-    }
-
-    { // Company
-        m_CompanyEClass->setName("Company");
-        m_CompanyEClass->setAbstract(false);
-        m_CompanyEClass->setInterface(false);
-        m_Company__name->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Company__name->setDefaultValueLiteral("");
-        m_Company__name->setLowerBound(0);
-        m_Company__name->setUpperBound(1);
-        m_Company__name->setTransient(false);
-        m_Company__name->setVolatile(false);
-        m_Company__name->setChangeable(true);
-        m_Company__name->setUnsettable(false);
-        m_Company__name->setID(false);
-        m_Company__name->setUnique(true);
-        m_Company__name->setDerived(false);
-        m_Company__name->setOrdered(true);
-
-        m_Company__departments->setEType(m_DepartmentEClass);
-        m_Company__departments->setDefaultValueLiteral("");
-        m_Company__departments->setLowerBound(0);
-        m_Company__departments->setUpperBound(-1);
-        m_Company__departments->setTransient(false);
-        m_Company__departments->setVolatile(false);
-        m_Company__departments->setChangeable(true);
-        m_Company__departments->setContainment(true);
-        m_Company__departments->setResolveProxies(true);
-        m_Company__departments->setUnique(true);
-        m_Company__departments->setDerived(false);
-        m_Company__departments->setOrdered(true);
-
-    }
-
-    { // PhonebookEntry
-        m_PhonebookEntryEClass->setName("PhonebookEntry");
-        m_PhonebookEntryEClass->setAbstract(false);
-        m_PhonebookEntryEClass->setInterface(false);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_CompanyEClass);
+        classifiers.push_back(m_DepartmentEClass);
+        classifiers.push_back(m_EmployeeEClass);
+        classifiers.push_back(m_PhonebookEntryEClass);
+    }();
 
     _initialize();
 }

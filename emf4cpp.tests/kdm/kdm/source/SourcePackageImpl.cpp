@@ -46,435 +46,1080 @@ using namespace ::kdm::source;
 
 SourcePackage::SourcePackage()
 {
-
-    // Feature definitions of SourceRef
-    m_SourceRef__language = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SourceRef__snippet = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SourceRef__region = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of SourceRegion
-    m_SourceRegion__startLine = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SourceRegion__startPosition = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SourceRegion__endLine = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SourceRegion__endPosition = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SourceRegion__language = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SourceRegion__path = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SourceRegion__file = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of InventoryModel
-    m_InventoryModel__inventoryElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of AbstractInventoryElement
-    m_AbstractInventoryElement__inventoryRelation = ::ecore::Ptr
-            < ::ecore::EReference > (new ::ecore::EReference);
-
-    // Feature definitions of InventoryItem
-    m_InventoryItem__version = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_InventoryItem__path = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of SourceFile
-    m_SourceFile__language = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SourceFile__encoding = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of Image
-
-    // Feature definitions of ResourceDescription
-
-    // Feature definitions of Configuration
-
-    // Feature definitions of InventoryContainer
-    m_InventoryContainer__inventoryElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Directory
-    m_Directory__path = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of Project
-
-    // Feature definitions of AbstractInventoryRelationship
-
-    // Feature definitions of BinaryFile
-
-    // Feature definitions of ExecutableFile
-
-    // Feature definitions of DependsOn
-    m_DependsOn__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_DependsOn__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of InventoryElement
-
-    // Feature definitions of InventoryRelationship
-    m_InventoryRelationship__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_InventoryRelationship__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_AbstractInventoryElement__inventoryRelation = ::ecore::make<
+            ::ecore::EReference >();
+    m_AbstractInventoryElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_AbstractInventoryRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_BinaryFileEClass = ::ecore::make< ::ecore::EClass >();
+    m_ConfigurationEClass = ::ecore::make< ::ecore::EClass >();
+    m_DependsOn__to = ::ecore::make< ::ecore::EReference >();
+    m_DependsOn__from = ::ecore::make< ::ecore::EReference >();
+    m_DependsOnEClass = ::ecore::make< ::ecore::EClass >();
+    m_Directory__path = ::ecore::make< ::ecore::EAttribute >();
+    m_DirectoryEClass = ::ecore::make< ::ecore::EClass >();
+    m_ExecutableFileEClass = ::ecore::make< ::ecore::EClass >();
+    m_ImageEClass = ::ecore::make< ::ecore::EClass >();
+    m_InventoryContainer__inventoryElement =
+            ::ecore::make< ::ecore::EReference >();
+    m_InventoryContainerEClass = ::ecore::make< ::ecore::EClass >();
+    m_InventoryElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_InventoryItem__version = ::ecore::make< ::ecore::EAttribute >();
+    m_InventoryItem__path = ::ecore::make< ::ecore::EAttribute >();
+    m_InventoryItemEClass = ::ecore::make< ::ecore::EClass >();
+    m_InventoryModel__inventoryElement = ::ecore::make< ::ecore::EReference >();
+    m_InventoryModelEClass = ::ecore::make< ::ecore::EClass >();
+    m_InventoryRelationship__to = ::ecore::make< ::ecore::EReference >();
+    m_InventoryRelationship__from = ::ecore::make< ::ecore::EReference >();
+    m_InventoryRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_ProjectEClass = ::ecore::make< ::ecore::EClass >();
+    m_ResourceDescriptionEClass = ::ecore::make< ::ecore::EClass >();
+    m_SourceFile__language = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceFile__encoding = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceFileEClass = ::ecore::make< ::ecore::EClass >();
+    m_SourceRef__region = ::ecore::make< ::ecore::EReference >();
+    m_SourceRef__language = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceRef__snippet = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceRefEClass = ::ecore::make< ::ecore::EClass >();
+    m_SourceRegion__file = ::ecore::make< ::ecore::EReference >();
+    m_SourceRegion__startLine = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceRegion__startPosition = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceRegion__endLine = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceRegion__endPosition = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceRegion__language = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceRegion__path = ::ecore::make< ::ecore::EAttribute >();
+    m_SourceRegionEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void SourcePackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = SourceFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = SourceFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // SourceRef
-        m_SourceRefEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_SourceRefEClass->setClassifierID(SOURCEREF);
-        m_SourceRefEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_SourceRefEClass);
-        // m_SourceRef__region has already been allocated above
-        m_SourceRef__region->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREF__REGION);
-        m_SourceRef__region->setName("region");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRef__region);
-        m_SourceRef__region->basicsetEContainingClass(m_SourceRefEClass);
-        // m_SourceRef__language has already been allocated above
-        m_SourceRef__language->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREF__LANGUAGE);
-        m_SourceRef__language->setName("language");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRef__language);
-        m_SourceRef__language->basicsetEContainingClass(m_SourceRefEClass);
-        // m_SourceRef__snippet has already been allocated above
-        m_SourceRef__snippet->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREF__SNIPPET);
-        m_SourceRef__snippet->setName("snippet");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRef__snippet);
-        m_SourceRef__snippet->basicsetEContainingClass(m_SourceRefEClass);
-    }
+    [this]()
+    { // Feature inventoryRelation of class AbstractInventoryElement
+        auto &&feature = m_AbstractInventoryElement__inventoryRelation;
 
-    { // SourceRegion
-        m_SourceRegionEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_SourceRegionEClass->setClassifierID(SOURCEREGION);
-        m_SourceRegionEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_SourceRegionEClass);
-        // m_SourceRegion__file has already been allocated above
-        m_SourceRegion__file->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREGION__FILE);
-        m_SourceRegion__file->setName("file");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRegion__file);
-        m_SourceRegion__file->basicsetEContainingClass(m_SourceRegionEClass);
-        // m_SourceRegion__startLine has already been allocated above
-        m_SourceRegion__startLine->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREGION__STARTLINE);
-        m_SourceRegion__startLine->setName("startLine");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRegion__startLine);
-        m_SourceRegion__startLine->basicsetEContainingClass(
-                m_SourceRegionEClass);
-        // m_SourceRegion__startPosition has already been allocated above
-        m_SourceRegion__startPosition->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREGION__STARTPOSITION);
-        m_SourceRegion__startPosition->setName("startPosition");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRegion__startPosition);
-        m_SourceRegion__startPosition->basicsetEContainingClass(
-                m_SourceRegionEClass);
-        // m_SourceRegion__endLine has already been allocated above
-        m_SourceRegion__endLine->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREGION__ENDLINE);
-        m_SourceRegion__endLine->setName("endLine");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRegion__endLine);
-        m_SourceRegion__endLine->basicsetEContainingClass(m_SourceRegionEClass);
-        // m_SourceRegion__endPosition has already been allocated above
-        m_SourceRegion__endPosition->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREGION__ENDPOSITION);
-        m_SourceRegion__endPosition->setName("endPosition");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRegion__endPosition);
-        m_SourceRegion__endPosition->basicsetEContainingClass(
-                m_SourceRegionEClass);
-        // m_SourceRegion__language has already been allocated above
-        m_SourceRegion__language->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREGION__LANGUAGE);
-        m_SourceRegion__language->setName("language");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRegion__language);
-        m_SourceRegion__language->basicsetEContainingClass(
-                m_SourceRegionEClass);
-        // m_SourceRegion__path has already been allocated above
-        m_SourceRegion__path->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEREGION__PATH);
-        m_SourceRegion__path->setName("path");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceRegion__path);
-        m_SourceRegion__path->basicsetEContainingClass(m_SourceRegionEClass);
-    }
+        // ENamedElement
+        feature->setName("inventoryRelation");
 
-    { // InventoryModel
-        m_InventoryModelEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_InventoryModelEClass->setClassifierID(INVENTORYMODEL);
-        m_InventoryModelEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_InventoryModelEClass);
-        // m_InventoryModel__inventoryElement has already been allocated above
-        m_InventoryModel__inventoryElement->setFeatureID(
-                ::kdm::source::SourcePackage::INVENTORYMODEL__INVENTORYELEMENT);
-        m_InventoryModel__inventoryElement->setName("inventoryElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryModelEClass->getEStructuralFeatures()).basicAdd(
-                m_InventoryModel__inventoryElement);
-        m_InventoryModel__inventoryElement->basicsetEContainingClass(
-                m_InventoryModelEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
 
-    { // AbstractInventoryElement
-        m_AbstractInventoryElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractInventoryElementEClass->setClassifierID(
-                ABSTRACTINVENTORYELEMENT);
-        m_AbstractInventoryElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractInventoryElementEClass);
-        // m_AbstractInventoryElement__inventoryRelation has already been allocated above
-        m_AbstractInventoryElement__inventoryRelation->setFeatureID(
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractInventoryRelationshipEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::source::SourcePackage::ABSTRACTINVENTORYELEMENT__INVENTORYRELATION);
-        m_AbstractInventoryElement__inventoryRelation->setName(
-                "inventoryRelation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractInventoryElementEClass->getEStructuralFeatures()).basicAdd(
-                m_AbstractInventoryElement__inventoryRelation);
-        m_AbstractInventoryElement__inventoryRelation->basicsetEContainingClass(
-                m_AbstractInventoryElementEClass);
-    }
+        feature->basicsetEContainingClass(m_AbstractInventoryElementEClass);
 
-    { // InventoryItem
-        m_InventoryItemEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_InventoryItemEClass->setClassifierID(INVENTORYITEM);
-        m_InventoryItemEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_InventoryItemEClass);
-        // m_InventoryItem__version has already been allocated above
-        m_InventoryItem__version->setFeatureID(
-                ::kdm::source::SourcePackage::INVENTORYITEM__VERSION);
-        m_InventoryItem__version->setName("version");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryItemEClass->getEStructuralFeatures()).basicAdd(
-                m_InventoryItem__version);
-        m_InventoryItem__version->basicsetEContainingClass(
-                m_InventoryItemEClass);
-        // m_InventoryItem__path has already been allocated above
-        m_InventoryItem__path->setFeatureID(
-                ::kdm::source::SourcePackage::INVENTORYITEM__PATH);
-        m_InventoryItem__path->setName("path");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryItemEClass->getEStructuralFeatures()).basicAdd(
-                m_InventoryItem__path);
-        m_InventoryItem__path->basicsetEContainingClass(m_InventoryItemEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // SourceFile
-        m_SourceFileEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_SourceFileEClass->setClassifierID(SOURCEFILE);
-        m_SourceFileEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_SourceFileEClass);
-        // m_SourceFile__language has already been allocated above
-        m_SourceFile__language->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEFILE__LANGUAGE);
-        m_SourceFile__language->setName("language");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceFileEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceFile__language);
-        m_SourceFile__language->basicsetEContainingClass(m_SourceFileEClass);
-        // m_SourceFile__encoding has already been allocated above
-        m_SourceFile__encoding->setFeatureID(
-                ::kdm::source::SourcePackage::SOURCEFILE__ENCODING);
-        m_SourceFile__encoding->setName("encoding");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceFileEClass->getEStructuralFeatures()).basicAdd(
-                m_SourceFile__encoding);
-        m_SourceFile__encoding->basicsetEContainingClass(m_SourceFileEClass);
-    }
+    [this]()
+    { // Classifier AbstractInventoryElement
+        auto &&classifier = m_AbstractInventoryElementEClass;
 
-    { // Image
-        m_ImageEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_ImageEClass->setClassifierID(IMAGE);
-        m_ImageEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ImageEClass);
-    }
+        // ENamedElement
+        classifier->setName("AbstractInventoryElement");
 
-    { // ResourceDescription
-        m_ResourceDescriptionEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ResourceDescriptionEClass->setClassifierID(RESOURCEDESCRIPTION);
-        m_ResourceDescriptionEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ResourceDescriptionEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTINVENTORYELEMENT);
 
-    { // Configuration
-        m_ConfigurationEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ConfigurationEClass->setClassifierID(CONFIGURATION);
-        m_ConfigurationEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ConfigurationEClass);
-    }
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AbstractInventoryElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(
+                    m_AbstractInventoryElement__inventoryRelation);
+        }
+    }();
 
-    { // InventoryContainer
-        m_InventoryContainerEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_InventoryContainerEClass->setClassifierID(INVENTORYCONTAINER);
-        m_InventoryContainerEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_InventoryContainerEClass);
-        // m_InventoryContainer__inventoryElement has already been allocated above
-        m_InventoryContainer__inventoryElement->setFeatureID(
+    [this]()
+    { // Classifier AbstractInventoryRelationship
+        auto &&classifier = m_AbstractInventoryRelationshipEClass;
+
+        // ENamedElement
+        classifier->setName("AbstractInventoryRelationship");
+
+        // EClassifier
+        classifier->setClassifierID(ABSTRACTINVENTORYRELATIONSHIP);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier BinaryFile
+        auto &&classifier = m_BinaryFileEClass;
+
+        // ENamedElement
+        classifier->setName("BinaryFile");
+
+        // EClassifier
+        classifier->setClassifierID(BINARYFILE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier Configuration
+        auto &&classifier = m_ConfigurationEClass;
+
+        // ENamedElement
+        classifier->setName("Configuration");
+
+        // EClassifier
+        classifier->setClassifierID(CONFIGURATION);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature to of class DependsOn
+        auto &&feature = m_DependsOn__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractInventoryElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::source::SourcePackage::DEPENDSON__TO);
+        feature->basicsetEContainingClass(m_DependsOnEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class DependsOn
+        auto &&feature = m_DependsOn__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractInventoryElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::source::SourcePackage::DEPENDSON__FROM);
+        feature->basicsetEContainingClass(m_DependsOnEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier DependsOn
+        auto &&classifier = m_DependsOnEClass;
+
+        // ENamedElement
+        classifier->setName("DependsOn");
+
+        // EClassifier
+        classifier->setClassifierID(DEPENDSON);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DependsOnEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_DependsOn__to);
+            eStructuralFeatures.basicAdd(m_DependsOn__from);
+        }
+    }();
+
+    [this]()
+    { // Feature path of class Directory
+        auto &&feature = m_Directory__path;
+
+        // ENamedElement
+        feature->setName("path");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::source::SourcePackage::DIRECTORY__PATH);
+        feature->basicsetEContainingClass(m_DirectoryEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Directory
+        auto &&classifier = m_DirectoryEClass;
+
+        // ENamedElement
+        classifier->setName("Directory");
+
+        // EClassifier
+        classifier->setClassifierID(DIRECTORY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DirectoryEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Directory__path);
+        }
+    }();
+
+    [this]()
+    { // Classifier ExecutableFile
+        auto &&classifier = m_ExecutableFileEClass;
+
+        // ENamedElement
+        classifier->setName("ExecutableFile");
+
+        // EClassifier
+        classifier->setClassifierID(EXECUTABLEFILE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier Image
+        auto &&classifier = m_ImageEClass;
+
+        // ENamedElement
+        classifier->setName("Image");
+
+        // EClassifier
+        classifier->setClassifierID(IMAGE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature inventoryElement of class InventoryContainer
+        auto &&feature = m_InventoryContainer__inventoryElement;
+
+        // ENamedElement
+        feature->setName("inventoryElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractInventoryElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::source::SourcePackage::INVENTORYCONTAINER__INVENTORYELEMENT);
-        m_InventoryContainer__inventoryElement->setName("inventoryElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryContainerEClass->getEStructuralFeatures()).basicAdd(
-                m_InventoryContainer__inventoryElement);
-        m_InventoryContainer__inventoryElement->basicsetEContainingClass(
-                m_InventoryContainerEClass);
-    }
+        feature->basicsetEContainingClass(m_InventoryContainerEClass);
 
-    { // Directory
-        m_DirectoryEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DirectoryEClass->setClassifierID(DIRECTORY);
-        m_DirectoryEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DirectoryEClass);
-        // m_Directory__path has already been allocated above
-        m_Directory__path->setFeatureID(
-                ::kdm::source::SourcePackage::DIRECTORY__PATH);
-        m_Directory__path->setName("path");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DirectoryEClass->getEStructuralFeatures()).basicAdd(
-                m_Directory__path);
-        m_Directory__path->basicsetEContainingClass(m_DirectoryEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // Project
-        m_ProjectEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ProjectEClass->setClassifierID(PROJECT);
-        m_ProjectEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ProjectEClass);
-    }
+    [this]()
+    { // Classifier InventoryContainer
+        auto &&classifier = m_InventoryContainerEClass;
 
-    { // AbstractInventoryRelationship
-        m_AbstractInventoryRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AbstractInventoryRelationshipEClass->setClassifierID(
-                ABSTRACTINVENTORYRELATIONSHIP);
-        m_AbstractInventoryRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AbstractInventoryRelationshipEClass);
-    }
+        // ENamedElement
+        classifier->setName("InventoryContainer");
 
-    { // BinaryFile
-        m_BinaryFileEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_BinaryFileEClass->setClassifierID(BINARYFILE);
-        m_BinaryFileEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BinaryFileEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(INVENTORYCONTAINER);
 
-    { // ExecutableFile
-        m_ExecutableFileEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ExecutableFileEClass->setClassifierID(EXECUTABLEFILE);
-        m_ExecutableFileEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ExecutableFileEClass);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryContainerEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(
+                    m_InventoryContainer__inventoryElement);
+        }
+    }();
 
-    { // DependsOn
-        m_DependsOnEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_DependsOnEClass->setClassifierID(DEPENDSON);
-        m_DependsOnEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DependsOnEClass);
-        // m_DependsOn__to has already been allocated above
-        m_DependsOn__to->setFeatureID(
-                ::kdm::source::SourcePackage::DEPENDSON__TO);
-        m_DependsOn__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DependsOnEClass->getEStructuralFeatures()).basicAdd(
-                m_DependsOn__to);
-        m_DependsOn__to->basicsetEContainingClass(m_DependsOnEClass);
-        // m_DependsOn__from has already been allocated above
-        m_DependsOn__from->setFeatureID(
-                ::kdm::source::SourcePackage::DEPENDSON__FROM);
-        m_DependsOn__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_DependsOnEClass->getEStructuralFeatures()).basicAdd(
-                m_DependsOn__from);
-        m_DependsOn__from->basicsetEContainingClass(m_DependsOnEClass);
-    }
+    [this]()
+    { // Classifier InventoryElement
+        auto &&classifier = m_InventoryElementEClass;
 
-    { // InventoryElement
-        m_InventoryElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_InventoryElementEClass->setClassifierID(INVENTORYELEMENT);
-        m_InventoryElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_InventoryElementEClass);
-    }
+        // ENamedElement
+        classifier->setName("InventoryElement");
 
-    { // InventoryRelationship
-        m_InventoryRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_InventoryRelationshipEClass->setClassifierID(INVENTORYRELATIONSHIP);
-        m_InventoryRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_InventoryRelationshipEClass);
-        // m_InventoryRelationship__to has already been allocated above
-        m_InventoryRelationship__to->setFeatureID(
+        // EClassifier
+        classifier->setClassifierID(INVENTORYELEMENT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature version of class InventoryItem
+        auto &&feature = m_InventoryItem__version;
+
+        // ENamedElement
+        feature->setName("version");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::INVENTORYITEM__VERSION);
+        feature->basicsetEContainingClass(m_InventoryItemEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature path of class InventoryItem
+        auto &&feature = m_InventoryItem__path;
+
+        // ENamedElement
+        feature->setName("path");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::INVENTORYITEM__PATH);
+        feature->basicsetEContainingClass(m_InventoryItemEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier InventoryItem
+        auto &&classifier = m_InventoryItemEClass;
+
+        // ENamedElement
+        classifier->setName("InventoryItem");
+
+        // EClassifier
+        classifier->setClassifierID(INVENTORYITEM);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryItemEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_InventoryItem__version);
+            eStructuralFeatures.basicAdd(m_InventoryItem__path);
+        }
+    }();
+
+    [this]()
+    { // Feature inventoryElement of class InventoryModel
+        auto &&feature = m_InventoryModel__inventoryElement;
+
+        // ENamedElement
+        feature->setName("inventoryElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractInventoryElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::INVENTORYMODEL__INVENTORYELEMENT);
+        feature->basicsetEContainingClass(m_InventoryModelEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier InventoryModel
+        auto &&classifier = m_InventoryModelEClass;
+
+        // ENamedElement
+        classifier->setName("InventoryModel");
+
+        // EClassifier
+        classifier->setClassifierID(INVENTORYMODEL);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryModelEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_InventoryModel__inventoryElement);
+        }
+    }();
+
+    [this]()
+    { // Feature to of class InventoryRelationship
+        auto &&feature = m_InventoryRelationship__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::source::SourcePackage::INVENTORYRELATIONSHIP__TO);
-        m_InventoryRelationship__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_InventoryRelationship__to);
-        m_InventoryRelationship__to->basicsetEContainingClass(
-                m_InventoryRelationshipEClass);
-        // m_InventoryRelationship__from has already been allocated above
-        m_InventoryRelationship__from->setFeatureID(
+        feature->basicsetEContainingClass(m_InventoryRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature from of class InventoryRelationship
+        auto &&feature = m_InventoryRelationship__from;
+
+        // ENamedElement
+        feature->setName("from");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_AbstractInventoryElementEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::source::SourcePackage::INVENTORYRELATIONSHIP__FROM);
-        m_InventoryRelationship__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_InventoryRelationship__from);
-        m_InventoryRelationship__from->basicsetEContainingClass(
-                m_InventoryRelationshipEClass);
-    }
+        feature->basicsetEContainingClass(m_InventoryRelationshipEClass);
 
-    // Create enums
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    // Create data types
+    [this]()
+    { // Classifier InventoryRelationship
+        auto &&classifier = m_InventoryRelationshipEClass;
+
+        // ENamedElement
+        classifier->setName("InventoryRelationship");
+
+        // EClassifier
+        classifier->setClassifierID(INVENTORYRELATIONSHIP);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_InventoryRelationshipEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_InventoryRelationship__to);
+            eStructuralFeatures.basicAdd(m_InventoryRelationship__from);
+        }
+    }();
+
+    [this]()
+    { // Classifier Project
+        auto &&classifier = m_ProjectEClass;
+
+        // ENamedElement
+        classifier->setName("Project");
+
+        // EClassifier
+        classifier->setClassifierID(PROJECT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Classifier ResourceDescription
+        auto &&classifier = m_ResourceDescriptionEClass;
+
+        // ENamedElement
+        classifier->setName("ResourceDescription");
+
+        // EClassifier
+        classifier->setClassifierID(RESOURCEDESCRIPTION);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature language of class SourceFile
+        auto &&feature = m_SourceFile__language;
+
+        // ENamedElement
+        feature->setName("language");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::SOURCEFILE__LANGUAGE);
+        feature->basicsetEContainingClass(m_SourceFileEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature encoding of class SourceFile
+        auto &&feature = m_SourceFile__encoding;
+
+        // ENamedElement
+        feature->setName("encoding");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::SOURCEFILE__ENCODING);
+        feature->basicsetEContainingClass(m_SourceFileEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier SourceFile
+        auto &&classifier = m_SourceFileEClass;
+
+        // ENamedElement
+        classifier->setName("SourceFile");
+
+        // EClassifier
+        classifier->setClassifierID(SOURCEFILE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceFileEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_SourceFile__language);
+            eStructuralFeatures.basicAdd(m_SourceFile__encoding);
+        }
+    }();
+
+    [this]()
+    { // Feature region of class SourceRef
+        auto &&feature = m_SourceRef__region;
+
+        // ENamedElement
+        feature->setName("region");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_SourceRegionEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::source::SourcePackage::SOURCEREF__REGION);
+        feature->basicsetEContainingClass(m_SourceRefEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature language of class SourceRef
+        auto &&feature = m_SourceRef__language;
+
+        // ENamedElement
+        feature->setName("language");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::SOURCEREF__LANGUAGE);
+        feature->basicsetEContainingClass(m_SourceRefEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature snippet of class SourceRef
+        auto &&feature = m_SourceRef__snippet;
+
+        // ENamedElement
+        feature->setName("snippet");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::source::SourcePackage::SOURCEREF__SNIPPET);
+        feature->basicsetEContainingClass(m_SourceRefEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier SourceRef
+        auto &&classifier = m_SourceRefEClass;
+
+        // ENamedElement
+        classifier->setName("SourceRef");
+
+        // EClassifier
+        classifier->setClassifierID(SOURCEREF);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRefEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_SourceRef__region);
+            eStructuralFeatures.basicAdd(m_SourceRef__language);
+            eStructuralFeatures.basicAdd(m_SourceRef__snippet);
+        }
+    }();
+
+    [this]()
+    { // Feature file of class SourceRegion
+        auto &&feature = m_SourceRegion__file;
+
+        // ENamedElement
+        feature->setName("file");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_SourceFileEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::source::SourcePackage::SOURCEREGION__FILE);
+        feature->basicsetEContainingClass(m_SourceRegionEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature startLine of class SourceRegion
+        auto &&feature = m_SourceRegion__startLine;
+
+        // ENamedElement
+        feature->setName("startLine");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::SOURCEREGION__STARTLINE);
+        feature->basicsetEContainingClass(m_SourceRegionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature startPosition of class SourceRegion
+        auto &&feature = m_SourceRegion__startPosition;
+
+        // ENamedElement
+        feature->setName("startPosition");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::SOURCEREGION__STARTPOSITION);
+        feature->basicsetEContainingClass(m_SourceRegionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature endLine of class SourceRegion
+        auto &&feature = m_SourceRegion__endLine;
+
+        // ENamedElement
+        feature->setName("endLine");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::SOURCEREGION__ENDLINE);
+        feature->basicsetEContainingClass(m_SourceRegionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature endPosition of class SourceRegion
+        auto &&feature = m_SourceRegion__endPosition;
+
+        // ENamedElement
+        feature->setName("endPosition");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::SOURCEREGION__ENDPOSITION);
+        feature->basicsetEContainingClass(m_SourceRegionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature language of class SourceRegion
+        auto &&feature = m_SourceRegion__language;
+
+        // ENamedElement
+        feature->setName("language");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::source::SourcePackage::SOURCEREGION__LANGUAGE);
+        feature->basicsetEContainingClass(m_SourceRegionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature path of class SourceRegion
+        auto &&feature = m_SourceRegion__path;
+
+        // ENamedElement
+        feature->setName("path");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::source::SourcePackage::SOURCEREGION__PATH);
+        feature->basicsetEContainingClass(m_SourceRegionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier SourceRegion
+        auto &&classifier = m_SourceRegionEClass;
+
+        // ENamedElement
+        classifier->setName("SourceRegion");
+
+        // EClassifier
+        classifier->setClassifierID(SOURCEREGION);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SourceRegionEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_SourceRegion__file);
+            eStructuralFeatures.basicAdd(m_SourceRegion__startLine);
+            eStructuralFeatures.basicAdd(m_SourceRegion__startPosition);
+            eStructuralFeatures.basicAdd(m_SourceRegion__endLine);
+            eStructuralFeatures.basicAdd(m_SourceRegion__endPosition);
+            eStructuralFeatures.basicAdd(m_SourceRegion__language);
+            eStructuralFeatures.basicAdd(m_SourceRegion__path);
+        }
+    }();
 
     // Initialize package
     setName("source");
@@ -484,459 +1129,64 @@ void SourcePackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_SourceRefEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
-    m_SourceRegionEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
-    m_InventoryModelEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
-    m_AbstractInventoryElementEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-    m_InventoryItemEClass->getESuperTypes().push_back(
-            m_AbstractInventoryElementEClass);
-    m_SourceFileEClass->getESuperTypes().push_back(m_InventoryItemEClass);
-    m_ImageEClass->getESuperTypes().push_back(m_InventoryItemEClass);
-    m_ResourceDescriptionEClass->getESuperTypes().push_back(
-            m_InventoryItemEClass);
-    m_ConfigurationEClass->getESuperTypes().push_back(m_InventoryItemEClass);
-    m_InventoryContainerEClass->getESuperTypes().push_back(
-            m_AbstractInventoryElementEClass);
-    m_DirectoryEClass->getESuperTypes().push_back(m_InventoryContainerEClass);
-    m_ProjectEClass->getESuperTypes().push_back(m_InventoryContainerEClass);
-    m_AbstractInventoryRelationshipEClass->getESuperTypes().push_back(
-            dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
-    m_BinaryFileEClass->getESuperTypes().push_back(m_InventoryItemEClass);
-    m_ExecutableFileEClass->getESuperTypes().push_back(m_InventoryItemEClass);
-    m_DependsOnEClass->getESuperTypes().push_back(
-            m_AbstractInventoryRelationshipEClass);
-    m_InventoryElementEClass->getESuperTypes().push_back(
-            m_AbstractInventoryElementEClass);
-    m_InventoryRelationshipEClass->getESuperTypes().push_back(
-            m_AbstractInventoryRelationshipEClass);
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // SourceRef
-        m_SourceRefEClass->setName("SourceRef");
-        m_SourceRefEClass->setAbstract(false);
-        m_SourceRefEClass->setInterface(false);
-        m_SourceRef__language->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceRef__language->setDefaultValueLiteral("");
-        m_SourceRef__language->setLowerBound(0);
-        m_SourceRef__language->setUpperBound(1);
-        m_SourceRef__language->setTransient(false);
-        m_SourceRef__language->setVolatile(false);
-        m_SourceRef__language->setChangeable(true);
-        m_SourceRef__language->setUnsettable(false);
-        m_SourceRef__language->setID(false);
-        m_SourceRef__language->setUnique(false);
-        m_SourceRef__language->setDerived(false);
-        m_SourceRef__language->setOrdered(false);
-        m_SourceRef__snippet->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceRef__snippet->setDefaultValueLiteral("");
-        m_SourceRef__snippet->setLowerBound(0);
-        m_SourceRef__snippet->setUpperBound(1);
-        m_SourceRef__snippet->setTransient(false);
-        m_SourceRef__snippet->setVolatile(false);
-        m_SourceRef__snippet->setChangeable(true);
-        m_SourceRef__snippet->setUnsettable(false);
-        m_SourceRef__snippet->setID(false);
-        m_SourceRef__snippet->setUnique(false);
-        m_SourceRef__snippet->setDerived(false);
-        m_SourceRef__snippet->setOrdered(false);
-
-        m_SourceRef__region->setEType(m_SourceRegionEClass);
-        m_SourceRef__region->setDefaultValueLiteral("");
-        m_SourceRef__region->setLowerBound(0);
-        m_SourceRef__region->setUpperBound(-1);
-        m_SourceRef__region->setTransient(false);
-        m_SourceRef__region->setVolatile(false);
-        m_SourceRef__region->setChangeable(true);
-        m_SourceRef__region->setContainment(true);
-        m_SourceRef__region->setResolveProxies(true);
-        m_SourceRef__region->setUnique(true);
-        m_SourceRef__region->setDerived(false);
-        m_SourceRef__region->setOrdered(false);
-
-    }
-
-    { // SourceRegion
-        m_SourceRegionEClass->setName("SourceRegion");
-        m_SourceRegionEClass->setAbstract(false);
-        m_SourceRegionEClass->setInterface(false);
-        m_SourceRegion__startLine->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SourceRegion__startLine->setDefaultValueLiteral("");
-        m_SourceRegion__startLine->setLowerBound(0);
-        m_SourceRegion__startLine->setUpperBound(1);
-        m_SourceRegion__startLine->setTransient(false);
-        m_SourceRegion__startLine->setVolatile(false);
-        m_SourceRegion__startLine->setChangeable(true);
-        m_SourceRegion__startLine->setUnsettable(false);
-        m_SourceRegion__startLine->setID(false);
-        m_SourceRegion__startLine->setUnique(false);
-        m_SourceRegion__startLine->setDerived(false);
-        m_SourceRegion__startLine->setOrdered(false);
-        m_SourceRegion__startPosition->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SourceRegion__startPosition->setDefaultValueLiteral("");
-        m_SourceRegion__startPosition->setLowerBound(0);
-        m_SourceRegion__startPosition->setUpperBound(1);
-        m_SourceRegion__startPosition->setTransient(false);
-        m_SourceRegion__startPosition->setVolatile(false);
-        m_SourceRegion__startPosition->setChangeable(true);
-        m_SourceRegion__startPosition->setUnsettable(false);
-        m_SourceRegion__startPosition->setID(false);
-        m_SourceRegion__startPosition->setUnique(false);
-        m_SourceRegion__startPosition->setDerived(false);
-        m_SourceRegion__startPosition->setOrdered(false);
-        m_SourceRegion__endLine->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SourceRegion__endLine->setDefaultValueLiteral("");
-        m_SourceRegion__endLine->setLowerBound(0);
-        m_SourceRegion__endLine->setUpperBound(1);
-        m_SourceRegion__endLine->setTransient(false);
-        m_SourceRegion__endLine->setVolatile(false);
-        m_SourceRegion__endLine->setChangeable(true);
-        m_SourceRegion__endLine->setUnsettable(false);
-        m_SourceRegion__endLine->setID(false);
-        m_SourceRegion__endLine->setUnique(false);
-        m_SourceRegion__endLine->setDerived(false);
-        m_SourceRegion__endLine->setOrdered(false);
-        m_SourceRegion__endPosition->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
-        m_SourceRegion__endPosition->setDefaultValueLiteral("");
-        m_SourceRegion__endPosition->setLowerBound(0);
-        m_SourceRegion__endPosition->setUpperBound(1);
-        m_SourceRegion__endPosition->setTransient(false);
-        m_SourceRegion__endPosition->setVolatile(false);
-        m_SourceRegion__endPosition->setChangeable(true);
-        m_SourceRegion__endPosition->setUnsettable(false);
-        m_SourceRegion__endPosition->setID(false);
-        m_SourceRegion__endPosition->setUnique(false);
-        m_SourceRegion__endPosition->setDerived(false);
-        m_SourceRegion__endPosition->setOrdered(false);
-        m_SourceRegion__language->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceRegion__language->setDefaultValueLiteral("");
-        m_SourceRegion__language->setLowerBound(0);
-        m_SourceRegion__language->setUpperBound(1);
-        m_SourceRegion__language->setTransient(false);
-        m_SourceRegion__language->setVolatile(false);
-        m_SourceRegion__language->setChangeable(true);
-        m_SourceRegion__language->setUnsettable(false);
-        m_SourceRegion__language->setID(false);
-        m_SourceRegion__language->setUnique(false);
-        m_SourceRegion__language->setDerived(false);
-        m_SourceRegion__language->setOrdered(false);
-        m_SourceRegion__path->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceRegion__path->setDefaultValueLiteral("");
-        m_SourceRegion__path->setLowerBound(0);
-        m_SourceRegion__path->setUpperBound(1);
-        m_SourceRegion__path->setTransient(false);
-        m_SourceRegion__path->setVolatile(false);
-        m_SourceRegion__path->setChangeable(true);
-        m_SourceRegion__path->setUnsettable(false);
-        m_SourceRegion__path->setID(false);
-        m_SourceRegion__path->setUnique(false);
-        m_SourceRegion__path->setDerived(false);
-        m_SourceRegion__path->setOrdered(false);
-
-        m_SourceRegion__file->setEType(m_SourceFileEClass);
-        m_SourceRegion__file->setDefaultValueLiteral("");
-        m_SourceRegion__file->setLowerBound(0);
-        m_SourceRegion__file->setUpperBound(1);
-        m_SourceRegion__file->setTransient(false);
-        m_SourceRegion__file->setVolatile(false);
-        m_SourceRegion__file->setChangeable(true);
-        m_SourceRegion__file->setContainment(false);
-        m_SourceRegion__file->setResolveProxies(true);
-        m_SourceRegion__file->setUnique(true);
-        m_SourceRegion__file->setDerived(false);
-        m_SourceRegion__file->setOrdered(false);
-
-    }
-
-    { // InventoryModel
-        m_InventoryModelEClass->setName("InventoryModel");
-        m_InventoryModelEClass->setAbstract(false);
-        m_InventoryModelEClass->setInterface(false);
-
-        m_InventoryModel__inventoryElement->setEType(
-                m_AbstractInventoryElementEClass);
-        m_InventoryModel__inventoryElement->setDefaultValueLiteral("");
-        m_InventoryModel__inventoryElement->setLowerBound(0);
-        m_InventoryModel__inventoryElement->setUpperBound(-1);
-        m_InventoryModel__inventoryElement->setTransient(false);
-        m_InventoryModel__inventoryElement->setVolatile(false);
-        m_InventoryModel__inventoryElement->setChangeable(true);
-        m_InventoryModel__inventoryElement->setContainment(true);
-        m_InventoryModel__inventoryElement->setResolveProxies(true);
-        m_InventoryModel__inventoryElement->setUnique(true);
-        m_InventoryModel__inventoryElement->setDerived(false);
-        m_InventoryModel__inventoryElement->setOrdered(false);
-
-    }
-
-    { // AbstractInventoryElement
-        m_AbstractInventoryElementEClass->setName("AbstractInventoryElement");
-        m_AbstractInventoryElementEClass->setAbstract(true);
-        m_AbstractInventoryElementEClass->setInterface(false);
-
-        m_AbstractInventoryElement__inventoryRelation->setEType(
-                m_AbstractInventoryRelationshipEClass);
-        m_AbstractInventoryElement__inventoryRelation->setDefaultValueLiteral(
-                "");
-        m_AbstractInventoryElement__inventoryRelation->setLowerBound(0);
-        m_AbstractInventoryElement__inventoryRelation->setUpperBound(-1);
-        m_AbstractInventoryElement__inventoryRelation->setTransient(false);
-        m_AbstractInventoryElement__inventoryRelation->setVolatile(false);
-        m_AbstractInventoryElement__inventoryRelation->setChangeable(true);
-        m_AbstractInventoryElement__inventoryRelation->setContainment(true);
-        m_AbstractInventoryElement__inventoryRelation->setResolveProxies(true);
-        m_AbstractInventoryElement__inventoryRelation->setUnique(true);
-        m_AbstractInventoryElement__inventoryRelation->setDerived(false);
-        m_AbstractInventoryElement__inventoryRelation->setOrdered(false);
-
-    }
-
-    { // InventoryItem
-        m_InventoryItemEClass->setName("InventoryItem");
-        m_InventoryItemEClass->setAbstract(false);
-        m_InventoryItemEClass->setInterface(false);
-        m_InventoryItem__version->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_InventoryItem__version->setDefaultValueLiteral("");
-        m_InventoryItem__version->setLowerBound(0);
-        m_InventoryItem__version->setUpperBound(1);
-        m_InventoryItem__version->setTransient(false);
-        m_InventoryItem__version->setVolatile(false);
-        m_InventoryItem__version->setChangeable(true);
-        m_InventoryItem__version->setUnsettable(false);
-        m_InventoryItem__version->setID(false);
-        m_InventoryItem__version->setUnique(false);
-        m_InventoryItem__version->setDerived(false);
-        m_InventoryItem__version->setOrdered(false);
-        m_InventoryItem__path->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_InventoryItem__path->setDefaultValueLiteral("");
-        m_InventoryItem__path->setLowerBound(0);
-        m_InventoryItem__path->setUpperBound(1);
-        m_InventoryItem__path->setTransient(false);
-        m_InventoryItem__path->setVolatile(false);
-        m_InventoryItem__path->setChangeable(true);
-        m_InventoryItem__path->setUnsettable(false);
-        m_InventoryItem__path->setID(false);
-        m_InventoryItem__path->setUnique(false);
-        m_InventoryItem__path->setDerived(false);
-        m_InventoryItem__path->setOrdered(false);
-
-    }
-
-    { // SourceFile
-        m_SourceFileEClass->setName("SourceFile");
-        m_SourceFileEClass->setAbstract(false);
-        m_SourceFileEClass->setInterface(false);
-        m_SourceFile__language->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceFile__language->setDefaultValueLiteral("");
-        m_SourceFile__language->setLowerBound(0);
-        m_SourceFile__language->setUpperBound(1);
-        m_SourceFile__language->setTransient(false);
-        m_SourceFile__language->setVolatile(false);
-        m_SourceFile__language->setChangeable(true);
-        m_SourceFile__language->setUnsettable(false);
-        m_SourceFile__language->setID(false);
-        m_SourceFile__language->setUnique(false);
-        m_SourceFile__language->setDerived(false);
-        m_SourceFile__language->setOrdered(false);
-        m_SourceFile__encoding->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_SourceFile__encoding->setDefaultValueLiteral("");
-        m_SourceFile__encoding->setLowerBound(0);
-        m_SourceFile__encoding->setUpperBound(1);
-        m_SourceFile__encoding->setTransient(false);
-        m_SourceFile__encoding->setVolatile(false);
-        m_SourceFile__encoding->setChangeable(true);
-        m_SourceFile__encoding->setUnsettable(false);
-        m_SourceFile__encoding->setID(false);
-        m_SourceFile__encoding->setUnique(false);
-        m_SourceFile__encoding->setDerived(false);
-        m_SourceFile__encoding->setOrdered(false);
-
-    }
-
-    { // Image
-        m_ImageEClass->setName("Image");
-        m_ImageEClass->setAbstract(false);
-        m_ImageEClass->setInterface(false);
-
-    }
-
-    { // ResourceDescription
-        m_ResourceDescriptionEClass->setName("ResourceDescription");
-        m_ResourceDescriptionEClass->setAbstract(false);
-        m_ResourceDescriptionEClass->setInterface(false);
-
-    }
-
-    { // Configuration
-        m_ConfigurationEClass->setName("Configuration");
-        m_ConfigurationEClass->setAbstract(false);
-        m_ConfigurationEClass->setInterface(false);
-
-    }
-
-    { // InventoryContainer
-        m_InventoryContainerEClass->setName("InventoryContainer");
-        m_InventoryContainerEClass->setAbstract(false);
-        m_InventoryContainerEClass->setInterface(false);
-
-        m_InventoryContainer__inventoryElement->setEType(
-                m_AbstractInventoryElementEClass);
-        m_InventoryContainer__inventoryElement->setDefaultValueLiteral("");
-        m_InventoryContainer__inventoryElement->setLowerBound(0);
-        m_InventoryContainer__inventoryElement->setUpperBound(-1);
-        m_InventoryContainer__inventoryElement->setTransient(false);
-        m_InventoryContainer__inventoryElement->setVolatile(false);
-        m_InventoryContainer__inventoryElement->setChangeable(true);
-        m_InventoryContainer__inventoryElement->setContainment(true);
-        m_InventoryContainer__inventoryElement->setResolveProxies(true);
-        m_InventoryContainer__inventoryElement->setUnique(true);
-        m_InventoryContainer__inventoryElement->setDerived(false);
-        m_InventoryContainer__inventoryElement->setOrdered(false);
-
-    }
-
-    { // Directory
-        m_DirectoryEClass->setName("Directory");
-        m_DirectoryEClass->setAbstract(false);
-        m_DirectoryEClass->setInterface(false);
-        m_Directory__path->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
-        m_Directory__path->setDefaultValueLiteral("");
-        m_Directory__path->setLowerBound(0);
-        m_Directory__path->setUpperBound(1);
-        m_Directory__path->setTransient(false);
-        m_Directory__path->setVolatile(false);
-        m_Directory__path->setChangeable(true);
-        m_Directory__path->setUnsettable(false);
-        m_Directory__path->setID(false);
-        m_Directory__path->setUnique(false);
-        m_Directory__path->setDerived(false);
-        m_Directory__path->setOrdered(false);
-
-    }
-
-    { // Project
-        m_ProjectEClass->setName("Project");
-        m_ProjectEClass->setAbstract(false);
-        m_ProjectEClass->setInterface(false);
-
-    }
-
-    { // AbstractInventoryRelationship
-        m_AbstractInventoryRelationshipEClass->setName(
-                "AbstractInventoryRelationship");
-        m_AbstractInventoryRelationshipEClass->setAbstract(true);
-        m_AbstractInventoryRelationshipEClass->setInterface(false);
-
-    }
-
-    { // BinaryFile
-        m_BinaryFileEClass->setName("BinaryFile");
-        m_BinaryFileEClass->setAbstract(false);
-        m_BinaryFileEClass->setInterface(false);
-
-    }
-
-    { // ExecutableFile
-        m_ExecutableFileEClass->setName("ExecutableFile");
-        m_ExecutableFileEClass->setAbstract(false);
-        m_ExecutableFileEClass->setInterface(false);
-
-    }
-
-    { // DependsOn
-        m_DependsOnEClass->setName("DependsOn");
-        m_DependsOnEClass->setAbstract(false);
-        m_DependsOnEClass->setInterface(false);
-
-        m_DependsOn__to->setEType(m_AbstractInventoryElementEClass);
-        m_DependsOn__to->setDefaultValueLiteral("");
-        m_DependsOn__to->setLowerBound(1);
-        m_DependsOn__to->setUpperBound(1);
-        m_DependsOn__to->setTransient(false);
-        m_DependsOn__to->setVolatile(false);
-        m_DependsOn__to->setChangeable(true);
-        m_DependsOn__to->setContainment(false);
-        m_DependsOn__to->setResolveProxies(true);
-        m_DependsOn__to->setUnique(true);
-        m_DependsOn__to->setDerived(false);
-        m_DependsOn__to->setOrdered(false);
-        m_DependsOn__from->setEType(m_AbstractInventoryElementEClass);
-        m_DependsOn__from->setDefaultValueLiteral("");
-        m_DependsOn__from->setLowerBound(1);
-        m_DependsOn__from->setUpperBound(1);
-        m_DependsOn__from->setTransient(false);
-        m_DependsOn__from->setVolatile(false);
-        m_DependsOn__from->setChangeable(true);
-        m_DependsOn__from->setContainment(false);
-        m_DependsOn__from->setResolveProxies(true);
-        m_DependsOn__from->setUnique(true);
-        m_DependsOn__from->setDerived(false);
-        m_DependsOn__from->setOrdered(false);
-
-    }
-
-    { // InventoryElement
-        m_InventoryElementEClass->setName("InventoryElement");
-        m_InventoryElementEClass->setAbstract(false);
-        m_InventoryElementEClass->setInterface(false);
-
-    }
-
-    { // InventoryRelationship
-        m_InventoryRelationshipEClass->setName("InventoryRelationship");
-        m_InventoryRelationshipEClass->setAbstract(false);
-        m_InventoryRelationshipEClass->setInterface(false);
-
-        m_InventoryRelationship__to->setEType(
+    [this]()
+    {
+        m_SourceRefEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+        m_SourceRegionEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+        m_InventoryModelEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+        m_AbstractInventoryElementEClass->getESuperTypes().push_back(
                 dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
-        m_InventoryRelationship__to->setDefaultValueLiteral("");
-        m_InventoryRelationship__to->setLowerBound(1);
-        m_InventoryRelationship__to->setUpperBound(1);
-        m_InventoryRelationship__to->setTransient(false);
-        m_InventoryRelationship__to->setVolatile(false);
-        m_InventoryRelationship__to->setChangeable(true);
-        m_InventoryRelationship__to->setContainment(false);
-        m_InventoryRelationship__to->setResolveProxies(true);
-        m_InventoryRelationship__to->setUnique(true);
-        m_InventoryRelationship__to->setDerived(false);
-        m_InventoryRelationship__to->setOrdered(false);
-        m_InventoryRelationship__from->setEType(
+        m_InventoryItemEClass->getESuperTypes().push_back(
                 m_AbstractInventoryElementEClass);
-        m_InventoryRelationship__from->setDefaultValueLiteral("");
-        m_InventoryRelationship__from->setLowerBound(1);
-        m_InventoryRelationship__from->setUpperBound(1);
-        m_InventoryRelationship__from->setTransient(false);
-        m_InventoryRelationship__from->setVolatile(false);
-        m_InventoryRelationship__from->setChangeable(true);
-        m_InventoryRelationship__from->setContainment(false);
-        m_InventoryRelationship__from->setResolveProxies(true);
-        m_InventoryRelationship__from->setUnique(true);
-        m_InventoryRelationship__from->setDerived(false);
-        m_InventoryRelationship__from->setOrdered(false);
+        m_SourceFileEClass->getESuperTypes().push_back(m_InventoryItemEClass);
+        m_ImageEClass->getESuperTypes().push_back(m_InventoryItemEClass);
+        m_ResourceDescriptionEClass->getESuperTypes().push_back(
+                m_InventoryItemEClass);
+        m_ConfigurationEClass->getESuperTypes().push_back(
+                m_InventoryItemEClass);
+        m_InventoryContainerEClass->getESuperTypes().push_back(
+                m_AbstractInventoryElementEClass);
+        m_DirectoryEClass->getESuperTypes().push_back(
+                m_InventoryContainerEClass);
+        m_ProjectEClass->getESuperTypes().push_back(m_InventoryContainerEClass);
+        m_AbstractInventoryRelationshipEClass->getESuperTypes().push_back(
+                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+        m_BinaryFileEClass->getESuperTypes().push_back(m_InventoryItemEClass);
+        m_ExecutableFileEClass->getESuperTypes().push_back(
+                m_InventoryItemEClass);
+        m_DependsOnEClass->getESuperTypes().push_back(
+                m_AbstractInventoryRelationshipEClass);
+        m_InventoryElementEClass->getESuperTypes().push_back(
+                m_AbstractInventoryElementEClass);
+        m_InventoryRelationshipEClass->getESuperTypes().push_back(
+                m_AbstractInventoryRelationshipEClass);
+    }();
 
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_AbstractInventoryElementEClass);
+        classifiers.push_back(m_AbstractInventoryRelationshipEClass);
+        classifiers.push_back(m_BinaryFileEClass);
+        classifiers.push_back(m_ConfigurationEClass);
+        classifiers.push_back(m_DependsOnEClass);
+        classifiers.push_back(m_DirectoryEClass);
+        classifiers.push_back(m_ExecutableFileEClass);
+        classifiers.push_back(m_ImageEClass);
+        classifiers.push_back(m_InventoryContainerEClass);
+        classifiers.push_back(m_InventoryElementEClass);
+        classifiers.push_back(m_InventoryItemEClass);
+        classifiers.push_back(m_InventoryModelEClass);
+        classifiers.push_back(m_InventoryRelationshipEClass);
+        classifiers.push_back(m_ProjectEClass);
+        classifiers.push_back(m_ResourceDescriptionEClass);
+        classifiers.push_back(m_SourceFileEClass);
+        classifiers.push_back(m_SourceRefEClass);
+        classifiers.push_back(m_SourceRegionEClass);
+    }();
 
     _initialize();
 }

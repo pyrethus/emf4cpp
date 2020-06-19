@@ -37,55 +37,78 @@ using namespace ::PrimitiveTypes;
 
 PrimitiveTypesPackage::PrimitiveTypesPackage()
 {
-
+    m_BooleanEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_DoubleEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_IntegerEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_StringEDataType = ::ecore::make< ::ecore::EDataType >();
 }
 
 void PrimitiveTypesPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = PrimitiveTypesFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = PrimitiveTypesFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    // Create enums
+    [this]()
+    { // Classifier Boolean
+        auto &&classifier = m_BooleanEDataType;
 
-    // Create data types
+        // ENamedElement
+        classifier->setName("Boolean");
 
-    { // Boolean
-        m_BooleanEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_BooleanEDataType->setClassifierID(BOOLEAN);
-        m_BooleanEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BooleanEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(BOOLEAN);
 
-    { // Integer
-        m_IntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_IntegerEDataType->setClassifierID(INTEGER);
-        m_IntegerEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IntegerEDataType);
-    }
+        // EDataType
+        classifier->setSerializable(true);
+    }();
 
-    { // String
-        m_StringEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_StringEDataType->setClassifierID(STRING);
-        m_StringEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_StringEDataType);
-    }
+    [this]()
+    { // Classifier Double
+        auto &&classifier = m_DoubleEDataType;
 
-    { // Double
-        m_DoubleEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_DoubleEDataType->setClassifierID(DOUBLE);
-        m_DoubleEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DoubleEDataType);
-    }
+        // ENamedElement
+        classifier->setName("Double");
+
+        // EClassifier
+        classifier->setClassifierID(DOUBLE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Integer
+        auto &&classifier = m_IntegerEDataType;
+
+        // ENamedElement
+        classifier->setName("Integer");
+
+        // EClassifier
+        classifier->setClassifierID(INTEGER);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier String
+        auto &&classifier = m_StringEDataType;
+
+        // ENamedElement
+        classifier->setName("String");
+
+        // EClassifier
+        classifier->setClassifierID(STRING);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
 
     // Initialize package
     setName("PrimitiveTypes");
@@ -95,34 +118,18 @@ void PrimitiveTypesPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
+    [this]()
+    {
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-
-    // TODO: Initialize data types
-
-    { // Boolean
-        m_BooleanEDataType->setName("Boolean");
-        m_BooleanEDataType->setSerializable(true);
-    }
-
-    { // Integer
-        m_IntegerEDataType->setName("Integer");
-        m_IntegerEDataType->setSerializable(true);
-    }
-
-    { // String
-        m_StringEDataType->setName("String");
-        m_StringEDataType->setSerializable(true);
-    }
-
-    { // Double
-        m_DoubleEDataType->setName("Double");
-        m_DoubleEDataType->setSerializable(true);
-    }
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_BooleanEDataType);
+        classifiers.push_back(m_DoubleEDataType);
+        classifiers.push_back(m_IntegerEDataType);
+        classifiers.push_back(m_StringEDataType);
+    }();
 
     _initialize();
 }

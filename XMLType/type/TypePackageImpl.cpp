@@ -40,687 +40,1458 @@ using namespace ::type;
 
 TypePackage::TypePackage()
 {
-
-    // Feature definitions of AnyType
-    m_AnyType__mixed = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_AnyType__any = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_AnyType__anyAttribute = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of ProcessingInstruction
-    m_ProcessingInstruction__data = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ProcessingInstruction__target = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of SimpleAnyType
-    m_SimpleAnyType__rawValue = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SimpleAnyType__value = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_SimpleAnyType__instanceType = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of XMLTypeDocumentRoot
-    m_XMLTypeDocumentRoot__mixed = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_XMLTypeDocumentRoot__cDATA = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_XMLTypeDocumentRoot__comment = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_XMLTypeDocumentRoot__text = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_XMLTypeDocumentRoot__xMLNSPrefixMap = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_XMLTypeDocumentRoot__xSISchemaLocation = ::ecore::Ptr
-            < ::ecore::EReference > (new ::ecore::EReference);
-    m_XMLTypeDocumentRoot__processingInstruction = ::ecore::Ptr
-            < ::ecore::EReference > (new ::ecore::EReference);
-
+    m_AnySimpleTypeEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_AnyType__mixed = ::ecore::make< ::ecore::EAttribute >();
+    m_AnyType__any = ::ecore::make< ::ecore::EAttribute >();
+    m_AnyType__anyAttribute = ::ecore::make< ::ecore::EAttribute >();
+    m_AnyTypeEClass = ::ecore::make< ::ecore::EClass >();
+    m_AnyURIEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_Base64BinaryEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_BooleanEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_BooleanObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ByteEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ByteObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_DateEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_DateTimeEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_DecimalEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_DoubleEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_DoubleObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_DurationEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ENTITIESEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ENTITIESBaseEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ENTITYEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_FloatEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_FloatObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_GDayEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_GMonthEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_GMonthDayEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_GYearEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_GYearMonthEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_HexBinaryEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_IDEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_IDREFEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_IDREFSEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_IDREFSBaseEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_IntEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_IntegerEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_IntObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_LanguageEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_LongEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_LongObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NameEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NCNameEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NegativeIntegerEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NMTOKENEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NMTOKENSEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NMTOKENSBaseEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NonNegativeIntegerEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NonPositiveIntegerEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NormalizedStringEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_NOTATIONEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_PositiveIntegerEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ProcessingInstruction__data = ::ecore::make< ::ecore::EAttribute >();
+    m_ProcessingInstruction__target = ::ecore::make< ::ecore::EAttribute >();
+    m_ProcessingInstructionEClass = ::ecore::make< ::ecore::EClass >();
+    m_QNameEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ShortEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ShortObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_SimpleAnyType__rawValue = ::ecore::make< ::ecore::EAttribute >();
+    m_SimpleAnyType__value = ::ecore::make< ::ecore::EAttribute >();
+    m_SimpleAnyType__instanceType = ::ecore::make< ::ecore::EReference >();
+    m_SimpleAnyTypeEClass = ::ecore::make< ::ecore::EClass >();
+    m_StringEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_TimeEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_TokenEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_UnsignedByteEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_UnsignedByteObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_UnsignedIntEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_UnsignedIntObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_UnsignedLongEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_UnsignedShortEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_UnsignedShortObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_XMLTypeDocumentRoot__mixed = ::ecore::make< ::ecore::EAttribute >();
+    m_XMLTypeDocumentRoot__xMLNSPrefixMap =
+            ::ecore::make< ::ecore::EReference >();
+    m_XMLTypeDocumentRoot__xSISchemaLocation = ::ecore::make<
+            ::ecore::EReference >();
+    m_XMLTypeDocumentRoot__cDATA = ::ecore::make< ::ecore::EAttribute >();
+    m_XMLTypeDocumentRoot__comment = ::ecore::make< ::ecore::EAttribute >();
+    m_XMLTypeDocumentRoot__processingInstruction = ::ecore::make<
+            ::ecore::EReference >();
+    m_XMLTypeDocumentRoot__text = ::ecore::make< ::ecore::EAttribute >();
+    m_XMLTypeDocumentRootEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void TypePackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = TypeFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = TypeFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // AnyType
-        m_AnyTypeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AnyTypeEClass->setClassifierID(ANYTYPE);
-        m_AnyTypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AnyTypeEClass);
-        // m_AnyType__mixed has already been allocated above
-        m_AnyType__mixed->setFeatureID(::type::TypePackage::ANYTYPE__MIXED);
-        m_AnyType__mixed->setName("mixed");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_AnyType__mixed);
-        m_AnyType__mixed->basicsetEContainingClass(m_AnyTypeEClass);
-        // m_AnyType__any has already been allocated above
-        m_AnyType__any->setFeatureID(::type::TypePackage::ANYTYPE__ANY);
-        m_AnyType__any->setName("any");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_AnyType__any);
-        m_AnyType__any->basicsetEContainingClass(m_AnyTypeEClass);
-        // m_AnyType__anyAttribute has already been allocated above
-        m_AnyType__anyAttribute->setFeatureID(
-                ::type::TypePackage::ANYTYPE__ANYATTRIBUTE);
-        m_AnyType__anyAttribute->setName("anyAttribute");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_AnyType__anyAttribute);
-        m_AnyType__anyAttribute->basicsetEContainingClass(m_AnyTypeEClass);
-    }
+    [this]()
+    { // Classifier AnySimpleType
+        auto &&classifier = m_AnySimpleTypeEDataType;
 
-    { // ProcessingInstruction
-        m_ProcessingInstructionEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ProcessingInstructionEClass->setClassifierID(PROCESSINGINSTRUCTION);
-        m_ProcessingInstructionEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ProcessingInstructionEClass);
-        // m_ProcessingInstruction__data has already been allocated above
-        m_ProcessingInstruction__data->setFeatureID(
-                ::type::TypePackage::PROCESSINGINSTRUCTION__DATA);
-        m_ProcessingInstruction__data->setName("data");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProcessingInstructionEClass->getEStructuralFeatures()).basicAdd(
-                m_ProcessingInstruction__data);
-        m_ProcessingInstruction__data->basicsetEContainingClass(
-                m_ProcessingInstructionEClass);
-        // m_ProcessingInstruction__target has already been allocated above
-        m_ProcessingInstruction__target->setFeatureID(
+        // ENamedElement
+        classifier->setName("AnySimpleType");
+
+        // EClassifier
+        classifier->setClassifierID(ANYSIMPLETYPE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Feature mixed of class AnyType
+        auto &&feature = m_AnyType__mixed;
+
+        // ENamedElement
+        feature->setName("mixed");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(false);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::type::TypePackage::ANYTYPE__MIXED);
+        feature->basicsetEContainingClass(m_AnyTypeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature any of class AnyType
+        auto &&feature = m_AnyType__any;
+
+        // ENamedElement
+        feature->setName("any");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(false);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::type::TypePackage::ANYTYPE__ANY);
+        feature->basicsetEContainingClass(m_AnyTypeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature anyAttribute of class AnyType
+        auto &&feature = m_AnyType__anyAttribute;
+
+        // ENamedElement
+        feature->setName("anyAttribute");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(false);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::type::TypePackage::ANYTYPE__ANYATTRIBUTE);
+        feature->basicsetEContainingClass(m_AnyTypeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier AnyType
+        auto &&classifier = m_AnyTypeEClass;
+
+        // ENamedElement
+        classifier->setName("AnyType");
+
+        // EClassifier
+        classifier->setClassifierID(ANYTYPE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AnyTypeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_AnyType__mixed);
+            eStructuralFeatures.basicAdd(m_AnyType__any);
+            eStructuralFeatures.basicAdd(m_AnyType__anyAttribute);
+        }
+    }();
+
+    [this]()
+    { // Classifier AnyURI
+        auto &&classifier = m_AnyURIEDataType;
+
+        // ENamedElement
+        classifier->setName("AnyURI");
+
+        // EClassifier
+        classifier->setClassifierID(ANYURI);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Base64Binary
+        auto &&classifier = m_Base64BinaryEDataType;
+
+        // ENamedElement
+        classifier->setName("Base64Binary");
+
+        // EClassifier
+        classifier->setClassifierID(BASE64BINARY);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Boolean
+        auto &&classifier = m_BooleanEDataType;
+
+        // ENamedElement
+        classifier->setName("Boolean");
+
+        // EClassifier
+        classifier->setClassifierID(BOOLEAN);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier BooleanObject
+        auto &&classifier = m_BooleanObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("BooleanObject");
+
+        // EClassifier
+        classifier->setClassifierID(BOOLEANOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Byte
+        auto &&classifier = m_ByteEDataType;
+
+        // ENamedElement
+        classifier->setName("Byte");
+
+        // EClassifier
+        classifier->setClassifierID(BYTE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier ByteObject
+        auto &&classifier = m_ByteObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("ByteObject");
+
+        // EClassifier
+        classifier->setClassifierID(BYTEOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Date
+        auto &&classifier = m_DateEDataType;
+
+        // ENamedElement
+        classifier->setName("Date");
+
+        // EClassifier
+        classifier->setClassifierID(DATE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier DateTime
+        auto &&classifier = m_DateTimeEDataType;
+
+        // ENamedElement
+        classifier->setName("DateTime");
+
+        // EClassifier
+        classifier->setClassifierID(DATETIME);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Decimal
+        auto &&classifier = m_DecimalEDataType;
+
+        // ENamedElement
+        classifier->setName("Decimal");
+
+        // EClassifier
+        classifier->setClassifierID(DECIMAL);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Double
+        auto &&classifier = m_DoubleEDataType;
+
+        // ENamedElement
+        classifier->setName("Double");
+
+        // EClassifier
+        classifier->setClassifierID(DOUBLE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier DoubleObject
+        auto &&classifier = m_DoubleObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("DoubleObject");
+
+        // EClassifier
+        classifier->setClassifierID(DOUBLEOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Duration
+        auto &&classifier = m_DurationEDataType;
+
+        // ENamedElement
+        classifier->setName("Duration");
+
+        // EClassifier
+        classifier->setClassifierID(DURATION);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier ENTITIES
+        auto &&classifier = m_ENTITIESEDataType;
+
+        // ENamedElement
+        classifier->setName("ENTITIES");
+
+        // EClassifier
+        classifier->setClassifierID(ENTITIES);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier ENTITIESBase
+        auto &&classifier = m_ENTITIESBaseEDataType;
+
+        // ENamedElement
+        classifier->setName("ENTITIESBase");
+
+        // EClassifier
+        classifier->setClassifierID(ENTITIESBASE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier ENTITY
+        auto &&classifier = m_ENTITYEDataType;
+
+        // ENamedElement
+        classifier->setName("ENTITY");
+
+        // EClassifier
+        classifier->setClassifierID(ENTITY);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Float
+        auto &&classifier = m_FloatEDataType;
+
+        // ENamedElement
+        classifier->setName("Float");
+
+        // EClassifier
+        classifier->setClassifierID(FLOAT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier FloatObject
+        auto &&classifier = m_FloatObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("FloatObject");
+
+        // EClassifier
+        classifier->setClassifierID(FLOATOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier GDay
+        auto &&classifier = m_GDayEDataType;
+
+        // ENamedElement
+        classifier->setName("GDay");
+
+        // EClassifier
+        classifier->setClassifierID(GDAY);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier GMonth
+        auto &&classifier = m_GMonthEDataType;
+
+        // ENamedElement
+        classifier->setName("GMonth");
+
+        // EClassifier
+        classifier->setClassifierID(GMONTH);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier GMonthDay
+        auto &&classifier = m_GMonthDayEDataType;
+
+        // ENamedElement
+        classifier->setName("GMonthDay");
+
+        // EClassifier
+        classifier->setClassifierID(GMONTHDAY);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier GYear
+        auto &&classifier = m_GYearEDataType;
+
+        // ENamedElement
+        classifier->setName("GYear");
+
+        // EClassifier
+        classifier->setClassifierID(GYEAR);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier GYearMonth
+        auto &&classifier = m_GYearMonthEDataType;
+
+        // ENamedElement
+        classifier->setName("GYearMonth");
+
+        // EClassifier
+        classifier->setClassifierID(GYEARMONTH);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier HexBinary
+        auto &&classifier = m_HexBinaryEDataType;
+
+        // ENamedElement
+        classifier->setName("HexBinary");
+
+        // EClassifier
+        classifier->setClassifierID(HEXBINARY);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier ID
+        auto &&classifier = m_IDEDataType;
+
+        // ENamedElement
+        classifier->setName("ID");
+
+        // EClassifier
+        classifier->setClassifierID(ID);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier IDREF
+        auto &&classifier = m_IDREFEDataType;
+
+        // ENamedElement
+        classifier->setName("IDREF");
+
+        // EClassifier
+        classifier->setClassifierID(IDREF);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier IDREFS
+        auto &&classifier = m_IDREFSEDataType;
+
+        // ENamedElement
+        classifier->setName("IDREFS");
+
+        // EClassifier
+        classifier->setClassifierID(IDREFS);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier IDREFSBase
+        auto &&classifier = m_IDREFSBaseEDataType;
+
+        // ENamedElement
+        classifier->setName("IDREFSBase");
+
+        // EClassifier
+        classifier->setClassifierID(IDREFSBASE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Int
+        auto &&classifier = m_IntEDataType;
+
+        // ENamedElement
+        classifier->setName("Int");
+
+        // EClassifier
+        classifier->setClassifierID(INT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Integer
+        auto &&classifier = m_IntegerEDataType;
+
+        // ENamedElement
+        classifier->setName("Integer");
+
+        // EClassifier
+        classifier->setClassifierID(INTEGER);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier IntObject
+        auto &&classifier = m_IntObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("IntObject");
+
+        // EClassifier
+        classifier->setClassifierID(INTOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Language
+        auto &&classifier = m_LanguageEDataType;
+
+        // ENamedElement
+        classifier->setName("Language");
+
+        // EClassifier
+        classifier->setClassifierID(LANGUAGE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Long
+        auto &&classifier = m_LongEDataType;
+
+        // ENamedElement
+        classifier->setName("Long");
+
+        // EClassifier
+        classifier->setClassifierID(LONG);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier LongObject
+        auto &&classifier = m_LongObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("LongObject");
+
+        // EClassifier
+        classifier->setClassifierID(LONGOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Name
+        auto &&classifier = m_NameEDataType;
+
+        // ENamedElement
+        classifier->setName("Name");
+
+        // EClassifier
+        classifier->setClassifierID(NAME);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier NCName
+        auto &&classifier = m_NCNameEDataType;
+
+        // ENamedElement
+        classifier->setName("NCName");
+
+        // EClassifier
+        classifier->setClassifierID(NCNAME);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier NegativeInteger
+        auto &&classifier = m_NegativeIntegerEDataType;
+
+        // ENamedElement
+        classifier->setName("NegativeInteger");
+
+        // EClassifier
+        classifier->setClassifierID(NEGATIVEINTEGER);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier NMTOKEN
+        auto &&classifier = m_NMTOKENEDataType;
+
+        // ENamedElement
+        classifier->setName("NMTOKEN");
+
+        // EClassifier
+        classifier->setClassifierID(NMTOKEN);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier NMTOKENS
+        auto &&classifier = m_NMTOKENSEDataType;
+
+        // ENamedElement
+        classifier->setName("NMTOKENS");
+
+        // EClassifier
+        classifier->setClassifierID(NMTOKENS);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier NMTOKENSBase
+        auto &&classifier = m_NMTOKENSBaseEDataType;
+
+        // ENamedElement
+        classifier->setName("NMTOKENSBase");
+
+        // EClassifier
+        classifier->setClassifierID(NMTOKENSBASE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier NonNegativeInteger
+        auto &&classifier = m_NonNegativeIntegerEDataType;
+
+        // ENamedElement
+        classifier->setName("NonNegativeInteger");
+
+        // EClassifier
+        classifier->setClassifierID(NONNEGATIVEINTEGER);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier NonPositiveInteger
+        auto &&classifier = m_NonPositiveIntegerEDataType;
+
+        // ENamedElement
+        classifier->setName("NonPositiveInteger");
+
+        // EClassifier
+        classifier->setClassifierID(NONPOSITIVEINTEGER);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier NormalizedString
+        auto &&classifier = m_NormalizedStringEDataType;
+
+        // ENamedElement
+        classifier->setName("NormalizedString");
+
+        // EClassifier
+        classifier->setClassifierID(NORMALIZEDSTRING);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier NOTATION
+        auto &&classifier = m_NOTATIONEDataType;
+
+        // ENamedElement
+        classifier->setName("NOTATION");
+
+        // EClassifier
+        classifier->setClassifierID(NOTATION);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier PositiveInteger
+        auto &&classifier = m_PositiveIntegerEDataType;
+
+        // ENamedElement
+        classifier->setName("PositiveInteger");
+
+        // EClassifier
+        classifier->setClassifierID(POSITIVEINTEGER);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Feature data of class ProcessingInstruction
+        auto &&feature = m_ProcessingInstruction__data;
+
+        // ENamedElement
+        feature->setName("data");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_StringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::type::TypePackage::PROCESSINGINSTRUCTION__DATA);
+        feature->basicsetEContainingClass(m_ProcessingInstructionEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature target of class ProcessingInstruction
+        auto &&feature = m_ProcessingInstruction__target;
+
+        // ENamedElement
+        feature->setName("target");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_StringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::type::TypePackage::PROCESSINGINSTRUCTION__TARGET);
-        m_ProcessingInstruction__target->setName("target");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProcessingInstructionEClass->getEStructuralFeatures()).basicAdd(
-                m_ProcessingInstruction__target);
-        m_ProcessingInstruction__target->basicsetEContainingClass(
-                m_ProcessingInstructionEClass);
-    }
+        feature->basicsetEContainingClass(m_ProcessingInstructionEClass);
 
-    { // SimpleAnyType
-        m_SimpleAnyTypeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_SimpleAnyTypeEClass->setClassifierID(SIMPLEANYTYPE);
-        m_SimpleAnyTypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_SimpleAnyTypeEClass);
-        // m_SimpleAnyType__rawValue has already been allocated above
-        m_SimpleAnyType__rawValue->setFeatureID(
-                ::type::TypePackage::SIMPLEANYTYPE__RAWVALUE);
-        m_SimpleAnyType__rawValue->setName("rawValue");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_SimpleAnyType__rawValue);
-        m_SimpleAnyType__rawValue->basicsetEContainingClass(
-                m_SimpleAnyTypeEClass);
-        // m_SimpleAnyType__value has already been allocated above
-        m_SimpleAnyType__value->setFeatureID(
-                ::type::TypePackage::SIMPLEANYTYPE__VALUE);
-        m_SimpleAnyType__value->setName("value");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_SimpleAnyType__value);
-        m_SimpleAnyType__value->basicsetEContainingClass(m_SimpleAnyTypeEClass);
-        // m_SimpleAnyType__instanceType has already been allocated above
-        m_SimpleAnyType__instanceType->setFeatureID(
-                ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE);
-        m_SimpleAnyType__instanceType->setName("instanceType");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_SimpleAnyType__instanceType);
-        m_SimpleAnyType__instanceType->basicsetEContainingClass(
-                m_SimpleAnyTypeEClass);
-    }
+        // EAttribute
+        feature->setID(false);
+    }();
 
-    { // XMLTypeDocumentRoot
-        m_XMLTypeDocumentRootEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_XMLTypeDocumentRootEClass->setClassifierID(XMLTYPEDOCUMENTROOT);
-        m_XMLTypeDocumentRootEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_XMLTypeDocumentRootEClass);
-        // m_XMLTypeDocumentRoot__mixed has already been allocated above
-        m_XMLTypeDocumentRoot__mixed->setFeatureID(
-                ::type::TypePackage::XMLTYPEDOCUMENTROOT__MIXED);
-        m_XMLTypeDocumentRoot__mixed->setName("mixed");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-                m_XMLTypeDocumentRoot__mixed);
-        m_XMLTypeDocumentRoot__mixed->basicsetEContainingClass(
-                m_XMLTypeDocumentRootEClass);
-        // m_XMLTypeDocumentRoot__xMLNSPrefixMap has already been allocated above
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setFeatureID(
+    [this]()
+    { // Classifier ProcessingInstruction
+        auto &&classifier = m_ProcessingInstructionEClass;
+
+        // ENamedElement
+        classifier->setName("ProcessingInstruction");
+
+        // EClassifier
+        classifier->setClassifierID(PROCESSINGINSTRUCTION);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ProcessingInstructionEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ProcessingInstruction__data);
+            eStructuralFeatures.basicAdd(m_ProcessingInstruction__target);
+        }
+    }();
+
+    [this]()
+    { // Classifier QName
+        auto &&classifier = m_QNameEDataType;
+
+        // ENamedElement
+        classifier->setName("QName");
+
+        // EClassifier
+        classifier->setClassifierID(QNAME);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Short
+        auto &&classifier = m_ShortEDataType;
+
+        // ENamedElement
+        classifier->setName("Short");
+
+        // EClassifier
+        classifier->setClassifierID(SHORT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier ShortObject
+        auto &&classifier = m_ShortObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("ShortObject");
+
+        // EClassifier
+        classifier->setClassifierID(SHORTOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Feature rawValue of class SimpleAnyType
+        auto &&feature = m_SimpleAnyType__rawValue;
+
+        // ENamedElement
+        feature->setName("rawValue");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_StringEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::type::TypePackage::SIMPLEANYTYPE__RAWVALUE);
+        feature->basicsetEContainingClass(m_SimpleAnyTypeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature value of class SimpleAnyType
+        auto &&feature = m_SimpleAnyType__value;
+
+        // ENamedElement
+        feature->setName("value");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_AnySimpleTypeEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::type::TypePackage::SIMPLEANYTYPE__VALUE);
+        feature->basicsetEContainingClass(m_SimpleAnyTypeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature instanceType of class SimpleAnyType
+        auto &&feature = m_SimpleAnyType__instanceType;
+
+        // ENamedElement
+        feature->setName("instanceType");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDataType());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE);
+        feature->basicsetEContainingClass(m_SimpleAnyTypeEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier SimpleAnyType
+        auto &&classifier = m_SimpleAnyTypeEClass;
+
+        // ENamedElement
+        classifier->setName("SimpleAnyType");
+
+        // EClassifier
+        classifier->setClassifierID(SIMPLEANYTYPE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_SimpleAnyTypeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_SimpleAnyType__rawValue);
+            eStructuralFeatures.basicAdd(m_SimpleAnyType__value);
+            eStructuralFeatures.basicAdd(m_SimpleAnyType__instanceType);
+        }
+    }();
+
+    [this]()
+    { // Classifier String
+        auto &&classifier = m_StringEDataType;
+
+        // ENamedElement
+        classifier->setName("String");
+
+        // EClassifier
+        classifier->setClassifierID(STRING);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Time
+        auto &&classifier = m_TimeEDataType;
+
+        // ENamedElement
+        classifier->setName("Time");
+
+        // EClassifier
+        classifier->setClassifierID(TIME);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier Token
+        auto &&classifier = m_TokenEDataType;
+
+        // ENamedElement
+        classifier->setName("Token");
+
+        // EClassifier
+        classifier->setClassifierID(TOKEN);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier UnsignedByte
+        auto &&classifier = m_UnsignedByteEDataType;
+
+        // ENamedElement
+        classifier->setName("UnsignedByte");
+
+        // EClassifier
+        classifier->setClassifierID(UNSIGNEDBYTE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier UnsignedByteObject
+        auto &&classifier = m_UnsignedByteObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("UnsignedByteObject");
+
+        // EClassifier
+        classifier->setClassifierID(UNSIGNEDBYTEOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier UnsignedInt
+        auto &&classifier = m_UnsignedIntEDataType;
+
+        // ENamedElement
+        classifier->setName("UnsignedInt");
+
+        // EClassifier
+        classifier->setClassifierID(UNSIGNEDINT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier UnsignedIntObject
+        auto &&classifier = m_UnsignedIntObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("UnsignedIntObject");
+
+        // EClassifier
+        classifier->setClassifierID(UNSIGNEDINTOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier UnsignedLong
+        auto &&classifier = m_UnsignedLongEDataType;
+
+        // ENamedElement
+        classifier->setName("UnsignedLong");
+
+        // EClassifier
+        classifier->setClassifierID(UNSIGNEDLONG);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier UnsignedShort
+        auto &&classifier = m_UnsignedShortEDataType;
+
+        // ENamedElement
+        classifier->setName("UnsignedShort");
+
+        // EClassifier
+        classifier->setClassifierID(UNSIGNEDSHORT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier UnsignedShortObject
+        auto &&classifier = m_UnsignedShortObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("UnsignedShortObject");
+
+        // EClassifier
+        classifier->setClassifierID(UNSIGNEDSHORTOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Feature mixed of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__mixed;
+
+        // ENamedElement
+        feature->setName("mixed");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(false);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::type::TypePackage::XMLTYPEDOCUMENTROOT__MIXED);
+        feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature xMLNSPrefixMap of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__xMLNSPrefixMap;
+
+        // ENamedElement
+        feature->setName("xMLNSPrefixMap");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__XMLNSPREFIXMAP);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setName("xMLNSPrefixMap");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-                m_XMLTypeDocumentRoot__xMLNSPrefixMap);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->basicsetEContainingClass(
-                m_XMLTypeDocumentRootEClass);
-        // m_XMLTypeDocumentRoot__xSISchemaLocation has already been allocated above
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setFeatureID(
+        feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature xSISchemaLocation of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__xSISchemaLocation;
+
+        // ENamedElement
+        feature->setName("xSISchemaLocation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__XSISCHEMALOCATION);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setName("xSISchemaLocation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-                m_XMLTypeDocumentRoot__xSISchemaLocation);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->basicsetEContainingClass(
-                m_XMLTypeDocumentRootEClass);
-        // m_XMLTypeDocumentRoot__cDATA has already been allocated above
-        m_XMLTypeDocumentRoot__cDATA->setFeatureID(
-                ::type::TypePackage::XMLTYPEDOCUMENTROOT__CDATA);
-        m_XMLTypeDocumentRoot__cDATA->setName("cDATA");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-                m_XMLTypeDocumentRoot__cDATA);
-        m_XMLTypeDocumentRoot__cDATA->basicsetEContainingClass(
-                m_XMLTypeDocumentRootEClass);
-        // m_XMLTypeDocumentRoot__comment has already been allocated above
-        m_XMLTypeDocumentRoot__comment->setFeatureID(
+        feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature cDATA of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__cDATA;
+
+        // ENamedElement
+        feature->setName("cDATA");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(false);
+        feature->setUpperBound(-2);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_StringEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::type::TypePackage::XMLTYPEDOCUMENTROOT__CDATA);
+        feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature comment of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__comment;
+
+        // ENamedElement
+        feature->setName("comment");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(false);
+        feature->setUpperBound(-2);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_StringEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__COMMENT);
-        m_XMLTypeDocumentRoot__comment->setName("comment");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-                m_XMLTypeDocumentRoot__comment);
-        m_XMLTypeDocumentRoot__comment->basicsetEContainingClass(
-                m_XMLTypeDocumentRootEClass);
-        // m_XMLTypeDocumentRoot__processingInstruction has already been allocated above
-        m_XMLTypeDocumentRoot__processingInstruction->setFeatureID(
+        feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature processingInstruction of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__processingInstruction;
+
+        // ENamedElement
+        feature->setName("processingInstruction");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-2);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_ProcessingInstructionEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
                 ::type::TypePackage::XMLTYPEDOCUMENTROOT__PROCESSINGINSTRUCTION);
-        m_XMLTypeDocumentRoot__processingInstruction->setName(
-                "processingInstruction");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-                m_XMLTypeDocumentRoot__processingInstruction);
-        m_XMLTypeDocumentRoot__processingInstruction->basicsetEContainingClass(
-                m_XMLTypeDocumentRootEClass);
-        // m_XMLTypeDocumentRoot__text has already been allocated above
-        m_XMLTypeDocumentRoot__text->setFeatureID(
-                ::type::TypePackage::XMLTYPEDOCUMENTROOT__TEXT);
-        m_XMLTypeDocumentRoot__text->setName("text");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures()).basicAdd(
-                m_XMLTypeDocumentRoot__text);
-        m_XMLTypeDocumentRoot__text->basicsetEContainingClass(
-                m_XMLTypeDocumentRootEClass);
-    }
+        feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
 
-    // Create enums
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
 
-    // Create data types
+    [this]()
+    { // Feature text of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__text;
 
-    { // AnySimpleType
-        m_AnySimpleTypeEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_AnySimpleTypeEDataType->setClassifierID(ANYSIMPLETYPE);
-        m_AnySimpleTypeEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AnySimpleTypeEDataType);
-    }
+        // ENamedElement
+        feature->setName("text");
 
-    { // AnyURI
-        m_AnyURIEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_AnyURIEDataType->setClassifierID(ANYURI);
-        m_AnyURIEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AnyURIEDataType);
-    }
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(false);
+        feature->setUpperBound(-2);
 
-    { // Base64Binary
-        m_Base64BinaryEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_Base64BinaryEDataType->setClassifierID(BASE64BINARY);
-        m_Base64BinaryEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_Base64BinaryEDataType);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_StringEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
 
-    { // Boolean
-        m_BooleanEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_BooleanEDataType->setClassifierID(BOOLEAN);
-        m_BooleanEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BooleanEDataType);
-    }
+        feature->setFeatureID(::type::TypePackage::XMLTYPEDOCUMENTROOT__TEXT);
+        feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
 
-    { // BooleanObject
-        m_BooleanObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_BooleanObjectEDataType->setClassifierID(BOOLEANOBJECT);
-        m_BooleanObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BooleanObjectEDataType);
-    }
+        // EAttribute
+        feature->setID(false);
+    }();
 
-    { // Byte
-        m_ByteEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ByteEDataType->setClassifierID(BYTE);
-        m_ByteEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ByteEDataType);
-    }
+    [this]()
+    { // Classifier XMLTypeDocumentRoot
+        auto &&classifier = m_XMLTypeDocumentRootEClass;
 
-    { // ByteObject
-        m_ByteObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ByteObjectEDataType->setClassifierID(BYTEOBJECT);
-        m_ByteObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ByteObjectEDataType);
-    }
+        // ENamedElement
+        classifier->setName("XMLTypeDocumentRoot");
 
-    { // Date
-        m_DateEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_DateEDataType->setClassifierID(DATE);
-        m_DateEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DateEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(XMLTYPEDOCUMENTROOT);
 
-    { // DateTime
-        m_DateTimeEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_DateTimeEDataType->setClassifierID(DATETIME);
-        m_DateTimeEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DateTimeEDataType);
-    }
-
-    { // Decimal
-        m_DecimalEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_DecimalEDataType->setClassifierID(DECIMAL);
-        m_DecimalEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DecimalEDataType);
-    }
-
-    { // Double
-        m_DoubleEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_DoubleEDataType->setClassifierID(DOUBLE);
-        m_DoubleEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DoubleEDataType);
-    }
-
-    { // DoubleObject
-        m_DoubleObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_DoubleObjectEDataType->setClassifierID(DOUBLEOBJECT);
-        m_DoubleObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DoubleObjectEDataType);
-    }
-
-    { // Duration
-        m_DurationEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_DurationEDataType->setClassifierID(DURATION);
-        m_DurationEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_DurationEDataType);
-    }
-
-    { // ENTITIES
-        m_ENTITIESEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ENTITIESEDataType->setClassifierID(ENTITIES);
-        m_ENTITIESEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ENTITIESEDataType);
-    }
-
-    { // ENTITIESBase
-        m_ENTITIESBaseEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ENTITIESBaseEDataType->setClassifierID(ENTITIESBASE);
-        m_ENTITIESBaseEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ENTITIESBaseEDataType);
-    }
-
-    { // ENTITY
-        m_ENTITYEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ENTITYEDataType->setClassifierID(ENTITY);
-        m_ENTITYEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ENTITYEDataType);
-    }
-
-    { // Float
-        m_FloatEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_FloatEDataType->setClassifierID(FLOAT);
-        m_FloatEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_FloatEDataType);
-    }
-
-    { // FloatObject
-        m_FloatObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_FloatObjectEDataType->setClassifierID(FLOATOBJECT);
-        m_FloatObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_FloatObjectEDataType);
-    }
-
-    { // GDay
-        m_GDayEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_GDayEDataType->setClassifierID(GDAY);
-        m_GDayEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_GDayEDataType);
-    }
-
-    { // GMonth
-        m_GMonthEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_GMonthEDataType->setClassifierID(GMONTH);
-        m_GMonthEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_GMonthEDataType);
-    }
-
-    { // GMonthDay
-        m_GMonthDayEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_GMonthDayEDataType->setClassifierID(GMONTHDAY);
-        m_GMonthDayEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_GMonthDayEDataType);
-    }
-
-    { // GYear
-        m_GYearEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_GYearEDataType->setClassifierID(GYEAR);
-        m_GYearEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_GYearEDataType);
-    }
-
-    { // GYearMonth
-        m_GYearMonthEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_GYearMonthEDataType->setClassifierID(GYEARMONTH);
-        m_GYearMonthEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_GYearMonthEDataType);
-    }
-
-    { // HexBinary
-        m_HexBinaryEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_HexBinaryEDataType->setClassifierID(HEXBINARY);
-        m_HexBinaryEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_HexBinaryEDataType);
-    }
-
-    { // ID
-        m_IDEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_IDEDataType->setClassifierID(ID);
-        m_IDEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IDEDataType);
-    }
-
-    { // IDREF
-        m_IDREFEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_IDREFEDataType->setClassifierID(IDREF);
-        m_IDREFEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IDREFEDataType);
-    }
-
-    { // IDREFS
-        m_IDREFSEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_IDREFSEDataType->setClassifierID(IDREFS);
-        m_IDREFSEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IDREFSEDataType);
-    }
-
-    { // IDREFSBase
-        m_IDREFSBaseEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_IDREFSBaseEDataType->setClassifierID(IDREFSBASE);
-        m_IDREFSBaseEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IDREFSBaseEDataType);
-    }
-
-    { // Int
-        m_IntEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_IntEDataType->setClassifierID(INT);
-        m_IntEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IntEDataType);
-    }
-
-    { // Integer
-        m_IntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_IntegerEDataType->setClassifierID(INTEGER);
-        m_IntegerEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IntegerEDataType);
-    }
-
-    { // IntObject
-        m_IntObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_IntObjectEDataType->setClassifierID(INTOBJECT);
-        m_IntObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IntObjectEDataType);
-    }
-
-    { // Language
-        m_LanguageEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_LanguageEDataType->setClassifierID(LANGUAGE);
-        m_LanguageEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_LanguageEDataType);
-    }
-
-    { // Long
-        m_LongEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_LongEDataType->setClassifierID(LONG);
-        m_LongEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_LongEDataType);
-    }
-
-    { // LongObject
-        m_LongObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_LongObjectEDataType->setClassifierID(LONGOBJECT);
-        m_LongObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_LongObjectEDataType);
-    }
-
-    { // Name
-        m_NameEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NameEDataType->setClassifierID(NAME);
-        m_NameEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NameEDataType);
-    }
-
-    { // NCName
-        m_NCNameEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NCNameEDataType->setClassifierID(NCNAME);
-        m_NCNameEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NCNameEDataType);
-    }
-
-    { // NegativeInteger
-        m_NegativeIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NegativeIntegerEDataType->setClassifierID(NEGATIVEINTEGER);
-        m_NegativeIntegerEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NegativeIntegerEDataType);
-    }
-
-    { // NMTOKEN
-        m_NMTOKENEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NMTOKENEDataType->setClassifierID(NMTOKEN);
-        m_NMTOKENEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NMTOKENEDataType);
-    }
-
-    { // NMTOKENS
-        m_NMTOKENSEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NMTOKENSEDataType->setClassifierID(NMTOKENS);
-        m_NMTOKENSEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NMTOKENSEDataType);
-    }
-
-    { // NMTOKENSBase
-        m_NMTOKENSBaseEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NMTOKENSBaseEDataType->setClassifierID(NMTOKENSBASE);
-        m_NMTOKENSBaseEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NMTOKENSBaseEDataType);
-    }
-
-    { // NonNegativeInteger
-        m_NonNegativeIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NonNegativeIntegerEDataType->setClassifierID(NONNEGATIVEINTEGER);
-        m_NonNegativeIntegerEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NonNegativeIntegerEDataType);
-    }
-
-    { // NonPositiveInteger
-        m_NonPositiveIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NonPositiveIntegerEDataType->setClassifierID(NONPOSITIVEINTEGER);
-        m_NonPositiveIntegerEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NonPositiveIntegerEDataType);
-    }
-
-    { // NormalizedString
-        m_NormalizedStringEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NormalizedStringEDataType->setClassifierID(NORMALIZEDSTRING);
-        m_NormalizedStringEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NormalizedStringEDataType);
-    }
-
-    { // NOTATION
-        m_NOTATIONEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_NOTATIONEDataType->setClassifierID(NOTATION);
-        m_NOTATIONEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_NOTATIONEDataType);
-    }
-
-    { // PositiveInteger
-        m_PositiveIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_PositiveIntegerEDataType->setClassifierID(POSITIVEINTEGER);
-        m_PositiveIntegerEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_PositiveIntegerEDataType);
-    }
-
-    { // QName
-        m_QNameEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_QNameEDataType->setClassifierID(QNAME);
-        m_QNameEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_QNameEDataType);
-    }
-
-    { // Short
-        m_ShortEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ShortEDataType->setClassifierID(SHORT);
-        m_ShortEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ShortEDataType);
-    }
-
-    { // ShortObject
-        m_ShortObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ShortObjectEDataType->setClassifierID(SHORTOBJECT);
-        m_ShortObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ShortObjectEDataType);
-    }
-
-    { // String
-        m_StringEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_StringEDataType->setClassifierID(STRING);
-        m_StringEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_StringEDataType);
-    }
-
-    { // Time
-        m_TimeEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_TimeEDataType->setClassifierID(TIME);
-        m_TimeEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TimeEDataType);
-    }
-
-    { // Token
-        m_TokenEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_TokenEDataType->setClassifierID(TOKEN);
-        m_TokenEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TokenEDataType);
-    }
-
-    { // UnsignedByte
-        m_UnsignedByteEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_UnsignedByteEDataType->setClassifierID(UNSIGNEDBYTE);
-        m_UnsignedByteEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UnsignedByteEDataType);
-    }
-
-    { // UnsignedByteObject
-        m_UnsignedByteObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_UnsignedByteObjectEDataType->setClassifierID(UNSIGNEDBYTEOBJECT);
-        m_UnsignedByteObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UnsignedByteObjectEDataType);
-    }
-
-    { // UnsignedInt
-        m_UnsignedIntEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_UnsignedIntEDataType->setClassifierID(UNSIGNEDINT);
-        m_UnsignedIntEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UnsignedIntEDataType);
-    }
-
-    { // UnsignedIntObject
-        m_UnsignedIntObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_UnsignedIntObjectEDataType->setClassifierID(UNSIGNEDINTOBJECT);
-        m_UnsignedIntObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UnsignedIntObjectEDataType);
-    }
-
-    { // UnsignedLong
-        m_UnsignedLongEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_UnsignedLongEDataType->setClassifierID(UNSIGNEDLONG);
-        m_UnsignedLongEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UnsignedLongEDataType);
-    }
-
-    { // UnsignedShort
-        m_UnsignedShortEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_UnsignedShortEDataType->setClassifierID(UNSIGNEDSHORT);
-        m_UnsignedShortEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UnsignedShortEDataType);
-    }
-
-    { // UnsignedShortObject
-        m_UnsignedShortObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_UnsignedShortObjectEDataType->setClassifierID(UNSIGNEDSHORTOBJECT);
-        m_UnsignedShortObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_UnsignedShortObjectEDataType);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_XMLTypeDocumentRootEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_XMLTypeDocumentRoot__mixed);
+            eStructuralFeatures.basicAdd(m_XMLTypeDocumentRoot__xMLNSPrefixMap);
+            eStructuralFeatures.basicAdd(
+                    m_XMLTypeDocumentRoot__xSISchemaLocation);
+            eStructuralFeatures.basicAdd(m_XMLTypeDocumentRoot__cDATA);
+            eStructuralFeatures.basicAdd(m_XMLTypeDocumentRoot__comment);
+            eStructuralFeatures.basicAdd(
+                    m_XMLTypeDocumentRoot__processingInstruction);
+            eStructuralFeatures.basicAdd(m_XMLTypeDocumentRoot__text);
+        }
+    }();
 
     // Initialize package
     setName("type");
@@ -730,944 +1501,897 @@ void TypePackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_SimpleAnyTypeEClass->getESuperTypes().push_back(m_AnyTypeEClass);
-
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // AnyType
-        m_AnyTypeEClass->setName("AnyType");
-        m_AnyTypeEClass->setAbstract(false);
-        m_AnyTypeEClass->setInterface(false);
-        m_AnyType__mixed->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-        m_AnyType__mixed->setDefaultValueLiteral("");
-        m_AnyType__mixed->setLowerBound(0);
-        m_AnyType__mixed->setUpperBound(-1);
-        m_AnyType__mixed->setTransient(false);
-        m_AnyType__mixed->setVolatile(false);
-        m_AnyType__mixed->setChangeable(true);
-        m_AnyType__mixed->setUnsettable(false);
-        m_AnyType__mixed->setID(false);
-        m_AnyType__mixed->setUnique(false);
-        m_AnyType__mixed->setDerived(false);
-        m_AnyType__mixed->setOrdered(true);
-        m_AnyType__any->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-        m_AnyType__any->setDefaultValueLiteral("");
-        m_AnyType__any->setLowerBound(0);
-        m_AnyType__any->setUpperBound(-1);
-        m_AnyType__any->setTransient(true);
-        m_AnyType__any->setVolatile(true);
-        m_AnyType__any->setChangeable(true);
-        m_AnyType__any->setUnsettable(false);
-        m_AnyType__any->setID(false);
-        m_AnyType__any->setUnique(false);
-        m_AnyType__any->setDerived(true);
-        m_AnyType__any->setOrdered(true);
-        m_AnyType__anyAttribute->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-        m_AnyType__anyAttribute->setDefaultValueLiteral("");
-        m_AnyType__anyAttribute->setLowerBound(0);
-        m_AnyType__anyAttribute->setUpperBound(-1);
-        m_AnyType__anyAttribute->setTransient(false);
-        m_AnyType__anyAttribute->setVolatile(false);
-        m_AnyType__anyAttribute->setChangeable(true);
-        m_AnyType__anyAttribute->setUnsettable(false);
-        m_AnyType__anyAttribute->setID(false);
-        m_AnyType__anyAttribute->setUnique(false);
-        m_AnyType__anyAttribute->setDerived(false);
-        m_AnyType__anyAttribute->setOrdered(true);
-
-    }
-
-    { // ProcessingInstruction
-        m_ProcessingInstructionEClass->setName("ProcessingInstruction");
-        m_ProcessingInstructionEClass->setAbstract(false);
-        m_ProcessingInstructionEClass->setInterface(false);
-        m_ProcessingInstruction__data->setEType(m_StringEDataType);
-        m_ProcessingInstruction__data->setDefaultValueLiteral("");
-        m_ProcessingInstruction__data->setLowerBound(0);
-        m_ProcessingInstruction__data->setUpperBound(1);
-        m_ProcessingInstruction__data->setTransient(false);
-        m_ProcessingInstruction__data->setVolatile(false);
-        m_ProcessingInstruction__data->setChangeable(true);
-        m_ProcessingInstruction__data->setUnsettable(false);
-        m_ProcessingInstruction__data->setID(false);
-        m_ProcessingInstruction__data->setUnique(true);
-        m_ProcessingInstruction__data->setDerived(false);
-        m_ProcessingInstruction__data->setOrdered(true);
-        m_ProcessingInstruction__target->setEType(m_StringEDataType);
-        m_ProcessingInstruction__target->setDefaultValueLiteral("");
-        m_ProcessingInstruction__target->setLowerBound(1);
-        m_ProcessingInstruction__target->setUpperBound(1);
-        m_ProcessingInstruction__target->setTransient(false);
-        m_ProcessingInstruction__target->setVolatile(false);
-        m_ProcessingInstruction__target->setChangeable(true);
-        m_ProcessingInstruction__target->setUnsettable(false);
-        m_ProcessingInstruction__target->setID(false);
-        m_ProcessingInstruction__target->setUnique(true);
-        m_ProcessingInstruction__target->setDerived(false);
-        m_ProcessingInstruction__target->setOrdered(true);
-
-    }
-
-    { // SimpleAnyType
-        m_SimpleAnyTypeEClass->setName("SimpleAnyType");
-        m_SimpleAnyTypeEClass->setAbstract(false);
-        m_SimpleAnyTypeEClass->setInterface(false);
-        m_SimpleAnyType__rawValue->setEType(m_StringEDataType);
-        m_SimpleAnyType__rawValue->setDefaultValueLiteral("");
-        m_SimpleAnyType__rawValue->setLowerBound(0);
-        m_SimpleAnyType__rawValue->setUpperBound(1);
-        m_SimpleAnyType__rawValue->setTransient(true);
-        m_SimpleAnyType__rawValue->setVolatile(true);
-        m_SimpleAnyType__rawValue->setChangeable(true);
-        m_SimpleAnyType__rawValue->setUnsettable(false);
-        m_SimpleAnyType__rawValue->setID(false);
-        m_SimpleAnyType__rawValue->setUnique(true);
-        m_SimpleAnyType__rawValue->setDerived(true);
-        m_SimpleAnyType__rawValue->setOrdered(true);
-        m_SimpleAnyType__value->setEType(m_AnySimpleTypeEDataType);
-        m_SimpleAnyType__value->setDefaultValueLiteral("");
-        m_SimpleAnyType__value->setLowerBound(0);
-        m_SimpleAnyType__value->setUpperBound(1);
-        m_SimpleAnyType__value->setTransient(true);
-        m_SimpleAnyType__value->setVolatile(true);
-        m_SimpleAnyType__value->setChangeable(true);
-        m_SimpleAnyType__value->setUnsettable(false);
-        m_SimpleAnyType__value->setID(false);
-        m_SimpleAnyType__value->setUnique(true);
-        m_SimpleAnyType__value->setDerived(true);
-        m_SimpleAnyType__value->setOrdered(true);
-
-        m_SimpleAnyType__instanceType->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDataType());
-        m_SimpleAnyType__instanceType->setDefaultValueLiteral("");
-        m_SimpleAnyType__instanceType->setLowerBound(1);
-        m_SimpleAnyType__instanceType->setUpperBound(1);
-        m_SimpleAnyType__instanceType->setTransient(false);
-        m_SimpleAnyType__instanceType->setVolatile(false);
-        m_SimpleAnyType__instanceType->setChangeable(true);
-        m_SimpleAnyType__instanceType->setContainment(false);
-        m_SimpleAnyType__instanceType->setResolveProxies(false);
-        m_SimpleAnyType__instanceType->setUnique(true);
-        m_SimpleAnyType__instanceType->setDerived(false);
-        m_SimpleAnyType__instanceType->setOrdered(true);
-
-    }
-
-    { // XMLTypeDocumentRoot
-        m_XMLTypeDocumentRootEClass->setName("XMLTypeDocumentRoot");
-        m_XMLTypeDocumentRootEClass->setAbstract(false);
-        m_XMLTypeDocumentRootEClass->setInterface(false);
-        m_XMLTypeDocumentRoot__mixed->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
-        m_XMLTypeDocumentRoot__mixed->setDefaultValueLiteral("");
-        m_XMLTypeDocumentRoot__mixed->setLowerBound(0);
-        m_XMLTypeDocumentRoot__mixed->setUpperBound(-1);
-        m_XMLTypeDocumentRoot__mixed->setTransient(false);
-        m_XMLTypeDocumentRoot__mixed->setVolatile(false);
-        m_XMLTypeDocumentRoot__mixed->setChangeable(true);
-        m_XMLTypeDocumentRoot__mixed->setUnsettable(false);
-        m_XMLTypeDocumentRoot__mixed->setID(false);
-        m_XMLTypeDocumentRoot__mixed->setUnique(false);
-        m_XMLTypeDocumentRoot__mixed->setDerived(false);
-        m_XMLTypeDocumentRoot__mixed->setOrdered(true);
-        m_XMLTypeDocumentRoot__cDATA->setEType(m_StringEDataType);
-        m_XMLTypeDocumentRoot__cDATA->setDefaultValueLiteral("");
-        m_XMLTypeDocumentRoot__cDATA->setLowerBound(0);
-        m_XMLTypeDocumentRoot__cDATA->setUpperBound(-2);
-        m_XMLTypeDocumentRoot__cDATA->setTransient(true);
-        m_XMLTypeDocumentRoot__cDATA->setVolatile(true);
-        m_XMLTypeDocumentRoot__cDATA->setChangeable(true);
-        m_XMLTypeDocumentRoot__cDATA->setUnsettable(false);
-        m_XMLTypeDocumentRoot__cDATA->setID(false);
-        m_XMLTypeDocumentRoot__cDATA->setUnique(false);
-        m_XMLTypeDocumentRoot__cDATA->setDerived(true);
-        m_XMLTypeDocumentRoot__cDATA->setOrdered(true);
-        m_XMLTypeDocumentRoot__comment->setEType(m_StringEDataType);
-        m_XMLTypeDocumentRoot__comment->setDefaultValueLiteral("");
-        m_XMLTypeDocumentRoot__comment->setLowerBound(0);
-        m_XMLTypeDocumentRoot__comment->setUpperBound(-2);
-        m_XMLTypeDocumentRoot__comment->setTransient(true);
-        m_XMLTypeDocumentRoot__comment->setVolatile(true);
-        m_XMLTypeDocumentRoot__comment->setChangeable(true);
-        m_XMLTypeDocumentRoot__comment->setUnsettable(false);
-        m_XMLTypeDocumentRoot__comment->setID(false);
-        m_XMLTypeDocumentRoot__comment->setUnique(false);
-        m_XMLTypeDocumentRoot__comment->setDerived(true);
-        m_XMLTypeDocumentRoot__comment->setOrdered(true);
-        m_XMLTypeDocumentRoot__text->setEType(m_StringEDataType);
-        m_XMLTypeDocumentRoot__text->setDefaultValueLiteral("");
-        m_XMLTypeDocumentRoot__text->setLowerBound(0);
-        m_XMLTypeDocumentRoot__text->setUpperBound(-2);
-        m_XMLTypeDocumentRoot__text->setTransient(true);
-        m_XMLTypeDocumentRoot__text->setVolatile(true);
-        m_XMLTypeDocumentRoot__text->setChangeable(true);
-        m_XMLTypeDocumentRoot__text->setUnsettable(false);
-        m_XMLTypeDocumentRoot__text->setID(false);
-        m_XMLTypeDocumentRoot__text->setUnique(false);
-        m_XMLTypeDocumentRoot__text->setDerived(true);
-        m_XMLTypeDocumentRoot__text->setOrdered(true);
-
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setDefaultValueLiteral("");
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setLowerBound(0);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setUpperBound(-1);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setTransient(true);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setVolatile(false);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setChangeable(true);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setContainment(true);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setResolveProxies(false);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setUnique(true);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setDerived(false);
-        m_XMLTypeDocumentRoot__xMLNSPrefixMap->setOrdered(true);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setDefaultValueLiteral("");
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setLowerBound(0);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setUpperBound(-1);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setTransient(true);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setVolatile(false);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setChangeable(true);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setContainment(true);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setResolveProxies(false);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setUnique(true);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setDerived(false);
-        m_XMLTypeDocumentRoot__xSISchemaLocation->setOrdered(true);
-        m_XMLTypeDocumentRoot__processingInstruction->setEType(
-                m_ProcessingInstructionEClass);
-        m_XMLTypeDocumentRoot__processingInstruction->setDefaultValueLiteral(
-                "");
-        m_XMLTypeDocumentRoot__processingInstruction->setLowerBound(0);
-        m_XMLTypeDocumentRoot__processingInstruction->setUpperBound(-2);
-        m_XMLTypeDocumentRoot__processingInstruction->setTransient(true);
-        m_XMLTypeDocumentRoot__processingInstruction->setVolatile(true);
-        m_XMLTypeDocumentRoot__processingInstruction->setChangeable(true);
-        m_XMLTypeDocumentRoot__processingInstruction->setContainment(true);
-        m_XMLTypeDocumentRoot__processingInstruction->setResolveProxies(false);
-        m_XMLTypeDocumentRoot__processingInstruction->setUnique(true);
-        m_XMLTypeDocumentRoot__processingInstruction->setDerived(true);
-        m_XMLTypeDocumentRoot__processingInstruction->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    { // AnySimpleType
-        m_AnySimpleTypeEDataType->setName("AnySimpleType");
-        m_AnySimpleTypeEDataType->setSerializable(true);
-    }
-
-    { // AnyURI
-        m_AnyURIEDataType->setName("AnyURI");
-        m_AnyURIEDataType->setSerializable(true);
-    }
-
-    { // Base64Binary
-        m_Base64BinaryEDataType->setName("Base64Binary");
-        m_Base64BinaryEDataType->setSerializable(true);
-    }
-
-    { // Boolean
-        m_BooleanEDataType->setName("Boolean");
-        m_BooleanEDataType->setSerializable(true);
-    }
-
-    { // BooleanObject
-        m_BooleanObjectEDataType->setName("BooleanObject");
-        m_BooleanObjectEDataType->setSerializable(true);
-    }
-
-    { // Byte
-        m_ByteEDataType->setName("Byte");
-        m_ByteEDataType->setSerializable(true);
-    }
-
-    { // ByteObject
-        m_ByteObjectEDataType->setName("ByteObject");
-        m_ByteObjectEDataType->setSerializable(true);
-    }
-
-    { // Date
-        m_DateEDataType->setName("Date");
-        m_DateEDataType->setSerializable(true);
-    }
-
-    { // DateTime
-        m_DateTimeEDataType->setName("DateTime");
-        m_DateTimeEDataType->setSerializable(true);
-    }
-
-    { // Decimal
-        m_DecimalEDataType->setName("Decimal");
-        m_DecimalEDataType->setSerializable(true);
-    }
-
-    { // Double
-        m_DoubleEDataType->setName("Double");
-        m_DoubleEDataType->setSerializable(true);
-    }
-
-    { // DoubleObject
-        m_DoubleObjectEDataType->setName("DoubleObject");
-        m_DoubleObjectEDataType->setSerializable(true);
-    }
-
-    { // Duration
-        m_DurationEDataType->setName("Duration");
-        m_DurationEDataType->setSerializable(true);
-    }
-
-    { // ENTITIES
-        m_ENTITIESEDataType->setName("ENTITIES");
-        m_ENTITIESEDataType->setSerializable(true);
-    }
-
-    { // ENTITIESBase
-        m_ENTITIESBaseEDataType->setName("ENTITIESBase");
-        m_ENTITIESBaseEDataType->setSerializable(true);
-    }
-
-    { // ENTITY
-        m_ENTITYEDataType->setName("ENTITY");
-        m_ENTITYEDataType->setSerializable(true);
-    }
-
-    { // Float
-        m_FloatEDataType->setName("Float");
-        m_FloatEDataType->setSerializable(true);
-    }
-
-    { // FloatObject
-        m_FloatObjectEDataType->setName("FloatObject");
-        m_FloatObjectEDataType->setSerializable(true);
-    }
-
-    { // GDay
-        m_GDayEDataType->setName("GDay");
-        m_GDayEDataType->setSerializable(true);
-    }
-
-    { // GMonth
-        m_GMonthEDataType->setName("GMonth");
-        m_GMonthEDataType->setSerializable(true);
-    }
-
-    { // GMonthDay
-        m_GMonthDayEDataType->setName("GMonthDay");
-        m_GMonthDayEDataType->setSerializable(true);
-    }
-
-    { // GYear
-        m_GYearEDataType->setName("GYear");
-        m_GYearEDataType->setSerializable(true);
-    }
-
-    { // GYearMonth
-        m_GYearMonthEDataType->setName("GYearMonth");
-        m_GYearMonthEDataType->setSerializable(true);
-    }
-
-    { // HexBinary
-        m_HexBinaryEDataType->setName("HexBinary");
-        m_HexBinaryEDataType->setSerializable(true);
-    }
-
-    { // ID
-        m_IDEDataType->setName("ID");
-        m_IDEDataType->setSerializable(true);
-    }
-
-    { // IDREF
-        m_IDREFEDataType->setName("IDREF");
-        m_IDREFEDataType->setSerializable(true);
-    }
-
-    { // IDREFS
-        m_IDREFSEDataType->setName("IDREFS");
-        m_IDREFSEDataType->setSerializable(true);
-    }
-
-    { // IDREFSBase
-        m_IDREFSBaseEDataType->setName("IDREFSBase");
-        m_IDREFSBaseEDataType->setSerializable(true);
-    }
-
-    { // Int
-        m_IntEDataType->setName("Int");
-        m_IntEDataType->setSerializable(true);
-    }
-
-    { // Integer
-        m_IntegerEDataType->setName("Integer");
-        m_IntegerEDataType->setSerializable(true);
-    }
-
-    { // IntObject
-        m_IntObjectEDataType->setName("IntObject");
-        m_IntObjectEDataType->setSerializable(true);
-    }
-
-    { // Language
-        m_LanguageEDataType->setName("Language");
-        m_LanguageEDataType->setSerializable(true);
-    }
-
-    { // Long
-        m_LongEDataType->setName("Long");
-        m_LongEDataType->setSerializable(true);
-    }
-
-    { // LongObject
-        m_LongObjectEDataType->setName("LongObject");
-        m_LongObjectEDataType->setSerializable(true);
-    }
-
-    { // Name
-        m_NameEDataType->setName("Name");
-        m_NameEDataType->setSerializable(true);
-    }
-
-    { // NCName
-        m_NCNameEDataType->setName("NCName");
-        m_NCNameEDataType->setSerializable(true);
-    }
-
-    { // NegativeInteger
-        m_NegativeIntegerEDataType->setName("NegativeInteger");
-        m_NegativeIntegerEDataType->setSerializable(true);
-    }
-
-    { // NMTOKEN
-        m_NMTOKENEDataType->setName("NMTOKEN");
-        m_NMTOKENEDataType->setSerializable(true);
-    }
-
-    { // NMTOKENS
-        m_NMTOKENSEDataType->setName("NMTOKENS");
-        m_NMTOKENSEDataType->setSerializable(true);
-    }
-
-    { // NMTOKENSBase
-        m_NMTOKENSBaseEDataType->setName("NMTOKENSBase");
-        m_NMTOKENSBaseEDataType->setSerializable(true);
-    }
-
-    { // NonNegativeInteger
-        m_NonNegativeIntegerEDataType->setName("NonNegativeInteger");
-        m_NonNegativeIntegerEDataType->setSerializable(true);
-    }
-
-    { // NonPositiveInteger
-        m_NonPositiveIntegerEDataType->setName("NonPositiveInteger");
-        m_NonPositiveIntegerEDataType->setSerializable(true);
-    }
-
-    { // NormalizedString
-        m_NormalizedStringEDataType->setName("NormalizedString");
-        m_NormalizedStringEDataType->setSerializable(true);
-    }
-
-    { // NOTATION
-        m_NOTATIONEDataType->setName("NOTATION");
-        m_NOTATIONEDataType->setSerializable(true);
-    }
-
-    { // PositiveInteger
-        m_PositiveIntegerEDataType->setName("PositiveInteger");
-        m_PositiveIntegerEDataType->setSerializable(true);
-    }
-
-    { // QName
-        m_QNameEDataType->setName("QName");
-        m_QNameEDataType->setSerializable(true);
-    }
-
-    { // Short
-        m_ShortEDataType->setName("Short");
-        m_ShortEDataType->setSerializable(true);
-    }
-
-    { // ShortObject
-        m_ShortObjectEDataType->setName("ShortObject");
-        m_ShortObjectEDataType->setSerializable(true);
-    }
-
-    { // String
-        m_StringEDataType->setName("String");
-        m_StringEDataType->setSerializable(true);
-    }
-
-    { // Time
-        m_TimeEDataType->setName("Time");
-        m_TimeEDataType->setSerializable(true);
-    }
-
-    { // Token
-        m_TokenEDataType->setName("Token");
-        m_TokenEDataType->setSerializable(true);
-    }
-
-    { // UnsignedByte
-        m_UnsignedByteEDataType->setName("UnsignedByte");
-        m_UnsignedByteEDataType->setSerializable(true);
-    }
-
-    { // UnsignedByteObject
-        m_UnsignedByteObjectEDataType->setName("UnsignedByteObject");
-        m_UnsignedByteObjectEDataType->setSerializable(true);
-    }
-
-    { // UnsignedInt
-        m_UnsignedIntEDataType->setName("UnsignedInt");
-        m_UnsignedIntEDataType->setSerializable(true);
-    }
-
-    { // UnsignedIntObject
-        m_UnsignedIntObjectEDataType->setName("UnsignedIntObject");
-        m_UnsignedIntObjectEDataType->setSerializable(true);
-    }
-
-    { // UnsignedLong
-        m_UnsignedLongEDataType->setName("UnsignedLong");
-        m_UnsignedLongEDataType->setSerializable(true);
-    }
-
-    { // UnsignedShort
-        m_UnsignedShortEDataType->setName("UnsignedShort");
-        m_UnsignedShortEDataType->setSerializable(true);
-    }
-
-    { // UnsignedShortObject
-        m_UnsignedShortObjectEDataType->setName("UnsignedShortObject");
-        m_UnsignedShortObjectEDataType->setSerializable(true);
-    }
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
-
-    _annotation = m_AnyTypeEClass->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "anyType");
-    _annotation->setDetail("kind", "mixed");
-
-    _annotation = m_AnyType__mixed->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "elementWildcard");
-    _annotation->setDetail("name", ":mixed");
-
-    _annotation = m_AnyType__any->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "elementWildcard");
-    _annotation->setDetail("wildcards", "##any");
-    _annotation->setDetail("name", ":1");
-    _annotation->setDetail("processing", "lax");
-
-    _annotation = m_AnyType__anyAttribute->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "attributeWildcard");
-    _annotation->setDetail("wildcards", "##any");
-    _annotation->setDetail("name", ":2");
-    _annotation->setDetail("processing", "lax");
-
-    _annotation = m_ProcessingInstructionEClass->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "processingInstruction_._type");
-    _annotation->setDetail("kind", "empty");
-
-    _annotation = m_ProcessingInstruction__data->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "attribute");
-    _annotation->setDetail("name", "data");
-
-    _annotation = m_ProcessingInstruction__target->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "attribute");
-    _annotation->setDetail("name", "target");
-
-    _annotation = m_SimpleAnyTypeEClass->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "simpleAnyType");
-    _annotation->setDetail("kind", "simple");
-
-    _annotation = m_SimpleAnyType__rawValue->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", ":3");
-    _annotation->setDetail("kind", "simple");
-
-    _annotation = m_SimpleAnyType__value->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", ":4");
-    _annotation->setDetail("kind", "simple");
-
-    _annotation = m_SimpleAnyType__instanceType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", ":5");
-    _annotation->setDetail("kind", "simple");
-
-    _annotation = m_XMLTypeDocumentRootEClass->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "");
-    _annotation->setDetail("kind", "mixed");
-
-    _annotation = m_XMLTypeDocumentRoot__mixed->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "elementWildcard");
-    _annotation->setDetail("name", ":mixed");
-
-    _annotation = m_XMLTypeDocumentRoot__xMLNSPrefixMap->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "attribute");
-    _annotation->setDetail("name", "xmlns:prefix");
-
-    _annotation = m_XMLTypeDocumentRoot__xSISchemaLocation->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "attribute");
-    _annotation->setDetail("name", "xsi:schemaLocation");
-
-    _annotation = m_XMLTypeDocumentRoot__cDATA->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "element");
-    _annotation->setDetail("name", "cDATA");
-    _annotation->setDetail("namespace", "##targetNamespace");
-
-    _annotation = m_XMLTypeDocumentRoot__cDATA->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedGetVisibility", "true");
-
-    _annotation = m_XMLTypeDocumentRoot__comment->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "element");
-    _annotation->setDetail("name", "comment");
-    _annotation->setDetail("namespace", "##targetNamespace");
-
-    _annotation = m_XMLTypeDocumentRoot__comment->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedGetVisibility", "true");
-
-    _annotation = m_XMLTypeDocumentRoot__processingInstruction->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "element");
-    _annotation->setDetail("name", "processingInstruction");
-    _annotation->setDetail("namespace", "##targetNamespace");
-
-    _annotation = m_XMLTypeDocumentRoot__processingInstruction->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedGetVisibility", "true");
-
-    _annotation = m_XMLTypeDocumentRoot__text->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("kind", "element");
-    _annotation->setDetail("name", "text");
-    _annotation->setDetail("namespace", "##targetNamespace");
-
-    _annotation = m_XMLTypeDocumentRoot__text->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedGetVisibility", "true");
-
-    _annotation = m_AnySimpleTypeEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "anySimpleType");
-
-    _annotation = m_AnyURIEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "anyURI");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_Base64BinaryEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "base64Binary");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_BooleanEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "boolean");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_BooleanObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "boolean:Object");
-    _annotation->setDetail("baseType", "boolean");
-
-    _annotation = m_ByteEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "byte");
-
-    _annotation = m_ByteObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "byte:Object");
-    _annotation->setDetail("baseType", "byte");
-
-    _annotation = m_DateEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "date");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_DateTimeEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "dateTime");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_DecimalEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "decimal");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_DoubleEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "double");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_DoubleObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "double:Object");
-    _annotation->setDetail("baseType", "double");
-
-    _annotation = m_DurationEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "duration");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_ENTITIESEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "ENTITIES");
-    _annotation->setDetail("baseType", "ENTITIES_._base");
-    _annotation->setDetail("minLength", "1");
-
-    _annotation = m_ENTITIESBaseEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "ENTITIES_._base");
-    _annotation->setDetail("itemType", "ENTITY");
-
-    _annotation = m_ENTITYEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "ENTITY");
-    _annotation->setDetail("baseType", "NCName");
-
-    _annotation = m_FloatEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "float");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_FloatObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "float:Object");
-    _annotation->setDetail("baseType", "float");
-
-    _annotation = m_GDayEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "gDay");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_GMonthEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "gMonth");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_GMonthDayEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "gMonthDay");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_GYearEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "gYear");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_GYearMonthEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "gYearMonth");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_HexBinaryEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "hexBinary");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_IDEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "ID");
-    _annotation->setDetail("baseType", "NCName");
-
-    _annotation = m_IDREFEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "IDREF");
-    _annotation->setDetail("baseType", "NCName");
-
-    _annotation = m_IDREFSEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "IDREFS");
-    _annotation->setDetail("baseType", "IDREFS_._base");
-    _annotation->setDetail("minLength", "1");
-
-    _annotation = m_IDREFSBaseEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "IDREFS_._base");
-    _annotation->setDetail("itemType", "IDREF");
-
-    _annotation = m_IntEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "int");
-
-    _annotation = m_IntegerEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "integer");
-
-    _annotation = m_IntObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "int:Object");
-    _annotation->setDetail("baseType", "int");
-
-    _annotation = m_LanguageEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "language");
-    _annotation->setDetail("baseType", "token");
-    _annotation->setDetail("pattern", "[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*");
-
-    _annotation = m_LongEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "long");
-
-    _annotation = m_LongObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "long:Object");
-    _annotation->setDetail("baseType", "long");
-
-    _annotation = m_NameEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "Name");
-    _annotation->setDetail("baseType", "token");
-    _annotation->setDetail("pattern", "\\i\\c*");
-
-    _annotation = m_NCNameEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "NCName");
-    _annotation->setDetail("baseType", "Name");
-    _annotation->setDetail("pattern", "[\\i-[:]][\\c-[:]]*");
-
-    _annotation = m_NegativeIntegerEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "negativeInteger");
-    _annotation->setDetail("baseType", "nonPositiveInteger");
-    _annotation->setDetail("maxInclusive", "-1");
-
-    _annotation = m_NMTOKENEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "NMTOKEN");
-    _annotation->setDetail("baseType", "token");
-    _annotation->setDetail("pattern", "\\c+");
-
-    _annotation = m_NMTOKENSEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "NMTOKENS");
-    _annotation->setDetail("baseType", "NMTOKENS_._base");
-    _annotation->setDetail("minLength", "1");
-
-    _annotation = m_NMTOKENSBaseEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "NMTOKENS_._base");
-    _annotation->setDetail("itemType", "NMTOKEN");
-
-    _annotation = m_NonNegativeIntegerEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "nonNegativeInteger");
-    _annotation->setDetail("baseType", "integer");
-    _annotation->setDetail("minInclusive", "0");
-
-    _annotation = m_NonPositiveIntegerEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "nonPositiveInteger");
-    _annotation->setDetail("baseType", "integer");
-    _annotation->setDetail("maxInclusive", "0");
-
-    _annotation = m_NormalizedStringEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "normalizedString");
-    _annotation->setDetail("baseType", "string");
-    _annotation->setDetail("whiteSpace", "replace");
-
-    _annotation = m_NOTATIONEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "NOTATION");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_PositiveIntegerEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "positiveInteger");
-    _annotation->setDetail("baseType", "nonNegativeInteger");
-    _annotation->setDetail("minInclusive", "1");
-
-    _annotation = m_QNameEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "QName");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_ShortEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "short");
-
-    _annotation = m_ShortObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "short:Object");
-    _annotation->setDetail("baseType", "short");
-
-    _annotation = m_StringEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "string");
-    _annotation->setDetail("whiteSpace", "preserve");
-
-    _annotation = m_TimeEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "time");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_TokenEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "token");
-    _annotation->setDetail("baseType", "normalizedString");
-    _annotation->setDetail("whiteSpace", "collapse");
-
-    _annotation = m_UnsignedByteEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "unsignedByte");
-    _annotation->setDetail("maxInclusive", "255");
-    _annotation->setDetail("minInclusive", "0");
-
-    _annotation = m_UnsignedByteObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "unsignedByte:Object");
-    _annotation->setDetail("baseType", "unsignedByte");
-
-    _annotation = m_UnsignedIntEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "unsignedInt");
-    _annotation->setDetail("maxInclusive", "4294967295");
-    _annotation->setDetail("minInclusive", "0");
-
-    _annotation = m_UnsignedIntObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "unsignedInt:Object");
-    _annotation->setDetail("baseType", "unsignedInt");
-
-    _annotation = m_UnsignedLongEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "unsignedLong");
-    _annotation->setDetail("baseType", "nonNegativeInteger");
-    _annotation->setDetail("maxInclusive", "18446744073709551615");
-    _annotation->setDetail("minInclusive", "0");
-
-    _annotation = m_UnsignedShortEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "unsignedShort");
-    _annotation->setDetail("maxInclusive", "65535");
-    _annotation->setDetail("minInclusive", "0");
-
-    _annotation = m_UnsignedShortObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("name", "unsignedShort:Object");
-    _annotation->setDetail("baseType", "unsignedShort");
+    [this]()
+    {
+        m_SimpleAnyTypeEClass->getESuperTypes().push_back(m_AnyTypeEClass);
+    }();
+
+    [this]()
+    { // Feature mixed of class AnyType
+        auto &&feature = m_AnyType__mixed;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "elementWildcard");
+            eAnnotation->setDetail("name", ":mixed");
+        }
+    }();
+    [this]()
+    { // Feature any of class AnyType
+        auto &&feature = m_AnyType__any;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "elementWildcard");
+            eAnnotation->setDetail("wildcards", "##any");
+            eAnnotation->setDetail("name", ":1");
+            eAnnotation->setDetail("processing", "lax");
+        }
+    }();
+    [this]()
+    { // Feature anyAttribute of class AnyType
+        auto &&feature = m_AnyType__anyAttribute;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "attributeWildcard");
+            eAnnotation->setDetail("wildcards", "##any");
+            eAnnotation->setDetail("name", ":2");
+            eAnnotation->setDetail("processing", "lax");
+        }
+    }();
+
+    [this]()
+    { // Class AnyType
+        auto &&cls = m_AnyTypeEClass;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "anyType");
+            eAnnotation->setDetail("kind", "mixed");
+        }
+    }();
+
+    [this]()
+    { // Feature data of class ProcessingInstruction
+        auto &&feature = m_ProcessingInstruction__data;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "attribute");
+            eAnnotation->setDetail("name", "data");
+        }
+    }();
+    [this]()
+    { // Feature target of class ProcessingInstruction
+        auto &&feature = m_ProcessingInstruction__target;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "attribute");
+            eAnnotation->setDetail("name", "target");
+        }
+    }();
+
+    [this]()
+    { // Class ProcessingInstruction
+        auto &&cls = m_ProcessingInstructionEClass;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "processingInstruction_._type");
+            eAnnotation->setDetail("kind", "empty");
+        }
+    }();
+
+    [this]()
+    { // Feature rawValue of class SimpleAnyType
+        auto &&feature = m_SimpleAnyType__rawValue;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", ":3");
+            eAnnotation->setDetail("kind", "simple");
+        }
+    }();
+    [this]()
+    { // Feature value of class SimpleAnyType
+        auto &&feature = m_SimpleAnyType__value;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", ":4");
+            eAnnotation->setDetail("kind", "simple");
+        }
+    }();
+    [this]()
+    { // Feature instanceType of class SimpleAnyType
+        auto &&feature = m_SimpleAnyType__instanceType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", ":5");
+            eAnnotation->setDetail("kind", "simple");
+        }
+    }();
+
+    [this]()
+    { // Class SimpleAnyType
+        auto &&cls = m_SimpleAnyTypeEClass;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "simpleAnyType");
+            eAnnotation->setDetail("kind", "simple");
+        }
+    }();
+
+    [this]()
+    { // Feature mixed of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__mixed;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "elementWildcard");
+            eAnnotation->setDetail("name", ":mixed");
+        }
+    }();
+    [this]()
+    { // Feature xMLNSPrefixMap of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__xMLNSPrefixMap;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "attribute");
+            eAnnotation->setDetail("name", "xmlns:prefix");
+        }
+    }();
+    [this]()
+    { // Feature xSISchemaLocation of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__xSISchemaLocation;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "attribute");
+            eAnnotation->setDetail("name", "xsi:schemaLocation");
+        }
+    }();
+    [this]()
+    { // Feature cDATA of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__cDATA;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "element");
+            eAnnotation->setDetail("name", "cDATA");
+            eAnnotation->setDetail("namespace", "##targetNamespace");
+        }
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedGetVisibility", "true");
+        }
+    }();
+    [this]()
+    { // Feature comment of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__comment;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "element");
+            eAnnotation->setDetail("name", "comment");
+            eAnnotation->setDetail("namespace", "##targetNamespace");
+        }
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedGetVisibility", "true");
+        }
+    }();
+    [this]()
+    { // Feature processingInstruction of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__processingInstruction;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "element");
+            eAnnotation->setDetail("name", "processingInstruction");
+            eAnnotation->setDetail("namespace", "##targetNamespace");
+        }
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedGetVisibility", "true");
+        }
+    }();
+    [this]()
+    { // Feature text of class XMLTypeDocumentRoot
+        auto &&feature = m_XMLTypeDocumentRoot__text;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("kind", "element");
+            eAnnotation->setDetail("name", "text");
+            eAnnotation->setDetail("namespace", "##targetNamespace");
+        }
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedGetVisibility", "true");
+        }
+    }();
+
+    [this]()
+    { // Class XMLTypeDocumentRoot
+        auto &&cls = m_XMLTypeDocumentRootEClass;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "");
+            eAnnotation->setDetail("kind", "mixed");
+        }
+    }();
+
+    [this]()
+    { // Annotations for Datatype AnySimpleType
+        auto &&datatype = m_AnySimpleTypeEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "anySimpleType");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype AnyURI
+        auto &&datatype = m_AnyURIEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "anyURI");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Base64Binary
+        auto &&datatype = m_Base64BinaryEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "base64Binary");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Boolean
+        auto &&datatype = m_BooleanEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "boolean");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype BooleanObject
+        auto &&datatype = m_BooleanObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "boolean:Object");
+            eAnnotation->setDetail("baseType", "boolean");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Byte
+        auto &&datatype = m_ByteEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "byte");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype ByteObject
+        auto &&datatype = m_ByteObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "byte:Object");
+            eAnnotation->setDetail("baseType", "byte");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Date
+        auto &&datatype = m_DateEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "date");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype DateTime
+        auto &&datatype = m_DateTimeEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "dateTime");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Decimal
+        auto &&datatype = m_DecimalEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "decimal");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Double
+        auto &&datatype = m_DoubleEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "double");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype DoubleObject
+        auto &&datatype = m_DoubleObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "double:Object");
+            eAnnotation->setDetail("baseType", "double");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Duration
+        auto &&datatype = m_DurationEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "duration");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype ENTITIES
+        auto &&datatype = m_ENTITIESEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "ENTITIES");
+            eAnnotation->setDetail("baseType", "ENTITIES_._base");
+            eAnnotation->setDetail("minLength", "1");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype ENTITIESBase
+        auto &&datatype = m_ENTITIESBaseEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "ENTITIES_._base");
+            eAnnotation->setDetail("itemType", "ENTITY");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype ENTITY
+        auto &&datatype = m_ENTITYEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "ENTITY");
+            eAnnotation->setDetail("baseType", "NCName");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Float
+        auto &&datatype = m_FloatEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "float");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype FloatObject
+        auto &&datatype = m_FloatObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "float:Object");
+            eAnnotation->setDetail("baseType", "float");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype GDay
+        auto &&datatype = m_GDayEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "gDay");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype GMonth
+        auto &&datatype = m_GMonthEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "gMonth");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype GMonthDay
+        auto &&datatype = m_GMonthDayEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "gMonthDay");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype GYear
+        auto &&datatype = m_GYearEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "gYear");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype GYearMonth
+        auto &&datatype = m_GYearMonthEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "gYearMonth");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype HexBinary
+        auto &&datatype = m_HexBinaryEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "hexBinary");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype ID
+        auto &&datatype = m_IDEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "ID");
+            eAnnotation->setDetail("baseType", "NCName");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype IDREF
+        auto &&datatype = m_IDREFEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "IDREF");
+            eAnnotation->setDetail("baseType", "NCName");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype IDREFS
+        auto &&datatype = m_IDREFSEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "IDREFS");
+            eAnnotation->setDetail("baseType", "IDREFS_._base");
+            eAnnotation->setDetail("minLength", "1");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype IDREFSBase
+        auto &&datatype = m_IDREFSBaseEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "IDREFS_._base");
+            eAnnotation->setDetail("itemType", "IDREF");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Int
+        auto &&datatype = m_IntEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "int");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Integer
+        auto &&datatype = m_IntegerEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "integer");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype IntObject
+        auto &&datatype = m_IntObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "int:Object");
+            eAnnotation->setDetail("baseType", "int");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Language
+        auto &&datatype = m_LanguageEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "language");
+            eAnnotation->setDetail("baseType", "token");
+            eAnnotation->setDetail("pattern",
+                    "[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Long
+        auto &&datatype = m_LongEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "long");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype LongObject
+        auto &&datatype = m_LongObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "long:Object");
+            eAnnotation->setDetail("baseType", "long");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Name
+        auto &&datatype = m_NameEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "Name");
+            eAnnotation->setDetail("baseType", "token");
+            eAnnotation->setDetail("pattern", "\\i\\c*");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype NCName
+        auto &&datatype = m_NCNameEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "NCName");
+            eAnnotation->setDetail("baseType", "Name");
+            eAnnotation->setDetail("pattern", "[\\i-[:]][\\c-[:]]*");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype NegativeInteger
+        auto &&datatype = m_NegativeIntegerEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "negativeInteger");
+            eAnnotation->setDetail("baseType", "nonPositiveInteger");
+            eAnnotation->setDetail("maxInclusive", "-1");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype NMTOKEN
+        auto &&datatype = m_NMTOKENEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "NMTOKEN");
+            eAnnotation->setDetail("baseType", "token");
+            eAnnotation->setDetail("pattern", "\\c+");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype NMTOKENS
+        auto &&datatype = m_NMTOKENSEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "NMTOKENS");
+            eAnnotation->setDetail("baseType", "NMTOKENS_._base");
+            eAnnotation->setDetail("minLength", "1");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype NMTOKENSBase
+        auto &&datatype = m_NMTOKENSBaseEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "NMTOKENS_._base");
+            eAnnotation->setDetail("itemType", "NMTOKEN");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype NonNegativeInteger
+        auto &&datatype = m_NonNegativeIntegerEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "nonNegativeInteger");
+            eAnnotation->setDetail("baseType", "integer");
+            eAnnotation->setDetail("minInclusive", "0");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype NonPositiveInteger
+        auto &&datatype = m_NonPositiveIntegerEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "nonPositiveInteger");
+            eAnnotation->setDetail("baseType", "integer");
+            eAnnotation->setDetail("maxInclusive", "0");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype NormalizedString
+        auto &&datatype = m_NormalizedStringEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "normalizedString");
+            eAnnotation->setDetail("baseType", "string");
+            eAnnotation->setDetail("whiteSpace", "replace");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype NOTATION
+        auto &&datatype = m_NOTATIONEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "NOTATION");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype PositiveInteger
+        auto &&datatype = m_PositiveIntegerEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "positiveInteger");
+            eAnnotation->setDetail("baseType", "nonNegativeInteger");
+            eAnnotation->setDetail("minInclusive", "1");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype QName
+        auto &&datatype = m_QNameEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "QName");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Short
+        auto &&datatype = m_ShortEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "short");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype ShortObject
+        auto &&datatype = m_ShortObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "short:Object");
+            eAnnotation->setDetail("baseType", "short");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype String
+        auto &&datatype = m_StringEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "string");
+            eAnnotation->setDetail("whiteSpace", "preserve");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Time
+        auto &&datatype = m_TimeEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "time");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype Token
+        auto &&datatype = m_TokenEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "token");
+            eAnnotation->setDetail("baseType", "normalizedString");
+            eAnnotation->setDetail("whiteSpace", "collapse");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype UnsignedByte
+        auto &&datatype = m_UnsignedByteEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "unsignedByte");
+            eAnnotation->setDetail("maxInclusive", "255");
+            eAnnotation->setDetail("minInclusive", "0");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype UnsignedByteObject
+        auto &&datatype = m_UnsignedByteObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "unsignedByte:Object");
+            eAnnotation->setDetail("baseType", "unsignedByte");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype UnsignedInt
+        auto &&datatype = m_UnsignedIntEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "unsignedInt");
+            eAnnotation->setDetail("maxInclusive", "4294967295");
+            eAnnotation->setDetail("minInclusive", "0");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype UnsignedIntObject
+        auto &&datatype = m_UnsignedIntObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "unsignedInt:Object");
+            eAnnotation->setDetail("baseType", "unsignedInt");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype UnsignedLong
+        auto &&datatype = m_UnsignedLongEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "unsignedLong");
+            eAnnotation->setDetail("baseType", "nonNegativeInteger");
+            eAnnotation->setDetail("maxInclusive", "18446744073709551615");
+            eAnnotation->setDetail("minInclusive", "0");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype UnsignedShort
+        auto &&datatype = m_UnsignedShortEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "unsignedShort");
+            eAnnotation->setDetail("maxInclusive", "65535");
+            eAnnotation->setDetail("minInclusive", "0");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype UnsignedShortObject
+        auto &&datatype = m_UnsignedShortObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("name", "unsignedShort:Object");
+            eAnnotation->setDetail("baseType", "unsignedShort");
+        }
+    }();
+
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_AnySimpleTypeEDataType);
+        classifiers.push_back(m_AnyTypeEClass);
+        classifiers.push_back(m_AnyURIEDataType);
+        classifiers.push_back(m_Base64BinaryEDataType);
+        classifiers.push_back(m_BooleanEDataType);
+        classifiers.push_back(m_BooleanObjectEDataType);
+        classifiers.push_back(m_ByteEDataType);
+        classifiers.push_back(m_ByteObjectEDataType);
+        classifiers.push_back(m_DateEDataType);
+        classifiers.push_back(m_DateTimeEDataType);
+        classifiers.push_back(m_DecimalEDataType);
+        classifiers.push_back(m_DoubleEDataType);
+        classifiers.push_back(m_DoubleObjectEDataType);
+        classifiers.push_back(m_DurationEDataType);
+        classifiers.push_back(m_ENTITIESEDataType);
+        classifiers.push_back(m_ENTITIESBaseEDataType);
+        classifiers.push_back(m_ENTITYEDataType);
+        classifiers.push_back(m_FloatEDataType);
+        classifiers.push_back(m_FloatObjectEDataType);
+        classifiers.push_back(m_GDayEDataType);
+        classifiers.push_back(m_GMonthEDataType);
+        classifiers.push_back(m_GMonthDayEDataType);
+        classifiers.push_back(m_GYearEDataType);
+        classifiers.push_back(m_GYearMonthEDataType);
+        classifiers.push_back(m_HexBinaryEDataType);
+        classifiers.push_back(m_IDEDataType);
+        classifiers.push_back(m_IDREFEDataType);
+        classifiers.push_back(m_IDREFSEDataType);
+        classifiers.push_back(m_IDREFSBaseEDataType);
+        classifiers.push_back(m_IntEDataType);
+        classifiers.push_back(m_IntegerEDataType);
+        classifiers.push_back(m_IntObjectEDataType);
+        classifiers.push_back(m_LanguageEDataType);
+        classifiers.push_back(m_LongEDataType);
+        classifiers.push_back(m_LongObjectEDataType);
+        classifiers.push_back(m_NameEDataType);
+        classifiers.push_back(m_NCNameEDataType);
+        classifiers.push_back(m_NegativeIntegerEDataType);
+        classifiers.push_back(m_NMTOKENEDataType);
+        classifiers.push_back(m_NMTOKENSEDataType);
+        classifiers.push_back(m_NMTOKENSBaseEDataType);
+        classifiers.push_back(m_NonNegativeIntegerEDataType);
+        classifiers.push_back(m_NonPositiveIntegerEDataType);
+        classifiers.push_back(m_NormalizedStringEDataType);
+        classifiers.push_back(m_NOTATIONEDataType);
+        classifiers.push_back(m_PositiveIntegerEDataType);
+        classifiers.push_back(m_ProcessingInstructionEClass);
+        classifiers.push_back(m_QNameEDataType);
+        classifiers.push_back(m_ShortEDataType);
+        classifiers.push_back(m_ShortObjectEDataType);
+        classifiers.push_back(m_SimpleAnyTypeEClass);
+        classifiers.push_back(m_StringEDataType);
+        classifiers.push_back(m_TimeEDataType);
+        classifiers.push_back(m_TokenEDataType);
+        classifiers.push_back(m_UnsignedByteEDataType);
+        classifiers.push_back(m_UnsignedByteObjectEDataType);
+        classifiers.push_back(m_UnsignedIntEDataType);
+        classifiers.push_back(m_UnsignedIntObjectEDataType);
+        classifiers.push_back(m_UnsignedLongEDataType);
+        classifiers.push_back(m_UnsignedShortEDataType);
+        classifiers.push_back(m_UnsignedShortObjectEDataType);
+        classifiers.push_back(m_XMLTypeDocumentRootEClass);
+    }();
 
     _initialize();
 }

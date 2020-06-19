@@ -42,193 +42,459 @@ using namespace ::kdm::core;
 
 CorePackage::CorePackage()
 {
-
-    // Feature definitions of Element
-    m_Element__attribute = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_Element__annotation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ModelElement
-    m_ModelElement__stereotype = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ModelElement__taggedValue = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of KDMEntity
-    m_KDMEntity__name = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of KDMRelationship
-
-    // Feature definitions of AggregatedRelationship
-    m_AggregatedRelationship__density = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_AggregatedRelationship__from = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AggregatedRelationship__to = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_AggregatedRelationship__relation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_AggregatedRelationship__from = ::ecore::make< ::ecore::EReference >();
+    m_AggregatedRelationship__to = ::ecore::make< ::ecore::EReference >();
+    m_AggregatedRelationship__relation = ::ecore::make< ::ecore::EReference >();
+    m_AggregatedRelationship__density = ::ecore::make< ::ecore::EAttribute >();
+    m_AggregatedRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_BooleanEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_Element__attribute = ::ecore::make< ::ecore::EReference >();
+    m_Element__annotation = ::ecore::make< ::ecore::EReference >();
+    m_ElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_IntegerEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_KDMEntity__name = ::ecore::make< ::ecore::EAttribute >();
+    m_KDMEntityEClass = ::ecore::make< ::ecore::EClass >();
+    m_KDMRelationshipEClass = ::ecore::make< ::ecore::EClass >();
+    m_ModelElement__stereotype = ::ecore::make< ::ecore::EReference >();
+    m_ModelElement__taggedValue = ::ecore::make< ::ecore::EReference >();
+    m_ModelElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_StringEDataType = ::ecore::make< ::ecore::EDataType >();
 }
 
 void CorePackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = CoreFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = CoreFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // Element
-        m_ElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ElementEClass->setClassifierID(ELEMENT);
-        m_ElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ElementEClass);
-        // m_Element__attribute has already been allocated above
-        m_Element__attribute->setFeatureID(
-                ::kdm::core::CorePackage::ELEMENT__ATTRIBUTE);
-        m_Element__attribute->setName("attribute");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
-                m_Element__attribute);
-        m_Element__attribute->basicsetEContainingClass(m_ElementEClass);
-        // m_Element__annotation has already been allocated above
-        m_Element__annotation->setFeatureID(
-                ::kdm::core::CorePackage::ELEMENT__ANNOTATION);
-        m_Element__annotation->setName("annotation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures()).basicAdd(
-                m_Element__annotation);
-        m_Element__annotation->basicsetEContainingClass(m_ElementEClass);
-    }
+    [this]()
+    { // Feature from of class AggregatedRelationship
+        auto &&feature = m_AggregatedRelationship__from;
 
-    { // ModelElement
-        m_ModelElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ModelElementEClass->setClassifierID(MODELELEMENT);
-        m_ModelElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ModelElementEClass);
-        // m_ModelElement__stereotype has already been allocated above
-        m_ModelElement__stereotype->setFeatureID(
-                ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE);
-        m_ModelElement__stereotype->setName("stereotype");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ModelElement__stereotype);
-        m_ModelElement__stereotype->basicsetEContainingClass(
-                m_ModelElementEClass);
-        // m_ModelElement__taggedValue has already been allocated above
-        m_ModelElement__taggedValue->setFeatureID(
-                ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE);
-        m_ModelElement__taggedValue->setName("taggedValue");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ModelElement__taggedValue);
-        m_ModelElement__taggedValue->basicsetEContainingClass(
-                m_ModelElementEClass);
-    }
+        // ENamedElement
+        feature->setName("from");
 
-    { // KDMEntity
-        m_KDMEntityEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_KDMEntityEClass->setClassifierID(KDMENTITY);
-        m_KDMEntityEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_KDMEntityEClass);
-        // m_KDMEntity__name has already been allocated above
-        m_KDMEntity__name->setFeatureID(
-                ::kdm::core::CorePackage::KDMENTITY__NAME);
-        m_KDMEntity__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMEntityEClass->getEStructuralFeatures()).basicAdd(
-                m_KDMEntity__name);
-        m_KDMEntity__name->basicsetEContainingClass(m_KDMEntityEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    { // KDMRelationship
-        m_KDMRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_KDMRelationshipEClass->setClassifierID(KDMRELATIONSHIP);
-        m_KDMRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_KDMRelationshipEClass);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_KDMEntityEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // AggregatedRelationship
-        m_AggregatedRelationshipEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_AggregatedRelationshipEClass->setClassifierID(AGGREGATEDRELATIONSHIP);
-        m_AggregatedRelationshipEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_AggregatedRelationshipEClass);
-        // m_AggregatedRelationship__from has already been allocated above
-        m_AggregatedRelationship__from->setFeatureID(
+        feature->setFeatureID(
                 ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__FROM);
-        m_AggregatedRelationship__from->setName("from");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_AggregatedRelationship__from);
-        m_AggregatedRelationship__from->basicsetEContainingClass(
-                m_AggregatedRelationshipEClass);
-        // m_AggregatedRelationship__to has already been allocated above
-        m_AggregatedRelationship__to->setFeatureID(
+        feature->basicsetEContainingClass(m_AggregatedRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature to of class AggregatedRelationship
+        auto &&feature = m_AggregatedRelationship__to;
+
+        // ENamedElement
+        feature->setName("to");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_KDMEntityEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__TO);
-        m_AggregatedRelationship__to->setName("to");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_AggregatedRelationship__to);
-        m_AggregatedRelationship__to->basicsetEContainingClass(
-                m_AggregatedRelationshipEClass);
-        // m_AggregatedRelationship__relation has already been allocated above
-        m_AggregatedRelationship__relation->setFeatureID(
+        feature->basicsetEContainingClass(m_AggregatedRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature relation of class AggregatedRelationship
+        auto &&feature = m_AggregatedRelationship__relation;
+
+        // ENamedElement
+        feature->setName("relation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_KDMRelationshipEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__RELATION);
-        m_AggregatedRelationship__relation->setName("relation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_AggregatedRelationship__relation);
-        m_AggregatedRelationship__relation->basicsetEContainingClass(
-                m_AggregatedRelationshipEClass);
-        // m_AggregatedRelationship__density has already been allocated above
-        m_AggregatedRelationship__density->setFeatureID(
+        feature->basicsetEContainingClass(m_AggregatedRelationshipEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature density of class AggregatedRelationship
+        auto &&feature = m_AggregatedRelationship__density;
+
+        // ENamedElement
+        feature->setName("density");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_IntegerEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::kdm::core::CorePackage::AGGREGATEDRELATIONSHIP__DENSITY);
-        m_AggregatedRelationship__density->setName("density");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures()).basicAdd(
-                m_AggregatedRelationship__density);
-        m_AggregatedRelationship__density->basicsetEContainingClass(
-                m_AggregatedRelationshipEClass);
-    }
+        feature->basicsetEContainingClass(m_AggregatedRelationshipEClass);
 
-    // Create enums
+        // EAttribute
+        feature->setID(false);
+    }();
 
-    // Create data types
+    [this]()
+    { // Classifier AggregatedRelationship
+        auto &&classifier = m_AggregatedRelationshipEClass;
 
-    { // String
-        m_StringEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_StringEDataType->setClassifierID(STRING);
-        m_StringEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_StringEDataType);
-    }
+        // ENamedElement
+        classifier->setName("AggregatedRelationship");
 
-    { // Integer
-        m_IntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_IntegerEDataType->setClassifierID(INTEGER);
-        m_IntegerEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_IntegerEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(AGGREGATEDRELATIONSHIP);
 
-    { // Boolean
-        m_BooleanEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_BooleanEDataType->setClassifierID(BOOLEAN);
-        m_BooleanEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_BooleanEDataType);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_AggregatedRelationshipEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_AggregatedRelationship__from);
+            eStructuralFeatures.basicAdd(m_AggregatedRelationship__to);
+            eStructuralFeatures.basicAdd(m_AggregatedRelationship__relation);
+            eStructuralFeatures.basicAdd(m_AggregatedRelationship__density);
+        }
+    }();
+
+    [this]()
+    { // Classifier Boolean
+        auto &&classifier = m_BooleanEDataType;
+
+        // ENamedElement
+        classifier->setName("Boolean");
+
+        // EClassifier
+        classifier->setClassifierID(BOOLEAN);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Feature attribute of class Element
+        auto &&feature = m_Element__attribute;
+
+        // ENamedElement
+        feature->setName("attribute");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getAttribute());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::core::CorePackage::ELEMENT__ATTRIBUTE);
+        feature->basicsetEContainingClass(m_ElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature annotation of class Element
+        auto &&feature = m_Element__annotation;
+
+        // ENamedElement
+        feature->setName("annotation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getAnnotation());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::core::CorePackage::ELEMENT__ANNOTATION);
+        feature->basicsetEContainingClass(m_ElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier Element
+        auto &&classifier = m_ElementEClass;
+
+        // ENamedElement
+        classifier->setName("Element");
+
+        // EClassifier
+        classifier->setClassifierID(ELEMENT);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Element__attribute);
+            eStructuralFeatures.basicAdd(m_Element__annotation);
+        }
+    }();
+
+    [this]()
+    { // Classifier Integer
+        auto &&classifier = m_IntegerEDataType;
+
+        // ENamedElement
+        classifier->setName("Integer");
+
+        // EClassifier
+        classifier->setClassifierID(INTEGER);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Feature name of class KDMEntity
+        auto &&feature = m_KDMEntity__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(false);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_StringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::kdm::core::CorePackage::KDMENTITY__NAME);
+        feature->basicsetEContainingClass(m_KDMEntityEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier KDMEntity
+        auto &&classifier = m_KDMEntityEClass;
+
+        // ENamedElement
+        classifier->setName("KDMEntity");
+
+        // EClassifier
+        classifier->setClassifierID(KDMENTITY);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_KDMEntityEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_KDMEntity__name);
+        }
+    }();
+
+    [this]()
+    { // Classifier KDMRelationship
+        auto &&classifier = m_KDMRelationshipEClass;
+
+        // ENamedElement
+        classifier->setName("KDMRelationship");
+
+        // EClassifier
+        classifier->setClassifierID(KDMRELATIONSHIP);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature stereotype of class ModelElement
+        auto &&feature = m_ModelElement__stereotype;
+
+        // ENamedElement
+        feature->setName("stereotype");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getStereotype());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::core::CorePackage::MODELELEMENT__STEREOTYPE);
+        feature->basicsetEContainingClass(m_ModelElementEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature taggedValue of class ModelElement
+        auto &&feature = m_ModelElement__taggedValue;
+
+        // ENamedElement
+        feature->setName("taggedValue");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(false);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getExtendedValue());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::kdm::core::CorePackage::MODELELEMENT__TAGGEDVALUE);
+        feature->basicsetEContainingClass(m_ModelElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier ModelElement
+        auto &&classifier = m_ModelElementEClass;
+
+        // ENamedElement
+        classifier->setName("ModelElement");
+
+        // EClassifier
+        classifier->setClassifierID(MODELELEMENT);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ModelElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ModelElement__stereotype);
+            eStructuralFeatures.basicAdd(m_ModelElement__taggedValue);
+        }
+    }();
+
+    [this]()
+    { // Classifier String
+        auto &&classifier = m_StringEDataType;
+
+        // ENamedElement
+        classifier->setName("String");
+
+        // EClassifier
+        classifier->setClassifierID(STRING);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
 
     // Initialize package
     setName("core");
@@ -238,110 +504,30 @@ void CorePackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
-    m_ModelElementEClass->getESuperTypes().push_back(m_ElementEClass);
-    m_KDMEntityEClass->getESuperTypes().push_back(m_ModelElementEClass);
-    m_KDMRelationshipEClass->getESuperTypes().push_back(m_ModelElementEClass);
-    m_AggregatedRelationshipEClass->getESuperTypes().push_back(
-            m_ModelElementEClass);
+    [this]()
+    {
+        m_ModelElementEClass->getESuperTypes().push_back(m_ElementEClass);
+        m_KDMEntityEClass->getESuperTypes().push_back(m_ModelElementEClass);
+        m_KDMRelationshipEClass->getESuperTypes().push_back(
+                m_ModelElementEClass);
+        m_AggregatedRelationshipEClass->getESuperTypes().push_back(
+                m_ModelElementEClass);
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // Element
-        m_ElementEClass->setName("Element");
-        m_ElementEClass->setAbstract(true);
-        m_ElementEClass->setInterface(false);
+    [this]()
+    { // Class KDMEntity
+        auto &&cls = m_KDMEntityEClass;
 
-        m_Element__attribute->setEType(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getAttribute());
-        m_Element__attribute->setDefaultValueLiteral("");
-        m_Element__attribute->setLowerBound(0);
-        m_Element__attribute->setUpperBound(-1);
-        m_Element__attribute->setTransient(false);
-        m_Element__attribute->setVolatile(false);
-        m_Element__attribute->setChangeable(true);
-        m_Element__attribute->setContainment(true);
-        m_Element__attribute->setResolveProxies(true);
-        m_Element__attribute->setUnique(true);
-        m_Element__attribute->setDerived(false);
-        m_Element__attribute->setOrdered(false);
-        m_Element__annotation->setEType(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getAnnotation());
-        m_Element__annotation->setDefaultValueLiteral("");
-        m_Element__annotation->setLowerBound(0);
-        m_Element__annotation->setUpperBound(-1);
-        m_Element__annotation->setTransient(false);
-        m_Element__annotation->setVolatile(false);
-        m_Element__annotation->setChangeable(true);
-        m_Element__annotation->setContainment(true);
-        m_Element__annotation->setResolveProxies(true);
-        m_Element__annotation->setUnique(true);
-        m_Element__annotation->setDerived(false);
-        m_Element__annotation->setOrdered(false);
-
-    }
-
-    { // ModelElement
-        m_ModelElementEClass->setName("ModelElement");
-        m_ModelElementEClass->setAbstract(true);
-        m_ModelElementEClass->setInterface(false);
-
-        m_ModelElement__stereotype->setEType(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getStereotype());
-        m_ModelElement__stereotype->setDefaultValueLiteral("");
-        m_ModelElement__stereotype->setLowerBound(0);
-        m_ModelElement__stereotype->setUpperBound(-1);
-        m_ModelElement__stereotype->setTransient(false);
-        m_ModelElement__stereotype->setVolatile(false);
-        m_ModelElement__stereotype->setChangeable(true);
-        m_ModelElement__stereotype->setContainment(false);
-        m_ModelElement__stereotype->setResolveProxies(true);
-        m_ModelElement__stereotype->setUnique(true);
-        m_ModelElement__stereotype->setDerived(false);
-        m_ModelElement__stereotype->setOrdered(false);
-        m_ModelElement__taggedValue->setEType(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getExtendedValue());
-        m_ModelElement__taggedValue->setDefaultValueLiteral("");
-        m_ModelElement__taggedValue->setLowerBound(0);
-        m_ModelElement__taggedValue->setUpperBound(-1);
-        m_ModelElement__taggedValue->setTransient(false);
-        m_ModelElement__taggedValue->setVolatile(false);
-        m_ModelElement__taggedValue->setChangeable(true);
-        m_ModelElement__taggedValue->setContainment(true);
-        m_ModelElement__taggedValue->setResolveProxies(true);
-        m_ModelElement__taggedValue->setUnique(true);
-        m_ModelElement__taggedValue->setDerived(false);
-        m_ModelElement__taggedValue->setOrdered(false);
-
-    }
-
-    { // KDMEntity
-        m_KDMEntityEClass->setName("KDMEntity");
-        m_KDMEntityEClass->setAbstract(true);
-        m_KDMEntityEClass->setInterface(false);
-        m_KDMEntity__name->setEType(m_StringEDataType);
-        m_KDMEntity__name->setDefaultValueLiteral("");
-        m_KDMEntity__name->setLowerBound(0);
-        m_KDMEntity__name->setUpperBound(1);
-        m_KDMEntity__name->setTransient(false);
-        m_KDMEntity__name->setVolatile(false);
-        m_KDMEntity__name->setChangeable(true);
-        m_KDMEntity__name->setUnsettable(false);
-        m_KDMEntity__name->setID(false);
-        m_KDMEntity__name->setUnique(false);
-        m_KDMEntity__name->setDerived(false);
-        m_KDMEntity__name->setOrdered(false);
-
-        { // createAggregation()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation createAggregation()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setName("createAggregation");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
             { // otherEntity
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_KDMEntityEClass);
                 _pa->setName("otherEntity");
                 _pa->setLowerBound(0);
@@ -350,19 +536,17 @@ void CorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // deleteAggregation()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation deleteAggregation()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setName("deleteAggregation");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
             { // aggregation
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_AggregatedRelationshipEClass);
                 _pa->setName("aggregation");
                 _pa->setLowerBound(0);
@@ -371,110 +555,100 @@ void CorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getInbound()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getInbound()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_KDMRelationshipEClass);
             _op->setName("getInbound");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getOutbound()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getOutbound()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_KDMRelationshipEClass);
             _op->setName("getOutbound");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getOwnedRelation()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getOwnedRelation()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_KDMRelationshipEClass);
             _op->setName("getOwnedRelation");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getInAggregated()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getInAggregated()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_AggregatedRelationshipEClass);
             _op->setName("getInAggregated");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getOutAggregated()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getOutAggregated()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_AggregatedRelationshipEClass);
             _op->setName("getOutAggregated");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getOwner()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getOwner()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_KDMEntityEClass);
             _op->setName("getOwner");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getOwnedElement()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getOwnedElement()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_KDMEntityEClass);
             _op->setName("getOwnedElement");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getGroup()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getGroup()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_KDMEntityEClass);
             _op->setName("getGroup");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getGroupedElement()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getGroupedElement()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_KDMEntityEClass);
             _op->setName("getGroupedElement");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getModel()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getModel()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(
                     dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
             _op->setName("getModel");
@@ -482,114 +656,49 @@ void CorePackage::_initPackage()
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMEntityEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // KDMRelationship
-        m_KDMRelationshipEClass->setName("KDMRelationship");
-        m_KDMRelationshipEClass->setAbstract(true);
-        m_KDMRelationshipEClass->setInterface(false);
+    [this]()
+    { // Class KDMRelationship
+        auto &&cls = m_KDMRelationshipEClass;
 
-        { // getTo()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation getTo()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_KDMEntityEClass);
             _op->setName("getTo");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMRelationshipEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getFrom()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getFrom()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_KDMEntityEClass);
             _op->setName("getFrom");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_KDMRelationshipEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // AggregatedRelationship
-        m_AggregatedRelationshipEClass->setName("AggregatedRelationship");
-        m_AggregatedRelationshipEClass->setAbstract(false);
-        m_AggregatedRelationshipEClass->setInterface(false);
-        m_AggregatedRelationship__density->setEType(m_IntegerEDataType);
-        m_AggregatedRelationship__density->setDefaultValueLiteral("");
-        m_AggregatedRelationship__density->setLowerBound(0);
-        m_AggregatedRelationship__density->setUpperBound(1);
-        m_AggregatedRelationship__density->setTransient(false);
-        m_AggregatedRelationship__density->setVolatile(false);
-        m_AggregatedRelationship__density->setChangeable(true);
-        m_AggregatedRelationship__density->setUnsettable(false);
-        m_AggregatedRelationship__density->setID(false);
-        m_AggregatedRelationship__density->setUnique(false);
-        m_AggregatedRelationship__density->setDerived(false);
-        m_AggregatedRelationship__density->setOrdered(false);
-
-        m_AggregatedRelationship__from->setEType(m_KDMEntityEClass);
-        m_AggregatedRelationship__from->setDefaultValueLiteral("");
-        m_AggregatedRelationship__from->setLowerBound(1);
-        m_AggregatedRelationship__from->setUpperBound(1);
-        m_AggregatedRelationship__from->setTransient(false);
-        m_AggregatedRelationship__from->setVolatile(false);
-        m_AggregatedRelationship__from->setChangeable(true);
-        m_AggregatedRelationship__from->setContainment(false);
-        m_AggregatedRelationship__from->setResolveProxies(true);
-        m_AggregatedRelationship__from->setUnique(true);
-        m_AggregatedRelationship__from->setDerived(false);
-        m_AggregatedRelationship__from->setOrdered(false);
-        m_AggregatedRelationship__to->setEType(m_KDMEntityEClass);
-        m_AggregatedRelationship__to->setDefaultValueLiteral("");
-        m_AggregatedRelationship__to->setLowerBound(1);
-        m_AggregatedRelationship__to->setUpperBound(1);
-        m_AggregatedRelationship__to->setTransient(false);
-        m_AggregatedRelationship__to->setVolatile(false);
-        m_AggregatedRelationship__to->setChangeable(true);
-        m_AggregatedRelationship__to->setContainment(false);
-        m_AggregatedRelationship__to->setResolveProxies(true);
-        m_AggregatedRelationship__to->setUnique(true);
-        m_AggregatedRelationship__to->setDerived(false);
-        m_AggregatedRelationship__to->setOrdered(false);
-        m_AggregatedRelationship__relation->setEType(m_KDMRelationshipEClass);
-        m_AggregatedRelationship__relation->setDefaultValueLiteral("");
-        m_AggregatedRelationship__relation->setLowerBound(0);
-        m_AggregatedRelationship__relation->setUpperBound(-1);
-        m_AggregatedRelationship__relation->setTransient(false);
-        m_AggregatedRelationship__relation->setVolatile(false);
-        m_AggregatedRelationship__relation->setChangeable(true);
-        m_AggregatedRelationship__relation->setContainment(false);
-        m_AggregatedRelationship__relation->setResolveProxies(true);
-        m_AggregatedRelationship__relation->setUnique(true);
-        m_AggregatedRelationship__relation->setDerived(false);
-        m_AggregatedRelationship__relation->setOrdered(false);
-
-    }
-
-    // TODO: Initialize data types
-
-    { // String
-        m_StringEDataType->setName("String");
-        m_StringEDataType->setSerializable(true);
-    }
-
-    { // Integer
-        m_IntegerEDataType->setName("Integer");
-        m_IntegerEDataType->setSerializable(true);
-    }
-
-    { // Boolean
-        m_BooleanEDataType->setName("Boolean");
-        m_BooleanEDataType->setSerializable(true);
-    }
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_AggregatedRelationshipEClass);
+        classifiers.push_back(m_BooleanEDataType);
+        classifiers.push_back(m_ElementEClass);
+        classifiers.push_back(m_IntegerEDataType);
+        classifiers.push_back(m_KDMEntityEClass);
+        classifiers.push_back(m_KDMRelationshipEClass);
+        classifiers.push_back(m_ModelElementEClass);
+        classifiers.push_back(m_StringEDataType);
+    }();
 
     _initialize();
 }

@@ -45,9 +45,7 @@ namespace TopLevelPackage
 
             // IDs for classifier Level2Class
             static const int LEVEL2CLASS = 0;
-
             static const int LEVEL2CLASS__REFERENCE = 0;
-
             static const int LEVEL2CLASS_FEATURE_COUNT = 1;
 
             // EClassifiers methods
@@ -63,13 +61,7 @@ namespace TopLevelPackage
             Level2Package();
             void _initPackage();
 
-            // EClass instances 
-
             ::ecore::EClass_ptr m_Level2ClassEClass;
-
-            // EEnuminstances 
-
-            // EDataType instances 
 
             // EStructuralFeatures instances
 

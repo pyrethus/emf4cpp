@@ -38,82 +38,191 @@ using namespace ::treeiterator;
 
 TreeiteratorPackage::TreeiteratorPackage()
 {
-
-    // Feature definitions of TreeNode
-    m_TreeNode__name = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_TreeNode__children = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_TreeNode__leaf = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of Leaf
-    m_Leaf__name = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
+    m_Leaf__name = ::ecore::make< ::ecore::EAttribute >();
+    m_LeafEClass = ::ecore::make< ::ecore::EClass >();
+    m_TreeNode__name = ::ecore::make< ::ecore::EAttribute >();
+    m_TreeNode__children = ::ecore::make< ::ecore::EReference >();
+    m_TreeNode__leaf = ::ecore::make< ::ecore::EReference >();
+    m_TreeNodeEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void TreeiteratorPackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = TreeiteratorFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = TreeiteratorFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // TreeNode
-        m_TreeNodeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_TreeNodeEClass->setClassifierID(TREENODE);
-        m_TreeNodeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_TreeNodeEClass);
-        // m_TreeNode__name has already been allocated above
-        m_TreeNode__name->setFeatureID(
+    [this]()
+    { // Feature name of class Leaf
+        auto &&feature = m_Leaf__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::treeiterator::TreeiteratorPackage::LEAF__NAME);
+        feature->basicsetEContainingClass(m_LeafEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier Leaf
+        auto &&classifier = m_LeafEClass;
+
+        // ENamedElement
+        classifier->setName("Leaf");
+
+        // EClassifier
+        classifier->setClassifierID(LEAF);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_Leaf__name);
+        }
+    }();
+
+    [this]()
+    { // Feature name of class TreeNode
+        auto &&feature = m_TreeNode__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(
+                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::treeiterator::TreeiteratorPackage::TREENODE__NAME);
-        m_TreeNode__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
-                m_TreeNode__name);
-        m_TreeNode__name->basicsetEContainingClass(m_TreeNodeEClass);
-        // m_TreeNode__children has already been allocated above
-        m_TreeNode__children->setFeatureID(
+        feature->basicsetEContainingClass(m_TreeNodeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature children of class TreeNode
+        auto &&feature = m_TreeNode__children;
+
+        // ENamedElement
+        feature->setName("children");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_TreeNodeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::treeiterator::TreeiteratorPackage::TREENODE__CHILDREN);
-        m_TreeNode__children->setName("children");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
-                m_TreeNode__children);
-        m_TreeNode__children->basicsetEContainingClass(m_TreeNodeEClass);
-        // m_TreeNode__leaf has already been allocated above
-        m_TreeNode__leaf->setFeatureID(
+        feature->basicsetEContainingClass(m_TreeNodeEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature leaf of class TreeNode
+        auto &&feature = m_TreeNode__leaf;
+
+        // ENamedElement
+        feature->setName("leaf");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_LeafEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::treeiterator::TreeiteratorPackage::TREENODE__LEAF);
-        m_TreeNode__leaf->setName("leaf");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures()).basicAdd(
-                m_TreeNode__leaf);
-        m_TreeNode__leaf->basicsetEContainingClass(m_TreeNodeEClass);
-    }
+        feature->basicsetEContainingClass(m_TreeNodeEClass);
 
-    { // Leaf
-        m_LeafEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_LeafEClass->setClassifierID(LEAF);
-        m_LeafEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_LeafEClass);
-        // m_Leaf__name has already been allocated above
-        m_Leaf__name->setFeatureID(
-                ::treeiterator::TreeiteratorPackage::LEAF__NAME);
-        m_Leaf__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_LeafEClass->getEStructuralFeatures()).basicAdd(
-                m_Leaf__name);
-        m_Leaf__name->basicsetEContainingClass(m_LeafEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    // Create enums
+    [this]()
+    { // Classifier TreeNode
+        auto &&classifier = m_TreeNodeEClass;
 
-    // Create data types
+        // ENamedElement
+        classifier->setName("TreeNode");
+
+        // EClassifier
+        classifier->setClassifierID(TREENODE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_TreeNodeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_TreeNode__name);
+            eStructuralFeatures.basicAdd(m_TreeNode__children);
+            eStructuralFeatures.basicAdd(m_TreeNode__leaf);
+        }
+    }();
 
     // Initialize package
     setName("treeiterator");
@@ -123,78 +232,16 @@ void TreeiteratorPackage::_initPackage()
     // TODO: bounds for type parameters
 
     // Add supertypes to classes
+    [this]()
+    {
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // TreeNode
-        m_TreeNodeEClass->setName("TreeNode");
-        m_TreeNodeEClass->setAbstract(false);
-        m_TreeNodeEClass->setInterface(false);
-        m_TreeNode__name->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_TreeNode__name->setDefaultValueLiteral("");
-        m_TreeNode__name->setLowerBound(0);
-        m_TreeNode__name->setUpperBound(1);
-        m_TreeNode__name->setTransient(false);
-        m_TreeNode__name->setVolatile(false);
-        m_TreeNode__name->setChangeable(true);
-        m_TreeNode__name->setUnsettable(false);
-        m_TreeNode__name->setID(false);
-        m_TreeNode__name->setUnique(true);
-        m_TreeNode__name->setDerived(false);
-        m_TreeNode__name->setOrdered(true);
-
-        m_TreeNode__children->setEType(m_TreeNodeEClass);
-        m_TreeNode__children->setDefaultValueLiteral("");
-        m_TreeNode__children->setLowerBound(0);
-        m_TreeNode__children->setUpperBound(-1);
-        m_TreeNode__children->setTransient(false);
-        m_TreeNode__children->setVolatile(false);
-        m_TreeNode__children->setChangeable(true);
-        m_TreeNode__children->setContainment(true);
-        m_TreeNode__children->setResolveProxies(true);
-        m_TreeNode__children->setUnique(true);
-        m_TreeNode__children->setDerived(false);
-        m_TreeNode__children->setOrdered(true);
-        m_TreeNode__leaf->setEType(m_LeafEClass);
-        m_TreeNode__leaf->setDefaultValueLiteral("");
-        m_TreeNode__leaf->setLowerBound(0);
-        m_TreeNode__leaf->setUpperBound(1);
-        m_TreeNode__leaf->setTransient(false);
-        m_TreeNode__leaf->setVolatile(false);
-        m_TreeNode__leaf->setChangeable(true);
-        m_TreeNode__leaf->setContainment(true);
-        m_TreeNode__leaf->setResolveProxies(true);
-        m_TreeNode__leaf->setUnique(true);
-        m_TreeNode__leaf->setDerived(false);
-        m_TreeNode__leaf->setOrdered(true);
-
-    }
-
-    { // Leaf
-        m_LeafEClass->setName("Leaf");
-        m_LeafEClass->setAbstract(false);
-        m_LeafEClass->setInterface(false);
-        m_Leaf__name->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
-        m_Leaf__name->setDefaultValueLiteral("");
-        m_Leaf__name->setLowerBound(0);
-        m_Leaf__name->setUpperBound(1);
-        m_Leaf__name->setTransient(false);
-        m_Leaf__name->setVolatile(false);
-        m_Leaf__name->setChangeable(true);
-        m_Leaf__name->setUnsettable(false);
-        m_Leaf__name->setID(false);
-        m_Leaf__name->setUnique(true);
-        m_Leaf__name->setDerived(false);
-        m_Leaf__name->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_LeafEClass);
+        classifiers.push_back(m_TreeNodeEClass);
+    }();
 
     _initialize();
 }

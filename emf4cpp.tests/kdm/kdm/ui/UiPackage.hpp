@@ -44,395 +44,227 @@ namespace kdm
 
         // IDs for classifier AbstractUIElement
         static const int ABSTRACTUIELEMENT = 0;
-
         static const int ABSTRACTUIELEMENT__ATTRIBUTE = 0;
-
         static const int ABSTRACTUIELEMENT__ANNOTATION = 1;
-
         static const int ABSTRACTUIELEMENT__STEREOTYPE = 2;
-
         static const int ABSTRACTUIELEMENT__TAGGEDVALUE = 3;
-
         static const int ABSTRACTUIELEMENT__NAME = 4;
-
         static const int ABSTRACTUIELEMENT__SOURCE = 5;
-
         static const int ABSTRACTUIELEMENT__UIRELATION = 6;
-
         static const int ABSTRACTUIELEMENT__IMPLEMENTATION = 7;
-
         static const int ABSTRACTUIELEMENT__ABSTRACTION = 8;
-
         static const int ABSTRACTUIELEMENT_FEATURE_COUNT = 9;
 
         // IDs for classifier AbstractUIRelationship
         static const int ABSTRACTUIRELATIONSHIP = 1;
-
         static const int ABSTRACTUIRELATIONSHIP__ATTRIBUTE = 0;
-
         static const int ABSTRACTUIRELATIONSHIP__ANNOTATION = 1;
-
         static const int ABSTRACTUIRELATIONSHIP__STEREOTYPE = 2;
-
         static const int ABSTRACTUIRELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int ABSTRACTUIRELATIONSHIP_FEATURE_COUNT = 4;
 
         // IDs for classifier Displays
         static const int DISPLAYS = 2;
-
         static const int DISPLAYS__ATTRIBUTE = 0;
-
         static const int DISPLAYS__ANNOTATION = 1;
-
         static const int DISPLAYS__STEREOTYPE = 2;
-
         static const int DISPLAYS__TAGGEDVALUE = 3;
-
         static const int DISPLAYS__TO = 4;
-
         static const int DISPLAYS__FROM = 5;
-
         static const int DISPLAYS_FEATURE_COUNT = 6;
 
         // IDs for classifier DisplaysImage
         static const int DISPLAYSIMAGE = 3;
-
         static const int DISPLAYSIMAGE__ATTRIBUTE = 0;
-
         static const int DISPLAYSIMAGE__ANNOTATION = 1;
-
         static const int DISPLAYSIMAGE__STEREOTYPE = 2;
-
         static const int DISPLAYSIMAGE__TAGGEDVALUE = 3;
-
         static const int DISPLAYSIMAGE__TO = 4;
-
         static const int DISPLAYSIMAGE__FROM = 5;
-
         static const int DISPLAYSIMAGE_FEATURE_COUNT = 6;
 
         // IDs for classifier ManagesUI
         static const int MANAGESUI = 4;
-
         static const int MANAGESUI__ATTRIBUTE = 0;
-
         static const int MANAGESUI__ANNOTATION = 1;
-
         static const int MANAGESUI__STEREOTYPE = 2;
-
         static const int MANAGESUI__TAGGEDVALUE = 3;
-
         static const int MANAGESUI__TO = 4;
-
         static const int MANAGESUI__FROM = 5;
-
         static const int MANAGESUI_FEATURE_COUNT = 6;
 
         // IDs for classifier ReadsUI
         static const int READSUI = 5;
-
         static const int READSUI__ATTRIBUTE = 0;
-
         static const int READSUI__ANNOTATION = 1;
-
         static const int READSUI__STEREOTYPE = 2;
-
         static const int READSUI__TAGGEDVALUE = 3;
-
         static const int READSUI__TO = 4;
-
         static const int READSUI__FROM = 5;
-
         static const int READSUI_FEATURE_COUNT = 6;
 
         // IDs for classifier Report
         static const int REPORT = 6;
-
         static const int REPORT__ATTRIBUTE = 0;
-
         static const int REPORT__ANNOTATION = 1;
-
         static const int REPORT__STEREOTYPE = 2;
-
         static const int REPORT__TAGGEDVALUE = 3;
-
         static const int REPORT__NAME = 4;
-
         static const int REPORT__SOURCE = 5;
-
         static const int REPORT__UIRELATION = 6;
-
         static const int REPORT__IMPLEMENTATION = 7;
-
         static const int REPORT__ABSTRACTION = 8;
-
         static const int REPORT__UIELEMENT = 9;
-
         static const int REPORT_FEATURE_COUNT = 10;
 
         // IDs for classifier Screen
         static const int SCREEN = 7;
-
         static const int SCREEN__ATTRIBUTE = 0;
-
         static const int SCREEN__ANNOTATION = 1;
-
         static const int SCREEN__STEREOTYPE = 2;
-
         static const int SCREEN__TAGGEDVALUE = 3;
-
         static const int SCREEN__NAME = 4;
-
         static const int SCREEN__SOURCE = 5;
-
         static const int SCREEN__UIRELATION = 6;
-
         static const int SCREEN__IMPLEMENTATION = 7;
-
         static const int SCREEN__ABSTRACTION = 8;
-
         static const int SCREEN__UIELEMENT = 9;
-
         static const int SCREEN_FEATURE_COUNT = 10;
 
         // IDs for classifier UIAction
         static const int UIACTION = 8;
-
         static const int UIACTION__ATTRIBUTE = 0;
-
         static const int UIACTION__ANNOTATION = 1;
-
         static const int UIACTION__STEREOTYPE = 2;
-
         static const int UIACTION__TAGGEDVALUE = 3;
-
         static const int UIACTION__NAME = 4;
-
         static const int UIACTION__SOURCE = 5;
-
         static const int UIACTION__UIRELATION = 6;
-
         static const int UIACTION__IMPLEMENTATION = 7;
-
         static const int UIACTION__ABSTRACTION = 8;
-
         static const int UIACTION__KIND = 9;
-
         static const int UIACTION__UIELEMENT = 10;
-
         static const int UIACTION_FEATURE_COUNT = 11;
 
         // IDs for classifier UIDisplay
         static const int UIDISPLAY = 9;
-
         static const int UIDISPLAY__ATTRIBUTE = 0;
-
         static const int UIDISPLAY__ANNOTATION = 1;
-
         static const int UIDISPLAY__STEREOTYPE = 2;
-
         static const int UIDISPLAY__TAGGEDVALUE = 3;
-
         static const int UIDISPLAY__NAME = 4;
-
         static const int UIDISPLAY__SOURCE = 5;
-
         static const int UIDISPLAY__UIRELATION = 6;
-
         static const int UIDISPLAY__IMPLEMENTATION = 7;
-
         static const int UIDISPLAY__ABSTRACTION = 8;
-
         static const int UIDISPLAY__UIELEMENT = 9;
-
         static const int UIDISPLAY_FEATURE_COUNT = 10;
 
         // IDs for classifier UIElement
         static const int UIELEMENT = 10;
-
         static const int UIELEMENT__ATTRIBUTE = 0;
-
         static const int UIELEMENT__ANNOTATION = 1;
-
         static const int UIELEMENT__STEREOTYPE = 2;
-
         static const int UIELEMENT__TAGGEDVALUE = 3;
-
         static const int UIELEMENT__NAME = 4;
-
         static const int UIELEMENT__SOURCE = 5;
-
         static const int UIELEMENT__UIRELATION = 6;
-
         static const int UIELEMENT__IMPLEMENTATION = 7;
-
         static const int UIELEMENT__ABSTRACTION = 8;
-
         static const int UIELEMENT_FEATURE_COUNT = 9;
 
         // IDs for classifier UIEvent
         static const int UIEVENT = 11;
-
         static const int UIEVENT__ATTRIBUTE = 0;
-
         static const int UIEVENT__ANNOTATION = 1;
-
         static const int UIEVENT__STEREOTYPE = 2;
-
         static const int UIEVENT__TAGGEDVALUE = 3;
-
         static const int UIEVENT__NAME = 4;
-
         static const int UIEVENT__SOURCE = 5;
-
         static const int UIEVENT__UIRELATION = 6;
-
         static const int UIEVENT__IMPLEMENTATION = 7;
-
         static const int UIEVENT__ABSTRACTION = 8;
-
         static const int UIEVENT__KIND = 9;
-
         static const int UIEVENT_FEATURE_COUNT = 10;
 
         // IDs for classifier UIField
         static const int UIFIELD = 12;
-
         static const int UIFIELD__ATTRIBUTE = 0;
-
         static const int UIFIELD__ANNOTATION = 1;
-
         static const int UIFIELD__STEREOTYPE = 2;
-
         static const int UIFIELD__TAGGEDVALUE = 3;
-
         static const int UIFIELD__NAME = 4;
-
         static const int UIFIELD__SOURCE = 5;
-
         static const int UIFIELD__UIRELATION = 6;
-
         static const int UIFIELD__IMPLEMENTATION = 7;
-
         static const int UIFIELD__ABSTRACTION = 8;
-
         static const int UIFIELD__UIELEMENT = 9;
-
         static const int UIFIELD_FEATURE_COUNT = 10;
 
         // IDs for classifier UIFlow
         static const int UIFLOW = 13;
-
         static const int UIFLOW__ATTRIBUTE = 0;
-
         static const int UIFLOW__ANNOTATION = 1;
-
         static const int UIFLOW__STEREOTYPE = 2;
-
         static const int UIFLOW__TAGGEDVALUE = 3;
-
         static const int UIFLOW__TO = 4;
-
         static const int UIFLOW__FROM = 5;
-
         static const int UIFLOW_FEATURE_COUNT = 6;
 
         // IDs for classifier UILayout
         static const int UILAYOUT = 14;
-
         static const int UILAYOUT__ATTRIBUTE = 0;
-
         static const int UILAYOUT__ANNOTATION = 1;
-
         static const int UILAYOUT__STEREOTYPE = 2;
-
         static const int UILAYOUT__TAGGEDVALUE = 3;
-
         static const int UILAYOUT__TO = 4;
-
         static const int UILAYOUT__FROM = 5;
-
         static const int UILAYOUT_FEATURE_COUNT = 6;
 
         // IDs for classifier UIModel
         static const int UIMODEL = 15;
-
         static const int UIMODEL__ATTRIBUTE = 0;
-
         static const int UIMODEL__ANNOTATION = 1;
-
         static const int UIMODEL__STEREOTYPE = 2;
-
         static const int UIMODEL__TAGGEDVALUE = 3;
-
         static const int UIMODEL__AUDIT = 4;
-
         static const int UIMODEL__EXTENSIONFAMILY = 5;
-
         static const int UIMODEL__NAME = 6;
-
         static const int UIMODEL__UIELEMENT = 7;
-
         static const int UIMODEL_FEATURE_COUNT = 8;
 
         // IDs for classifier UIRelationship
         static const int UIRELATIONSHIP = 16;
-
         static const int UIRELATIONSHIP__ATTRIBUTE = 0;
-
         static const int UIRELATIONSHIP__ANNOTATION = 1;
-
         static const int UIRELATIONSHIP__STEREOTYPE = 2;
-
         static const int UIRELATIONSHIP__TAGGEDVALUE = 3;
-
         static const int UIRELATIONSHIP__TO = 4;
-
         static const int UIRELATIONSHIP__FROM = 5;
-
         static const int UIRELATIONSHIP_FEATURE_COUNT = 6;
 
         // IDs for classifier UIResource
         static const int UIRESOURCE = 17;
-
         static const int UIRESOURCE__ATTRIBUTE = 0;
-
         static const int UIRESOURCE__ANNOTATION = 1;
-
         static const int UIRESOURCE__STEREOTYPE = 2;
-
         static const int UIRESOURCE__TAGGEDVALUE = 3;
-
         static const int UIRESOURCE__NAME = 4;
-
         static const int UIRESOURCE__SOURCE = 5;
-
         static const int UIRESOURCE__UIRELATION = 6;
-
         static const int UIRESOURCE__IMPLEMENTATION = 7;
-
         static const int UIRESOURCE__ABSTRACTION = 8;
-
         static const int UIRESOURCE__UIELEMENT = 9;
-
         static const int UIRESOURCE_FEATURE_COUNT = 10;
 
         // IDs for classifier WritesUI
         static const int WRITESUI = 18;
-
         static const int WRITESUI__ATTRIBUTE = 0;
-
         static const int WRITESUI__ANNOTATION = 1;
-
         static const int WRITESUI__STEREOTYPE = 2;
-
         static const int WRITESUI__TAGGEDVALUE = 3;
-
         static const int WRITESUI__TO = 4;
-
         static const int WRITESUI__FROM = 5;
-
         static const int WRITESUI_FEATURE_COUNT = 6;
 
         // EClassifiers methods
@@ -534,49 +366,25 @@ namespace kdm
         UiPackage();
         void _initPackage();
 
-        // EClass instances 
-
         ::ecore::EClass_ptr m_AbstractUIElementEClass;
-
-        ::ecore::EClass_ptr m_UIResourceEClass;
-
-        ::ecore::EClass_ptr m_UIDisplayEClass;
-
-        ::ecore::EClass_ptr m_ScreenEClass;
-
-        ::ecore::EClass_ptr m_ReportEClass;
-
-        ::ecore::EClass_ptr m_UIModelEClass;
-
         ::ecore::EClass_ptr m_AbstractUIRelationshipEClass;
-
-        ::ecore::EClass_ptr m_UILayoutEClass;
-
-        ::ecore::EClass_ptr m_UIFieldEClass;
-
-        ::ecore::EClass_ptr m_DisplaysImageEClass;
-
         ::ecore::EClass_ptr m_DisplaysEClass;
-
-        ::ecore::EClass_ptr m_UIFlowEClass;
-
-        ::ecore::EClass_ptr m_UIElementEClass;
-
-        ::ecore::EClass_ptr m_UIRelationshipEClass;
-
-        ::ecore::EClass_ptr m_UIActionEClass;
-
-        ::ecore::EClass_ptr m_UIEventEClass;
-
-        ::ecore::EClass_ptr m_ReadsUIEClass;
-
-        ::ecore::EClass_ptr m_WritesUIEClass;
-
+        ::ecore::EClass_ptr m_DisplaysImageEClass;
         ::ecore::EClass_ptr m_ManagesUIEClass;
-
-        // EEnuminstances 
-
-        // EDataType instances 
+        ::ecore::EClass_ptr m_ReadsUIEClass;
+        ::ecore::EClass_ptr m_ReportEClass;
+        ::ecore::EClass_ptr m_ScreenEClass;
+        ::ecore::EClass_ptr m_UIActionEClass;
+        ::ecore::EClass_ptr m_UIDisplayEClass;
+        ::ecore::EClass_ptr m_UIElementEClass;
+        ::ecore::EClass_ptr m_UIEventEClass;
+        ::ecore::EClass_ptr m_UIFieldEClass;
+        ::ecore::EClass_ptr m_UIFlowEClass;
+        ::ecore::EClass_ptr m_UILayoutEClass;
+        ::ecore::EClass_ptr m_UIModelEClass;
+        ::ecore::EClass_ptr m_UIRelationshipEClass;
+        ::ecore::EClass_ptr m_UIResourceEClass;
+        ::ecore::EClass_ptr m_WritesUIEClass;
 
         // EStructuralFeatures instances
 

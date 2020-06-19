@@ -39,40 +39,27 @@ public:
 
     // IDs for classifier Element
     static const int ELEMENT = 0;
-
     static const int ELEMENT__KIND = 0;
-
     static const int ELEMENT_FEATURE_COUNT = 1;
 
     // IDs for classifier Leaf
     static const int LEAF = 1;
-
     static const int LEAF__KIND = 0;
-
     static const int LEAF__VALUE = 1;
-
     static const int LEAF__POS = 2;
-
     static const int LEAF__LINE = 3;
-
     static const int LEAF_FEATURE_COUNT = 4;
 
     // IDs for classifier Node
     static const int NODE = 2;
-
     static const int NODE__KIND = 0;
-
     static const int NODE__CHILDREN = 1;
-
     static const int NODE_FEATURE_COUNT = 2;
 
     // IDs for classifier Tree
     static const int TREE = 3;
-
     static const int TREE__KIND = 0;
-
     static const int TREE__CHILDREN = 1;
-
     static const int TREE_FEATURE_COUNT = 2;
 
     // EClassifiers methods
@@ -104,19 +91,10 @@ protected:
     CSTPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_TreeEClass;
-
     ::ecore::EClass_ptr m_ElementEClass;
-
-    ::ecore::EClass_ptr m_NodeEClass;
-
     ::ecore::EClass_ptr m_LeafEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
+    ::ecore::EClass_ptr m_NodeEClass;
+    ::ecore::EClass_ptr m_TreeEClass;
 
     // EStructuralFeatures instances
 

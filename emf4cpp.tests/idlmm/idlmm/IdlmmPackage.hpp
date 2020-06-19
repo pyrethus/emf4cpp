@@ -39,114 +39,67 @@ public:
 
     // IDs for classifier AliasDef
     static const int ALIASDEF = 0;
-
     static const int ALIASDEF__CONTAINEDTYPE = 0;
-
     static const int ALIASDEF__SHAREDTYPE = 1;
-
     static const int ALIASDEF__TYPECODE = 2;
-
     static const int ALIASDEF__IDENTIFIER = 3;
-
     static const int ALIASDEF__REPOSITORYID = 4;
-
     static const int ALIASDEF__VERSION = 5;
-
     static const int ALIASDEF__ABSOLUTENAME = 6;
-
     static const int ALIASDEF__DEFINEDIN = 7;
-
     static const int ALIASDEF_FEATURE_COUNT = 8;
 
     // IDs for classifier ArrayDef
     static const int ARRAYDEF = 1;
-
     static const int ARRAYDEF__CONTAINEDTYPE = 0;
-
     static const int ARRAYDEF__SHAREDTYPE = 1;
-
     static const int ARRAYDEF__TYPECODE = 2;
-
     static const int ARRAYDEF__BOUND = 3;
-
     static const int ARRAYDEF_FEATURE_COUNT = 4;
 
     // IDs for classifier AttributeDef
     static const int ATTRIBUTEDEF = 2;
-
     static const int ATTRIBUTEDEF__IDENTIFIER = 0;
-
     static const int ATTRIBUTEDEF__REPOSITORYID = 1;
-
     static const int ATTRIBUTEDEF__VERSION = 2;
-
     static const int ATTRIBUTEDEF__ABSOLUTENAME = 3;
-
     static const int ATTRIBUTEDEF__DEFINEDIN = 4;
-
     static const int ATTRIBUTEDEF__CONTAINEDTYPE = 5;
-
     static const int ATTRIBUTEDEF__SHAREDTYPE = 6;
-
     static const int ATTRIBUTEDEF__GETRAISES = 7;
-
     static const int ATTRIBUTEDEF__SETRAISES = 8;
-
     static const int ATTRIBUTEDEF__ISREADONLY = 9;
-
     static const int ATTRIBUTEDEF_FEATURE_COUNT = 10;
 
     // IDs for classifier ConstantDef
     static const int CONSTANTDEF = 3;
-
     static const int CONSTANTDEF__IDENTIFIER = 0;
-
     static const int CONSTANTDEF__REPOSITORYID = 1;
-
     static const int CONSTANTDEF__VERSION = 2;
-
     static const int CONSTANTDEF__ABSOLUTENAME = 3;
-
     static const int CONSTANTDEF__DEFINEDIN = 4;
-
     static const int CONSTANTDEF__CONTAINEDTYPE = 5;
-
     static const int CONSTANTDEF__SHAREDTYPE = 6;
-
     static const int CONSTANTDEF__CONSTVALUE = 7;
-
     static const int CONSTANTDEF_FEATURE_COUNT = 8;
 
     // IDs for classifier Contained
     static const int CONTAINED = 4;
-
     static const int CONTAINED__IDENTIFIER = 0;
-
     static const int CONTAINED__REPOSITORYID = 1;
-
     static const int CONTAINED__VERSION = 2;
-
     static const int CONTAINED__ABSOLUTENAME = 3;
-
     static const int CONTAINED__DEFINEDIN = 4;
-
     static const int CONTAINED_FEATURE_COUNT = 5;
 
     // IDs for classifier Container
     static const int CONTAINER = 5;
-
     static const int CONTAINER__IDENTIFIER = 0;
-
     static const int CONTAINER__REPOSITORYID = 1;
-
     static const int CONTAINER__VERSION = 2;
-
     static const int CONTAINER__ABSOLUTENAME = 3;
-
     static const int CONTAINER__DEFINEDIN = 4;
-
     static const int CONTAINER__CONTAINS = 5;
-
     static const int CONTAINER_FEATURE_COUNT = 6;
 
     // IDs for classifier EAny
@@ -154,21 +107,13 @@ public:
 
     // IDs for classifier EnumDef
     static const int ENUMDEF = 7;
-
     static const int ENUMDEF__TYPECODE = 0;
-
     static const int ENUMDEF__IDENTIFIER = 1;
-
     static const int ENUMDEF__REPOSITORYID = 2;
-
     static const int ENUMDEF__VERSION = 3;
-
     static const int ENUMDEF__ABSOLUTENAME = 4;
-
     static const int ENUMDEF__DEFINEDIN = 5;
-
     static const int ENUMDEF__MEMBERS = 6;
-
     static const int ENUMDEF_FEATURE_COUNT = 7;
 
     // IDs for classifier ETypeCode
@@ -176,143 +121,86 @@ public:
 
     // IDs for classifier ExceptionDef
     static const int EXCEPTIONDEF = 9;
-
     static const int EXCEPTIONDEF__IDENTIFIER = 0;
-
     static const int EXCEPTIONDEF__REPOSITORYID = 1;
-
     static const int EXCEPTIONDEF__VERSION = 2;
-
     static const int EXCEPTIONDEF__ABSOLUTENAME = 3;
-
     static const int EXCEPTIONDEF__DEFINEDIN = 4;
-
     static const int EXCEPTIONDEF__TYPECODE = 5;
-
     static const int EXCEPTIONDEF__MEMBERS = 6;
-
     static const int EXCEPTIONDEF_FEATURE_COUNT = 7;
 
     // IDs for classifier Field
     static const int FIELD = 10;
-
     static const int FIELD__CONTAINEDTYPE = 0;
-
     static const int FIELD__SHAREDTYPE = 1;
-
     static const int FIELD__IDENTIFIER = 2;
-
     static const int FIELD_FEATURE_COUNT = 3;
 
     // IDs for classifier FixedDef
     static const int FIXEDDEF = 11;
-
     static const int FIXEDDEF__TYPECODE = 0;
-
     static const int FIXEDDEF__DIGITS = 1;
-
     static const int FIXEDDEF__SCALE = 2;
-
     static const int FIXEDDEF_FEATURE_COUNT = 3;
 
     // IDs for classifier IDLType
     static const int IDLTYPE = 12;
-
     static const int IDLTYPE__TYPECODE = 0;
-
     static const int IDLTYPE_FEATURE_COUNT = 1;
 
     // IDs for classifier Include
     static const int INCLUDE = 13;
-
     static const int INCLUDE__IMPORTURI = 0;
-
     static const int INCLUDE_FEATURE_COUNT = 1;
 
     // IDs for classifier InterfaceDef
     static const int INTERFACEDEF = 14;
-
     static const int INTERFACEDEF__IDENTIFIER = 0;
-
     static const int INTERFACEDEF__REPOSITORYID = 1;
-
     static const int INTERFACEDEF__VERSION = 2;
-
     static const int INTERFACEDEF__ABSOLUTENAME = 3;
-
     static const int INTERFACEDEF__DEFINEDIN = 4;
-
     static const int INTERFACEDEF__CONTAINS = 5;
-
     static const int INTERFACEDEF__TYPECODE = 6;
-
     static const int INTERFACEDEF__ISABSTRACT = 7;
-
     static const int INTERFACEDEF__ISCUSTOM = 8;
-
     static const int INTERFACEDEF__ISTRUNCATABLE = 9;
-
     static const int INTERFACEDEF__DERIVESFROM = 10;
-
     static const int INTERFACEDEF_FEATURE_COUNT = 11;
 
     // IDs for classifier ModuleDef
     static const int MODULEDEF = 15;
-
     static const int MODULEDEF__IDENTIFIER = 0;
-
     static const int MODULEDEF__REPOSITORYID = 1;
-
     static const int MODULEDEF__VERSION = 2;
-
     static const int MODULEDEF__ABSOLUTENAME = 3;
-
     static const int MODULEDEF__DEFINEDIN = 4;
-
     static const int MODULEDEF__CONTAINS = 5;
-
     static const int MODULEDEF__PREFIX = 6;
-
     static const int MODULEDEF_FEATURE_COUNT = 7;
 
     // IDs for classifier OperationDef
     static const int OPERATIONDEF = 16;
-
     static const int OPERATIONDEF__IDENTIFIER = 0;
-
     static const int OPERATIONDEF__REPOSITORYID = 1;
-
     static const int OPERATIONDEF__VERSION = 2;
-
     static const int OPERATIONDEF__ABSOLUTENAME = 3;
-
     static const int OPERATIONDEF__DEFINEDIN = 4;
-
     static const int OPERATIONDEF__CONTAINEDTYPE = 5;
-
     static const int OPERATIONDEF__SHAREDTYPE = 6;
-
     static const int OPERATIONDEF__PARAMETERS = 7;
-
     static const int OPERATIONDEF__ISONEWAY = 8;
-
     static const int OPERATIONDEF__CONTEXTS = 9;
-
     static const int OPERATIONDEF__CANRAISE = 10;
-
     static const int OPERATIONDEF_FEATURE_COUNT = 11;
 
     // IDs for classifier ParameterDef
     static const int PARAMETERDEF = 17;
-
     static const int PARAMETERDEF__CONTAINEDTYPE = 0;
-
     static const int PARAMETERDEF__SHAREDTYPE = 1;
-
     static const int PARAMETERDEF__IDENTIFIER = 2;
-
     static const int PARAMETERDEF__DIRECTION = 3;
-
     static const int PARAMETERDEF_FEATURE_COUNT = 4;
 
     // IDs for classifier ParameterMode
@@ -320,11 +208,8 @@ public:
 
     // IDs for classifier PrimitiveDef
     static const int PRIMITIVEDEF = 19;
-
     static const int PRIMITIVEDEF__TYPECODE = 0;
-
     static const int PRIMITIVEDEF__KIND = 1;
-
     static const int PRIMITIVEDEF_FEATURE_COUNT = 2;
 
     // IDs for classifier PrimitiveKind
@@ -332,125 +217,77 @@ public:
 
     // IDs for classifier SequenceDef
     static const int SEQUENCEDEF = 21;
-
     static const int SEQUENCEDEF__CONTAINEDTYPE = 0;
-
     static const int SEQUENCEDEF__SHAREDTYPE = 1;
-
     static const int SEQUENCEDEF__TYPECODE = 2;
-
     static const int SEQUENCEDEF__BOUND = 3;
-
     static const int SEQUENCEDEF_FEATURE_COUNT = 4;
 
     // IDs for classifier StringDef
     static const int STRINGDEF = 22;
-
     static const int STRINGDEF__TYPECODE = 0;
-
     static const int STRINGDEF__BOUND = 1;
-
     static const int STRINGDEF_FEATURE_COUNT = 2;
 
     // IDs for classifier StructDef
     static const int STRUCTDEF = 23;
-
     static const int STRUCTDEF__TYPECODE = 0;
-
     static const int STRUCTDEF__IDENTIFIER = 1;
-
     static const int STRUCTDEF__REPOSITORYID = 2;
-
     static const int STRUCTDEF__VERSION = 3;
-
     static const int STRUCTDEF__ABSOLUTENAME = 4;
-
     static const int STRUCTDEF__DEFINEDIN = 5;
-
     static const int STRUCTDEF__MEMBERS = 6;
-
     static const int STRUCTDEF_FEATURE_COUNT = 7;
 
     // IDs for classifier TranslationUnit
     static const int TRANSLATIONUNIT = 24;
-
     static const int TRANSLATIONUNIT__CONTAINS = 0;
-
     static const int TRANSLATIONUNIT__IDENTIFIER = 1;
-
     static const int TRANSLATIONUNIT__INCLUDES = 2;
-
     static const int TRANSLATIONUNIT_FEATURE_COUNT = 3;
 
     // IDs for classifier Typed
     static const int TYPED = 25;
-
     static const int TYPED__CONTAINEDTYPE = 0;
-
     static const int TYPED__SHAREDTYPE = 1;
-
     static const int TYPED_FEATURE_COUNT = 2;
 
     // IDs for classifier TypedefDef
     static const int TYPEDEFDEF = 26;
-
     static const int TYPEDEFDEF__TYPECODE = 0;
-
     static const int TYPEDEFDEF__IDENTIFIER = 1;
-
     static const int TYPEDEFDEF__REPOSITORYID = 2;
-
     static const int TYPEDEFDEF__VERSION = 3;
-
     static const int TYPEDEFDEF__ABSOLUTENAME = 4;
-
     static const int TYPEDEFDEF__DEFINEDIN = 5;
-
     static const int TYPEDEFDEF_FEATURE_COUNT = 6;
 
     // IDs for classifier UnionDef
     static const int UNIONDEF = 27;
-
     static const int UNIONDEF__TYPECODE = 0;
-
     static const int UNIONDEF__IDENTIFIER = 1;
-
     static const int UNIONDEF__REPOSITORYID = 2;
-
     static const int UNIONDEF__VERSION = 3;
-
     static const int UNIONDEF__ABSOLUTENAME = 4;
-
     static const int UNIONDEF__DEFINEDIN = 5;
-
     static const int UNIONDEF__UNIONMEMBERS = 6;
-
     static const int UNIONDEF__CONTAINEDDISCRIM = 7;
-
     static const int UNIONDEF__SHAREDDISCRIM = 8;
-
     static const int UNIONDEF_FEATURE_COUNT = 9;
 
     // IDs for classifier UnionField
     static const int UNIONFIELD = 28;
-
     static const int UNIONFIELD__CONTAINEDTYPE = 0;
-
     static const int UNIONFIELD__SHAREDTYPE = 1;
-
     static const int UNIONFIELD__IDENTIFIER = 2;
-
     static const int UNIONFIELD__LABEL = 3;
-
     static const int UNIONFIELD_FEATURE_COUNT = 4;
 
     // IDs for classifier WstringDef
     static const int WSTRINGDEF = 29;
-
     static const int WSTRINGDEF__TYPECODE = 0;
-
     static const int WSTRINGDEF__BOUND = 1;
-
     static const int WSTRINGDEF_FEATURE_COUNT = 2;
 
     // EClassifiers methods
@@ -614,71 +451,36 @@ protected:
     IdlmmPackage();
     void _initPackage();
 
-    // EClass instances 
-
-    ::ecore::EClass_ptr m_ContainerEClass;
-
-    ::ecore::EClass_ptr m_ContainedEClass;
-
-    ::ecore::EClass_ptr m_InterfaceDefEClass;
-
-    ::ecore::EClass_ptr m_ModuleDefEClass;
-
-    ::ecore::EClass_ptr m_IDLTypeEClass;
-
-    ::ecore::EClass_ptr m_OperationDefEClass;
-
-    ::ecore::EClass_ptr m_AttributeDefEClass;
-
-    ::ecore::EClass_ptr m_ConstantDefEClass;
-
-    ::ecore::EClass_ptr m_TypedEClass;
-
-    ::ecore::EClass_ptr m_ParameterDefEClass;
-
-    ::ecore::EClass_ptr m_PrimitiveDefEClass;
-
-    ::ecore::EClass_ptr m_ExceptionDefEClass;
-
-    ::ecore::EClass_ptr m_FieldEClass;
-
-    ::ecore::EClass_ptr m_FixedDefEClass;
-
-    ::ecore::EClass_ptr m_WstringDefEClass;
-
-    ::ecore::EClass_ptr m_StringDefEClass;
-
     ::ecore::EClass_ptr m_AliasDefEClass;
-
     ::ecore::EClass_ptr m_ArrayDefEClass;
-
-    ::ecore::EClass_ptr m_SequenceDefEClass;
-
-    ::ecore::EClass_ptr m_UnionFieldEClass;
-
-    ::ecore::EClass_ptr m_TypedefDefEClass;
-
-    ::ecore::EClass_ptr m_UnionDefEClass;
-
-    ::ecore::EClass_ptr m_EnumDefEClass;
-
-    ::ecore::EClass_ptr m_StructDefEClass;
-
-    ::ecore::EClass_ptr m_TranslationUnitEClass;
-
-    ::ecore::EClass_ptr m_IncludeEClass;
-
-    // EEnuminstances 
-
-    ::ecore::EEnum_ptr m_ParameterModeEEnum;
-
-    ::ecore::EEnum_ptr m_PrimitiveKindEEnum;
-
-    // EDataType instances 
-
+    ::ecore::EClass_ptr m_AttributeDefEClass;
+    ::ecore::EClass_ptr m_ConstantDefEClass;
+    ::ecore::EClass_ptr m_ContainedEClass;
+    ::ecore::EClass_ptr m_ContainerEClass;
     ::ecore::EDataType_ptr m_EAnyEDataType;
-
     ::ecore::EDataType_ptr m_ETypeCodeEDataType;
+    ::ecore::EClass_ptr m_EnumDefEClass;
+    ::ecore::EClass_ptr m_ExceptionDefEClass;
+    ::ecore::EClass_ptr m_FieldEClass;
+    ::ecore::EClass_ptr m_FixedDefEClass;
+    ::ecore::EClass_ptr m_IDLTypeEClass;
+    ::ecore::EClass_ptr m_IncludeEClass;
+    ::ecore::EClass_ptr m_InterfaceDefEClass;
+    ::ecore::EClass_ptr m_ModuleDefEClass;
+    ::ecore::EClass_ptr m_OperationDefEClass;
+    ::ecore::EClass_ptr m_ParameterDefEClass;
+    ::ecore::EEnum_ptr m_ParameterModeEEnum;
+    ::ecore::EClass_ptr m_PrimitiveDefEClass;
+    ::ecore::EEnum_ptr m_PrimitiveKindEEnum;
+    ::ecore::EClass_ptr m_SequenceDefEClass;
+    ::ecore::EClass_ptr m_StringDefEClass;
+    ::ecore::EClass_ptr m_StructDefEClass;
+    ::ecore::EClass_ptr m_TranslationUnitEClass;
+    ::ecore::EClass_ptr m_TypedEClass;
+    ::ecore::EClass_ptr m_TypedefDefEClass;
+    ::ecore::EClass_ptr m_UnionDefEClass;
+    ::ecore::EClass_ptr m_UnionFieldEClass;
+    ::ecore::EClass_ptr m_WstringDefEClass;
 
     // EStructuralFeatures instances
 

@@ -37,1714 +37,3660 @@ using namespace ::ecore;
 
 EcorePackage::EcorePackage()
 {
-
-    // Feature definitions of EAttribute
-    m_EAttribute__iD = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EAttribute__eAttributeType = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EAnnotation
-    m_EAnnotation__source = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EAnnotation__details = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EAnnotation__eModelElement = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EAnnotation__contents = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EAnnotation__references = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EClass
-    m_EClass__abstract = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EClass__interface = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EClass__eSuperTypes = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eOperations = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eAllAttributes = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eAllReferences = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eReferences = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eAttributes = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eAllContainments = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eAllOperations = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eAllStructuralFeatures = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eAllSuperTypes = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eIDAttribute = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eStructuralFeatures = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eGenericSuperTypes = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClass__eAllGenericSuperTypes = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EClassifier
-    m_EClassifier__instanceClassName = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EClassifier__instanceClass = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EClassifier__defaultValue = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EClassifier__instanceTypeName = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EClassifier__ePackage = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EClassifier__eTypeParameters = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EDataType
-    m_EDataType__serializable = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of EEnum
-    m_EEnum__eLiterals = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EEnumLiteral
-    m_EEnumLiteral__value = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EEnumLiteral__instance = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EEnumLiteral__literal = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EEnumLiteral__eEnum = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EFactory
-    m_EFactory__ePackage = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EModelElement
-    m_EModelElement__eAnnotations = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ENamedElement
-    m_ENamedElement__name = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of EObject
-
-    // Feature definitions of EOperation
-    m_EOperation__eContainingClass = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EOperation__eTypeParameters = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EOperation__eParameters = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EOperation__eExceptions = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EOperation__eGenericExceptions = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EPackage
-    m_EPackage__nsURI = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EPackage__nsPrefix = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EPackage__eFactoryInstance = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EPackage__eClassifiers = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EPackage__eSubpackages = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EPackage__eSuperPackage = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EParameter
-    m_EParameter__eOperation = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EReference
-    m_EReference__containment = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EReference__container = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EReference__resolveProxies = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EReference__eOpposite = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EReference__eReferenceType = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EReference__eKeys = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EStructuralFeature
-    m_EStructuralFeature__changeable = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EStructuralFeature__volatile = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EStructuralFeature__transient = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EStructuralFeature__defaultValueLiteral = ::ecore::Ptr
-            < ::ecore::EAttribute > (new ::ecore::EAttribute);
-    m_EStructuralFeature__defaultValue = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EStructuralFeature__unsettable = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EStructuralFeature__derived = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EStructuralFeature__eContainingClass = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ETypedElement
-    m_ETypedElement__ordered = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ETypedElement__unique = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ETypedElement__lowerBound = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ETypedElement__upperBound = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ETypedElement__many = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ETypedElement__required = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_ETypedElement__eType = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_ETypedElement__eGenericType = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of EStringToStringMapEntry
-    m_EStringToStringMapEntry__key = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-    m_EStringToStringMapEntry__value = ::ecore::Ptr < ::ecore::EAttribute
-            > (new ::ecore::EAttribute);
-
-    // Feature definitions of EGenericType
-    m_EGenericType__eUpperBound = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EGenericType__eTypeArguments = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EGenericType__eRawType = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EGenericType__eLowerBound = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EGenericType__eTypeParameter = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-    m_EGenericType__eClassifier = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
-    // Feature definitions of ETypeParameter
-    m_ETypeParameter__eBounds = ::ecore::Ptr < ::ecore::EReference
-            > (new ::ecore::EReference);
-
+    m_EAnnotation__source = ::ecore::make< ::ecore::EAttribute >();
+    m_EAnnotation__details = ::ecore::make< ::ecore::EReference >();
+    m_EAnnotation__eModelElement = ::ecore::make< ::ecore::EReference >();
+    m_EAnnotation__contents = ::ecore::make< ::ecore::EReference >();
+    m_EAnnotation__references = ::ecore::make< ::ecore::EReference >();
+    m_EAnnotationEClass = ::ecore::make< ::ecore::EClass >();
+    m_EAttribute__iD = ::ecore::make< ::ecore::EAttribute >();
+    m_EAttribute__eAttributeType = ::ecore::make< ::ecore::EReference >();
+    m_EAttributeEClass = ::ecore::make< ::ecore::EClass >();
+    m_EBigDecimalEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EBigIntegerEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EBooleanEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EBooleanObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EByteEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EByteArrayEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EByteObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ECharEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ECharacterObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EClass__abstract = ::ecore::make< ::ecore::EAttribute >();
+    m_EClass__interface = ::ecore::make< ::ecore::EAttribute >();
+    m_EClass__eSuperTypes = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eOperations = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eAllAttributes = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eAllReferences = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eReferences = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eAttributes = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eAllContainments = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eAllOperations = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eAllStructuralFeatures = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eAllSuperTypes = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eIDAttribute = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eStructuralFeatures = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eGenericSuperTypes = ::ecore::make< ::ecore::EReference >();
+    m_EClass__eAllGenericSuperTypes = ::ecore::make< ::ecore::EReference >();
+    m_EClassEClass = ::ecore::make< ::ecore::EClass >();
+    m_EClassifier__instanceClassName = ::ecore::make< ::ecore::EAttribute >();
+    m_EClassifier__instanceClass = ::ecore::make< ::ecore::EAttribute >();
+    m_EClassifier__defaultValue = ::ecore::make< ::ecore::EAttribute >();
+    m_EClassifier__instanceTypeName = ::ecore::make< ::ecore::EAttribute >();
+    m_EClassifier__ePackage = ::ecore::make< ::ecore::EReference >();
+    m_EClassifier__eTypeParameters = ::ecore::make< ::ecore::EReference >();
+    m_EClassifierEClass = ::ecore::make< ::ecore::EClass >();
+    m_EDataType__serializable = ::ecore::make< ::ecore::EAttribute >();
+    m_EDataTypeEClass = ::ecore::make< ::ecore::EClass >();
+    m_EDateEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EDiagnosticChainEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EDoubleEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EDoubleObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EEListEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EEnum__eLiterals = ::ecore::make< ::ecore::EReference >();
+    m_EEnumEClass = ::ecore::make< ::ecore::EClass >();
+    m_EEnumeratorEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EEnumLiteral__value = ::ecore::make< ::ecore::EAttribute >();
+    m_EEnumLiteral__instance = ::ecore::make< ::ecore::EAttribute >();
+    m_EEnumLiteral__literal = ::ecore::make< ::ecore::EAttribute >();
+    m_EEnumLiteral__eEnum = ::ecore::make< ::ecore::EReference >();
+    m_EEnumLiteralEClass = ::ecore::make< ::ecore::EClass >();
+    m_EFactory__ePackage = ::ecore::make< ::ecore::EReference >();
+    m_EFactoryEClass = ::ecore::make< ::ecore::EClass >();
+    m_EFeatureMapEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EFeatureMapEntryEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EFloatEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EFloatObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EGenericType__eUpperBound = ::ecore::make< ::ecore::EReference >();
+    m_EGenericType__eTypeArguments = ::ecore::make< ::ecore::EReference >();
+    m_EGenericType__eRawType = ::ecore::make< ::ecore::EReference >();
+    m_EGenericType__eLowerBound = ::ecore::make< ::ecore::EReference >();
+    m_EGenericType__eTypeParameter = ::ecore::make< ::ecore::EReference >();
+    m_EGenericType__eClassifier = ::ecore::make< ::ecore::EReference >();
+    m_EGenericTypeEClass = ::ecore::make< ::ecore::EClass >();
+    m_EIntEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EIntegerObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EInvocationTargetExceptionEDataType =
+            ::ecore::make< ::ecore::EDataType >();
+    m_EJavaClassEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EJavaObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ELongEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ELongObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EMapEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EModelElement__eAnnotations = ::ecore::make< ::ecore::EReference >();
+    m_EModelElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ENamedElement__name = ::ecore::make< ::ecore::EAttribute >();
+    m_ENamedElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_EObjectEClass = ::ecore::make< ::ecore::EClass >();
+    m_EOperation__eContainingClass = ::ecore::make< ::ecore::EReference >();
+    m_EOperation__eTypeParameters = ::ecore::make< ::ecore::EReference >();
+    m_EOperation__eParameters = ::ecore::make< ::ecore::EReference >();
+    m_EOperation__eExceptions = ::ecore::make< ::ecore::EReference >();
+    m_EOperation__eGenericExceptions = ::ecore::make< ::ecore::EReference >();
+    m_EOperationEClass = ::ecore::make< ::ecore::EClass >();
+    m_EPackage__nsURI = ::ecore::make< ::ecore::EAttribute >();
+    m_EPackage__nsPrefix = ::ecore::make< ::ecore::EAttribute >();
+    m_EPackage__eFactoryInstance = ::ecore::make< ::ecore::EReference >();
+    m_EPackage__eClassifiers = ::ecore::make< ::ecore::EReference >();
+    m_EPackage__eSubpackages = ::ecore::make< ::ecore::EReference >();
+    m_EPackage__eSuperPackage = ::ecore::make< ::ecore::EReference >();
+    m_EPackageEClass = ::ecore::make< ::ecore::EClass >();
+    m_EParameter__eOperation = ::ecore::make< ::ecore::EReference >();
+    m_EParameterEClass = ::ecore::make< ::ecore::EClass >();
+    m_EReference__containment = ::ecore::make< ::ecore::EAttribute >();
+    m_EReference__container = ::ecore::make< ::ecore::EAttribute >();
+    m_EReference__resolveProxies = ::ecore::make< ::ecore::EAttribute >();
+    m_EReference__eOpposite = ::ecore::make< ::ecore::EReference >();
+    m_EReference__eReferenceType = ::ecore::make< ::ecore::EReference >();
+    m_EReference__eKeys = ::ecore::make< ::ecore::EReference >();
+    m_EReferenceEClass = ::ecore::make< ::ecore::EClass >();
+    m_EResourceEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EResourceSetEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EShortEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EShortObjectEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EStringEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_EStringToStringMapEntry__key = ::ecore::make< ::ecore::EAttribute >();
+    m_EStringToStringMapEntry__value = ::ecore::make< ::ecore::EAttribute >();
+    m_EStringToStringMapEntryEClass = ::ecore::make< ::ecore::EClass >();
+    m_EStructuralFeature__changeable = ::ecore::make< ::ecore::EAttribute >();
+    m_EStructuralFeature__volatile = ::ecore::make< ::ecore::EAttribute >();
+    m_EStructuralFeature__transient = ::ecore::make< ::ecore::EAttribute >();
+    m_EStructuralFeature__defaultValueLiteral = ::ecore::make<
+            ::ecore::EAttribute >();
+    m_EStructuralFeature__defaultValue = ::ecore::make< ::ecore::EAttribute >();
+    m_EStructuralFeature__unsettable = ::ecore::make< ::ecore::EAttribute >();
+    m_EStructuralFeature__derived = ::ecore::make< ::ecore::EAttribute >();
+    m_EStructuralFeature__eContainingClass =
+            ::ecore::make< ::ecore::EReference >();
+    m_EStructuralFeatureEClass = ::ecore::make< ::ecore::EClass >();
+    m_ETreeIteratorEDataType = ::ecore::make< ::ecore::EDataType >();
+    m_ETypedElement__ordered = ::ecore::make< ::ecore::EAttribute >();
+    m_ETypedElement__unique = ::ecore::make< ::ecore::EAttribute >();
+    m_ETypedElement__lowerBound = ::ecore::make< ::ecore::EAttribute >();
+    m_ETypedElement__upperBound = ::ecore::make< ::ecore::EAttribute >();
+    m_ETypedElement__many = ::ecore::make< ::ecore::EAttribute >();
+    m_ETypedElement__required = ::ecore::make< ::ecore::EAttribute >();
+    m_ETypedElement__eType = ::ecore::make< ::ecore::EReference >();
+    m_ETypedElement__eGenericType = ::ecore::make< ::ecore::EReference >();
+    m_ETypedElementEClass = ::ecore::make< ::ecore::EClass >();
+    m_ETypeParameter__eBounds = ::ecore::make< ::ecore::EReference >();
+    m_ETypeParameterEClass = ::ecore::make< ::ecore::EClass >();
 }
 
 void EcorePackage::_initPackage()
 {
-    // Factory
-    ::ecore::EFactory_ptr _fa = EcoreFactory::_instance();
-    basicsetEFactoryInstance(_fa);
-    _fa->basicsetEPackage(_this());
+    [this]()
+    { // Factory
+        auto &&_fa = EcoreFactory::_instance();
+        basicsetEFactoryInstance(_fa);
+        _fa->basicsetEPackage(_this());
+    }();
 
-// Create classes and their features
-    auto &classifiers = (::ecorecpp::mapping::ReferenceEListImpl<
-            ::ecore::EClassifier_ptr, -1, true, true >&) getEClassifiers();
+    // Create classes and their features
 
-    { // EAttribute
-        m_EAttributeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EAttributeEClass->setClassifierID(EATTRIBUTE);
-        m_EAttributeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EAttributeEClass);
-        // m_EAttribute__iD has already been allocated above
-        m_EAttribute__iD->setFeatureID(::ecore::EcorePackage::EATTRIBUTE__ID);
-        m_EAttribute__iD->setName("iD");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAttributeEClass->getEStructuralFeatures()).basicAdd(
-                m_EAttribute__iD);
-        m_EAttribute__iD->basicsetEContainingClass(m_EAttributeEClass);
-        // m_EAttribute__eAttributeType has already been allocated above
-        m_EAttribute__eAttributeType->setFeatureID(
-                ::ecore::EcorePackage::EATTRIBUTE__EATTRIBUTETYPE);
-        m_EAttribute__eAttributeType->setName("eAttributeType");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAttributeEClass->getEStructuralFeatures()).basicAdd(
-                m_EAttribute__eAttributeType);
-        m_EAttribute__eAttributeType->basicsetEContainingClass(
-                m_EAttributeEClass);
-    }
+    [this]()
+    { // Feature source of class EAnnotation
+        auto &&feature = m_EAnnotation__source;
 
-    { // EAnnotation
-        m_EAnnotationEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EAnnotationEClass->setClassifierID(EANNOTATION);
-        m_EAnnotationEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EAnnotationEClass);
-        // m_EAnnotation__source has already been allocated above
-        m_EAnnotation__source->setFeatureID(
-                ::ecore::EcorePackage::EANNOTATION__SOURCE);
-        m_EAnnotation__source->setName("source");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
-                m_EAnnotation__source);
-        m_EAnnotation__source->basicsetEContainingClass(m_EAnnotationEClass);
-        // m_EAnnotation__details has already been allocated above
-        m_EAnnotation__details->setFeatureID(
-                ::ecore::EcorePackage::EANNOTATION__DETAILS);
-        m_EAnnotation__details->setName("details");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
-                m_EAnnotation__details);
-        m_EAnnotation__details->basicsetEContainingClass(m_EAnnotationEClass);
-        // m_EAnnotation__eModelElement has already been allocated above
-        m_EAnnotation__eModelElement->setFeatureID(
+        // ENamedElement
+        feature->setName("source");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EANNOTATION__SOURCE);
+        feature->basicsetEContainingClass(m_EAnnotationEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature details of class EAnnotation
+        auto &&feature = m_EAnnotation__details;
+
+        // ENamedElement
+        feature->setName("details");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringToStringMapEntryEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EANNOTATION__DETAILS);
+        feature->basicsetEContainingClass(m_EAnnotationEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eModelElement of class EAnnotation
+        auto &&feature = m_EAnnotation__eModelElement;
+
+        // ENamedElement
+        feature->setName("eModelElement");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EModelElementEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::EANNOTATION__EMODELELEMENT);
-        m_EAnnotation__eModelElement->setName("eModelElement");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
-                m_EAnnotation__eModelElement);
-        m_EAnnotation__eModelElement->basicsetEContainingClass(
-                m_EAnnotationEClass);
-        // m_EAnnotation__contents has already been allocated above
-        m_EAnnotation__contents->setFeatureID(
-                ::ecore::EcorePackage::EANNOTATION__CONTENTS);
-        m_EAnnotation__contents->setName("contents");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
-                m_EAnnotation__contents);
-        m_EAnnotation__contents->basicsetEContainingClass(m_EAnnotationEClass);
-        // m_EAnnotation__references has already been allocated above
-        m_EAnnotation__references->setFeatureID(
-                ::ecore::EcorePackage::EANNOTATION__REFERENCES);
-        m_EAnnotation__references->setName("references");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures()).basicAdd(
-                m_EAnnotation__references);
-        m_EAnnotation__references->basicsetEContainingClass(
-                m_EAnnotationEClass);
-    }
+        feature->basicsetEContainingClass(m_EAnnotationEClass);
 
-    { // EClass
-        m_EClassEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_EClassEClass->setClassifierID(ECLASS);
-        m_EClassEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EClassEClass);
-        // m_EClass__abstract has already been allocated above
-        m_EClass__abstract->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__ABSTRACT);
-        m_EClass__abstract->setName("abstract");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__abstract);
-        m_EClass__abstract->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__interface has already been allocated above
-        m_EClass__interface->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__INTERFACE);
-        m_EClass__interface->setName("interface");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__interface);
-        m_EClass__interface->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eSuperTypes has already been allocated above
-        m_EClass__eSuperTypes->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__ESUPERTYPES);
-        m_EClass__eSuperTypes->setName("eSuperTypes");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eSuperTypes);
-        m_EClass__eSuperTypes->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eOperations has already been allocated above
-        m_EClass__eOperations->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__EOPERATIONS);
-        m_EClass__eOperations->setName("eOperations");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eOperations);
-        m_EClass__eOperations->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eAllAttributes has already been allocated above
-        m_EClass__eAllAttributes->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__EALLATTRIBUTES);
-        m_EClass__eAllAttributes->setName("eAllAttributes");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eAllAttributes);
-        m_EClass__eAllAttributes->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eAllReferences has already been allocated above
-        m_EClass__eAllReferences->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__EALLREFERENCES);
-        m_EClass__eAllReferences->setName("eAllReferences");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eAllReferences);
-        m_EClass__eAllReferences->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eReferences has already been allocated above
-        m_EClass__eReferences->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__EREFERENCES);
-        m_EClass__eReferences->setName("eReferences");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eReferences);
-        m_EClass__eReferences->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eAttributes has already been allocated above
-        m_EClass__eAttributes->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__EATTRIBUTES);
-        m_EClass__eAttributes->setName("eAttributes");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eAttributes);
-        m_EClass__eAttributes->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eAllContainments has already been allocated above
-        m_EClass__eAllContainments->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__EALLCONTAINMENTS);
-        m_EClass__eAllContainments->setName("eAllContainments");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eAllContainments);
-        m_EClass__eAllContainments->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eAllOperations has already been allocated above
-        m_EClass__eAllOperations->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__EALLOPERATIONS);
-        m_EClass__eAllOperations->setName("eAllOperations");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eAllOperations);
-        m_EClass__eAllOperations->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eAllStructuralFeatures has already been allocated above
-        m_EClass__eAllStructuralFeatures->setFeatureID(
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(m_EModelElement__eAnnotations);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature contents of class EAnnotation
+        auto &&feature = m_EAnnotation__contents;
+
+        // ENamedElement
+        feature->setName("contents");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EObjectEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EANNOTATION__CONTENTS);
+        feature->basicsetEContainingClass(m_EAnnotationEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature references of class EAnnotation
+        auto &&feature = m_EAnnotation__references;
+
+        // ENamedElement
+        feature->setName("references");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EObjectEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EANNOTATION__REFERENCES);
+        feature->basicsetEContainingClass(m_EAnnotationEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier EAnnotation
+        auto &&classifier = m_EAnnotationEClass;
+
+        // ENamedElement
+        classifier->setName("EAnnotation");
+
+        // EClassifier
+        classifier->setClassifierID(EANNOTATION);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAnnotationEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EAnnotation__source);
+            eStructuralFeatures.basicAdd(m_EAnnotation__details);
+            eStructuralFeatures.basicAdd(m_EAnnotation__eModelElement);
+            eStructuralFeatures.basicAdd(m_EAnnotation__contents);
+            eStructuralFeatures.basicAdd(m_EAnnotation__references);
+        }
+    }();
+
+    [this]()
+    { // Feature iD of class EAttribute
+        auto &&feature = m_EAttribute__iD;
+
+        // ENamedElement
+        feature->setName("iD");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EATTRIBUTE__ID);
+        feature->basicsetEContainingClass(m_EAttributeEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature eAttributeType of class EAttribute
+        auto &&feature = m_EAttribute__eAttributeType;
+
+        // ENamedElement
+        feature->setName("eAttributeType");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EDataTypeEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::EATTRIBUTE__EATTRIBUTETYPE);
+        feature->basicsetEContainingClass(m_EAttributeEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier EAttribute
+        auto &&classifier = m_EAttributeEClass;
+
+        // ENamedElement
+        classifier->setName("EAttribute");
+
+        // EClassifier
+        classifier->setClassifierID(EATTRIBUTE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EAttributeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EAttribute__iD);
+            eStructuralFeatures.basicAdd(m_EAttribute__eAttributeType);
+        }
+    }();
+
+    [this]()
+    { // Classifier EBigDecimal
+        auto &&classifier = m_EBigDecimalEDataType;
+
+        // ENamedElement
+        classifier->setName("EBigDecimal");
+
+        // EClassifier
+        classifier->setClassifierID(EBIGDECIMAL);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EBigInteger
+        auto &&classifier = m_EBigIntegerEDataType;
+
+        // ENamedElement
+        classifier->setName("EBigInteger");
+
+        // EClassifier
+        classifier->setClassifierID(EBIGINTEGER);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EBoolean
+        auto &&classifier = m_EBooleanEDataType;
+
+        // ENamedElement
+        classifier->setName("EBoolean");
+
+        // EClassifier
+        classifier->setClassifierID(EBOOLEAN);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EBooleanObject
+        auto &&classifier = m_EBooleanObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("EBooleanObject");
+
+        // EClassifier
+        classifier->setClassifierID(EBOOLEANOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EByte
+        auto &&classifier = m_EByteEDataType;
+
+        // ENamedElement
+        classifier->setName("EByte");
+
+        // EClassifier
+        classifier->setClassifierID(EBYTE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EByteArray
+        auto &&classifier = m_EByteArrayEDataType;
+
+        // ENamedElement
+        classifier->setName("EByteArray");
+
+        // EClassifier
+        classifier->setClassifierID(EBYTEARRAY);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EByteObject
+        auto &&classifier = m_EByteObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("EByteObject");
+
+        // EClassifier
+        classifier->setClassifierID(EBYTEOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EChar
+        auto &&classifier = m_ECharEDataType;
+
+        // ENamedElement
+        classifier->setName("EChar");
+
+        // EClassifier
+        classifier->setClassifierID(ECHAR);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier ECharacterObject
+        auto &&classifier = m_ECharacterObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("ECharacterObject");
+
+        // EClassifier
+        classifier->setClassifierID(ECHARACTEROBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Feature abstract of class EClass
+        auto &&feature = m_EClass__abstract;
+
+        // ENamedElement
+        feature->setName("abstract");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__ABSTRACT);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature interface of class EClass
+        auto &&feature = m_EClass__interface;
+
+        // ENamedElement
+        feature->setName("interface");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__INTERFACE);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature eSuperTypes of class EClass
+        auto &&feature = m_EClass__eSuperTypes;
+
+        // ENamedElement
+        feature->setName("eSuperTypes");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EClassEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(true);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__ESUPERTYPES);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eOperations of class EClass
+        auto &&feature = m_EClass__eOperations;
+
+        // ENamedElement
+        feature->setName("eOperations");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EOperationEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__EOPERATIONS);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setEOpposite(m_EOperation__eContainingClass);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eAllAttributes of class EClass
+        auto &&feature = m_EClass__eAllAttributes;
+
+        // ENamedElement
+        feature->setName("eAllAttributes");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EAttributeEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__EALLATTRIBUTES);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eAllReferences of class EClass
+        auto &&feature = m_EClass__eAllReferences;
+
+        // ENamedElement
+        feature->setName("eAllReferences");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EReferenceEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__EALLREFERENCES);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eReferences of class EClass
+        auto &&feature = m_EClass__eReferences;
+
+        // ENamedElement
+        feature->setName("eReferences");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EReferenceEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__EREFERENCES);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eAttributes of class EClass
+        auto &&feature = m_EClass__eAttributes;
+
+        // ENamedElement
+        feature->setName("eAttributes");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EAttributeEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__EATTRIBUTES);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eAllContainments of class EClass
+        auto &&feature = m_EClass__eAllContainments;
+
+        // ENamedElement
+        feature->setName("eAllContainments");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EReferenceEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__EALLCONTAINMENTS);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eAllOperations of class EClass
+        auto &&feature = m_EClass__eAllOperations;
+
+        // ENamedElement
+        feature->setName("eAllOperations");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EOperationEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__EALLOPERATIONS);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eAllStructuralFeatures of class EClass
+        auto &&feature = m_EClass__eAllStructuralFeatures;
+
+        // ENamedElement
+        feature->setName("eAllStructuralFeatures");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EStructuralFeatureEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EALLSTRUCTURALFEATURES);
-        m_EClass__eAllStructuralFeatures->setName("eAllStructuralFeatures");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eAllStructuralFeatures);
-        m_EClass__eAllStructuralFeatures->basicsetEContainingClass(
-                m_EClassEClass);
-        // m_EClass__eAllSuperTypes has already been allocated above
-        m_EClass__eAllSuperTypes->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__EALLSUPERTYPES);
-        m_EClass__eAllSuperTypes->setName("eAllSuperTypes");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eAllSuperTypes);
-        m_EClass__eAllSuperTypes->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eIDAttribute has already been allocated above
-        m_EClass__eIDAttribute->setFeatureID(
-                ::ecore::EcorePackage::ECLASS__EIDATTRIBUTE);
-        m_EClass__eIDAttribute->setName("eIDAttribute");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eIDAttribute);
-        m_EClass__eIDAttribute->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eStructuralFeatures has already been allocated above
-        m_EClass__eStructuralFeatures->setFeatureID(
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eAllSuperTypes of class EClass
+        auto &&feature = m_EClass__eAllSuperTypes;
+
+        // ENamedElement
+        feature->setName("eAllSuperTypes");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EClassEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__EALLSUPERTYPES);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eIDAttribute of class EClass
+        auto &&feature = m_EClass__eIDAttribute;
+
+        // ENamedElement
+        feature->setName("eIDAttribute");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EAttributeEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASS__EIDATTRIBUTE);
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eStructuralFeatures of class EClass
+        auto &&feature = m_EClass__eStructuralFeatures;
+
+        // ENamedElement
+        feature->setName("eStructuralFeatures");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStructuralFeatureEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__ESTRUCTURALFEATURES);
-        m_EClass__eStructuralFeatures->setName("eStructuralFeatures");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eStructuralFeatures);
-        m_EClass__eStructuralFeatures->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eGenericSuperTypes has already been allocated above
-        m_EClass__eGenericSuperTypes->setFeatureID(
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setEOpposite(m_EStructuralFeature__eContainingClass);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eGenericSuperTypes of class EClass
+        auto &&feature = m_EClass__eGenericSuperTypes;
+
+        // ENamedElement
+        feature->setName("eGenericSuperTypes");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EGenericTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(true);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EGENERICSUPERTYPES);
-        m_EClass__eGenericSuperTypes->setName("eGenericSuperTypes");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eGenericSuperTypes);
-        m_EClass__eGenericSuperTypes->basicsetEContainingClass(m_EClassEClass);
-        // m_EClass__eAllGenericSuperTypes has already been allocated above
-        m_EClass__eAllGenericSuperTypes->setFeatureID(
+        feature->basicsetEContainingClass(m_EClassEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eAllGenericSuperTypes of class EClass
+        auto &&feature = m_EClass__eAllGenericSuperTypes;
+
+        // ENamedElement
+        feature->setName("eAllGenericSuperTypes");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EGenericTypeEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::ECLASS__EALLGENERICSUPERTYPES);
-        m_EClass__eAllGenericSuperTypes->setName("eAllGenericSuperTypes");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures()).basicAdd(
-                m_EClass__eAllGenericSuperTypes);
-        m_EClass__eAllGenericSuperTypes->basicsetEContainingClass(
-                m_EClassEClass);
-    }
+        feature->basicsetEContainingClass(m_EClassEClass);
 
-    { // EClassifier
-        m_EClassifierEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EClassifierEClass->setClassifierID(ECLASSIFIER);
-        m_EClassifierEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EClassifierEClass);
-        // m_EClassifier__instanceClassName has already been allocated above
-        m_EClassifier__instanceClassName->setFeatureID(
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier EClass
+        auto &&classifier = m_EClassEClass;
+
+        // ENamedElement
+        classifier->setName("EClass");
+
+        // EClassifier
+        classifier->setClassifierID(ECLASS);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EClass__abstract);
+            eStructuralFeatures.basicAdd(m_EClass__interface);
+            eStructuralFeatures.basicAdd(m_EClass__eSuperTypes);
+            eStructuralFeatures.basicAdd(m_EClass__eOperations);
+            eStructuralFeatures.basicAdd(m_EClass__eAllAttributes);
+            eStructuralFeatures.basicAdd(m_EClass__eAllReferences);
+            eStructuralFeatures.basicAdd(m_EClass__eReferences);
+            eStructuralFeatures.basicAdd(m_EClass__eAttributes);
+            eStructuralFeatures.basicAdd(m_EClass__eAllContainments);
+            eStructuralFeatures.basicAdd(m_EClass__eAllOperations);
+            eStructuralFeatures.basicAdd(m_EClass__eAllStructuralFeatures);
+            eStructuralFeatures.basicAdd(m_EClass__eAllSuperTypes);
+            eStructuralFeatures.basicAdd(m_EClass__eIDAttribute);
+            eStructuralFeatures.basicAdd(m_EClass__eStructuralFeatures);
+            eStructuralFeatures.basicAdd(m_EClass__eGenericSuperTypes);
+            eStructuralFeatures.basicAdd(m_EClass__eAllGenericSuperTypes);
+        }
+    }();
+
+    [this]()
+    { // Feature instanceClassName of class EClassifier
+        auto &&feature = m_EClassifier__instanceClassName;
+
+        // ENamedElement
+        feature->setName("instanceClassName");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(true);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASSNAME);
-        m_EClassifier__instanceClassName->setName("instanceClassName");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
-                m_EClassifier__instanceClassName);
-        m_EClassifier__instanceClassName->basicsetEContainingClass(
-                m_EClassifierEClass);
-        // m_EClassifier__instanceClass has already been allocated above
-        m_EClassifier__instanceClass->setFeatureID(
+        feature->basicsetEContainingClass(m_EClassifierEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature instanceClass of class EClassifier
+        auto &&feature = m_EClassifier__instanceClass;
+
+        // ENamedElement
+        feature->setName("instanceClass");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EJavaClassEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__INSTANCECLASS);
-        m_EClassifier__instanceClass->setName("instanceClass");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
-                m_EClassifier__instanceClass);
-        m_EClassifier__instanceClass->basicsetEContainingClass(
-                m_EClassifierEClass);
-        // m_EClassifier__defaultValue has already been allocated above
-        m_EClassifier__defaultValue->setFeatureID(
-                ::ecore::EcorePackage::ECLASSIFIER__DEFAULTVALUE);
-        m_EClassifier__defaultValue->setName("defaultValue");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
-                m_EClassifier__defaultValue);
-        m_EClassifier__defaultValue->basicsetEContainingClass(
-                m_EClassifierEClass);
-        // m_EClassifier__instanceTypeName has already been allocated above
-        m_EClassifier__instanceTypeName->setFeatureID(
+        feature->basicsetEContainingClass(m_EClassifierEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature defaultValue of class EClassifier
+        auto &&feature = m_EClassifier__defaultValue;
+
+        // ENamedElement
+        feature->setName("defaultValue");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EJavaObjectEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASSIFIER__DEFAULTVALUE);
+        feature->basicsetEContainingClass(m_EClassifierEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature instanceTypeName of class EClassifier
+        auto &&feature = m_EClassifier__instanceTypeName;
+
+        // ENamedElement
+        feature->setName("instanceTypeName");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(true);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__INSTANCETYPENAME);
-        m_EClassifier__instanceTypeName->setName("instanceTypeName");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
-                m_EClassifier__instanceTypeName);
-        m_EClassifier__instanceTypeName->basicsetEContainingClass(
-                m_EClassifierEClass);
-        // m_EClassifier__ePackage has already been allocated above
-        m_EClassifier__ePackage->setFeatureID(
-                ::ecore::EcorePackage::ECLASSIFIER__EPACKAGE);
-        m_EClassifier__ePackage->setName("ePackage");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
-                m_EClassifier__ePackage);
-        m_EClassifier__ePackage->basicsetEContainingClass(m_EClassifierEClass);
-        // m_EClassifier__eTypeParameters has already been allocated above
-        m_EClassifier__eTypeParameters->setFeatureID(
+        feature->basicsetEContainingClass(m_EClassifierEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature ePackage of class EClassifier
+        auto &&feature = m_EClassifier__ePackage;
+
+        // ENamedElement
+        feature->setName("ePackage");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EPackageEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ECLASSIFIER__EPACKAGE);
+        feature->basicsetEContainingClass(m_EClassifierEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(m_EPackage__eClassifiers);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eTypeParameters of class EClassifier
+        auto &&feature = m_EClassifier__eTypeParameters;
+
+        // ENamedElement
+        feature->setName("eTypeParameters");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ETypeParameterEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::ECLASSIFIER__ETYPEPARAMETERS);
-        m_EClassifier__eTypeParameters->setName("eTypeParameters");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures()).basicAdd(
-                m_EClassifier__eTypeParameters);
-        m_EClassifier__eTypeParameters->basicsetEContainingClass(
-                m_EClassifierEClass);
-    }
+        feature->basicsetEContainingClass(m_EClassifierEClass);
 
-    { // EDataType
-        m_EDataTypeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EDataTypeEClass->setClassifierID(EDATATYPE);
-        m_EDataTypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EDataTypeEClass);
-        // m_EDataType__serializable has already been allocated above
-        m_EDataType__serializable->setFeatureID(
-                ::ecore::EcorePackage::EDATATYPE__SERIALIZABLE);
-        m_EDataType__serializable->setName("serializable");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EDataTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_EDataType__serializable);
-        m_EDataType__serializable->basicsetEContainingClass(m_EDataTypeEClass);
-    }
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
 
-    { // EEnum
-        m_EEnumEClass = ::ecore::Ptr < ::ecore::EClass > (new ::ecore::EClass);
-        m_EEnumEClass->setClassifierID(EENUM);
-        m_EEnumEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EEnumEClass);
-        // m_EEnum__eLiterals has already been allocated above
-        m_EEnum__eLiterals->setFeatureID(
-                ::ecore::EcorePackage::EENUM__ELITERALS);
-        m_EEnum__eLiterals->setName("eLiterals");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumEClass->getEStructuralFeatures()).basicAdd(
-                m_EEnum__eLiterals);
-        m_EEnum__eLiterals->basicsetEContainingClass(m_EEnumEClass);
-    }
+    [this]()
+    { // Classifier EClassifier
+        auto &&classifier = m_EClassifierEClass;
 
-    { // EEnumLiteral
-        m_EEnumLiteralEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EEnumLiteralEClass->setClassifierID(EENUMLITERAL);
-        m_EEnumLiteralEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EEnumLiteralEClass);
-        // m_EEnumLiteral__value has already been allocated above
-        m_EEnumLiteral__value->setFeatureID(
-                ::ecore::EcorePackage::EENUMLITERAL__VALUE);
-        m_EEnumLiteral__value->setName("value");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumLiteralEClass->getEStructuralFeatures()).basicAdd(
-                m_EEnumLiteral__value);
-        m_EEnumLiteral__value->basicsetEContainingClass(m_EEnumLiteralEClass);
-        // m_EEnumLiteral__instance has already been allocated above
-        m_EEnumLiteral__instance->setFeatureID(
-                ::ecore::EcorePackage::EENUMLITERAL__INSTANCE);
-        m_EEnumLiteral__instance->setName("instance");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumLiteralEClass->getEStructuralFeatures()).basicAdd(
-                m_EEnumLiteral__instance);
-        m_EEnumLiteral__instance->basicsetEContainingClass(
-                m_EEnumLiteralEClass);
-        // m_EEnumLiteral__literal has already been allocated above
-        m_EEnumLiteral__literal->setFeatureID(
-                ::ecore::EcorePackage::EENUMLITERAL__LITERAL);
-        m_EEnumLiteral__literal->setName("literal");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumLiteralEClass->getEStructuralFeatures()).basicAdd(
-                m_EEnumLiteral__literal);
-        m_EEnumLiteral__literal->basicsetEContainingClass(m_EEnumLiteralEClass);
-        // m_EEnumLiteral__eEnum has already been allocated above
-        m_EEnumLiteral__eEnum->setFeatureID(
-                ::ecore::EcorePackage::EENUMLITERAL__EENUM);
-        m_EEnumLiteral__eEnum->setName("eEnum");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumLiteralEClass->getEStructuralFeatures()).basicAdd(
-                m_EEnumLiteral__eEnum);
-        m_EEnumLiteral__eEnum->basicsetEContainingClass(m_EEnumLiteralEClass);
-    }
+        // ENamedElement
+        classifier->setName("EClassifier");
 
-    { // EFactory
-        m_EFactoryEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EFactoryEClass->setClassifierID(EFACTORY);
-        m_EFactoryEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EFactoryEClass);
-        // m_EFactory__ePackage has already been allocated above
-        m_EFactory__ePackage->setFeatureID(
-                ::ecore::EcorePackage::EFACTORY__EPACKAGE);
-        m_EFactory__ePackage->setName("ePackage");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EFactoryEClass->getEStructuralFeatures()).basicAdd(
-                m_EFactory__ePackage);
-        m_EFactory__ePackage->basicsetEContainingClass(m_EFactoryEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(ECLASSIFIER);
 
-    { // EModelElement
-        m_EModelElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EModelElementEClass->setClassifierID(EMODELELEMENT);
-        m_EModelElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EModelElementEClass);
-        // m_EModelElement__eAnnotations has already been allocated above
-        m_EModelElement__eAnnotations->setFeatureID(
-                ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS);
-        m_EModelElement__eAnnotations->setName("eAnnotations");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EModelElementEClass->getEStructuralFeatures()).basicAdd(
-                m_EModelElement__eAnnotations);
-        m_EModelElement__eAnnotations->basicsetEContainingClass(
-                m_EModelElementEClass);
-    }
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EClassifierEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EClassifier__instanceClassName);
+            eStructuralFeatures.basicAdd(m_EClassifier__instanceClass);
+            eStructuralFeatures.basicAdd(m_EClassifier__defaultValue);
+            eStructuralFeatures.basicAdd(m_EClassifier__instanceTypeName);
+            eStructuralFeatures.basicAdd(m_EClassifier__ePackage);
+            eStructuralFeatures.basicAdd(m_EClassifier__eTypeParameters);
+        }
+    }();
 
-    { // ENamedElement
-        m_ENamedElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ENamedElementEClass->setClassifierID(ENAMEDELEMENT);
-        m_ENamedElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ENamedElementEClass);
-        // m_ENamedElement__name has already been allocated above
-        m_ENamedElement__name->setFeatureID(
-                ::ecore::EcorePackage::ENAMEDELEMENT__NAME);
-        m_ENamedElement__name->setName("name");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ENamedElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ENamedElement__name);
-        m_ENamedElement__name->basicsetEContainingClass(m_ENamedElementEClass);
-    }
+    [this]()
+    { // Feature serializable of class EDataType
+        auto &&feature = m_EDataType__serializable;
 
-    { // EObject
-        m_EObjectEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EObjectEClass->setClassifierID(EOBJECT);
-        m_EObjectEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EObjectEClass);
-    }
+        // ENamedElement
+        feature->setName("serializable");
 
-    { // EOperation
-        m_EOperationEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EOperationEClass->setClassifierID(EOPERATION);
-        m_EOperationEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EOperationEClass);
-        // m_EOperation__eContainingClass has already been allocated above
-        m_EOperation__eContainingClass->setFeatureID(
-                ::ecore::EcorePackage::EOPERATION__ECONTAININGCLASS);
-        m_EOperation__eContainingClass->setName("eContainingClass");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
-                m_EOperation__eContainingClass);
-        m_EOperation__eContainingClass->basicsetEContainingClass(
-                m_EOperationEClass);
-        // m_EOperation__eTypeParameters has already been allocated above
-        m_EOperation__eTypeParameters->setFeatureID(
-                ::ecore::EcorePackage::EOPERATION__ETYPEPARAMETERS);
-        m_EOperation__eTypeParameters->setName("eTypeParameters");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
-                m_EOperation__eTypeParameters);
-        m_EOperation__eTypeParameters->basicsetEContainingClass(
-                m_EOperationEClass);
-        // m_EOperation__eParameters has already been allocated above
-        m_EOperation__eParameters->setFeatureID(
-                ::ecore::EcorePackage::EOPERATION__EPARAMETERS);
-        m_EOperation__eParameters->setName("eParameters");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
-                m_EOperation__eParameters);
-        m_EOperation__eParameters->basicsetEContainingClass(m_EOperationEClass);
-        // m_EOperation__eExceptions has already been allocated above
-        m_EOperation__eExceptions->setFeatureID(
-                ::ecore::EcorePackage::EOPERATION__EEXCEPTIONS);
-        m_EOperation__eExceptions->setName("eExceptions");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
-                m_EOperation__eExceptions);
-        m_EOperation__eExceptions->basicsetEContainingClass(m_EOperationEClass);
-        // m_EOperation__eGenericExceptions has already been allocated above
-        m_EOperation__eGenericExceptions->setFeatureID(
-                ::ecore::EcorePackage::EOPERATION__EGENERICEXCEPTIONS);
-        m_EOperation__eGenericExceptions->setName("eGenericExceptions");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures()).basicAdd(
-                m_EOperation__eGenericExceptions);
-        m_EOperation__eGenericExceptions->basicsetEContainingClass(
-                m_EOperationEClass);
-    }
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    { // EPackage
-        m_EPackageEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EPackageEClass->setClassifierID(EPACKAGE);
-        m_EPackageEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EPackageEClass);
-        // m_EPackage__nsURI has already been allocated above
-        m_EPackage__nsURI->setFeatureID(::ecore::EcorePackage::EPACKAGE__NSURI);
-        m_EPackage__nsURI->setName("nsURI");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
-                m_EPackage__nsURI);
-        m_EPackage__nsURI->basicsetEContainingClass(m_EPackageEClass);
-        // m_EPackage__nsPrefix has already been allocated above
-        m_EPackage__nsPrefix->setFeatureID(
-                ::ecore::EcorePackage::EPACKAGE__NSPREFIX);
-        m_EPackage__nsPrefix->setName("nsPrefix");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
-                m_EPackage__nsPrefix);
-        m_EPackage__nsPrefix->basicsetEContainingClass(m_EPackageEClass);
-        // m_EPackage__eFactoryInstance has already been allocated above
-        m_EPackage__eFactoryInstance->setFeatureID(
-                ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE);
-        m_EPackage__eFactoryInstance->setName("eFactoryInstance");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
-                m_EPackage__eFactoryInstance);
-        m_EPackage__eFactoryInstance->basicsetEContainingClass(
-                m_EPackageEClass);
-        // m_EPackage__eClassifiers has already been allocated above
-        m_EPackage__eClassifiers->setFeatureID(
-                ::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS);
-        m_EPackage__eClassifiers->setName("eClassifiers");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
-                m_EPackage__eClassifiers);
-        m_EPackage__eClassifiers->basicsetEContainingClass(m_EPackageEClass);
-        // m_EPackage__eSubpackages has already been allocated above
-        m_EPackage__eSubpackages->setFeatureID(
-                ::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES);
-        m_EPackage__eSubpackages->setName("eSubpackages");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
-                m_EPackage__eSubpackages);
-        m_EPackage__eSubpackages->basicsetEContainingClass(m_EPackageEClass);
-        // m_EPackage__eSuperPackage has already been allocated above
-        m_EPackage__eSuperPackage->setFeatureID(
-                ::ecore::EcorePackage::EPACKAGE__ESUPERPACKAGE);
-        m_EPackage__eSuperPackage->setName("eSuperPackage");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures()).basicAdd(
-                m_EPackage__eSuperPackage);
-        m_EPackage__eSuperPackage->basicsetEContainingClass(m_EPackageEClass);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("true");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // EParameter
-        m_EParameterEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EParameterEClass->setClassifierID(EPARAMETER);
-        m_EParameterEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EParameterEClass);
-        // m_EParameter__eOperation has already been allocated above
-        m_EParameter__eOperation->setFeatureID(
-                ::ecore::EcorePackage::EPARAMETER__EOPERATION);
-        m_EParameter__eOperation->setName("eOperation");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EParameterEClass->getEStructuralFeatures()).basicAdd(
-                m_EParameter__eOperation);
-        m_EParameter__eOperation->basicsetEContainingClass(m_EParameterEClass);
-    }
+        feature->setFeatureID(::ecore::EcorePackage::EDATATYPE__SERIALIZABLE);
+        feature->basicsetEContainingClass(m_EDataTypeEClass);
 
-    { // EReference
-        m_EReferenceEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EReferenceEClass->setClassifierID(EREFERENCE);
-        m_EReferenceEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EReferenceEClass);
-        // m_EReference__containment has already been allocated above
-        m_EReference__containment->setFeatureID(
-                ::ecore::EcorePackage::EREFERENCE__CONTAINMENT);
-        m_EReference__containment->setName("containment");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
-                m_EReference__containment);
-        m_EReference__containment->basicsetEContainingClass(m_EReferenceEClass);
-        // m_EReference__container has already been allocated above
-        m_EReference__container->setFeatureID(
-                ::ecore::EcorePackage::EREFERENCE__CONTAINER);
-        m_EReference__container->setName("container");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
-                m_EReference__container);
-        m_EReference__container->basicsetEContainingClass(m_EReferenceEClass);
-        // m_EReference__resolveProxies has already been allocated above
-        m_EReference__resolveProxies->setFeatureID(
-                ::ecore::EcorePackage::EREFERENCE__RESOLVEPROXIES);
-        m_EReference__resolveProxies->setName("resolveProxies");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
-                m_EReference__resolveProxies);
-        m_EReference__resolveProxies->basicsetEContainingClass(
-                m_EReferenceEClass);
-        // m_EReference__eOpposite has already been allocated above
-        m_EReference__eOpposite->setFeatureID(
-                ::ecore::EcorePackage::EREFERENCE__EOPPOSITE);
-        m_EReference__eOpposite->setName("eOpposite");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
-                m_EReference__eOpposite);
-        m_EReference__eOpposite->basicsetEContainingClass(m_EReferenceEClass);
-        // m_EReference__eReferenceType has already been allocated above
-        m_EReference__eReferenceType->setFeatureID(
-                ::ecore::EcorePackage::EREFERENCE__EREFERENCETYPE);
-        m_EReference__eReferenceType->setName("eReferenceType");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
-                m_EReference__eReferenceType);
-        m_EReference__eReferenceType->basicsetEContainingClass(
-                m_EReferenceEClass);
-        // m_EReference__eKeys has already been allocated above
-        m_EReference__eKeys->setFeatureID(
-                ::ecore::EcorePackage::EREFERENCE__EKEYS);
-        m_EReference__eKeys->setName("eKeys");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures()).basicAdd(
-                m_EReference__eKeys);
-        m_EReference__eKeys->basicsetEContainingClass(m_EReferenceEClass);
-    }
+        // EAttribute
+        feature->setID(false);
+    }();
 
-    { // EStructuralFeature
-        m_EStructuralFeatureEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EStructuralFeatureEClass->setClassifierID(ESTRUCTURALFEATURE);
-        m_EStructuralFeatureEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EStructuralFeatureEClass);
-        // m_EStructuralFeature__changeable has already been allocated above
-        m_EStructuralFeature__changeable->setFeatureID(
-                ::ecore::EcorePackage::ESTRUCTURALFEATURE__CHANGEABLE);
-        m_EStructuralFeature__changeable->setName("changeable");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
-                m_EStructuralFeature__changeable);
-        m_EStructuralFeature__changeable->basicsetEContainingClass(
-                m_EStructuralFeatureEClass);
-        // m_EStructuralFeature__volatile has already been allocated above
-        m_EStructuralFeature__volatile->setFeatureID(
-                ::ecore::EcorePackage::ESTRUCTURALFEATURE__VOLATILE);
-        m_EStructuralFeature__volatile->setName("volatile");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
-                m_EStructuralFeature__volatile);
-        m_EStructuralFeature__volatile->basicsetEContainingClass(
-                m_EStructuralFeatureEClass);
-        // m_EStructuralFeature__transient has already been allocated above
-        m_EStructuralFeature__transient->setFeatureID(
-                ::ecore::EcorePackage::ESTRUCTURALFEATURE__TRANSIENT);
-        m_EStructuralFeature__transient->setName("transient");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
-                m_EStructuralFeature__transient);
-        m_EStructuralFeature__transient->basicsetEContainingClass(
-                m_EStructuralFeatureEClass);
-        // m_EStructuralFeature__defaultValueLiteral has already been allocated above
-        m_EStructuralFeature__defaultValueLiteral->setFeatureID(
-                ::ecore::EcorePackage::ESTRUCTURALFEATURE__DEFAULTVALUELITERAL);
-        m_EStructuralFeature__defaultValueLiteral->setName(
-                "defaultValueLiteral");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
-                m_EStructuralFeature__defaultValueLiteral);
-        m_EStructuralFeature__defaultValueLiteral->basicsetEContainingClass(
-                m_EStructuralFeatureEClass);
-        // m_EStructuralFeature__defaultValue has already been allocated above
-        m_EStructuralFeature__defaultValue->setFeatureID(
-                ::ecore::EcorePackage::ESTRUCTURALFEATURE__DEFAULTVALUE);
-        m_EStructuralFeature__defaultValue->setName("defaultValue");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
-                m_EStructuralFeature__defaultValue);
-        m_EStructuralFeature__defaultValue->basicsetEContainingClass(
-                m_EStructuralFeatureEClass);
-        // m_EStructuralFeature__unsettable has already been allocated above
-        m_EStructuralFeature__unsettable->setFeatureID(
-                ::ecore::EcorePackage::ESTRUCTURALFEATURE__UNSETTABLE);
-        m_EStructuralFeature__unsettable->setName("unsettable");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
-                m_EStructuralFeature__unsettable);
-        m_EStructuralFeature__unsettable->basicsetEContainingClass(
-                m_EStructuralFeatureEClass);
-        // m_EStructuralFeature__derived has already been allocated above
-        m_EStructuralFeature__derived->setFeatureID(
-                ::ecore::EcorePackage::ESTRUCTURALFEATURE__DERIVED);
-        m_EStructuralFeature__derived->setName("derived");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
-                m_EStructuralFeature__derived);
-        m_EStructuralFeature__derived->basicsetEContainingClass(
-                m_EStructuralFeatureEClass);
-        // m_EStructuralFeature__eContainingClass has already been allocated above
-        m_EStructuralFeature__eContainingClass->setFeatureID(
-                ::ecore::EcorePackage::ESTRUCTURALFEATURE__ECONTAININGCLASS);
-        m_EStructuralFeature__eContainingClass->setName("eContainingClass");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures()).basicAdd(
-                m_EStructuralFeature__eContainingClass);
-        m_EStructuralFeature__eContainingClass->basicsetEContainingClass(
-                m_EStructuralFeatureEClass);
-    }
+    [this]()
+    { // Classifier EDataType
+        auto &&classifier = m_EDataTypeEClass;
 
-    { // ETypedElement
-        m_ETypedElementEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ETypedElementEClass->setClassifierID(ETYPEDELEMENT);
-        m_ETypedElementEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ETypedElementEClass);
-        // m_ETypedElement__ordered has already been allocated above
-        m_ETypedElement__ordered->setFeatureID(
-                ::ecore::EcorePackage::ETYPEDELEMENT__ORDERED);
-        m_ETypedElement__ordered->setName("ordered");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ETypedElement__ordered);
-        m_ETypedElement__ordered->basicsetEContainingClass(
-                m_ETypedElementEClass);
-        // m_ETypedElement__unique has already been allocated above
-        m_ETypedElement__unique->setFeatureID(
-                ::ecore::EcorePackage::ETYPEDELEMENT__UNIQUE);
-        m_ETypedElement__unique->setName("unique");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ETypedElement__unique);
-        m_ETypedElement__unique->basicsetEContainingClass(
-                m_ETypedElementEClass);
-        // m_ETypedElement__lowerBound has already been allocated above
-        m_ETypedElement__lowerBound->setFeatureID(
-                ::ecore::EcorePackage::ETYPEDELEMENT__LOWERBOUND);
-        m_ETypedElement__lowerBound->setName("lowerBound");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ETypedElement__lowerBound);
-        m_ETypedElement__lowerBound->basicsetEContainingClass(
-                m_ETypedElementEClass);
-        // m_ETypedElement__upperBound has already been allocated above
-        m_ETypedElement__upperBound->setFeatureID(
-                ::ecore::EcorePackage::ETYPEDELEMENT__UPPERBOUND);
-        m_ETypedElement__upperBound->setName("upperBound");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ETypedElement__upperBound);
-        m_ETypedElement__upperBound->basicsetEContainingClass(
-                m_ETypedElementEClass);
-        // m_ETypedElement__many has already been allocated above
-        m_ETypedElement__many->setFeatureID(
-                ::ecore::EcorePackage::ETYPEDELEMENT__MANY);
-        m_ETypedElement__many->setName("many");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ETypedElement__many);
-        m_ETypedElement__many->basicsetEContainingClass(m_ETypedElementEClass);
-        // m_ETypedElement__required has already been allocated above
-        m_ETypedElement__required->setFeatureID(
-                ::ecore::EcorePackage::ETYPEDELEMENT__REQUIRED);
-        m_ETypedElement__required->setName("required");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ETypedElement__required);
-        m_ETypedElement__required->basicsetEContainingClass(
-                m_ETypedElementEClass);
-        // m_ETypedElement__eType has already been allocated above
-        m_ETypedElement__eType->setFeatureID(
-                ::ecore::EcorePackage::ETYPEDELEMENT__ETYPE);
-        m_ETypedElement__eType->setName("eType");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ETypedElement__eType);
-        m_ETypedElement__eType->basicsetEContainingClass(m_ETypedElementEClass);
-        // m_ETypedElement__eGenericType has already been allocated above
-        m_ETypedElement__eGenericType->setFeatureID(
-                ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE);
-        m_ETypedElement__eGenericType->setName("eGenericType");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures()).basicAdd(
-                m_ETypedElement__eGenericType);
-        m_ETypedElement__eGenericType->basicsetEContainingClass(
-                m_ETypedElementEClass);
-    }
+        // ENamedElement
+        classifier->setName("EDataType");
 
-    { // EStringToStringMapEntry
-        m_EStringToStringMapEntryEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EStringToStringMapEntryEClass->setClassifierID(
-                ESTRINGTOSTRINGMAPENTRY);
-        m_EStringToStringMapEntryEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EStringToStringMapEntryEClass);
-        // m_EStringToStringMapEntry__key has already been allocated above
-        m_EStringToStringMapEntry__key->setFeatureID(
-                ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__KEY);
-        m_EStringToStringMapEntry__key->setName("key");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStringToStringMapEntryEClass->getEStructuralFeatures()).basicAdd(
-                m_EStringToStringMapEntry__key);
-        m_EStringToStringMapEntry__key->basicsetEContainingClass(
-                m_EStringToStringMapEntryEClass);
-        // m_EStringToStringMapEntry__value has already been allocated above
-        m_EStringToStringMapEntry__value->setFeatureID(
-                ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__VALUE);
-        m_EStringToStringMapEntry__value->setName("value");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStringToStringMapEntryEClass->getEStructuralFeatures()).basicAdd(
-                m_EStringToStringMapEntry__value);
-        m_EStringToStringMapEntry__value->basicsetEContainingClass(
-                m_EStringToStringMapEntryEClass);
-    }
+        // EClassifier
+        classifier->setClassifierID(EDATATYPE);
 
-    { // EGenericType
-        m_EGenericTypeEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_EGenericTypeEClass->setClassifierID(EGENERICTYPE);
-        m_EGenericTypeEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EGenericTypeEClass);
-        // m_EGenericType__eUpperBound has already been allocated above
-        m_EGenericType__eUpperBound->setFeatureID(
-                ::ecore::EcorePackage::EGENERICTYPE__EUPPERBOUND);
-        m_EGenericType__eUpperBound->setName("eUpperBound");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_EGenericType__eUpperBound);
-        m_EGenericType__eUpperBound->basicsetEContainingClass(
-                m_EGenericTypeEClass);
-        // m_EGenericType__eTypeArguments has already been allocated above
-        m_EGenericType__eTypeArguments->setFeatureID(
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EDataTypeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EDataType__serializable);
+        }
+    }();
+
+    [this]()
+    { // Classifier EDate
+        auto &&classifier = m_EDateEDataType;
+
+        // ENamedElement
+        classifier->setName("EDate");
+
+        // EClassifier
+        classifier->setClassifierID(EDATE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EDiagnosticChain
+        auto &&classifier = m_EDiagnosticChainEDataType;
+
+        // ENamedElement
+        classifier->setName("EDiagnosticChain");
+
+        // EClassifier
+        classifier->setClassifierID(EDIAGNOSTICCHAIN);
+
+        // EDataType
+        classifier->setSerializable(false);
+    }();
+
+    [this]()
+    { // Classifier EDouble
+        auto &&classifier = m_EDoubleEDataType;
+
+        // ENamedElement
+        classifier->setName("EDouble");
+
+        // EClassifier
+        classifier->setClassifierID(EDOUBLE);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EDoubleObject
+        auto &&classifier = m_EDoubleObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("EDoubleObject");
+
+        // EClassifier
+        classifier->setClassifierID(EDOUBLEOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EEList
+        auto &&classifier = m_EEListEDataType;
+
+        // ENamedElement
+        classifier->setName("EEList");
+
+        // EClassifier
+        classifier->setClassifierID(EELIST);
+
+        // EDataType
+        classifier->setSerializable(false);
+    }();
+
+    [this]()
+    { // Feature eLiterals of class EEnum
+        auto &&feature = m_EEnum__eLiterals;
+
+        // ENamedElement
+        feature->setName("eLiterals");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EEnumLiteralEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EENUM__ELITERALS);
+        feature->basicsetEContainingClass(m_EEnumEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setEOpposite(m_EEnumLiteral__eEnum);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier EEnum
+        auto &&classifier = m_EEnumEClass;
+
+        // ENamedElement
+        classifier->setName("EEnum");
+
+        // EClassifier
+        classifier->setClassifierID(EENUM);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EEnum__eLiterals);
+        }
+    }();
+
+    [this]()
+    { // Classifier EEnumerator
+        auto &&classifier = m_EEnumeratorEDataType;
+
+        // ENamedElement
+        classifier->setName("EEnumerator");
+
+        // EClassifier
+        classifier->setClassifierID(EENUMERATOR);
+
+        // EDataType
+        classifier->setSerializable(false);
+    }();
+
+    [this]()
+    { // Feature value of class EEnumLiteral
+        auto &&feature = m_EEnumLiteral__value;
+
+        // ENamedElement
+        feature->setName("value");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EIntEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EENUMLITERAL__VALUE);
+        feature->basicsetEContainingClass(m_EEnumLiteralEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature instance of class EEnumLiteral
+        auto &&feature = m_EEnumLiteral__instance;
+
+        // ENamedElement
+        feature->setName("instance");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EEnumeratorEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EENUMLITERAL__INSTANCE);
+        feature->basicsetEContainingClass(m_EEnumLiteralEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature literal of class EEnumLiteral
+        auto &&feature = m_EEnumLiteral__literal;
+
+        // ENamedElement
+        feature->setName("literal");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EENUMLITERAL__LITERAL);
+        feature->basicsetEContainingClass(m_EEnumLiteralEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature eEnum of class EEnumLiteral
+        auto &&feature = m_EEnumLiteral__eEnum;
+
+        // ENamedElement
+        feature->setName("eEnum");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EEnumEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EENUMLITERAL__EENUM);
+        feature->basicsetEContainingClass(m_EEnumLiteralEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(m_EEnum__eLiterals);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier EEnumLiteral
+        auto &&classifier = m_EEnumLiteralEClass;
+
+        // ENamedElement
+        classifier->setName("EEnumLiteral");
+
+        // EClassifier
+        classifier->setClassifierID(EENUMLITERAL);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EEnumLiteralEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EEnumLiteral__value);
+            eStructuralFeatures.basicAdd(m_EEnumLiteral__instance);
+            eStructuralFeatures.basicAdd(m_EEnumLiteral__literal);
+            eStructuralFeatures.basicAdd(m_EEnumLiteral__eEnum);
+        }
+    }();
+
+    [this]()
+    { // Feature ePackage of class EFactory
+        auto &&feature = m_EFactory__ePackage;
+
+        // ENamedElement
+        feature->setName("ePackage");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EPackageEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EFACTORY__EPACKAGE);
+        feature->basicsetEContainingClass(m_EFactoryEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(m_EPackage__eFactoryInstance);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier EFactory
+        auto &&classifier = m_EFactoryEClass;
+
+        // ENamedElement
+        classifier->setName("EFactory");
+
+        // EClassifier
+        classifier->setClassifierID(EFACTORY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EFactoryEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EFactory__ePackage);
+        }
+    }();
+
+    [this]()
+    { // Classifier EFeatureMap
+        auto &&classifier = m_EFeatureMapEDataType;
+
+        // ENamedElement
+        classifier->setName("EFeatureMap");
+
+        // EClassifier
+        classifier->setClassifierID(EFEATUREMAP);
+
+        // EDataType
+        classifier->setSerializable(false);
+    }();
+
+    [this]()
+    { // Classifier EFeatureMapEntry
+        auto &&classifier = m_EFeatureMapEntryEDataType;
+
+        // ENamedElement
+        classifier->setName("EFeatureMapEntry");
+
+        // EClassifier
+        classifier->setClassifierID(EFEATUREMAPENTRY);
+
+        // EDataType
+        classifier->setSerializable(false);
+    }();
+
+    [this]()
+    { // Classifier EFloat
+        auto &&classifier = m_EFloatEDataType;
+
+        // ENamedElement
+        classifier->setName("EFloat");
+
+        // EClassifier
+        classifier->setClassifierID(EFLOAT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EFloatObject
+        auto &&classifier = m_EFloatObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("EFloatObject");
+
+        // EClassifier
+        classifier->setClassifierID(EFLOATOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Feature eUpperBound of class EGenericType
+        auto &&feature = m_EGenericType__eUpperBound;
+
+        // ENamedElement
+        feature->setName("eUpperBound");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EGenericTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EGENERICTYPE__EUPPERBOUND);
+        feature->basicsetEContainingClass(m_EGenericTypeEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eTypeArguments of class EGenericType
+        auto &&feature = m_EGenericType__eTypeArguments;
+
+        // ENamedElement
+        feature->setName("eTypeArguments");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EGenericTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::EGENERICTYPE__ETYPEARGUMENTS);
-        m_EGenericType__eTypeArguments->setName("eTypeArguments");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_EGenericType__eTypeArguments);
-        m_EGenericType__eTypeArguments->basicsetEContainingClass(
-                m_EGenericTypeEClass);
-        // m_EGenericType__eRawType has already been allocated above
-        m_EGenericType__eRawType->setFeatureID(
-                ::ecore::EcorePackage::EGENERICTYPE__ERAWTYPE);
-        m_EGenericType__eRawType->setName("eRawType");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_EGenericType__eRawType);
-        m_EGenericType__eRawType->basicsetEContainingClass(
-                m_EGenericTypeEClass);
-        // m_EGenericType__eLowerBound has already been allocated above
-        m_EGenericType__eLowerBound->setFeatureID(
-                ::ecore::EcorePackage::EGENERICTYPE__ELOWERBOUND);
-        m_EGenericType__eLowerBound->setName("eLowerBound");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_EGenericType__eLowerBound);
-        m_EGenericType__eLowerBound->basicsetEContainingClass(
-                m_EGenericTypeEClass);
-        // m_EGenericType__eTypeParameter has already been allocated above
-        m_EGenericType__eTypeParameter->setFeatureID(
+        feature->basicsetEContainingClass(m_EGenericTypeEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eRawType of class EGenericType
+        auto &&feature = m_EGenericType__eRawType;
+
+        // ENamedElement
+        feature->setName("eRawType");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EClassifierEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EGENERICTYPE__ERAWTYPE);
+        feature->basicsetEContainingClass(m_EGenericTypeEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eLowerBound of class EGenericType
+        auto &&feature = m_EGenericType__eLowerBound;
+
+        // ENamedElement
+        feature->setName("eLowerBound");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EGenericTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EGENERICTYPE__ELOWERBOUND);
+        feature->basicsetEContainingClass(m_EGenericTypeEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eTypeParameter of class EGenericType
+        auto &&feature = m_EGenericType__eTypeParameter;
+
+        // ENamedElement
+        feature->setName("eTypeParameter");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ETypeParameterEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
                 ::ecore::EcorePackage::EGENERICTYPE__ETYPEPARAMETER);
-        m_EGenericType__eTypeParameter->setName("eTypeParameter");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_EGenericType__eTypeParameter);
-        m_EGenericType__eTypeParameter->basicsetEContainingClass(
-                m_EGenericTypeEClass);
-        // m_EGenericType__eClassifier has already been allocated above
-        m_EGenericType__eClassifier->setFeatureID(
-                ::ecore::EcorePackage::EGENERICTYPE__ECLASSIFIER);
-        m_EGenericType__eClassifier->setName("eClassifier");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures()).basicAdd(
-                m_EGenericType__eClassifier);
-        m_EGenericType__eClassifier->basicsetEContainingClass(
-                m_EGenericTypeEClass);
-    }
+        feature->basicsetEContainingClass(m_EGenericTypeEClass);
 
-    { // ETypeParameter
-        m_ETypeParameterEClass = ::ecore::Ptr < ::ecore::EClass
-                > (new ::ecore::EClass);
-        m_ETypeParameterEClass->setClassifierID(ETYPEPARAMETER);
-        m_ETypeParameterEClass->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ETypeParameterEClass);
-        // m_ETypeParameter__eBounds has already been allocated above
-        m_ETypeParameter__eBounds->setFeatureID(
-                ::ecore::EcorePackage::ETYPEPARAMETER__EBOUNDS);
-        m_ETypeParameter__eBounds->setName("eBounds");
-        static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
-                ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypeParameterEClass->getEStructuralFeatures()).basicAdd(
-                m_ETypeParameter__eBounds);
-        m_ETypeParameter__eBounds->basicsetEContainingClass(
-                m_ETypeParameterEClass);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(false);
+    }();
 
-    // Create enums
+    [this]()
+    { // Feature eClassifier of class EGenericType
+        auto &&feature = m_EGenericType__eClassifier;
 
-    // Create data types
+        // ENamedElement
+        feature->setName("eClassifier");
 
-    { // EBigDecimal
-        m_EBigDecimalEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EBigDecimalEDataType->setClassifierID(EBIGDECIMAL);
-        m_EBigDecimalEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EBigDecimalEDataType);
-    }
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
 
-    { // EBigInteger
-        m_EBigIntegerEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EBigIntegerEDataType->setClassifierID(EBIGINTEGER);
-        m_EBigIntegerEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EBigIntegerEDataType);
-    }
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EClassifierEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
 
-    { // EBoolean
-        m_EBooleanEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EBooleanEDataType->setClassifierID(EBOOLEAN);
-        m_EBooleanEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EBooleanEDataType);
-    }
+        feature->setFeatureID(::ecore::EcorePackage::EGENERICTYPE__ECLASSIFIER);
+        feature->basicsetEContainingClass(m_EGenericTypeEClass);
 
-    { // EBooleanObject
-        m_EBooleanObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EBooleanObjectEDataType->setClassifierID(EBOOLEANOBJECT);
-        m_EBooleanObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EBooleanObjectEDataType);
-    }
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
 
-    { // EByte
-        m_EByteEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EByteEDataType->setClassifierID(EBYTE);
-        m_EByteEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EByteEDataType);
-    }
+    [this]()
+    { // Classifier EGenericType
+        auto &&classifier = m_EGenericTypeEClass;
 
-    { // EByteArray
-        m_EByteArrayEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EByteArrayEDataType->setClassifierID(EBYTEARRAY);
-        m_EByteArrayEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EByteArrayEDataType);
-    }
+        // ENamedElement
+        classifier->setName("EGenericType");
 
-    { // EByteObject
-        m_EByteObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EByteObjectEDataType->setClassifierID(EBYTEOBJECT);
-        m_EByteObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EByteObjectEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(EGENERICTYPE);
 
-    { // EChar
-        m_ECharEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ECharEDataType->setClassifierID(ECHAR);
-        m_ECharEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ECharEDataType);
-    }
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EGenericTypeEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EGenericType__eUpperBound);
+            eStructuralFeatures.basicAdd(m_EGenericType__eTypeArguments);
+            eStructuralFeatures.basicAdd(m_EGenericType__eRawType);
+            eStructuralFeatures.basicAdd(m_EGenericType__eLowerBound);
+            eStructuralFeatures.basicAdd(m_EGenericType__eTypeParameter);
+            eStructuralFeatures.basicAdd(m_EGenericType__eClassifier);
+        }
+    }();
 
-    { // ECharacterObject
-        m_ECharacterObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ECharacterObjectEDataType->setClassifierID(ECHARACTEROBJECT);
-        m_ECharacterObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ECharacterObjectEDataType);
-    }
+    [this]()
+    { // Classifier EInt
+        auto &&classifier = m_EIntEDataType;
 
-    { // EDate
-        m_EDateEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EDateEDataType->setClassifierID(EDATE);
-        m_EDateEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EDateEDataType);
-    }
+        // ENamedElement
+        classifier->setName("EInt");
 
-    { // EDiagnosticChain
-        m_EDiagnosticChainEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EDiagnosticChainEDataType->setClassifierID(EDIAGNOSTICCHAIN);
-        m_EDiagnosticChainEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EDiagnosticChainEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(EINT);
 
-    { // EDouble
-        m_EDoubleEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EDoubleEDataType->setClassifierID(EDOUBLE);
-        m_EDoubleEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EDoubleEDataType);
-    }
+        // EDataType
+        classifier->setSerializable(true);
+    }();
 
-    { // EDoubleObject
-        m_EDoubleObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EDoubleObjectEDataType->setClassifierID(EDOUBLEOBJECT);
-        m_EDoubleObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EDoubleObjectEDataType);
-    }
+    [this]()
+    { // Classifier EIntegerObject
+        auto &&classifier = m_EIntegerObjectEDataType;
 
-    { // EEList
-        m_EEListEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EEListEDataType->setClassifierID(EELIST);
-        m_EEListEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EEListEDataType);
-    }
+        // ENamedElement
+        classifier->setName("EIntegerObject");
 
-    { // EEnumerator
-        m_EEnumeratorEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EEnumeratorEDataType->setClassifierID(EENUMERATOR);
-        m_EEnumeratorEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EEnumeratorEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(EINTEGEROBJECT);
 
-    { // EFeatureMap
-        m_EFeatureMapEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EFeatureMapEDataType->setClassifierID(EFEATUREMAP);
-        m_EFeatureMapEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EFeatureMapEDataType);
-    }
+        // EDataType
+        classifier->setSerializable(true);
+    }();
 
-    { // EFeatureMapEntry
-        m_EFeatureMapEntryEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EFeatureMapEntryEDataType->setClassifierID(EFEATUREMAPENTRY);
-        m_EFeatureMapEntryEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EFeatureMapEntryEDataType);
-    }
+    [this]()
+    { // Classifier EInvocationTargetException
+        auto &&classifier = m_EInvocationTargetExceptionEDataType;
 
-    { // EFloat
-        m_EFloatEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EFloatEDataType->setClassifierID(EFLOAT);
-        m_EFloatEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EFloatEDataType);
-    }
+        // ENamedElement
+        classifier->setName("EInvocationTargetException");
 
-    { // EFloatObject
-        m_EFloatObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EFloatObjectEDataType->setClassifierID(EFLOATOBJECT);
-        m_EFloatObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EFloatObjectEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(EINVOCATIONTARGETEXCEPTION);
 
-    { // EInt
-        m_EIntEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EIntEDataType->setClassifierID(EINT);
-        m_EIntEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EIntEDataType);
-    }
+        // EDataType
+        classifier->setSerializable(false);
+    }();
 
-    { // EIntegerObject
-        m_EIntegerObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EIntegerObjectEDataType->setClassifierID(EINTEGEROBJECT);
-        m_EIntegerObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EIntegerObjectEDataType);
-    }
+    [this]()
+    { // Classifier EJavaClass
+        auto &&classifier = m_EJavaClassEDataType;
 
-    { // EJavaClass
-        m_EJavaClassEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EJavaClassEDataType->setClassifierID(EJAVACLASS);
-        m_EJavaClassEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EJavaClassEDataType);
-    }
+        // ENamedElement
+        classifier->setName("EJavaClass");
 
-    { // EJavaObject
-        m_EJavaObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EJavaObjectEDataType->setClassifierID(EJAVAOBJECT);
-        m_EJavaObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EJavaObjectEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(EJAVACLASS);
 
-    { // ELong
-        m_ELongEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ELongEDataType->setClassifierID(ELONG);
-        m_ELongEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ELongEDataType);
-    }
+        // EDataType
+        classifier->setSerializable(true);
+    }();
 
-    { // ELongObject
-        m_ELongObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ELongObjectEDataType->setClassifierID(ELONGOBJECT);
-        m_ELongObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ELongObjectEDataType);
-    }
+    [this]()
+    { // Classifier EJavaObject
+        auto &&classifier = m_EJavaObjectEDataType;
 
-    { // EMap
-        m_EMapEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EMapEDataType->setClassifierID(EMAP);
-        m_EMapEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EMapEDataType);
-    }
+        // ENamedElement
+        classifier->setName("EJavaObject");
 
-    { // EResource
-        m_EResourceEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EResourceEDataType->setClassifierID(ERESOURCE);
-        m_EResourceEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EResourceEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(EJAVAOBJECT);
 
-    { // EResourceSet
-        m_EResourceSetEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EResourceSetEDataType->setClassifierID(ERESOURCESET);
-        m_EResourceSetEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EResourceSetEDataType);
-    }
+        // EDataType
+        classifier->setSerializable(true);
+    }();
 
-    { // EShort
-        m_EShortEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EShortEDataType->setClassifierID(ESHORT);
-        m_EShortEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EShortEDataType);
-    }
+    [this]()
+    { // Classifier ELong
+        auto &&classifier = m_ELongEDataType;
 
-    { // EShortObject
-        m_EShortObjectEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EShortObjectEDataType->setClassifierID(ESHORTOBJECT);
-        m_EShortObjectEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EShortObjectEDataType);
-    }
+        // ENamedElement
+        classifier->setName("ELong");
 
-    { // EString
-        m_EStringEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_EStringEDataType->setClassifierID(ESTRING);
-        m_EStringEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EStringEDataType);
-    }
+        // EClassifier
+        classifier->setClassifierID(ELONG);
 
-    { // ETreeIterator
-        m_ETreeIteratorEDataType = ::ecore::Ptr < ::ecore::EDataType
-                > (new ::ecore::EDataType);
-        m_ETreeIteratorEDataType->setClassifierID(ETREEITERATOR);
-        m_ETreeIteratorEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_ETreeIteratorEDataType);
-    }
+        // EDataType
+        classifier->setSerializable(true);
+    }();
 
-    { // EInvocationTargetException
-        m_EInvocationTargetExceptionEDataType = ::ecore::Ptr
-                < ::ecore::EDataType > (new ::ecore::EDataType);
-        m_EInvocationTargetExceptionEDataType->setClassifierID(
-                EINVOCATIONTARGETEXCEPTION);
-        m_EInvocationTargetExceptionEDataType->basicsetEPackage(_this());
-        classifiers.basicAdd(m_EInvocationTargetExceptionEDataType);
-    }
+    [this]()
+    { // Classifier ELongObject
+        auto &&classifier = m_ELongObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("ELongObject");
+
+        // EClassifier
+        classifier->setClassifierID(ELONGOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EMap
+        auto &&classifier = m_EMapEDataType;
+
+        // ENamedElement
+        classifier->setName("EMap");
+
+        // EClassifier
+        classifier->setClassifierID(EMAP);
+
+        // EDataType
+        classifier->setSerializable(false);
+    }();
+
+    [this]()
+    { // Feature eAnnotations of class EModelElement
+        auto &&feature = m_EModelElement__eAnnotations;
+
+        // ENamedElement
+        feature->setName("eAnnotations");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EAnnotationEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::EMODELELEMENT__EANNOTATIONS);
+        feature->basicsetEContainingClass(m_EModelElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setEOpposite(m_EAnnotation__eModelElement);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier EModelElement
+        auto &&classifier = m_EModelElementEClass;
+
+        // ENamedElement
+        classifier->setName("EModelElement");
+
+        // EClassifier
+        classifier->setClassifierID(EMODELELEMENT);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EModelElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EModelElement__eAnnotations);
+        }
+    }();
+
+    [this]()
+    { // Feature name of class ENamedElement
+        auto &&feature = m_ENamedElement__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ENAMEDELEMENT__NAME);
+        feature->basicsetEContainingClass(m_ENamedElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier ENamedElement
+        auto &&classifier = m_ENamedElementEClass;
+
+        // ENamedElement
+        classifier->setName("ENamedElement");
+
+        // EClassifier
+        classifier->setClassifierID(ENAMEDELEMENT);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ENamedElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ENamedElement__name);
+        }
+    }();
+
+    [this]()
+    { // Classifier EObject
+        auto &&classifier = m_EObjectEClass;
+
+        // ENamedElement
+        classifier->setName("EObject");
+
+        // EClassifier
+        classifier->setClassifierID(EOBJECT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+    }();
+
+    [this]()
+    { // Feature eContainingClass of class EOperation
+        auto &&feature = m_EOperation__eContainingClass;
+
+        // ENamedElement
+        feature->setName("eContainingClass");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EClassEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::EOPERATION__ECONTAININGCLASS);
+        feature->basicsetEContainingClass(m_EOperationEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(m_EClass__eOperations);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eTypeParameters of class EOperation
+        auto &&feature = m_EOperation__eTypeParameters;
+
+        // ENamedElement
+        feature->setName("eTypeParameters");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_ETypeParameterEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::EOPERATION__ETYPEPARAMETERS);
+        feature->basicsetEContainingClass(m_EOperationEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eParameters of class EOperation
+        auto &&feature = m_EOperation__eParameters;
+
+        // ENamedElement
+        feature->setName("eParameters");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EParameterEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EOPERATION__EPARAMETERS);
+        feature->basicsetEContainingClass(m_EOperationEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setEOpposite(m_EParameter__eOperation);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eExceptions of class EOperation
+        auto &&feature = m_EOperation__eExceptions;
+
+        // ENamedElement
+        feature->setName("eExceptions");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EClassifierEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(true);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EOPERATION__EEXCEPTIONS);
+        feature->basicsetEContainingClass(m_EOperationEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eGenericExceptions of class EOperation
+        auto &&feature = m_EOperation__eGenericExceptions;
+
+        // ENamedElement
+        feature->setName("eGenericExceptions");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EGenericTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(true);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::EOPERATION__EGENERICEXCEPTIONS);
+        feature->basicsetEContainingClass(m_EOperationEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier EOperation
+        auto &&classifier = m_EOperationEClass;
+
+        // ENamedElement
+        classifier->setName("EOperation");
+
+        // EClassifier
+        classifier->setClassifierID(EOPERATION);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EOperationEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EOperation__eContainingClass);
+            eStructuralFeatures.basicAdd(m_EOperation__eTypeParameters);
+            eStructuralFeatures.basicAdd(m_EOperation__eParameters);
+            eStructuralFeatures.basicAdd(m_EOperation__eExceptions);
+            eStructuralFeatures.basicAdd(m_EOperation__eGenericExceptions);
+        }
+    }();
+
+    [this]()
+    { // Feature nsURI of class EPackage
+        auto &&feature = m_EPackage__nsURI;
+
+        // ENamedElement
+        feature->setName("nsURI");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EPACKAGE__NSURI);
+        feature->basicsetEContainingClass(m_EPackageEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature nsPrefix of class EPackage
+        auto &&feature = m_EPackage__nsPrefix;
+
+        // ENamedElement
+        feature->setName("nsPrefix");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EPACKAGE__NSPREFIX);
+        feature->basicsetEContainingClass(m_EPackageEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature eFactoryInstance of class EPackage
+        auto &&feature = m_EPackage__eFactoryInstance;
+
+        // ENamedElement
+        feature->setName("eFactoryInstance");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EFactoryEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::EPACKAGE__EFACTORYINSTANCE);
+        feature->basicsetEContainingClass(m_EPackageEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(m_EFactory__ePackage);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Feature eClassifiers of class EPackage
+        auto &&feature = m_EPackage__eClassifiers;
+
+        // ENamedElement
+        feature->setName("eClassifiers");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EClassifierEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EPACKAGE__ECLASSIFIERS);
+        feature->basicsetEContainingClass(m_EPackageEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setEOpposite(m_EClassifier__ePackage);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eSubpackages of class EPackage
+        auto &&feature = m_EPackage__eSubpackages;
+
+        // ENamedElement
+        feature->setName("eSubpackages");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EPackageEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EPACKAGE__ESUBPACKAGES);
+        feature->basicsetEContainingClass(m_EPackageEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setEOpposite(m_EPackage__eSuperPackage);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eSuperPackage of class EPackage
+        auto &&feature = m_EPackage__eSuperPackage;
+
+        // ENamedElement
+        feature->setName("eSuperPackage");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EPackageEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EPACKAGE__ESUPERPACKAGE);
+        feature->basicsetEContainingClass(m_EPackageEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(m_EPackage__eSubpackages);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier EPackage
+        auto &&classifier = m_EPackageEClass;
+
+        // ENamedElement
+        classifier->setName("EPackage");
+
+        // EClassifier
+        classifier->setClassifierID(EPACKAGE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EPackageEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EPackage__nsURI);
+            eStructuralFeatures.basicAdd(m_EPackage__nsPrefix);
+            eStructuralFeatures.basicAdd(m_EPackage__eFactoryInstance);
+            eStructuralFeatures.basicAdd(m_EPackage__eClassifiers);
+            eStructuralFeatures.basicAdd(m_EPackage__eSubpackages);
+            eStructuralFeatures.basicAdd(m_EPackage__eSuperPackage);
+        }
+    }();
+
+    [this]()
+    { // Feature eOperation of class EParameter
+        auto &&feature = m_EParameter__eOperation;
+
+        // ENamedElement
+        feature->setName("eOperation");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EOperationEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EPARAMETER__EOPERATION);
+        feature->basicsetEContainingClass(m_EParameterEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(m_EOperation__eParameters);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier EParameter
+        auto &&classifier = m_EParameterEClass;
+
+        // ENamedElement
+        classifier->setName("EParameter");
+
+        // EClassifier
+        classifier->setClassifierID(EPARAMETER);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EParameterEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EParameter__eOperation);
+        }
+    }();
+
+    [this]()
+    { // Feature containment of class EReference
+        auto &&feature = m_EReference__containment;
+
+        // ENamedElement
+        feature->setName("containment");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EREFERENCE__CONTAINMENT);
+        feature->basicsetEContainingClass(m_EReferenceEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature container of class EReference
+        auto &&feature = m_EReference__container;
+
+        // ENamedElement
+        feature->setName("container");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::EREFERENCE__CONTAINER);
+        feature->basicsetEContainingClass(m_EReferenceEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature resolveProxies of class EReference
+        auto &&feature = m_EReference__resolveProxies;
+
+        // ENamedElement
+        feature->setName("resolveProxies");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("true");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::EREFERENCE__RESOLVEPROXIES);
+        feature->basicsetEContainingClass(m_EReferenceEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature eOpposite of class EReference
+        auto &&feature = m_EReference__eOpposite;
+
+        // ENamedElement
+        feature->setName("eOpposite");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EReferenceEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EREFERENCE__EOPPOSITE);
+        feature->basicsetEContainingClass(m_EReferenceEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eReferenceType of class EReference
+        auto &&feature = m_EReference__eReferenceType;
+
+        // ENamedElement
+        feature->setName("eReferenceType");
+
+        // ETypedElement
+        feature->setLowerBound(1);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EClassEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::EREFERENCE__EREFERENCETYPE);
+        feature->basicsetEContainingClass(m_EReferenceEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eKeys of class EReference
+        auto &&feature = m_EReference__eKeys;
+
+        // ENamedElement
+        feature->setName("eKeys");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EAttributeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::EREFERENCE__EKEYS);
+        feature->basicsetEContainingClass(m_EReferenceEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Classifier EReference
+        auto &&classifier = m_EReferenceEClass;
+
+        // ENamedElement
+        classifier->setName("EReference");
+
+        // EClassifier
+        classifier->setClassifierID(EREFERENCE);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EReferenceEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EReference__containment);
+            eStructuralFeatures.basicAdd(m_EReference__container);
+            eStructuralFeatures.basicAdd(m_EReference__resolveProxies);
+            eStructuralFeatures.basicAdd(m_EReference__eOpposite);
+            eStructuralFeatures.basicAdd(m_EReference__eReferenceType);
+            eStructuralFeatures.basicAdd(m_EReference__eKeys);
+        }
+    }();
+
+    [this]()
+    { // Classifier EResource
+        auto &&classifier = m_EResourceEDataType;
+
+        // ENamedElement
+        classifier->setName("EResource");
+
+        // EClassifier
+        classifier->setClassifierID(ERESOURCE);
+
+        // EDataType
+        classifier->setSerializable(false);
+    }();
+
+    [this]()
+    { // Classifier EResourceSet
+        auto &&classifier = m_EResourceSetEDataType;
+
+        // ENamedElement
+        classifier->setName("EResourceSet");
+
+        // EClassifier
+        classifier->setClassifierID(ERESOURCESET);
+
+        // EDataType
+        classifier->setSerializable(false);
+    }();
+
+    [this]()
+    { // Classifier EShort
+        auto &&classifier = m_EShortEDataType;
+
+        // ENamedElement
+        classifier->setName("EShort");
+
+        // EClassifier
+        classifier->setClassifierID(ESHORT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EShortObject
+        auto &&classifier = m_EShortObjectEDataType;
+
+        // ENamedElement
+        classifier->setName("EShortObject");
+
+        // EClassifier
+        classifier->setClassifierID(ESHORTOBJECT);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Classifier EString
+        auto &&classifier = m_EStringEDataType;
+
+        // ENamedElement
+        classifier->setName("EString");
+
+        // EClassifier
+        classifier->setClassifierID(ESTRING);
+
+        // EDataType
+        classifier->setSerializable(true);
+    }();
+
+    [this]()
+    { // Feature key of class EStringToStringMapEntry
+        auto &&feature = m_EStringToStringMapEntry__key;
+
+        // ENamedElement
+        feature->setName("key");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__KEY);
+        feature->basicsetEContainingClass(m_EStringToStringMapEntryEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature value of class EStringToStringMapEntry
+        auto &&feature = m_EStringToStringMapEntry__value;
+
+        // ENamedElement
+        feature->setName("value");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRINGTOSTRINGMAPENTRY__VALUE);
+        feature->basicsetEContainingClass(m_EStringToStringMapEntryEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier EStringToStringMapEntry
+        auto &&classifier = m_EStringToStringMapEntryEClass;
+
+        // ENamedElement
+        classifier->setName("EStringToStringMapEntry");
+
+        // EClassifier
+        classifier->setClassifierID(ESTRINGTOSTRINGMAPENTRY);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStringToStringMapEntryEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EStringToStringMapEntry__key);
+            eStructuralFeatures.basicAdd(m_EStringToStringMapEntry__value);
+        }
+    }();
+
+    [this]()
+    { // Feature changeable of class EStructuralFeature
+        auto &&feature = m_EStructuralFeature__changeable;
+
+        // ENamedElement
+        feature->setName("changeable");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("true");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRUCTURALFEATURE__CHANGEABLE);
+        feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature volatile of class EStructuralFeature
+        auto &&feature = m_EStructuralFeature__volatile;
+
+        // ENamedElement
+        feature->setName("volatile");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRUCTURALFEATURE__VOLATILE);
+        feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature transient of class EStructuralFeature
+        auto &&feature = m_EStructuralFeature__transient;
+
+        // ENamedElement
+        feature->setName("transient");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRUCTURALFEATURE__TRANSIENT);
+        feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature defaultValueLiteral of class EStructuralFeature
+        auto &&feature = m_EStructuralFeature__defaultValueLiteral;
+
+        // ENamedElement
+        feature->setName("defaultValueLiteral");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EStringEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRUCTURALFEATURE__DEFAULTVALUELITERAL);
+        feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature defaultValue of class EStructuralFeature
+        auto &&feature = m_EStructuralFeature__defaultValue;
+
+        // ENamedElement
+        feature->setName("defaultValue");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EJavaObjectEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRUCTURALFEATURE__DEFAULTVALUE);
+        feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature unsettable of class EStructuralFeature
+        auto &&feature = m_EStructuralFeature__unsettable;
+
+        // ENamedElement
+        feature->setName("unsettable");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRUCTURALFEATURE__UNSETTABLE);
+        feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature derived of class EStructuralFeature
+        auto &&feature = m_EStructuralFeature__derived;
+
+        // ENamedElement
+        feature->setName("derived");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRUCTURALFEATURE__DERIVED);
+        feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature eContainingClass of class EStructuralFeature
+        auto &&feature = m_EStructuralFeature__eContainingClass;
+
+        // ENamedElement
+        feature->setName("eContainingClass");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EClassEClass);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ESTRUCTURALFEATURE__ECONTAININGCLASS);
+        feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setEOpposite(m_EClass__eStructuralFeatures);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier EStructuralFeature
+        auto &&classifier = m_EStructuralFeatureEClass;
+
+        // ENamedElement
+        classifier->setName("EStructuralFeature");
+
+        // EClassifier
+        classifier->setClassifierID(ESTRUCTURALFEATURE);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_EStructuralFeatureEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_EStructuralFeature__changeable);
+            eStructuralFeatures.basicAdd(m_EStructuralFeature__volatile);
+            eStructuralFeatures.basicAdd(m_EStructuralFeature__transient);
+            eStructuralFeatures.basicAdd(
+                    m_EStructuralFeature__defaultValueLiteral);
+            eStructuralFeatures.basicAdd(m_EStructuralFeature__defaultValue);
+            eStructuralFeatures.basicAdd(m_EStructuralFeature__unsettable);
+            eStructuralFeatures.basicAdd(m_EStructuralFeature__derived);
+            eStructuralFeatures.basicAdd(
+                    m_EStructuralFeature__eContainingClass);
+        }
+    }();
+
+    [this]()
+    { // Classifier ETreeIterator
+        auto &&classifier = m_ETreeIteratorEDataType;
+
+        // ENamedElement
+        classifier->setName("ETreeIterator");
+
+        // EClassifier
+        classifier->setClassifierID(ETREEITERATOR);
+
+        // EDataType
+        classifier->setSerializable(false);
+    }();
+
+    [this]()
+    { // Feature ordered of class ETypedElement
+        auto &&feature = m_ETypedElement__ordered;
+
+        // ENamedElement
+        feature->setName("ordered");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("true");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ETYPEDELEMENT__ORDERED);
+        feature->basicsetEContainingClass(m_ETypedElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature unique of class ETypedElement
+        auto &&feature = m_ETypedElement__unique;
+
+        // ENamedElement
+        feature->setName("unique");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("true");
+        feature->setDerived(false);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ETYPEDELEMENT__UNIQUE);
+        feature->basicsetEContainingClass(m_ETypedElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature lowerBound of class ETypedElement
+        auto &&feature = m_ETypedElement__lowerBound;
+
+        // ENamedElement
+        feature->setName("lowerBound");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EIntEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ETYPEDELEMENT__LOWERBOUND);
+        feature->basicsetEContainingClass(m_ETypedElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature upperBound of class ETypedElement
+        auto &&feature = m_ETypedElement__upperBound;
+
+        // ENamedElement
+        feature->setName("upperBound");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("1");
+        feature->setDerived(false);
+        feature->setEType(m_EIntEDataType);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ETYPEDELEMENT__UPPERBOUND);
+        feature->basicsetEContainingClass(m_ETypedElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature many of class ETypedElement
+        auto &&feature = m_ETypedElement__many;
+
+        // ENamedElement
+        feature->setName("many");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ETYPEDELEMENT__MANY);
+        feature->basicsetEContainingClass(m_ETypedElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature required of class ETypedElement
+        auto &&feature = m_ETypedElement__required;
+
+        // ENamedElement
+        feature->setName("required");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(false);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(true);
+        feature->setEType(m_EBooleanEDataType);
+        feature->setTransient(true);
+        feature->setUnsettable(false);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ETYPEDELEMENT__REQUIRED);
+        feature->basicsetEContainingClass(m_ETypedElementEClass);
+
+        // EAttribute
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Feature eType of class ETypedElement
+        auto &&feature = m_ETypedElement__eType;
+
+        // ENamedElement
+        feature->setName("eType");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EClassifierEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(true);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(::ecore::EcorePackage::ETYPEDELEMENT__ETYPE);
+        feature->basicsetEContainingClass(m_ETypedElementEClass);
+
+        // EReference
+        feature->setContainment(false);
+        feature->setResolveProxies(true);
+    }();
+
+    [this]()
+    { // Feature eGenericType of class ETypedElement
+        auto &&feature = m_ETypedElement__eGenericType;
+
+        // ENamedElement
+        feature->setName("eGenericType");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EGenericTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(true);
+        feature->setVolatile(true);
+
+        feature->setFeatureID(
+                ::ecore::EcorePackage::ETYPEDELEMENT__EGENERICTYPE);
+        feature->basicsetEContainingClass(m_ETypedElementEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier ETypedElement
+        auto &&classifier = m_ETypedElementEClass;
+
+        // ENamedElement
+        classifier->setName("ETypedElement");
+
+        // EClassifier
+        classifier->setClassifierID(ETYPEDELEMENT);
+
+        // EClass
+        classifier->setAbstract(true);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypedElementEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ETypedElement__ordered);
+            eStructuralFeatures.basicAdd(m_ETypedElement__unique);
+            eStructuralFeatures.basicAdd(m_ETypedElement__lowerBound);
+            eStructuralFeatures.basicAdd(m_ETypedElement__upperBound);
+            eStructuralFeatures.basicAdd(m_ETypedElement__many);
+            eStructuralFeatures.basicAdd(m_ETypedElement__required);
+            eStructuralFeatures.basicAdd(m_ETypedElement__eType);
+            eStructuralFeatures.basicAdd(m_ETypedElement__eGenericType);
+        }
+    }();
+
+    [this]()
+    { // Feature eBounds of class ETypeParameter
+        auto &&feature = m_ETypeParameter__eBounds;
+
+        // ENamedElement
+        feature->setName("eBounds");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(-1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(m_EGenericTypeEClass);
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(::ecore::EcorePackage::ETYPEPARAMETER__EBOUNDS);
+        feature->basicsetEContainingClass(m_ETypeParameterEClass);
+
+        // EReference
+        feature->setContainment(true);
+        feature->setResolveProxies(false);
+    }();
+
+    [this]()
+    { // Classifier ETypeParameter
+        auto &&classifier = m_ETypeParameterEClass;
+
+        // ENamedElement
+        classifier->setName("ETypeParameter");
+
+        // EClassifier
+        classifier->setClassifierID(ETYPEPARAMETER);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_ETypeParameterEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_ETypeParameter__eBounds);
+        }
+    }();
 
     // Initialize package
     setName("ecore");
     setNsPrefix("ecore");
     setNsURI("http://www.eclipse.org/emf/2002/Ecore");
 
+    // TODO: bounds for type parameters
     // Create type parameters
+    [this]()
     {
 
         {
-            auto _tp = ::ecore::Ptr < ::ecore::ETypeParameter
-                    > (new ::ecore::ETypeParameter);
+            auto _tp = ::ecore::make< ::ecore::ETypeParameter >();
             _tp->setName("E");
             m_EEListEDataType->getETypeParameters().push_back(_tp);
         }
 
         {
-            auto _tp = ::ecore::Ptr < ::ecore::ETypeParameter
-                    > (new ::ecore::ETypeParameter);
+            auto _tp = ::ecore::make< ::ecore::ETypeParameter >();
             _tp->setName("T");
             m_EJavaClassEDataType->getETypeParameters().push_back(_tp);
         }
 
         {
-            auto _tp = ::ecore::Ptr < ::ecore::ETypeParameter
-                    > (new ::ecore::ETypeParameter);
+            auto _tp = ::ecore::make< ::ecore::ETypeParameter >();
             _tp->setName("K");
             m_EMapEDataType->getETypeParameters().push_back(_tp);
         }
         {
-            auto _tp = ::ecore::Ptr < ::ecore::ETypeParameter
-                    > (new ::ecore::ETypeParameter);
+            auto _tp = ::ecore::make< ::ecore::ETypeParameter >();
             _tp->setName("V");
             m_EMapEDataType->getETypeParameters().push_back(_tp);
         }
 
         {
-            auto _tp = ::ecore::Ptr < ::ecore::ETypeParameter
-                    > (new ::ecore::ETypeParameter);
+            auto _tp = ::ecore::make< ::ecore::ETypeParameter >();
             _tp->setName("E");
             m_ETreeIteratorEDataType->getETypeParameters().push_back(_tp);
         }
-    }
-
-    // TODO: bounds for type parameters
+    }();
 
     // Add supertypes to classes
-    m_EAttributeEClass->getESuperTypes().push_back(m_EStructuralFeatureEClass);
-    m_EAnnotationEClass->getESuperTypes().push_back(m_EModelElementEClass);
-    m_EClassEClass->getESuperTypes().push_back(m_EClassifierEClass);
-    m_EClassifierEClass->getESuperTypes().push_back(m_ENamedElementEClass);
-    m_EDataTypeEClass->getESuperTypes().push_back(m_EClassifierEClass);
-    m_EEnumEClass->getESuperTypes().push_back(m_EDataTypeEClass);
-    m_EEnumLiteralEClass->getESuperTypes().push_back(m_ENamedElementEClass);
-    m_EFactoryEClass->getESuperTypes().push_back(m_EModelElementEClass);
-    m_ENamedElementEClass->getESuperTypes().push_back(m_EModelElementEClass);
-    m_EOperationEClass->getESuperTypes().push_back(m_ETypedElementEClass);
-    m_EPackageEClass->getESuperTypes().push_back(m_ENamedElementEClass);
-    m_EParameterEClass->getESuperTypes().push_back(m_ETypedElementEClass);
-    m_EReferenceEClass->getESuperTypes().push_back(m_EStructuralFeatureEClass);
-    m_EStructuralFeatureEClass->getESuperTypes().push_back(
-            m_ETypedElementEClass);
-    m_ETypedElementEClass->getESuperTypes().push_back(m_ENamedElementEClass);
-    m_ETypeParameterEClass->getESuperTypes().push_back(m_ENamedElementEClass);
+    [this]()
+    {
+        m_EAttributeEClass->getESuperTypes().push_back(
+                m_EStructuralFeatureEClass);
+        m_EAnnotationEClass->getESuperTypes().push_back(m_EModelElementEClass);
+        m_EClassEClass->getESuperTypes().push_back(m_EClassifierEClass);
+        m_EClassifierEClass->getESuperTypes().push_back(m_ENamedElementEClass);
+        m_EDataTypeEClass->getESuperTypes().push_back(m_EClassifierEClass);
+        m_EEnumEClass->getESuperTypes().push_back(m_EDataTypeEClass);
+        m_EEnumLiteralEClass->getESuperTypes().push_back(m_ENamedElementEClass);
+        m_EFactoryEClass->getESuperTypes().push_back(m_EModelElementEClass);
+        m_ENamedElementEClass->getESuperTypes().push_back(
+                m_EModelElementEClass);
+        m_EOperationEClass->getESuperTypes().push_back(m_ETypedElementEClass);
+        m_EPackageEClass->getESuperTypes().push_back(m_ENamedElementEClass);
+        m_EParameterEClass->getESuperTypes().push_back(m_ETypedElementEClass);
+        m_EReferenceEClass->getESuperTypes().push_back(
+                m_EStructuralFeatureEClass);
+        m_EStructuralFeatureEClass->getESuperTypes().push_back(
+                m_ETypedElementEClass);
+        m_ETypedElementEClass->getESuperTypes().push_back(
+                m_ENamedElementEClass);
+        m_ETypeParameterEClass->getESuperTypes().push_back(
+                m_ENamedElementEClass);
+    }();
 
-    // TODO: Initialize classes and features; add operations and parameters
-    // TODO: GenericTypes
-    { // EAttribute
-        m_EAttributeEClass->setName("EAttribute");
-        m_EAttributeEClass->setAbstract(false);
-        m_EAttributeEClass->setInterface(false);
-        m_EAttribute__iD->setEType(m_EBooleanEDataType);
-        m_EAttribute__iD->setDefaultValueLiteral("");
-        m_EAttribute__iD->setLowerBound(0);
-        m_EAttribute__iD->setUpperBound(1);
-        m_EAttribute__iD->setTransient(false);
-        m_EAttribute__iD->setVolatile(false);
-        m_EAttribute__iD->setChangeable(true);
-        m_EAttribute__iD->setUnsettable(false);
-        m_EAttribute__iD->setID(false);
-        m_EAttribute__iD->setUnique(true);
-        m_EAttribute__iD->setDerived(false);
-        m_EAttribute__iD->setOrdered(true);
+    [this]()
+    { // Class EAttribute
+        auto &&cls = m_EAttributeEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints", "ConsistentTransient");
+        }
+    }();
 
-        m_EAttribute__eAttributeType->setEType(m_EDataTypeEClass);
-        m_EAttribute__eAttributeType->setDefaultValueLiteral("");
-        m_EAttribute__eAttributeType->setLowerBound(1);
-        m_EAttribute__eAttributeType->setUpperBound(1);
-        m_EAttribute__eAttributeType->setTransient(true);
-        m_EAttribute__eAttributeType->setVolatile(true);
-        m_EAttribute__eAttributeType->setChangeable(false);
-        m_EAttribute__eAttributeType->setContainment(false);
-        m_EAttribute__eAttributeType->setResolveProxies(true);
-        m_EAttribute__eAttributeType->setUnique(true);
-        m_EAttribute__eAttributeType->setDerived(true);
-        m_EAttribute__eAttributeType->setOrdered(true);
+    [this]()
+    { // Class EAnnotation
+        auto &&cls = m_EAnnotationEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints", "WellFormedSourceURI");
+        }
+    }();
 
-    }
+    [this]()
+    { // Feature eSuperTypes of class EClass
+        auto &&feature = m_EClass__eSuperTypes;
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedIsSetVisibility", "true");
+            eAnnotation->setDetail("suppressedUnsetVisibility", "true");
+        }
+    }();
+    [this]()
+    { // Feature eGenericSuperTypes of class EClass
+        auto &&feature = m_EClass__eGenericSuperTypes;
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedIsSetVisibility", "true");
+            eAnnotation->setDetail("suppressedUnsetVisibility", "true");
+        }
+    }();
 
-    { // EAnnotation
-        m_EAnnotationEClass->setName("EAnnotation");
-        m_EAnnotationEClass->setAbstract(false);
-        m_EAnnotationEClass->setInterface(false);
-        m_EAnnotation__source->setEType(m_EStringEDataType);
-        m_EAnnotation__source->setDefaultValueLiteral("");
-        m_EAnnotation__source->setLowerBound(0);
-        m_EAnnotation__source->setUpperBound(1);
-        m_EAnnotation__source->setTransient(false);
-        m_EAnnotation__source->setVolatile(false);
-        m_EAnnotation__source->setChangeable(true);
-        m_EAnnotation__source->setUnsettable(false);
-        m_EAnnotation__source->setID(false);
-        m_EAnnotation__source->setUnique(true);
-        m_EAnnotation__source->setDerived(false);
-        m_EAnnotation__source->setOrdered(true);
+    [this]()
+    { // Class EClass
+        auto &&cls = m_EClassEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints",
+                    "InterfaceIsAbstract AtMostOneID UniqueFeatureNames UniqueOperationSignatures NoCircularSuperTypes WellFormedMapEntryClass ConsistentSuperTypes DisjointFeatureAndOperationSignatures");
+        }
 
-        m_EAnnotation__details->setEType(m_EStringToStringMapEntryEClass);
-        m_EAnnotation__details->setDefaultValueLiteral("");
-        m_EAnnotation__details->setLowerBound(0);
-        m_EAnnotation__details->setUpperBound(-1);
-        m_EAnnotation__details->setTransient(false);
-        m_EAnnotation__details->setVolatile(false);
-        m_EAnnotation__details->setChangeable(true);
-        m_EAnnotation__details->setContainment(true);
-        m_EAnnotation__details->setResolveProxies(false);
-        m_EAnnotation__details->setUnique(true);
-        m_EAnnotation__details->setDerived(false);
-        m_EAnnotation__details->setOrdered(true);
-        m_EAnnotation__eModelElement->setEType(m_EModelElementEClass);
-        m_EAnnotation__eModelElement->setDefaultValueLiteral("");
-        m_EAnnotation__eModelElement->setLowerBound(0);
-        m_EAnnotation__eModelElement->setUpperBound(1);
-        m_EAnnotation__eModelElement->setTransient(true);
-        m_EAnnotation__eModelElement->setVolatile(false);
-        m_EAnnotation__eModelElement->setChangeable(true);
-        m_EAnnotation__eModelElement->setContainment(false);
-        m_EAnnotation__eModelElement->setResolveProxies(false);
-        m_EAnnotation__eModelElement->setUnique(true);
-        m_EAnnotation__eModelElement->setDerived(false);
-        m_EAnnotation__eModelElement->setOrdered(true);
-        m_EAnnotation__eModelElement->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EModelElementEClass->getEStructuralFeatures()[0]));
-        m_EAnnotation__contents->setEType(m_EObjectEClass);
-        m_EAnnotation__contents->setDefaultValueLiteral("");
-        m_EAnnotation__contents->setLowerBound(0);
-        m_EAnnotation__contents->setUpperBound(-1);
-        m_EAnnotation__contents->setTransient(false);
-        m_EAnnotation__contents->setVolatile(false);
-        m_EAnnotation__contents->setChangeable(true);
-        m_EAnnotation__contents->setContainment(true);
-        m_EAnnotation__contents->setResolveProxies(false);
-        m_EAnnotation__contents->setUnique(true);
-        m_EAnnotation__contents->setDerived(false);
-        m_EAnnotation__contents->setOrdered(true);
-        m_EAnnotation__references->setEType(m_EObjectEClass);
-        m_EAnnotation__references->setDefaultValueLiteral("");
-        m_EAnnotation__references->setLowerBound(0);
-        m_EAnnotation__references->setUpperBound(-1);
-        m_EAnnotation__references->setTransient(false);
-        m_EAnnotation__references->setVolatile(false);
-        m_EAnnotation__references->setChangeable(true);
-        m_EAnnotation__references->setContainment(false);
-        m_EAnnotation__references->setResolveProxies(true);
-        m_EAnnotation__references->setUnique(true);
-        m_EAnnotation__references->setDerived(false);
-        m_EAnnotation__references->setOrdered(true);
-
-    }
-
-    { // EClass
-        m_EClassEClass->setName("EClass");
-        m_EClassEClass->setAbstract(false);
-        m_EClassEClass->setInterface(false);
-        m_EClass__abstract->setEType(m_EBooleanEDataType);
-        m_EClass__abstract->setDefaultValueLiteral("");
-        m_EClass__abstract->setLowerBound(0);
-        m_EClass__abstract->setUpperBound(1);
-        m_EClass__abstract->setTransient(false);
-        m_EClass__abstract->setVolatile(false);
-        m_EClass__abstract->setChangeable(true);
-        m_EClass__abstract->setUnsettable(false);
-        m_EClass__abstract->setID(false);
-        m_EClass__abstract->setUnique(true);
-        m_EClass__abstract->setDerived(false);
-        m_EClass__abstract->setOrdered(true);
-        m_EClass__interface->setEType(m_EBooleanEDataType);
-        m_EClass__interface->setDefaultValueLiteral("");
-        m_EClass__interface->setLowerBound(0);
-        m_EClass__interface->setUpperBound(1);
-        m_EClass__interface->setTransient(false);
-        m_EClass__interface->setVolatile(false);
-        m_EClass__interface->setChangeable(true);
-        m_EClass__interface->setUnsettable(false);
-        m_EClass__interface->setID(false);
-        m_EClass__interface->setUnique(true);
-        m_EClass__interface->setDerived(false);
-        m_EClass__interface->setOrdered(true);
-
-        m_EClass__eSuperTypes->setEType(m_EClassEClass);
-        m_EClass__eSuperTypes->setDefaultValueLiteral("");
-        m_EClass__eSuperTypes->setLowerBound(0);
-        m_EClass__eSuperTypes->setUpperBound(-1);
-        m_EClass__eSuperTypes->setTransient(false);
-        m_EClass__eSuperTypes->setVolatile(false);
-        m_EClass__eSuperTypes->setChangeable(true);
-        m_EClass__eSuperTypes->setContainment(false);
-        m_EClass__eSuperTypes->setResolveProxies(true);
-        m_EClass__eSuperTypes->setUnique(true);
-        m_EClass__eSuperTypes->setDerived(false);
-        m_EClass__eSuperTypes->setOrdered(true);
-        m_EClass__eOperations->setEType(m_EOperationEClass);
-        m_EClass__eOperations->setDefaultValueLiteral("");
-        m_EClass__eOperations->setLowerBound(0);
-        m_EClass__eOperations->setUpperBound(-1);
-        m_EClass__eOperations->setTransient(false);
-        m_EClass__eOperations->setVolatile(false);
-        m_EClass__eOperations->setChangeable(true);
-        m_EClass__eOperations->setContainment(true);
-        m_EClass__eOperations->setResolveProxies(false);
-        m_EClass__eOperations->setUnique(true);
-        m_EClass__eOperations->setDerived(false);
-        m_EClass__eOperations->setOrdered(true);
-        m_EClass__eOperations->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EOperationEClass->getEStructuralFeatures()[0]));
-        m_EClass__eAllAttributes->setEType(m_EAttributeEClass);
-        m_EClass__eAllAttributes->setDefaultValueLiteral("");
-        m_EClass__eAllAttributes->setLowerBound(0);
-        m_EClass__eAllAttributes->setUpperBound(-1);
-        m_EClass__eAllAttributes->setTransient(true);
-        m_EClass__eAllAttributes->setVolatile(true);
-        m_EClass__eAllAttributes->setChangeable(false);
-        m_EClass__eAllAttributes->setContainment(false);
-        m_EClass__eAllAttributes->setResolveProxies(true);
-        m_EClass__eAllAttributes->setUnique(true);
-        m_EClass__eAllAttributes->setDerived(true);
-        m_EClass__eAllAttributes->setOrdered(true);
-        m_EClass__eAllReferences->setEType(m_EReferenceEClass);
-        m_EClass__eAllReferences->setDefaultValueLiteral("");
-        m_EClass__eAllReferences->setLowerBound(0);
-        m_EClass__eAllReferences->setUpperBound(-1);
-        m_EClass__eAllReferences->setTransient(true);
-        m_EClass__eAllReferences->setVolatile(true);
-        m_EClass__eAllReferences->setChangeable(false);
-        m_EClass__eAllReferences->setContainment(false);
-        m_EClass__eAllReferences->setResolveProxies(true);
-        m_EClass__eAllReferences->setUnique(true);
-        m_EClass__eAllReferences->setDerived(true);
-        m_EClass__eAllReferences->setOrdered(true);
-        m_EClass__eReferences->setEType(m_EReferenceEClass);
-        m_EClass__eReferences->setDefaultValueLiteral("");
-        m_EClass__eReferences->setLowerBound(0);
-        m_EClass__eReferences->setUpperBound(-1);
-        m_EClass__eReferences->setTransient(true);
-        m_EClass__eReferences->setVolatile(true);
-        m_EClass__eReferences->setChangeable(false);
-        m_EClass__eReferences->setContainment(false);
-        m_EClass__eReferences->setResolveProxies(true);
-        m_EClass__eReferences->setUnique(true);
-        m_EClass__eReferences->setDerived(true);
-        m_EClass__eReferences->setOrdered(true);
-        m_EClass__eAttributes->setEType(m_EAttributeEClass);
-        m_EClass__eAttributes->setDefaultValueLiteral("");
-        m_EClass__eAttributes->setLowerBound(0);
-        m_EClass__eAttributes->setUpperBound(-1);
-        m_EClass__eAttributes->setTransient(true);
-        m_EClass__eAttributes->setVolatile(true);
-        m_EClass__eAttributes->setChangeable(false);
-        m_EClass__eAttributes->setContainment(false);
-        m_EClass__eAttributes->setResolveProxies(true);
-        m_EClass__eAttributes->setUnique(true);
-        m_EClass__eAttributes->setDerived(true);
-        m_EClass__eAttributes->setOrdered(true);
-        m_EClass__eAllContainments->setEType(m_EReferenceEClass);
-        m_EClass__eAllContainments->setDefaultValueLiteral("");
-        m_EClass__eAllContainments->setLowerBound(0);
-        m_EClass__eAllContainments->setUpperBound(-1);
-        m_EClass__eAllContainments->setTransient(true);
-        m_EClass__eAllContainments->setVolatile(true);
-        m_EClass__eAllContainments->setChangeable(false);
-        m_EClass__eAllContainments->setContainment(false);
-        m_EClass__eAllContainments->setResolveProxies(true);
-        m_EClass__eAllContainments->setUnique(true);
-        m_EClass__eAllContainments->setDerived(true);
-        m_EClass__eAllContainments->setOrdered(true);
-        m_EClass__eAllOperations->setEType(m_EOperationEClass);
-        m_EClass__eAllOperations->setDefaultValueLiteral("");
-        m_EClass__eAllOperations->setLowerBound(0);
-        m_EClass__eAllOperations->setUpperBound(-1);
-        m_EClass__eAllOperations->setTransient(true);
-        m_EClass__eAllOperations->setVolatile(true);
-        m_EClass__eAllOperations->setChangeable(false);
-        m_EClass__eAllOperations->setContainment(false);
-        m_EClass__eAllOperations->setResolveProxies(true);
-        m_EClass__eAllOperations->setUnique(true);
-        m_EClass__eAllOperations->setDerived(true);
-        m_EClass__eAllOperations->setOrdered(true);
-        m_EClass__eAllStructuralFeatures->setEType(m_EStructuralFeatureEClass);
-        m_EClass__eAllStructuralFeatures->setDefaultValueLiteral("");
-        m_EClass__eAllStructuralFeatures->setLowerBound(0);
-        m_EClass__eAllStructuralFeatures->setUpperBound(-1);
-        m_EClass__eAllStructuralFeatures->setTransient(true);
-        m_EClass__eAllStructuralFeatures->setVolatile(true);
-        m_EClass__eAllStructuralFeatures->setChangeable(false);
-        m_EClass__eAllStructuralFeatures->setContainment(false);
-        m_EClass__eAllStructuralFeatures->setResolveProxies(true);
-        m_EClass__eAllStructuralFeatures->setUnique(true);
-        m_EClass__eAllStructuralFeatures->setDerived(true);
-        m_EClass__eAllStructuralFeatures->setOrdered(true);
-        m_EClass__eAllSuperTypes->setEType(m_EClassEClass);
-        m_EClass__eAllSuperTypes->setDefaultValueLiteral("");
-        m_EClass__eAllSuperTypes->setLowerBound(0);
-        m_EClass__eAllSuperTypes->setUpperBound(-1);
-        m_EClass__eAllSuperTypes->setTransient(true);
-        m_EClass__eAllSuperTypes->setVolatile(true);
-        m_EClass__eAllSuperTypes->setChangeable(false);
-        m_EClass__eAllSuperTypes->setContainment(false);
-        m_EClass__eAllSuperTypes->setResolveProxies(true);
-        m_EClass__eAllSuperTypes->setUnique(true);
-        m_EClass__eAllSuperTypes->setDerived(true);
-        m_EClass__eAllSuperTypes->setOrdered(true);
-        m_EClass__eIDAttribute->setEType(m_EAttributeEClass);
-        m_EClass__eIDAttribute->setDefaultValueLiteral("");
-        m_EClass__eIDAttribute->setLowerBound(0);
-        m_EClass__eIDAttribute->setUpperBound(1);
-        m_EClass__eIDAttribute->setTransient(true);
-        m_EClass__eIDAttribute->setVolatile(true);
-        m_EClass__eIDAttribute->setChangeable(false);
-        m_EClass__eIDAttribute->setContainment(false);
-        m_EClass__eIDAttribute->setResolveProxies(false);
-        m_EClass__eIDAttribute->setUnique(true);
-        m_EClass__eIDAttribute->setDerived(true);
-        m_EClass__eIDAttribute->setOrdered(true);
-        m_EClass__eStructuralFeatures->setEType(m_EStructuralFeatureEClass);
-        m_EClass__eStructuralFeatures->setDefaultValueLiteral("");
-        m_EClass__eStructuralFeatures->setLowerBound(0);
-        m_EClass__eStructuralFeatures->setUpperBound(-1);
-        m_EClass__eStructuralFeatures->setTransient(false);
-        m_EClass__eStructuralFeatures->setVolatile(false);
-        m_EClass__eStructuralFeatures->setChangeable(true);
-        m_EClass__eStructuralFeatures->setContainment(true);
-        m_EClass__eStructuralFeatures->setResolveProxies(false);
-        m_EClass__eStructuralFeatures->setUnique(true);
-        m_EClass__eStructuralFeatures->setDerived(false);
-        m_EClass__eStructuralFeatures->setOrdered(true);
-        m_EClass__eStructuralFeatures->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EStructuralFeatureEClass->getEStructuralFeatures()[7]));
-        m_EClass__eGenericSuperTypes->setEType(m_EGenericTypeEClass);
-        m_EClass__eGenericSuperTypes->setDefaultValueLiteral("");
-        m_EClass__eGenericSuperTypes->setLowerBound(0);
-        m_EClass__eGenericSuperTypes->setUpperBound(-1);
-        m_EClass__eGenericSuperTypes->setTransient(false);
-        m_EClass__eGenericSuperTypes->setVolatile(false);
-        m_EClass__eGenericSuperTypes->setChangeable(true);
-        m_EClass__eGenericSuperTypes->setContainment(true);
-        m_EClass__eGenericSuperTypes->setResolveProxies(false);
-        m_EClass__eGenericSuperTypes->setUnique(true);
-        m_EClass__eGenericSuperTypes->setDerived(false);
-        m_EClass__eGenericSuperTypes->setOrdered(true);
-        m_EClass__eAllGenericSuperTypes->setEType(m_EGenericTypeEClass);
-        m_EClass__eAllGenericSuperTypes->setDefaultValueLiteral("");
-        m_EClass__eAllGenericSuperTypes->setLowerBound(0);
-        m_EClass__eAllGenericSuperTypes->setUpperBound(-1);
-        m_EClass__eAllGenericSuperTypes->setTransient(true);
-        m_EClass__eAllGenericSuperTypes->setVolatile(true);
-        m_EClass__eAllGenericSuperTypes->setChangeable(false);
-        m_EClass__eAllGenericSuperTypes->setContainment(false);
-        m_EClass__eAllGenericSuperTypes->setResolveProxies(true);
-        m_EClass__eAllGenericSuperTypes->setUnique(true);
-        m_EClass__eAllGenericSuperTypes->setDerived(true);
-        m_EClass__eAllGenericSuperTypes->setOrdered(true);
-
-        { // isSuperTypeOf()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation isSuperTypeOf()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EBooleanEDataType);
             _op->setName("isSuperTypeOf");
             _op->setLowerBound(0);
@@ -1752,8 +3698,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // someClass
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EClassEClass);
                 _pa->setName("someClass");
                 _pa->setLowerBound(0);
@@ -1762,22 +3707,20 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EClassEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getFeatureCount()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getFeatureCount()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EIntEDataType);
             _op->setName("getFeatureCount");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EClassEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getEStructuralFeature()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getEStructuralFeature()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EStructuralFeatureEClass);
             _op->setName("getEStructuralFeature");
             _op->setLowerBound(0);
@@ -1785,8 +3728,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // featureID
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EIntEDataType);
                 _pa->setName("featureID");
                 _pa->setLowerBound(0);
@@ -1795,11 +3737,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EClassEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getFeatureID()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getFeatureID()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EIntEDataType);
             _op->setName("getFeatureID");
             _op->setLowerBound(0);
@@ -1807,8 +3748,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // feature
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStructuralFeatureEClass);
                 _pa->setName("feature");
                 _pa->setLowerBound(0);
@@ -1817,11 +3757,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EClassEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getEStructuralFeature()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getEStructuralFeature()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EStructuralFeatureEClass);
             _op->setName("getEStructuralFeature");
             _op->setLowerBound(0);
@@ -1829,8 +3768,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // featureName
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStringEDataType);
                 _pa->setName("featureName");
                 _pa->setLowerBound(0);
@@ -1839,22 +3777,20 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EClassEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getOperationCount()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getOperationCount()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EIntEDataType);
             _op->setName("getOperationCount");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EClassEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getEOperation()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getEOperation()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EOperationEClass);
             _op->setName("getEOperation");
             _op->setLowerBound(0);
@@ -1862,8 +3798,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // operationID
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EIntEDataType);
                 _pa->setName("operationID");
                 _pa->setLowerBound(0);
@@ -1872,11 +3807,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EClassEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getOperationID()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getOperationID()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EIntEDataType);
             _op->setName("getOperationID");
             _op->setLowerBound(0);
@@ -1884,8 +3818,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // operation
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EOperationEClass);
                 _pa->setName("operation");
                 _pa->setLowerBound(0);
@@ -1894,11 +3827,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EClassEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getOverride()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getOverride()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EOperationEClass);
             _op->setName("getOverride");
             _op->setLowerBound(0);
@@ -1906,8 +3838,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // operation
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EOperationEClass);
                 _pa->setName("operation");
                 _pa->setLowerBound(0);
@@ -1916,103 +3847,58 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EClassEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // EClassifier
-        m_EClassifierEClass->setName("EClassifier");
-        m_EClassifierEClass->setAbstract(true);
-        m_EClassifierEClass->setInterface(false);
-        m_EClassifier__instanceClassName->setEType(m_EStringEDataType);
-        m_EClassifier__instanceClassName->setDefaultValueLiteral("");
-        m_EClassifier__instanceClassName->setLowerBound(0);
-        m_EClassifier__instanceClassName->setUpperBound(1);
-        m_EClassifier__instanceClassName->setTransient(false);
-        m_EClassifier__instanceClassName->setVolatile(true);
-        m_EClassifier__instanceClassName->setChangeable(true);
-        m_EClassifier__instanceClassName->setUnsettable(true);
-        m_EClassifier__instanceClassName->setID(false);
-        m_EClassifier__instanceClassName->setUnique(true);
-        m_EClassifier__instanceClassName->setDerived(false);
-        m_EClassifier__instanceClassName->setOrdered(true);
-        m_EClassifier__instanceClass->setEType(m_EJavaClassEDataType);
-        {
-            ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr < ::ecore::EGenericType
-                    > (new ::ecore::EGenericType);
-            _g0->setEClassifier(m_EJavaClassEDataType);
-            ::ecore::EGenericType_ptr _g1 = ::ecore::Ptr < ::ecore::EGenericType
-                    > (new ::ecore::EGenericType);
-            _g0->getETypeArguments().push_back(_g1);
-            m_EClassifier__instanceClass->setEGenericType(_g0);
+    [this]()
+    { // Feature instanceClassName of class EClassifier
+        auto &&feature = m_EClassifier__instanceClassName;
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedIsSetVisibility", "true");
+            eAnnotation->setDetail("suppressedUnsetVisibility", "true");
         }
-        m_EClassifier__instanceClass->setDefaultValueLiteral("");
-        m_EClassifier__instanceClass->setLowerBound(0);
-        m_EClassifier__instanceClass->setUpperBound(1);
-        m_EClassifier__instanceClass->setTransient(true);
-        m_EClassifier__instanceClass->setVolatile(true);
-        m_EClassifier__instanceClass->setChangeable(false);
-        m_EClassifier__instanceClass->setUnsettable(false);
-        m_EClassifier__instanceClass->setID(false);
-        m_EClassifier__instanceClass->setUnique(true);
-        m_EClassifier__instanceClass->setDerived(true);
-        m_EClassifier__instanceClass->setOrdered(true);
-        m_EClassifier__defaultValue->setEType(m_EJavaObjectEDataType);
-        m_EClassifier__defaultValue->setDefaultValueLiteral("");
-        m_EClassifier__defaultValue->setLowerBound(0);
-        m_EClassifier__defaultValue->setUpperBound(1);
-        m_EClassifier__defaultValue->setTransient(true);
-        m_EClassifier__defaultValue->setVolatile(true);
-        m_EClassifier__defaultValue->setChangeable(false);
-        m_EClassifier__defaultValue->setUnsettable(false);
-        m_EClassifier__defaultValue->setID(false);
-        m_EClassifier__defaultValue->setUnique(true);
-        m_EClassifier__defaultValue->setDerived(true);
-        m_EClassifier__defaultValue->setOrdered(true);
-        m_EClassifier__instanceTypeName->setEType(m_EStringEDataType);
-        m_EClassifier__instanceTypeName->setDefaultValueLiteral("");
-        m_EClassifier__instanceTypeName->setLowerBound(0);
-        m_EClassifier__instanceTypeName->setUpperBound(1);
-        m_EClassifier__instanceTypeName->setTransient(false);
-        m_EClassifier__instanceTypeName->setVolatile(true);
-        m_EClassifier__instanceTypeName->setChangeable(true);
-        m_EClassifier__instanceTypeName->setUnsettable(true);
-        m_EClassifier__instanceTypeName->setID(false);
-        m_EClassifier__instanceTypeName->setUnique(true);
-        m_EClassifier__instanceTypeName->setDerived(false);
-        m_EClassifier__instanceTypeName->setOrdered(true);
+    }();
+    [this]()
+    { // Feature instanceClass of class EClassifier
+        auto &&feature = m_EClassifier__instanceClass;
+        { // GenericType
+            auto eGenericType = ::ecore::make< ::ecore::EGenericType >();
+            eGenericType->setEClassifier(m_EJavaClassEDataType);
+            auto &&eTypeArguments = eGenericType->getETypeArguments();
+            {
+                auto &&eTypeArgument = ::ecore::make< ::ecore::EGenericType >();
+                eTypeArguments.push_back(eTypeArgument);
+            }
+            feature->setEGenericType(eGenericType);
+        }
+    }();
+    [this]()
+    { // Feature instanceTypeName of class EClassifier
+        auto &&feature = m_EClassifier__instanceTypeName;
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedIsSetVisibility", "true");
+            eAnnotation->setDetail("suppressedUnsetVisibility", "true");
+        }
+    }();
 
-        m_EClassifier__ePackage->setEType(m_EPackageEClass);
-        m_EClassifier__ePackage->setDefaultValueLiteral("");
-        m_EClassifier__ePackage->setLowerBound(0);
-        m_EClassifier__ePackage->setUpperBound(1);
-        m_EClassifier__ePackage->setTransient(true);
-        m_EClassifier__ePackage->setVolatile(false);
-        m_EClassifier__ePackage->setChangeable(false);
-        m_EClassifier__ePackage->setContainment(false);
-        m_EClassifier__ePackage->setResolveProxies(true);
-        m_EClassifier__ePackage->setUnique(true);
-        m_EClassifier__ePackage->setDerived(false);
-        m_EClassifier__ePackage->setOrdered(true);
-        m_EClassifier__ePackage->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EPackageEClass->getEStructuralFeatures()[3]));
-        m_EClassifier__eTypeParameters->setEType(m_ETypeParameterEClass);
-        m_EClassifier__eTypeParameters->setDefaultValueLiteral("");
-        m_EClassifier__eTypeParameters->setLowerBound(0);
-        m_EClassifier__eTypeParameters->setUpperBound(-1);
-        m_EClassifier__eTypeParameters->setTransient(false);
-        m_EClassifier__eTypeParameters->setVolatile(false);
-        m_EClassifier__eTypeParameters->setChangeable(true);
-        m_EClassifier__eTypeParameters->setContainment(true);
-        m_EClassifier__eTypeParameters->setResolveProxies(true);
-        m_EClassifier__eTypeParameters->setUnique(true);
-        m_EClassifier__eTypeParameters->setDerived(false);
-        m_EClassifier__eTypeParameters->setOrdered(true);
+    [this]()
+    { // Class EClassifier
+        auto &&cls = m_EClassifierEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints",
+                    "WellFormedInstanceTypeName UniqueTypeParameterNames");
+        }
 
-        { // isInstance()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation isInstance()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EBooleanEDataType);
             _op->setName("isInstance");
             _op->setLowerBound(0);
@@ -2020,8 +3906,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // object
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EJavaObjectEDataType);
                 _pa->setName("object");
                 _pa->setLowerBound(0);
@@ -2030,64 +3915,33 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EClassifierEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getClassifierID()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getClassifierID()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EIntEDataType);
             _op->setName("getClassifierID");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EClassifierEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // EDataType
-        m_EDataTypeEClass->setName("EDataType");
-        m_EDataTypeEClass->setAbstract(false);
-        m_EDataTypeEClass->setInterface(false);
-        m_EDataType__serializable->setEType(m_EBooleanEDataType);
-        m_EDataType__serializable->setDefaultValueLiteral("true");
-        m_EDataType__serializable->setLowerBound(0);
-        m_EDataType__serializable->setUpperBound(1);
-        m_EDataType__serializable->setTransient(false);
-        m_EDataType__serializable->setVolatile(false);
-        m_EDataType__serializable->setChangeable(true);
-        m_EDataType__serializable->setUnsettable(false);
-        m_EDataType__serializable->setID(false);
-        m_EDataType__serializable->setUnique(true);
-        m_EDataType__serializable->setDerived(false);
-        m_EDataType__serializable->setOrdered(true);
+    [this]()
+    { // Class EEnum
+        auto &&cls = m_EEnumEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints",
+                    "UniqueEnumeratorNames UniqueEnumeratorLiterals");
+        }
 
-    }
-
-    { // EEnum
-        m_EEnumEClass->setName("EEnum");
-        m_EEnumEClass->setAbstract(false);
-        m_EEnumEClass->setInterface(false);
-
-        m_EEnum__eLiterals->setEType(m_EEnumLiteralEClass);
-        m_EEnum__eLiterals->setDefaultValueLiteral("");
-        m_EEnum__eLiterals->setLowerBound(0);
-        m_EEnum__eLiterals->setUpperBound(-1);
-        m_EEnum__eLiterals->setTransient(false);
-        m_EEnum__eLiterals->setVolatile(false);
-        m_EEnum__eLiterals->setChangeable(true);
-        m_EEnum__eLiterals->setContainment(true);
-        m_EEnum__eLiterals->setResolveProxies(false);
-        m_EEnum__eLiterals->setUnique(true);
-        m_EEnum__eLiterals->setDerived(false);
-        m_EEnum__eLiterals->setOrdered(true);
-        m_EEnum__eLiterals->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EEnumLiteralEClass->getEStructuralFeatures()[3]));
-
-        { // getEEnumLiteral()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation getEEnumLiteral()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EEnumLiteralEClass);
             _op->setName("getEEnumLiteral");
             _op->setLowerBound(0);
@@ -2095,8 +3949,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // name
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStringEDataType);
                 _pa->setName("name");
                 _pa->setLowerBound(0);
@@ -2105,11 +3958,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EEnumEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getEEnumLiteral()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getEEnumLiteral()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EEnumLiteralEClass);
             _op->setName("getEEnumLiteral");
             _op->setLowerBound(0);
@@ -2117,8 +3969,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // value
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EIntEDataType);
                 _pa->setName("value");
                 _pa->setLowerBound(0);
@@ -2127,11 +3978,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EEnumEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getEEnumLiteralByLiteral()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getEEnumLiteralByLiteral()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EEnumLiteralEClass);
             _op->setName("getEEnumLiteralByLiteral");
             _op->setLowerBound(0);
@@ -2139,8 +3989,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // literal
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStringEDataType);
                 _pa->setName("literal");
                 _pa->setLowerBound(0);
@@ -2149,93 +3998,17 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EEnumEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // EEnumLiteral
-        m_EEnumLiteralEClass->setName("EEnumLiteral");
-        m_EEnumLiteralEClass->setAbstract(false);
-        m_EEnumLiteralEClass->setInterface(false);
-        m_EEnumLiteral__value->setEType(m_EIntEDataType);
-        m_EEnumLiteral__value->setDefaultValueLiteral("");
-        m_EEnumLiteral__value->setLowerBound(0);
-        m_EEnumLiteral__value->setUpperBound(1);
-        m_EEnumLiteral__value->setTransient(false);
-        m_EEnumLiteral__value->setVolatile(false);
-        m_EEnumLiteral__value->setChangeable(true);
-        m_EEnumLiteral__value->setUnsettable(false);
-        m_EEnumLiteral__value->setID(false);
-        m_EEnumLiteral__value->setUnique(true);
-        m_EEnumLiteral__value->setDerived(false);
-        m_EEnumLiteral__value->setOrdered(true);
-        m_EEnumLiteral__instance->setEType(m_EEnumeratorEDataType);
-        m_EEnumLiteral__instance->setDefaultValueLiteral("");
-        m_EEnumLiteral__instance->setLowerBound(0);
-        m_EEnumLiteral__instance->setUpperBound(1);
-        m_EEnumLiteral__instance->setTransient(true);
-        m_EEnumLiteral__instance->setVolatile(false);
-        m_EEnumLiteral__instance->setChangeable(true);
-        m_EEnumLiteral__instance->setUnsettable(false);
-        m_EEnumLiteral__instance->setID(false);
-        m_EEnumLiteral__instance->setUnique(true);
-        m_EEnumLiteral__instance->setDerived(false);
-        m_EEnumLiteral__instance->setOrdered(true);
-        m_EEnumLiteral__literal->setEType(m_EStringEDataType);
-        m_EEnumLiteral__literal->setDefaultValueLiteral("");
-        m_EEnumLiteral__literal->setLowerBound(0);
-        m_EEnumLiteral__literal->setUpperBound(1);
-        m_EEnumLiteral__literal->setTransient(false);
-        m_EEnumLiteral__literal->setVolatile(false);
-        m_EEnumLiteral__literal->setChangeable(true);
-        m_EEnumLiteral__literal->setUnsettable(false);
-        m_EEnumLiteral__literal->setID(false);
-        m_EEnumLiteral__literal->setUnique(true);
-        m_EEnumLiteral__literal->setDerived(false);
-        m_EEnumLiteral__literal->setOrdered(true);
+    [this]()
+    { // Class EFactory
+        auto &&cls = m_EFactoryEClass;
 
-        m_EEnumLiteral__eEnum->setEType(m_EEnumEClass);
-        m_EEnumLiteral__eEnum->setDefaultValueLiteral("");
-        m_EEnumLiteral__eEnum->setLowerBound(0);
-        m_EEnumLiteral__eEnum->setUpperBound(1);
-        m_EEnumLiteral__eEnum->setTransient(true);
-        m_EEnumLiteral__eEnum->setVolatile(false);
-        m_EEnumLiteral__eEnum->setChangeable(false);
-        m_EEnumLiteral__eEnum->setContainment(false);
-        m_EEnumLiteral__eEnum->setResolveProxies(false);
-        m_EEnumLiteral__eEnum->setUnique(true);
-        m_EEnumLiteral__eEnum->setDerived(false);
-        m_EEnumLiteral__eEnum->setOrdered(true);
-        m_EEnumLiteral__eEnum->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EEnumEClass->getEStructuralFeatures()[0]));
-
-    }
-
-    { // EFactory
-        m_EFactoryEClass->setName("EFactory");
-        m_EFactoryEClass->setAbstract(false);
-        m_EFactoryEClass->setInterface(false);
-
-        m_EFactory__ePackage->setEType(m_EPackageEClass);
-        m_EFactory__ePackage->setDefaultValueLiteral("");
-        m_EFactory__ePackage->setLowerBound(1);
-        m_EFactory__ePackage->setUpperBound(1);
-        m_EFactory__ePackage->setTransient(true);
-        m_EFactory__ePackage->setVolatile(false);
-        m_EFactory__ePackage->setChangeable(true);
-        m_EFactory__ePackage->setContainment(false);
-        m_EFactory__ePackage->setResolveProxies(false);
-        m_EFactory__ePackage->setUnique(true);
-        m_EFactory__ePackage->setDerived(false);
-        m_EFactory__ePackage->setOrdered(true);
-        m_EFactory__ePackage->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EPackageEClass->getEStructuralFeatures()[2]));
-
-        { // create()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation create()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EObjectEClass);
             _op->setName("create");
             _op->setLowerBound(0);
@@ -2243,8 +4016,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // eClass
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EClassEClass);
                 _pa->setName("eClass");
                 _pa->setLowerBound(0);
@@ -2253,11 +4025,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EFactoryEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // createFromString()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation createFromString()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EJavaObjectEDataType);
             _op->setName("createFromString");
             _op->setLowerBound(0);
@@ -2265,8 +4036,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // eDataType
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EDataTypeEClass);
                 _pa->setName("eDataType");
                 _pa->setLowerBound(0);
@@ -2276,8 +4046,7 @@ void EcorePackage::_initPackage()
                 _op->getEParameters().push_back(_pa);
             }
             { // literalValue
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStringEDataType);
                 _pa->setName("literalValue");
                 _pa->setLowerBound(0);
@@ -2286,11 +4055,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EFactoryEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // convertToString()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation convertToString()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EStringEDataType);
             _op->setName("convertToString");
             _op->setLowerBound(0);
@@ -2298,8 +4066,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // eDataType
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EDataTypeEClass);
                 _pa->setName("eDataType");
                 _pa->setLowerBound(0);
@@ -2309,8 +4076,7 @@ void EcorePackage::_initPackage()
                 _op->getEParameters().push_back(_pa);
             }
             { // instanceValue
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EJavaObjectEDataType);
                 _pa->setName("instanceValue");
                 _pa->setLowerBound(0);
@@ -2319,34 +4085,17 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EFactoryEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // EModelElement
-        m_EModelElementEClass->setName("EModelElement");
-        m_EModelElementEClass->setAbstract(true);
-        m_EModelElementEClass->setInterface(false);
+    [this]()
+    { // Class EModelElement
+        auto &&cls = m_EModelElementEClass;
 
-        m_EModelElement__eAnnotations->setEType(m_EAnnotationEClass);
-        m_EModelElement__eAnnotations->setDefaultValueLiteral("");
-        m_EModelElement__eAnnotations->setLowerBound(0);
-        m_EModelElement__eAnnotations->setUpperBound(-1);
-        m_EModelElement__eAnnotations->setTransient(false);
-        m_EModelElement__eAnnotations->setVolatile(false);
-        m_EModelElement__eAnnotations->setChangeable(true);
-        m_EModelElement__eAnnotations->setContainment(true);
-        m_EModelElement__eAnnotations->setResolveProxies(false);
-        m_EModelElement__eAnnotations->setUnique(true);
-        m_EModelElement__eAnnotations->setDerived(false);
-        m_EModelElement__eAnnotations->setOrdered(true);
-        m_EModelElement__eAnnotations->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EAnnotationEClass->getEStructuralFeatures()[2]));
-
-        { // getEAnnotation()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation getEAnnotation()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EAnnotationEClass);
             _op->setName("getEAnnotation");
             _op->setLowerBound(0);
@@ -2354,8 +4103,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // source
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStringEDataType);
                 _pa->setName("source");
                 _pa->setLowerBound(0);
@@ -2364,166 +4112,153 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EModelElementEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // ENamedElement
-        m_ENamedElementEClass->setName("ENamedElement");
-        m_ENamedElementEClass->setAbstract(true);
-        m_ENamedElementEClass->setInterface(false);
-        m_ENamedElement__name->setEType(m_EStringEDataType);
-        m_ENamedElement__name->setDefaultValueLiteral("");
-        m_ENamedElement__name->setLowerBound(0);
-        m_ENamedElement__name->setUpperBound(1);
-        m_ENamedElement__name->setTransient(false);
-        m_ENamedElement__name->setVolatile(false);
-        m_ENamedElement__name->setChangeable(true);
-        m_ENamedElement__name->setUnsettable(false);
-        m_ENamedElement__name->setID(false);
-        m_ENamedElement__name->setUnique(true);
-        m_ENamedElement__name->setDerived(false);
-        m_ENamedElement__name->setOrdered(true);
+    [this]()
+    { // Class ENamedElement
+        auto &&cls = m_ENamedElementEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints", "WellFormedName");
+        }
+    }();
 
-    }
+    [this]()
+    { // Class EObject
+        auto &&cls = m_EObjectEClass;
 
-    { // EObject
-        m_EObjectEClass->setName("EObject");
-        m_EObjectEClass->setAbstract(false);
-        m_EObjectEClass->setInterface(false);
-
-        { // eClass()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation eClass()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EClassEClass);
             _op->setName("eClass");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eIsProxy()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eIsProxy()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EBooleanEDataType);
             _op->setName("eIsProxy");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eResource()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eResource()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EResourceEDataType);
             _op->setName("eResource");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eContainer()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eContainer()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EObjectEClass);
             _op->setName("eContainer");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eContainingFeature()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eContainingFeature()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EStructuralFeatureEClass);
             _op->setName("eContainingFeature");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eContainmentFeature()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eContainmentFeature()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EReferenceEClass);
             _op->setName("eContainmentFeature");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eContents()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eContents()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EEListEDataType);
-            {
-                ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr
-                        < ::ecore::EGenericType > (new ::ecore::EGenericType);
-                _g0->setEClassifier(m_EEListEDataType);
-                ::ecore::EGenericType_ptr _g1 = ::ecore::Ptr
-                        < ::ecore::EGenericType > (new ::ecore::EGenericType);
-                _g1->setEClassifier(m_EObjectEClass);
-                _g0->getETypeArguments().push_back(_g1);
-                _op->setEGenericType(_g0);
+            { // GenericType
+                auto eGenericType = ::ecore::make< ::ecore::EGenericType >();
+                eGenericType->setEClassifier(m_EEListEDataType);
+                auto &&eTypeArguments = eGenericType->getETypeArguments();
+                {
+                    auto &&eTypeArgument =
+                            ::ecore::make< ::ecore::EGenericType >();
+                    eTypeArgument->setEClassifier(m_EObjectEClass);
+                    eTypeArguments.push_back(eTypeArgument);
+                }
+                _op->setEGenericType(eGenericType);
             }
             _op->setName("eContents");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eAllContents()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eAllContents()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_ETreeIteratorEDataType);
-            {
-                ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr
-                        < ::ecore::EGenericType > (new ::ecore::EGenericType);
-                _g0->setEClassifier(m_ETreeIteratorEDataType);
-                ::ecore::EGenericType_ptr _g1 = ::ecore::Ptr
-                        < ::ecore::EGenericType > (new ::ecore::EGenericType);
-                _g1->setEClassifier(m_EObjectEClass);
-                _g0->getETypeArguments().push_back(_g1);
-                _op->setEGenericType(_g0);
+            { // GenericType
+                auto eGenericType = ::ecore::make< ::ecore::EGenericType >();
+                eGenericType->setEClassifier(m_ETreeIteratorEDataType);
+                auto &&eTypeArguments = eGenericType->getETypeArguments();
+                {
+                    auto &&eTypeArgument =
+                            ::ecore::make< ::ecore::EGenericType >();
+                    eTypeArgument->setEClassifier(m_EObjectEClass);
+                    eTypeArguments.push_back(eTypeArgument);
+                }
+                _op->setEGenericType(eGenericType);
             }
             _op->setName("eAllContents");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eCrossReferences()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eCrossReferences()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EEListEDataType);
-            {
-                ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr
-                        < ::ecore::EGenericType > (new ::ecore::EGenericType);
-                _g0->setEClassifier(m_EEListEDataType);
-                ::ecore::EGenericType_ptr _g1 = ::ecore::Ptr
-                        < ::ecore::EGenericType > (new ::ecore::EGenericType);
-                _g1->setEClassifier(m_EObjectEClass);
-                _g0->getETypeArguments().push_back(_g1);
-                _op->setEGenericType(_g0);
+            { // GenericType
+                auto eGenericType = ::ecore::make< ::ecore::EGenericType >();
+                eGenericType->setEClassifier(m_EEListEDataType);
+                auto &&eTypeArguments = eGenericType->getETypeArguments();
+                {
+                    auto &&eTypeArgument =
+                            ::ecore::make< ::ecore::EGenericType >();
+                    eTypeArgument->setEClassifier(m_EObjectEClass);
+                    eTypeArguments.push_back(eTypeArgument);
+                }
+                _op->setEGenericType(eGenericType);
             }
             _op->setName("eCrossReferences");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eGet()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eGet()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EJavaObjectEDataType);
             _op->setName("eGet");
             _op->setLowerBound(0);
@@ -2531,8 +4266,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // feature
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStructuralFeatureEClass);
                 _pa->setName("feature");
                 _pa->setLowerBound(0);
@@ -2541,11 +4275,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eGet()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eGet()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EJavaObjectEDataType);
             _op->setName("eGet");
             _op->setLowerBound(0);
@@ -2553,8 +4286,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // feature
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStructuralFeatureEClass);
                 _pa->setName("feature");
                 _pa->setLowerBound(0);
@@ -2564,8 +4296,7 @@ void EcorePackage::_initPackage()
                 _op->getEParameters().push_back(_pa);
             }
             { // resolve
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EBooleanEDataType);
                 _pa->setName("resolve");
                 _pa->setLowerBound(0);
@@ -2574,19 +4305,17 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eSet()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eSet()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setName("eSet");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
             { // feature
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStructuralFeatureEClass);
                 _pa->setName("feature");
                 _pa->setLowerBound(0);
@@ -2596,8 +4325,7 @@ void EcorePackage::_initPackage()
                 _op->getEParameters().push_back(_pa);
             }
             { // newValue
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EJavaObjectEDataType);
                 _pa->setName("newValue");
                 _pa->setLowerBound(0);
@@ -2606,11 +4334,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eIsSet()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eIsSet()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EBooleanEDataType);
             _op->setName("eIsSet");
             _op->setLowerBound(0);
@@ -2618,8 +4345,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // feature
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStructuralFeatureEClass);
                 _pa->setName("feature");
                 _pa->setLowerBound(0);
@@ -2628,19 +4354,17 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eUnset()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eUnset()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setName("eUnset");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
             { // feature
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStructuralFeatureEClass);
                 _pa->setName("feature");
                 _pa->setLowerBound(0);
@@ -2649,11 +4373,10 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // eInvoke()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation eInvoke()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EJavaObjectEDataType);
             _op->setName("eInvoke");
             _op->setLowerBound(0);
@@ -2661,8 +4384,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // operation
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EOperationEClass);
                 _pa->setName("operation");
                 _pa->setLowerBound(0);
@@ -2672,19 +4394,19 @@ void EcorePackage::_initPackage()
                 _op->getEParameters().push_back(_pa);
             }
             { // arguments
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EEListEDataType);
-                {
-                    ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr
-                            < ::ecore::EGenericType
-                            > (new ::ecore::EGenericType);
-                    _g0->setEClassifier(m_EEListEDataType);
-                    ::ecore::EGenericType_ptr _g1 = ::ecore::Ptr
-                            < ::ecore::EGenericType
-                            > (new ::ecore::EGenericType);
-                    _g0->getETypeArguments().push_back(_g1);
-                    _pa->setEGenericType(_g0);
+                { // GenericType
+                    auto eGenericType =
+                            ::ecore::make< ::ecore::EGenericType >();
+                    eGenericType->setEClassifier(m_EEListEDataType);
+                    auto &&eTypeArguments = eGenericType->getETypeArguments();
+                    {
+                        auto &&eTypeArgument = ::ecore::make<
+                                ::ecore::EGenericType >();
+                        eTypeArguments.push_back(eTypeArgument);
+                    }
+                    _pa->setEGenericType(eGenericType);
                 }
                 _pa->setName("arguments");
                 _pa->setLowerBound(0);
@@ -2693,96 +4415,54 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EObjectEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // EOperation
-        m_EOperationEClass->setName("EOperation");
-        m_EOperationEClass->setAbstract(false);
-        m_EOperationEClass->setInterface(false);
+    [this]()
+    { // Feature eExceptions of class EOperation
+        auto &&feature = m_EOperation__eExceptions;
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedIsSetVisibility", "true");
+            eAnnotation->setDetail("suppressedUnsetVisibility", "true");
+        }
+    }();
+    [this]()
+    { // Feature eGenericExceptions of class EOperation
+        auto &&feature = m_EOperation__eGenericExceptions;
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedIsSetVisibility", "true");
+            eAnnotation->setDetail("suppressedUnsetVisibility", "true");
+        }
+    }();
 
-        m_EOperation__eContainingClass->setEType(m_EClassEClass);
-        m_EOperation__eContainingClass->setDefaultValueLiteral("");
-        m_EOperation__eContainingClass->setLowerBound(0);
-        m_EOperation__eContainingClass->setUpperBound(1);
-        m_EOperation__eContainingClass->setTransient(true);
-        m_EOperation__eContainingClass->setVolatile(false);
-        m_EOperation__eContainingClass->setChangeable(false);
-        m_EOperation__eContainingClass->setContainment(false);
-        m_EOperation__eContainingClass->setResolveProxies(false);
-        m_EOperation__eContainingClass->setUnique(true);
-        m_EOperation__eContainingClass->setDerived(false);
-        m_EOperation__eContainingClass->setOrdered(true);
-        m_EOperation__eContainingClass->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EClassEClass->getEStructuralFeatures()[3]));
-        m_EOperation__eTypeParameters->setEType(m_ETypeParameterEClass);
-        m_EOperation__eTypeParameters->setDefaultValueLiteral("");
-        m_EOperation__eTypeParameters->setLowerBound(0);
-        m_EOperation__eTypeParameters->setUpperBound(-1);
-        m_EOperation__eTypeParameters->setTransient(false);
-        m_EOperation__eTypeParameters->setVolatile(false);
-        m_EOperation__eTypeParameters->setChangeable(true);
-        m_EOperation__eTypeParameters->setContainment(true);
-        m_EOperation__eTypeParameters->setResolveProxies(true);
-        m_EOperation__eTypeParameters->setUnique(true);
-        m_EOperation__eTypeParameters->setDerived(false);
-        m_EOperation__eTypeParameters->setOrdered(true);
-        m_EOperation__eParameters->setEType(m_EParameterEClass);
-        m_EOperation__eParameters->setDefaultValueLiteral("");
-        m_EOperation__eParameters->setLowerBound(0);
-        m_EOperation__eParameters->setUpperBound(-1);
-        m_EOperation__eParameters->setTransient(false);
-        m_EOperation__eParameters->setVolatile(false);
-        m_EOperation__eParameters->setChangeable(true);
-        m_EOperation__eParameters->setContainment(true);
-        m_EOperation__eParameters->setResolveProxies(false);
-        m_EOperation__eParameters->setUnique(true);
-        m_EOperation__eParameters->setDerived(false);
-        m_EOperation__eParameters->setOrdered(true);
-        m_EOperation__eParameters->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EParameterEClass->getEStructuralFeatures()[0]));
-        m_EOperation__eExceptions->setEType(m_EClassifierEClass);
-        m_EOperation__eExceptions->setDefaultValueLiteral("");
-        m_EOperation__eExceptions->setLowerBound(0);
-        m_EOperation__eExceptions->setUpperBound(-1);
-        m_EOperation__eExceptions->setTransient(false);
-        m_EOperation__eExceptions->setVolatile(false);
-        m_EOperation__eExceptions->setChangeable(true);
-        m_EOperation__eExceptions->setContainment(false);
-        m_EOperation__eExceptions->setResolveProxies(true);
-        m_EOperation__eExceptions->setUnique(true);
-        m_EOperation__eExceptions->setDerived(false);
-        m_EOperation__eExceptions->setOrdered(true);
-        m_EOperation__eGenericExceptions->setEType(m_EGenericTypeEClass);
-        m_EOperation__eGenericExceptions->setDefaultValueLiteral("");
-        m_EOperation__eGenericExceptions->setLowerBound(0);
-        m_EOperation__eGenericExceptions->setUpperBound(-1);
-        m_EOperation__eGenericExceptions->setTransient(false);
-        m_EOperation__eGenericExceptions->setVolatile(false);
-        m_EOperation__eGenericExceptions->setChangeable(true);
-        m_EOperation__eGenericExceptions->setContainment(true);
-        m_EOperation__eGenericExceptions->setResolveProxies(false);
-        m_EOperation__eGenericExceptions->setUnique(true);
-        m_EOperation__eGenericExceptions->setDerived(false);
-        m_EOperation__eGenericExceptions->setOrdered(true);
+    [this]()
+    { // Class EOperation
+        auto &&cls = m_EOperationEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints",
+                    "UniqueParameterNames UniqueTypeParameterNames NoRepeatingVoid");
+        }
 
-        { // getOperationID()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation getOperationID()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EIntEDataType);
             _op->setName("getOperationID");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EOperationEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // isOverrideOf()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation isOverrideOf()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EBooleanEDataType);
             _op->setName("isOverrideOf");
             _op->setLowerBound(0);
@@ -2790,8 +4470,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // someOperation
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EOperationEClass);
                 _pa->setName("someOperation");
                 _pa->setLowerBound(0);
@@ -2800,103 +4479,23 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EOperationEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // EPackage
-        m_EPackageEClass->setName("EPackage");
-        m_EPackageEClass->setAbstract(false);
-        m_EPackageEClass->setInterface(false);
-        m_EPackage__nsURI->setEType(m_EStringEDataType);
-        m_EPackage__nsURI->setDefaultValueLiteral("");
-        m_EPackage__nsURI->setLowerBound(0);
-        m_EPackage__nsURI->setUpperBound(1);
-        m_EPackage__nsURI->setTransient(false);
-        m_EPackage__nsURI->setVolatile(false);
-        m_EPackage__nsURI->setChangeable(true);
-        m_EPackage__nsURI->setUnsettable(false);
-        m_EPackage__nsURI->setID(false);
-        m_EPackage__nsURI->setUnique(true);
-        m_EPackage__nsURI->setDerived(false);
-        m_EPackage__nsURI->setOrdered(true);
-        m_EPackage__nsPrefix->setEType(m_EStringEDataType);
-        m_EPackage__nsPrefix->setDefaultValueLiteral("");
-        m_EPackage__nsPrefix->setLowerBound(0);
-        m_EPackage__nsPrefix->setUpperBound(1);
-        m_EPackage__nsPrefix->setTransient(false);
-        m_EPackage__nsPrefix->setVolatile(false);
-        m_EPackage__nsPrefix->setChangeable(true);
-        m_EPackage__nsPrefix->setUnsettable(false);
-        m_EPackage__nsPrefix->setID(false);
-        m_EPackage__nsPrefix->setUnique(true);
-        m_EPackage__nsPrefix->setDerived(false);
-        m_EPackage__nsPrefix->setOrdered(true);
+    [this]()
+    { // Class EPackage
+        auto &&cls = m_EPackageEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints",
+                    "WellFormedNsURI WellFormedNsPrefix UniqueSubpackageNames UniqueClassifierNames UniqueNsURIs");
+        }
 
-        m_EPackage__eFactoryInstance->setEType(m_EFactoryEClass);
-        m_EPackage__eFactoryInstance->setDefaultValueLiteral("");
-        m_EPackage__eFactoryInstance->setLowerBound(1);
-        m_EPackage__eFactoryInstance->setUpperBound(1);
-        m_EPackage__eFactoryInstance->setTransient(true);
-        m_EPackage__eFactoryInstance->setVolatile(false);
-        m_EPackage__eFactoryInstance->setChangeable(true);
-        m_EPackage__eFactoryInstance->setContainment(false);
-        m_EPackage__eFactoryInstance->setResolveProxies(false);
-        m_EPackage__eFactoryInstance->setUnique(true);
-        m_EPackage__eFactoryInstance->setDerived(false);
-        m_EPackage__eFactoryInstance->setOrdered(true);
-        m_EPackage__eFactoryInstance->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EFactoryEClass->getEStructuralFeatures()[0]));
-        m_EPackage__eClassifiers->setEType(m_EClassifierEClass);
-        m_EPackage__eClassifiers->setDefaultValueLiteral("");
-        m_EPackage__eClassifiers->setLowerBound(0);
-        m_EPackage__eClassifiers->setUpperBound(-1);
-        m_EPackage__eClassifiers->setTransient(false);
-        m_EPackage__eClassifiers->setVolatile(false);
-        m_EPackage__eClassifiers->setChangeable(true);
-        m_EPackage__eClassifiers->setContainment(true);
-        m_EPackage__eClassifiers->setResolveProxies(true);
-        m_EPackage__eClassifiers->setUnique(true);
-        m_EPackage__eClassifiers->setDerived(false);
-        m_EPackage__eClassifiers->setOrdered(true);
-        m_EPackage__eClassifiers->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EClassifierEClass->getEStructuralFeatures()[4]));
-        m_EPackage__eSubpackages->setEType(m_EPackageEClass);
-        m_EPackage__eSubpackages->setDefaultValueLiteral("");
-        m_EPackage__eSubpackages->setLowerBound(0);
-        m_EPackage__eSubpackages->setUpperBound(-1);
-        m_EPackage__eSubpackages->setTransient(false);
-        m_EPackage__eSubpackages->setVolatile(false);
-        m_EPackage__eSubpackages->setChangeable(true);
-        m_EPackage__eSubpackages->setContainment(true);
-        m_EPackage__eSubpackages->setResolveProxies(true);
-        m_EPackage__eSubpackages->setUnique(true);
-        m_EPackage__eSubpackages->setDerived(false);
-        m_EPackage__eSubpackages->setOrdered(true);
-        m_EPackage__eSubpackages->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EPackageEClass->getEStructuralFeatures()[5]));
-        m_EPackage__eSuperPackage->setEType(m_EPackageEClass);
-        m_EPackage__eSuperPackage->setDefaultValueLiteral("");
-        m_EPackage__eSuperPackage->setLowerBound(0);
-        m_EPackage__eSuperPackage->setUpperBound(1);
-        m_EPackage__eSuperPackage->setTransient(true);
-        m_EPackage__eSuperPackage->setVolatile(false);
-        m_EPackage__eSuperPackage->setChangeable(false);
-        m_EPackage__eSuperPackage->setContainment(false);
-        m_EPackage__eSuperPackage->setResolveProxies(true);
-        m_EPackage__eSuperPackage->setUnique(true);
-        m_EPackage__eSuperPackage->setDerived(false);
-        m_EPackage__eSuperPackage->setOrdered(true);
-        m_EPackage__eSuperPackage->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EPackageEClass->getEStructuralFeatures()[4]));
-
-        { // getEClassifier()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation getEClassifier()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EClassifierEClass);
             _op->setName("getEClassifier");
             _op->setLowerBound(0);
@@ -2904,8 +4503,7 @@ void EcorePackage::_initPackage()
             _op->setUnique(true);
             _op->setOrdered(true);
             { // name
-                auto _pa = ::ecore::Ptr < ::ecore::EParameter
-                        > (new ::ecore::EParameter);
+                auto _pa = ::ecore::make< ::ecore::EParameter >();
                 _pa->setEType(m_EStringEDataType);
                 _pa->setName("name");
                 _pa->setLowerBound(0);
@@ -2914,844 +4512,355 @@ void EcorePackage::_initPackage()
                 _pa->setOrdered(true);
                 _op->getEParameters().push_back(_pa);
             }
-            m_EPackageEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
+    }();
 
-    { // EParameter
-        m_EParameterEClass->setName("EParameter");
-        m_EParameterEClass->setAbstract(false);
-        m_EParameterEClass->setInterface(false);
+    [this]()
+    { // Class EReference
+        auto &&cls = m_EReferenceEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints",
+                    "ConsistentOpposite SingleContainer ConsistentKeys ConsistentUnique ConsistentContainer");
+        }
+    }();
 
-        m_EParameter__eOperation->setEType(m_EOperationEClass);
-        m_EParameter__eOperation->setDefaultValueLiteral("");
-        m_EParameter__eOperation->setLowerBound(0);
-        m_EParameter__eOperation->setUpperBound(1);
-        m_EParameter__eOperation->setTransient(true);
-        m_EParameter__eOperation->setVolatile(false);
-        m_EParameter__eOperation->setChangeable(false);
-        m_EParameter__eOperation->setContainment(false);
-        m_EParameter__eOperation->setResolveProxies(false);
-        m_EParameter__eOperation->setUnique(true);
-        m_EParameter__eOperation->setDerived(false);
-        m_EParameter__eOperation->setOrdered(true);
-        m_EParameter__eOperation->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EOperationEClass->getEStructuralFeatures()[2]));
+    [this]()
+    { // Class EStructuralFeature
+        auto &&cls = m_EStructuralFeatureEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints", "ValidDefaultValueLiteral");
+        }
 
-    }
-
-    { // EReference
-        m_EReferenceEClass->setName("EReference");
-        m_EReferenceEClass->setAbstract(false);
-        m_EReferenceEClass->setInterface(false);
-        m_EReference__containment->setEType(m_EBooleanEDataType);
-        m_EReference__containment->setDefaultValueLiteral("");
-        m_EReference__containment->setLowerBound(0);
-        m_EReference__containment->setUpperBound(1);
-        m_EReference__containment->setTransient(false);
-        m_EReference__containment->setVolatile(false);
-        m_EReference__containment->setChangeable(true);
-        m_EReference__containment->setUnsettable(false);
-        m_EReference__containment->setID(false);
-        m_EReference__containment->setUnique(true);
-        m_EReference__containment->setDerived(false);
-        m_EReference__containment->setOrdered(true);
-        m_EReference__container->setEType(m_EBooleanEDataType);
-        m_EReference__container->setDefaultValueLiteral("");
-        m_EReference__container->setLowerBound(0);
-        m_EReference__container->setUpperBound(1);
-        m_EReference__container->setTransient(true);
-        m_EReference__container->setVolatile(true);
-        m_EReference__container->setChangeable(false);
-        m_EReference__container->setUnsettable(false);
-        m_EReference__container->setID(false);
-        m_EReference__container->setUnique(true);
-        m_EReference__container->setDerived(true);
-        m_EReference__container->setOrdered(true);
-        m_EReference__resolveProxies->setEType(m_EBooleanEDataType);
-        m_EReference__resolveProxies->setDefaultValueLiteral("true");
-        m_EReference__resolveProxies->setLowerBound(0);
-        m_EReference__resolveProxies->setUpperBound(1);
-        m_EReference__resolveProxies->setTransient(false);
-        m_EReference__resolveProxies->setVolatile(false);
-        m_EReference__resolveProxies->setChangeable(true);
-        m_EReference__resolveProxies->setUnsettable(false);
-        m_EReference__resolveProxies->setID(false);
-        m_EReference__resolveProxies->setUnique(true);
-        m_EReference__resolveProxies->setDerived(false);
-        m_EReference__resolveProxies->setOrdered(true);
-
-        m_EReference__eOpposite->setEType(m_EReferenceEClass);
-        m_EReference__eOpposite->setDefaultValueLiteral("");
-        m_EReference__eOpposite->setLowerBound(0);
-        m_EReference__eOpposite->setUpperBound(1);
-        m_EReference__eOpposite->setTransient(false);
-        m_EReference__eOpposite->setVolatile(false);
-        m_EReference__eOpposite->setChangeable(true);
-        m_EReference__eOpposite->setContainment(false);
-        m_EReference__eOpposite->setResolveProxies(true);
-        m_EReference__eOpposite->setUnique(true);
-        m_EReference__eOpposite->setDerived(false);
-        m_EReference__eOpposite->setOrdered(true);
-        m_EReference__eReferenceType->setEType(m_EClassEClass);
-        m_EReference__eReferenceType->setDefaultValueLiteral("");
-        m_EReference__eReferenceType->setLowerBound(1);
-        m_EReference__eReferenceType->setUpperBound(1);
-        m_EReference__eReferenceType->setTransient(true);
-        m_EReference__eReferenceType->setVolatile(true);
-        m_EReference__eReferenceType->setChangeable(false);
-        m_EReference__eReferenceType->setContainment(false);
-        m_EReference__eReferenceType->setResolveProxies(true);
-        m_EReference__eReferenceType->setUnique(true);
-        m_EReference__eReferenceType->setDerived(true);
-        m_EReference__eReferenceType->setOrdered(true);
-        m_EReference__eKeys->setEType(m_EAttributeEClass);
-        m_EReference__eKeys->setDefaultValueLiteral("");
-        m_EReference__eKeys->setLowerBound(0);
-        m_EReference__eKeys->setUpperBound(-1);
-        m_EReference__eKeys->setTransient(false);
-        m_EReference__eKeys->setVolatile(false);
-        m_EReference__eKeys->setChangeable(true);
-        m_EReference__eKeys->setContainment(false);
-        m_EReference__eKeys->setResolveProxies(true);
-        m_EReference__eKeys->setUnique(true);
-        m_EReference__eKeys->setDerived(false);
-        m_EReference__eKeys->setOrdered(true);
-
-    }
-
-    { // EStructuralFeature
-        m_EStructuralFeatureEClass->setName("EStructuralFeature");
-        m_EStructuralFeatureEClass->setAbstract(true);
-        m_EStructuralFeatureEClass->setInterface(false);
-        m_EStructuralFeature__changeable->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__changeable->setDefaultValueLiteral("true");
-        m_EStructuralFeature__changeable->setLowerBound(0);
-        m_EStructuralFeature__changeable->setUpperBound(1);
-        m_EStructuralFeature__changeable->setTransient(false);
-        m_EStructuralFeature__changeable->setVolatile(false);
-        m_EStructuralFeature__changeable->setChangeable(true);
-        m_EStructuralFeature__changeable->setUnsettable(false);
-        m_EStructuralFeature__changeable->setID(false);
-        m_EStructuralFeature__changeable->setUnique(true);
-        m_EStructuralFeature__changeable->setDerived(false);
-        m_EStructuralFeature__changeable->setOrdered(true);
-        m_EStructuralFeature__volatile->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__volatile->setDefaultValueLiteral("");
-        m_EStructuralFeature__volatile->setLowerBound(0);
-        m_EStructuralFeature__volatile->setUpperBound(1);
-        m_EStructuralFeature__volatile->setTransient(false);
-        m_EStructuralFeature__volatile->setVolatile(false);
-        m_EStructuralFeature__volatile->setChangeable(true);
-        m_EStructuralFeature__volatile->setUnsettable(false);
-        m_EStructuralFeature__volatile->setID(false);
-        m_EStructuralFeature__volatile->setUnique(true);
-        m_EStructuralFeature__volatile->setDerived(false);
-        m_EStructuralFeature__volatile->setOrdered(true);
-        m_EStructuralFeature__transient->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__transient->setDefaultValueLiteral("");
-        m_EStructuralFeature__transient->setLowerBound(0);
-        m_EStructuralFeature__transient->setUpperBound(1);
-        m_EStructuralFeature__transient->setTransient(false);
-        m_EStructuralFeature__transient->setVolatile(false);
-        m_EStructuralFeature__transient->setChangeable(true);
-        m_EStructuralFeature__transient->setUnsettable(false);
-        m_EStructuralFeature__transient->setID(false);
-        m_EStructuralFeature__transient->setUnique(true);
-        m_EStructuralFeature__transient->setDerived(false);
-        m_EStructuralFeature__transient->setOrdered(true);
-        m_EStructuralFeature__defaultValueLiteral->setEType(m_EStringEDataType);
-        m_EStructuralFeature__defaultValueLiteral->setDefaultValueLiteral("");
-        m_EStructuralFeature__defaultValueLiteral->setLowerBound(0);
-        m_EStructuralFeature__defaultValueLiteral->setUpperBound(1);
-        m_EStructuralFeature__defaultValueLiteral->setTransient(false);
-        m_EStructuralFeature__defaultValueLiteral->setVolatile(false);
-        m_EStructuralFeature__defaultValueLiteral->setChangeable(true);
-        m_EStructuralFeature__defaultValueLiteral->setUnsettable(false);
-        m_EStructuralFeature__defaultValueLiteral->setID(false);
-        m_EStructuralFeature__defaultValueLiteral->setUnique(true);
-        m_EStructuralFeature__defaultValueLiteral->setDerived(false);
-        m_EStructuralFeature__defaultValueLiteral->setOrdered(true);
-        m_EStructuralFeature__defaultValue->setEType(m_EJavaObjectEDataType);
-        m_EStructuralFeature__defaultValue->setDefaultValueLiteral("");
-        m_EStructuralFeature__defaultValue->setLowerBound(0);
-        m_EStructuralFeature__defaultValue->setUpperBound(1);
-        m_EStructuralFeature__defaultValue->setTransient(true);
-        m_EStructuralFeature__defaultValue->setVolatile(true);
-        m_EStructuralFeature__defaultValue->setChangeable(false);
-        m_EStructuralFeature__defaultValue->setUnsettable(false);
-        m_EStructuralFeature__defaultValue->setID(false);
-        m_EStructuralFeature__defaultValue->setUnique(true);
-        m_EStructuralFeature__defaultValue->setDerived(true);
-        m_EStructuralFeature__defaultValue->setOrdered(true);
-        m_EStructuralFeature__unsettable->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__unsettable->setDefaultValueLiteral("");
-        m_EStructuralFeature__unsettable->setLowerBound(0);
-        m_EStructuralFeature__unsettable->setUpperBound(1);
-        m_EStructuralFeature__unsettable->setTransient(false);
-        m_EStructuralFeature__unsettable->setVolatile(false);
-        m_EStructuralFeature__unsettable->setChangeable(true);
-        m_EStructuralFeature__unsettable->setUnsettable(false);
-        m_EStructuralFeature__unsettable->setID(false);
-        m_EStructuralFeature__unsettable->setUnique(true);
-        m_EStructuralFeature__unsettable->setDerived(false);
-        m_EStructuralFeature__unsettable->setOrdered(true);
-        m_EStructuralFeature__derived->setEType(m_EBooleanEDataType);
-        m_EStructuralFeature__derived->setDefaultValueLiteral("");
-        m_EStructuralFeature__derived->setLowerBound(0);
-        m_EStructuralFeature__derived->setUpperBound(1);
-        m_EStructuralFeature__derived->setTransient(false);
-        m_EStructuralFeature__derived->setVolatile(false);
-        m_EStructuralFeature__derived->setChangeable(true);
-        m_EStructuralFeature__derived->setUnsettable(false);
-        m_EStructuralFeature__derived->setID(false);
-        m_EStructuralFeature__derived->setUnique(true);
-        m_EStructuralFeature__derived->setDerived(false);
-        m_EStructuralFeature__derived->setOrdered(true);
-
-        m_EStructuralFeature__eContainingClass->setEType(m_EClassEClass);
-        m_EStructuralFeature__eContainingClass->setDefaultValueLiteral("");
-        m_EStructuralFeature__eContainingClass->setLowerBound(0);
-        m_EStructuralFeature__eContainingClass->setUpperBound(1);
-        m_EStructuralFeature__eContainingClass->setTransient(true);
-        m_EStructuralFeature__eContainingClass->setVolatile(false);
-        m_EStructuralFeature__eContainingClass->setChangeable(false);
-        m_EStructuralFeature__eContainingClass->setContainment(false);
-        m_EStructuralFeature__eContainingClass->setResolveProxies(false);
-        m_EStructuralFeature__eContainingClass->setUnique(true);
-        m_EStructuralFeature__eContainingClass->setDerived(false);
-        m_EStructuralFeature__eContainingClass->setOrdered(true);
-        m_EStructuralFeature__eContainingClass->setEOpposite(
-                ::ecore::as < ::ecore::EReference
-                        > (m_EClassEClass->getEStructuralFeatures()[13]));
-
-        { // getFeatureID()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        auto &&eOperations = cls->getEOperations();
+        { // Operation getFeatureID()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EIntEDataType);
             _op->setName("getFeatureID");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EStructuralFeatureEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-        { // getContainerClass()
-            auto _op = ::ecore::Ptr < ::ecore::EOperation
-                    > (new ::ecore::EOperation);
+        { // Operation getContainerClass()
+            auto _op = ::ecore::make< ::ecore::EOperation >();
             _op->setEType(m_EJavaClassEDataType);
-            {
-                ::ecore::EGenericType_ptr _g0 = ::ecore::Ptr
-                        < ::ecore::EGenericType > (new ::ecore::EGenericType);
-                _g0->setEClassifier(m_EJavaClassEDataType);
-                ::ecore::EGenericType_ptr _g1 = ::ecore::Ptr
-                        < ::ecore::EGenericType > (new ::ecore::EGenericType);
-                _g0->getETypeArguments().push_back(_g1);
-                _op->setEGenericType(_g0);
+            { // GenericType
+                auto eGenericType = ::ecore::make< ::ecore::EGenericType >();
+                eGenericType->setEClassifier(m_EJavaClassEDataType);
+                auto &&eTypeArguments = eGenericType->getETypeArguments();
+                {
+                    auto &&eTypeArgument =
+                            ::ecore::make< ::ecore::EGenericType >();
+                    eTypeArguments.push_back(eTypeArgument);
+                }
+                _op->setEGenericType(eGenericType);
             }
             _op->setName("getContainerClass");
             _op->setLowerBound(0);
             _op->setUpperBound(1);
             _op->setUnique(true);
             _op->setOrdered(true);
-            m_EStructuralFeatureEClass->getEOperations().push_back(_op);
+            eOperations.push_back(_op);
         }
-    }
-
-    { // ETypedElement
-        m_ETypedElementEClass->setName("ETypedElement");
-        m_ETypedElementEClass->setAbstract(true);
-        m_ETypedElementEClass->setInterface(false);
-        m_ETypedElement__ordered->setEType(m_EBooleanEDataType);
-        m_ETypedElement__ordered->setDefaultValueLiteral("true");
-        m_ETypedElement__ordered->setLowerBound(0);
-        m_ETypedElement__ordered->setUpperBound(1);
-        m_ETypedElement__ordered->setTransient(false);
-        m_ETypedElement__ordered->setVolatile(false);
-        m_ETypedElement__ordered->setChangeable(true);
-        m_ETypedElement__ordered->setUnsettable(false);
-        m_ETypedElement__ordered->setID(false);
-        m_ETypedElement__ordered->setUnique(true);
-        m_ETypedElement__ordered->setDerived(false);
-        m_ETypedElement__ordered->setOrdered(true);
-        m_ETypedElement__unique->setEType(m_EBooleanEDataType);
-        m_ETypedElement__unique->setDefaultValueLiteral("true");
-        m_ETypedElement__unique->setLowerBound(0);
-        m_ETypedElement__unique->setUpperBound(1);
-        m_ETypedElement__unique->setTransient(false);
-        m_ETypedElement__unique->setVolatile(false);
-        m_ETypedElement__unique->setChangeable(true);
-        m_ETypedElement__unique->setUnsettable(false);
-        m_ETypedElement__unique->setID(false);
-        m_ETypedElement__unique->setUnique(true);
-        m_ETypedElement__unique->setDerived(false);
-        m_ETypedElement__unique->setOrdered(true);
-        m_ETypedElement__lowerBound->setEType(m_EIntEDataType);
-        m_ETypedElement__lowerBound->setDefaultValueLiteral("");
-        m_ETypedElement__lowerBound->setLowerBound(0);
-        m_ETypedElement__lowerBound->setUpperBound(1);
-        m_ETypedElement__lowerBound->setTransient(false);
-        m_ETypedElement__lowerBound->setVolatile(false);
-        m_ETypedElement__lowerBound->setChangeable(true);
-        m_ETypedElement__lowerBound->setUnsettable(false);
-        m_ETypedElement__lowerBound->setID(false);
-        m_ETypedElement__lowerBound->setUnique(true);
-        m_ETypedElement__lowerBound->setDerived(false);
-        m_ETypedElement__lowerBound->setOrdered(true);
-        m_ETypedElement__upperBound->setEType(m_EIntEDataType);
-        m_ETypedElement__upperBound->setDefaultValueLiteral("1");
-        m_ETypedElement__upperBound->setLowerBound(0);
-        m_ETypedElement__upperBound->setUpperBound(1);
-        m_ETypedElement__upperBound->setTransient(false);
-        m_ETypedElement__upperBound->setVolatile(false);
-        m_ETypedElement__upperBound->setChangeable(true);
-        m_ETypedElement__upperBound->setUnsettable(false);
-        m_ETypedElement__upperBound->setID(false);
-        m_ETypedElement__upperBound->setUnique(true);
-        m_ETypedElement__upperBound->setDerived(false);
-        m_ETypedElement__upperBound->setOrdered(true);
-        m_ETypedElement__many->setEType(m_EBooleanEDataType);
-        m_ETypedElement__many->setDefaultValueLiteral("");
-        m_ETypedElement__many->setLowerBound(0);
-        m_ETypedElement__many->setUpperBound(1);
-        m_ETypedElement__many->setTransient(true);
-        m_ETypedElement__many->setVolatile(true);
-        m_ETypedElement__many->setChangeable(false);
-        m_ETypedElement__many->setUnsettable(false);
-        m_ETypedElement__many->setID(false);
-        m_ETypedElement__many->setUnique(true);
-        m_ETypedElement__many->setDerived(true);
-        m_ETypedElement__many->setOrdered(true);
-        m_ETypedElement__required->setEType(m_EBooleanEDataType);
-        m_ETypedElement__required->setDefaultValueLiteral("");
-        m_ETypedElement__required->setLowerBound(0);
-        m_ETypedElement__required->setUpperBound(1);
-        m_ETypedElement__required->setTransient(true);
-        m_ETypedElement__required->setVolatile(true);
-        m_ETypedElement__required->setChangeable(false);
-        m_ETypedElement__required->setUnsettable(false);
-        m_ETypedElement__required->setID(false);
-        m_ETypedElement__required->setUnique(true);
-        m_ETypedElement__required->setDerived(true);
-        m_ETypedElement__required->setOrdered(true);
-
-        m_ETypedElement__eType->setEType(m_EClassifierEClass);
-        m_ETypedElement__eType->setDefaultValueLiteral("");
-        m_ETypedElement__eType->setLowerBound(0);
-        m_ETypedElement__eType->setUpperBound(1);
-        m_ETypedElement__eType->setTransient(false);
-        m_ETypedElement__eType->setVolatile(true);
-        m_ETypedElement__eType->setChangeable(true);
-        m_ETypedElement__eType->setContainment(false);
-        m_ETypedElement__eType->setResolveProxies(true);
-        m_ETypedElement__eType->setUnique(true);
-        m_ETypedElement__eType->setDerived(false);
-        m_ETypedElement__eType->setOrdered(true);
-        m_ETypedElement__eGenericType->setEType(m_EGenericTypeEClass);
-        m_ETypedElement__eGenericType->setDefaultValueLiteral("");
-        m_ETypedElement__eGenericType->setLowerBound(0);
-        m_ETypedElement__eGenericType->setUpperBound(1);
-        m_ETypedElement__eGenericType->setTransient(false);
-        m_ETypedElement__eGenericType->setVolatile(true);
-        m_ETypedElement__eGenericType->setChangeable(true);
-        m_ETypedElement__eGenericType->setContainment(true);
-        m_ETypedElement__eGenericType->setResolveProxies(false);
-        m_ETypedElement__eGenericType->setUnique(true);
-        m_ETypedElement__eGenericType->setDerived(false);
-        m_ETypedElement__eGenericType->setOrdered(true);
-
-    }
-
-    { // EStringToStringMapEntry
-        m_EStringToStringMapEntryEClass->setName("EStringToStringMapEntry");
-        m_EStringToStringMapEntryEClass->setAbstract(false);
-        m_EStringToStringMapEntryEClass->setInterface(false);
-        m_EStringToStringMapEntry__key->setEType(m_EStringEDataType);
-        m_EStringToStringMapEntry__key->setDefaultValueLiteral("");
-        m_EStringToStringMapEntry__key->setLowerBound(0);
-        m_EStringToStringMapEntry__key->setUpperBound(1);
-        m_EStringToStringMapEntry__key->setTransient(false);
-        m_EStringToStringMapEntry__key->setVolatile(false);
-        m_EStringToStringMapEntry__key->setChangeable(true);
-        m_EStringToStringMapEntry__key->setUnsettable(false);
-        m_EStringToStringMapEntry__key->setID(false);
-        m_EStringToStringMapEntry__key->setUnique(true);
-        m_EStringToStringMapEntry__key->setDerived(false);
-        m_EStringToStringMapEntry__key->setOrdered(true);
-        m_EStringToStringMapEntry__value->setEType(m_EStringEDataType);
-        m_EStringToStringMapEntry__value->setDefaultValueLiteral("");
-        m_EStringToStringMapEntry__value->setLowerBound(0);
-        m_EStringToStringMapEntry__value->setUpperBound(1);
-        m_EStringToStringMapEntry__value->setTransient(false);
-        m_EStringToStringMapEntry__value->setVolatile(false);
-        m_EStringToStringMapEntry__value->setChangeable(true);
-        m_EStringToStringMapEntry__value->setUnsettable(false);
-        m_EStringToStringMapEntry__value->setID(false);
-        m_EStringToStringMapEntry__value->setUnique(true);
-        m_EStringToStringMapEntry__value->setDerived(false);
-        m_EStringToStringMapEntry__value->setOrdered(true);
-
-    }
-
-    { // EGenericType
-        m_EGenericTypeEClass->setName("EGenericType");
-        m_EGenericTypeEClass->setAbstract(false);
-        m_EGenericTypeEClass->setInterface(false);
-
-        m_EGenericType__eUpperBound->setEType(m_EGenericTypeEClass);
-        m_EGenericType__eUpperBound->setDefaultValueLiteral("");
-        m_EGenericType__eUpperBound->setLowerBound(0);
-        m_EGenericType__eUpperBound->setUpperBound(1);
-        m_EGenericType__eUpperBound->setTransient(false);
-        m_EGenericType__eUpperBound->setVolatile(false);
-        m_EGenericType__eUpperBound->setChangeable(true);
-        m_EGenericType__eUpperBound->setContainment(true);
-        m_EGenericType__eUpperBound->setResolveProxies(false);
-        m_EGenericType__eUpperBound->setUnique(true);
-        m_EGenericType__eUpperBound->setDerived(false);
-        m_EGenericType__eUpperBound->setOrdered(true);
-        m_EGenericType__eTypeArguments->setEType(m_EGenericTypeEClass);
-        m_EGenericType__eTypeArguments->setDefaultValueLiteral("");
-        m_EGenericType__eTypeArguments->setLowerBound(0);
-        m_EGenericType__eTypeArguments->setUpperBound(-1);
-        m_EGenericType__eTypeArguments->setTransient(false);
-        m_EGenericType__eTypeArguments->setVolatile(false);
-        m_EGenericType__eTypeArguments->setChangeable(true);
-        m_EGenericType__eTypeArguments->setContainment(true);
-        m_EGenericType__eTypeArguments->setResolveProxies(false);
-        m_EGenericType__eTypeArguments->setUnique(true);
-        m_EGenericType__eTypeArguments->setDerived(false);
-        m_EGenericType__eTypeArguments->setOrdered(true);
-        m_EGenericType__eRawType->setEType(m_EClassifierEClass);
-        m_EGenericType__eRawType->setDefaultValueLiteral("");
-        m_EGenericType__eRawType->setLowerBound(1);
-        m_EGenericType__eRawType->setUpperBound(1);
-        m_EGenericType__eRawType->setTransient(true);
-        m_EGenericType__eRawType->setVolatile(false);
-        m_EGenericType__eRawType->setChangeable(false);
-        m_EGenericType__eRawType->setContainment(false);
-        m_EGenericType__eRawType->setResolveProxies(true);
-        m_EGenericType__eRawType->setUnique(true);
-        m_EGenericType__eRawType->setDerived(true);
-        m_EGenericType__eRawType->setOrdered(true);
-        m_EGenericType__eLowerBound->setEType(m_EGenericTypeEClass);
-        m_EGenericType__eLowerBound->setDefaultValueLiteral("");
-        m_EGenericType__eLowerBound->setLowerBound(0);
-        m_EGenericType__eLowerBound->setUpperBound(1);
-        m_EGenericType__eLowerBound->setTransient(false);
-        m_EGenericType__eLowerBound->setVolatile(false);
-        m_EGenericType__eLowerBound->setChangeable(true);
-        m_EGenericType__eLowerBound->setContainment(true);
-        m_EGenericType__eLowerBound->setResolveProxies(false);
-        m_EGenericType__eLowerBound->setUnique(true);
-        m_EGenericType__eLowerBound->setDerived(false);
-        m_EGenericType__eLowerBound->setOrdered(true);
-        m_EGenericType__eTypeParameter->setEType(m_ETypeParameterEClass);
-        m_EGenericType__eTypeParameter->setDefaultValueLiteral("");
-        m_EGenericType__eTypeParameter->setLowerBound(0);
-        m_EGenericType__eTypeParameter->setUpperBound(1);
-        m_EGenericType__eTypeParameter->setTransient(false);
-        m_EGenericType__eTypeParameter->setVolatile(false);
-        m_EGenericType__eTypeParameter->setChangeable(true);
-        m_EGenericType__eTypeParameter->setContainment(false);
-        m_EGenericType__eTypeParameter->setResolveProxies(false);
-        m_EGenericType__eTypeParameter->setUnique(true);
-        m_EGenericType__eTypeParameter->setDerived(false);
-        m_EGenericType__eTypeParameter->setOrdered(true);
-        m_EGenericType__eClassifier->setEType(m_EClassifierEClass);
-        m_EGenericType__eClassifier->setDefaultValueLiteral("");
-        m_EGenericType__eClassifier->setLowerBound(0);
-        m_EGenericType__eClassifier->setUpperBound(1);
-        m_EGenericType__eClassifier->setTransient(false);
-        m_EGenericType__eClassifier->setVolatile(false);
-        m_EGenericType__eClassifier->setChangeable(true);
-        m_EGenericType__eClassifier->setContainment(false);
-        m_EGenericType__eClassifier->setResolveProxies(true);
-        m_EGenericType__eClassifier->setUnique(true);
-        m_EGenericType__eClassifier->setDerived(false);
-        m_EGenericType__eClassifier->setOrdered(true);
-
-    }
-
-    { // ETypeParameter
-        m_ETypeParameterEClass->setName("ETypeParameter");
-        m_ETypeParameterEClass->setAbstract(false);
-        m_ETypeParameterEClass->setInterface(false);
-
-        m_ETypeParameter__eBounds->setEType(m_EGenericTypeEClass);
-        m_ETypeParameter__eBounds->setDefaultValueLiteral("");
-        m_ETypeParameter__eBounds->setLowerBound(0);
-        m_ETypeParameter__eBounds->setUpperBound(-1);
-        m_ETypeParameter__eBounds->setTransient(false);
-        m_ETypeParameter__eBounds->setVolatile(false);
-        m_ETypeParameter__eBounds->setChangeable(true);
-        m_ETypeParameter__eBounds->setContainment(true);
-        m_ETypeParameter__eBounds->setResolveProxies(false);
-        m_ETypeParameter__eBounds->setUnique(true);
-        m_ETypeParameter__eBounds->setDerived(false);
-        m_ETypeParameter__eBounds->setOrdered(true);
-
-    }
-
-    // TODO: Initialize data types
-
-    { // EBigDecimal
-        m_EBigDecimalEDataType->setName("EBigDecimal");
-        m_EBigDecimalEDataType->setSerializable(true);
-    }
-
-    { // EBigInteger
-        m_EBigIntegerEDataType->setName("EBigInteger");
-        m_EBigIntegerEDataType->setSerializable(true);
-    }
-
-    { // EBoolean
-        m_EBooleanEDataType->setName("EBoolean");
-        m_EBooleanEDataType->setSerializable(true);
-    }
-
-    { // EBooleanObject
-        m_EBooleanObjectEDataType->setName("EBooleanObject");
-        m_EBooleanObjectEDataType->setSerializable(true);
-    }
-
-    { // EByte
-        m_EByteEDataType->setName("EByte");
-        m_EByteEDataType->setSerializable(true);
-    }
-
-    { // EByteArray
-        m_EByteArrayEDataType->setName("EByteArray");
-        m_EByteArrayEDataType->setSerializable(true);
-    }
-
-    { // EByteObject
-        m_EByteObjectEDataType->setName("EByteObject");
-        m_EByteObjectEDataType->setSerializable(true);
-    }
-
-    { // EChar
-        m_ECharEDataType->setName("EChar");
-        m_ECharEDataType->setSerializable(true);
-    }
-
-    { // ECharacterObject
-        m_ECharacterObjectEDataType->setName("ECharacterObject");
-        m_ECharacterObjectEDataType->setSerializable(true);
-    }
-
-    { // EDate
-        m_EDateEDataType->setName("EDate");
-        m_EDateEDataType->setSerializable(true);
-    }
-
-    { // EDiagnosticChain
-        m_EDiagnosticChainEDataType->setName("EDiagnosticChain");
-        m_EDiagnosticChainEDataType->setSerializable(false);
-    }
-
-    { // EDouble
-        m_EDoubleEDataType->setName("EDouble");
-        m_EDoubleEDataType->setSerializable(true);
-    }
-
-    { // EDoubleObject
-        m_EDoubleObjectEDataType->setName("EDoubleObject");
-        m_EDoubleObjectEDataType->setSerializable(true);
-    }
-
-    { // EEList
-        m_EEListEDataType->setName("EEList");
-        m_EEListEDataType->setSerializable(false);
-    }
-
-    { // EEnumerator
-        m_EEnumeratorEDataType->setName("EEnumerator");
-        m_EEnumeratorEDataType->setSerializable(false);
-    }
-
-    { // EFeatureMap
-        m_EFeatureMapEDataType->setName("EFeatureMap");
-        m_EFeatureMapEDataType->setSerializable(false);
-    }
-
-    { // EFeatureMapEntry
-        m_EFeatureMapEntryEDataType->setName("EFeatureMapEntry");
-        m_EFeatureMapEntryEDataType->setSerializable(false);
-    }
-
-    { // EFloat
-        m_EFloatEDataType->setName("EFloat");
-        m_EFloatEDataType->setSerializable(true);
-    }
-
-    { // EFloatObject
-        m_EFloatObjectEDataType->setName("EFloatObject");
-        m_EFloatObjectEDataType->setSerializable(true);
-    }
-
-    { // EInt
-        m_EIntEDataType->setName("EInt");
-        m_EIntEDataType->setSerializable(true);
-    }
-
-    { // EIntegerObject
-        m_EIntegerObjectEDataType->setName("EIntegerObject");
-        m_EIntegerObjectEDataType->setSerializable(true);
-    }
-
-    { // EJavaClass
-        m_EJavaClassEDataType->setName("EJavaClass");
-        m_EJavaClassEDataType->setSerializable(true);
-    }
-
-    { // EJavaObject
-        m_EJavaObjectEDataType->setName("EJavaObject");
-        m_EJavaObjectEDataType->setSerializable(true);
-    }
-
-    { // ELong
-        m_ELongEDataType->setName("ELong");
-        m_ELongEDataType->setSerializable(true);
-    }
-
-    { // ELongObject
-        m_ELongObjectEDataType->setName("ELongObject");
-        m_ELongObjectEDataType->setSerializable(true);
-    }
-
-    { // EMap
-        m_EMapEDataType->setName("EMap");
-        m_EMapEDataType->setSerializable(false);
-    }
-
-    { // EResource
-        m_EResourceEDataType->setName("EResource");
-        m_EResourceEDataType->setSerializable(false);
-    }
-
-    { // EResourceSet
-        m_EResourceSetEDataType->setName("EResourceSet");
-        m_EResourceSetEDataType->setSerializable(false);
-    }
-
-    { // EShort
-        m_EShortEDataType->setName("EShort");
-        m_EShortEDataType->setSerializable(true);
-    }
-
-    { // EShortObject
-        m_EShortObjectEDataType->setName("EShortObject");
-        m_EShortObjectEDataType->setSerializable(true);
-    }
-
-    { // EString
-        m_EStringEDataType->setName("EString");
-        m_EStringEDataType->setSerializable(true);
-    }
-
-    { // ETreeIterator
-        m_ETreeIteratorEDataType->setName("ETreeIterator");
-        m_ETreeIteratorEDataType->setSerializable(false);
-    }
-
-    { // EInvocationTargetException
-        m_EInvocationTargetExceptionEDataType->setName(
-                "EInvocationTargetException");
-        m_EInvocationTargetExceptionEDataType->setSerializable(false);
-    }
-
-    /* EAnnotations for EPackage, the EClasses and their EStructuralFeatures */
-    ::ecore::EAnnotation_ptr _annotation;
-
-    _annotation = m_EAttributeEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints", "ConsistentTransient");
-
-    _annotation = m_EAnnotationEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints", "WellFormedSourceURI");
-
-    _annotation = m_EClassEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints",
-            "InterfaceIsAbstract AtMostOneID UniqueFeatureNames UniqueOperationSignatures NoCircularSuperTypes WellFormedMapEntryClass ConsistentSuperTypes DisjointFeatureAndOperationSignatures");
-
-    _annotation = m_EClass__eSuperTypes->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedIsSetVisibility", "true");
-    _annotation->setDetail("suppressedUnsetVisibility", "true");
-
-    _annotation = m_EClass__eGenericSuperTypes->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedIsSetVisibility", "true");
-    _annotation->setDetail("suppressedUnsetVisibility", "true");
-
-    _annotation = m_EClassifierEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints",
-            "WellFormedInstanceTypeName UniqueTypeParameterNames");
-
-    _annotation = m_EClassifier__instanceClassName->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedIsSetVisibility", "true");
-    _annotation->setDetail("suppressedUnsetVisibility", "true");
-
-    _annotation = m_EClassifier__instanceTypeName->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedIsSetVisibility", "true");
-    _annotation->setDetail("suppressedUnsetVisibility", "true");
-
-    _annotation = m_EEnumEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints",
-            "UniqueEnumeratorNames UniqueEnumeratorLiterals");
-
-    _annotation = m_ENamedElementEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints", "WellFormedName");
-
-    _annotation = m_EOperationEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints",
-            "UniqueParameterNames UniqueTypeParameterNames NoRepeatingVoid");
-
-    _annotation = m_EOperation__eExceptions->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedIsSetVisibility", "true");
-    _annotation->setDetail("suppressedUnsetVisibility", "true");
-
-    _annotation = m_EOperation__eGenericExceptions->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedIsSetVisibility", "true");
-    _annotation->setDetail("suppressedUnsetVisibility", "true");
-
-    _annotation = m_EPackageEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints",
-            "WellFormedNsURI WellFormedNsPrefix UniqueSubpackageNames UniqueClassifierNames UniqueNsURIs");
-
-    _annotation = m_EReferenceEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints",
-            "ConsistentOpposite SingleContainer ConsistentKeys ConsistentUnique ConsistentContainer");
-
-    _annotation = m_EStructuralFeatureEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints", "ValidDefaultValueLiteral");
-
-    _annotation = m_ETypedElementEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints",
-            "ValidLowerBound ValidUpperBound ConsistentBounds ValidType");
-
-    _annotation = m_ETypedElement__eType->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedIsSetVisibility", "true");
-    _annotation->setDetail("suppressedUnsetVisibility", "true");
-
-    _annotation = m_ETypedElement__eGenericType->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/GenModel");
-    _annotation->setDetail("suppressedIsSetVisibility", "true");
-    _annotation->setDetail("suppressedUnsetVisibility", "true");
-
-    _annotation = m_EGenericTypeEClass->getEAnnotation(
-            "http://www.eclipse.org/emf/2002/Ecore");
-    _annotation->setDetail("constraints",
-            "ConsistentType ConsistentBounds ConsistentArguments");
-
-    _annotation = m_EBigDecimalEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType",
-            "http://www.w3.org/2001/XMLSchema#decimal");
-
-    _annotation = m_EBigIntegerEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType",
-            "http://www.w3.org/2001/XMLSchema#integer");
-
-    _annotation = m_EBooleanEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType",
-            "http://www.w3.org/2001/XMLSchema#boolean");
-
-    _annotation = m_EBooleanObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "EBoolean");
-    _annotation->setDetail("name", "EBoolean:Object");
-
-    _annotation = m_EByteEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "http://www.w3.org/2001/XMLSchema#byte");
-
-    _annotation = m_EByteArrayEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType",
-            "http://www.w3.org/2001/XMLSchema#hexBinary");
-
-    _annotation = m_EByteObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "EByte");
-    _annotation->setDetail("name", "EByte:Object");
-
-    _annotation = m_ECharacterObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "EChar");
-    _annotation->setDetail("name", "EChar:Object");
-
-    _annotation = m_EDoubleEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType",
-            "http://www.w3.org/2001/XMLSchema#double");
-
-    _annotation = m_EDoubleObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "EDouble");
-    _annotation->setDetail("name", "EDouble:Object");
-
-    _annotation = m_EFloatEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType",
-            "http://www.w3.org/2001/XMLSchema#float");
-
-    _annotation = m_EFloatObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "EFloat");
-    _annotation->setDetail("name", "EFloat:Object");
-
-    _annotation = m_EIntEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "http://www.w3.org/2001/XMLSchema#int");
-
-    _annotation = m_EIntegerObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "EInt");
-    _annotation->setDetail("name", "EInt:Object");
-
-    _annotation = m_ELongEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "http://www.w3.org/2001/XMLSchema#long");
-
-    _annotation = m_ELongObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "ELong");
-    _annotation->setDetail("name", "ELong:Object");
-
-    _annotation = m_EShortEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType",
-            "http://www.w3.org/2001/XMLSchema#short");
-
-    _annotation = m_EShortObjectEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType", "EShort");
-    _annotation->setDetail("name", "EShort:Object");
-
-    _annotation = m_EStringEDataType->getEAnnotation(
-            "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
-    _annotation->setDetail("baseType",
-            "http://www.w3.org/2001/XMLSchema#string");
+    }();
+
+    [this]()
+    { // Feature eType of class ETypedElement
+        auto &&feature = m_ETypedElement__eType;
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedIsSetVisibility", "true");
+            eAnnotation->setDetail("suppressedUnsetVisibility", "true");
+        }
+    }();
+    [this]()
+    { // Feature eGenericType of class ETypedElement
+        auto &&feature = m_ETypedElement__eGenericType;
+        { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+            auto &&eAnnotation = feature->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/GenModel");
+            eAnnotation->setDetail("suppressedIsSetVisibility", "true");
+            eAnnotation->setDetail("suppressedUnsetVisibility", "true");
+        }
+    }();
+
+    [this]()
+    { // Class ETypedElement
+        auto &&cls = m_ETypedElementEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints",
+                    "ValidLowerBound ValidUpperBound ConsistentBounds ValidType");
+        }
+    }();
+
+    [this]()
+    { // Class EGenericType
+        auto &&cls = m_EGenericTypeEClass;
+        { // Annotations for http://www.eclipse.org/emf/2002/Ecore
+            auto &&eAnnotation = cls->getEAnnotation(
+                    "http://www.eclipse.org/emf/2002/Ecore");
+            eAnnotation->setDetail("constraints",
+                    "ConsistentType ConsistentBounds ConsistentArguments");
+        }
+    }();
+
+    [this]()
+    { // Annotations for Datatype EBigDecimal
+        auto &&datatype = m_EBigDecimalEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#decimal");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EBigInteger
+        auto &&datatype = m_EBigIntegerEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#integer");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EBoolean
+        auto &&datatype = m_EBooleanEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#boolean");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EBooleanObject
+        auto &&datatype = m_EBooleanObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType", "EBoolean");
+            eAnnotation->setDetail("name", "EBoolean:Object");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EByte
+        auto &&datatype = m_EByteEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#byte");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EByteArray
+        auto &&datatype = m_EByteArrayEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#hexBinary");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EByteObject
+        auto &&datatype = m_EByteObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType", "EByte");
+            eAnnotation->setDetail("name", "EByte:Object");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype ECharacterObject
+        auto &&datatype = m_ECharacterObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType", "EChar");
+            eAnnotation->setDetail("name", "EChar:Object");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EDouble
+        auto &&datatype = m_EDoubleEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#double");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EDoubleObject
+        auto &&datatype = m_EDoubleObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType", "EDouble");
+            eAnnotation->setDetail("name", "EDouble:Object");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EFloat
+        auto &&datatype = m_EFloatEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#float");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EFloatObject
+        auto &&datatype = m_EFloatObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType", "EFloat");
+            eAnnotation->setDetail("name", "EFloat:Object");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EInt
+        auto &&datatype = m_EIntEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#int");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EIntegerObject
+        auto &&datatype = m_EIntegerObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType", "EInt");
+            eAnnotation->setDetail("name", "EInt:Object");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype ELong
+        auto &&datatype = m_ELongEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#long");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype ELongObject
+        auto &&datatype = m_ELongObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType", "ELong");
+            eAnnotation->setDetail("name", "ELong:Object");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EShort
+        auto &&datatype = m_EShortEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#short");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EShortObject
+        auto &&datatype = m_EShortObjectEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType", "EShort");
+            eAnnotation->setDetail("name", "EShort:Object");
+        }
+    }();
+    [this]()
+    { // Annotations for Datatype EString
+        auto &&datatype = m_EStringEDataType;
+        { // Annotations for http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+            auto &&eAnnotation = datatype->getEAnnotation(
+                    "http:///org/eclipse/emf/ecore/util/ExtendedMetaData");
+            eAnnotation->setDetail("baseType",
+                    "http://www.w3.org/2001/XMLSchema#string");
+        }
+    }();
+
+    [this]()
+    { // Classifiers of this package
+        auto &&classifiers = getEClassifiers();
+        classifiers.push_back(m_EAnnotationEClass);
+        classifiers.push_back(m_EAttributeEClass);
+        classifiers.push_back(m_EBigDecimalEDataType);
+        classifiers.push_back(m_EBigIntegerEDataType);
+        classifiers.push_back(m_EBooleanEDataType);
+        classifiers.push_back(m_EBooleanObjectEDataType);
+        classifiers.push_back(m_EByteEDataType);
+        classifiers.push_back(m_EByteArrayEDataType);
+        classifiers.push_back(m_EByteObjectEDataType);
+        classifiers.push_back(m_ECharEDataType);
+        classifiers.push_back(m_ECharacterObjectEDataType);
+        classifiers.push_back(m_EClassEClass);
+        classifiers.push_back(m_EClassifierEClass);
+        classifiers.push_back(m_EDataTypeEClass);
+        classifiers.push_back(m_EDateEDataType);
+        classifiers.push_back(m_EDiagnosticChainEDataType);
+        classifiers.push_back(m_EDoubleEDataType);
+        classifiers.push_back(m_EDoubleObjectEDataType);
+        classifiers.push_back(m_EEListEDataType);
+        classifiers.push_back(m_EEnumEClass);
+        classifiers.push_back(m_EEnumeratorEDataType);
+        classifiers.push_back(m_EEnumLiteralEClass);
+        classifiers.push_back(m_EFactoryEClass);
+        classifiers.push_back(m_EFeatureMapEDataType);
+        classifiers.push_back(m_EFeatureMapEntryEDataType);
+        classifiers.push_back(m_EFloatEDataType);
+        classifiers.push_back(m_EFloatObjectEDataType);
+        classifiers.push_back(m_EGenericTypeEClass);
+        classifiers.push_back(m_EIntEDataType);
+        classifiers.push_back(m_EIntegerObjectEDataType);
+        classifiers.push_back(m_EInvocationTargetExceptionEDataType);
+        classifiers.push_back(m_EJavaClassEDataType);
+        classifiers.push_back(m_EJavaObjectEDataType);
+        classifiers.push_back(m_ELongEDataType);
+        classifiers.push_back(m_ELongObjectEDataType);
+        classifiers.push_back(m_EMapEDataType);
+        classifiers.push_back(m_EModelElementEClass);
+        classifiers.push_back(m_ENamedElementEClass);
+        classifiers.push_back(m_EObjectEClass);
+        classifiers.push_back(m_EOperationEClass);
+        classifiers.push_back(m_EPackageEClass);
+        classifiers.push_back(m_EParameterEClass);
+        classifiers.push_back(m_EReferenceEClass);
+        classifiers.push_back(m_EResourceEDataType);
+        classifiers.push_back(m_EResourceSetEDataType);
+        classifiers.push_back(m_EShortEDataType);
+        classifiers.push_back(m_EShortObjectEDataType);
+        classifiers.push_back(m_EStringEDataType);
+        classifiers.push_back(m_EStringToStringMapEntryEClass);
+        classifiers.push_back(m_EStructuralFeatureEClass);
+        classifiers.push_back(m_ETreeIteratorEDataType);
+        classifiers.push_back(m_ETypedElementEClass);
+        classifiers.push_back(m_ETypeParameterEClass);
+    }();
 
     _initialize();
 }

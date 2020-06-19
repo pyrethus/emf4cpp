@@ -39,9 +39,7 @@ public:
 
     // IDs for classifier TopLevelClass
     static const int TOPLEVELCLASS = 0;
-
     static const int TOPLEVELCLASS__REFERENCE = 0;
-
     static const int TOPLEVELCLASS_FEATURE_COUNT = 1;
 
     // EClassifiers methods
@@ -59,13 +57,7 @@ protected:
     TopLevelPackagePackage();
     void _initPackage();
 
-    // EClass instances 
-
     ::ecore::EClass_ptr m_TopLevelClassEClass;
-
-    // EEnuminstances 
-
-    // EDataType instances 
 
     // EStructuralFeatures instances
 
