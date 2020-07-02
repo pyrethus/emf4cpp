@@ -229,7 +229,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 			}
 			/* Fallback: No ns-nsUri mapping or no EPackage found. */
 			if (!epkg)
-				epkg = _mmr->getByName(type_ns);
+				epkg = _mmr->getByNSPrefix(type_ns);
 			if (!epkg)
 				throw std::logic_error(std::string("missing package: ") + type_ns);
 

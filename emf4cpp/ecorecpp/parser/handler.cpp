@@ -147,7 +147,7 @@ void handler::start_tag(xml_parser::match_pair const& name,
 		}
 		/* Fallback: No ns-nsUri mapping or no EPackage found. */
 		if (!epkg)
-			epkg = _mmr->getByName(_type_ns);
+			epkg = _mmr->getByNSPrefix(_type_ns);
 
         if (!m_level)
         {
