@@ -21,7 +21,7 @@
 #define ECOREUTILPRINT_HPP
 
 #include <ecore.hpp>
-#include <iostream>
+#include <iosfwd>
 
 #include "../dllEcorecpp.hpp"
 

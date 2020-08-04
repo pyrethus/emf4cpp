@@ -104,7 +104,7 @@ void XMLHandler::characters(xml_parser::match_pair const& chars) {
 	::ecorecpp::mapping::type_definitions::string_t const& name =
 		  m_expected_literal_name;
 
-	DEBUG_MSG(cout, name);
+	DEBUG_MSG(cerr, name);
 
 	EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, name);
 
@@ -144,7 +144,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 	::ecorecpp::mapping::type_definitions::string_t * href = nullptr;
 	::ecorecpp::mapping::type_definitions::string_t * xmiId = nullptr;
 	::ecorecpp::mapping::type_definitions::string_t name(nameP.first, nameP.second);
-	DEBUG_MSG(cout, "--- START: " << m_level << " " << name);
+	DEBUG_MSG(cerr, "--- START: " << m_level << " " << name);
 	static MetaModelRepository_ptr _mmr = MetaModelRepository::_instance();
 
 	// Data
@@ -194,7 +194,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 	}
 
 	if (href) {
-		DEBUG_MSG(cout, "    --- Unresolved cross document reference: "
+		DEBUG_MSG(cerr, "    --- Unresolved cross document reference: "
 				<< *href);
 
 		Reference cr;
@@ -267,7 +267,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 		eobj = efac->create(eclass);
 		assert(eobj);
 
-		DEBUG_MSG(cout, "--- START: " << (m_level + 1));
+		DEBUG_MSG(cerr, "--- START: " << (m_level + 1));
 
 		// Attributes
 		for (size_t i = 0; i < length; i++) {
@@ -281,7 +281,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 				::ecorecpp::mapping::type_definitions::string_t const& avalue =
 						attr_list[i].second;
 
-				DEBUG_MSG(cout, "    --- Attributes: (" << (i + 1) << "/"
+				DEBUG_MSG(cerr, "    --- Attributes: (" << (i + 1) << "/"
 						<< length << ") " << aname << " " << avalue);
 
 				EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, aname);
@@ -301,7 +301,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 					ref._href = avalue;
 					m_unresolved_references.push_back(ref);
 
-					DEBUG_MSG(cout, "    --- Unresolved reference: "
+					DEBUG_MSG(cerr, "    --- Unresolved reference: "
 							<< avalue);
 				} else {
 					// Convert from string
@@ -365,7 +365,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 }
 
 void XMLHandler::end_tag(xml_parser::match_pair const& nameP) {
-	DEBUG_MSG(cout, "---     END: " << m_level);
+	DEBUG_MSG(cerr, "---     END: " << m_level);
 
 	if (--m_level && !m_expected_literal)
 		m_objects.pop_back();
@@ -411,7 +411,7 @@ void XMLHandler::resolveReferences() {
 			EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, refs._featureName);
 			assert(esf);
 
-			DEBUG_MSG(cout, "--- Resolving reference: " << ref << " from "
+			DEBUG_MSG(cerr, "--- Resolving reference: " << ref << " from "
 					<< eclass->getName() << ":" << refs._featureName);
 
 			EJavaObject owner = eobj->eGet(esf);
@@ -464,7 +464,7 @@ void XMLHandler::resolveCrossDocumentReferences() {
 		EStructuralFeature_ptr const esf = getEStructuralFeature(eclass, ref._featureName);
 		assert(esf);
 
-		DEBUG_MSG(cout, "--- Resolving cross reference: " << ref._href << " from "
+		DEBUG_MSG(cerr, "--- Resolving cross reference: " << ref._href << " from "
 					<< eclass->getName() << ":" << ref._featureName);
 
 		EJavaObject owner = eobj->eGet(esf);

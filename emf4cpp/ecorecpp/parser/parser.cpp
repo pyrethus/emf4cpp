@@ -50,7 +50,7 @@ struct array_auto_ptr
    array_auto_ptr() : data(0) {}
    ~array_auto_ptr() { reset(); }
 
-   void reset(T * d = 0) 
+   void reset(T * d = 0)
    { delete [] data; data = d; }
 
    T * get() { return data; }
@@ -122,7 +122,7 @@ parser::load_str(const ::ecorecpp::mapping::type_definitions::char_t* buffer,
 
     mtime = ((seconds) * 1000 + useconds/1000.0) + 0.5;
 #endif
-    DEBUG_MSG(cout,"--- DURATION: " << mtime);
+    DEBUG_MSG(cerr,"--- DURATION: " << mtime);
 
     _handler.resolveReferences();
 

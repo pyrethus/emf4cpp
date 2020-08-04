@@ -82,12 +82,12 @@ void XMLSerializer::serialize(EObject_ptr obj) {
 
 	if (m_extendedMetaData) {
 		auto root_eClass = obj->eClass();
-		DEBUG_MSG(cout, "name " << m_extendedMetaData->getName(root_eClass) );
+		DEBUG_MSG(cerr, "name " << m_extendedMetaData->getName(root_eClass) );
 		if (m_extendedMetaData->isDocumentRoot(root_eClass)) {
-			DEBUG_MSG(cout, "DocumentRoot detected");
+			DEBUG_MSG(cerr, "DocumentRoot detected");
 			throw std::logic_error("Cannot persist DocumentRoot");
 		} else
-			DEBUG_MSG(cout, "DocumentRoot not detected");
+			DEBUG_MSG(cerr, "DocumentRoot not detected");
 	}
 
 
@@ -294,7 +294,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 		try {
 			EClassifier_ptr at_classifier = current_at->getEType();
 
-			DEBUG_MSG(cout, indent << attributeName << " (from " << current_at->getName() << ")");
+			DEBUG_MSG(cerr, indent << attributeName << " (from " << current_at->getName() << ")");
 
 			EDataType_ptr atc = as< EDataType >(at_classifier);
 			if (atc) {
@@ -305,7 +305,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 				::ecorecpp::mapping::type_definitions::string_t value =
 						fac->convertToString(atc, any);
 
-				DEBUG_MSG(cout, indent << attributeName
+				DEBUG_MSG(cerr, indent << attributeName
 						  << value);
 
 				if ( (!value.empty() && value
@@ -340,7 +340,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 		if (m_extendedMetaData)
 			referenceName = m_extendedMetaData->getName(current_ref);
 		try {
-			DEBUG_MSG(cout, indent << referenceName << " (from " << current_ref->getName() << ")");
+			DEBUG_MSG(cerr, indent << referenceName << " (from " << current_ref->getName() << ")");
 
 			ecorecpp::mapping::any any = obj->eGet(current_ref);
 			::ecorecpp::mapping::type_definitions::stringstream_t value;
@@ -456,7 +456,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 		try {
 			EClassifier_ptr at_classifier = current_at->getEType();
 
-			DEBUG_MSG(cout, indent << attributeName << " (from " << current_at->getName() << ")");
+			DEBUG_MSG(cerr, indent << attributeName << " (from " << current_at->getName() << ")");
 
 			EDataType_ptr atc = as< EDataType >(at_classifier);
 			if (atc) {
@@ -472,7 +472,7 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 					::ecorecpp::mapping::type_definitions::string_t value =
 						fac->convertToString(atc, currAny);
 
-					DEBUG_MSG(cout, indent << attributeName
+					DEBUG_MSG(cerr, indent << attributeName
 							  << " " << value);
 
 					m_ser.open_object(attributeName);
@@ -506,7 +506,7 @@ void XMLSerializer::serialize_node_children(EObject_ptr obj) {
 		if (m_extendedMetaData)
 			referenceName = m_extendedMetaData->getName(current_ref);
 		try {
-			DEBUG_MSG(cout, indent << referenceName << " (from " << current_ref->getName() << ")");
+			DEBUG_MSG(cerr, indent << referenceName << " (from " << current_ref->getName() << ")");
 
 			if ( current_ref->isTransient() || current_ref->isDerived()
 					|| !current_ref->isContainment()

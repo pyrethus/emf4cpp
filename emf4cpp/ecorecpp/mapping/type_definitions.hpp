@@ -36,13 +36,13 @@ namespace type_definitions
   typedef wchar_t      char_t;
   typedef std::wstringstream stringstream_t;
   typedef std::wostringstream ostringstream_t;
-#define E_COUT std::cout
+#define E_CERR std::wcerr
 #else // ECORECPP_USE_STRING (default)
   typedef std::string  string_t;
   typedef char         char_t;
   typedef std::stringstream stringstream_t;
   typedef std::ostringstream ostringstream_t;
-#define E_COUT std::cout
+#define E_CERR std::cerr
 #endif
 
 } // type_definitions

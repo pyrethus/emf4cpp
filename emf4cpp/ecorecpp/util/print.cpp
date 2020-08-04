@@ -19,6 +19,7 @@
  */
 
 #include "print.hpp"
+#include <iostream>
 #include <ecore.hpp>
 #include <string>
 #include <cassert>
@@ -35,9 +36,9 @@ namespace util
 void print_all(EPackage_ptr pkg)
 {
 /*
-    E_COUT << "PACKAGE: " << pkg->getName() << std::endl;
-    E_COUT << "         " << pkg->getNsPrefix() << std::endl;
-    E_COUT << "         " << pkg->getNsURI() << std::endl;
+    E_CERR << "PACKAGE: " << pkg->getName() << std::endl;
+    E_CERR << "         " << pkg->getNsPrefix() << std::endl;
+    E_CERR << "         " << pkg->getNsURI() << std::endl;
 
     std::vector< EClassifier_ptr > classifiers = pkg->getEClassifiers();
 
@@ -47,19 +48,19 @@ void print_all(EPackage_ptr pkg)
         EClass_ptr eclass = instanceOf< EClass > (classifier);
         EDataType_ptr edt = instanceOf< EDataType > (classifier);
 
-        E_COUT << "CLASSIFIER: " << classifier->getName() << std::endl;
+        E_CERR << "CLASSIFIER: " << classifier->getName() << std::endl;
         assert(pkg == classifier->getEPackage());
 
         if (eclass)
         {
-            E_COUT << "            EClass" << std::endl;
+            E_CERR << "            EClass" << std::endl;
 
             // AllSuperTypes
             std::vector< EClass_ptr > const& supertypes =
                     eclass->getEAllSuperTypes();
             for (size_t j = 0; j < supertypes.size(); j++)
             {
-                E_COUT << "            SUPERTYPE: "
+                E_CERR << "            SUPERTYPE: "
                         << supertypes[j]->getName() << std::endl;
             }
 
@@ -68,7 +69,7 @@ void print_all(EPackage_ptr pkg)
                     eclass->getEAllOperations();
             for (size_t j = 0; j < operations.size(); j++)
             {
-                E_COUT << "            OPERATION: "
+                E_CERR << "            OPERATION: "
                         << operations[j]->getName() << std::endl;
             }
 
@@ -77,7 +78,7 @@ void print_all(EPackage_ptr pkg)
                     eclass->getEAllAttributes();
             for (size_t j = 0; j < attributes.size(); j++)
             {
-                E_COUT << "            ATTRIBUTE: "
+                E_CERR << "            ATTRIBUTE: "
                         << attributes[j]->getName() << std::endl;
             }
 
@@ -86,13 +87,13 @@ void print_all(EPackage_ptr pkg)
                     eclass->getEAllReferences();
             for (size_t j = 0; j < references.size(); j++)
             {
-                E_COUT << "            REFERENCE: "
+                E_CERR << "            REFERENCE: "
                         << references[j]->getName() << std::endl;
 
                 EClass_ptr _cc = references[j]->getEContainingClass();
                 if (_cc)
                 {
-                    E_COUT << "                       "
+                    E_CERR << "                       "
                             << "ContainingClass: " << _cc->getName()
                             << std::endl;
                 }
@@ -101,16 +102,16 @@ void print_all(EPackage_ptr pkg)
 
                 if (opp)
                 {
-                    E_COUT << "                       " << "Opposite: "
+                    E_CERR << "                       " << "Opposite: "
                             << opp->getName();
 
                     EClass_ptr _occ = opp->getEContainingClass();
                     if (_occ)
                     {
-                        E_COUT << " EClass: "
+                        E_CERR << " EClass: "
                                 << opp->getEContainingClass()->getName();
                     }
-                    E_COUT << std::endl;
+                    E_CERR << std::endl;
                 }
             }
 
@@ -119,16 +120,16 @@ void print_all(EPackage_ptr pkg)
                     eclass->getEAllStructuralFeatures();
             for (size_t j = 0; j < features.size(); j++)
             {
-                E_COUT << "            FEATURE: " << features[j]->getName()
+                E_CERR << "            FEATURE: " << features[j]->getName()
                         << std::endl;
                 if (features[j]->getEType())
-                    E_COUT << "                     " << "Type: "
+                    E_CERR << "                     " << "Type: "
                             << features[j]->getEType()->getName() << std::endl;
             }
         }
         else if (edt)
         {
-            E_COUT << "            EDataType" << std::endl;
+            E_CERR << "            EDataType" << std::endl;
         }
     }
 
@@ -149,19 +150,19 @@ void print(EPackage_ptr pkg)
         EClass_ptr eclass = dynamic_cast< EClass* > (classifier);
         EDataType_ptr edt = dynamic_cast< EDataType* > (classifier);
 
-        E_COUT << "CLASSIFIER: " << classifier->getName() << std::endl;
+        E_CERR << "CLASSIFIER: " << classifier->getName() << std::endl;
         assert(pkg == classifier->getEPackage());
 
         if (eclass)
         {
-            E_COUT << "            EClass" << std::endl;
+            E_CERR << "            EClass" << std::endl;
 
             // AllSuperTypes
             std::vector< EClass_ptr > const& supertypes =
                     eclass->getESuperTypes();
             for (size_t j = 0; j < supertypes.size(); j++)
             {
-                E_COUT << "            SUPERTYPE: "
+                E_CERR << "            SUPERTYPE: "
                         << supertypes[j]->getName() << std::endl;
             }
 
@@ -170,7 +171,7 @@ void print(EPackage_ptr pkg)
                     eclass->getEOperations();
             for (size_t j = 0; j < operations.size(); j++)
             {
-                E_COUT << "            OPERATION: "
+                E_CERR << "            OPERATION: "
                         << operations[j]->getName() << std::endl;
             }
 
@@ -179,7 +180,7 @@ void print(EPackage_ptr pkg)
                     eclass->getEAttributes();
             for (size_t j = 0; j < attributes.size(); j++)
             {
-                E_COUT << "            ATTRIBUTE: "
+                E_CERR << "            ATTRIBUTE: "
                         << attributes[j]->getName() << std::endl;
             }
 
@@ -188,7 +189,7 @@ void print(EPackage_ptr pkg)
                     eclass->getEReferences();
             for (size_t j = 0; j < references.size(); j++)
             {
-                E_COUT << "            REFERENCE: "
+                E_CERR << "            REFERENCE: "
                         << references[j]->getName() << std::endl;
             }
 
@@ -197,13 +198,13 @@ void print(EPackage_ptr pkg)
                     eclass->getEStructuralFeatures();
             for (size_t j = 0; j < features.size(); j++)
             {
-                E_COUT << "            FEATURE: " << features[j]->getName()
+                E_CERR << "            FEATURE: " << features[j]->getName()
                         << std::endl;
             }
         }
         else if (edt)
         {
-            E_COUT << "            EDataType" << std::endl;
+            E_CERR << "            EDataType" << std::endl;
         }
     }
 */

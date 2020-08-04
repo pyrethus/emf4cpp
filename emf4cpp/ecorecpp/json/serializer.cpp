@@ -74,7 +74,7 @@ serializer::serialize_node(EObject_ptr obj)
             EAttribute_ptr const& current_at = attributes[i];
             EClassifier_ptr at_classifier = current_at->getEType();
 
-            DEBUG_MSG(cout, indent << current_at->getName());
+            DEBUG_MSG(cerr, indent << current_at->getName());
 
             if (!current_at->isTransient() && obj->eIsSet(current_at))
             {
@@ -90,7 +90,7 @@ serializer::serialize_node(EObject_ptr obj)
                         ::ecorecpp::mapping::type_definitions::string_t value =
                                 fac->convertToString(atc, any);
 
-                        DEBUG_MSG(cout, indent << current_at->getName() << " "
+                        DEBUG_MSG(cerr, indent << current_at->getName() << " "
                                 << value);
 
                         if (!value.empty() && value
@@ -114,7 +114,7 @@ serializer::serialize_node(EObject_ptr obj)
                             ::ecorecpp::mapping::type_definitions::string_t value =
                                     fac->convertToString(atc, anys[k]);
 
-                            DEBUG_MSG(cout, indent << current_at->getName()
+                            DEBUG_MSG(cerr, indent << current_at->getName()
                                     << " " << value);
 
                             m_ser.add_value(value);
@@ -144,7 +144,7 @@ serializer::serialize_node(EObject_ptr obj)
         {
             EReference_ptr current_ref = references[i];
 
-            DEBUG_MSG(cout, indent << current_ref->getName());
+            DEBUG_MSG(cerr, indent << current_ref->getName());
 
             if (!current_ref->isTransient() && obj->eIsSet(current_ref))
             {
@@ -152,7 +152,7 @@ serializer::serialize_node(EObject_ptr obj)
 
                 if (current_ref->isContainment())
                 {
-                    DEBUG_MSG(cout, indent << current_ref->getName());
+                    DEBUG_MSG(cerr, indent << current_ref->getName());
 
                     m_ser.add_child(current_ref->getName());
 
@@ -179,7 +179,7 @@ serializer::serialize_node(EObject_ptr obj)
                 {
                     // TODO: create reference
                     ::ecorecpp::mapping::type_definitions::stringstream_t value;
-                    DEBUG_MSG(cout, indent << current_ref->getName());
+                    DEBUG_MSG(cerr, indent << current_ref->getName());
 
                     if (current_ref->getUpperBound() != 1)
                     {
