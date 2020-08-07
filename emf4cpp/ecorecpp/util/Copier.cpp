@@ -87,23 +87,8 @@ EObject_ptr Copier::copy( EObject_ptr src ) {
 		if ( attr->isTransient() || ! src->eIsSet( attr )
 			 || (attr->isID() && !m_exactCopy) )
 			continue;
-		if ( attr->getUpperBound() == 1)
-			dst->eSet( attr, src->eGet( attr ) );
-		else {
-			/* The generated eSet() is inconsistent with eGet(): While eGet()
-			 * returns a std::vector of anys, eSet() expects a single any
-			 * parameter, which is appended to the current content.
-			 *
-			 * As the object is new, we do not need to the clear the attribute
-			 * container. */
-			auto any = src->eGet( attr );
-			std::vector< mapping::any > anys =
-				mapping::any::any_cast<
-					std::vector<mapping::any> >(any);
-			for (auto const& currAny : anys) {
-				dst->eSet( attr, currAny );
-			}
-		}
+
+		dst->eSet( attr, src->eGet( attr ) );
 	}
 
 	/* 2)  Recursively traverse references, deep copying all containments.

@@ -71,8 +71,11 @@ void handler::characters(xml_parser::match_pair const& chars)
             EFactory_ptr const efac = edt->getEPackage()->getEFactoryInstance();
             assert(efac);
 
-            any _any = efac->createFromString(edt, _literal);
-            peobj->eSet(esf, _any);
+            any anyObj = efac->createFromString(edt, _literal);
+            EAttribute_ptr const eattr = as< EAttribute > (esf);
+            eattr && eattr->getUpperBound() != 1 ?
+                appendMultipleAttributeValue(peobj, eattr, anyObj) :
+                peobj->eSet(esf, anyObj);
         } catch (const char * e)
         {
             ERROR_MSG("ERROR: " << e);
@@ -237,23 +240,25 @@ void handler::start_tag(xml_parser::match_pair const& name,
             EStructuralFeature_ptr const esf = peclass->getEStructuralFeature(
                     _name);
 
-            any _any;
+            any anyObj;
 
             EReference_ptr const eref = as< EReference > (esf);
-
             if (eref && eref->getUpperBound() != 1)
             {
                 // Gets the collection and adds the new element
-                _any = peobj->eGet(esf);
+                anyObj = peobj->eGet(esf);
                 mapping::EList<::ecore::EObject_ptr>::ptr_type list = ecorecpp::mapping::any::any_cast<
-                        mapping::EList<::ecore::EObject_ptr>::ptr_type >(_any);
+                        mapping::EList<::ecore::EObject_ptr>::ptr_type >(anyObj);
 
                 list->push_back(eobj);
             }
             else
             {
-                _any = eobj;
-                peobj->eSet(esf, _any);
+                anyObj = eobj;
+                EAttribute_ptr const eattr = as< EAttribute > (esf);
+                eattr && eattr->getUpperBound() != 1 ?
+                    appendMultipleAttributeValue(peobj, eattr, anyObj) :
+                    peobj->eSet(esf, anyObj);
             }
 
             // Is a reference and has opposite
@@ -264,16 +269,16 @@ void handler::start_tag(xml_parser::match_pair const& name,
                 if (eopref->getUpperBound() != 1)
                 {
                     // Gets the collection and adds the new element
-                    _any = eobj->eGet(eopref);
+                    anyObj = eobj->eGet(eopref);
                     mapping::EList<::ecore::EObject_ptr>::ptr_type list = ecorecpp::mapping::any::any_cast<
-                            mapping::EList<::ecore::EObject_ptr>::ptr_type >(_any);
+                            mapping::EList<::ecore::EObject_ptr>::ptr_type >(anyObj);
 
                     list->push_back(peobj);
                 }
                 else
                 {
-                    _any = peobj;
-                    eobj->eSet(eopref, _any);
+                    anyObj = peobj;
+                    eobj->eSet(eopref, anyObj);
                 }
             }
         }
@@ -437,4 +442,16 @@ void handler::resolveReferences()
         m_unresolved_references.pop_back();
     }
 
+}
+
+void handler::appendMultipleAttributeValue(
+        EObject_ptr const& eobj,
+        EAttribute_ptr const& eattr,
+        any anyObj) {
+    assert(eattr->getUpperBound() != 1);
+    auto oldList = eobj->eGet(eattr);
+    auto list = ecorecpp::mapping::any::any_cast<
+            std::vector<ecorecpp::mapping::any>>(oldList);
+    list.push_back(anyObj);
+    eobj->eSet(eattr, list);
 }

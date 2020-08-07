@@ -120,10 +120,18 @@ void UnionField::eSet(::ecore::EInt _featureID,
         return;
     case ::idlmm::IdlmmPackage::UNIONFIELD__LABEL:
     {
-        ::idlmm::EAny _t0;
-        ::ecorecpp::mapping::any_traits < ::idlmm::EAny
-                > ::fromAny(_newValue, _t0);
-        addLabel(_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < std::vector
+                < ::ecorecpp::mapping::any >> (_newValue);
+        std::vector < ::idlmm::EAny > _t1;
+        _t1.reserve(_t0.size());
+        for (const auto &anyValue : _t0)
+        {
+            idlmm::EAny value;
+            ::ecorecpp::mapping::any_traits < idlmm::EAny
+                    > ::fromAny(anyValue, value);
+            _t1.push_back(value);
+        }
+        setLabel (_t1);
     }
         return;
 

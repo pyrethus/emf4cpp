@@ -152,7 +152,11 @@ protected:
     // Attributes
     «FOREACH this.EAttributes AS at»
 		«IF !at.volatile && !at.derived-»
-    «at.getCPPDeclaration()+"{"+at.getDefaultValue()+"}"»;
+			«IF at.isMultiple()-»
+    			«at.getCPPDeclaration()+"{}"»;
+    		«ELSE-»
+    			«at.getCPPDeclaration()+"{"+at.getDefaultValue()+"}"»;
+    		«ENDIF-»
 		«ENDIF-»
     «ENDFOREACH»
 

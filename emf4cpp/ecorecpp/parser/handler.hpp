@@ -80,6 +80,11 @@ private:
         return _name.find(':') == ::ecorecpp::mapping::type_definitions::string_t::npos;
     }
 
+	static void appendMultipleAttributeValue(
+			ecore::EObject_ptr const& eobj,
+			ecore::EAttribute_ptr const& eattr,
+			ecorecpp::mapping::any anyObj);
+
 	std::unordered_map<
 		::ecorecpp::mapping::type_definitions::string_t,
 		::ecorecpp::mapping::type_definitions::string_t > _nsUriMap;

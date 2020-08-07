@@ -90,6 +90,11 @@ private:
 	std::unordered_map<
 		::ecorecpp::mapping::type_definitions::string_t,
 		::ecorecpp::mapping::type_definitions::string_t > _nsUriMap;
+
+	static void appendMultipleAttributeValue(
+			ecore::EObject_ptr const& eobj,
+			ecore::EAttribute_ptr const& eattr,
+			ecorecpp::mapping::any anyObj);
 };
 
 } // parser

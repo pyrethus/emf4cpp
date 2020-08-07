@@ -124,6 +124,11 @@ void EOperationBodyPackage::_initPackage()
         auto &&eOperations = cls->getEOperations();
         { // Operation increment()
             auto _op = ::ecore::make< ::ecore::EOperation >();
+            { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+                auto &&eAnnotation = _op->getEAnnotation(
+                        "http://www.eclipse.org/emf/2002/GenModel");
+                eAnnotation->setDetail("body", "m_value++; return _this();");
+            }
             _op->setEType(m_IntegerEClass);
             _op->setName("increment");
             _op->setLowerBound(0);
@@ -134,6 +139,12 @@ void EOperationBodyPackage::_initPackage()
         }
         { // Operation add()
             auto _op = ::ecore::make< ::ecore::EOperation >();
+            { // Annotations for http://www.eclipse.org/emf/2002/GenModel
+                auto &&eAnnotation = _op->getEAnnotation(
+                        "http://www.eclipse.org/emf/2002/GenModel");
+                eAnnotation->setDetail("body",
+                        "Let us assume this would be some language different than C++");
+            }
             _op->setEType(m_IntegerEClass);
             _op->setName("add");
             _op->setLowerBound(0);

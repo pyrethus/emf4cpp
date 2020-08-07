@@ -162,10 +162,18 @@ void EnumDef::eSet(::ecore::EInt _featureID,
         return;
     case ::idlmm::IdlmmPackage::ENUMDEF__MEMBERS:
     {
-        ::ecore::EString _t0;
-        ::ecorecpp::mapping::any_traits < ::ecore::EString
-                > ::fromAny(_newValue, _t0);
-        addMembers(_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < std::vector
+                < ::ecorecpp::mapping::any >> (_newValue);
+        std::vector < ::ecore::EString > _t1;
+        _t1.reserve(_t0.size());
+        for (const auto &anyValue : _t0)
+        {
+            ecore::EString value;
+            ::ecorecpp::mapping::any_traits < ecore::EString
+                    > ::fromAny(anyValue, value);
+            _t1.push_back(value);
+        }
+        setMembers (_t1);
     }
         return;
 

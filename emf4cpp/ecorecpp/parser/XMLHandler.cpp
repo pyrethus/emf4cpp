@@ -127,7 +127,10 @@ void XMLHandler::characters(xml_parser::match_pair const& chars) {
 		assert(efac);
 
 		any anyObj = efac->createFromString(edt, literal);
-		eobj->eSet(esf, anyObj);
+		EAttribute_ptr const eattr = as< EAttribute > (esf);
+		eattr && eattr->getUpperBound() != 1 ?
+				appendMultipleAttributeValue(eobj, eattr, anyObj) :
+				eobj->eSet(esf, anyObj);
 	} catch (const char * e) {
 		ERROR_MSG("ERROR: " << e);
 	}
@@ -323,21 +326,23 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 			EClass_ptr const peclass = peobj->eClass();
 			EStructuralFeature_ptr const esf = getEStructuralFeature(peclass, name);
 
-			any anyRef;
+			any anyObj;
 
 			EReference_ptr const eref = as< EReference > (esf);
-
 			if (eref && eref->getUpperBound() != 1) {
 				// Gets the collection and adds the new element
-				anyRef = peobj->eGet(esf);
+				anyObj = peobj->eGet(esf);
 				mapping::EList<::ecore::EObject_ptr>::ptr_type list =
 						ecorecpp::mapping::any::any_cast<
-						mapping::EList<::ecore::EObject_ptr>::ptr_type>(anyRef);
+						mapping::EList<::ecore::EObject_ptr>::ptr_type>(anyObj);
 
 				list->push_back(eobj);
 			} else {
-				anyRef = eobj;
-				peobj->eSet(esf, anyRef);
+				anyObj = eobj;
+				EAttribute_ptr const eattr = as< EAttribute > (esf);
+				eattr && eattr->getUpperBound() != 1 ?
+					appendMultipleAttributeValue(peobj, eattr, anyObj) :
+					peobj->eSet(esf, anyObj);
 			}
 
 			// EOpposite relations are implemented via a call of _inverseAdd()
@@ -481,6 +486,19 @@ void XMLHandler::resolveCrossDocumentReferences() {
 
 const std::list<Reference>& XMLHandler::getCrossDocumentReferences() const {
 	return m_unresolved_cross_references;
+}
+
+
+void XMLHandler::appendMultipleAttributeValue(
+		EObject_ptr const& eobj,
+		EAttribute_ptr const& eattr,
+		any anyObj) {
+	assert(eattr->getUpperBound() != 1);
+	auto oldList = eobj->eGet(eattr);
+	auto list = ecorecpp::mapping::any::any_cast<
+			std::vector<ecorecpp::mapping::any>>(oldList);
+	list.push_back(anyObj);
+	eobj->eSet(eattr, list);
 }
 
 } // parser

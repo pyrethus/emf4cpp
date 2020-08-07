@@ -115,18 +115,34 @@ void SimpleAnyType::eSet(::ecore::EInt _featureID,
     {
     case ::type::TypePackage::SIMPLEANYTYPE__MIXED:
     {
-        ::ecore::EFeatureMapEntry _t0;
-        ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
-                > ::fromAny(_newValue, _t0);
-        addMixed(_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < std::vector
+                < ::ecorecpp::mapping::any >> (_newValue);
+        std::vector < ::ecore::EFeatureMapEntry > _t1;
+        _t1.reserve(_t0.size());
+        for (const auto &anyValue : _t0)
+        {
+            ecore::EFeatureMapEntry value;
+            ::ecorecpp::mapping::any_traits < ecore::EFeatureMapEntry
+                    > ::fromAny(anyValue, value);
+            _t1.push_back(value);
+        }
+        setMixed (_t1);
     }
         return;
     case ::type::TypePackage::SIMPLEANYTYPE__ANYATTRIBUTE:
     {
-        ::ecore::EFeatureMapEntry _t0;
-        ::ecorecpp::mapping::any_traits < ::ecore::EFeatureMapEntry
-                > ::fromAny(_newValue, _t0);
-        addAnyAttribute(_t0);
+        auto _t0 = ::ecorecpp::mapping::any::any_cast < std::vector
+                < ::ecorecpp::mapping::any >> (_newValue);
+        std::vector < ::ecore::EFeatureMapEntry > _t1;
+        _t1.reserve(_t0.size());
+        for (const auto &anyValue : _t0)
+        {
+            ecore::EFeatureMapEntry value;
+            ::ecorecpp::mapping::any_traits < ecore::EFeatureMapEntry
+                    > ::fromAny(anyValue, value);
+            _t1.push_back(value);
+        }
+        setAnyAttribute (_t1);
     }
         return;
     case ::type::TypePackage::SIMPLEANYTYPE__INSTANCETYPE:

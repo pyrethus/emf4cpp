@@ -163,11 +163,17 @@ void «name»::eSet ( ::ecore::EInt _featureID, ::ecore::EJavaObject const& _new
                     «ENDIF-»
                 «ELSE-»
                     «IF ef.isList() || ef.isMultiple()-»
-                        «ef.getCPPTypeSignatureImpl()» _t0;
-                        ::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::fromAny(_newValue, _t0);
-                        add«ef.name.toFirstUpper()»(_t0);
+                        auto _t0 = ::ecorecpp::mapping::any::any_cast<std::vector<::ecorecpp::mapping::any>>(_newValue);
+                        «ef.getCPPTypeSignature()» _t1;
+                        _t1.reserve(_t0.size());
+                        for (const auto& anyValue : _t0) {
+                        	«ef.EType.getFQN()» value;
+                        	::ecorecpp::mapping::any_traits<«ef.EType.getFQN()»>::fromAny(anyValue, value);
+                        	_t1.push_back(value);
+                        }
+                        set«ef.name.toFirstUpper()»(_t1);
                     «ELSE-»
-                        «ef.getCPPTypeSignatureImpl()» _t0;
+                    	«ef.getCPPTypeSignatureImpl()» _t0;
                         ::ecorecpp::mapping::any_traits< ::«ef.EType.getFQN()» >::fromAny(_newValue, _t0);
                         set«ef.name.toFirstUpper()»(_t0);
                     «ENDIF-»
