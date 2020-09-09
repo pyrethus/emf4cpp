@@ -66,6 +66,12 @@ void handler::characters(xml_parser::match_pair const& chars)
             EStructuralFeature_ptr const esf = peclass->getEStructuralFeature(
                     _name);
 
+            if ( instanceOf< EReference >(esf) ) {
+                /* m_expected_literal_name does not identify an EAttribute, hence any
+                 * parsed text content is ignored. */
+                return;
+            }
+
             EDataType_ptr const edt = as< EDataType >(esf->getEType());
 
             EFactory_ptr const efac = edt->getEPackage()->getEFactoryInstance();
@@ -94,6 +100,7 @@ void handler::start_tag(xml_parser::match_pair const& name,
 {
     ::ecorecpp::mapping::type_definitions::string_t * _type = 0;
     ::ecorecpp::mapping::type_definitions::string_t _name(name.first, name.second);
+    bool isNull = false;
     static MetaModelRepository_ptr _mmr = MetaModelRepository::_instance();
 
     // Data
@@ -118,6 +125,9 @@ void handler::start_tag(xml_parser::match_pair const& name,
                               attributes[i].second.second));
 
 		util::unescape_html(attr_list[i].second);
+
+		if (attr_list[i].first == "xsi:nil")
+			isNull = true;
 
 		if (!_type && (attr_list[i].first == "xsi:type"))
 			_type = &attr_list[i].second;
@@ -172,7 +182,7 @@ void handler::start_tag(xml_parser::match_pair const& name,
     assert(epkg);
     eclass = as< EClass > (eclassifier);
 
-    if (eclass)
+    if (!isNull && eclass)
     {
         efac = epkg->getEFactoryInstance();
         assert(efac);

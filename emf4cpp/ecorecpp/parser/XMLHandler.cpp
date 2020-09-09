@@ -147,6 +147,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 	::ecorecpp::mapping::type_definitions::string_t * href = nullptr;
 	::ecorecpp::mapping::type_definitions::string_t * xmiId = nullptr;
 	::ecorecpp::mapping::type_definitions::string_t name(nameP.first, nameP.second);
+	bool isNull = false;
 	DEBUG_MSG(cerr, "--- START: " << m_level << " " << name);
 	static MetaModelRepository_ptr _mmr = MetaModelRepository::_instance();
 
@@ -173,6 +174,9 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 						attributes[i].second.second));
 
 		util::unescape_html(attr_list[i].second);
+
+		if (attr_list[i].first == "xsi:nil")
+			isNull = true;
 
 		if (!type && (attr_list[i].first == "xsi:type"))
 			type = &attr_list[i].second;
@@ -264,7 +268,7 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 	assert(epkg);
 	eclass = as<EClass>(eclassifier);
 
-	if (eclass) {
+	if (!isNull && eclass) {
 		efac = epkg->getEFactoryInstance();
 		assert(efac);
 		eobj = efac->create(eclass);

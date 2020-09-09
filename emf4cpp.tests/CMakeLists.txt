@@ -60,4 +60,6 @@ add_subdirectory(xpand/antlr EXCLUDE_FROM_ALL)
 add_subdirectory(mapping-tests)
 add_subdirectory(EOperationBody)
 add_subdirectory(EOperationBody/test)
+add_subdirectory(nil-reference)
+add_subdirectory(nil-reference/test)
 
