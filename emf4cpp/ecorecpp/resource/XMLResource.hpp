@@ -22,6 +22,7 @@
 
 #include "../dllEcorecpp.hpp"
 
+#include <map>
 #include <unordered_map>
 
 #include "../mapping/type_definitions.hpp"
@@ -111,8 +112,13 @@ private:
 	void doLoad(const std::vector<::ecorecpp::mapping::type_definitions::char_t>&,
 				const Resource::OptionMap& = Resource::OptionMap());
 
-	std::unordered_map<::ecore::EObject_ptr, std::string> _eObjectToIDMap;
-	std::unordered_map<std::string, ::ecore::EObject_ptr> _idToEObjectMap;
+	using WeakEObject_ptr = std::weak_ptr<::ecore::EObject>;
+
+	std::map<WeakEObject_ptr, std::string,
+			 std::owner_less<WeakEObject_ptr> > _eObjectToIDMap;
+
+	/* Safe because the std::weak_ptr is only the value. */
+	std::unordered_map<std::string, WeakEObject_ptr> _idToEObjectMap;
 };
 
 } // resource

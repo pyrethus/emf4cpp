@@ -25,6 +25,7 @@
 #include <QUuid>
 #include <ecorecpp/parser/XMLHandler.hpp>
 #include <ecorecpp/serializer/XMLSerializer.hpp>
+#include <util/EcoreUtil.hpp>
 
 namespace ecorecpp {
 namespace resource {
@@ -67,10 +68,21 @@ std::string XMLResource::getID(::ecore::EObject_ptr eobj) {
 
 ::ecore::EObject_ptr XMLResource::getEObject(const std::string& uriFragment) {
 	auto it = _idToEObjectMap.find(uriFragment);
-	if (it != _idToEObjectMap.end())
-		return it->second;
+	if (it != _idToEObjectMap.end()) {
+		auto retVal = it->second.lock();
+		if (retVal)
+			return retVal;
+		_idToEObjectMap.erase(it);
+	}
 
-	return Resource::getEObject(uriFragment);
+	auto retVal = Resource::getEObject(uriFragment);
+	if (retVal) {
+		auto id = ::ecorecpp::util::EcoreUtil::getId(retVal);
+		if (!id.empty())
+			setID(retVal, id);
+	}
+
+	return retVal;
 }
 
 std::string XMLResource::getURIFragment(::ecore::EObject_ptr obj) {
@@ -209,9 +221,10 @@ void XMLResource::doLoad(
 
 	getContents()->push_back(root);
 
-	_idToEObjectMap = handler.getXmiIds();
-	for (auto& entry : _idToEObjectMap)
-		_eObjectToIDMap.insert(std::make_pair(entry.second, entry.first));
+	for (auto&& entry : handler.getXmiIds()) {
+		_idToEObjectMap.insert(std::make_pair(entry.first,  entry.second));
+		_eObjectToIDMap.insert(std::make_pair(entry.second, entry.first ));
+	}
 
 	/* Now the model knows it's resource and we can try to resolve
 	 * the (cross-document) references, too.
