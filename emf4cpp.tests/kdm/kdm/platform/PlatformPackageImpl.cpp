@@ -154,7 +154,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -164,6 +164,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractPlatformElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -195,6 +197,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractPlatformElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractPlatformRelationshipEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -217,7 +220,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -227,6 +230,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractPlatformElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -249,7 +254,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
+                ::kdm::code::CodePackage::_instance()->getAbstractCodeElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -259,6 +264,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractPlatformElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::code::CodePackage::_instance()->getAbstractCodeElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -330,6 +337,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_BindsToEClass);
 
         // EReference
+        feature->setEReferenceType(m_ResourceTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -360,6 +368,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_BindsToEClass);
 
         // EReference
+        feature->setEReferenceType(m_ResourceTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -418,8 +427,7 @@ void PlatformPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
+        feature->setEType(::kdm::code::CodePackage::_instance()->getCodeItem());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -428,6 +436,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_DefinedByEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::code::CodePackage::_instance()->getCodeItem());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -450,7 +460,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -460,6 +470,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_DefinedByEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -503,8 +515,7 @@ void PlatformPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getModule());
+        feature->setEType(::kdm::code::CodePackage::_instance()->getModule());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -514,6 +525,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_DeployedComponentEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::code::CodePackage::_instance()->getModule());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -566,6 +579,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_DeployedResourceEClass);
 
         // EReference
+        feature->setEReferenceType(m_ResourceTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -618,6 +632,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_DeployedSoftwareSystemEClass);
 
         // EReference
+        feature->setEReferenceType(m_DeployedComponentEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -715,6 +730,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_LoadsEClass);
 
         // EReference
+        feature->setEReferenceType(m_DeployedComponentEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -737,7 +753,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -746,6 +762,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_LoadsEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -814,6 +832,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_MachineEClass);
 
         // EReference
+        feature->setEReferenceType(m_DeployedComponentEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -845,6 +864,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_MachineEClass);
 
         // EReference
+        feature->setEReferenceType(m_DeployedResourceEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -898,6 +918,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_ManagesResourceEClass);
 
         // EReference
+        feature->setEReferenceType(m_ResourceTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -920,7 +941,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -930,6 +951,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_ManagesResourceEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1018,8 +1041,7 @@ void PlatformPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1029,6 +1051,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_PlatformActionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1059,6 +1083,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_PlatformActionEClass);
 
         // EReference
+        feature->setEReferenceType(m_PlatformEventEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1117,8 +1142,7 @@ void PlatformPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1128,6 +1152,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_PlatformEventEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1179,6 +1205,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_PlatformModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractPlatformElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1222,7 +1249,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1232,6 +1259,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_PlatformRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1263,6 +1292,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_PlatformRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractPlatformElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1331,6 +1361,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReadsResourceEClass);
 
         // EReference
+        feature->setEReferenceType(m_ResourceTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1353,7 +1384,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1363,6 +1394,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReadsResourceEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1415,6 +1448,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_RequiresEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractPlatformElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1445,6 +1479,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_RequiresEClass);
 
         // EReference
+        feature->setEReferenceType(m_DeployedComponentEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1498,6 +1533,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_ResourceTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractPlatformElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1564,6 +1600,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_SpawnsEClass);
 
         // EReference
+        feature->setEReferenceType(m_RuntimeResourceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1586,7 +1623,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1595,6 +1632,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_SpawnsEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1678,6 +1717,7 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_WritesResourceEClass);
 
         // EReference
+        feature->setEReferenceType(m_ResourceTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1700,7 +1740,7 @@ void PlatformPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1710,6 +1750,8 @@ void PlatformPackage::_initPackage()
         feature->basicsetEContainingClass(m_WritesResourceEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1747,11 +1789,11 @@ void PlatformPackage::_initPackage()
     [this]()
     {
         m_AbstractPlatformElementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         m_PlatformModelEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+                ::kdm::kdm::KdmPackage::_instance()->getKDMModel());
         m_AbstractPlatformRelationshipEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+                ::kdm::core::CorePackage::_instance()->getKDMRelationship());
         m_RequiresEClass->getESuperTypes().push_back(
                 m_AbstractPlatformRelationshipEClass);
         m_ResourceTypeEClass->getESuperTypes().push_back(
@@ -1796,13 +1838,13 @@ void PlatformPackage::_initPackage()
         m_ThreadEClass->getESuperTypes().push_back(m_RuntimeResourceEClass);
         m_ProcessEClass->getESuperTypes().push_back(m_RuntimeResourceEClass);
         m_ReadsResourceEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_WritesResourceEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_ManagesResourceEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_DefinedByEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_StreamResourceEClass->getESuperTypes().push_back(
                 m_ResourceTypeEClass);
     }();

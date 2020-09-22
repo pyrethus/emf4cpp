@@ -191,7 +191,7 @@ void DataPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -201,6 +201,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractDataElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -232,6 +234,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractDataElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractDataRelationshipEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -254,7 +257,7 @@ void DataPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -264,6 +267,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractDataElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -368,8 +373,7 @@ void DataPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getItemUnit());
+        feature->setEType(::kdm::code::CodePackage::_instance()->getItemUnit());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -378,6 +382,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ColumnSetEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::code::CodePackage::_instance()->getItemUnit());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -430,6 +436,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ComplexContentTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractContentElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -511,6 +518,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContentItemEClass);
 
         // EReference
+        feature->setEReferenceType(m_ComplexContentTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -542,6 +550,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContentItemEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractContentElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -600,8 +609,7 @@ void DataPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -611,6 +619,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContentRestrictionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -631,8 +641,7 @@ void DataPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -642,6 +651,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContentRestrictionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -684,8 +695,7 @@ void DataPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -694,6 +704,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DataActionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -715,7 +727,7 @@ void DataPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -725,6 +737,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DataActionEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -756,6 +770,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DataActionEClass);
 
         // EReference
+        feature->setEReferenceType(m_DataEventEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -810,6 +825,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DataContainerEClass);
 
         // EReference
+        feature->setEReferenceType(m_DataResourceEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -852,8 +868,7 @@ void DataPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -862,6 +877,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DataEventEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -912,6 +929,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DataModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractDataElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -955,7 +973,7 @@ void DataPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -964,6 +982,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DataRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -994,6 +1014,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DataRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractDataElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1067,8 +1088,7 @@ void DataPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getDatatype());
+        feature->setEType(::kdm::code::CodePackage::_instance()->getDatatype());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1077,6 +1097,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DatatypeOfEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::code::CodePackage::_instance()->getDatatype());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1107,6 +1129,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_DatatypeOfEClass);
 
         // EReference
+        feature->setEReferenceType(m_ComplexContentTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1174,6 +1197,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExtensionToEClass);
 
         // EReference
+        feature->setEReferenceType(m_ComplexContentTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1204,6 +1228,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExtensionToEClass);
 
         // EReference
+        feature->setEReferenceType(m_ComplexContentTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1271,6 +1296,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_HasContentEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractDataElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1293,7 +1319,7 @@ void DataPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1302,6 +1328,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_HasContentEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1360,8 +1388,7 @@ void DataPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getItemUnit());
+        feature->setEType(::kdm::code::CodePackage::_instance()->getItemUnit());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1371,6 +1398,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_IndexElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::code::CodePackage::_instance()->getItemUnit());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1422,6 +1451,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_KeyRelationEClass);
 
         // EReference
+        feature->setEReferenceType(m_UniqueKeyEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1452,6 +1482,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_KeyRelationEClass);
 
         // EReference
+        feature->setEReferenceType(m_ReferenceKeyEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1504,6 +1535,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ManagesDataEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractDataElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1526,7 +1558,7 @@ void DataPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1535,6 +1567,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ManagesDataEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1602,6 +1636,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProducesDataEventEClass);
 
         // EReference
+        feature->setEReferenceType(m_DataEventEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1624,7 +1659,7 @@ void DataPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1634,6 +1669,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProducesDataEventEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1686,6 +1723,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReadsColumnSetEClass);
 
         // EReference
+        feature->setEReferenceType(m_ColumnSetEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1708,7 +1746,7 @@ void DataPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1717,6 +1755,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReadsColumnSetEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1799,6 +1839,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReferenceToEClass);
 
         // EReference
+        feature->setEReferenceType(m_ContentItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1829,6 +1870,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReferenceToEClass);
 
         // EReference
+        feature->setEReferenceType(m_ContentItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1872,8 +1914,7 @@ void DataPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getCodeItem());
+        feature->setEType(::kdm::code::CodePackage::_instance()->getCodeItem());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1883,6 +1924,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_RelationalSchemaEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::code::CodePackage::_instance()->getCodeItem());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1964,6 +2007,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_RestrictionOfEClass);
 
         // EReference
+        feature->setEReferenceType(m_ComplexContentTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1994,6 +2038,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_RestrictionOfEClass);
 
         // EReference
+        feature->setEReferenceType(m_ComplexContentTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2062,6 +2107,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_SimpleContentTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_ComplexContentTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2083,8 +2129,7 @@ void DataPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2094,6 +2139,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_SimpleContentTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2145,6 +2192,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_TypedByEClass);
 
         // EReference
+        feature->setEReferenceType(m_ComplexContentTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2175,6 +2223,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_TypedByEClass);
 
         // EReference
+        feature->setEReferenceType(m_ContentItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2242,6 +2291,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_WritesColumnSetEClass);
 
         // EReference
+        feature->setEReferenceType(m_ColumnSetEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2264,7 +2314,7 @@ void DataPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2273,6 +2323,8 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_WritesColumnSetEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2326,6 +2378,7 @@ void DataPackage::_initPackage()
         feature->basicsetEContainingClass(m_XMLSchemaEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractContentElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -2362,16 +2415,16 @@ void DataPackage::_initPackage()
     [this]()
     {
         m_DataModelEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+                ::kdm::kdm::KdmPackage::_instance()->getKDMModel());
         m_AbstractDataElementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         m_DataResourceEClass->getESuperTypes().push_back(
                 m_AbstractDataElementEClass);
         m_IndexElementEClass->getESuperTypes().push_back(m_DataResourceEClass);
         m_UniqueKeyEClass->getESuperTypes().push_back(m_IndexElementEClass);
         m_IndexEClass->getESuperTypes().push_back(m_IndexElementEClass);
         m_AbstractDataRelationshipEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+                ::kdm::core::CorePackage::_instance()->getKDMRelationship());
         m_KeyRelationEClass->getESuperTypes().push_back(
                 m_AbstractDataRelationshipEClass);
         m_ReferenceKeyEClass->getESuperTypes().push_back(m_IndexElementEClass);
@@ -2414,7 +2467,7 @@ void DataPackage::_initPackage()
         m_DataActionEClass->getESuperTypes().push_back(
                 m_AbstractDataElementEClass);
         m_ReadsColumnSetEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_ContentAttributeEClass->getESuperTypes().push_back(
                 m_ContentItemEClass);
         m_TypedByEClass->getESuperTypes().push_back(
@@ -2428,15 +2481,15 @@ void DataPackage::_initPackage()
         m_DatatypeOfEClass->getESuperTypes().push_back(
                 m_AbstractDataRelationshipEClass);
         m_HasContentEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_WritesColumnSetEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_ProducesDataEventEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_DataSegmentEClass->getESuperTypes().push_back(m_ColumnSetEClass);
         m_ContentElementEClass->getESuperTypes().push_back(m_ContentItemEClass);
         m_ManagesDataEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
     }();
 
     [this]()

@@ -74,8 +74,7 @@ void TreeiteratorPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -84,6 +83,8 @@ void TreeiteratorPackage::_initPackage()
         feature->basicsetEContainingClass(m_LeafEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -125,8 +126,7 @@ void TreeiteratorPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -136,6 +136,8 @@ void TreeiteratorPackage::_initPackage()
         feature->basicsetEContainingClass(m_TreeNodeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -166,6 +168,7 @@ void TreeiteratorPackage::_initPackage()
         feature->basicsetEContainingClass(m_TreeNodeEClass);
 
         // EReference
+        feature->setEReferenceType(m_TreeNodeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -197,6 +200,7 @@ void TreeiteratorPackage::_initPackage()
         feature->basicsetEContainingClass(m_TreeNodeEClass);
 
         // EReference
+        feature->setEReferenceType(m_LeafEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();

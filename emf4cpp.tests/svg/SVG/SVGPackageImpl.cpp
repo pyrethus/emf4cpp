@@ -200,6 +200,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_AttributeEClass);
 
         // EReference
+        feature->setEReferenceType(m_ElementEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Element__attribute);
         feature->setResolveProxies(true);
@@ -259,7 +260,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -268,6 +269,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_CoordinatesEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -289,7 +292,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -298,6 +301,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_CoordinatesEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -356,7 +361,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -365,6 +370,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_DimensionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -386,7 +393,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -395,6 +402,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_DimensionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -446,6 +455,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_SvgFileEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_SvgFile__elements);
         feature->setResolveProxies(true);
@@ -477,6 +487,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_UseEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Use__use);
         feature->setResolveProxies(true);
@@ -508,6 +519,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AttributeEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Attribute__attOwner);
         feature->setResolveProxies(true);
@@ -539,6 +551,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_CoordinatesEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -569,6 +582,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_DimensionEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -599,6 +613,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_SvgEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Svg__children);
         feature->setResolveProxies(true);
@@ -622,7 +637,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -631,6 +646,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -652,7 +669,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -661,6 +678,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -690,6 +709,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_GroupingElementEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_GroupingElement__groupContent);
         feature->setResolveProxies(true);
@@ -713,7 +733,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -722,6 +742,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -751,6 +773,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_MarkerEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Marker__drawing);
         feature->setResolveProxies(true);
@@ -820,7 +843,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getBoolean());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -829,6 +852,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_FontStyleEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getBoolean());
         feature->setID(false);
     }();
 
@@ -871,7 +896,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getBoolean());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -880,6 +905,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_FontWeightEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getBoolean());
         feature->setID(false);
     }();
 
@@ -922,7 +949,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -931,6 +958,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_GEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -973,7 +1002,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -982,6 +1011,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_GraphicalElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1032,6 +1063,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_GroupingElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_ElementEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_Element__group);
         feature->setResolveProxies(true);
@@ -1084,6 +1116,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ImageEClass);
 
         // EReference
+        feature->setEReferenceType(m_ReferencedFileEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_ReferencedFile__referer);
         feature->setResolveProxies(true);
@@ -1136,6 +1169,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_LineEClass);
 
         // EReference
+        feature->setEReferenceType(m_PointEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1158,7 +1192,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1167,6 +1201,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_LineEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1188,7 +1224,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1197,6 +1233,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_LineEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1241,7 +1279,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1250,6 +1288,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_MarkerEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1271,7 +1311,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1280,6 +1320,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_MarkerEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -1301,7 +1343,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1310,6 +1352,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_MarkerEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -1331,7 +1375,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1340,6 +1384,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_MarkerEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -1361,7 +1407,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1370,6 +1416,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_MarkerEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -1391,7 +1439,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1400,6 +1448,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_MarkerEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1429,6 +1479,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_MarkerEClass);
 
         // EReference
+        feature->setEReferenceType(m_ElementEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_Element__drawsMarker);
         feature->setResolveProxies(true);
@@ -1479,7 +1530,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1488,6 +1539,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PathEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -1509,7 +1562,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1518,6 +1571,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PathEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1539,7 +1594,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1548,6 +1603,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PathEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1569,7 +1626,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1578,6 +1635,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PathEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1646,6 +1705,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PolygonEClass);
 
         // EReference
+        feature->setEReferenceType(m_PointEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1668,7 +1728,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1677,6 +1737,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PolygonEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1698,7 +1760,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1707,6 +1769,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PolygonEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1759,6 +1823,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PolylineEClass);
 
         // EReference
+        feature->setEReferenceType(m_PointEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1781,7 +1846,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1790,6 +1855,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PolylineEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1811,7 +1878,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1820,6 +1887,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PolylineEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1841,7 +1910,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1850,6 +1919,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_PolylineEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1895,7 +1966,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1904,6 +1975,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_RectEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -1925,7 +1998,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1934,6 +2007,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_RectEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -1985,6 +2060,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReferencedFileEClass);
 
         // EReference
+        feature->setEReferenceType(m_ImageEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Image__referee);
         feature->setResolveProxies(true);
@@ -2008,7 +2084,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2017,6 +2093,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReferencedFileEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2075,7 +2153,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2084,6 +2162,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_RotateEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -2105,7 +2185,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2114,6 +2194,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_RotateEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -2135,7 +2217,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2144,6 +2226,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_RotateEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -2188,7 +2272,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2197,6 +2281,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ScaleEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -2218,7 +2304,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2227,6 +2313,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_ScaleEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -2308,6 +2396,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_SvgEClass);
 
         // EReference
+        feature->setEReferenceType(m_SvgFileEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_SvgFile__tag);
         feature->setResolveProxies(true);
@@ -2339,6 +2428,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_SvgEClass);
 
         // EReference
+        feature->setEReferenceType(m_ElementEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_Element__root);
         feature->setResolveProxies(true);
@@ -2362,7 +2452,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2371,6 +2461,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_SvgEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2392,7 +2484,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2401,6 +2493,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_SvgEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2422,7 +2516,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2431,6 +2525,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_SvgEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2485,6 +2581,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_SvgFileEClass);
 
         // EReference
+        feature->setEReferenceType(m_SvgEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Svg__owner_SVG);
         feature->setResolveProxies(true);
@@ -2516,6 +2613,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_SvgFileEClass);
 
         // EReference
+        feature->setEReferenceType(m_ElementEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Element__owner);
         feature->setResolveProxies(true);
@@ -2576,7 +2674,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2585,6 +2683,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_TextEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2606,7 +2706,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2615,6 +2715,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_TextEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2658,7 +2760,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2667,6 +2769,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_TextElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -2688,7 +2792,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2697,6 +2801,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_TextElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2718,7 +2824,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2727,6 +2833,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_TextElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2786,7 +2894,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2795,6 +2903,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_TranslateEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -2816,7 +2926,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getDouble());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2825,6 +2935,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_TranslateEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getDouble());
         feature->setID(false);
     }();
 
@@ -2876,6 +2988,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_TrefEClass);
 
         // EReference
+        feature->setEReferenceType(m_TextElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2919,7 +3032,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getString());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2928,6 +3041,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_TspanEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -2978,6 +3093,7 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_UseEClass);
 
         // EReference
+        feature->setEReferenceType(m_ElementEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Element__target);
         feature->setResolveProxies(true);
@@ -3022,7 +3138,7 @@ void SVGPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::PrimitiveTypes::PrimitiveTypesPackage* >(::PrimitiveTypes::PrimitiveTypesPackage::_instance().get())->getBoolean());
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -3031,6 +3147,8 @@ void SVGPackage::_initPackage()
         feature->basicsetEContainingClass(m_VisibilityEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::PrimitiveTypes::PrimitiveTypesPackage::_instance()->getBoolean());
         feature->setID(false);
     }();
 

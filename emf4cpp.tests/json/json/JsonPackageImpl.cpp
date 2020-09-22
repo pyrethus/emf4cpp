@@ -92,6 +92,7 @@ void JsonPackage::_initPackage()
         feature->basicsetEContainingClass(m_ArrayValueEClass);
 
         // EReference
+        feature->setEReferenceType(m_ValueEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -134,8 +135,7 @@ void JsonPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -144,6 +144,8 @@ void JsonPackage::_initPackage()
         feature->basicsetEContainingClass(m_BooleanValueEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -200,8 +202,7 @@ void JsonPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDouble());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -210,6 +211,8 @@ void JsonPackage::_initPackage()
         feature->basicsetEContainingClass(m_NumberValueEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEDouble());
         feature->setID(false);
     }();
 
@@ -251,8 +254,7 @@ void JsonPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -261,6 +263,8 @@ void JsonPackage::_initPackage()
         feature->basicsetEContainingClass(m_NVPairEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -290,6 +294,7 @@ void JsonPackage::_initPackage()
         feature->basicsetEContainingClass(m_NVPairEClass);
 
         // EReference
+        feature->setEReferenceType(m_ValueEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -342,6 +347,7 @@ void JsonPackage::_initPackage()
         feature->basicsetEContainingClass(m_ObjectValueEClass);
 
         // EReference
+        feature->setEReferenceType(m_NVPairEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -384,8 +390,7 @@ void JsonPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -394,6 +399,8 @@ void JsonPackage::_initPackage()
         feature->basicsetEContainingClass(m_StringValueEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 

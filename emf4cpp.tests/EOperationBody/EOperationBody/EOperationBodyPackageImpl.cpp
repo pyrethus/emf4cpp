@@ -70,8 +70,7 @@ void EOperationBodyPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -81,6 +80,8 @@ void EOperationBodyPackage::_initPackage()
         feature->basicsetEContainingClass(m_IntegerEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 

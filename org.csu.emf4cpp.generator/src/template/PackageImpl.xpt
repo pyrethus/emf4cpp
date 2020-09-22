@@ -163,6 +163,7 @@ void «name.toFirstUpper()»Package::_initPackage()
             «LET ((EAttribute)esf) AS at-»
 
         // EAttribute
+        feature->setEAttributeType(«getPackageAttribute(at.EAttributeType)»);
         feature->setID(«at.getID()»);
             «ENDLET-»
         «ENDIF-»
@@ -170,6 +171,7 @@ void «name.toFirstUpper()»Package::_initPackage()
             «LET ((EReference)esf) AS ref-»
 
         // EReference
+        feature->setEReferenceType(«getPackageAttribute(ref.EReferenceType)»);
         feature->setContainment(«ref.containment»);
             «IF ref.EOpposite != null-»
         feature->setEOpposite( «getFeatureMember(ref.EOpposite)» );

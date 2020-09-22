@@ -82,8 +82,7 @@ void ResourceTestsPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("Hallo Welt!");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -93,6 +92,8 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypesEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -113,8 +114,7 @@ void ResourceTestsPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -124,6 +124,8 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypesEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -144,8 +146,7 @@ void ResourceTestsPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("1976-05-27T12:13:14.123-0300");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDate());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEDate());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -155,6 +156,8 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypesEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEDate());
         feature->setID(false);
     }();
 
@@ -175,8 +178,7 @@ void ResourceTestsPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("98");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEChar());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEChar());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -186,6 +188,8 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypesEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEChar());
         feature->setID(false);
     }();
 
@@ -206,8 +210,7 @@ void ResourceTestsPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("true");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -217,6 +220,8 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypesEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -237,8 +242,7 @@ void ResourceTestsPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("3.14");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDouble());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEDouble());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -248,6 +252,8 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypesEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEDouble());
         feature->setID(false);
     }();
 
@@ -268,8 +274,7 @@ void ResourceTestsPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("10");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -279,6 +284,8 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypesEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -351,6 +358,7 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReferrerEClass);
 
         // EReference
+        feature->setEReferenceType(m_ReferenceTargetEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -403,6 +411,7 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_RootEClass);
 
         // EReference
+        feature->setEReferenceType(m_ReferenceTargetEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -434,6 +443,7 @@ void ResourceTestsPackage::_initPackage()
         feature->basicsetEContainingClass(m_RootEClass);
 
         // EReference
+        feature->setEReferenceType(m_ReferrerEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();

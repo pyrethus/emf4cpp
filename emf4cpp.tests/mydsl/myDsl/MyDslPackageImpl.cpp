@@ -92,6 +92,7 @@ void MyDslPackage::_initPackage()
         feature->basicsetEContainingClass(m_EntityEClass);
 
         // EReference
+        feature->setEReferenceType(m_EntityEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -122,6 +123,7 @@ void MyDslPackage::_initPackage()
         feature->basicsetEContainingClass(m_EntityEClass);
 
         // EReference
+        feature->setEReferenceType(m_PropertyEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -165,8 +167,7 @@ void MyDslPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -175,6 +176,8 @@ void MyDslPackage::_initPackage()
         feature->basicsetEContainingClass(m_ImportEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -225,6 +228,7 @@ void MyDslPackage::_initPackage()
         feature->basicsetEContainingClass(m_ModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_ImportEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -255,6 +259,7 @@ void MyDslPackage::_initPackage()
         feature->basicsetEContainingClass(m_ModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_TypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -298,8 +303,7 @@ void MyDslPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -308,6 +312,8 @@ void MyDslPackage::_initPackage()
         feature->basicsetEContainingClass(m_PropertyEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -337,6 +343,7 @@ void MyDslPackage::_initPackage()
         feature->basicsetEContainingClass(m_PropertyEClass);
 
         // EReference
+        feature->setEReferenceType(m_TypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -358,8 +365,7 @@ void MyDslPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -368,6 +374,8 @@ void MyDslPackage::_initPackage()
         feature->basicsetEContainingClass(m_PropertyEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -426,8 +434,7 @@ void MyDslPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -436,6 +443,8 @@ void MyDslPackage::_initPackage()
         feature->basicsetEContainingClass(m_TypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 

@@ -74,8 +74,7 @@ void EdatePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("1969-07-20T20:18:00.000+0000");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDate());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEDate());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -85,6 +84,8 @@ void EdatePackage::_initPackage()
         feature->basicsetEContainingClass(m_Apollo11EClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEDate());
         feature->setID(false);
     }();
 
@@ -114,6 +115,7 @@ void EdatePackage::_initPackage()
         feature->basicsetEContainingClass(m_Apollo11EClass);
 
         // EReference
+        feature->setEReferenceType(m_PersonEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -157,8 +159,7 @@ void EdatePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDate());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEDate());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -167,6 +168,8 @@ void EdatePackage::_initPackage()
         feature->basicsetEContainingClass(m_PersonEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEDate());
         feature->setID(false);
     }();
 
@@ -187,8 +190,7 @@ void EdatePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -197,6 +199,8 @@ void EdatePackage::_initPackage()
         feature->basicsetEContainingClass(m_PersonEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 

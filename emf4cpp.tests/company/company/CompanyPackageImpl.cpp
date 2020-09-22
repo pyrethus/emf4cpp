@@ -79,8 +79,7 @@ void CompanyPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -89,6 +88,8 @@ void CompanyPackage::_initPackage()
         feature->basicsetEContainingClass(m_CompanyEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -118,6 +119,7 @@ void CompanyPackage::_initPackage()
         feature->basicsetEContainingClass(m_CompanyEClass);
 
         // EReference
+        feature->setEReferenceType(m_DepartmentEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -170,6 +172,7 @@ void CompanyPackage::_initPackage()
         feature->basicsetEContainingClass(m_DepartmentEClass);
 
         // EReference
+        feature->setEReferenceType(m_EmployeeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -200,6 +203,7 @@ void CompanyPackage::_initPackage()
         feature->basicsetEContainingClass(m_DepartmentEClass);
 
         // EReference
+        feature->setEReferenceType(m_EmployeeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -221,8 +225,7 @@ void CompanyPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -231,6 +234,8 @@ void CompanyPackage::_initPackage()
         feature->basicsetEContainingClass(m_DepartmentEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -274,8 +279,7 @@ void CompanyPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -284,6 +288,8 @@ void CompanyPackage::_initPackage()
         feature->basicsetEContainingClass(m_EmployeeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -314,6 +320,7 @@ void CompanyPackage::_initPackage()
         feature->basicsetEContainingClass(m_EmployeeEClass);
 
         // EReference
+        feature->setEReferenceType(m_PhonebookEntryEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();

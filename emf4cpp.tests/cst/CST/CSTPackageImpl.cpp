@@ -77,8 +77,7 @@ void CSTPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -87,6 +86,8 @@ void CSTPackage::_initPackage()
         feature->basicsetEContainingClass(m_ElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -128,8 +129,7 @@ void CSTPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -138,6 +138,8 @@ void CSTPackage::_initPackage()
         feature->basicsetEContainingClass(m_LeafEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -158,8 +160,7 @@ void CSTPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -168,6 +169,8 @@ void CSTPackage::_initPackage()
         feature->basicsetEContainingClass(m_LeafEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -188,8 +191,7 @@ void CSTPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -198,6 +200,8 @@ void CSTPackage::_initPackage()
         feature->basicsetEContainingClass(m_LeafEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -250,6 +254,7 @@ void CSTPackage::_initPackage()
         feature->basicsetEContainingClass(m_NodeEClass);
 
         // EReference
+        feature->setEReferenceType(m_ElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();

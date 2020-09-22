@@ -86,7 +86,7 @@ void Level2Package::_initPackage()
     [this]()
     {
         m_Level2ClassEClass->getESuperTypes().push_back(
-                dynamic_cast< ::TopLevelPackage::TopLevelPackagePackage* >(::TopLevelPackage::TopLevelPackagePackage::_instance().get())->getTopLevelClass());
+                ::TopLevelPackage::TopLevelPackagePackage::_instance()->getTopLevelClass());
     }();
 
     [this]()

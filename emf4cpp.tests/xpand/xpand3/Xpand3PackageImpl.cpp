@@ -95,6 +95,7 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_DeclaredParameterEClass);
 
         // EReference
+        feature->setEReferenceType(m_IdentifierEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -125,6 +126,7 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_DeclaredParameterEClass);
 
         // EReference
+        feature->setEReferenceType(m_IdentifierEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -177,6 +179,7 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_FileEClass);
 
         // EReference
+        feature->setEReferenceType(m_ImportStatementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -199,7 +202,7 @@ void Xpand3Package::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::declaration::DeclarationPackage* >(::xpand3::declaration::DeclarationPackage::_instance().get())->getAbstractDeclaration());
+                ::xpand3::declaration::DeclarationPackage::_instance()->getAbstractDeclaration());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -208,6 +211,8 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_FileEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::declaration::DeclarationPackage::_instance()->getAbstractDeclaration());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -251,8 +256,7 @@ void Xpand3Package::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -261,6 +265,8 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_IdentifierEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -312,6 +318,7 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_ImportStatementEClass);
 
         // EReference
+        feature->setEReferenceType(m_IdentifierEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -333,8 +340,7 @@ void Xpand3Package::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -344,6 +350,8 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_ImportStatementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -386,8 +394,7 @@ void Xpand3Package::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -396,6 +403,8 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_SyntaxElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -416,8 +425,7 @@ void Xpand3Package::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -426,6 +434,8 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_SyntaxElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -446,8 +456,7 @@ void Xpand3Package::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -456,6 +465,8 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_SyntaxElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -476,8 +487,7 @@ void Xpand3Package::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -486,6 +496,8 @@ void Xpand3Package::_initPackage()
         feature->basicsetEContainingClass(m_SyntaxElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 

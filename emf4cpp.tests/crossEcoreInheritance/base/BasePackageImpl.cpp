@@ -77,8 +77,7 @@ void BasePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -87,6 +86,8 @@ void BasePackage::_initPackage()
         feature->basicsetEContainingClass(m_Base01EClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -108,7 +109,7 @@ void BasePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::derived::DerivedPackage* >(::derived::DerivedPackage::_instance().get())->getDerived02());
+                ::derived::DerivedPackage::_instance()->getDerived02());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -117,6 +118,8 @@ void BasePackage::_initPackage()
         feature->basicsetEContainingClass(m_Base01EClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::derived::DerivedPackage::_instance()->getDerived02());
         feature->setContainment(false);
         feature->setEOpposite(
                 ::derived::DerivedPackage::_instance()->getDerived02__base01ref());
@@ -162,8 +165,7 @@ void BasePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -172,6 +174,8 @@ void BasePackage::_initPackage()
         feature->basicsetEContainingClass(m_Base02EClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -213,8 +217,7 @@ void BasePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -223,6 +226,8 @@ void BasePackage::_initPackage()
         feature->basicsetEContainingClass(m_Base03EClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 

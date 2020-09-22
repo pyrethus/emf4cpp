@@ -243,7 +243,7 @@ void CodePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -253,6 +253,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractCodeElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -284,6 +286,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractCodeElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_CommentUnitEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -315,6 +318,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractCodeElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractCodeRelationshipEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -374,8 +378,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -384,6 +387,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ArrayTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -413,6 +418,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ArrayTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_IndexUnitEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -456,8 +462,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -466,6 +471,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_BagTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -575,6 +582,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_CallableUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_CallableKindEEnum);
         feature->setID(false);
     }();
 
@@ -646,8 +654,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getBoolean());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -656,6 +663,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ClassUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getBoolean());
         feature->setID(false);
     }();
 
@@ -685,6 +694,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ClassUnitEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -782,6 +792,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_CodeModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractCodeElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -825,7 +836,7 @@ void CodePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -834,6 +845,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_CodeRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -864,6 +877,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_CodeRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -907,8 +921,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -917,6 +930,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_CommentUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -983,6 +998,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_CompositeTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_ItemUnitEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1064,6 +1080,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ControlElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_DatatypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1086,7 +1103,7 @@ void CodePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getEntryFlow());
+                ::kdm::action::ActionPackage::_instance()->getEntryFlow());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1096,6 +1113,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ControlElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getEntryFlow());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1127,6 +1146,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ControlElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractCodeElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1180,6 +1200,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_DataElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_DatatypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1201,8 +1222,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1211,6 +1231,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_DataElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1231,8 +1253,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1241,6 +1262,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_DataElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -1271,6 +1294,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_DataElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_DatatypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1370,6 +1394,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_DefinedTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_DatatypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1401,6 +1426,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_DefinedTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_DatatypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1453,6 +1479,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_DerivedTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_ItemUnitEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1504,6 +1531,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_EnumeratedTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_ValueEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1555,6 +1583,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ExpandsEClass);
 
         // EReference
+        feature->setEReferenceType(m_PreprocessorDirectiveEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1585,6 +1614,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ExpandsEClass);
 
         // EReference
+        feature->setEReferenceType(m_PreprocessorDirectiveEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1651,6 +1681,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ExtendsEClass);
 
         // EReference
+        feature->setEReferenceType(m_DatatypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1681,6 +1712,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ExtendsEClass);
 
         // EReference
+        feature->setEReferenceType(m_DatatypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1748,6 +1780,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_GeneratedFromEClass);
 
         // EReference
+        feature->setEReferenceType(m_PreprocessorDirectiveEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1778,6 +1811,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_GeneratedFromEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractCodeElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1830,6 +1864,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_HasTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_DatatypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1860,6 +1895,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_HasTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1912,6 +1948,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_HasValueEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1942,6 +1979,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_HasValueEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1994,6 +2032,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ImplementationOfEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2024,6 +2063,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ImplementationOfEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2076,6 +2116,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ImplementsEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2106,6 +2147,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ImplementsEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2158,6 +2200,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ImportsEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2188,6 +2231,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ImportsEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2255,6 +2299,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_IncludesEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractCodeElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2285,6 +2330,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_IncludesEClass);
 
         // EReference
+        feature->setEReferenceType(m_PreprocessorDirectiveEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2352,6 +2398,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_InstanceOfEClass);
 
         // EReference
+        feature->setEReferenceType(m_TemplateUnitEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2382,6 +2429,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_InstanceOfEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractCodeElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2450,6 +2498,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_InterfaceUnitEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -2560,6 +2609,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_MacroUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_MacroKindEEnum);
         feature->setID(false);
     }();
 
@@ -2610,6 +2660,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_MemberUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_ExportKindEEnum);
         feature->setID(false);
     }();
 
@@ -2674,6 +2725,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_MethodUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_MethodKindEEnum);
         feature->setID(false);
     }();
 
@@ -2703,6 +2755,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_MethodUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_ExportKindEEnum);
         feature->setID(false);
     }();
 
@@ -2754,6 +2807,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ModuleEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractCodeElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -2806,6 +2860,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_NamespaceUnitEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2931,6 +2986,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ParameterToEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2961,6 +3017,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ParameterToEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractCodeElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -3013,6 +3070,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ParameterUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_ParameterKindEEnum);
         feature->setID(false);
     }();
 
@@ -3033,8 +3091,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -3043,6 +3100,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ParameterUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -3110,6 +3169,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_PreprocessorDirectiveEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractCodeElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -3167,8 +3227,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -3177,6 +3236,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_RangeTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -3197,8 +3258,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -3207,6 +3267,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_RangeTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -3273,6 +3335,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_RedefinesEClass);
 
         // EReference
+        feature->setEReferenceType(m_PreprocessorDirectiveEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -3303,6 +3366,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_RedefinesEClass);
 
         // EReference
+        feature->setEReferenceType(m_PreprocessorDirectiveEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -3361,8 +3425,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -3371,6 +3434,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_SequenceTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -3412,8 +3477,7 @@ void CodePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -3422,6 +3486,8 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_SetTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -3488,6 +3554,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_SignatureEClass);
 
         // EReference
+        feature->setEReferenceType(m_ParameterUnitEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -3553,6 +3620,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_StorableUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_StorableKindEEnum);
         feature->setID(false);
     }();
 
@@ -3664,6 +3732,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_TemplateUnitEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -3776,6 +3845,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_ValueListEClass);
 
         // EReference
+        feature->setEReferenceType(m_ValueElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -3827,6 +3897,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_VariantToEClass);
 
         // EReference
+        feature->setEReferenceType(m_PreprocessorDirectiveEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -3857,6 +3928,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_VariantToEClass);
 
         // EReference
+        feature->setEReferenceType(m_PreprocessorDirectiveEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -3909,6 +3981,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_VisibleInEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -3939,6 +4012,7 @@ void CodePackage::_initPackage()
         feature->basicsetEContainingClass(m_VisibleInEClass);
 
         // EReference
+        feature->setEReferenceType(m_CodeItemEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -3991,7 +4065,7 @@ void CodePackage::_initPackage()
     [this]()
     {
         m_AbstractCodeElementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         m_CodeItemEClass->getESuperTypes().push_back(
                 m_AbstractCodeElementEClass);
         m_ComputationalObjectEClass->getESuperTypes().push_back(
@@ -4007,12 +4081,12 @@ void CodePackage::_initPackage()
         m_TemplateUnitEClass->getESuperTypes().push_back(m_DatatypeEClass);
         m_TemplateParameterEClass->getESuperTypes().push_back(m_DatatypeEClass);
         m_AbstractCodeRelationshipEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+                ::kdm::core::CorePackage::_instance()->getKDMRelationship());
         m_InstanceOfEClass->getESuperTypes().push_back(
                 m_AbstractCodeRelationshipEClass);
         m_CompilationUnitEClass->getESuperTypes().push_back(m_ModuleEClass);
         m_CodeModelEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+                ::kdm::kdm::KdmPackage::_instance()->getKDMModel());
         m_DerivedTypeEClass->getESuperTypes().push_back(m_DatatypeEClass);
         m_ArrayTypeEClass->getESuperTypes().push_back(m_DerivedTypeEClass);
         m_PrimitiveTypeEClass->getESuperTypes().push_back(m_DatatypeEClass);
@@ -4047,7 +4121,7 @@ void CodePackage::_initPackage()
         m_VisibleInEClass->getESuperTypes().push_back(
                 m_AbstractCodeRelationshipEClass);
         m_CommentUnitEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getModelElement());
+                ::kdm::core::CorePackage::_instance()->getModelElement());
         m_SharedUnitEClass->getESuperTypes().push_back(m_CompilationUnitEClass);
         m_DecimalTypeEClass->getESuperTypes().push_back(m_PrimitiveTypeEClass);
         m_DateTypeEClass->getESuperTypes().push_back(m_PrimitiveTypeEClass);

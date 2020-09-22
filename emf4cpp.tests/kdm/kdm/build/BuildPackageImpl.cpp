@@ -130,6 +130,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractBuildElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractBuildRelationshipEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -203,7 +204,7 @@ void BuildPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -213,6 +214,8 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_BuildDescriptionEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -234,8 +237,7 @@ void BuildPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -245,6 +247,8 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_BuildDescriptionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -312,6 +316,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_BuildModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractBuildElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -370,7 +375,7 @@ void BuildPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -380,6 +385,8 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_BuildRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -411,6 +418,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_BuildRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractBuildElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -455,7 +463,7 @@ void BuildPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -465,6 +473,8 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_BuildResourceEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -496,6 +506,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_BuildResourceEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractBuildElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -527,6 +538,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_BuildResourceEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractBuildElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -595,6 +607,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConsumesEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractBuildElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -625,6 +638,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConsumesEClass);
 
         // EReference
+        feature->setEReferenceType(m_BuildStepEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -677,6 +691,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_DescribedByEClass);
 
         // EReference
+        feature->setEReferenceType(m_BuildDescriptionEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -707,6 +722,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_DescribedByEClass);
 
         // EReference
+        feature->setEReferenceType(m_BuildStepEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -774,6 +790,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_LinksToEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractBuildElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -804,6 +821,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_LinksToEClass);
 
         // EReference
+        feature->setEReferenceType(m_SymbolicLinkEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -856,6 +874,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProducesEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractBuildElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -886,6 +905,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProducesEClass);
 
         // EReference
+        feature->setEReferenceType(m_BuildStepEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -938,6 +958,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_SuppliedByEClass);
 
         // EReference
+        feature->setEReferenceType(m_SupplierEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -968,6 +989,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_SuppliedByEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractBuildElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1035,6 +1057,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_SupportedByEClass);
 
         // EReference
+        feature->setEReferenceType(m_ToolEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1065,6 +1088,7 @@ void BuildPackage::_initPackage()
         feature->basicsetEContainingClass(m_SupportedByEClass);
 
         // EReference
+        feature->setEReferenceType(m_BuildStepEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1132,7 +1156,7 @@ void BuildPackage::_initPackage()
     [this]()
     {
         m_AbstractBuildElementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         m_BuildResourceEClass->getESuperTypes().push_back(
                 m_AbstractBuildElementEClass);
         m_BuildDescriptionEClass->getESuperTypes().push_back(
@@ -1140,13 +1164,13 @@ void BuildPackage::_initPackage()
         m_SymbolicLinkEClass->getESuperTypes().push_back(
                 m_AbstractBuildElementEClass);
         m_AbstractBuildRelationshipEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+                ::kdm::core::CorePackage::_instance()->getKDMRelationship());
         m_LinksToEClass->getESuperTypes().push_back(
                 m_AbstractBuildRelationshipEClass);
         m_ConsumesEClass->getESuperTypes().push_back(
                 m_AbstractBuildRelationshipEClass);
         m_BuildModelEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+                ::kdm::kdm::KdmPackage::_instance()->getKDMModel());
         m_BuildComponentEClass->getESuperTypes().push_back(
                 m_BuildResourceEClass);
         m_SupplierEClass->getESuperTypes().push_back(

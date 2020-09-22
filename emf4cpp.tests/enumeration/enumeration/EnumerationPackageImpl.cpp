@@ -81,6 +81,7 @@ void EnumerationPackage::_initPackage()
         feature->basicsetEContainingClass(m_BirdEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_BirdTypeEEnum);
         feature->setID(false);
     }();
 
@@ -101,8 +102,7 @@ void EnumerationPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("Birdy");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -111,6 +111,8 @@ void EnumerationPackage::_initPackage()
         feature->basicsetEContainingClass(m_BirdEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 

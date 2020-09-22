@@ -112,7 +112,7 @@ void ConceptualPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -122,6 +122,8 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractConceptualElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -144,7 +146,7 @@ void ConceptualPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -154,6 +156,8 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractConceptualElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -185,6 +189,7 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractConceptualElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractConceptualRelationshipEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -207,7 +212,7 @@ void ConceptualPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -217,6 +222,8 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractConceptualElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -305,6 +312,7 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConceptualContainerEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractConceptualElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -373,6 +381,7 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConceptualFlowEClass);
 
         // EReference
+        feature->setEReferenceType(m_ConceptualContainerEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -404,6 +413,7 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConceptualFlowEClass);
 
         // EReference
+        feature->setEReferenceType(m_ConceptualContainerEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -457,6 +467,7 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConceptualModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractConceptualElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -500,7 +511,7 @@ void ConceptualPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -510,6 +521,8 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConceptualRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -541,6 +554,7 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConceptualRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractConceptualElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -594,6 +608,7 @@ void ConceptualPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConceptualRoleEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractConceptualElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -690,9 +705,9 @@ void ConceptualPackage::_initPackage()
     [this]()
     {
         m_ConceptualModelEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+                ::kdm::kdm::KdmPackage::_instance()->getKDMModel());
         m_AbstractConceptualElementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         m_TermUnitEClass->getESuperTypes().push_back(
                 m_AbstractConceptualElementEClass);
         m_ConceptualContainerEClass->getESuperTypes().push_back(
@@ -700,7 +715,7 @@ void ConceptualPackage::_initPackage()
         m_FactUnitEClass->getESuperTypes().push_back(
                 m_ConceptualContainerEClass);
         m_AbstractConceptualRelationshipEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+                ::kdm::core::CorePackage::_instance()->getKDMRelationship());
         m_ConceptualRelationshipEClass->getESuperTypes().push_back(
                 m_AbstractConceptualRelationshipEClass);
         m_BehaviorUnitEClass->getESuperTypes().push_back(

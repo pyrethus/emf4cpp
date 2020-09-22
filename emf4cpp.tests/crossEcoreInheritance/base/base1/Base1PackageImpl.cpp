@@ -74,8 +74,7 @@ void Base1Package::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -84,6 +83,8 @@ void Base1Package::_initPackage()
         feature->basicsetEContainingClass(m_Base10EClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -125,8 +126,7 @@ void Base1Package::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEInt());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEInt());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -135,6 +135,8 @@ void Base1Package::_initPackage()
         feature->basicsetEContainingClass(m_Base11EClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEInt());
         feature->setID(false);
     }();
 
@@ -177,12 +179,12 @@ void Base1Package::_initPackage()
     [this]()
     {
         m_Base10EClass->getESuperTypes().push_back(
-                dynamic_cast< ::base::BasePackage* >(::base::BasePackage::_instance().get())->getBase01());
+                ::base::BasePackage::_instance()->getBase01());
         m_Base11EClass->getESuperTypes().push_back(m_Base10EClass);
         m_Base11EClass->getESuperTypes().push_back(
-                dynamic_cast< ::base::BasePackage* >(::base::BasePackage::_instance().get())->getBase02());
+                ::base::BasePackage::_instance()->getBase02());
         m_Base11EClass->getESuperTypes().push_back(
-                dynamic_cast< ::base::BasePackage* >(::base::BasePackage::_instance().get())->getBase03());
+                ::base::BasePackage::_instance()->getBase03());
     }();
 
     [this]()

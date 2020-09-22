@@ -135,6 +135,7 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractStatementWithBodyEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractStatementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -178,7 +179,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -188,6 +189,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ErrorStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -230,8 +233,7 @@ void StatementPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -241,6 +243,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExpandStatementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -262,7 +266,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -272,6 +276,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExpandStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -294,7 +300,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -304,6 +310,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExpandStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -326,7 +334,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -336,6 +344,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExpandStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -358,7 +368,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -368,6 +378,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExpandStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -415,7 +427,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -425,6 +437,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExpressionStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -468,7 +482,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -478,6 +492,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_FileStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -500,7 +516,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -510,6 +526,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_FileStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -531,8 +549,7 @@ void StatementPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -542,6 +559,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_FileStatementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -586,7 +605,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -596,6 +615,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ForEachStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -618,7 +639,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -628,6 +649,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ForEachStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -650,7 +673,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -660,6 +683,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ForEachStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -682,7 +707,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -692,6 +717,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ForEachStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -738,7 +765,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -748,6 +775,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_IfStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -779,6 +808,7 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_IfStatementEClass);
 
         // EReference
+        feature->setEReferenceType(m_IfStatementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -823,7 +853,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getIdentifier());
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -833,6 +863,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_LetStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::Xpand3Package::_instance()->getIdentifier());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -855,7 +887,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -865,6 +897,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_LetStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -909,7 +943,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -919,6 +953,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProtectStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -941,7 +977,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -951,6 +987,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProtectStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -973,7 +1011,7 @@ void StatementPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::xpand3::expression::ExpressionPackage* >(::xpand3::expression::ExpressionPackage::_instance().get())->getAbstractExpression());
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -983,6 +1021,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProtectStatementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::xpand3::expression::ExpressionPackage::_instance()->getAbstractExpression());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1004,8 +1044,7 @@ void StatementPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1015,6 +1054,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProtectStatementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -1059,8 +1100,7 @@ void StatementPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1070,6 +1110,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_TextStatementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -1090,8 +1132,7 @@ void StatementPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1101,6 +1142,8 @@ void StatementPackage::_initPackage()
         feature->basicsetEContainingClass(m_TextStatementEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -1137,7 +1180,7 @@ void StatementPackage::_initPackage()
     [this]()
     {
         m_AbstractStatementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::xpand3::Xpand3Package* >(::xpand3::Xpand3Package::_instance().get())->getSyntaxElement());
+                ::xpand3::Xpand3Package::_instance()->getSyntaxElement());
         m_ExpandStatementEClass->getESuperTypes().push_back(
                 m_AbstractStatementEClass);
         m_ExpressionStatementEClass->getESuperTypes().push_back(

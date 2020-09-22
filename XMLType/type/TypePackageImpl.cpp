@@ -165,7 +165,7 @@ void TypePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+                ::ecore::EcorePackage::_instance()->getEFeatureMapEntry());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -174,6 +174,8 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_AnyTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEFeatureMapEntry());
         feature->setID(false);
     }();
 
@@ -195,7 +197,7 @@ void TypePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(true);
         feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+                ::ecore::EcorePackage::_instance()->getEFeatureMapEntry());
         feature->setTransient(true);
         feature->setUnsettable(false);
         feature->setVolatile(true);
@@ -204,6 +206,8 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_AnyTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEFeatureMapEntry());
         feature->setID(false);
     }();
 
@@ -225,7 +229,7 @@ void TypePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+                ::ecore::EcorePackage::_instance()->getEFeatureMapEntry());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -234,6 +238,8 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_AnyTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEFeatureMapEntry());
         feature->setID(false);
     }();
 
@@ -902,6 +908,7 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_ProcessingInstructionEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_StringEDataType);
         feature->setID(false);
     }();
 
@@ -932,6 +939,7 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_ProcessingInstructionEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_StringEDataType);
         feature->setID(false);
     }();
 
@@ -1025,6 +1033,7 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_SimpleAnyTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_StringEDataType);
         feature->setID(false);
     }();
 
@@ -1054,6 +1063,7 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_SimpleAnyTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_AnySimpleTypeEDataType);
         feature->setID(false);
     }();
 
@@ -1074,8 +1084,7 @@ void TypePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEDataType());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEDataType());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1084,6 +1093,8 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_SimpleAnyTypeEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::ecore::EcorePackage::_instance()->getEDataType());
         feature->setContainment(false);
         feature->setResolveProxies(false);
     }();
@@ -1269,7 +1280,7 @@ void TypePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEFeatureMapEntry());
+                ::ecore::EcorePackage::_instance()->getEFeatureMapEntry());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1278,6 +1289,8 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEFeatureMapEntry());
         feature->setID(false);
     }();
 
@@ -1299,7 +1312,7 @@ void TypePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
+                ::ecore::EcorePackage::_instance()->getEStringToStringMapEntry());
         feature->setTransient(true);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1309,6 +1322,8 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::ecore::EcorePackage::_instance()->getEStringToStringMapEntry());
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -1331,7 +1346,7 @@ void TypePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEStringToStringMapEntry());
+                ::ecore::EcorePackage::_instance()->getEStringToStringMapEntry());
         feature->setTransient(true);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1341,6 +1356,8 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::ecore::EcorePackage::_instance()->getEStringToStringMapEntry());
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -1371,6 +1388,7 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_StringEDataType);
         feature->setID(false);
     }();
 
@@ -1401,6 +1419,7 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_StringEDataType);
         feature->setID(false);
     }();
 
@@ -1431,6 +1450,7 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
 
         // EReference
+        feature->setEReferenceType(m_ProcessingInstructionEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -1461,6 +1481,7 @@ void TypePackage::_initPackage()
         feature->basicsetEContainingClass(m_XMLTypeDocumentRootEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_StringEDataType);
         feature->setID(false);
     }();
 

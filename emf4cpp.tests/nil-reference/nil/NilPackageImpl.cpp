@@ -81,6 +81,7 @@ void NilPackage::_initPackage()
         feature->basicsetEContainingClass(m_RootEClass);
 
         // EReference
+        feature->setEReferenceType(m_RootEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -111,6 +112,7 @@ void NilPackage::_initPackage()
         feature->basicsetEContainingClass(m_RootEClass);
 
         // EReference
+        feature->setEReferenceType(m_RootEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -141,6 +143,7 @@ void NilPackage::_initPackage()
         feature->basicsetEContainingClass(m_RootEClass);
 
         // EReference
+        feature->setEReferenceType(m_RootEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -172,6 +175,7 @@ void NilPackage::_initPackage()
         feature->basicsetEContainingClass(m_RootEClass);
 
         // EReference
+        feature->setEReferenceType(m_RootEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();

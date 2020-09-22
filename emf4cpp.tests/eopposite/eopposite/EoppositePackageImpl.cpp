@@ -90,6 +90,7 @@ void EoppositePackage::_initPackage()
         feature->basicsetEContainingClass(m_LeftHandEClass);
 
         // EReference
+        feature->setEReferenceType(m_RightHandEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_RightHand__leftee);
         feature->setResolveProxies(true);
@@ -122,6 +123,7 @@ void EoppositePackage::_initPackage()
         feature->basicsetEContainingClass(m_LeftHandEClass);
 
         // EReference
+        feature->setEReferenceType(m_RightMultipleEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_RightMultiple__leftees);
         feature->setResolveProxies(true);
@@ -166,8 +168,7 @@ void EoppositePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -176,6 +177,8 @@ void EoppositePackage::_initPackage()
         feature->basicsetEContainingClass(m_NamedObjectEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -226,6 +229,7 @@ void EoppositePackage::_initPackage()
         feature->basicsetEContainingClass(m_RightHandEClass);
 
         // EReference
+        feature->setEReferenceType(m_LeftHandEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_LeftHand__rightee);
         feature->setResolveProxies(true);
@@ -279,6 +283,7 @@ void EoppositePackage::_initPackage()
         feature->basicsetEContainingClass(m_RightMultipleEClass);
 
         // EReference
+        feature->setEReferenceType(m_LeftHandEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_LeftHand__rightMultiple);
         feature->setResolveProxies(true);
@@ -331,6 +336,7 @@ void EoppositePackage::_initPackage()
         feature->basicsetEContainingClass(m_TopLevelEClass);
 
         // EReference
+        feature->setEReferenceType(m_LeftHandEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -362,6 +368,7 @@ void EoppositePackage::_initPackage()
         feature->basicsetEContainingClass(m_TopLevelEClass);
 
         // EReference
+        feature->setEReferenceType(m_RightHandEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -393,6 +400,7 @@ void EoppositePackage::_initPackage()
         feature->basicsetEContainingClass(m_TopLevelEClass);
 
         // EReference
+        feature->setEReferenceType(m_RightMultipleEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();

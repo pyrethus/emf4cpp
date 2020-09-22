@@ -158,8 +158,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -168,6 +167,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ArrayDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -218,6 +219,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_AttributeDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_ExceptionDefEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -248,6 +250,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_AttributeDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_ExceptionDefEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -269,8 +272,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -279,6 +281,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_AttributeDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -331,6 +335,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConstantDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EAnyEDataType);
         feature->setID(false);
     }();
 
@@ -372,8 +377,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -382,6 +386,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainedEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -402,8 +408,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -412,6 +417,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainedEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -432,8 +439,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -442,6 +448,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainedEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -462,8 +470,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -472,6 +479,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainedEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -501,6 +510,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainedEClass);
 
         // EReference
+        feature->setEReferenceType(m_ContainerEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_Container__contains);
         feature->setResolveProxies(true);
@@ -557,6 +567,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainerEClass);
 
         // EReference
+        feature->setEReferenceType(m_ContainedEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_Contained__definedIn);
         feature->setResolveProxies(true);
@@ -614,8 +625,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -624,6 +634,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_EnumDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -688,6 +700,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExceptionDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_ETypeCodeEDataType);
         feature->setID(false);
     }();
 
@@ -717,6 +730,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExceptionDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_FieldEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -760,8 +774,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -770,6 +783,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_FieldEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -811,8 +826,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -821,6 +835,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_FixedDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -841,8 +857,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -851,6 +866,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_FixedDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -902,6 +919,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_IDLTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_ETypeCodeEDataType);
         feature->setID(false);
     }();
 
@@ -943,8 +961,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -953,6 +970,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_IncludeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -994,8 +1013,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1004,6 +1022,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_InterfaceDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -1024,8 +1044,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1034,6 +1053,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_InterfaceDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -1054,8 +1075,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1065,6 +1085,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_InterfaceDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -1094,6 +1116,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_InterfaceDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_InterfaceDefEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1139,8 +1162,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1149,6 +1171,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ModuleDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -1199,6 +1223,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_OperationDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_ParameterDefEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1220,8 +1245,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEBoolean());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1230,6 +1254,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_OperationDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEBoolean());
         feature->setID(false);
     }();
 
@@ -1250,8 +1276,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1260,6 +1285,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_OperationDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -1289,6 +1316,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_OperationDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_ExceptionDefEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1334,8 +1362,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1344,6 +1371,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ParameterDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -1373,6 +1402,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ParameterDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_ParameterModeEEnum);
         feature->setID(false);
     }();
 
@@ -1438,6 +1468,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_PrimitiveDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_PrimitiveKindEEnum);
         feature->setID(false);
     }();
 
@@ -1493,8 +1524,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1503,6 +1533,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_SequenceDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -1544,8 +1576,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1554,6 +1585,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_StringDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -1604,6 +1637,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_StructDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_FieldEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1655,6 +1689,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_TranslationUnitEClass);
 
         // EReference
+        feature->setEReferenceType(m_ContainedEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1676,8 +1711,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1687,6 +1721,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_TranslationUnitEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -1716,6 +1752,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_TranslationUnitEClass);
 
         // EReference
+        feature->setEReferenceType(m_IncludeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1769,6 +1806,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_TypedEClass);
 
         // EReference
+        feature->setEReferenceType(m_IDLTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1799,6 +1837,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_TypedEClass);
 
         // EReference
+        feature->setEReferenceType(m_TypedefDefEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1866,6 +1905,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_UnionDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_UnionFieldEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1897,6 +1937,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_UnionDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_IDLTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1927,6 +1968,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_UnionDefEClass);
 
         // EReference
+        feature->setEReferenceType(m_TypedefDefEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1971,8 +2013,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1981,6 +2022,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_UnionFieldEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 
@@ -2010,6 +2053,7 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_UnionFieldEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EAnyEDataType);
         feature->setID(false);
     }();
 
@@ -2052,8 +2096,7 @@ void IdlmmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -2062,6 +2105,8 @@ void IdlmmPackage::_initPackage()
         feature->basicsetEContainingClass(m_WstringDefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 

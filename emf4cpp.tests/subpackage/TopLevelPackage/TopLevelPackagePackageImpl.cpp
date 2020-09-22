@@ -71,8 +71,7 @@ void TopLevelPackagePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEObject());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEObject());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -82,6 +81,8 @@ void TopLevelPackagePackage::_initPackage()
         feature->basicsetEContainingClass(m_TopLevelClassEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::ecore::EcorePackage::_instance()->getEObject());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();

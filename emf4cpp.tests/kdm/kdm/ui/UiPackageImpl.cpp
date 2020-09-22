@@ -129,7 +129,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -138,6 +138,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractUIElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -169,6 +171,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractUIElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractUIRelationshipEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -191,7 +194,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
+                ::kdm::code::CodePackage::_instance()->getAbstractCodeElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -201,6 +204,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractUIElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::code::CodePackage::_instance()->getAbstractCodeElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -223,7 +228,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -233,6 +238,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractUIElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -302,6 +309,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_DisplaysEClass);
 
         // EReference
+        feature->setEReferenceType(m_UIResourceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -324,7 +332,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -333,6 +341,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_DisplaysEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -377,7 +387,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getImage());
+                ::kdm::source::SourcePackage::_instance()->getImage());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -386,6 +396,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_DisplaysImageEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::source::SourcePackage::_instance()->getImage());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -408,7 +420,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -417,6 +429,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_DisplaysImageEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -469,6 +483,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_ManagesUIEClass);
 
         // EReference
+        feature->setEReferenceType(m_UIResourceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -491,7 +506,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -500,6 +515,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_ManagesUIEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -552,6 +569,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReadsUIEClass);
 
         // EReference
+        feature->setEReferenceType(m_UIResourceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -574,7 +592,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -583,6 +601,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReadsUIEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -656,8 +676,7 @@ void UiPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -666,6 +685,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UIActionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -695,6 +716,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UIActionEClass);
 
         // EReference
+        feature->setEReferenceType(m_UIEventEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -768,8 +790,7 @@ void UiPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -778,6 +799,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UIEventEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -843,6 +866,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UIFlowEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractUIElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -873,6 +897,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UIFlowEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractUIElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -925,6 +950,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UILayoutEClass);
 
         // EReference
+        feature->setEReferenceType(m_UIResourceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -955,6 +981,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UILayoutEClass);
 
         // EReference
+        feature->setEReferenceType(m_UIResourceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1007,6 +1034,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UIModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractUIElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1050,7 +1078,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1059,6 +1087,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UIRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1089,6 +1119,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UIRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractUIElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1141,6 +1172,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_UIResourceEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractUIElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1192,6 +1224,7 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_WritesUIEClass);
 
         // EReference
+        feature->setEReferenceType(m_UIResourceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1214,7 +1247,7 @@ void UiPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1223,6 +1256,8 @@ void UiPackage::_initPackage()
         feature->basicsetEContainingClass(m_WritesUIEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1260,16 +1295,16 @@ void UiPackage::_initPackage()
     [this]()
     {
         m_AbstractUIElementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         m_UIResourceEClass->getESuperTypes().push_back(
                 m_AbstractUIElementEClass);
         m_UIDisplayEClass->getESuperTypes().push_back(m_UIResourceEClass);
         m_ScreenEClass->getESuperTypes().push_back(m_UIDisplayEClass);
         m_ReportEClass->getESuperTypes().push_back(m_UIDisplayEClass);
         m_UIModelEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+                ::kdm::kdm::KdmPackage::_instance()->getKDMModel());
         m_AbstractUIRelationshipEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+                ::kdm::core::CorePackage::_instance()->getKDMRelationship());
         m_UILayoutEClass->getESuperTypes().push_back(
                 m_AbstractUIRelationshipEClass);
         m_UIFieldEClass->getESuperTypes().push_back(m_UIResourceEClass);
@@ -1286,11 +1321,11 @@ void UiPackage::_initPackage()
         m_UIActionEClass->getESuperTypes().push_back(m_AbstractUIElementEClass);
         m_UIEventEClass->getESuperTypes().push_back(m_AbstractUIElementEClass);
         m_ReadsUIEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_WritesUIEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_ManagesUIEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
     }();
 
     [this]()

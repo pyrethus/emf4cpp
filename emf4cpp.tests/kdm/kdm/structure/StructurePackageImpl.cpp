@@ -99,7 +99,7 @@ void StructurePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getAggregatedRelationship());
+                ::kdm::core::CorePackage::_instance()->getAggregatedRelationship());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -109,6 +109,8 @@ void StructurePackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractStructureElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getAggregatedRelationship());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -131,7 +133,7 @@ void StructurePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -141,6 +143,8 @@ void StructurePackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractStructureElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -172,6 +176,7 @@ void StructurePackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractStructureElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractStructureElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -203,6 +208,7 @@ void StructurePackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractStructureElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractStructureRelationshipEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -352,6 +358,7 @@ void StructurePackage::_initPackage()
         feature->basicsetEContainingClass(m_StructureModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractStructureElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -395,7 +402,7 @@ void StructurePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -405,6 +412,8 @@ void StructurePackage::_initPackage()
         feature->basicsetEContainingClass(m_StructureRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -436,6 +445,7 @@ void StructurePackage::_initPackage()
         feature->basicsetEContainingClass(m_StructureRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractStructureElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -488,19 +498,19 @@ void StructurePackage::_initPackage()
     [this]()
     {
         m_AbstractStructureElementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         m_SubsystemEClass->getESuperTypes().push_back(
                 m_AbstractStructureElementEClass);
         m_LayerEClass->getESuperTypes().push_back(
                 m_AbstractStructureElementEClass);
         m_StructureModelEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+                ::kdm::kdm::KdmPackage::_instance()->getKDMModel());
         m_ComponentEClass->getESuperTypes().push_back(
                 m_AbstractStructureElementEClass);
         m_SoftwareSystemEClass->getESuperTypes().push_back(
                 m_AbstractStructureElementEClass);
         m_AbstractStructureRelationshipEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+                ::kdm::core::CorePackage::_instance()->getKDMRelationship());
         m_StructureRelationshipEClass->getESuperTypes().push_back(
                 m_AbstractStructureRelationshipEClass);
         m_ArchitectureViewEClass->getESuperTypes().push_back(

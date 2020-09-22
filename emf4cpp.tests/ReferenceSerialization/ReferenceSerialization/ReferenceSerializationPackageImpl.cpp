@@ -101,6 +101,7 @@ void ReferenceSerializationPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainerEClass);
 
         // EReference
+        feature->setEReferenceType(m_ContentEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -132,6 +133,7 @@ void ReferenceSerializationPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainerEClass);
 
         // EReference
+        feature->setEReferenceType(m_ContentEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -163,6 +165,7 @@ void ReferenceSerializationPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainerEClass);
 
         // EReference
+        feature->setEReferenceType(m_ChildEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -194,6 +197,7 @@ void ReferenceSerializationPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContainerEClass);
 
         // EReference
+        feature->setEReferenceType(m_ChildEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -239,8 +243,7 @@ void ReferenceSerializationPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -250,6 +253,8 @@ void ReferenceSerializationPackage::_initPackage()
         feature->basicsetEContainingClass(m_ContentEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 

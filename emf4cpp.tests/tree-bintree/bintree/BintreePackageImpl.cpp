@@ -82,6 +82,7 @@ void BintreePackage::_initPackage()
         feature->basicsetEContainingClass(m_BinTreeNodeEClass);
 
         // EReference
+        feature->setEReferenceType(m_BinTreeNodeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -112,6 +113,7 @@ void BintreePackage::_initPackage()
         feature->basicsetEContainingClass(m_BinTreeNodeEClass);
 
         // EReference
+        feature->setEReferenceType(m_BinTreeNodeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -142,6 +144,7 @@ void BintreePackage::_initPackage()
         feature->basicsetEContainingClass(m_BinTreeNodeEClass);
 
         // EReference
+        feature->setEReferenceType(m_BinTreeNodeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -163,8 +166,7 @@ void BintreePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::ecore::EcorePackage* >(::ecore::EcorePackage::_instance().get())->getEString());
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -173,6 +175,8 @@ void BintreePackage::_initPackage()
         feature->basicsetEContainingClass(m_BinTreeNodeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
         feature->setID(false);
     }();
 

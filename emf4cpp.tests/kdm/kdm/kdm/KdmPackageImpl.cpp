@@ -102,8 +102,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -112,6 +111,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_AnnotationEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -153,8 +154,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -163,6 +163,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_AttributeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -183,8 +185,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -193,6 +194,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_AttributeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -235,8 +238,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -245,6 +247,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_AuditEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -265,8 +269,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -275,6 +278,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_AuditEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -295,8 +300,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -305,6 +309,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_AuditEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -357,6 +363,7 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExtendedValueEClass);
 
         // EReference
+        feature->setEReferenceType(m_TagDefinitionEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -409,6 +416,7 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExtensionFamilyEClass);
 
         // EReference
+        feature->setEReferenceType(m_StereotypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -430,8 +438,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -440,6 +447,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_ExtensionFamilyEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -491,6 +500,7 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_KDMFrameworkEClass);
 
         // EReference
+        feature->setEReferenceType(m_AuditEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -522,6 +532,7 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_KDMFrameworkEClass);
 
         // EReference
+        feature->setEReferenceType(m_ExtensionFamilyEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -543,8 +554,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -553,6 +563,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_KDMFrameworkEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -620,6 +632,7 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_SegmentEClass);
 
         // EReference
+        feature->setEReferenceType(m_SegmentEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -650,6 +663,7 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_SegmentEClass);
 
         // EReference
+        feature->setEReferenceType(m_KDMModelEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -702,6 +716,7 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_StereotypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_TagDefinitionEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -723,8 +738,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -733,6 +747,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_StereotypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -753,8 +769,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -763,6 +778,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_StereotypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -806,8 +823,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -816,6 +832,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_TagDefinitionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -836,8 +854,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -846,6 +863,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_TagDefinitionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -889,7 +908,7 @@ void KdmPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getModelElement());
+                ::kdm::core::CorePackage::_instance()->getModelElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -898,6 +917,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_TaggedRefEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getModelElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -940,8 +961,7 @@ void KdmPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -950,6 +970,8 @@ void KdmPackage::_initPackage()
         feature->basicsetEContainingClass(m_TaggedValueEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -985,23 +1007,23 @@ void KdmPackage::_initPackage()
     [this]()
     {
         m_KDMFrameworkEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getModelElement());
+                ::kdm::core::CorePackage::_instance()->getModelElement());
         m_KDMModelEClass->getESuperTypes().push_back(m_KDMFrameworkEClass);
         m_AuditEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+                ::kdm::core::CorePackage::_instance()->getElement());
         m_SegmentEClass->getESuperTypes().push_back(m_KDMFrameworkEClass);
         m_AttributeEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+                ::kdm::core::CorePackage::_instance()->getElement());
         m_AnnotationEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+                ::kdm::core::CorePackage::_instance()->getElement());
         m_TagDefinitionEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+                ::kdm::core::CorePackage::_instance()->getElement());
         m_ExtendedValueEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+                ::kdm::core::CorePackage::_instance()->getElement());
         m_StereotypeEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+                ::kdm::core::CorePackage::_instance()->getElement());
         m_ExtensionFamilyEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+                ::kdm::core::CorePackage::_instance()->getElement());
         m_TaggedRefEClass->getESuperTypes().push_back(m_ExtendedValueEClass);
         m_TaggedValueEClass->getESuperTypes().push_back(m_ExtendedValueEClass);
     }();

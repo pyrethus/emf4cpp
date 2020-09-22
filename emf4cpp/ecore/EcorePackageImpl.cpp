@@ -213,6 +213,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EAnnotationEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -242,6 +243,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EAnnotationEClass);
 
         // EReference
+        feature->setEReferenceType(m_EStringToStringMapEntryEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -273,6 +275,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EAnnotationEClass);
 
         // EReference
+        feature->setEReferenceType(m_EModelElementEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_EModelElement__eAnnotations);
         feature->setResolveProxies(false);
@@ -304,6 +307,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EAnnotationEClass);
 
         // EReference
+        feature->setEReferenceType(m_EObjectEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -334,6 +338,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EAnnotationEClass);
 
         // EReference
+        feature->setEReferenceType(m_EObjectEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -389,6 +394,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EAttributeEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -419,6 +425,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EAttributeEClass);
 
         // EReference
+        feature->setEReferenceType(m_EDataTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -597,6 +604,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -626,6 +634,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -655,6 +664,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -685,6 +695,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EOperationEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_EOperation__eContainingClass);
         feature->setResolveProxies(false);
@@ -716,6 +727,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EAttributeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -746,6 +758,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EReferenceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -776,6 +789,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EReferenceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -806,6 +820,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EAttributeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -836,6 +851,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EReferenceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -866,6 +882,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EOperationEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -897,6 +914,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EStructuralFeatureEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -927,6 +945,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -957,6 +976,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EAttributeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(false);
     }();
@@ -988,6 +1008,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EStructuralFeatureEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_EStructuralFeature__eContainingClass);
         feature->setResolveProxies(false);
@@ -1020,6 +1041,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EGenericTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -1051,6 +1073,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassEClass);
 
         // EReference
+        feature->setEReferenceType(m_EGenericTypeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1118,6 +1141,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassifierEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -1148,6 +1172,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassifierEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EJavaClassEDataType);
         feature->setID(false);
     }();
 
@@ -1177,6 +1202,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassifierEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EJavaObjectEDataType);
         feature->setID(false);
     }();
 
@@ -1207,6 +1233,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassifierEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -1236,6 +1263,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassifierEClass);
 
         // EReference
+        feature->setEReferenceType(m_EPackageEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_EPackage__eClassifiers);
         feature->setResolveProxies(true);
@@ -1268,6 +1296,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EClassifierEClass);
 
         // EReference
+        feature->setEReferenceType(m_ETypeParameterEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -1324,6 +1353,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EDataTypeEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -1444,6 +1474,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EEnumEClass);
 
         // EReference
+        feature->setEReferenceType(m_EEnumLiteralEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_EEnumLiteral__eEnum);
         feature->setResolveProxies(false);
@@ -1510,6 +1541,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EEnumLiteralEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EIntEDataType);
         feature->setID(false);
     }();
 
@@ -1539,6 +1571,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EEnumLiteralEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EEnumeratorEDataType);
         feature->setID(false);
     }();
 
@@ -1568,6 +1601,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EEnumLiteralEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -1597,6 +1631,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EEnumLiteralEClass);
 
         // EReference
+        feature->setEReferenceType(m_EEnumEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_EEnum__eLiterals);
         feature->setResolveProxies(false);
@@ -1652,6 +1687,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EFactoryEClass);
 
         // EReference
+        feature->setEReferenceType(m_EPackageEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_EPackage__eFactoryInstance);
         feature->setResolveProxies(false);
@@ -1760,6 +1796,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EGenericTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_EGenericTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -1791,6 +1828,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EGenericTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_EGenericTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -1821,6 +1859,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EGenericTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassifierEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1851,6 +1890,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EGenericTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_EGenericTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -1882,6 +1922,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EGenericTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_ETypeParameterEClass);
         feature->setContainment(false);
         feature->setResolveProxies(false);
     }();
@@ -1912,6 +1953,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EGenericTypeEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassifierEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2081,6 +2123,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EModelElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_EAnnotationEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_EAnnotation__eModelElement);
         feature->setResolveProxies(false);
@@ -2133,6 +2176,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ENamedElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -2199,6 +2243,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EOperationEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_EClass__eOperations);
         feature->setResolveProxies(false);
@@ -2231,6 +2276,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EOperationEClass);
 
         // EReference
+        feature->setEReferenceType(m_ETypeParameterEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -2261,6 +2307,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EOperationEClass);
 
         // EReference
+        feature->setEReferenceType(m_EParameterEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_EParameter__eOperation);
         feature->setResolveProxies(false);
@@ -2292,6 +2339,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EOperationEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassifierEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2323,6 +2371,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EOperationEClass);
 
         // EReference
+        feature->setEReferenceType(m_EGenericTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -2378,6 +2427,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EPackageEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -2407,6 +2457,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EPackageEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -2437,6 +2488,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EPackageEClass);
 
         // EReference
+        feature->setEReferenceType(m_EFactoryEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_EFactory__ePackage);
         feature->setResolveProxies(false);
@@ -2468,6 +2520,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EPackageEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassifierEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_EClassifier__ePackage);
         feature->setResolveProxies(true);
@@ -2499,6 +2552,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EPackageEClass);
 
         // EReference
+        feature->setEReferenceType(m_EPackageEClass);
         feature->setContainment(true);
         feature->setEOpposite(m_EPackage__eSuperPackage);
         feature->setResolveProxies(true);
@@ -2530,6 +2584,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EPackageEClass);
 
         // EReference
+        feature->setEReferenceType(m_EPackageEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_EPackage__eSubpackages);
         feature->setResolveProxies(true);
@@ -2587,6 +2642,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EParameterEClass);
 
         // EReference
+        feature->setEReferenceType(m_EOperationEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_EOperation__eParameters);
         feature->setResolveProxies(false);
@@ -2639,6 +2695,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EReferenceEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -2668,6 +2725,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EReferenceEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -2698,6 +2756,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EReferenceEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -2727,6 +2786,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EReferenceEClass);
 
         // EReference
+        feature->setEReferenceType(m_EReferenceEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2758,6 +2818,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EReferenceEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2788,6 +2849,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EReferenceEClass);
 
         // EReference
+        feature->setEReferenceType(m_EAttributeEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -2915,6 +2977,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStringToStringMapEntryEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -2945,6 +3008,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStringToStringMapEntryEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -2997,6 +3061,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -3027,6 +3092,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -3057,6 +3123,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -3087,6 +3154,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EStringEDataType);
         feature->setID(false);
     }();
 
@@ -3117,6 +3185,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EJavaObjectEDataType);
         feature->setID(false);
     }();
 
@@ -3147,6 +3216,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -3177,6 +3247,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -3207,6 +3278,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_EStructuralFeatureEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassEClass);
         feature->setContainment(false);
         feature->setEOpposite(m_EClass__eStructuralFeatures);
         feature->setResolveProxies(false);
@@ -3282,6 +3354,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypedElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -3311,6 +3384,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypedElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -3340,6 +3414,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypedElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EIntEDataType);
         feature->setID(false);
     }();
 
@@ -3369,6 +3444,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypedElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EIntEDataType);
         feature->setID(false);
     }();
 
@@ -3398,6 +3474,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypedElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -3427,6 +3504,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypedElementEClass);
 
         // EAttribute
+        feature->setEAttributeType(m_EBooleanEDataType);
         feature->setID(false);
     }();
 
@@ -3456,6 +3534,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypedElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_EClassifierEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -3487,6 +3566,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypedElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_EGenericTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();
@@ -3545,6 +3625,7 @@ void EcorePackage::_initPackage()
         feature->basicsetEContainingClass(m_ETypeParameterEClass);
 
         // EReference
+        feature->setEReferenceType(m_EGenericTypeEClass);
         feature->setContainment(true);
         feature->setResolveProxies(false);
     }();

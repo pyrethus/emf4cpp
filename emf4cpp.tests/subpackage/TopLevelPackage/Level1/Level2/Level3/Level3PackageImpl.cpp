@@ -80,7 +80,7 @@ void Level3Package::_initPackage()
     [this]()
     {
         m_Level3ClassEClass->getESuperTypes().push_back(
-                dynamic_cast< ::TopLevelPackage::Level1::Level2::Level2Package* >(::TopLevelPackage::Level1::Level2::Level2Package::_instance().get())->getLevel2Class());
+                ::TopLevelPackage::Level1::Level2::Level2Package::_instance()->getLevel2Class());
     }();
 
     [this]()

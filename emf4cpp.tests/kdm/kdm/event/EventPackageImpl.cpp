@@ -125,7 +125,7 @@ void EventPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::source::SourcePackage* >(::kdm::source::SourcePackage::_instance().get())->getSourceRef());
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -135,6 +135,8 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractEventElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::source::SourcePackage::_instance()->getSourceRef());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -166,6 +168,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractEventElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractEventRelationshipEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -188,7 +191,7 @@ void EventPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -198,6 +201,8 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractEventElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -220,7 +225,7 @@ void EventPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::code::CodePackage* >(::kdm::code::CodePackage::_instance().get())->getAbstractCodeElement());
+                ::kdm::code::CodePackage::_instance()->getAbstractCodeElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -230,6 +235,8 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractEventElementEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::code::CodePackage::_instance()->getAbstractCodeElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -300,6 +307,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConsumesEventEClass);
 
         // EReference
+        feature->setEReferenceType(m_EventEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -330,6 +338,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_ConsumesEventEClass);
 
         // EReference
+        feature->setEReferenceType(m_TransitionEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -373,8 +382,7 @@ void EventPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -383,6 +391,8 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_EventEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -424,8 +434,7 @@ void EventPackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -434,6 +443,8 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_EventActionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -464,6 +475,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_EventActionEClass);
 
         // EReference
+        feature->setEReferenceType(m_EventEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -532,6 +544,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_EventModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractEventElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -575,7 +588,7 @@ void EventPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -585,6 +598,8 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_EventRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -616,6 +631,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_EventRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractEventElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -669,6 +685,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_EventResourceEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractEventElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -720,6 +737,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_HasStateEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractEventElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -742,7 +760,7 @@ void EventPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -751,6 +769,8 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_HasStateEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -818,6 +838,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_NextStateEClass);
 
         // EReference
+        feature->setEReferenceType(m_StateEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -848,6 +869,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_NextStateEClass);
 
         // EReference
+        feature->setEReferenceType(m_TransitionEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -930,6 +952,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProducesEventEClass);
 
         // EReference
+        feature->setEReferenceType(m_EventEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -952,7 +975,7 @@ void EventPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -961,6 +984,8 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_ProducesEventEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1013,6 +1038,7 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReadsStateEClass);
 
         // EReference
+        feature->setEReferenceType(m_StateEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1035,7 +1061,7 @@ void EventPackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getActionElement());
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1044,6 +1070,8 @@ void EventPackage::_initPackage()
         feature->basicsetEContainingClass(m_ReadsStateEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::action::ActionPackage::_instance()->getActionElement());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -1111,12 +1139,12 @@ void EventPackage::_initPackage()
     [this]()
     {
         m_EventModelEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+                ::kdm::kdm::KdmPackage::_instance()->getKDMModel());
         m_AbstractEventElementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         m_EventEClass->getESuperTypes().push_back(m_AbstractEventElementEClass);
         m_AbstractEventRelationshipEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+                ::kdm::core::CorePackage::_instance()->getKDMRelationship());
         m_EventRelationshipEClass->getESuperTypes().push_back(
                 m_AbstractEventRelationshipEClass);
         m_EventResourceEClass->getESuperTypes().push_back(
@@ -1128,9 +1156,9 @@ void EventPackage::_initPackage()
         m_EventActionEClass->getESuperTypes().push_back(
                 m_AbstractEventElementEClass);
         m_ReadsStateEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_ProducesEventEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
         m_ConsumesEventEClass->getESuperTypes().push_back(
                 m_AbstractEventRelationshipEClass);
         m_NextStateEClass->getESuperTypes().push_back(
@@ -1139,7 +1167,7 @@ void EventPackage::_initPackage()
         m_EventElementEClass->getESuperTypes().push_back(
                 m_AbstractEventElementEClass);
         m_HasStateEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::action::ActionPackage* >(::kdm::action::ActionPackage::_instance().get())->getAbstractActionRelationship());
+                ::kdm::action::ActionPackage::_instance()->getAbstractActionRelationship());
     }();
 
     [this]()

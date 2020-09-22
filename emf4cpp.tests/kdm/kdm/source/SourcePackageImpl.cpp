@@ -128,6 +128,7 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_AbstractInventoryElementEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractInventoryRelationshipEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -225,6 +226,7 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_DependsOnEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractInventoryElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -255,6 +257,7 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_DependsOnEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractInventoryElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -298,8 +301,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -308,6 +310,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_DirectoryEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -389,6 +393,7 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_InventoryContainerEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractInventoryElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -447,8 +452,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -458,6 +462,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_InventoryItemEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -478,8 +484,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -489,6 +494,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_InventoryItemEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -541,6 +548,7 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_InventoryModelEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractInventoryElementEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -584,7 +592,7 @@ void SourcePackage::_initPackage()
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
         feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -594,6 +602,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_InventoryRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -625,6 +635,7 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_InventoryRelationshipEClass);
 
         // EReference
+        feature->setEReferenceType(m_AbstractInventoryElementEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -698,8 +709,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -709,6 +719,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceFileEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -729,8 +741,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -740,6 +751,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceFileEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -791,6 +804,7 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRefEClass);
 
         // EReference
+        feature->setEReferenceType(m_SourceRegionEClass);
         feature->setContainment(true);
         feature->setResolveProxies(true);
     }();
@@ -812,8 +826,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -823,6 +836,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -843,8 +858,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -853,6 +867,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRefEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -905,6 +921,7 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRegionEClass);
 
         // EReference
+        feature->setEReferenceType(m_SourceFileEClass);
         feature->setContainment(false);
         feature->setResolveProxies(true);
     }();
@@ -926,8 +943,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -937,6 +953,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRegionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -957,8 +975,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -968,6 +985,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRegionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -988,8 +1007,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -999,6 +1017,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRegionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -1019,8 +1039,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getInteger());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getInteger());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1030,6 +1049,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRegionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getInteger());
         feature->setID(false);
     }();
 
@@ -1050,8 +1071,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1061,6 +1081,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRegionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1081,8 +1103,7 @@ void SourcePackage::_initPackage()
         feature->setChangeable(true);
         feature->setDefaultValueLiteral("");
         feature->setDerived(false);
-        feature->setEType(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getString());
+        feature->setEType(::kdm::core::CorePackage::_instance()->getString());
         feature->setTransient(false);
         feature->setUnsettable(false);
         feature->setVolatile(false);
@@ -1091,6 +1112,8 @@ void SourcePackage::_initPackage()
         feature->basicsetEContainingClass(m_SourceRegionEClass);
 
         // EAttribute
+        feature->setEAttributeType(
+                ::kdm::core::CorePackage::_instance()->getString());
         feature->setID(false);
     }();
 
@@ -1132,13 +1155,13 @@ void SourcePackage::_initPackage()
     [this]()
     {
         m_SourceRefEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+                ::kdm::core::CorePackage::_instance()->getElement());
         m_SourceRegionEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getElement());
+                ::kdm::core::CorePackage::_instance()->getElement());
         m_InventoryModelEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::kdm::KdmPackage* >(::kdm::kdm::KdmPackage::_instance().get())->getKDMModel());
+                ::kdm::kdm::KdmPackage::_instance()->getKDMModel());
         m_AbstractInventoryElementEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMEntity());
+                ::kdm::core::CorePackage::_instance()->getKDMEntity());
         m_InventoryItemEClass->getESuperTypes().push_back(
                 m_AbstractInventoryElementEClass);
         m_SourceFileEClass->getESuperTypes().push_back(m_InventoryItemEClass);
@@ -1153,7 +1176,7 @@ void SourcePackage::_initPackage()
                 m_InventoryContainerEClass);
         m_ProjectEClass->getESuperTypes().push_back(m_InventoryContainerEClass);
         m_AbstractInventoryRelationshipEClass->getESuperTypes().push_back(
-                dynamic_cast< ::kdm::core::CorePackage* >(::kdm::core::CorePackage::_instance().get())->getKDMRelationship());
+                ::kdm::core::CorePackage::_instance()->getKDMRelationship());
         m_BinaryFileEClass->getESuperTypes().push_back(m_InventoryItemEClass);
         m_ExecutableFileEClass->getESuperTypes().push_back(
                 m_InventoryItemEClass);
