@@ -5,7 +5,7 @@ set -e
 EMF4CPPDIR=../..
 
 # generator-release
-VERSION=emf4cpp-generator-2.0.0-release
+VERSION=emf4cpp-generator-3.0.0-release
 mkdir -p emf4cpp-release
 mkdir -p generator-release
 mkdir -p xmltype-release

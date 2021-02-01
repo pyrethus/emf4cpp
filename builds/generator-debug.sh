@@ -5,7 +5,7 @@ set -e
 EMF4CPPDIR=../..
 
 # generator-debug
-VERSION=emf4cpp-generator-2.0.0-debug
+VERSION=emf4cpp-generator-3.0.0-debug
 mkdir -p emf4cpp-debug
 mkdir -p generator-debug
 mkdir -p xmltype-debug

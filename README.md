@@ -2,7 +2,7 @@
 
 EMF4CPP (formerly Ecore2CPP) is a C++ implementation and type mapping for the Eclipse Modeling Framework (EMF) core, the Ecore metamodel.
 
-The current release allows to generate C++ code from Ecore metamodels, and to parse and serialize models and metamodels from and into XMI documents. Also, a partially implemented reflective API for generated metamodels is provided.
+The current release allows to generate C++ code from Ecore metamodels, and to parse and serialize models and metamodels from and into XMI documents. Also, a reflective API for generated metamodels is provided.
 
 EMF4CPP consists of two parts: a source code generator from Ecore metamodels to C++ and two runtime support libraries. One of the runtime support libraries implements the Ecore metamodel (libemf4cpp-ecore). The other one implements the type mapping, support algorithms, and allows to parse and serialize modeles in XMI format (libemf4cpp-ecorecpp). The generator is currently implemented using Xpand and Xtend.
 
@@ -16,11 +16,13 @@ Two direct advantages can be that C++ programmers can write their data model usi
 
 * Updates only source files which really change.
 
-* Object management via std::shared_ptr<> - no more memory leaks.
-
 * Automatic handling of econtainment and eopposite relations - setting one side of a relation automatically sets the other side.
 
+* Object management via std::shared_ptr<> in the interface and for containment references. Non-containment references are internally kept as std::weak_ptr<> to properly handle relations without an eopposite relation in the model.
+
 * XMI serialization and deserialization of model instances - a resource framework allows splitting of serializations, including cross-resource containment.
+
+* Classifier ids are counted per EPackage, while feature ids are counted per EClass. Feature ids are internally handled in a way, which even allows cross-ecore inheritance.
 
 * Full support for reflection - inspect your metamodel at runtime, including sub-/super-class relations. Powerful enough to implement a generic tree copier.
 
@@ -34,7 +36,7 @@ Two direct advantages can be that C++ programmers can write their data model usi
 
   * Inject constructor methods into the generated factories - extend a generated class by inheritance and have your classes instantiated from the beginning on, including deserialization.
 
-* Includes support classes from EMF's EcoreUtil package, implemented in the namespace ecorecpp::util, starting with TreeIterator, CrossReferencer and Copier.
+* Includes support classes from EMF's EcoreUtil package, implemented in the namespace ecorecpp::util, starting with TreeIterator, TreeWalker, CrossReferencer and Copier.
 
 * A dispatcher framework forwards calls to overloaded methods according to the best-match in the class hierarchy.
 
@@ -44,7 +46,7 @@ Two direct advantages can be that C++ programmers can write their data model usi
 
 * Boost C++ libraries (1.54 or greater)
 
-* G++ (4.8.5 or greater due to C++11)
+* G++ (4.8.5 or greater due to C++11 - we are using g++ 8.3)
 
 * Java Runtime Environment (1.8 or greater)
 
@@ -62,7 +64,7 @@ t.b.d.
 1. Checkout a clone of this repository
 
 ```
-git clone https://github.com/catedrasaes-umu/emf4cpp.git
+git clone https://github.com/inchron/emf4cpp.git
 cd emf4cpp
 ```
 2. Build the generator jar file in eclipse
@@ -82,7 +84,7 @@ Select 'Generator - org.csu.emf4cpp.generator'
 ```
 Select (from context menu): Export->Java->Runnable JAR file...
 Select Launch configuration: 'Generator - org.csu.emf4cpp.generator'
-Select Export destination: org.csu.emf4cpp.generator/org.csu.emf4cpp.generator_2.0.0.jar
+Select Export destination: org.csu.emf4cpp.generator/org.csu.emf4cpp.generator_3.0.0.jar
 ```
 3. Change to the build directory and run:
 
@@ -90,13 +92,14 @@ Select Export destination: org.csu.emf4cpp.generator/org.csu.emf4cpp.generator_2
 cd build
 ./generator-release.sh
 ```
-This builds the library to sub-folder 'emf4cpp-generator-2.0.0'.
+This builds the library to sub-folder 'emf4cpp-generator-3.0.0'.
 
 ## EMF4CPP development distribution ##
 
 The EMF4CPP development project consists of four major components:
 org.csu.emf4cpp.generator, emf4cpp.tests, the emf4cpp-ecore library, and the
-emf4cpp-ecorecpp library.
+emf4cpp-ecorecpp library. In addition, XMLType is used to support ecore files
+which have been created from a XML Schema Definition (xsd).
 
 Two additional components are contained:
 emf4cpp.xtext, which is a bootstrap implementation of a ANTLR3 grammars
@@ -138,51 +141,6 @@ is required to process instances of ecore metamodels. Aside of the required
 mapping from EMF datatypes to C++ datatypes this includes serialization and
 de-serialization, a resource framework, a notification framework, and utilities
 like a TreeIterator, a CrossReferencer and a Copier.
-
-### Build workspace ###
-
-1. Download the tarball file, extract it and change to _builds_ directory.
-
-```
-wget http://emf4cpp.googlecode.com/files/emf4cpp-snapshot-1012011253.tgz
-tar xzf emf4cpp-snapshot-1012011253.tgz
-cd emf4cpp-snapshot-1012011253/builds
-```
-
-2. Run the bootstrap script.
-
-```
-./bootstrap.sh
-```
-
-It creates two build directories: _debug_ and _release_.
-
-3. Build the workspace
-
-```
-cd release
-make
-```
-
-Also, you can build executables and libraries with debug information and debug symbols doing _make_ at _debug_ directory.
-
-4. Install EMF4CPP
-
-Optionally, you can install it doing _sudo make install_. By default, EMF4CPP is installed at /opt/emf4cpp-0.0.2
-
-## EMF4CPP Eclipse plug-in ##
-
-There is another way for generating C++ code from an Ecore metamodel using the EMF4CPP Eclipse plug-in.
-This plug-in requires Eclipse Helios and the C/C++ Development Tools.
-For installing it, close Eclipse, extract [this package](https://raw.githubusercontent.com/catedrasaes-umu/emf4cpp/downloads/emf4cpp-plugins-0.0.2.tar.gz) into your Eclipse plugins directory and re-run Eclipse.
-
-This plug-in adds a submenu called _EMF4CPP_ on the Ecore metamodels right click menu. You can use the option _Generate C++ with wizard_ from this menu as the next screenshot shows.
-
-![](https://raw.githubusercontent.com/catedrasaes-umu/emf4cpp/images/images/emf4cpp-plugin.png)
-
-Clicking _finish_ the generated code appears into the selected directory, as the next screenshot shows.
-
-![](https://raw.githubusercontent.com/catedrasaes-umu/emf4cpp/images/images/emf4cpp-plugin2.png)
 
 # Examples #
 
@@ -372,13 +330,10 @@ EPackage: company
 
 _Comming soon_
 
-# Performance comparison with Java #
-
-_Comming soon_
-
 # License #
 
-EMF4CPP is released under the LGPL License.
+EMF4CPP is released under the LGPL License. This covers the generator and the
+runtime libraries. However, it does not cover the generated code.
 
 # Acknowledgements #
 
@@ -388,7 +343,9 @@ EMF4CPP is released under the LGPL License.
 
 Andrés Senac González, Diego Sevilla Ruiz, Gregorio Martinez Perez, "_EMF4CPP: a C++ Ecore Implementation_", DSDM 2010 - Desarrollo de Software Dirigido por Modelos, Jornadas de Ingenieria del Software y Bases de Datos (JISBD 2010), Valencia, Spain, September 2010. [PDF](http://www.sistedes.es/TJISBD/Vol-4/No-2/articles/DSDM-articulo-13.pdf)
 
+Matthias Dörfel, "_EMF4CPP Generating Ecore Models for C++_", MUC++, Munich C++ User Group Meeting, September 2018. [PDF](doc/muc++-lightning-talk-2018/presentation.pdf) | [Video](https://www.youtube.com/watch?v=tKM8-paCVyw)
+
 # Contact #
 
-The code is still being actively developed, but we encourage all programmers that want a port of the great EMF tooling to C++ to contact us and test the tools, provide feedback or even code. We hope this utility to be of help to the community. If you want further information, or collaborate with the code or ideas, you can contact either [Andrés Senac](mailto:andres@senac.es) or [Diego Sevilla](mailto:dsevilla@um.es).
+The code is still being actively developed, but we encourage all programmers that want a port of the great EMF tooling to C++ to contact us and test the tools, provide feedback or even code. We hope this utility to be of help to the community. If you want further information, or collaborate with the code or ideas, you can contact either the [EMF4CPP Team at INCHRON](mailto:emf4cpp@inchron.com), or the original authors [Andrés Senac](mailto:andres@senac.es) or [Diego Sevilla](mailto:dsevilla@um.es).
 

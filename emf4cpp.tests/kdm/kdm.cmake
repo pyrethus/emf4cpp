@@ -2,7 +2,8 @@
 #
 # kdm.cmake
 # Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
-# Copyright (C) INCHRON GmbH 2016-2018 <emf4cpp@inchron.com>
+# Copyright (C) INCHRON GmbH 2016-2019 <emf4cpp@inchron.com>
+# Copyright (C) INCHRON AG 2019-2021 <emf4cpp@inchron.com>
 #
 # EMF4CPP is free software: you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published
@@ -1403,11 +1404,11 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/kdm/ui/WritesUI.hpp DESTINATION includ
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/kdm/ui/ManagesUI.hpp DESTINATION include/emf4cpp/kdm/ui)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/kdm/dllKdm.hpp DESTINATION include/emf4cpp/kdm)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-2.0.0-${CMAKE_BUILD_TYPE_LOWER}/lib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-3.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-3.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-3.0.0-${CMAKE_BUILD_TYPE_LOWER}/lib)
 
 add_library(emf4cpp-kdm SHARED ${kdm_HEADERS} ${kdm_SOURCES})
-set_target_properties(emf4cpp-kdm PROPERTIES COMPILE_FLAGS "-DMAKE_KDM_DLL" VERSION 0.0.1 SOVERSION 1)
+set_target_properties(emf4cpp-kdm PROPERTIES COMPILE_FLAGS "-DMAKE_KDM_DLL" VERSION 3.0.0 SOVERSION 3)
 set_property(TARGET emf4cpp-kdm APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
 target_link_libraries(emf4cpp-kdm emf4cpp-ecore)
 

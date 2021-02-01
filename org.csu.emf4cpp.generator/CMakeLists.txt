@@ -1,6 +1,7 @@
 #
 # CMakeLists.txt
 # Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
+# Copyright (C) INCHRON AG 2021 <emf4cpp@inchron.com>
 # 
 # EMF4CPP is free software: you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published
@@ -22,11 +23,11 @@ cmake_minimum_required(VERSION 2.6)
 project(emf4cpp-generator CXX C)
 
 set(CPACK_GENERATOR TGZ)
-set(CPACK_PACKAGE_VERSION_MAJOR "2")
+set(CPACK_PACKAGE_VERSION_MAJOR "3")
 set(CPACK_PACKAGE_VERSION_MINOR "0")
 set(CPACK_PACKAGE_VERSION_PATCH "0")
-set(CPACK_PACKAGE_VENDOR "Cátedra SAES-UMU")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Cátedra SAES-UMU: EMF4CPP-Generator")
+set(CPACK_PACKAGE_VENDOR "INCHRON AG")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "INCHRON AG: EMF4CPP-Generator")
 include(CPack)
 
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

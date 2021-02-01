@@ -2,6 +2,7 @@
 CMakeLists.ext
 Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
 Copyright (C) INCHRON GmbH 2016 <soeren.henning@inchron.com>
+Copyright (C) INCHRON AG 2020 <emf4cpp@inchron.com>
 
 EMF4CPP is free software: you can redistribute it and/or modify it
 under the terms of the GNU Lesser General Public License as published
@@ -39,17 +40,6 @@ foreach(cmake ${CMAKES})
   include(${cmake})
 endforeach(cmake)
 
-«REM»
-set(CPACK_GENERATOR TGZ STGZ)
-set(CPACK_PACKAGE_VERSION_MAJOR "0")
-set(CPACK_PACKAGE_VERSION_MINOR "0")
-set(CPACK_PACKAGE_VERSION_PATCH "1")
-set(CPACK_PACKAGE_VENDOR "Cátedra SAES-UMU")
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Andrés Senac <andres.senac@um.es>")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Cátedra SAES-UMU: EMF4CPP «name» metamodel")
-set(CPACK_SOURCE_GENERATOR TGZ)
-include(CPack)
-«ENDREM»
 «ENDFILE-»
 «ENDDEFINE»
 
@@ -121,10 +111,18 @@ link_directories(«GLOBALVAR ecoreLibraryPath»)
 
 «IF (boolean) GLOBALVAR staticLibrary-»
 add_library(emf4cpp-«fqn» STATIC ${«fqn»_HEADERS} ${«fqn»_SOURCES})
+«IF (boolean) GLOBALVAR internalLicense-»
+set_target_properties(emf4cpp-«fqn» PROPERTIES COMPILE_FLAGS "-DMAKE_«getHeaderDef()»_STATIC" VERSION 3.0.0 SOVERSION 3)
+«ELSE-»
 set_target_properties(emf4cpp-«fqn» PROPERTIES COMPILE_FLAGS "-DMAKE_«getHeaderDef()»_STATIC" VERSION 0.0.1 SOVERSION 1)
+«ENDIF-»
 «ELSE-»
 add_library(emf4cpp-«fqn» SHARED ${«fqn»_HEADERS} ${«fqn»_SOURCES})
+«IF (boolean) GLOBALVAR internalLicense-»
+set_target_properties(emf4cpp-«fqn» PROPERTIES COMPILE_FLAGS "-DMAKE_«getHeaderDef()»_DLL" VERSION 3.0.0 SOVERSION 3)
+«ELSE-»
 set_target_properties(emf4cpp-«fqn» PROPERTIES COMPILE_FLAGS "-DMAKE_«getHeaderDef()»_DLL" VERSION 0.0.1 SOVERSION 1)
+«ENDIF-»
 set_property(TARGET emf4cpp-«fqn» APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
 «ENDIF-»
 «IF (boolean) GLOBALVAR bootstrap-»

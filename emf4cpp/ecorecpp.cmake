@@ -163,7 +163,7 @@ target_sources(emf4cpp-ecore PRIVATE
 		${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/EDate.hpp
 		${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/EDate.cpp)
 
-set_target_properties(emf4cpp-ecorecpp PROPERTIES COMPILE_FLAGS "-DMAKE_ECORECPP_DLL" VERSION 0.0.1 SOVERSION 1)
+set_target_properties(emf4cpp-ecorecpp PROPERTIES COMPILE_FLAGS "-DMAKE_ECORECPP_DLL" VERSION 3.0.0 SOVERSION 3)
 target_link_libraries(emf4cpp-ecorecpp emf4cpp-ecore Qt5::Core)
 
 install(TARGETS emf4cpp-ecorecpp DESTINATION lib)
