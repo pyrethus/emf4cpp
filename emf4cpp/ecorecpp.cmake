@@ -63,12 +63,10 @@ set(ecorecpp_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/notify/Notifier.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/Reference.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/XMLHandler.hpp
-	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/handler-xerces.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/handler.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/localstr.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/parser_common.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/parser.hpp
-	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/parser-xerces.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/reference_parser.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/simple_xml_parser.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/unresolved_reference.hpp
@@ -76,7 +74,6 @@ set(ecorecpp_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/serializer/greedy_serializer.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/serializer/serializer.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/serializer/XMLSerializer.hpp
-	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/serializer/serializer-xerces.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/debug.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/print.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/escape_html.hpp
@@ -123,11 +120,9 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/notify/Notifier.hpp DESTINATI
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/Reference.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/XMLHandler.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/handler.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/handler-xerces.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/localstr.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/parser.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/parser_common.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/parser-xerces.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/reference_parser.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/simple_xml_parser.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/parser/unresolved_reference.hpp DESTINATION include/emf4cpp/ecorecpp/parser)
@@ -135,7 +130,6 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/serializer/externalstr.hpp DE
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/serializer/greedy_serializer.hpp DESTINATION include/emf4cpp/ecorecpp/serializer)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/serializer/serializer.hpp DESTINATION include/emf4cpp/ecorecpp/serializer)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/serializer/XMLSerializer.hpp DESTINATION include/emf4cpp/ecorecpp/serializer)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/serializer/serializer-xerces.hpp DESTINATION include/emf4cpp/ecorecpp/serializer)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/debug.hpp DESTINATION include/emf4cpp/ecorecpp/util)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/print.hpp DESTINATION include/emf4cpp/ecorecpp/util)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/escape_html.hpp DESTINATION include/emf4cpp/ecorecpp/util)

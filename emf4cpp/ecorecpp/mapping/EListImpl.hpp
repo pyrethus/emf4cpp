@@ -67,13 +67,26 @@ public:
 		m_content.insert(it, _obj);
     }
 
+    bool contains(T _obj,
+			const typename EList< T >::ef_ptr& = nullptr) const override
+    {
+		return std::any_of( m_content.begin(), m_content.end(),
+				[&_obj](const T& obj){return obj == _obj;} );
+	}
+
     void push_back(T _obj,
 			const typename EList< T >::ef_ptr& = nullptr) override
     {
         m_content.push_back(_obj);
     }
 
-    size_t size() const override
+    void push_back_unsafe(T _obj,
+			const typename EList< T >::ef_ptr& = nullptr) override
+    {
+        m_content.push_back(_obj);
+    }
+
+	size_t size() const override
     {
         return m_content.size();
     }
@@ -138,13 +151,14 @@ public:
 		if (_pos >= m_content.size())
 			return push_back(_obj, ef);
 
-		/* Do not insert a second reference to the same object. */
-		auto it = std::find_if( m_content.begin(), m_content.end(),
-				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );
-		if (it == m_content.end()) {
-			/* Removed deletion of element at previous position. */
-
-			it = m_content.begin() + _pos;
+		/* Do not insert a second reference to the same object.
+		 * This should be possible for non-containment - non-unique
+		 * reference lists but the java eclipse implementation also
+		 * does not support it either.
+		 * (see: https://bugs.eclipse.org/bugs/show_bug.cgi?id=89325)
+		 */
+		if ( !contains(_obj) ) {
+			auto it = m_content.begin() + _pos;
 			m_content.insert(it, typename containment_t::ptr_type(_obj));
 
 			containment_t::set(_obj, _this(), m_ref);
@@ -176,31 +190,41 @@ public:
 		return nullptr;
 	}
 
+    bool contains(T _obj,
+			const typename EList< T >::ef_ptr& = nullptr) const override
+	{
+		return std::any_of( m_content.begin(), m_content.end(),
+				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );
+	}
+
     void push_back(value_type _obj,
 			const typename EList< T >::ef_ptr& = nullptr ) override
     {
-		auto it = std::find_if( m_content.begin(), m_content.end(),
-				[&_obj](const ptr_type& ptr){return containment_t::to_value_type(ptr) == _obj;} );
-		if (it == m_content.end()) {
-			m_content.push_back(typename containment_t::ptr_type(_obj));
+		if ( !contains(_obj) )
+			push_back_unsafe(_obj);
+    }
 
-			containment_t::set(_obj, _this(), m_ref);
-			opposite_t::set(_obj, _this(), m_opp);
+    void push_back_unsafe(value_type _obj,
+			const typename EList< T >::ef_ptr& = nullptr ) override
+	{
+		m_content.push_back(typename containment_t::ptr_type(_obj));
+
+		containment_t::set(_obj, _this(), m_ref);
+		opposite_t::set(_obj, _this(), m_opp);
 
 #ifdef ECORECPP_NOTIFICATION_API
-			if (_this()->eNotificationRequired())
-			{
-				::ecorecpp::notify::Notification notification(
-					::ecorecpp::notify::Notification::ADD,
-					_this(),
-					m_ref,
-					T(),
-					_obj
-					);
-				_this()->eNotify(&notification);
-			}
-#endif
+		if (_this()->eNotificationRequired())
+		{
+			::ecorecpp::notify::Notification notification(
+				::ecorecpp::notify::Notification::ADD,
+				_this(),
+				m_ref,
+				T(),
+				_obj
+				);
+			_this()->eNotify(&notification);
 		}
+#endif
     }
 
     size_t size() const override

@@ -336,11 +336,10 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 			if (eref && eref->getUpperBound() != 1) {
 				// Gets the collection and adds the new element
 				anyObj = peobj->eGet(esf);
-				mapping::EList<::ecore::EObject_ptr>::ptr_type list =
-						ecorecpp::mapping::any::any_cast<
+				auto list = ecorecpp::mapping::any::any_cast<
 						mapping::EList<::ecore::EObject_ptr>::ptr_type>(anyObj);
 
-				list->push_back(eobj);
+				list->push_back_unsafe(eobj);
 			} else {
 				anyObj = eobj;
 				EAttribute_ptr const eattr = as< EAttribute > (esf);
@@ -425,10 +424,9 @@ void XMLHandler::resolveReferences() {
 
 			EJavaObject owner = eobj->eGet(esf);
 
-			if ( ::ecorecpp::mapping::any::is_a<
-					mapping::EList<::ecore::EObject_ptr>::ptr_type>(owner) ) {
+			if ( esf->getUpperBound() != 1 ) {
 				ecorecpp::mapping::any::any_cast<
-						mapping::EList<::ecore::EObject_ptr>::ptr_type >(owner)->push_back(resolvedObj);
+						mapping::EList<::ecore::EObject_ptr>::ptr_type >(owner)->push_back_unsafe(resolvedObj);
 			} else {
 				eobj->eSet(esf, resolvedObj);
 			}
@@ -478,10 +476,9 @@ void XMLHandler::resolveCrossDocumentReferences() {
 
 		EJavaObject owner = eobj->eGet(esf);
 
-		if ( ::ecorecpp::mapping::any::is_a<
-				mapping::EList<::ecore::EObject_ptr>::ptr_type>(owner) ) {
+		if ( esf->getUpperBound() != 1 ) {
 			ecorecpp::mapping::any::any_cast<
-					mapping::EList<::ecore::EObject_ptr>::ptr_type >(owner)->push_back(resolvedObj);
+					mapping::EList<::ecore::EObject_ptr>::ptr_type >(owner)->push_back_unsafe(resolvedObj);
 		} else {
 			eobj->eSet(esf, resolvedObj);
 		}

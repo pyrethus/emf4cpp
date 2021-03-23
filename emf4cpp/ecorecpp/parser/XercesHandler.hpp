@@ -18,10 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _ECORECPPPARSERHANDLER_HPP
-#define    _ECORECPPPARSERHANDLER_HPP
-
-#include "unresolved_reference.hpp"
+#pragma once
 
 #include <xercesc/sax/HandlerBase.hpp>
 #include <ecore/EObject.hpp>
@@ -30,18 +27,20 @@
 #include <string>
 #include <unordered_map>
 
+#include "unresolved_reference.hpp"
+
 namespace ecorecpp
 {
 namespace parser
 {
 
-class handler: public xercesc::HandlerBase
+class XercesHandler: public xercesc::HandlerBase
 {
 public:
 
-    handler();
+    XercesHandler();
 
-    virtual ~handler();
+    virtual ~XercesHandler();
 
     void startElement(const XMLCh * const name,
             xercesc::AttributeList& attributes);
@@ -71,15 +70,20 @@ protected:
 
 private:
 
-    inline bool isAtCurrentNamespace(const ::ecorecpp::mapping::type_definitions::string_t& _name);
+	inline bool isAtCurrentNamespace(const ::ecorecpp::mapping::type_definitions::string_t& _name) const
+	{
+		return _name.find(':') == ::ecorecpp::mapping::type_definitions::string_t::npos;
+	}
+
+	static void appendMultipleAttributeValue(
+			ecore::EObject_ptr const& eobj,
+			ecore::EAttribute_ptr const& eattr,
+			ecorecpp::mapping::any anyObj);
 
 	std::unordered_map<
 		::ecorecpp::mapping::type_definitions::string_t,
 		::ecorecpp::mapping::type_definitions::string_t > _nsUriMap;
-
 };
 
 } // parser
 } // ecorecpp
-
-#endif    /* _ECORECPPPARSERHANDLER_HPP */

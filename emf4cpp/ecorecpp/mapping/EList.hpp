@@ -136,7 +136,13 @@ public:
 
     virtual ef_ptr eFeature(size_t _index) const  = 0;
 
-    virtual void push_back(T _obj, const ef_ptr& = nullptr) = 0;
+	virtual bool contains( T _obj, const ef_ptr& = nullptr ) const = 0;
+
+	virtual void push_back(T _obj, const ef_ptr& = nullptr) = 0;
+
+	/* Do not check, if '_obj' is already part of the list (only relevant for
+	 * containment relations). */
+	virtual void push_back_unsafe(T _obj, const ef_ptr& = nullptr) = 0;
 
     virtual size_t size() const = 0;
 
@@ -231,10 +237,22 @@ public:
         m_delegate.insert_at(_pos, _cast< T, Q >::do_cast(_obj), ef);
     }
 
-    void push_back(T _obj,
+    bool contains(T _obj,
+			const typename EList< T >::ef_ptr& ef = nullptr) const override
+    {
+        return m_delegate.contains(_cast< T, Q >::do_cast(_obj), ef);
+    }
+
+	void push_back(T _obj,
 			const typename EList< T >::ef_ptr& ef = nullptr) override
     {
         m_delegate.push_back(_cast< T, Q >::do_cast(_obj), ef);
+    }
+
+	void push_back_unsafe(T _obj,
+			const typename EList< T >::ef_ptr& ef = nullptr) override
+    {
+        m_delegate.push_back_unsafe(_cast< T, Q >::do_cast(_obj), ef);
     }
 
     size_t size() const override

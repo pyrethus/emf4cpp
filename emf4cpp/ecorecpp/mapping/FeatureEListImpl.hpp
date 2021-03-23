@@ -68,7 +68,18 @@ public:
 		m_content.insert(it, std::make_pair(_obj, ef));
     }
 
+    bool contains(T _obj, const typename EList< T >::ef_ptr& ef) const override
+    {
+		return std::any_of( m_content.begin(), m_content.end(),
+				[&_obj, &ef](typename Container::const_reference p){return p == std::make_pair(_obj,ef);} );
+    }
+
     void push_back(T _obj, const typename EList< T >::ef_ptr& ef) override
+    {
+        m_content.push_back( std::make_pair(_obj, ef) );
+    }
+
+    void push_back_unsafe(T _obj, const typename EList< T >::ef_ptr& ef) override
     {
         m_content.push_back( std::make_pair(_obj, ef) );
     }
@@ -109,7 +120,8 @@ public:
 
 protected:
 
-	std::vector< std::pair< T, typename EList< T >::ef_ptr > > m_content;
+	using Container = std::vector< std::pair< T, typename EList< T >::ef_ptr > >;
+	Container m_content;
 };
 
 } // mapping

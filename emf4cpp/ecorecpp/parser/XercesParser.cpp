@@ -2,40 +2,44 @@
 /*
  * parser/parser-xerces.cpp
  * Copyright (C) Cátedra SAES-UMU 2010 <andres.senac@um.es>
- * 
+ * Copyright (C) INCHRON AG 2021 <info@inchron.com>
+ *
  * EMF4CPP is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published
  * by the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * EMF4CPP is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "parser.hpp"
-#include "handler.hpp"
-#include "../util/debug.hpp"
+#include "ParserXerces.hpp"
+
 #include <xercesc/parsers/SAXParser.hpp>
 #include <xercesc/util/OutOfMemoryException.hpp>
 #include <iostream>
 #include <fstream>
+#include <memory>
+
+#include "HandlerXerces.hpp"
+#include "../util/debug.hpp"
 
 using namespace ::ecorecpp::parser;
 
-parser::parser()
+XercesParser::XercesParser()
 {
 }
 
-parser::~parser()
+XercesParser::~XercesParser()
 {
 }
 
-::ecore::EObject_ptr parser::load(const char* _file)
+::ecore::EObject_ptr XercesParser::load(const char* _file)
 {
     ::ecore::EObject_ptr _returned = 0;
 
@@ -82,7 +86,7 @@ parser::~parser()
     //  Create our SAX handler object and install it on the parser, as the
     //  document and error handler.
     //
-    ::ecorecpp::parser::handler _handler;
+    ::ecorecpp::parser::XercesHandler _handler;
     _parser->setDocumentHandler(&_handler);
 
     //
@@ -104,8 +108,8 @@ parser::~parser()
         const unsigned long endMillis =
                 xercesc::XMLPlatformUtils::getCurrentMillis();
         duration = endMillis - startMillis;
-#endif
         ERROR_MSG("--- DURATION: " << duration);
+#endif
     } catch (const xercesc::OutOfMemoryException&)
     {
         ERROR_MSG("OutOfMemoryException");

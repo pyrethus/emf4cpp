@@ -260,7 +260,7 @@ void handler::start_tag(xml_parser::match_pair const& name,
                 mapping::EList<::ecore::EObject_ptr>::ptr_type list = ecorecpp::mapping::any::any_cast<
                         mapping::EList<::ecore::EObject_ptr>::ptr_type >(anyObj);
 
-                list->push_back(eobj);
+                list->push_back_unsafe(eobj);
             }
             else
             {
@@ -283,7 +283,7 @@ void handler::start_tag(xml_parser::match_pair const& name,
                     mapping::EList<::ecore::EObject_ptr>::ptr_type list = ecorecpp::mapping::any::any_cast<
                             mapping::EList<::ecore::EObject_ptr>::ptr_type >(anyObj);
 
-                    list->push_back(peobj);
+                    list->push_back_unsafe(peobj);
                 }
                 else
                 {
@@ -436,7 +436,7 @@ void handler::resolveReferences()
 				EJavaObject targetObject = eobj->eGet(esf);
 				if ( any::is_a<mapping::EList<::ecore::EObject_ptr>::ptr_type>(targetObject) ) {
 					ecorecpp::mapping::any::any_cast<mapping::EList<::ecore::EObject_ptr>::ptr_type >(targetObject)
-							->push_back(_current);
+							->push_back_unsafe(_current);
 				} else {
 					eobj->eSet(esf, _any);
 				}
