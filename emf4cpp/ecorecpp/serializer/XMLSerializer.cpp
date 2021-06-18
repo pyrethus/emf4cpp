@@ -21,10 +21,11 @@
 
 #include <algorithm>
 
-#include <ecorecpp/resource/XMLResource.hpp>
-#include <ecorecpp/mapping/EListImpl.hpp>
-#include <ecore_forward.hpp>
 #include <ecore.hpp>
+#include <ecore_forward.hpp>
+#include <ecorecpp/exception/ReferenceStringCreationException.hpp>
+#include <ecorecpp/mapping/EListImpl.hpp>
+#include <ecorecpp/resource/XMLResource.hpp>
 
 #include "../util/debug.hpp"
 #include "../mapping.hpp"
@@ -180,9 +181,27 @@ XMLSerializer::get_reference(::ecore::EObject_ptr obj) const {
 			::ecore::EObject_ptr from, ::ecore::EObject_ptr to,
 			bool crossDocument ) const {
 	::ecorecpp::resource::Resource_ptr fromResource = from->eResource();
-	assert (fromResource);
+	if ( !fromResource ) {
+		const std::string msg{
+			"The reference string could not be retrieved for source EObject of type '" +
+				from->eClass()->getName() +
+				"' and destination EObject of type '" +
+				to->eClass()->getName() +
+				"' because the source object is not assigned to any resource."};
+		throw ::ecorecpp::exception::ReferenceStringCreationException(msg,
+				from, to, crossDocument);
+	}
 	::ecorecpp::resource::Resource_ptr toResource = to->eResource();
-	assert (toResource);
+	if ( !toResource ) {
+		const std::string msg{
+			"The reference string could not be retrieved for source EObject of type '" +
+				from->eClass()->getName() +
+				"' and destination EObject of type '" +
+				to->eClass()->getName() +
+				"' because the destination object is not assigned to any resource."};
+		throw ::ecorecpp::exception::ReferenceStringCreationException(msg,
+				from, to, crossDocument);
+	}
 
 	QUrl referenceUri = toResource->getURI();
 	referenceUri.setFragment(QString::fromStdString(toResource->getURIFragment(to)));
@@ -291,34 +310,31 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 		auto attributeName = current_at->getName();
 		if (m_extendedMetaData)
 			attributeName = m_extendedMetaData->getName(current_at);
-		try {
-			EClassifier_ptr at_classifier = current_at->getEType();
 
-			DEBUG_MSG(cerr, indent << attributeName << " (from " << current_at->getName() << ")");
+		EClassifier_ptr at_classifier = current_at->getEType();
 
-			EDataType_ptr atc = as< EDataType >(at_classifier);
-			if (atc) {
-				EFactory_ptr fac =
-						at_classifier->getEPackage()->getEFactoryInstance();
-				ecorecpp::mapping::any any = obj->eGet(current_at);
+		DEBUG_MSG(cerr, indent << attributeName << " (from " << current_at->getName() << ")");
 
-				::ecorecpp::mapping::type_definitions::string_t value =
-						fac->convertToString(atc, any);
+		EDataType_ptr atc = as< EDataType >(at_classifier);
+		if (atc) {
+			EFactory_ptr fac =
+					at_classifier->getEPackage()->getEFactoryInstance();
+			ecorecpp::mapping::any any = obj->eGet(current_at);
 
-				DEBUG_MSG(cerr, indent << attributeName
-						  << value);
+			::ecorecpp::mapping::type_definitions::string_t value =
+					fac->convertToString(atc, any);
 
-				if ( (!value.empty() && value
-						!= current_at->getDefaultValueLiteral())
-					|| (m_keepDefault && value
-						== current_at->getDefaultValueLiteral())) {
-					m_ser.add_attribute(attributeName, value);
-				}
-			} else {
-				// TODO: possible? Yes, for non-ecore built-in types!
+			DEBUG_MSG(cerr, indent << attributeName
+					  << value);
+
+			if ( (!value.empty() && value
+					!= current_at->getDefaultValueLiteral())
+				|| (m_keepDefault && value
+					== current_at->getDefaultValueLiteral())) {
+				m_ser.add_attribute(attributeName, value);
 			}
-		} catch (const std::exception& e) {
-			DEBUG_MSG(cerr, e.what() );
+		} else {
+			// TODO: possible? Yes, for non-ecore built-in types!
 		}
 	}
 
@@ -339,74 +355,71 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 		auto referenceName = current_ref->getName();
 		if (m_extendedMetaData)
 			referenceName = m_extendedMetaData->getName(current_ref);
-		try {
-			DEBUG_MSG(cerr, indent << referenceName << " (from " << current_ref->getName() << ")");
 
-			ecorecpp::mapping::any any = obj->eGet(current_ref);
-			::ecorecpp::mapping::type_definitions::stringstream_t value;
+		DEBUG_MSG(cerr, indent << referenceName << " (from " << current_ref->getName() << ")");
 
-			if (current_ref->getUpperBound() != 1) {
-				mapping::EList<::ecore::EObject_ptr>::ptr_type children =
-						ecorecpp::mapping::any::any_cast<
-							mapping::EList<::ecore::EObject_ptr>::ptr_type >(any);
-				// Remove expired references first
-				children->cleanup();
+		ecorecpp::mapping::any any = obj->eGet(current_ref);
+		::ecorecpp::mapping::type_definitions::stringstream_t value;
 
-				const bool isCrossDocumentReference =
-						std::any_of( children->begin(), children->end(),
-						[obj](::ecore::EObject_ptr child){
-								return obj->eResource() != child->eResource(); } );
+		if (current_ref->getUpperBound() != 1) {
+			mapping::EList<::ecore::EObject_ptr>::ptr_type children =
+					ecorecpp::mapping::any::any_cast<
+						mapping::EList<::ecore::EObject_ptr>::ptr_type >(any);
+			// Remove expired references first
+			children->cleanup();
 
-				for ( size_t ind = 0; ind < children->size(); ++ind ) {
-					auto child = children->get(ind);
-					auto ref = get_reference(obj, child, isCrossDocumentReference);
-					if ( isCrossDocumentReference ) {
-						std::array<::ecorecpp::mapping::type_definitions::string_t, 3> crossRef;
-						crossRef[0] = referenceName;
+			const bool isCrossDocumentReference =
+					std::any_of( children->begin(), children->end(),
+					[obj](::ecore::EObject_ptr child){
+							return obj->eResource() != child->eResource(); } );
 
-						if (child->eClass() != current_ref->getEType()) {
-							crossRef[1] = get_type(child);
-							m_usedPackages.push_back(child->eClass()->getEPackage());
-						}
+			for ( size_t ind = 0; ind < children->size(); ++ind ) {
+				auto child = children->get(ind);
+				auto ref = get_reference(obj, child, isCrossDocumentReference);
+				if ( isCrossDocumentReference ) {
+					std::array<::ecorecpp::mapping::type_definitions::string_t, 3> crossRef;
+					crossRef[0] = referenceName;
 
-						crossRef[2] = ref;
-						crossReferences.push_back(crossRef);
-					} else {
-						value << ref;
-						if (ind+1 != children->size())
-							value << " ";
+					if (child->eClass() != current_ref->getEType()) {
+						crossRef[1] = get_type(child);
+						m_usedPackages.push_back(child->eClass()->getEPackage());
 					}
-				}
-			} else {
-				EObject_ptr child =
-						ecorecpp::mapping::any::any_cast< EObject_ptr >(any);
-				if (child) {
-					const bool isCrossDocumentReference =
-							obj->eResource() != child->eResource();
 
-					auto ref = get_reference(obj, child, isCrossDocumentReference);
-					if (isCrossDocumentReference) {
-						std::array<::ecorecpp::mapping::type_definitions::string_t, 3> crossRef;
-						crossRef[0] = referenceName;
-
-						if (child->eClass() != current_ref->getEType()) {
-							crossRef[1] = get_type(child);
-							m_usedPackages.push_back(child->eClass()->getEPackage());
-						}
-
-						crossRef[2] = ref;
-						crossReferences.push_back(crossRef);
-					} else {
-						value << ref;
-					}
+					crossRef[2] = ref;
+					crossReferences.push_back(crossRef);
+				} else {
+					value << ref;
+					if (ind+1 != children->size())
+						value << " ";
 				}
 			}
+		} else {
+			EObject_ptr child =
+					ecorecpp::mapping::any::any_cast< EObject_ptr >(any);
+			if (child) {
+				const bool isCrossDocumentReference =
+						obj->eResource() != child->eResource();
 
-			if (!value.str().empty())
-				m_ser.add_attribute(referenceName, value.str());
-		} catch (...) {
-			DEBUG_MSG(cerr, "exception catched! ");
+				auto ref = get_reference(obj, child, isCrossDocumentReference);
+				if (isCrossDocumentReference) {
+					std::array<::ecorecpp::mapping::type_definitions::string_t, 3> crossRef;
+					crossRef[0] = referenceName;
+
+					if (child->eClass() != current_ref->getEType()) {
+						crossRef[1] = get_type(child);
+						m_usedPackages.push_back(child->eClass()->getEPackage());
+					}
+
+					crossRef[2] = ref;
+					crossReferences.push_back(crossRef);
+				} else {
+					value << ref;
+				}
+			}
 		}
+
+		if (!value.str().empty())
+			m_ser.add_attribute(referenceName, value.str());
 	}
 
 	/*
@@ -453,37 +466,34 @@ void XMLSerializer::serialize_node_attributes(EObject_ptr obj) {
 		auto attributeName = current_at->getName();
 		if (m_extendedMetaData)
 			attributeName = m_extendedMetaData->getName(current_at);
-		try {
-			EClassifier_ptr at_classifier = current_at->getEType();
 
-			DEBUG_MSG(cerr, indent << attributeName << " (from " << current_at->getName() << ")");
+		EClassifier_ptr at_classifier = current_at->getEType();
 
-			EDataType_ptr atc = as< EDataType >(at_classifier);
-			if (atc) {
-				EFactory_ptr fac =
-						at_classifier->getEPackage()->getEFactoryInstance();
-				ecorecpp::mapping::any any = obj->eGet(current_at);
+		DEBUG_MSG(cerr, indent << attributeName << " (from " << current_at->getName() << ")");
 
-				std::vector< ecorecpp::mapping::any > anys =
-						ecorecpp::mapping::any::any_cast<
-							std::vector<ecorecpp::mapping::any> >(any);
+		EDataType_ptr atc = as< EDataType >(at_classifier);
+		if (atc) {
+			EFactory_ptr fac =
+					at_classifier->getEPackage()->getEFactoryInstance();
+			ecorecpp::mapping::any any = obj->eGet(current_at);
 
-				for (auto const& currAny : anys) {
-					::ecorecpp::mapping::type_definitions::string_t value =
-						fac->convertToString(atc, currAny);
+			std::vector< ecorecpp::mapping::any > anys =
+					ecorecpp::mapping::any::any_cast<
+						std::vector<ecorecpp::mapping::any> >(any);
 
-					DEBUG_MSG(cerr, indent << attributeName
-							  << " " << value);
+			for (auto const& currAny : anys) {
+				::ecorecpp::mapping::type_definitions::string_t value =
+					fac->convertToString(atc, currAny);
 
-					m_ser.open_object(attributeName);
-					m_ser.add_value(value);
-					m_ser.close_object(attributeName);
-				}
-			} else {
-				// TODO: possible?
+				DEBUG_MSG(cerr, indent << attributeName
+						  << " " << value);
+
+				m_ser.open_object(attributeName);
+				m_ser.add_value(value);
+				m_ser.close_object(attributeName);
 			}
-		} catch (...) {
-			DEBUG_MSG(cerr, "exception catched!");
+		} else {
+			// TODO: possible?
 		}
 	}
 }
@@ -505,66 +515,62 @@ void XMLSerializer::serialize_node_children(EObject_ptr obj) {
 		auto referenceName = current_ref->getName();
 		if (m_extendedMetaData)
 			referenceName = m_extendedMetaData->getName(current_ref);
-		try {
-			DEBUG_MSG(cerr, indent << referenceName << " (from " << current_ref->getName() << ")");
 
-			if ( current_ref->isTransient() || current_ref->isDerived()
-					|| !current_ref->isContainment()
-					|| !obj->eIsSet(current_ref) )
-				continue;
+		DEBUG_MSG(cerr, indent << referenceName << " (from " << current_ref->getName() << ")");
 
-			ecorecpp::mapping::any any = obj->eGet(current_ref);
+		if ( current_ref->isTransient() || current_ref->isDerived()
+				|| !current_ref->isContainment()
+				|| !obj->eIsSet(current_ref) )
+			continue;
 
-			if (current_ref->getUpperBound() != 1) {
-				mapping::EList<::ecore::EObject_ptr>::ptr_type children =
-						ecorecpp::mapping::any::any_cast<
-							mapping::EList<::ecore::EObject_ptr>::ptr_type >(any);
+		ecorecpp::mapping::any any = obj->eGet(current_ref);
 
-				for ( auto const& child : *children ) {
-					if (objResource != child->eResource())
-						create_crossref_node(obj, child, current_ref);
-					else
-						create_node(obj, child, current_ref);
-				}
+		if (current_ref->getUpperBound() != 1) {
+			mapping::EList<::ecore::EObject_ptr>::ptr_type children =
+					ecorecpp::mapping::any::any_cast<
+						mapping::EList<::ecore::EObject_ptr>::ptr_type >(any);
 
-			} else {
-				EObject_ptr child =
-						ecorecpp::mapping::any::any_cast<EObject_ptr>(any);
-				if (child) {
-					if (objResource != child->eResource())
-						create_crossref_node(obj, child, current_ref);
-					else
-						create_node(obj, child, current_ref);
-				}
+			for ( auto const& child : *children ) {
+				if (objResource != child->eResource())
+					create_crossref_node(obj, child, current_ref);
+				else
+					create_node(obj, child, current_ref);
 			}
 
-			auto range = _unresolvedReferences.equal_range(obj);
-			for ( auto it = range.first; it != range.second; ++it ) {
-				const auto& ref = it->second;
-				try {
-					auto eref = ::ecore::as<::ecore::EReference>(
-							getEStructuralFeature(obj->eClass(),
-							ref._featureName) );
+		} else {
+			EObject_ptr child =
+					ecorecpp::mapping::any::any_cast<EObject_ptr>(any);
+			if (child) {
+				if (objResource != child->eResource())
+					create_crossref_node(obj, child, current_ref);
+				else
+					create_node(obj, child, current_ref);
+			}
+		}
 
-					if ( !eref || !eref->isContainment() )
-						continue;
+		auto range = _unresolvedReferences.equal_range(obj);
+		for ( auto it = range.first; it != range.second; ++it ) {
+			const auto& ref = it->second;
+			try {
+				auto eref = ::ecore::as<::ecore::EReference>(
+						getEStructuralFeature(obj->eClass(),
+						ref._featureName) );
 
-				} catch (...) {
+				if ( !eref || !eref->isContainment() )
 					continue;
-				}
 
-				m_ser.open_object(ref._featureName);
-
-				// May be a subtype
-				if ( !ref._refType.empty() )
-					m_ser.add_attribute("xsi:type", ref._refType);
-
-				m_ser.add_attribute("href", ref._href);
-				m_ser.close_object(ref._featureName);
+			} catch (...) {
+				continue;
 			}
 
-		} catch (...) {
-			DEBUG_MSG(cerr, "exception catched! ");
+			m_ser.open_object(ref._featureName);
+
+			// May be a subtype
+			if ( !ref._refType.empty() )
+				m_ser.add_attribute("xsi:type", ref._refType);
+
+			m_ser.add_attribute("href", ref._href);
+			m_ser.close_object(ref._featureName);
 		}
 	}
 }

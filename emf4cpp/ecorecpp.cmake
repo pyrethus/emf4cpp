@@ -90,6 +90,7 @@ set(ecorecpp_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/ExtendedMetaData.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/BasicExtendedMetaData.hpp
 	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/TreeWalker.hpp
+	${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/exception/ReferenceStringCreationException.hpp
    )
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp.hpp DESTINATION include/emf4cpp)
@@ -146,6 +147,7 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/CrossReferencer.hpp DEST
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/ExtendedMetaData.hpp DESTINATION include/emf4cpp/ecorecpp/util)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/BasicExtendedMetaData.hpp DESTINATION include/emf4cpp/ecorecpp/util)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/util/TreeWalker.hpp DESTINATION include/emf4cpp/ecorecpp/util)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/exception/ReferenceStringCreationException.hpp DESTINATION include/emf4cpp/ecorecpp/exception)
 
 include_directories(../emf4cpp ../XMLType ./ecorecpp ${Qt5Core_INCLUDE_DIRS})
 
