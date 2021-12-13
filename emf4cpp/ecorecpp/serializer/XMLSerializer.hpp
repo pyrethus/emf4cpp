@@ -42,7 +42,7 @@ public:
 
 	~XMLSerializer() = default;
 
-	void serialize(::ecore::EObject_ptr obj);
+	void serialize(const ::ecorecpp::mapping::EList<::ecore::EObject_ptr>::ptr_type& objlist);
 
 	void setIndentMode(XmiIndentMode);
 	XmiIndentMode getIndentMode() const;
@@ -87,14 +87,14 @@ protected:
 	 *  serialized output.
 	 */
 	XmiIndentMode m_mode = XmiIndentMode::Indentation;
-	bool m_keepDefault = false;
+	bool m_keepDefault{false};
 
 	std::ostringstream m_internalBuffer;
 
-	int m_level; // current_level
+	int m_level{0}; // current_level
 	::ecore::EObject_ptr m_root_obj;
 
-	greedy_serializer m_ser;
+	greedy_serializer m_ser{m_internalBuffer, m_mode == XmiIndentMode::Indentation};
 
 	std::vector<::ecore::EPackage_ptr> m_usedPackages;
 	::ecore::Ptr<util::ExtendedMetaData> m_extendedMetaData;

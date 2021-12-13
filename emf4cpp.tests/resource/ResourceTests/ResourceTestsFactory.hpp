@@ -41,6 +41,7 @@ namespace ResourceTests
         virtual ReferenceTarget_ptr createReferenceTarget();
         virtual Referrer_ptr createReferrer();
         virtual ETypes_ptr createETypes();
+        virtual NamedObject_ptr createNamedObject();
 
         virtual ::ecore::EObject_ptr create ( ::ecore::EClass_ptr _eClass);
         virtual ::ecore::EJavaObject createFromString ( ::ecore::EDataType_ptr _eDataType, ::ecore::EString const& _literalValue);
@@ -99,6 +100,15 @@ namespace ResourceTests
         auto packageFactory =
                 dynamic_cast< ResourceTestsFactory* >(eFactory.get());
         return packageFactory->createETypes();
+    }
+
+    template< > inline NamedObject_ptr create< NamedObject >()
+    {
+        auto eFactory =
+                ResourceTestsPackage::_instance()->getEFactoryInstance();
+        auto packageFactory =
+                dynamic_cast< ResourceTestsFactory* >(eFactory.get());
+        return packageFactory->createNamedObject();
     }
 
 } // ResourceTests

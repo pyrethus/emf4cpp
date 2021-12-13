@@ -39,17 +39,6 @@ using namespace ::ecore;
 namespace ecorecpp {
 namespace parser {
 
-XMLHandler::XMLHandler()
-	: m_level(0),
-	  m_expected_literal(false),
-	  m_expected_literal_name(),
-	  m_objects(),
-	  m_current_metamodel(nullptr),
-	  m_current_namespace(),
-	  m_unresolved_references(),
-	  m_unresolved_cross_references() {
-}
-
 void XMLHandler::setExtendedMetaData(bool b) {
 	if (b)
 		m_extendedMetaData = ::ecorecpp::util::ExtendedMetaData::_instance();
@@ -199,6 +188,9 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 			_nsUriMap.insert( std::make_pair(type_ns, type_nsuri) );
 		}
 	}
+
+	if ( !m_level && name == "xmi::XMI" )
+			return;
 
 	if (href) {
 		DEBUG_MSG(cerr, "    --- Unresolved cross document reference: "
@@ -364,6 +356,9 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 		}
 
 		m_objects.push_back(eobj);
+		if ( !m_level )
+			m_root_objects.push_back(eobj);
+
 	} else {
 		m_expected_literal = true;
 		m_expected_literal_name = name;
@@ -375,16 +370,17 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 void XMLHandler::end_tag(xml_parser::match_pair const& nameP) {
 	DEBUG_MSG(cerr, "---     END: " << m_level);
 
-	if (--m_level && !m_expected_literal)
+	if ( m_level > 0 )
+		--m_level;
+
+	if (m_level && !m_expected_literal)
 		m_objects.pop_back();
 
 	m_expected_literal = false;
 }
 
-EObject_ptr XMLHandler::getRootElement() {
-	if (!m_objects.empty())
-		return m_objects.front();
-	return EObject_ptr(); // TODO: throw exception?
+const std::list<EObject_ptr>& XMLHandler::getRootElements() const {
+	return m_root_objects;
 }
 
 XMLHandler::XmiIdMap& XMLHandler::getXmiIds() {
@@ -392,7 +388,10 @@ XMLHandler::XmiIdMap& XMLHandler::getXmiIds() {
 }
 
 void XMLHandler::resolveReferences() {
-	auto model_root = m_objects.front();
+	if ( m_root_objects.empty() )
+		return;
+
+	auto model_root = m_root_objects.front();
 	::ecorecpp::resource::Resource_ptr resource = model_root->eResource();
 	if (!resource)
 		throw std::logic_error("Cannot resolve references. Model has no resource.");
@@ -435,10 +434,10 @@ void XMLHandler::resolveReferences() {
 }
 
 void XMLHandler::resolveCrossDocumentReferences() {
-	if ( m_objects.empty() )
+	if ( m_root_objects.empty() )
 		return;
 
-	auto model_root = m_objects.front();
+	auto model_root = m_root_objects.front();
 	::ecorecpp::resource::Resource_ptr resource = model_root->eResource();
 	if (!resource)
 		throw std::logic_error("Cannot resolve cross references. Model has no resource.");

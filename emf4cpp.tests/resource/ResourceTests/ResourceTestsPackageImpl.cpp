@@ -47,6 +47,8 @@ ResourceTestsPackage::ResourceTestsPackage()
     m_ETypes__double = ::ecore::make< ::ecore::EAttribute >();
     m_ETypes__int = ::ecore::make< ::ecore::EAttribute >();
     m_ETypesEClass = ::ecore::make< ::ecore::EClass >();
+    m_NamedObject__name = ::ecore::make< ::ecore::EAttribute >();
+    m_NamedObjectEClass = ::ecore::make< ::ecore::EClass >();
     m_ReferenceTargetEClass = ::ecore::make< ::ecore::EClass >();
     m_Referrer__reference = ::ecore::make< ::ecore::EReference >();
     m_ReferrerEClass = ::ecore::make< ::ecore::EClass >();
@@ -318,6 +320,59 @@ void ResourceTestsPackage::_initPackage()
     }();
 
     [this]()
+    { // Feature name of class NamedObject
+        auto &&feature = m_NamedObject__name;
+
+        // ENamedElement
+        feature->setName("name");
+
+        // ETypedElement
+        feature->setLowerBound(0);
+        feature->setOrdered(true);
+        feature->setUnique(true);
+        feature->setUpperBound(1);
+
+        // EStructuralFeature
+        feature->setChangeable(true);
+        feature->setDefaultValueLiteral("");
+        feature->setDerived(false);
+        feature->setEType(::ecore::EcorePackage::_instance()->getEString());
+        feature->setTransient(false);
+        feature->setUnsettable(false);
+        feature->setVolatile(false);
+
+        feature->setFeatureID(
+                ::ResourceTests::ResourceTestsPackage::NAMEDOBJECT__NAME);
+        feature->basicsetEContainingClass(m_NamedObjectEClass);
+
+        // EAttribute
+        feature->setEAttributeType(
+                ::ecore::EcorePackage::_instance()->getEString());
+        feature->setID(false);
+    }();
+
+    [this]()
+    { // Classifier NamedObject
+        auto &&classifier = m_NamedObjectEClass;
+
+        // ENamedElement
+        classifier->setName("NamedObject");
+
+        // EClassifier
+        classifier->setClassifierID(NAMEDOBJECT);
+
+        // EClass
+        classifier->setAbstract(false);
+        classifier->setInterface(false);
+        {
+            auto &&eStructuralFeatures =
+                    static_cast< ::ecorecpp::mapping::ReferenceEListImpl<
+                            ::ecore::EStructuralFeature_ptr, -1, true, true >& >(m_NamedObjectEClass->getEStructuralFeatures());
+            eStructuralFeatures.basicAdd(m_NamedObject__name);
+        }
+    }();
+
+    [this]()
     { // Classifier ReferenceTarget
         auto &&classifier = m_ReferenceTargetEClass;
 
@@ -487,6 +542,7 @@ void ResourceTestsPackage::_initPackage()
     { // Classifiers of this package
         auto &&classifiers = getEClassifiers();
         classifiers.push_back(m_ETypesEClass);
+        classifiers.push_back(m_NamedObjectEClass);
         classifiers.push_back(m_ReferenceTargetEClass);
         classifiers.push_back(m_ReferrerEClass);
         classifiers.push_back(m_RootEClass);
@@ -510,6 +566,10 @@ void ResourceTestsPackage::_initPackage()
 ::ecore::EClass_ptr ResourceTestsPackage::getETypes()
 {
     return m_ETypesEClass;
+}
+::ecore::EClass_ptr ResourceTestsPackage::getNamedObject()
+{
+    return m_NamedObjectEClass;
 }
 
 ::ecore::EReference_ptr ResourceTestsPackage::getRoot__target()
@@ -551,5 +611,9 @@ void ResourceTestsPackage::_initPackage()
 ::ecore::EAttribute_ptr ResourceTestsPackage::getETypes__int()
 {
     return m_ETypes__int;
+}
+::ecore::EAttribute_ptr ResourceTestsPackage::getNamedObject__name()
+{
+    return m_NamedObject__name;
 }
 

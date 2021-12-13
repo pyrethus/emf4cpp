@@ -32,6 +32,7 @@
 #include "ResourceTests/ReferenceTarget.hpp"
 #include "ResourceTests/Referrer.hpp"
 #include "ResourceTests/ETypes.hpp"
+#include "ResourceTests/NamedObject.hpp"
 
 // Package & Factory
 #include "ResourceTests/ResourceTestsPackage.hpp"

@@ -49,17 +49,22 @@ public:
     static const int ETYPES__INT = 6;
     static const int ETYPES_FEATURE_COUNT = 7;
 
+    // IDs for classifier NamedObject
+    static const int NAMEDOBJECT = 1;
+    static const int NAMEDOBJECT__NAME = 0;
+    static const int NAMEDOBJECT_FEATURE_COUNT = 1;
+
     // IDs for classifier ReferenceTarget
-    static const int REFERENCETARGET = 1;
+    static const int REFERENCETARGET = 2;
     static const int REFERENCETARGET_FEATURE_COUNT = 0;
 
     // IDs for classifier Referrer
-    static const int REFERRER = 2;
+    static const int REFERRER = 3;
     static const int REFERRER__REFERENCE = 0;
     static const int REFERRER_FEATURE_COUNT = 1;
 
     // IDs for classifier Root
-    static const int ROOT = 3;
+    static const int ROOT = 4;
     static const int ROOT__TARGET = 0;
     static const int ROOT__REFERRERS = 1;
     static const int ROOT_FEATURE_COUNT = 2;
@@ -73,6 +78,8 @@ public:
     virtual ::ecore::EClass_ptr getReferrer();
 
     virtual ::ecore::EClass_ptr getETypes();
+
+    virtual ::ecore::EClass_ptr getNamedObject();
 
     // EStructuralFeatures methods
 
@@ -96,6 +103,8 @@ public:
 
     virtual ::ecore::EAttribute_ptr getETypes__int();
 
+    virtual ::ecore::EAttribute_ptr getNamedObject__name();
+
 protected:
 
     static ::ecore::Ptr< ResourceTestsPackage > s_instance;
@@ -104,6 +113,7 @@ protected:
     void _initPackage();
 
     ::ecore::EClass_ptr m_ETypesEClass;
+    ::ecore::EClass_ptr m_NamedObjectEClass;
     ::ecore::EClass_ptr m_ReferenceTargetEClass;
     ::ecore::EClass_ptr m_ReferrerEClass;
     ::ecore::EClass_ptr m_RootEClass;
@@ -129,6 +139,8 @@ protected:
     ::ecore::EAttribute_ptr m_ETypes__double;
 
     ::ecore::EAttribute_ptr m_ETypes__int;
+
+    ::ecore::EAttribute_ptr m_NamedObject__name;
 
 };
 

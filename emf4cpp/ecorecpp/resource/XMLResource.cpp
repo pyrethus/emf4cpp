@@ -173,7 +173,7 @@ void XMLResource::save(std::ostream& os, const Resource::OptionMap& options) {
 			throw std::logic_error("Unresolved cross document references exist!");
 	}
 
-	ser.serialize(getContents()->get(0));
+	ser.serialize(getContents());
 }
 
 void XMLResource::doLoad(
@@ -213,20 +213,10 @@ void XMLResource::doLoad(
 	 */
 	xml_parser::grammar::the_xml::match(st);
 
-	/* This only resolves non-containment references, that are not
-	 * cross-document !
-	 */
-	::ecore::EObject_ptr root = handler.getRootElement();
-	if (!root) {
-		/* Input XML file could be broken/truncated. In this case getRootElement()
-		 * returns NULL.
-		 */
-		throw std::logic_error("No root element found");
+	for ( const auto& root : handler.getRootElements() ) {
+		root->_initialize();
+		getContents()->push_back(root);
 	}
-
-	root->_initialize();
-
-	getContents()->push_back(root);
 
 	for (auto&& entry : handler.getXmiIds()) {
 		_idToEObjectMap.insert(std::make_pair(entry.first,  entry.second));

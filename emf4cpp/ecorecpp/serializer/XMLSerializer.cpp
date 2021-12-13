@@ -36,11 +36,7 @@ using namespace ::ecore;
 using ::ecorecpp::mapping::type_definitions::string_t;
 
 XMLSerializer::XMLSerializer( std::ostream& os )
-	: m_out(os),
-	  m_internalBuffer(),
-	  m_level(0),
-	  m_ser(m_internalBuffer, m_mode == XmiIndentMode::Indentation),
-	  m_usedPackages() {
+	: m_out(os) {
 }
 
 void XMLSerializer::setIndentMode(XmiIndentMode mode) {
@@ -78,37 +74,47 @@ void XMLSerializer::setExternalReferences(
 		_unresolvedReferences.emplace(ref._obj, ref);
 }
 
-void XMLSerializer::serialize(EObject_ptr obj) {
-	m_root_obj = obj;
-
-	if (m_extendedMetaData) {
-		auto root_eClass = obj->eClass();
-		DEBUG_MSG(cerr, "name " << m_extendedMetaData->getName(root_eClass) );
-		if (m_extendedMetaData->isDocumentRoot(root_eClass)) {
-			DEBUG_MSG(cerr, "DocumentRoot detected");
-			throw std::logic_error("Cannot persist DocumentRoot");
-		} else
-			DEBUG_MSG(cerr, "DocumentRoot not detected");
-	}
-
-
-	EClass_ptr cl = obj->eClass();
-	EPackage_ptr pkg = cl->getEPackage();
-	m_usedPackages.push_back(pkg);
-
-	::ecorecpp::mapping::type_definitions::string_t root_name(get_type(obj));
-	if ( m_extendedMetaData && obj->eContainer()
-		 && m_extendedMetaData->isDocumentRoot(obj->eContainer()->eClass()) ) {
-		root_name = get_reference(obj);
-	}
-
+void XMLSerializer::serialize(const ::ecorecpp::mapping::EList<::ecore::EObject_ptr>::ptr_type& objlist) {
+	const bool hasManyRootObjects = objlist->size() > 1;
 	// Serialize the top level object into m_internalBuffer
 	// First remove the XML processing instruction
 	m_internalBuffer.str(::ecorecpp::mapping::type_definitions::string_t());
 	// Then change the internal state but do not output anything
 	m_ser.open_object("", greedy_serializer::SilentMode::Silent);
-	// Output attributes and child nodes
-	serialize_node(obj);
+
+	::ecorecpp::mapping::type_definitions::string_t root_name;
+	for ( const auto obj : *objlist ) {
+		if (m_extendedMetaData) {
+			auto root_eClass = obj->eClass();
+			DEBUG_MSG(cerr, "name " << m_extendedMetaData->getName(root_eClass) );
+			if (m_extendedMetaData->isDocumentRoot(root_eClass)) {
+				DEBUG_MSG(cerr, "DocumentRoot detected");
+				throw std::logic_error("Cannot persist DocumentRoot");
+			} else
+				DEBUG_MSG(cerr, "DocumentRoot not detected");
+		}
+
+
+		EClass_ptr cl = obj->eClass();
+		EPackage_ptr pkg = cl->getEPackage();
+		m_usedPackages.push_back(pkg);
+
+		root_name = get_type(obj);
+		if ( m_extendedMetaData && obj->eContainer()
+			 && m_extendedMetaData->isDocumentRoot(obj->eContainer()->eClass()) ) {
+			root_name = get_reference(obj);
+		}
+
+		if ( hasManyRootObjects )
+			m_ser.open_object(root_name, greedy_serializer::SilentMode::Loud);
+		// Output attributes and child nodes
+		serialize_node(obj);
+		if ( hasManyRootObjects )
+			m_ser.close_object(root_name, greedy_serializer::SilentMode::Loud);
+	}
+
+	if ( hasManyRootObjects )
+		root_name = "xmi::XMI";
 	// The current state of m_internalBuffer controls the closing tag
 	m_ser.close_object(root_name, greedy_serializer::SilentMode::Loud);
 

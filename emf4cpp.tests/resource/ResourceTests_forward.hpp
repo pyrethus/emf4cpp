@@ -55,6 +55,10 @@ namespace ResourceTests
     class ETypes;
     using ETypes_ptr = ::ecore::Ptr<ETypes>;
 
+// NamedObject
+    class NamedObject;
+    using NamedObject_ptr = ::ecore::Ptr<NamedObject>;
+
 // EEnum
 
 // Package & Factory

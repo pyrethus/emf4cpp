@@ -35,6 +35,8 @@ SOURCES += \
     ResourceTests/ReferrerImpl.cpp \
     ResourceTests/ETypes.cpp \
     ResourceTests/ETypesImpl.cpp \
+    ResourceTests/NamedObject.cpp \
+    ResourceTests/NamedObjectImpl.cpp \
 
 
 HEADERS += \
@@ -47,4 +49,5 @@ HEADERS += \
     ResourceTests/ReferenceTarget.hpp \
     ResourceTests/Referrer.hpp \
     ResourceTests/ETypes.hpp \
+    ResourceTests/NamedObject.hpp \
 

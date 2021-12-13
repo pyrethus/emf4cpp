@@ -41,6 +41,8 @@ set(ResourceTests_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/ReferrerImpl.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/ETypes.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/ETypesImpl.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/NamedObject.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/NamedObjectImpl.cpp
 )
 
 set(ResourceTests_HEADERS
@@ -52,6 +54,7 @@ set(ResourceTests_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/ReferenceTarget.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/Referrer.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/ETypes.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/NamedObject.hpp
 )
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests.hpp DESTINATION include/emf4cpp/)
@@ -62,6 +65,7 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/Root.hpp DESTINATION inc
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/ReferenceTarget.hpp DESTINATION include/emf4cpp/ResourceTests)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/Referrer.hpp DESTINATION include/emf4cpp/ResourceTests)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/ETypes.hpp DESTINATION include/emf4cpp/ResourceTests)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/NamedObject.hpp DESTINATION include/emf4cpp/ResourceTests)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ResourceTests/dllResourceTests.hpp DESTINATION include/emf4cpp/ResourceTests)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-3.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp ${CMAKE_CURRENT_SOURCE_DIR}/../../builds/emf4cpp-generator-3.0.0-${CMAKE_BUILD_TYPE_LOWER}/include/emf4cpp)

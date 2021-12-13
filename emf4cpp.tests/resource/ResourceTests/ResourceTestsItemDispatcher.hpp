@@ -65,6 +65,11 @@ public:
                 auto derived = ::ecore::as< ETypes >(obj);
                 _this()->T::work(derived, (ETypes*)nullptr);
             }break;
+            case ResourceTestsPackage::NAMEDOBJECT:
+            {
+                auto derived = ::ecore::as< NamedObject >(obj);
+                _this()->T::work(derived, (NamedObject*)nullptr);
+            }break;
             case ResourceTestsPackage::REFERENCETARGET:
             {
                 auto derived = ::ecore::as< ReferenceTarget >(obj);

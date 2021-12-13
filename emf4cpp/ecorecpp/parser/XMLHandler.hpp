@@ -40,7 +40,7 @@ namespace parser {
 class EXPORT_ECORECPP_DLL XMLHandler {
 public:
 
-	XMLHandler();
+	XMLHandler() = default;
 	~XMLHandler() = default;
 
 	void setExtendedMetaData(bool);
@@ -56,7 +56,7 @@ public:
 
 	void characters(xml_parser::match_pair const& chars);
 
-	::ecore::EObject_ptr getRootElement();
+	const std::list<::ecore::EObject_ptr>& getRootElements() const;
 
 	using XmiIdMap = std::unordered_map<::ecorecpp::mapping::type_definitions::string_t, ::ecore::EObject_ptr>;
 	XmiIdMap& getXmiIds();
@@ -67,10 +67,11 @@ public:
 
 private:
 
-	int m_level;
-	bool m_expected_literal;
+	int m_level{0};
+	bool m_expected_literal{false};
 	::ecorecpp::mapping::type_definitions::string_t m_expected_literal_name;
 	std::list<::ecore::EObject_ptr> m_objects;
+	std::list<::ecore::EObject_ptr> m_root_objects;
 
 	::ecore::EPackage_ptr m_current_metamodel;
 	::ecorecpp::mapping::type_definitions::string_t m_current_namespace;

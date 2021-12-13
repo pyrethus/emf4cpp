@@ -25,6 +25,7 @@
 #include <ResourceTests/ReferenceTarget.hpp>
 #include <ResourceTests/Referrer.hpp>
 #include <ResourceTests/ETypes.hpp>
+#include <ResourceTests/NamedObject.hpp>
 
 #include <ecore.hpp>
 #include <ecorecpp/mapping.hpp>
@@ -47,6 +48,8 @@ ResourceTestsFactory::ResourceTestsFactory()
         return createReferrer();
     case ResourceTestsPackage::ETYPES:
         return createETypes();
+    case ResourceTestsPackage::NAMEDOBJECT:
+        return createNamedObject();
     default:
         throw "IllegalArgumentException";
     }
@@ -89,5 +92,9 @@ Referrer_ptr ResourceTestsFactory::createReferrer()
 ETypes_ptr ResourceTestsFactory::createETypes()
 {
     return ::ecore::Ptr < ETypes > (new ETypes);
+}
+NamedObject_ptr ResourceTestsFactory::createNamedObject()
+{
+    return ::ecore::Ptr < NamedObject > (new NamedObject);
 }
 

@@ -23,6 +23,8 @@ project(emf4cpp CXX C)
 
 include(CTest)
 
+add_definitions(-DQT_NO_VERSION_TAGGING)
+
 add_subdirectory(emf4cpp)
 add_subdirectory(XMLType)
 add_subdirectory(org.csu.emf4cpp.generator)
