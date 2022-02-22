@@ -68,21 +68,6 @@ using namespace ::«EPackage.getFQN()»;
 #endif
 }
 
-«IF "::"+this.getFQN() == "::ecore::EObject"-»
-// Copy constructor only for EObject, needed to properly initialize reference counting
-«name»::«name»(const «name»&)
-{
-«PROTECT CSTART '/*' CEND '*/' ID name+"Impl__"+name+"ImplConst" DISABLE»
-// Please, enable the protected region if you add manually written code.
-// To do this, add the keyword ENABLED before START.
-«ENDPROTECT»
-
-#ifdef ECORECPP_NOTIFICATION_API
-    m_eDeliver = false;
-#endif
-}
-«ENDIF»
-
 «name»::~«name»()
 {
     «FOREACH this.EReferences.select(e|e.containment) AS ref-»

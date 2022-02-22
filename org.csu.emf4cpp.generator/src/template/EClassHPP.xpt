@@ -118,10 +118,6 @@ public:
     static const int classifierId = «EPackage.name.toFirstUpper()»Package::«name.toUpperCase()»;
     «ENDIF-»
 
-	«IF "::"+this.getFQN() == "::ecore::EObject"-»
-    «name»(const «name»&);
-    «ENDIF-»
-
     «REM»«EXPAND template::boost_serialization::serialize FOR this»«ENDREM»
 
     «PROTECT CSTART '/*' CEND '*/' ID name DISABLE»

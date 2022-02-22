@@ -54,19 +54,6 @@ EObject::EObject()
 #endif
 }
 
-// Copy constructor only for EObject, needed to properly initialize reference counting
-EObject::EObject(const EObject&)
-{
-    /*PROTECTED REGION ID(EObjectImpl__EObjectImplConst) START*/
-// Please, enable the protected region if you add manually written code.
-// To do this, add the keyword ENABLED before START.
-    /*PROTECTED REGION END*/
-
-#ifdef ECORECPP_NOTIFICATION_API
-    m_eDeliver = false;
-#endif
-}
-
 EObject::~EObject()
 {
 }
