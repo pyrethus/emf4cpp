@@ -217,6 +217,13 @@ void XMLResource::doLoad(
 	 * cross-document !
 	 */
 	::ecore::EObject_ptr root = handler.getRootElement();
+	if (!root) {
+		/* Input XML file could be broken/truncated. In this case getRootElement()
+		 * returns NULL.
+		 */
+		throw std::logic_error("No root element found");
+	}
+
 	root->_initialize();
 
 	getContents()->push_back(root);
