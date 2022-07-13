@@ -271,26 +271,9 @@ void handler::start_tag(xml_parser::match_pair const& name,
                     peobj->eSet(esf, anyObj);
             }
 
-            // Is a reference and has opposite
-            // TODO: remove when Notification implemented
-            EReference_ptr eopref;
-            if (eref && (eopref = eref->getEOpposite()))
-            {
-                if (eopref->getUpperBound() != 1)
-                {
-                    // Gets the collection and adds the new element
-                    anyObj = eobj->eGet(eopref);
-                    mapping::EList<::ecore::EObject_ptr>::ptr_type list = ecorecpp::mapping::any::any_cast<
-                            mapping::EList<::ecore::EObject_ptr>::ptr_type >(anyObj);
-
-                    list->push_back_unsafe(peobj);
-                }
-                else
-                {
-                    anyObj = peobj;
-                    eobj->eSet(eopref, anyObj);
-                }
-            }
+			// EOpposite relations are implemented via a call of _inverseAdd()
+			// and _inverseRemove(), which are called implicitly by eSet(). No
+			// need to call them extra.
         }
 
         m_objects.push_back(eobj);
@@ -438,7 +421,7 @@ void handler::resolveReferences()
 				EJavaObject targetObject = eobj->eGet(esf);
 				if ( any::is_a<mapping::EList<::ecore::EObject_ptr>::ptr_type>(targetObject) ) {
 					ecorecpp::mapping::any::any_cast<mapping::EList<::ecore::EObject_ptr>::ptr_type >(targetObject)
-							->push_back_unsafe(_current);
+							->push_back(_current);
 				} else {
 					eobj->eSet(esf, _any);
 				}

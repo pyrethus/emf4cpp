@@ -425,7 +425,7 @@ void XMLHandler::resolveReferences() {
 
 			if ( esf->getUpperBound() != 1 ) {
 				ecorecpp::mapping::any::any_cast<
-						mapping::EList<::ecore::EObject_ptr>::ptr_type >(owner)->push_back_unsafe(resolvedObj);
+						mapping::EList<::ecore::EObject_ptr>::ptr_type >(owner)->push_back(resolvedObj);
 			} else {
 				eobj->eSet(esf, resolvedObj);
 			}
@@ -477,7 +477,7 @@ void XMLHandler::resolveCrossDocumentReferences() {
 
 		if ( esf->getUpperBound() != 1 ) {
 			ecorecpp::mapping::any::any_cast<
-					mapping::EList<::ecore::EObject_ptr>::ptr_type >(owner)->push_back_unsafe(resolvedObj);
+					mapping::EList<::ecore::EObject_ptr>::ptr_type >(owner)->push_back(resolvedObj);
 		} else {
 			eobj->eSet(esf, resolvedObj);
 		}
