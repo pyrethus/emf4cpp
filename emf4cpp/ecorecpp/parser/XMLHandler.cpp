@@ -307,8 +307,20 @@ void XMLHandler::start_tag(xml_parser::match_pair const& nameP,
 					EPackage_ptr const pkg = aedt->getEPackage();
 					EFactory_ptr const fac = pkg->getEFactoryInstance();
 
-					any anyVal = fac->createFromString(aedt, avalue);
-					eobj->eSet(esf, anyVal);
+					if ( esf->getUpperBound() != 1 ) {
+						/* Parses EEnumLiterals as TAG="literal literal" */
+						/* Split literal along spaces */
+						std::istringstream input( avalue );
+						std::string subLiteral;
+						EAttribute_ptr const eattr = as<EAttribute>( esf );
+						while ( std::getline( input, subLiteral, ' ' ) ) {
+							any anyVal = fac->createFromString( aedt, subLiteral );
+							appendMultipleAttributeValue( eobj, eattr, anyVal );
+						}
+					} else {
+						any anyVal = fac->createFromString( aedt, avalue );
+						eobj->eSet( esf, anyVal );
+					}
 				}
 			} catch (const char* e) {
 				ERROR_MSG("ERROR: " << e);
