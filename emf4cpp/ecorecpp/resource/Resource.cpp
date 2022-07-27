@@ -43,14 +43,29 @@ public:
 
 	virtual ~ResourceContentEList() = default;
 
-	void push_back(::ecore::EObject_ptr _obj,
-				   const typename EList::ef_ptr& = nullptr) override {
-		base_t::m_content.push_back(_obj);
+	void push_back( ::ecore::EObject_ptr _obj,
+					const typename EList::ef_ptr& = nullptr ) override {
+		m_content.push_back( _obj );
 		if ( auto other = _obj->_getDirectResource() ) {
-			other->getContents()->remove(_obj);
+			other->getContents()->remove( _obj );
 		}
-		_obj->_setEResource(_this->shared_from_this());
+		_obj->_setEResource( _this->shared_from_this() );
 		_this->_loaded = true;
+	}
+
+	void clear() override {
+		for ( const auto& obj : m_content )
+			obj->_basicSetEResource( nullptr );
+
+		m_content.clear();
+	}
+
+	void remove( ::ecore::EObject_ptr _obj ) override {
+		auto it = std::find( m_content.begin(), m_content.end(), _obj );
+		if ( it != m_content.end() ) {
+			m_content.erase( it );
+			_obj->_basicSetEResource( nullptr );
+		}
 	}
 
 private:

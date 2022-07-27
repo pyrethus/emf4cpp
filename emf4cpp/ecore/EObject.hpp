@@ -104,6 +104,7 @@ public:
             ::ecore::EStructuralFeature_ptr _eContainingFeature);
 
     void _setEResource(::ecorecpp::resource::Resource_ptr);
+    void _basicSetEResource(::ecorecpp::resource::Resource_ptr);
 
     ::ecorecpp::resource::Resource_ptr _getDirectResource();
 

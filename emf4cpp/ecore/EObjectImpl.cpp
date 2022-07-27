@@ -81,7 +81,11 @@ void EObject::_setEResource(::ecorecpp::resource::Resource_ptr res)
         list->remove(_this());
     }
 
-    m_eResource = res;
+    _basicSetEResource(res);
+}
+
+void EObject::_basicSetEResource(::ecorecpp::resource::Resource_ptr res) {
+	m_eResource = res;
 }
 
 ::ecorecpp::resource::Resource_ptr EObject::_getDirectResource()
