@@ -20,12 +20,28 @@
 #include "URIHandler.hpp"
 
 #include <cstdio>
+#if  __has_include(<filesystem>)
+#include <filesystem>
+namespace fs = std::filesystem;
+#elif __has_include(<experimental/filesystem>)
+#include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
+#else
+#error "Your compiler doesn't support std::filesystem."
+#endif
 #include <fstream>
 
 #include <QUrl>
 
 namespace ecorecpp {
 namespace resource {
+
+namespace details {
+fs::path toFilesystemPath( const QUrl& url ) {
+	const auto filename = url.toLocalFile().toStdWString();
+	return fs::path( filename );
+}
+}
 
 const URIHandler::URIHandlerList URIHandler::DEFAULT_HANDLERS =
 		{std::make_shared<URIHandler>()};
@@ -39,37 +55,34 @@ bool URIHandler::canHandle( const QUrl& url) const {
 	return url.isLocalFile();
 }
 
-std::shared_ptr<std::istream> URIHandler::createInputStream(const QUrl& url) const {
-	if (!canHandle(url))
+std::shared_ptr<std::istream> URIHandler::createInputStream( const QUrl& url ) const {
+	if ( !canHandle( url ) )
 		return std::shared_ptr<std::istream>();
 
-	const std::string filename(url.toLocalFile().toStdString());
-	return std::make_shared<std::ifstream>(filename.c_str());
+	return std::make_shared<std::ifstream>( details::toFilesystemPath( url ) );
 }
 
 
-std::shared_ptr<std::ostream> URIHandler::createOutputStream(const QUrl& url) const {
-	if (!canHandle(url))
+std::shared_ptr<std::ostream> URIHandler::createOutputStream( const QUrl& url ) const {
+	if ( !canHandle( url ) )
 		return std::shared_ptr<std::ostream>();
 
-	const std::string filename(url.toLocalFile().toStdString());
-	return std::make_shared<std::ofstream>(filename.c_str(), std::ios_base::trunc);
+	return std::make_shared<std::ofstream>( details::toFilesystemPath( url ),
+											std::ios_base::trunc );
 }
 
-void URIHandler::remove(const QUrl& url) const {
-	if (!canHandle(url))
+void URIHandler::remove( const QUrl& url ) const {
+	if ( !canHandle( url ) )
 		return;
 
-	const std::string filename(url.toLocalFile().toStdString());
-	std::remove(filename.c_str());
+	fs::remove( details::toFilesystemPath( url ) );
 }
 
-bool URIHandler::exists(const QUrl& url) const {
-	if (!canHandle(url))
+bool URIHandler::exists( const QUrl& url ) const {
+	if ( !canHandle( url ) )
 		return false;
 
-	const std::string filename(url.toLocalFile().toStdString());
-	return static_cast<bool>(std::ifstream(filename.c_str()));
+	return static_cast<bool>( std::ifstream( details::toFilesystemPath( url ) ) );
 }
 
 } // resource

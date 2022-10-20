@@ -46,7 +46,7 @@ Two direct advantages can be that C++ programmers can write their data model usi
 
 * Boost C++ libraries (1.54 or greater)
 
-* G++ (4.8.5 or greater due to C++11 - we are using g++ 8.3)
+* G++ (8 or greater due to C++17 - we are using g++ 8.3)
 
 * Java Runtime Environment (1.8 or greater)
 
