@@ -24,6 +24,7 @@
 
 #include <memory>
 #include <string>
+#include <list>
 #include <unordered_map>
 
 #include <QtCore/qstring.h>
@@ -48,7 +49,7 @@ class EXPORT_ECORECPP_DLL Resource : public std::enable_shared_from_this<Resourc
 public:
 	using OptionMap = std::unordered_map<std::string, std::string>;
 
-	Resource(const Resource&)    = delete;
+  Resource(const Resource&) = delete;
 	void operator=(const Resource&) = delete;
 	virtual ~Resource();
 

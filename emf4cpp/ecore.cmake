@@ -25,6 +25,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -funroll-loops")
 
+
 string(TOLOWER ${CMAKE_BUILD_TYPE} CMAKE_BUILD_TYPE_LOWER)
 
 set(ecore_SOURCES
@@ -76,36 +77,36 @@ set(ecore_SOURCES
 )
 
 set(ecore_HEADERS
-	${CMAKE_CURRENT_SOURCE_DIR}/ecore.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore_forward.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EcorePackage.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EcoreFactory.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EAttribute.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EAnnotation.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EClass.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EClassifier.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EDataType.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EEnum.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EEnumLiteral.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EFactory.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EModelElement.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/ENamedElement.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EObject.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EOperation.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EPackage.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EParameter.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EReference.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EStructuralFeature.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/ETypedElement.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EStringToStringMapEntry.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EGenericType.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/ecore/ETypeParameter.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore_forward.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EcorePackage.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EcoreFactory.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EAttribute.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EAnnotation.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EClass.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EClassifier.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EDataType.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EEnum.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EEnumLiteral.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EFactory.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EModelElement.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/ENamedElement.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EObject.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EOperation.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EPackage.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EParameter.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EReference.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EStructuralFeature.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/ETypedElement.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EStringToStringMapEntry.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EGenericType.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/ecore/ETypeParameter.hpp
 )
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore.hpp DESTINATION include/emf4cpp/)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore_forward.hpp DESTINATION include/emf4cpp/)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EcoreFactory.hpp DESTINATION include/emf4cpp/ecore)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EcorePackage.hpp DESTINATION include/emf4cpp/ecore)   
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EcorePackage.hpp DESTINATION include/emf4cpp/ecore)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EAttribute.hpp DESTINATION include/emf4cpp/ecore)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EAnnotation.hpp DESTINATION include/emf4cpp/ecore)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EClass.hpp DESTINATION include/emf4cpp/ecore)
@@ -128,11 +129,12 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore/EGenericType.hpp DESTINATION inc
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore/ETypeParameter.hpp DESTINATION include/emf4cpp/ecore)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ecore/dllEcore.hpp DESTINATION include/emf4cpp/ecore)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ../org.csu.emf4cpp.generator/../include/emf4cpp ../org.csu.emf4cpp.generator/../include/emf4cpp)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 add_library(emf4cpp-ecore SHARED ${ecore_HEADERS} ${ecore_SOURCES})
+
+target_link_libraries(emf4cpp-ecore PRIVATE Qt6::Core)
 set_target_properties(emf4cpp-ecore PROPERTIES COMPILE_FLAGS "-DMAKE_ECORE_DLL" VERSION 3.0.0 SOVERSION 3)
 set_property(TARGET emf4cpp-ecore APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
 
 install(TARGETS emf4cpp-ecore DESTINATION lib)
-
