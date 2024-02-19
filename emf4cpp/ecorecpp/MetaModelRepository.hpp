@@ -49,6 +49,8 @@ public:
 
     void load(::ecore::EPackage_ptr _mm);
 
+    void clear();
+
 protected:
 
     static std::unique_ptr<MetaModelRepository> m_instance;

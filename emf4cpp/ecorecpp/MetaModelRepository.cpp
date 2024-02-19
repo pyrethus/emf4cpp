@@ -78,3 +78,10 @@ void MetaModelRepository::load(::ecore::EPackage_ptr _mm)
     if (!_uri.empty())
         m_by_nsURI[_uri] = _mm;
 }
+
+void MetaModelRepository::clear()
+{
+  m_by_name.clear();
+  m_by_nsPrefix.clear();
+  m_by_nsURI.clear();
+}
