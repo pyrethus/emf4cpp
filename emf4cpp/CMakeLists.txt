@@ -21,5 +21,11 @@ cmake_minimum_required(VERSION 3.1)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# TODO: Until we fix the MSVC build.
+if(MSVC)
+    add_compile_options("/w")
+endif()
+
+
 include(ecore.cmake)
 include(ecorecpp.cmake)

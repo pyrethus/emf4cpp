@@ -19,6 +19,7 @@
 
 #include "XMLSerializer.hpp"
 
+#include <array>
 #include <algorithm>
 
 #include <ecore.hpp>

@@ -21,11 +21,6 @@
 #
 
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11")
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -DDEBUG")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -funroll-loops")
-
-
 string(TOLOWER ${CMAKE_BUILD_TYPE} CMAKE_BUILD_TYPE_LOWER)
 
 set(ecore_SOURCES
@@ -134,7 +129,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 add_library(emf4cpp-ecore SHARED ${ecore_HEADERS} ${ecore_SOURCES})
 
 target_link_libraries(emf4cpp-ecore PRIVATE Qt6::Core)
-set_target_properties(emf4cpp-ecore PROPERTIES COMPILE_FLAGS "-DMAKE_ECORE_DLL" VERSION 3.0.0 SOVERSION 3)
+target_compile_definitions(emf4cpp-ecore PRIVATE MAKE_ECORE_DLL USE_ECORECPP_STATIC)
 set_property(TARGET emf4cpp-ecore APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
 
 install(TARGETS emf4cpp-ecore DESTINATION lib)

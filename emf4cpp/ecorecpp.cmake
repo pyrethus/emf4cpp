@@ -1,7 +1,4 @@
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11")
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -DDEBUG")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -funroll-loops")
 
 find_package(Qt6Core REQUIRED)
 set (CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -159,7 +156,7 @@ target_sources(emf4cpp-ecore PRIVATE
 		${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/EDate.hpp
 		${CMAKE_CURRENT_SOURCE_DIR}/ecorecpp/mapping/EDate.cpp)
 
-set_target_properties(emf4cpp-ecorecpp PROPERTIES COMPILE_FLAGS "-DMAKE_ECORECPP_DLL" VERSION 3.0.0 SOVERSION 3)
+target_compile_definitions(emf4cpp-ecorecpp PRIVATE MAKE_ECORECPP_DLL)
 target_link_libraries(emf4cpp-ecorecpp emf4cpp-ecore Qt6::Core $<$<AND:$<CXX_COMPILER_ID:GNU>,$<VERSION_LESS:$<CXX_COMPILER_VERSION>,9.0>>:stdc++fs>)
 install(TARGETS emf4cpp-ecorecpp DESTINATION lib)
 
